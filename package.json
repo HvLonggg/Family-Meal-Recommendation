@@ -1,0 +1,10 @@
+{
+  "name": "bep-viet",
+  "private": true,
+  "packageManager": "pnpm@11.28.0",
+  "scripts": {
+    "frontend:dev": "corepack pnpm --dir frontend dev",
+    "frontend:check": "corepack pnpm --dir frontend check",
+    "frontend:build": "corepack pnpm --dir frontend build"
+  }
+}

@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.venv/
+htmlcov/
+.coverage
+
+# Frontend
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# IDE and operating system
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Runtime
+*.log
+.tmp/
+
+# Local planning and AI-assisted development materials
+# Keep these files on the development machine; do not publish them.
+*.doc
+*.docx
+/CODING_UI_STANDARDS_PYTHON_REACT_V2_SENIOR.md
+/DEVELOPMENT_READINESS_AUDIT.md
+/IMPLEMENTATION_EXECUTION_PLAN.md
+/PRODUCT_STARTUP_PLAN.md
+/docs/IMAGE_GENERATION_PROMPTS.md

@@ -1,0 +1,70 @@
+services:
+  db:
+    image: postgres:18-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-bep_viet}
+      POSTGRES_USER: ${POSTGRES_USER:-bep_viet}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-bep_viet_local}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-bep_viet} -d ${POSTGRES_DB:-bep_viet}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    volumes:
+      - bep_viet_postgres:/var/lib/postgresql
+
+  backend:
+    build:
+      context: ./backend
+    environment:
+      BEP_VIET_APP_ENV: development
+      BEP_VIET_DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-bep_viet}:${POSTGRES_PASSWORD:-bep_viet_local}@db:5432/${POSTGRES_DB:-bep_viet}
+      BEP_VIET_CORS_ORIGINS: '["http://localhost:${FRONTEND_PORT:-5173}"]'
+      BEP_VIET_FRONTEND_URL: ${BEP_VIET_FRONTEND_URL:-http://localhost:5173}
+      BEP_VIET_JWT_SECRET: ${BEP_VIET_JWT_SECRET:-development-only-secret-change-before-deploying-bep-viet}
+      BEP_VIET_ACCESS_TOKEN_EXPIRE_MINUTES: ${BEP_VIET_ACCESS_TOKEN_EXPIRE_MINUTES:-15}
+      BEP_VIET_REFRESH_TOKEN_EXPIRE_DAYS: ${BEP_VIET_REFRESH_TOKEN_EXPIRE_DAYS:-30}
+      BEP_VIET_PASSWORD_RESET_EXPIRE_MINUTES: ${BEP_VIET_PASSWORD_RESET_EXPIRE_MINUTES:-30}
+      BEP_VIET_PHONE_OTP_EXPIRE_MINUTES: ${BEP_VIET_PHONE_OTP_EXPIRE_MINUTES:-5}
+      BEP_VIET_OAUTH_STATE_EXPIRE_MINUTES: ${BEP_VIET_OAUTH_STATE_EXPIRE_MINUTES:-10}
+      BEP_VIET_GOOGLE_CLIENT_ID: ${BEP_VIET_GOOGLE_CLIENT_ID:-}
+      BEP_VIET_GOOGLE_CLIENT_SECRET: ${BEP_VIET_GOOGLE_CLIENT_SECRET:-}
+      BEP_VIET_GOOGLE_REDIRECT_URI: ${BEP_VIET_GOOGLE_REDIRECT_URI:-http://localhost:5173/api/v1/auth/oauth/google/callback}
+      BEP_VIET_FACEBOOK_CLIENT_ID: ${BEP_VIET_FACEBOOK_CLIENT_ID:-}
+      BEP_VIET_FACEBOOK_CLIENT_SECRET: ${BEP_VIET_FACEBOOK_CLIENT_SECRET:-}
+    ports:
+      - "${BACKEND_PORT:-8000}:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    command: >-
+      sh -c "alembic upgrade head &&
+      uvicorn app.main:app --host 0.0.0.0 --port 8000"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/v1/livez')",
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 5s
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_BASE_URL: /api/v1
+    ports:
+      - "${FRONTEND_PORT:-5173}:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+
+volumes:
+  bep_viet_postgres:
