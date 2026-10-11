@@ -11,7 +11,9 @@ COPY package.json ./
 RUN pnpm install --frozen-lockfile=false
 
 COPY . .
-RUN pnpm build
+# Re-link pnpm's dependency tree after the source copy. This also makes the
+# container build resilient to a host node_modules directory entering context.
+RUN pnpm install --frozen-lockfile=false && pnpm build
 
 FROM nginx:1.29-alpine
 

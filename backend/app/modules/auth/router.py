@@ -1,15 +1,20 @@
 from typing import Annotated, Literal
 from urllib.parse import urlencode
 
-from fastapi import APIRouter, Cookie, Depends, Query, Response, status
+from fastapi import APIRouter, Cookie, Depends, Query, Request, Response, status
 from fastapi.responses import RedirectResponse
+from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from app.core.config import get_settings
 from app.core.exceptions import DomainError
 from app.db.session import get_db_session
 from app.modules.auth.dependencies import get_current_user, require_admin
-from app.modules.auth.models import User
+from app.modules.auth.email import (
+    EmailDeliveryError,
+    send_verification_email,
+)
+from app.modules.auth.models import EmailOtpChallenge, User
 from app.modules.auth.oauth import (
     OAuthExchangeError,
     exchange_google_code,
@@ -17,31 +22,34 @@ from app.modules.auth.oauth import (
 )
 from app.modules.auth.schemas import (
     AuthSessionResponse,
+    ChangePasswordRequest,
+    EmailOtpVerifyRequest,
     ForgotPasswordRequest,
     ForgotPasswordResponse,
     LoginRequest,
     MessageResponse,
-    PhoneOtpRequest,
-    PhoneOtpResponse,
-    PhoneOtpVerifyRequest,
     ProviderAvailabilityResponse,
     RegisterRequest,
     ResetPasswordRequest,
+    ResetTokenResponse,
     UserResponse,
 )
 from app.modules.auth.service import (
+    EmailNotRegisteredError,
+    EmailServiceUnavailableError,
     OAuthProviderNotConfiguredError,
-    authenticate_email,
     authenticate_oauth_user,
-    create_password_reset_token,
-    create_phone_challenge,
+    authenticate_password,
+    change_password,
+    complete_password_reset_email_verification,
+    create_email_otp_challenge,
     create_session_tokens,
+    invalidate_email_otp_challenge,
     provider_availability,
-    register_user,
+    register_email_account,
     reset_password,
     revoke_refresh_token,
     rotate_refresh_token,
-    verify_phone_challenge,
 )
 
 router = APIRouter(prefix="/auth")
@@ -49,12 +57,12 @@ REFRESH_COOKIE_NAME = "bep_viet_refresh"
 OAUTH_STATE_COOKIE_NAME = "bep_viet_oauth_state"
 
 
-def set_refresh_cookie(response: Response, token: str) -> None:
+def set_refresh_cookie(response: Response, token: str, *, remember_me: bool = False) -> None:
     settings = get_settings()
     response.set_cookie(
         key=REFRESH_COOKIE_NAME,
         value=token,
-        max_age=settings.refresh_token_expire_days * 24 * 60 * 60,
+        max_age=(settings.refresh_token_expire_days * 24 * 60 * 60) if remember_me else None,
         httponly=True,
         secure=settings.secure_cookies,
         samesite="lax",
@@ -101,7 +109,7 @@ def oauth_frontend_response(*, success: bool) -> RedirectResponse:
     settings = get_settings()
     query = urlencode({"status": "success" if success else "error"})
     return RedirectResponse(
-        url=f"{str(settings.frontend_url).rstrip('/')}/xac-thuc-google?{query}",
+        url=f"{str(settings.frontend_url).rstrip('/')}/oauth-callback?{query}",
         status_code=status.HTTP_303_SEE_OTHER,
     )
 
@@ -114,36 +122,86 @@ def session_response(user: User, access_token: str, expires_in: int) -> AuthSess
     )
 
 
+def request_email_otp_code(
+    *,
+    session: Session,
+    email: str,
+    purpose: str,
+    requester_ip: str | None,
+    account_exists: bool,
+    pending_full_name: str | None = None,
+    pending_password: str | None = None,
+    remember_me: bool = False,
+) -> tuple[EmailOtpChallenge, str | None]:
+    settings = get_settings()
+    if not settings.email_enabled and settings.app_env != "test":
+        raise EmailServiceUnavailableError(
+            "Dịch vụ email chưa sẵn sàng. Hãy cấu hình Gmail SMTP và thử lại."
+        )
+    challenge, code = create_email_otp_challenge(
+        session,
+        email,
+        purpose=purpose,
+        requester_ip=requester_ip,
+        account_exists=account_exists,
+        pending_full_name=pending_full_name,
+        pending_password=pending_password,
+        remembered=remember_me,
+    )
+    if settings.app_env != "test" and account_exists and settings.email_enabled:
+        try:
+            send_verification_email(recipient=challenge.email, code=code, purpose=purpose)
+        except Exception as exc:
+            invalidate_email_otp_challenge(session, challenge.id)
+            message = (
+                "Không gửi được email lúc này. Vui lòng thử lại."
+                if isinstance(exc, EmailDeliveryError)
+                else "Chưa gửi được mã xác thực. Vui lòng thử lại sau."
+            )
+            raise EmailServiceUnavailableError(message) from exc
+    development_code = code if settings.app_env == "test" else None
+    return challenge, development_code
+
+
 @router.post(
     "/register",
-    response_model=AuthSessionResponse,
+    response_model=MessageResponse,
     status_code=status.HTTP_201_CREATED,
-    summary="Đăng ký tài khoản người dùng",
+    summary="Create an account with email and password",
 )
 def register(
     payload: RegisterRequest,
-    response: Response,
     session: Annotated[Session, Depends(get_db_session)],
-) -> AuthSessionResponse:
-    user = register_user(session, payload)
-    tokens = create_session_tokens(session, user)
-    set_refresh_cookie(response, tokens.refresh_token)
-    return session_response(user, tokens.access_token, tokens.access_expires_in)
+) -> MessageResponse:
+    register_email_account(
+        session,
+        email=str(payload.email),
+        full_name=payload.full_name,
+        password=payload.password,
+    )
+    return MessageResponse(
+        message=(
+            "Tài khoản đã được tạo thành công. Bạn có thể đăng nhập ngay. "
+            "Email chào mừng sẽ được gửi tới địa chỉ đăng ký."
+        )
+    )
 
 
-@router.post("/login", response_model=AuthSessionResponse, summary="Đăng nhập bằng email")
+@router.post("/login", response_model=AuthSessionResponse, summary="Sign in with email")
 def login(
     payload: LoginRequest,
     response: Response,
     session: Annotated[Session, Depends(get_db_session)],
 ) -> AuthSessionResponse:
-    user = authenticate_email(session, email=str(payload.email), password=payload.password)
-    tokens = create_session_tokens(session, user)
-    set_refresh_cookie(response, tokens.refresh_token)
+    user = authenticate_password(session, email=str(payload.email), password=payload.password)
+    tokens = create_session_tokens(session, user, remember_me=payload.remember_me)
+    set_refresh_cookie(response, tokens.refresh_token, remember_me=tokens.remembered)
     return session_response(user, tokens.access_token, tokens.access_expires_in)
 
 
-@router.post("/refresh", response_model=AuthSessionResponse, summary="Làm mới phiên đăng nhập")
+@router.post(
+    "/refresh", response_model=AuthSessionResponse, summary="Refresh the authentication session"
+)
 def refresh(
     response: Response,
     session: Annotated[Session, Depends(get_db_session)],
@@ -154,11 +212,11 @@ def refresh(
 
         raise InvalidTokenError("Không tìm thấy phiên đăng nhập.")
     user, tokens = rotate_refresh_token(session, refresh_token)
-    set_refresh_cookie(response, tokens.refresh_token)
+    set_refresh_cookie(response, tokens.refresh_token, remember_me=tokens.remembered)
     return session_response(user, tokens.access_token, tokens.access_expires_in)
 
 
-@router.post("/logout", response_model=MessageResponse, summary="Đăng xuất")
+@router.post("/logout", response_model=MessageResponse, summary="Sign out")
 def logout(
     response: Response,
     session: Annotated[Session, Depends(get_db_session)],
@@ -169,12 +227,12 @@ def logout(
     return MessageResponse(message="Bạn đã đăng xuất an toàn.")
 
 
-@router.get("/me", response_model=UserResponse, summary="Lấy tài khoản hiện tại")
+@router.get("/me", response_model=UserResponse, summary="Get the current user")
 def me(current_user: Annotated[User, Depends(get_current_user)]) -> UserResponse:
     return UserResponse.model_validate(current_user)
 
 
-@router.get("/admin-check", response_model=UserResponse, summary="Kiểm tra quyền quản trị")
+@router.get("/admin-check", response_model=UserResponse, summary="Check administrator access")
 def admin_check(current_user: Annotated[User, Depends(require_admin)]) -> UserResponse:
     return UserResponse.model_validate(current_user)
 
@@ -182,73 +240,124 @@ def admin_check(current_user: Annotated[User, Depends(require_admin)]) -> UserRe
 @router.post(
     "/forgot-password",
     response_model=ForgotPasswordResponse,
-    summary="Yêu cầu đặt lại mật khẩu",
+    summary="Request an email password reset code",
 )
 def forgot_password(
     payload: ForgotPasswordRequest,
+    request: Request,
     session: Annotated[Session, Depends(get_db_session)],
 ) -> ForgotPasswordResponse:
+    email = str(payload.email).strip().casefold()
+    user = session.scalar(select(User).where(User.email == email))
+    if user is None:
+        challenge, _ = create_email_otp_challenge(
+            session,
+            email,
+            purpose="password_reset",
+            requester_ip=request.client.host if request.client else None,
+            account_exists=False,
+        )
+        invalidate_email_otp_challenge(session, challenge.id)
+        raise EmailNotRegisteredError(
+            "Email này chưa có tài khoản Bếp Việt. Vui lòng kiểm tra email "
+            "hoặc tạo tài khoản mới."
+        )
+
+    challenge, development_code = request_email_otp_code(
+        session=session,
+        email=email,
+        purpose="password_reset",
+        requester_ip=request.client.host if request.client else None,
+        account_exists=True,
+    )
     settings = get_settings()
-    token = create_password_reset_token(session, str(payload.email))
     return ForgotPasswordResponse(
-        message=("Nếu email tồn tại, hướng dẫn đặt lại mật khẩu sẽ được gửi trong ít phút."),
-        development_reset_token=token if settings.app_env == "development" else None,
+        challenge_id=challenge.id,
+        expires_in=settings.email_otp_expire_minutes * 60,
+        message=(
+            "Mã khôi phục thử nghiệm đã sẵn sàng."
+            if settings.app_env == "test"
+            else "Mã khôi phục đã được gửi đến email đăng ký."
+        ),
+        development_code=development_code,
+    )
+
+
+@router.post(
+    "/forgot-password/verify-code",
+    response_model=ResetTokenResponse,
+    summary="Verify an email password reset code",
+)
+def verify_password_reset_code(
+    payload: EmailOtpVerifyRequest,
+    session: Annotated[Session, Depends(get_db_session)],
+) -> ResetTokenResponse:
+    reset_token, expires_in = complete_password_reset_email_verification(
+        session, challenge_id=payload.challenge_id, code=payload.code
+    )
+    return ResetTokenResponse(
+        reset_token=reset_token,
+        expires_in=expires_in,
+        message="Email đã được xác minh. Hãy tạo mật khẩu mới.",
     )
 
 
 @router.post(
     "/reset-password",
     response_model=MessageResponse,
-    summary="Đặt lại mật khẩu",
+    summary="Reset a password",
 )
 def confirm_password_reset(
     payload: ResetPasswordRequest,
+    response: Response,
     session: Annotated[Session, Depends(get_db_session)],
 ) -> MessageResponse:
     reset_password(session, raw_token=payload.token, new_password=payload.new_password)
-    return MessageResponse(message="Mật khẩu đã được cập nhật. Bạn có thể đăng nhập lại.")
-
-
-@router.post("/phone/request", response_model=PhoneOtpResponse, summary="Gửi mã đăng nhập SMS")
-def request_phone_otp(
-    payload: PhoneOtpRequest,
-    session: Annotated[Session, Depends(get_db_session)],
-) -> PhoneOtpResponse:
-    settings = get_settings()
-    if settings.app_env != "development":
-        raise OAuthProviderNotConfiguredError("Dịch vụ SMS chưa được cấu hình cho môi trường này.")
-    challenge, code = create_phone_challenge(session, payload.phone)
-    return PhoneOtpResponse(
-        challenge_id=challenge.id,
-        expires_in=settings.phone_otp_expire_minutes * 60,
-        message="Mã xác thực phát triển đã được tạo.",
-        development_code=code,
+    clear_refresh_cookie(response)
+    return MessageResponse(
+        message=(
+            "Mật khẩu đã được cập nhật. Bạn có thể đăng nhập lại. "
+            "Email bảo mật đã được xếp hàng gửi."
+        )
     )
 
 
-@router.post("/phone/verify", response_model=AuthSessionResponse, summary="Xác thực mã SMS")
-def verify_phone_otp(
-    payload: PhoneOtpVerifyRequest,
+@router.post(
+    "/change-password",
+    response_model=MessageResponse,
+    summary="Change the current user's password",
+)
+def change_current_password(
+    payload: ChangePasswordRequest,
     response: Response,
+    current_user: Annotated[User, Depends(get_current_user)],
     session: Annotated[Session, Depends(get_db_session)],
-) -> AuthSessionResponse:
-    user, tokens = verify_phone_challenge(
-        session, challenge_id=payload.challenge_id, code=payload.code
+) -> MessageResponse:
+    change_password(
+        session,
+        user_id=current_user.id,
+        current_password=payload.current_password,
+        new_password=payload.new_password,
     )
-    set_refresh_cookie(response, tokens.refresh_token)
-    return session_response(user, tokens.access_token, tokens.access_expires_in)
+    clear_refresh_cookie(response)
+    return MessageResponse(
+        message=(
+            "Mật khẩu đã được đổi. Các phiên cũ đã đăng xuất; hãy đăng nhập lại. "
+            "Email bảo mật đã được xếp hàng gửi."
+        )
+    )
 
 
 @router.get(
     "/providers",
     response_model=ProviderAvailabilityResponse,
-    summary="Danh sách phương thức đăng nhập khả dụng",
+    summary="List available authentication providers",
 )
 def providers() -> ProviderAvailabilityResponse:
     return ProviderAvailabilityResponse(**provider_availability())
 
 
-@router.get("/oauth/{provider}/start", summary="Bắt đầu đăng nhập mạng xã hội")
+@router.get("/oauth/{provider}/start", summary="Start social sign-in")
 def start_oauth(provider: Literal["google", "facebook"]) -> Response:
     availability = provider_availability()
     if not availability[provider]:
@@ -271,7 +380,7 @@ def start_oauth(provider: Literal["google", "facebook"]) -> Response:
     return response
 
 
-@router.get("/oauth/google/callback", summary="Hoàn tất đăng nhập Google")
+@router.get("/oauth/google/callback", summary="Complete Google sign-in")
 async def google_oauth_callback(
     session: Annotated[Session, Depends(get_db_session)],
     code: str | None = None,

@@ -115,9 +115,7 @@ def downgrade() -> None:
     op.drop_index(op.f("ix_buoc_nau_mon_an_loai_buoc"), table_name="buoc_nau_mon_an")
     op.drop_index(op.f("ix_buoc_nau_mon_an_mon_an_id"), table_name="buoc_nau_mon_an")
     op.drop_table("buoc_nau_mon_an")
-    op.drop_index(
-        op.f("ix_nguyen_lieu_mon_an_mon_an_id"), table_name="nguyen_lieu_mon_an"
-    )
+    op.drop_index(op.f("ix_nguyen_lieu_mon_an_mon_an_id"), table_name="nguyen_lieu_mon_an")
     op.drop_table("nguyen_lieu_mon_an")
     op.drop_index(op.f("ix_mon_an_trang_thai"), table_name="mon_an")
     op.drop_index(op.f("ix_mon_an_do_kho"), table_name="mon_an")

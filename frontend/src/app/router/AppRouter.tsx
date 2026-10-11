@@ -1,43 +1,106 @@
-import { createBrowserRouter, RouterProvider } from 'react-router';
+import { createBrowserRouter, Navigate, RouterProvider, useLocation } from 'react-router';
+
+import { canonicalPath, legacyRoutes } from '@/app/router/legacyRoutes';
 
 import { AuthLayout } from '@/app/layouts/AuthLayout';
 import { PublicLayout } from '@/app/layouts/PublicLayout';
+import { useAuth } from '@/features/auth/AuthContext';
 import { ProtectedRoute } from '@/features/auth/ProtectedRoute';
-import { AccountPage } from '@/pages/AccountPage';
-import { AdminPage } from '@/pages/AdminPage';
+import { AccountLayout } from '@/pages/account/AccountLayout';
+import { AccountOverviewPage } from '@/pages/account/AccountOverviewPage';
+import { MyStoriesPage } from '@/pages/account/MyStoriesPage';
+import { MySubmissionsPage } from '@/pages/account/MySubmissionsPage';
+import { SecurityPage } from '@/pages/account/SecurityPage';
+import { SettingsPage } from '@/pages/account/SettingsPage';
+import { AdminArticlesPage } from '@/pages/admin/AdminArticlesPage';
+import { AdminLayout } from '@/pages/admin/AdminLayout';
+import { AdminOverviewPage } from '@/pages/admin/AdminOverviewPage';
+import { AdminPlansPage } from '@/pages/admin/AdminPlansPage';
+import { AdminRecipesPage } from '@/pages/admin/AdminRecipesPage';
+import { AdminSubmissionsPage } from '@/pages/admin/AdminSubmissionsPage';
+import { AdminSupportPage } from '@/pages/admin/AdminSupportPage';
+import { AdminUserDetailPage } from '@/pages/admin/AdminUserDetailPage';
+import { AdminUsersPage } from '@/pages/admin/AdminUsersPage';
+import { ArticleDetailPage } from '@/pages/ArticleDetailPage';
 import { ArticlesPage } from '@/pages/ArticlesPage';
+import { ContactPage } from '@/pages/ContactPage';
 import { FavoritesPage } from '@/pages/FavoritesPage';
 import { HomePage } from '@/pages/HomePage';
 import { MealSetsPage } from '@/pages/MealSetsPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 import { NutritionPage } from '@/pages/NutritionPage';
 import { PlannerPage } from '@/pages/PlannerPage';
+import { RandomMealPage } from '@/pages/RandomMealPage';
 import { RecipeDetailPage } from '@/pages/RecipeDetailPage';
 import { RecipesPage } from '@/pages/RecipesPage';
+import { StoryEditorPage } from '@/pages/StoryEditorPage';
 import { SubmitRecipePage } from '@/pages/SubmitRecipePage';
 import { SuggestionsPage } from '@/pages/SuggestionsPage';
 import { ForgotPasswordPage } from '@/pages/auth/ForgotPasswordPage';
 import { LoginPage } from '@/pages/auth/LoginPage';
 import { OAuthCallbackPage } from '@/pages/auth/OAuthCallbackPage';
-import { PhoneLoginPage } from '@/pages/auth/PhoneLoginPage';
 import { RegisterPage } from '@/pages/auth/RegisterPage';
 import { ResetPasswordPage } from '@/pages/auth/ResetPasswordPage';
 
+function LegacyRedirect() {
+  const location = useLocation();
+  return (
+    <Navigate
+      replace
+      to={`${canonicalPath(location.pathname)}${location.search}${location.hash}`}
+    />
+  );
+}
+
+/** Khi mở ứng dụng mà chưa đăng nhập thì vào thẳng trang đăng nhập. */
+function HomeRoute() {
+  const { isLoading, user } = useAuth();
+  if (!isLoading && !user) return <Navigate replace to="/login" />;
+  return <HomePage />;
+}
+
 const router = createBrowserRouter([
+  ...Object.keys(legacyRoutes).map((path) => ({ path: `${path}/*`, element: <LegacyRedirect /> })),
   {
     element: <PublicLayout />,
     children: [
-      { index: true, element: <HomePage /> },
-      { path: 'mon-an', element: <RecipesPage /> },
-      { path: 'mon-an/:slug', element: <RecipeDetailPage /> },
-      { path: 'bua-com', element: <MealSetsPage /> },
-      { path: 'ke-hoach', element: <PlannerPage /> },
-      { path: 'goi-y', element: <SuggestionsPage /> },
-      { path: 'dinh-duong', element: <NutritionPage /> },
-      { path: 'bai-viet', element: <ArticlesPage /> },
-      { path: 'yeu-thich', element: <FavoritesPage /> },
+      { index: true, element: <HomeRoute /> },
+      { path: 'recipes', element: <RecipesPage /> },
+      { path: 'recipes/:slug', element: <RecipeDetailPage /> },
+      { path: 'meals', element: <MealSetsPage /> },
+      { path: 'random-meal', element: <RandomMealPage /> },
       {
-        path: 'de-xuat-mon',
+        path: 'planner',
+        element: (
+          <ProtectedRoute>
+            <PlannerPage />
+          </ProtectedRoute>
+        ),
+      },
+      { path: 'suggestions', element: <SuggestionsPage /> },
+      { path: 'nutrition', element: <NutritionPage /> },
+      { path: 'articles', element: <ArticlesPage /> },
+      { path: 'articles/:slug', element: <ArticleDetailPage /> },
+      { path: 'contact', element: <ContactPage /> },
+      { path: 'favorites', element: <FavoritesPage /> },
+      {
+        path: 'stories/new',
+        element: (
+          <ProtectedRoute>
+            <StoryEditorPage />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: 'stories/:id/edit',
+        element: (
+          <ProtectedRoute>
+            <StoryEditorPage />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: 'submit-recipe',
         element: (
           <ProtectedRoute>
             <SubmitRecipePage />
@@ -45,20 +108,37 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: 'tai-khoan',
+        path: 'account',
         element: (
           <ProtectedRoute>
-            <AccountPage />
+            <AccountLayout />
           </ProtectedRoute>
         ),
+        children: [
+          { index: true, element: <AccountOverviewPage /> },
+          { path: 'settings', element: <SettingsPage /> },
+          { path: 'security', element: <SecurityPage /> },
+          { path: 'stories', element: <MyStoriesPage /> },
+          { path: 'submissions', element: <MySubmissionsPage /> },
+        ],
       },
       {
-        path: 'quan-tri',
+        path: 'admin',
         element: (
           <ProtectedRoute allow={['admin']}>
-            <AdminPage />
+            <AdminLayout />
           </ProtectedRoute>
         ),
+        children: [
+          { index: true, element: <AdminOverviewPage /> },
+          { path: 'users', element: <AdminUsersPage /> },
+          { path: 'users/:userId', element: <AdminUserDetailPage /> },
+          { path: 'plans', element: <AdminPlansPage /> },
+          { path: 'recipes', element: <AdminRecipesPage /> },
+          { path: 'articles', element: <AdminArticlesPage /> },
+          { path: 'submissions', element: <AdminSubmissionsPage /> },
+          { path: 'support', element: <AdminSupportPage /> },
+        ],
       },
       { path: '*', element: <NotFoundPage /> },
     ],
@@ -66,12 +146,11 @@ const router = createBrowserRouter([
   {
     element: <AuthLayout />,
     children: [
-      { path: 'dang-nhap', element: <LoginPage /> },
-      { path: 'dang-ky', element: <RegisterPage /> },
-      { path: 'quen-mat-khau', element: <ForgotPasswordPage /> },
-      { path: 'dat-lai-mat-khau', element: <ResetPasswordPage /> },
-      { path: 'dang-nhap-so-dien-thoai', element: <PhoneLoginPage /> },
-      { path: 'xac-thuc-google', element: <OAuthCallbackPage /> },
+      { path: 'login', element: <LoginPage /> },
+      { path: 'register', element: <RegisterPage /> },
+      { path: 'forgot-password', element: <ForgotPasswordPage /> },
+      { path: 'reset-password', element: <ResetPasswordPage /> },
+      { path: 'oauth-callback', element: <OAuthCallbackPage /> },
     ],
   },
 ]);

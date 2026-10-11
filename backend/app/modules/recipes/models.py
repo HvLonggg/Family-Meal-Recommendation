@@ -1,8 +1,20 @@
 from datetime import datetime
 from decimal import Decimal
+from typing import Any
 from uuid import UUID, uuid4
 
-from sqlalchemy import Boolean, DateTime, ForeignKey, Integer, Numeric, String, Text, Uuid, func
+from sqlalchemy import (
+    JSON,
+    Boolean,
+    DateTime,
+    ForeignKey,
+    Integer,
+    Numeric,
+    String,
+    Text,
+    Uuid,
+    func,
+)
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db.base import Base
@@ -28,6 +40,9 @@ class Recipe(Base):
     source_name: Mapped[str] = mapped_column("ten_nguon", String(120))
     source_url: Mapped[str] = mapped_column("duong_dan_nguon", String(500))
     status: Mapped[str] = mapped_column("trang_thai", String(24), default="published", index=True)
+    catalog_id: Mapped[str | None] = mapped_column(String(16), unique=True, index=True)
+    content: Mapped[dict[str, Any]] = mapped_column(JSON, default=dict)
+    search_text: Mapped[str] = mapped_column(Text, default="")
     created_at: Mapped[datetime] = mapped_column(
         "ngay_tao", DateTime(timezone=True), server_default=func.now()
     )

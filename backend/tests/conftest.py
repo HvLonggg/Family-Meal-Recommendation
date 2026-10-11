@@ -6,10 +6,30 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import Session, sessionmaker
 from sqlalchemy.pool import StaticPool
 
+from app.core.config import get_settings
 from app.db import models as database_models  # noqa: F401
 from app.db.base import Base
 from app.db.session import get_db_session
 from app.main import create_app
+
+
+@pytest.fixture(autouse=True)
+def isolated_auth_test_settings(monkeypatch: pytest.MonkeyPatch) -> Generator[None, None, None]:
+    monkeypatch.setenv("BEP_VIET_APP_ENV", "test")
+    monkeypatch.setenv("BEP_VIET_EMAIL_PROVIDER", "smtp")
+    for key in (
+        "BEP_VIET_EMAIL_SMTP_HOST",
+        "BEP_VIET_EMAIL_SMTP_USERNAME",
+        "BEP_VIET_EMAIL_SMTP_PASSWORD",
+        "BEP_VIET_EMAIL_FROM_ADDRESS",
+        "BEP_VIET_EMAIL_GMAIL_CLIENT_ID",
+        "BEP_VIET_EMAIL_GMAIL_CLIENT_SECRET",
+        "BEP_VIET_EMAIL_GMAIL_REFRESH_TOKEN",
+    ):
+        monkeypatch.setenv(key, "")
+    get_settings.cache_clear()
+    yield
+    get_settings.cache_clear()
 
 
 @pytest.fixture

@@ -38,3 +38,8 @@ Thumbs.db
 /IMPLEMENTATION_EXECUTION_PLAN.md
 /PRODUCT_STARTUP_PLAN.md
 /docs/IMAGE_GENERATION_PROMPTS.md
+
+# Local agent/tool files and generated image workspace (not part of the app)
+.claude/
+.codex-repair/
+output/

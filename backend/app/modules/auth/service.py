@@ -1,11 +1,12 @@
-import re
+import hashlib
+import hmac
 import secrets
 from dataclasses import dataclass
 from datetime import UTC, datetime, timedelta
 from uuid import UUID
 
 from fastapi import status
-from sqlalchemy import select, update
+from sqlalchemy import func, select, update
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
@@ -13,12 +14,12 @@ from app.core.config import get_settings
 from app.core.exceptions import DomainError
 from app.modules.auth.models import (
     AuthIdentity,
+    EmailOtpChallenge,
     PasswordResetToken,
-    PhoneOtpChallenge,
     RefreshSession,
+    SecurityEmailOutbox,
     User,
 )
-from app.modules.auth.schemas import RegisterRequest
 from app.modules.auth.security import (
     DUMMY_PASSWORD_HASH,
     create_access_token,
@@ -34,6 +35,11 @@ from app.modules.auth.security import (
 class EmailAlreadyExistsError(DomainError):
     code = "EMAIL_ALREADY_EXISTS"
     status_code = status.HTTP_409_CONFLICT
+
+
+class EmailNotRegisteredError(DomainError):
+    code = "EMAIL_NOT_REGISTERED"
+    status_code = status.HTTP_404_NOT_FOUND
 
 
 class InvalidCredentialsError(DomainError):
@@ -56,14 +62,14 @@ class InvalidResetTokenError(DomainError):
     status_code = status.HTTP_400_BAD_REQUEST
 
 
-class InvalidPhoneError(DomainError):
-    code = "INVALID_PHONE_NUMBER"
-    status_code = status.HTTP_422_UNPROCESSABLE_CONTENT
-
-
 class InvalidOtpError(DomainError):
     code = "INVALID_OTP"
     status_code = status.HTTP_400_BAD_REQUEST
+
+
+class OtpRateLimitError(DomainError):
+    code = "OTP_RATE_LIMITED"
+    status_code = status.HTTP_429_TOO_MANY_REQUESTS
 
 
 class OAuthProviderNotConfiguredError(DomainError):
@@ -71,11 +77,22 @@ class OAuthProviderNotConfiguredError(DomainError):
     status_code = status.HTTP_503_SERVICE_UNAVAILABLE
 
 
+class EmailServiceUnavailableError(DomainError):
+    code = "EMAIL_SERVICE_UNAVAILABLE"
+    status_code = status.HTTP_503_SERVICE_UNAVAILABLE
+
+
+class RegistrationRequiredError(DomainError):
+    code = "REGISTRATION_REQUIRED"
+    status_code = status.HTTP_403_FORBIDDEN
+
+
 @dataclass(frozen=True)
 class SessionTokens:
     access_token: str
     access_expires_in: int
     refresh_token: str
+    remembered: bool
 
 
 def utc_now() -> datetime:
@@ -88,43 +105,12 @@ def is_expired(value: datetime) -> bool:
     return value <= utc_now()
 
 
-def register_user(session: Session, payload: RegisterRequest) -> User:
-    existing_user = session.scalar(select(User).where(User.email == payload.email))
-    if existing_user is not None:
-        raise EmailAlreadyExistsError("Email này đã được sử dụng.")
-
-    user = User(
-        email=payload.email,
-        full_name=payload.full_name,
-        password_hash=hash_password(payload.password),
-        role="user",
-        status="active",
-    )
-    session.add(user)
-    session.flush()
-    session.add(
-        AuthIdentity(
-            user_id=user.id,
-            provider="password",
-            provider_subject=payload.email,
-            provider_email=payload.email,
-        )
-    )
-    try:
-        session.commit()
-    except IntegrityError as exc:
-        session.rollback()
-        raise EmailAlreadyExistsError("Email này đã được sử dụng.") from exc
-    session.refresh(user)
-    return user
-
-
-def authenticate_email(session: Session, *, email: str, password: str) -> User:
-    user = session.scalar(select(User).where(User.email == email))
+def authenticate_password(session: Session, *, email: str, password: str) -> User:
+    user = session.scalar(select(User).where(User.email == email.strip().casefold()))
     password_hash = user.password_hash if user and user.password_hash else DUMMY_PASSWORD_HASH
     password_is_valid = verify_password(password, password_hash)
     if user is None or not password_is_valid:
-        raise InvalidCredentialsError("Email hoặc mật khẩu chưa đúng.")
+        raise InvalidCredentialsError("Thông tin đăng nhập chưa đúng.")
     ensure_active_user(user)
     return user
 
@@ -134,19 +120,67 @@ def ensure_active_user(user: User) -> None:
         raise AccountForbiddenError("Tài khoản hiện không thể đăng nhập.")
 
 
-def create_session_tokens(session: Session, user: User) -> SessionTokens:
+def create_session_tokens(
+    session: Session, user: User, *, remember_me: bool = False
+) -> SessionTokens:
     settings = get_settings()
-    access_token, access_expires_in = create_access_token(user_id=user.id, role=user.role)
+    access_token, access_expires_in = create_access_token(
+        user_id=user.id, role=user.role, auth_version=user.auth_version
+    )
     refresh_token = generate_secret_token()
+    user.last_login_at = utc_now()
+    refresh_expiration = (
+        utc_now() + timedelta(days=settings.refresh_token_expire_days)
+        if remember_me
+        else utc_now() + timedelta(hours=settings.session_expire_hours)
+    )
     session.add(
         RefreshSession(
             user_id=user.id,
             token_hash=token_digest(refresh_token),
-            expires_at=utc_now() + timedelta(days=settings.refresh_token_expire_days),
+            expires_at=refresh_expiration,
+            remembered=remember_me,
         )
     )
     session.commit()
-    return SessionTokens(access_token, access_expires_in, refresh_token)
+    return SessionTokens(access_token, access_expires_in, refresh_token, remember_me)
+
+
+def register_email_account(session: Session, *, email: str, full_name: str, password: str) -> User:
+    normalized_email = email.strip().casefold()
+    if session.scalar(select(User.id).where(User.email == normalized_email)) is not None:
+        raise EmailAlreadyExistsError(
+            "Email này đã được đăng ký. Hãy đăng nhập hoặc khôi phục mật khẩu."
+        )
+
+    user = User(
+        email=normalized_email,
+        full_name=full_name,
+        password_hash=hash_password(password),
+        role="user",
+        status="active",
+    )
+    try:
+        session.add(user)
+        session.flush()
+        session.add(
+            AuthIdentity(
+                user_id=user.id,
+                provider="password",
+                provider_subject=normalized_email,
+                provider_email=normalized_email,
+            )
+        )
+        queue_security_email(session, user, event="registration")
+        session.commit()
+    except IntegrityError as exc:
+        session.rollback()
+        raise EmailAlreadyExistsError(
+            "Email này đã được đăng ký. Hãy đăng nhập hoặc khôi phục mật khẩu."
+        ) from exc
+
+    session.refresh(user)
+    return user
 
 
 def rotate_refresh_token(session: Session, raw_token: str) -> tuple[User, SessionTokens]:
@@ -166,7 +200,7 @@ def rotate_refresh_token(session: Session, raw_token: str) -> tuple[User, Sessio
     ensure_active_user(user)
     refresh_session.revoked_at = utc_now()
     session.flush()
-    return user, create_session_tokens(session, user)
+    return user, create_session_tokens(session, user, remember_me=refresh_session.remembered)
 
 
 def revoke_refresh_token(session: Session, raw_token: str | None) -> None:
@@ -180,23 +214,6 @@ def revoke_refresh_token(session: Session, raw_token: str | None) -> None:
         session.commit()
 
 
-def create_password_reset_token(session: Session, email: str) -> str | None:
-    user = session.scalar(select(User).where(User.email == email))
-    if user is None:
-        return None
-    settings = get_settings()
-    raw_token = generate_secret_token()
-    session.add(
-        PasswordResetToken(
-            user_id=user.id,
-            token_hash=token_digest(raw_token),
-            expires_at=utc_now() + timedelta(minutes=settings.password_reset_expire_minutes),
-        )
-    )
-    session.commit()
-    return raw_token
-
-
 def reset_password(session: Session, *, raw_token: str, new_password: str) -> None:
     reset_token = session.scalar(
         select(PasswordResetToken).where(PasswordResetToken.token_hash == token_digest(raw_token))
@@ -208,32 +225,188 @@ def reset_password(session: Session, *, raw_token: str, new_password: str) -> No
         raise InvalidResetTokenError("Không tìm thấy tài khoản cần đặt lại mật khẩu.")
 
     user.password_hash = hash_password(new_password)
+    user.auth_version += 1
     reset_token.used_at = utc_now()
     session.execute(
         update(RefreshSession)
         .where(RefreshSession.user_id == user.id, RefreshSession.revoked_at.is_(None))
         .values(revoked_at=utc_now())
     )
+    session.execute(
+        update(PasswordResetToken)
+        .where(
+            PasswordResetToken.user_id == user.id,
+            PasswordResetToken.used_at.is_(None),
+        )
+        .values(used_at=utc_now())
+    )
+    queue_security_email(session, user, event="password_reset")
     session.commit()
 
 
-def normalize_vietnamese_phone(value: str) -> str:
-    compact = re.sub(r"[^\d+]", "", value)
-    if re.fullmatch(r"0\d{9}", compact):
-        return f"+84{compact[1:]}"
-    if re.fullmatch(r"\+84\d{9}", compact):
-        return compact
-    raise InvalidPhoneError("Số điện thoại Việt Nam chưa đúng định dạng.")
+def change_password(
+    session: Session,
+    *,
+    user_id: UUID,
+    current_password: str,
+    new_password: str,
+) -> None:
+    user = session.scalar(select(User).where(User.id == user_id).with_for_update())
+    if user is None:
+        raise InvalidTokenError("Không tìm thấy tài khoản đăng nhập.")
+    if not user.password_hash:
+        raise InvalidCredentialsError(
+            "Tài khoản chưa có mật khẩu. Hãy dùng chức năng quên mật khẩu để tạo mật khẩu email."
+        )
+    if not verify_password(current_password, user.password_hash):
+        raise InvalidCredentialsError("Mật khẩu hiện tại chưa đúng.")
+    if verify_password(new_password, user.password_hash):
+        raise InvalidCredentialsError("Mật khẩu mới phải khác mật khẩu hiện tại.")
+
+    user.password_hash = hash_password(new_password)
+    user.auth_version += 1
+    session.execute(
+        update(RefreshSession)
+        .where(RefreshSession.user_id == user.id, RefreshSession.revoked_at.is_(None))
+        .values(revoked_at=utc_now())
+    )
+    queue_security_email(session, user, event="password_change")
+    session.commit()
 
 
-def create_phone_challenge(session: Session, raw_phone: str) -> tuple[PhoneOtpChallenge, str]:
+def revoke_all_sessions(session: Session, user: User) -> None:
+    """Vô hiệu hóa access token hiện hành và mọi refresh token của tài khoản (chưa commit)."""
+    user.auth_version += 1
+    session.execute(
+        update(RefreshSession)
+        .where(RefreshSession.user_id == user.id, RefreshSession.revoked_at.is_(None))
+        .values(revoked_at=utc_now())
+    )
+
+
+def queue_security_email(session: Session, user: User, *, event: str) -> SecurityEmailOutbox:
+    if not user.email:
+        raise InvalidCredentialsError("Tài khoản chưa có email để nhận thông báo bảo mật.")
+    outbox = SecurityEmailOutbox(user_id=user.id, recipient=user.email, event=event)
+    session.add(outbox)
+    session.flush()
+    return outbox
+
+
+def _requester_digest(requester_ip: str | None) -> str | None:
+    if not requester_ip:
+        return None
+    secret = get_settings().jwt_secret.get_secret_value().encode("utf-8")
+    return hmac.new(secret, requester_ip.encode("utf-8"), hashlib.sha256).hexdigest()
+
+
+def _lock_email_otp_limits(
+    session: Session, *, email: str, purpose: str, requester_key: str | None
+) -> None:
+    # Serialize concurrent sends per email and IP on PostgreSQL so parallel requests
+    # cannot bypass the resend cooldown and hourly limits.
+    if session.get_bind().dialect.name != "postgresql":
+        return
+    scopes = [f"email:{email}:{purpose}"]
+    if requester_key:
+        scopes.append(f"ip:{requester_key}")
+    lock_ids = sorted(
+        int.from_bytes(hashlib.sha256(scope.encode()).digest()[:8], "big", signed=True)
+        for scope in scopes
+    )
+    for lock_id in lock_ids:
+        session.execute(select(func.pg_advisory_xact_lock(lock_id)))
+
+
+def create_email_otp_challenge(
+    session: Session,
+    email: str,
+    *,
+    purpose: str,
+    requester_ip: str | None = None,
+    account_exists: bool = True,
+    pending_full_name: str | None = None,
+    pending_password: str | None = None,
+    remembered: bool = False,
+) -> tuple[EmailOtpChallenge, str]:
     settings = get_settings()
-    phone = normalize_vietnamese_phone(raw_phone)
-    code = f"{secrets.randbelow(1_000_000):06d}"
-    challenge = PhoneOtpChallenge(
-        phone_e164=phone,
+    normalized_email = email.strip().casefold()
+    now = utc_now()
+    requester_key = _requester_digest(requester_ip)
+    _lock_email_otp_limits(
+        session, email=normalized_email, purpose=purpose, requester_key=requester_key
+    )
+
+    # Expired or consumed challenges no longer need the pending registration secret.
+    session.execute(
+        update(EmailOtpChallenge)
+        .where(
+            (EmailOtpChallenge.expires_at <= now)
+            | (EmailOtpChallenge.consumed_at.is_not(None)),
+            EmailOtpChallenge.pending_password_hash.is_not(None),
+        )
+        .values(pending_password_hash=None, pending_full_name=None)
+    )
+    since = now - timedelta(hours=1)
+    recent_for_email = (
+        session.scalar(
+            select(func.count(EmailOtpChallenge.id)).where(
+                EmailOtpChallenge.email == normalized_email,
+                EmailOtpChallenge.purpose == purpose,
+                EmailOtpChallenge.created_at >= since,
+            )
+        )
+        or 0
+    )
+    if recent_for_email >= 3:
+        raise OtpRateLimitError("Đã gửi quá nhiều mã. Vui lòng thử lại sau.")
+
+    if requester_key:
+        recent_for_ip = (
+            session.scalar(
+                select(func.count(EmailOtpChallenge.id)).where(
+                    EmailOtpChallenge.requester_key == requester_key,
+                    EmailOtpChallenge.created_at >= since,
+                )
+            )
+            or 0
+        )
+        if recent_for_ip >= 10:
+            raise OtpRateLimitError("Yêu cầu quá thường xuyên. Vui lòng thử lại sau.")
+
+    cooldown = session.scalar(
+        select(EmailOtpChallenge.id)
+        .where(
+            EmailOtpChallenge.email == normalized_email,
+            EmailOtpChallenge.purpose == purpose,
+            EmailOtpChallenge.created_at >= now - timedelta(seconds=60),
+        )
+        .limit(1)
+    )
+    if cooldown is not None:
+        raise OtpRateLimitError("Vui lòng chờ 60 giây trước khi yêu cầu mã mới.")
+
+    pending_password_hash = hash_password(pending_password) if pending_password else None
+    session.execute(
+        update(EmailOtpChallenge)
+        .where(
+            EmailOtpChallenge.email == normalized_email,
+            EmailOtpChallenge.purpose == purpose,
+            EmailOtpChallenge.consumed_at.is_(None),
+        )
+        .values(consumed_at=now, pending_password_hash=None, pending_full_name=None)
+    )
+    code = f"{secrets.randbelow(100_000):05d}"
+    challenge = EmailOtpChallenge(
+        email=normalized_email,
+        purpose=purpose,
         code_hash="pending",
-        expires_at=utc_now() + timedelta(minutes=settings.phone_otp_expire_minutes),
+        expires_at=now + timedelta(minutes=settings.email_otp_expire_minutes),
+        pending_full_name=pending_full_name,
+        pending_password_hash=pending_password_hash,
+        account_exists=account_exists,
+        remembered=remembered,
+        requester_key=requester_key,
     )
     session.add(challenge)
     session.flush()
@@ -243,49 +416,68 @@ def create_phone_challenge(session: Session, raw_phone: str) -> tuple[PhoneOtpCh
     return challenge, code
 
 
-def verify_phone_challenge(
-    session: Session, *, challenge_id: UUID, code: str
-) -> tuple[User, SessionTokens]:
-    challenge = session.get(PhoneOtpChallenge, challenge_id)
-    if (
-        challenge is None
-        or challenge.consumed_at is not None
-        or challenge.attempts >= 5
-        or is_expired(challenge.expires_at)
-    ):
+def invalidate_email_otp_challenge(session: Session, challenge_id: UUID) -> None:
+    challenge = session.get(EmailOtpChallenge, challenge_id)
+    if challenge is not None and challenge.consumed_at is None:
+        challenge.consumed_at = utc_now()
+        challenge.pending_password_hash = None
+        challenge.pending_full_name = None
+        session.commit()
+
+
+def verify_email_otp_challenge(
+    session: Session, *, challenge_id: UUID, code: str, purpose: str
+) -> EmailOtpChallenge:
+    challenge = session.scalar(
+        select(EmailOtpChallenge)
+        .where(EmailOtpChallenge.id == challenge_id)
+        .with_for_update()
+    )
+    if challenge is None or challenge.purpose != purpose or challenge.consumed_at is not None:
+        raise InvalidOtpError("Mã xác thực không hợp lệ hoặc đã hết hạn.")
+    if is_expired(challenge.expires_at) or challenge.attempts >= 3:
+        challenge.consumed_at = utc_now()
+        challenge.pending_password_hash = None
+        challenge.pending_full_name = None
+        session.commit()
         raise InvalidOtpError("Mã xác thực không hợp lệ hoặc đã hết hạn.")
 
     challenge.attempts += 1
-    if not secure_compare(
-        challenge.code_hash,
-        otp_digest(challenge_id=challenge.id, code=code),
-    ):
+    expected = otp_digest(challenge_id=challenge.id, code=code)
+    if not secure_compare(challenge.code_hash, expected):
+        if challenge.attempts >= 3:
+            challenge.consumed_at = utc_now()
+            challenge.pending_password_hash = None
+            challenge.pending_full_name = None
         session.commit()
         raise InvalidOtpError("Mã xác thực chưa đúng.")
-
     challenge.consumed_at = utc_now()
-    user = session.scalar(select(User).where(User.phone_e164 == challenge.phone_e164))
-    if user is None:
-        user = User(
-            phone_e164=challenge.phone_e164,
-            full_name="Người dùng Bếp Việt",
-            role="user",
-            status="active",
+    return challenge
+
+
+def complete_password_reset_email_verification(
+    session: Session, *, challenge_id: UUID, code: str
+) -> tuple[str, int]:
+    challenge = verify_email_otp_challenge(
+        session, challenge_id=challenge_id, code=code, purpose="password_reset"
+    )
+    user = session.scalar(select(User).where(User.email == challenge.email))
+    if not challenge.account_exists or user is None:
+        session.commit()
+        raise InvalidOtpError("Mã xác thực không hợp lệ hoặc đã hết hạn.")
+    if user.email_verified_at is None:
+        user.email_verified_at = utc_now()
+    settings = get_settings()
+    raw_token = generate_secret_token()
+    session.add(
+        PasswordResetToken(
+            user_id=user.id,
+            token_hash=token_digest(raw_token),
+            expires_at=utc_now() + timedelta(minutes=settings.password_reset_expire_minutes),
         )
-        session.add(user)
-        session.flush()
-        session.add(
-            AuthIdentity(
-                user_id=user.id,
-                provider="phone",
-                provider_subject=challenge.phone_e164,
-            )
-        )
-    ensure_active_user(user)
-    session.flush()
-    tokens = create_session_tokens(session, user)
-    session.refresh(user)
-    return user, tokens
+    )
+    session.commit()
+    return raw_token, settings.password_reset_expire_minutes * 60
 
 
 def authenticate_oauth_user(
@@ -313,19 +505,12 @@ def authenticate_oauth_user(
 
     user = session.scalar(select(User).where(User.email == email))
     if user is None:
-        user = User(
-            email=email,
-            full_name=full_name,
-            role="user",
-            status="active",
-            email_verified_at=utc_now(),
+        raise RegistrationRequiredError(
+            "Hãy tạo tài khoản và xác minh email trước khi liên kết Google."
         )
-        session.add(user)
-        session.flush()
-    else:
-        ensure_active_user(user)
-        if user.email_verified_at is None:
-            user.email_verified_at = utc_now()
+    ensure_active_user(user)
+    if user.email_verified_at is None:
+        user.email_verified_at = utc_now()
 
     session.add(
         AuthIdentity(
@@ -361,5 +546,5 @@ def provider_availability() -> dict[str, bool]:
     return {
         "google": bool(settings.google_client_id and settings.google_client_secret),
         "facebook": bool(settings.facebook_client_id and settings.facebook_client_secret),
-        "phone": settings.app_env == "development",
+        "email": settings.email_enabled or settings.app_env == "test",
     }

@@ -1,4 +1,5 @@
 from decimal import Decimal
+from typing import Any
 from uuid import UUID
 
 from pydantic import BaseModel, ConfigDict
@@ -42,6 +43,8 @@ class RecipeSummaryResponse(BaseModel):
 
 
 class RecipeDetailResponse(RecipeSummaryResponse):
+    catalog_id: str | None
+    content: dict[str, Any]
     serving: str
     tip: str
     source_name: str
@@ -52,4 +55,9 @@ class RecipeDetailResponse(RecipeSummaryResponse):
 
 class RecipeListResponse(BaseModel):
     data: list[RecipeSummaryResponse]
+    total: int
+
+
+class RecipeCatalogResponse(BaseModel):
+    data: list[RecipeDetailResponse]
     total: int

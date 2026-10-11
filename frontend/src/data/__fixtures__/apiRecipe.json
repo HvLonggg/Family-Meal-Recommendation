@@ -1,0 +1,320 @@
+{
+  "id": "49a1398e-fc08-4b39-9454-f98a2fb6c510",
+  "slug": "thit-rang-chay-canh",
+  "name": "Thịt rang cháy cạnh",
+  "excerpt": "Thịt rang cháy cạnh hợp với mâm cơm có cơm nóng, rau và một bát canh nhẹ. Thịt ba chỉ kết hợp với hành tím, được rang để làm nổi vị chính và mùi thơm của phần gia vị đi kèm. Khi đạt, món có mặt thịt nâu nhẹ, phần mỡ trong, vị mặn ngọt và thơm hành. Nêm từng phần giúp giữ vị nguyên liệu rõ hơn. Bày lượng vừa dùng, ăn cùng món có kết cấu khác sẽ khiến bữa cơm hài hòa và dễ ăn.",
+  "region": "Bắc",
+  "category": "Món mặn",
+  "difficulty": "Dễ",
+  "prep_minutes": 15,
+  "cook_minutes": 20,
+  "base_servings": 4,
+  "image_path": "/images/recipes/BV001.jpg",
+  "image_alt": "Thịt rang cháy cạnh đã chế biến, phần món ăn được bày trên đĩa hoặc trong bát.",
+  "catalog_id": "BV001",
+  "content": {
+    "id": "BV001",
+    "name": "Thịt rang cháy cạnh",
+    "aliases": ["Thịt ba chỉ rang cháy cạnh"],
+    "region": ["Bắc"],
+    "province": [],
+    "category": "Thịt heo",
+    "meal_type": ["trưa", "tối"],
+    "difficulty": "Dễ",
+    "servings": 4,
+    "serving_basis": "4 người lớn; món cùng cơm là phần dùng chung trong mâm 3–4 món, món bún/cơm/cháo là 4 phần chính.",
+    "prep_time": 15,
+    "cook_time": 20,
+    "passive_time": 0,
+    "total_time": 35,
+    "time_unit": "minute",
+    "time_note": "Chuẩn bị là thao tác chủ động; thời gian chờ gồm ướp/ngâm/làm lạnh ngoài thao tác. Tổng theo lịch tuần tự, có thể rút ngắn khi làm song song.",
+    "description": "Thịt rang cháy cạnh hợp với mâm cơm có cơm nóng, rau và một bát canh nhẹ. Thịt ba chỉ kết hợp với hành tím, được rang để làm nổi vị chính và mùi thơm của phần gia vị đi kèm. Khi đạt, món có mặt thịt nâu nhẹ, phần mỡ trong, vị mặn ngọt và thơm hành. Nêm từng phần giúp giữ vị nguyên liệu rõ hơn. Bày lượng vừa dùng, ăn cùng món có kết cấu khác sẽ khiến bữa cơm hài hòa và dễ ăn.",
+    "ingredients": [
+      {
+        "name": "Thịt ba chỉ",
+        "quantity": 500,
+        "unit": "g",
+        "role": "main",
+        "notes": "Nguyên liệu chính; cân phần dùng được trừ khi ghi nguyên vỏ/có xương.",
+        "scaling_rule": "linear",
+        "sequence": 1
+      },
+      {
+        "name": "Hành tím",
+        "quantity": 30,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+        "scaling_rule": "taste_adjusted",
+        "sequence": 2
+      },
+      {
+        "name": "Hành lá",
+        "quantity": 20,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+        "scaling_rule": "taste_adjusted",
+        "sequence": 3
+      },
+      {
+        "name": "Nước mắm",
+        "quantity": 20,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+        "scaling_rule": "taste_adjusted",
+        "sequence": 4
+      },
+      {
+        "name": "Đường",
+        "quantity": 6,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+        "scaling_rule": "taste_adjusted",
+        "sequence": 5
+      },
+      {
+        "name": "Dầu ăn",
+        "quantity": 20,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "Chia cho các lượt phi/xào hoặc phết mặt.",
+        "scaling_rule": "taste_adjusted",
+        "sequence": 6
+      }
+    ],
+    "preparation_steps": [
+      {
+        "step": 1,
+        "instruction": "Thịt ba chỉ: thấm ráo, thái ngang thớ dày 2–3 mm."
+      },
+      {
+        "step": 2,
+        "instruction": "Hành tím: bóc vỏ, băm hoặc thái mỏng để phi; hành lá: rửa, tách đầu trắng và lá, thái nhỏ."
+      }
+    ],
+    "cooking_steps": [
+      {
+        "step": 1,
+        "instruction": "Cho ba chỉ thái lát vào chảo rộng, rang lửa vừa 10–12 phút, đảo cho mỡ trong và cạnh vàng."
+      },
+      {
+        "step": 2,
+        "instruction": "Chắt bớt mỡ, giữ khoảng 15 ml trong chảo; thêm hành tím thái mỏng, đảo 1 phút."
+      },
+      {
+        "step": 3,
+        "instruction": "Thêm mắm và đường, đảo 3–5 phút đến bám thịt; cho hành lá 30 giây cuối rồi tắt."
+      }
+    ],
+    "finished_dish": "Ba chỉ nâu vàng ở cạnh, mỡ trong, thơm hành; vị mặn ngọt nhẹ, nạc còn ẩm và cạnh hơi giòn.",
+    "serving": "Dùng nóng hoặc ấm với cơm trắng; rưới một ít nước món ăn lên cơm nếu có. Món đã đậm vị nên thường không cần thêm nước chấm. Gợi ý ăn cùng: canh rau ngót thịt băm, rau muống luộc, cà pháo muối chua.",
+    "tips": [
+      "Dùng chảo rộng hoặc nồi đáy dày, đảo sát đáy để phần gia vị không đóng cháy.",
+      "Chắt bớt mỡ khi cần, chỉ giữ một lớp mỏng giúp hành và gia vị dậy mùi.",
+      "Nêm phần mặn ở gần cuối và dừng khi còn độ ẩm, tránh rang đến khô hoặc quá mặn."
+    ],
+    "scaling": {
+      "base_servings": 4,
+      "targets": [
+        {
+          "servings": 2,
+          "main_factor": 0.5,
+          "seasoning_start_factor": 0.5,
+          "example": "Thịt ba chỉ: 250 g",
+          "instruction": "Nguyên liệu chính ×0.5; Thịt ba chỉ: 250 g. Gia vị nêm bắt đầu ×0.5, nếm khi chín rồi bổ sung."
+        },
+        {
+          "servings": 6,
+          "main_factor": 1.5,
+          "seasoning_start_factor": 1.25,
+          "example": "Thịt ba chỉ: 750 g",
+          "instruction": "Nguyên liệu chính ×1.5; Thịt ba chỉ: 750 g. Gia vị nêm bắt đầu ×1.25, nếm khi chín rồi bổ sung."
+        },
+        {
+          "servings": 8,
+          "main_factor": 2,
+          "seasoning_start_factor": 1.6,
+          "example": "Thịt ba chỉ: 1000 g",
+          "instruction": "Nguyên liệu chính ×2; Thịt ba chỉ: 1000 g. Gia vị nêm bắt đầu ×1.6, nếm khi chín rồi bổ sung."
+        }
+      ],
+      "rules": [
+        "Nguyên liệu chính, bột và phần nhân tăng theo tỷ lệ; trứng lẻ đánh tan rồi cân chia, không tự làm tròn mọi quả.",
+        "Mắm, muối, đường, ớt nêm theo hệ số khởi điểm ở trên; đây là hướng dẫn nếm, không phải công thức chuyển đổi độ mặn cố định.",
+        "Nước nấu và sốt điều chỉnh theo mặt thoáng nồi và độ sánh; nước chấm giữ tỷ lệ trước, pha ít hơn nếu dùng ít. Dầu chiên và nước xửng theo dụng cụ.",
+        "Giữ cỡ miếng; chia mẻ khi tăng lượng. Không nhân thời gian nấu theo số người, kiểm tra chín ở phần dày nhất."
+      ]
+    },
+    "tags": {
+      "region": ["Bắc"],
+      "province": [],
+      "meal_type": ["trưa", "tối"],
+      "dish_type": ["Thịt heo", "rang", "Món gia đình"],
+      "main_ingredient": ["thịt heo"],
+      "cooking_method": ["rang"],
+      "difficulty": "Dễ",
+      "prep_time": 15,
+      "cook_time": 20,
+      "servings": 4,
+      "spicy_level": 0,
+      "suitable_for_family_meal": true,
+      "suggested_pairings": ["BV141", "BV116", "BV177"],
+      "keywords": [
+        "Thịt rang cháy cạnh",
+        "Thịt ba chỉ rang cháy cạnh",
+        "thịt heo",
+        "rang",
+        "công thức 4 người"
+      ],
+      "recipe_family": "rang"
+    },
+    "media": [
+      {
+        "image_url": "https://cookbeo.com/media/2020/06/50092213/thit-rang-chay-canh.jpg",
+        "page_url": "https://cookbeo.com/recipes/cach-lam-thit-rang-chay-canh",
+        "source": "Cookbeo",
+        "author": null,
+        "license": null,
+        "rights_status": "reference_only",
+        "rights_note": "Cần xác nhận quyền trước khi sử dụng production.",
+        "width": 1500,
+        "height": 1500,
+        "orientation": "portrait_or_square",
+        "preferred_width_met": true,
+        "alt_text": "Thịt rang cháy cạnh đã chế biến, phần món ăn được bày trên đĩa hoặc trong bát.",
+        "verified_dish_match": true,
+        "visual_review_date": "2026-10-04",
+        "photo_variant_note": "Ảnh món thực tế trên trang nguồn; cách bày và một số thành phần phụ có thể khác bản công thức biên tập. Không phải ảnh chụp thử công thức BẾP VIỆT."
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://cookbeo.com/recipes/cach-lam-thit-rang-chay-canh",
+        "publisher": "Cookbeo",
+        "title": "Thịt rang cháy cạnh",
+        "accessed_at": "2026-10-03",
+        "use": "Tham khảo nguyên liệu và kỹ thuật; định lượng/thời gian được biên tập cho 4 người.",
+        "type": "recipe"
+      }
+    ],
+    "editorial": {
+      "status": "editorial_draft",
+      "production_ready": false,
+      "test_cook_status": "not_tested",
+      "variant_note": "Bản gia đình của BẾP VIỆT; định lượng và thời gian là ước tính biên tập, cần nấu thử trước khi duyệt. Miền là phong cách gợi ý, không khẳng định xuất xứ độc quyền.",
+      "seed_recipe": null,
+      "reviewed_at": "2026-10-04",
+      "needs": [
+        "Nấu thử định lượng, thời gian, khẩu phần và mức nêm",
+        "Biên tập viên duyệt nội dung và tag vùng miền",
+        "Xác nhận quyền ảnh hoặc thay bằng ảnh tự chụp có quyền sử dụng"
+      ]
+    },
+    "suggested_pairings": [
+      {
+        "id": "BV141",
+        "name": "Canh rau ngót thịt băm"
+      },
+      {
+        "id": "BV116",
+        "name": "Rau muống luộc"
+      },
+      {
+        "id": "BV177",
+        "name": "Cà pháo muối chua"
+      }
+    ],
+    "recipe_family": "rang"
+  },
+  "serving": "Dùng nóng hoặc ấm với cơm trắng; rưới một ít nước món ăn lên cơm nếu có. Món đã đậm vị nên thường không cần thêm nước chấm. Gợi ý ăn cùng: canh rau ngót thịt băm, rau muống luộc, cà pháo muối chua.",
+  "tip": "Dùng chảo rộng hoặc nồi đáy dày, đảo sát đáy để phần gia vị không đóng cháy.\nChắt bớt mỡ khi cần, chỉ giữ một lớp mỏng giúp hành và gia vị dậy mùi.\nNêm phần mặn ở gần cuối và dừng khi còn độ ẩm, tránh rang đến khô hoặc quá mặn.",
+  "source_name": "Bếp Việt",
+  "source_url": "https://cookbeo.com/recipes/cach-lam-thit-rang-chay-canh",
+  "ingredients": [
+    {
+      "group_name": "Nguyên liệu chính",
+      "name": "Thịt ba chỉ",
+      "amount": "500.00",
+      "unit": "g",
+      "note": "Nguyên liệu chính; cân phần dùng được trừ khi ghi nguyên vỏ/có xương.",
+      "scalable": true,
+      "position": 1
+    },
+    {
+      "group_name": "Gia vị",
+      "name": "Hành tím",
+      "amount": "30.00",
+      "unit": "g",
+      "note": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+      "scalable": true,
+      "position": 2
+    },
+    {
+      "group_name": "Gia vị",
+      "name": "Hành lá",
+      "amount": "20.00",
+      "unit": "g",
+      "note": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+      "scalable": true,
+      "position": 3
+    },
+    {
+      "group_name": "Gia vị",
+      "name": "Nước mắm",
+      "amount": "20.00",
+      "unit": "ml",
+      "note": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+      "scalable": true,
+      "position": 4
+    },
+    {
+      "group_name": "Gia vị",
+      "name": "Đường",
+      "amount": "6.00",
+      "unit": "g",
+      "note": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+      "scalable": true,
+      "position": 5
+    },
+    {
+      "group_name": "Gia vị",
+      "name": "Dầu ăn",
+      "amount": "20.00",
+      "unit": "ml",
+      "note": "Chia cho các lượt phi/xào hoặc phết mặt.",
+      "scalable": true,
+      "position": 6
+    }
+  ],
+  "steps": [
+    {
+      "step_type": "so_che",
+      "content": "Thịt ba chỉ: thấm ráo, thái ngang thớ dày 2–3 mm.",
+      "position": 1
+    },
+    {
+      "step_type": "thuc_hien",
+      "content": "Cho ba chỉ thái lát vào chảo rộng, rang lửa vừa 10–12 phút, đảo cho mỡ trong và cạnh vàng.",
+      "position": 1
+    },
+    {
+      "step_type": "so_che",
+      "content": "Hành tím: bóc vỏ, băm hoặc thái mỏng để phi; hành lá: rửa, tách đầu trắng và lá, thái nhỏ.",
+      "position": 2
+    },
+    {
+      "step_type": "thuc_hien",
+      "content": "Chắt bớt mỡ, giữ khoảng 15 ml trong chảo; thêm hành tím thái mỏng, đảo 1 phút.",
+      "position": 2
+    },
+    {
+      "step_type": "thuc_hien",
+      "content": "Thêm mắm và đường, đảo 3–5 phút đến bám thịt; cho hành lá 30 giây cuối rồi tắt.",
+      "position": 3
+    }
+  ]
+}

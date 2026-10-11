@@ -32,8 +32,23 @@ def get_current_user(
     user = session.get(User, user_id)
     if user is None:
         raise InvalidTokenError("Không tìm thấy tài khoản đăng nhập.")
+    if payload.get("ver", 0) != user.auth_version:
+        raise InvalidTokenError("Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại.")
     ensure_active_user(user)
     return user
+
+
+def get_optional_user(
+    token: Annotated[str | None, Depends(oauth2_scheme)],
+    session: Annotated[Session, Depends(get_db_session)],
+) -> User | None:
+    """Dùng cho API công khai có thêm quyền khi người xem đã đăng nhập."""
+    if not token:
+        return None
+    try:
+        return get_current_user(token, session)
+    except (InvalidTokenError, AccountForbiddenError):
+        return None
 
 
 def require_admin(current_user: Annotated[User, Depends(get_current_user)]) -> User:

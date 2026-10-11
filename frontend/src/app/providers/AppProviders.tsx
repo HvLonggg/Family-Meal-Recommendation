@@ -1,7 +1,9 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useState, type PropsWithChildren } from 'react';
 
+import { PreferenceEffects } from '@/features/account/PreferenceEffects';
 import { AuthProvider } from '@/features/auth/AuthContext';
+import { I18nProvider } from '@/features/i18n/I18nContext';
 
 export function AppProviders({ children }: PropsWithChildren) {
   const [queryClient] = useState(
@@ -21,7 +23,12 @@ export function AppProviders({ children }: PropsWithChildren) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <AuthProvider>{children}</AuthProvider>
+      <AuthProvider>
+        <I18nProvider>
+          <PreferenceEffects />
+          {children}
+        </I18nProvider>
+      </AuthProvider>
     </QueryClientProvider>
   );
 }

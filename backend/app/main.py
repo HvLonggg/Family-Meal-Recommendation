@@ -1,5 +1,6 @@
+import asyncio
 from collections.abc import AsyncIterator
-from contextlib import asynccontextmanager
+from contextlib import asynccontextmanager, suppress
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -9,13 +10,25 @@ from app.core.config import get_settings
 from app.core.exceptions import register_exception_handlers
 from app.core.logging import configure_logging
 from app.core.middleware import RequestContextMiddleware
+from app.modules.auth.email import run_security_email_worker
 
 
 @asynccontextmanager
 async def lifespan(_: FastAPI) -> AsyncIterator[None]:
     settings = get_settings()
     configure_logging(settings.log_level)
-    yield
+    email_worker = (
+        asyncio.create_task(run_security_email_worker())
+        if settings.email_enabled and settings.app_env != "test"
+        else None
+    )
+    try:
+        yield
+    finally:
+        if email_worker is not None:
+            email_worker.cancel()
+            with suppress(asyncio.CancelledError):
+                await email_worker
 
 
 def create_app() -> FastAPI:
@@ -23,7 +36,7 @@ def create_app() -> FastAPI:
     application = FastAPI(
         title=settings.app_name,
         version="0.1.0",
-        description="API cho sản phẩm lập kế hoạch bữa ăn Bếp Việt.",
+        description="API for Vietnamese recipes and family meal planning.",
         docs_url="/docs" if settings.docs_enabled else None,
         redoc_url="/redoc" if settings.docs_enabled else None,
         lifespan=lifespan,

@@ -1,0 +1,693 @@
+[
+  {
+    "slug": "ca-chep-kho-rieng",
+    "name": "Cá chép kho riềng",
+    "excerpt": "Cá chắc thịt, thơm riềng và thấm vị; một món mặn quen thuộc cho mâm cơm miền Bắc.",
+    "image": "/legacy-assets/recipes/ca-chep-kho-rieng.jpg",
+    "imageAlt": "Nồi cá chép kho riềng màu nâu hổ phách trên bàn gỗ",
+    "imageCredit": "Ảnh minh họa chân thật được tạo riêng cho Bếp Việt",
+    "imageKind": "project",
+    "region": "Bắc",
+    "category": "Món mặn",
+    "difficulty": "Dễ",
+    "prepMinutes": 30,
+    "cookMinutes": 45,
+    "servings": 4,
+    "ingredients": [
+      {
+        "group": "Nguyên liệu chính",
+        "items": [
+          {
+            "name": "Cá chép",
+            "amount": 500,
+            "unit": "g"
+          },
+          {
+            "name": "Thịt ba chỉ",
+            "amount": 50,
+            "unit": "g"
+          },
+          {
+            "name": "Riềng tươi",
+            "amount": 100,
+            "unit": "g"
+          },
+          {
+            "name": "Lá trà xanh",
+            "amount": 200,
+            "unit": "g"
+          },
+          {
+            "name": "Mía",
+            "amount": 1,
+            "unit": "khúc 40 cm"
+          }
+        ]
+      },
+      {
+        "group": "Gia vị",
+        "items": [
+          {
+            "name": "Nước tương",
+            "amount": 5,
+            "unit": "muỗng canh"
+          },
+          {
+            "name": "Dầu điều",
+            "amount": 1,
+            "unit": "muỗng canh"
+          },
+          {
+            "name": "Nước màu",
+            "amount": 1,
+            "unit": "muỗng cà phê"
+          },
+          {
+            "name": "Muối",
+            "amount": 3,
+            "unit": "g"
+          },
+          {
+            "name": "Hạt nêm",
+            "amount": 2,
+            "unit": "g",
+            "note": "có thể gia giảm"
+          },
+          {
+            "name": "Tiêu, ớt và hành lá",
+            "amount": null,
+            "unit": "vừa đủ",
+            "scalable": false
+          }
+        ]
+      }
+    ],
+    "preparation": [
+      "Mía chẻ thành lát vừa đáy nồi. Lá trà xanh rửa sạch, vò nhẹ; hã nhanh một lượt rồi thay nước, tiếp tục hã khoảng 5 phút để lấy gần 3 chén nước trà.",
+      "Rửa cá với muối và một ít giấm, để 10 phút rồi chắt bỏ phần nước nhớt. Thấm cá thật khô và khứa nông trên mình cá để gia vị dễ thấm.",
+      "Chia riềng thành hai phần: một phần giã để lấy nước, phần còn lại thái lát. Ướp cá 30 phút với nước riềng, nước tương, muối, tiêu, nước màu, dầu điều, hạt nêm và ớt đập dập.",
+      "Thịt ba chỉ cắt miếng nhỏ khoảng 1 cm, ướp với đầu hành băm và tiêu. Cá sau khi ướp được chiên sơ cùng vài lát riềng để bề mặt săn lại."
+    ],
+    "cooking": [
+      "Lót mía dưới đáy niêu, sau đó xếp cá, thịt ba chỉ và riềng lát thành từng lớp. Rưới toàn bộ phần nước ướp còn lại lên trên.",
+      "Đặt niêu lên lửa lớn vừa đủ để cá săn và nước kho sôi đều. Nghiêng nhẹ niêu thay vì dùng đũa đảo để cá không bị vỡ.",
+      "Rót nước trà nóng vào gần xâm xấp mặt cá, đậy nắp và hạ lửa nhỏ. Kho khoảng 35–40 phút để cá chín mềm, riềng và trà thấm sâu vào thịt cá.",
+      "Khi nước kho cạn còn sền sệt, nêm lại cho vị mặn-ngọt hài hòa. Rắc ớt sừng và hành lá, tắt bếp rồi để cá nghỉ 5 phút trước khi gắp."
+    ],
+    "serving": "Dùng nóng cùng cơm trắng, rau luộc và một bát canh thanh.",
+    "tip": "Mía giúp chống bén đáy và tạo hậu ngọt; nước trà làm vị cá thanh hơn. Khi kho chỉ nghiêng niêu, không đảo trực tiếp.",
+    "tags": [
+      "cơm nhà",
+      "cá kho",
+      "miền Bắc"
+    ],
+    "sourceName": "Món Ngon Mỗi Ngày",
+    "sourceUrl": "https://monngonmoingay.com/ca-chep-kho-rieng/"
+  },
+  {
+    "slug": "suon-xao-chua-ngot",
+    "name": "Sườn xào chua ngọt",
+    "excerpt": "Sườn mềm, áo xốt chua ngọt cân bằng, hợp cả người lớn lẫn trẻ nhỏ.",
+    "image": "/legacy-assets/recipes/suon-xao-chua-ngot.jpg",
+    "imageAlt": "Đĩa sườn xào chua ngọt với ớt chuông và hành tây",
+    "imageCredit": "Ảnh minh họa chân thật được tạo riêng cho Bếp Việt",
+    "imageKind": "project",
+    "region": "Ba miền",
+    "category": "Món mặn",
+    "difficulty": "Dễ",
+    "prepMinutes": 15,
+    "cookMinutes": 20,
+    "servings": 4,
+    "ingredients": [
+      {
+        "group": "Nguyên liệu chính",
+        "items": [
+          {
+            "name": "Sườn non",
+            "amount": 400,
+            "unit": "g"
+          },
+          {
+            "name": "Ớt chuông xanh, đỏ, vàng",
+            "amount": 3,
+            "unit": "quả"
+          },
+          {
+            "name": "Hành tây",
+            "amount": 1,
+            "unit": "củ"
+          },
+          {
+            "name": "Lòng trắng trứng",
+            "amount": 1,
+            "unit": "phần"
+          },
+          {
+            "name": "Bột năng",
+            "amount": 2,
+            "unit": "muỗng canh"
+          }
+        ]
+      },
+      {
+        "group": "Xốt chua ngọt",
+        "items": [
+          {
+            "name": "Giấm gạo",
+            "amount": 0.5,
+            "unit": "muỗng canh"
+          },
+          {
+            "name": "Đường",
+            "amount": 1,
+            "unit": "muỗng canh"
+          },
+          {
+            "name": "Nước tương",
+            "amount": 0.5,
+            "unit": "muỗng canh"
+          },
+          {
+            "name": "Tương cà",
+            "amount": 1,
+            "unit": "muỗng canh"
+          },
+          {
+            "name": "Nước",
+            "amount": 0.5,
+            "unit": "chén"
+          },
+          {
+            "name": "Hành tím, tỏi, tiêu và ngò rí",
+            "amount": null,
+            "unit": "vừa đủ",
+            "scalable": false
+          }
+        ]
+      }
+    ],
+    "preparation": [
+      "Chẻ sườn dọc theo xương rồi chặt khúc khoảng 4 cm. Ướp 10 phút với đường, muối, chút nước tương, tiêu và hành tím băm.",
+      "Trộn sườn đã ướp với lòng trắng trứng, sau đó áo một lớp bột năng thật mỏng. Lớp áo này giúp giữ nước ngọt và làm xốt bám đều.",
+      "Cắt hành tây và ba màu ớt chuông thành miếng vuông cạnh khoảng 3 cm. Khuấy giấm, đường, nước tương, tương cà và nửa chén nước thành hỗn hợp xốt."
+    ],
+    "cooking": [
+      "Xào nhanh hành tây và ớt chuông trên lửa lớn khoảng 1 phút rồi trút ra đĩa. Rau chỉ cần vừa thơm, vẫn giữ độ giòn và màu tươi.",
+      "Đun nóng dầu, chiên sườn đến khi vàng đều các mặt. Gắp sườn ra giá hoặc giấy thấm để loại bỏ dầu thừa.",
+      "Phi thơm tỏi, cho hỗn hợp xốt vào đun lửa nhỏ. Thêm sườn và đảo khoảng 5 phút để thịt chín mềm, thấm vị chua ngọt.",
+      "Nếu xốt còn loãng, thêm một ít nước bột năng. Cho hành tây và ớt chuông trở lại, đảo nhanh đến khi xốt phủ bóng rồi tắt bếp."
+    ],
+    "serving": "Dọn nóng với cơm trắng; rắc thêm tiêu nếu thích.",
+    "tip": "Áo bột sau khi ướp giúp miếng sườn không khô; rau củ nên xào riêng và cho lại vào chảo ở bước cuối.",
+    "tags": [
+      "dễ nấu",
+      "trẻ em thích",
+      "món mặn"
+    ],
+    "sourceName": "Món Ngon Mỗi Ngày",
+    "sourceUrl": "https://monngonmoingay.com/suon-xao-chua-ngot/"
+  },
+  {
+    "slug": "canh-chua-ca",
+    "name": "Canh chua cá",
+    "excerpt": "Vị chua dịu từ me và dứa, cá mềm ngọt, nhiều rau — rất hợp ngày nóng.",
+    "image": "/legacy-assets/recipes/canh-chua-ca.jpg",
+    "imageAlt": "Bát canh chua cá với cà chua, dứa, đậu bắp và rau thơm",
+    "imageCredit": "Ảnh minh họa chân thật được tạo riêng cho Bếp Việt",
+    "imageKind": "project",
+    "region": "Nam",
+    "category": "Món canh",
+    "difficulty": "Dễ",
+    "prepMinutes": 15,
+    "cookMinutes": 15,
+    "servings": 4,
+    "ingredients": [
+      {
+        "group": "Cá và rau",
+        "items": [
+          {
+            "name": "Cá liệt, cá diêu hồng hoặc cá lóc",
+            "amount": 250,
+            "unit": "g"
+          },
+          {
+            "name": "Thơm",
+            "amount": 100,
+            "unit": "g"
+          },
+          {
+            "name": "Cà chua",
+            "amount": 100,
+            "unit": "g"
+          },
+          {
+            "name": "Bạc hà (dọc mùng)",
+            "amount": 100,
+            "unit": "g"
+          }
+        ]
+      },
+      {
+        "group": "Tạo vị",
+        "items": [
+          {
+            "name": "Nước",
+            "amount": 1.7,
+            "unit": "lít"
+          },
+          {
+            "name": "Nước mắm",
+            "amount": 2,
+            "unit": "muỗng canh"
+          },
+          {
+            "name": "Hành tím băm",
+            "amount": 1,
+            "unit": "muỗng cà phê"
+          },
+          {
+            "name": "Gia vị tạo vị chua cay",
+            "amount": null,
+            "unit": "vừa đủ",
+            "scalable": false
+          },
+          {
+            "name": "Rau om và hành lá",
+            "amount": null,
+            "unit": "vừa đủ",
+            "scalable": false
+          }
+        ]
+      }
+    ],
+    "preparation": [
+      "Cá làm sạch, cắt khúc vừa ăn, rửa nhanh với nước muối loãng rồi để thật ráo. Nếu dùng cá nguyên con, khứa nông hai bên để cá chín đều.",
+      "Cà chua bổ múi cau; thơm cắt miếng rẻ quạt. Bạc hà tước bỏ lớp xơ ngoài, thái lát mỏng rồi bóp nhẹ với muối và rửa lại.",
+      "Rau om và hành lá nhặt sạch, rửa, để ráo rồi cắt nhỏ. Chuẩn bị sẵn toàn bộ gia vị để canh không phải nấu quá lâu sau khi cho rau vào."
+    ],
+    "cooking": [
+      "Phi thơm hành tím với một ít dầu, cho cà chua vào đảo nhanh khoảng 1 phút để tạo màu và vị nền cho nước canh.",
+      "Rót 1,7 lít nước vào nồi. Khi nước sôi, thả cá và thơm vào, đợi sôi trở lại rồi hớt bọt để nước dùng trong.",
+      "Giữ lửa vừa và nấu cá thêm khoảng 5 phút. Cho bạc hà vào, nêm gia vị chua cay và nước mắm sao cho vị chua nhẹ, ngọt hậu và mặn vừa.",
+      "Cho rau om và hành lá vào cuối cùng, đảo nhẹ rồi tắt bếp. Đậy nắp 1 phút để hương rau lan đều nhưng rau không bị thâm."
+    ],
+    "serving": "Dùng nóng trong bữa cơm hoặc ăn kèm bún.",
+    "tip": "Cho cá khi nước đã sôi, hớt bọt kỹ và chỉ đảo nhẹ một lần để nước canh trong, miếng cá không bị nát.",
+    "tags": [
+      "món canh",
+      "miền Nam",
+      "thanh mát"
+    ],
+    "sourceName": "Món Ngon Mỗi Ngày",
+    "sourceUrl": "https://monngonmoingay.com/canh-chua-ca-mien-nam/"
+  },
+  {
+    "slug": "trung-chien-rau-cu",
+    "name": "Trứng chiên rau củ",
+    "excerpt": "Món nhanh gọn trong 15 phút, có màu sắc vui mắt và dễ kết hợp với cơm nóng.",
+    "image": "/legacy-assets/recipes/trung-chien-rau-cu.jpg",
+    "imageAlt": "Đĩa trứng chiên vàng với cà rốt, đậu que và hành lá",
+    "imageCredit": "Ảnh minh họa chân thật được tạo riêng cho Bếp Việt",
+    "imageKind": "project",
+    "region": "Ba miền",
+    "category": "Món mặn",
+    "difficulty": "Dễ",
+    "prepMinutes": 8,
+    "cookMinutes": 7,
+    "servings": 4,
+    "ingredients": [
+      {
+        "group": "Nguyên liệu",
+        "items": [
+          {
+            "name": "Trứng gà",
+            "amount": 3,
+            "unit": "quả"
+          },
+          {
+            "name": "Cà chua",
+            "amount": 0.5,
+            "unit": "quả"
+          },
+          {
+            "name": "Hành tây",
+            "amount": 0.25,
+            "unit": "củ"
+          },
+          {
+            "name": "Đậu que",
+            "amount": 5,
+            "unit": "trái"
+          },
+          {
+            "name": "Xốt mayonnaise",
+            "amount": 2,
+            "unit": "muỗng canh"
+          },
+          {
+            "name": "Hành lá, ngò rí, hành tím và tiêu",
+            "amount": null,
+            "unit": "vừa đủ",
+            "scalable": false
+          }
+        ]
+      }
+    ],
+    "preparation": [
+      "Cà chua bỏ hạt rồi cắt hạt lựu. Hành tây cũng cắt hạt lựu; đậu que tước xơ và thái lát mỏng để nhanh chín.",
+      "Đập trứng vào tô, thêm tiêu, một lượng gia vị vừa ăn, hành lá cắt nhỏ và mayonnaise. Đánh nhẹ cho hỗn hợp hòa quyện nhưng không tạo quá nhiều bọt.",
+      "Để riêng phần rau củ và trứng. Việc xào rau trước giúp rau ráo nước, thơm và không làm mặt trứng bị rỗ."
+    ],
+    "cooking": [
+      "Phi thơm hành tím với một lớp dầu mỏng, cho đậu que, hành tây và cà chua vào xào nhanh đến khi rau vừa săn.",
+      "Hạ xuống lửa nhỏ, rót trứng theo vòng quanh chảo để rau củ và mayonnaise phân bố đều. Dùng xẻng chỉnh nhẹ phần rau nhưng không khuấy.",
+      "Đậy nắp và chiên đến khi đáy vàng, mặt trứng vừa chín tới. Có thể chia trứng thành miếng trước khi lật nếu muốn hai mặt vàng đều."
+    ],
+    "serving": "Cắt miếng, dùng nóng với cơm và dưa leo.",
+    "tip": "Chiên trên lửa nhỏ và đậy nắp giúp trứng chín đều, không cháy đáy; mayonnaise làm trứng mềm và béo hơn.",
+    "tags": [
+      "15 phút",
+      "tiết kiệm",
+      "dễ nấu"
+    ],
+    "sourceName": "Món Ngon Mỗi Ngày",
+    "sourceUrl": "https://monngonmoingay.com/trung-chien-rau-cu-xot-mayonnaise/"
+  },
+  {
+    "slug": "rau-muong-xao-toi",
+    "name": "Rau muống xào tỏi",
+    "excerpt": "Rau xanh giòn, thơm tỏi, hoàn thiện mâm cơm chỉ trong khoảng 10 phút.",
+    "image": "/legacy-assets/recipes/rau-muong-xao-toi-cc0.jpg",
+    "imageAlt": "Đĩa rau muống xào xanh với những lát tỏi",
+    "imageCredit": "Andy Li / Wikimedia Commons",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Pad_Pak_Bung_(Morning_glory)_-_Thai_Street_Food,_Worthing_2026-08-21.jpg",
+    "imageLicense": "CC0 1.0",
+    "imageKind": "licensed",
+    "region": "Ba miền",
+    "category": "Món rau",
+    "difficulty": "Dễ",
+    "prepMinutes": 6,
+    "cookMinutes": 4,
+    "servings": 4,
+    "ingredients": [
+      {
+        "group": "Nguyên liệu",
+        "items": [
+          {
+            "name": "Rau muống",
+            "amount": 500,
+            "unit": "g"
+          },
+          {
+            "name": "Tỏi",
+            "amount": 5,
+            "unit": "tép"
+          },
+          {
+            "name": "Dầu ăn",
+            "amount": 2,
+            "unit": "muỗng canh"
+          },
+          {
+            "name": "Nước mắm và muối",
+            "amount": null,
+            "unit": "vừa đủ",
+            "scalable": false
+          }
+        ]
+      }
+    ],
+    "preparation": [
+      "Nhặt bỏ gốc già và lá úa, ngắt rau thành đoạn 8–10 cm. Rửa nhanh 2–3 lần rồi ngâm nước muối loãng 5 phút, vớt ra để thật ráo.",
+      "Đập dập tỏi, băm thô và chia hai phần. Pha sẵn nước mắm với 1 muỗng canh nước để gia vị phân tán nhanh khi xào.",
+      "Nếu rau thân to, chần 30 giây trong nước sôi có chút muối rồi ngâm nhanh vào nước mát; bước này giúp rau chín đều và xanh."
+    ],
+    "cooking": [
+      "Làm nóng chảo lớn trên lửa cao đến khi chảo thật nóng. Cho dầu và hai phần ba lượng tỏi vào phi khoảng 15 giây.",
+      "Cho toàn bộ rau vào, dùng hai xẻng đảo liên tục để rau tiếp xúc đều với mặt chảo. Không đậy vung.",
+      "Sau khoảng 90 giây, rưới hỗn hợp nước mắm quanh thành chảo, đảo thêm 30–60 giây đến khi cọng rau vừa mềm nhưng còn giòn.",
+      "Cho phần tỏi còn lại vào, đảo nhanh rồi tắt bếp. Gắp rau ra đĩa ngay để nhiệt trong chảo không làm rau chín quá."
+    ],
+    "serving": "Dùng nóng; có thể kèm bát nước rau luộc dầm sấu vào mùa hè.",
+    "tip": "Chảo cần đủ nóng và rau thật ráo để rau xanh, giòn, không ra nhiều nước.",
+    "tags": [
+      "10 phút",
+      "món rau",
+      "cơm nhà"
+    ],
+    "sourceName": "Món Ngon Mỗi Ngày",
+    "sourceUrl": "https://monngonmoingay.com/cac-mon-an-ngon-de-lam-tai-nha/"
+  },
+  {
+    "slug": "dau-hu-sot-ca-chua",
+    "name": "Đậu hũ sốt cà chua",
+    "excerpt": "Đậu hũ mềm béo trong xốt cà chua dịu, nguyên liệu bình dân và hợp cả bữa chay.",
+    "image": "/legacy-assets/recipes/dau-hu-sot-ca-chua-cc-by-sa.jpg",
+    "imageAlt": "Đĩa đậu hũ vàng sốt cà chua và hành lá",
+    "imageCredit": "Mickey Đại Phát / Wikimedia Commons",
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Tomato-sauced_tofu.jpg",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageKind": "licensed",
+    "region": "Ba miền",
+    "category": "Món chay",
+    "difficulty": "Dễ",
+    "prepMinutes": 8,
+    "cookMinutes": 15,
+    "servings": 4,
+    "ingredients": [
+      {
+        "group": "Nguyên liệu",
+        "items": [
+          {
+            "name": "Đậu hũ trắng",
+            "amount": 4,
+            "unit": "miếng"
+          },
+          {
+            "name": "Cà chua",
+            "amount": 4,
+            "unit": "quả"
+          },
+          {
+            "name": "Hành lá",
+            "amount": 2,
+            "unit": "nhánh"
+          },
+          {
+            "name": "Nước mắm chay, đường và tiêu",
+            "amount": null,
+            "unit": "vừa đủ",
+            "scalable": false
+          }
+        ]
+      }
+    ],
+    "preparation": [
+      "Rửa nhanh đậu hũ, thấm khô kỹ rồi cắt mỗi miếng thành 4–6 phần. Bề mặt khô giúp đậu ít bắn dầu và lên màu đẹp.",
+      "Cà chua bỏ cuống, bổ múi cau; băm nhỏ một nửa để xốt nhanh sánh, giữ nửa còn lại nguyên miếng để món có kết cấu.",
+      "Thái riêng đầu hành trắng và lá hành. Pha nước mắm chay với đường và 100 ml nước ấm."
+    ],
+    "cooking": [
+      "Cho dầu vào chảo, áp chảo đậu trên lửa vừa đến khi các mặt vàng nhạt. Không chiên quá giòn; gắp ra giấy thấm dầu.",
+      "Giữ lại khoảng một muỗng canh dầu, phi đầu hành rồi cho phần cà chua băm vào. Thêm một nhúm muối và dằm đến khi thành xốt.",
+      "Cho phần cà chua múi cùng hỗn hợp gia vị vào, đun 2 phút. Xếp đậu vào chảo, rưới xốt lên từng miếng.",
+      "Rim lửa nhỏ 5–7 phút, trở nhẹ một lần để đậu thấm đều. Khi xốt sánh vừa, thêm hành lá và tiêu rồi tắt bếp."
+    ],
+    "serving": "Rắc hành lá, dùng với cơm nóng và rau luộc.",
+    "tip": "Áp chảo đậu vừa vàng giúp miếng đậu đứng dáng mà bên trong vẫn mềm.",
+    "tags": [
+      "món chay",
+      "tiết kiệm",
+      "dễ nấu"
+    ],
+    "sourceName": "Món Ngon Mỗi Ngày",
+    "sourceUrl": "https://monngonmoingay.com/cac-mon-an-ngon-de-lam-tai-nha/"
+  },
+  {
+    "slug": "bun-cha-ha-noi",
+    "name": "Bún chả Hà Nội",
+    "excerpt": "Chả nướng thơm, nước chấm chua ngọt và rổ rau tươi cho bữa cuối tuần đổi vị.",
+    "image": "/legacy-assets/auth/bun-cha-pho-hoi.webp",
+    "imageAlt": "Bún chả Hà Nội với thịt nướng và rau tươi",
+    "imageCredit": "Ảnh minh họa chân thật được tạo riêng cho Bếp Việt",
+    "imageKind": "project",
+    "region": "Bắc",
+    "category": "Món nước",
+    "difficulty": "Vừa",
+    "prepMinutes": 35,
+    "cookMinutes": 25,
+    "servings": 4,
+    "ingredients": [
+      {
+        "group": "Phần chả",
+        "items": [
+          {
+            "name": "Bún tươi",
+            "amount": 800,
+            "unit": "g"
+          },
+          {
+            "name": "Thịt vai và ba chỉ",
+            "amount": 700,
+            "unit": "g"
+          },
+          {
+            "name": "Hành tím băm",
+            "amount": 3,
+            "unit": "muỗng canh"
+          },
+          {
+            "name": "Rau sống",
+            "amount": 400,
+            "unit": "g"
+          }
+        ]
+      },
+      {
+        "group": "Nước chấm và dưa góp",
+        "items": [
+          {
+            "name": "Nước mắm",
+            "amount": 5,
+            "unit": "muỗng canh"
+          },
+          {
+            "name": "Giấm gạo",
+            "amount": 4,
+            "unit": "muỗng canh"
+          },
+          {
+            "name": "Đường",
+            "amount": 4,
+            "unit": "muỗng canh"
+          },
+          {
+            "name": "Đu đủ xanh và cà rốt",
+            "amount": 250,
+            "unit": "g"
+          },
+          {
+            "name": "Tỏi, ớt, tiêu",
+            "amount": null,
+            "unit": "vừa đủ",
+            "scalable": false
+          }
+        ]
+      }
+    ],
+    "preparation": [
+      "Thịt ba chỉ thái lát mỏng; thịt vai băm hoặc xay thô rồi nặn thành miếng dẹt. Ướp hai phần thịt riêng với hành tím, nước mắm, đường, tiêu và chút dầu trong ít nhất 30 phút.",
+      "Đu đủ xanh và cà rốt thái mỏng, bóp nhẹ với muối, rửa lại rồi ngâm 15 phút trong hỗn hợp giấm-đường để làm dưa góp.",
+      "Rau sống nhặt kỹ, rửa sạch và để ráo. Trụng nhanh bún bằng nước ấm nếu bún lạnh hoặc bị dính."
+    ],
+    "cooking": [
+      "Xếp thịt lên vỉ, nướng trên than hoặc nồi chiên ở 190°C. Trở mặt sau 6–8 phút và nướng đến khi cạnh thịt xém nhẹ nhưng bên trong còn mọng.",
+      "Đun ấm hỗn hợp nước, nước mắm, đường và giấm; nếm theo thứ tự mặn dịu, chua nhẹ rồi ngọt hậu. Tắt bếp mới thêm tỏi, ớt.",
+      "Chia dưa góp vào bát, thêm nước chấm ấm rồi thả chả miếng và thịt nướng vào ngay trước khi ăn."
+    ],
+    "serving": "Ăn kèm bún tươi và rau sống, chấm từng đũa vừa miệng.",
+    "tip": "Nướng hai lượt lửa và quét mỏng dầu giúp thịt thơm mà không khô.",
+    "tags": [
+      "cuối tuần",
+      "Hà Nội",
+      "món nước"
+    ],
+    "sourceName": "Cookpad",
+    "sourceUrl": "https://cookpad.com/vn/tim-kiem/b%C3%BAn%20ch%E1%BA%A3%20h%C3%A0%20n%E1%BB%99i"
+  },
+  {
+    "slug": "pho-ga-gia-dinh",
+    "name": "Phở gà gia đình",
+    "excerpt": "Nước dùng trong, thơm gừng hành; một lựa chọn ấm bụng cho sáng cuối tuần.",
+    "image": "/legacy-assets/auth/pho-bep-nha.webp",
+    "imageAlt": "Bát phở gà nóng với hành và rau thơm",
+    "imageCredit": "Ảnh minh họa chân thật được tạo riêng cho Bếp Việt",
+    "imageKind": "project",
+    "region": "Bắc",
+    "category": "Món nước",
+    "difficulty": "Vừa",
+    "prepMinutes": 25,
+    "cookMinutes": 55,
+    "servings": 4,
+    "ingredients": [
+      {
+        "group": "Nước dùng và thịt",
+        "items": [
+          {
+            "name": "Gà ta",
+            "amount": 1.2,
+            "unit": "kg"
+          },
+          {
+            "name": "Gừng",
+            "amount": 40,
+            "unit": "g"
+          },
+          {
+            "name": "Hành tây",
+            "amount": 1,
+            "unit": "củ"
+          },
+          {
+            "name": "Hành tím",
+            "amount": 4,
+            "unit": "củ"
+          },
+          {
+            "name": "Hoa hồi và hạt mùi",
+            "amount": null,
+            "unit": "một ít",
+            "scalable": false
+          }
+        ]
+      },
+      {
+        "group": "Phần ăn kèm",
+        "items": [
+          {
+            "name": "Bánh phở",
+            "amount": 700,
+            "unit": "g"
+          },
+          {
+            "name": "Hành lá và rau mùi",
+            "amount": 100,
+            "unit": "g"
+          },
+          {
+            "name": "Chanh và ớt",
+            "amount": null,
+            "unit": "vừa đủ",
+            "scalable": false
+          },
+          {
+            "name": "Nước mắm, muối, đường phèn",
+            "amount": null,
+            "unit": "vừa đủ",
+            "scalable": false
+          }
+        ]
+      }
+    ],
+    "preparation": [
+      "Xát gà với muối và gừng đập dập, rửa sạch cả trong lẫn ngoài. Buộc gọn chân cánh để gà chín đều và không rách da.",
+      "Nướng hành tây, hành tím và gừng đến khi thơm, cạo bỏ phần cháy đen. Rang nhanh hoa hồi và hạt mùi trên chảo khô rồi cho vào túi lọc.",
+      "Hành lá, rau mùi rửa sạch; chẻ phần đầu hành, thái nhỏ phần lá. Bánh phở tách nhẹ để khi chần không vón."
+    ],
+    "cooking": [
+      "Cho gà vào nồi, thêm nước lạnh ngập gà và một ít muối. Đun đến khi vừa sôi thì hạ lửa, hớt bọt thật kỹ.",
+      "Thêm hành gừng nướng và túi gia vị. Luộc lăn tăn 25–30 phút, tắt bếp và ngâm gà thêm 10 phút trước khi vớt ra.",
+      "Ngâm gà chín vào nước nguội 2 phút cho da săn, để ráo rồi lọc thịt, thái hoặc xé vừa ăn. Cho xương trở lại nồi ninh thêm 20 phút.",
+      "Lọc nước dùng, nêm nước mắm, muối và một ít đường phèn cho vị thanh. Chần bánh phở 10–15 giây, xếp thịt gà, hành rồi chan nước dùng đang sôi."
+    ],
+    "serving": "Thêm hành, rau thơm, chanh và ớt theo khẩu vị.",
+    "tip": "Chỉ để nước sôi lăn tăn trong lúc luộc để gà mềm và nước dùng trong.",
+    "tags": [
+      "cuối tuần",
+      "món nước",
+      "miền Bắc"
+    ],
+    "sourceName": "Món Ngon Mỗi Ngày",
+    "sourceUrl": "https://monngonmoingay.com/pho-ga/"
+  }
+]

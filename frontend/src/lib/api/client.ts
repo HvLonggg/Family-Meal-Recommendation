@@ -62,3 +62,28 @@ export function apiPost<T>(path: string, payload?: unknown): Promise<T> {
     body: payload === undefined ? undefined : JSON.stringify(payload),
   });
 }
+
+export function apiPatch<T>(path: string, payload?: unknown): Promise<T> {
+  return apiRequest<T>(path, {
+    method: 'PATCH',
+    body: payload === undefined ? undefined : JSON.stringify(payload),
+  });
+}
+
+export function apiPut<T>(path: string, payload?: unknown): Promise<T> {
+  return apiRequest<T>(path, {
+    method: 'PUT',
+    body: payload === undefined ? undefined : JSON.stringify(payload),
+  });
+}
+
+export function apiDelete<T = void>(path: string): Promise<T> {
+  return apiRequest<T>(path, { method: 'DELETE' });
+}
+
+/** Đổi đường dẫn tương đối theo gốc API (ví dụ avatar, ảnh bìa) thành URL dùng được cho thẻ img. */
+export function apiUrl(path: string | null | undefined) {
+  if (!path) return undefined;
+  if (/^(https?:|data:|blob:)/.test(path)) return path;
+  return `${API_BASE_URL}${path}`;
+}

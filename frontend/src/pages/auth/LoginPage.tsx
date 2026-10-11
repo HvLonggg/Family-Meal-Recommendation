@@ -7,36 +7,73 @@ import { AuthField } from '@/components/auth/AuthField';
 import { SocialLoginButtons } from '@/components/auth/SocialLoginButtons';
 import { Button } from '@/components/ui/Button';
 import { useAuth } from '@/features/auth/AuthContext';
-import { getAuthErrorMessage } from '@/features/auth/errors';
+import { errorMessage } from '@/lib/errors';
+import { useI18n } from '@/features/i18n/I18nContext';
 
 interface LoginForm {
   email: string;
   password: string;
+  rememberMe: boolean;
+}
+
+const REMEMBERED_IDENTIFIER_KEY = 'bep-viet-login-hint-v1';
+
+function getRememberedIdentifier() {
+  try {
+    return localStorage.getItem(REMEMBERED_IDENTIFIER_KEY) ?? '';
+  } catch {
+    return '';
+  }
 }
 
 export function LoginPage() {
   const { login } = useAuth();
+  const { t } = useI18n();
   const navigate = useNavigate();
   const location = useLocation();
-  const [message, setMessage] = useState('');
+  const loginState = location.state as { email?: string; from?: string; notice?: string } | null;
+  const [message, setMessage] = useState(() => (loginState?.notice ? t(loginState.notice) : ''));
   const [isSubmitting, setIsSubmitting] = useState(false);
   const {
     formState: { errors },
     handleSubmit,
     register,
-  } = useForm<LoginForm>();
+  } = useForm<LoginForm>({
+    defaultValues: {
+      email: loginState?.email ?? getRememberedIdentifier(),
+      password: '',
+      rememberMe: false,
+    },
+  });
 
   const submit = handleSubmit(async (values) => {
     setMessage('');
     setIsSubmitting(true);
     try {
-      const user = await login(values);
-      const requestedPath = (location.state as { from?: string } | null)?.from;
-      await navigate(requestedPath ?? (user.role === 'admin' ? '/quan-tri' : '/tai-khoan'), {
+      const user = await login({
+        email: values.email,
+        password: values.password,
+        remember_me: values.rememberMe,
+      });
+      try {
+        if (values.rememberMe) {
+          localStorage.setItem(REMEMBERED_IDENTIFIER_KEY, values.email.trim());
+        } else {
+          localStorage.removeItem(REMEMBERED_IDENTIFIER_KEY);
+        }
+      } catch {
+        // Authentication still works when browser storage is disabled.
+      }
+      const requestedPath = loginState?.from;
+      const landing =
+        user.role === 'admin' && (user.preferences?.admin_landing ?? 'admin') === 'admin'
+          ? '/admin'
+          : '/account';
+      await navigate(requestedPath ?? landing, {
         replace: true,
       });
     } catch (error) {
-      setMessage(getAuthErrorMessage(error));
+      setMessage(errorMessage(error, t));
     } finally {
       setIsSubmitting(false);
     }
@@ -45,51 +82,56 @@ export function LoginPage() {
   return (
     <>
       <div className="auth-card__heading">
-        <span className="auth-kicker">Chào mừng trở lại</span>
-        <h2>Đăng nhập Bếp Việt</h2>
-        <p>Tiếp tục hành trình chuẩn bị những bữa cơm thật nhẹ nhàng.</p>
+        <span className="auth-kicker">{t('Chào mừng trở lại')}</span>
+        <h2>{t('Đăng nhập Bếp Việt')}</h2>
+        <p>{t('Tiếp tục hành trình chuẩn bị những bữa cơm thật nhẹ nhàng.')}</p>
       </div>
 
       {message ? <AuthAlert tone="info">{message}</AuthAlert> : null}
 
       <form className="auth-form" onSubmit={(event) => void submit(event)} noValidate>
         <AuthField
-          autoComplete="email"
+          autoComplete="username"
           error={errors.email?.message}
           id="login-email"
-          label="Địa chỉ email"
+          label={t('Địa chỉ email')}
           placeholder="ban@example.com"
           type="email"
           {...register('email', {
-            required: 'Vui lòng nhập email.',
-            pattern: { value: /^\S+@\S+\.\S+$/, message: 'Email chưa đúng định dạng.' },
+            required: t('Vui lòng nhập email.'),
+            pattern: { value: /^\S+@\S+\.\S+$/, message: t('Email chưa đúng định dạng.') },
           })}
         />
         <AuthField
           autoComplete="current-password"
           error={errors.password?.message}
           id="login-password"
-          label="Mật khẩu"
-          placeholder="Nhập mật khẩu"
+          label={t('Mật khẩu')}
+          placeholder={t('Nhập mật khẩu')}
           type="password"
-          {...register('password', { required: 'Vui lòng nhập mật khẩu.' })}
+          {...register('password', { required: t('Vui lòng nhập mật khẩu.') })}
         />
         <div className="auth-form__between">
           <label className="auth-checkbox">
-            <input type="checkbox" />
-            <span>Ghi nhớ thiết bị này</span>
+            <input type="checkbox" {...register('rememberMe')} />
+            <span>{t('Ghi nhớ thiết bị này')}</span>
           </label>
-          <Link to="/quen-mat-khau">Quên mật khẩu?</Link>
+          <Link to="/forgot-password">{t('Quên mật khẩu?')}</Link>
         </div>
+        <p className="auth-field__hint">
+          {t(
+            'Giữ phiên đăng nhập và gợi ý email trên thiết bị này. Mật khẩu chỉ được trình duyệt lưu nếu bạn đồng ý với trình quản lý mật khẩu của trình duyệt.',
+          )}
+        </p>
         <Button className="auth-submit" isLoading={isSubmitting} type="submit">
-          Đăng nhập
+          {t('Đăng nhập')}
         </Button>
       </form>
 
       <SocialLoginButtons onNotice={setMessage} />
 
       <p className="auth-switch">
-        Chưa có tài khoản? <Link to="/dang-ky">Tạo tài khoản miễn phí</Link>
+        {t('Chưa có tài khoản?')} <Link to="/register">{t('Tạo tài khoản miễn phí')}</Link>
       </p>
     </>
   );

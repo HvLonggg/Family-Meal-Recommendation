@@ -1,8 +1,10 @@
-import re
 from datetime import datetime
+from typing import Any
 from uuid import UUID
 
 from pydantic import BaseModel, ConfigDict, EmailStr, Field, field_validator
+
+from app.modules.account.preferences import PreferencesResponse, read_preferences, to_response
 
 
 def validate_password_strength(value: str) -> str:
@@ -13,6 +15,17 @@ def validate_password_strength(value: str) -> str:
     if not any(character.isdigit() for character in value):
         raise ValueError("Mật khẩu phải có ít nhất một chữ số.")
     return value
+
+
+class LoginRequest(BaseModel):
+    email: EmailStr
+    password: str = Field(min_length=1, max_length=128)
+    remember_me: bool = False
+
+    @field_validator("email")
+    @classmethod
+    def normalize_email(cls, value: EmailStr) -> str:
+        return str(value).strip().casefold()
 
 
 class RegisterRequest(BaseModel):
@@ -36,16 +49,6 @@ class RegisterRequest(BaseModel):
         return validate_password_strength(value)
 
 
-class LoginRequest(BaseModel):
-    email: EmailStr
-    password: str = Field(min_length=1, max_length=128)
-
-    @field_validator("email")
-    @classmethod
-    def normalize_email(cls, value: EmailStr) -> str:
-        return str(value).strip().casefold()
-
-
 class ForgotPasswordRequest(BaseModel):
     email: EmailStr
 
@@ -65,18 +68,19 @@ class ResetPasswordRequest(BaseModel):
         return validate_password_strength(value)
 
 
-class PhoneOtpRequest(BaseModel):
-    phone: str = Field(min_length=9, max_length=20)
+class ChangePasswordRequest(BaseModel):
+    current_password: str = Field(min_length=1, max_length=128)
+    new_password: str = Field(min_length=8, max_length=128)
 
-    @field_validator("phone")
+    @field_validator("new_password")
     @classmethod
-    def clean_phone(cls, value: str) -> str:
-        return re.sub(r"[\s.()-]", "", value)
+    def check_password(cls, value: str) -> str:
+        return validate_password_strength(value)
 
 
-class PhoneOtpVerifyRequest(BaseModel):
+class EmailOtpVerifyRequest(BaseModel):
     challenge_id: UUID
-    code: str = Field(pattern=r"^\d{6}$")
+    code: str = Field(pattern=r"^\d{5}$")
 
 
 class UserResponse(BaseModel):
@@ -88,6 +92,15 @@ class UserResponse(BaseModel):
     full_name: str
     role: str
     created_at: datetime
+    avatar_url: str | None = None
+    preferences: PreferencesResponse = Field(default_factory=PreferencesResponse)
+
+    @field_validator("preferences", mode="before")
+    @classmethod
+    def normalize_preferences(cls, value: Any) -> Any:
+        if isinstance(value, dict) or value is None:
+            return to_response(read_preferences(value))
+        return value
 
 
 class AuthSessionResponse(BaseModel):
@@ -102,17 +115,18 @@ class MessageResponse(BaseModel):
 
 
 class ForgotPasswordResponse(MessageResponse):
-    development_reset_token: str | None = None
-
-
-class PhoneOtpResponse(BaseModel):
     challenge_id: UUID
     expires_in: int
-    message: str
     development_code: str | None = None
+
+
+class ResetTokenResponse(BaseModel):
+    reset_token: str
+    expires_in: int
+    message: str
 
 
 class ProviderAvailabilityResponse(BaseModel):
     google: bool
     facebook: bool
-    phone: bool
+    email: bool

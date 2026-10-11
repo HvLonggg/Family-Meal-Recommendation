@@ -7,6 +7,7 @@ import tomatoTofuImage from '@/assets/recipes/dau-hu-sot-ca-chua-cc-by-sa.jpg';
 import waterSpinachImage from '@/assets/recipes/rau-muong-xao-toi-cc0.jpg';
 import sweetSourRibsImage from '@/assets/recipes/suon-xao-chua-ngot.jpg';
 import vegetableOmeletteImage from '@/assets/recipes/trung-chien-rau-cu.jpg';
+import editedImages from '@/data/recipeImageAssets.json';
 
 export type Ingredient = {
   name: string;
@@ -14,21 +15,43 @@ export type Ingredient = {
   unit: string;
   note?: string;
   scalable?: boolean;
+  scalingRule?: 'linear' | 'taste_adjusted' | 'fixed_ratio' | 'vessel_dependent';
 };
 
 export type Recipe = {
   slug: string;
+  catalogId?: string;
+  aliases?: string[];
+  regions?: string[];
+  passiveMinutes?: number;
+  finishedDish?: string;
+  tips?: string[];
+  pairingSlugs?: string[];
+  family?: string;
+  ingredientCategory?: string;
+  servingBasis?: string;
+  scalingTargets?: { servings: number; seasoning_start_factor: number }[];
   name: string;
   excerpt: string;
   image: string;
+  imageSrcSet?: string;
+  imageMaster?: string;
   imageAlt: string;
   imageCredit?: string;
   imageCreditUrl?: string;
   imageLicense?: string;
-  imageKind?: 'project' | 'licensed';
+  imageKind?: 'project' | 'licensed' | 'reference';
   region: 'Bắc' | 'Trung' | 'Nam' | 'Ba miền';
-  category: 'Món mặn' | 'Món canh' | 'Món rau' | 'Món chay' | 'Món nước';
-  difficulty: 'Dễ' | 'Vừa';
+  category:
+    | 'Món mặn'
+    | 'Món canh'
+    | 'Món rau'
+    | 'Món chay'
+    | 'Món nước'
+    | 'Món tráng miệng'
+    | 'Món ăn sáng'
+    | 'Món ăn kèm';
+  difficulty: 'Dễ' | 'Vừa' | 'Trung bình' | 'Khó';
   prepMinutes: number;
   cookMinutes: number;
   servings: number;
@@ -38,7 +61,7 @@ export type Recipe = {
   serving: string;
   tip: string;
   tags: string[];
-  sourceName: 'Món Ngon Mỗi Ngày' | 'Cookpad';
+  sourceName: string;
   sourceUrl: string;
   status?: 'published' | 'draft';
 };
@@ -534,7 +557,75 @@ const recipeCatalog: Recipe[] = [
   },
 ];
 
-export const recipes = recipeCatalog.filter((recipe) => recipe.status !== 'draft');
+type EditedImage = { src: string; srcSet: string; master: string; alt: string };
+
+function applyEditedImage(recipe: Recipe): Recipe {
+  const image = (editedImages as Record<string, EditedImage>)[recipe.slug];
+  if (!image) return recipe;
+  return {
+    ...recipe,
+    image: image.src,
+    imageSrcSet: image.srcSet,
+    imageMaster: image.master,
+    imageAlt: image.alt,
+    imageKind: 'project',
+    imageCredit: 'Ảnh minh họa của Bếp Việt được biên tập bởi tác giả',
+    imageCreditUrl: undefined,
+    imageLicense: undefined,
+  };
+}
+
+export let recipes = recipeCatalog
+  .filter((recipe) => recipe.status !== 'draft')
+  .map(applyEditedImage);
+
+export function replaceRecipeCatalog(catalog: Recipe[]) {
+  const order = new Map(recipes.map((recipe, index) => [recipe.slug, index]));
+  recipes = catalog
+    .map(applyEditedImage)
+    .sort((a, b) => (order.get(a.slug) ?? 1000) - (order.get(b.slug) ?? 1000));
+}
+
+export function recipeMinutes(recipe: Recipe) {
+  return recipe.prepMinutes + recipe.cookMinutes + (recipe.passiveMinutes ?? 0);
+}
+
+type FormatText = (text: string, vars?: Record<string, string | number>) => string;
+
+const fillTemplate: FormatText = (text, vars) =>
+  text.replace(/\{(\w+)\}/g, (match, key: string) =>
+    vars && key in vars ? String(vars[key]) : match,
+  );
+
+/** Định dạng thời lượng; truyền hàm dịch `t` để hiển thị theo ngôn ngữ đang chọn. */
+export function formatMinutes(minutes: number, t: FormatText = fillTemplate) {
+  if (minutes < 60) return t('{count} phút', { count: minutes });
+  if (minutes >= 1440 && minutes % 1440 === 0) return t('{count} ngày', { count: minutes / 1440 });
+  const remainder = minutes % 60;
+  const hours = t('{count} giờ', { count: Math.floor(minutes / 60) });
+  return remainder ? `${hours} ${t('{count} phút', { count: remainder })}` : hours;
+}
+
+export function ingredientAmount(item: Ingredient, recipe: Recipe, servings: number) {
+  if (item.amount == null || item.scalable === false || item.scalingRule === 'vessel_dependent')
+    return item.amount;
+  let factor = servings / recipe.servings;
+  if (item.scalingRule === 'taste_adjusted' && recipe.scalingTargets?.length) {
+    const points = [
+      { servings: 0, seasoning_start_factor: 0 },
+      { servings: recipe.servings, seasoning_start_factor: 1 },
+      ...recipe.scalingTargets,
+    ].sort((a, b) => a.servings - b.servings);
+    const upperIndex = points.findIndex((point) => point.servings >= servings);
+    const upper = points[upperIndex > 0 ? upperIndex : points.length - 1]!;
+    const lower = points[upperIndex > 0 ? upperIndex - 1 : points.length - 2]!;
+    factor =
+      lower.seasoning_start_factor +
+      ((servings - lower.servings) / (upper.servings - lower.servings)) *
+        (upper.seasoning_start_factor - lower.seasoning_start_factor);
+  }
+  return item.amount * factor;
+}
 
 export const mealSets = [
   {
@@ -542,6 +633,7 @@ export const mealSets = [
     title: 'Mâm cơm ngày thường dễ nấu',
     description: 'Đủ món mặn, canh và rau; hoàn thành trong khoảng 45 phút.',
     time: '45 phút',
+    minutes: 45,
     servings: 4,
     recipeSlugs: ['ca-chep-kho-rieng', 'canh-chua-ca', 'rau-muong-xao-toi'],
   },
@@ -550,6 +642,7 @@ export const mealSets = [
     title: 'Mâm cơm cả nhà đều thích',
     description: 'Hương vị dịu, nhiều màu sắc và dễ ăn cho gia đình có trẻ nhỏ.',
     time: '40 phút',
+    minutes: 40,
     servings: 4,
     recipeSlugs: ['suon-xao-chua-ngot', 'trung-chien-rau-cu', 'dau-hu-sot-ca-chua'],
   },
@@ -558,6 +651,7 @@ export const mealSets = [
     title: 'Mâm cơm thanh mát ngày nóng',
     description: 'Canh chua cân vị cùng đậu hũ và rau xanh nhẹ bụng.',
     time: '35 phút',
+    minutes: 35,
     servings: 4,
     recipeSlugs: ['canh-chua-ca', 'dau-hu-sot-ca-chua', 'rau-muong-xao-toi'],
   },

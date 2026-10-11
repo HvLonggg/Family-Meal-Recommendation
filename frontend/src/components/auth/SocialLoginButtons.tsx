@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router';
 
 import type { ProviderAvailability } from '@/features/auth/types';
 import { apiRequest } from '@/lib/api/client';
+import { useI18n } from '@/features/i18n/I18nContext';
 
 interface SocialLoginButtonsProps {
   onNotice: (message: string) => void;
@@ -10,18 +10,24 @@ interface SocialLoginButtonsProps {
 
 export function SocialLoginButtons({ onNotice }: SocialLoginButtonsProps) {
   const [providers, setProviders] = useState<ProviderAvailability | null>(null);
+  const { t } = useI18n();
 
   useEffect(() => {
     void apiRequest<ProviderAvailability>('/auth/providers')
       .then(setProviders)
-      .catch(() => setProviders({ google: false, facebook: false, phone: true }));
+      .catch(() => setProviders({ google: false, facebook: false, email: true }));
   }, []);
 
   const handleProvider = (provider: 'google' | 'facebook') => {
     const providerName = provider === 'google' ? 'Google' : 'Facebook';
     if (!providers?.[provider]) {
       onNotice(
-        `${providerName} đã có sẵn trên giao diện và cần Client ID/Secret để kích hoạt đăng nhập thật.`,
+        t(
+          '{provider} đã có sẵn trên giao diện và cần Client ID/Secret để kích hoạt đăng nhập thật.',
+          {
+            provider: providerName,
+          },
+        ),
       );
       return;
     }
@@ -31,7 +37,7 @@ export function SocialLoginButtons({ onNotice }: SocialLoginButtonsProps) {
   return (
     <>
       <div className="auth-divider">
-        <span>Hoặc tiếp tục với</span>
+        <span>{t('Hoặc tiếp tục với')}</span>
       </div>
       <div className="social-login-grid">
         <button
@@ -58,7 +64,7 @@ export function SocialLoginButtons({ onNotice }: SocialLoginButtonsProps) {
             />
           </svg>
           <span>Google</span>
-          {!providers?.google ? <small>Sắp có</small> : null}
+          {!providers?.google ? <small>{t('Sắp có')}</small> : null}
         </button>
         <button
           className="social-button social-button--facebook"
@@ -73,15 +79,9 @@ export function SocialLoginButtons({ onNotice }: SocialLoginButtonsProps) {
             />
           </svg>
           <span>Facebook</span>
-          {!providers?.facebook ? <small>Sắp có</small> : null}
+          {!providers?.facebook ? <small>{t('Sắp có')}</small> : null}
         </button>
       </div>
-      <Link className="phone-login-button" to="/dang-nhap-so-dien-thoai">
-        <svg aria-hidden="true" viewBox="0 0 24 24">
-          <path d="M7.2 2.8 9.6 8 7.9 9.7a15 15 0 0 0 6.4 6.4l1.7-1.7 5.2 2.4v2.8a2 2 0 0 1-2 2A16.8 16.8 0 0 1 2.4 4.8a2 2 0 0 1 2-2h2.8Z" />
-        </svg>
-        Số điện thoại
-      </Link>
     </>
   );
 }

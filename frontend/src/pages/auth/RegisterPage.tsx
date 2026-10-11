@@ -4,10 +4,10 @@ import { Link, useNavigate } from 'react-router';
 
 import { AuthAlert } from '@/components/auth/AuthAlert';
 import { AuthField } from '@/components/auth/AuthField';
-import { SocialLoginButtons } from '@/components/auth/SocialLoginButtons';
 import { Button } from '@/components/ui/Button';
-import { useAuth } from '@/features/auth/AuthContext';
-import { getAuthErrorMessage } from '@/features/auth/errors';
+import { errorMessage } from '@/lib/errors';
+import { apiPost } from '@/lib/api/client';
+import { useI18n } from '@/features/i18n/I18nContext';
 
 interface RegisterForm {
   confirmPassword: string;
@@ -18,29 +18,27 @@ interface RegisterForm {
 }
 
 export function RegisterPage() {
-  const { register: createAccount } = useAuth();
   const navigate = useNavigate();
+  const { t } = useI18n();
   const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const {
-    formState: { errors },
-    getValues,
-    handleSubmit,
-    register,
-  } = useForm<RegisterForm>();
+  const registrationForm = useForm<RegisterForm>();
 
-  const submit = handleSubmit(async (values) => {
+  const submit = registrationForm.handleSubmit(async (values) => {
     setMessage('');
     setIsSubmitting(true);
     try {
-      await createAccount({
+      const response = await apiPost<{ message: string }>('/auth/register', {
         full_name: values.fullName,
         email: values.email,
         password: values.password,
       });
-      await navigate('/tai-khoan', { replace: true });
+      await navigate('/login', {
+        replace: true,
+        state: { notice: t(response.message), email: values.email.trim() },
+      });
     } catch (error) {
-      setMessage(getAuthErrorMessage(error));
+      setMessage(errorMessage(error, t));
     } finally {
       setIsSubmitting(false);
     }
@@ -49,82 +47,91 @@ export function RegisterPage() {
   return (
     <div className="auth-page auth-page--register">
       <div className="auth-card__heading">
-        <span className="auth-kicker">Bắt đầu miễn phí</span>
-        <h2>Tạo tài khoản của bạn</h2>
-        <p>Một tài khoản, mọi kế hoạch bữa ăn và món yêu thích.</p>
+        <span className="auth-kicker">{t('Bắt đầu miễn phí')}</span>
+        <h2>{t('Tạo tài khoản của bạn')}</h2>
+        <p>
+          {t(
+            'Điền thông tin để tạo tài khoản. Sau đó bạn có thể đăng nhập và nhận email chào mừng từ Bếp Việt.',
+          )}
+        </p>
       </div>
-      {message ? <AuthAlert tone="info">{message}</AuthAlert> : null}
+      {message ? <AuthAlert tone="danger">{message}</AuthAlert> : null}
 
       <form className="auth-form" onSubmit={(event) => void submit(event)} noValidate>
         <AuthField
           autoComplete="name"
-          error={errors.fullName?.message}
+          error={registrationForm.formState.errors.fullName?.message}
           id="register-name"
-          label="Họ và tên"
+          label={t('Họ và tên')}
           placeholder="Nguyễn Ngọc Lan"
-          {...register('fullName', {
-            required: 'Vui lòng nhập họ tên.',
-            minLength: { value: 2, message: 'Họ tên cần ít nhất 2 ký tự.' },
+          {...registrationForm.register('fullName', {
+            required: t('Vui lòng nhập họ tên.'),
+            minLength: { value: 2, message: t('Họ tên cần ít nhất 2 ký tự.') },
           })}
         />
         <AuthField
           autoComplete="email"
-          error={errors.email?.message}
+          error={registrationForm.formState.errors.email?.message}
           id="register-email"
-          label="Địa chỉ email"
+          label={t('Địa chỉ email')}
           placeholder="ban@example.com"
           type="email"
-          {...register('email', {
-            required: 'Vui lòng nhập email.',
-            pattern: { value: /^\S+@\S+\.\S+$/, message: 'Email chưa đúng định dạng.' },
+          {...registrationForm.register('email', {
+            required: t('Vui lòng nhập email.'),
+            pattern: { value: /^\S+@\S+\.\S+$/, message: t('Email chưa đúng định dạng.') },
           })}
         />
         <AuthField
           autoComplete="new-password"
-          error={errors.password?.message}
-          hint="Tối thiểu 8 ký tự, gồm chữ cái và chữ số."
+          error={registrationForm.formState.errors.password?.message}
+          hint={t('Tối thiểu 8 ký tự, gồm chữ cái và chữ số.')}
           id="register-password"
-          label="Mật khẩu"
-          placeholder="Tạo mật khẩu an toàn"
+          label={t('Mật khẩu')}
+          placeholder={t('Tạo mật khẩu an toàn')}
           type="password"
-          {...register('password', {
-            required: 'Vui lòng tạo mật khẩu.',
-            minLength: { value: 8, message: 'Mật khẩu cần ít nhất 8 ký tự.' },
+          {...registrationForm.register('password', {
+            required: t('Vui lòng tạo mật khẩu.'),
+            minLength: { value: 8, message: t('Mật khẩu cần ít nhất 8 ký tự.') },
             validate: (value) =>
               (/[A-Za-zÀ-ỹ]/.test(value) && /\d/.test(value)) ||
-              'Mật khẩu cần có chữ cái và chữ số.',
+              t('Mật khẩu cần có chữ cái và chữ số.'),
           })}
         />
         <AuthField
           autoComplete="new-password"
-          error={errors.confirmPassword?.message}
+          error={registrationForm.formState.errors.confirmPassword?.message}
           id="register-confirm-password"
-          label="Nhập lại mật khẩu"
-          placeholder="Nhập lại mật khẩu"
+          label={t('Nhập lại mật khẩu')}
+          placeholder={t('Nhập lại mật khẩu')}
           type="password"
-          {...register('confirmPassword', {
-            required: 'Vui lòng nhập lại mật khẩu.',
-            validate: (value) => value === getValues('password') || 'Hai mật khẩu chưa trùng nhau.',
+          {...registrationForm.register('confirmPassword', {
+            required: t('Vui lòng nhập lại mật khẩu.'),
+            validate: (value) =>
+              value === registrationForm.getValues('password') ||
+              t('Hai mật khẩu chưa trùng nhau.'),
           })}
         />
         <label className="auth-checkbox auth-checkbox--terms">
           <input
             type="checkbox"
-            {...register('terms', { required: 'Bạn cần đồng ý điều khoản để tiếp tục.' })}
+            {...registrationForm.register('terms', {
+              required: t('Bạn cần đồng ý điều khoản để tiếp tục.'),
+            })}
           />
           <span>
-            Tôi đồng ý với <a href="#dieu-khoan">Điều khoản</a> và{' '}
-            <a href="#bao-mat">Chính sách bảo mật</a>.
+            {t('Tôi đồng ý với')} <a href="#dieu-khoan">{t('Điều khoản')}</a> {t('và')}{' '}
+            <a href="#bao-mat">{t('Chính sách bảo mật')}</a>.
           </span>
         </label>
-        {errors.terms ? <p className="auth-field__error">{errors.terms.message}</p> : null}
+        {registrationForm.formState.errors.terms ? (
+          <p className="auth-field__error">{registrationForm.formState.errors.terms.message}</p>
+        ) : null}
         <Button className="auth-submit" isLoading={isSubmitting} type="submit">
-          Tạo tài khoản
+          {t('Tạo tài khoản')}
         </Button>
       </form>
-      <SocialLoginButtons onNotice={setMessage} />
       <p className="auth-switch">
-        Đã có tài khoản? <Link to="/dang-nhap">Đăng nhập</Link>
+        {t('Đã có tài khoản?')} <Link to="/login">{t('Đăng nhập')}</Link>
       </p>
     </div>
   );

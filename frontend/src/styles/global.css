@@ -225,8 +225,10 @@ h3 {
     border-color 160ms ease;
 }
 
-.button:hover:not(:disabled) {
-  transform: translateY(-2px);
+@media (hover: hover) and (pointer: fine) {
+  .button:hover:not(:disabled) {
+    transform: translateY(-2px);
+  }
 }
 
 .button:disabled {

@@ -1,7 +1,8 @@
-from sqlalchemy import func, or_, select
+from sqlalchemy import select
 from sqlalchemy.orm import Session, selectinload
 
 from app.modules.recipes.models import Recipe
+from app.modules.recipes.search import matches_search
 
 
 def list_recipes(
@@ -12,25 +13,50 @@ def list_recipes(
     category: str | None = None,
     limit: int = 24,
     offset: int = 0,
+    with_details: bool = False,
 ) -> tuple[list[Recipe], int]:
     conditions = [Recipe.status == "published"]
-    if query:
-        search = f"%{query.strip()}%"
-        conditions.append(or_(Recipe.name.ilike(search), Recipe.excerpt.ilike(search)))
-    if region:
-        conditions.append(Recipe.region == region)
-    if category:
+    if category and category != "Món chay":
         conditions.append(Recipe.category == category)
 
     statement = (
-        select(Recipe)
-        .where(*conditions)
-        .order_by(Recipe.created_at.desc(), Recipe.name.asc())
-        .limit(limit)
-        .offset(offset)
+        select(Recipe).where(*conditions).order_by(Recipe.catalog_id.asc(), Recipe.name.asc())
     )
-    count_statement = select(func.count()).select_from(Recipe).where(*conditions)
-    return list(session.scalars(statement)), int(session.scalar(count_statement) or 0)
+    if with_details or query:
+        statement = statement.options(selectinload(Recipe.ingredients), selectinload(Recipe.steps))
+    items = list(session.scalars(statement))
+    if category == "Món chay":
+        items = [
+            item
+            for item in items
+            if item.category == category
+            or category in item.content.get("tags", {}).get("dish_type", [])
+        ]
+    if region:
+        items = [
+            item
+            for item in items
+            if item.region == region or region in item.content.get("region", [])
+        ]
+    if query:
+        items = [
+            item
+            for item in items
+            if matches_search(
+                query,
+                item.search_text
+                or " ".join(
+                    [
+                        item.name,
+                        item.excerpt,
+                        item.region,
+                        item.category,
+                        *[ingredient.name for ingredient in item.ingredients],
+                    ]
+                ),
+            )
+        ]
+    return items[offset : offset + limit], len(items)
 
 
 def get_recipe_by_slug(session: Session, slug: str) -> Recipe | None:

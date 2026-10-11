@@ -1,4 +1,5 @@
 import type { ButtonHTMLAttributes, PropsWithChildren } from 'react';
+import { useI18n } from '@/features/i18n/I18nContext';
 
 type ButtonVariant = 'primary' | 'secondary' | 'ghost';
 
@@ -16,6 +17,7 @@ export function Button({
   variant = 'primary',
   ...props
 }: PropsWithChildren<ButtonProps>) {
+  const { t } = useI18n();
   const classes = ['button', `button--${variant}`, className].filter(Boolean).join(' ');
 
   return (
@@ -27,7 +29,7 @@ export function Button({
       {...props}
     >
       {isLoading ? <span className="button__spinner" aria-hidden="true" /> : null}
-      <span>{isLoading ? 'Đang xử lý' : children}</span>
+      <span>{isLoading ? t('Đang xử lý') : children}</span>
     </button>
   );
 }

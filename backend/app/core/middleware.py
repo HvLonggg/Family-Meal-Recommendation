@@ -25,6 +25,17 @@ class RequestContextMiddleware(BaseHTTPMiddleware):
 
         try:
             response = await call_next(request)
+            has_identity = bool(
+                request.headers.get("Authorization") or request.headers.get("Cookie")
+            )
+            is_auth_response = request.url.path.startswith("/api/v1/auth/")
+            if request.url.path.startswith("/api/") and (has_identity or is_auth_response):
+                response.headers["Cache-Control"] = "no-store, no-cache, must-revalidate, private"
+                response.headers["Pragma"] = "no-cache"
+                response.headers["Expires"] = "0"
+                vary = {item.strip() for item in response.headers.get("Vary", "").split(",")}
+                vary.update({"Authorization", "Cookie"})
+                response.headers["Vary"] = ", ".join(sorted(filter(None, vary)))
             duration_ms = round((time.perf_counter() - started_at) * 1000, 2)
             response.headers["X-Request-ID"] = request_id
             logger.info(

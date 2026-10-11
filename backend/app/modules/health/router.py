@@ -17,12 +17,12 @@ class DatabaseUnavailableError(DomainError):
     status_code = status.HTTP_503_SERVICE_UNAVAILABLE
 
 
-@router.get("/livez", response_model=HealthResponse, summary="Kiểm tra tiến trình API")
+@router.get("/livez", response_model=HealthResponse, summary="Check API liveness")
 def liveness() -> HealthResponse:
     return HealthResponse(data=HealthData(status="ok", service="api"))
 
 
-@router.get("/readyz", response_model=HealthResponse, summary="Kiểm tra API sẵn sàng nhận tải")
+@router.get("/readyz", response_model=HealthResponse, summary="Check API readiness")
 def readiness(session: Annotated[Session, Depends(get_db_session)]) -> HealthResponse:
     try:
         session.execute(text("SELECT 1"))

@@ -23,13 +23,14 @@ def verify_password(password: str, password_hash: str) -> bool:
     return password_hasher.verify(password, password_hash)
 
 
-def create_access_token(*, user_id: UUID, role: str) -> tuple[str, int]:
+def create_access_token(*, user_id: UUID, role: str, auth_version: int) -> tuple[str, int]:
     settings = get_settings()
     expires_in = settings.access_token_expire_minutes * 60
     now = datetime.now(UTC)
     payload = {
         "sub": str(user_id),
         "role": role,
+        "ver": auth_version,
         "type": "access",
         "jti": str(uuid4()),
         "iat": now,

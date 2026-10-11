@@ -5,8 +5,9 @@ import { Link, useSearchParams } from 'react-router';
 import { AuthAlert } from '@/components/auth/AuthAlert';
 import { AuthField } from '@/components/auth/AuthField';
 import { Button } from '@/components/ui/Button';
-import { getAuthErrorMessage } from '@/features/auth/errors';
+import { errorMessage } from '@/lib/errors';
 import { apiPost } from '@/lib/api/client';
+import { useI18n } from '@/features/i18n/I18nContext';
 
 interface ResetForm {
   confirmPassword: string;
@@ -15,6 +16,7 @@ interface ResetForm {
 
 export function ResetPasswordPage() {
   const [searchParams] = useSearchParams();
+  const { t } = useI18n();
   const token = searchParams.get('token') ?? '';
   const [message, setMessage] = useState('');
   const [success, setSuccess] = useState(false);
@@ -34,10 +36,10 @@ export function ResetPasswordPage() {
         token,
         new_password: values.password,
       });
-      setMessage(response.message);
+      setMessage(t(response.message));
       setSuccess(true);
     } catch (error) {
-      setMessage(getAuthErrorMessage(error));
+      setMessage(errorMessage(error, t));
     } finally {
       setIsSubmitting(false);
     }
@@ -46,12 +48,12 @@ export function ResetPasswordPage() {
   return (
     <>
       <div className="auth-card__heading">
-        <span className="auth-kicker">Bảo vệ tài khoản</span>
-        <h2>Tạo mật khẩu mới</h2>
-        <p>Chọn mật khẩu riêng biệt và dễ nhớ với bạn.</p>
+        <span className="auth-kicker">{t('Bảo vệ tài khoản')}</span>
+        <h2>{t('Tạo mật khẩu mới')}</h2>
+        <p>{t('Chọn mật khẩu riêng biệt và dễ nhớ với bạn.')}</p>
       </div>
       {!token ? (
-        <AuthAlert tone="danger">Liên kết đặt lại mật khẩu đang thiếu token.</AuthAlert>
+        <AuthAlert tone="danger">{t('Liên kết đặt lại mật khẩu đang thiếu token.')}</AuthAlert>
       ) : null}
       {message ? <AuthAlert tone={success ? 'success' : 'danger'}>{message}</AuthAlert> : null}
       {!success ? (
@@ -59,39 +61,39 @@ export function ResetPasswordPage() {
           <AuthField
             autoComplete="new-password"
             error={errors.password?.message}
-            hint="Tối thiểu 8 ký tự, gồm chữ cái và chữ số."
+            hint={t('Tối thiểu 8 ký tự, gồm chữ cái và chữ số.')}
             id="reset-password"
-            label="Mật khẩu mới"
-            placeholder="Nhập mật khẩu mới"
+            label={t('Mật khẩu mới')}
+            placeholder={t('Nhập mật khẩu mới')}
             type="password"
             {...register('password', {
-              required: 'Vui lòng nhập mật khẩu mới.',
-              minLength: { value: 8, message: 'Mật khẩu cần ít nhất 8 ký tự.' },
+              required: t('Vui lòng nhập mật khẩu mới.'),
+              minLength: { value: 8, message: t('Mật khẩu cần ít nhất 8 ký tự.') },
               validate: (value) =>
                 (/[A-Za-zÀ-ỹ]/.test(value) && /\d/.test(value)) ||
-                'Mật khẩu cần có chữ cái và chữ số.',
+                t('Mật khẩu cần có chữ cái và chữ số.'),
             })}
           />
           <AuthField
             autoComplete="new-password"
             error={errors.confirmPassword?.message}
             id="reset-confirm-password"
-            label="Nhập lại mật khẩu"
-            placeholder="Nhập lại mật khẩu mới"
+            label={t('Nhập lại mật khẩu')}
+            placeholder={t('Nhập lại mật khẩu mới')}
             type="password"
             {...register('confirmPassword', {
-              required: 'Vui lòng nhập lại mật khẩu.',
+              required: t('Vui lòng nhập lại mật khẩu.'),
               validate: (value) =>
-                value === getValues('password') || 'Hai mật khẩu chưa trùng nhau.',
+                value === getValues('password') || t('Hai mật khẩu chưa trùng nhau.'),
             })}
           />
           <Button className="auth-submit" disabled={!token} isLoading={isSubmitting} type="submit">
-            Cập nhật mật khẩu
+            {t('Cập nhật mật khẩu')}
           </Button>
         </form>
       ) : null}
       <p className="auth-switch">
-        <Link to="/dang-nhap">Đi tới đăng nhập</Link>
+        <Link to="/login">{t('Đi tới đăng nhập')}</Link>
       </p>
     </>
   );

@@ -19,5 +19,9 @@ describe('AuthField', () => {
     expect(input).toHaveAttribute('type', 'password');
     fireEvent.click(screen.getByRole('button', { name: 'Hiện mật khẩu' }));
     expect(input).toHaveAttribute('type', 'text');
+    expect(screen.getByRole('button', { name: 'Ẩn mật khẩu' })).toHaveAttribute(
+      'aria-pressed',
+      'true',
+    );
   });
 });

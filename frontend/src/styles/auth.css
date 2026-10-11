@@ -1,60 +1,20 @@
 .kitchen-logo {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  line-height: 0;
 }
 
-.kitchen-logo__mark {
-  display: grid;
-  width: 48px;
-  height: 48px;
+.kitchen-logo__image {
+  display: block;
+  width: 88px;
+  height: 88px;
   flex: 0 0 auto;
-  place-items: center;
-  border: 1px solid rgb(255 255 255 / 22%);
-  border-radius: 16px;
-  background: linear-gradient(145deg, #3b82f6, #1559d6 55%, #0891b2);
-  box-shadow: 0 12px 28px rgb(2 30 82 / 26%);
+  object-fit: contain;
 }
 
-.kitchen-logo__mark svg {
-  width: 32px;
-  height: 32px;
-  overflow: visible;
-  fill: none;
-  stroke: white;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 2.4;
-}
-
-.kitchen-logo__text {
-  display: grid;
-  gap: 2px;
-}
-
-.kitchen-logo__text strong {
-  font-size: 20px;
-  letter-spacing: -0.025em;
-  line-height: 1.1;
-}
-
-.kitchen-logo__text small {
-  opacity: 0.68;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.kitchen-logo--compact .kitchen-logo__mark {
-  width: 40px;
-  height: 40px;
-  border-radius: 13px;
-}
-
-.kitchen-logo--compact .kitchen-logo__mark svg {
-  width: 27px;
-  height: 27px;
+.kitchen-logo--compact .kitchen-logo__image {
+  width: 68px;
+  height: 68px;
 }
 
 .auth-shell {
@@ -285,8 +245,7 @@
   gap: 10px;
 }
 
-.social-button,
-.phone-login-button {
+.social-button {
   position: relative;
   display: inline-flex;
   min-height: 48px;
@@ -307,8 +266,7 @@
     transform 160ms ease;
 }
 
-.social-button:hover,
-.phone-login-button:hover {
+.social-button:hover {
   border-color: #a9bfdf;
   box-shadow: 0 8px 20px rgb(30 64 175 / 8%);
   transform: translateY(-1px);
@@ -349,11 +307,6 @@
   background: #1877f2;
   font-family: Arial, sans-serif;
   font-size: 18px;
-}
-
-.phone-login-button {
-  width: 100%;
-  margin-top: 10px;
 }
 
 .auth-divider {
@@ -425,19 +378,61 @@
   font-size: 14px;
 }
 
+.auth-input input:focus,
+.auth-input input:focus-visible {
+  outline: 0;
+  box-shadow: none;
+}
+
 .auth-input input::placeholder {
   color: #9aa9bc;
 }
 
 .auth-input__action {
+  display: grid;
+  width: 44px;
+  flex: 0 0 44px;
   align-self: stretch;
+  place-items: center;
   border: 0;
-  padding-inline: 13px;
+  padding: 0;
   color: #4b6381;
   background: transparent;
-  font-size: 11px;
-  font-weight: 750;
   cursor: pointer;
+}
+
+.auth-input__action:hover {
+  color: var(--color-primary);
+  background: transparent;
+}
+
+.auth-input__action:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -4px;
+  border-radius: 10px;
+}
+
+.auth-input input::-ms-reveal,
+.auth-input input::-ms-clear {
+  display: none;
+}
+
+/* Nền tự điền phải trùng nền ô để nút mắt không bị tách thành khối riêng. */
+.auth-input input:-webkit-autofill,
+.auth-input input:-webkit-autofill:hover,
+.auth-input input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 100px #fffdfa inset;
+  -webkit-text-fill-color: #10213a;
+  transition: background-color 9999s ease-out 0s;
+}
+
+.auth-input__action svg {
+  width: 19px;
+  height: 19px;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
 }
 
 .auth-field__hint,
@@ -604,9 +599,7 @@
   gap: 18px;
 }
 
-.nav-signup,
-.user-chip,
-.nav-logout {
+.nav-signup {
   display: inline-flex;
   min-height: 40px;
   align-items: center;
@@ -614,214 +607,17 @@
   border: 0;
   border-radius: 11px;
   padding: 8px 14px;
+  color: white;
+  background: var(--color-primary);
   font-size: 13px;
   font-weight: 750;
   text-decoration: none;
   cursor: pointer;
 }
 
-.nav-signup {
-  color: white;
-  background: var(--color-primary);
-}
-
-.user-chip {
-  gap: 8px;
-  color: #233752;
-  background: #eff5fd;
-}
-
-.user-chip > span {
-  display: grid;
-  width: 25px;
-  height: 25px;
-  place-items: center;
-  border-radius: 9999px;
-  color: white;
-  background: linear-gradient(135deg, #2563eb, #0891b2);
-  font-size: 11px;
-}
-
-.nav-logout {
-  padding-inline: 6px;
-  color: #64748b;
-  background: transparent;
-}
-
-.account-page,
-.admin-page {
-  min-height: calc(100vh - 146px);
-  background:
-    radial-gradient(circle at top right, rgb(191 219 254 / 45%), transparent 28%), #f7faff;
-}
-
-.account-layout {
-  display: grid;
-  gap: 28px;
-}
-
-.profile-card,
-.account-content,
-.admin-hero,
-.admin-module {
-  border: 1px solid #dbe5f2;
-  border-radius: 22px;
-  background: white;
-  box-shadow: 0 18px 48px rgb(30 64 175 / 7%);
-}
-
-.profile-card {
-  padding: 34px 24px;
-  text-align: center;
-}
-
-.profile-card__avatar {
-  display: grid;
-  width: 82px;
-  height: 82px;
-  margin: 0 auto 18px;
-  place-items: center;
-  border: 8px solid #dbeafe;
-  border-radius: 9999px;
-  color: white;
-  background: linear-gradient(145deg, #2563eb, #0891b2);
-  font-size: 28px;
-  font-weight: 800;
-}
-
-.profile-card h1 {
-  font-size: 24px;
-  letter-spacing: -0.03em;
-}
-
-.profile-card p {
-  margin: 9px 0 16px;
-  color: #64748b;
-  font-size: 13px;
-}
-
-.role-badge,
-.admin-hero__secure {
-  display: inline-flex;
-  border-radius: 9999px;
-  padding: 7px 10px;
-  color: #1d4ed8;
-  background: #dbeafe;
-  font-size: 11px;
-  font-weight: 800;
-}
-
-.account-content {
-  padding: clamp(28px, 5vw, 54px);
-}
-
-.account-content > h2 {
-  max-width: 680px;
-}
-
-.account-content > p {
-  max-width: 720px;
-  margin: 16px 0 30px;
-  color: #64748b;
-  line-height: 1.7;
-}
-
-.account-stat-grid {
-  display: grid;
-  gap: 12px;
-  margin-bottom: 30px;
-}
-
-.account-stat-grid article {
-  display: grid;
-  gap: 5px;
-  border: 1px solid #e2e8f0;
-  border-radius: 15px;
-  padding: 20px;
-  background: #f8fbff;
-}
-
-.account-stat-grid strong {
-  color: #163d79;
-  font-size: 22px;
-}
-
-.account-stat-grid span {
-  color: #718096;
-  font-size: 12px;
-}
-
-.admin-hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 28px;
-  padding: clamp(28px, 5vw, 48px);
-}
-
-.admin-hero h1 {
-  font-size: clamp(2rem, 5vw, 3rem);
-}
-
-.admin-hero p {
-  margin: 13px 0 0;
-  color: #64748b;
-}
-
-.admin-hero__secure {
-  flex: 0 0 auto;
-  color: #047857;
-  background: #d1fae5;
-}
-
-.admin-grid {
-  display: grid;
-  gap: 18px;
-  margin-top: 24px;
-}
-
-.admin-module {
-  display: flex;
-  gap: 18px;
-  padding: 24px;
-}
-
-.admin-module__icon {
-  display: grid;
-  width: 50px;
-  height: 50px;
-  flex: 0 0 auto;
-  place-items: center;
-  border-radius: 15px;
-  color: white;
-  background: linear-gradient(145deg, #2563eb, #0891b2);
-  font-weight: 800;
-}
-
-.admin-module h2 {
-  font-size: 18px;
-}
-
-.admin-module p {
-  margin: 8px 0 16px;
-  color: #64748b;
-  font-size: 13px;
-  line-height: 1.6;
-}
-
-.admin-module small {
-  color: #2563eb;
-  font-weight: 750;
-}
-
 @media (min-width: 540px) {
-  .social-login-grid,
-  .account-stat-grid {
+  .social-login-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .account-stat-grid article:last-child {
-    grid-column: 1 / -1;
   }
 }
 
@@ -848,23 +644,6 @@
     background: transparent;
     box-shadow: none;
   }
-
-  .account-layout {
-    grid-template-columns: 300px minmax(0, 1fr);
-    align-items: start;
-  }
-
-  .account-stat-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .account-stat-grid article:last-child {
-    grid-column: auto;
-  }
-
-  .admin-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
 }
 
 @media (max-width: 720px) {
@@ -872,19 +651,8 @@
     gap: 10px;
   }
 
-  .site-nav > .nav-link:first-child,
-  .nav-logout {
-    display: none;
-  }
-
-  .nav-signup,
-  .user-chip {
+  .nav-signup {
     padding-inline: 10px;
-  }
-
-  .admin-hero {
-    align-items: flex-start;
-    flex-direction: column;
   }
 }
 
@@ -901,10 +669,6 @@
 
   .site-header__content {
     min-height: 64px;
-  }
-
-  .brand .kitchen-logo__text {
-    display: none;
   }
 }
 
@@ -951,12 +715,6 @@ body,
   flex: 0 0 auto;
   color: #142033;
   text-decoration: none;
-}
-
-.auth-workspace__brand .kitchen-logo__mark {
-  border-color: rgb(255 255 255 / 70%);
-  background: linear-gradient(145deg, #ff7a18, #ee4d2d 52%, #c52d5b);
-  box-shadow: 0 12px 30px rgb(213 71 42 / 24%);
 }
 
 .auth-card {
@@ -1081,8 +839,7 @@ body,
   gap: 10px;
 }
 
-.social-button,
-.phone-login-button {
+.social-button {
   min-width: 0;
   min-height: 46px;
   border-color: #e1d9cf;
@@ -1093,8 +850,7 @@ body,
   box-shadow: 0 5px 14px rgb(70 52 34 / 5%);
 }
 
-.social-button:hover,
-.phone-login-button:hover {
+.social-button:hover {
   border-color: #cfc0af;
   box-shadow: 0 10px 24px rgb(83 54 29 / 10%);
 }
@@ -1109,19 +865,10 @@ body,
   background: #f6faff;
 }
 
-.social-button__brand-icon,
-.phone-login-button svg {
+.social-button__brand-icon {
   width: 21px;
   height: 21px;
   flex: 0 0 auto;
-}
-
-.phone-login-button svg {
-  fill: none;
-  stroke: #e95332;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.7;
 }
 
 .social-button small {
@@ -1129,11 +876,6 @@ body,
   right: 7px;
   color: #8b3a26;
   background: #ffeadf;
-}
-
-.phone-login-button {
-  margin-top: 10px;
-  color: #614c3e;
 }
 
 .auth-switch {
@@ -1302,15 +1044,9 @@ body,
     color: white;
   }
 
-  .auth-story__brand .kitchen-logo__mark {
-    border-color: rgb(255 255 255 / 42%);
-    background: rgb(255 255 255 / 16%);
-    box-shadow: 0 10px 30px rgb(0 0 0 / 18%);
-    backdrop-filter: blur(12px);
-  }
-
-  .auth-story__brand .kitchen-logo__text small {
-    color: rgb(255 255 255 / 74%);
+  .auth-story__brand .kitchen-logo__image {
+    width: 100px;
+    height: 100px;
   }
 
   .auth-carousel__content {
@@ -1520,13 +1256,8 @@ body,
     margin-block: 9px 7px;
   }
 
-  .auth-page--register .social-button,
-  .auth-page--register .phone-login-button {
+  .auth-page--register .social-button {
     min-height: 40px;
-  }
-
-  .auth-page--register .phone-login-button {
-    margin-top: 7px;
   }
 
   .auth-page--register .auth-switch {

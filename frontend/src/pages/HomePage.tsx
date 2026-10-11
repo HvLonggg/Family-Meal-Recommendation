@@ -2,16 +2,25 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 
 import { AppIcon } from '@/components/common/AppIcon';
+import { SearchField } from '@/components/common/SearchField';
+import { HeroDishShowcase } from '@/components/recipes/HeroDishShowcase';
+import { MealCard } from '@/components/recipes/MealCard';
 import { RecipeCard } from '@/components/recipes/RecipeCard';
-import { getMealRecipes, mealSets, recipes } from '@/data/recipes';
+import { RecipeSearchSuggestions } from '@/components/recipes/RecipeSearchSuggestions';
+import { ShowcaseCarousel } from '@/components/recipes/ShowcaseCarousel';
+import { createHomeMealSuggestions } from '@/data/homeMealSuggestions';
+import { recipes } from '@/data/recipes';
+import { useI18n } from '@/features/i18n/I18nContext';
 
 export function HomePage() {
   const [query, setQuery] = useState('');
   const navigate = useNavigate();
+  const { t } = useI18n();
+  const [mealSuggestions] = useState(() => createHomeMealSuggestions(recipes));
 
   const submitSearch = (event: React.FormEvent) => {
     event.preventDefault();
-    void navigate(`/mon-an?q=${encodeURIComponent(query)}`);
+    void navigate(`/recipes?q=${encodeURIComponent(query.trim())}`);
   };
 
   return (
@@ -20,81 +29,63 @@ export function HomePage() {
         <div className="container home-hero__inner">
           <div className="home-hero__copy">
             <span className="hero-kicker">
-              <AppIcon name="sparkles" size={17} /> Bữa nhà ngon hơn mỗi ngày
+              <AppIcon name="sparkles" size={17} /> {t('Bữa nhà ngon hơn mỗi ngày')}
             </span>
             <h1>
-              Cùng Quyên,
+              {t('Cùng Quyên,')}
               <br />
-              <em>trọn vị cơm nhà</em>
+              <em>{t('trọn vị cơm nhà')}</em>
             </h1>
             <p>
-              Chọn món quen, ghép mâm cơm đủ vị và chuẩn bị đúng lượng cho cả gia đình — tất cả
-              trong một căn bếp số.
+              {t(
+                'Chọn món quen, ghép mâm cơm đủ vị và chuẩn bị đúng lượng cho cả gia đình — tất cả trong một căn bếp số.',
+              )}
             </p>
             <form className="hero-search" onSubmit={submitSearch}>
-              <AppIcon name="search" size={21} />
-              <input
-                aria-label="Tìm món ăn"
-                onChange={(event) => setQuery(event.target.value)}
-                placeholder="Hôm nay nhà mình ăn gì?"
+              <SearchField
+                actionLabel={t('Tìm món')}
+                label={t('Tìm món ăn')}
+                onChange={setQuery}
+                placeholder={t('Tìm món ngon cho bữa cơm hôm nay…')}
                 value={query}
               />
-              <button type="submit">Tìm món</button>
             </form>
-            <div className="hero-suggestions">
-              <span>Gợi ý:</span>
-              <Link to="/mon-an?q=cá kho">cá kho</Link>
-              <Link to="/mon-an?q=canh">món canh</Link>
-              <Link to="/mon-an?q=15 phút">15 phút</Link>
-            </div>
+            <RecipeSearchSuggestions />
           </div>
           <div className="home-hero__visual">
-            <img alt="Mâm cơm gia đình Việt ấm cúng" src={recipes[0]!.image} />
-            <div className="hero-float hero-float--top">
-              <span>Hôm nay</span>
-              <strong>Mâm cơm 4 người</strong>
-            </div>
-            <div className="hero-float hero-float--bottom">
-              <span className="hero-float__icon">
-                <AppIcon name="clock" />
-              </span>
-              <div>
-                <strong>45 phút</strong>
-                <small>3 món đủ vị</small>
-              </div>
-            </div>
+            <HeroDishShowcase />
           </div>
         </div>
       </section>
 
-      <section className="quick-paths container" aria-label="Lối tắt">
-        <Link to="/mon-an">
+      <section className="quick-paths container" aria-label={t('Lối tắt')}>
+        <Link to="/recipes">
           <span className="quick-paths__icon quick-paths__icon--orange">
             <AppIcon name="book" />
           </span>
           <span>
-            <strong>Kho món Việt</strong>
-            <small>Tìm theo vùng, thời gian</small>
+            <strong>{t('Kho món Việt')}</strong>
+            <small>{t('Tìm theo vùng, thời gian')}</small>
           </span>
           <AppIcon name="arrow" />
         </Link>
-        <Link to="/bua-com">
+        <Link to="/random-meal">
           <span className="quick-paths__icon quick-paths__icon--green">
             <AppIcon name="chef" />
           </span>
           <span>
-            <strong>Bữa cơm gia đình</strong>
-            <small>Ghép mâm đủ món</small>
+            <strong>{t('Vòng quay mâm cơm')}</strong>
+            <small>{t('Chọn ngẫu nhiên đủ vị')}</small>
           </span>
           <AppIcon name="arrow" />
         </Link>
-        <Link to="/ke-hoach">
+        <Link to="/planner">
           <span className="quick-paths__icon quick-paths__icon--yellow">
             <AppIcon name="calendar" />
           </span>
           <span>
-            <strong>Kế hoạch tuần</strong>
-            <small>Chủ động từng bữa</small>
+            <strong>{t('Kế hoạch tuần')}</strong>
+            <small>{t('Chủ động từng bữa')}</small>
           </span>
           <AppIcon name="arrow" />
         </Link>
@@ -104,84 +95,63 @@ export function HomePage() {
         <div className="container">
           <div className="section-heading">
             <div>
-              <span className="section-label">Món nhà thân thuộc</span>
-              <h2>Hôm nay nấu gì?</h2>
-              <p>Công thức được chuẩn hóa theo khẩu phần, dễ theo dõi từ sơ chế đến lúc lên mâm.</p>
+              <span className="section-label">{t('Món nhà thân thuộc')}</span>
+              <h2>{t('Hôm nay nấu gì?')}</h2>
+              <p>
+                {t(
+                  'Công thức được chuẩn hóa theo khẩu phần, dễ theo dõi từ sơ chế đến lúc lên mâm.',
+                )}
+              </p>
             </div>
-            <Link className="view-all" to="/mon-an">
-              Xem tất cả <AppIcon name="arrow" size={17} />
+            <Link className="view-all" to="/recipes">
+              {t('Xem tất cả')} <AppIcon name="arrow" size={17} />
             </Link>
           </div>
-          <div className="recipe-grid">
-            {recipes.slice(0, 4).map((recipe) => (
-              <RecipeCard key={recipe.slug} recipe={recipe} />
-            ))}
-          </div>
         </div>
+        <ShowcaseCarousel
+          bleed
+          getKey={(recipe) => recipe.slug}
+          items={recipes}
+          label={t('Món ăn')}
+          renderItem={(recipe) => <RecipeCard eager recipe={recipe} />}
+        />
       </section>
 
       <section className="content-section content-section--tint">
         <div className="container">
           <div className="section-heading">
             <div>
-              <span className="section-label">Không cần nghĩ nhiều</span>
-              <h2>Mâm cơm gợi ý hôm nay</h2>
-              <p>Cân bằng món mặn, món canh và rau cho một bữa ăn trọn vẹn.</p>
+              <span className="section-label">{t('Không cần nghĩ nhiều')}</span>
+              <h2>{t('Mâm cơm gợi ý hôm nay')}</h2>
+              <p>{t('Cân bằng món mặn, món canh và rau cho một bữa ăn trọn vẹn.')}</p>
             </div>
-            <Link className="view-all" to="/bua-com">
-              Xem mọi thực đơn <AppIcon name="arrow" size={17} />
+            <Link className="view-all" to="/meals">
+              {t('Xem mọi thực đơn')} <AppIcon name="arrow" size={17} />
             </Link>
           </div>
-          <div className="meal-set-grid">
-            {mealSets.map((meal) => {
-              const mealRecipes = getMealRecipes(meal.recipeSlugs);
-              return (
-                <article className="meal-card" key={meal.id}>
-                  <div className="meal-card__collage">
-                    {mealRecipes.map((recipe) => (
-                      <img alt="" key={recipe.slug} src={recipe.image} />
-                    ))}
-                    <span>{mealRecipes.length} món</span>
-                  </div>
-                  <div className="meal-card__body">
-                    <div className="recipe-card__meta">
-                      <span>
-                        <AppIcon name="clock" size={16} /> {meal.time}
-                      </span>
-                      <span>
-                        <AppIcon name="users" size={16} /> {meal.servings} người
-                      </span>
-                    </div>
-                    <h3>{meal.title}</h3>
-                    <p>{meal.description}</p>
-                    <ul>
-                      {mealRecipes.map((recipe) => (
-                        <li key={recipe.slug}>{recipe.name}</li>
-                      ))}
-                    </ul>
-                    <Link className="button button--outline" to={`/bua-com#${meal.id}`}>
-                      Xem mâm cơm
-                    </Link>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
         </div>
+        <ShowcaseCarousel
+          bleed
+          getKey={(meal) => meal.id}
+          items={mealSuggestions}
+          label={t('Mâm cơm')}
+          renderItem={(meal) => <MealCard eager meal={meal} />}
+        />
       </section>
 
       <section className="story-band">
         <div className="container story-band__inner">
           <div>
-            <span className="section-label section-label--light">Góc của Quyên</span>
-            <h2>Mỗi bữa cơm là một lần nhà mình gần nhau hơn.</h2>
+            <span className="section-label section-label--light">{t('Góc của Quyên')}</span>
+            <h2>{t('Mỗi bữa cơm là một lần nhà mình gần nhau hơn.')}</h2>
             <p>
-              Bếp Việt giúp giữ lại những món quen, đồng thời làm việc chọn món và chuẩn bị bữa ăn
-              nhẹ nhàng hơn.
+              {t(
+                'Bếp Việt giúp giữ lại những món quen, đồng thời làm việc chọn món và chuẩn bị bữa ăn nhẹ nhàng hơn.',
+              )}
             </p>
           </div>
-          <Link className="button button--cream" to="/bai-viet">
-            Đọc chuyện căn bếp <AppIcon name="arrow" size={17} />
+          <Link className="button button--cream" to="/articles">
+            {t('Đọc chuyện căn bếp')} <AppIcon name="arrow" size={17} />
           </Link>
         </div>
       </section>

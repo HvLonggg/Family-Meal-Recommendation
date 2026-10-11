@@ -4,6 +4,7 @@ import bunChaImage from '@/assets/auth/bun-cha-pho-hoi.webp';
 import familyMealImage from '@/assets/auth/mam-com-nha.webp';
 import phoImage from '@/assets/auth/pho-bep-nha.webp';
 import { KitchenHomeLogo } from '@/components/brand/KitchenHomeLogo';
+import { useI18n } from '@/features/i18n/I18nContext';
 
 const slides = [
   {
@@ -29,6 +30,7 @@ const slides = [
 
 export function AuthCarousel() {
   const [activeSlide, setActiveSlide] = useState(0);
+  const { t } = useI18n();
   const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
@@ -50,7 +52,7 @@ export function AuthCarousel() {
   return (
     <section
       className="auth-story"
-      aria-label="Câu chuyện Bếp Việt"
+      aria-label={t('Câu chuyện Bếp Việt')}
       aria-roledescription="carousel"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
@@ -71,9 +73,9 @@ export function AuthCarousel() {
             />
             <div className="auth-carousel__veil" />
             <div className="auth-carousel__content">
-              <span className="auth-carousel__badge">{slide.badge}</span>
-              <h1>{slide.title}</h1>
-              <p>{slide.description}</p>
+              <span className="auth-carousel__badge">{t(slide.badge)}</span>
+              <h1>{t(slide.title)}</h1>
+              <p>{t(slide.description)}</p>
             </div>
           </article>
         ))}
@@ -84,11 +86,14 @@ export function AuthCarousel() {
       </div>
 
       <div className="auth-carousel__controls">
-        <div className="auth-carousel__dots" aria-label="Chọn nội dung giới thiệu">
+        <div className="auth-carousel__dots" aria-label={t('Chọn nội dung giới thiệu')}>
           {slides.map((slide, index) => (
             <button
               className={index === activeSlide ? 'is-active' : ''}
-              aria-label={`Xem nội dung ${index + 1}: ${slide.badge}`}
+              aria-label={t('Xem nội dung {index}: {title}', {
+                index: index + 1,
+                title: t(slide.badge),
+              })}
               aria-current={index === activeSlide ? 'true' : undefined}
               key={slide.badge}
               onClick={() => setActiveSlide(index)}
@@ -97,10 +102,10 @@ export function AuthCarousel() {
           ))}
         </div>
         <div className="auth-carousel__arrows">
-          <button aria-label="Nội dung trước" onClick={showPrevious} type="button">
+          <button aria-label={t('Nội dung trước')} onClick={showPrevious} type="button">
             <span aria-hidden="true">←</span>
           </button>
-          <button aria-label="Nội dung tiếp theo" onClick={showNext} type="button">
+          <button aria-label={t('Nội dung tiếp theo')} onClick={showNext} type="button">
             <span aria-hidden="true">→</span>
           </button>
         </div>
