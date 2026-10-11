@@ -19,7 +19,7 @@
 }
 
 body {
-  overflow-x: hidden;
+  overflow-x: clip;
   background: var(--color-bg);
 }
 h1,
@@ -6120,10 +6120,6 @@ html[data-reduce-motion='true'] .hero-dish__steam {
   color: #a8968a;
   font-size: 13px;
 }
-.footer-bottom .language-switcher--dark {
-  margin-top: 0;
-}
-
 .location-map {
   margin: 0;
   overflow: hidden;
@@ -6209,6 +6205,194 @@ html[data-reduce-motion='true'] .hero-dish__steam {
   .site-footer a,
   .location-map,
   .location-map__frame iframe {
+    transition: none;
+  }
+}
+
+/* ---------- Thuyết minh công thức ---------- */
+.is-narrating {
+  border-radius: 14px;
+  box-shadow: 0 0 0 3px rgb(217 119 6 / 45%);
+  transition: box-shadow 200ms ease;
+}
+.method-step.is-narrating {
+  padding: 8px;
+  margin-inline: -8px;
+  background: #fff3df;
+}
+.method-step.is-narrating p {
+  color: var(--color-text);
+}
+body.has-narrator {
+  padding-bottom: 240px;
+}
+.narrator-bar {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 60;
+  padding: 0 16px max(12px, env(safe-area-inset-bottom));
+  pointer-events: none;
+}
+.narrator-bar__inner {
+  max-width: 920px;
+  margin: 0 auto;
+  border: 1px solid #e5d5c3;
+  border-radius: 20px;
+  padding: 14px 16px;
+  background: #fffaf0;
+  box-shadow: 0 -8px 32px rgb(73 53 44 / 18%);
+  pointer-events: auto;
+}
+.narrator-bar__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.narrator-bar__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 999px;
+  padding: 4px 10px;
+  color: #78271f;
+  background: #fff3df;
+  font-size: 13px;
+  font-weight: 700;
+}
+.narrator-bar__count {
+  margin-right: auto;
+  color: var(--color-text-muted);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+.narrator-bar__progress {
+  height: 4px;
+  margin: 10px 0;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #efe3d4;
+}
+.narrator-bar__progress span {
+  display: block;
+  height: 100%;
+  background: #9b372b;
+  transition: width 300ms ease;
+}
+.narrator-bar__text {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  color: var(--color-text);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.narrator-bar__note {
+  margin: 8px 0 0;
+  color: #92400e;
+  font-size: 13px;
+}
+.narrator-bar__sections {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.narrator-bar__sections button,
+.narrator-bar__rates button {
+  flex: none;
+  min-height: 32px;
+  border: 1px solid #e5d5c3;
+  border-radius: 999px;
+  padding: 4px 12px;
+  color: #49352c;
+  background: white;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+.narrator-bar__sections button[aria-current='step'],
+.narrator-bar__rates button[aria-pressed='true'] {
+  border-color: #9b372b;
+  color: white;
+  background: #9b372b;
+}
+.narrator-bar__controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 18px;
+  margin-top: 12px;
+}
+.narrator-bar__transport,
+.narrator-bar__rates,
+.narrator-bar__volume {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.narrator-bar__icon,
+.narrator-bar__play {
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.narrator-bar__icon {
+  width: 40px;
+  height: 40px;
+  color: #49352c;
+  background: transparent;
+}
+.narrator-bar__icon:hover:not(:disabled) {
+  background: #f5e9dc;
+}
+.narrator-bar__icon:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.narrator-bar__play {
+  width: 52px;
+  height: 52px;
+  color: white;
+  background: #9b372b;
+}
+.narrator-bar__play:hover {
+  background: #7f2c22;
+}
+.narrator-bar__volume input {
+  width: 110px;
+  accent-color: #9b372b;
+}
+.narrator-bar__volume span {
+  min-width: 38px;
+  color: var(--color-text-muted);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+@media (max-width: 560px) {
+  body.has-narrator {
+    padding-bottom: 320px;
+  }
+  .narrator-bar {
+    padding-inline: 8px;
+  }
+  .narrator-bar__controls {
+    justify-content: center;
+  }
+  .narrator-bar__rates {
+    overflow-x: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .is-narrating,
+  .narrator-bar__progress span {
     transition: none;
   }
 }

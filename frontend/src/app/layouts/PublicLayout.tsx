@@ -141,10 +141,7 @@ export function PublicLayout() {
                   </ul>
                 )}
               </Dropdown>
-              <NavLink
-                className={(state) => navClass(state, 'nav-link--support')}
-                to="/contact"
-              >
+              <NavLink className={(state) => navClass(state, 'nav-link--support')} to="/contact">
                 {t('Liên hệ hỗ trợ')}
               </NavLink>
             </div>
@@ -290,7 +287,6 @@ export function PublicLayout() {
           <span>
             © {new Date().getFullYear()} Bếp Việt. {t('Bảo lưu mọi quyền.')}
           </span>
-          <LanguageSwitcher className="language-switcher--dark" />
         </div>
       </footer>
     </div>

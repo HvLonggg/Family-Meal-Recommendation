@@ -9,6 +9,7 @@ import {
   calculateMealStats,
   createMealSlots,
   getCandidates,
+  dishName,
   getNextWheelRotation,
   pickRandomDish,
   profileDetails,
@@ -159,7 +160,7 @@ export function RandomMealPage() {
       if (historyDishCount !== 'all' && savedSlots.length !== historyDishCount) return false;
       return matchesSearch(historyQuery, [
         t(profileDetails[meal.profile].label),
-        ...savedSlots.map((slot) => slot.dish?.name ?? ''),
+        ...savedSlots.map((slot) => (slot.dish ? t(dishName(slot.dish)) : '')),
       ]);
     });
   }, [history, historyDishCount, historyProfile, historyQuery, t]);
@@ -235,7 +236,7 @@ export function RandomMealPage() {
       const completesMeal = selectedDishes.length + (targetSlot.dish ? 0 : 1) === slots.length;
       if (completesMeal && !isComplete) celebrateMeal();
       setNotice(
-        `${t('{name} đã được đặt vào mâm.', { name: dish.name })} ${completesMeal ? t('Mâm đã đủ, bạn có thể lưu lại.') : t('Quay tiếp nhé!')}`,
+        `${t('{name} đã được đặt vào mâm.', { name: t(dishName(dish)) })} ${completesMeal ? t('Mâm đã đủ, bạn có thể lưu lại.') : t('Quay tiếp nhé!')}`,
       );
     });
   };
@@ -584,7 +585,7 @@ export function RandomMealPage() {
                         slot.dish
                           ? t('{role}: {name}. Bấm để quay đổi món.', {
                               role: t(roleDetails[slot.role].label),
-                              name: slot.dish.name,
+                              name: t(dishName(slot.dish)),
                             })
                           : t('{role} đang trống. Bấm để quay món này.', {
                               role: t(roleDetails[slot.role].label),
@@ -654,7 +655,7 @@ export function RandomMealPage() {
                     <span className="tray-menu__index">{index + 1}</span>
                     <span className="tray-menu__text">
                       <small>{t(roleDetails[slot.role].label)}</small>
-                      <strong>{slot.dish?.name ?? t('Chưa chọn món')}</strong>
+                      <strong>{slot.dish ? t(dishName(slot.dish)) : t('Chưa chọn món')}</strong>
                     </span>
                     <AppIcon name={slot.dish ? 'refresh' : 'plus'} size={16} />
                   </button>
@@ -842,7 +843,7 @@ export function RandomMealPage() {
                           </div>
                           <ul>
                             {savedSlots.map((slot) => (
-                              <li key={slot.dish!.id}>{slot.dish!.name}</li>
+                              <li key={slot.dish!.id}>{t(dishName(slot.dish!))}</li>
                             ))}
                           </ul>
                           <button

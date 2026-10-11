@@ -5,7 +5,7 @@ import { Link, useSearchParams } from 'react-router';
 import { AppIcon } from '@/components/common/AppIcon';
 import { MealCelebration } from '@/components/recipes/MealCelebration';
 import { matchesRecipeSearch, recipeSearchRank } from '@/data/recipeSearch';
-import { recipes } from '@/data/recipes';
+import { recipes, recipeText } from '@/data/recipes';
 import {
   addPlanMeal,
   getPlanHistory,
@@ -29,6 +29,7 @@ import { useAuth } from '@/features/auth/AuthContext';
 import type { Translate } from '@/features/i18n/translate';
 import { errorMessage as translateError } from '@/lib/errors';
 import { useI18n } from '@/features/i18n/I18nContext';
+import { useRecipeCatalog } from '@/features/i18n/recipeContent';
 
 const mealTypes: { id: PlannerMealType; label: string }[] = [
   { id: 'breakfast', label: 'Bữa sáng' },
@@ -81,6 +82,7 @@ function formatQuantity(
   t: Translate,
   locale: string,
 ) {
+  unit = recipeText(unit);
   if (amount === null) return t('vừa đủ {unit}', { unit });
   const value = Number(amount);
   const display = Number.isInteger(value) ? String(value) : value.toLocaleString(locale);
@@ -94,6 +96,7 @@ function planItemKey(item: PlanItem) {
 export function PlannerPage() {
   const { user } = useAuth();
   const { locale, t } = useI18n();
+  const catalog = useRecipeCatalog();
   const errorMessage = (error: unknown) => translateError(error, t);
   const defaultServings = useDefaultServings();
   const [searchParams, setSearchParams] = useSearchParams();
@@ -203,10 +206,10 @@ export function PlannerPage() {
   const plannedItems = useMemo(() => itemsQuery.data ?? [], [itemsQuery.data]);
   const filteredRecipes = useMemo(
     () =>
-      recipes
+      catalog
         .filter((recipe) => matchesRecipeSearch(recipe, search))
         .sort((left, right) => recipeSearchRank(right, search) - recipeSearchRank(left, search)),
-    [search],
+    [catalog, search],
   );
   const recipePageSize = 8;
   const recipePageCount = Math.max(1, Math.ceil(filteredRecipes.length / recipePageSize));
@@ -674,7 +677,7 @@ export function PlannerPage() {
                                               ? 'Đã bỏ qua'
                                               : 'Đưa lại vào kế hoạch',
                                   )}{' '}
-                                  {event.recipe_name}
+                                  {recipeText(event.recipe_name)}
                                 </strong>
                                 <span>
                                   {t(
@@ -817,9 +820,9 @@ export function PlannerPage() {
                     <div>
                       {shoppingQuery.data.dishes.map((dish, index) => (
                         <article key={`${dish.plan_date}:${dish.meal_type}:${dish.slug}:${index}`}>
-                          <img alt={dish.image_alt} src={dish.image_path} />
+                          <img alt={recipeText(dish.name)} src={dish.image_path} />
                           <div>
-                            <strong>{dish.name}</strong>
+                            <strong>{recipeText(dish.name)}</strong>
                             <small>
                               {new Intl.DateTimeFormat(locale, { dateStyle: 'medium' }).format(
                                 parseLocalDate(dish.plan_date),
@@ -863,15 +866,19 @@ export function PlannerPage() {
                                   key={`${ingredient.category}:${ingredient.name}:${ingredient.unit}`}
                                 >
                                   <input
-                                    aria-label={t('Đã mua {name}', { name: ingredient.name })}
+                                    aria-label={t('Đã mua {name}', {
+                                      name: recipeText(ingredient.name),
+                                    })}
                                     className="planner-shopping__check"
                                     type="checkbox"
                                   />
                                   <div>
-                                    <strong>{ingredient.name}</strong>
-                                    <small>{ingredient.recipe_names.join(' · ')}</small>
+                                    <strong>{recipeText(ingredient.name)}</strong>
+                                    <small>
+                                      {ingredient.recipe_names.map(recipeText).join(' · ')}
+                                    </small>
                                     {ingredient.notes.length ? (
-                                      <small>{ingredient.notes.join(' · ')}</small>
+                                      <small>{ingredient.notes.map(recipeText).join(' · ')}</small>
                                     ) : null}
                                   </div>
                                   <span className="planner-shopping__amount">

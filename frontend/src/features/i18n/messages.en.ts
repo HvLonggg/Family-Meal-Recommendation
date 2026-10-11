@@ -1378,4 +1378,79 @@ export const en: Record<string, string> = {
   'Bảo lưu mọi quyền.': 'All rights reserved.',
   'Bản đồ vị trí Bếp Việt': 'Map of Bep Viet location',
   'Chỉ đường': 'Directions',
+
+  // ---------- Thuyết minh công thức ----------
+  'Nghe hướng dẫn': 'Listen to recipe',
+  'Nghe tiếp': 'Resume listening',
+  'Tạm dừng': 'Pause',
+  'Dừng lại': 'Stop',
+  'Đoạn trước': 'Previous part',
+  'Đoạn tiếp theo': 'Next part',
+  'Tốc độ đọc': 'Reading speed',
+  'Âm lượng': 'Volume',
+  'Bật tiếng': 'Unmute',
+  'Tắt tiếng': 'Mute',
+  'Trình phát thuyết minh': 'Recipe narration player',
+  'Thuyết minh công thức': 'Recipe narration',
+  'Đóng trình phát': 'Close player',
+  'Chọn phần muốn nghe': 'Choose a part to listen to',
+  'Giới thiệu': 'Introduction',
+  'Thành phẩm': 'Finished dish',
+  Mẹo: 'Tips',
+  'Trình duyệt này chưa hỗ trợ đọc thành tiếng.': 'This browser does not support text-to-speech.',
+  'Bấm phát để nghe giới thiệu, nguyên liệu, các bước nấu và mẹo của món.':
+    'Press play to hear the introduction, ingredients, cooking steps and tips.',
+  'Không phát được âm thanh. Hãy kiểm tra loa rồi bấm phát lại.':
+    'Audio could not be played. Check your speaker and press play again.',
+  'Thiết bị chưa có giọng đọc tiếng Việt nên phát âm có thể chưa chuẩn. Bạn có thể cài thêm giọng tiếng Việt trong cài đặt ngôn ngữ của máy.':
+    'This device has no Vietnamese voice, so pronunciation may be off. You can add a Vietnamese voice in your system language settings.',
+  'Thiết bị chưa có giọng đọc tiếng Anh nên phát âm có thể chưa chuẩn. Bạn có thể cài thêm giọng tiếng Anh trong cài đặt ngôn ngữ của máy.':
+    'This device has no English voice, so pronunciation may be off. You can add an English voice in your system language settings.',
+
+  // ---------- Bài viết & đăng món ----------
+  'Chuyện hay từ': 'Great stories from',
+  'căn bếp Việt': 'the Vietnamese kitchen',
+  'Đọc bài mới nhất': 'Read the latest',
+  'Tác giả': 'Authors',
+  'Bếp Việt & cộng đồng': 'Bep Viet & community',
+  '{count} bài viết phù hợp': '{count} matching articles',
+  'Xóa bộ lọc': 'Clear filters',
+  'Món của mẹ': "Mum's dish",
+  'Lần đầu vào bếp': 'First time cooking',
+  'Mẹo của bà': "Grandma's tip",
+  'Mâm cơm ngày Tết': 'Tet family feast',
+  'Tên món rõ ràng': 'A clear dish name',
+  'Ít nhất 2 nguyên liệu kèm định lượng': 'At least 2 ingredients with amounts',
+  'Ít nhất 2 bước thực hiện': 'At least 2 cooking steps',
+  'Thông tin món': 'Dish details',
+  'Công thức': 'Recipe',
+  'Các phần cần điền': 'Sections to complete',
+  'Đã khôi phục bản nháp bạn đang soạn dở trên máy này.':
+    'We restored the unfinished draft saved on this device.',
+  'Bắt đầu lại': 'Start over',
+  'Tên gọi quen thuộc giúp mọi người dễ tìm thấy món của bạn.':
+    'A familiar name helps people find your dish.',
+  'Kỷ niệm, xuất xứ hay lý do món này đặc biệt với gia đình bạn.':
+    'A memory, its origin or why this dish is special to your family.',
+  'Mỗi dòng một nguyên liệu hoặc một bước, ghi rõ định lượng và dấu hiệu món đạt.':
+    'One ingredient or step per line, with clear amounts and how to tell it is done.',
+  'Ví dụ:': 'For example:',
+  '500 g thịt ba chỉ': '500 g pork belly',
+  '4 quả trứng vịt': '4 duck eggs',
+  '3 muỗng canh nước mắm': '3 tbsp fish sauce',
+  '{count} nguyên liệu': '{count} ingredients',
+  'Thịt rửa sạch, cắt miếng vừa ăn, ướp nước mắm 20 phút.':
+    'Rinse the pork, cut into bite-sized pieces and marinate in fish sauce for 20 minutes.',
+  'Thắng nước màu, cho thịt vào đảo đến khi săn.':
+    'Make the caramel, add the pork and stir until it firms up.',
+  '{count} bước': '{count} steps',
+  'Tự lưu nháp trên máy': 'Draft saved on this device',
+  'Mức độ hoàn thiện': 'Completion',
+  'Sẵn sàng gửi!': 'Ready to submit!',
+  'Xem trước thẻ món': 'Dish card preview',
+  'Tên món của bạn': 'Your dish name',
+  'Câu chuyện ngắn về món ăn sẽ hiển thị ở đây.':
+    'Your short story about the dish will appear here.',
+  'Giảm {label}': 'Decrease {label}',
+  'Tăng {label}': 'Increase {label}',
 };

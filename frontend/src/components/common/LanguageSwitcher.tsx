@@ -1,3 +1,4 @@
+import { AppIcon } from '@/components/common/AppIcon';
 import type { Language } from '@/features/auth/types';
 import { useI18n } from '@/features/i18n/I18nContext';
 
@@ -12,22 +13,27 @@ export function LanguageSwitcher({ className = '' }: { className?: string }) {
     <div
       aria-label={t('Ngôn ngữ')}
       className={`language-switcher ${className}`.trim()}
+      data-active={language}
       role="group"
     >
-      {options.map((option) => (
-        <button
-          aria-label={option.label}
-          aria-pressed={language === option.id}
-          className={language === option.id ? 'is-active' : ''}
-          key={option.id}
-          lang={option.id}
-          onClick={() => setLanguage(option.id)}
-          title={option.label}
-          type="button"
-        >
-          {option.short}
-        </button>
-      ))}
+      <AppIcon name="globe" size={16} />
+      <div className="language-switcher__track">
+        <span aria-hidden="true" className="language-switcher__thumb" />
+        {options.map((option) => (
+          <button
+            aria-label={option.label}
+            aria-pressed={language === option.id}
+            className={language === option.id ? 'is-active' : ''}
+            key={option.id}
+            lang={option.id}
+            onClick={() => setLanguage(option.id)}
+            title={option.label}
+            type="button"
+          >
+            {option.short}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }

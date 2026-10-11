@@ -2,8 +2,9 @@ import { useMemo, useState } from 'react';
 
 import { AppIcon } from '@/components/common/AppIcon';
 import { RecipeCard } from '@/components/recipes/RecipeCard';
-import { recipeMinutes, recipes, type Recipe } from '@/data/recipes';
+import { recipeMinutes, type Recipe } from '@/data/recipes';
 import { useI18n } from '@/features/i18n/I18nContext';
+import { useRecipeCatalog } from '@/features/i18n/recipeContent';
 
 interface Need {
   id: string;
@@ -46,9 +47,10 @@ const needs: Need[] = [
 
 export function NutritionPage() {
   const { t } = useI18n();
+  const catalog = useRecipeCatalog();
   const [activeId, setActiveId] = useState(needs[0]!.id);
   const active = needs.find((need) => need.id === activeId) ?? needs[0]!;
-  const matches = useMemo(() => recipes.filter(active.matches).slice(0, 8), [active]);
+  const matches = useMemo(() => catalog.filter(active.matches).slice(0, 8), [active, catalog]);
 
   return (
     <div className="page-wrap">

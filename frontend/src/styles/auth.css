@@ -677,7 +677,8 @@ html,
 body,
 #root {
   max-width: 100%;
-  overflow-x: hidden;
+  /* `clip` thay vì `hidden`: vẫn chặn tràn ngang nhưng không tạo vùng cuộn, nên `position: sticky` bám theo màn hình. */
+  overflow-x: clip;
 }
 
 .auth-shell {

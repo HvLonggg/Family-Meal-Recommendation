@@ -38,7 +38,15 @@ export type IconName =
   | 'save'
   | 'search'
   | 'sparkles'
-  | 'users';
+  | 'users'
+  | 'headphones'
+  | 'pause'
+  | 'play'
+  | 'skipBack'
+  | 'skipForward'
+  | 'stop'
+  | 'volume'
+  | 'volumeOff';
 
 const paths: Record<IconName, React.ReactNode> = {
   camera: (
@@ -239,6 +247,44 @@ const paths: Record<IconName, React.ReactNode> = {
       <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
       <circle cx="9" cy="7" r="4" />
       <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+    </>
+  ),
+  headphones: (
+    <>
+      <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
+      <path d="M21 19a2 2 0 0 1-2 2h-1v-6h3v4ZM3 19a2 2 0 0 0 2 2h1v-6H3v4Z" />
+    </>
+  ),
+  pause: (
+    <>
+      <rect height="14" rx="1" width="4" x="6" y="5" />
+      <rect height="14" rx="1" width="4" x="14" y="5" />
+    </>
+  ),
+  play: <path d="M7 4.5v15l12-7.5-12-7.5Z" />,
+  skipBack: (
+    <>
+      <path d="M18 19 8 12l10-7v14Z" />
+      <path d="M6 5v14" />
+    </>
+  ),
+  skipForward: (
+    <>
+      <path d="m6 5 10 7-10 7V5Z" />
+      <path d="M18 5v14" />
+    </>
+  ),
+  stop: <rect height="12" rx="1.5" width="12" x="6" y="6" />,
+  volume: (
+    <>
+      <path d="M11 5 6 9H2v6h4l5 4V5Z" />
+      <path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14" />
+    </>
+  ),
+  volumeOff: (
+    <>
+      <path d="M11 5 6 9H2v6h4l5 4V5Z" />
+      <path d="m23 9-6 6M17 9l6 6" />
     </>
   ),
 };

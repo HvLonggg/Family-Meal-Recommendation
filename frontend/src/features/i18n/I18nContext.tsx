@@ -5,12 +5,18 @@ import {
   useEffect,
   useMemo,
   useState,
+  useSyncExternalStore,
   type PropsWithChildren,
 } from 'react';
 
 import { useAuth } from '@/features/auth/AuthContext';
 import type { Language } from '@/features/auth/types';
 import { savePreferences } from '@/features/account/accountApi';
+import {
+  applyRecipeLanguage,
+  getRecipeContentVersion,
+  subscribeRecipeContent,
+} from '@/features/i18n/recipeContent';
 import {
   LANGUAGE_STORAGE_KEY,
   LOCALES,
@@ -25,6 +31,8 @@ interface I18nContextValue {
   language: Language;
   locale: string;
   setLanguage: (language: Language) => void;
+  /** Tăng mỗi khi nội dung món đổi ngôn ngữ; dùng làm deps cho các useMemo lọc `recipes`. */
+  recipeContentVersion: number;
   t: Translate;
   formatDate: (value: Date | string, options?: Intl.DateTimeFormatOptions) => string;
   formatNumber: (value: number, options?: Intl.NumberFormatOptions) => string;
@@ -39,12 +47,14 @@ function toDate(value: Date | string) {
 function createValue(
   language: Language,
   setLanguage: (language: Language) => void,
+  recipeContentVersion = 0,
 ): I18nContextValue {
   const locale = LOCALES[language];
   return {
     language,
     locale,
     setLanguage,
+    recipeContentVersion,
     t: (text, vars) => translate(language, text, vars),
     formatDate: (value, options) => new Intl.DateTimeFormat(locale, options).format(toDate(value)),
     formatNumber: (value, options) => new Intl.NumberFormat(locale, options).format(value),
@@ -85,7 +95,18 @@ export function I18nProvider({ children }: PropsWithChildren) {
     }
   }, [language]);
 
-  const value = useMemo(() => createValue(language, setLanguage), [language, setLanguage]);
+  useEffect(() => {
+    void applyRecipeLanguage(language);
+  }, [language]);
+  const recipeContentVersion = useSyncExternalStore(
+    subscribeRecipeContent,
+    getRecipeContentVersion,
+  );
+
+  const value = useMemo(
+    () => createValue(language, setLanguage, recipeContentVersion),
+    [language, setLanguage, recipeContentVersion],
+  );
   return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;
 }
 

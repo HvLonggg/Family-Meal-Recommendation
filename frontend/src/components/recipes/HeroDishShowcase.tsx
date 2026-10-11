@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router';
 
 import { AppIcon } from '@/components/common/AppIcon';
-import { formatMinutes, recipeMinutes, recipes, type Recipe } from '@/data/recipes';
+import { formatMinutes, getRecipe, recipeMinutes, recipes, type Recipe } from '@/data/recipes';
 import { useI18n } from '@/features/i18n/I18nContext';
 
 const FIRST_SWITCH_MS = 2000;
@@ -83,7 +83,8 @@ export function HeroDishShowcase() {
     return () => window.clearTimeout(timer);
   }, [leaving]);
 
-  const dish = pool[current]!;
+  // Lấy lại từ danh mục để tên món đổi theo ngôn ngữ đang chọn.
+  const dish = getRecipe(pool[current]!.slug) ?? pool[current]!;
   const layers = leaving === null || leaving === current ? [current] : [leaving, current];
 
   return (

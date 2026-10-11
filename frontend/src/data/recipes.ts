@@ -575,15 +575,69 @@ function applyEditedImage(recipe: Recipe): Recipe {
   };
 }
 
-export let recipes = recipeCatalog
+/** Từ điển nội dung món (khóa là chuỗi tiếng Việt gốc); `null` khi hiển thị tiếng Việt. */
+export type RecipeDictionary = Record<string, string>;
+
+let sourceRecipes = recipeCatalog
   .filter((recipe) => recipe.status !== 'draft')
   .map(applyEditedImage);
+let dictionary: RecipeDictionary | null = null;
+
+/** Danh mục đang hiển thị: bản gốc hoặc bản đã dịch theo ngôn ngữ hiện tại. */
+export let recipes = sourceRecipes;
+
+/** Dịch một chuỗi nội dung món; thiếu bản dịch thì giữ nguyên tiếng Việt. */
+export function recipeText(text: string): string;
+export function recipeText(text: string | undefined): string | undefined;
+export function recipeText(text: string | undefined) {
+  if (!text || !dictionary) return text;
+  return dictionary[text.trim()] ?? text;
+}
+
+function localizeRecipe(recipe: Recipe): Recipe {
+  const name = recipeText(recipe.name);
+  return {
+    ...recipe,
+    name,
+    // Giữ tên tiếng Việt làm bí danh để tìm "phở", "bún chả" vẫn ra món khi đang xem tiếng Anh.
+    aliases: [...(recipe.aliases ?? []), recipe.name],
+    excerpt: recipeText(recipe.excerpt),
+    imageAlt: dictionary?.[recipe.imageAlt] ?? name,
+    servingBasis: recipeText(recipe.servingBasis),
+    ingredients: recipe.ingredients.map((group) => ({
+      group: recipeText(group.group),
+      items: group.items.map((item) => ({
+        ...item,
+        name: recipeText(item.name),
+        unit: recipeText(item.unit),
+        note: recipeText(item.note),
+      })),
+    })),
+    serving: recipeText(recipe.serving),
+    finishedDish: recipeText(recipe.finishedDish),
+    tip: recipe.tip.split('\n').map(recipeText).join('\n'),
+    tips: recipe.tips?.map((tip) => recipeText(tip)),
+  };
+}
+
+function publishCatalog() {
+  recipes = dictionary ? sourceRecipes.map(localizeRecipe) : sourceRecipes;
+}
 
 export function replaceRecipeCatalog(catalog: Recipe[]) {
-  const order = new Map(recipes.map((recipe, index) => [recipe.slug, index]));
-  recipes = catalog
+  const order = new Map(sourceRecipes.map((recipe, index) => [recipe.slug, index]));
+  sourceRecipes = catalog
     .map(applyEditedImage)
     .sort((a, b) => (order.get(a.slug) ?? 1000) - (order.get(b.slug) ?? 1000));
+  publishCatalog();
+}
+
+export const getRecipeCatalog = () => recipes;
+
+export function setRecipeDictionary(next: RecipeDictionary | null) {
+  if (next === dictionary) return;
+  dictionary = next;
+  publishCatalog();
 }
 
 export function recipeMinutes(recipe: Recipe) {

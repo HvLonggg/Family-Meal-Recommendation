@@ -13,9 +13,8 @@ vi.mock('@/features/auth/AuthContext', () => ({
   useAuth: () => ({ user: mockUser, isLoading: false, login: vi.fn(), logout: vi.fn() }),
 }));
 
-vi.mock('@/data/recipes', () => ({
-  recipeMinutes: () => 40,
-  recipes: Array.from({ length: 24 }, (_, index) => ({
+vi.mock('@/data/recipes', () => {
+  const recipes = Array.from({ length: 24 }, (_, index) => ({
     slug: `test-dish-${index}`,
     name: `Món kiểm thử ${index + 1}`,
     excerpt: 'Món ăn gia đình',
@@ -27,8 +26,15 @@ vi.mock('@/data/recipes', () => ({
     imageAlt: `Món kiểm thử ${index + 1}`,
     tags: [],
     ingredients: [],
-  })),
-}));
+  }));
+  return {
+    recipeMinutes: () => 40,
+    recipes,
+    getRecipeCatalog: () => recipes,
+    recipeText: (text: string) => text,
+    setRecipeDictionary: () => undefined,
+  };
+});
 
 let plannedItems: Array<Record<string, unknown>> = [];
 let shoppingRequests: string[] = [];
