@@ -3,12 +3,14 @@ import { createRoot } from 'react-dom/client';
 
 import { App } from '@/app/App';
 import { loadRecipeCatalog } from '@/data/recipeApi';
+import { applyRecipeLanguage } from '@/features/i18n/recipeContent';
 import { readStoredLanguage, translate } from '@/features/i18n/translate';
 import '@/styles/global.css';
 import '@/styles/auth.css';
 import '@/styles/product.css';
 import '@/styles/workspace.css';
 import '@/styles/admin.css';
+import '@/styles/community.css';
 
 const rootElement = document.getElementById('root');
 
@@ -49,11 +51,14 @@ renderCatalogLoader(6);
 async function startApp() {
   let catalogUnavailable = false;
   let offlineCatalog = false;
+  // Người dùng đã chọn English từ trước: tải song song bản dịch món để không nháy tiếng Việt.
+  const recipeLanguage = applyRecipeLanguage(readStoredLanguage());
   try {
     offlineCatalog = (await loadRecipeCatalog(renderCatalogLoader)) === 'offline';
   } catch {
     catalogUnavailable = true;
   }
+  await recipeLanguage;
   await document.fonts.ready.catch(() => undefined);
   renderCatalogLoader(100);
   await new Promise((resolve) => window.setTimeout(resolve, 180));
