@@ -5,7 +5,7 @@ import type { ConfirmRequest } from '@/components/admin/ConfirmDialog';
 import { adminKeys, updateAdminUser, type AdminUserRow } from '@/features/admin/adminApi';
 import { useI18n } from '@/features/i18n/I18nContext';
 
-/** Đổi vai trò/khóa tài khoản kèm hộp thoại xác nhận; dùng chung cho danh sách và trang chi tiết. */
+/** Thay đổi vai trò và trạng thái tài khoản sau khi xác nhận. */
 export function useUserAccessActions() {
   const { t } = useI18n();
   const queryClient = useQueryClient();

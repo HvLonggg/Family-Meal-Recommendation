@@ -65,11 +65,14 @@ export function LoginPage() {
         // Authentication still works when browser storage is disabled.
       }
       const requestedPath = loginState?.from;
+// Chỉ giữ đường dẫn chuyển tiếp trong khu quản trị.
       const landing =
-        user.role === 'admin' && (user.preferences?.admin_landing ?? 'admin') === 'admin'
-          ? '/admin'
-          : '/account';
-      await navigate(requestedPath ?? landing, {
+        user.role === 'admin'
+          ? requestedPath?.startsWith('/admin')
+            ? requestedPath
+            : '/admin'
+          : (requestedPath ?? '/account');
+      await navigate(landing, {
         replace: true,
       });
     } catch (error) {
@@ -94,7 +97,7 @@ export function LoginPage() {
           autoComplete="username"
           error={errors.email?.message}
           id="login-email"
-          label={t('Địa chỉ email')}
+          label={t('Email đăng nhập')}
           placeholder="ban@example.com"
           type="email"
           {...register('email', {

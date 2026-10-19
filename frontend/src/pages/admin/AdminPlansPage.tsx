@@ -22,6 +22,7 @@ import {
 import { mealLabels, planStatusLabels, planStatusTone } from '@/features/admin/labels';
 import { useAdminFilters } from '@/features/admin/useAdminFilters';
 import { useI18n } from '@/features/i18n/I18nContext';
+import { dishImage } from '@/data/dishImages';
 import { errorMessage } from '@/lib/errors';
 
 const LIMIT = 12;
@@ -159,9 +160,11 @@ export function AdminPlansPage() {
                     <ul>
                       {items.map((item) => (
                         <li key={item.id}>
-                          <img alt="" src={item.image_path} />
+                          <img alt="" {...dishImage(item.recipe_slug, item.image_path)} />
                           <div>
-                            <Link to={`/recipes/${item.recipe_slug}`}>{item.recipe_name}</Link>
+                            <Link target="_blank" to={`/recipes/${item.recipe_slug}`}>
+                              {item.recipe_name}
+                            </Link>
                             <small>
                               {t(mealLabels[item.meal_type])} ·{' '}
                               {t('{count} khẩu phần', { count: item.servings })}

@@ -32,13 +32,29 @@ export type IconName =
   | 'leaf'
   | 'menu'
   | 'minus'
+  | 'moon'
   | 'plus'
   | 'plate'
   | 'refresh'
   | 'save'
   | 'search'
   | 'sparkles'
-  | 'users';
+  | 'users'
+  | 'headphones'
+  | 'pause'
+  | 'play'
+  | 'skipBack'
+  | 'skipForward'
+  | 'stop'
+  | 'volume'
+  | 'volumeOff'
+  | 'paperclip'
+  | 'mic'
+  | 'send'
+  | 'copy'
+  | 'expand'
+  | 'collapse'
+  | 'file';
 
 const paths: Record<IconName, React.ReactNode> = {
   camera: (
@@ -202,6 +218,7 @@ const paths: Record<IconName, React.ReactNode> = {
     </>
   ),
   minus: <path d="M5 12h14" />,
+  moon: <path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z" />,
   plus: <path d="M12 5v14M5 12h14" />,
   plate: (
     <>
@@ -239,6 +256,73 @@ const paths: Record<IconName, React.ReactNode> = {
       <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
       <circle cx="9" cy="7" r="4" />
       <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+    </>
+  ),
+  headphones: (
+    <>
+      <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
+      <path d="M21 19a2 2 0 0 1-2 2h-1v-6h3v4ZM3 19a2 2 0 0 0 2 2h1v-6H3v4Z" />
+    </>
+  ),
+  pause: (
+    <>
+      <rect height="14" rx="1" width="4" x="6" y="5" />
+      <rect height="14" rx="1" width="4" x="14" y="5" />
+    </>
+  ),
+  play: <path d="M7 4.5v15l12-7.5-12-7.5Z" />,
+  skipBack: (
+    <>
+      <path d="M18 19 8 12l10-7v14Z" />
+      <path d="M6 5v14" />
+    </>
+  ),
+  skipForward: (
+    <>
+      <path d="m6 5 10 7-10 7V5Z" />
+      <path d="M18 5v14" />
+    </>
+  ),
+  stop: <rect height="12" rx="1.5" width="12" x="6" y="6" />,
+  volume: (
+    <>
+      <path d="M11 5 6 9H2v6h4l5 4V5Z" />
+      <path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14" />
+    </>
+  ),
+  volumeOff: (
+    <>
+      <path d="M11 5 6 9H2v6h4l5 4V5Z" />
+      <path d="m23 9-6 6M17 9l6 6" />
+    </>
+  ),
+  paperclip: (
+    <path d="m21 11.5-8.6 8.6a5.5 5.5 0 0 1-7.8-7.8l8.6-8.6a3.7 3.7 0 0 1 5.2 5.2l-8.6 8.6a1.8 1.8 0 0 1-2.6-2.6l7.9-7.9" />
+  ),
+  mic: (
+    <>
+      <rect height="12" rx="3" width="6" x="9" y="3" />
+      <path d="M5 11a7 7 0 0 0 14 0M12 18v3M9 21h6" />
+    </>
+  ),
+  send: (
+    <>
+      <path d="M21 3 10.5 13.5" />
+      <path d="M21 3 14.5 21l-4-7.5L3 9.5 21 3Z" />
+    </>
+  ),
+  copy: (
+    <>
+      <rect height="12" rx="2" width="12" x="9" y="9" />
+      <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+    </>
+  ),
+  expand: <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />,
+  collapse: <path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7" />,
+  file: (
+    <>
+      <path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8l-5-5Z" />
+      <path d="M14 3v5h5M9 13h6M9 17h4" />
     </>
   ),
 };

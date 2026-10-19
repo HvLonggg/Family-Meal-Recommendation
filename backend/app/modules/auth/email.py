@@ -1,13 +1,16 @@
 import asyncio
 import base64
 import logging
+import re
 import smtplib
 import ssl
 import threading
 import time
-from datetime import UTC, datetime, timedelta
+from datetime import UTC, date, datetime, timedelta
 from email.message import EmailMessage
 from html import escape
+from pathlib import Path
+from urllib.parse import urljoin
 from uuid import UUID
 
 import httpx
@@ -26,13 +29,24 @@ class EmailDeliveryError(Exception):
 
 GOOGLE_TOKEN_URL = "https://oauth2.googleapis.com/token"
 GMAIL_SEND_URL = "https://gmail.googleapis.com/gmail/v1/users/me/messages/send"
+EMAIL_LOGO_CID = "bep-viet-logo"
+EMAIL_LOGO_PATH = Path(__file__).resolve().parents[2] / "assets" / "bep-viet-email-logo.png"
+DEFAULT_PREHEADER = "Thông tin mới từ Bếp Việt."
+SAFE_SLUG = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 
 _gmail_token_lock = threading.Lock()
 _gmail_access_token: tuple[str, float] | None = None
 
 
 def _send_message(
-    *, recipient: str, subject: str, text: str, html: str, reply_to: str | None = None
+    *,
+    recipient: str,
+    subject: str,
+    text: str,
+    html: str,
+    reply_to: str | None = None,
+    inline_images: list[tuple[str, bytes, str, str]] | None = None,
+    preheader: str = DEFAULT_PREHEADER,
 ) -> None:
     settings = get_settings()
     if not settings.email_enabled:
@@ -47,13 +61,88 @@ def _send_message(
     message["To"] = recipient
     if reply_to:
         message["Reply-To"] = reply_to
-    message.set_content(text)
-    message.add_alternative(html, subtype="html")
+    message.set_content(_branded_plain_text(text, settings.support_email))
+    message.add_alternative(
+        _branded_html(html, settings.support_email, preheader=preheader), subtype="html"
+    )
+    html_part = message.get_body(preferencelist=("html",))
+    if html_part is None:
+        raise EmailDeliveryError("Bếp Việt email template could not be prepared.")
+    try:
+        html_part.add_related(
+            EMAIL_LOGO_PATH.read_bytes(),
+            maintype="image",
+            subtype="png",
+            cid=f"<{EMAIL_LOGO_CID}>",
+            disposition="inline",
+        )
+    except OSError as exc:
+        raise EmailDeliveryError("Bếp Việt email logo is not available.") from exc
+    for content_id, image_data, content_type, filename in inline_images or []:
+        maintype, subtype = content_type.split("/", maxsplit=1)
+        html_part.add_related(
+            image_data,
+            maintype=maintype,
+            subtype=subtype,
+            cid=f"<{content_id}>",
+            filename=filename,
+            disposition="inline",
+        )
 
     if settings.email_provider == "gmail_api":
         _send_via_gmail_api(message)
     else:
         _send_via_smtp(message)
+
+
+def _branded_plain_text(content: str, support_email: str) -> str:
+    return (
+        "BẾP VIỆT\nChọn món ngon, chăm bữa cơm nhà\n\n"
+        f"{content.strip()}\n\n"
+        "—\nEmail được gửi tự động bởi Bếp Việt.\n"
+        f"Hỗ trợ: {support_email}"
+    )
+
+
+def _branded_html(content: str, support_email: str, preheader: str = DEFAULT_PREHEADER) -> str:
+    safe_support_email = escape(support_email, quote=True)
+    return (
+        "<!doctype html><html lang='vi'><head><meta charset='utf-8'>"
+        "<meta name='viewport' content='width=device-width,initial-scale=1.0'>"
+        # Giữ bảng màu sáng: ứng dụng mail ở chế độ tối không tự đảo màu ảnh món và nền thẻ.
+        "<meta name='color-scheme' content='light only'>"
+        "<meta name='supported-color-schemes' content='light only'>"
+        "<title>Bếp Việt</title></head>"
+        "<body style='margin:0;padding:0;background:#f5f0e8;"
+        "font-family:Arial,Helvetica,sans-serif;color:#35251f'>"
+        "<div style='display:none;max-height:0;overflow:hidden;opacity:0'>"
+        f"{escape(preheader)}</div>"
+        "<table role='presentation' width='100%' cellspacing='0' cellpadding='0' "
+        "style='width:100%;background:#f5f0e8;border-collapse:collapse'>"
+        "<tr><td align='center' style='padding:28px 14px'>"
+        "<table role='presentation' width='600' cellspacing='0' cellpadding='0' "
+        "style='width:100%;max-width:600px;background:#ffffff;border:1px solid #eadfd2;"
+        "border-radius:18px;border-collapse:separate;overflow:hidden'>"
+        "<tr><td style='padding:20px 26px;background:#fffaf3;border-bottom:1px solid #eee3d7'>"
+        "<table role='presentation' cellspacing='0' cellpadding='0' "
+        "style='border-collapse:collapse'>"
+        "<tr><td valign='middle' style='padding-right:16px'>"
+        f"<img src='cid:{EMAIL_LOGO_CID}' width='76' height='76' alt='Logo Bếp Việt' "
+        "style='display:block;width:76px;height:76px;object-fit:contain;border:0'>"
+        "</td><td valign='middle'>"
+        "<div style='font-size:22px;font-weight:700;letter-spacing:.3px;color:#762b21'>"
+        "Bếp Việt</div>"
+        "<div style='margin-top:5px;font-size:13px;line-height:1.5;color:#76675d'>"
+        "Chọn món ngon, chăm bữa cơm nhà</div>"
+        "</td></tr></table></td></tr>"
+        f"<tr><td style='padding:30px 28px 28px;line-height:1.7;font-size:15px'>{content}</td></tr>"
+        "<tr><td style='padding:18px 28px;background:#fbf8f3;border-top:1px solid #eee3d7;"
+        "font-size:12px;line-height:1.7;color:#76675d'>"
+        "Email được gửi tự động bởi Bếp Việt. Nếu cần hỗ trợ, hãy liên hệ "
+        f"<a href='mailto:{safe_support_email}' style='color:#9d3e2d;text-decoration:none'>"
+        f"{safe_support_email}</a>."
+        "</td></tr></table></td></tr></table></body></html>"
+    )
 
 
 def _send_via_smtp(message: EmailMessage) -> None:
@@ -148,7 +237,10 @@ def _send_via_gmail_api(message: EmailMessage) -> None:
 
 def send_verification_email(*, recipient: str, code: str, purpose: str) -> None:
     settings = get_settings()
-    purpose_text = "hoàn tất đăng ký" if purpose == "registration" else "đặt lại mật khẩu"
+    purpose_text = {
+        "registration": "hoàn tất đăng ký",
+        "email_change": "xác nhận email mới cho tài khoản",
+    }.get(purpose, "đặt lại mật khẩu")
     safe_code = escape(code)
     safe_purpose = escape(purpose_text)
     validity = settings.email_otp_expire_minutes
@@ -156,17 +248,28 @@ def send_verification_email(*, recipient: str, code: str, purpose: str) -> None:
         recipient=recipient,
         subject="Mã xác thực tài khoản | Bếp Việt",
         text=(
-            f"Mã xác thực Bếp Việt của bạn là {code}.\n"
+            f"Mã xác thực của bạn: {code}\n"
             f"Mã dùng để {purpose_text}, có hiệu lực trong {validity} phút.\n"
-            "Nếu bạn không yêu cầu mã này, hãy bỏ qua email. Không chia sẻ mã với bất kỳ ai."
+            "Mỗi mã chỉ sử dụng một lần. Nếu bạn không yêu cầu mã này, hãy bỏ qua email. "
+            "Không chia sẻ mã với bất kỳ ai."
         ),
         html=(
-            "<div style='font-family:Arial,sans-serif;color:#33251f;max-width:520px'>"
-            "<p>Bếp Việt nhận được yêu cầu xác thực tài khoản của bạn.</p>"
-            f"<p style='font-size:30px;font-weight:700;letter-spacing:8px'>{safe_code}</p>"
-            f"<p>Mã dùng để {safe_purpose}, có hiệu lực trong {validity} phút.</p>"
-            "<p>Nếu bạn không yêu cầu mã này, hãy bỏ qua email. Không chia sẻ mã với bất kỳ ai.</p>"
+            "<p style='margin:0 0 8px;font-size:12px;font-weight:700;letter-spacing:1.2px;"
+            "color:#a74735'>XÁC THỰC TÀI KHOẢN</p>"
+            "<h1 style='margin:0 0 14px;font-size:25px;line-height:1.3;color:#35251f'>"
+            "Mã xác thực của bạn</h1>"
+            "<p style='margin:0 0 20px;color:#65574f'>"
+            f"Bếp Việt nhận được yêu cầu để {safe_purpose}.</p>"
+            "<div style='padding:18px 20px;text-align:center;border:1px solid #f0dfcf;"
+            "border-radius:14px;background:#fffaf3'>"
+            "<span style='font-size:32px;font-weight:700;letter-spacing:10px;color:#8f3025'>"
+            f"{safe_code}</span>"
             "</div>"
+            f"<p style='margin:18px 0 8px;color:#65574f'>Mã có hiệu lực trong "
+            f"<strong>{validity} phút</strong> và chỉ sử dụng một lần.</p>"
+            "<p style='margin:0;padding:13px 15px;border-radius:10px;background:#f7f3ed;"
+            "font-size:13px;color:#76675d'>Nếu bạn không yêu cầu mã này, hãy bỏ qua email. "
+            "Vì an toàn, Bếp Việt sẽ không bao giờ yêu cầu bạn chia sẻ mã xác thực.</p>"
         ),
     )
 
@@ -175,40 +278,57 @@ def send_security_notification(*, recipient: str, event: str) -> None:
     messages = {
         "registration": (
             "Chào mừng bạn đến với Bếp Việt",
-            "Tài khoản Bếp Việt của bạn đã được tạo thành công. Chúc bạn có trải nghiệm sử dụng "
-            "tuyệt vời! Nếu gặp sự cố trong quá trình sử dụng, vui lòng liên hệ bộ phận hỗ trợ "
-            "Bếp Việt.",
+            "Tài khoản Bếp Việt của bạn đã được tạo thành công. Chúc bạn có những bữa cơm ngon "
+            "và trải nghiệm thật hữu ích cùng Bếp Việt.",
+            None,
         ),
         "password_reset": (
             "Mật khẩu Bếp Việt đã được đặt lại",
-            "Mật khẩu tài khoản Bếp Việt vừa được đặt lại qua email xác minh. "
-            "Các phiên đăng nhập cũ đã bị thu hồi.",
+            "Mật khẩu tài khoản Bếp Việt vừa được đặt lại sau khi xác minh email. "
+            "Các phiên đăng nhập cũ đã được đăng xuất để bảo vệ tài khoản.",
+            "Nếu bạn không thực hiện thao tác này, hãy đặt lại mật khẩu ngay "
+            "và liên hệ bộ phận hỗ trợ.",
+        ),
+        "email_change": (
+            "Email đăng nhập Bếp Việt đã thay đổi",
+            "Email đăng nhập tài khoản Bếp Việt vừa được đổi sang một địa chỉ mới sau khi "
+            "xác minh mã. Từ nay bạn sẽ đăng nhập và nhận thông báo bằng email mới.",
+            "Nếu bạn không thực hiện thao tác này, hãy liên hệ bộ phận hỗ trợ ngay "
+            "để khôi phục tài khoản.",
         ),
         "password_change": (
             "Mật khẩu Bếp Việt đã thay đổi",
-            "Mật khẩu tài khoản Bếp Việt vừa được thay đổi. Các phiên đăng nhập cũ đã bị thu hồi.",
+            "Mật khẩu tài khoản Bếp Việt vừa được thay đổi. Các phiên đăng nhập cũ đã được "
+            "đăng xuất để bảo vệ tài khoản.",
+            "Nếu bạn không thực hiện thao tác này, hãy đặt lại mật khẩu ngay "
+            "và liên hệ bộ phận hỗ trợ.",
         ),
     }
     message = messages.get(event)
     if message is None:
         raise EmailDeliveryError("Unknown security email event.")
-    subject, body = message
+    subject, body, security_notice = message
     safe_body = escape(body)
+    safe_security_notice = escape(security_notice) if security_notice else None
+    plain_text = f"{body}\n"
+    if security_notice:
+        plain_text += f"\n{security_notice}\n"
     _send_message(
         recipient=recipient,
         subject=f"{subject} | Bếp Việt",
-        text=(
-            f"{body}\n"
-            "Nếu bạn không thực hiện thao tác này, hãy đặt lại mật khẩu ngay và liên hệ "
-            "bộ phận hỗ trợ Bếp Việt."
-        ),
+        text=plain_text,
         html=(
-            "<div style='font-family:Arial,sans-serif;color:#33251f;max-width:560px'>"
-            "<h2 style='color:#9d3e2d'>Bếp Việt</h2>"
-            f"<p>{safe_body}</p>"
-            "<p>Nếu bạn không thực hiện thao tác này, hãy đặt lại mật khẩu ngay và liên hệ "
-            "bộ phận hỗ trợ Bếp Việt.</p>"
-            "</div>"
+            "<p style='margin:0 0 8px;font-size:12px;font-weight:700;letter-spacing:1.2px;"
+            "color:#a74735'>THÔNG BÁO TÀI KHOẢN</p>"
+            "<h1 style='margin:0 0 14px;font-size:25px;line-height:1.3;color:#35251f'>"
+            f"{escape(subject)}</h1>"
+            f"<p style='margin:0;color:#65574f'>{safe_body}</p>"
+            + (
+                f"<p style='margin:20px 0 0;padding:14px 16px;border-radius:10px;"
+                f"background:#fff5ed;color:#82402f'>{safe_security_notice}</p>"
+                if safe_security_notice
+                else ""
+            )
         ),
     )
 
@@ -255,23 +375,294 @@ def send_support_ticket_notification(
             "Bạn có thể trả lời trực tiếp email này để phản hồi người gửi."
         ),
         html=(
-            "<div style='font-family:Arial,sans-serif;color:#35251f;"
-            "max-width:640px;line-height:1.65'>"
-            "<div style='padding:22px 26px;border-radius:18px 18px 0 0;"
-            "background:#8f3025;color:#fff7ed'><strong style='font-size:20px'>Bếp Việt</strong>"
-            "<div style='color:#f4c899'>Yêu cầu hỗ trợ mới</div></div>"
-            "<div style='padding:24px;border:1px solid #eee3d7;border-top:0;"
-            "border-radius:0 0 18px 18px'>"
-            f"<p><strong>Mã yêu cầu:</strong> {safe['reference']}</p>"
-            f"<p><strong>Người gửi:</strong> {safe['name']} &lt;{safe['email']}&gt;<br>"
-            f"<strong>Chủ đề:</strong> {safe['topic']}<br>"
-            f"<strong>Thời gian:</strong> {safe['created_at']}</p>"
-            f"<p><strong>{safe['subject']}</strong></p>"
-            f"<div style='padding:16px;border-radius:12px;background:#faf5ee'>"
-            f"{safe['message']}</div>"
-            "<p style='color:#75665d'>Trả lời email này để phản hồi trực tiếp người gửi.</p>"
-            "</div></div>"
+            "<p style='margin:0 0 8px;font-size:12px;font-weight:700;letter-spacing:1.2px;"
+            "color:#a74735'>HỘP THƯ HỖ TRỢ</p>"
+            "<h1 style='margin:0 0 18px;font-size:25px;line-height:1.3;color:#35251f'>"
+            "Yêu cầu hỗ trợ mới</h1>"
+            "<table role='presentation' width='100%' cellspacing='0' cellpadding='0' "
+            "style='width:100%;border-collapse:collapse;font-size:14px'>"
+            f"<tr><td style='padding:7px 0;color:#76675d'>Mã yêu cầu</td>"
+            "<td align='right' style='padding:7px 0;font-weight:700;color:#35251f'>"
+            f"{safe['reference']}</td></tr>"
+            f"<tr><td style='padding:7px 0;color:#76675d'>Người gửi</td>"
+            "<td align='right' style='padding:7px 0;color:#35251f'>"
+            f"{safe['name']} &lt;{safe['email']}&gt;</td></tr>"
+            f"<tr><td style='padding:7px 0;color:#76675d'>Chủ đề</td>"
+            f"<td align='right' style='padding:7px 0;color:#35251f'>{safe['topic']}</td></tr>"
+            f"<tr><td style='padding:7px 0;color:#76675d'>Thời gian</td>"
+            f"<td align='right' style='padding:7px 0;color:#35251f'>{safe['created_at']}</td></tr>"
+            "</table>"
+            f"<h2 style='margin:22px 0 10px;font-size:18px;color:#35251f'>{safe['subject']}</h2>"
+            f"<div style='padding:16px;border:1px solid #eee3d7;border-radius:12px;"
+            f"background:#fffaf3;line-height:1.7'>{safe['message']}</div>"
+            "<p style='margin:18px 0 0;font-size:13px;color:#76675d'>"
+            "Bạn có thể trả lời trực tiếp email này để phản hồi người gửi.</p>"
         ),
+    )
+
+
+def send_support_reply_email(
+    *, recipient: str, recipient_name: str, subject: str, body: str, reference: str
+) -> None:
+    settings = get_settings()
+    safe_name = escape(recipient_name)
+    safe_reference = escape(reference)
+    safe_subject = escape(subject)
+    safe_body = escape(body).replace("\n", "<br>")
+    support_email = settings.support_email
+    _send_message(
+        recipient=recipient,
+        reply_to=support_email,
+        subject=subject,
+        text=f"Chào {recipient_name},\n\n{body}\n\nBếp Việt · {reference}",
+        html=(
+            "<p style='margin:0 0 8px;font-size:12px;font-weight:700;letter-spacing:1.2px;"
+            "color:#a74735'>PHẢN HỒI HỖ TRỢ</p>"
+            f"<h1 style='margin:0 0 12px;font-size:24px;color:#35251f'>{safe_subject}</h1>"
+            f"<p style='margin:0 0 18px;color:#65574f'>Chào {safe_name},</p>"
+            f"<div style='line-height:1.75;color:#49382f'>{safe_body}</div>"
+            f"<p style='margin:24px 0 0;color:#76675d;font-size:13px'>Mã yêu cầu: "
+            f"<strong>{safe_reference}</strong></p>"
+        ),
+    )
+
+
+def _fetch_public_image(normalized_path: str, max_bytes: int) -> tuple[bytes, str] | None:
+    """Tải một ảnh tĩnh của chính Bếp Việt; đường dẫn đã được kiểm tra ở nơi gọi."""
+    settings = get_settings()
+    public_base = str(settings.frontend_url).rstrip("/")
+    asset_base = (settings.email_asset_base_url or public_base).rstrip("/")
+    asset_url = urljoin(f"{asset_base}/", normalized_path.lstrip("/"))
+    try:
+        with httpx.Client(timeout=min(settings.email_timeout_seconds, 6)) as client:
+            response = client.get(asset_url)
+            response.raise_for_status()
+    except (httpx.HTTPError, ValueError):
+        return None
+    content_type = response.headers.get("content-type", "").split(";", maxsplit=1)[0]
+    if not content_type.startswith("image/") or len(response.content) > max_bytes:
+        return None
+    return response.content, content_type
+
+
+def _email_image_source(
+    image_path: str,
+    image_index: int,
+    remaining_bytes: int = 16_000_000,
+    slug: str | None = None,
+) -> tuple[str, tuple[str, bytes, str, str] | None]:
+    settings = get_settings()
+    public_base = str(settings.frontend_url).rstrip("/")
+    # Recipe image paths come from our catalog. Never fetch arbitrary absolute URLs
+    # from the backend: that would turn an admin email into an SSRF primitive.
+    remote_image = image_path.startswith(("https://", "http://"))
+    normalized_path = "" if remote_image else image_path.replace("\\", "/")
+    if not remote_image and (
+        normalized_path.startswith("//")
+        or any(segment == ".." for segment in normalized_path.split("/"))
+    ):
+        return "", None
+    if normalized_path and not normalized_path.startswith("/"):
+        normalized_path = f"/{normalized_path}"
+    public_url = image_path if remote_image else f"{public_base}{normalized_path}"
+    if remaining_bytes <= 0:
+        return public_url, None
+    content_id = f"bep-viet-meal-{image_index}"
+
+    # Ưu tiên ảnh tách nền; đổi WebP alpha sang PNG để email hiển thị ổn định.
+    if slug and SAFE_SLUG.fullmatch(slug):
+        cutout_paths = [f"/images/recipes/edited/{slug}-1600.webp"]
+        if normalized_path.startswith("/images/recipes/edited/") and normalized_path.endswith(
+            ".webp"
+        ):
+            cutout_paths.append(normalized_path)
+        for cutout_path in dict.fromkeys(cutout_paths):
+            cutout = _fetch_public_image(cutout_path, 8_000_000)
+            if cutout is None:
+                continue
+            try:
+                from PIL import Image
+
+                from app.modules.auth.email_images import compose_dish_cutout
+            except ImportError:
+                # Pillow chưa cài: gửi ảnh WebP tách nền gốc.
+                return f"cid:{content_id}", (
+                    content_id,
+                    cutout[0],
+                    "image/webp",
+                    f"{slug}.webp",
+                )
+            try:
+                dish_png = compose_dish_cutout(cutout[0], max_bytes=remaining_bytes)
+            except (OSError, ValueError, Image.DecompressionBombError):
+                logger.warning("Không tối ưu được ảnh tách nền cho email món %s", slug)
+                # Giữ ảnh tách nền nếu không tối ưu được; không dùng ảnh có nền.
+                return f"{public_base}{cutout_path}", None
+            return f"cid:{content_id}", (content_id, dish_png, "image/png", f"{slug}.png")
+
+    if remote_image:
+        return image_path, None
+    if not normalized_path:
+        return "", None
+    original = _fetch_public_image(normalized_path, min(8_000_000, remaining_bytes))
+    if original is None:
+        return public_url, None
+    filename = Path(normalized_path).name or f"mon-an-{image_index}"
+    return f"cid:{content_id}", (content_id, original[0], original[1], filename)
+
+
+def _email_button(url: str, label: str) -> str:
+    """Nút “bulletproof”: bảng có nền màu nên vẫn hiện như nút trên Outlook."""
+    return (
+        "<table role='presentation' cellspacing='0' cellpadding='0' "
+        "style='border-collapse:separate'><tr>"
+        "<td bgcolor='#b43b2c' style='border-radius:999px;background:#b43b2c'>"
+        f"<a href='{escape(url, quote=True)}' style='display:inline-block;padding:12px 24px;"
+        "font-size:14px;font-weight:700;line-height:1;color:#ffffff;text-decoration:none;"
+        f"border-radius:999px'>{escape(label)}</a></td></tr></table>"
+    )
+
+
+def send_meal_suggestion_email(
+    *,
+    recipient: str,
+    recipient_name: str,
+    meal_type: str,
+    subject: str,
+    intro_message: str,
+    closing_message: str,
+    recipes: list[dict[str, str]],
+    plan_date: date | None = None,
+) -> None:
+    meal_label = "bữa trưa" if meal_type == "lunch" else "bữa tối"
+    greeting_name = recipient_name.strip() or "bạn"
+    safe_name = escape(greeting_name)
+    safe_intro = escape(intro_message).replace("\n", "<br>")
+    safe_closing = escape(closing_message).replace("\n", "<br>")
+    settings = get_settings()
+    site_base = str(settings.frontend_url).rstrip("/")
+    inline_images: list[tuple[str, bytes, str, str]] = []
+    inline_bytes = 0
+    text_cards: list[str] = []
+    html_cards: list[str] = []
+    title_font = "Georgia,'Times New Roman',serif"
+
+    for index, recipe in enumerate(recipes):
+        slug = recipe["slug"]
+        name = recipe["name"]
+        excerpt = recipe.get("excerpt", "")
+        recipe_url = f"{site_base}/recipes/{slug}"
+        image_source, inline_image = _email_image_source(
+            recipe["image_path"], index, remaining_bytes=16_000_000 - inline_bytes, slug=slug
+        )
+        if inline_image is not None:
+            inline_images.append(inline_image)
+            inline_bytes += len(inline_image[1])
+        text_cards.append(f"{index + 1}. {name}\n{excerpt}\nXem công thức: {recipe_url}")
+        safe_url = escape(recipe_url, quote=True)
+        image_row = (
+            "<tr><td bgcolor='#fbf8f3' style='padding:8px 16px 0;background:#fbf8f3;"
+            "line-height:0;text-align:center'>"
+            f"<a href='{safe_url}' style='display:block;text-decoration:none'>"
+            f"<img src='{escape(image_source, quote=True)}' alt='{escape(name, quote=True)}' "
+            "width='544' style='display:block;width:100%;max-width:544px;height:auto;margin:0 auto;"
+            "border:0;outline:none'></a></td></tr>"
+            if image_source
+            else ""
+        )
+        html_cards.append(
+            "<tr><td style='padding:0 0 22px'>"
+            "<table role='presentation' width='100%' cellspacing='0' cellpadding='0' "
+            "style='width:100%;border:1px solid #ecdccb;border-radius:18px;overflow:hidden;"
+            "border-collapse:separate;background:#ffffff;"
+            "box-shadow:0 10px 26px rgba(74,47,27,0.08)'>"
+            f"{image_row}"
+            "<tr><td style='padding:20px 22px 22px'>"
+            "<div style='margin:0 0 8px;font-size:11px;font-weight:700;letter-spacing:1.4px;"
+            f"color:#b7791f'>MÓN {index + 1} / {len(recipes)}</div>"
+            f"<h2 style='margin:0 0 8px;font-family:{title_font};font-size:23px;"
+            f"font-weight:700;line-height:1.3;color:#2f2320'>{escape(name)}</h2>"
+            f"<p style='margin:0 0 18px;font-size:14px;color:#6b5b51;line-height:1.65'>"
+            f"{escape(excerpt)}</p>"
+            f"{_email_button(recipe_url, 'Xem công thức')}"
+            "</td></tr></table></td></tr>"
+        )
+
+    dish_names = ", ".join(recipe["name"] for recipe in recipes)
+    if plan_date is None:
+        hero_message = f"{len(recipes)} món được đề xuất cho {meal_label} ngon miệng tại nhà."
+        hero_label = f"GỢI Ý {meal_label.upper()} · BẾP VIỆT"
+    else:
+        formatted_plan_date = plan_date.strftime("%d/%m/%Y")
+        hero_message = (
+            f"{len(recipes)} món đã có trong kế hoạch {meal_label} ngày {formatted_plan_date}."
+        )
+        hero_label = f"NHẮC LỊCH {meal_label.upper()} · BẾP VIỆT"
+    text = (
+        f"Chào {greeting_name},\n\n{intro_message}\n\n"
+        f"{hero_message}\n\n"
+        + "\n\n".join(text_cards)
+        + (f"\n\n{closing_message}" if closing_message else "")
+        + "\n\nThân mến,\nĐội ngũ Bếp Việt"
+    )
+    html = (
+        "<table role='presentation' width='100%' cellspacing='0' cellpadding='0' "
+        "style='width:100%;border-collapse:separate;margin:0 0 24px;border-radius:18px;"
+        "background:#fff6e9;border:1px solid #ead8c4'>"
+        "<tr><td style='padding:24px 24px 22px'>"
+        "<div style='font-size:11px;font-weight:700;letter-spacing:1.6px;color:#a74735'>"
+        f"{hero_label}</div>"
+        f"<h1 style='margin:10px 0 6px;font-family:{title_font};font-size:28px;"
+        f"font-weight:700;line-height:1.25;color:#762b21'>Chào {safe_name},</h1>"
+        "<p style='margin:0;font-size:14px;line-height:1.6;color:#65574f'>"
+        f"{escape(hero_message)}</p>"
+        "</td></tr></table>"
+        f"<p style='margin:0 0 24px;color:#49382f;font-size:15px;line-height:1.75'>{safe_intro}</p>"
+        "<table role='presentation' width='100%' cellspacing='0' cellpadding='0' "
+        "style='width:100%;border-collapse:collapse'>"
+        + "".join(html_cards)
+        + "</table>"
+        + (
+            f"<p style='margin:4px 0 0;color:#49382f;font-size:15px;line-height:1.75'>"
+            f"{safe_closing}</p>"
+            if safe_closing
+            else ""
+        )
+        + "<p style='margin:20px 0 0;color:#6b5b51;font-size:14px;line-height:1.6'>Thân mến,<br>"
+        f"<strong style='font-family:{title_font};color:#762b21'>Đội ngũ Bếp Việt</strong></p>"
+    )
+    _send_message(
+        recipient=recipient,
+        subject=subject,
+        text=text,
+        html=html,
+        inline_images=inline_images,
+        preheader=f"{hero_message} {dish_names}"[:140],
+    )
+
+
+def send_meal_plan_reminder_email(
+    *,
+    recipient: str,
+    recipient_name: str,
+    meal_type: str,
+    plan_date: date,
+    recipes: list[dict[str, str]],
+) -> None:
+    meal_label = "bữa trưa" if meal_type == "lunch" else "bữa tối"
+    formatted_plan_date = plan_date.strftime("%d/%m/%Y")
+    send_meal_suggestion_email(
+        recipient=recipient,
+        recipient_name=recipient_name,
+        meal_type=meal_type,
+        subject=f"Nhắc kế hoạch {meal_label} ngày {formatted_plan_date} | Bếp Việt",
+        intro_message=(
+            f"Bếp Việt xin nhắc bạn về thực đơn {meal_label} ngày {formatted_plan_date}. "
+            "Đây là những món bạn đã thêm vào kế hoạch của mình:"
+        ),
+        closing_message="Chúc bạn chuẩn bị bữa cơm thật vui và ngon miệng cùng gia đình.",
+        recipes=recipes,
+        plan_date=plan_date,
     )
 
 
@@ -375,9 +766,7 @@ def deliver_support_ticket_email(session: Session, ticket_id: UUID) -> bool:
                 minutes=retry_minutes
             )
             session.commit()
-        logger.warning(
-            "Support email delivery failed; retry scheduled (%s).", type(exc).__name__
-        )
+        logger.warning("Support email delivery failed; retry scheduled (%s).", type(exc).__name__)
         return False
 
     delivered = session.get(SupportTicket, ticket_id)

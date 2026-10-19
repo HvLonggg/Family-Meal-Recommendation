@@ -9,6 +9,7 @@ from sqlalchemy import (
     DateTime,
     ForeignKey,
     Integer,
+    LargeBinary,
     Numeric,
     String,
     Text,
@@ -35,6 +36,9 @@ class Recipe(Base):
     base_servings: Mapped[int] = mapped_column("khau_phan_goc", Integer)
     image_path: Mapped[str] = mapped_column("duong_dan_anh", String(500))
     image_alt: Mapped[str] = mapped_column("mo_ta_anh", String(300))
+    # Ảnh tách nền do quản trị viên tải lên cho món mới (WebP nền trong suốt).
+    image_data: Mapped[bytes | None] = mapped_column("anh_du_lieu", LargeBinary, deferred=True)
+    image_content_type: Mapped[str | None] = mapped_column("anh_dinh_dang", String(32))
     serving: Mapped[str] = mapped_column("cach_dung", Text)
     tip: Mapped[str] = mapped_column("mach_nho", Text)
     source_name: Mapped[str] = mapped_column("ten_nguon", String(120))

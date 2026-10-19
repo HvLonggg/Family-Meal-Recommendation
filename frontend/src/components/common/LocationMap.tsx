@@ -7,7 +7,7 @@ interface LocationMapProps {
   height?: number;
 }
 
-/** Bản đồ vị trí Bếp Việt kèm địa chỉ và nút mở Google Maps (chỉ đường trên điện thoại). */
+/** Bản đồ địa chỉ và liên kết chỉ đường. */
 export function LocationMap({ className = '', height = 180 }: LocationMapProps) {
   const { language, t } = useI18n();
   return (

@@ -57,10 +57,7 @@ function matchRole(tokens: string[], index: number) {
   );
 }
 
-/**
- * Gợi ý danh sách thành viên từ mô tả tự do, ví dụ “2 chị em 25 và 22 tuổi” hoặc
- * “gia đình 3 người: bố mẹ và bạn nhỏ 12 tuổi”. Kết quả là bản nháp để người dùng xem lại.
- */
+/** Tạo bản nháp thành viên gia đình từ mô tả tự do. */
 export function parseHouseholdDescription(raw: string): HouseholdMember[] {
   const tokens = tokenize(raw);
   const roles: Role[] = [];

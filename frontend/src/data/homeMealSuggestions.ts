@@ -45,7 +45,6 @@ export function createHomeMealSuggestions(catalog: Recipe[]): HomeMealSuggestion
       : pickRecipe(vegetables.length ? vegetables : fallback, index, selected);
     if (vegetable) selected.add(vegetable.slug);
 
-    // Keep breakfast and dessert recipes discoverable in the full-catalog meal carousel too.
     if (!selected.has(anchor.slug)) selected.add(anchor.slug);
 
     const mealRecipes = [...selected]

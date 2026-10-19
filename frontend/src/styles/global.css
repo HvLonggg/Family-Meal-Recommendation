@@ -447,3 +447,11 @@ h3 {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Ảnh tách nền giữ nguyên tỷ lệ, không cắt món. */
+img.dish-cutout.dish-cutout {
+  padding: 3px;
+  object-fit: contain;
+  background: radial-gradient(ellipse at 50% 46%, #fffdf8 0, #fbf1e4 58%, #f1e2cf 100%);
+  filter: drop-shadow(0 1px 1px rgb(92 58 38 / 6%));
+}

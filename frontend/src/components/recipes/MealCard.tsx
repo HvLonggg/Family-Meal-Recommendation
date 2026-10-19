@@ -13,7 +13,7 @@ export function MealCard({ meal, eager = false }: { meal: Meal; eager?: boolean 
   const items = getMealRecipes(meal.recipeSlugs);
   const [active, setActive] = useState(0);
   const platterSize = Math.min(items.length, 4);
-  const description = items.length ? describeMealComposition(items) : t(meal.description);
+  const description = items.length ? describeMealComposition(items, t) : t(meal.description);
 
   return (
     <article className="meal-card">
@@ -40,7 +40,7 @@ export function MealCard({ meal, eager = false }: { meal: Meal; eager?: boolean 
                 alt={recipe.imageAlt}
                 decoding="async"
                 loading={eager ? 'eager' : 'lazy'}
-                sizes="(min-width: 1320px) 112px, (min-width: 680px) 12vw, 28vw"
+                sizes="(min-width: 1320px) 180px, (min-width: 680px) 17vw, 38vw"
                 src={recipe.image}
                 srcSet={recipe.imageSrcSet}
               />
@@ -79,7 +79,10 @@ export function MealCard({ meal, eager = false }: { meal: Meal; eager?: boolean 
         <h3>
           {meal.anchorName ? t('Mâm cơm cùng {name}', { name: meal.anchorName }) : t(meal.title)}
         </h3>
-        <p>{description}</p>
+        <div className="meal-card__summary">
+          <span className="meal-card__summary-label">{t('Gợi ý phối vị')}</span>
+          <p>{description}</p>
+        </div>
         <Link className="button button--outline" to={`/meals#${meal.id}`}>
           {t('Xem mâm cơm')}
         </Link>

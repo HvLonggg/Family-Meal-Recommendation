@@ -52,3 +52,21 @@ export function changePassword(currentPassword: string, newPassword: string) {
     new_password: newPassword,
   });
 }
+
+export interface EmailChangeChallenge {
+  challenge_id: string;
+  development_code: string | null;
+  expires_in: number;
+  message: string;
+}
+
+export function requestEmailChange(newEmail: string, currentPassword?: string) {
+  return apiPost<EmailChangeChallenge>('/auth/change-email', {
+    new_email: newEmail,
+    current_password: currentPassword ?? null,
+  });
+}
+
+export function confirmEmailChange(challengeId: string, code: string) {
+  return apiPost<AuthUser>('/auth/change-email/confirm', { challenge_id: challengeId, code });
+}

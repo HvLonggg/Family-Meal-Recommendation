@@ -4,6 +4,7 @@ import { Link, useNavigate, useParams } from 'react-router';
 
 import { AppIcon } from '@/components/common/AppIcon';
 import { RecipeCard } from '@/components/recipes/RecipeCard';
+import { RecipeNarrator } from '@/components/recipes/RecipeNarrator';
 import {
   formatMinutes,
   getRecipe,
@@ -18,22 +19,26 @@ import {
   useUserPreferences,
 } from '@/features/account/preferences';
 import { favoriteRecipesQueryKey, type FavoriteRecipe } from '@/features/favorites/favoritesApi';
+import { buildRecipeScript } from '@/features/narration/recipeScript';
+import { useNarration } from '@/features/narration/useNarration';
+import { useRecipeCatalog } from '@/features/i18n/recipeContent';
 import { apiDelete, apiPost, apiRequest } from '@/lib/api/client';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 import { useI18n } from '@/features/i18n/I18nContext';
 
 export function RecipeDetailPage() {
   const { slug = '' } = useParams();
-  const recipe = getRecipe(slug);
+  // Theo dõi danh mục để món hiển thị đổi theo ngôn ngữ đang chọn.
+  const recipe = useRecipeCatalog().find((item) => item.slug === slug);
   if (!recipe) return <NotFoundPage />;
   return <RecipeDetails key={slug} recipe={recipe} />;
 }
 
 function RecipeDetails({ recipe }: { recipe: Recipe }) {
-  const { formatNumber, t } = useI18n();
+  const { formatNumber, language, t } = useI18n();
   const { isPersonal, preferences, user } = useUserPreferences();
   const householdServings = isPersonal ? preferences.computed_servings : null;
-  // Chỉ lưu giá trị khi người dùng tự chỉnh; còn lại đi theo khẩu phần gia đình (có thể tải sau).
+  // Theo khẩu phần gia đình cho tới khi người dùng tự chỉnh.
   const [chosenServings, setServings] = useState<number | null>(null);
   const servings = chosenServings ?? householdServings ?? recipe.servings;
   const navigate = useNavigate();
@@ -62,6 +67,13 @@ function RecipeDetails({ recipe }: { recipe: Recipe }) {
       ...recipes.filter((item) => item.slug !== recipe.slug && !pairings.includes(item)),
     ].slice(0, 3);
   }, [recipe]);
+  const narrationScript = useMemo(
+    () => buildRecipeScript(recipe, servings, language),
+    [language, recipe, servings],
+  );
+  const narration = useNarration(narrationScript, language);
+  const narratingClass = (anchor: string) =>
+    narration.current?.anchor === anchor ? ' is-narrating' : '';
 
   useEffect(() => {
     const reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
@@ -116,7 +128,7 @@ function RecipeDetails({ recipe }: { recipe: Recipe }) {
             ) : null}
           </figcaption>
         </figure>
-        <div className="recipe-detail__intro">
+        <div className={`recipe-detail__intro${narratingClass('intro')}`} data-narration="intro">
           <div className="recipe-detail__tags">
             <span>{t(recipe.region)}</span>
             <span>{t(recipe.category)}</span>
@@ -163,6 +175,7 @@ function RecipeDetails({ recipe }: { recipe: Recipe }) {
             >
               <AppIcon name="calendar" size={18} /> {t('Thêm vào kế hoạch')}
             </Link>
+            <RecipeNarrator narration={narration} segments={narrationScript} />
           </div>
           {conflicts.length ? (
             <p className="diet-warning" role="note">
@@ -189,7 +202,10 @@ function RecipeDetails({ recipe }: { recipe: Recipe }) {
       </section>
       <section className="content-section recipe-detail__content">
         <div className="container detail-grid">
-          <article className="ingredients-panel">
+          <article
+            className={`ingredients-panel${narratingClass('ingredients')}`}
+            data-narration="ingredients"
+          >
             <div className="ingredients-panel__head">
               <div>
                 <span className="section-label">{t('Chuẩn bị')}</span>
@@ -263,7 +279,7 @@ function RecipeDetails({ recipe }: { recipe: Recipe }) {
               )}
             </p>
           </article>
-          <aside className="kitchen-note">
+          <aside className={`kitchen-note${narratingClass('tips')}`} data-narration="tips">
             <AppIcon name="sparkles" size={25} />
             <h3>{t('Mách nhỏ của bếp')}</h3>
             <ul className="recipe-tip-list">
@@ -296,7 +312,11 @@ function RecipeDetails({ recipe }: { recipe: Recipe }) {
             <div className="method-section">
               <h3>{t('Sơ chế')}</h3>
               {recipe.preparation.map((step, index) => (
-                <div className="method-step" key={step}>
+                <div
+                  className={`method-step${narratingClass(`preparation-${index}`)}`}
+                  data-narration={`preparation-${index}`}
+                  key={step}
+                >
                   <span>{index + 1}</span>
                   <p>{step}</p>
                 </div>
@@ -305,14 +325,21 @@ function RecipeDetails({ recipe }: { recipe: Recipe }) {
             <div className="method-section">
               <h3>{t('Thực hiện')}</h3>
               {recipe.cooking.map((step, index) => (
-                <div className="method-step method-step--cooking" key={step}>
+                <div
+                  className={`method-step method-step--cooking${narratingClass(`cooking-${index}`)}`}
+                  data-narration={`cooking-${index}`}
+                  key={step}
+                >
                   <span>{index + 1}</span>
                   <p>{step}</p>
                 </div>
               ))}
             </div>
             {recipe.finishedDish && (
-              <div className="finished-dish">
+              <div
+                className={`finished-dish${narratingClass('finished')}`}
+                data-narration="finished"
+              >
                 <AppIcon name="check" size={22} />
                 <div>
                   <h3>{t('Thành phẩm đạt chuẩn')}</h3>
@@ -321,7 +348,7 @@ function RecipeDetails({ recipe }: { recipe: Recipe }) {
               </div>
             )}
           </div>
-          <aside className="serving-card">
+          <aside className={`serving-card${narratingClass('serving')}`} data-narration="serving">
             <span className="serving-card__icon">
               <AppIcon name="chef" size={28} />
             </span>

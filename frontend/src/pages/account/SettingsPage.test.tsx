@@ -22,6 +22,9 @@ const { authState, updateUser, basePreferences } = vi.hoisted(() => ({
     preferred_regions: [],
     max_cooking_minutes: 0,
     week_start: 'monday',
+    calendar_mode: 'solar',
+    vegetarian_lunar_days: false,
+    email_meal_plan_reminders: true,
     text_size: 'normal',
     reduce_motion: false,
     notify_weekly_plan: true,
@@ -96,6 +99,43 @@ describe('SettingsPage', () => {
     await waitFor(() => expect(updateUser).toHaveBeenCalled());
   });
 
+  it('saves the lunar calendar and automatic vegetarian days', async () => {
+    vi.mocked(savePreferences).mockImplementation((preferences: UserPreferences) =>
+      Promise.resolve(preferences),
+    );
+    renderSettings();
+
+    expect(screen.getByText(/Lịch chạy theo giờ Việt Nam \(GMT\+7\)/)).toBeInTheDocument();
+    expect(screen.getByText(/Hôm nay .* · Ngày \d+ tháng \d+/)).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Âm lịch' }));
+    expect(screen.getByRole('button', { name: 'Âm lịch' })).toHaveAttribute('aria-pressed', 'true');
+    fireEvent.click(screen.getByRole('switch', { name: /Tự đánh dấu ăn chay mùng 1 và rằm/ }));
+
+    fireEvent.click(screen.getByRole('button', { name: 'Lưu cài đặt' }));
+    await waitFor(() => expect(savePreferences).toHaveBeenCalledTimes(1));
+    const saved = vi.mocked(savePreferences).mock.calls[0]![0];
+    expect(saved.calendar_mode).toBe('lunar');
+    expect(saved.vegetarian_lunar_days).toBe(true);
+  });
+
+  it('enables daily meal reminders by default and lets the user disable them', async () => {
+    vi.mocked(savePreferences).mockImplementation((preferences: UserPreferences) =>
+      Promise.resolve(preferences),
+    );
+    renderSettings();
+
+    const reminderToggle = screen.getByRole('switch', {
+      name: /Email nhắc món trong kế hoạch/,
+    });
+    expect(reminderToggle).toBeChecked();
+    fireEvent.click(screen.getByText('Email nhắc món trong kế hoạch'));
+    fireEvent.click(screen.getByRole('button', { name: 'Lưu cài đặt' }));
+
+    await waitFor(() => expect(savePreferences).toHaveBeenCalledTimes(1));
+    const saved = vi.mocked(savePreferences).mock.calls[0]![0];
+    expect(saved.email_meal_plan_reminders).toBe(false);
+  });
+
   it('switches to manual servings', () => {
     renderSettings();
     fireEvent.click(screen.getByRole('button', { name: 'Tự đặt' }));
@@ -111,5 +151,11 @@ describe('SettingsPage', () => {
     authState.role = 'admin';
     renderSettings();
     expect(screen.getByText('Thiết lập quản trị')).toBeInTheDocument();
+    expect(screen.getByText('Ngôn ngữ & hiển thị')).toBeInTheDocument();
+    // Quản trị viên không cần phần cá nhân hóa bữa ăn của người dùng.
+    for (const title of ['Gia đình & khẩu phần', 'Khẩu vị & chế độ ăn', 'Kế hoạch & thông báo']) {
+      expect(screen.queryByText(title)).not.toBeInTheDocument();
+    }
+    expect(screen.queryByText('Trang mở sau khi đăng nhập')).not.toBeInTheDocument();
   });
 });

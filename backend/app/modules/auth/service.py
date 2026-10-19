@@ -328,6 +328,7 @@ def create_email_otp_challenge(
     pending_full_name: str | None = None,
     pending_password: str | None = None,
     remembered: bool = False,
+    user_id: UUID | None = None,
 ) -> tuple[EmailOtpChallenge, str]:
     settings = get_settings()
     normalized_email = email.strip().casefold()
@@ -407,6 +408,7 @@ def create_email_otp_challenge(
         account_exists=account_exists,
         remembered=remembered,
         requester_key=requester_key,
+        user_id=user_id,
     )
     session.add(challenge)
     session.flush()
@@ -478,6 +480,63 @@ def complete_password_reset_email_verification(
     )
     session.commit()
     return raw_token, settings.password_reset_expire_minutes * 60
+
+
+def check_email_change_request(
+    session: Session, *, user: User, new_email: str, current_password: str | None
+) -> str:
+    """Kiểm tra yêu cầu đổi email trước khi gửi mã; trả về email mới đã chuẩn hóa."""
+    normalized = new_email.strip().casefold()
+    if user.email and normalized == user.email.casefold():
+        raise EmailAlreadyExistsError("Email mới phải khác email hiện tại.")
+    # Xác minh lại mật khẩu để phiên bị lộ không thể chiếm tài khoản bằng cách đổi email.
+    if user.password_hash and not (
+        current_password and verify_password(current_password, user.password_hash)
+    ):
+        raise InvalidCredentialsError("Mật khẩu hiện tại chưa đúng.")
+    if session.scalar(select(User.id).where(User.email == normalized)) is not None:
+        raise EmailAlreadyExistsError("Email này đã được dùng cho một tài khoản Bếp Việt khác.")
+    return normalized
+
+
+def complete_email_change(
+    session: Session, *, user_id: UUID, challenge_id: UUID, code: str
+) -> User:
+    challenge = verify_email_otp_challenge(
+        session, challenge_id=challenge_id, code=code, purpose="email_change"
+    )
+    if challenge.user_id != user_id:
+        session.commit()
+        raise InvalidOtpError("Mã xác thực không hợp lệ hoặc đã hết hạn.")
+    user = session.scalar(select(User).where(User.id == user_id).with_for_update())
+    if user is None:
+        session.commit()
+        raise InvalidTokenError("Không tìm thấy tài khoản đăng nhập.")
+    taken = session.scalar(select(User.id).where(User.email == challenge.email, User.id != user.id))
+    if taken is not None:
+        session.commit()
+        raise EmailAlreadyExistsError("Email này đã được dùng cho một tài khoản Bếp Việt khác.")
+
+    # Báo về email cũ trước khi đổi để chủ tài khoản biết nếu không phải họ thao tác.
+    if user.email:
+        queue_security_email(session, user, event="email_change")
+    user.email = challenge.email
+    user.email_verified_at = utc_now()
+    # Định danh mật khẩu dùng email làm khóa; đổi theo để email cũ có thể đăng ký lại.
+    session.execute(
+        update(AuthIdentity)
+        .where(AuthIdentity.user_id == user.id, AuthIdentity.provider == "password")
+        .values(provider_subject=challenge.email, provider_email=challenge.email)
+    )
+    try:
+        session.commit()
+    except IntegrityError as exc:
+        session.rollback()
+        raise EmailAlreadyExistsError(
+            "Email này đã được dùng cho một tài khoản Bếp Việt khác."
+        ) from exc
+    session.refresh(user)
+    return user
 
 
 def authenticate_oauth_user(

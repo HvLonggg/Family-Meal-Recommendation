@@ -35,6 +35,7 @@ export function ForgotPasswordPage() {
   const [step, setStep] = useState<RecoveryStep>('email');
   const { t } = useI18n();
   const [challenge, setChallenge] = useState<OtpChallenge | null>(null);
+  const [recoveryEmail, setRecoveryEmail] = useState('');
   const [resetToken, setResetToken] = useState('');
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
@@ -55,6 +56,7 @@ export function ForgotPasswordPage() {
         email: values.email,
       });
       setChallenge(response);
+      setRecoveryEmail(values.email.trim().toLowerCase());
       setMessage(t(response.message));
       setStep('code');
     } catch (requestError) {
@@ -115,7 +117,7 @@ export function ForgotPasswordPage() {
                 ? 'Nhập mã OTP vừa được gửi đến email của bạn.'
                 : step === 'password'
                   ? 'Tạo mật khẩu mới để tiếp tục bảo vệ tài khoản.'
-                  : 'Mật khẩu mới đã được lưu. Bạn có thể đăng nhập lại.',
+                  : 'Mật khẩu mới đã được lưu. Bạn có thể đăng nhập lại bằng email đã đăng ký.',
           )}
         </p>
       </div>
@@ -127,15 +129,22 @@ export function ForgotPasswordPage() {
           <strong>{challenge.development_code}</strong>
         </AuthAlert>
       ) : null}
+      {step === 'code' && recoveryEmail ? (
+        <AuthAlert tone="info">
+          {t('Mã OTP được gửi tới:')} <strong>{recoveryEmail}</strong>
+        </AuthAlert>
+      ) : null}
 
       {step === 'email' ? (
         <form className="auth-form" onSubmit={(event) => void requestCode(event)} noValidate>
           <AuthField
             autoComplete="email"
             error={errors.email?.message}
-            hint={t('Nhập email đã đăng ký. Nếu email chưa có tài khoản, Bếp Việt sẽ báo tại đây.')}
+            hint={t(
+              'Nhập đúng email đã đăng ký và dùng để đăng nhập. Mã khôi phục chỉ được gửi đến email khớp với tài khoản.',
+            )}
             id="forgot-email"
-            label={t('Địa chỉ email')}
+            label={t('Email đăng ký / đăng nhập')}
             placeholder="ban@example.com"
             type="email"
             {...register('email', {
@@ -213,8 +222,16 @@ export function ForgotPasswordPage() {
         </form>
       ) : null}
 
+      {step === 'complete' && recoveryEmail ? (
+        <AuthAlert tone="info">
+          {t('Email đăng nhập của tài khoản vẫn là:')} <strong>{recoveryEmail}</strong>
+        </AuthAlert>
+      ) : null}
+
       <p className="auth-switch">
-        <Link to="/login">← {t('Quay lại đăng nhập')}</Link>
+        <Link state={recoveryEmail ? { email: recoveryEmail } : undefined} to="/login">
+          {step === 'complete' ? t('Đăng nhập bằng email này') : `← ${t('Quay lại đăng nhập')}`}
+        </Link>
       </p>
     </>
   );

@@ -100,7 +100,7 @@ export function AdminArticlesPage() {
           <option value="editorial">{t('Bài viết biên tập')}</option>
           <option value="story">{t('Câu chuyện căn bếp')}</option>
         </select>
-        <Link className="button button--primary" to="/stories/new?kind=editorial">
+        <Link className="button button--primary" to="/admin/articles/new">
           <AppIcon name="plus" size={16} /> {t('Viết bài mới')}
         </Link>
       </div>
@@ -150,7 +150,10 @@ export function AdminArticlesPage() {
                   <Link className="text-link" target="_blank" to={`/articles/${article.slug}`}>
                     {t('Xem trước')} <AppIcon name="eye" size={15} />
                   </Link>
-                  <Link className="button button--outline" to={`/stories/${article.id}/edit`}>
+                  <Link
+                    className="button button--outline"
+                    to={`/admin/articles/${article.id}/edit`}
+                  >
                     <AppIcon name="pen" size={15} /> {t('Biên tập')}
                   </Link>
                   {article.status !== 'published' ? (

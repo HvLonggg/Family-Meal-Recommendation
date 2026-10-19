@@ -28,15 +28,19 @@ vi.mock('@/features/auth/AuthContext', () => ({
   }),
 }));
 
-function renderLayout() {
+function renderLayout(path = '/') {
   return render(
     <QueryClientProvider client={new QueryClient()}>
       <I18nProvider>
-        <MemoryRouter>
+        <MemoryRouter initialEntries={[path]}>
           <Routes>
             <Route element={<PublicLayout />}>
               <Route index element={<p>Trang chủ thử nghiệm</p>} />
+              <Route element={<p>Chi tiết món thử nghiệm</p>} path="recipes/:slug" />
+              <Route element={<p>Trang kế hoạch thử nghiệm</p>} path="planner" />
             </Route>
+            <Route element={<p>Bảng quản trị thử nghiệm</p>} path="admin" />
+            <Route element={<p>Quản lý kế hoạch thử nghiệm</p>} path="admin/plans" />
           </Routes>
         </MemoryRouter>
       </I18nProvider>
@@ -77,11 +81,28 @@ describe('PublicLayout header', () => {
     expect(screen.queryByRole('link', { name: 'Trang quản trị' })).not.toBeInTheDocument();
   });
 
-  it('shows the admin console link only to administrators', () => {
+  it('sends administrators from public pages to the admin console', () => {
     authState.user.role = 'admin';
-    renderLayout();
-    fireEvent.click(screen.getByRole('button', { name: 'Mở menu tài khoản' }));
-    expect(screen.getByRole('link', { name: 'Trang quản trị' })).toHaveAttribute('href', '/admin');
+    renderLayout('/');
+    expect(screen.getByText('Bảng quản trị thử nghiệm')).toBeInTheDocument();
+    expect(screen.queryByText('Trang chủ thử nghiệm')).not.toBeInTheDocument();
+    cleanup();
+
+    renderLayout('/planner');
+    expect(screen.getByText('Quản lý kế hoạch thử nghiệm')).toBeInTheDocument();
+  });
+
+  it('lets administrators preview recipe pages without the member navigation', () => {
+    authState.user.role = 'admin';
+    renderLayout('/recipes/pho-bo');
+    expect(screen.getByText('Chi tiết món thử nghiệm')).toBeInTheDocument();
+    expect(screen.getByText('Chế độ xem trước')).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /Về trang quản trị/ })).toHaveAttribute(
+      'href',
+      '/admin',
+    );
+    expect(screen.queryByRole('navigation', { name: 'Điều hướng chính' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('contentinfo')).not.toBeInTheDocument();
   });
 
   it('keeps important destinations outside the explore menu', () => {
@@ -108,10 +129,10 @@ describe('PublicLayout header', () => {
     }
   });
 
-  it('switches the whole interface to English', () => {
+  it('switches the whole interface to English', async () => {
     renderLayout();
     fireEvent.click(within(screen.getByRole('banner')).getByRole('button', { name: 'English' }));
-    const nav = screen.getByRole('navigation', { name: 'Main navigation' });
+    const nav = await screen.findByRole('navigation', { name: 'Main navigation' });
     expect(within(nav).getByRole('link', { name: 'Recipes' })).toBeInTheDocument();
     expect(within(nav).getByRole('link', { name: 'Planner' })).toBeInTheDocument();
     expect(document.documentElement.lang).toBe('en');

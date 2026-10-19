@@ -4,14 +4,16 @@ import { useSearchParams } from 'react-router';
 import { AppIcon } from '@/components/common/AppIcon';
 import { SearchField } from '@/components/common/SearchField';
 import { RecipeCard } from '@/components/recipes/RecipeCard';
-import { recipeMinutes, recipes } from '@/data/recipes';
+import { recipeMinutes } from '@/data/recipes';
 import { matchesRecipeSearch, recipeSearchRank } from '@/data/recipeSearch';
 import { dietaryConflicts, useUserPreferences } from '@/features/account/preferences';
 import { useI18n } from '@/features/i18n/I18nContext';
+import { useRecipeCatalog } from '@/features/i18n/recipeContent';
 
 export function RecipesPage() {
   const [params, setParams] = useSearchParams();
   const { t } = useI18n();
+  const catalog = useRecipeCatalog();
   const [pageSize, setPageSize] = useState(() => getCatalogPageSize());
   const query = params.get('q') ?? '';
   const category = params.get('category') ?? 'Tất cả';
@@ -51,7 +53,7 @@ export function RecipesPage() {
   };
   const filtered = useMemo(
     () =>
-      recipes
+      catalog
         .filter(
           (recipe) =>
             matchesRecipeSearch(recipe, query) &&
@@ -72,7 +74,7 @@ export function RecipesPage() {
               ? a.name.localeCompare(b.name, 'vi')
               : recipeSearchRank(b, query) - recipeSearchRank(a, query),
         ),
-    [canPersonalize, category, fitMe, preferences, query, region, sort],
+    [canPersonalize, catalog, category, fitMe, preferences, query, region, sort],
   );
   const pageCount = Math.max(1, Math.ceil(filtered.length / pageSize));
   const requestedPage = Number(params.get('page') ?? 1);

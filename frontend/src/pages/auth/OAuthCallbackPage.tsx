@@ -13,10 +13,7 @@ export function OAuthCallbackPage() {
 
   useEffect(() => {
     if (!isLoading && user) {
-      const landing =
-        user.role === 'admin' && (user.preferences?.admin_landing ?? 'admin') === 'admin'
-          ? '/admin'
-          : '/account';
+      const landing = user.role === 'admin' ? '/admin' : '/account';
       void navigate(landing, { replace: true });
     }
   }, [isLoading, navigate, user]);

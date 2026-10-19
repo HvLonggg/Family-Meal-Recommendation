@@ -7,6 +7,7 @@ import { translate } from '@/features/i18n/translate';
 import { submissionStatusLabels } from '@/features/submissions/submissionsApi';
 import { supportStatusLabels, supportTopics } from '@/features/support/supportApi';
 import { mealSets } from '@/data/recipes';
+import { narrationSectionLabels } from '@/features/narration/recipeScript';
 import { profileDetails, roleDetails } from '@/data/randomMeals';
 
 const sources = import.meta.glob<string>(['/src/**/*.{ts,tsx}', '!/src/**/*.test.{ts,tsx}'], {
@@ -45,6 +46,7 @@ describe('English dictionary', () => {
       ...Object.values(dietaryTagLabels),
       ...householdPresets.flatMap((preset) => [preset.label, preset.description]),
       ...mealSets.flatMap((meal) => [meal.title, meal.description]),
+      ...Object.values(narrationSectionLabels),
       'Bắc',
       'Trung',
       'Nam',

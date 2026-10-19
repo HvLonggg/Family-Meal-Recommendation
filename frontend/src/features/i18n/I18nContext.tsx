@@ -5,12 +5,18 @@ import {
   useEffect,
   useMemo,
   useState,
+  useSyncExternalStore,
   type PropsWithChildren,
 } from 'react';
 
 import { useAuth } from '@/features/auth/AuthContext';
 import type { Language } from '@/features/auth/types';
 import { savePreferences } from '@/features/account/accountApi';
+import {
+  applyRecipeLanguage,
+  getRecipeLanguage,
+  subscribeRecipeContent,
+} from '@/features/i18n/recipeContent';
 import {
   LANGUAGE_STORAGE_KEY,
   LOCALES,
@@ -56,24 +62,34 @@ const I18nContext = createContext<I18nContextValue>(createValue('vi', () => unde
 export function I18nProvider({ children }: PropsWithChildren) {
   const { updateUser, user } = useAuth();
   const [guestLanguage, setGuestLanguage] = useState<Language>(readStoredLanguage);
-  const language = user?.preferences?.language ?? guestLanguage;
+  const requestedLanguage = user?.preferences?.language ?? guestLanguage;
+// Đồng bộ ngôn ngữ giao diện với từ điển món ăn.
+  const language = useSyncExternalStore(subscribeRecipeContent, getRecipeLanguage);
 
   const setLanguage = useCallback(
     (next: Language) => {
-      try {
-        localStorage.setItem(LANGUAGE_STORAGE_KEY, next);
-      } catch {
-        // Trình duyệt chặn lưu trữ: ngôn ngữ vẫn áp dụng trong phiên hiện tại.
-      }
-      setGuestLanguage(next);
-      if (user?.preferences) {
-        const preferences = { ...user.preferences, language: next };
-        updateUser({ ...user, preferences });
-        void savePreferences(preferences).catch(() => undefined);
-      }
+      // Chỉ đổi giao diện và lưu lựa chọn sau khi bản dịch món đã sẵn sàng.
+      void applyRecipeLanguage(next).then((applied) => {
+        if (!applied) return;
+        setGuestLanguage(next);
+        try {
+          localStorage.setItem(LANGUAGE_STORAGE_KEY, next);
+        } catch {
+          // Trình duyệt chặn lưu trữ: ngôn ngữ vẫn áp dụng trong phiên hiện tại.
+        }
+        if (user?.preferences) {
+          const preferences = { ...user.preferences, language: next };
+          updateUser({ ...user, preferences });
+          void savePreferences(preferences).catch(() => undefined);
+        }
+      });
     },
     [updateUser, user],
   );
+
+  useEffect(() => {
+    void applyRecipeLanguage(requestedLanguage);
+  }, [requestedLanguage]);
 
   useEffect(() => {
     document.documentElement.lang = language;

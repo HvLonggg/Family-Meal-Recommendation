@@ -1,9 +1,11 @@
 from typing import Annotated
 
-from fastapi import APIRouter, Depends, HTTPException, Query, status
-from sqlalchemy.orm import Session
+from fastapi import APIRouter, Depends, HTTPException, Query, Response, status
+from sqlalchemy import select
+from sqlalchemy.orm import Session, undefer
 
 from app.db.session import get_db_session
+from app.modules.recipes.models import Recipe
 from app.modules.recipes.schemas import (
     RecipeCatalogResponse,
     RecipeDetailResponse,
@@ -50,6 +52,24 @@ def recipe_catalog(
     items, total = list_recipes(session, limit=limit, offset=offset, with_details=True)
     return RecipeCatalogResponse(
         data=[RecipeDetailResponse.model_validate(item) for item in items], total=total
+    )
+
+
+@router.get("/{slug}/image", summary="Get an uploaded recipe cut-out image")
+def recipe_image(slug: str, session: Annotated[Session, Depends(get_db_session)]) -> Response:
+    recipe = session.scalar(
+        select(Recipe).where(Recipe.slug == slug).options(undefer(Recipe.image_data))
+    )
+    if recipe is None or not recipe.image_data or not recipe.image_content_type:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
+    return Response(
+        content=recipe.image_data,
+        media_type=recipe.image_content_type,
+        # Đường dẫn ảnh luôn kèm ?v=<thời điểm cập nhật> nên có thể lưu đệm lâu.
+        headers={
+            "Cache-Control": "public, max-age=604800, immutable",
+            "X-Content-Type-Options": "nosniff",
+        },
     )
 
 

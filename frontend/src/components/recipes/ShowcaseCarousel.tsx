@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { flushSync } from 'react-dom';
 
 import { AppIcon } from '@/components/common/AppIcon';
 import { useI18n } from '@/features/i18n/I18nContext';
@@ -135,14 +136,17 @@ export function ShowcaseCarousel<Item>({
         offsetRef.current = start + (destination - start) * eased;
         if (progress >= 1) {
           offsetRef.current = 0;
+          // Đổi thẻ và vị trí cùng lúc để tránh nháy thẻ cũ.
+          flushSync(() => {
+            setTrackOffset(0);
+            setCurrentIndex((index) =>
+              modulo(index + (manualDirection === 'next' ? 1 : -1), items.length),
+            );
+            setManualDirection(null);
+          });
           if (trackRef.current) {
             trackRef.current.style.transform = 'translate3d(0, 0, 0)';
           }
-          setTrackOffset(0);
-          setCurrentIndex((index) =>
-            modulo(index + (manualDirection === 'next' ? 1 : -1), items.length),
-          );
-          setManualDirection(null);
           return;
         }
       } else if (previousTime !== null) {
@@ -151,8 +155,10 @@ export function ShowcaseCarousel<Item>({
         if (offsetRef.current >= stepRef.current) {
           const passedCards = Math.floor(offsetRef.current / stepRef.current);
           offsetRef.current -= passedCards * stepRef.current;
-          setTrackOffset(offsetRef.current);
-          setCurrentIndex((index) => modulo(index + passedCards, items.length));
+          flushSync(() => {
+            setTrackOffset(offsetRef.current);
+            setCurrentIndex((index) => modulo(index + passedCards, items.length));
+          });
         }
       }
 
@@ -168,7 +174,8 @@ export function ShowcaseCarousel<Item>({
   }, [isInView, items.length, manualDirection, reducedMotion, visibleCount]);
 
   const canMove = items.length > visibleCount;
-  const renderedCount = Math.min(items.length, visibleCount + (canMove ? 1 : 0));
+  // Giữ hai thẻ đệm để tải ảnh trước khi chúng vào khung nhìn.
+  const renderedCount = Math.min(items.length, visibleCount + (canMove ? 2 : 0));
   const firstItemIndex = currentIndex + (manualDirection === 'previous' ? -1 : 0);
   const renderedItems = Array.from({ length: renderedCount }, (_, index) => {
     const absoluteIndex = firstItemIndex + index;
@@ -186,8 +193,7 @@ export function ShowcaseCarousel<Item>({
       return;
     }
     if (direction === 'previous') {
-      // Prepend the previous card, then slide the track left toward offset 0.
-      // This mirrors the next animation and preserves any in-progress auto offset.
+      // Thêm thẻ trước vào đầu và trượt về vị trí gốc.
       offsetRef.current = stepRef.current + offsetRef.current;
     }
     setTrackOffset(offsetRef.current);

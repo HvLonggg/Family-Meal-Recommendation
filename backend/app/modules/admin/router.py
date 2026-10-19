@@ -3,12 +3,22 @@ from typing import Annotated, Any
 from uuid import UUID
 
 from fastapi import APIRouter, Depends, Query, status
+from pydantic import EmailStr
 from sqlalchemy import case, func, or_, select
 from sqlalchemy.orm import Session, selectinload
 
+from app.core.config import get_settings
 from app.core.exceptions import DomainError
+from app.core.images import decode_image_data_url
 from app.db.session import get_db_session
 from app.modules.admin import insights
+from app.modules.admin.email_schemas import (
+    MealSuggestionEmailListResponse,
+    MealSuggestionEmailResponse,
+    MealSuggestionRecipientLookup,
+    MealSuggestionSendRequest,
+    MealSuggestionSendResponse,
+)
 from app.modules.admin.schemas import (
     ActivityKind,
     AdminActivityResponse,
@@ -19,11 +29,14 @@ from app.modules.admin.schemas import (
     AdminPlanItem,
     AdminPlannerListResponse,
     AdminPlannerRow,
+    AdminRecipeCreate,
     AdminRecipeEngagementListResponse,
     AdminRecipeEngagementRow,
+    AdminRecipeImageUpdate,
     AdminRecipeInsightsResponse,
     AdminRecipeRow,
     AdminRecipeUpdate,
+    AdminUserCreate,
     AdminUserDetailResponse,
     AdminUserListResponse,
     AdminUserPlansResponse,
@@ -41,13 +54,22 @@ from app.modules.articles.schemas import (
     ArticleModerationRequest,
     ArticleStatus,
 )
-from app.modules.articles.service import list_articles, moderate_article, to_detail, to_summary
+from app.modules.articles.service import (
+    list_articles,
+    moderate_article,
+    slugify,
+    to_detail,
+    to_summary,
+)
 from app.modules.auth.dependencies import require_admin
-from app.modules.auth.models import User
-from app.modules.auth.service import revoke_all_sessions
+from app.modules.auth.email import send_meal_suggestion_email, send_support_reply_email
+from app.modules.auth.models import AuthIdentity, User
+from app.modules.auth.security import hash_password
+from app.modules.auth.service import EmailAlreadyExistsError, revoke_all_sessions
 from app.modules.favorites.models import UserFavoriteRecipe
 from app.modules.planner.models import UserMealPlanEvent, UserMealPlanItem
-from app.modules.recipes.models import Recipe
+from app.modules.recipes.models import Recipe, RecipeIngredient, RecipeStep
+from app.modules.recipes.search import normalize_search
 from app.modules.submissions.models import RecipeSubmission
 from app.modules.submissions.schemas import (
     AdminSubmissionListResponse,
@@ -56,13 +78,17 @@ from app.modules.submissions.schemas import (
     SubmissionStatus,
     SubmissionSubmitter,
 )
-from app.modules.support.models import SupportTicket
+from app.modules.support.models import AdminMealSuggestionEmail, SupportTicket
 from app.modules.support.schemas import (
+    AdminSupportTicketListResponse,
+    AdminSupportTicketResponse,
+    SupportRecipient,
+    SupportRecipientListResponse,
     SupportStatus,
-    SupportTicketListResponse,
-    SupportTicketResponse,
+    SupportTicketReplyRequest,
     SupportTicketUpdate,
 )
+from app.modules.support.service import ticket_reference
 
 router = APIRouter(prefix="/admin", dependencies=[Depends(require_admin)])
 
@@ -80,6 +106,11 @@ class AdminResourceNotFoundError(DomainError):
 class AdminActionForbiddenError(DomainError):
     code = "ADMIN_ACTION_FORBIDDEN"
     status_code = status.HTTP_409_CONFLICT
+
+
+class AdminEmailDeliveryError(DomainError):
+    code = "ADMIN_EMAIL_DELIVERY_FAILED"
+    status_code = status.HTTP_503_SERVICE_UNAVAILABLE
 
 
 def _count(session: Session, statement: Any) -> int:
@@ -203,6 +234,39 @@ def users(
         )
     )
     return AdminUserListResponse(data=_user_rows(session, items), total=total)
+
+
+@router.post(
+    "/users",
+    response_model=AdminUserRow,
+    status_code=status.HTTP_201_CREATED,
+    summary="Create an account",
+)
+def create_user(payload: AdminUserCreate, session: DatabaseSession) -> AdminUserRow:
+    if session.scalar(select(User.id).where(User.email == payload.email)) is not None:
+        raise EmailAlreadyExistsError("Email này đã có tài khoản trong hệ thống.")
+    user = User(
+        email=payload.email,
+        full_name=payload.full_name,
+        password_hash=hash_password(payload.password),
+        role=payload.role,
+        status="active",
+        # Quản trị viên tạo hộ nên email được coi là đã xác minh.
+        email_verified_at=datetime.now(UTC),
+    )
+    session.add(user)
+    session.flush()
+    session.add(
+        AuthIdentity(
+            user_id=user.id,
+            provider="password",
+            provider_subject=payload.email,
+            provider_email=payload.email,
+        )
+    )
+    session.commit()
+    session.refresh(user)
+    return _user_rows(session, [user])[0]
 
 
 @router.patch("/users/{user_id}", response_model=AdminUserRow, summary="Change role or status")
@@ -487,6 +551,92 @@ def update_recipe(
     return AdminRecipeRow.model_validate(recipe)
 
 
+RECIPE_IMAGE_MAX_BYTES = 8 * 1024 * 1024
+
+
+def _apply_recipe_image(recipe: Recipe, data_url: str) -> None:
+    from app.modules.recipes.images import prepare_recipe_cutout
+
+    upload = decode_image_data_url(data_url, max_bytes=RECIPE_IMAGE_MAX_BYTES)
+    recipe.image_data = prepare_recipe_cutout(upload.data)
+    recipe.image_content_type = "image/webp"
+    version = int(datetime.now(UTC).timestamp())
+    # Cùng origin với giao diện (proxy /api), nên dùng thẳng làm src ảnh ở mọi nơi.
+    recipe.image_path = f"{get_settings().api_v1_prefix}/recipes/{recipe.slug}/image?v={version}"
+
+
+@router.post(
+    "/recipes",
+    response_model=AdminRecipeRow,
+    status_code=status.HTTP_201_CREATED,
+    summary="Create a recipe",
+)
+def create_recipe(payload: AdminRecipeCreate, session: DatabaseSession) -> AdminRecipeRow:
+    base = slugify(payload.name)
+    slug = base
+    suffix = 2
+    while session.scalar(select(Recipe.id).where(Recipe.slug == slug)) is not None:
+        slug = f"{base}-{suffix}"
+        suffix += 1
+    fields = payload.model_dump(
+        exclude={"image", "image_alt", "ingredients", "preparation_steps", "cooking_steps"}
+    )
+    recipe = Recipe(
+        slug=slug,
+        **fields,
+        image_path="",
+        image_alt=payload.image_alt or payload.name,
+        source_name="Bếp Việt",
+        source_url="",
+        content={},
+    )
+    _apply_recipe_image(recipe, payload.image)
+    for position, ingredient in enumerate(payload.ingredients, start=1):
+        recipe.ingredients.append(
+            RecipeIngredient(
+                group_name=ingredient.group_name,
+                name=ingredient.name,
+                amount=ingredient.amount,
+                unit=ingredient.unit,
+                note=ingredient.note,
+                scalable=True,
+                position=position,
+            )
+        )
+    steps = [("so_che", step) for step in payload.preparation_steps] + [
+        ("thuc_hien", step) for step in payload.cooking_steps
+    ]
+    for position, (step_type, content) in enumerate(steps, start=1):
+        recipe.steps.append(RecipeStep(step_type=step_type, content=content, position=position))
+    recipe.search_text = normalize_search(
+        " ".join(
+            [
+                recipe.name,
+                recipe.excerpt,
+                recipe.region,
+                recipe.category,
+                *(ingredient.name for ingredient in payload.ingredients),
+                f"{recipe.prep_minutes + recipe.cook_minutes} phút",
+            ]
+        )
+    )
+    session.add(recipe)
+    session.commit()
+    session.refresh(recipe)
+    return AdminRecipeRow.model_validate(recipe)
+
+
+@router.put("/recipes/{slug}/image", response_model=AdminRecipeRow, summary="Replace recipe image")
+def replace_recipe_image(
+    slug: str, payload: AdminRecipeImageUpdate, session: DatabaseSession
+) -> AdminRecipeRow:
+    recipe = _get_recipe(session, slug)
+    _apply_recipe_image(recipe, payload.image)
+    session.commit()
+    session.refresh(recipe)
+    return AdminRecipeRow.model_validate(recipe)
+
+
 @router.get("/articles", response_model=ArticleListResponse, summary="All articles and stories")
 def articles(
     session: DatabaseSession,
@@ -583,14 +733,25 @@ def review_submission(
     return _submission_response(item)
 
 
-@router.get("/support", response_model=SupportTicketListResponse, summary="Support requests")
+@router.get("/support", response_model=AdminSupportTicketListResponse, summary="Support requests")
 def support_tickets(
     session: DatabaseSession,
     status_filter: Annotated[SupportStatus | None, Query(alias="status")] = None,
+    q: Annotated[str | None, Query(max_length=100)] = None,
     limit: Limit = 20,
     offset: Offset = 0,
-) -> SupportTicketListResponse:
-    conditions = [SupportTicket.status == status_filter] if status_filter else []
+) -> AdminSupportTicketListResponse:
+    conditions: list[Any] = [SupportTicket.status == status_filter] if status_filter else []
+    if q and q.strip():
+        pattern = f"%{q.strip()}%"
+        conditions.append(
+            or_(
+                SupportTicket.email.ilike(pattern),
+                SupportTicket.name.ilike(pattern),
+                SupportTicket.subject.ilike(pattern),
+                SupportTicket.message.ilike(pattern),
+            )
+        )
     total = _count(session, _counter(SupportTicket, *conditions))
     items = session.scalars(
         select(SupportTicket)
@@ -599,17 +760,19 @@ def support_tickets(
         .limit(limit)
         .offset(offset)
     ).all()
-    return SupportTicketListResponse(
-        data=[SupportTicketResponse.model_validate(item) for item in items], total=total
+    return AdminSupportTicketListResponse(
+        data=[AdminSupportTicketResponse.model_validate(item) for item in items], total=total
     )
 
 
 @router.patch(
-    "/support/{ticket_id}", response_model=SupportTicketResponse, summary="Update support request"
+    "/support/{ticket_id}",
+    response_model=AdminSupportTicketResponse,
+    summary="Update support request",
 )
 def update_support_ticket(
     ticket_id: UUID, payload: SupportTicketUpdate, session: DatabaseSession
-) -> SupportTicketResponse:
+) -> AdminSupportTicketResponse:
     ticket = session.get(SupportTicket, ticket_id)
     if ticket is None:
         raise AdminResourceNotFoundError("Không tìm thấy yêu cầu hỗ trợ.")
@@ -617,4 +780,265 @@ def update_support_ticket(
     ticket.admin_note = (payload.admin_note or "").strip() or None
     session.commit()
     session.refresh(ticket)
-    return SupportTicketResponse.model_validate(ticket)
+    return AdminSupportTicketResponse.model_validate(ticket)
+
+
+@router.post(
+    "/support/{ticket_id}/viewed",
+    response_model=AdminSupportTicketResponse,
+    summary="Mark a support request as viewed",
+)
+def mark_support_ticket_viewed(
+    ticket_id: UUID, session: DatabaseSession
+) -> AdminSupportTicketResponse:
+    ticket = session.get(SupportTicket, ticket_id)
+    if ticket is None:
+        raise AdminResourceNotFoundError("Không tìm thấy yêu cầu hỗ trợ.")
+    if ticket.viewed_at is None:
+        ticket.viewed_at = datetime.now(UTC)
+        session.commit()
+        session.refresh(ticket)
+    return AdminSupportTicketResponse.model_validate(ticket)
+
+
+@router.post(
+    "/support/{ticket_id}/reply",
+    response_model=AdminSupportTicketResponse,
+    summary="Reply to a support request by email",
+)
+def reply_to_support_ticket(
+    ticket_id: UUID,
+    payload: SupportTicketReplyRequest,
+    session: DatabaseSession,
+) -> AdminSupportTicketResponse:
+    ticket = session.get(SupportTicket, ticket_id)
+    if ticket is None:
+        raise AdminResourceNotFoundError("Không tìm thấy yêu cầu hỗ trợ.")
+    now = datetime.now(UTC)
+    ticket.reply_status = "sending"
+    ticket.reply_attempts += 1
+    ticket.reply_last_attempt_at = now
+    ticket.reply_last_error = None
+    ticket.reply_subject = payload.subject
+    ticket.reply_message = payload.message
+    session.commit()
+    try:
+        send_support_reply_email(
+            recipient=ticket.email,
+            recipient_name=ticket.name,
+            subject=payload.subject,
+            body=payload.message,
+            reference=ticket_reference(ticket.id),
+        )
+    except Exception as exc:
+        ticket = session.get(SupportTicket, ticket_id)
+        if ticket is not None:
+            ticket.reply_status = "failed"
+            ticket.reply_last_error = (
+                "Email chưa gửi được. Hãy kiểm tra cấu hình email rồi thử lại."
+            )
+            session.commit()
+        raise AdminEmailDeliveryError(
+            "Email phản hồi chưa gửi được. Vui lòng thử lại sau."
+        ) from exc
+
+    ticket = session.get(SupportTicket, ticket_id)
+    if ticket is None:
+        raise AdminResourceNotFoundError("Không tìm thấy yêu cầu hỗ trợ.")
+    ticket.reply_status = "sent"
+    ticket.reply_sent_at = datetime.now(UTC)
+    if ticket.status == "open":
+        ticket.status = "in_progress"
+    session.commit()
+    session.refresh(ticket)
+    return AdminSupportTicketResponse.model_validate(ticket)
+
+
+@router.get(
+    "/support/recipients",
+    response_model=SupportRecipientListResponse,
+    summary="List unique support request senders",
+)
+def support_recipients(
+    session: DatabaseSession,
+    q: Annotated[str | None, Query(max_length=100)] = None,
+    limit: Annotated[int, Query(ge=1, le=100)] = 50,
+) -> SupportRecipientListResponse:
+    conditions = []
+    if q and q.strip():
+        pattern = f"%{q.strip()}%"
+        conditions.append(
+            or_(SupportTicket.email.ilike(pattern), SupportTicket.name.ilike(pattern))
+        )
+    latest_by_email = session.execute(
+        select(SupportTicket.email, func.max(SupportTicket.created_at).label("latest_at"))
+        .where(*conditions)
+        .group_by(SupportTicket.email)
+        .order_by(func.max(SupportTicket.created_at).desc())
+        .limit(limit)
+    ).all()
+    data = []
+    for email, latest_at in latest_by_email:
+        ticket = session.scalar(
+            select(SupportTicket)
+            .where(SupportTicket.email == email)
+            .order_by(SupportTicket.created_at.desc())
+            .limit(1)
+        )
+        user = session.scalar(select(User).where(User.email == email))
+        data.append(
+            SupportRecipient(
+                email=email,
+                name=user.full_name if user else ticket.name if ticket else email,
+                latest_at=latest_at,
+            )
+        )
+    return SupportRecipientListResponse(data=data)
+
+
+@router.post(
+    "/meal-suggestions/send",
+    response_model=MealSuggestionSendResponse,
+    summary="Email a meal suggestion to selected recipients",
+)
+def send_meal_suggestions(
+    payload: MealSuggestionSendRequest,
+    session: DatabaseSession,
+    admin: AdminUser,
+) -> MealSuggestionSendResponse:
+    recipes_by_slug = {
+        recipe.slug: recipe
+        for recipe in session.scalars(
+            select(Recipe).where(
+                Recipe.slug.in_(payload.recipe_slugs), Recipe.status == "published"
+            )
+        )
+    }
+    if len(recipes_by_slug) != len(payload.recipe_slugs):
+        raise AdminResourceNotFoundError("Một hoặc nhiều món đã chọn không còn được hiển thị.")
+    recipes = [recipes_by_slug[slug] for slug in payload.recipe_slugs]
+    recipe_data = [
+        {
+            "slug": recipe.slug,
+            "name": recipe.name,
+            "excerpt": recipe.excerpt[:400],
+            "image_path": recipe.image_path,
+        }
+        for recipe in recipes
+    ]
+    users = list(session.scalars(select(User).where(User.email.in_(payload.recipient_emails))))
+    users_by_email = {user.email: user for user in users if user.email}
+    results = []
+    for email in payload.recipient_emails:
+        user = users_by_email.get(email)
+        recent_ticket = None
+        if user is None:
+            recent_ticket = session.scalar(
+                select(SupportTicket)
+                .where(SupportTicket.email == email)
+                .order_by(SupportTicket.created_at.desc())
+                .limit(1)
+            )
+        # Tài khoản có sẵn dùng tên trong hệ thống; email mới dùng tên quản trị viên nhập,
+        # rồi đến tên trong yêu cầu hỗ trợ gần nhất; không có gì thì chào “bạn”.
+        recipient_name = (
+            user.full_name
+            if user
+            else payload.recipient_names.get(email)
+            or (recent_ticket.name if recent_ticket else None)
+            or "bạn"
+        )
+        delivery = AdminMealSuggestionEmail(
+            admin_user_id=admin.id,
+            recipient_user_id=user.id if user else None,
+            recipient_email=email,
+            recipient_name=recipient_name,
+            meal_type=payload.meal_type,
+            subject=payload.subject,
+            intro_message=payload.intro_message,
+            closing_message=payload.closing_message,
+            recipe_data=recipe_data,
+            status="sending",
+            attempts=1,
+        )
+        session.add(delivery)
+        session.commit()
+        try:
+            send_meal_suggestion_email(
+                recipient=email,
+                recipient_name=recipient_name,
+                meal_type=payload.meal_type,
+                subject=payload.subject,
+                intro_message=payload.intro_message,
+                closing_message=payload.closing_message,
+                recipes=recipe_data,
+            )
+        except Exception:
+            failed = session.get(AdminMealSuggestionEmail, delivery.id)
+            if failed is not None:
+                failed.status = "failed"
+                failed.error_message = (
+                    "Email chưa gửi được. Hãy kiểm tra cấu hình email rồi thử gửi lại."
+                )
+                session.commit()
+                session.refresh(failed)
+                results.append(MealSuggestionEmailResponse.model_validate(failed))
+            continue
+        sent = session.get(AdminMealSuggestionEmail, delivery.id)
+        if sent is not None:
+            sent.status = "sent"
+            sent.sent_at = datetime.now(UTC)
+            sent.error_message = None
+            session.commit()
+            session.refresh(sent)
+            results.append(MealSuggestionEmailResponse.model_validate(sent))
+
+    sent_count = sum(item.status == "sent" for item in results)
+    return MealSuggestionSendResponse(
+        data=results, sent=sent_count, failed=len(results) - sent_count
+    )
+
+
+@router.get(
+    "/meal-suggestions/recipient",
+    response_model=MealSuggestionRecipientLookup,
+    summary="Look up the greeting name for a meal suggestion recipient",
+)
+def meal_suggestion_recipient(
+    session: DatabaseSession, email: Annotated[EmailStr, Query()]
+) -> MealSuggestionRecipientLookup:
+    normalized = str(email).strip().casefold()
+    user = session.scalar(select(User).where(func.lower(User.email) == normalized))
+    if user is not None:
+        return MealSuggestionRecipientLookup(email=normalized, name=user.full_name, source="user")
+    ticket = session.scalar(
+        select(SupportTicket)
+        .where(func.lower(SupportTicket.email) == normalized)
+        .order_by(SupportTicket.created_at.desc())
+        .limit(1)
+    )
+    if ticket is not None:
+        return MealSuggestionRecipientLookup(email=normalized, name=ticket.name, source="support")
+    return MealSuggestionRecipientLookup(email=normalized, name=None, source="new")
+
+
+@router.get(
+    "/meal-suggestions/history",
+    response_model=MealSuggestionEmailListResponse,
+    summary="List meal suggestion email history",
+)
+def meal_suggestion_email_history(
+    session: DatabaseSession,
+    limit: Limit = 20,
+    offset: Offset = 0,
+) -> MealSuggestionEmailListResponse:
+    total = _count(session, _counter(AdminMealSuggestionEmail))
+    items = session.scalars(
+        select(AdminMealSuggestionEmail)
+        .order_by(AdminMealSuggestionEmail.created_at.desc())
+        .limit(limit)
+        .offset(offset)
+    ).all()
+    return MealSuggestionEmailListResponse(
+        data=[MealSuggestionEmailResponse.model_validate(item) for item in items], total=total
+    )

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router';
 
 import { AppIcon } from '@/components/common/AppIcon';
-import { formatMinutes, recipeMinutes, recipes, type Recipe } from '@/data/recipes';
+import { formatMinutes, getRecipe, recipeMinutes, recipes, type Recipe } from '@/data/recipes';
 import { useI18n } from '@/features/i18n/I18nContext';
 
 const FIRST_SWITCH_MS = 2000;
@@ -11,10 +11,10 @@ const LEAVE_MS = 900;
 const IMAGE_SIZES = '(min-width: 1320px) 600px, (min-width: 960px) 45vw, 90vw';
 const STEAM_WISPS = 8;
 
-// Món ăn nguội không hợp với hiệu ứng bốc hơi nên không đưa vào hero.
+// Loại món nguội khỏi hiệu ứng hơi nóng.
 const COLD_DISHES = new Set(['thit-dong', 'gio-thu', 'thit-heo-ngam-nuoc-mam']);
 
-/** Chỉ dùng ảnh đã tách nền để món "nổi" trên nền hero và hơi nóng phủ tự nhiên. */
+/** Chọn món có ảnh tách nền cho hero. */
 function showcaseDishes() {
   const cutouts = recipes.filter(
     (recipe) =>
@@ -83,7 +83,8 @@ export function HeroDishShowcase() {
     return () => window.clearTimeout(timer);
   }, [leaving]);
 
-  const dish = pool[current]!;
+  // Lấy lại từ danh mục để tên món đổi theo ngôn ngữ đang chọn.
+  const dish = getRecipe(pool[current]!.slug) ?? pool[current]!;
   const layers = leaving === null || leaving === current ? [current] : [leaving, current];
 
   return (

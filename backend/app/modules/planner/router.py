@@ -21,20 +21,31 @@ from app.modules.planner.schemas import (
     PlanMealStatusUpdate,
     ShoppingListResponse,
     ShoppingPeriod,
+    VegetarianDayResponse,
+    VegetarianDayUpdate,
 )
 from app.modules.planner.service import (
     create_shopping_list,
     list_past_meals,
     list_plan_history,
     list_plan_items,
+    list_vegetarian_days,
     remove_plan_item,
     save_plan_item,
     save_plan_meal,
+    set_vegetarian_day,
     update_meal_status,
     update_plan_item,
 )
 
 router = APIRouter(prefix="/planner")
+
+
+def _validate_range(from_date: date, to_date: date) -> None:
+    if to_date < from_date:
+        raise HTTPException(status_code=422, detail="Ngày kết thúc phải sau ngày bắt đầu.")
+    if (to_date - from_date).days > 366:
+        raise HTTPException(status_code=422, detail="Mỗi lần chỉ xem tối đa một năm kế hoạch.")
 
 
 @router.get("/items", response_model=list[PlanItemResponse], summary="List meal plan items")
@@ -44,10 +55,7 @@ def plan_items(
     from_date: Annotated[date, Query(alias="from")],
     to_date: Annotated[date, Query(alias="to")],
 ) -> list[PlanItemResponse]:
-    if to_date < from_date:
-        raise HTTPException(status_code=422, detail="Ngày kết thúc phải sau ngày bắt đầu.")
-    if (to_date - from_date).days > 366:
-        raise HTTPException(status_code=422, detail="Mỗi lần chỉ xem tối đa một năm kế hoạch.")
+    _validate_range(from_date, to_date)
     return [
         PlanItemResponse.model_validate(item)
         for item in list_plan_items(
@@ -217,3 +225,40 @@ def shopping_list(
     return ShoppingListResponse.model_validate(
         create_shopping_list(session, user_id=current_user.id, period=period, anchor_date=on)
     )
+
+
+@router.get(
+    "/vegetarian-days",
+    response_model=list[VegetarianDayResponse],
+    summary="List days the user marked or unmarked as vegetarian",
+)
+def vegetarian_days(
+    session: Annotated[Session, Depends(get_db_session)],
+    current_user: Annotated[User, Depends(get_current_user)],
+    from_date: Annotated[date, Query(alias="from")],
+    to_date: Annotated[date, Query(alias="to")],
+) -> list[VegetarianDayResponse]:
+    _validate_range(from_date, to_date)
+    return [
+        VegetarianDayResponse.model_validate(record)
+        for record in list_vegetarian_days(
+            session, user_id=current_user.id, from_date=from_date, to_date=to_date
+        )
+    ]
+
+
+@router.put(
+    "/vegetarian-days/{day}",
+    response_model=VegetarianDayResponse,
+    summary="Mark or unmark a day as vegetarian",
+)
+def update_vegetarian_day(
+    day: date,
+    payload: VegetarianDayUpdate,
+    session: Annotated[Session, Depends(get_db_session)],
+    current_user: Annotated[User, Depends(get_current_user)],
+) -> VegetarianDayResponse:
+    record = set_vegetarian_day(
+        session, user_id=current_user.id, day=day, is_vegetarian=payload.is_vegetarian
+    )
+    return VegetarianDayResponse.model_validate(record)

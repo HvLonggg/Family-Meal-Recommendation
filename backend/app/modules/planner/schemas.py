@@ -146,3 +146,16 @@ class ShoppingListResponse(BaseModel):
     recipe_count: int
     dishes: list[ShoppingDishResponse]
     items: list[ShoppingListItemResponse]
+
+
+class VegetarianDayUpdate(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    is_vegetarian: bool
+
+
+class VegetarianDayResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    day: date
+    is_vegetarian: bool

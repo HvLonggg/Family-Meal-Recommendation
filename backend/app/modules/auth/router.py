@@ -1,5 +1,6 @@
 from typing import Annotated, Literal
 from urllib.parse import urlencode
+from uuid import UUID
 
 from fastapi import APIRouter, Cookie, Depends, Query, Request, Response, status
 from fastapi.responses import RedirectResponse
@@ -22,6 +23,7 @@ from app.modules.auth.oauth import (
 )
 from app.modules.auth.schemas import (
     AuthSessionResponse,
+    ChangeEmailRequest,
     ChangePasswordRequest,
     EmailOtpVerifyRequest,
     ForgotPasswordRequest,
@@ -41,6 +43,8 @@ from app.modules.auth.service import (
     authenticate_oauth_user,
     authenticate_password,
     change_password,
+    check_email_change_request,
+    complete_email_change,
     complete_password_reset_email_verification,
     create_email_otp_challenge,
     create_session_tokens,
@@ -132,6 +136,7 @@ def request_email_otp_code(
     pending_full_name: str | None = None,
     pending_password: str | None = None,
     remember_me: bool = False,
+    user_id: UUID | None = None,
 ) -> tuple[EmailOtpChallenge, str | None]:
     settings = get_settings()
     if not settings.email_enabled and settings.app_env != "test":
@@ -147,6 +152,7 @@ def request_email_otp_code(
         pending_full_name=pending_full_name,
         pending_password=pending_password,
         remembered=remember_me,
+        user_id=user_id,
     )
     if settings.app_env != "test" and account_exists and settings.email_enabled:
         try:
@@ -346,6 +352,60 @@ def change_current_password(
             "Email bảo mật đã được xếp hàng gửi."
         )
     )
+
+
+@router.post(
+    "/change-email",
+    response_model=ForgotPasswordResponse,
+    summary="Send a confirmation code to the new email address",
+)
+def request_email_change(
+    payload: ChangeEmailRequest,
+    request: Request,
+    current_user: Annotated[User, Depends(get_current_user)],
+    session: Annotated[Session, Depends(get_db_session)],
+) -> ForgotPasswordResponse:
+    new_email = check_email_change_request(
+        session,
+        user=current_user,
+        new_email=str(payload.new_email),
+        current_password=payload.current_password,
+    )
+    challenge, development_code = request_email_otp_code(
+        session=session,
+        email=new_email,
+        purpose="email_change",
+        requester_ip=request.client.host if request.client else None,
+        account_exists=True,
+        user_id=current_user.id,
+    )
+    settings = get_settings()
+    return ForgotPasswordResponse(
+        challenge_id=challenge.id,
+        expires_in=settings.email_otp_expire_minutes * 60,
+        message=(
+            "Mã xác nhận thử nghiệm đã sẵn sàng."
+            if settings.app_env == "test"
+            else "Mã xác nhận đã được gửi đến email mới."
+        ),
+        development_code=development_code,
+    )
+
+
+@router.post(
+    "/change-email/confirm",
+    response_model=UserResponse,
+    summary="Confirm the new email address with the emailed code",
+)
+def confirm_email_change(
+    payload: EmailOtpVerifyRequest,
+    current_user: Annotated[User, Depends(get_current_user)],
+    session: Annotated[Session, Depends(get_db_session)],
+) -> UserResponse:
+    user = complete_email_change(
+        session, user_id=current_user.id, challenge_id=payload.challenge_id, code=payload.code
+    )
+    return UserResponse.model_validate(user)
 
 
 @router.get(

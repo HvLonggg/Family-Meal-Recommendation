@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 
 import { AppIcon } from '@/components/common/AppIcon';
@@ -10,13 +10,23 @@ import { RecipeSearchSuggestions } from '@/components/recipes/RecipeSearchSugges
 import { ShowcaseCarousel } from '@/components/recipes/ShowcaseCarousel';
 import { createHomeMealSuggestions } from '@/data/homeMealSuggestions';
 import { recipes } from '@/data/recipes';
+import { useAuth } from '@/features/auth/AuthContext';
 import { useI18n } from '@/features/i18n/I18nContext';
+import { useRecipeCatalog } from '@/features/i18n/recipeContent';
+import { pageLoadSeed, seededShuffle } from '@/lib/seededShuffle';
 
 export function HomePage() {
   const [query, setQuery] = useState('');
   const navigate = useNavigate();
   const { t } = useI18n();
   const [mealSuggestions] = useState(() => createHomeMealSuggestions(recipes));
+  const { user } = useAuth();
+  const catalog = useRecipeCatalog();
+// Đổi thứ tự món khi tải trang hoặc đổi tài khoản.
+  const featuredRecipes = useMemo(
+    () => seededShuffle(catalog, `${pageLoadSeed}:${user?.id ?? 'guest'}`, (recipe) => recipe.slug),
+    [catalog, user?.id],
+  );
 
   const submitSearch = (event: React.FormEvent) => {
     event.preventDefault();
@@ -111,7 +121,7 @@ export function HomePage() {
         <ShowcaseCarousel
           bleed
           getKey={(recipe) => recipe.slug}
-          items={recipes}
+          items={featuredRecipes}
           label={t('Món ăn')}
           renderItem={(recipe) => <RecipeCard eager recipe={recipe} />}
         />

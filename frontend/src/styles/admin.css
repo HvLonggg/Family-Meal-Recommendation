@@ -1,14 +1,10 @@
-/* ==========================================================================
-   Bảng quản trị: hồ sơ người dùng, biểu đồ hoạt động, chi tiết món.
-   Dùng lại token của workspace.css; mọi chuyển động tắt khi người dùng giảm chuyển động.
-   ========================================================================== */
+
 
 .admin-console {
   --admin-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   --admin-lift: 0 14px 30px rgb(53 37 31 / 10%);
 }
 
-/* ---------- Bổ sung hover cho phần sẵn có ---------- */
 .admin-tile,
 .admin-queue a,
 .planner-people button {
@@ -1119,5 +1115,806 @@ button.text-link {
   .modal--confirm {
     animation: none !important;
     transition: none !important;
+  }
+}
+
+/* ---------- Khung quản trị: sidebar + thanh trên cùng ---------- */
+.admin-shell {
+  --admin-sidebar-w: 264px;
+  --admin-topbar-h: 84px;
+  --admin-bg: #f5f2ee;
+  --admin-side-bg: #241915;
+  --admin-side-ink: #ecdfd5;
+  --admin-side-muted: #a8958a;
+  --admin-side-line: rgb(255 255 255 / 8%);
+  --admin-accent: #e2a356;
+  display: grid;
+  grid-template-columns: var(--admin-sidebar-w) minmax(0, 1fr);
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--admin-bg);
+}
+.admin-sidebar {
+  position: sticky;
+  z-index: 40;
+  top: 0;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  gap: 14px;
+  overflow-y: auto;
+  padding: 16px 12px;
+  color: var(--admin-side-ink);
+  background:
+    radial-gradient(circle at 0 0, rgb(226 163 86 / 14%), transparent 38%),
+    linear-gradient(180deg, #2b1e19 0, var(--admin-side-bg) 55%, #1c1310 100%);
+  scrollbar-color: rgb(255 255 255 / 18%) transparent;
+  scrollbar-width: thin;
+}
+.admin-sidebar__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid var(--admin-side-line);
+  padding: 4px 8px 16px;
+  color: inherit;
+  text-decoration: none;
+}
+.admin-sidebar__brand .kitchen-logo__image {
+  width: 46px;
+  height: 46px;
+}
+.admin-sidebar__brand > span {
+  display: grid;
+  gap: 2px;
+}
+.admin-sidebar__brand strong {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 750;
+  letter-spacing: -0.01em;
+}
+.admin-sidebar__brand small {
+  color: var(--admin-accent);
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.admin-sidebar__nav {
+  display: grid;
+  flex: 1;
+  align-content: start;
+  gap: 16px;
+}
+.admin-nav-group {
+  display: grid;
+  gap: 2px;
+}
+.admin-nav-group__label {
+  padding: 0 12px 6px;
+  color: var(--admin-side-muted);
+  font-size: 10.5px;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.admin-nav-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-height: 42px;
+  border-radius: 11px;
+  padding: 0 12px;
+  color: #d9cbc1;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    color 160ms ease,
+    background-color 160ms ease;
+}
+.admin-nav-link svg {
+  flex: 0 0 auto;
+  color: var(--admin-side-muted);
+  transition: color 160ms ease;
+}
+.admin-nav-link > span:first-of-type {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.admin-nav-link:hover {
+  color: #fff;
+  background: rgb(255 255 255 / 6%);
+}
+.admin-nav-link:hover svg {
+  color: #fff;
+}
+.admin-nav-link.is-active {
+  color: #fff;
+  background: linear-gradient(90deg, rgb(180 59 44 / 92%), rgb(180 59 44 / 62%));
+  box-shadow: 0 8px 20px rgb(0 0 0 / 22%);
+}
+.admin-nav-link.is-active svg {
+  color: #fff;
+}
+.admin-nav-link:focus-visible,
+.admin-sidebar__brand:focus-visible,
+.admin-sidebar__logout:focus-visible,
+.admin-topbar__menu:focus-visible {
+  outline: 2px solid var(--admin-accent);
+  outline-offset: 2px;
+}
+.admin-nav-link__badge {
+  display: inline-grid;
+  min-width: 22px;
+  height: 20px;
+  place-items: center;
+  border-radius: 999px;
+  padding: 0 7px;
+  color: #2b1e19;
+  background: var(--admin-accent);
+  font-size: 11px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+.admin-nav-link.is-active .admin-nav-link__badge {
+  color: var(--color-primary);
+  background: #fff;
+}
+.admin-sidebar__account {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--admin-side-line);
+  border-radius: 14px;
+  padding: 10px;
+  background: rgb(255 255 255 / 4%);
+}
+.admin-sidebar__account > div {
+  display: grid;
+  flex: 1;
+  gap: 2px;
+  min-width: 0;
+}
+.admin-sidebar__account strong {
+  overflow: hidden;
+  color: #fff;
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.admin-sidebar__account small {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #9fd8b1;
+  font-size: 11px;
+  font-weight: 700;
+}
+.admin-sidebar__logout {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 0;
+  border-radius: 10px;
+  color: var(--admin-side-muted);
+  background: transparent;
+  cursor: pointer;
+  transition:
+    color 160ms ease,
+    background-color 160ms ease;
+}
+.admin-sidebar__logout:hover {
+  color: #fff;
+  background: rgb(255 255 255 / 10%);
+}
+.admin-shell__backdrop {
+  display: none;
+}
+.admin-main {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+.admin-topbar {
+  position: sticky;
+  z-index: 30;
+  top: 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: var(--admin-topbar-h);
+  border-bottom: 1px solid #e7dfd6;
+  padding: 14px clamp(16px, 3vw, 32px);
+  background: rgb(255 255 255 / 97%);
+  box-shadow:
+    0 1px 0 rgb(53 37 31 / 3%),
+    0 8px 24px -18px rgb(53 37 31 / 35%);
+  backdrop-filter: saturate(1.4) blur(14px);
+}
+.admin-topbar__menu {
+  display: none;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid var(--ws-line);
+  border-radius: 12px;
+  color: var(--ws-ink);
+  background: #fff;
+  cursor: pointer;
+}
+.admin-topbar__heading {
+  display: grid;
+  flex: 1;
+  gap: 2px;
+  min-width: 0;
+}
+.admin-topbar__heading h1 {
+  margin: 0;
+  color: var(--ws-ink);
+  font-size: clamp(1.25rem, 2vw, 1.55rem);
+  font-weight: 750;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+.admin-topbar__heading p {
+  overflow: hidden;
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.admin-breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--color-text-muted);
+  font-size: 11.5px;
+  font-weight: 650;
+}
+.admin-breadcrumb li + li::before {
+  margin: 0 7px;
+  color: #c9bcb0;
+  content: '/';
+}
+.admin-breadcrumb a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+.admin-breadcrumb a:hover {
+  text-decoration: underline;
+}
+.admin-topbar__actions {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 10px;
+}
+.admin-topbar__pending {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #f1d7a8;
+  border-radius: 999px;
+  padding: 7px 12px;
+  color: #8a5a0b;
+  background: #fff6e4;
+  font-size: 12.5px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.admin-topbar__pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d97706;
+  box-shadow: 0 0 0 0 rgb(217 119 6 / 45%);
+  animation: admin-pulse 1.8s ease-out infinite;
+}
+@keyframes admin-pulse {
+  70% {
+    box-shadow: 0 0 0 8px rgb(217 119 6 / 0%);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgb(217 119 6 / 0%);
+  }
+}
+.admin-topbar__cta {
+  min-height: 40px;
+  white-space: nowrap;
+}
+.admin-shell .admin-content {
+  display: grid;
+  align-content: start;
+  gap: 18px;
+  width: 100%;
+  max-width: 1440px;
+  padding: clamp(16px, 2.6vw, 28px) clamp(16px, 3vw, 32px) 64px;
+}
+.admin-shell .admin-content:focus {
+  outline: none;
+}
+/* Trang dùng chung với khu người dùng: tiêu đề đã nằm ở thanh trên cùng. */
+.admin-shell .ws-heading {
+  display: none;
+}
+.admin-shell .segmented {
+  top: calc(var(--admin-topbar-h) + 8px);
+}
+.admin-shell .activity-feed__day {
+  top: calc(var(--admin-topbar-h) + 64px);
+}
+.admin-editor .content-section {
+  padding: 0;
+}
+.admin-editor .container {
+  width: 100%;
+  max-width: none;
+}
+
+/* ---------- Xem trước trang công khai bằng tài khoản quản trị ---------- */
+.admin-preview-bar {
+  position: sticky;
+  z-index: 50;
+  top: 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px clamp(16px, 3vw, 32px);
+  color: var(--admin-side-ink, #ecdfd5);
+  background: #241915;
+  box-shadow: 0 6px 18px rgb(0 0 0 / 18%);
+}
+.admin-preview-bar__brand .kitchen-logo__image {
+  width: 42px;
+  height: 42px;
+}
+.admin-preview-bar__label {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  margin: 0;
+  font-size: 13px;
+}
+.admin-preview-bar__label svg {
+  color: #e2a356;
+}
+.admin-preview-bar__label strong {
+  color: #fff;
+}
+.admin-preview-bar__label span {
+  color: #b9a79b;
+}
+.admin-preview-bar__back {
+  min-height: 40px;
+  white-space: nowrap;
+}
+
+@media (max-width: 1100px) {
+  .admin-topbar__pending {
+    display: none;
+  }
+}
+@media (max-width: 960px) {
+  .admin-shell {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .admin-sidebar {
+    position: fixed;
+    left: 0;
+    width: min(86vw, var(--admin-sidebar-w));
+    box-shadow: 18px 0 40px rgb(0 0 0 / 28%);
+    transform: translateX(-104%);
+    transition: transform 240ms var(--admin-ease, ease);
+  }
+  .admin-shell.is-nav-open .admin-sidebar {
+    transform: none;
+  }
+  .admin-shell__backdrop {
+    position: fixed;
+    z-index: 35;
+    inset: 0;
+    display: block;
+    border: 0;
+    background: rgb(24 16 13 / 45%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 200ms ease;
+  }
+  .admin-shell.is-nav-open .admin-shell__backdrop {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .admin-topbar__menu {
+    display: grid;
+  }
+}
+@media (max-width: 640px) {
+  .admin-shell {
+    --admin-topbar-h: 72px;
+  }
+  .admin-topbar {
+    gap: 10px;
+    padding-block: 10px;
+  }
+  .admin-topbar__heading p,
+  .admin-breadcrumb {
+    display: none;
+  }
+  .admin-topbar__language {
+    display: none;
+  }
+  .admin-topbar__cta {
+    padding-inline: 12px;
+    font-size: 13px;
+  }
+  .admin-preview-bar__label span {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .admin-sidebar,
+  .admin-shell__backdrop,
+  .admin-nav-link,
+  .admin-topbar__pulse {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* ==========================================================================
+   Tinh chỉnh bố cục quản trị: lưới cân hàng, form thêm mới món ăn và người dùng.
+   ========================================================================== */
+.admin-insights > .ws-panel,
+.admin-overview-split > .ws-panel {
+  display: flex;
+  flex-direction: column;
+}
+.admin-insights > .ws-panel > .ws-panel__body,
+.admin-overview-split > .ws-panel > .ws-panel__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 14px;
+}
+.admin-insights .activity-bars + .admin-queue__hint,
+.admin-overview-split .admin-queue + .admin-queue__hint {
+  margin-top: auto;
+  border-top: 1px dashed var(--ws-line);
+  padding-top: 12px;
+}
+@media (min-width: 980px) and (max-width: 1239px) {
+  .user-overview > .ws-panel:last-child {
+    grid-column: 1 / -1;
+  }
+  .user-overview > .ws-panel:last-child .fact-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 28px;
+  }
+}
+@media (min-width: 1240px) {
+  .user-overview {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.admin-filters__create {
+  min-height: 46px;
+  margin-left: auto;
+  white-space: nowrap;
+}
+.admin-support__tab-count {
+  display: inline-grid;
+  min-width: 22px;
+  height: 20px;
+  place-items: center;
+  border-radius: 999px;
+  padding: 0 7px;
+  color: #fff;
+  background: var(--color-primary);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* ---------- Hộp thoại rộng/hẹp ---------- */
+.modal--wide {
+  width: min(1080px, 100%);
+  animation: modal-in 220ms var(--admin-ease, ease) both;
+}
+.modal--narrow {
+  width: min(540px, 100%);
+  animation: modal-in 220ms var(--admin-ease, ease) both;
+}
+.ws-grid-4 {
+  display: grid;
+  gap: 14px;
+}
+@media (min-width: 640px) {
+  .ws-grid-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+.ws-field > label:first-child {
+  color: #49382f;
+  font-size: 13px;
+  font-weight: 750;
+}
+.ws-field > small.is-error {
+  color: var(--ws-danger);
+}
+
+/* ---------- Ảnh món tách nền ---------- */
+.cutout-picker {
+  display: grid;
+  gap: 12px;
+}
+.cutout-picker__stage {
+  display: grid;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  place-items: center;
+  border: 1.5px dashed #e2cdb8;
+  border-radius: 18px;
+  background: radial-gradient(ellipse at 50% 44%, #fffdf8 0, #fbf1e4 56%, #efdec9 100%);
+  transition:
+    border-color 200ms ease,
+    box-shadow 200ms ease;
+}
+.cutout-picker.has-image .cutout-picker__stage {
+  border-style: solid;
+  border-color: #ecdccb;
+  box-shadow: inset 0 0 0 1px #fff;
+}
+.cutout-picker.has-error .cutout-picker__stage {
+  border-color: #e3a093;
+}
+.cutout-picker__stage img {
+  width: 92%;
+  height: 92%;
+  object-fit: contain;
+  filter: drop-shadow(0 18px 18px rgb(92 58 38 / 22%));
+  animation: cutout-in 320ms var(--admin-ease, ease) both;
+}
+@keyframes cutout-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+}
+.cutout-picker__placeholder {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  padding: 16px;
+  color: #a2795f;
+  text-align: center;
+}
+.cutout-picker__placeholder strong {
+  color: var(--ws-ink);
+  font-size: 15px;
+}
+.cutout-picker__placeholder small,
+.cutout-picker__actions small {
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+.cutout-picker__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+}
+.cutout-picker__actions .button {
+  min-height: 40px;
+  cursor: pointer;
+}
+.cutout-picker__actions:focus-within .button {
+  box-shadow: var(--focus-ring);
+}
+.cutout-picker__error {
+  margin: 0;
+  border-radius: 12px;
+  padding: 10px 12px;
+  color: var(--ws-danger);
+  background: var(--ws-danger-soft);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ---------- Form thêm món ---------- */
+.recipe-creator__body {
+  gap: 22px;
+}
+@media (min-width: 980px) {
+  .recipe-creator__body {
+    grid-template-columns: minmax(0, 340px) minmax(0, 1fr);
+    align-items: start;
+  }
+  .recipe-creator__media {
+    position: sticky;
+    top: 0;
+    grid-row: span 4;
+  }
+}
+.recipe-creator__section {
+  display: grid;
+  gap: 14px;
+  border: 1px solid var(--ws-line);
+  border-radius: 18px;
+  padding: 18px;
+  background: #fffdfa;
+}
+.recipe-creator__section h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  color: var(--ws-ink);
+  font-size: 15.5px;
+}
+.recipe-creator__section h3 span {
+  display: grid;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: linear-gradient(140deg, #c25a3f, #8e291f);
+  font-size: 12.5px;
+}
+.recipe-creator__hint {
+  margin: -6px 0 0;
+  color: var(--color-text-muted);
+  font-size: 12.5px;
+}
+.recipe-creator__ingredients {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.recipe-creator__ingredients li {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 2fr) minmax(60px, 0.6fr) minmax(70px, 0.7fr) minmax(158px, 1.4fr)
+    38px;
+  align-items: center;
+  gap: 8px;
+}
+.recipe-creator__ingredients input,
+.recipe-creator__ingredients select {
+  width: 100%;
+  min-height: 40px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 8px 11px;
+  color: var(--ws-ink);
+  background: #fff;
+  font: inherit;
+  font-size: 13.5px;
+}
+.recipe-creator__ingredients input:focus,
+.recipe-creator__ingredients select:focus {
+  border-color: var(--color-primary);
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+@media (max-width: 720px) {
+  .recipe-creator__ingredients li {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 38px;
+    border-bottom: 1px dashed var(--ws-line);
+    padding-bottom: 8px;
+  }
+  .recipe-creator__ingredients li > input:first-child {
+    grid-column: 1 / -1;
+  }
+}
+.recipe-creator__add {
+  display: inline-flex;
+  justify-self: start;
+  align-items: center;
+  gap: 8px;
+  border: 1px dashed #d9b9a2;
+  border-radius: 12px;
+  padding: 9px 14px;
+  color: var(--color-primary);
+  background: #fff8f2;
+  font: inherit;
+  font-size: 13.5px;
+  font-weight: 750;
+  cursor: pointer;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease;
+}
+.recipe-creator__add:hover:not(:disabled) {
+  border-color: var(--color-primary);
+  background: #fff0e6;
+}
+
+/* ---------- Form thêm người dùng ---------- */
+.user-creator__password {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 44px auto;
+  align-items: center;
+  gap: 8px;
+}
+.user-creator__password .button {
+  min-height: 44px;
+  white-space: nowrap;
+}
+.user-creator__roles {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+@media (min-width: 480px) {
+  .user-creator__roles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.user-creator__roles legend {
+  margin-bottom: 8px;
+  color: #49382f;
+  font-size: 13px;
+  font-weight: 750;
+}
+.user-creator__roles label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  border: 1px solid var(--ws-line);
+  border-radius: 14px;
+  padding: 12px;
+  background: #fff;
+  cursor: pointer;
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease,
+    box-shadow 160ms ease;
+}
+.user-creator__roles label.is-active {
+  border-color: var(--color-primary);
+  background: #fff6f1;
+  box-shadow: 0 0 0 3px rgb(164 61 45 / 10%);
+}
+.user-creator__roles input {
+  margin-top: 3px;
+  accent-color: var(--color-primary);
+}
+.user-creator__roles span {
+  display: grid;
+  gap: 2px;
+}
+.user-creator__roles strong {
+  color: var(--ws-ink);
+  font-size: 14px;
+}
+.user-creator__roles small {
+  color: var(--color-text-muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+@media (prefers-reduced-motion: reduce) {
+  .modal--wide,
+  .modal--narrow,
+  .cutout-picker__stage img {
+    animation: none;
   }
 }

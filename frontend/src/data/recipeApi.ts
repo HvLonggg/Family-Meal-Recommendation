@@ -55,7 +55,18 @@ export function adaptRecipe(item: ApiRecipe, idToSlug: Map<string, string>): Rec
   const fallback = getRecipe(item.slug);
   const image = content.display_image ?? content.media?.[0];
   const editedImage =
-    fallback?.imageKind === 'project' && fallback.imageSrcSet ? fallback : undefined;
+    fallback?.imageKind === 'project' && fallback.imageSrcSet
+      ? fallback
+      : // Món mới do quản trị viên thêm: ảnh tách nền lưu ở máy chủ (/recipes/{slug}/image).
+        item.image_path.includes(`/recipes/${item.slug}/image`)
+        ? {
+            image: item.image_path,
+            imageSrcSet: undefined,
+            imageMaster: item.image_path,
+            imageAlt: item.image_alt,
+            imageCredit: 'Ảnh minh họa của Bếp Việt được biên tập bởi tác giả',
+          }
+        : undefined;
   const ingredients: Recipe['ingredients'] = [];
   for (const ingredient of item.ingredients) {
     let group = ingredients.find((entry) => entry.group === ingredient.group_name);

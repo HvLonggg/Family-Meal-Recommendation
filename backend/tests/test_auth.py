@@ -166,10 +166,9 @@ def test_admin_route_enforces_role(
 def test_email_password_reset_uses_otp_and_revokes_sessions(
     client: TestClient, database_session_factory: sessionmaker[Session]
 ) -> None:
-    register_user(client)
-    forgot = client.post(
-        "/api/v1/auth/forgot-password", json={"email": "lan.nguyen@example.com"}
-    )
+    original_account = register_user(client)
+    other_account = register_user(client, email="other.user@example.com")
+    forgot = client.post("/api/v1/auth/forgot-password", json={"email": "LAN.NGUYEN@EXAMPLE.COM"})
     assert forgot.status_code == 200
     challenge = forgot.json()
     assert re.fullmatch(r"\d{5}", challenge["development_code"])
@@ -215,10 +214,24 @@ def test_email_password_reset_uses_otp_and_revokes_sessions(
     )
     new_login = client.post(
         "/api/v1/auth/login",
-        json={"email": "lan.nguyen@example.com", "password": "MatKhauMoi2026"},
+        json={"email": "LAN.NGUYEN@EXAMPLE.COM", "password": "MatKhauMoi2026"},
+    )
+    other_old_login = client.post(
+        "/api/v1/auth/login",
+        json={"email": "other.user@example.com", "password": "BepViet2026"},
+    )
+    other_new_password_login = client.post(
+        "/api/v1/auth/login",
+        json={"email": "other.user@example.com", "password": "MatKhauMoi2026"},
     )
     assert old_login.status_code == 401
     assert new_login.status_code == 200
+    assert new_login.json()["user"]["id"] == original_account["user"]["id"]
+    assert new_login.json()["user"]["email"] == "lan.nguyen@example.com"
+    assert new_login.json()["user"]["full_name"] == "Nguyễn Ngọc Lan"
+    assert other_old_login.status_code == 200
+    assert other_old_login.json()["user"]["id"] == other_account["user"]["id"]
+    assert other_new_password_login.status_code == 401
 
 
 def test_password_reset_invalidates_previously_issued_access_tokens(client: TestClient) -> None:

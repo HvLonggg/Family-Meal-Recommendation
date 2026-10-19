@@ -1,13 +1,15 @@
 import { useState } from 'react';
-import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router';
+import { Link, Navigate, NavLink, Outlet, useLocation, useNavigate } from 'react-router';
 
 import { KitchenHomeLogo } from '@/components/brand/KitchenHomeLogo';
 import { AppIcon, type IconName } from '@/components/common/AppIcon';
 import { Dropdown } from '@/components/common/Dropdown';
+import { AssistantWidget } from '@/components/assistant/AssistantWidget';
 import { LanguageSwitcher } from '@/components/common/LanguageSwitcher';
 import { LocationMap } from '@/components/common/LocationMap';
 import { UserAvatar } from '@/components/common/UserAvatar';
 import { contactInfo, phoneHref } from '@/config/contact';
+import { adminDestinationFor } from '@/features/admin/adminRouting';
 import { useAuth } from '@/features/auth/AuthContext';
 import { useI18n } from '@/features/i18n/I18nContext';
 
@@ -76,6 +78,32 @@ export function PublicLayout() {
     await logout();
   };
 
+  if (user?.role === 'admin') {
+    // Quản trị viên chỉ làm việc trong khu /admin; trang công khai chỉ còn để xem trước.
+    const destination = adminDestinationFor(location.pathname);
+    if (destination) return <Navigate replace to={`${destination}${location.search}`} />;
+    return (
+      <div className="app-shell app-shell--admin-preview">
+        <header className="admin-preview-bar">
+          <Link aria-label={t('Bảng điều khiển')} className="admin-preview-bar__brand" to="/admin">
+            <KitchenHomeLogo compact />
+          </Link>
+          <p className="admin-preview-bar__label">
+            <AppIcon name="eye" size={16} />
+            <strong>{t('Chế độ xem trước')}</strong>
+            <span>{t('Trang hiển thị đúng như người dùng nhìn thấy.')}</span>
+          </p>
+          <Link className="button button--primary admin-preview-bar__back" to="/admin">
+            <AppIcon name="shield" size={16} /> {t('Về trang quản trị')}
+          </Link>
+        </header>
+        <main id="main-content" tabIndex={-1}>
+          <Outlet />
+        </main>
+      </div>
+    );
+  }
+
   return (
     <div className="app-shell">
       <a className="skip-link" href="#main-content">
@@ -141,10 +169,7 @@ export function PublicLayout() {
                   </ul>
                 )}
               </Dropdown>
-              <NavLink
-                className={(state) => navClass(state, 'nav-link--support')}
-                to="/contact"
-              >
+              <NavLink className={(state) => navClass(state, 'nav-link--support')} to="/contact">
                 {t('Liên hệ hỗ trợ')}
               </NavLink>
             </div>
@@ -176,9 +201,7 @@ export function PublicLayout() {
                         <div>
                           <strong>{user.full_name}</strong>
                           <small>{user.email ?? user.phone_e164}</small>
-                          <span className={`role-chip role-chip--${user.role}`}>
-                            {user.role === 'admin' ? t('Quản trị viên') : t('Thành viên')}
-                          </span>
+                          <span className="role-chip role-chip--user">{t('Thành viên')}</span>
                         </div>
                       </div>
                       <ul className="menu-list">
@@ -192,20 +215,6 @@ export function PublicLayout() {
                             </NavLink>
                           </li>
                         ))}
-                        {user.role === 'admin' ? (
-                          <li>
-                            <NavLink
-                              className="menu-item menu-item--admin"
-                              onClick={close}
-                              to="/admin"
-                            >
-                              <span className="menu-item__icon">
-                                <AppIcon name="shield" size={17} />
-                              </span>
-                              <strong>{t('Trang quản trị')}</strong>
-                            </NavLink>
-                          </li>
-                        ) : null}
                       </ul>
                       <button
                         className="menu-item menu-item--logout"
@@ -241,6 +250,8 @@ export function PublicLayout() {
       <main id="main-content" tabIndex={-1}>
         <Outlet />
       </main>
+
+      <AssistantWidget />
 
       <footer className="site-footer">
         <div className="container footer-main">
@@ -290,7 +301,6 @@ export function PublicLayout() {
           <span>
             © {new Date().getFullYear()} Bếp Việt. {t('Bảo lưu mọi quyền.')}
           </span>
-          <LanguageSwitcher className="language-switcher--dark" />
         </div>
       </footer>
     </div>

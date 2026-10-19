@@ -293,3 +293,81 @@ def test_planner_requires_authentication(client: TestClient) -> None:
     assert (
         client.get("/api/v1/planner/shopping-list?period=week&date=2026-10-07").status_code == 401
     )
+
+
+def test_vegetarian_days_are_private_upserted_and_range_limited(client: TestClient) -> None:
+    headers = register_and_login(client, "chay@example.com")
+    other_headers = register_and_login(client, "khac@example.com")
+
+    marked = client.put(
+        "/api/v1/planner/vegetarian-days/2026-10-24",
+        headers=headers,
+        json={"is_vegetarian": True},
+    )
+    assert marked.status_code == 200, marked.text
+    assert marked.json() == {"day": "2026-10-24", "is_vegetarian": True}
+
+    # Bỏ đánh dấu một ngày rằm phải được lưu lại để ghi đè quy tắc tự động.
+    unmarked = client.put(
+        "/api/v1/planner/vegetarian-days/2026-10-25",
+        headers=headers,
+        json={"is_vegetarian": False},
+    )
+    assert unmarked.status_code == 200
+    toggled = client.put(
+        "/api/v1/planner/vegetarian-days/2026-10-24",
+        headers=headers,
+        json={"is_vegetarian": False},
+    )
+    assert toggled.json()["is_vegetarian"] is False
+
+    listed = client.get(
+        "/api/v1/planner/vegetarian-days?from=2026-10-19&to=2026-10-25", headers=headers
+    )
+    assert listed.status_code == 200
+    assert listed.json() == [
+        {"day": "2026-10-24", "is_vegetarian": False},
+        {"day": "2026-10-25", "is_vegetarian": False},
+    ]
+    assert (
+        client.get(
+            "/api/v1/planner/vegetarian-days?from=2026-10-19&to=2026-10-25",
+            headers=other_headers,
+        ).json()
+        == []
+    )
+    assert (
+        client.get(
+            "/api/v1/planner/vegetarian-days?from=2026-10-25&to=2026-10-19", headers=headers
+        ).status_code
+        == 422
+    )
+    assert (
+        client.get(
+            "/api/v1/planner/vegetarian-days?from=2026-01-01&to=2027-06-01", headers=headers
+        ).status_code
+        == 422
+    )
+    assert (
+        client.put(
+            "/api/v1/planner/vegetarian-days/2026-10-24",
+            headers=headers,
+            json={"is_vegetarian": True, "note": "x"},
+        ).status_code
+        == 422
+    )
+    exported = client.get("/api/v1/account/export", headers=headers).json()
+    assert {"date": "2026-10-24", "is_vegetarian": False} in exported["vegetarian_days"]
+
+
+def test_vegetarian_days_require_authentication(client: TestClient) -> None:
+    assert (
+        client.get("/api/v1/planner/vegetarian-days?from=2026-10-19&to=2026-10-25").status_code
+        == 401
+    )
+    assert (
+        client.put(
+            "/api/v1/planner/vegetarian-days/2026-10-24", json={"is_vegetarian": True}
+        ).status_code
+        == 401
+    )

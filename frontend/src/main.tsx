@@ -3,12 +3,15 @@ import { createRoot } from 'react-dom/client';
 
 import { App } from '@/app/App';
 import { loadRecipeCatalog } from '@/data/recipeApi';
-import { readStoredLanguage, translate } from '@/features/i18n/translate';
+import { applyRecipeLanguage } from '@/features/i18n/recipeContent';
+import { LANGUAGE_STORAGE_KEY, readStoredLanguage, translate } from '@/features/i18n/translate';
 import '@/styles/global.css';
 import '@/styles/auth.css';
 import '@/styles/product.css';
 import '@/styles/workspace.css';
 import '@/styles/admin.css';
+import '@/styles/community.css';
+import '@/styles/assistant.css';
 
 const rootElement = document.getElementById('root');
 
@@ -49,10 +52,22 @@ renderCatalogLoader(6);
 async function startApp() {
   let catalogUnavailable = false;
   let offlineCatalog = false;
+  // Tải bản dịch song song với danh mục món.
+  const recipeLanguage = applyRecipeLanguage(readStoredLanguage());
   try {
     offlineCatalog = (await loadRecipeCatalog(renderCatalogLoader)) === 'offline';
   } catch {
     catalogUnavailable = true;
+  }
+  const recipeLanguageReady = await recipeLanguage;
+  if (!recipeLanguageReady && language === 'en') {
+    // Dùng tiếng Việt nếu không tải được bản dịch.
+    try {
+      localStorage.setItem(LANGUAGE_STORAGE_KEY, 'vi');
+    } catch {
+      // Bộ nhớ trình duyệt có thể không truy cập được.
+    }
+    document.documentElement.lang = 'vi';
   }
   await document.fonts.ready.catch(() => undefined);
   renderCatalogLoader(100);

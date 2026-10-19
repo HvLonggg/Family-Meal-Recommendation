@@ -9,9 +9,11 @@ description = "API cho sản phẩm lập kế hoạch bữa ăn Bếp Việt"
 requires-python = ">=3.12"
 dependencies = [
   "alembic==1.20.0",
+  "anthropic==1.15.0",
   "email-validator==2.3.0",
   "fastapi==0.141.1",
   "httpx==0.28.1",
+  "pillow==12.3.0",
   "psycopg[binary]==3.3.6",
   "pydantic-settings==2.15.0",
   "pwdlib[argon2]==0.3.1",

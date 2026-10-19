@@ -4,6 +4,7 @@ export type Appetite = 'light' | 'normal' | 'big';
 export type DietaryTag =
   'vegetarian' | 'no_pork' | 'no_beef' | 'no_seafood' | 'low_salt' | 'low_sugar' | 'less_oil';
 export type PreferredRegion = 'Bắc' | 'Trung' | 'Nam';
+export type CalendarMode = 'solar' | 'lunar';
 
 export interface HouseholdMember {
   label: string;
@@ -23,6 +24,9 @@ export interface UserPreferences {
   preferred_regions: PreferredRegion[];
   max_cooking_minutes: number;
   week_start: 'monday' | 'sunday';
+  calendar_mode: CalendarMode;
+  vegetarian_lunar_days: boolean;
+  email_meal_plan_reminders: boolean;
   text_size: 'normal' | 'large';
   reduce_motion: boolean;
   notify_weekly_plan: boolean;

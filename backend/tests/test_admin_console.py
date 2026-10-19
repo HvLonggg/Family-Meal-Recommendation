@@ -1,5 +1,6 @@
 from datetime import date
 
+import pytest
 from fastapi.testclient import TestClient
 from sqlalchemy.orm import Session, sessionmaker
 
@@ -182,6 +183,210 @@ def test_support_ticket_flow_with_spam_protection(
         client.post("/api/v1/support/tickets", json=payload)
     limited = client.post("/api/v1/support/tickets", json=payload)
     assert limited.status_code == 429
+
+
+def test_admin_support_read_and_email_reply_statuses(
+    client: TestClient,
+    database_session_factory: sessionmaker[Session],
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    sent = client.post(
+        "/api/v1/support/tickets",
+        json={
+            "name": "Lê Minh",
+            "email": "minh@example.com",
+            "topic": "general",
+            "subject": "Xin tư vấn món ăn",
+            "message": "Tôi muốn hỏi cách chọn món cho bữa cơm gia đình bốn người.",
+        },
+    )
+    assert sent.status_code == 201
+    admin = create_admin(client, database_session_factory, "admin@example.com")
+    ticket = client.get("/api/v1/admin/support", headers=admin).json()["data"][0]
+    assert ticket["viewed_at"] is None
+    assert ticket["reply_status"] == "not_sent"
+
+    viewed = client.post(f"/api/v1/admin/support/{ticket['id']}/viewed", headers=admin)
+    assert viewed.status_code == 200, viewed.text
+    assert viewed.json()["viewed_at"] is not None
+
+    sent_message: dict[str, str] = {}
+    monkeypatch.setattr(
+        "app.modules.admin.router.send_support_reply_email",
+        lambda **kwargs: sent_message.update(kwargs),
+    )
+    reply = client.post(
+        f"/api/v1/admin/support/{ticket['id']}/reply",
+        headers=admin,
+        json={
+            "subject": "Bếp Việt xin phản hồi",
+            "message": (
+                "Cảm ơn bạn đã gửi câu hỏi. Bếp Việt sẽ tư vấn món phù hợp với gia đình bạn."
+            ),
+        },
+    )
+    assert reply.status_code == 200, reply.text
+    assert sent_message["recipient"] == "minh@example.com"
+    assert reply.json()["reply_status"] == "sent"
+    assert reply.json()["reply_sent_at"] is not None
+    assert reply.json()["reply_attempts"] == 1
+    assert reply.json()["status"] == "in_progress"
+
+    recipients = client.get("/api/v1/admin/support/recipients", headers=admin)
+    assert recipients.status_code == 200
+    assert recipients.json()["data"][0]["email"] == "minh@example.com"
+
+
+def test_admin_sends_and_tracks_personalized_meal_suggestions(
+    client: TestClient,
+    database_session_factory: sessionmaker[Session],
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    seed_recipe(database_session_factory)
+    admin = create_admin(client, database_session_factory, "admin@example.com")
+    register_and_login(client, "lan@example.com")
+    deliveries: list[dict[str, object]] = []
+
+    def send_meal(**kwargs: object) -> None:
+        deliveries.append(kwargs)
+        if kwargs["recipient"] == "fail@example.com":
+            raise RuntimeError("SMTP not available")
+
+    monkeypatch.setattr("app.modules.admin.router.send_meal_suggestion_email", send_meal)
+    response = client.post(
+        "/api/v1/admin/meal-suggestions/send",
+        headers=admin,
+        json={
+            "recipient_emails": ["lan@example.com", "fail@example.com"],
+            "meal_type": "dinner",
+            "recipe_slugs": ["bun-cha-ha-noi"],
+            "subject": "Gợi ý bữa tối từ Bếp Việt",
+            "intro_message": "Bếp Việt chọn món này cho bữa tối hôm nay.",
+            "closing_message": "Chúc bạn dùng bữa ngon miệng!",
+        },
+    )
+    assert response.status_code == 200, response.text
+    body = response.json()
+    assert body["sent"] == 1
+    assert body["failed"] == 1
+    assert {row["status"] for row in body["data"]} == {"sent", "failed"}
+    assert len(deliveries) == 2
+    assert all(call["recipes"][0]["image_path"] == "/images/bun-cha.jpg" for call in deliveries)
+
+    history = client.get("/api/v1/admin/meal-suggestions/history", headers=admin)
+    assert history.status_code == 200
+    assert history.json()["total"] == 2
+    failed = next(row for row in history.json()["data"] if row["status"] == "failed")
+    assert failed["error_message"]
+    delivered_to_member = next(
+        row for row in history.json()["data"] if row["recipient_email"] == "lan@example.com"
+    )
+    assert delivered_to_member["recipient_name"] == "Nguyễn Ngọc Lan"
+
+
+def test_meal_suggestion_names_new_recipients_and_keeps_account_names(
+    client: TestClient,
+    database_session_factory: sessionmaker[Session],
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    seed_recipe(database_session_factory)
+    admin = create_admin(client, database_session_factory, "admin@example.com")
+    register_and_login(client, "lan@example.com")
+    ticket = client.post(
+        "/api/v1/support/tickets",
+        json={
+            "name": "Lê Minh",
+            "email": "minh@example.com",
+            "topic": "bug",
+            "subject": "Hỏi về thực đơn",
+            "message": "Mình muốn nhận gợi ý món cho bữa tối của gia đình nhỏ.",
+        },
+    )
+    assert ticket.status_code == 201, ticket.text
+
+    lookups = {
+        email: client.get(
+            "/api/v1/admin/meal-suggestions/recipient", headers=admin, params={"email": email}
+        ).json()
+        for email in ("LAN@example.com", "minh@example.com", "moi@example.com")
+    }
+    assert lookups["LAN@example.com"] == {
+        "email": "lan@example.com",
+        "name": "Nguyễn Ngọc Lan",
+        "source": "user",
+    }
+    assert lookups["minh@example.com"]["source"] == "support"
+    assert lookups["minh@example.com"]["name"] == "Lê Minh"
+    assert lookups["moi@example.com"] == {"email": "moi@example.com", "name": None, "source": "new"}
+    member = register_and_login(client, "thanhvien@example.com")
+    assert (
+        client.get(
+            "/api/v1/admin/meal-suggestions/recipient",
+            headers=member,
+            params={"email": "moi@example.com"},
+        ).status_code
+        == 403
+    )
+
+    deliveries: list[dict[str, object]] = []
+    monkeypatch.setattr(
+        "app.modules.admin.router.send_meal_suggestion_email",
+        lambda **kwargs: deliveries.append(kwargs),
+    )
+    base = {
+        "meal_type": "dinner",
+        "recipe_slugs": ["bun-cha-ha-noi"],
+        "subject": "Gợi ý bữa tối từ Bếp Việt",
+        "intro_message": "Bếp Việt chọn món này cho bữa tối hôm nay.",
+    }
+    response = client.post(
+        "/api/v1/admin/meal-suggestions/send",
+        headers=admin,
+        json={
+            **base,
+            "recipient_emails": [
+                "lan@example.com",
+                "minh@example.com",
+                "moi@example.com",
+                "trong@example.com",
+            ],
+            "recipient_names": {
+                "lan@example.com": "Tên ghi đè",
+                "minh@example.com": "  Anh   Minh ",
+                "MOI@example.com": "Chị Hoa",
+                "trong@example.com": "   ",
+            },
+        },
+    )
+    assert response.status_code == 200, response.text
+    names = {call["recipient"]: call["recipient_name"] for call in deliveries}
+    assert names == {
+        "lan@example.com": "Nguyễn Ngọc Lan",
+        "minh@example.com": "Anh Minh",
+        "moi@example.com": "Chị Hoa",
+        "trong@example.com": "bạn",
+    }
+
+    stray = client.post(
+        "/api/v1/admin/meal-suggestions/send",
+        headers=admin,
+        json={
+            **base,
+            "recipient_emails": ["moi@example.com"],
+            "recipient_names": {"khac@example.com": "Người lạ"},
+        },
+    )
+    assert stray.status_code == 422
+    too_long = client.post(
+        "/api/v1/admin/meal-suggestions/send",
+        headers=admin,
+        json={
+            **base,
+            "recipient_emails": ["moi@example.com"],
+            "recipient_names": {"moi@example.com": "A" * 81},
+        },
+    )
+    assert too_long.status_code == 422
 
 
 def test_admin_sees_user_behaviour_and_recipe_engagement(

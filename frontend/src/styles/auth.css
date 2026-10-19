@@ -672,12 +672,12 @@
   }
 }
 
-/* Trải nghiệm xác thực v2: form gọn bên trái, carousel món Việt bên phải. */
 html,
 body,
 #root {
   max-width: 100%;
-  overflow-x: hidden;
+/* `clip` chặn tràn mà không làm hỏng `position: sticky`. */
+  overflow-x: clip;
 }
 
 .auth-shell {

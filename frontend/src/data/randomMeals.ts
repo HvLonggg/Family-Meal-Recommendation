@@ -276,3 +276,8 @@ export function getNextWheelRotation(current: number, segmentIndex: number, segm
   const delta = (target - (current % 360) + 360) % 360;
   return current + 1080 + delta;
 }
+
+/** Tên món theo ngôn ngữ hiện tại. */
+export function dishName(dish: Pick<RandomDish, 'name' | 'sourceKey'>) {
+  return getRecipe(dish.sourceKey)?.name ?? dish.name;
+}
