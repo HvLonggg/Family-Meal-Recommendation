@@ -18,7 +18,7 @@ interface ConfirmDialogProps {
   onClose: () => void;
 }
 
-/** Hộp thoại xác nhận thay cho window.confirm: đúng giao diện, hỗ trợ Esc và trả focus. */
+/** Hộp thoại xác nhận có hỗ trợ Esc và trả focus. */
 export function ConfirmDialog({ isPending = false, onClose, request }: ConfirmDialogProps) {
   const { t } = useI18n();
   const dialogRef = useRef<HTMLDivElement>(null);

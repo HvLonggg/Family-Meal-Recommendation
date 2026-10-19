@@ -38,7 +38,7 @@ function RecipeDetails({ recipe }: { recipe: Recipe }) {
   const { formatNumber, language, t } = useI18n();
   const { isPersonal, preferences, user } = useUserPreferences();
   const householdServings = isPersonal ? preferences.computed_servings : null;
-  // Chỉ lưu giá trị khi người dùng tự chỉnh; còn lại đi theo khẩu phần gia đình (có thể tải sau).
+  // Theo khẩu phần gia đình cho tới khi người dùng tự chỉnh.
   const [chosenServings, setServings] = useState<number | null>(null);
   const servings = chosenServings ?? householdServings ?? recipe.servings;
   const navigate = useNavigate();

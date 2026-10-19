@@ -43,10 +43,7 @@ function subscribeVoices(onChange: () => void) {
 
 const LANGS: NarrationLang[] = ['vi-VN', 'en-US'];
 
-/**
- * Giọng đã chọn cho từng ngôn ngữ, mã hóa thành chuỗi để `useSyncExternalStore` so sánh được.
- * `null`: trình duyệt chưa nạp xong danh sách giọng.
- */
+/** Trạng thái giọng đọc theo ngôn ngữ. */
 function voiceSnapshot() {
   const voices = window.speechSynthesis.getVoices();
   if (!voices.length) return null;
@@ -91,7 +88,7 @@ export function useNarration(segments: NarrationSegment[], language: Language) {
     controller.setVoices(voices);
   }, [controller, voiceKey]);
 
-  // Rời trang, chuyển món hoặc đổi ngôn ngữ thì dừng đọc: kịch bản cũ không còn khớp màn hình.
+// Dừng đọc khi rời trang, đổi món hoặc đổi ngôn ngữ.
   useEffect(() => () => controller?.stop(), [controller, language]);
 
   useEffect(() => {

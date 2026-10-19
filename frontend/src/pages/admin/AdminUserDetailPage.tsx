@@ -46,6 +46,7 @@ import {
   type SubmissionStatus,
 } from '@/features/submissions/submissionsApi';
 import { supportStatusLabels, type SupportStatus } from '@/features/support/supportApi';
+import { dishImage } from '@/data/dishImages';
 import { errorMessage } from '@/lib/errors';
 
 type Tab = 'overview' | 'plans' | 'cooked' | 'favorites' | 'activity';
@@ -60,7 +61,7 @@ const tabs: { id: Tab; label: string; icon: IconName }[] = [
 
 const GRID_LIMIT = 12;
 
-/** Ngày dạng 'YYYY-MM-DD' được hiểu theo giờ địa phương để không lệch sang ngày trước. */
+/** Đọc ngày `YYYY-MM-DD` theo giờ địa phương. */
 const localDay = (day: string) => `${day.slice(0, 10)}T00:00:00`;
 
 function useRelativeTime() {
@@ -384,9 +385,11 @@ function OverviewTab({
             {detail.top_cooked.map((recipe, index) => (
               <li key={recipe.slug}>
                 <span className="rank-list__no">{index + 1}</span>
-                <img alt="" loading="lazy" src={recipe.image_path} />
+                <img alt="" loading="lazy" {...dishImage(recipe.slug, recipe.image_path)} />
                 <div>
-                  <Link to={`/recipes/${recipe.slug}`}>{recipe.name}</Link>
+                  <Link target="_blank" to={`/recipes/${recipe.slug}`}>
+                    {recipe.name}
+                  </Link>
                   <small>
                     {t('Lần cuối {date}', {
                       date: formatDate(localDay(recipe.last_cooked), { dateStyle: 'medium' }),
@@ -503,9 +506,11 @@ function PlansTab({ userId }: { userId: string }) {
               <ul>
                 {items.map((item) => (
                   <li key={item.id}>
-                    <img alt="" loading="lazy" src={item.image_path} />
+                    <img alt="" loading="lazy" {...dishImage(item.recipe_slug, item.image_path)} />
                     <div>
-                      <Link to={`/recipes/${item.recipe_slug}`}>{item.recipe_name}</Link>
+                      <Link target="_blank" to={`/recipes/${item.recipe_slug}`}>
+                        {item.recipe_name}
+                      </Link>
                       <small>
                         {t(mealLabels[item.meal_type])} ·{' '}
                         {t('{count} khẩu phần', { count: item.servings })}
@@ -601,9 +606,9 @@ function RecipeTile({
 }) {
   return (
     <li className={`recipe-tile${muted ? ' is-muted' : ''}`}>
-      <Link to={`/recipes/${slug}`}>
+      <Link target="_blank" to={`/recipes/${slug}`}>
         <span className="recipe-tile__media">
-          <img alt="" loading="lazy" src={image} />
+          <img alt="" loading="lazy" {...dishImage(slug, image, '320px')} />
           {badge ? <span className="recipe-tile__badge">{badge}</span> : null}
         </span>
         <span className="recipe-tile__body">
@@ -874,7 +879,9 @@ function ActivityRow({ event }: { event: AdminActivityEvent }) {
             {t(activityActionLabels[key] ?? event.action)}
           </span>{' '}
           {event.recipe_slug ? (
-            <Link to={`/recipes/${event.recipe_slug}`}>{title}</Link>
+            <Link target="_blank" to={`/recipes/${event.recipe_slug}`}>
+              {title}
+            </Link>
           ) : (
             <strong>{title}</strong>
           )}
@@ -886,7 +893,9 @@ function ActivityRow({ event }: { event: AdminActivityEvent }) {
           </small>
         ) : null}
       </div>
-      {event.image_path ? <img alt="" loading="lazy" src={event.image_path} /> : null}
+      {event.image_path ? (
+        <img alt="" loading="lazy" {...dishImage(event.recipe_slug, event.image_path)} />
+      ) : null}
       <time dateTime={event.occurred_at}>
         {formatDate(event.occurred_at, { hour: '2-digit', minute: '2-digit' })}
       </time>

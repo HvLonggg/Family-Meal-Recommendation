@@ -17,7 +17,7 @@ export const RECIPE_SEARCH_SUGGESTIONS = [
   'Món dễ nấu',
 ] as const;
 
-/** Pick distinct suggestion topics that have real matches in the loaded recipe catalog. */
+/** Chọn chủ đề gợi ý có món phù hợp trong danh mục. */
 export function pickRecipeSearchSuggestions(
   catalog: Recipe[],
   count = 5,

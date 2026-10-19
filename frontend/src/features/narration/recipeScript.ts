@@ -2,11 +2,7 @@ import { ingredientAmount, recipeMinutes, type Recipe } from '@/data/recipes';
 import type { Language } from '@/features/auth/types';
 import { translate } from '@/features/i18n/translate';
 
-/**
- * Kịch bản thuyết minh công thức theo ngôn ngữ giao diện. Câu dẫn ("Bước 1", "Ingredients for…")
- * theo ngôn ngữ đang chọn; mỗi đoạn tự nhận ngôn ngữ theo nội dung, nên phần chưa có bản dịch
- * (các bước nấu) vẫn được đọc bằng giọng tiếng Việt thay vì giọng Anh đọc sai dấu.
- */
+/** Tạo lời thuyết minh và chọn giọng theo ngôn ngữ của từng đoạn. */
 export type NarrationSection =
   'intro' | 'ingredients' | 'preparation' | 'cooking' | 'finished' | 'tips';
 

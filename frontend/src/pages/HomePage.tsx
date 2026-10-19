@@ -22,7 +22,7 @@ export function HomePage() {
   const [mealSuggestions] = useState(() => createHomeMealSuggestions(recipes));
   const { user } = useAuth();
   const catalog = useRecipeCatalog();
-  // Mỗi lần tải trang hoặc đăng nhập tài khoản khác, băng chuyền gợi ý ra một thứ tự món mới.
+// Đổi thứ tự món khi tải trang hoặc đổi tài khoản.
   const featuredRecipes = useMemo(
     () => seededShuffle(catalog, `${pageLoadSeed}:${user?.id ?? 'guest'}`, (recipe) => recipe.slug),
     [catalog, user?.id],

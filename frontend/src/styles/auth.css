@@ -672,12 +672,11 @@
   }
 }
 
-/* Trải nghiệm xác thực v2: form gọn bên trái, carousel món Việt bên phải. */
 html,
 body,
 #root {
   max-width: 100%;
-  /* `clip` thay vì `hidden`: vẫn chặn tràn ngang nhưng không tạo vùng cuộn, nên `position: sticky` bám theo màn hình. */
+/* `clip` chặn tràn mà không làm hỏng `position: sticky`. */
   overflow-x: clip;
 }
 

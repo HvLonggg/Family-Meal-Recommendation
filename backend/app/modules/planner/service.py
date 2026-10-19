@@ -10,8 +10,9 @@ from uuid import UUID
 from sqlalchemy import func, select, tuple_
 from sqlalchemy.orm import Session, joinedload
 
-from app.modules.planner.models import UserMealPlanEvent, UserMealPlanItem
+from app.modules.planner.models import UserMealPlanEvent, UserMealPlanItem, UserVegetarianDay
 from app.modules.planner.schemas import ShoppingPeriod
+from app.modules.planner.seasonings import is_pantry_seasoning
 from app.modules.recipes.models import Recipe
 
 
@@ -336,12 +337,9 @@ def create_shopping_list(
         base_servings = max(recipe.base_servings, 1)
         factor = Decimal(plan_item.servings) / Decimal(base_servings)
         for ingredient in recipe.ingredients:
-            group = normalized(ingredient.group_name)
-            category = (
-                "seasoning"
-                if any(token in group for token in ("gia vi", "nuoc cham", "nuoc sot", "sot"))
-                else "ingredient"
-            )
+            # Chỉ đồ nêm nếm (mắm, muối, mì chính…) vào cột gia vị; hành, tỏi, rau thơm là
+            # nguyên liệu tươi dù công thức xếp chúng trong nhóm "Gia vị".
+            category = "seasoning" if is_pantry_seasoning(ingredient.name) else "ingredient"
             key = (category, normalized(ingredient.name), normalized(ingredient.unit))
             entry = aggregated.setdefault(
                 key, _ShoppingIngredient(ingredient.name, ingredient.unit, category)
@@ -389,3 +387,36 @@ def create_shopping_list(
         "dishes": dishes,
         "items": rows,
     }
+
+
+def list_vegetarian_days(
+    session: Session, *, user_id: UUID, from_date: date, to_date: date
+) -> list[UserVegetarianDay]:
+    statement = (
+        select(UserVegetarianDay)
+        .where(
+            UserVegetarianDay.user_id == user_id,
+            UserVegetarianDay.day >= from_date,
+            UserVegetarianDay.day <= to_date,
+        )
+        .order_by(UserVegetarianDay.day)
+    )
+    return list(session.scalars(statement))
+
+
+def set_vegetarian_day(
+    session: Session, *, user_id: UUID, day: date, is_vegetarian: bool
+) -> UserVegetarianDay:
+    record = session.scalar(
+        select(UserVegetarianDay).where(
+            UserVegetarianDay.user_id == user_id, UserVegetarianDay.day == day
+        )
+    )
+    if record is None:
+        record = UserVegetarianDay(user_id=user_id, day=day, is_vegetarian=is_vegetarian)
+        session.add(record)
+    else:
+        record.is_vegetarian = is_vegetarian
+    session.commit()
+    session.refresh(record)
+    return record

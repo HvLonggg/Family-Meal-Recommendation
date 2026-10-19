@@ -3,7 +3,9 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Link, useSearchParams } from 'react-router';
 
 import { AppIcon } from '@/components/common/AppIcon';
+import { PlannerCalendarHeader, PlannerDayHeader } from '@/components/planner/PlannerCalendar';
 import { MealCelebration } from '@/components/recipes/MealCelebration';
+import { dishImage } from '@/data/dishImages';
 import { matchesRecipeSearch, recipeSearchRank } from '@/data/recipeSearch';
 import { recipes, recipeText } from '@/data/recipes';
 import {
@@ -12,24 +14,44 @@ import {
   getPastMealHistory,
   getPlanItems,
   getShoppingList,
+  getVegetarianDays,
   plannerHistoryQueryKey,
   plannerItemsQueryKey,
   plannerMealHistoryQueryKey,
   plannerShoppingQueryKey,
+  plannerVegetarianDaysQueryKey,
   removePlanItem,
+  setVegetarianDay,
   updatePlanServings,
   updateMealStatus,
   type PlanItem,
   type PlannerMealType,
   type PlannerPeriod,
   type MealCompletionStatus,
+  type VegetarianDayMark,
 } from '@/data/plannerApi';
-import { useDefaultServings } from '@/features/account/preferences';
+import { savePreferences } from '@/features/account/accountApi';
+import { DEFAULT_PREFERENCES, useDefaultServings } from '@/features/account/preferences';
 import { useAuth } from '@/features/auth/AuthContext';
+import type { CalendarMode } from '@/features/auth/types';
 import type { Translate } from '@/features/i18n/translate';
 import { errorMessage as translateError } from '@/lib/errors';
 import { useI18n } from '@/features/i18n/I18nContext';
 import { useRecipeCatalog } from '@/features/i18n/recipeContent';
+import {
+  formatDayMonth,
+  formatLunarRange,
+  isVegetarianRecipe,
+  resolveVegetarianDay,
+  upsertVegetarianMark,
+  vegetarianOverrides,
+} from '@/features/planner/plannerCalendar';
+import {
+  lunarFromIsoDate,
+  lunarYearName,
+  numericLunarLabel,
+  vietnamToday,
+} from '@/lib/lunarCalendar';
 
 const mealTypes: { id: PlannerMealType; label: string }[] = [
   { id: 'breakfast', label: 'Bữa sáng' },
@@ -69,7 +91,7 @@ function shiftDate(date: Date, days: number) {
 }
 
 function formatDay(date: Date, locale: string) {
-  return new Intl.DateTimeFormat(locale, { day: '2-digit', month: '2-digit' }).format(date);
+  return formatDayMonth(date, locale);
 }
 
 function formatRange(from: string, to: string, locale: string) {
@@ -94,8 +116,9 @@ function planItemKey(item: PlanItem) {
 }
 
 export function PlannerPage() {
-  const { user } = useAuth();
+  const { updateUser, user } = useAuth();
   const { locale, t } = useI18n();
+  const preferences = user?.preferences ?? DEFAULT_PREFERENCES;
   const catalog = useRecipeCatalog();
   const errorMessage = (error: unknown) => translateError(error, t);
   const defaultServings = useDefaultServings();
@@ -103,7 +126,7 @@ export function PlannerPage() {
   const sundayFirst = user?.preferences?.week_start === 'sunday';
   const weekStartOf = (date: Date) => startOfWeek(date, sundayFirst);
   const queryClient = useQueryClient();
-  const [weekStart, setWeekStart] = useState(() => weekStartOf(new Date()));
+  const [weekStart, setWeekStart] = useState(() => weekStartOf(parseLocalDate(vietnamToday())));
   const [activeTab, setActiveTab] = useState<'week' | 'history'>('week');
   const [addTarget, setAddTarget] = useState<{ date: string; mealType: PlannerMealType } | null>(
     null,
@@ -115,12 +138,19 @@ export function PlannerPage() {
   const [feedback, setFeedback] = useState('');
   const [shoppingOpen, setShoppingOpen] = useState(false);
   const [shoppingPeriod, setShoppingPeriod] = useState<PlannerPeriod>('week');
-  const [shoppingDate, setShoppingDate] = useState(() => toDateInputValue(weekStartOf(new Date())));
+  const [shoppingDate, setShoppingDate] = useState(() =>
+    toDateInputValue(weekStartOf(parseLocalDate(vietnamToday()))),
+  );
   const [celebration, setCelebration] = useState(false);
-  const [today, setToday] = useState(() => toDateInputValue(new Date()));
+  const [vegetarianFilter, setVegetarianFilter] = useState<boolean | null>(null);
+  const [modeOverride, setModeOverride] = useState<CalendarMode | null>(null);
+  // Lịch luôn chạy theo ngày Việt Nam (GMT+7), kể cả khi máy đặt múi giờ khác.
+  const [today, setToday] = useState(() => vietnamToday());
+  const calendarMode = modeOverride ?? preferences.calendar_mode;
+  const currentWeekStart = toDateInputValue(weekStartOf(parseLocalDate(today)));
 
   useEffect(() => {
-    const refreshToday = () => setToday(toDateInputValue(new Date()));
+    const refreshToday = () => setToday(vietnamToday());
     const timer = window.setInterval(refreshToday, 60_000);
     window.addEventListener('focus', refreshToday);
     return () => {
@@ -159,6 +189,16 @@ export function PlannerPage() {
       return loaded < lastPage.total ? loaded : undefined;
     },
     enabled: activeTab === 'history' && Boolean(user),
+  });
+  const vegetarianQuery = useQuery({
+    queryKey: plannerVegetarianDaysQueryKey(user?.id, weekFrom, weekTo),
+    queryFn: ({ signal }) => getVegetarianDays(weekFrom, weekTo, signal),
+    enabled: Boolean(user),
+  });
+  const todayVegetarianQuery = useQuery({
+    queryKey: plannerVegetarianDaysQueryKey(user?.id, today, today),
+    queryFn: ({ signal }) => getVegetarianDays(today, today, signal),
+    enabled: Boolean(user),
   });
   const shoppingQuery = useQuery({
     queryKey: plannerShoppingQueryKey(user?.id, shoppingPeriod, shoppingDate),
@@ -202,6 +242,36 @@ export function PlannerPage() {
     mutationFn: updateMealStatus,
     onSuccess: invalidatePlanner,
   });
+  const vegetarianKey = ['planner-vegetarian-days', user?.id] as const;
+  const vegetarianMutation = useMutation({
+    mutationFn: ({ day, value }: { day: string; value: boolean }) => setVegetarianDay(day, value),
+    // Cập nhật lạc quan để ô lịch đổi màu ngay khi bấm, hoàn tác nếu máy chủ từ chối.
+    onMutate: async ({ day, value }) => {
+      await queryClient.cancelQueries({ queryKey: vegetarianKey });
+      const snapshots = queryClient.getQueriesData<VegetarianDayMark[]>({
+        queryKey: vegetarianKey,
+      });
+      for (const [key, marks] of snapshots) {
+        const [, , from, to] = key;
+        if (typeof from === 'string' && typeof to === 'string' && day >= from && day <= to) {
+          queryClient.setQueryData(key, upsertVegetarianMark(marks ?? [], day, value));
+        }
+      }
+      return { snapshots };
+    },
+    onError: (_error, _variables, context) => {
+      for (const [key, marks] of context?.snapshots ?? []) queryClient.setQueryData(key, marks);
+    },
+    onSettled: () => queryClient.invalidateQueries({ queryKey: vegetarianKey }),
+  });
+  const calendarModeMutation = useMutation({
+    mutationFn: (mode: CalendarMode) => savePreferences({ ...preferences, calendar_mode: mode }),
+    onMutate: (mode) => setModeOverride(mode),
+    onSuccess: (saved) => {
+      if (user) updateUser({ ...user, preferences: saved });
+    },
+    onError: () => setModeOverride(null),
+  });
 
   const plannedItems = useMemo(() => itemsQuery.data ?? [], [itemsQuery.data]);
   const filteredRecipes = useMemo(
@@ -210,12 +280,6 @@ export function PlannerPage() {
         .filter((recipe) => matchesRecipeSearch(recipe, search))
         .sort((left, right) => recipeSearchRank(right, search) - recipeSearchRank(left, search)),
     [catalog, search],
-  );
-  const recipePageSize = 8;
-  const recipePageCount = Math.max(1, Math.ceil(filteredRecipes.length / recipePageSize));
-  const visibleRecipes = filteredRecipes.slice(
-    recipePage * recipePageSize,
-    (recipePage + 1) * recipePageSize,
   );
   const historyEvents = historyQuery.data?.pages.flatMap((page) => page.data) ?? [];
   const pastMealGroups = pastMealsQuery.data?.pages.flatMap((page) => page.data) ?? [];
@@ -227,6 +291,42 @@ export function PlannerPage() {
     }
     return grouped;
   }, [plannedItems]);
+  const overrides = useMemo(
+    () => vegetarianOverrides(vegetarianQuery.data, todayVegetarianQuery.data),
+    [todayVegetarianQuery.data, vegetarianQuery.data],
+  );
+  const vegetarianStateOf = (value: string) =>
+    resolveVegetarianDay(value, overrides, preferences.vegetarian_lunar_days);
+  const toggleVegetarian = (value: string) =>
+    vegetarianMutation.mutate({ day: value, value: !vegetarianStateOf(value).vegetarian });
+  const vegetarianPendingFor = (value: string) =>
+    vegetarianMutation.isPending && vegetarianMutation.variables?.day === value;
+  const catalogBySlug = useMemo(
+    () => new Map(catalog.map((recipe) => [recipe.slug, recipe])),
+    [catalog],
+  );
+  const isNonVegetarianDish = (slug: string) => {
+    const recipe = catalogBySlug.get(slug);
+    return Boolean(recipe && !isVegetarianRecipe(recipe));
+  };
+  const vegetarianDayCount = days.filter(
+    (day) => vegetarianStateOf(toDateInputValue(day)).vegetarian,
+  ).length;
+  const targetIsVegetarian = addTarget ? vegetarianStateOf(addTarget.date).vegetarian : false;
+  const targetLunar =
+    addTarget && /^\d{4}-\d{2}-\d{2}$/.test(addTarget.date)
+      ? lunarFromIsoDate(addTarget.date)
+      : null;
+  const vegetarianOnly = vegetarianFilter ?? targetIsVegetarian;
+  const dialogRecipes = vegetarianOnly
+    ? filteredRecipes.filter((recipe) => isVegetarianRecipe(recipe))
+    : filteredRecipes;
+  const recipePageSize = 8;
+  const recipePageCount = Math.max(1, Math.ceil(dialogRecipes.length / recipePageSize));
+  const visibleRecipes = dialogRecipes.slice(
+    recipePage * recipePageSize,
+    (recipePage + 1) * recipePageSize,
+  );
   const uniqueMeals = new Set(plannedItems.map(planItemKey)).size;
   const totalServings = plannedItems.reduce((total, item) => total + item.servings, 0);
 
@@ -236,6 +336,7 @@ export function PlannerPage() {
     setSelectedSlugs([]);
     setRecipePage(0);
     setServings(defaultServings);
+    setVegetarianFilter(null);
     setAddTarget({ date, mealType });
     addMutation.reset();
   };
@@ -250,7 +351,8 @@ export function PlannerPage() {
     setSelectedSlugs(requestedRecipe ? [requestedRecipe.slug] : []);
     setRecipePage(0);
     setServings(defaultServings);
-    setAddTarget({ date: toDateInputValue(new Date()), mealType: 'dinner' });
+    setVegetarianFilter(null);
+    setAddTarget({ date: today, mealType: 'dinner' });
   }
   useEffect(() => {
     if (requestedSlug && requestedSlug === handledAddSlug) setSearchParams({}, { replace: true });
@@ -298,6 +400,20 @@ export function PlannerPage() {
 
       <section className="content-section">
         <div className="container planner-dashboard">
+          <PlannerCalendarHeader
+            mode={calendarMode}
+            modeSaving={calendarModeMutation.isPending}
+            onModeChange={(mode) => calendarModeMutation.mutate(mode)}
+            onToggleTodayVegetarian={() => toggleVegetarian(today)}
+            today={today}
+            todayVegetarian={vegetarianStateOf(today)}
+            vegetarianPending={vegetarianPendingFor(today)}
+          />
+          {calendarModeMutation.isError || vegetarianMutation.isError ? (
+            <p className="planner-inline-error" role="alert">
+              {errorMessage(calendarModeMutation.error ?? vegetarianMutation.error)}
+            </p>
+          ) : null}
           <div className="planner-toolbar planner-toolbar--modern">
             <div className="planner-week-control">
               <button
@@ -310,13 +426,20 @@ export function PlannerPage() {
               </button>
               <div className="planner-week-label">
                 <strong>
-                  {toDateInputValue(weekStart) === toDateInputValue(weekStartOf(new Date()))
-                    ? t('Tuần này')
-                    : t('Kế hoạch tuần')}
+                  {weekFrom === currentWeekStart ? t('Tuần này') : t('Kế hoạch tuần')}
                 </strong>
                 <span>
-                  {formatRange(weekFrom, weekTo, locale)} · {weekStart.getFullYear()}
+                  {calendarMode === 'lunar'
+                    ? t('ÂL {date}', { date: formatLunarRange(weekFrom, weekTo) })
+                    : `${formatRange(weekFrom, weekTo, locale)} · ${weekStart.getFullYear()}`}
                 </span>
+                <small>
+                  {calendarMode === 'lunar'
+                    ? t('DL {date}', {
+                        date: `${formatRange(weekFrom, weekTo, locale)} · ${weekStart.getFullYear()}`,
+                      })
+                    : t('ÂL {date}', { date: formatLunarRange(weekFrom, weekTo) })}
+                </small>
               </div>
               <button
                 aria-label={t('Xem tuần tiếp theo')}
@@ -326,10 +449,10 @@ export function PlannerPage() {
               >
                 <AppIcon name="arrow" size={18} />
               </button>
-              {toDateInputValue(weekStart) !== toDateInputValue(weekStartOf(new Date())) ? (
+              {weekFrom !== currentWeekStart ? (
                 <button
                   className="button button--outline planner-current-week"
-                  onClick={() => setWeekStart(weekStartOf(new Date()))}
+                  onClick={() => setWeekStart(parseLocalDate(currentWeekStart))}
                   type="button"
                 >
                   {t('Tuần hiện tại')}
@@ -391,125 +514,161 @@ export function PlannerPage() {
                   </button>
                 </div>
               ) : (
-                <div aria-label={t('Lịch món ăn trong tuần')} className="planner-week-scroll">
-                  <div className="planner-grid planner-grid--personal">
-                    {days.map((day) => {
-                      const dateValue = toDateInputValue(day);
-                      const today = dateValue === toDateInputValue(new Date());
-                      return (
-                        <article
-                          className={`planner-day${today ? ' is-today' : ''}`}
-                          key={dateValue}
-                        >
-                          <header className="planner-day__header">
-                            <span>
-                              {new Intl.DateTimeFormat(locale, { weekday: 'short' }).format(day)}
-                            </span>
-                            <strong>{day.getDate()}</strong>
-                          </header>
-                          <div className="planner-day__meals">
-                            {mealTypes.map((meal) => {
-                              const slotItems = groupedItems.get(`${dateValue}:${meal.id}`) ?? [];
-                              return (
-                                <section className="planner-meal" key={meal.id}>
-                                  <div className="planner-meal__heading">
-                                    <h3>{t(meal.label)}</h3>
-                                    <button
-                                      aria-label={t('Thêm món vào {meal} {date}', {
-                                        meal: t(meal.label).toLocaleLowerCase(locale),
-                                        date: dateValue,
-                                      })}
-                                      className="planner-add-icon"
-                                      onClick={() => openAddDialog(dateValue, meal.id)}
-                                      type="button"
-                                    >
-                                      <AppIcon name="plus" size={15} />
-                                    </button>
-                                  </div>
-                                  {slotItems.length ? (
-                                    <ul className="planner-dish-list">
-                                      {slotItems.map((item) => (
-                                        <li className="planner-dish" key={item.id}>
-                                          <Link
-                                            aria-label={t('Xem chi tiết {name}', {
-                                              name: item.recipe.name,
-                                            })}
-                                            className="planner-dish__link"
-                                            to={`/recipes/${item.recipe.slug}`}
-                                          >
-                                            <img
-                                              alt={item.recipe.image_alt}
-                                              src={item.recipe.image_path}
-                                            />
-                                            <span>{item.recipe.name}</span>
-                                          </Link>
-                                          <div className="planner-dish__footer">
-                                            <span>
-                                              {t('{count} người', { count: item.servings })}
-                                            </span>
-                                            <div>
-                                              <button
-                                                aria-label={t('Giảm khẩu phần {name}', {
-                                                  name: item.recipe.name,
-                                                })}
-                                                disabled={
-                                                  item.servings <= 1 || servingsMutation.isPending
-                                                }
-                                                onClick={() =>
-                                                  servingsMutation.mutate({
-                                                    id: item.id,
-                                                    count: item.servings - 1,
-                                                  })
-                                                }
-                                                type="button"
-                                              >
-                                                <AppIcon name="minus" size={13} />
-                                              </button>
-                                              <button
-                                                aria-label={t('Tăng khẩu phần {name}', {
-                                                  name: item.recipe.name,
-                                                })}
-                                                disabled={
-                                                  item.servings >= 30 || servingsMutation.isPending
-                                                }
-                                                onClick={() =>
-                                                  servingsMutation.mutate({
-                                                    id: item.id,
-                                                    count: item.servings + 1,
-                                                  })
-                                                }
-                                                type="button"
-                                              >
-                                                <AppIcon name="plus" size={13} />
-                                              </button>
-                                              <button
-                                                aria-label={t('Xóa {name} khỏi kế hoạch', {
-                                                  name: item.recipe.name,
-                                                })}
-                                                className="planner-dish__remove"
-                                                disabled={removeMutation.isPending}
-                                                onClick={() => removeMutation.mutate(item.id)}
-                                                type="button"
-                                              >
-                                                <AppIcon name="close" size={13} />
-                                              </button>
-                                            </div>
-                                          </div>
-                                        </li>
-                                      ))}
-                                    </ul>
-                                  ) : (
-                                    <p className="planner-meal__empty">{t('Chưa có món')}</p>
-                                  )}
-                                </section>
-                              );
-                            })}
-                          </div>
-                        </article>
-                      );
-                    })}
+                <>
+                  <div className="planner-legend">
+                    <span className="planner-legend__item planner-legend__item--veg">
+                      <i aria-hidden="true" /> {t('Ngày ăn chay')}
+                    </span>
+                    <span className="planner-legend__item planner-legend__item--today">
+                      <i aria-hidden="true" /> {t('Hôm nay')}
+                    </span>
+                    <span className="planner-legend__hint">
+                      <AppIcon name="leaf" size={14} />
+                      {t('Bấm biểu tượng lá ở đầu mỗi ngày để đánh dấu ngày ăn chay.')}
+                    </span>
                   </div>
-                </div>
+                  <div aria-label={t('Lịch món ăn trong tuần')} className="planner-week-scroll">
+                    <div className="planner-grid planner-grid--personal">
+                      {days.map((day) => {
+                        const dateValue = toDateInputValue(day);
+                        const isToday = dateValue === today;
+                        const vegetarianDay = vegetarianStateOf(dateValue);
+                        return (
+                          <article
+                            aria-label={
+                              vegetarianDay.vegetarian
+                                ? t('{date} · ngày ăn chay', {
+                                    date: new Intl.DateTimeFormat(locale, {
+                                      dateStyle: 'full',
+                                    }).format(day),
+                                  })
+                                : undefined
+                            }
+                            className={`planner-day${isToday ? ' is-today' : ''}${vegetarianDay.vegetarian ? ' is-vegetarian' : ''}`}
+                            key={dateValue}
+                          >
+                            <PlannerDayHeader
+                              isToday={isToday}
+                              mode={calendarMode}
+                              onToggleVegetarian={() => toggleVegetarian(dateValue)}
+                              pending={vegetarianPendingFor(dateValue)}
+                              value={dateValue}
+                              vegetarian={vegetarianDay}
+                            />
+                            <div className="planner-day__meals">
+                              {mealTypes.map((meal) => {
+                                const slotItems = groupedItems.get(`${dateValue}:${meal.id}`) ?? [];
+                                return (
+                                  <section className="planner-meal" key={meal.id}>
+                                    <div className="planner-meal__heading">
+                                      <h3>{t(meal.label)}</h3>
+                                      <button
+                                        aria-label={t('Thêm món vào {meal} {date}', {
+                                          meal: t(meal.label).toLocaleLowerCase(locale),
+                                          date: dateValue,
+                                        })}
+                                        className="planner-add-icon"
+                                        onClick={() => openAddDialog(dateValue, meal.id)}
+                                        type="button"
+                                      >
+                                        <AppIcon name="plus" size={15} />
+                                      </button>
+                                    </div>
+                                    {slotItems.length ? (
+                                      <ul className="planner-dish-list">
+                                        {slotItems.map((item) => (
+                                          <li className="planner-dish" key={item.id}>
+                                            <Link
+                                              aria-label={t('Xem chi tiết {name}', {
+                                                name: recipeText(item.recipe.name),
+                                              })}
+                                              className="planner-dish__link"
+                                              to={`/recipes/${item.recipe.slug}`}
+                                            >
+                                              <img
+                                                alt={recipeText(item.recipe.image_alt)}
+                                                {...dishImage(
+                                                  item.recipe.slug,
+                                                  item.recipe.image_path,
+                                                )}
+                                              />
+                                              <span>{recipeText(item.recipe.name)}</span>
+                                            </Link>
+                                            {vegetarianDay.vegetarian &&
+                                            isNonVegetarianDish(item.recipe.slug) ? (
+                                              <span className="planner-dish__veg-warning">
+                                                {t('Không phải món chay')}
+                                              </span>
+                                            ) : null}
+                                            <div className="planner-dish__footer">
+                                              <span>
+                                                {t('{count} người', { count: item.servings })}
+                                              </span>
+                                              <div>
+                                                <button
+                                                  aria-label={t('Giảm khẩu phần {name}', {
+                                                    name: recipeText(item.recipe.name),
+                                                  })}
+                                                  disabled={
+                                                    item.servings <= 1 || servingsMutation.isPending
+                                                  }
+                                                  onClick={() =>
+                                                    servingsMutation.mutate({
+                                                      id: item.id,
+                                                      count: item.servings - 1,
+                                                    })
+                                                  }
+                                                  type="button"
+                                                >
+                                                  <AppIcon name="minus" size={13} />
+                                                </button>
+                                                <button
+                                                  aria-label={t('Tăng khẩu phần {name}', {
+                                                    name: recipeText(item.recipe.name),
+                                                  })}
+                                                  disabled={
+                                                    item.servings >= 30 ||
+                                                    servingsMutation.isPending
+                                                  }
+                                                  onClick={() =>
+                                                    servingsMutation.mutate({
+                                                      id: item.id,
+                                                      count: item.servings + 1,
+                                                    })
+                                                  }
+                                                  type="button"
+                                                >
+                                                  <AppIcon name="plus" size={13} />
+                                                </button>
+                                                <button
+                                                  aria-label={t('Xóa {name} khỏi kế hoạch', {
+                                                    name: recipeText(item.recipe.name),
+                                                  })}
+                                                  className="planner-dish__remove"
+                                                  disabled={removeMutation.isPending}
+                                                  onClick={() => removeMutation.mutate(item.id)}
+                                                  type="button"
+                                                >
+                                                  <AppIcon name="close" size={13} />
+                                                </button>
+                                              </div>
+                                            </div>
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    ) : (
+                                      <p className="planner-meal__empty">{t('Chưa có món')}</p>
+                                    )}
+                                  </section>
+                                );
+                              })}
+                            </div>
+                          </article>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </>
               )}
 
               <div className="planner-summary planner-summary--personal">
@@ -526,6 +685,12 @@ export function PlannerPage() {
                       servings: totalServings,
                     })}
                   </small>
+                  {vegetarianDayCount ? (
+                    <small className="planner-summary__veg">
+                      <AppIcon name="leaf" size={13} />
+                      {t('{count} ngày ăn chay trong tuần', { count: vegetarianDayCount })}
+                    </small>
+                  ) : null}
                 </div>
                 <button className="button button--primary" onClick={showShoppingList} type="button">
                   {t('Tạo danh sách mua sắm')} <AppIcon name="arrow" size={17} />
@@ -572,7 +737,11 @@ export function PlannerPage() {
                             <span>
                               {new Intl.DateTimeFormat(locale, { dateStyle: 'full' }).format(
                                 parseLocalDate(group.plan_date),
-                              )}
+                              )}{' '}
+                              ·{' '}
+                              {t('ÂL {date}', {
+                                date: numericLunarLabel(lunarFromIsoDate(group.plan_date)),
+                              })}
                             </span>
                             <h3>
                               {t(
@@ -591,8 +760,11 @@ export function PlannerPage() {
                         <div className="planner-meal-history__dishes">
                           {group.items.map((item) => (
                             <Link key={item.id} to={`/recipes/${item.recipe.slug}`}>
-                              <img alt={item.recipe.image_alt} src={item.recipe.image_path} />
-                              <span>{item.recipe.name}</span>
+                              <img
+                                alt={recipeText(item.recipe.image_alt)}
+                                {...dishImage(item.recipe.slug, item.recipe.image_path)}
+                              />
+                              <span>{recipeText(item.recipe.name)}</span>
                             </Link>
                           ))}
                         </div>
@@ -661,7 +833,7 @@ export function PlannerPage() {
                         <ol className="planner-history__list">
                           {historyEvents.map((event) => (
                             <li key={event.id}>
-                              <img alt="" src={event.image_path} />
+                              <img alt="" {...dishImage(event.recipe_slug, event.image_path)} />
                               <div>
                                 <strong>
                                   {t(
@@ -820,7 +992,10 @@ export function PlannerPage() {
                     <div>
                       {shoppingQuery.data.dishes.map((dish, index) => (
                         <article key={`${dish.plan_date}:${dish.meal_type}:${dish.slug}:${index}`}>
-                          <img alt={recipeText(dish.name)} src={dish.image_path} />
+                          <img
+                            alt={recipeText(dish.name)}
+                            {...dishImage(dish.slug, dish.image_path)}
+                          />
                           <div>
                             <strong>{recipeText(dish.name)}</strong>
                             <small>
@@ -951,8 +1126,20 @@ export function PlannerPage() {
                 <input
                   type="date"
                   value={addTarget.date}
-                  onChange={(event) => setAddTarget({ ...addTarget, date: event.target.value })}
+                  onChange={(event) => {
+                    setVegetarianFilter(null);
+                    setRecipePage(0);
+                    setAddTarget({ ...addTarget, date: event.target.value });
+                  }}
                 />
+                {targetLunar ? (
+                  <small className="planner-dialog__lunar">
+                    <AppIcon name="moon" size={12} />
+                    {t('ÂL {date}', {
+                      date: `${numericLunarLabel(targetLunar)} · ${lunarYearName(targetLunar.year)}`,
+                    })}
+                  </small>
+                ) : null}
               </label>
               <label>
                 <span>{t('Bữa ăn')}</span>
@@ -994,6 +1181,24 @@ export function PlannerPage() {
                 }}
               />
             </label>
+            <div className="planner-dialog__veg">
+              <button
+                aria-pressed={vegetarianOnly}
+                className={`planner-veg-filter${vegetarianOnly ? ' is-active' : ''}`}
+                onClick={() => {
+                  setVegetarianFilter(!vegetarianOnly);
+                  setRecipePage(0);
+                }}
+                type="button"
+              >
+                <AppIcon name="leaf" size={14} /> {t('Chỉ món chay')}
+              </button>
+              {targetIsVegetarian ? (
+                <span className="planner-dialog__veg-note">
+                  {t('Ngày ăn chay — danh sách đang ưu tiên món chay.')}
+                </span>
+              ) : null}
+            </div>
             {addMutation.isError ? (
               <p className="planner-inline-error" role="alert">
                 {errorMessage(addMutation.error)}
@@ -1004,7 +1209,7 @@ export function PlannerPage() {
               </p>
             ) : null}
             <div aria-label={t('Kết quả tìm món')} className="planner-recipe-results">
-              {filteredRecipes.length ? (
+              {dialogRecipes.length ? (
                 visibleRecipes.map((recipe) => {
                   const alreadyAdded = plannedItems.some(
                     (item) =>
@@ -1044,15 +1249,17 @@ export function PlannerPage() {
                 })
               ) : (
                 <p className="planner-no-results">
-                  {t('Không tìm thấy món phù hợp với từ khóa này.')}
+                  {vegetarianOnly && filteredRecipes.length
+                    ? t('Chưa có món chay phù hợp. Tắt “Chỉ món chay” để xem tất cả món.')
+                    : t('Không tìm thấy món phù hợp với từ khóa này.')}
                 </p>
               )}
             </div>
-            {filteredRecipes.length > recipePageSize ? (
+            {dialogRecipes.length > recipePageSize ? (
               <nav aria-label={t('Phân trang danh sách món')} className="planner-recipe-pagination">
                 <span>
                   {t('{count} món phù hợp · Trang {page}/{pages}', {
-                    count: filteredRecipes.length,
+                    count: dialogRecipes.length,
                     page: recipePage + 1,
                     pages: recipePageCount,
                   })}

@@ -5,7 +5,7 @@
  * qua biến môi trường để không phải sửa mã.
  */
 const DEFAULT_ADDRESS = 'Ngõ 80/57 Mễ Trì Hạ, phường Từ Liêm, Hà Nội';
-// Google Maps vẫn định vị chính xác hơn với tên quận cũ, nên chuỗi tìm kiếm tách riêng khỏi địa chỉ hiển thị.
+// Giữ tên quận cũ riêng cho truy vấn Google Maps.
 const DEFAULT_MAP_QUERY = '80/57 Mễ Trì Hạ, Nam Từ Liêm, Hà Nội';
 
 export const contactInfo = {
@@ -27,7 +27,7 @@ export function phoneHref(phone: string) {
   return `tel:${phone.replace(/[^\d+]/g, '')}`;
 }
 
-/** Nhúng Google Maps không cần API key; chỉ tải khi khối bản đồ cuộn tới (loading="lazy"). */
+/** Bản đồ tải chậm, không cần API key. */
 export function mapEmbedUrl(query: string, language = 'vi') {
   return `https://www.google.com/maps?q=${encodeURIComponent(query)}&hl=${language}&z=16&output=embed`;
 }

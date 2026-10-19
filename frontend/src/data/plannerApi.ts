@@ -104,6 +104,13 @@ export interface PlanMealStatusUpdate {
   completion_status: MealCompletionStatus;
 }
 
+export interface VegetarianDayMark {
+  day: string;
+  is_vegetarian: boolean;
+}
+
+export const plannerVegetarianDaysQueryKey = (userId?: string, from = '', to = '') =>
+  ['planner-vegetarian-days', userId, from, to] as const;
 export const plannerItemsQueryKey = (userId?: string, from = '', to = '') =>
   ['planner-items', userId, from, to] as const;
 export const plannerHistoryQueryKey = (userId?: string) => ['planner-history', userId] as const;
@@ -167,4 +174,16 @@ export function getPastMealHistory(
 export function getShoppingList(period: PlannerPeriod, date: string, signal?: AbortSignal) {
   const query = new URLSearchParams({ period, date });
   return apiRequest<ShoppingList>(`/planner/shopping-list?${query}`, { signal });
+}
+
+export function getVegetarianDays(from: string, to: string, signal?: AbortSignal) {
+  const query = new URLSearchParams({ from, to });
+  return apiRequest<VegetarianDayMark[]>(`/planner/vegetarian-days?${query}`, { signal });
+}
+
+export function setVegetarianDay(day: string, isVegetarian: boolean) {
+  return apiRequest<VegetarianDayMark>(`/planner/vegetarian-days/${encodeURIComponent(day)}`, {
+    method: 'PUT',
+    body: JSON.stringify({ is_vegetarian: isVegetarian }),
+  });
 }

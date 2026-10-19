@@ -5106,7 +5106,6 @@ html[data-reduce-motion='true'] .hero-dish__steam {
   }
 }
 
-/* Random meal: readable controls and uncropped dish imagery. */
 .profile-options > button > span:last-child {
   min-width: 0;
 }
@@ -5491,7 +5490,6 @@ html[data-reduce-motion='true'] .hero-dish__steam {
   }
 }
 
-/* Daily meal ideas: a more tactile, editorial platter card. */
 .content-section--tint:has(.meal-card) {
   background:
     radial-gradient(ellipse at 8% 12%, rgb(234 193 143 / 15%), transparent 36%),
@@ -5688,7 +5686,6 @@ html[data-reduce-motion='true'] .hero-dish__steam {
   }
 }
 
-/* Keep every recipe photo fully visible inside its own space on the platter. */
 .meal-platter__dish {
   width: 40%;
   aspect-ratio: 1.38;
@@ -5923,7 +5920,6 @@ html[data-reduce-motion='true'] .hero-dish__steam {
   }
 }
 
-/* Home food showcases: bright plating, full dish visibility and gentle depth. */
 .showcase-carousel .showcase-carousel__item > .recipe-card {
   overflow: hidden;
   border: 1px solid #eee3d7;
@@ -5993,6 +5989,224 @@ html[data-reduce-motion='true'] .hero-dish__steam {
 .showcase-carousel .meal-platter__dish.is-active img {
   filter: drop-shadow(0 12px 11px rgb(60 45 31 / 24%));
 }
+
+.meal-card__platter {
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 50% 45%, #fffdf9 0, #faf5ec 58%, #f5eddf 100%);
+}
+.meal-card__platter::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 62%, rgb(111 75 38 / 9%), transparent 64%);
+  content: '';
+  pointer-events: none;
+}
+.meal-platter {
+  z-index: 1;
+  width: min(100%, 360px);
+  filter: none;
+}
+.meal-platter::before {
+  inset: 0;
+  border-radius: 0;
+  border: 0;
+  box-shadow: none;
+  background: url('/images/platter/meal-rattan-tray-cutout.webp') center / contain no-repeat;
+  filter: drop-shadow(0 10px 14px rgb(74 48 25 / 22%));
+}
+.meal-platter::after {
+  display: none;
+}
+.meal-platter__dish {
+  z-index: 1;
+  width: 48%;
+  aspect-ratio: 1.38;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  transition: transform 560ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+.meal-platter__dish:hover,
+.meal-platter__dish.is-active {
+  z-index: 2;
+  transform: translateY(-2px);
+  box-shadow: none;
+}
+.meal-platter__dish:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: 18px;
+}
+.meal-platter__dish img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border-radius: 0;
+  object-fit: contain;
+  filter: saturate(1.045) contrast(1.02) drop-shadow(0 8px 8px rgb(55 37 23 / 19%));
+  transform-origin: center 70%;
+  animation: none;
+  transition:
+    filter 520ms ease,
+    scale 520ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+.showcase-carousel .meal-platter__dish img {
+  padding: 0;
+  border-radius: 0;
+  object-fit: contain;
+  filter: saturate(1.045) contrast(1.02) drop-shadow(0 8px 8px rgb(55 37 23 / 19%));
+  animation: none;
+  transition:
+    filter 520ms ease,
+    scale 520ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+.meal-platter__dish:nth-child(2) img {
+  rotate: 0deg;
+}
+.meal-platter__dish:nth-child(3) img {
+  rotate: 0deg;
+}
+.meal-platter__dish:nth-child(4) img {
+  rotate: 0deg;
+}
+.meal-platter__dish:hover img,
+.meal-platter__dish.is-active img {
+  filter: saturate(1.08) contrast(1.02) drop-shadow(0 13px 11px rgb(65 47 31 / 23%));
+  scale: 1.02;
+}
+.showcase-carousel .meal-platter__dish:hover img,
+.showcase-carousel .meal-platter__dish.is-active img {
+  filter: saturate(1.08) contrast(1.02) drop-shadow(0 13px 11px rgb(65 47 31 / 23%));
+  scale: 1.02;
+}
+.meal-platter--1 .meal-platter__dish--1-1 {
+  top: 20%;
+  left: 20%;
+  width: 60%;
+}
+.meal-platter--2 .meal-platter__dish {
+  top: 29%;
+  width: 48%;
+}
+.meal-platter--2 .meal-platter__dish--2-1 {
+  left: 1%;
+}
+.meal-platter--2 .meal-platter__dish--2-2 {
+  right: 1%;
+}
+.meal-platter--3 .meal-platter__dish--3-1 {
+  top: 12%;
+  left: 24%;
+  width: 52%;
+}
+.meal-platter--3 .meal-platter__dish--3-2 {
+  bottom: 15%;
+  left: 6%;
+  width: 44%;
+}
+.meal-platter--3 .meal-platter__dish--3-3 {
+  right: 6%;
+  bottom: 15%;
+  width: 44%;
+}
+.meal-platter--4 .meal-platter__dish {
+  width: 44%;
+}
+.meal-platter--4 .meal-platter__dish--4-1 {
+  top: 14%;
+  left: 4%;
+  right: auto;
+  bottom: auto;
+}
+.meal-platter--4 .meal-platter__dish--4-2 {
+  top: 14%;
+  left: auto;
+  right: 4%;
+  bottom: auto;
+}
+.meal-platter--4 .meal-platter__dish--4-3 {
+  top: auto;
+  bottom: 14%;
+  left: 4%;
+  right: auto;
+}
+.meal-platter--4 .meal-platter__dish--4-4 {
+  top: auto;
+  bottom: 14%;
+  left: auto;
+  right: 4%;
+}
+
+.meal-card__summary {
+  display: grid;
+  min-height: 82px;
+  align-content: start;
+  gap: 5px;
+  margin: 2px 0 4px;
+  border: 1px solid #f0e3d7;
+  border-left: 3px solid #b34d3a;
+  border-radius: 0 14px 14px 0;
+  padding: 10px 13px;
+  background: linear-gradient(115deg, #fff7ef, #fffdfa 82%);
+}
+.meal-card__summary-label {
+  color: #a34433;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+.meal-card__summary > p {
+  min-height: 0;
+  color: #6c5a4e;
+  font-size: 13px;
+  line-height: 1.55;
+}
+.meal-card__platter-caption {
+  position: relative;
+  z-index: 1;
+  min-height: 42px;
+  padding-inline: 6px;
+}
+
+@keyframes meal-platter-dish-breathe {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -2.5px;
+  }
+}
+
+@media (max-width: 680px) {
+  .meal-platter {
+    width: min(100%, 340px);
+  }
+  .meal-platter--4 .meal-platter__dish {
+    width: 43%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .meal-platter__dish,
+  .meal-platter__dish img {
+    animation: none;
+    transition-duration: 0.01ms;
+  }
+  .showcase-carousel .meal-platter__dish,
+  .showcase-carousel .meal-platter__dish img {
+    animation: none;
+    transition-duration: 0.01ms;
+  }
+}
+
 @keyframes home-dish-light {
   from {
     opacity: 0.48;
@@ -6394,5 +6608,491 @@ body.has-narrator {
   .is-narrating,
   .narrator-bar__progress span {
     transition: none;
+  }
+}
+
+/* ---------- Kế hoạch: lịch dương/âm song song & ngày ăn chay ---------- */
+.planner-page {
+  --veg-bg: #fff6d1;
+  --veg-bg-strong: #ffe58a;
+  --veg-border: #efc94c;
+  --veg-text: #7a5600;
+  --veg-leaf: #3f7a35;
+  --lunar-ink: #5b4a8a;
+  --lunar-soft: #f1ecfb;
+}
+.planner-calendar-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(250px, 1fr);
+  gap: 18px;
+  margin-bottom: 22px;
+  border: 1px solid var(--color-border);
+  border-radius: 22px;
+  padding: 16px;
+  background:
+    radial-gradient(circle at 100% 0, rgb(233 175 82 / 16%), transparent 42%), var(--color-surface);
+  box-shadow: var(--shadow-sm);
+  transition:
+    border-color 220ms ease,
+    background-color 220ms ease;
+}
+.planner-calendar-hero.is-vegetarian {
+  border-color: var(--veg-border);
+  background: radial-gradient(circle at 100% 0, rgb(255 214 92 / 34%), transparent 46%), #fffdf2;
+}
+.planner-calendar-hero__dates {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.planner-date-card {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  min-width: 0;
+  border: 1px solid #efe4d6;
+  border-radius: 16px;
+  padding: 14px 16px;
+  background: #fffaf3;
+  transition:
+    border-color 200ms ease,
+    box-shadow 200ms ease;
+}
+.planner-date-card.is-primary {
+  border-color: rgb(180 59 44 / 32%);
+  background: linear-gradient(135deg, #fff 0, #fff1ea 100%);
+  box-shadow: 0 10px 26px rgb(180 59 44 / 10%);
+}
+.planner-date-card--lunar {
+  border-color: #e7e0f4;
+  background: #fbf9ff;
+}
+.planner-date-card--lunar.is-primary {
+  border-color: rgb(91 74 138 / 38%);
+  background: linear-gradient(135deg, #fff 0, var(--lunar-soft) 100%);
+  box-shadow: 0 10px 26px rgb(91 74 138 / 12%);
+}
+.planner-date-card__kicker {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-text-muted);
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.planner-date-card__kicker em {
+  border-radius: 999px;
+  padding: 2px 8px;
+  color: var(--veg-text);
+  background: var(--veg-bg-strong);
+  font-style: normal;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.planner-date-card__body {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+.planner-date-card__body > div {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+.planner-date-card__day {
+  color: var(--color-primary);
+  font-size: clamp(38px, 4.6vw, 52px);
+  font-variant-numeric: tabular-nums;
+  font-weight: 800;
+  line-height: 1;
+}
+.planner-date-card--lunar .planner-date-card__day {
+  color: var(--lunar-ink);
+}
+.planner-date-card__title {
+  display: block;
+  color: var(--color-text);
+  font-size: 15px;
+  font-weight: 750;
+}
+.planner-date-card__body small {
+  display: block;
+  color: var(--color-text-muted);
+  font-size: 12.5px;
+}
+.planner-date-card__title::first-letter,
+.planner-date-card__body small::first-letter {
+  text-transform: uppercase;
+}
+.planner-calendar-hero__side {
+  display: grid;
+  align-content: center;
+  gap: 10px;
+}
+.planner-calendar-switch {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: 4px;
+  background: #fbf5ee;
+}
+.planner-calendar-switch button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 38px;
+  border: 0;
+  border-radius: 10px;
+  padding: 0 10px;
+  color: var(--color-text-secondary);
+  background: transparent;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease;
+}
+.planner-calendar-switch button:hover {
+  color: var(--color-text);
+}
+.planner-calendar-switch button.is-active {
+  color: var(--color-primary);
+  background: white;
+  box-shadow: var(--shadow-sm);
+}
+.planner-calendar-switch button:disabled {
+  cursor: progress;
+}
+.planner-calendar-switch button:focus-visible,
+.planner-veg-today:focus-visible,
+.planner-veg-toggle:focus-visible,
+.planner-veg-filter:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+.planner-veg-today {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  border: 1px dashed var(--veg-border);
+  border-radius: 12px;
+  padding: 0 14px;
+  color: var(--veg-text);
+  background: #fffbea;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 750;
+  cursor: pointer;
+  transition:
+    background-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+.planner-veg-today:hover {
+  background: var(--veg-bg);
+  transform: translateY(-1px);
+}
+.planner-veg-today.is-active {
+  border-style: solid;
+  color: #5a3f00;
+  background: linear-gradient(135deg, #ffe58a, #ffd257);
+  box-shadow: 0 8px 20px rgb(214 160 0 / 22%);
+}
+.planner-veg-today svg,
+.planner-veg-toggle.is-active svg,
+.planner-veg-filter.is-active svg,
+.planner-day__veg-banner svg,
+.planner-summary__veg svg,
+.planner-legend__hint svg {
+  color: var(--veg-leaf);
+}
+.planner-calendar-hero__next {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  color: var(--lunar-ink);
+  font-size: 12.5px;
+  font-weight: 650;
+}
+.planner-calendar-hero__zone {
+  color: var(--color-text-muted);
+  font-size: 11.5px;
+  line-height: 1.45;
+}
+.planner-week-label small {
+  color: var(--lunar-ink);
+  font-size: 12px;
+  font-weight: 650;
+}
+.planner-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  margin: 0 0 10px;
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+.planner-legend__item,
+.planner-legend__hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.planner-legend__item {
+  font-weight: 650;
+}
+.planner-legend__item i {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+}
+.planner-legend__item--veg i {
+  border: 1px solid var(--veg-border);
+  background: var(--veg-bg-strong);
+}
+.planner-legend__item--today i {
+  border-radius: 50%;
+  background: var(--color-primary);
+}
+.planner-legend__hint {
+  margin-left: auto;
+}
+.planner-day__header {
+  gap: 6px;
+}
+.planner-day__weekday {
+  display: grid;
+  justify-items: start;
+  gap: 4px;
+  min-width: 0;
+}
+.planner-day__weekday > span {
+  font-weight: 650;
+  text-transform: capitalize;
+}
+.planner-day__moon {
+  border-radius: 999px;
+  padding: 1px 6px;
+  color: var(--lunar-ink);
+  background: var(--lunar-soft);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 750;
+  white-space: nowrap;
+}
+.planner-day__dates {
+  display: grid;
+  justify-items: center;
+  gap: 3px;
+}
+.planner-grid .planner-day__dates strong {
+  width: 34px;
+  height: 34px;
+  background: #f8f1e9;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+.planner-grid article.is-today .planner-day__dates strong {
+  color: white;
+  background: var(--color-primary);
+}
+.planner-day__dates small {
+  color: var(--lunar-ink);
+  font-size: 10.5px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+.planner-veg-toggle {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid #ecdcc8;
+  border-radius: 50%;
+  color: #b9a58f;
+  background: white;
+  cursor: pointer;
+  transition:
+    color 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease,
+    transform 160ms ease;
+}
+.planner-veg-toggle:hover {
+  border-color: var(--veg-border);
+  color: var(--veg-leaf);
+  transform: scale(1.08);
+}
+.planner-veg-toggle.is-active {
+  border-color: var(--veg-border);
+  background: var(--veg-bg-strong);
+}
+.planner-veg-toggle:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+.planner-day.is-vegetarian {
+  background: linear-gradient(180deg, #fff3c4 0, #fffaf0 220px, #fffdf6 100%);
+  box-shadow: inset 0 3px 0 #f5c842;
+}
+.planner-day.is-vegetarian .planner-day__header {
+  border-bottom-color: var(--veg-border);
+  background: rgb(255 229 138 / 45%);
+}
+.planner-day.is-vegetarian .planner-meal {
+  border-color: #f3e2a6;
+  background: rgb(255 255 255 / 78%);
+}
+.planner-day__header {
+  position: relative;
+}
+.planner-day__veg-banner {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 50%;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid var(--veg-border);
+  border-radius: 999px;
+  padding: 1px 8px;
+  color: var(--veg-text);
+  background: var(--veg-bg-strong);
+  font-size: 10.5px;
+  font-weight: 750;
+  line-height: 15px;
+  text-transform: none;
+  white-space: nowrap;
+  transform: translate(-50%, 50%);
+}
+.planner-dish__veg-warning {
+  display: inline-flex;
+  margin-top: 4px;
+  border-radius: 6px;
+  padding: 2px 6px;
+  color: #9a3412;
+  background: #ffedd5;
+  font-size: 10px;
+  font-weight: 700;
+}
+.planner-summary__copy .planner-summary__veg {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 3px;
+  color: var(--veg-text);
+  font-weight: 700;
+}
+.planner-dialog__lunar {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--lunar-ink);
+  font-size: 11.5px;
+}
+.planner-dialog__veg {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  margin: 10px 0 2px;
+}
+.planner-veg-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 34px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0 14px;
+  color: var(--color-text-secondary);
+  background: white;
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease;
+}
+.planner-veg-filter.is-active {
+  border-color: var(--veg-border);
+  color: #5a3f00;
+  background: var(--veg-bg-strong);
+}
+.planner-dialog__veg-note {
+  color: var(--veg-text);
+  font-size: 12px;
+  font-weight: 600;
+}
+.settings-calendar-preview {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #5b4a8a;
+  font-size: 12.5px;
+  font-weight: 650;
+}
+.settings-calendar-preview__note {
+  color: var(--color-text-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+@media (max-width: 960px) {
+  .planner-calendar-hero {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 560px) {
+  .planner-calendar-hero {
+    padding: 12px;
+  }
+  .planner-calendar-hero__dates {
+    gap: 8px;
+  }
+  .planner-date-card {
+    padding: 12px;
+  }
+  .planner-date-card__body {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .planner-date-card__day {
+    font-size: 34px;
+  }
+  .planner-legend__hint {
+    margin-left: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .planner-calendar-hero,
+  .planner-date-card,
+  .planner-veg-today,
+  .planner-veg-toggle {
+    transition: none;
+  }
+}
+@media print {
+  .planner-calendar-hero,
+  .planner-legend {
+    display: none !important;
   }
 }

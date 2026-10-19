@@ -14,7 +14,7 @@ function interpolate(text: string, vars?: TranslateVars) {
   );
 }
 
-/** Chuỗi tiếng Việt là khóa gốc; tiếng Anh tra trong từ điển, thiếu thì giữ nguyên bản Việt. */
+/** Dịch chuỗi giao diện, giữ nguyên nếu chưa có bản dịch. */
 export function translate(language: Language, text: string, vars?: TranslateVars) {
   const template = language === 'en' ? (en[text] ?? text) : text;
   return interpolate(template, vars);

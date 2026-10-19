@@ -1,6 +1,6 @@
 import { useSearchParams } from 'react-router';
 
-/** Bộ lọc của các bảng quản trị được giữ trên URL để có thể chia sẻ hoặc quay lại đúng trang. */
+/** Đồng bộ bộ lọc bảng quản trị với URL. */
 export function useAdminFilters<K extends string>(keys: readonly K[]) {
   const [params, setParams] = useSearchParams();
   const values = Object.fromEntries(keys.map((key) => [key, params.get(key) ?? ''])) as Record<

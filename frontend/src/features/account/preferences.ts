@@ -14,6 +14,9 @@ export const DEFAULT_PREFERENCES: UserPreferences = {
   preferred_regions: [],
   max_cooking_minutes: 0,
   week_start: 'monday',
+  calendar_mode: 'solar',
+  vegetarian_lunar_days: false,
+  email_meal_plan_reminders: true,
   text_size: 'normal',
   reduce_motion: false,
   notify_weekly_plan: true,
@@ -27,7 +30,7 @@ export const DEFAULT_PREFERENCES: UserPreferences = {
 
 const APPETITE_FACTORS: Record<Appetite, number> = { light: 0.8, normal: 1, big: 1.25 };
 
-/** Bản sao quy tắc quy đổi của máy chủ để xem trước ngay khi người dùng chỉnh thành viên. */
+/** Quy đổi khẩu phần để xem trước khi chỉnh thành viên. */
 export function portionFactor(age: number, appetite: Appetite = 'normal') {
   const base = age < 3 ? 0.3 : age <= 6 ? 0.5 : age <= 12 ? 0.7 : age < 65 ? 1 : 0.8;
   return base * APPETITE_FACTORS[appetite];
@@ -120,7 +123,7 @@ function wordsOf(value: string) {
     .join(' ');
 }
 
-/** Gợi ý mềm: dò nguyên liệu theo từ khóa, không thay thế việc người dùng tự kiểm tra. */
+/** Gợi ý nguyên liệu theo từ khóa. */
 export function dietaryConflicts(recipe: Recipe, tags: DietaryTag[]) {
   if (!tags.length) return [];
   const ingredientText = ` ${recipe.ingredients
@@ -143,7 +146,7 @@ export function useUserPreferences() {
   return { user, preferences: user?.preferences ?? DEFAULT_PREFERENCES, isPersonal: Boolean(user) };
 }
 
-/** Khẩu phần mặc định: theo gia đình đã khai báo, hoặc giá trị dự phòng khi chưa đăng nhập. */
+/** Khẩu phần theo thiết lập gia đình hoặc giá trị mặc định. */
 export function useDefaultServings(fallback = 4) {
   const { user } = useAuth();
   return user?.preferences ? user.preferences.computed_servings : fallback;

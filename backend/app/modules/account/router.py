@@ -22,13 +22,14 @@ from app.modules.account.schemas import (
     ProfileUpdateRequest,
 )
 from app.modules.articles.models import Article
+from app.modules.assistant.models import AssistantConversation
 from app.modules.auth.dependencies import get_current_user
 from app.modules.auth.models import AuthIdentity, User
 from app.modules.auth.router import clear_refresh_cookie
 from app.modules.auth.schemas import MessageResponse, UserResponse
 from app.modules.auth.service import revoke_all_sessions
 from app.modules.favorites.models import UserFavoriteRecipe
-from app.modules.planner.models import UserMealPlanItem
+from app.modules.planner.models import UserMealPlanItem, UserVegetarianDay
 from app.modules.recipes.models import Recipe
 from app.modules.submissions.models import RecipeSubmission
 
@@ -198,6 +199,11 @@ def export_account_data(current_user: CurrentUser, session: DatabaseSession) -> 
         .where(UserMealPlanItem.user_id == current_user.id)
         .order_by(UserMealPlanItem.plan_date.desc())
     ).all()
+    vegetarian_days = session.scalars(
+        select(UserVegetarianDay)
+        .where(UserVegetarianDay.user_id == current_user.id)
+        .order_by(UserVegetarianDay.day.desc())
+    ).all()
     articles = session.scalars(
         select(Article).where(Article.author_id == current_user.id).order_by(Article.created_at)
     ).all()
@@ -205,6 +211,11 @@ def export_account_data(current_user: CurrentUser, session: DatabaseSession) -> 
         select(RecipeSubmission)
         .where(RecipeSubmission.user_id == current_user.id)
         .order_by(RecipeSubmission.created_at)
+    ).all()
+    conversations = session.scalars(
+        select(AssistantConversation)
+        .where(AssistantConversation.user_id == current_user.id)
+        .order_by(AssistantConversation.created_at)
     ).all()
     return {
         "exported_at": datetime.now(UTC).isoformat(),
@@ -230,6 +241,10 @@ def export_account_data(current_user: CurrentUser, session: DatabaseSession) -> 
             }
             for plan_date, meal_type, servings, completion_status, slug, name in plans
         ],
+        "vegetarian_days": [
+            {"date": record.day.isoformat(), "is_vegetarian": record.is_vegetarian}
+            for record in vegetarian_days
+        ],
         "stories": [
             {
                 "title": article.title,
@@ -250,5 +265,20 @@ def export_account_data(current_user: CurrentUser, session: DatabaseSession) -> 
                 "created_at": item.created_at.isoformat(),
             }
             for item in submissions
+        ],
+        "assistant_conversations": [
+            {
+                "title": conversation.title,
+                "created_at": conversation.created_at.isoformat(),
+                "messages": [
+                    {
+                        "role": message.role,
+                        "content": message.content,
+                        "created_at": message.created_at.isoformat(),
+                    }
+                    for message in conversation.messages
+                ],
+            }
+            for conversation in conversations
         ],
     }

@@ -3,6 +3,7 @@ from fastapi import APIRouter
 from app.modules.account.router import router as account_router
 from app.modules.admin.router import router as admin_router
 from app.modules.articles.router import router as articles_router
+from app.modules.assistant.router import router as assistant_router
 from app.modules.auth.router import router as auth_router
 from app.modules.favorites.router import router as favorites_router
 from app.modules.health.router import router as health_router
@@ -23,4 +24,5 @@ api_router.include_router(account_router, tags=["account"])
 api_router.include_router(articles_router, tags=["articles"])
 api_router.include_router(submissions_router, tags=["submissions"])
 api_router.include_router(support_router, tags=["support"])
+api_router.include_router(assistant_router, tags=["assistant"])
 api_router.include_router(admin_router, tags=["admin"])

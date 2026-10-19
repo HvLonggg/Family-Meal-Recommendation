@@ -63,7 +63,7 @@ export class NarrationController {
     if (this.state.index >= segments.length) this.stop();
   }
 
-  /** Giọng cho từng ngôn ngữ; đoạn nào không có giọng phù hợp thì để trình duyệt tự chọn theo `lang`. */
+  /** Lưu giọng đọc theo ngôn ngữ. */
   setVoices(voices: NarrationVoices) {
     this.voices = voices;
   }
@@ -151,10 +151,7 @@ export class NarrationController {
   }
 }
 
-/**
- * Chọn giọng cho một ngôn ngữ: ưu tiên đúng vùng (vi-VN, en-US), rồi giọng cài sẵn trên máy
- * (ổn định, chạy cả khi offline) trước giọng online.
- */
+/** Ưu tiên giọng đúng vùng và giọng cài sẵn trên máy. */
 export function pickVoice(voices: SpeechSynthesisVoice[], lang: NarrationLang) {
   const normalize = (value: string) => value.toLowerCase().replace('_', '-');
   const target = normalize(lang);

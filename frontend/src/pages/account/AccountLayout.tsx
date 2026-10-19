@@ -45,12 +45,6 @@ export function AccountLayout() {
                 <span>{t(section.label)}</span>
               </NavLink>
             ))}
-            {user.role === 'admin' ? (
-              <NavLink className="ws-nav__link ws-nav__link--admin" to="/admin">
-                <AppIcon name="shield" size={18} />
-                <span>{t('Trang quản trị')}</span>
-              </NavLink>
-            ) : null}
             <button
               className="ws-nav__link ws-nav__link--logout"
               onClick={() => {

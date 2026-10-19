@@ -1,10 +1,11 @@
-import { keepPreviousData, useQuery } from '@tanstack/react-query';
+import { keepPreviousData, useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 
 import { ConfirmDialog } from '@/components/admin/ConfirmDialog';
-
+import { UserCreator } from '@/components/admin/UserCreator';
 import { AppIcon } from '@/components/common/AppIcon';
+import { Button } from '@/components/ui/Button';
 import { SearchField } from '@/components/common/SearchField';
 import { UserAvatar } from '@/components/common/UserAvatar';
 import {
@@ -14,7 +15,7 @@ import {
   Pagination,
   StatusBadge,
 } from '@/components/ui/Workspace';
-import { adminKeys, listAdminUsers } from '@/features/admin/adminApi';
+import { adminKeys, createAdminUser, listAdminUsers } from '@/features/admin/adminApi';
 import { useAdminFilters } from '@/features/admin/useAdminFilters';
 import { useUserAccessActions } from '@/features/admin/useUserAccessActions';
 import { useAuth } from '@/features/auth/AuthContext';
@@ -36,6 +37,17 @@ export function AdminUsersPage() {
     placeholderData: keepPreviousData,
   });
   const { closeConfirm, confirm, mutation, toggleRole, toggleStatus } = useUserAccessActions();
+  const queryClient = useQueryClient();
+  const [creating, setCreating] = useState(false);
+  const [created, setCreated] = useState<string | null>(null);
+  const create = useMutation({
+    mutationFn: createAdminUser,
+    onSuccess: async (row) => {
+      setCreating(false);
+      setCreated(row.full_name);
+      await queryClient.invalidateQueries({ queryKey: ['admin'] });
+    },
+  });
 
   return (
     <section className="admin-section">
@@ -72,7 +84,20 @@ export function AdminUsersPage() {
           <option value="active">{t('Đang hoạt động')}</option>
           <option value="locked">{t('Đã khóa')}</option>
         </select>
+        <Button
+          className="admin-filters__create"
+          onClick={() => {
+            create.reset();
+            setCreating(true);
+          }}
+        >
+          <AppIcon name="plus" size={16} /> {t('Thêm người dùng')}
+        </Button>
       </div>
+
+      {created ? (
+        <Notice tone="success">{t('Đã tạo tài khoản cho {name}.', { name: created })}</Notice>
+      ) : null}
 
       {mutation.isError ? <Notice tone="danger">{errorMessage(mutation.error, t)}</Notice> : null}
 
@@ -197,6 +222,14 @@ export function AdminUsersPage() {
         total={users.data?.total ?? 0}
       />
       <ConfirmDialog isPending={mutation.isPending} onClose={closeConfirm} request={confirm} />
+      {creating ? (
+        <UserCreator
+          error={create.isError ? errorMessage(create.error, t) : null}
+          isSaving={create.isPending}
+          onClose={() => setCreating(false)}
+          onSave={(payload) => create.mutate(payload)}
+        />
+      ) : null}
     </section>
   );
 }

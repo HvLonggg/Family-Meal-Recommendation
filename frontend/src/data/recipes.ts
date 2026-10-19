@@ -575,7 +575,7 @@ function applyEditedImage(recipe: Recipe): Recipe {
   };
 }
 
-/** Từ điển nội dung món (khóa là chuỗi tiếng Việt gốc); `null` khi hiển thị tiếng Việt. */
+/** Từ điển bản dịch món; `null` khi dùng tiếng Việt. */
 export type RecipeDictionary = Record<string, string>;
 
 let sourceRecipes = recipeCatalog
@@ -599,7 +599,7 @@ function localizeRecipe(recipe: Recipe): Recipe {
   return {
     ...recipe,
     name,
-    // Giữ tên tiếng Việt làm bí danh để tìm "phở", "bún chả" vẫn ra món khi đang xem tiếng Anh.
+// Giữ tên tiếng Việt để tìm món khi giao diện đang dùng tiếng Anh.
     aliases: [...(recipe.aliases ?? []), recipe.name],
     excerpt: recipeText(recipe.excerpt),
     imageAlt: dictionary?.[recipe.imageAlt] ?? name,
@@ -613,6 +613,8 @@ function localizeRecipe(recipe: Recipe): Recipe {
         note: recipeText(item.note),
       })),
     })),
+    preparation: recipe.preparation.map((step) => recipeText(step)),
+    cooking: recipe.cooking.map((step) => recipeText(step)),
     serving: recipeText(recipe.serving),
     finishedDish: recipeText(recipe.finishedDish),
     tip: recipe.tip.split('\n').map(recipeText).join('\n'),

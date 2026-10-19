@@ -30,8 +30,8 @@ describe('suggested meal platter', () => {
       ).toHaveAttribute('href', `/recipes/${dish.slug}`);
     }
     expect(within(platter).getByText(`${dishes.length} món`)).toBeInTheDocument();
-    const summary = document.querySelector('.meal-card__body > p')?.textContent ?? '';
-    expect(summary).toContain('Kết hợp');
+    const summary = document.querySelector('.meal-card__summary > p')?.textContent ?? '';
+    expect(summary).toContain('nâng đỡ hương vị');
     for (const dish of dishes) expect(summary).toContain(dish.name);
   });
 

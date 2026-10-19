@@ -65,7 +65,9 @@ export function StoryEditorPage() {
 }
 
 function EditStory({ id }: { id: string }) {
+  const { user } = useAuth();
   const { t } = useI18n();
+  const isAdmin = user?.role === 'admin';
   const article = useQuery({
     queryKey: ['article-edit', id],
     queryFn: ({ signal }) => getArticleForEditing(id, signal),
@@ -79,9 +81,15 @@ function EditStory({ id }: { id: string }) {
     return (
       <div className="container section">
         <Notice tone="danger">{errorMessage(article.error, t)}</Notice>
-        <Link className="button button--outline" to="/account/stories">
-          {t('Về câu chuyện của tôi')}
-        </Link>
+        {isAdmin ? (
+          <Link className="button button--outline" to="/admin/articles">
+            {t('Về danh sách bài viết')}
+          </Link>
+        ) : (
+          <Link className="button button--outline" to="/account/stories">
+            {t('Về câu chuyện của tôi')}
+          </Link>
+        )}
       </div>
     );
   }
@@ -95,8 +103,9 @@ function StoryForm({ article }: { article?: ArticleDetail }) {
   const queryClient = useQueryClient();
   const [params] = useSearchParams();
   const isAdmin = user?.role === 'admin';
+  // Quản trị viên viết từ khu quản trị nên mặc định là bài biên tập.
   const initialKind: ArticleKind =
-    isAdmin && params.get('kind') === 'editorial' ? 'editorial' : 'story';
+    isAdmin && params.get('kind') !== 'story' ? 'editorial' : 'story';
   const [draft, setDraft] = useState<Draft>(() =>
     article ? fromArticle(article) : emptyDraft(initialKind),
   );
@@ -128,12 +137,12 @@ function StoryForm({ article }: { article?: ArticleDetail }) {
       await queryClient.invalidateQueries({ queryKey: ['my-articles'] });
       await queryClient.invalidateQueries({ queryKey: ['articles'] });
       queryClient.removeQueries({ queryKey: ['article-edit'] });
-      await navigate(
-        saved.status === 'published' ? `/articles/${saved.slug}` : '/account/stories',
-        {
-          replace: true,
-        },
-      );
+      const destination = isAdmin
+        ? '/admin/articles'
+        : saved.status === 'published'
+          ? `/articles/${saved.slug}`
+          : '/account/stories';
+      await navigate(destination, { replace: true });
     },
     onError: (saveError) => setError(errorMessage(saveError, t)),
   });
@@ -175,22 +184,23 @@ function StoryForm({ article }: { article?: ArticleDetail }) {
   };
 
   return (
-    <div className="page-wrap">
-      <section className="page-hero page-hero--compact">
-        <div className="container">
-          <span className="section-label">
-            {draft.kind === 'editorial' ? t('Bài viết biên tập') : t('Câu chuyện căn bếp')}
-          </span>
-          <h1>{article ? t('Chỉnh sửa bài viết') : t('Chia sẻ câu chuyện căn bếp')}</h1>
-          <p>
-            {isAdmin
-              ? t('Bài viết của quản trị viên được xuất bản ngay khi bấm “Xuất bản”.')
-              : t(
-                  'Kể hành trình nấu một món ăn của bạn. Ban biên tập sẽ duyệt trước khi bài hiển thị công khai.',
-                )}
-          </p>
-        </div>
-      </section>
+    <div className={isAdmin ? 'admin-editor' : 'page-wrap'}>
+      {/* Trong khu quản trị, tiêu đề đã nằm ở thanh trên cùng. */}
+      {isAdmin ? null : (
+        <section className="page-hero page-hero--compact">
+          <div className="container">
+            <span className="section-label">
+              {draft.kind === 'editorial' ? t('Bài viết biên tập') : t('Câu chuyện căn bếp')}
+            </span>
+            <h1>{article ? t('Chỉnh sửa bài viết') : t('Chia sẻ câu chuyện căn bếp')}</h1>
+            <p>
+              {t(
+                'Kể hành trình nấu một món ăn của bạn. Ban biên tập sẽ duyệt trước khi bài hiển thị công khai.',
+              )}
+            </p>
+          </div>
+        </section>
+      )}
       <section className="content-section">
         <div className="container editor-layout">
           <form className="editor-form" onSubmit={submit}>

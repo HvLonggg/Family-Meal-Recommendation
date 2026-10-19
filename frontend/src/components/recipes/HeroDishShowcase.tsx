@@ -11,10 +11,10 @@ const LEAVE_MS = 900;
 const IMAGE_SIZES = '(min-width: 1320px) 600px, (min-width: 960px) 45vw, 90vw';
 const STEAM_WISPS = 8;
 
-// Món ăn nguội không hợp với hiệu ứng bốc hơi nên không đưa vào hero.
+// Loại món nguội khỏi hiệu ứng hơi nóng.
 const COLD_DISHES = new Set(['thit-dong', 'gio-thu', 'thit-heo-ngam-nuoc-mam']);
 
-/** Chỉ dùng ảnh đã tách nền để món "nổi" trên nền hero và hơi nóng phủ tự nhiên. */
+/** Chọn món có ảnh tách nền cho hero. */
 function showcaseDishes() {
   const cutouts = recipes.filter(
     (recipe) =>

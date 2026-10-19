@@ -22,7 +22,7 @@ interface AuthContextValue {
   isLoading: boolean;
   login: (payload: LoginPayload) => Promise<AuthUser>;
   logout: () => Promise<void>;
-  /** Cập nhật hồ sơ trong bộ nhớ sau khi người dùng đổi tên, ảnh đại diện hoặc thiết lập. */
+/** Cập nhật hồ sơ tài khoản trong bộ nhớ. */
   updateUser: (user: AuthUser) => void;
   user: AuthUser | null;
 }

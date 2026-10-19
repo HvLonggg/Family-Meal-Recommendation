@@ -10,10 +10,7 @@ interface ActivityBarsProps {
   height?: number;
 }
 
-/**
- * Biểu đồ cột theo ngày: một chuỗi, một màu; tooltip hiện khi rê chuột hoặc focus.
- * Trục y được ẩn, chỉ giữ đường nền và nhãn ngày đầu/giữa/cuối để biểu đồ gọn.
- */
+/** Biểu đồ hoạt động theo ngày. */
 export function ActivityBars({ data, height = 132, label }: ActivityBarsProps) {
   const { formatDate, formatNumber, t } = useI18n();
   const max = Math.max(1, ...data.map((item) => item.count));
@@ -81,7 +78,7 @@ interface MeterListProps {
   emptyText: string;
 }
 
-/** Thanh ngang cùng một sắc độ để so sánh độ lớn; nhãn và số luôn hiển thị bằng chữ. */
+/** So sánh các giá trị bằng thanh ngang. */
 export function MeterList({ emptyText, items }: MeterListProps) {
   const { formatNumber, t } = useI18n();
   const total = items.reduce((sum, item) => sum + item.count, 0);

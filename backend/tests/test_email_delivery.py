@@ -11,8 +11,12 @@ import pytest
 
 from app.core.config import get_settings
 from app.modules.auth.email import (
+    EMAIL_LOGO_CID,
     EmailDeliveryError,
+    send_meal_suggestion_email,
     send_security_notification,
+    send_support_reply_email,
+    send_support_ticket_notification,
     send_verification_email,
 )
 
@@ -36,8 +40,8 @@ def test_account_created_email_welcomes_user_and_mentions_support(
     assert delivery["recipient"] == "lan@example.com"
     assert "Chào mừng bạn đến với Bếp Việt" in delivery["subject"]
     assert "được tạo thành công" in delivery["text"]
-    assert "trải nghiệm sử dụng tuyệt vời" in delivery["text"]
-    assert "liên hệ bộ phận hỗ trợ Bếp Việt" in delivery["text"]
+    assert "những bữa cơm ngon" in delivery["text"]
+    assert "Bếp Việt" in delivery["html"]
 
 
 def test_gmail_smtp_sends_an_otp_over_starttls(monkeypatch: pytest.MonkeyPatch) -> None:
@@ -71,8 +75,161 @@ def test_gmail_smtp_sends_an_otp_over_starttls(monkeypatch: pytest.MonkeyPatch) 
         plain_body = message.get_body(preferencelist=("plain",)).get_content()
         assert "04281" in plain_body
         assert "5 phút" in plain_body
+        assert "BẾP VIỆT" in plain_body
+        assert "Hỗ trợ: hvlongg@gmail.com" in plain_body
+
+        html_part = next(part for part in message.walk() if part.get_content_type() == "text/html")
+        assert f"cid:{EMAIL_LOGO_CID}" in html_part.get_content()
+        inline_logo = next(
+            part for part in message.walk() if part.get_content_type() == "image/png"
+        )
+        assert inline_logo["Content-ID"] == f"<{EMAIL_LOGO_CID}>"
+        assert inline_logo.get_content_disposition() == "inline"
+        assert len(inline_logo.get_payload(decode=True) or b"") > 10_000
     finally:
         get_settings.cache_clear()
+
+
+def test_support_notification_uses_the_branded_email_content(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    from app.modules.auth import email as auth_email
+
+    deliveries: list[dict[str, str]] = []
+    monkeypatch.setattr(
+        auth_email,
+        "_send_message",
+        lambda **message: deliveries.append(message),
+    )
+
+    send_support_ticket_notification(
+        name="Hoàng Long",
+        sender="customer@example.com",
+        topic_id="recipe",
+        subject="Không mở được công thức",
+        body="Trang bị lỗi khi mở món.",
+        created_at=None,
+        reference="BV-TEST1234",
+    )
+
+    assert len(deliveries) == 1
+    assert deliveries[0]["reply_to"] == "customer@example.com"
+    assert "BV-TEST1234" in deliveries[0]["html"]
+    assert "Yêu cầu hỗ trợ mới" in deliveries[0]["html"]
+
+
+def test_support_reply_and_meal_suggestion_use_branded_safe_email(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    from app.modules.auth import email as auth_email
+
+    deliveries: list[dict[str, object]] = []
+    monkeypatch.setattr(auth_email, "_send_message", lambda **message: deliveries.append(message))
+    monkeypatch.setattr(
+        auth_email,
+        "_email_image_source",
+        lambda path, index, **kwargs: (
+            f"cid:meal-{index}",
+            (f"meal-{index}", b"test-photo", "image/jpeg", path.rsplit("/", 1)[-1]),
+        ),
+    )
+
+    send_support_reply_email(
+        recipient="lan@example.com",
+        recipient_name="Lan <script>",
+        subject="Bếp Việt phản hồi",
+        body="Cảm ơn bạn <script>alert(1)</script>",
+        reference="BV-REPLY01",
+    )
+    send_meal_suggestion_email(
+        recipient="lan@example.com",
+        recipient_name="Lan <script>",
+        meal_type="dinner",
+        subject="Gợi ý bữa tối",
+        intro_message="Bếp Việt gợi ý món cho bạn.",
+        closing_message="Chúc bạn ngon miệng.",
+        recipes=[
+            {
+                "slug": "bun-cha-ha-noi",
+                "name": "Bún chả Hà Nội",
+                "excerpt": "Thịt nướng thơm.",
+                "image_path": "/images/recipes/bun-cha.jpg",
+            }
+        ],
+    )
+
+    assert len(deliveries) == 2
+    reply = deliveries[0]
+    assert reply["recipient"] == "lan@example.com"
+    assert "&lt;script&gt;" in str(reply["html"])
+    assert "<script>" not in str(reply["html"])
+
+    suggestion = deliveries[1]
+    assert suggestion["subject"] == "Gợi ý bữa tối"
+    assert "Bếp Việt" in str(suggestion["html"])
+    assert "1 món được đề xuất cho bữa tối ngon miệng tại nhà." in str(suggestion["html"])
+    assert "chọn riêng" not in str(suggestion["html"])
+    assert "background:#fff6e9" in str(suggestion["html"])
+    assert "cid:meal-0" in str(suggestion["html"])
+    assert "/recipes/bun-cha-ha-noi" in str(suggestion["html"])
+    assert suggestion["inline_images"] == [("meal-0", b"test-photo", "image/jpeg", "bun-cha.jpg")]
+
+
+def test_meal_plan_reminder_uses_a_formal_subject_and_planned_meal_copy(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    from datetime import date
+
+    from app.modules.auth import email as auth_email
+
+    deliveries: list[dict[str, object]] = []
+    monkeypatch.setattr(auth_email, "_send_message", lambda **message: deliveries.append(message))
+    monkeypatch.setattr(
+        auth_email,
+        "_email_image_source",
+        lambda path, index, **kwargs: ("", None),
+    )
+
+    auth_email.send_meal_plan_reminder_email(
+        recipient="lan@example.com",
+        recipient_name="Lan",
+        meal_type="dinner",
+        plan_date=date(2026, 10, 19),
+        recipes=[
+            {
+                "slug": "ca-chep-kho-rieng",
+                "name": "Cá chép kho riềng",
+                "excerpt": "Món cá kho đậm đà.",
+                "image_path": "/images/ca-chep.webp",
+            }
+        ],
+    )
+
+    message = deliveries[0]
+    assert message["subject"] == "Nhắc kế hoạch bữa tối ngày 19/10/2026 | Bếp Việt"
+    assert "NHẮC LỊCH BỮA TỐI · BẾP VIỆT" in str(message["html"])
+    assert "1 món đã có trong kế hoạch bữa tối ngày 19/10/2026." in str(message["html"])
+    assert "được đề xuất" not in str(message["html"])
+    assert "Bếp Việt xin nhắc bạn về thực đơn bữa tối" in str(message["text"])
+
+
+def test_email_image_source_does_not_fetch_arbitrary_or_traversal_paths(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    from app.modules.auth import email as auth_email
+
+    monkeypatch.setattr(
+        auth_email.httpx,
+        "Client",
+        lambda **kwargs: pytest.fail("unsafe recipe paths must not trigger an HTTP request"),
+    )
+    external, external_inline = auth_email._email_image_source("http://127.0.0.1/admin", 0)
+    traversal, traversal_inline = auth_email._email_image_source("/images/../../secret", 1)
+
+    assert external == "http://127.0.0.1/admin"
+    assert external_inline is None
+    assert traversal == ""
+    assert traversal_inline is None
 
 
 def test_smtp_refusal_is_not_reported_as_success(monkeypatch: pytest.MonkeyPatch) -> None:

@@ -15,6 +15,7 @@ import {
 import { useAuth } from '@/features/auth/AuthContext';
 import { useI18n } from '@/features/i18n/I18nContext';
 import { errorMessage } from '@/lib/errors';
+import { ChangeEmailPanel } from '@/pages/account/ChangeEmailPanel';
 
 function passwordStrength(value: string) {
   let score = 0;
@@ -163,21 +164,26 @@ export function SecurityPage() {
             <dl className="security-facts">
               <div>
                 <dt>{t('Email')}</dt>
-                <dd>{user.email ?? '—'}</dd>
+                <dd>
+                  {user.email ?? '—'} <a href="#email">{t('Đổi email')}</a>
+                </dd>
               </div>
               <div>
                 <dt>{t('Phương thức')}</dt>
                 <dd className="security-facts__badges">
                   {hasPassword ? <StatusBadge tone="info">{t('Mật khẩu')}</StatusBadge> : null}
-                  {(overview.data?.linked_providers ?? []).map((provider) => (
-                    <StatusBadge key={provider} tone="neutral">
-                      {provider === 'google'
-                        ? 'Google'
-                        : provider === 'facebook'
-                          ? 'Facebook'
-                          : provider}
-                    </StatusBadge>
-                  ))}
+                  {(overview.data?.linked_providers ?? [])
+                    // Đăng nhập bằng mật khẩu đã hiện ở huy hiệu "Mật khẩu" phía trước.
+                    .filter((provider) => provider !== 'password')
+                    .map((provider) => (
+                      <StatusBadge key={provider} tone="neutral">
+                        {provider === 'google'
+                          ? 'Google'
+                          : provider === 'facebook'
+                            ? 'Facebook'
+                            : provider}
+                      </StatusBadge>
+                    ))}
                 </dd>
               </div>
               <div>
@@ -193,6 +199,7 @@ export function SecurityPage() {
               </div>
             </dl>
           </Panel>
+          <ChangeEmailPanel hasPassword={hasPassword} />
           <Panel
             description={t(
               'Dùng khi bạn quên đăng xuất trên máy lạ hoặc nghi ngờ tài khoản bị truy cập trái phép.',

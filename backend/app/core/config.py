@@ -39,6 +39,7 @@ class Settings(BaseSettings):
     email_from_address: str | None = "hvlongg@gmail.com"
     email_from_name: str = "Bếp Việt"
     support_email: str = "hvlongg@gmail.com"
+    email_asset_base_url: str | None = None
     email_use_ssl: bool = False
     email_starttls: bool = True
     email_timeout_seconds: int = Field(default=10, ge=3, le=60)
@@ -52,6 +53,10 @@ class Settings(BaseSettings):
     )
     facebook_client_id: str | None = None
     facebook_client_secret: SecretStr | None = None
+    # Trợ lý Chú Rồng: không có key thì chạy bộ máy gợi ý món nội bộ (miễn phí).
+    anthropic_api_key: SecretStr | None = None
+    assistant_model: str = "claude-opus-5-5"
+    assistant_timeout_seconds: float = Field(default=30, ge=5, le=120)
 
     @model_validator(mode="after")
     def validate_production_secrets(self) -> "Settings":

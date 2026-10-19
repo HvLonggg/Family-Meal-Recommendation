@@ -29,7 +29,7 @@ export const activityKinds: { kind: ActivityKind; label: string; icon: IconName 
   { kind: 'support', label: 'Hỗ trợ', icon: 'message' },
 ];
 
-/** Nhãn hành động theo cặp loại:hành động; dùng nhãn dự phòng khi gặp hành động mới. */
+/** Nhãn hành động theo loại và tên hành động. */
 export const activityActionLabels: Record<string, string> = {
   'plan:added': 'Thêm vào kế hoạch',
   'plan:updated': 'Cập nhật kế hoạch',

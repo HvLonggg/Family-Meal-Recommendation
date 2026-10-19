@@ -1,8 +1,11 @@
 from datetime import date, datetime
+from decimal import Decimal
 from typing import Literal
 from uuid import UUID
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator
+from pydantic import BaseModel, ConfigDict, EmailStr, Field, ValidationInfo, field_validator
+
+from app.modules.auth.schemas import validate_password_strength
 
 UserRole = Literal["user", "admin"]
 UserStatus = Literal["active", "locked"]
@@ -60,6 +63,30 @@ class AdminUserUpdate(BaseModel):
 
     role: UserRole | None = None
     status: UserStatus | None = None
+
+
+class AdminUserCreate(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    full_name: str = Field(min_length=2, max_length=120)
+    email: EmailStr
+    password: str = Field(min_length=8, max_length=128)
+    role: UserRole = "user"
+
+    @field_validator("full_name")
+    @classmethod
+    def clean_full_name(cls, value: str) -> str:
+        return " ".join(value.strip().split())
+
+    @field_validator("email")
+    @classmethod
+    def normalize_email(cls, value: EmailStr) -> str:
+        return str(value).strip().casefold()
+
+    @field_validator("password")
+    @classmethod
+    def check_password(cls, value: str) -> str:
+        return validate_password_strength(value)
 
 
 class AdminPlanItem(BaseModel):
@@ -150,6 +177,62 @@ class AdminRecipeUpdate(BaseModel):
     @classmethod
     def clean_text(cls, value: str) -> str:
         return " ".join(value.strip().split())
+
+
+IngredientGroup = Literal["Nguyên liệu chính", "Gia vị", "Nước và chất lỏng", "Hỗ trợ chế biến"]
+
+
+class AdminRecipeIngredientInput(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    group_name: IngredientGroup = "Nguyên liệu chính"
+    name: str = Field(min_length=1, max_length=180)
+    amount: Decimal | None = Field(default=None, ge=0, le=100000)
+    unit: str = Field(default="", max_length=60)
+    note: str | None = Field(default=None, max_length=300)
+
+    @field_validator("name", "unit")
+    @classmethod
+    def clean_text(cls, value: str) -> str:
+        return " ".join(value.strip().split())
+
+    @field_validator("note")
+    @classmethod
+    def clean_note(cls, value: str | None) -> str | None:
+        cleaned = " ".join((value or "").strip().split())
+        return cleaned or None
+
+
+class AdminRecipeCreate(AdminRecipeUpdate):
+    """Món mới do quản trị viên nhập; ảnh bắt buộc là ảnh món đã tách nền."""
+
+    image: str = Field(min_length=32, max_length=12_000_000)
+    image_alt: str = Field(default="", max_length=300)
+    ingredients: list[AdminRecipeIngredientInput] = Field(min_length=1, max_length=60)
+    preparation_steps: list[str] = Field(default_factory=list, max_length=30)
+    cooking_steps: list[str] = Field(min_length=1, max_length=30)
+
+    @field_validator("image_alt")
+    @classmethod
+    def clean_alt(cls, value: str) -> str:
+        return " ".join(value.strip().split())
+
+    @field_validator("preparation_steps", "cooking_steps")
+    @classmethod
+    def clean_steps(cls, steps: list[str], info: ValidationInfo) -> list[str]:
+        cleaned = [" ".join(step.strip().split()) for step in steps]
+        if any(len(step) > 2000 for step in cleaned):
+            raise ValueError("Mỗi bước tối đa 2000 ký tự.")
+        cleaned = [step for step in cleaned if step]
+        if info.field_name == "cooking_steps" and not cleaned:
+            raise ValueError("Cần ít nhất một bước nấu.")
+        return cleaned
+
+
+class AdminRecipeImageUpdate(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    image: str = Field(min_length=32, max_length=12_000_000)
 
 
 class AdminRecipeEngagement(BaseModel):

@@ -2,6 +2,8 @@ import { keepPreviousData, useMutation, useQuery, useQueryClient } from '@tansta
 import { useEffect, useState, type FormEvent } from 'react';
 import { Link } from 'react-router';
 
+import { CutoutImagePicker } from '@/components/admin/CutoutImagePicker';
+import { RecipeCreator } from '@/components/admin/RecipeCreator';
 import { AppIcon } from '@/components/common/AppIcon';
 import { SearchField } from '@/components/common/SearchField';
 import { UserAvatar } from '@/components/common/UserAvatar';
@@ -15,8 +17,10 @@ import {
 } from '@/components/ui/Workspace';
 import {
   adminKeys,
+  createAdminRecipe,
   getAdminRecipeInsights,
   listAdminRecipes,
+  replaceAdminRecipeImage,
   updateAdminRecipe,
   type AdminRecipe,
   type AdminRecipeFan,
@@ -24,6 +28,7 @@ import {
   type AdminRecipeUpdate,
 } from '@/features/admin/adminApi';
 import { useAdminFilters } from '@/features/admin/useAdminFilters';
+import { dishImage } from '@/data/dishImages';
 import { useI18n } from '@/features/i18n/I18nContext';
 import { errorMessage } from '@/lib/errors';
 
@@ -88,9 +93,29 @@ export function AdminRecipesPage() {
     queryFn: ({ signal }) => listAdminRecipes(params, signal),
     placeholderData: keepPreviousData,
   });
+  const [creating, setCreating] = useState(false);
+  const [created, setCreated] = useState<AdminRecipe | null>(null);
+  const create = useMutation({
+    mutationFn: createAdminRecipe,
+    onSuccess: async (recipe) => {
+      setCreating(false);
+      setCreated(recipe);
+      await queryClient.invalidateQueries({ queryKey: ['admin'] });
+    },
+  });
   const mutation = useMutation({
-    mutationFn: ({ slug, payload }: { slug: string; payload: AdminRecipeUpdate }) =>
-      updateAdminRecipe(slug, payload),
+    mutationFn: async ({
+      image,
+      payload,
+      slug,
+    }: {
+      slug: string;
+      payload: AdminRecipeUpdate;
+      image?: string | null;
+    }) => {
+      if (image) await replaceAdminRecipeImage(slug, image);
+      return updateAdminRecipe(slug, payload);
+    },
     onSuccess: async () => {
       setEditing(null);
       setInspecting(null);
@@ -164,7 +189,24 @@ export function AdminRecipesPage() {
             </option>
           ))}
         </select>
+        <Button
+          className="admin-filters__create"
+          onClick={() => {
+            create.reset();
+            setCreating(true);
+          }}
+        >
+          <AppIcon name="plus" size={16} /> {t('Thêm món mới')}
+        </Button>
       </div>
+      {created ? (
+        <Notice tone="success">
+          {t('Đã thêm “{name}” vào kho món.', { name: created.name })}{' '}
+          <Link target="_blank" to={`/recipes/${created.slug}`}>
+            {t('Xem trang món')}
+          </Link>
+        </Notice>
+      ) : null}
       <p className="admin-hint">
         <AppIcon name="sparkles" size={15} />{' '}
         {t('Món bị ẩn sẽ không xuất hiện trong kho món của người dùng sau lần tải trang kế tiếp.')}
@@ -198,7 +240,7 @@ export function AdminRecipesPage() {
                 <tr key={recipe.id}>
                   <td>
                     <div className="cell-recipe">
-                      <img alt="" loading="lazy" src={recipe.image_path} />
+                      <img alt="" loading="lazy" {...dishImage(recipe.slug, recipe.image_path)} />
                       <div>
                         <button
                           className="cell-recipe__name"
@@ -310,8 +352,21 @@ export function AdminRecipesPage() {
         <RecipeEditor
           isSaving={mutation.isPending}
           onClose={() => setEditing(null)}
-          onSave={(payload) => mutation.mutate({ slug: editing.slug, payload })}
+          onSave={(payload, image) => mutation.mutate({ slug: editing.slug, payload, image })}
           recipe={editing}
+        />
+      ) : null}
+
+      {creating ? (
+        <RecipeCreator
+          categories={categories}
+          difficulties={difficulties}
+          error={create.isError ? errorMessage(create.error, t) : null}
+          isSaving={create.isPending}
+          onClose={() => setCreating(false)}
+          onSave={(payload) => create.mutate(payload)}
+          regions={regions}
+          statusLabels={statusLabels}
         />
       ) : null}
     </section>
@@ -322,17 +377,18 @@ interface RecipeEditorProps {
   recipe: AdminRecipe;
   isSaving: boolean;
   onClose: () => void;
-  onSave: (payload: AdminRecipeUpdate) => void;
+  onSave: (payload: AdminRecipeUpdate, image: string | null) => void;
 }
 
 function RecipeEditor({ isSaving, onClose, onSave, recipe }: RecipeEditorProps) {
   const { t } = useI18n();
   const [form, setForm] = useState<AdminRecipeUpdate>(() => toUpdate(recipe));
+  const [image, setImage] = useState<string | null>(null);
   const update = <K extends keyof AdminRecipeUpdate>(key: K, value: AdminRecipeUpdate[K]) =>
     setForm((current) => ({ ...current, [key]: value }));
   const submit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    onSave(form);
+    onSave(form, image);
   };
 
   return (
@@ -362,6 +418,11 @@ function RecipeEditor({ isSaving, onClose, onSave, recipe }: RecipeEditorProps) 
           </button>
         </header>
         <div className="modal__body">
+          <CutoutImagePicker
+            currentSrc={dishImage(recipe.slug, recipe.image_path).src}
+            onChange={setImage}
+            value={image}
+          />
           <label className="ws-field">
             <span>{t('Tên món')}</span>
             <input
@@ -581,7 +642,7 @@ function RecipeInsightsDrawer({ onClose, onEdit, slug }: RecipeInsightsDrawerPro
         ) : (
           <div className="drawer__body">
             <div className="drawer__cover">
-              <img alt="" src={recipe.image_path} />
+              <img alt="" {...dishImage(recipe.slug, recipe.image_path, '480px')} />
               <StatusBadge tone={recipe.status === 'published' ? 'success' : 'neutral'}>
                 {t(statusLabels[recipe.status])}
               </StatusBadge>

@@ -81,7 +81,7 @@ export function apiDelete<T = void>(path: string): Promise<T> {
   return apiRequest<T>(path, { method: 'DELETE' });
 }
 
-/** Đổi đường dẫn tương đối theo gốc API (ví dụ avatar, ảnh bìa) thành URL dùng được cho thẻ img. */
+/** Tạo URL ảnh từ đường dẫn tương đối của API. */
 export function apiUrl(path: string | null | undefined) {
   if (!path) return undefined;
   if (/^(https?:|data:|blob:)/.test(path)) return path;

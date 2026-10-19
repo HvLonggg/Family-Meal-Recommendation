@@ -2,7 +2,7 @@ import type { ArticleList, ArticleDetail, ArticleStatus } from '@/features/artic
 import { toSearch } from '@/features/articles/articlesApi';
 import type { AdminSubmission, SubmissionStatus } from '@/features/submissions/submissionsApi';
 import type { SupportStatus, SupportTicket } from '@/features/support/supportApi';
-import { apiPatch, apiRequest } from '@/lib/api/client';
+import { apiPatch, apiPost, apiPut, apiRequest } from '@/lib/api/client';
 
 export interface Paged<T> {
   data: T[];
@@ -113,6 +113,17 @@ export function updateAdminUser(id: string, payload: { role?: 'user' | 'admin'; 
   return apiPatch<AdminUserRow>(`/admin/users/${encodeURIComponent(id)}`, payload);
 }
 
+export interface AdminUserCreate {
+  full_name: string;
+  email: string;
+  password: string;
+  role: 'user' | 'admin';
+}
+
+export function createAdminUser(payload: AdminUserCreate) {
+  return apiPost<AdminUserRow>('/admin/users', payload);
+}
+
 export function getAdminUserPlans(id: string, signal?: AbortSignal) {
   return apiRequest<{ user: AdminUserRow; data: AdminPlanItem[]; total: number }>(
     `/admin/users/${encodeURIComponent(id)}/plans`,
@@ -130,6 +141,38 @@ export function listAdminRecipes(params: Params, signal?: AbortSignal) {
 
 export function updateAdminRecipe(slug: string, payload: AdminRecipeUpdate) {
   return apiPatch<AdminRecipe>(`/admin/recipes/${encodeURIComponent(slug)}`, payload);
+}
+
+export const ingredientGroups = [
+  'Nguyên liệu chính',
+  'Gia vị',
+  'Nước và chất lỏng',
+  'Hỗ trợ chế biến',
+] as const;
+
+export interface AdminRecipeIngredientInput {
+  group_name: (typeof ingredientGroups)[number];
+  name: string;
+  amount: string | null;
+  unit: string;
+  note?: string | null;
+}
+
+export interface AdminRecipeCreate extends AdminRecipeUpdate {
+  /** Data URL của ảnh PNG/WebP đã tách nền. */
+  image: string;
+  image_alt?: string;
+  ingredients: AdminRecipeIngredientInput[];
+  preparation_steps: string[];
+  cooking_steps: string[];
+}
+
+export function createAdminRecipe(payload: AdminRecipeCreate) {
+  return apiPost<AdminRecipe>('/admin/recipes', payload);
+}
+
+export function replaceAdminRecipeImage(slug: string, image: string) {
+  return apiPut<AdminRecipe>(`/admin/recipes/${encodeURIComponent(slug)}/image`, { image });
 }
 
 export function listAdminArticles(params: Params, signal?: AbortSignal) {
@@ -155,14 +198,107 @@ export function reviewSubmission(
 }
 
 export function listAdminSupport(params: Params, signal?: AbortSignal) {
-  return apiRequest<Paged<SupportTicket>>(`/admin/support${toSearch(params)}`, { signal });
+  return apiRequest<Paged<AdminSupportTicket>>(`/admin/support${toSearch(params)}`, { signal });
 }
 
 export function updateSupportTicket(
   id: string,
   payload: { status: SupportStatus; admin_note?: string | null },
 ) {
-  return apiPatch<SupportTicket>(`/admin/support/${encodeURIComponent(id)}`, payload);
+  return apiPatch<AdminSupportTicket>(`/admin/support/${encodeURIComponent(id)}`, payload);
+}
+
+export interface AdminSupportTicket extends SupportTicket {
+  notification_attempts: number;
+  notification_sent_at: string | null;
+  viewed_at: string | null;
+  reply_status: 'not_sent' | 'sending' | 'sent' | 'failed';
+  reply_attempts: number;
+  reply_last_attempt_at: string | null;
+  reply_sent_at: string | null;
+  reply_last_error: string | null;
+  reply_subject: string | null;
+  reply_message: string | null;
+}
+
+export function markSupportTicketViewed(id: string) {
+  return apiPost<AdminSupportTicket>(`/admin/support/${encodeURIComponent(id)}/viewed`);
+}
+
+export function replyToSupportTicket(id: string, payload: { subject: string; message: string }) {
+  return apiPost<AdminSupportTicket>(`/admin/support/${encodeURIComponent(id)}/reply`, payload);
+}
+
+export interface SupportRecipient {
+  email: string;
+  name: string;
+  latest_at: string;
+}
+
+export function listSupportRecipients(q = '', signal?: AbortSignal) {
+  return apiRequest<{ data: SupportRecipient[] }>(
+    `/admin/support/recipients${toSearch({ q: q || undefined, limit: 100 })}`,
+    { signal },
+  );
+}
+
+export type MealType = 'lunch' | 'dinner';
+export type MealEmailStatus = 'sending' | 'sent' | 'failed';
+
+export interface MealSuggestionEmail {
+  id: string;
+  recipient_email: string;
+  recipient_name: string;
+  meal_type: MealType;
+  subject: string;
+  intro_message: string;
+  closing_message: string;
+  recipe_data: Pick<AdminRecipe, 'slug' | 'name' | 'excerpt' | 'image_path'>[];
+  status: MealEmailStatus;
+  attempts: number;
+  error_message: string | null;
+  sent_at: string | null;
+  created_at: string;
+}
+
+export type MealRecipientSource = 'user' | 'support' | 'new';
+
+export interface MealRecipientLookup {
+  email: string;
+  name: string | null;
+  source: MealRecipientSource;
+}
+
+export function lookupMealRecipient(email: string, signal?: AbortSignal) {
+  return apiRequest<MealRecipientLookup>(
+    `/admin/meal-suggestions/recipient${toSearch({ email })}`,
+    { signal },
+  );
+}
+
+export interface MealSuggestionSendPayload {
+  recipient_emails: string[];
+  /** Tên lời chào cho email chưa có tài khoản; bỏ trống thì email chào “bạn”. */
+  recipient_names?: Record<string, string>;
+  meal_type: MealType;
+  recipe_slugs: string[];
+  subject: string;
+  intro_message: string;
+  closing_message: string;
+}
+
+export function sendMealSuggestion(payload: MealSuggestionSendPayload) {
+  return apiPost<{ data: MealSuggestionEmail[]; sent: number; failed: number }>(
+    '/admin/meal-suggestions/send',
+    payload,
+  );
+}
+
+export function listMealSuggestionHistory(params: Params, signal?: AbortSignal) {
+  return apiRequest<Paged<MealSuggestionEmail>>(
+    `/admin/meal-suggestions/history${toSearch(params)}`,
+    { signal },
+  );
 }
 
 export interface AdminRecipeEngagement extends AdminRecipe {

@@ -36,6 +36,8 @@ def test_preferences_round_trip_and_are_returned_with_session(client: TestClient
                 {"label": "Em", "age": 22, "appetite": "light"},
             ],
             "dietary_tags": ["no_beef", "no_beef"],
+            "calendar_mode": "lunar",
+            "vegetarian_lunar_days": True,
         },
     )
     assert saved.status_code == 200, saved.text
@@ -47,6 +49,8 @@ def test_preferences_round_trip_and_are_returned_with_session(client: TestClient
     me = client.get("/api/v1/auth/me", headers=headers).json()
     assert me["preferences"]["language"] == "en"
     assert me["preferences"]["household_members"][1]["appetite"] == "light"
+    assert me["preferences"]["calendar_mode"] == "lunar"
+    assert me["preferences"]["vegetarian_lunar_days"] is True
 
 
 def test_regular_user_cannot_write_admin_only_preferences(client: TestClient) -> None:
@@ -80,6 +84,10 @@ def test_invalid_preferences_are_rejected(client: TestClient) -> None:
         json={"household_members": [{"label": "Ông", "age": 300}]},
     )
     assert response.status_code == 422
+    invalid_calendar = client.put(
+        "/api/v1/account/preferences", headers=headers, json={"calendar_mode": "chinese"}
+    )
+    assert invalid_calendar.status_code == 422
 
 
 def test_profile_and_avatar_lifecycle(client: TestClient) -> None:

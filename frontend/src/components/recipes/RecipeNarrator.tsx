@@ -13,7 +13,7 @@ import type { Narration } from '@/features/narration/useNarration';
 
 type Props = { narration: Narration; segments: NarrationSegment[] };
 
-/** Nút "Nghe hướng dẫn" và thanh điều khiển thuyết minh bám đáy màn hình khi đang nghe. */
+/** Nút nghe và thanh điều khiển thuyết minh công thức. */
 export function RecipeNarrator({ narration, segments }: Props) {
   const { formatNumber, t } = useI18n();
   const { controller, current, missingVoices, state } = narration;
@@ -31,7 +31,7 @@ export function RecipeNarrator({ narration, segments }: Props) {
     return [...starts];
   }, [segments]);
 
-  // Tự cuộn tới bước đang đọc để người nấu liếc là thấy, kể cả khi đứng xa màn hình.
+  // Cuộn tới đoạn đang đọc.
   const anchor = current?.anchor;
   const playing = state.status === 'playing';
   useEffect(() => {
@@ -42,7 +42,7 @@ export function RecipeNarrator({ narration, segments }: Props) {
     const visibleTop = 80; // chừa chỗ cho header dính đầu trang
     const visibleBottom = window.innerHeight - (barRef.current?.offsetHeight ?? 0);
     if (rect.top >= visibleTop && rect.bottom <= visibleBottom) return;
-    // Căn giữa trong vùng không bị thanh phát che (scrollIntoView chỉ căn theo cả màn hình).
+    // Căn trong vùng phía trên thanh phát.
     const offset =
       rect.top - visibleTop - Math.max(0, (visibleBottom - visibleTop - rect.height) / 2);
     const reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;

@@ -122,25 +122,31 @@ const router = createBrowserRouter([
           { path: 'submissions', element: <MySubmissionsPage /> },
         ],
       },
-      {
-        path: 'admin',
-        element: (
-          <ProtectedRoute allow={['admin']}>
-            <AdminLayout />
-          </ProtectedRoute>
-        ),
-        children: [
-          { index: true, element: <AdminOverviewPage /> },
-          { path: 'users', element: <AdminUsersPage /> },
-          { path: 'users/:userId', element: <AdminUserDetailPage /> },
-          { path: 'plans', element: <AdminPlansPage /> },
-          { path: 'recipes', element: <AdminRecipesPage /> },
-          { path: 'articles', element: <AdminArticlesPage /> },
-          { path: 'submissions', element: <AdminSubmissionsPage /> },
-          { path: 'support', element: <AdminSupportPage /> },
-        ],
-      },
       { path: '*', element: <NotFoundPage /> },
+    ],
+  },
+  {
+    // Khu quản trị có khung riêng, không dùng header/footer của trang công khai.
+    path: 'admin',
+    element: (
+      <ProtectedRoute allow={['admin']}>
+        <AdminLayout />
+      </ProtectedRoute>
+    ),
+    children: [
+      { index: true, element: <AdminOverviewPage /> },
+      { path: 'users', element: <AdminUsersPage /> },
+      { path: 'users/:userId', element: <AdminUserDetailPage /> },
+      { path: 'plans', element: <AdminPlansPage /> },
+      { path: 'recipes', element: <AdminRecipesPage /> },
+      { path: 'articles', element: <AdminArticlesPage /> },
+      { path: 'articles/new', element: <StoryEditorPage /> },
+      { path: 'articles/:id/edit', element: <StoryEditorPage /> },
+      { path: 'submissions', element: <AdminSubmissionsPage /> },
+      { path: 'support', element: <AdminSupportPage /> },
+      { path: 'settings', element: <SettingsPage /> },
+      { path: 'security', element: <SecurityPage /> },
+      { path: '*', element: <Navigate replace to="/admin" /> },
     ],
   },
   {

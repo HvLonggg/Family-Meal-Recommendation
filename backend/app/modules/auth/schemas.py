@@ -78,6 +78,17 @@ class ChangePasswordRequest(BaseModel):
         return validate_password_strength(value)
 
 
+class ChangeEmailRequest(BaseModel):
+    new_email: EmailStr
+    # Bắt buộc với tài khoản có mật khẩu; tài khoản chỉ dùng mạng xã hội để trống.
+    current_password: str | None = Field(default=None, max_length=128)
+
+    @field_validator("new_email")
+    @classmethod
+    def normalize_email(cls, value: EmailStr) -> str:
+        return str(value).strip().casefold()
+
+
 class EmailOtpVerifyRequest(BaseModel):
     challenge_id: UUID
     code: str = Field(pattern=r"^\d{5}$")

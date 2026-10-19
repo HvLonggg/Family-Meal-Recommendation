@@ -125,6 +125,10 @@ class EmailOtpChallenge(Base):
     id: Mapped[UUID] = mapped_column(Uuid(as_uuid=True), primary_key=True, default=uuid4)
     email: Mapped[str] = mapped_column(String(320), index=True)
     purpose: Mapped[str] = mapped_column(String(32), index=True)
+    # Tài khoản đã yêu cầu mã (đổi email); để trống với đăng ký và quên mật khẩu.
+    user_id: Mapped[UUID | None] = mapped_column(
+        Uuid(as_uuid=True), ForeignKey("users.id", ondelete="CASCADE"), index=True
+    )
     code_hash: Mapped[str] = mapped_column(String(64))
     attempts: Mapped[int] = mapped_column(default=0)
     pending_full_name: Mapped[str | None] = mapped_column(String(120))

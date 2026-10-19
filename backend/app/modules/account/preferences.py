@@ -66,6 +66,9 @@ class UserPreferences(BaseModel):
     preferred_regions: list[Region] = Field(default_factory=list, max_length=3)
     max_cooking_minutes: int = Field(default=0, ge=0, le=240)
     week_start: Literal["monday", "sunday"] = "monday"
+    calendar_mode: Literal["solar", "lunar"] = "solar"
+    vegetarian_lunar_days: bool = False
+    email_meal_plan_reminders: bool = True
     text_size: Literal["normal", "large"] = "normal"
     reduce_motion: bool = False
     notify_weekly_plan: bool = True

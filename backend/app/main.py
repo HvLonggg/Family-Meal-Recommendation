@@ -11,6 +11,7 @@ from app.core.exceptions import register_exception_handlers
 from app.core.logging import configure_logging
 from app.core.middleware import RequestContextMiddleware
 from app.modules.auth.email import run_security_email_worker
+from app.modules.planner.email_reminders import run_meal_plan_reminder_worker
 
 
 @asynccontextmanager
@@ -22,6 +23,11 @@ async def lifespan(_: FastAPI) -> AsyncIterator[None]:
         if settings.email_enabled and settings.app_env != "test"
         else None
     )
+    meal_plan_worker = (
+        asyncio.create_task(run_meal_plan_reminder_worker())
+        if settings.email_enabled and settings.app_env != "test"
+        else None
+    )
     try:
         yield
     finally:
@@ -29,6 +35,10 @@ async def lifespan(_: FastAPI) -> AsyncIterator[None]:
             email_worker.cancel()
             with suppress(asyncio.CancelledError):
                 await email_worker
+        if meal_plan_worker is not None:
+            meal_plan_worker.cancel()
+            with suppress(asyncio.CancelledError):
+                await meal_plan_worker
 
 
 def create_app() -> FastAPI:

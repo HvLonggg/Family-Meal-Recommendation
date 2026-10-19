@@ -32,6 +32,7 @@ export type IconName =
   | 'leaf'
   | 'menu'
   | 'minus'
+  | 'moon'
   | 'plus'
   | 'plate'
   | 'refresh'
@@ -46,7 +47,14 @@ export type IconName =
   | 'skipForward'
   | 'stop'
   | 'volume'
-  | 'volumeOff';
+  | 'volumeOff'
+  | 'paperclip'
+  | 'mic'
+  | 'send'
+  | 'copy'
+  | 'expand'
+  | 'collapse'
+  | 'file';
 
 const paths: Record<IconName, React.ReactNode> = {
   camera: (
@@ -210,6 +218,7 @@ const paths: Record<IconName, React.ReactNode> = {
     </>
   ),
   minus: <path d="M5 12h14" />,
+  moon: <path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z" />,
   plus: <path d="M12 5v14M5 12h14" />,
   plate: (
     <>
@@ -285,6 +294,35 @@ const paths: Record<IconName, React.ReactNode> = {
     <>
       <path d="M11 5 6 9H2v6h4l5 4V5Z" />
       <path d="m23 9-6 6M17 9l6 6" />
+    </>
+  ),
+  paperclip: (
+    <path d="m21 11.5-8.6 8.6a5.5 5.5 0 0 1-7.8-7.8l8.6-8.6a3.7 3.7 0 0 1 5.2 5.2l-8.6 8.6a1.8 1.8 0 0 1-2.6-2.6l7.9-7.9" />
+  ),
+  mic: (
+    <>
+      <rect height="12" rx="3" width="6" x="9" y="3" />
+      <path d="M5 11a7 7 0 0 0 14 0M12 18v3M9 21h6" />
+    </>
+  ),
+  send: (
+    <>
+      <path d="M21 3 10.5 13.5" />
+      <path d="M21 3 14.5 21l-4-7.5L3 9.5 21 3Z" />
+    </>
+  ),
+  copy: (
+    <>
+      <rect height="12" rx="2" width="12" x="9" y="9" />
+      <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+    </>
+  ),
+  expand: <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />,
+  collapse: <path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7" />,
+  file: (
+    <>
+      <path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8l-5-5Z" />
+      <path d="M14 3v5h5M9 13h6M9 17h4" />
     </>
   ),
 };

@@ -7,6 +7,7 @@ import { UserAvatar } from '@/components/common/UserAvatar';
 import { LoadingBlock, Notice, Panel } from '@/components/ui/Workspace';
 import { adminKeys, getAdminInsights, getAdminOverview } from '@/features/admin/adminApi';
 import { useI18n } from '@/features/i18n/I18nContext';
+import { dishImage } from '@/data/dishImages';
 import { errorMessage } from '@/lib/errors';
 
 export function AdminOverviewPage() {
@@ -102,7 +103,7 @@ export function AdminOverviewPage() {
             <LoadingBlock label={t('Đang tổng hợp số liệu…')} />
           ) : insights.data ? (
             <>
-              <ActivityBars data={insights.data.activity} label="Thao tác" />
+              <ActivityBars data={insights.data.activity} height={236} label="Thao tác" />
               <p className="admin-queue__hint">
                 {t('{count} tài khoản mới trong 14 ngày', {
                   count: insights.data.signups.reduce((sum, day) => sum + day.count, 0),
@@ -127,9 +128,11 @@ export function AdminOverviewPage() {
               {insights.data.top_recipes.map((recipe, index) => (
                 <li key={recipe.slug}>
                   <span className="rank-list__no">{index + 1}</span>
-                  <img alt="" loading="lazy" src={recipe.image_path} />
+                  <img alt="" loading="lazy" {...dishImage(recipe.slug, recipe.image_path)} />
                   <div>
-                    <Link to={`/recipes/${recipe.slug}`}>{recipe.name}</Link>
+                    <Link target="_blank" to={`/recipes/${recipe.slug}`}>
+                      {recipe.name}
+                    </Link>
                     <small>
                       {t(recipe.region)} · {t(recipe.category)}
                     </small>
@@ -150,7 +153,7 @@ export function AdminOverviewPage() {
           )}
         </Panel>
       </div>
-      <div className="ws-split">
+      <div className="ws-split admin-overview-split">
         <Panel icon="sparkles" title={t('Việc cần xử lý')}>
           <ul className="admin-queue">
             {queue.map((item) => (

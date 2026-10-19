@@ -136,8 +136,7 @@ export function ShowcaseCarousel<Item>({
         offsetRef.current = start + (destination - start) * eased;
         if (progress >= 1) {
           offsetRef.current = 0;
-          // Đổi danh sách thẻ và đặt lại vị trí trong cùng một lần vẽ; nếu đặt vị trí trước khi
-          // React kịp đổi thẻ, thẻ cũ sẽ nháy ngược lại một khung hình (trông như tải lại).
+          // Đổi thẻ và vị trí cùng lúc để tránh nháy thẻ cũ.
           flushSync(() => {
             setTrackOffset(0);
             setCurrentIndex((index) =>
@@ -175,8 +174,7 @@ export function ShowcaseCarousel<Item>({
   }, [isInView, items.length, manualDirection, reducedMotion, visibleCount]);
 
   const canMove = items.length > visibleCount;
-  // Dựng sẵn hai thẻ ngoài khung nhìn: một thẻ đang trượt vào và một thẻ chờ để ảnh tải trước,
-  // tránh cảnh thẻ mới xuất hiện với ảnh trống khi bấm "tiếp".
+  // Giữ hai thẻ đệm để tải ảnh trước khi chúng vào khung nhìn.
   const renderedCount = Math.min(items.length, visibleCount + (canMove ? 2 : 0));
   const firstItemIndex = currentIndex + (manualDirection === 'previous' ? -1 : 0);
   const renderedItems = Array.from({ length: renderedCount }, (_, index) => {
@@ -195,8 +193,7 @@ export function ShowcaseCarousel<Item>({
       return;
     }
     if (direction === 'previous') {
-      // Prepend the previous card, then slide the track left toward offset 0.
-      // This mirrors the next animation and preserves any in-progress auto offset.
+      // Thêm thẻ trước vào đầu và trượt về vị trí gốc.
       offsetRef.current = stepRef.current + offsetRef.current;
     }
     setTrackOffset(offsetRef.current);
