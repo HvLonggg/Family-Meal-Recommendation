@@ -1,0 +1,1355 @@
+{
+  "batch": 58,
+  "description": "Năm món gia cầm miền Nam và Đồng bằng sông Cửu Long được biên tập theo nguồn văn hóa, du lịch và công thức tham khảo; định lượng do Bếp Việt chuẩn hóa, chưa nấu thử.",
+  "recipes": [
+    {
+      "id": "BV616",
+      "slug": "ga-nuong-sau-rieng-lai-thieu",
+      "name": "Gà nướng sầu riêng Lái Thiêu",
+      "aliases": [
+        "Gà nướng sầu riêng Bình Dương"
+      ],
+      "region": [
+        "Nam"
+      ],
+      "province": [
+        "Bình Dương"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "b?a tr?a",
+        "b?a t?i",
+        "m?n m?n"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Một món gà nướng sầu riêng lái thiêu dùng chung cho bốn người.",
+      "prep_time": 25,
+      "cook_time": 60,
+      "passive_time": 120,
+      "total_time": 205,
+      "description": "Gà ta ướp cơm sầu riêng chín rồi nướng vàng thơm, thịt mềm với vị béo ngọt dịu. Món gắn với vùng vườn cây Lái Thiêu; Bếp Việt chuẩn hóa định lượng cho bữa gia đình.",
+      "finished_dish": "Da gà vàng nâu, thịt mọng, thoảng vị sầu riêng mà không át vị gà.",
+      "serving": "Nghỉ gà 8 phút rồi chặt, dùng với xôi hoặc cơm nóng, dưa leo và rau thơm.",
+      "tips": [
+        "Chọn sầu riêng chín thơm, bỏ hạt.",
+        "Ướp trong ngăn mát; không để gà sống ở nhiệt độ phòng.",
+        "Trở đều khi nướng để sầu riêng không cháy; phần thịt dày nhất cần đạt 74°C."
+      ],
+      "dish_type": [
+        "Món nướng",
+        "Món gà"
+      ],
+      "main_ingredient": [
+        "Gà ta",
+        "Sầu riêng"
+      ],
+      "cooking_method": [
+        "Ướp",
+        "Nướng"
+      ],
+      "search_terms": [
+        "gà nướng sầu riêng",
+        "gà nướng Lái Thiêu",
+        "gà nướng Bình Dương"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Gà nướng sầu riêng Lái Thiêu vàng nâu, da óng nhẹ, điểm rau thơm; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 3 giờ 25 phút, gồm 2 giờ ướp.",
+      "suggested_pairings": [
+        "Xôi trắng",
+        "Dưa leo và rau thơm"
+      ],
+      "recipe_family": "lai_thieu_durian_roast_chicken",
+      "keywords": [
+        "gà",
+        "sầu riêng",
+        "Lái Thiêu",
+        "Bình Dương"
+      ],
+      "tags": [
+        "Bình Dương",
+        "Lái Thiêu",
+        "món gà",
+        "món nướng"
+      ],
+      "ingredients": [
+        {
+          "name": "Gà ta nguyên con",
+          "quantity": 1400,
+          "unit": "g",
+          "role": "main",
+          "notes": "Làm sạch, thấm khô.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Cơm sầu riêng chín",
+          "quantity": 220,
+          "unit": "g",
+          "role": "main",
+          "notes": "Bỏ hạt, nghiền thô.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 25,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Gia giảm theo độ ngọt của quả.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 5
+        },
+        {
+          "name": "Đường",
+          "quantity": 10,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Có thể giảm.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 6
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Trộn vào hỗn hợp ướp.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Tiêu đen",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm vừa.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        },
+        {
+          "name": "Muối",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Xát nhẹ trong bụng gà.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 9
+        },
+        {
+          "name": "Rau thơm",
+          "quantity": 20,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm sạch gà, thấm khô; khứa nhẹ phần đùi và ức dày."
+        },
+        {
+          "step": 2,
+          "instruction": "Trộn sầu riêng, hành, tỏi, nước mắm, đường, dầu và tiêu. Để riêng một thìa hỗn hợp sạch để phết; xoa phần còn lại lên gà và ướp lạnh 2 giờ."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng lò 180°C; đưa gà khỏi tủ lạnh trước khi nướng 20 phút."
+        },
+        {
+          "step": 2,
+          "instruction": "Nướng 50–60 phút tùy kích thước, trở vài lần và phết phần hỗn hợp đã để riêng."
+        },
+        {
+          "step": 3,
+          "instruction": "Kiểm tra phần thịt dày nhất đạt 74°C, để nghỉ 8 phút rồi chặt và dọn."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://khcn.tdmu.edu.vn/Data/files/HNKH%202023%20Tap%202.pdf",
+          "publisher": "Trường Đại học Thủ Dầu Một",
+          "title": "Đặc trưng ẩm thực Bình Dương nhìn từ góc độ điều kiện tự nhiên và môi trường xã hội",
+          "use": "Tư liệu hội thảo ghi nhận gà nướng sầu riêng là món đặc sản Bình Dương; không có định lượng.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://mia.vn/cam-nang-du-lich/an-ngay-ga-nuong-sau-rieng-thom-phuc-khi-den-du-lich-binh-duong-6470",
+          "publisher": "MIA.vn",
+          "title": "Ăn ngay gà nướng sầu riêng thơm phức khi đến du lịch Bình Dương",
+          "use": "Đối chiếu liên hệ món với vùng Lái Thiêu; công thức là biên tập.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Khoảng nửa lượng nguyên liệu chính.",
+            "instruction": "Nêm gia vị từ ít một, nhất là muối, nước mắm, cá mặn hoặc tiêu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "Khoảng một lần rưỡi lượng nguyên liệu chính.",
+            "instruction": "Nấu thành mẻ hoặc nồi rộng để thực phẩm chín đều; gia giảm gia vị theo khẩu vị."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/ga-nuong-sau-rieng-lai-thieu-960.webp",
+          "page_url": "https://khcn.tdmu.edu.vn/Data/files/HNKH%202023%20Tap%202.pdf",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để biên tập đặc điểm món và cách nấu.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Gà nướng sầu riêng Lái Thiêu vàng nâu, da óng nhẹ, điểm rau thơm; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "?nh ImageGen m?i, n?n trong su?t; master PNG 1536 ? 1024, b?n canvas xu?t 3840 ? 2160. C?ng th?c bi?n t?p, ch?a n?u th?."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Nguồn xác nhận tên món và bối cảnh Lái Thiêu/Bình Dương, không có tỉ lệ bếp nhà. Bếp Việt biên tập gia vị và thời gian; cần nấu thử.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử với gà cỡ tương đương để xác nhận thời gian.",
+          "Nhờ người am hiểu ẩm thực Lái Thiêu rà soát hương vị."
+        ]
+      }
+    },
+    {
+      "id": "BV617",
+      "slug": "ga-hap-buoi-tan-trieu",
+      "name": "Gà hấp bưởi Tân Triều",
+      "aliases": [
+        "Gà hấp trái bưởi Tân Triều",
+        "Gà hấp vỏ bưởi Đồng Nai"
+      ],
+      "region": [
+        "Nam"
+      ],
+      "province": [
+        "Đồng Nai"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "b?a tr?a",
+        "b?a t?i",
+        "m?n m?n"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Một món gà hấp bưởi tân triều dùng chung cho bốn người.",
+      "prep_time": 35,
+      "cook_time": 45,
+      "passive_time": 30,
+      "total_time": 110,
+      "description": "Gà ta tẩm ướp, xếp vào quả bưởi Tân Triều đã khoét rỗng rồi hấp cách thủy cùng lá bưởi. Hương vỏ bưởi thấm vào thịt, tạo nên món ăn đặc trưng của vùng Tân Triều, Đồng Nai.",
+      "finished_dish": "Thịt gà mềm mọng, thoảng tinh dầu bưởi và hậu vị hơi the đắng.",
+      "serving": "Dọn nóng cùng muối tiêu chanh hoặc mắm gừng, rau sống và cơm trắng.",
+      "tips": [
+        "Chọn bưởi dày vỏ, vừa chín tới và không nứt.",
+        "Dùng lá bưởi vừa phải, tránh hấp lâu làm vị đắng lấn át.",
+        "Xếp gà thoáng trong vỏ; phần thịt dày nhất cần đạt 74°C."
+      ],
+      "dish_type": [
+        "Món hấp",
+        "Món gà"
+      ],
+      "main_ingredient": [
+        "Gà ta",
+        "Bưởi Tân Triều",
+        "Lá bưởi"
+      ],
+      "cooking_method": [
+        "Ướp",
+        "Hấp cách thủy"
+      ],
+      "search_terms": [
+        "gà hấp bưởi",
+        "gà hấp bưởi Tân Triều",
+        "gà hấp trái bưởi Đồng Nai"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Gà hấp bưởi Tân Triều trong vỏ bưởi mở nắp, điểm lá bưởi; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 1 giờ 50 phút, gồm 30 phút ướp; hấp khoảng 35–45 phút.",
+      "suggested_pairings": [
+        "Muối tiêu chanh",
+        "Mắm gừng",
+        "Cơm trắng"
+      ],
+      "recipe_family": "tan_trieu_pomelo_steamed_chicken",
+      "keywords": [
+        "gà hấp bưởi",
+        "Tân Triều",
+        "Đồng Nai"
+      ],
+      "tags": [
+        "Đồng Nai",
+        "Tân Triều",
+        "món gà",
+        "món hấp"
+      ],
+      "ingredients": [
+        {
+          "name": "Gà ta chặt miếng",
+          "quantity": 900,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chặt vừa đủ xếp trong quả bưởi.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Bưởi Tân Triều",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "vegetable",
+          "notes": "Quả lớn, vỏ nguyên; khoét lấy múi.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Lá bưởi",
+          "quantity": 12,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Thái chỉ một phần, phần còn lại lót xửng.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Rượu bưởi",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Tùy chọn nếu có.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 4
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 20,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 12,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 18,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Ướp cùng gà.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 7
+        },
+        {
+          "name": "Muối",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Gia giảm theo nước mắm.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        },
+        {
+          "name": "Đường",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm nhẹ.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 9
+        },
+        {
+          "name": "Tiêu đen",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Xay vừa.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 10
+        },
+        {
+          "name": "Muối tiêu chanh",
+          "quantity": 30,
+          "unit": "g",
+          "role": "condiment",
+          "notes": "Dùng kèm.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa gà, để ráo, chặt miếng. Trộn với hành, tỏi, rượu bưởi, nước mắm, muối, đường và tiêu; ướp lạnh 30 phút."
+        },
+        {
+          "step": 2,
+          "instruction": "Cắt đầu quả bưởi làm nắp, lấy múi nhưng giữ nguyên vỏ; rửa lá bưởi và lót một phần vào đáy."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Xếp gà và lá bưởi thái chỉ vào vỏ, đậy nắp; đặt vào nồi hấp có nước sôi nhẹ."
+        },
+        {
+          "step": 2,
+          "instruction": "Hấp 35–45 phút tùy miếng gà. Kiểm tra phần thịt dày nhất đạt 74°C, tránh hấp quá lâu."
+        },
+        {
+          "step": 3,
+          "instruction": "Cẩn thận lấy quả bưởi ra, mở nắp khi nóng và dọn cùng muối tiêu chanh."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://baodongnai.com.vn/tintuc/201402/ga-hap-trai-buoi-2292557/",
+          "publisher": "Báo Đồng Nai",
+          "title": "Gà hấp trái bưởi",
+          "use": "Ghi nhận dùng bưởi Tân Triều, lấy ruột rồi đặt gà vào vỏ để hấp.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://vietnamnet.vn/ga-tha-vuon-vui-minh-trong-trai-buoi-dac-san-thom-ngon-nuc-tieng-o-dong-nai-783308.html",
+          "publisher": "VietNamNet",
+          "title": "Gà thả vườn vùi mình trong trái bưởi",
+          "use": "Đối chiếu cách tẩm ướp, xếp gà vào bưởi và hấp cách thủy.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Khoảng nửa lượng nguyên liệu chính.",
+            "instruction": "Nêm gia vị từ ít một, nhất là muối, nước mắm, cá mặn hoặc tiêu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "Khoảng một lần rưỡi lượng nguyên liệu chính.",
+            "instruction": "Nấu thành mẻ hoặc nồi rộng để thực phẩm chín đều; gia giảm gia vị theo khẩu vị."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/ga-hap-buoi-tan-trieu-960.webp",
+          "page_url": "https://baodongnai.com.vn/tintuc/201402/ga-hap-trai-buoi-2292557/",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để biên tập đặc điểm món và cách nấu.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Gà hấp bưởi Tân Triều trong vỏ bưởi mở nắp, điểm lá bưởi; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "?nh ImageGen m?i, n?n trong su?t; master PNG 1536 ? 1024, b?n canvas xu?t 3840 ? 2160. C?ng th?c bi?n t?p, ch?a n?u th?."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Nguồn mô tả gà nguyên con hoặc chặt miếng hấp trong quả bưởi. Bếp Việt chọn miếng gà cho vừa vỏ bưởi gia đình; định lượng là biên tập.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử với quả bưởi cỡ phổ biến để chốt lượng gà và thời gian.",
+          "Nhờ người am hiểu Tân Triều rà soát lượng lá bưởi."
+        ]
+      }
+    },
+    {
+      "id": "BV618",
+      "slug": "com-ga-ca-man-long-khanh",
+      "name": "Cơm gà cá mặn Long Khánh",
+      "aliases": [
+        "Cơm chiên gà cá mặn Long Khánh",
+        "Cơm gà cá mặn Đồng Nai"
+      ],
+      "region": [
+        "Nam"
+      ],
+      "province": [
+        "Đồng Nai"
+      ],
+      "category": "Món cơm",
+      "meal_type": [
+        "b?a tr?a",
+        "b?a t?i",
+        "m?n m?n"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Một món cơm gà cá mặn long khánh dùng chung cho bốn người.",
+      "prep_time": 25,
+      "cook_time": 35,
+      "passive_time": 20,
+      "total_time": 80,
+      "description": "Cơm nguội được đảo săn cùng gà xé và cá mặn nướng tơi, tạo vị mặn thơm quyện hạt cơm rời. Món được nhắc đến trong ẩm thực Long Khánh, Đồng Nai; Bếp Việt biên tập định lượng cho bữa nhà.",
+      "finished_dish": "Hạt cơm tơi, thơm cá mặn và hành, xen gà mềm; vị đậm vừa.",
+      "serving": "Dùng nóng với dưa leo, cà chua hoặc rau xanh luộc.",
+      "tips": [
+        "Nấu cơm hơi khô và để nguội hoàn toàn.",
+        "Cá mặn vốn nhiều muối; nếm trước khi nêm thêm.",
+        "Đảo cá và gà trước, cho cơm sau; chia mẻ nếu chảo nhỏ."
+      ],
+      "dish_type": [
+        "Món cơm",
+        "Cơm chiên"
+      ],
+      "main_ingredient": [
+        "Cơm",
+        "Gà",
+        "Cá mặn"
+      ],
+      "cooking_method": [
+        "Luộc",
+        "Nướng",
+        "Chiên cơm"
+      ],
+      "search_terms": [
+        "cơm gà cá mặn",
+        "cơm gà cá mặn Long Khánh",
+        "cơm chiên gà cá mặn Đồng Nai"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Cơm gà cá mặn Long Khánh với cơm tơi, gà xé, cá mặn nướng và hành lá; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 1 giờ 20 phút nếu nấu cơm mới.",
+      "suggested_pairings": [
+        "Dưa leo và cà chua",
+        "Rau xanh luộc",
+        "Canh rau"
+      ],
+      "recipe_family": "long_khanh_salted_fish_chicken_rice",
+      "keywords": [
+        "cơm gà cá mặn",
+        "Long Khánh",
+        "Đồng Nai",
+        "cá mặn"
+      ],
+      "tags": [
+        "Đồng Nai",
+        "Long Khánh",
+        "món cơm",
+        "món gà"
+      ],
+      "ingredients": [
+        {
+          "name": "Gạo tẻ",
+          "quantity": 320,
+          "unit": "g",
+          "role": "grain",
+          "notes": "Nấu trước với ít nước để hạt ráo.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Thịt gà bỏ xương",
+          "quantity": 350,
+          "unit": "g",
+          "role": "main",
+          "notes": "Luộc chín rồi xé.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Cá mặn",
+          "quantity": 90,
+          "unit": "g",
+          "role": "seafood",
+          "notes": "Nướng chín, gỡ xương và làm tơi; điều chỉnh theo độ mặn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 3
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 25,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Thái mỏng.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 10,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 20,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Chia để phi và rang cơm.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Tiêu đen",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm sau cùng.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 5,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Chỉ thêm sau khi nếm.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 9
+        },
+        {
+          "name": "Dưa leo",
+          "quantity": 200,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Thái lát ăn kèm.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Nấu cơm hơi ráo, trải ra khay cho nguội rồi tách hạt."
+        },
+        {
+          "step": 2,
+          "instruction": "Luộc gà vừa chín rồi xé. Nướng cá mặn, gỡ xương và làm tơi."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Phi hành và tỏi, cho cá mặn đảo thơm rồi thêm gà xé và hành."
+        },
+        {
+          "step": 2,
+          "instruction": "Cho cơm nguội vào, đảo tơi lửa vừa lớn; nêm tiêu và nếm trước khi thêm nước mắm."
+        },
+        {
+          "step": 3,
+          "instruction": "Khi cơm săn nóng, rắc hành lá, tắt bếp và dùng ngay."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.vietnamairlines.com/no/vi/plan-book/travel/travel-guide/dac-san-dong-nai",
+          "publisher": "Vietnam Airlines",
+          "title": "Đặc sản Đồng Nai",
+          "use": "Giới thiệu cơm gà cá mặn là món đặc trưng tại Long Khánh.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://vgmo.com.vn/com-ga-ca-man-dong-nai-mon-an-dam-da-huong-vi-mien-dong/",
+          "publisher": "VGMO",
+          "title": "Cơm gà cá mặn Đồng Nai",
+          "use": "Đối chiếu cách dùng cơm nguội, gà luộc xé và cá mặn nướng/xé; định lượng do Bếp Việt biên tập.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Khoảng nửa lượng nguyên liệu chính.",
+            "instruction": "Nêm gia vị từ ít một, nhất là muối, nước mắm, cá mặn hoặc tiêu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "Khoảng một lần rưỡi lượng nguyên liệu chính.",
+            "instruction": "Nấu thành mẻ hoặc nồi rộng để thực phẩm chín đều; gia giảm gia vị theo khẩu vị."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/com-ga-ca-man-long-khanh-960.webp",
+          "page_url": "https://www.vietnamairlines.com/no/vi/plan-book/travel/travel-guide/dac-san-dong-nai",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để biên tập đặc điểm món và cách nấu.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Cơm gà cá mặn Long Khánh với cơm tơi, gà xé, cá mặn nướng và hành lá; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "?nh ImageGen m?i, n?n trong su?t; master PNG 1423 ? 1105, b?n canvas xu?t 3840 ? 2160. C?ng th?c bi?n t?p, ch?a n?u th?."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Nguồn xác nhận món cơm gà cá mặn ở Long Khánh và cách kết hợp nguyên liệu. Bếp Việt chuẩn hóa lượng nguyên liệu; độ mặn tùy loại cá.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử với cá mặn phổ biến để cân chỉnh muối và dầu.",
+          "Rà soát tên gọi cơm chiên/cơm rang tại Long Khánh."
+        ]
+      }
+    },
+    {
+      "id": "BV619",
+      "slug": "vit-nau-tieu-xanh-mien-tay",
+      "name": "Vịt nấu tiêu xanh kiểu miền Tây",
+      "aliases": [
+        "Vịt nấu tiêu xanh",
+        "Vịt hầm tiêu xanh khoai tây"
+      ],
+      "region": [
+        "Nam"
+      ],
+      "province": [],
+      "category": "Món mặn",
+      "meal_type": [
+        "b?a tr?a",
+        "b?a t?i",
+        "m?n m?n"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Một món vịt nấu tiêu xanh kiểu miền tây dùng chung cho bốn người.",
+      "prep_time": 30,
+      "cook_time": 60,
+      "passive_time": 30,
+      "total_time": 120,
+      "description": "Vịt ướp, xào săn rồi hầm với khoai tây, sả và tiêu xanh đến khi mềm. Món được chia sẻ trong thực đơn tiệc miền Tây; đây là phiên bản Bếp Việt cho bữa nhà.",
+      "finished_dish": "Thịt vịt mềm còn nguyên miếng, khoai tây thấm nước dùng cay thơm và tiêu xanh nồng dịu.",
+      "serving": "Dọn nóng với cơm trắng hoặc bánh mì, thêm rau sống.",
+      "tips": [
+        "Khử mùi vịt với gừng và muối, rửa sạch rồi thấm khô.",
+        "Cho khoai vào khi vịt gần mềm để khoai không nát.",
+        "Thêm tiêu xanh ở hai thời điểm để giữ hương thơm."
+      ],
+      "dish_type": [
+        "Món hầm",
+        "Món vịt"
+      ],
+      "main_ingredient": [
+        "Vịt",
+        "Tiêu xanh",
+        "Khoai tây"
+      ],
+      "cooking_method": [
+        "Ướp",
+        "Xào",
+        "Hầm"
+      ],
+      "search_terms": [
+        "vịt nấu tiêu xanh",
+        "vịt nấu tiêu xanh miền Tây",
+        "vịt hầm tiêu xanh khoai tây"
+      ],
+      "spicy_level": 2,
+      "image_alt": "Vịt nấu tiêu xanh với miếng vịt mềm, khoai tây và nhánh tiêu xanh trong nồi đất; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 2 giờ, gồm 30 phút ướp.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Bánh mì",
+        "Rau sống"
+      ],
+      "recipe_family": "mekong_green_pepper_duck_stew",
+      "keywords": [
+        "vịt",
+        "tiêu xanh",
+        "khoai tây",
+        "miền Tây"
+      ],
+      "tags": [
+        "miền Tây",
+        "món vịt",
+        "món hầm",
+        "tiêu xanh"
+      ],
+      "ingredients": [
+        {
+          "name": "Vịt làm sạch",
+          "quantity": 1300,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chặt miếng vừa; chọn vịt không quá già.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Tiêu xanh",
+          "quantity": 45,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Để nguyên nhánh hoặc giã nhẹ.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 2
+        },
+        {
+          "name": "Khoai tây",
+          "quantity": 450,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Gọt vỏ, cắt miếng lớn.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Sả",
+          "quantity": 45,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Đập dập, cắt khúc.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Hành tây",
+          "quantity": 150,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Bổ múi cau.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 20,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Chia để ướp và nêm.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        },
+        {
+          "name": "Đường",
+          "quantity": 8,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Gia giảm.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 9
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng xào vịt.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Nước",
+          "quantity": 900,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Châm vừa xâm xấp.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Muối",
+          "quantity": 4,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm từng ít.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 12
+        },
+        {
+          "name": "Rau sống",
+          "quantity": 100,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Rửa sạch, để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 13
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Chà vịt với muối và gừng, rửa sạch, thấm khô và chặt miếng. Ướp với nửa lượng nước mắm, đường, hành, tỏi và ít tiêu xanh 30 phút."
+        },
+        {
+          "step": 2,
+          "instruction": "Rửa tiêu, đập dập nhẹ một phần; sơ chế khoai, hành tây và sả."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Phi thơm sả, hành tỏi; cho vịt vào xào săn."
+        },
+        {
+          "step": 2,
+          "instruction": "Thêm nước vừa xâm xấp, đun sôi rồi hạ lửa, hầm khoảng 35 phút."
+        },
+        {
+          "step": 3,
+          "instruction": "Thêm khoai, hành tây và tiêu còn lại; hầm 15–20 phút đến khi khoai chín. Nêm vừa và dọn nóng."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://kingfoodmart.com/bai-viet/vit-nau-tieu-xanh-dam-chat-mien-tay",
+          "publisher": "Kingfoodmart",
+          "title": "Vịt nấu tiêu xanh đậm chất miền Tây",
+          "use": "Đối chiếu nguyên liệu và trình tự xào vịt rồi hầm với tiêu xanh, khoai tây và sả.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=RHv3RIxMV7M",
+          "publisher": "Cơm Quê Miền Tây",
+          "title": "Vịt nấu tiêu xanh kiểu miền Tây | Tập 104",
+          "use": "Nguồn địa phương ghi nhận món vịt nấu tiêu trong dịp tiệc miền Tây; tham khảo bối cảnh, không sao chép định lượng.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Khoảng nửa lượng nguyên liệu chính.",
+            "instruction": "Nêm gia vị từ ít một, nhất là muối, nước mắm, cá mặn hoặc tiêu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "Khoảng một lần rưỡi lượng nguyên liệu chính.",
+            "instruction": "Nấu thành mẻ hoặc nồi rộng để thực phẩm chín đều; gia giảm gia vị theo khẩu vị."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/vit-nau-tieu-xanh-mien-tay-960.webp",
+          "page_url": "https://kingfoodmart.com/bai-viet/vit-nau-tieu-xanh-dam-chat-mien-tay",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để biên tập đặc điểm món và cách nấu.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Vịt nấu tiêu xanh với miếng vịt mềm, khoai tây và nhánh tiêu xanh trong nồi đất; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "?nh ImageGen m?i, n?n trong su?t; master PNG 1536 ? 1024, b?n canvas xu?t 3840 ? 2160. C?ng th?c bi?n t?p, ch?a n?u th?."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Định lượng được Bếp Việt chuẩn hóa từ công thức tham khảo cho bốn người; không tuyên bố đây là tỉ lệ duy nhất hay công thức truyền thống.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử để xác nhận thời gian mềm theo tuổi vịt.",
+          "Rà soát độ cay và món ăn kèm với người nấu miền Tây."
+        ]
+      }
+    },
+    {
+      "id": "BV620",
+      "slug": "vit-khia-nuoc-dua-mien-tay",
+      "name": "Vịt khìa nước dừa miền Tây",
+      "aliases": [
+        "Vịt om nước dừa miền Tây",
+        "Vịt khìa dừa"
+      ],
+      "region": [
+        "Nam"
+      ],
+      "province": [],
+      "category": "Món mặn",
+      "meal_type": [
+        "b?a tr?a",
+        "b?a t?i",
+        "m?n m?n"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Một món vịt khìa nước dừa miền tây dùng chung cho bốn người.",
+      "prep_time": 25,
+      "cook_time": 55,
+      "passive_time": 30,
+      "total_time": 110,
+      "description": "Vịt ướp gia vị, áp chảo săn vàng rồi khìa liu riu trong nước dừa đến khi mềm và sốt sánh bóng. Cách nấu dân dã thường được giới thiệu ở miền Tây; Bếp Việt biên tập lượng gia vị cho bữa nhà.",
+      "finished_dish": "Miếng vịt mềm thấm nước dừa, phủ sốt nâu óng với vị mặn ngọt hài hòa.",
+      "serving": "Dọn nóng cùng cơm trắng, dưa leo hoặc rau sống; rưới sốt lên cơm.",
+      "tips": [
+        "Làm sạch vịt với gừng và muối, rửa kỹ rồi thấm khô.",
+        "Áp chảo mặt da trước để vịt ra bớt mỡ và có màu đẹp.",
+        "Khìa lửa nhỏ; nếm trước khi cô sốt vì nước tương và nước mắm đều mặn."
+      ],
+      "dish_type": [
+        "Món khìa",
+        "Món vịt"
+      ],
+      "main_ingredient": [
+        "Vịt",
+        "Nước dừa"
+      ],
+      "cooking_method": [
+        "Ướp",
+        "Áp chảo",
+        "Khìa"
+      ],
+      "search_terms": [
+        "vịt khìa nước dừa",
+        "vịt khìa nước dừa miền Tây",
+        "vịt om nước dừa",
+        "món vịt Nam Bộ"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Vịt khìa nước dừa với miếng vịt nâu óng trong sốt sánh, điểm hành lá; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 1 giờ 50 phút, gồm 30 phút ướp.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Bánh mì",
+        "Dưa leo"
+      ],
+      "recipe_family": "mekong_coconut_braised_duck",
+      "keywords": [
+        "vịt",
+        "khìa",
+        "nước dừa",
+        "miền Tây"
+      ],
+      "tags": [
+        "miền Tây",
+        "món vịt",
+        "món khìa",
+        "nước dừa"
+      ],
+      "ingredients": [
+        {
+          "name": "Vịt làm sạch",
+          "quantity": 1400,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chặt miếng vừa ăn, để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Nước dừa tươi",
+          "quantity": 800,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Chọn nước không lên men.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Gừng",
+          "quantity": 25,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Một phần khử mùi, phần còn lại thái lát.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 25,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Nước tương",
+          "quantity": 35,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Tạo màu và vị mặn dịu.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 6
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Gia giảm theo độ mặn nước tương.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 7
+        },
+        {
+          "name": "Đường",
+          "quantity": 22,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Cân vị ngọt nước dừa.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng nếu vịt ít mỡ.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Tiêu đen",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Rắc sau cùng.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 10
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 15,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Dưa leo",
+          "quantity": 200,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Dùng ăn kèm.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Chà vịt với muối và gừng, rửa, để ráo, chặt miếng. Trộn với hành, tỏi, nước tương, một phần nước mắm, đường và tiêu; ướp lạnh 30 phút."
+        },
+        {
+          "step": 2,
+          "instruction": "Chuẩn bị nước dừa và thái lát gừng. Có thể giữ riêng một thìa nước ướp sạch trước khi trộn vịt để cân chỉnh sốt."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Áp chảo vịt cho săn và vàng nhẹ các mặt; chắt bớt mỡ thừa nếu có."
+        },
+        {
+          "step": 2,
+          "instruction": "Cho nước ướp, nước dừa và gừng vào. Đun sôi rồi hạ nhỏ, khìa 40–50 phút, trở miếng vài lần."
+        },
+        {
+          "step": 3,
+          "instruction": "Khi vịt mềm và sốt sánh, nếm lại rồi chỉnh nước mắm hoặc đường. Rắc hành lá, tiêu và dọn nóng."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.bluestone.com.vn/blogs/vao-bep/vit-khia-nuoc-dua",
+          "publisher": "Bluestone",
+          "title": "Cách làm vịt khìa nước dừa",
+          "use": "Đối chiếu kỹ thuật ướp vịt, khìa lửa nhỏ với nước dừa và dùng sốt với cơm/bánh mì.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://sgtt.thesaigontimes.vn/bua-sang-sai-gon-moi-la-mon-xoi-vit-khia-huong-vi-mien-tay-song-nuoc/",
+          "publisher": "Sài Gòn Tiếp Thị",
+          "title": "Bữa sáng Sài Gòn mới lạ: món xôi vịt khìa hương vị miền Tây",
+          "use": "Đối chiếu cách gọi vịt khìa và liên hệ món với miền Tây; định lượng là biên tập.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Khoảng nửa lượng nguyên liệu chính.",
+            "instruction": "Nêm gia vị từ ít một, nhất là muối, nước mắm, cá mặn hoặc tiêu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "Khoảng một lần rưỡi lượng nguyên liệu chính.",
+            "instruction": "Nấu thành mẻ hoặc nồi rộng để thực phẩm chín đều; gia giảm gia vị theo khẩu vị."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/vit-khia-nuoc-dua-mien-tay-960.webp",
+          "page_url": "https://www.bluestone.com.vn/blogs/vao-bep/vit-khia-nuoc-dua",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để biên tập đặc điểm món và cách nấu.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Vịt khìa nước dừa với miếng vịt nâu óng trong sốt sánh, điểm hành lá; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "?nh ImageGen m?i, n?n trong su?t; master PNG 1536 ? 1024, b?n canvas xu?t 3840 ? 2160. C?ng th?c bi?n t?p, ch?a n?u th?."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Nguồn xác nhận kỹ thuật khìa vịt với nước dừa và cách ăn kèm. Bếp Việt chuẩn hóa gia vị và thời gian; độ ngọt tùy vịt và nước dừa.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử với vịt cỡ phổ biến để xác nhận thời gian.",
+          "Rà soát độ ngọt và cách gọi khìa/om với người nấu miền Tây."
+        ]
+      }
+    }
+  ]
+}

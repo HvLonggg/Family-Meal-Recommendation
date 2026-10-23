@@ -1,0 +1,1467 @@
+{
+  "batch": 61,
+  "description": "N?m m?n gia c?m v? m?n canh ???c bi?n t?p t? ngu?n b?o ch?, du l?ch v? c?ng th?c gia ??nh Vi?t; kh?u ph?n chu?n h?a b?n ng??i, ch?a n?u th?.",
+  "recipes": [
+    {
+      "id": "BV631",
+      "slug": "chao-vit-thanh-da",
+      "name": "Ch?o v?t Thanh ?a",
+      "aliases": [
+        "Ch?o v?t ki?u Thanh ?a",
+        "V?t lu?c ?n ch?o"
+      ],
+      "region": [
+        "Nam"
+      ],
+      "province": [
+        "Th?nh ph? H? Ch? Minh"
+      ],
+      "category": "M?n n??c",
+      "meal_type": [
+        "b?a tr?a",
+        "b?a t?i",
+        "m?n ch?nh"
+      ],
+      "difficulty": "Trung b?nh",
+      "servings": 4,
+      "serving_basis": "M?t m?n d?ng chung trong m?m c?m ho?c b?a ?n gia ??nh b?n ng??i.",
+      "prep_time": 25,
+      "cook_time": 60,
+      "passive_time": 0,
+      "total_time": 85,
+      "description": "V?t lu?c ch?n t?i ???c d?ng v?i ch?o g?o n?u t? n??c lu?c, ?n k?m g?ng, h?nh v? rau th?m. T?n Thanh ?a g?n v?i c?m qu?n ch?o v?t l?u n?m ? Th?nh ph? H? Ch? Minh; B?p Vi?t bi?n t?p kh?u ph?n gia ??nh t? c?ch n?u v?t v? ch?o ph? bi?n, kh?ng nh?n ??y l? c?ng th?c ??c quy?n c?a m?t qu?n.",
+      "finished_dish": "H?t g?o n? m?m nh?ng kh?ng qu? ??c, n??c ch?o th?m g?ng; th?t v?t m?m, da nguy?n mi?ng v? ch?n n??c m?m g?ng c? v? m?n cay d?u.",
+      "serving": "M?c ch?o n?ng v?o t?, r?c h?nh l?, rau m?i v? ti?u. Ch?t v?t th?nh mi?ng, d?ng ri?ng v?i rau s?ng v? n??c m?m g?ng pha lo?ng.",
+      "tips": [
+        "L?m s?ch v?t v?i mu?i v? g?ng; tr?ng l?i, ?? r?o.",
+        "Gi? l?a liu riu v? h?t b?t ?? n??c lu?c trong, kh?ng l?m v?t kh?.",
+        "Ch? rang g?o ??n khi th?m, kh?ng rang s?m m?u."
+      ],
+      "dish_type": [
+        "Ch?o v?t",
+        "M?n v?t",
+        "M?n n??c"
+      ],
+      "main_ingredient": [
+        "V?t",
+        "G?o"
+      ],
+      "cooking_method": [
+        "Lu?c",
+        "N?u ch?o"
+      ],
+      "search_terms": [
+        "ch?o v?t Thanh ?a",
+        "ch?o v?t S?i G?n",
+        "ch?o v?t g?o rang",
+        "c?ch n?u ch?o v?t",
+        "duck porridge Thanh Da"
+      ],
+      "spicy_level": 1,
+      "image_alt": "T? ch?o v?t n?ng v?i h?t g?o n? m?m, th?t v?t ch?t mi?ng, h?nh l? v? g?ng; b?n c?nh l? ch?n n??c m?m g?ng.",
+      "time_note": "Kho?ng 85 ph?t, g?m 0 ph?t ch?; th?i gian th?c t? t?y k?ch c? nguy?n li?u v? thi?t b?.",
+      "suggested_pairings": [
+        "G?i b?p chu?i",
+        "Rau th?m",
+        "N??c m?m g?ng"
+      ],
+      "recipe_family": "duck_porridge_thanh_da_style",
+      "keywords": [
+        "ch?o v?t",
+        "Thanh ?a",
+        "v?t",
+        "g?o"
+      ],
+      "tags": [
+        "Th?nh ph? H? Ch? Minh",
+        "mi?n Nam",
+        "ch?o",
+        "th?t tr?ng"
+      ],
+      "ingredients": [
+        {
+          "name": "V?t l?m s?ch",
+          "quantity": 1200,
+          "unit": "g",
+          "role": "protein",
+          "notes": "Ch?n v?t ?? l?m s?ch, c?n t??i.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "G?o t?",
+          "quantity": 180,
+          "unit": "g",
+          "role": "grain",
+          "notes": "Vo nhanh, ?? r?o.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "G?o n?p",
+          "quantity": 40,
+          "unit": "g",
+          "role": "grain",
+          "notes": "Vo c?ng g?o t? ?? ch?o s?nh nh?.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "G?ng",
+          "quantity": 55,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "M?t n?a ??p d?p lu?c v?t, ph?n c?n l?i th?i s?i pha n??c ch?m.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "H?nh t?m",
+          "quantity": 25,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "N??ng s? ho?c ??p d?p.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "H?nh l?",
+          "quantity": 25,
+          "unit": "g",
+          "role": "herb",
+          "notes": "R?a s?ch, th?i nh?.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Rau m?i",
+          "quantity": 15,
+          "unit": "g",
+          "role": "herb",
+          "notes": "R?a s?ch, th?i nh?.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Mu?i",
+          "quantity": 8,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Chia cho n??c lu?c v? ch?o.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        },
+        {
+          "name": "N??c m?m",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "D?ng n?m ch?o v? pha n??c ch?m.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 9
+        },
+        {
+          "name": "???ng",
+          "quantity": 8,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Pha ch?n n??c m?m g?ng.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 10
+        },
+        {
+          "name": "?t t??i",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Th?i l?t, t?y ch?n.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 11
+        },
+        {
+          "name": "N??c l?c",
+          "quantity": 2400,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "D?ng lu?c v?t v? n?u ch?o.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "X?t v?t v?i mu?i v? g?ng ??p d?p, r?a s?ch, ?? r?o. Vo g?o t? v? n?p; ?? ri?ng."
+        },
+        {
+          "step": 2,
+          "instruction": "N??ng s? h?nh t?m. Th?i g?ng c?n l?i th?nh s?i; chu?n b? h?nh l?, rau m?i v? ?t."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Cho v?t v?o n?i v?i kho?ng 2 l?t n??c, h?nh t?m, g?ng ??p d?p v? m?t ph?n mu?i. ?un s?i, h?t b?t, h? l?a v? lu?c liu riu 35?45 ph?t ??n khi ph?n ??i ch?n; v?t v?t ra, gi? n??c lu?c."
+        },
+        {
+          "step": 2,
+          "instruction": "Rang g?o tr?n ch?o kh? 3?4 ph?t ??n khi th?m. Cho g?o v?o n??c lu?c ?? l?c, th?m n??c n?ng n?u c?n; n?u nh? l?a 25?30 ph?t, khu?y th?nh tho?ng ??n khi h?t g?o n? m?m."
+        },
+        {
+          "step": 3,
+          "instruction": "N?m ch?o b?ng n??c m?m v? mu?i. Pha n??c m?m v?i g?ng s?i, ???ng, ?t v? ?t n??c ?m. Ch?t v?t, r?c h?nh l?, rau m?i, ti?u v? d?ng n?ng."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://vietnamnews.vn/sunday/restaurant-review/298912/chao-vit-thanh-da-hot-and-happening-duck.html",
+          "publisher": "Vietnam News",
+          "title": "Ch?o V?t Thanh ?a: hot and happening duck",
+          "use": "Ghi nh?n t?n g?i Thanh ?a g?n v?i c?c qu?n ch?o v?t t?i Th?nh ph? H? Ch? Minh; d?ng l?m tham chi?u v? b?i c?nh m?n, kh?ng d?ng l?m c?ng th?c ??nh l??ng.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=yLry2A-b6S8",
+          "publisher": "V?nh Khuy?n L?",
+          "title": "Ch?o v?t Thanh ?a / c?ch n?u ch?o v?t",
+          "use": "Tham kh?o s? ch? v? lu?c v?t, d?ng n??c lu?c n?u ch?o v? c?ch ?n c?ng n??c m?m g?ng; B?p Vi?t t? chu?n h?a ??nh l??ng b?n ph?n.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "D?ng m?t n?a nguy?n li?u ch?nh, n?m gia v? t? ?t h?n m?t n?a r?i ?i?u ch?nh.",
+            "instruction": "Gi? nguy?n nguy?n t?c l?m ch?n k? gia c?m v? n?m l?i ? cu?i."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "T?ng nguy?n li?u ch?nh kho?ng m?t l?n r??i, gia v? t?ng t? t?.",
+            "instruction": "D?ng n?i ?? r?ng; kh?ng nh?n gia v? m?n theo t? l? c?ng."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/chao-vit-thanh-da-960.webp",
+          "page_url": null,
+          "source": "B?p Vi?t",
+          "author": "B?p Vi?t",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "?nh ???c t?o m?i cho B?p Vi?t; ngu?n tham kh?o ch? d?ng ?? bi?n t?p danh t?nh m?n, nguy?n li?u v? k? thu?t.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "T? ch?o v?t n?ng v?i h?t g?o n? m?m, th?t v?t ch?t mi?ng, h?nh l? v? g?ng; b?n c?nh l? ch?n n??c m?m g?ng.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "?nh ImageGen m?i; master PNG alpha l?u t?i output/recipe-images/native. C?c WebP 480/960/1536/3840 ???c xu?t tr?n canvas 3840?2160; k?ch th??c master s? ???c ghi ri?ng trong assets_61.json."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Ngu?n b?o ch? x?c nh?n t?n qu?n/m?n Thanh ?a; c?c t? l? g?o, n??c, gia v? v? th?i gian l? b?n chu?n h?a t?i nh? c?a B?p Vi?t, ch?a n?u th?.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": "N?u th? ?? ?i?u ch?nh t? l? g?o/n??c theo lo?i g?o v? ?? ??c mong mu?n; x?c nh?n nhi?t ?? ch?n v?t tr??c khi ph?c v?."
+      }
+    },
+    {
+      "id": "BV632",
+      "slug": "ga-ro-ti-nuoc-dua-mien-nam",
+      "name": "G? r? ti n??c d?a mi?n Nam",
+      "aliases": [
+        "G? r?-ti",
+        "G? r? ti n??c d?a"
+      ],
+      "region": [
+        "Nam"
+      ],
+      "province": [],
+      "category": "M?n m?n",
+      "meal_type": [
+        "b?a tr?a",
+        "b?a t?i",
+        "m?n ch?nh"
+      ],
+      "difficulty": "D?",
+      "servings": 4,
+      "serving_basis": "M?t m?n d?ng chung trong m?m c?m ho?c b?a ?n gia ??nh b?n ng??i.",
+      "prep_time": 20,
+      "cook_time": 45,
+      "passive_time": 30,
+      "total_time": 95,
+      "description": "G? ???c ??p gia v? th?m, ?p ch?o cho da v?ng r?i rim v?i n??c d?a t??i ??n khi n??c s?t s?nh b?ng. ??y l? m?n g? r? ti ki?u gia ??nh ph? bi?n ? mi?n Nam; B?p Vi?t chu?n h?a c?ch rim v? l??ng n??c d?a cho b?n ng??i.",
+      "finished_dish": "Mi?ng g? n?u v?ng, th?t m?m nh?ng c?n ch?c; n??c d?a c? l?i th?nh l?p s?t m?n ng?t nh?, th?m t?i v? ng? v? h??ng.",
+      "serving": "D?n n?ng v?i c?m tr?ng ho?c b?nh m?, th?m d?a leo v? rau x? l?ch. R??i ?t s?t l?n g? ngay tr??c khi ?n.",
+      "tips": [
+        "??p g? trong ng?n m?t; ?? r?o m?t tr??c khi ?p ch?o ?? da l?n m?u.",
+        "D?ng n??c d?a t??i kh?ng ???ng; n?m s?t tr??c khi th?m ???ng ho?c n??c t??ng.",
+        "Ph?n th?t d?y nh?t c?n ??t t?i thi?u 74?C."
+      ],
+      "dish_type": [
+        "M?n g?",
+        "M?n rim"
+      ],
+      "main_ingredient": [
+        "G?",
+        "N??c d?a"
+      ],
+      "cooking_method": [
+        "??p",
+        "?p ch?o",
+        "Rim"
+      ],
+      "search_terms": [
+        "g? r? ti n??c d?a",
+        "g? r? ti mi?n Nam",
+        "g? r?-ti",
+        "g? rim n??c d?a",
+        "Vietnamese coconut braised chicken"
+      ],
+      "spicy_level": 0,
+      "image_alt": "??i g? r? ti v?ng n?u ph? s?t n??c d?a s?nh nh?, ?i?m h?nh l? v? ti?u, b?y tr?n ??a s? tr?ng.",
+      "time_note": "Kho?ng 95 ph?t, g?m 30 ph?t ch?; th?i gian th?c t? t?y k?ch c? nguy?n li?u v? thi?t b?.",
+      "suggested_pairings": [
+        "C?m tr?ng",
+        "B?nh m?",
+        "D?a leo"
+      ],
+      "recipe_family": "southern_coconut_roti_chicken",
+      "keywords": [
+        "g? r? ti",
+        "n??c d?a",
+        "m?n mi?n Nam",
+        "g? rim"
+      ],
+      "tags": [
+        "mi?n Nam",
+        "m?n g?",
+        "m?n rim",
+        "th?t tr?ng"
+      ],
+      "ingredients": [
+        {
+          "name": "??i g? g?c t?",
+          "quantity": 1200,
+          "unit": "g",
+          "role": "protein",
+          "notes": "Ch?t ??i kh?c l?n; th?m kh?.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "N??c d?a t??i",
+          "quantity": 600,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Kh?ng d?ng n??c d?a c? ???ng.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "T?i",
+          "quantity": 18,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "B?m nh?.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "H?nh t?m",
+          "quantity": 25,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "B?m nh?.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "N??c t??ng",
+          "quantity": 30,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Ch?n lo?i d?u m?n.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 5
+        },
+        {
+          "name": "D?u h?o",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "C? th? b? qua n?u c?n tr?nh th?nh ph?n h?i s?n.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 6
+        },
+        {
+          "name": "Ng? v? h??ng",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Kho?ng 1/2 th?a c? ph?.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 7
+        },
+        {
+          "name": "???ng",
+          "quantity": 12,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Gia gi?m theo ?? ng?t n??c d?a.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        },
+        {
+          "name": "D?u ?n",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "cooking_fat",
+          "notes": "D?ng ?p ch?o g?.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Ti?u ?en",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "R?c khi d?n.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 10
+        },
+        {
+          "name": "Mu?i",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "N?m ?t, ch?nh sau khi s?t c?.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 11
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "R?a g?, th?m th?t kh?. Tr?n t?i, h?nh t?m, n??c t??ng, d?u h?o, ng? v? h??ng, ???ng v? mu?i; xoa ??u l?n g?, ??y k?n v? ??p l?nh 30 ph?t."
+        },
+        {
+          "step": 2,
+          "instruction": "L?y g? kh?i t? l?nh kho?ng 10 ph?t tr??c khi n?u; gi? l?i ph?n n??c ??p ?? rim."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "L?m n?ng d?u trong ch?o ??y d?y. G?t b?t h?nh t?i b?m b?n ngo?i r?i ?p ch?o g? ? l?a v?a, tr? ??u ??n khi c?c m?t v?ng nh?."
+        },
+        {
+          "step": 2,
+          "instruction": "?? n??c d?a v? ph?n n??c ??p v?o; ?un s?i r?i h? l?a nh?, ??y h? n?p v? rim 30?35 ph?t. Tr? g? v?i l?n; th?m ch?t n??c n?ng n?u s?t c?n tr??c khi g? ch?n."
+        },
+        {
+          "step": 3,
+          "instruction": "M? n?p, rim th?m 5?8 ph?t ?? s?t s?nh ph? ??u. Ki?m tra ph?n d?y nh?t ??t 74?C, n?m l?i ?? m?n ng?t, r?c ti?u v? d?n n?ng."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.nhahangquangon.com/huong-dan-lam-ga-ro-ti/",
+          "publisher": "Nh? h?ng Qu? Ngon",
+          "title": "H??ng d?n l?m g? r?-ti",
+          "use": "??i chi?u c?ch ??p g? b?ng n??c d?a, n??c t??ng, ng? v? h??ng v? c?ch ?p ch?o/rim; B?p Vi?t ?i?u ch?nh l??ng cho gia ??nh.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://monngonmoingay.com/ga-ro-ti/",
+          "publisher": "M?n Ngon M?i Ng?y",
+          "title": "C?ch l?m g? r? ti th?m m?m cho b?a c?m gia ??nh",
+          "use": "??i chi?u k? thu?t x?o s?n g? tr??c khi rim v?i n??c d?a v? ho?n thi?n ph?n s?t.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "D?ng m?t n?a nguy?n li?u ch?nh, n?m gia v? t? ?t h?n m?t n?a r?i ?i?u ch?nh.",
+            "instruction": "Gi? nguy?n nguy?n t?c l?m ch?n k? gia c?m v? n?m l?i ? cu?i."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "T?ng nguy?n li?u ch?nh kho?ng m?t l?n r??i, gia v? t?ng t? t?.",
+            "instruction": "D?ng n?i ?? r?ng; kh?ng nh?n gia v? m?n theo t? l? c?ng."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/ga-ro-ti-nuoc-dua-mien-nam-960.webp",
+          "page_url": null,
+          "source": "B?p Vi?t",
+          "author": "B?p Vi?t",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "?nh ???c t?o m?i cho B?p Vi?t; ngu?n tham kh?o ch? d?ng ?? bi?n t?p danh t?nh m?n, nguy?n li?u v? k? thu?t.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "??i g? r? ti v?ng n?u ph? s?t n??c d?a s?nh nh?, ?i?m h?nh l? v? ti?u, b?y tr?n ??a s? tr?ng.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "?nh ImageGen m?i; master PNG alpha l?u t?i output/recipe-images/native. C?c WebP 480/960/1536/3840 ???c xu?t tr?n canvas 3840?2160; k?ch th??c master s? ???c ghi ri?ng trong assets_61.json."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "B?p Vi?t chu?n h?a m?n r? ti n??c d?a ki?u gia ??nh t? c?ng th?c tham kh?o; c?ch g?i ?mi?n Nam? m? t? phong c?ch ph? bi?n, kh?ng kh?ng ??nh xu?t x? ??c quy?n.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": "N?u th? ?? ch?t th?i gian theo k?ch th??c ??i g? v? l??ng n??c s?t; r? so?t d? ?ng/nh?n d?u h?o n?u thay th?."
+      }
+    },
+    {
+      "id": "BV633",
+      "slug": "canh-ga-la-giang-binh-dinh",
+      "name": "Canh g? l? giang ki?u B?nh ??nh",
+      "aliases": [
+        "G? n?u l? giang",
+        "Canh l? giang th?t g?"
+      ],
+      "region": [
+        "Trung B?"
+      ],
+      "province": [
+        "B?nh ??nh"
+      ],
+      "category": "M?n canh",
+      "meal_type": [
+        "b?a tr?a",
+        "b?a t?i",
+        "m?n canh"
+      ],
+      "difficulty": "D?",
+      "servings": 4,
+      "serving_basis": "M?t m?n d?ng chung trong m?m c?m ho?c b?a ?n gia ??nh b?n ng??i.",
+      "prep_time": 20,
+      "cook_time": 30,
+      "passive_time": 15,
+      "total_time": 65,
+      "description": "Th?t g? x?o s?n r?i n?u v?i l? giang v? d?p ?? t?o v? chua d?u, th?m s? v? rau th?m. B?o B?nh ??nh ghi nh?n canh l? giang n?u c?ng th?t g? l? m?n quen thu?c trong b?a c?m ??a ph??ng; c?ng th?c n?y l? b?n gia ??nh B?p Vi?t bi?n t?p theo c?ch n?u ???c b?o ??a ph??ng m? t?.",
+      "finished_dish": "N??c canh chua thanh, th?m s?; th?t g? ch?n m?m, l? giang v?a ti?t v? chua, kh?ng n?u qu? l?u ?? n??c kh?ng ch?t.",
+      "serving": "M?c canh n?ng, th?m ng? om, ng? gai v? ?t t?y th?ch. D?ng c?ng c?m tr?ng v? m?n rau lu?c.",
+      "tips": [
+        "Nh?t l? giang, b? c?ng gi?, v? nh? tr??c khi cho v?o n?i.",
+        "N?m chua t? t? v? ?? chua l? thay ??i theo m?a v? ?? non.",
+        "Kh?ng ?? n?i canh s?i l?u sau khi cho l? ?? gi? v? thanh."
+      ],
+      "dish_type": [
+        "M?n canh",
+        "M?n g?"
+      ],
+      "main_ingredient": [
+        "G?",
+        "L? giang"
+      ],
+      "cooking_method": [
+        "??p",
+        "X?o s?n",
+        "N?u canh"
+      ],
+      "search_terms": [
+        "canh g? l? giang B?nh ??nh",
+        "g? n?u l? giang",
+        "canh l? giang mi?n Trung",
+        "canh g? chua",
+        "chicken and giang leaves soup"
+      ],
+      "spicy_level": 1,
+      "image_alt": "B?t canh g? l? giang v?i mi?ng g? ch?n, l? xanh v? s?, n??c canh trong h?i chua, b?y tr?n n?n trong su?t.",
+      "time_note": "Kho?ng 65 ph?t, g?m 15 ph?t ch?; th?i gian th?c t? t?y k?ch c? nguy?n li?u v? thi?t b?.",
+      "suggested_pairings": [
+        "C?m tr?ng",
+        "Rau lu?c",
+        "C? ph?o"
+      ],
+      "recipe_family": "binh_dinh_chicken_giang_leaf_soup",
+      "keywords": [
+        "g?",
+        "l? giang",
+        "B?nh ??nh",
+        "canh chua"
+      ],
+      "tags": [
+        "B?nh ??nh",
+        "Trung B?",
+        "m?n canh",
+        "th?t tr?ng"
+      ],
+      "ingredients": [
+        {
+          "name": "Th?t g? ch?t mi?ng",
+          "quantity": 700,
+          "unit": "g",
+          "role": "protein",
+          "notes": "Ch?n ??i ho?c ph?n g? c? x??ng.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "L? giang",
+          "quantity": 140,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Nh?t l? non, r?a s?ch.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "S?",
+          "quantity": 2,
+          "unit": "c?y",
+          "role": "aromatic",
+          "notes": "??p d?p, c?t kh?c.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "H?nh t?m",
+          "quantity": 20,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "B?m nh?.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "T?i",
+          "quantity": 12,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "B?m nh?.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "N??c m?m",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Chia cho ??p v? n?m.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 6
+        },
+        {
+          "name": "Mu?i",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Chia cho ??p v? n?m.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 7
+        },
+        {
+          "name": "???ng",
+          "quantity": 6,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "C?n b?ng v? chua.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        },
+        {
+          "name": "D?u ?n",
+          "quantity": 12,
+          "unit": "ml",
+          "role": "cooking_fat",
+          "notes": "D?ng x?o g?.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "N??c l?c",
+          "quantity": 1300,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "C? th? thay m?t ph?n b?ng n??c d?ng g? nh?t.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Ng? gai",
+          "quantity": 10,
+          "unit": "g",
+          "role": "herb",
+          "notes": "R?a s?ch, th?i nh?.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Ng? om",
+          "quantity": 10,
+          "unit": "g",
+          "role": "herb",
+          "notes": "R?a s?ch, th?i nh?.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        },
+        {
+          "name": "?t t??i",
+          "quantity": 4,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Th?i l?t, t?y ch?n.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 13
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "R?a g?, ?? r?o r?i ??p v?i m?t n?a n??c m?m, m?t ?t mu?i v? h?nh t?m trong 15 ph?t."
+        },
+        {
+          "step": 2,
+          "instruction": "Nh?t v? r?a l? giang, v? nh? t?ng n?m. ??p d?p s?; b?m t?i, th?i ng? gai v? ng? om."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "?un n?ng d?u, phi th?m t?i v? ph?n h?nh t?m c?n l?i. Cho g? c?ng s? v?o ??o ??n khi m?t th?t s?n."
+        },
+        {
+          "step": 2,
+          "instruction": "Th?m n??c, ?un s?i v? h?t b?t; h? l?a, n?u 20?25 ph?t ??n khi g? ch?n."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho l? giang v?o n?i, n?u s?i l?i 2?3 ph?t. N?m ph?n n??c m?m c?n l?i, mu?i v? ???ng theo ?? chua; t?t b?p, th?m ng? om, ng? gai v? ?t."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://baobinhdinh.vn/viewer.aspx?mabb=36027&macm=48",
+          "publisher": "B?o ?i?n t? B?nh ??nh",
+          "title": "L? giang d?n d?",
+          "use": "B?i b?o ??a ph??ng ghi nh?n l? giang n?u c?ng c?c ph?n th?t g? l? m?n canh ???c ng??i d?n B?nh ??nh ?a chu?ng; d?ng l?m c?n c? v? b?i c?nh m?n, kh?ng l?m ngu?n ??nh l??ng.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://cdn.baogialai.com.vn/files/5c3372a3262899340db80c413f513189e4cdd5ec2c3d9c2163a3cde99cacc52aaeb501b02b39974eb3dca138e0bab22d/21979103.pdf",
+          "publisher": "B?o Gia Lai, ?n ph?m B?nh ??nh",
+          "title": "B?i vi?t v? canh l? giang",
+          "use": "Tham kh?o c?ch s? ch? v? ??p g?, cho l? v?o sau ?? gi? v? chua d?u; B?p Vi?t bi?n t?p l??ng d?ng v? th? t? n?u cho b?n ng??i.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "D?ng m?t n?a nguy?n li?u ch?nh, n?m gia v? t? ?t h?n m?t n?a r?i ?i?u ch?nh.",
+            "instruction": "Gi? nguy?n nguy?n t?c l?m ch?n k? gia c?m v? n?m l?i ? cu?i."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "T?ng nguy?n li?u ch?nh kho?ng m?t l?n r??i, gia v? t?ng t? t?.",
+            "instruction": "D?ng n?i ?? r?ng; kh?ng nh?n gia v? m?n theo t? l? c?ng."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/canh-ga-la-giang-binh-dinh-960.webp",
+          "page_url": null,
+          "source": "B?p Vi?t",
+          "author": "B?p Vi?t",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "?nh ???c t?o m?i cho B?p Vi?t; ngu?n tham kh?o ch? d?ng ?? bi?n t?p danh t?nh m?n, nguy?n li?u v? k? thu?t.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "B?t canh g? l? giang v?i mi?ng g? ch?n, l? xanh v? s?, n??c canh trong h?i chua, b?y tr?n n?n trong su?t.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "?nh ImageGen m?i; master PNG alpha l?u t?i output/recipe-images/native. C?c WebP 480/960/1536/3840 ???c xu?t tr?n canvas 3840?2160; k?ch th??c master s? ???c ghi ri?ng trong assets_61.json."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Ngu?n ??a ph??ng ghi nh?n m?n canh l? giang v?i th?t g? trong b?a c?m B?nh ??nh; B?p Vi?t chu?n h?a t? l? v? thao t?c, kh?ng g?i ??y l? m?n ??c s?n ??c quy?n.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": "N?u th? ?? ?i?u ch?nh l??ng l? giang theo m?a; r? so?t ?? chua v? ?? ch?n g? theo ph?n th?t s? d?ng."
+      }
+    },
+    {
+      "id": "BV634",
+      "slug": "lau-ga-tien-yen-nau-bong-ruou",
+      "name": "L?u g? Ti?n Y?n n?u b?ng r??u",
+      "aliases": [
+        "L?u g? n?u b?ng r??u",
+        "L?u g? Ti?n Y?n"
+      ],
+      "region": [
+        "B?c"
+      ],
+      "province": [
+        "Qu?ng Ninh"
+      ],
+      "category": "M?n l?u",
+      "meal_type": [
+        "b?a t?i",
+        "m?n ch?nh",
+        "m?n l?u"
+      ],
+      "difficulty": "Trung b?nh",
+      "servings": 4,
+      "serving_basis": "M?t m?n d?ng chung trong m?m c?m ho?c b?a ?n gia ??nh b?n ng??i.",
+      "prep_time": 25,
+      "cook_time": 50,
+      "passive_time": 30,
+      "total_time": 105,
+      "description": "G? Ti?n Y?n ???c ??p v?i c?m r??u, g?ng v? h?nh, sau ?? n?u trong n??c d?ng c? b?ng r??u, n?m v? rau nh?ng. B?o Qu?ng Ninh ghi nh?n ??y l? m?n do m?t ch? qu?n ? Ti?n Y?n s?ng t?o t? nguy?n li?u ??a ph??ng; B?p Vi?t bi?n t?p th?nh n?i l?u gia ??nh, kh?ng xem ??y l? c?ng th?c c? truy?n duy nh?t.",
+      "finished_dish": "N??c l?u th?m chua d?u c?a b?ng r??u, v? ng?t t? g? v? n?m; th?t g? s?n, rau v?a ch?n v? n??c d?ng kh?ng qu? cay.",
+      "serving": "??t n?i l?u s?i l?n t?n gi?a b?n, nh?ng rau theo t?ng l??t. D?ng v?i b?n ho?c c?m n?ng v? ch?n n??c t??ng pha d?u m?.",
+      "tips": [
+        "D?ng b?ng r??u n?p s?ch, m?i th?m d?u; kh?ng d?ng b?ng ?? c? m?i l?.",
+        "??p g? trong ng?n m?t v? kh?ng t?i s? d?ng n??c ??p s?ng l?m n??c ch?m.",
+        "Cho rau nh?ng v?o t?ng ?t ?? n??c l?u kh?ng ngu?i."
+      ],
+      "dish_type": [
+        "M?n l?u",
+        "M?n g?"
+      ],
+      "main_ingredient": [
+        "G? Ti?n Y?n",
+        "B?ng r??u",
+        "N?m"
+      ],
+      "cooking_method": [
+        "??p",
+        "N?u l?u"
+      ],
+      "search_terms": [
+        "l?u g? Ti?n Y?n n?u b?ng r??u",
+        "l?u g? b?ng r??u",
+        "g? Ti?n Y?n",
+        "l?u g? Qu?ng Ninh",
+        "Tien Yen chicken rice wine hotpot"
+      ],
+      "spicy_level": 1,
+      "image_alt": "N?i l?u g? Ti?n Y?n n?u b?ng r??u n?ng v?i mi?ng g?, n?m h??ng, n?m v? rau xanh; b?y trong n?i ??t, kh?ng ch?.",
+      "time_note": "Kho?ng 105 ph?t, g?m 30 ph?t ch?; th?i gian th?c t? t?y k?ch c? nguy?n li?u v? thi?t b?.",
+      "suggested_pairings": [
+        "B?n t??i",
+        "C?i th?o",
+        "Rau mu?ng"
+      ],
+      "recipe_family": "tien_yen_chicken_rice_ferment_hotpot",
+      "keywords": [
+        "g? Ti?n Y?n",
+        "b?ng r??u",
+        "Qu?ng Ninh",
+        "l?u"
+      ],
+      "tags": [
+        "Qu?ng Ninh",
+        "Ti?n Y?n",
+        "mi?n B?c",
+        "m?n l?u",
+        "th?t tr?ng"
+      ],
+      "ingredients": [
+        {
+          "name": "G? ta ch?t mi?ng",
+          "quantity": 1200,
+          "unit": "g",
+          "role": "protein",
+          "notes": "?u ti?n g? Ti?n Y?n n?u c? ngu?n r?; d?ng g? ta thay th? v?n n?u ???c.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "C?m r??u n?p",
+          "quantity": 180,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Ch?n c?m r??u n?p m?i, kh?ng qu? ng?t.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "B?ng r??u n?p",
+          "quantity": 180,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Khu?y v?i n??c d?ng r?i l?c b? th? n?u c?n.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "N??c d?ng g?",
+          "quantity": 1400,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "N??c d?ng nh?t, ?? n?u ch?n.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "G?ng",
+          "quantity": 35,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Th?i s?i.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "H?nh t?m",
+          "quantity": 30,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "B?c v?, th?i l?t.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "N?m h??ng",
+          "quantity": 100,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Ng?m m?m n?u kh?, b? ch?n c?ng.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "N?m s?",
+          "quantity": 180,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "T?ch v?a ?n.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "C?i th?o",
+          "quantity": 250,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "R?a s?ch, c?t kh?c.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Rau mu?ng",
+          "quantity": 200,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Nh?t, r?a s?ch.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "H?nh l?",
+          "quantity": 25,
+          "unit": "g",
+          "role": "herb",
+          "notes": "C?t kh?c.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "N??c m?m",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "N?m t?ng ?t m?t.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 12
+        },
+        {
+          "name": "???ng",
+          "quantity": 8,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "?i?u ch?nh theo ?? chua c?a b?ng.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 13
+        },
+        {
+          "name": "Sa t?",
+          "quantity": 10,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "D?ng t?y kh?u v?.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 14
+        },
+        {
+          "name": "Mu?i",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "N?m n??c d?ng.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 15
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "R?a g?, ch?t mi?ng v?a ?n v? ?? r?o. ??p g? v?i c?m r??u, m?t n?a g?ng, h?nh t?m v? m?t ?t mu?i trong ng?n m?t 30 ph?t."
+        },
+        {
+          "step": 2,
+          "instruction": "Ng?m m?m n?m h??ng n?u d?ng lo?i kh?. R?a n?m s?, c?i th?o, rau mu?ng v? h?nh l?; chu?n b? n??c d?ng ?? n?u ch?n."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "?un s?i n??c d?ng g?, cho b?ng r??u ?? khu?y v? l?c v?o c?ng ph?n g?ng c?n l?i; n?m s? n??c m?m v? mu?i."
+        },
+        {
+          "step": 2,
+          "instruction": "Cho g? ?? ??p v?o n?i, ?un s?i r?i h? nh? l?a, n?u 25?30 ph?t ??n khi g? ch?n. Th?m n?m h??ng, n?m s? v? n?u th?m 5 ph?t."
+        },
+        {
+          "step": 3,
+          "instruction": "Chuy?n n?i l?n b?p l?u, n?m l?i v? chua m?n ng?t, th?m sa t? n?u th?ch. Nh?ng c?i th?o, rau mu?ng v? h?nh l? t?ng l??t; d?ng n?ng."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://tuoitre.vn/dulichtphcm/an-gi/lau-ga-tien-yen-nau-bong-ruou-c12a38608.html",
+          "publisher": "Tu?i Tr? (d?n ngu?n B?o Qu?ng Ninh)",
+          "title": "L?u g? Ti?n Y?n n?u b?ng r??u",
+          "use": "Ngu?n t??ng thu?t m?n do ch? nh? h?ng ? Ti?n Y?n t? ph?t tri?n; ??i chi?u g? Ti?n Y?n, c?m/b?ng r??u, g?ng, h?nh, n?m, rau v? c?ch ??p/n?u. B?p Vi?t chu?n h?a kh?u ph?n, n??c d?ng v? th?i gian.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://dulich.quangninh.gov.vn/Trang/ChiTietTinTuc.aspx?nid=3371",
+          "publisher": "C?ng th?ng tin Du l?ch Qu?ng Ninh",
+          "title": "L?u g? Ti?n Y?n n?u b?ng r??u",
+          "use": "??i chi?u nguy?n li?u v? quy tr?nh m?n ???c gi?i thi?u t?i Qu?ng Ninh, ??ng th?i x?c ??nh ??y l? s?ng t?o c?a ng??i n?u ???c ph?ng v?n.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "D?ng m?t n?a nguy?n li?u ch?nh, n?m gia v? t? ?t h?n m?t n?a r?i ?i?u ch?nh.",
+            "instruction": "Gi? nguy?n nguy?n t?c l?m ch?n k? gia c?m v? n?m l?i ? cu?i."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "T?ng nguy?n li?u ch?nh kho?ng m?t l?n r??i, gia v? t?ng t? t?.",
+            "instruction": "D?ng n?i ?? r?ng; kh?ng nh?n gia v? m?n theo t? l? c?ng."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/lau-ga-tien-yen-nau-bong-ruou-960.webp",
+          "page_url": null,
+          "source": "B?p Vi?t",
+          "author": "B?p Vi?t",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "?nh ???c t?o m?i cho B?p Vi?t; ngu?n tham kh?o ch? d?ng ?? bi?n t?p danh t?nh m?n, nguy?n li?u v? k? thu?t.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "N?i l?u g? Ti?n Y?n n?u b?ng r??u n?ng v?i mi?ng g?, n?m h??ng, n?m v? rau xanh; b?y trong n?i ??t, kh?ng ch?.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "?nh ImageGen m?i; master PNG alpha l?u t?i output/recipe-images/native. C?c WebP 480/960/1536/3840 ???c xu?t tr?n canvas 3840?2160; k?ch th??c master s? ???c ghi ri?ng trong assets_61.json."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "B?o Qu?ng Ninh ghi nh?n m?n n?y l? s?ng t?o c?a m?t ch? qu?n t?i Ti?n Y?n, kh?ng ph?i chu?n c?ng th?c truy?n ??i. B?p Vi?t thay ??i t? l? cho n?i b?n ng??i, th?m rau nh?ng ph? bi?n v? ghi r? ??y l? b?n bi?n t?p gia ??nh.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": "N?u th? ?? c?n b?ng ?? chua/m?i men theo t?ng lo?i b?ng r??u; x?c nh?n th?i gian ch?n g? v? an to?n nhi?t ?? tr??c khi xu?t b?n."
+      }
+    },
+    {
+      "id": "BV635",
+      "slug": "bun-vit-mang-chua",
+      "name": "B?n v?t m?ng chua",
+      "aliases": [
+        "B?n m?ng v?t chua",
+        "B?n v?t n?u m?ng chua"
+      ],
+      "region": [
+        "Ba mi?n"
+      ],
+      "province": [],
+      "category": "M?n n??c",
+      "meal_type": [
+        "b?a s?ng",
+        "b?a tr?a",
+        "m?n ch?nh",
+        "m?n n??c"
+      ],
+      "difficulty": "Trung b?nh",
+      "servings": 4,
+      "serving_basis": "M?t m?n d?ng chung trong m?m c?m ho?c b?a ?n gia ??nh b?n ng??i.",
+      "prep_time": 35,
+      "cook_time": 55,
+      "passive_time": 15,
+      "total_time": 105,
+      "description": "Th?t v?t lu?c ch?n m?ng, ?n c?ng m?ng chua ?? x?o ng?m, m?c gi? v? b?n trong n??c d?ng ninh t? x??ng v?t. B?p Vi?t bi?n t?p kh?u ph?n gia ??nh theo c?ng th?c B?n v?t m?ng chua c?a VnExpress Cooking; m?n ???c gi?i thi?u nh? m?t l?a ch?n b?n v?t, kh?ng g?n cho ri?ng m?t v?ng.",
+      "finished_dish": "N??c d?ng trong ng?t, m?ng chua d?u v? th?m, th?t v?t m?m m?ng; m?c gi? dai nh? t?o th?m k?t c?u.",
+      "serving": "Ch?n b?n r?i x?p v?o t? c?ng th?t v?t th?i, m?ng v? m?c. Chan n??c d?ng ?ang n?ng, th?m h?nh l?, m?i t?u v? h?ng ch?. D?n k?m ch?n m?m g?ng.",
+      "tips": [
+        "R?a v?t v?i g?ng v? r??u tr?ng, b? phao c?u ?? gi?m m?i.",
+        "Lu?c v?t ? l?a nh? v? ng?m th?m sau khi t?t b?p ?? th?t m?ng; ?i?u ch?nh th?i gian theo k?ch c?.",
+        "Lu?c m?ng chua qua v?i l?n n??c n?u v? qu? g?t, sau ?? x?o ri?ng tr??c khi cho v?o n??c d?ng."
+      ],
+      "dish_type": [
+        "M?n b?n",
+        "M?n v?t",
+        "M?n n??c"
+      ],
+      "main_ingredient": [
+        "V?t",
+        "M?ng chua",
+        "B?n"
+      ],
+      "cooking_method": [
+        "Lu?c v?t",
+        "X?o m?ng",
+        "N?u n??c d?ng"
+      ],
+      "search_terms": [
+        "b?n v?t m?ng chua",
+        "b?n m?ng v?t chua",
+        "b?n v?t m?ng",
+        "b?n v?t",
+        "duck noodles sour bamboo"
+      ],
+      "spicy_level": 1,
+      "image_alt": "T? b?n v?t m?ng chua v?i th?t v?t th?i, m?ng chua, vi?n m?c v? h?nh rau th?m trong n??c d?ng n?ng.",
+      "time_note": "Kho?ng 105 ph?t; g?m 15 ph?t ng?m v?t sau lu?c, th?i gian c? th? ??i theo k?ch c? v?t.",
+      "suggested_pairings": [
+        "M?m g?ng",
+        "Rau th?m",
+        "?t t??i"
+      ],
+      "recipe_family": "duck_sour_bamboo_noodle_soup",
+      "keywords": [
+        "b?n v?t",
+        "m?ng chua",
+        "v?t",
+        "m?n n??c"
+      ],
+      "tags": [
+        "b?n",
+        "m?n v?t",
+        "m?ng chua",
+        "th?t tr?ng"
+      ],
+      "ingredients": [
+        {
+          "name": "V?t l?m s?ch",
+          "quantity": 1600,
+          "unit": "g",
+          "role": "protein",
+          "notes": "Ch?n v?t v?a, l?m s?ch v? b? phao c?u.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "M?ng chua",
+          "quantity": 400,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Th?i mi?ng v?a, lu?c v? x? n?u chua g?t.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Gi? s?ng",
+          "quantity": 220,
+          "unit": "g",
+          "role": "protein",
+          "notes": "Ch?n lo?i t??i, n?m nh?.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "B?n t??i",
+          "quantity": 800,
+          "unit": "g",
+          "role": "grain",
+          "notes": "Ch?n nhanh tr??c khi chia t?.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "N?m h??ng kh?",
+          "quantity": 12,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Ng?m m?m, b?m nh? m?t ph?n tr?n m?c.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "M?c nh? kh?",
+          "quantity": 8,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Ng?m n?, r?a s?ch, b?m nh?.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "G?ng",
+          "quantity": 55,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "??p d?p; chia cho lu?c v?t v? pha m?m g?ng.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "H?nh kh?",
+          "quantity": 30,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "B?c v?, ??p d?p; gi? l?i m?t ?t ?? phi m?ng.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "H?nh l?",
+          "quantity": 30,
+          "unit": "g",
+          "role": "herb",
+          "notes": "R?a s?ch, th?i nh?.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "M?i t?u",
+          "quantity": 15,
+          "unit": "g",
+          "role": "herb",
+          "notes": "R?a s?ch, th?i nh?.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "H?ng ch?",
+          "quantity": 15,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Nh?t v? r?a s?ch.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "R??u tr?ng",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "D?ng x?t v?t kh? m?i r?i r?a l?i.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        },
+        {
+          "name": "N??c m?m",
+          "quantity": 35,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Chia n?m n??c d?ng, m?ng v? n??c ch?m.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 13
+        },
+        {
+          "name": "Mu?i",
+          "quantity": 8,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "D?ng v?a ??, n?m l?i ? cu?i.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 14
+        },
+        {
+          "name": "???ng",
+          "quantity": 10,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Chia m?t ?t ?? pha m?m g?ng.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 15
+        },
+        {
+          "name": "N??c l?c",
+          "quantity": 2600,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "D?ng lu?c v?t v? ninh n??c d?ng.",
+          "scaling_rule": "linear",
+          "sequence": 16
+        },
+        {
+          "name": "Chanh",
+          "quantity": 25,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "V?t l?y n??c pha m?m g?ng.",
+          "scaling_rule": "linear",
+          "sequence": 17
+        },
+        {
+          "name": "?t t??i",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "B? h?t, b?m nh?; d?ng cho n??c ch?m.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 18
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "X?t v?t v?i r??u tr?ng v? g?ng ??p d?p, r?a s?ch, c?t b? phao c?u. ?? r?o; r?a l?ng m? ri?ng n?u s? d?ng."
+        },
+        {
+          "step": 2,
+          "instruction": "Ng?m n?m h??ng v? m?c nh? cho n?, r?a s?ch r?i b?m nh?. Tr?n gi? s?ng v?i n?m, n?m nh? v? qu?t ??n khi d?o. Chu?n b? m?ng, b?n v? c?c lo?i rau."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Cho v?t v?o n?i n??c v?i g?ng, h?nh kh? v? ch?t mu?i. ?un s?i nh?, h?t b?t r?i h? l?a; lu?c ??n khi v?t ch?n, t?t b?p v? ng?m th?m 15 ph?t. V?t v?t ra, l?c th?t; cho x??ng tr? l?i n?i ninh ?? l?y n??c d?ng."
+        },
+        {
+          "step": 2,
+          "instruction": "Lu?c m?ng chua 2?3 l?n n??c n?u chua g?t, r?a v? ?? r?o. Phi th?m h?nh kh?, cho m?ng v?o x?o k? v?i ch?t n??c m?m v? m?t ?t m? n?i t? n?i v?t."
+        },
+        {
+          "step": 3,
+          "instruction": "L?c n??c d?ng, ?un s?i l?i r?i th? t?ng vi?n m?c v?o; khi m?c n?i, th?m m?ng v? n?u th?m 8?10 ph?t. N?m n??c m?m, mu?i cho v?a. Ch?n b?n, x?p v?t v? rau v?o t?, chan n??c d?ng n?ng."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://vnexpress.net/doi-song-cooking-bun-vit-mang-chua-4918915.html",
+          "publisher": "VnExpress Cooking",
+          "title": "C?ch n?u b?n v?t m?ng chua",
+          "use": "??i chi?u danh t?nh m?n, nguy?n li?u (v?t, m?ng chua, gi? s?ng, n?m h??ng, m?c nh?, g?ng, h?nh, b?n), k? thu?t lu?c v?t, x?o m?ng v? n?u m?c. B?p Vi?t gi?m ??nh l??ng cho b?n ng??i v? bi?n t?p tr?nh t? n?u.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "D?ng m?t n?a nguy?n li?u ch?nh, n?m gia v? t? ?t h?n m?t n?a r?i ?i?u ch?nh.",
+            "instruction": "Gi? nguy?n nguy?n t?c l?m ch?n k? gia c?m v? n?m l?i ? cu?i."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "T?ng nguy?n li?u ch?nh kho?ng m?t l?n r??i, gia v? t?ng t? t?.",
+            "instruction": "D?ng n?i ?? r?ng; kh?ng nh?n gia v? m?n theo t? l? c?ng."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/bun-vit-mang-chua-960.webp",
+          "page_url": null,
+          "source": "B?p Vi?t",
+          "author": "B?p Vi?t",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "?nh t?o m?i cho B?p Vi?t; ngu?n tham kh?o ch? d?ng ?? bi?n t?p m?n v? k? thu?t.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "T? b?n v?t m?ng chua v?i th?t v?t th?i, m?ng chua, vi?n m?c v? h?nh rau th?m trong n??c d?ng n?ng.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "?nh ImageGen ri?ng; master PNG alpha t?i output/recipe-images/native; WebP 480/960/1536/3840 tr?n canvas 3840?2160."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "B?p Vi?t bi?n t?p c?ng th?c VnExpress Cooking cho b?n ph?n, gi?m l??ng v?t v? gi? c?c k? thu?t ch?nh; kh?ng g?n m?n cho m?t ??a ph??ng c? th?.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "N?u th? ?? ch?t th?i gian lu?c theo k?ch c? v?t v? ?? chua c?a m?ng.",
+          "X?c nh?n ?? dai c?a m?c khi d?ng gi? s?ng kh?c nh?n hi?u."
+        ]
+      }
+    }
+  ]
+}

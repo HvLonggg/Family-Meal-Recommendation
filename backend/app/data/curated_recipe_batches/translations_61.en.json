@@ -1,0 +1,806 @@
+{
+  "chao-vit-thanh-da": {
+    "name": "Thanh Da Duck Porridge",
+    "aliases": [
+      "Thanh Da?style duck porridge",
+      "Boiled duck served with porridge"
+    ],
+    "region": [
+      "Southern Vietnam"
+    ],
+    "province": [
+      "Ho Chi Minh City"
+    ],
+    "category": "Noodle and rice dishes",
+    "meal_type": [
+      "lunch",
+      "dinner",
+      "main dish"
+    ],
+    "difficulty": "Intermediate",
+    "serving_basis": "One shared dish for a family meal of four.",
+    "description": "Tender boiled duck is served with rice porridge cooked in the duck broth, with ginger, scallions and herbs. Thanh Da is associated with long-running duck porridge shops in Ho Chi Minh City. B?p Vi?t adapts the common duck-and-porridge method for four home servings and does not claim a restaurant-specific formula.",
+    "finished_dish": "The rice grains are soft without making the porridge overly thick. Ginger perfumes the broth; the duck remains tender and is served with a gently spicy ginger fish-sauce dip.",
+    "serving": "Ladle hot porridge into bowls and garnish with scallions, cilantro and pepper. Cut the duck into pieces and serve separately with fresh herbs and diluted ginger fish sauce.",
+    "tips": [
+      "Clean the duck with salt and ginger, rinse and drain.",
+      "Keep the broth at a gentle simmer and skim the foam for a clearer soup; avoid overcooking the duck.",
+      "Toast the rice only until fragrant, not dark."
+    ],
+    "dish_type": [
+      "Duck porridge",
+      "Duck dish",
+      "Rice dish"
+    ],
+    "main_ingredient": [
+      "Duck",
+      "Rice"
+    ],
+    "cooking_method": [
+      "Boiling",
+      "Porridge cooking"
+    ],
+    "search_terms": [
+      "Thanh Da duck porridge",
+      "Saigon duck porridge",
+      "roasted-rice duck porridge",
+      "how to cook duck porridge"
+    ],
+    "image_alt": "A hot bowl of duck porridge with tender rice, sliced duck, scallions and ginger, served with ginger fish sauce.",
+    "time_note": "About 85 minutes; actual time varies with the size of the duck and the rice.",
+    "suggested_pairings": [
+      "Banana blossom salad",
+      "Fresh herbs",
+      "Ginger fish sauce"
+    ],
+    "keywords": [
+      "duck porridge",
+      "Thanh Da",
+      "duck",
+      "rice"
+    ],
+    "tags": [
+      "Ho Chi Minh City",
+      "Southern Vietnam",
+      "porridge",
+      "white meat"
+    ],
+    "ingredients": [
+      {
+        "name": "Cleaned duck",
+        "quantity": 1200,
+        "unit": "g",
+        "notes": "Use fresh, cleaned duck."
+      },
+      {
+        "name": "Polished rice",
+        "quantity": 180,
+        "unit": "g",
+        "notes": "Rinse briefly and drain."
+      },
+      {
+        "name": "Glutinous rice",
+        "quantity": 40,
+        "unit": "g",
+        "notes": "Rinse with the rice for a lightly creamy porridge."
+      },
+      {
+        "name": "Ginger",
+        "quantity": 55,
+        "unit": "g",
+        "notes": "Use half crushed for the broth; julienne the rest for the dip."
+      },
+      {
+        "name": "Shallot",
+        "quantity": 25,
+        "unit": "g",
+        "notes": "Lightly char or crush."
+      },
+      {
+        "name": "Scallions",
+        "quantity": 25,
+        "unit": "g",
+        "notes": "Rinse and finely slice."
+      },
+      {
+        "name": "Cilantro",
+        "quantity": 15,
+        "unit": "g",
+        "notes": "Rinse and finely chop."
+      },
+      {
+        "name": "Salt",
+        "quantity": 8,
+        "unit": "g",
+        "notes": "Divide between the broth and porridge."
+      },
+      {
+        "name": "Fish sauce",
+        "quantity": 25,
+        "unit": "ml",
+        "notes": "Use to season the porridge and make the dipping sauce."
+      },
+      {
+        "name": "Sugar",
+        "quantity": 8,
+        "unit": "g",
+        "notes": "For the ginger dipping sauce."
+      },
+      {
+        "name": "Fresh chili",
+        "quantity": 5,
+        "unit": "g",
+        "notes": "Slice; optional."
+      },
+      {
+        "name": "Water",
+        "quantity": 2400,
+        "unit": "ml",
+        "notes": "For boiling the duck and cooking the porridge."
+      }
+    ],
+    "preparation_steps": [
+      "Rub the duck with salt and crushed ginger, rinse well and drain. Rinse both types of rice and set aside.",
+      "Lightly char the shallot. Julienne the remaining ginger; prepare the scallions, cilantro and chili."
+    ],
+    "cooking_steps": [
+      "Place the duck in a pot with about 2 liters of water, shallot, crushed ginger and some salt. Bring to a boil, skim, then simmer for 35?45 minutes until the thigh is cooked through. Remove the duck and reserve the broth.",
+      "Toast the rice in a dry pan for 3?4 minutes until fragrant. Add it to the strained broth, topping up with hot water if needed. Simmer for 25?30 minutes, stirring occasionally, until tender.",
+      "Season with fish sauce and salt. Mix fish sauce with julienned ginger, sugar, chili and a little warm water. Cut the duck, garnish the porridge with scallions, cilantro and pepper, and serve hot."
+    ]
+  },
+  "ga-ro-ti-nuoc-dua-mien-nam": {
+    "name": "Southern Vietnamese Coconut Roti Chicken",
+    "aliases": [
+      "Coconut-water chicken roti",
+      "Southern-style ga roti"
+    ],
+    "region": [
+      "Southern Vietnam"
+    ],
+    "province": [],
+    "category": "Meat dish",
+    "meal_type": [
+      "lunch",
+      "dinner",
+      "main dish"
+    ],
+    "difficulty": "Easy",
+    "serving_basis": "One shared chicken dish for a family meal of four.",
+    "description": "Chicken is marinated with aromatics and spices, browned in a pan, then braised in fresh coconut water until the sauce turns glossy. This is a popular Southern-style home preparation; B?p Vi?t standardizes the proportions for four servings.",
+    "finished_dish": "Golden-brown chicken stays tender beneath a lightly sweet and savory coconut reduction scented with garlic and five-spice.",
+    "serving": "Serve hot with steamed rice or bread, cucumber and lettuce. Spoon a little sauce over the chicken just before serving.",
+    "tips": [
+      "Marinate in the refrigerator; pat the chicken dry before browning for better color.",
+      "Use unsweetened fresh coconut water and taste the sauce before adding sugar or soy sauce.",
+      "The thickest part of the chicken should reach at least 74?C."
+    ],
+    "dish_type": [
+      "Chicken",
+      "Braised dish"
+    ],
+    "main_ingredient": [
+      "Chicken",
+      "Coconut water"
+    ],
+    "cooking_method": [
+      "Marinating",
+      "Pan-searing",
+      "Braising"
+    ],
+    "search_terms": [
+      "coconut roti chicken",
+      "Southern Vietnamese roti chicken",
+      "coconut-water braised chicken",
+      "Vietnamese chicken roti"
+    ],
+    "image_alt": "Golden-brown chicken legs coated in a light coconut reduction, garnished with scallions and pepper on a white ceramic plate.",
+    "time_note": "About 95 minutes, including a 30-minute marinade; cooking time varies with the size of the chicken pieces.",
+    "suggested_pairings": [
+      "Steamed rice",
+      "Bread",
+      "Cucumber"
+    ],
+    "keywords": [
+      "roti chicken",
+      "coconut water",
+      "Southern Vietnam",
+      "braised chicken"
+    ],
+    "tags": [
+      "Southern Vietnam",
+      "chicken",
+      "braised",
+      "white meat"
+    ],
+    "ingredients": [
+      {
+        "name": "Chicken leg quarters",
+        "quantity": 1200,
+        "unit": "g",
+        "notes": "Cut large pieces in half and pat dry."
+      },
+      {
+        "name": "Fresh coconut water",
+        "quantity": 600,
+        "unit": "ml",
+        "notes": "Use unsweetened coconut water."
+      },
+      {
+        "name": "Garlic",
+        "quantity": 18,
+        "unit": "g",
+        "notes": "Mince."
+      },
+      {
+        "name": "Shallot",
+        "quantity": 25,
+        "unit": "g",
+        "notes": "Mince."
+      },
+      {
+        "name": "Soy sauce",
+        "quantity": 30,
+        "unit": "ml",
+        "notes": "Choose a mildly salty variety."
+      },
+      {
+        "name": "Oyster sauce",
+        "quantity": 15,
+        "unit": "ml",
+        "notes": "Optional if avoiding seafood ingredients."
+      },
+      {
+        "name": "Five-spice powder",
+        "quantity": 2,
+        "unit": "g",
+        "notes": "About 1/2 teaspoon."
+      },
+      {
+        "name": "Sugar",
+        "quantity": 12,
+        "unit": "g",
+        "notes": "Adjust to the sweetness of the coconut water."
+      },
+      {
+        "name": "Neutral oil",
+        "quantity": 15,
+        "unit": "ml",
+        "notes": "For browning the chicken."
+      },
+      {
+        "name": "Black pepper",
+        "quantity": 1,
+        "unit": "g",
+        "notes": "Finish with pepper."
+      },
+      {
+        "name": "Salt",
+        "quantity": 3,
+        "unit": "g",
+        "notes": "Use sparingly; adjust after the sauce reduces."
+      }
+    ],
+    "preparation_steps": [
+      "Rinse the chicken and pat thoroughly dry. Mix garlic, shallot, soy sauce, oyster sauce, five-spice, sugar and salt. Coat the chicken, cover and refrigerate for 30 minutes.",
+      "Take the chicken out about 10 minutes before cooking. Reserve the marinade for the braise."
+    ],
+    "cooking_steps": [
+      "Heat the oil in a heavy pan. Brush excess aromatics from the chicken and sear over medium heat, turning until lightly browned on all sides.",
+      "Add coconut water and the reserved marinade. Bring to a boil, then partially cover and simmer for 30?35 minutes, turning the chicken several times. Add a little hot water if the sauce reduces too quickly.",
+      "Uncover and simmer for another 5?8 minutes until the sauce lightly coats the chicken. Check that the thickest part reaches 74?C, adjust the seasoning and serve hot."
+    ]
+  },
+  "canh-ga-la-giang-binh-dinh": {
+    "name": "Binh Dinh?Style Chicken and Giang Leaf Soup",
+    "aliases": [
+      "Chicken soup with giang leaves",
+      "Binh Dinh chicken giang leaf soup"
+    ],
+    "region": [
+      "Central Vietnam"
+    ],
+    "province": [
+      "Binh Dinh"
+    ],
+    "category": "Soup",
+    "meal_type": [
+      "lunch",
+      "dinner",
+      "soup"
+    ],
+    "difficulty": "Easy",
+    "serving_basis": "One shared soup for a family meal of four.",
+    "description": "Chicken is briefly seared, then simmered with giang leaves gently bruised to release their tart flavor, along with lemongrass and herbs. A local Binh Dinh newspaper records chicken among the meats used in everyday giang-leaf soup; B?p Vi?t edits the home recipe from the regional method described.",
+    "finished_dish": "The broth is gently sour and fragrant with lemongrass; chicken is tender and the leaves are just cooked, without astringency.",
+    "serving": "Serve hot with rice and a vegetable dish. Finish with rice paddy herb, sawtooth coriander and optional chili.",
+    "tips": [
+      "Remove tough stems and lightly bruise the giang leaves before adding them.",
+      "Add the leaves gradually because their sourness varies by season and maturity.",
+      "Avoid boiling the soup for a long time after adding the leaves."
+    ],
+    "dish_type": [
+      "Soup",
+      "Chicken"
+    ],
+    "main_ingredient": [
+      "Chicken",
+      "Giang leaves"
+    ],
+    "cooking_method": [
+      "Marinating",
+      "Searing",
+      "Simmering"
+    ],
+    "search_terms": [
+      "Binh Dinh chicken giang-leaf soup",
+      "chicken soup with giang leaves",
+      "Central Vietnamese sour chicken soup",
+      "giang leaf soup"
+    ],
+    "image_alt": "A clear, gently sour soup with chicken pieces, green giang leaves and lemongrass in a ceramic bowl.",
+    "time_note": "About 65 minutes, including 15 minutes to marinate; timing depends on the cut of chicken.",
+    "suggested_pairings": [
+      "Steamed rice",
+      "Boiled vegetables",
+      "Pickled eggplant"
+    ],
+    "keywords": [
+      "chicken",
+      "giang leaves",
+      "Binh Dinh",
+      "sour soup"
+    ],
+    "tags": [
+      "Binh Dinh",
+      "Central Vietnam",
+      "soup",
+      "white meat"
+    ],
+    "ingredients": [
+      {
+        "name": "Chicken pieces",
+        "quantity": 700,
+        "unit": "g",
+        "notes": "Use bone-in thighs or other bone-in cuts."
+      },
+      {
+        "name": "Giang leaves",
+        "quantity": 140,
+        "unit": "g",
+        "notes": "Pick young leaves and rinse."
+      },
+      {
+        "name": "Lemongrass",
+        "quantity": 2,
+        "unit": "stalks",
+        "notes": "Bruise and cut into sections."
+      },
+      {
+        "name": "Shallot",
+        "quantity": 20,
+        "unit": "g",
+        "notes": "Mince."
+      },
+      {
+        "name": "Garlic",
+        "quantity": 12,
+        "unit": "g",
+        "notes": "Mince."
+      },
+      {
+        "name": "Fish sauce",
+        "quantity": 20,
+        "unit": "ml",
+        "notes": "Divide between the marinade and seasoning."
+      },
+      {
+        "name": "Salt",
+        "quantity": 5,
+        "unit": "g",
+        "notes": "Divide between the marinade and broth."
+      },
+      {
+        "name": "Sugar",
+        "quantity": 6,
+        "unit": "g",
+        "notes": "Balances the acidity."
+      },
+      {
+        "name": "Neutral oil",
+        "quantity": 12,
+        "unit": "ml",
+        "notes": "For searing the chicken."
+      },
+      {
+        "name": "Water",
+        "quantity": 1300,
+        "unit": "ml",
+        "notes": "May replace part with mild chicken stock."
+      },
+      {
+        "name": "Sawtooth coriander",
+        "quantity": 10,
+        "unit": "g",
+        "notes": "Rinse and chop."
+      },
+      {
+        "name": "Rice paddy herb",
+        "quantity": 10,
+        "unit": "g",
+        "notes": "Rinse and chop."
+      },
+      {
+        "name": "Fresh chili",
+        "quantity": 4,
+        "unit": "g",
+        "notes": "Slice; optional."
+      }
+    ],
+    "preparation_steps": [
+      "Rinse the chicken, drain, then marinate with half the fish sauce, a little salt and the shallot for 15 minutes.",
+      "Pick and rinse the giang leaves, lightly bruise them by hand. Bruise the lemongrass, mince the garlic, and chop the herbs."
+    ],
+    "cooking_steps": [
+      "Heat the oil and saut? the garlic and remaining shallot until fragrant. Add the chicken and lemongrass; stir until the outside of the chicken is sealed.",
+      "Add the water, bring to a boil and skim. Reduce the heat and simmer for 20?25 minutes until the chicken is cooked through.",
+      "Add the giang leaves and simmer for 2?3 minutes. Season with the remaining fish sauce, salt and sugar, adjusting to taste. Turn off the heat and add the herbs and chili."
+    ]
+  },
+  "lau-ga-tien-yen-nau-bong-ruou": {
+    "name": "Tien Yen Chicken Hotpot with Fermented Rice Lees",
+    "aliases": [
+      "Chicken hotpot with rice lees",
+      "Tien Yen chicken hotpot"
+    ],
+    "region": [
+      "Northern Vietnam"
+    ],
+    "province": [
+      "Quang Ninh"
+    ],
+    "category": "Hotpot",
+    "meal_type": [
+      "dinner",
+      "main dish",
+      "hotpot"
+    ],
+    "difficulty": "Intermediate",
+    "serving_basis": "One hotpot shared by four people.",
+    "description": "Tien Yen chicken is marinated with fermented rice, ginger and shallot, then cooked in a broth flavored with rice lees, mushrooms and greens. Quang Ninh reporting describes this as a restaurant owner?s local creation using regional ingredients; B?p Vi?t adapts it for a family hotpot and does not present it as a single historic standard.",
+    "finished_dish": "The broth is gently tart and fragrant from the fermented rice lees, with savory chicken and mushrooms; the greens are added just before eating.",
+    "serving": "Keep the hotpot at a gentle simmer and add greens in small batches. Serve with rice noodles or steamed rice and a soy-sesame dip.",
+    "tips": [
+      "Choose clean fermented rice lees with a mild, pleasant aroma.",
+      "Marinate raw chicken under refrigeration; do not reuse the uncooked marinade as a dip.",
+      "Add greens a little at a time so the broth does not cool down."
+    ],
+    "dish_type": [
+      "Hotpot",
+      "Chicken"
+    ],
+    "main_ingredient": [
+      "Tien Yen chicken",
+      "Fermented rice lees",
+      "Mushrooms"
+    ],
+    "cooking_method": [
+      "Marinating",
+      "Hotpot simmering"
+    ],
+    "search_terms": [
+      "Tien Yen chicken fermented rice hotpot",
+      "Quang Ninh chicken hotpot",
+      "chicken hotpot with rice lees",
+      "lau ga bong ruou"
+    ],
+    "image_alt": "A simmering clay hotpot with Tien Yen chicken pieces, shiitake and oyster mushrooms, and fresh greens, with no lettering.",
+    "time_note": "About 105 minutes, including a 30-minute marinade; simmering time varies with chicken size.",
+    "suggested_pairings": [
+      "Fresh rice noodles",
+      "Napa cabbage",
+      "Water spinach"
+    ],
+    "keywords": [
+      "Tien Yen chicken",
+      "rice lees",
+      "Quang Ninh",
+      "hotpot"
+    ],
+    "tags": [
+      "Quang Ninh",
+      "Tien Yen",
+      "Northern Vietnam",
+      "hotpot",
+      "white meat"
+    ],
+    "ingredients": [
+      {
+        "name": "Cut-up free-range chicken",
+        "quantity": 1200,
+        "unit": "g",
+        "notes": "Use Tien Yen chicken with a traceable source if available; local free-range chicken also works."
+      },
+      {
+        "name": "Fermented glutinous rice",
+        "quantity": 180,
+        "unit": "g",
+        "notes": "Choose fresh fermented rice with a mild aroma."
+      },
+      {
+        "name": "Glutinous rice lees",
+        "quantity": 180,
+        "unit": "g",
+        "notes": "Stir into the broth and strain out coarse solids if desired."
+      },
+      {
+        "name": "Chicken stock",
+        "quantity": 1400,
+        "unit": "ml",
+        "notes": "Use mild, fully cooked stock."
+      },
+      {
+        "name": "Ginger",
+        "quantity": 35,
+        "unit": "g",
+        "notes": "Julienne."
+      },
+      {
+        "name": "Shallot",
+        "quantity": 30,
+        "unit": "g",
+        "notes": "Peel and slice."
+      },
+      {
+        "name": "Shiitake mushrooms",
+        "quantity": 100,
+        "unit": "g",
+        "notes": "Soak if dried; remove tough stems."
+      },
+      {
+        "name": "Oyster mushrooms",
+        "quantity": 180,
+        "unit": "g",
+        "notes": "Tear into bite-size pieces."
+      },
+      {
+        "name": "Napa cabbage",
+        "quantity": 250,
+        "unit": "g",
+        "notes": "Rinse and cut into sections."
+      },
+      {
+        "name": "Water spinach",
+        "quantity": 200,
+        "unit": "g",
+        "notes": "Trim and rinse."
+      },
+      {
+        "name": "Scallions",
+        "quantity": 25,
+        "unit": "g",
+        "notes": "Cut into sections."
+      },
+      {
+        "name": "Fish sauce",
+        "quantity": 25,
+        "unit": "ml",
+        "notes": "Season gradually."
+      },
+      {
+        "name": "Sugar",
+        "quantity": 8,
+        "unit": "g",
+        "notes": "Adjust to the acidity of the lees."
+      },
+      {
+        "name": "Chili paste",
+        "quantity": 10,
+        "unit": "g",
+        "notes": "Optional, to taste."
+      },
+      {
+        "name": "Salt",
+        "quantity": 5,
+        "unit": "g",
+        "notes": "Season the broth."
+      }
+    ],
+    "preparation_steps": [
+      "Rinse and cut the chicken into serving pieces; drain. Marinate with the fermented rice, half the ginger, shallot and a little salt under refrigeration for 30 minutes.",
+      "Soak the shiitake if dried. Rinse the oyster mushrooms, cabbage, water spinach and scallions; prepare the cooked stock."
+    ],
+    "cooking_steps": [
+      "Bring the chicken stock to a boil. Stir in the rice lees and the remaining ginger; season lightly with fish sauce and salt.",
+      "Add the marinated chicken, bring back to a boil, then simmer for 25?30 minutes until cooked through. Add both kinds of mushrooms and simmer for another 5 minutes.",
+      "Move the pot to a hotpot burner. Adjust the sweet-sour-salty balance and add chili paste if desired. Add cabbage, water spinach and scallions in batches and serve hot."
+    ]
+  },
+  "bun-vit-mang-chua": {
+    "name": "Rice Noodles with Duck and Sour Bamboo Shoots",
+    "aliases": [
+      "Duck rice noodles with sour bamboo shoots",
+      "Vietnamese duck and sour bamboo noodle soup"
+    ],
+    "region": [
+      "Vietnam"
+    ],
+    "province": [],
+    "category": "Noodle soup",
+    "meal_type": [
+      "breakfast",
+      "lunch",
+      "main dish",
+      "noodle soup"
+    ],
+    "difficulty": "Intermediate",
+    "serving_basis": "Four bowls of noodle soup.",
+    "description": "Tender boiled duck is served with rice noodles, bamboo shoots saut?ed until seasoned, pork paste balls and a clear broth made from the duck bones. B?p Vi?t adapts VnExpress Cooking?s recipe for four servings and does not assign the dish to one region.",
+    "finished_dish": "A clear, savory broth, gently sour bamboo shoots, juicy duck and springy pork paste balls.",
+    "serving": "Briefly blanch the noodles, top with sliced duck, bamboo shoots and pork paste balls, then ladle over piping-hot broth. Add scallions, sawtooth coriander and Vietnamese balm; serve with ginger fish sauce.",
+    "tips": [
+      "Rub the duck with ginger and rice wine and remove the oil gland at the tail to reduce odor.",
+      "Simmer gently and rest the duck after turning off the heat so the meat stays juicy; adjust time to its size.",
+      "If the sour bamboo is sharply acidic, boil and rinse it, then saut? it separately before adding it to the broth."
+    ],
+    "dish_type": [
+      "Rice noodle dish",
+      "Duck dish",
+      "Noodle soup"
+    ],
+    "main_ingredient": [
+      "Duck",
+      "Sour bamboo shoots",
+      "Rice noodles"
+    ],
+    "cooking_method": [
+      "Boiling duck",
+      "Saut?ing bamboo shoots",
+      "Simmering broth"
+    ],
+    "search_terms": [
+      "duck noodles with sour bamboo shoots",
+      "sour bamboo duck noodle soup",
+      "Vietnamese duck noodles",
+      "bun vit mang chua"
+    ],
+    "image_alt": "A bowl of rice noodles with sliced duck, sour bamboo shoots, pork paste balls and fresh herbs in hot broth.",
+    "time_note": "About 105 minutes, including 15 minutes to rest the duck after boiling; timing varies with its size.",
+    "suggested_pairings": [
+      "Ginger fish sauce",
+      "Fresh herbs",
+      "Fresh chili"
+    ],
+    "keywords": [
+      "duck noodles",
+      "sour bamboo shoots",
+      "duck",
+      "noodle soup"
+    ],
+    "tags": [
+      "rice noodles",
+      "duck",
+      "sour bamboo",
+      "white meat"
+    ],
+    "ingredients": [
+      {
+        "name": "Cleaned duck",
+        "quantity": 1600,
+        "unit": "g",
+        "notes": "Choose a medium duck, cleaned and with the tail gland removed."
+      },
+      {
+        "name": "Sour bamboo shoots",
+        "quantity": 400,
+        "unit": "g",
+        "notes": "Cut into bite-size pieces; boil and rinse if sharply sour."
+      },
+      {
+        "name": "Pork paste",
+        "quantity": 220,
+        "unit": "g",
+        "notes": "Use fresh paste and season lightly."
+      },
+      {
+        "name": "Fresh rice noodles",
+        "quantity": 800,
+        "unit": "g",
+        "notes": "Blanch briefly before dividing among bowls."
+      },
+      {
+        "name": "Dried shiitake mushrooms",
+        "quantity": 12,
+        "unit": "g",
+        "notes": "Soak until soft; mince some for the pork balls."
+      },
+      {
+        "name": "Dried wood ear mushrooms",
+        "quantity": 8,
+        "unit": "g",
+        "notes": "Rehydrate, rinse and mince."
+      },
+      {
+        "name": "Ginger",
+        "quantity": 55,
+        "unit": "g",
+        "notes": "Crush for boiling the duck; reserve some for the dipping sauce."
+      },
+      {
+        "name": "Shallots",
+        "quantity": 30,
+        "unit": "g",
+        "notes": "Peel and crush; reserve a little for saut?ing bamboo."
+      },
+      {
+        "name": "Scallions",
+        "quantity": 30,
+        "unit": "g",
+        "notes": "Rinse and finely slice."
+      },
+      {
+        "name": "Sawtooth coriander",
+        "quantity": 15,
+        "unit": "g",
+        "notes": "Rinse and chop."
+      },
+      {
+        "name": "Vietnamese balm",
+        "quantity": 15,
+        "unit": "g",
+        "notes": "Pick and rinse."
+      },
+      {
+        "name": "Rice wine",
+        "quantity": 25,
+        "unit": "ml",
+        "notes": "Rub over the duck to reduce odor, then rinse."
+      },
+      {
+        "name": "Fish sauce",
+        "quantity": 35,
+        "unit": "ml",
+        "notes": "Divide between broth, bamboo and dipping sauce."
+      },
+      {
+        "name": "Salt",
+        "quantity": 8,
+        "unit": "g",
+        "notes": "Season gradually."
+      },
+      {
+        "name": "Sugar",
+        "quantity": 10,
+        "unit": "g",
+        "notes": "Use a little for the ginger dip."
+      },
+      {
+        "name": "Water",
+        "quantity": 2600,
+        "unit": "ml",
+        "notes": "For boiling the duck and making the broth."
+      },
+      {
+        "name": "Lime",
+        "quantity": 25,
+        "unit": "g",
+        "notes": "Squeeze for the ginger dipping sauce."
+      },
+      {
+        "name": "Fresh chili",
+        "quantity": 5,
+        "unit": "g",
+        "notes": "Deseed and mince for the dip."
+      }
+    ],
+    "preparation_steps": [
+      "Rub the duck with rice wine and crushed ginger, rinse well and remove the tail gland. Drain; clean the giblets separately if using them.",
+      "Soak the shiitake and wood ear mushrooms until soft, rinse and mince. Mix with the pork paste, season lightly and knead until cohesive. Prepare the bamboo shoots, noodles and herbs."
+    ],
+    "cooking_steps": [
+      "Place the duck in a pot with water, ginger, shallots and a little salt. Bring to a gentle boil, skim, reduce the heat and cook until done. Turn off the heat and rest for 15 minutes. Remove the duck and debone; return the bones to the pot to make broth.",
+      "If sharply sour, boil the bamboo shoots in two or three changes of water, rinse and drain. Saut? shallots, add the bamboo and cook thoroughly with a little fish sauce and duck fat skimmed from the broth.",
+      "Strain and reboil the broth. Drop in small pork paste balls; once they float, add the bamboo and simmer for another 8?10 minutes. Season with fish sauce and salt. Blanch the noodles, arrange duck and herbs in bowls, then ladle over the hot broth."
+    ]
+  }
+}

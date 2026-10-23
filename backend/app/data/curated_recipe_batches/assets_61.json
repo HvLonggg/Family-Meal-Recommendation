@@ -1,0 +1,237 @@
+{
+  "batch": 61,
+  "native_format": "PNG",
+  "canvas": {
+    "width": 3840,
+    "height": 2160,
+    "format": "WebP",
+    "background": "transparent"
+  },
+  "assets": [
+    {
+      "id": "BV631",
+      "slug": "chao-vit-thanh-da",
+      "native_file": "output/recipe-images/native/chao-vit-thanh-da.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "canvas_export_file": "output/recipe-images/4k/chao-vit-thanh-da.png",
+      "canvas_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/chao-vit-thanh-da-480.webp",
+          "pixels": [
+            480,
+            270
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/chao-vit-thanh-da-960.webp",
+          "pixels": [
+            960,
+            540
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/chao-vit-thanh-da-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/chao-vit-thanh-da-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BV632",
+      "slug": "ga-ro-ti-nuoc-dua-mien-nam",
+      "native_file": "output/recipe-images/native/ga-ro-ti-nuoc-dua-mien-nam.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "canvas_export_file": "output/recipe-images/4k/ga-ro-ti-nuoc-dua-mien-nam.png",
+      "canvas_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/ga-ro-ti-nuoc-dua-mien-nam-480.webp",
+          "pixels": [
+            480,
+            270
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/ga-ro-ti-nuoc-dua-mien-nam-960.webp",
+          "pixels": [
+            960,
+            540
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/ga-ro-ti-nuoc-dua-mien-nam-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/ga-ro-ti-nuoc-dua-mien-nam-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BV633",
+      "slug": "canh-ga-la-giang-binh-dinh",
+      "native_file": "output/recipe-images/native/canh-ga-la-giang-binh-dinh.png",
+      "native_pixels": [
+        1388,
+        1133
+      ],
+      "has_alpha": true,
+      "canvas_export_file": "output/recipe-images/4k/canh-ga-la-giang-binh-dinh.png",
+      "canvas_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/canh-ga-la-giang-binh-dinh-480.webp",
+          "pixels": [
+            480,
+            270
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/canh-ga-la-giang-binh-dinh-960.webp",
+          "pixels": [
+            960,
+            540
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/canh-ga-la-giang-binh-dinh-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/canh-ga-la-giang-binh-dinh-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BV634",
+      "slug": "lau-ga-tien-yen-nau-bong-ruou",
+      "native_file": "output/recipe-images/native/lau-ga-tien-yen-nau-bong-ruou.png",
+      "native_pixels": [
+        1383,
+        1137
+      ],
+      "has_alpha": true,
+      "canvas_export_file": "output/recipe-images/4k/lau-ga-tien-yen-nau-bong-ruou.png",
+      "canvas_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/lau-ga-tien-yen-nau-bong-ruou-480.webp",
+          "pixels": [
+            480,
+            270
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/lau-ga-tien-yen-nau-bong-ruou-960.webp",
+          "pixels": [
+            960,
+            540
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/lau-ga-tien-yen-nau-bong-ruou-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/lau-ga-tien-yen-nau-bong-ruou-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BV635",
+      "slug": "bun-vit-mang-chua",
+      "native_file": "output/recipe-images/native/bun-vit-mang-chua.png",
+      "native_pixels": [
+        1374,
+        1145
+      ],
+      "has_alpha": true,
+      "canvas_export_file": "output/recipe-images/4k/bun-vit-mang-chua.png",
+      "canvas_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/bun-vit-mang-chua-480.webp",
+          "pixels": [
+            480,
+            270
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/bun-vit-mang-chua-960.webp",
+          "pixels": [
+            960,
+            540
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/bun-vit-mang-chua-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/bun-vit-mang-chua-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ]
+        }
+      ]
+    }
+  ]
+}

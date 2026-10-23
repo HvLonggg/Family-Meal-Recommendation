@@ -1,0 +1,313 @@
+{
+  "batch": 59,
+  "description": "Năm món vùng miền từ Bình Phước, Quảng Ngãi và Đồng Nai được biên tập theo nguồn địa phương; định lượng gia đình cho bốn người, chưa nấu thử.",
+  "recipes": [
+    {
+      "id": "BV621",
+      "slug": "canh-thut-nguoi-stieng-binh-phuoc",
+      "name": "Canh thụt người S’Tiêng Bình Phước",
+      "aliases": ["Canh thụt S’tiêng", "Canh thụt lá nhíp đọt mây"],
+      "region": ["Nam"],
+      "province": ["Bình Phước"],
+      "category": "Món canh",
+      "meal_type": ["bữa trưa", "bữa tối", "món canh", "mâm cơm gia đình"],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Một nồi canh dùng chung trong mâm cơm bốn người; lượng lá nhíp, đọt mây và da trâu được Bếp Việt chuẩn hóa để nấu tại nhà.",
+      "prep_time": 25,
+      "cook_time": 35,
+      "passive_time": 0,
+      "total_time": 60,
+      "description": "Canh thụt là món ăn truyền thống của người S’Tiêng, kết hợp lá nhíp non, đọt mây, da trâu và ớt; nguyên liệu được nấu trong ống tre với ít nước rồi dùng que tre thụt để trộn. Bếp Việt giữ các thành phần và cách nấu được Cổng thông tin Bình Phước ghi nhận, đồng thời biên tập lượng gia vị và cách nấu thay thế bằng nồi chịu nhiệt cho căn bếp gia đình.",
+      "finished_dish": "Lá nhíp chín mềm, đọt mây còn độ giòn và vị đắng dịu; da trâu mềm dai, nước canh sánh nhẹ, cay vừa theo lượng ớt.",
+      "serving": "Dọn nóng trong nồi nhỏ hoặc bát sâu lòng, dùng cùng cơm trắng. Nếu nấu bằng ống tre, đặt ống vững và mở miệng ống khi nấu; không đậy kín.",
+      "tips": [
+        "Chỉ dùng lá nhíp và đọt mây được nhận diện chắc chắn, có nguồn thu hái hợp pháp và đã sơ chế an toàn; không tự hái cây rừng chưa rõ loại.",
+        "Dùng da trâu đã làm sạch và luộc mềm từ nguồn thực phẩm đáng tin cậy; phần sơ chế da trâu sống không nằm trong thời gian công thức.",
+        "Nguồn địa phương ghi nhận nấu trong ống tre và dùng que tre thụt để trộn; nồi chịu nhiệt là cách thích nghi của Bếp Việt khi nấu tại nhà.",
+        "Nêm nhẹ để giữ vị đắng, bùi tự nhiên; điều chỉnh ớt sau cùng theo khẩu vị gia đình."
+      ],
+      "dish_type": ["Món canh truyền thống", "Ẩm thực người S’Tiêng"],
+      "main_ingredient": ["lá nhíp", "đọt mây", "da trâu"],
+      "cooking_method": ["sơ chế rau rừng", "nấu ống tre", "thụt trộn nguyên liệu"],
+      "search_terms": ["canh thụt", "canh thụt S’Tiêng", "canh lá nhíp đọt mây", "món ăn Bình Phước", "món truyền thống người S’Tiêng"],
+      "spicy_level": 1,
+      "image_alt": "Nồi canh thụt S’Tiêng nấu từ lá nhíp, đọt mây và da trâu, đặt cạnh ống tre nấu canh.",
+      "time_note": "Khoảng 60 phút với da trâu đã luộc mềm; chưa tính thời gian sơ chế da trâu sống.",
+      "suggested_pairings": ["Cơm trắng", "Cá suối nướng", "Rau luộc"],
+      "recipe_family": "stieng_binh_phuoc_bamboo_tube_canhtut",
+      "keywords": ["canh thụt", "S’Tiêng", "Bình Phước", "lá nhíp", "đọt mây", "ống tre"],
+      "tags": ["Bình Phước", "miền Nam", "món canh", "món truyền thống", "ẩm thực dân tộc"],
+      "ingredients": [
+        {"name":"Lá nhíp non","quantity":250,"unit":"g","role":"main","notes":"Nhặt lá non, loại phần dập; chỉ dùng lá được nhận diện chắc chắn và có nguồn thu hái hợp pháp, an toàn.","scaling_rule":"linear","sequence":1},
+        {"name":"Đọt mây đã sơ chế","quantity":150,"unit":"g","role":"main","notes":"Bóc phần xơ già, cắt đoạn vừa ăn; chỉ dùng loại được nhận diện và sơ chế an toàn từ nguồn hợp pháp.","scaling_rule":"linear","sequence":2},
+        {"name":"Da trâu luộc mềm","quantity":180,"unit":"g","role":"main","notes":"Dùng da trâu đã làm sạch và luộc mềm, thái miếng nhỏ.","scaling_rule":"linear","sequence":3},
+        {"name":"Nước","quantity":700,"unit":"ml","role":"liquid","notes":"Lượng vừa đủ tạo nồi canh sánh; gia giảm theo độ mềm của lá.","scaling_rule":"taste_adjusted","sequence":4},
+        {"name":"Muối","quantity":4,"unit":"g","role":"seasoning","notes":"Nêm nhẹ sau khi các nguyên liệu đã mềm.","scaling_rule":"taste_adjusted","sequence":5},
+        {"name":"Ớt tươi","quantity":5,"unit":"g","role":"seasoning","notes":"Đập dập; dùng ít hoặc bỏ tùy khẩu vị.","scaling_rule":"optional","sequence":6}
+      ],
+      "preparation_steps": [
+        {"step":1,"instruction":"Rửa lá nhíp nhiều lần, để ráo. Kiểm tra đọt mây đã được bóc xơ và xử lý phù hợp trước khi cắt khúc ngắn."},
+        {"step":2,"instruction":"Thái da trâu đã luộc mềm thành miếng nhỏ để dễ ăn. Đập dập ớt; chuẩn bị ống tre nấu ăn sạch hoặc một nồi nhỏ chịu nhiệt."}
+      ],
+      "cooking_steps": [
+        {"step":1,"instruction":"Cho da trâu, đọt mây, lá nhíp, nước và ớt vào ống tre hoặc nồi. Chỉ thêm lượng nước vừa đủ để các nguyên liệu chín quyện."},
+        {"step":2,"instruction":"Nếu dùng ống tre, đặt ống nghiêng vững cạnh than hồng, không bịt kín miệng; nấu liu riu và dùng que tre sạch thụt, khuấy định kỳ. Nếu dùng nồi, đun nhỏ lửa và khuấy nhẹ."},
+        {"step":3,"instruction":"Nấu khoảng 25–35 phút đến khi lá mềm, đọt mây vừa chín và nước canh sánh nhẹ. Nêm muối, nếm lại độ cay rồi dọn nóng."}
+      ],
+      "sources": [
+        {"url":"https://binhphuoc.gov.vn/vi/dukhach/anh-dep-binh-phuoc/canh-thut-huong-vi-nui-rung-cua-nguoi-s-tieng-131.html","publisher":"Cổng thông tin điện tử tỉnh Bình Phước","title":"Canh thụt hương vị núi rừng của người S’Tiêng","use":"Xác nhận món ăn truyền thống của người S’Tiêng, các nguyên liệu lá nhíp non, đọt mây, da trâu, ớt tươi và cách nấu trong ống tre, thụt bằng que tre. Định lượng, cách nêm và thời gian cho bữa ăn bốn người là phần biên tập của Bếp Việt.","accessed_at":"2026-10-24","type":"editorial_reference"},
+        {"url":"https://binhphuoc.gov.vn/vi/news/hoat-dong-huyen-thi-xa-thanh-pho/canh-thut-mon-ngon-doc-la-o-binh-phuoc-32051.html","publisher":"Cổng thông tin điện tử tỉnh Bình Phước","title":"Canh thụt – món ngon độc lạ ở Bình Phước","use":"Nguồn chính quyền địa phương bổ sung xác nhận canh thụt được nấu trong ống tre với lá nhíp, đọt mây và thịt hoặc cá. Công thức của Bếp Việt dùng lượng da trâu theo một nguồn địa phương khác và ghi rõ đây là định lượng biên tập.","accessed_at":"2026-10-24","type":"editorial_reference"}
+      ],
+      "time_unit": "minute",
+      "scaling": {"base_servings":4,"targets":[{"servings":2,"main_factor":0.5,"seasoning_start_factor":0.5,"example":"125 g lá nhíp, 75 g đọt mây và 90 g da trâu đã luộc mềm","instruction":"Giảm lượng nước để nồi canh vẫn sánh; nêm muối và ớt sau khi nấu."},{"servings":6,"main_factor":1.5,"seasoning_start_factor":1.2,"example":"375 g lá nhíp, 225 g đọt mây và 270 g da trâu đã luộc mềm","instruction":"Dùng nồi rộng hoặc ống tre lớn, khuấy định kỳ để rau chín đều."}]},
+      "media": [{"image_url":"/images/recipes/edited/canh-thut-nguoi-stieng-binh-phuoc-960.webp","page_url":"https://binhphuoc.gov.vn/vi/dukhach/anh-dep-binh-phuoc/canh-thut-huong-vi-nui-rung-cua-nguoi-s-tieng-131.html","source":"Bếp Việt","author":"Bếp Việt","license":null,"rights_status":"project","rights_note":"Ảnh được tạo riêng cho kho Bếp Việt; nguồn tham khảo chỉ dùng để xác nhận món, vùng miền, nguyên liệu và cách nấu.","width":3840,"height":2160,"orientation":"landscape","preferred_width_met":true,"alt_text":"Nồi canh thụt S’Tiêng nấu từ lá nhíp, đọt mây và da trâu, đặt cạnh ống tre nấu canh.","verified_dish_match":true,"visual_review_date":"2026-10-24","photo_variant_note":"Ảnh PNG nền trong suốt được giữ ở output/recipe-images/native; các biến thể WebP dùng canvas 3840×2160, không kéo méo món."}],
+      "editorial": {"status":"editorial_draft","production_ready":false,"test_cook_status":"not_tested","variant_note":"Giữ nguyên nguyên liệu và phương pháp ống tre được nguồn Bình Phước ghi nhận. Bếp Việt biên tập định lượng, thời gian tham khảo và lựa chọn nồi chịu nhiệt cho bếp gia đình; không xem đây là công thức duy nhất của cộng đồng S’Tiêng.","seed_recipe":null,"reviewed_at":"2026-10-24","needs":["Đối chiếu thêm với người nấu S’Tiêng và nấu thử để xác nhận lượng nước, cách xử lý đọt mây và thời gian nấu."]}
+    },
+    {
+      "id": "BV622",
+      "slug": "rau-mop-muoi-chua-bu-gia-map",
+      "name": "Rau móp muối chua Bù Gia Mập",
+      "aliases": ["Rau móp gai muối chua", "Đọt móp muối chua Bình Phước"],
+      "region": ["Nam"],
+      "province": ["Bình Phước"],
+      "category": "Món rau",
+      "meal_type": ["món rau", "món chua", "bữa trưa", "bữa tối", "mâm cơm gia đình"],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một hũ rau muối ăn kèm cho bốn người; khối lượng thành phẩm phụ thuộc độ non và lượng nước rau tiết ra.",
+      "prep_time": 20,
+      "cook_time": 0,
+      "passive_time": 2880,
+      "total_time": 2900,
+      "description": "Đọt rau móp là rau rừng quen thuộc ở vùng Bù Gia Mập; rau móp muối chua được Báo Dân Việt ghi nhận là cách chế biến phổ biến tại Bình Phước. Bếp Việt biên tập lượng muối và quy trình muối một hũ nhỏ cho gia đình; vị chua giòn hình thành sau khoảng 2–3 ngày ở nhiệt độ phù hợp.",
+      "finished_dish": "Đọt móp chuyển màu xanh vàng, giòn và có vị chua mặn dịu; không có mùi lạ, màng mốc hay nhớt bất thường.",
+      "serving": "Vớt lượng vừa đủ, để ráo rồi dọn như món ăn kèm cơm. Có thể thêm tỏi và ớt tươi sau khi rau đã chua; phần còn lại bảo quản lạnh trong hũ sạch.",
+      "tips": [
+        "Chỉ dùng rau móp được nhận diện chắc chắn, thu hái hợp pháp và bán từ nguồn thực phẩm đáng tin cậy; cây có gai, không tự hái rau dại chưa rõ loài.",
+        "Dùng hũ sạch, tráng nước sôi và để khô; rau phải ngập hoàn toàn trong nước muối để hạn chế hư hỏng.",
+        "Tỷ lệ muối trong công thức là mức Bếp Việt chuẩn hóa để bắt đầu; nhiệt độ môi trường làm thời gian lên men thay đổi.",
+        "Không dùng nếu rau có mốc, nhớt hoặc mùi lạ. Khi đạt vị chua mong muốn, chuyển hũ vào ngăn mát và dùng dụng cụ sạch để gắp."
+      ],
+      "dish_type": ["Rau muối chua", "Đặc sản rau rừng Bình Phước"],
+      "main_ingredient": ["đọt rau móp", "muối hạt"],
+      "cooking_method": ["tước bẹ có gai", "ngâm nước muối", "lên men tự nhiên"],
+      "search_terms": ["rau móp muối chua", "rau móp Bù Gia Mập", "rau móp gai muối", "món chua Bình Phước", "đọt móp lên men"],
+      "spicy_level": 0,
+      "image_alt": "Đĩa rau móp muối chua giòn màu xanh vàng, bên cạnh là hũ thủy tinh rau ngập trong nước muối.",
+      "time_note": "Khoảng 2–3 ngày lên men; theo dõi vị chua và chuyển lạnh khi rau đạt độ mong muốn.",
+      "suggested_pairings": ["Cơm trắng", "Cá kho", "Món chiên"],
+      "recipe_family": "bu_gia_map_pickled_mop_greens",
+      "keywords": ["rau móp", "móp gai", "Bù Gia Mập", "Bình Phước", "rau muối chua", "lên men"],
+      "tags": ["Bình Phước", "miền Nam", "món rau", "rau rừng", "món muối chua"],
+      "ingredients": [
+        {"name":"Đọt rau móp non","quantity":500,"unit":"g","role":"main","notes":"Tước bỏ bẹ và phần gai theo hướng dẫn của người bán; chỉ dùng rau được nhận diện chắc chắn, có nguồn thu hái hợp pháp; cân sau sơ chế.","scaling_rule":"linear","sequence":1},
+        {"name":"Nước đun sôi để nguội","quantity":1000,"unit":"ml","role":"liquid","notes":"Dùng nước sạch đã đun sôi và để nguội hoàn toàn.","scaling_rule":"vessel_dependent","sequence":2},
+        {"name":"Muối hạt","quantity":35,"unit":"g","role":"seasoning","notes":"Hòa tan thành nước muối; lượng do Bếp Việt chuẩn hóa, có thể cần điều chỉnh theo độ mặn và lượng nước thực tế.","scaling_rule":"taste_adjusted","sequence":3},
+        {"name":"Tỏi","quantity":10,"unit":"g","role":"aromatic","notes":"Thái lát; tùy chọn trộn hoặc dọn kèm sau khi rau đã lên men.","scaling_rule":"optional","sequence":4},
+        {"name":"Ớt tươi","quantity":5,"unit":"g","role":"seasoning","notes":"Thái lát, dùng tùy chọn sau khi rau chua.","scaling_rule":"optional","sequence":5}
+      ],
+      "preparation_steps": [
+        {"step":1,"instruction":"Tước bỏ bẹ và gai ở đọt móp bằng găng tay sạch, cắt miếng vừa ăn, rửa kỹ rồi để thật ráo."},
+        {"step":2,"instruction":"Hòa tan muối hạt vào nước đã đun sôi để nguội. Tráng hũ sạch bằng nước sôi, để khô và chuẩn bị vật nén sạch."}
+      ],
+      "cooking_steps": [
+        {"step":1,"instruction":"Xếp rau móp vào hũ, rót nước muối ngập hoàn toàn. Dùng vật nén sạch giữ rau dưới mặt nước rồi đậy nắp."},
+        {"step":2,"instruction":"Để hũ ở nơi sạch, thoáng trong khoảng 2–3 ngày. Kiểm tra hằng ngày; nhiệt độ phòng nóng có thể làm rau chua nhanh hơn."},
+        {"step":3,"instruction":"Khi rau giòn và đạt vị chua dịu, lấy lượng ăn bằng dụng cụ sạch, thêm tỏi ớt nếu thích và bảo quản phần còn lại trong ngăn mát."}
+      ],
+      "sources": [
+        {"url":"https://danviet.vn/gio-phut-sap-nhap-tinh-dong-nai-binh-phuoc-can-ke-day-la-loai-rau-rung-rau-dai-khien-nguoi-ta-khen-ngon-phat-hon-d1342485.html","publisher":"Báo điện tử Dân Việt","title":"Giờ phút sáp nhập tỉnh Đồng Nai, Bình Phước cận kề, đây là loại rau rừng, rau dại khiến người ta khen ngon ‘phát hờn’","use":"Xác nhận rau móp mọc ở Bù Gia Mập và rau móp muối chua là cách chế biến phổ biến; bài mô tả tước bẹ gai, cắt rửa, dùng nước muối đun sôi để nguội và ủ kín 2–3 ngày. Tỷ lệ muối cho một hũ gia đình do Bếp Việt biên tập.","accessed_at":"2026-10-24","type":"editorial_reference"}
+      ],
+      "time_unit": "minute",
+      "scaling": {"base_servings":4,"targets":[{"servings":2,"main_factor":0.5,"seasoning_start_factor":0.5,"example":"250 g đọt móp và khoảng 500 ml nước muối","instruction":"Dùng hũ nhỏ vừa khít để rau luôn ngập; theo dõi độ chua thay vì cố định thời gian."},{"servings":6,"main_factor":1.5,"seasoning_start_factor":1.2,"example":"750 g đọt móp và khoảng 1,5 lít nước muối","instruction":"Dùng hũ rộng hoặc chia thành hai hũ để rau được nén ngập đều."}]},
+      "media": [{"image_url":"/images/recipes/edited/rau-mop-muoi-chua-bu-gia-map-960.webp","page_url":"https://danviet.vn/gio-phut-sap-nhap-tinh-dong-nai-binh-phuoc-can-ke-day-la-loai-rau-rung-rau-dai-khien-nguoi-ta-khen-ngon-phat-hon-d1342485.html","source":"Bếp Việt","author":"Bếp Việt","license":null,"rights_status":"project","rights_note":"Ảnh được tạo riêng cho kho Bếp Việt; nguồn tham khảo chỉ dùng để xác nhận rau móp, địa phương và cách muối chua.","width":3840,"height":2160,"orientation":"landscape","preferred_width_met":true,"alt_text":"Đĩa rau móp muối chua giòn màu xanh vàng, bên cạnh là hũ thủy tinh rau ngập trong nước muối.","verified_dish_match":true,"visual_review_date":"2026-10-24","photo_variant_note":"Ảnh PNG nền trong suốt được giữ ở output/recipe-images/native; các biến thể WebP dùng canvas 3840×2160, không kéo méo món."}],
+      "editorial": {"status":"editorial_draft","production_ready":false,"test_cook_status":"not_tested","variant_note":"Nguồn Dân Việt xác nhận cách muối và khoảng thời gian ủ. Bếp Việt chuẩn hóa lượng muối, thao tác vệ sinh và cách bảo quản cho mẻ nhỏ tại nhà; không thay thế hướng dẫn an toàn thực phẩm cho quy mô sản xuất.","seed_recipe":null,"reviewed_at":"2026-10-24","needs":["Nấu thử/ủ thử để xác nhận tỷ lệ nước muối phù hợp với độ dày bẹ rau và nhiệt độ từng mùa."]}
+    },
+    {
+      "id": "BV623",
+      "slug": "ca-nien-nuong-trui-quang-ngai",
+      "name": "Cá niên nướng trui Quảng Ngãi",
+      "aliases": ["Cá niên nướng than Quảng Ngãi", "Cá niên nướng dân dã"],
+      "region": ["Trung"],
+      "province": ["Quảng Ngãi"],
+      "category": "Món mặn",
+      "meal_type": ["món cá", "bữa trưa", "bữa tối", "mâm cơm gia đình"],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Khoảng 800 g cá nhỏ nướng dùng làm món mặn cho bốn người; cá niên tự nhiên theo mùa có thể khó tìm.",
+      "prep_time": 20,
+      "cook_time": 18,
+      "passive_time": 0,
+      "total_time": 38,
+      "description": "Cá niên sống ở các dòng suối miền núi Quảng Ngãi, trong đó có Trà Bồng và Sơn Tây; nguồn phát thanh, truyền hình tỉnh ghi nhận nướng trui là cách chế biến nổi bật vì giữ vị cá tự nhiên. Bếp Việt biên tập khẩu phần, bước làm sạch và muối ớt xanh ăn kèm cho bữa cơm gia đình.",
+      "finished_dish": "Cá chín thơm mùi than, da xém nhẹ, thịt chắc và béo bùi; vị cá vẫn là chính, không bị lớp gia vị phủ át.",
+      "serving": "Dọn cá nóng cùng muối ớt xanh, rau sống hoặc rau thơm và cơm trắng. Chọn cá có nguồn gốc hợp pháp, ưu tiên nguồn nuôi hoặc khai thác bền vững.",
+      "tips": [
+        "Cá niên tự nhiên có sản lượng hạn chế; không mua cá không rõ nguồn gốc hoặc kích thước quá nhỏ, ưu tiên nguồn cung hợp pháp và có trách nhiệm.",
+        "Làm sạch cá kỹ, để ráo trước khi nướng để bề mặt không hấp hơi và thịt chín đều.",
+        "Nguồn địa phương mô tả nướng trui giản dị, không cầu kỳ gia vị; chỉ dùng chút muối và chấm thêm muối ớt khi ăn.",
+        "Nướng trên than hồng ổn định, trở nhẹ tay để cá không cháy xém quá mức."
+      ],
+      "dish_type": ["Món nướng", "Đặc sản cá suối miền núi"],
+      "main_ingredient": ["cá niên", "ớt xanh"],
+      "cooking_method": ["làm sạch cá", "nướng trui", "giã muối ớt"],
+      "search_terms": ["cá niên nướng trui", "cá niên Quảng Ngãi", "cá suối miền núi nướng", "món cá Trà Bồng", "món cá Sơn Tây"],
+      "spicy_level": 2,
+      "image_alt": "Cá niên nướng trui vàng xém nhẹ trên mẹt tre, ăn kèm muối ớt xanh và rau thơm.",
+      "time_note": "Khoảng 38 phút, chưa tính thời gian làm nóng than; cá lớn cần nướng lâu hơn.",
+      "suggested_pairings": ["Cơm trắng", "Rau luộc", "Rau thơm và muối ớt xanh"],
+      "recipe_family": "quang_ngai_grilled_ca_nien",
+      "keywords": ["cá niên", "cá suối", "Quảng Ngãi", "Trà Bồng", "Sơn Tây", "nướng trui"],
+      "tags": ["Quảng Ngãi", "miền Trung", "món cá", "món nướng", "đặc sản vùng cao"],
+      "ingredients": [
+        {"name":"Cá niên nhỏ","quantity":800,"unit":"g","role":"main","notes":"Chọn cá nguồn gốc hợp pháp, làm sạch mang và ruột; cân sau khi loại bỏ phần không ăn.","scaling_rule":"linear","sequence":1},
+        {"name":"Muối hạt","quantity":5,"unit":"g","role":"seasoning","notes":"Xát rất nhẹ lên cá; nếm trước khi thêm.","scaling_rule":"taste_adjusted","sequence":2},
+        {"name":"Ớt xanh","quantity":12,"unit":"g","role":"seasoning","notes":"Giã cùng muối để làm chén chấm, gia giảm theo độ cay.","scaling_rule":"taste_adjusted","sequence":3},
+        {"name":"Chanh","quantity":20,"unit":"ml","role":"seasoning","notes":"Vắt lấy nước cốt cho chén muối ớt.","scaling_rule":"taste_adjusted","sequence":4},
+        {"name":"Rau thơm ăn kèm","quantity":120,"unit":"g","role":"accompaniment","notes":"Rửa sạch, để ráo; chọn loại rau thơm theo mùa.","scaling_rule":"linear","sequence":5}
+      ],
+      "preparation_steps": [
+        {"step":1,"instruction":"Làm sạch mang và ruột cá, rửa nhanh bằng nước sạch rồi thấm ráo. Có thể khía nhẹ thân cá dày để nhiệt vào đều."},
+        {"step":2,"instruction":"Giã ớt xanh với muối hạt, vắt chanh vào chén chấm. Rửa sạch rau thơm và chuẩn bị bếp than hồng."}
+      ],
+      "cooking_steps": [
+        {"step":1,"instruction":"Xát một lớp muối mỏng lên cá, không ướp quá lâu để giữ vị tự nhiên. Xếp cá lên vỉ hoặc kẹp nướng sạch."},
+        {"step":2,"instruction":"Nướng trên than hồng vừa, trở cá định kỳ khoảng 15–18 phút tùy kích thước. Nướng đến khi thịt cá đục trắng, dễ tách khỏi xương và chín đều."},
+        {"step":3,"instruction":"Gỡ cá khỏi vỉ, dọn nóng cùng muối ớt xanh và rau thơm. Không dùng cá còn dấu hiệu hư hỏng hoặc không rõ nguồn gốc."}
+      ],
+      "sources": [
+        {"url":"https://quangngaitv.vn/ca-nien-dac-san-nui-rung-quang-ngai-co-gia-tri-kinh-te-cao-6517648.html","publisher":"Báo và Phát thanh, Truyền hình Quảng Ngãi","title":"Cá niên – đặc sản núi rừng Quảng Ngãi có giá trị kinh tế cao","use":"Xác nhận cá niên là loài cá suối miền núi Quảng Ngãi, có ở Trà Bồng và Sơn Tây; bài ghi nhận nướng trui là cách chế biến nổi bật và lưu ý cần khai thác hợp lý, bảo vệ nguồn lợi. Khẩu phần, làm sạch cá và chén muối ớt do Bếp Việt biên tập.","accessed_at":"2026-10-24","type":"editorial_reference"}
+      ],
+      "time_unit": "minute",
+      "scaling": {"base_servings":4,"targets":[{"servings":2,"main_factor":0.5,"seasoning_start_factor":0.5,"example":"400 g cá niên và một nửa lượng muối ớt","instruction":"Nướng theo mẻ nhỏ; kiểm tra cá chín bằng độ đục của thịt, không chỉ dựa vào thời gian."},{"servings":6,"main_factor":1.5,"seasoning_start_factor":1.2,"example":"1,2 kg cá niên và chén muối ớt lớn hơn","instruction":"Nướng thành nhiều mẻ để than không bị nguội và cá chín đồng đều."}]},
+      "media": [{"image_url":"/images/recipes/edited/ca-nien-nuong-trui-quang-ngai-960.webp","page_url":"https://quangngaitv.vn/ca-nien-dac-san-nui-rung-quang-ngai-co-gia-tri-kinh-te-cao-6517648.html","source":"Bếp Việt","author":"Bếp Việt","license":null,"rights_status":"project","rights_note":"Ảnh được tạo riêng cho kho Bếp Việt; nguồn tham khảo chỉ xác nhận cá niên, địa phương và cách nướng trui.","width":3840,"height":2160,"orientation":"landscape","preferred_width_met":true,"alt_text":"Cá niên nướng trui vàng xém nhẹ trên mẹt tre, ăn kèm muối ớt xanh và rau thơm.","verified_dish_match":true,"visual_review_date":"2026-10-24","photo_variant_note":"Ảnh PNG nền trong suốt được giữ ở output/recipe-images/native; các biến thể WebP dùng canvas 3840×2160, không kéo méo món."}],
+      "editorial": {"status":"editorial_draft","production_ready":false,"test_cook_status":"not_tested","variant_note":"Giữ phương pháp nướng trui ít gia vị được nguồn Quảng Ngãi ghi nhận. Bếp Việt biên tập khẩu phần, bước làm sạch, thời gian tham khảo và muối ớt xanh ăn kèm; khuyến nghị chọn nguồn cá hợp pháp do nguồn lợi tự nhiên hạn chế.","seed_recipe":null,"reviewed_at":"2026-10-24","needs":["Nấu thử với cá có kích thước khác nhau để chốt thời gian nướng và tỷ lệ muối ớt."]}
+    },
+    {
+      "id": "BV624",
+      "slug": "ca-bong-suoi-kho-rim-tieu-son-tay",
+      "name": "Cá bống suối kho rim tiêu Sơn Tây",
+      "aliases": ["Cá bống suối kho tiêu Quảng Ngãi", "Cá bống suối rim tiêu"],
+      "region": ["Trung"],
+      "province": ["Quảng Ngãi"],
+      "category": "Món mặn",
+      "meal_type": ["món cá", "bữa trưa", "bữa tối", "mâm cơm gia đình"],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một nồi cá kho rim ăn cùng cơm cho bốn người; lượng cá được Bếp Việt chuẩn hóa từ món gia đình vùng núi Quảng Ngãi.",
+      "prep_time": 20,
+      "cook_time": 30,
+      "passive_time": 10,
+      "total_time": 60,
+      "description": "Cá bống suối nhỏ, thịt dai thơm được người dân miền núi Quảng Ngãi kho rim với tiêu hoặc ớt rừng để ăn cơm. Bếp Việt chọn vị tiêu vừa phải, biên tập tỷ lệ nước mắm và nước màu cho nồi cá bốn người; không gán công thức này là cách nấu duy nhất của vùng.",
+      "finished_dish": "Cá săn chắc, áo lớp nước kho nâu óng, vị mặn ngọt vừa và tiêu thơm rõ; nước kho sánh mỏng để chan cơm.",
+      "serving": "Dọn cá trong nồi đất nhỏ hoặc đĩa sâu lòng, rắc tiêu mới xay và ăn với cơm nóng, rau luộc. Có thể thay cá bống suối bằng cá bống nhỏ từ nguồn nuôi hoặc nguồn khai thác hợp pháp.",
+      "tips": [
+        "Cá bống suối tự nhiên ở vùng cao có sản lượng ít; chỉ dùng cá có nguồn gốc hợp pháp, không tự bắt ở khu vực cấm hoặc trong mùa bảo vệ.",
+        "Rửa cá nhẹ tay và để ráo; cá nhỏ dễ nát nếu đảo mạnh trong khi kho.",
+        "Ướp ngắn với nước mắm, tiêu và chút đường để cá thấm; rim lửa nhỏ, lắc nồi thay vì đảo.",
+        "Nếu cá không có đủ nước tiết ra, thêm từng ít nước nóng để lớp kho không khô trước khi cá chín."
+      ],
+      "dish_type": ["Món kho", "Món cá suối"],
+      "main_ingredient": ["cá bống suối", "tiêu"],
+      "cooking_method": ["sơ chế cá", "ướp ngắn", "kho rim lửa nhỏ"],
+      "search_terms": ["cá bống suối kho rim", "cá bống suối kho tiêu", "cá bống Sơn Tây", "món cá Quảng Ngãi", "cá suối ăn cơm"],
+      "spicy_level": 1,
+      "image_alt": "Cá bống suối kho rim tiêu trong niêu đất, thân cá nhỏ phủ nước kho nâu sánh và rắc tiêu.",
+      "time_note": "Khoảng 60 phút, gồm 10 phút ướp; cá to hoặc niêu dày có thể cần thêm thời gian.",
+      "suggested_pairings": ["Cơm trắng", "Rau luộc", "Canh rau"],
+      "recipe_family": "son_tay_stream_goby_pepper_braise",
+      "keywords": ["cá bống suối", "Sơn Tây", "Quảng Ngãi", "kho rim", "tiêu", "món ăn cơm"],
+      "tags": ["Quảng Ngãi", "miền Trung", "món cá", "món kho", "mâm cơm"],
+      "ingredients": [
+        {"name":"Cá bống suối nhỏ","quantity":600,"unit":"g","role":"main","notes":"Chọn cá tươi từ nguồn hợp pháp; làm sạch mang và ruột nếu cá đủ lớn.","scaling_rule":"linear","sequence":1},
+        {"name":"Nước mắm","quantity":25,"unit":"ml","role":"seasoning","notes":"Gia giảm theo độ mặn của nước mắm.","scaling_rule":"taste_adjusted","sequence":2},
+        {"name":"Đường","quantity":10,"unit":"g","role":"seasoning","notes":"Cân vị mặn và giúp nước kho dịu.","scaling_rule":"taste_adjusted","sequence":3},
+        {"name":"Hành tím","quantity":15,"unit":"g","role":"aromatic","notes":"Bóc vỏ, băm nhỏ.","scaling_rule":"linear","sequence":4},
+        {"name":"Tiêu đen xay","quantity":2,"unit":"g","role":"seasoning","notes":"Chia một phần để ướp, phần còn lại rắc sau khi kho.","scaling_rule":"taste_adjusted","sequence":5},
+        {"name":"Nước màu","quantity":8,"unit":"ml","role":"seasoning","notes":"Tạo màu nâu nhẹ; dùng vừa đủ, không để vị đường thắng lấn át cá.","scaling_rule":"optional","sequence":6},
+        {"name":"Nước nóng","quantity":100,"unit":"ml","role":"liquid","notes":"Chỉ thêm khi cá ít tiết nước hoặc niêu kho cạn nhanh.","scaling_rule":"taste_adjusted","sequence":7},
+        {"name":"Dầu ăn","quantity":5,"unit":"ml","role":"fat","notes":"Phi hành tím; có thể bỏ nếu dùng niêu chống dính tốt.","scaling_rule":"optional","sequence":8}
+      ],
+      "preparation_steps": [
+        {"step":1,"instruction":"Nhặt bỏ tạp chất, làm sạch cá theo kích thước rồi rửa nhẹ và để ráo. Không chà xát mạnh làm tróc da cá nhỏ."},
+        {"step":2,"instruction":"Ướp cá với nước mắm, đường, một nửa lượng tiêu và nước màu trong 10 phút. Băm hành tím."}
+      ],
+      "cooking_steps": [
+        {"step":1,"instruction":"Làm nóng niêu, cho dầu và hành tím vào phi thơm. Xếp cá cùng phần nước ướp vào nồi, đun sôi nhẹ khoảng 2 phút."},
+        {"step":2,"instruction":"Hạ lửa nhỏ, thêm một ít nước nóng nếu cần, đậy hé nắp và kho rim 20–25 phút. Không đảo; thỉnh thoảng lắc nhẹ nồi để cá không dính đáy."},
+        {"step":3,"instruction":"Mở nắp, nếm và chỉnh vị; rim thêm đến khi cá chín, săn và nước kho sánh mỏng. Rắc phần tiêu còn lại rồi dọn nóng."}
+      ],
+      "sources": [
+        {"url":"https://vietnamnet.vn/quang-ngai-de-nhat-ca-suoi-co-tien-cung-khong-de-ma-mua-636780.html","publisher":"VietNamNet (theo Dân Việt)","title":"Quảng Ngãi: ‘Đệ nhất cá suối’ có tiền cũng không dễ mà mua","use":"Bài dẫn lời người dân miền núi Quảng Ngãi về cá bống suối ở Sơn Tây, thịt dai thơm và cách kho rim với tiêu hoặc ớt rừng để ăn cơm; đồng thời cho biết sản lượng bắt được ít. Tỷ lệ gia vị và thời gian nấu cho bốn người do Bếp Việt biên tập.","accessed_at":"2026-10-24","type":"editorial_reference"}
+      ],
+      "time_unit": "minute",
+      "scaling": {"base_servings":4,"targets":[{"servings":2,"main_factor":0.5,"seasoning_start_factor":0.45,"example":"300 g cá bống suối và khoảng 12 ml nước mắm","instruction":"Dùng niêu nhỏ, canh lửa thấp và nếm nước mắm trước khi tăng lượng."},{"servings":6,"main_factor":1.5,"seasoning_start_factor":1.2,"example":"900 g cá bống suối và khoảng 38 ml nước mắm","instruction":"Kho trong niêu rộng hoặc chia hai mẻ để cá nằm thành lớp nông, không cần đảo."}]},
+      "media": [{"image_url":"/images/recipes/edited/ca-bong-suoi-kho-rim-tieu-son-tay-960.webp","page_url":"https://vietnamnet.vn/quang-ngai-de-nhat-ca-suoi-co-tien-cung-khong-de-ma-mua-636780.html","source":"Bếp Việt","author":"Bếp Việt","license":null,"rights_status":"project","rights_note":"Ảnh được tạo riêng cho kho Bếp Việt; nguồn tham khảo chỉ xác nhận cá bống suối, Sơn Tây và cách kho rim tiêu.","width":3840,"height":2160,"orientation":"landscape","preferred_width_met":true,"alt_text":"Cá bống suối kho rim tiêu trong niêu đất, thân cá nhỏ phủ nước kho nâu sánh và rắc tiêu.","verified_dish_match":true,"visual_review_date":"2026-10-24","photo_variant_note":"Ảnh PNG nền trong suốt được giữ ở output/recipe-images/native; các biến thể WebP dùng canvas 3840×2160, không kéo méo món."}],
+      "editorial": {"status":"editorial_draft","production_ready":false,"test_cook_status":"not_tested","variant_note":"Giữ cách kho rim cá với tiêu được người dân Sơn Tây chia sẻ trên VietNamNet. Bếp Việt biên tập định lượng, nước màu và thao tác nấu gia đình; ghi chú nguồn cá hiếm để khuyến khích lựa chọn có trách nhiệm.","seed_recipe":null,"reviewed_at":"2026-10-24","needs":["Nấu thử với cá bống suối hoặc loại cá thay thế để xác nhận thời gian kho và lượng nước phù hợp."]}
+    },
+    {
+      "id": "BV625",
+      "slug": "nam-moi-xao-la-lot-dong-nai",
+      "name": "Nấm mối xào lá lốt Đồng Nai",
+      "aliases": ["Nấm mối xào lá lốt Long Khánh", "Nấm mối xào lá lốt miền Đông"],
+      "region": ["Nam"],
+      "province": ["Đồng Nai"],
+      "category": "Món rau",
+      "meal_type": ["món chay", "món rau", "bữa trưa", "bữa tối", "mâm cơm gia đình"],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một đĩa nấm xào dùng chung trong mâm cơm bốn người; nấm mối tự nhiên thường chỉ có theo mùa và nguồn cung hạn chế.",
+      "prep_time": 15,
+      "cook_time": 8,
+      "passive_time": 0,
+      "total_time": 23,
+      "description": "Nấm mối là sản vật tự nhiên theo mùa được Báo Đồng Nai ghi nhận ở Long Khánh và các điểm thu mua trong tỉnh; bài viết liệt kê nấm mối xào lá lốt trong những cách chế biến quen thuộc. Bếp Việt biên tập lượng gia vị và thao tác xào nhanh cho bữa cơm gia đình, giữ vị ngọt thơm của nấm làm chính.",
+      "finished_dish": "Nấm chín vừa, còn mọng và dai nhẹ; lá lốt thơm thoảng, tỏi vàng nhẹ, vị nêm thanh không át mùi nấm.",
+      "serving": "Dọn nóng như món rau ăn cùng cơm trắng. Nấm mối chỉ nên mua từ nơi bán đáng tin cậy; không tự hái hoặc ăn nấm rừng chưa được nhận dạng chắc chắn.",
+      "tips": [
+        "Chỉ dùng nấm mối đã được người bán nhận diện và cung cấp như thực phẩm; không tự hái nấm dại vì hình dạng gần giống có thể gây ngộ độc.",
+        "Nấm mối tự nhiên theo mùa và khan hiếm; nếu không có nguồn tin cậy, không thay bằng nấm lạ mà hãy chọn nấm ăn được thông dụng và ghi rõ đó là phiên bản thay thế.",
+        "Không ngâm nấm lâu trong nước; chải nhẹ đất, rửa nhanh nếu cần và để ráo để nấm không hút nước.",
+        "Xào trên lửa lớn trong thời gian ngắn, cho lá lốt ở cuối để giữ hương thơm và độ tươi."
+      ],
+      "dish_type": ["Món xào", "Món rau theo mùa"],
+      "main_ingredient": ["nấm mối", "lá lốt"],
+      "cooking_method": ["làm sạch nấm", "phi thơm tỏi", "xào nhanh"],
+      "search_terms": ["nấm mối xào lá lốt", "nấm mối Đồng Nai", "nấm mối Long Khánh", "món chay nấm mối", "nấm theo mùa"],
+      "spicy_level": 0,
+      "image_alt": "Đĩa nấm mối xào lá lốt Đồng Nai với nấm vàng nâu mọng, lá lốt xanh và tỏi phi.",
+      "time_note": "Khoảng 23 phút; thao tác làm sạch nấm cần nhẹ tay và không ngâm lâu.",
+      "suggested_pairings": ["Cơm trắng", "Đậu hũ kho", "Canh rau"],
+      "recipe_family": "dong_nai_termite_mushroom_stir_fried_piper_lolot",
+      "keywords": ["nấm mối", "lá lốt", "Đồng Nai", "Long Khánh", "món chay", "món xào"],
+      "tags": ["Đồng Nai", "miền Nam", "món chay", "món rau", "theo mùa"],
+      "ingredients": [
+        {"name":"Nấm mối tươi","quantity":450,"unit":"g","role":"main","notes":"Chỉ dùng nấm được bán như thực phẩm từ nguồn đáng tin; nhặt nhẹ đất, cắt bỏ chân già.","scaling_rule":"linear","sequence":1},
+        {"name":"Lá lốt","quantity":35,"unit":"g","role":"main","notes":"Rửa nhanh, để khô và thái sợi vừa.","scaling_rule":"linear","sequence":2},
+        {"name":"Tỏi","quantity":12,"unit":"g","role":"aromatic","notes":"Bóc vỏ, băm nhỏ.","scaling_rule":"linear","sequence":3},
+        {"name":"Dầu ăn","quantity":15,"unit":"ml","role":"fat","notes":"Có thể dùng dầu thực vật cho bữa chay.","scaling_rule":"linear","sequence":4},
+        {"name":"Nước tương","quantity":15,"unit":"ml","role":"seasoning","notes":"Chọn nước tương chay, nêm vừa phải.","scaling_rule":"taste_adjusted","sequence":5},
+        {"name":"Muối","quantity":2,"unit":"g","role":"seasoning","notes":"Chỉ thêm sau khi nếm vì nước tương đã mặn.","scaling_rule":"taste_adjusted","sequence":6},
+        {"name":"Tiêu xay","quantity":1,"unit":"g","role":"seasoning","notes":"Rắc nhẹ khi dọn, tùy chọn.","scaling_rule":"optional","sequence":7}
+      ],
+      "preparation_steps": [
+        {"step":1,"instruction":"Nhặt bỏ phần nấm dập hoặc chân già, dùng chổi mềm phủi đất. Nếu phải rửa, rửa nhanh dưới vòi nước rồi để ráo hoàn toàn."},
+        {"step":2,"instruction":"Rửa lá lốt, để khô và thái sợi; băm tỏi. Đong sẵn nước tương chay để nêm nhanh khi xào."}
+      ],
+      "cooking_steps": [
+        {"step":1,"instruction":"Làm nóng chảo ở lửa vừa lớn, cho dầu và tỏi vào phi thơm nhưng không để tỏi sẫm màu."},
+        {"step":2,"instruction":"Cho nấm vào xào nhanh 3–4 phút đến khi nấm vừa mềm và tiết ít nước. Thêm nước tương, đảo nhẹ cho thấm."},
+        {"step":3,"instruction":"Cho lá lốt vào đảo thêm khoảng 30–45 giây, nếm rồi mới thêm muối nếu cần. Rắc tiêu tùy thích và dọn nóng."}
+      ],
+      "sources": [
+        {"url":"https://baodongnai.com.vn/dong-nai-cuoi-tuan/202406/dac-san-nam-moi-dat-xat-ra-mieng-cfc5ae2/","publisher":"Báo Đồng Nai","title":"Đặc sản nấm mối ‘đắt xắt ra miếng’","use":"Nguồn địa phương ghi nhận nấm mối tự nhiên theo mùa, gắn với thị trường Long Khánh và liệt kê nấm mối xào lá lốt trong các cách chế biến. Định lượng, cách xào tại nhà và gia vị chay do Bếp Việt biên tập.","accessed_at":"2026-10-24","type":"editorial_reference"}
+      ],
+      "time_unit": "minute",
+      "scaling": {"base_servings":4,"targets":[{"servings":2,"main_factor":0.5,"seasoning_start_factor":0.45,"example":"225 g nấm mối, khoảng 18 g lá lốt và nửa lượng gia vị","instruction":"Xào nhanh từng mẻ nhỏ, nếm nước tương trước khi thêm muối."},{"servings":6,"main_factor":1.5,"seasoning_start_factor":1.2,"example":"675 g nấm mối, khoảng 52 g lá lốt và gia vị cho sáu người","instruction":"Chia nấm thành hai mẻ để chảo không bị giảm nhiệt và nấm không ra nhiều nước."}]},
+      "media": [{"image_url":"/images/recipes/edited/nam-moi-xao-la-lot-dong-nai-960.webp","page_url":"https://baodongnai.com.vn/dong-nai-cuoi-tuan/202406/dac-san-nam-moi-dat-xat-ra-mieng-cfc5ae2/","source":"Bếp Việt","author":"Bếp Việt","license":null,"rights_status":"project","rights_note":"Ảnh được tạo riêng cho kho Bếp Việt; nguồn tham khảo chỉ dùng để xác nhận nấm mối, địa phương, mùa và cách chế biến.","width":3840,"height":2160,"orientation":"landscape","preferred_width_met":true,"alt_text":"Đĩa nấm mối xào lá lốt Đồng Nai với nấm vàng nâu mọng, lá lốt xanh và tỏi phi.","verified_dish_match":true,"visual_review_date":"2026-10-24","photo_variant_note":"Ảnh PNG nền trong suốt được giữ ở output/recipe-images/native; các biến thể WebP dùng canvas 3840×2160, không kéo méo món."}],
+      "editorial": {"status":"editorial_draft","production_ready":false,"test_cook_status":"not_tested","variant_note":"Báo Đồng Nai xác nhận nấm mối xào lá lốt là một cách chế biến tại địa phương. Bếp Việt biên tập lượng gia vị và cách xào nhanh theo khẩu vị chay; không khẳng định đây là công thức truyền thống duy nhất.","seed_recipe":null,"reviewed_at":"2026-10-24","needs":["Nấu thử với nấm mối đúng mùa để chốt thời gian xào và mức độ nêm phù hợp."]}
+    }
+  ]
+}

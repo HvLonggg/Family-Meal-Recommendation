@@ -1,0 +1,87 @@
+{
+  "batch": 59,
+  "native_format": "PNG",
+  "canvas": {
+    "width": 3840,
+    "height": 2160,
+    "format": "WebP",
+    "background": "transparent"
+  },
+  "assets": [
+    {
+      "id": "BV621",
+      "slug": "canh-thut-nguoi-stieng-binh-phuoc",
+      "native_file": "output/recipe-images/native/canh-thut-nguoi-stieng-binh-phuoc.png",
+      "native_pixels": [1295, 1214],
+      "has_alpha": true,
+      "canvas_export_file": "output/recipe-images/4k/canh-thut-nguoi-stieng-binh-phuoc.png",
+      "canvas_pixels": [3840, 2160],
+      "web_variants": [
+        {"path":"frontend/public/images/recipes/edited/canh-thut-nguoi-stieng-binh-phuoc-480.webp","pixels":[480,270]},
+        {"path":"frontend/public/images/recipes/edited/canh-thut-nguoi-stieng-binh-phuoc-960.webp","pixels":[960,540]},
+        {"path":"frontend/public/images/recipes/edited/canh-thut-nguoi-stieng-binh-phuoc-1536.webp","pixels":[1536,864]},
+        {"path":"frontend/public/images/recipes/edited/canh-thut-nguoi-stieng-binh-phuoc-3840.webp","pixels":[3840,2160]}
+      ]
+    },
+    {
+      "id": "BV622",
+      "slug": "rau-mop-muoi-chua-bu-gia-map",
+      "native_file": "output/recipe-images/native/rau-mop-muoi-chua-bu-gia-map.png",
+      "native_pixels": [1536, 1024],
+      "has_alpha": true,
+      "canvas_export_file": "output/recipe-images/4k/rau-mop-muoi-chua-bu-gia-map.png",
+      "canvas_pixels": [3840, 2160],
+      "web_variants": [
+        {"path":"frontend/public/images/recipes/edited/rau-mop-muoi-chua-bu-gia-map-480.webp","pixels":[480,270]},
+        {"path":"frontend/public/images/recipes/edited/rau-mop-muoi-chua-bu-gia-map-960.webp","pixels":[960,540]},
+        {"path":"frontend/public/images/recipes/edited/rau-mop-muoi-chua-bu-gia-map-1536.webp","pixels":[1536,864]},
+        {"path":"frontend/public/images/recipes/edited/rau-mop-muoi-chua-bu-gia-map-3840.webp","pixels":[3840,2160]}
+      ]
+    },
+    {
+      "id": "BV623",
+      "slug": "ca-nien-nuong-trui-quang-ngai",
+      "native_file": "output/recipe-images/native/ca-nien-nuong-trui-quang-ngai.png",
+      "native_pixels": [1392, 1130],
+      "has_alpha": true,
+      "canvas_export_file": "output/recipe-images/4k/ca-nien-nuong-trui-quang-ngai.png",
+      "canvas_pixels": [3840, 2160],
+      "web_variants": [
+        {"path":"frontend/public/images/recipes/edited/ca-nien-nuong-trui-quang-ngai-480.webp","pixels":[480,270]},
+        {"path":"frontend/public/images/recipes/edited/ca-nien-nuong-trui-quang-ngai-960.webp","pixels":[960,540]},
+        {"path":"frontend/public/images/recipes/edited/ca-nien-nuong-trui-quang-ngai-1536.webp","pixels":[1536,864]},
+        {"path":"frontend/public/images/recipes/edited/ca-nien-nuong-trui-quang-ngai-3840.webp","pixels":[3840,2160]}
+      ]
+    },
+    {
+      "id": "BV624",
+      "slug": "ca-bong-suoi-kho-rim-tieu-son-tay",
+      "native_file": "output/recipe-images/native/ca-bong-suoi-kho-rim-tieu-son-tay.png",
+      "native_pixels": [1448, 1086],
+      "has_alpha": true,
+      "canvas_export_file": "output/recipe-images/4k/ca-bong-suoi-kho-rim-tieu-son-tay.png",
+      "canvas_pixels": [3840, 2160],
+      "web_variants": [
+        {"path":"frontend/public/images/recipes/edited/ca-bong-suoi-kho-rim-tieu-son-tay-480.webp","pixels":[480,270]},
+        {"path":"frontend/public/images/recipes/edited/ca-bong-suoi-kho-rim-tieu-son-tay-960.webp","pixels":[960,540]},
+        {"path":"frontend/public/images/recipes/edited/ca-bong-suoi-kho-rim-tieu-son-tay-1536.webp","pixels":[1536,864]},
+        {"path":"frontend/public/images/recipes/edited/ca-bong-suoi-kho-rim-tieu-son-tay-3840.webp","pixels":[3840,2160]}
+      ]
+    },
+    {
+      "id": "BV625",
+      "slug": "nam-moi-xao-la-lot-dong-nai",
+      "native_file": "output/recipe-images/native/nam-moi-xao-la-lot-dong-nai.png",
+      "native_pixels": [1428, 1102],
+      "has_alpha": true,
+      "canvas_export_file": "output/recipe-images/4k/nam-moi-xao-la-lot-dong-nai.png",
+      "canvas_pixels": [3840, 2160],
+      "web_variants": [
+        {"path":"frontend/public/images/recipes/edited/nam-moi-xao-la-lot-dong-nai-480.webp","pixels":[480,270]},
+        {"path":"frontend/public/images/recipes/edited/nam-moi-xao-la-lot-dong-nai-960.webp","pixels":[960,540]},
+        {"path":"frontend/public/images/recipes/edited/nam-moi-xao-la-lot-dong-nai-1536.webp","pixels":[1536,864]},
+        {"path":"frontend/public/images/recipes/edited/nam-moi-xao-la-lot-dong-nai-3840.webp","pixels":[3840,2160]}
+      ]
+    }
+  ]
+}

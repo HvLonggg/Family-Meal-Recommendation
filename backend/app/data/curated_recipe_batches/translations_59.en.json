@@ -1,0 +1,238 @@
+{
+  "canh-thut-nguoi-stieng-binh-phuoc": {
+    "name": "S’tiêng Bamboo-Tube Soup from Binh Phuoc",
+    "aliases": ["S’tiêng canh thụt", "Bamboo-tube soup with young nhíp leaves and rattan shoots"],
+    "region": ["Southern Vietnam"],
+    "province": ["Binh Phuoc"],
+    "category": "Soup",
+    "meal_type": ["lunch", "dinner", "soup", "family meal"],
+    "difficulty": "Intermediate",
+    "serving_basis": "One shared pot of soup for four people; Bếp Việt standardizes the quantities of nhíp leaves, rattan shoots and buffalo skin for home cooking.",
+    "description": "Canh thụt is a traditional S’tiêng dish made with young nhíp leaves, rattan shoots, buffalo skin and fresh chili. The ingredients are cooked with a little water in a bamboo tube and stirred with a bamboo stick. Bếp Việt keeps the ingredients and method recorded by the Binh Phuoc provincial portal, while editing the household quantities and offering a heatproof-pot adaptation.",
+    "finished_dish": "The nhíp leaves are soft, the rattan shoots retain a gentle bite and mild bitterness, and the buffalo skin is tender and chewy. The broth is lightly thickened and gently spicy.",
+    "serving": "Serve hot in a small pot or deep bowls with steamed rice. If cooking in a bamboo tube, keep it stable, leave the opening uncovered and never seal it.",
+    "tips": [
+      "Use only nhíp leaves and rattan shoots that are confidently identified, legally sourced and safely prepared; do not gather unidentified forest plants.",
+      "Buy cleaned, tenderized buffalo skin from a reliable food supplier; preparing raw buffalo skin is not included in the recipe time.",
+      "The local source records cooking in a bamboo tube and stirring with a bamboo stick; a heatproof pot is Bếp Việt’s home-kitchen adaptation.",
+      "Season lightly to preserve the natural bitter, nutty notes, and adjust the chili at the end."
+    ],
+    "dish_type": ["Traditional soup", "S’tiêng cuisine"],
+    "main_ingredient": ["nhíp leaves", "rattan shoots", "buffalo skin"],
+    "cooking_method": ["prepare wild greens", "cook in a bamboo tube", "stir with a bamboo stick"],
+    "search_terms": ["canh thụt", "S’tiêng bamboo-tube soup", "nhíp leaves and rattan shoots soup", "Binh Phuoc food", "traditional S’tiêng dish"],
+    "image_alt": "S’tiêng canh thụt soup made with nhíp leaves, rattan shoots and buffalo skin, served beside a bamboo cooking tube.",
+    "time_note": "About 60 minutes when using pre-tenderized buffalo skin; this excludes preparation of raw buffalo skin.",
+    "suggested_pairings": ["Steamed rice", "Grilled stream fish", "Boiled greens"],
+    "recipe_family": "stieng_binh_phuoc_bamboo_tube_canhtut",
+    "spicy_level": 1,
+    "ingredients": [
+      {"name":"Young nhíp leaves","unit":"g","notes":"Pick tender leaves and discard damaged parts; use only confidently identified, legally sourced greens sold as food."},
+      {"name":"Prepared rattan shoots","unit":"g","notes":"Remove fibrous outer parts and cut into bite-size pieces; use only legally sourced, safely prepared shoots."},
+      {"name":"Tenderized buffalo skin","unit":"g","notes":"Use cleaned, pre-cooked buffalo skin cut into small pieces."},
+      {"name":"Water","unit":"ml","notes":"Add only enough to create a lightly thickened soup."},
+      {"name":"Salt","unit":"g","notes":"Season lightly after the ingredients soften."},
+      {"name":"Fresh chili","unit":"g","notes":"Crush and use sparingly, to taste."}
+    ],
+    "tags": ["Binh Phuoc", "Southern Vietnam", "soup", "traditional dish", "ethnic cuisine"],
+    "preparation_steps": [
+      "Rinse the nhíp leaves several times and drain. Check that the rattan shoots have been peeled and properly prepared before cutting them into short pieces.",
+      "Cut the pre-tenderized buffalo skin into small pieces. Crush the chili and prepare either a clean cooking bamboo tube or a small heatproof pot."
+    ],
+    "cooking_steps": [
+      "Place the buffalo skin, rattan shoots, nhíp leaves, water and chili in the bamboo tube or pot. Use only enough water for the ingredients to cook together.",
+      "For a bamboo tube, set it securely at an angle beside glowing coals, leave the opening uncovered, and stir periodically with a clean bamboo stick. In a pot, simmer gently and stir lightly.",
+      "Cook for about 25–35 minutes, until the leaves soften, the shoots are just tender and the broth thickens slightly. Season with salt, adjust the heat and serve hot."
+    ],
+    "keywords": ["canh thụt", "S’tiêng", "Binh Phuoc", "nhíp leaves", "rattan shoots", "bamboo tube"]
+  },
+  "rau-mop-muoi-chua-bu-gia-map": {
+    "name": "Bù Gia Mập Fermented Móp Greens",
+    "aliases": ["Fermented thorny móp shoots", "Binh Phuoc sour-pickled móp shoots"],
+    "region": ["Southern Vietnam"],
+    "province": ["Binh Phuoc"],
+    "category": "Vegetable dish",
+    "meal_type": ["vegetable side", "sour side dish", "lunch", "dinner", "family meal"],
+    "difficulty": "Easy",
+    "serving_basis": "One small jar of pickled greens for four people; the finished yield depends on the tenderness of the shoots and how much liquid they release.",
+    "description": "Young móp shoots are a familiar wild vegetable in the Bù Gia Mập area. Dân Việt reports that sour-pickled móp is a common local preparation in Binh Phuoc. Bếp Việt standardizes the salt quantity and small-batch method; the crisp, tangy flavor develops over roughly two to three days, depending on room temperature.",
+    "finished_dish": "The shoots turn green-gold, stay crisp and taste mildly sour and salty, with no unusual odor, mold or slime.",
+    "serving": "Take out only what you need, drain and serve as a rice accompaniment. Garlic and fresh chili can be added after fermentation; refrigerate the remaining greens in a clean jar.",
+    "tips": [
+      "Use only móp greens that have been confidently identified, legally harvested and sold by a reliable food supplier; do not gather unidentified wild greens.",
+      "Use a clean jar, scald it with boiling water and let it dry. Keep the shoots fully submerged in brine to reduce spoilage risk.",
+      "The brine ratio is Bếp Việt’s starting point for a home batch; fermentation time changes with room temperature.",
+      "Discard the batch if mold, slime or an unusual smell appears. Once it tastes as sour as you like, refrigerate and use clean utensils."
+    ],
+    "dish_type": ["Fermented greens", "Binh Phuoc wild-vegetable specialty"],
+    "main_ingredient": ["young móp shoots", "coarse salt"],
+    "cooking_method": ["remove thorny sheaths", "brine", "natural fermentation"],
+    "search_terms": ["rau móp muối chua", "Bù Gia Mập móp greens", "fermented thorny móp shoots", "Binh Phuoc sour side dish", "pickled móp shoots"],
+    "image_alt": "A plate of crisp, green-gold fermented móp shoots beside a glass jar with the shoots submerged in brine.",
+    "time_note": "About 2–3 days to ferment; monitor the sourness and refrigerate when it reaches the desired flavor.",
+    "suggested_pairings": ["Steamed rice", "Braised fish", "Fried dishes"],
+    "recipe_family": "bu_gia_map_pickled_mop_greens",
+    "spicy_level": 0,
+    "ingredients": [
+      {"name":"Young móp shoots","unit":"g","notes":"Use confidently identified, legally harvested shoots; remove thorny sheaths as instructed by the seller, cut, wash and drain well."},
+      {"name":"Boiled and cooled water","unit":"ml","notes":"Use clean water that has been boiled and completely cooled."},
+      {"name":"Coarse salt","unit":"g","notes":"Dissolve into the brine; the quantity is standardized by Bếp Việt and may need adjustment to the actual water volume."},
+      {"name":"Garlic","unit":"g","notes":"Slice and optionally add after the greens have fermented."},
+      {"name":"Fresh chili","unit":"g","notes":"Slice and optionally add after fermentation."}
+    ],
+    "tags": ["Binh Phuoc", "Southern Vietnam", "vegetable dish", "wild greens", "fermented"],
+    "preparation_steps": [
+      "Wear clean gloves to remove the thorny sheaths, cut the móp shoots into bite-size pieces, wash thoroughly and drain completely.",
+      "Dissolve the coarse salt in boiled-and-cooled water. Scald a clean jar with boiling water, let it dry and prepare a clean weight to keep the greens submerged."
+    ],
+    "cooking_steps": [
+      "Pack the shoots into the jar and pour in enough brine to cover them completely. Use a clean weight to hold them below the surface, then cover the jar.",
+      "Leave the jar in a clean, ventilated place for about two to three days. Check it daily; warm room temperatures can speed up fermentation.",
+      "When the shoots are crisp and pleasantly sour, remove a portion with clean utensils, add garlic or chili if desired and refrigerate the rest."
+    ],
+    "keywords": ["móp greens", "thorny móp", "Bù Gia Mập", "Binh Phuoc", "pickled greens", "fermentation"]
+  },
+  "ca-nien-nuong-trui-quang-ngai": {
+    "name": "Quảng Ngãi Charcoal-Grilled Cá Niên",
+    "aliases": ["Quảng Ngãi grilled cá niên", "Rustic charcoal-grilled cá niên"],
+    "region": ["Central Vietnam"],
+    "province": ["Quang Ngai"],
+    "category": "Main dish",
+    "meal_type": ["fish dish", "lunch", "dinner", "family meal"],
+    "difficulty": "Intermediate",
+    "serving_basis": "About 800 g of small fish as a shared main dish for four; wild cá niên can be seasonal and difficult to find.",
+    "description": "Cá niên lives in the mountain streams of Quang Ngai, including the Tra Bong and Son Tay areas. The provincial broadcaster identifies simple charcoal grilling as a standout preparation because it preserves the fish’s natural flavor. Bếp Việt edits the household portion, cleaning steps and green-chili salt accompaniment.",
+    "finished_dish": "The fish smells of charcoal, has lightly charred skin and firm, rich flesh; its own flavor remains at the center without a heavy seasoning crust.",
+    "serving": "Serve hot with green-chili salt, fresh herbs or other seasonal greens, and steamed rice. Choose fish from a legal source and favor responsible aquaculture or sustainable catch.",
+    "tips": [
+      "Wild cá niên is limited in supply. Avoid fish with unclear origins or very small fish; choose a legal, responsible source.",
+      "Clean the fish thoroughly and pat it dry before grilling so the surface does not steam and the flesh cooks evenly.",
+      "The local source describes a simple charcoal-grilled preparation with little seasoning; use only a light touch of salt and serve extra green-chili salt on the side.",
+      "Grill over steady glowing coals and turn gently to avoid excessive charring."
+    ],
+    "dish_type": ["Grilled dish", "Mountain-stream fish specialty"],
+    "main_ingredient": ["cá niên", "green chili"],
+    "cooking_method": ["clean fish", "charcoal grill", "pound chili salt"],
+    "search_terms": ["cá niên nướng trui", "Quang Ngai cá niên", "grilled mountain-stream fish", "Tra Bong fish dish", "Son Tay fish dish"],
+    "image_alt": "Charcoal-grilled cá niên with lightly browned skin on a woven bamboo tray, served with green-chili salt and herbs.",
+    "time_note": "About 38 minutes, excluding the time needed to heat the charcoal; larger fish take longer.",
+    "suggested_pairings": ["Steamed rice", "Boiled greens", "Fresh herbs and green-chili salt"],
+    "recipe_family": "quang_ngai_grilled_ca_nien",
+    "spicy_level": 2,
+    "ingredients": [
+      {"name":"Small cá niên","unit":"g","notes":"Choose fish from a legal source; remove gills and entrails, then weigh after trimming."},
+      {"name":"Coarse salt","unit":"g","notes":"Rub on very lightly; adjust to taste."},
+      {"name":"Green chili","unit":"g","notes":"Pound with salt for dipping; adjust the heat to taste."},
+      {"name":"Lime","unit":"ml","notes":"Squeeze into the chili-salt dip."},
+      {"name":"Fresh herbs","unit":"g","notes":"Wash and drain; choose seasonal herbs."}
+    ],
+    "tags": ["Quang Ngai", "Central Vietnam", "fish", "grilled", "mountain specialty"],
+    "preparation_steps": [
+      "Remove the gills and entrails, rinse the fish quickly with clean water and pat dry. Lightly score thicker fish so the heat reaches the center.",
+      "Pound green chili with coarse salt and squeeze lime into a dipping bowl. Wash and drain the herbs, then prepare glowing charcoal."
+    ],
+    "cooking_steps": [
+      "Rub a very thin layer of salt over the fish. Arrange them on a clean grill rack or grilling basket.",
+      "Grill over medium-hot charcoal for about 15–18 minutes, turning periodically according to size. Cook until the flesh is opaque, separates easily from the bones and is cooked through.",
+      "Remove the fish from the rack and serve hot with green-chili salt and herbs. Do not use fish that appears spoiled or has an unknown source."
+    ],
+    "keywords": ["cá niên", "stream fish", "Quang Ngai", "Tra Bong", "Son Tay", "charcoal grilled"]
+  },
+  "ca-bong-suoi-kho-rim-tieu-son-tay": {
+    "name": "Sơn Tây Stream Goby Braised with Pepper",
+    "aliases": ["Quang Ngai stream goby pepper braise", "Sơn Tây stream goby braised in caramelized sauce"],
+    "region": ["Central Vietnam"],
+    "province": ["Quang Ngai"],
+    "category": "Main dish",
+    "meal_type": ["fish dish", "lunch", "dinner", "family meal"],
+    "difficulty": "Easy",
+    "serving_basis": "One small pot of braised fish to serve with rice for four; Bếp Việt standardizes the quantity from a family dish in the Quang Ngai highlands.",
+    "description": "Small stream gobies from the Quang Ngai highlands are described by local residents as fragrant and pleasantly firm. People in Sơn Mùa, Sơn Tây, say they braise the fish with pepper or wild chili to eat with rice. Bếp Việt edits the fish-sauce ratio and a little caramel sauce for a four-person home meal; this is not presented as the only local method.",
+    "finished_dish": "The fish is firm and coated in a glossy brown sauce, with balanced savory-sweet flavor and clear pepper aroma; the sauce is lightly reduced for rice.",
+    "serving": "Serve in a small clay pot or deep plate, finish with freshly ground pepper and eat with hot rice and boiled greens. If stream goby is unavailable, use small goby from a farmed or legally sourced supply.",
+    "tips": [
+      "Wild stream gobies from the highlands are caught in limited quantities; use a legal source and avoid fishing in protected areas or seasons.",
+      "Rinse the fish gently and drain well; small fish break easily if stirred while braising.",
+      "Marinate briefly with fish sauce, pepper and a little sugar, then braise over low heat. Swirl the pot instead of stirring.",
+      "If the fish releases little liquid, add hot water a little at a time so the sauce does not dry before the fish cooks through."
+    ],
+    "dish_type": ["Braised dish", "Stream fish dish"],
+    "main_ingredient": ["stream goby", "black pepper"],
+    "cooking_method": ["clean fish", "brief marinade", "low simmer and reduction"],
+    "search_terms": ["cá bống suối kho rim", "cá bống suối kho tiêu", "Sơn Tây stream goby", "Quang Ngai fish dish", "stream fish with rice"],
+    "image_alt": "Small stream gobies braised with pepper in a clay pot, coated in glossy brown sauce and finished with pepper.",
+    "time_note": "About 60 minutes including a 10-minute marinade; larger fish or a thick clay pot may need more time.",
+    "suggested_pairings": ["Steamed rice", "Boiled greens", "Vegetable soup"],
+    "recipe_family": "son_tay_stream_goby_pepper_braise",
+    "spicy_level": 1,
+    "ingredients": [
+      {"name":"Small stream goby","unit":"g","notes":"Choose fresh fish from a legal source; remove gills and entrails if the fish is large enough."},
+      {"name":"Fish sauce","unit":"ml","notes":"Adjust to the saltiness of the fish sauce."},
+      {"name":"Sugar","unit":"g","notes":"Balances the savory flavor and softens the sauce."},
+      {"name":"Shallot","unit":"g","notes":"Peel and mince."},
+      {"name":"Ground black pepper","unit":"g","notes":"Use some in the marinade and reserve the rest for serving."},
+      {"name":"Caramel sauce","unit":"ml","notes":"Optional, for a light brown color; use sparingly."},
+      {"name":"Hot water","unit":"ml","notes":"Add only if the fish releases too little liquid or the pot reduces too quickly."},
+      {"name":"Cooking oil","unit":"ml","notes":"Use to sauté shallot; optional in a well-seasoned nonstick clay pot."}
+    ],
+    "tags": ["Quang Ngai", "Central Vietnam", "fish", "braised", "family meal"],
+    "preparation_steps": [
+      "Remove debris and clean the fish according to its size, then rinse gently and drain. Avoid rubbing small fish hard enough to remove the skin.",
+      "Marinate the fish with fish sauce, sugar, half the pepper and caramel sauce for 10 minutes. Mince the shallot."
+    ],
+    "cooking_steps": [
+      "Warm the pot, add the oil and sauté the shallot until fragrant. Add the fish and its marinade, then bring to a gentle simmer for about 2 minutes.",
+      "Lower the heat, add a little hot water if needed, cover loosely and braise for 20–25 minutes. Do not stir; gently swirl the pot from time to time to prevent sticking.",
+      "Uncover, taste and adjust the seasoning. Reduce until the fish is cooked through and firm and the sauce lightly coats it. Finish with the remaining pepper and serve hot."
+    ],
+    "keywords": ["stream goby", "Sơn Tây", "Quang Ngai", "pepper braise", "fish sauce", "rice dish"]
+  },
+  "nam-moi-xao-la-lot-dong-nai": {
+    "name": "Đồng Nai Termite Mushrooms Stir-Fried with Wild Betel Leaf",
+    "aliases": ["Long Khánh termite mushrooms with wild betel leaf", "Southern termite mushrooms stir-fry"],
+    "region": ["Southern Vietnam"],
+    "province": ["Dong Nai"],
+    "category": "Vegetable dish",
+    "meal_type": ["vegetarian dish", "vegetable side", "lunch", "dinner", "family meal"],
+    "difficulty": "Easy",
+    "serving_basis": "One shared plate of mushrooms for four people; wild termite mushrooms are seasonal and supplies can be limited.",
+    "description": "Termite mushrooms are a seasonal wild product documented in Dong Nai, including the Long Khanh market area. Báo Đồng Nai lists termite mushrooms stir-fried with wild betel leaf among the familiar preparations. Bếp Việt edits the seasoning and quick stir-fry method for a family meal, keeping the mushrooms’ sweet aroma at the center.",
+    "finished_dish": "The mushrooms are just tender, juicy and lightly chewy; wild betel leaf adds a fresh herbal aroma, while the garlic and seasoning remain gentle.",
+    "serving": "Serve hot as a vegetable side with steamed rice. Buy termite mushrooms from a trusted food vendor; never gather or eat unidentified wild mushrooms.",
+    "tips": [
+      "Use only termite mushrooms identified and sold as food by a reliable vendor; do not gather wild mushrooms because lookalike species can be poisonous.",
+      "Wild termite mushrooms are seasonal and scarce. If no trusted supply is available, choose a familiar cultivated edible mushroom and treat it as a separate adaptation.",
+      "Do not soak mushrooms for long. Brush away soil gently, rinse quickly only if needed, and drain thoroughly so they do not absorb excess water.",
+      "Stir-fry quickly over high heat and add the wild betel leaf near the end to retain its aroma and freshness."
+    ],
+    "dish_type": ["Stir-fry", "Seasonal vegetable dish"],
+    "main_ingredient": ["termite mushrooms", "wild betel leaf"],
+    "cooking_method": ["clean mushrooms", "sauté garlic", "quick stir-fry"],
+    "search_terms": ["nấm mối xào lá lốt", "Dong Nai termite mushroom", "Long Khanh termite mushroom", "vegetarian mushroom dish", "seasonal mushroom"],
+    "image_alt": "A plate of Dong Nai termite mushrooms stir-fried with wild betel leaf, showing plump golden-brown mushrooms and fresh green leaves.",
+    "time_note": "About 23 minutes; clean the mushrooms gently and do not soak them for long.",
+    "suggested_pairings": ["Steamed rice", "Braised tofu", "Vegetable soup"],
+    "recipe_family": "dong_nai_termite_mushroom_stir_fried_piper_lolot",
+    "spicy_level": 0,
+    "ingredients": [
+      {"name":"Fresh termite mushrooms","unit":"g","notes":"Use mushrooms sold for food by a trusted source; brush off soil and trim old stems."},
+      {"name":"Wild betel leaves","unit":"g","notes":"Rinse quickly, dry and slice into strips."},
+      {"name":"Garlic","unit":"g","notes":"Peel and mince."},
+      {"name":"Cooking oil","unit":"ml","notes":"Use plant-based oil for a vegetarian version."},
+      {"name":"Soy sauce","unit":"ml","notes":"Choose vegetarian soy sauce and season lightly."},
+      {"name":"Salt","unit":"g","notes":"Add only after tasting because soy sauce is already salty."},
+      {"name":"Ground pepper","unit":"g","notes":"Optional, for a light finish."}
+    ],
+    "tags": ["Dong Nai", "Southern Vietnam", "vegetarian", "vegetable dish", "seasonal"],
+    "preparation_steps": [
+      "Discard bruised mushrooms and old stems, then brush off soil with a soft brush. If washing is necessary, rinse quickly under running water and drain completely.",
+      "Rinse and dry the wild betel leaves, then slice them into strips. Mince the garlic and measure the vegetarian soy sauce so it can be added quickly."
+    ],
+    "cooking_steps": [
+      "Heat a pan over medium-high heat. Add the oil and garlic and sauté until fragrant, without letting the garlic darken.",
+      "Add the mushrooms and stir-fry for 3–4 minutes, until just tender and releasing a little liquid. Add the soy sauce and toss gently to coat.",
+      "Add the wild betel leaves and toss for another 30–45 seconds. Taste before adding salt, finish with pepper if desired and serve hot."
+    ],
+    "keywords": ["termite mushroom", "wild betel leaf", "Dong Nai", "Long Khanh", "vegetarian", "stir-fry"]
+  }
+}

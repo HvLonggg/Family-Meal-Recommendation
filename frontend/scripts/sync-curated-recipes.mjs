@@ -87,11 +87,13 @@ function recipeCategory(recipe) {
 const ingredientGroups = {
   main: 'Nguyên liệu chính',
   protein: 'Nguyên liệu chính',
+  seafood: 'Nguyên liệu chính',
   fruit: 'Nguyên liệu chính',
   seaweed: 'Nguyên liệu chính',
   seed: 'Nguyên liệu chính',
   vegetable: 'Rau củ',
   seasoning: 'Gia vị',
+  condiment: 'Gia vị',
   acid: 'Gia vị',
   sweetener: 'Gia vị',
   frying_oil: 'Gia vị',
@@ -106,9 +108,17 @@ const ingredientGroups = {
   serving: 'Món ăn kèm',
   fat: 'Gia vị',
   grain: 'Nguyên liệu chính',
+  gelatin_source: 'Nguyên liệu tạo đông',
+  stock: 'Nước và chất lỏng',
+  cleaning: 'Hỗ trợ sơ chế',
   other: 'Hỗ trợ chế biến',
   wrapping: 'Lá gói',
   wrapper: 'Lá gói',
+  cooking_fat: 'Gia vị',
+  seasoning_base: 'Gia vị',
+  coating: 'Lớp áo chiên',
+  plant_protein: 'Nguyên liệu chính',
+  dressing: 'Nước trộn',
 };
 
 function asApiRecipe(recipe) {

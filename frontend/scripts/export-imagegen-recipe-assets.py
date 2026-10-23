@@ -30,8 +30,11 @@ def export_asset(slug: str, source: Path) -> dict:
     image.save(native_path, format="PNG", optimize=True)
 
     export = Image.new("RGBA", EXPORT_SIZE, (0, 0, 0, 0))
-    scaled = image.copy()
-    scaled.thumbnail(EXPORT_SIZE, Image.Resampling.LANCZOS)
+    safe_width = round(EXPORT_SIZE[0] * 0.84)
+    safe_height = round(EXPORT_SIZE[1] * 0.88)
+    scale = min(safe_width / image.width, safe_height / image.height)
+    scaled_size = (round(image.width * scale), round(image.height * scale))
+    scaled = image.resize(scaled_size, Image.Resampling.LANCZOS)
     export.alpha_composite(scaled, ((EXPORT_SIZE[0] - scaled.width) // 2, (EXPORT_SIZE[1] - scaled.height) // 2))
     export.save(four_k_dir / f"{slug}.png", format="PNG", optimize=True)
 
