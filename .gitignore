@@ -29,8 +29,7 @@ Thumbs.db
 *.log
 .tmp/
 
-# Local planning and AI-assisted development materials
-# Keep these files on the development machine; do not publish them.
+# Local-only documents
 *.doc
 *.docx
 /CODING_UI_STANDARDS_PYTHON_REACT_V2_SENIOR.md
@@ -39,7 +38,11 @@ Thumbs.db
 /PRODUCT_STARTUP_PLAN.md
 /docs/IMAGE_GENERATION_PROMPTS.md
 
-# Local agent/tool files and generated image workspace (not part of the app)
+# Local workspace and generated image files
 .claude/
 .codex-repair/
+tmp/
+.tmp-imagegen-write-check
+backend/.build-wheel/
+backend/app/data/curated_recipe_batches_paused/
 output/

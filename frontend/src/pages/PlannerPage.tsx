@@ -33,6 +33,8 @@ import {
 import { savePreferences } from '@/features/account/accountApi';
 import { DEFAULT_PREFERENCES, useDefaultServings } from '@/features/account/preferences';
 import { useAuth } from '@/features/auth/AuthContext';
+import { logCooked, unmarkPlanItem } from '@/features/cooking/cookingApi';
+import { cookPath } from '@/features/cooking/cookSession';
 import type { CalendarMode } from '@/features/auth/types';
 import type { Translate } from '@/features/i18n/translate';
 import { errorMessage as translateError } from '@/lib/errors';
@@ -233,6 +235,24 @@ export function PlannerPage() {
   const removeMutation = useMutation({
     mutationFn: removePlanItem,
     onSuccess: invalidatePlanner,
+  });
+  // Tick "đã nấu" từng món: ghi vào nhật ký nấu và đánh dấu món hoàn thành trong kế hoạch.
+  const cookedMutation = useMutation({
+    mutationFn: async (item: PlanItem) => {
+      if (item.completion_status === 'completed') await unmarkPlanItem(item.id);
+      else {
+        await logCooked({
+          recipe_slug: item.recipe.slug,
+          plan_item_id: item.id,
+          servings: item.servings,
+          source: 'planner',
+        });
+      }
+    },
+    onSuccess: () => {
+      void queryClient.invalidateQueries({ queryKey: ['cook-logs'] });
+      return invalidatePlanner();
+    },
   });
   const servingsMutation = useMutation({
     mutationFn: ({ id, count }: { id: string; count: number }) => updatePlanServings(id, count),
@@ -562,6 +582,18 @@ export function PlannerPage() {
                                   <section className="planner-meal" key={meal.id}>
                                     <div className="planner-meal__heading">
                                       <h3>{t(meal.label)}</h3>
+                                      {slotItems.length > 1 ? (
+                                        <Link
+                                          aria-label={t('Vào bếp nấu cả {meal} {date}', {
+                                            meal: t(meal.label).toLocaleLowerCase(locale),
+                                            date: dateValue,
+                                          })}
+                                          className="planner-cook-meal"
+                                          to={mealCookPath(slotItems)}
+                                        >
+                                          <AppIcon name="chef" size={14} /> {t('Vào bếp')}
+                                        </Link>
+                                      ) : null}
                                       <button
                                         aria-label={t('Thêm món vào {meal} {date}', {
                                           meal: t(meal.label).toLocaleLowerCase(locale),
@@ -577,7 +609,10 @@ export function PlannerPage() {
                                     {slotItems.length ? (
                                       <ul className="planner-dish-list">
                                         {slotItems.map((item) => (
-                                          <li className="planner-dish" key={item.id}>
+                                          <li
+                                            className={`planner-dish${item.completion_status === 'completed' ? ' is-cooked' : ''}`}
+                                            key={item.id}
+                                          >
                                             <Link
                                               aria-label={t('Xem chi tiết {name}', {
                                                 name: recipeText(item.recipe.name),
@@ -600,6 +635,44 @@ export function PlannerPage() {
                                                 {t('Không phải món chay')}
                                               </span>
                                             ) : null}
+                                            <div className="planner-dish__cook">
+                                              <button
+                                                aria-label={
+                                                  item.completion_status === 'completed'
+                                                    ? t('Bỏ đánh dấu đã nấu {name}', {
+                                                        name: recipeText(item.recipe.name),
+                                                      })
+                                                    : t('Đánh dấu đã nấu {name}', {
+                                                        name: recipeText(item.recipe.name),
+                                                      })
+                                                }
+                                                aria-pressed={item.completion_status === 'completed'}
+                                                className="planner-dish__cooked"
+                                                disabled={cookedMutation.isPending}
+                                                onClick={() => cookedMutation.mutate(item)}
+                                                type="button"
+                                              >
+                                                <AppIcon name="check" size={13} />
+                                                {item.completion_status === 'completed'
+                                                  ? t('Đã nấu')
+                                                  : t('Chưa nấu')}
+                                              </button>
+                                              <Link
+                                                aria-label={t('Vào bếp nấu {name}', {
+                                                  name: recipeText(item.recipe.name),
+                                                })}
+                                                className="planner-dish__cook-link"
+                                                to={cookPath([
+                                                  {
+                                                    slug: item.recipe.slug,
+                                                    servings: item.servings,
+                                                    planItemId: item.id,
+                                                  },
+                                                ])}
+                                              >
+                                                <AppIcon name="chef" size={13} /> {t('Vào bếp')}
+                                              </Link>
+                                            </div>
                                             <div className="planner-dish__footer">
                                               <span>
                                                 {t('{count} người', { count: item.servings })}
@@ -696,9 +769,11 @@ export function PlannerPage() {
                   {t('Tạo danh sách mua sắm')} <AppIcon name="arrow" size={17} />
                 </button>
               </div>
-              {servingsMutation.isError || removeMutation.isError ? (
+              {servingsMutation.isError || removeMutation.isError || cookedMutation.isError ? (
                 <p className="planner-inline-error" role="alert">
-                  {errorMessage(servingsMutation.error ?? removeMutation.error)}
+                  {errorMessage(
+                    servingsMutation.error ?? removeMutation.error ?? cookedMutation.error,
+                  )}
                 </p>
               ) : null}
             </>
@@ -1313,5 +1388,17 @@ export function PlannerPage() {
         />
       ) : null}
     </div>
+  );
+}
+
+/** Vào bếp cả bữa: nấu các món chưa xong; bữa đã nấu hết thì nấu lại toàn bộ. */
+function mealCookPath(items: PlanItem[]) {
+  const pending = items.filter((item) => item.completion_status !== 'completed');
+  return cookPath(
+    (pending.length ? pending : items).map((item) => ({
+      slug: item.recipe.slug,
+      servings: item.servings,
+      planItemId: item.id,
+    })),
   );
 }

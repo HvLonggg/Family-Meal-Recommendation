@@ -1,3 +1,4 @@
+import logging
 from typing import Any
 
 from fastapi import FastAPI, Request, status
@@ -5,7 +6,9 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
-from app.core.middleware import get_request_id
+from app.core.middleware import GENERIC_ERROR, get_request_id
+
+logger = logging.getLogger("bep_viet.errors")
 
 
 class DomainError(Exception):
@@ -70,6 +73,10 @@ def register_exception_handlers(app: FastAPI) -> None:
         if exc.status_code == status.HTTP_404_NOT_FOUND:
             code = "RESOURCE_NOT_FOUND"
             message = "Không tìm thấy tài nguyên được yêu cầu."
+        elif exc.status_code >= 500:
+            # Không trả chi tiết nội bộ của lỗi máy chủ ra ngoài.
+            code = "INTERNAL_ERROR"
+            message = GENERIC_ERROR
         else:
             code = "HTTP_ERROR"
             message = str(exc.detail)
@@ -77,4 +84,13 @@ def register_exception_handlers(app: FastAPI) -> None:
         return JSONResponse(
             status_code=exc.status_code,
             content=error_payload(code=code, message=message),
+        )
+
+    @app.exception_handler(Exception)
+    async def handle_unexpected_error(request: Request, exc: Exception) -> JSONResponse:
+        # Chi tiết (traceback) chỉ ghi vào log máy chủ kèm trace_id; người dùng chỉ thấy câu chung.
+        logger.exception("Lỗi không mong muốn khi xử lý %s %s", request.method, request.url.path)
+        return JSONResponse(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            content=error_payload(code="INTERNAL_ERROR", message=GENERIC_ERROR),
         )

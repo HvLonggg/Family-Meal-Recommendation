@@ -29,4 +29,10 @@ export default tseslint.config(
       '@typescript-eslint/no-floating-promises': 'error',
     },
   },
+  {
+    // Service worker là JavaScript thuần chạy ngoài trang, không thuộc dự án TypeScript.
+    files: ['public/sw.js'],
+    extends: [tseslint.configs.disableTypeChecked],
+    languageOptions: { globals: globals.serviceworker },
+  },
 );

@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link, useLocation, useNavigate } from 'react-router';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router';
 
 import { AuthAlert } from '@/components/auth/AuthAlert';
 import { AuthField } from '@/components/auth/AuthField';
 import { SocialLoginButtons } from '@/components/auth/SocialLoginButtons';
 import { Button } from '@/components/ui/Button';
 import { useAuth } from '@/features/auth/AuthContext';
+import { landingPath } from '@/features/auth/landing';
 import { errorMessage } from '@/lib/errors';
 import { useI18n } from '@/features/i18n/I18nContext';
 
@@ -27,7 +28,7 @@ function getRememberedIdentifier() {
 }
 
 export function LoginPage() {
-  const { login } = useAuth();
+  const { isLoading, login, user: currentUser } = useAuth();
   const { t } = useI18n();
   const navigate = useNavigate();
   const location = useLocation();
@@ -64,23 +65,19 @@ export function LoginPage() {
       } catch {
         // Authentication still works when browser storage is disabled.
       }
-      const requestedPath = loginState?.from;
-// Chỉ giữ đường dẫn chuyển tiếp trong khu quản trị.
-      const landing =
-        user.role === 'admin'
-          ? requestedPath?.startsWith('/admin')
-            ? requestedPath
-            : '/admin'
-          : (requestedPath ?? '/account');
-      await navigate(landing, {
-        replace: true,
-      });
+      // Quay lại đúng trang đã mở trước khi bị yêu cầu đăng nhập.
+      await navigate(landingPath(user.role, loginState?.from), { replace: true });
     } catch (error) {
       setMessage(errorMessage(error, t));
     } finally {
       setIsSubmitting(false);
     }
   });
+
+  // Đã đăng nhập (mở lại /login hoặc bấm Quay lại) thì vào thẳng ứng dụng.
+  if (!isLoading && currentUser && !isSubmitting) {
+    return <Navigate replace to={landingPath(currentUser.role, loginState?.from)} />;
+  }
 
   return (
     <>

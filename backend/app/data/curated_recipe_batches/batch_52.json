@@ -1,0 +1,332 @@
+{
+  "batch": 52,
+  "description": "Năm món dân dã Ninh Bình thuộc bữa cơm và làng nghề miền Bắc, Bếp Việt biên tập theo báo chí và nguồn du lịch địa phương; ảnh món tạo mới riêng với nền trong suốt.",
+  "recipes": [
+    {
+      "id": "BV586",
+      "slug": "ca-chach-sun-kho-nieu-ninh-binh",
+      "name": "Cá chạch sụn kho niêu đất Yên Hòa",
+      "aliases": ["Cá chạch bùn kho niêu đất Yên Mô", "Cá chạch sụn kho niêu Ninh Bình"],
+      "region": ["Bắc"],
+      "province": ["Ninh Bình"],
+      "category": "Món mặn",
+      "meal_type": ["bữa trưa", "bữa tối", "món mặn"],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Một niêu cá kho nhỏ dùng làm món mặn cho bốn người ăn cùng cơm trắng.",
+      "prep_time": 30,
+      "cook_time": 480,
+      "passive_time": 15,
+      "total_time": 525,
+      "description": "Cá chạch sụn nhỏ để nguyên con, ướp nước mắm, hành, tỏi, tiêu rồi kho rất lâu trong niêu đất cho thịt mềm, nước kho sánh và xương mềm như sụn. Bếp Việt chuẩn hóa lượng gia vị cho bữa cơm gia đình từ cách kho của HTX ở Yên Hòa, Yên Mô.",
+      "finished_dish": "Cá nguyên con mềm thấm vị mặn ngọt, thơm hành tỏi và tiêu; nước kho nâu óng vừa cạn, ăn với cơm nóng.",
+      "serving": "Dọn cá trong niêu còn nóng, rưới phần nước kho lên cá và ăn cùng cơm trắng, rau luộc hoặc dưa muối. Gắp nhẹ để cá vẫn nguyên con.",
+      "tips": [
+        "Chọn cá chạch sụn nhỏ, tươi sống; cá nhỏ sẽ mềm đều trong thời gian kho dài.",
+        "Làm sạch nhớt kỹ, giữ cá nguyên con như cách địa phương ghi nhận; nêm vừa tay vì nước kho sẽ cô lại.",
+        "Đun thật nhỏ và kiểm tra đáy nồi định kỳ; châm ít nước nóng nếu nước gần cạn trước khi cá mềm."
+      ],
+      "dish_type": ["Món cá kho niêu đất", "Món quê Ninh Bình"],
+      "main_ingredient": ["cá chạch sụn", "nước mắm", "hành khô"],
+      "cooking_method": ["ướp cá", "kho liu riu trong niêu đất"],
+      "search_terms": ["cá chạch sụn kho niêu", "cá chạch bùn kho đất", "cá kho Yên Hòa Yên Mô", "món cá kho Ninh Bình"],
+      "spicy_level": 0,
+      "image_alt": "Niêu đất nhỏ đựng cá chạch sụn nguyên con kho nâu óng với hành tỏi và tiêu; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 8 giờ 45 phút, gồm 15 phút ướp và hơn 8 giờ kho liu riu.",
+      "suggested_pairings": ["Cơm trắng", "Rau luộc theo mùa", "Dưa cải muối"],
+      "recipe_family": "ninh_binh_yen_hoa_softbone_loach_claypot",
+      "keywords": ["cá chạch sụn", "cá chạch bùn", "kho niêu đất", "Yên Hòa", "Yên Mô", "Ninh Bình", "món dân dã miền Bắc"],
+      "tags": ["Ninh Bình", "món mặn", "món kho", "món dân dã", "bữa cơm gia đình"],
+      "ingredients": [
+        {"name":"Cá chạch sụn nhỏ","quantity":700,"unit":"g","role":"main","notes":"Chọn cá tươi sống, cỡ nhỏ; để nguyên con sau khi làm sạch.","scaling_rule":"linear","sequence":1},
+        {"name":"Nước nóng","quantity":250,"unit":"ml","role":"liquid","notes":"Dùng kho và châm thêm từng ít nếu nồi cạn trước khi cá mềm.","scaling_rule":"vessel_dependent","sequence":2},
+        {"name":"Nước mắm","quantity":25,"unit":"ml","role":"seasoning","notes":"Nêm vừa phải vì kho lâu nước sẽ cô lại.","scaling_rule":"taste_adjusted","sequence":3},
+        {"name":"Hành khô","quantity":20,"unit":"g","role":"aromatic","notes":"Bóc vỏ, băm nhỏ.","scaling_rule":"linear","sequence":4},
+        {"name":"Tỏi","quantity":10,"unit":"g","role":"aromatic","notes":"Bóc vỏ, băm nhỏ.","scaling_rule":"linear","sequence":5},
+        {"name":"Đường","quantity":10,"unit":"g","role":"seasoning","notes":"Tạo vị dịu, không làm cá quá ngọt.","scaling_rule":"taste_adjusted","sequence":6},
+        {"name":"Muối","quantity":3,"unit":"g","role":"seasoning","notes":"Dùng một phần để làm sạch cá, phần còn lại để nêm.","scaling_rule":"taste_adjusted","sequence":7},
+        {"name":"Tiêu xay","quantity":1.5,"unit":"g","role":"seasoning","notes":"Chia một nửa để ướp, một nửa rắc cuối.","scaling_rule":"taste_adjusted","sequence":8},
+        {"name":"Bột nêm","quantity":2,"unit":"g","role":"seasoning","notes":"Tùy chọn, điều chỉnh theo độ mặn của nước mắm.","scaling_rule":"optional","sequence":9}
+      ],
+      "preparation_steps": [
+        {"step":1,"instruction":"Rửa cá dưới vòi nước, xát nhẹ với muối và nước cốt chanh để sạch nhớt rồi tráng lại, để ráo. Giữ cá nguyên con; dùng thớt và dụng cụ riêng cho cá sống."},
+        {"step":2,"instruction":"Băm hành khô, tỏi; cân nước mắm, đường, tiêu và bột nêm. Làm nóng niêu đất từ từ để tránh sốc nhiệt."}
+      ],
+      "cooking_steps": [
+        {"step":1,"instruction":"Trộn cá với nước mắm, hành, tỏi, đường, muối, một nửa tiêu và bột nêm nếu dùng. Để ướp 15 phút."},
+        {"step":2,"instruction":"Xếp cá thành lớp trong niêu, thêm nước nóng vừa đủ làm ẩm đáy nồi. Đun đến khi sôi lăn tăn rồi hạ mức nhiệt thấp nhất, đậy nắp."},
+        {"step":3,"instruction":"Kho liu riu khoảng 8 giờ, thỉnh thoảng kiểm tra đáy nồi và châm một ít nước nóng nếu cần. Hạn chế đảo; cá đạt khi mềm thấm, nước kho nâu óng và xương nhỏ mềm như sụn."},
+        {"step":4,"instruction":"Mở nắp ở cuối để nước kho sánh nhẹ, nếm lại độ mặn ngọt và rắc phần tiêu còn lại. Dọn nóng trong niêu."}
+      ],
+      "sources": [
+        {"url":"https://baoninhbinh.org.vn/doc-dao-mon-an-dan-da-ca-chach-sun-kho-nieu-dat/d20210115082542128.htm","publisher":"Báo Ninh Bình","title":"Độc đáo món ăn dân dã - Cá chạch sụn kho niêu đất","use":"Nguồn địa phương ghi nhận cá chạch sụn Yên Hòa để nguyên con sau sơ chế, ướp khoảng 15 phút với nước mắm, tiêu, hành, đường, tỏi, bột nêm rồi kho trong niêu trên 8 giờ; xương cá mềm như sụn. Lượng nguyên liệu cho bốn người là bản chuẩn hóa của Bếp Việt.","accessed_at":"2026-10-24","type":"editorial_reference"}
+      ],
+      "time_unit": "minute",
+      "scaling": {"base_servings":4,"targets":[{"servings":2,"main_factor":0.5,"seasoning_start_factor":0.45,"example":"350 g cá chạch sụn, kho trong niêu nhỏ","instruction":"Ướp 15 phút; giữ nhiệt thật thấp và kiểm tra nước kho để cá không bén đáy."},{"servings":6,"main_factor":1.5,"seasoning_start_factor":1.2,"example":"1,05 kg cá chạch sụn, chia thành hai niêu nếu cần","instruction":"Dùng niêu rộng để cá không chồng quá dày; nêm lại sau khi nước kho cô."}]},
+      "media": [
+        {"image_url":"/images/recipes/edited/ca-chach-sun-kho-nieu-ninh-binh-960.webp","page_url":"https://baoninhbinh.org.vn/doc-dao-mon-an-dan-da-ca-chach-sun-kho-nieu-dat/d20210115082542128.htm","source":"Bếp Việt","author":"Bếp Việt","license":null,"rights_status":"project","rights_note":"Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để biên tập đặc điểm món và cách nấu.","width":3840,"height":2160,"orientation":"landscape","preferred_width_met":true,"alt_text":"Niêu đất nhỏ đựng cá chạch sụn nguyên con kho nâu óng với hành tỏi và tiêu; ảnh Bếp Việt nền trong suốt.","verified_dish_match":true,"visual_review_date":"2026-10-24","photo_variant_note":"PNG master được tạo bằng ImageGen và lưu tại output/recipe-images/native/ca-chach-sun-kho-nieu-ninh-binh.png, kích thước 1402 × 1122 px, có alpha trong suốt; biến thể 3840 × 2160 px được xuất từ master này, không phải PNG master 4K. Công thức biên tập, chưa nấu thử."}
+      ],
+      "editorial": {"status":"editorial_draft","production_ready":false,"test_cook_status":"not_tested","variant_note":"Bếp Việt giữ cách để cá nguyên con, ướp gia vị cơ bản và kho lâu trong niêu được Báo Ninh Bình ghi nhận; lượng gia vị và nước được ước tính cho nồi gia đình.","seed_recipe":null,"reviewed_at":"2026-10-24","needs":["Nấu thử để xác nhận lượng nước và mức nhiệt thấp phù hợp với từng loại niêu và bếp gia đình.","Nhờ người địa phương Yên Hòa rà soát tỷ lệ gia vị của bản gia đình."]}
+    },
+    {
+      "id": "BV587",
+      "slug": "cha-da-vuong-khanh-thien",
+      "name": "Chả đa vuông Bồng Hải",
+      "aliases": ["Chả đa vuông Khánh Thiện", "Chả nem vuông Bồng Hải"],
+      "region": ["Bắc"],
+      "province": ["Ninh Bình"],
+      "category": "Món chiên",
+      "meal_type": ["bữa trưa", "bữa tối", "món mặn"],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Khoảng 12 miếng chả vuông làm món mặn hoặc món ăn chung cho bốn người.",
+      "prep_time": 25,
+      "cook_time": 25,
+      "passive_time": 15,
+      "total_time": 65,
+      "description": "Chả Bồng Hải gói nhân thịt vai, mộc nhĩ, miến và rau muống chẻ bằng bánh đa nem thành những miếng vuông rồi rán vàng. Bếp Việt chuẩn hóa lượng nguyên liệu cho mâm cơm nhà từ món ăn Khánh Thiện được Báo Ninh Bình ghi nhận.",
+      "finished_dish": "Miếng chả vuông vàng giòn, nhân thịt mềm quyện mộc nhĩ, miến và rau muống; ăn nóng cùng rau thơm, nước chấm chua ngọt.",
+      "serving": "Dọn chả ngay khi còn nóng với rau thơm và chén nước mắm chua ngọt. Gắp chả bằng đũa sạch; có thể ăn cùng cơm nóng trong bữa gia đình.",
+      "tips": ["Ngâm mộc nhĩ và miến vừa mềm rồi để thật ráo để nhân không chảy nước.","Thái rau muống thành sợi mảnh để nhân dễ gói và có độ giòn nhẹ.","Gấp kín bốn góc bánh đa nem; rán từng mẻ để dầu không nguội và mặt chả vàng đều."],
+      "dish_type": ["Chả rán gói vuông", "Món quê Khánh Thiện"],
+      "main_ingredient": ["thịt nạc vai", "bánh đa nem", "rau muống"],
+      "cooking_method": ["trộn nhân", "gói chả hình vuông", "rán"],
+      "search_terms": ["chả đa vuông Bồng Hải", "chả đa vuông Khánh Thiện", "chả rán vuông Ninh Bình", "món mặn quê Ninh Bình"],
+      "spicy_level": 1,
+      "image_alt": "Đĩa chả đa vuông Bồng Hải vàng giòn, một miếng cắt hé nhân thịt, miến, mộc nhĩ và rau muống; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 1 giờ 5 phút, gồm 15 phút ngâm miến và mộc nhĩ.",
+      "suggested_pairings": ["Cơm trắng", "Rau thơm theo mùa", "Nước mắm chua ngọt"],
+      "recipe_family": "ninh_binh_bong_hai_square_ricepaper_roll",
+      "keywords": ["chả đa vuông", "Bồng Hải", "Khánh Thiện", "thịt nạc vai", "rau muống chẻ", "món rán", "Ninh Bình"],
+      "tags": ["Ninh Bình", "món mặn", "món chiên", "món dân dã", "bữa cơm gia đình"],
+      "ingredients": [
+        {"name":"Thịt nạc vai","quantity":450,"unit":"g","role":"main","notes":"Băm nhỏ hoặc xay thô.","scaling_rule":"linear","sequence":1},
+        {"name":"Mộc nhĩ khô","quantity":10,"unit":"g","role":"vegetable","notes":"Ngâm mềm, rửa sạch và thái sợi.","scaling_rule":"linear","sequence":2},
+        {"name":"Miến dong khô","quantity":30,"unit":"g","role":"grain","notes":"Ngâm mềm, cắt ngắn và để ráo.","scaling_rule":"linear","sequence":3},
+        {"name":"Rau muống","quantity":100,"unit":"g","role":"vegetable","notes":"Chọn cọng non, bỏ lá già và chẻ hoặc thái sợi mảnh.","scaling_rule":"linear","sequence":4},
+        {"name":"Hành lá","quantity":20,"unit":"g","role":"aromatic","notes":"Rửa sạch, thái nhỏ.","scaling_rule":"linear","sequence":5},
+        {"name":"Mùi tàu","quantity":10,"unit":"g","role":"herb","notes":"Rửa sạch, thái nhỏ.","scaling_rule":"linear","sequence":6},
+        {"name":"Trứng gà","quantity":1,"unit":"quả","role":"process_aid","notes":"Đánh tan để kết dính nhân.","scaling_rule":"linear","sequence":7},
+        {"name":"Bánh đa nem vuông","quantity":12,"unit":"lá","role":"wrapping","notes":"Chọn loại mỏng dẻo, đủ lớn để gấp thành gói vuông.","scaling_rule":"linear","sequence":8},
+        {"name":"Nước mắm","quantity":18,"unit":"ml","role":"seasoning","notes":"Nêm vừa vì còn dùng nước chấm.","scaling_rule":"taste_adjusted","sequence":9},
+        {"name":"Muối","quantity":3,"unit":"g","role":"seasoning","notes":"Nêm nhẹ nhân.","scaling_rule":"taste_adjusted","sequence":10},
+        {"name":"Tiêu xay","quantity":1,"unit":"g","role":"seasoning","notes":"Tùy khẩu vị.","scaling_rule":"taste_adjusted","sequence":11},
+        {"name":"Dầu ăn","quantity":700,"unit":"ml","role":"fat","notes":"Dùng rán; lượng thực tế hấp thụ ít hơn.","scaling_rule":"vessel_dependent","sequence":12},
+        {"name":"Rau thơm ăn kèm","quantity":80,"unit":"g","role":"herb","notes":"Rửa sạch, để ráo.","scaling_rule":"linear","sequence":13},
+        {"name":"Nước chấm chua ngọt","quantity":120,"unit":"ml","role":"accompaniment","notes":"Pha từ nước mắm, nước, đường, chanh hoặc giấm; dọn riêng.","scaling_rule":"taste_adjusted","sequence":14}
+      ],
+      "preparation_steps": [
+        {"step":1,"instruction":"Ngâm mộc nhĩ và miến trong nước sạch khoảng 15 phút cho mềm; vớt ra, để ráo. Thái mộc nhĩ, cắt miến ngắn và chẻ rau muống thành sợi."},
+        {"step":2,"instruction":"Băm thịt, hành lá và mùi tàu. Đánh tan trứng; rửa rau thơm, để riêng."}
+      ],
+      "cooking_steps": [
+        {"step":1,"instruction":"Trộn thịt với mộc nhĩ, miến, hành lá, mùi tàu, rau muống, trứng, nước mắm, muối và tiêu. Chia nhân thành 12 phần."},
+        {"step":2,"instruction":"Đặt một phần nhân lên giữa bánh đa nem; gấp bốn cạnh thành hình vuông, miết mép kín. Nếu bánh khô, phết rất ít nước lên mép để bánh dính."},
+        {"step":3,"instruction":"Đun dầu ở mức nóng vừa. Rán chả theo từng mẻ, trở đều đến khi vỏ vàng giòn và nhân chín; để ráo trên giá hoặc giấy thấm dầu."},
+        {"step":4,"instruction":"Dọn chả khi còn nóng cùng rau thơm và nước chấm chua ngọt."}
+      ],
+      "sources": [
+        {"url":"https://baoninhbinh.org.vn/dan-da-am-thuc-khanh-thien/d20140202091220340.htm","publisher":"Báo Ninh Bình","title":"Dân dã ẩm thực Khánh Thiện","use":"Nguồn địa phương nêu chả đa vuông Bồng Hải gồm thịt nạc vai, mộc nhĩ, miến, hành, mùi tàu, tiêu, nước mắm, rau muống chẻ và bánh đa nem; nhân trộn với trứng rồi gói vuông, rán giòn, ăn nóng với rau thơm và nước chấm chua ngọt. Lượng gia vị được Bếp Việt chuẩn hóa.","accessed_at":"2026-10-24","type":"editorial_reference"}
+      ],
+      "time_unit": "minute",
+      "scaling": {"base_servings":4,"targets":[{"servings":2,"main_factor":0.5,"seasoning_start_factor":0.45,"example":"225 g thịt nạc vai và 6 lá bánh đa nem","instruction":"Chia nhân thành 6 phần nhỏ; giữ nhân ráo để bánh không bục."},{"servings":6,"main_factor":1.5,"seasoning_start_factor":1.2,"example":"675 g thịt nạc vai và 18 lá bánh đa nem","instruction":"Rán thành nhiều mẻ, giữ dầu ở nhiệt ổn định và không xếp chồng chả khi còn nóng."}]},
+      "media": [
+        {"image_url":"/images/recipes/edited/cha-da-vuong-khanh-thien-960.webp","page_url":"https://baoninhbinh.org.vn/dan-da-am-thuc-khanh-thien/d20140202091220340.htm","source":"Bếp Việt","author":"Bếp Việt","license":null,"rights_status":"project","rights_note":"Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để biên tập đặc điểm món và cách nấu.","width":3840,"height":2160,"orientation":"landscape","preferred_width_met":true,"alt_text":"Đĩa chả đa vuông Bồng Hải vàng giòn, một miếng cắt hé nhân thịt, miến, mộc nhĩ và rau muống; ảnh Bếp Việt nền trong suốt.","verified_dish_match":true,"visual_review_date":"2026-10-24","photo_variant_note":"PNG master được tạo bằng ImageGen và lưu tại output/recipe-images/native/cha-da-vuong-khanh-thien.png, kích thước 1536 × 1024 px, có alpha trong suốt; biến thể 3840 × 2160 px được xuất từ master này, không phải PNG master 4K. Công thức biên tập, chưa nấu thử."}
+      ],
+      "editorial": {"status":"editorial_draft","production_ready":false,"test_cook_status":"not_tested","variant_note":"Bếp Việt giữ phần rau muống chẻ và hình gói vuông được Báo Ninh Bình mô tả; lượng nhân, số miếng và cách rán được chuẩn hóa cho bữa cơm bốn người.","seed_recipe":null,"reviewed_at":"2026-10-24","needs":["Nấu thử để điều chỉnh độ ẩm nhân và lượng bánh đa nem theo kích cỡ bán tại địa phương.","Nhờ người dân Khánh Thiện rà soát cách gọi và tỷ lệ rau muống trong nhân."]}
+    },
+    {
+      "id": "BV588",
+      "slug": "gio-trung-non-khe",
+      "name": "Giò trứng Nộn Khê",
+      "aliases": ["Giò trứng Yên Mô", "Giò trứng Ninh Bình"],
+      "region": ["Bắc"],
+      "province": ["Ninh Bình"],
+      "category": "Món mặn",
+      "meal_type": ["bữa trưa", "bữa tối", "mâm cỗ ngày lễ"],
+      "difficulty": "Khó",
+      "servings": 4,
+      "serving_basis": "Một khoanh giò trứng vuông lớn cắt lát mỏng dùng trong mâm cơm bốn người.",
+      "prep_time": 50,
+      "cook_time": 150,
+      "passive_time": 360,
+      "total_time": 560,
+      "description": "Khoanh giò vuông của làng Nộn Khê xếp lớp thịt nạc xay, ba chỉ và trứng gà luộc trong lá chuối, sau đó luộc chín rồi ép định hình. Bếp Việt biên tập một mẻ nhỏ cho gia đình, giữ cấu trúc nhiều lớp và cách ép giò truyền thống.",
+      "finished_dish": "Khoanh giò mềm mịn, lát cắt có những lớp trứng vàng xen thịt trắng và ba chỉ; thơm nhẹ lá chuối, béo bùi nhưng không ngấy.",
+      "serving": "Để giò nguội và lạnh đủ chắc rồi cắt lát. Dọn với hành muối và nước mắm nguyên chất; phần còn lại bọc kín, làm lạnh sớm.",
+      "tips": ["Giữ thịt ở trạng thái lạnh trong lúc xay, trộn và gói; không để thịt sống lâu ở nhiệt độ phòng.","Xếp trứng thành hàng so le và dàn đều thịt để lát nào cũng có đủ trứng, nạc và ba chỉ.","Luộc giò ngay sau khi gói, ép khi còn nóng; dùng nhiệt kế kiểm tra tâm giò đạt ít nhất 71°C vì nhân có thịt xay.","Làm lạnh nhanh sau khi ép và bảo quản trong ngăn mát; món này chưa được Bếp Việt nấu thử."],
+      "dish_type": ["Giò trứng truyền thống", "Món cỗ Nộn Khê"],
+      "main_ingredient": ["thịt nạc xay", "thịt ba chỉ", "trứng gà"],
+      "cooking_method": ["xay và xếp lớp", "gói lá chuối", "luộc", "ép vuông"],
+      "search_terms": ["giò trứng Nộn Khê", "giò trứng Yên Mô", "giò trứng Ninh Bình", "cách làm giò trứng lá chuối"],
+      "spicy_level": 0,
+      "image_alt": "Khoanh giò trứng Nộn Khê bọc lá chuối, cắt lát vuông thấy trứng vàng xếp lớp trong giò thịt; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 9 giờ 20 phút, gồm 2 giờ 30 phút luộc, 4 giờ ép và 2 giờ làm lạnh.",
+      "suggested_pairings": ["Hành muối", "Nước mắm nguyên chất", "Cơm trắng"],
+      "recipe_family": "ninh_binh_non_khe_egg_pork_loaf",
+      "keywords": ["giò trứng", "Nộn Khê", "Yên Mô", "Ninh Bình", "trứng gà", "lá chuối", "mâm cỗ Bắc Bộ"],
+      "tags": ["Ninh Bình", "món mặn", "món truyền thống", "mâm cỗ", "bữa cơm gia đình"],
+      "ingredients": [
+        {"name":"Thịt nạc heo xay","quantity":600,"unit":"g","role":"main","notes":"Chọn thịt tươi, giữ lạnh và xay mịn ngay trước khi trộn.","scaling_rule":"linear","sequence":1},
+        {"name":"Thịt ba chỉ","quantity":200,"unit":"g","role":"main","notes":"Thái dải mỏng; ướp cùng phần gia vị.","scaling_rule":"linear","sequence":2},
+        {"name":"Trứng gà","quantity":10,"unit":"quả","role":"main","notes":"Luộc chín kỹ, bóc vỏ và bổ dọc bằng sợi chỉ mảnh.","scaling_rule":"linear","sequence":3},
+        {"name":"Nước mắm","quantity":20,"unit":"ml","role":"seasoning","notes":"Nêm phần thịt nạc; điều chỉnh theo độ mặn.","scaling_rule":"taste_adjusted","sequence":4},
+        {"name":"Muối","quantity":4,"unit":"g","role":"seasoning","notes":"Chia phần để nêm thịt nạc và ba chỉ.","scaling_rule":"taste_adjusted","sequence":5},
+        {"name":"Tiêu xay","quantity":2,"unit":"g","role":"seasoning","notes":"Rắc vào thịt trước khi gói.","scaling_rule":"taste_adjusted","sequence":6},
+        {"name":"Mì chính","quantity":1,"unit":"g","role":"seasoning","notes":"Tùy chọn theo cách nêm địa phương.","scaling_rule":"optional","sequence":7},
+        {"name":"Lá chuối","quantity":6,"unit":"lá lớn","role":"wrapping","notes":"Rửa sạch, trụng sơ cho mềm và lau khô.","scaling_rule":"linear","sequence":8},
+        {"name":"Lạt tre","quantity":8,"unit":"sợi","role":"wrapping","notes":"Dùng buộc chặt khuôn giò.","scaling_rule":"linear","sequence":9},
+        {"name":"Nước sạch","quantity":4000,"unit":"ml","role":"liquid","notes":"Dùng luộc ngập khoanh giò; châm thêm nước sôi nếu cần.","scaling_rule":"vessel_dependent","sequence":10},
+        {"name":"Hành muối","quantity":120,"unit":"g","role":"accompaniment","notes":"Dọn riêng cùng lát giò.","scaling_rule":"linear","sequence":11}
+      ],
+      "preparation_steps": [
+        {"step":1,"instruction":"Giữ thịt nạc và ba chỉ lạnh. Xay thịt nạc thật mịn; thái ba chỉ thành dải mỏng và trộn riêng với một ít nước mắm, muối, tiêu."},
+        {"step":2,"instruction":"Luộc trứng đến khi chín kỹ, làm nguội nhanh, bóc vỏ rồi dùng sợi chỉ mảnh bổ dọc từng quả để lòng đỏ không vỡ."},
+        {"step":3,"instruction":"Rửa lá chuối, trụng nhanh cho mềm rồi lau khô. Chuẩn bị khuôn ép chữ nhật hoặc hai tấm gỗ sạch có thể ép phẳng."}
+      ],
+      "cooking_steps": [
+        {"step":1,"instruction":"Nêm thịt nạc xay với phần nước mắm, muối, tiêu và mì chính nếu dùng; trộn nhanh đến khi thịt dẻo kết dính."},
+        {"step":2,"instruction":"Lót khuôn bằng nhiều lớp lá chuối. Dàn một lớp thịt nạc, xếp dải ba chỉ và hàng trứng bổ dọc so le; phủ thịt nạc rồi lặp lại để mặt cắt có trứng và thịt đều khắp. Gấp lá kín và buộc chặt thành khối vuông."},
+        {"step":3,"instruction":"Cho giò vào nồi nước sôi nhẹ, luộc khoảng 2 giờ 30 phút. Giữ nước sôi lăn tăn, châm nước nóng để khoanh giò luôn ngập; kiểm tra tâm giò đạt ít nhất 71°C."},
+        {"step":4,"instruction":"Vớt giò ra khi còn nóng, đặt vào khuôn ép hoặc giữa hai tấm gỗ sạch, chèn vật nặng vừa phải khoảng 4 giờ cho vuông và ráo. Để nguội rồi làm lạnh ít nhất 2 giờ trước khi tháo lá và cắt."}
+      ],
+      "sources": [
+        {"url":"https://baoninhbinh.org.vn/gio-trung-net-van-hoa-am-thuc-doc-dao-dat-non-khe/d20220107091915356.htm","publisher":"Báo Ninh Bình","title":"Giò trứng: Nét văn hóa ẩm thực độc đáo đất Nộn Khê","use":"Nguồn địa phương ghi nhận thịt nạc xay, ba chỉ, trứng gà, lá chuối, gia vị; cách xếp xen lớp, luộc khoảng 2,5 giờ, ép 4–5 giờ và ăn cùng hành muối, nước mắm. Nguồn cho biết khoanh lớn dùng 10–16 quả trứng; công thức này dùng mức thấp nhất cho một mẻ gia đình.","accessed_at":"2026-10-24","type":"editorial_reference"},
+        {"url":"https://www.fsis.usda.gov/food-safety/food-safety-basics/safe-temperature-chart","publisher":"USDA Food Safety and Inspection Service","title":"Safe Minimum Internal Temperature Chart","use":"Xác nhận mức tối thiểu 160°F/71.1°C cho món có thịt heo xay; recipe làm tròn thao tác kiểm tra lên 71°C.","accessed_at":"2026-10-24","type":"food_safety_reference"}
+      ],
+      "time_unit": "minute",
+      "scaling": {"base_servings":4,"targets":[{"servings":2,"main_factor":0.5,"seasoning_start_factor":0.45,"example":"300 g thịt nạc, 100 g ba chỉ và 5 quả trứng","instruction":"Dùng khuôn nhỏ hơn và kiểm tra nhiệt độ ở tâm; thời gian ép có thể ngắn hơn nhưng cần chờ giò nguội hẳn."},{"servings":6,"main_factor":1.5,"seasoning_start_factor":1.2,"example":"900 g thịt nạc, 300 g ba chỉ và 15 quả trứng","instruction":"Gói thành một khối vuông lớn hoặc chia hai khoanh; không xếp trứng quá dày và kiểm tra nhiệt ở tâm."}]},
+      "media": [
+        {"image_url":"/images/recipes/edited/gio-trung-non-khe-960.webp","page_url":"https://baoninhbinh.org.vn/gio-trung-net-van-hoa-am-thuc-doc-dao-dat-non-khe/d20220107091915356.htm","source":"Bếp Việt","author":"Bếp Việt","license":null,"rights_status":"project","rights_note":"Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để biên tập đặc điểm món và cách nấu.","width":3840,"height":2160,"orientation":"landscape","preferred_width_met":true,"alt_text":"Khoanh giò trứng Nộn Khê bọc lá chuối, cắt lát vuông thấy trứng vàng xếp lớp trong giò thịt; ảnh Bếp Việt nền trong suốt.","verified_dish_match":true,"visual_review_date":"2026-10-24","photo_variant_note":"PNG master được tạo bằng ImageGen và lưu tại output/recipe-images/native/gio-trung-non-khe.png, kích thước 1536 × 1024 px, có alpha trong suốt; biến thể 3840 × 2160 px được xuất từ master này, không phải PNG master 4K. Công thức biên tập, chưa nấu thử."}
+      ],
+      "editorial": {"status":"editorial_draft","production_ready":false,"test_cook_status":"not_tested","variant_note":"Bếp Việt giữ cách xếp lớp trứng, nạc và ba chỉ, luộc rồi ép vuông theo Báo Ninh Bình; lượng thịt được chuẩn hóa cho gia đình và dùng 10 trứng là mức thấp nhất trong mô tả nguồn về một khoanh lớn.","seed_recipe":null,"reviewed_at":"2026-10-24","needs":["Nấu thử để xác nhận tỷ lệ thịt, số trứng, độ chặt và thời gian luộc của khuôn gia đình.","Nhờ người làm giò trứng Nộn Khê rà soát kỹ thuật xếp trứng và cách ép.","Xác nhận khả năng bảo quản phù hợp cho mẻ gia đình sau khi làm lạnh."]}
+    },
+    {
+      "id": "BV589",
+      "slug": "chao-chan-gio-bong-hai",
+      "name": "Chạo chân giò Bồng Hải",
+      "aliases": ["Chạo chân giò Khánh Thiện", "Chạo chân giò Ninh Bình"],
+      "region": ["Bắc"],
+      "province": ["Ninh Bình"],
+      "category": "Món mặn",
+      "meal_type": ["bữa trưa", "bữa tối", "món ăn chung"],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Một đĩa chạo chân giò và rau cuốn cho bốn người dùng trong bữa cơm hoặc mâm cỗ.",
+      "prep_time": 25,
+      "cook_time": 45,
+      "passive_time": 10,
+      "total_time": 80,
+      "description": "Chạo chân giò Bồng Hải trộn thịt chân giò chín với riềng, sả, khế chua, lá chanh và vừng, rồi cuốn cùng lá sung hoặc bánh đa nem. Bếp Việt biên tập lượng gia vị cho bốn người theo cách ăn truyền thống được Báo Ninh Bình ghi nhận.",
+      "finished_dish": "Thịt chân giò mềm, phần bì giòn dai quyện riềng cay thơm, khế chua và vừng bùi; ăn cuốn lá cùng nước chấm chua mặn ngọt.",
+      "serving": "Bày chạo với rau thơm, lá sung và bánh đa nem; cuốn từng phần nhỏ rồi chấm nước mắm chua ngọt hoặc tương bần. Dọn ngay sau khi trộn để rau giữ độ tươi.",
+      "tips": ["Chọn chân giò vừa cỡ, còn da và có chút gân; buộc gọn để thịt chín đều khi hấp.","Để thịt nguội bớt trước khi thái mỏng để phần nạc và bì không tách rời.","Nêm riềng, khế và nước mắm từ từ; món cần chua cay thơm nhưng không át vị thịt.","Dùng nhiệt kế kiểm tra thịt heo nguyên miếng đạt ít nhất 63°C rồi để nghỉ tối thiểu 3 phút."],
+      "dish_type": ["Món chạo trộn thịt", "Món quê Bồng Hải"],
+      "main_ingredient": ["chân giò heo", "riềng", "khế chua"],
+      "cooking_method": ["hấp chân giò", "thái mỏng", "trộn chạo", "cuốn lá"],
+      "search_terms": ["chạo chân giò Bồng Hải", "chạo chân giò Khánh Thiện", "chạo chân giò Ninh Bình", "chạo chân giò riềng khế"],
+      "spicy_level": 1,
+      "image_alt": "Đĩa chạo chân giò Bồng Hải trộn riềng sả, khế chua, lá chanh và vừng, kèm lá cuốn; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 1 giờ 20 phút, gồm 10 phút để thịt nghỉ và nguội bớt trước khi trộn.",
+      "suggested_pairings": ["Cơm trắng", "Bánh đa nem", "Tương bần"],
+      "recipe_family": "ninh_binh_bong_hai_pork_leg_chaosalad",
+      "keywords": ["chạo chân giò", "Bồng Hải", "Khánh Thiện", "riềng", "khế chua", "vừng rang", "Ninh Bình"],
+      "tags": ["Ninh Bình", "món mặn", "món trộn", "món dân dã", "mâm cỗ gia đình"],
+      "ingredients": [
+        {"name":"Chân giò heo rút xương","quantity":600,"unit":"g","role":"main","notes":"Giữ nguyên da; buộc thành khối gọn để hấp.","scaling_rule":"linear","sequence":1},
+        {"name":"Nước sạch","quantity":1000,"unit":"ml","role":"liquid","notes":"Cho vào nồi hấp, không để chạm đáy xửng.","scaling_rule":"vessel_dependent","sequence":2},
+        {"name":"Riềng tươi","quantity":60,"unit":"g","role":"aromatic","notes":"Giã nhỏ; vắt riêng một ít nước riềng nếu muốn ướp thịt.","scaling_rule":"linear","sequence":3},
+        {"name":"Sả","quantity":30,"unit":"g","role":"aromatic","notes":"Cắt lát mỏng; một phần lót nồi hấp, phần còn lại trộn chạo.","scaling_rule":"linear","sequence":4},
+        {"name":"Tỏi","quantity":8,"unit":"g","role":"aromatic","notes":"Bóc vỏ, băm nhỏ.","scaling_rule":"linear","sequence":5},
+        {"name":"Khế chua","quantity":120,"unit":"g","role":"vegetable","notes":"Rửa sạch, bỏ cạnh cứng và thái lát mỏng.","scaling_rule":"linear","sequence":6},
+        {"name":"Lá chanh","quantity":5,"unit":"g","role":"herb","notes":"Thái chỉ thật mảnh.","scaling_rule":"linear","sequence":7},
+        {"name":"Vừng trắng","quantity":25,"unit":"g","role":"topping","notes":"Rang trên lửa nhỏ đến khi thơm.","scaling_rule":"linear","sequence":8},
+        {"name":"Nước mắm","quantity":20,"unit":"ml","role":"seasoning","notes":"Nêm từng ít một.","scaling_rule":"taste_adjusted","sequence":9},
+        {"name":"Muối","quantity":2,"unit":"g","role":"seasoning","notes":"Dùng một phần để ướp thịt.","scaling_rule":"taste_adjusted","sequence":10},
+        {"name":"Đường","quantity":5,"unit":"g","role":"seasoning","notes":"Điều chỉnh theo độ chua của khế.","scaling_rule":"taste_adjusted","sequence":11},
+        {"name":"Ớt tươi","quantity":3,"unit":"g","role":"seasoning","notes":"Băm nhỏ; tùy chọn.","scaling_rule":"optional","sequence":12},
+        {"name":"Tiêu xay","quantity":1,"unit":"g","role":"seasoning","notes":"Tùy khẩu vị.","scaling_rule":"taste_adjusted","sequence":13},
+        {"name":"Lá sung và rau thơm","quantity":100,"unit":"g","role":"herb","notes":"Rửa sạch, để ráo và dùng cuốn chạo.","scaling_rule":"linear","sequence":14},
+        {"name":"Bánh đa nem","quantity":8,"unit":"lá","role":"wrapping","notes":"Có thể thay bằng lá sung lớn để cuốn.","scaling_rule":"linear","sequence":15},
+        {"name":"Nước chấm tương bần hoặc mắm chua ngọt","quantity":120,"unit":"ml","role":"accompaniment","notes":"Dọn riêng, nêm theo khẩu vị.","scaling_rule":"taste_adjusted","sequence":16}
+      ],
+      "preparation_steps": [
+        {"step":1,"instruction":"Rửa chân giò, thấm khô và buộc thành khối vừa. Cắt sả; giã riềng; thái chỉ lá chanh; rang vừng và thái mỏng khế."},
+        {"step":2,"instruction":"Rửa lá sung và rau thơm, để ráo. Chuẩn bị nồi hấp có nước và xửng; dùng thớt riêng cho thịt sống."}
+      ],
+      "cooking_steps": [
+        {"step":1,"instruction":"Lót một phần sả và lá chanh dưới xửng, đặt chân giò lên trên. Hấp đến khi phần dày nhất đạt ít nhất 63°C; với khối 600 g thường cần khoảng 35–45 phút. Để thịt nghỉ ít nhất 3 phút."},
+        {"step":2,"instruction":"Để thịt nguội bớt khoảng 10 phút rồi thái lát mỏng, giữ phần da dính với nạc. Nếu có nước riềng, xoa một ít lên thịt."},
+        {"step":3,"instruction":"Trộn thịt với riềng, sả, tỏi, khế, lá chanh, nước mắm, muối, đường, tiêu và ớt nếu dùng. Nếm rồi điều chỉnh vị chua mặn cay."},
+        {"step":4,"instruction":"Rắc vừng rang, đảo nhẹ lần cuối và bày ra đĩa. Dọn cùng lá sung, rau thơm, bánh đa nem và nước chấm."}
+      ],
+      "sources": [
+        {"url":"https://baoninhbinh.org.vn/dan-da-am-thuc-khanh-thien/d20140202091220340.htm","publisher":"Báo Ninh Bình","title":"Dân dã ẩm thực Khánh Thiện","use":"Nguồn địa phương xác định chạo chân giò Bồng Hải là món trong mâm cỗ gia đình; liệt kê chân giò, riềng, tỏi, khế hoặc xoài xanh, sả, lá chanh và rau cuốn; mô tả hấp khoảng 15 phút, thái mỏng, trộn mắm, riềng, vừng.","accessed_at":"2026-10-24","type":"editorial_reference"},
+        {"url":"https://www.fsis.usda.gov/food-safety/food-safety-basics/safe-temperature-chart","publisher":"USDA Food Safety and Inspection Service","title":"Safe Minimum Internal Temperature Chart","use":"Tham khảo nhiệt độ tối thiểu 145°F/62.8°C và thời gian nghỉ 3 phút cho thịt heo nguyên miếng; thời gian hấp trong công thức là ước tính cho khối chân giò gia đình.","accessed_at":"2026-10-24","type":"food_safety_reference"}
+      ],
+      "time_unit": "minute",
+      "scaling": {"base_servings":4,"targets":[{"servings":2,"main_factor":0.5,"seasoning_start_factor":0.45,"example":"300 g chân giò rút xương và 60 g khế chua","instruction":"Buộc khối thịt nhỏ và kiểm tra nhiệt ở phần dày nhất; thời gian hấp có thể ngắn hơn."},{"servings":6,"main_factor":1.5,"seasoning_start_factor":1.2,"example":"900 g chân giò rút xương và 180 g khế chua","instruction":"Chia thành hai khối để hấp chín đều; trộn chạo sát giờ ăn."}]},
+      "media": [
+        {"image_url":"/images/recipes/edited/chao-chan-gio-bong-hai-960.webp","page_url":"https://baoninhbinh.org.vn/dan-da-am-thuc-khanh-thien/d20140202091220340.htm","source":"Bếp Việt","author":"Bếp Việt","license":null,"rights_status":"project","rights_note":"Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để biên tập đặc điểm món và cách nấu.","width":3840,"height":2160,"orientation":"landscape","preferred_width_met":true,"alt_text":"Đĩa chạo chân giò Bồng Hải trộn riềng sả, khế chua, lá chanh và vừng, kèm lá cuốn; ảnh Bếp Việt nền trong suốt.","verified_dish_match":true,"visual_review_date":"2026-10-24","photo_variant_note":"PNG master được tạo bằng ImageGen và lưu tại output/recipe-images/native/chao-chan-gio-bong-hai.png, kích thước 1536 × 1024 px, có alpha trong suốt; biến thể 3840 × 2160 px được xuất từ master này, không phải PNG master 4K. Công thức biên tập, chưa nấu thử."}
+      ],
+      "editorial": {"status":"editorial_draft","production_ready":false,"test_cook_status":"not_tested","variant_note":"Bếp Việt giữ nhóm gia vị, rau cuốn và cách trộn thịt hấp của món Bồng Hải theo Báo Ninh Bình; thời gian hấp được điều chỉnh theo khối chân giò gia đình và kèm kiểm tra nhiệt độ an toàn.","seed_recipe":null,"reviewed_at":"2026-10-24","needs":["Nấu thử để xác nhận thời gian hấp của chân giò rút xương theo kích cỡ thực tế.","Nhờ người am hiểu món Bồng Hải rà soát tỷ lệ riềng, khế, vừng và loại lá cuốn."]}
+    },
+    {
+      "id": "BV590",
+      "slug": "banh-da-vung-khanh-thien",
+      "name": "Bánh đa vừng Khánh Thiện",
+      "aliases": ["Bánh đa quạt Phong An", "Bánh đa mè Khánh Thiện"],
+      "region": ["Bắc"],
+      "province": ["Ninh Bình"],
+      "category": "Món ăn vặt",
+      "meal_type": ["bữa phụ", "món ăn vặt", "món ăn kèm"],
+      "difficulty": "Khó",
+      "servings": 4,
+      "serving_basis": "Khoảng bốn bánh đa vừng cỡ lớn, mỗi người một chiếc ăn ngay sau khi nướng.",
+      "prep_time": 30,
+      "cook_time": 35,
+      "passive_time": 340,
+      "total_time": 405,
+      "description": "Bánh đa Khánh Thiện làm từ gạo tẻ không dẻo, vừng và muối; bánh được tráng hai lượt, phơi tới độ khô vừa rồi nướng than củi cho giòn xốp. Bếp Việt chuyển quy trình làng nghề thành một mẻ nhỏ cho bếp nhà; thời gian phơi phụ thuộc thời tiết.",
+      "finished_dish": "Bánh tròn mỏng, thơm mùi gạo rang và vừng, giòn xốp sau khi nướng than; ngon nhất khi vừa chín.",
+      "serving": "Bẻ bánh thành miếng và ăn ngay khi còn giòn. Có thể dùng kèm lạc rang hoặc lạc luộc theo cách ăn địa phương.",
+      "tips": ["Dùng gạo tẻ không dẻo và xay bột trong ngày; bột để lâu có thể chua.","Tráng hai lớp thật mỏng, phơi tới khi bánh khô vừa đủ cầm mà vẫn còn độ dẻo nhẹ.","Thời gian phơi thay đổi theo nắng và độ ẩm; không xếp bánh chồng lên nhau khi còn ẩm.","Nướng từng bánh trên than vừa, trở liên tục để bánh giòn đều mà không cháy."],
+      "dish_type": ["Bánh gạo nướng vừng", "Đặc sản Khánh Thiện"],
+      "main_ingredient": ["gạo tẻ", "vừng trắng"],
+      "cooking_method": ["ngâm và xay gạo", "tráng hai lượt", "phơi bánh", "nướng than"],
+      "search_terms": ["bánh đa vừng Khánh Thiện", "bánh đa quạt Phong An", "bánh đa mè Ninh Bình", "cách làm bánh đa vừng"],
+      "spicy_level": 0,
+      "image_alt": "Bánh đa vừng Khánh Thiện tròn mỏng, nướng vàng giòn với nhiều hạt vừng trên đĩa; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 6 giờ 45 phút, gồm 2 giờ ngâm gạo và khoảng 3 giờ 40 phút phơi; thời gian phơi tùy thời tiết.",
+      "suggested_pairings": ["Lạc rang", "Lạc luộc", "Trà nóng"],
+      "recipe_family": "ninh_binh_khanh_thien_sesame_rice_cracker",
+      "keywords": ["bánh đa vừng", "bánh đa quạt", "Phong An", "Khánh Thiện", "gạo tẻ", "vừng", "món quê Ninh Bình"],
+      "tags": ["Ninh Bình", "món ăn vặt", "món dân dã", "làng nghề", "món ăn kèm"],
+      "ingredients": [
+        {"name":"Gạo tẻ không dẻo","quantity":250,"unit":"g","role":"grain","notes":"Chọn gạo thơm, hạt khô; vo sạch trước khi ngâm.","scaling_rule":"linear","sequence":1},
+        {"name":"Vừng trắng","quantity":35,"unit":"g","role":"main","notes":"Sàng sạch; có thể rang sơ cho thơm trước khi tráng.","scaling_rule":"linear","sequence":2},
+        {"name":"Muối hạt","quantity":3,"unit":"g","role":"seasoning","notes":"Giã nhỏ, trộn đều vào bột.","scaling_rule":"taste_adjusted","sequence":3},
+        {"name":"Nước sạch","quantity":350,"unit":"ml","role":"liquid","notes":"Dùng xay gạo thành bột lỏng, mịn; có thể điều chỉnh thêm ít nước.","scaling_rule":"vessel_dependent","sequence":4}
+      ],
+      "preparation_steps": [
+        {"step":1,"instruction":"Vo gạo rồi ngâm trong nước sạch khoảng 2 giờ. Vớt ra để ráo; sàng sạch vừng và giã nhỏ muối."},
+        {"step":2,"instruction":"Xay gạo với nước thành bột lỏng, mịn và dùng ngay. Khuấy vừng cùng muối vào bột."},
+        {"step":3,"instruction":"Chuẩn bị nồi tráng bánh có khăn căng sạch và mặt phơi phẳng. Khi tráng xong, tách từng bánh ra phơi trên giá sạch tới khi khô vừa, thường mất khoảng 3 giờ 40 phút tùy nắng và độ ẩm."}
+      ],
+      "cooking_steps": [
+        {"step":1,"instruction":"Khi nước trong nồi hấp sôi mạnh, múc một lớp bột thật mỏng lên khăn căng, rắc ít vừng và đậy nắp khoảng 2–3 phút cho bánh se. Tráng lượt thứ hai phủ thêm một lớp bột mỏng rồi hấp tiếp đến khi bánh trong và chín."},
+        {"step":2,"instruction":"Nhấc bánh ra cẩn thận, dàn phẳng trên giá sạch; lặp lại với phần bột còn lại. Để bánh khô vừa tay, không phơi giòn cứng hoặc còn ẩm nhão."},
+        {"step":3,"instruction":"Nướng từng bánh trên than củi ở mức nhiệt vừa, lật đều tay đến khi bánh phồng nhẹ, khô giòn và thơm. Dọn ngay sau khi nướng."}
+      ],
+      "sources": [
+        {"url":"https://dulichninhbinh.com.vn/item/1363","publisher":"Trung tâm Thông tin Xúc tiến Du lịch Ninh Bình - Sở Du lịch Ninh Bình","title":"Đặc sản bánh đa vừng Khánh Thiện","use":"Nguồn du lịch địa phương ghi nhận nguyên liệu gạo tẻ không dẻo, vừng, muối; ngâm gạo khoảng 2 giờ, xay và tráng ngay, bánh vừng tráng hai lượt, phơi tới độ khô vừa rồi nướng than củi và lật đều. Lượng nguyên liệu và thời gian phơi là ước tính cho mẻ nhỏ gia đình.","accessed_at":"2026-10-24","type":"editorial_reference"}
+      ],
+      "time_unit": "minute",
+      "scaling": {"base_servings":4,"targets":[{"servings":2,"main_factor":0.5,"seasoning_start_factor":0.45,"example":"125 g gạo tẻ, 18 g vừng và 2 bánh lớn","instruction":"Tráng bánh thành lớp mỏng và phơi riêng từng chiếc để khô đều."},{"servings":6,"main_factor":1.5,"seasoning_start_factor":1.2,"example":"375 g gạo tẻ, 52 g vừng và khoảng 6 bánh lớn","instruction":"Xay bột thành nhiều mẻ nhỏ, tráng và phơi liên tục để bột không chua."}]},
+      "media": [
+        {"image_url":"/images/recipes/edited/banh-da-vung-khanh-thien-960.webp","page_url":"https://dulichninhbinh.com.vn/item/1363","source":"Bếp Việt","author":"Bếp Việt","license":null,"rights_status":"project","rights_note":"Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để biên tập đặc điểm món và cách nấu.","width":3840,"height":2160,"orientation":"landscape","preferred_width_met":true,"alt_text":"Bánh đa vừng Khánh Thiện tròn mỏng, nướng vàng giòn với nhiều hạt vừng trên đĩa; ảnh Bếp Việt nền trong suốt.","verified_dish_match":true,"visual_review_date":"2026-10-24","photo_variant_note":"PNG master được tạo bằng ImageGen và lưu tại output/recipe-images/native/banh-da-vung-khanh-thien.png, kích thước 1374 × 1145 px, có alpha trong suốt; biến thể 3840 × 2160 px được xuất từ master này, không phải PNG master 4K. Công thức biên tập, chưa nấu thử."}
+      ],
+      "editorial": {"status":"editorial_draft","production_ready":false,"test_cook_status":"not_tested","variant_note":"Bếp Việt giữ nguyên nguyên liệu và quy trình làng nghề được Trung tâm Xúc tiến Du lịch Ninh Bình ghi nhận; quy mô mẻ, lượng nước và thời gian phơi được ước tính cho dụng cụ gia đình.","seed_recipe":null,"reviewed_at":"2026-10-24","needs":["Thử tráng bánh bằng nồi và khăn gia đình để xác nhận độ lỏng của bột và số lượt tráng.","Cần thử phơi trong điều kiện thời tiết khác nhau để chốt thời gian khô an toàn trước khi nướng."]}
+    }
+  ]
+}

@@ -4,7 +4,7 @@ from uuid import UUID
 
 from pydantic import BaseModel, ConfigDict, EmailStr, Field, field_validator, model_validator
 
-MealType = Literal["lunch", "dinner"]
+MealType = Literal["breakfast", "lunch", "dinner"]
 MealEmailStatus = Literal["sending", "sent", "failed"]
 RecipientSource = Literal["user", "support", "new"]
 
@@ -94,6 +94,20 @@ class MealSuggestionSendResponse(BaseModel):
     data: list[MealSuggestionEmailResponse]
     sent: int
     failed: int
+    # Số email đã xếp hàng gửi ở nền; trạng thái cuối xem trong lịch sử.
+    queued: int = 0
+
+
+class MealSuggestionRecipient(BaseModel):
+    email: EmailStr
+    name: str
+    last_sent_at: datetime | None
+    sent_count: int
+
+
+class MealSuggestionRecipientListResponse(BaseModel):
+    data: list[MealSuggestionRecipient]
+    total: int
 
 
 class MealSuggestionRecipientLookup(BaseModel):

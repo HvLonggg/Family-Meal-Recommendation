@@ -9,6 +9,8 @@ from sqlalchemy.orm import Session
 
 from app.core.config import get_settings
 from app.core.exceptions import DomainError
+from app.core.net import client_ip
+from app.core.rate_limit import SlidingWindowLimiter
 from app.db.session import get_db_session
 from app.modules.auth.dependencies import get_current_user, require_admin
 from app.modules.auth.email import (
@@ -39,6 +41,8 @@ from app.modules.auth.schemas import (
 from app.modules.auth.service import (
     EmailNotRegisteredError,
     EmailServiceUnavailableError,
+    InvalidCredentialsError,
+    LoginRateLimitError,
     OAuthProviderNotConfiguredError,
     authenticate_oauth_user,
     authenticate_password,
@@ -57,6 +61,10 @@ from app.modules.auth.service import (
 )
 
 router = APIRouter(prefix="/auth")
+
+# Chống dò mật khẩu: đếm lần đăng nhập sai theo email và theo địa chỉ IP trong 15 phút.
+LOGIN_FAILURES_PER_EMAIL = SlidingWindowLimiter(limit=5, window_seconds=15 * 60)
+LOGIN_FAILURES_PER_IP = SlidingWindowLimiter(limit=20, window_seconds=15 * 60)
 REFRESH_COOKIE_NAME = "bep_viet_refresh"
 OAUTH_STATE_COOKIE_NAME = "bep_viet_oauth_state"
 
@@ -196,10 +204,23 @@ def register(
 @router.post("/login", response_model=AuthSessionResponse, summary="Sign in with email")
 def login(
     payload: LoginRequest,
+    request: Request,
     response: Response,
     session: Annotated[Session, Depends(get_db_session)],
 ) -> AuthSessionResponse:
-    user = authenticate_password(session, email=str(payload.email), password=payload.password)
+    email_key = str(payload.email).strip().casefold()
+    ip_key = client_ip(request)
+    if LOGIN_FAILURES_PER_EMAIL.blocked(email_key) or LOGIN_FAILURES_PER_IP.blocked(ip_key):
+        raise LoginRateLimitError(
+            "Bạn đã nhập sai quá nhiều lần. Vui lòng thử lại sau 15 phút hoặc đặt lại mật khẩu."
+        )
+    try:
+        user = authenticate_password(session, email=email_key, password=payload.password)
+    except InvalidCredentialsError:
+        LOGIN_FAILURES_PER_EMAIL.hit(email_key)
+        LOGIN_FAILURES_PER_IP.hit(ip_key)
+        raise
+    LOGIN_FAILURES_PER_EMAIL.reset(email_key)
     tokens = create_session_tokens(session, user, remember_me=payload.remember_me)
     set_refresh_cookie(response, tokens.refresh_token, remember_me=tokens.remembered)
     return session_response(user, tokens.access_token, tokens.access_expires_in)
@@ -260,20 +281,19 @@ def forgot_password(
             session,
             email,
             purpose="password_reset",
-            requester_ip=request.client.host if request.client else None,
+            requester_ip=client_ip(request),
             account_exists=False,
         )
         invalidate_email_otp_challenge(session, challenge.id)
         raise EmailNotRegisteredError(
-            "Email này chưa có tài khoản Bếp Việt. Vui lòng kiểm tra email "
-            "hoặc tạo tài khoản mới."
+            "Email này chưa có tài khoản Bếp Việt. Vui lòng kiểm tra email hoặc tạo tài khoản mới."
         )
 
     challenge, development_code = request_email_otp_code(
         session=session,
         email=email,
         purpose="password_reset",
-        requester_ip=request.client.host if request.client else None,
+        requester_ip=client_ip(request),
         account_exists=True,
     )
     settings = get_settings()
@@ -375,7 +395,7 @@ def request_email_change(
         session=session,
         email=new_email,
         purpose="email_change",
-        requester_ip=request.client.host if request.client else None,
+        requester_ip=client_ip(request),
         account_exists=True,
         user_id=current_user.id,
     )
@@ -434,7 +454,9 @@ def start_oauth(provider: Literal["google", "facebook"]) -> Response:
     try:
         authorization_url = google_authorization_url(state_value)
     except OAuthExchangeError as exc:
-        raise OAuthProviderNotConfiguredError(str(exc)) from exc
+        raise OAuthProviderNotConfiguredError(
+            "Đăng nhập Google tạm thời chưa sẵn sàng. Vui lòng thử lại sau."
+        ) from exc
     response = RedirectResponse(authorization_url, status_code=status.HTTP_302_FOUND)
     set_oauth_state_cookie(response, state_value)
     return response

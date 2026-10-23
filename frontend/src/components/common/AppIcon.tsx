@@ -1,4 +1,5 @@
 export type IconName =
+  | 'bell'
   | 'camera'
   | 'chart'
   | 'chevron'
@@ -177,6 +178,12 @@ const paths: Record<IconName, React.ReactNode> = {
       <path d="M6 13.9V20h12v-6.1" />
       <path d="M6 14a4 4 0 0 1 1-7.87A5 5 0 0 1 17 6a4 4 0 0 1 1 7.9Z" />
       <path d="M9 17h6" />
+    </>
+  ),
+  bell: (
+    <>
+      <path d="M6 8a6 6 0 1 1 12 0c0 7 3 8 3 8H3s3-1 3-8" />
+      <path d="M10.3 20a1.9 1.9 0 0 0 3.4 0" />
     </>
   ),
   clock: (

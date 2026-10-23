@@ -10,13 +10,13 @@ def create_user(client: TestClient, email: str) -> str:
         json={
             "full_name": "Nguyễn Ngọc Lan",
             "email": email,
-            "password": "BepViet2026",
+            "password": "Test-Only-No-Login-2026!",
         },
     )
     assert created.status_code == 201
     verified = client.post(
         "/api/v1/auth/login",
-        json={"email": email, "password": "BepViet2026"},
+        json={"email": email, "password": "Test-Only-No-Login-2026!"},
     )
     assert verified.status_code == 200
     return verified.json()["access_token"]

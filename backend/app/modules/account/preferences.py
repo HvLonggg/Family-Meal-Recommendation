@@ -74,6 +74,8 @@ class UserPreferences(BaseModel):
     notify_weekly_plan: bool = True
     notify_story_updates: bool = True
     show_name_on_stories: bool = True
+    # Chú Rồng trả treo, cà khịa (vẫn trả lời đúng); tắt thì dí dỏm bình thường.
+    assistant_sassy: bool = False
     admin_notify_pending: bool = True
     admin_landing: Literal["home", "admin"] = "admin"
 

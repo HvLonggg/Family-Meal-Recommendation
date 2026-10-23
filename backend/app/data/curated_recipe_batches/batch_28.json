@@ -1,0 +1,1584 @@
+{
+  "batch": 28,
+  "description": "Món Việt vùng miền và món nhà có nguồn đối chiếu; nội dung Bếp Việt biên tập để tham khảo nấu tại nhà, chưa nấu thử.",
+  "recipes": [
+    {
+      "id": "BV466",
+      "slug": "canh-rau-san-chua-nau-suon-phu-tho",
+      "name": "Canh rau sắn chua nấu sườn Phú Thọ",
+      "aliases": [],
+      "region": [
+        "Trung du và miền núi Bắc Bộ"
+      ],
+      "province": [
+        "Phú Thọ"
+      ],
+      "category": "Món canh",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "4 bát canh dùng chung trong bữa cơm gia đình.",
+      "prep_time": 20,
+      "cook_time": 50,
+      "passive_time": 0,
+      "description": "Rau sắn muối chua nấu mềm cùng sườn non tạo vị chua dịu, thơm ngai ngái đặc trưng của bữa cơm Phú Thọ. Bếp Việt biên tập lượng gia vị vừa phải để giữ vị rau và nước ngọt từ sườn.",
+      "finished_dish": "Sườn mềm, rau sắn thấm nước dùng, vị chua mặn dịu và thơm hành khô.",
+      "serving": "Múc nóng ra tô, dùng cùng cơm trắng và món mặn ít gia vị. Nếm lại sau khi rau đã mềm vì rau muối có thể còn mặn.",
+      "tips": [
+        "Chỉ dùng rau sắn đã muối chua, được sơ chế an toàn; không dùng lá sống.",
+        "Vắt bớt nước chua và nếm trước khi rửa để tránh làm rau nhạt quá.",
+        "Nêm muối, nước mắm ở cuối vì rau sắn muối thường đã có độ mặn."
+      ],
+      "dish_type": [
+        "Canh chua",
+        "Món ăn Phú Thọ"
+      ],
+      "main_ingredient": [
+        "rau sắn muối chua",
+        "sườn non"
+      ],
+      "cooking_method": [
+        "xào",
+        "ninh",
+        "nấu canh"
+      ],
+      "search_terms": [
+        "canh rau sắn chua",
+        "rau sắn nấu sườn Phú Thọ"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Tô canh rau sắn muối chua nấu sườn non, điểm hành lá trên mặt.",
+      "ingredients": [
+        {
+          "name": "Sườn non",
+          "quantity": 600,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chặt miếng vừa ăn.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Rau sắn muối chua",
+          "quantity": 350,
+          "unit": "g",
+          "role": "main",
+          "notes": "Vắt bớt nước chua; nếm độ mặn.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Hành khô",
+          "quantity": 30,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 1500,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Gia giảm để nước vừa ngập sườn.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng phi hành.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm sau cùng nếu cần.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Tùy chọn.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa sườn, ngâm nước muối loãng khoảng 15 phút rồi xả sạch. Chần sườn 2 phút trong nước sôi, đổ bỏ nước và rửa lại."
+        },
+        {
+          "step": 2,
+          "instruction": "Vắt rau sắn cho bớt nước muối; nếm thử. Nếu quá mặn hoặc chua gắt, xả nhanh một lần rồi để ráo."
+        },
+        {
+          "step": 3,
+          "instruction": "Bóc vỏ, băm hành khô."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng dầu, phi hành thơm. Cho sườn vào đảo săn, thêm nước mắm và tiêu."
+        },
+        {
+          "step": 2,
+          "instruction": "Đổ nước vào nồi, đun sôi rồi hạ lửa nhỏ. Hớt bọt và ninh 30–35 phút đến khi sườn gần mềm."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho rau sắn vào, nấu thêm 15–20 phút đến khi rau mềm và vị chua hòa vào nước dùng. Nếm lại, chỉ thêm gia vị nếu cần rồi tắt bếp."
+        }
+      ],
+      "time_note": "Thời gian ninh thay đổi theo phần sườn; rau sắn được nấu đến mềm nhưng vẫn còn sợi lá.",
+      "total_time": 70,
+      "time_unit": "phút",
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "canh-rau-san-chua-nau-suon-phu-tho",
+      "keywords": [
+        "Canh rau sắn chua nấu sườn Phú Thọ",
+        "Trung du và miền núi Bắc Bộ",
+        "Phú Thọ",
+        "rau sắn muối chua",
+        "sườn non",
+        "canh rau sắn chua",
+        "rau sắn nấu sườn Phú Thọ",
+        "Canh chua",
+        "Món ăn Phú Thọ",
+        "70 phút"
+      ],
+      "tags": {
+        "region": [
+          "Trung du và miền núi Bắc Bộ"
+        ],
+        "province": [
+          "Phú Thọ"
+        ],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Canh chua",
+          "Món ăn Phú Thọ"
+        ],
+        "main_ingredient": [
+          "rau sắn muối chua",
+          "sườn non"
+        ],
+        "cooking_method": [
+          "xào",
+          "ninh",
+          "nấu canh"
+        ],
+        "difficulty": "Dễ",
+        "prep_time": 20,
+        "cook_time": 50,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Cơm trắng",
+          "Đậu phụ rán",
+          "Rau luộc"
+        ],
+        "keywords": [
+          "Canh rau sắn chua nấu sườn Phú Thọ",
+          "Trung du và miền núi Bắc Bộ",
+          "Phú Thọ",
+          "rau sắn muối chua",
+          "sườn non",
+          "canh rau sắn chua",
+          "rau sắn nấu sườn Phú Thọ",
+          "Canh chua",
+          "Món ăn Phú Thọ",
+          "70 phút"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://vnexpress.net/canh-rau-san-chua-nau-suon-mon-ngon-phu-tho-4390345.html",
+          "publisher": "VnExpress Cooking",
+          "title": "Canh rau sắn chua nấu sườn - món ngon Phú Thọ",
+          "use": "Đối chiếu đặc trưng rau sắn muối chua nấu mềm cùng sườn, cách ninh và lưu ý nêm cuối.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://vnexpress.net/cac-mon-an-noi-tieng-o-vung-dat-to-2972506.html",
+          "publisher": "VnExpress Du lịch",
+          "title": "Các món ăn nổi tiếng ở vùng đất Tổ",
+          "use": "Đối chiếu món canh rau sắn với cá đồng và vị chua đặc trưng của Phú Thọ.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Canh rau sắn chua nấu sườn Phú Thọ cho 2 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Canh rau sắn chua nấu sườn Phú Thọ cho 6 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Canh rau sắn chua nấu sườn Phú Thọ cho 8 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/canh-rau-san-chua-nau-suon-phu-tho-960.webp",
+          "page_url": "https://vnexpress.net/canh-rau-san-chua-nau-suon-mon-ngon-phu-tho-4390345.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Tô canh rau sắn muối chua nấu sườn non, điểm hành lá trên mặt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức do Bếp Việt biên tập dựa trên nguồn tham khảo; định lượng và thời gian cần được nấu thử trước khi xem là bản hoàn chỉnh.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để xác nhận định lượng, thời gian và khẩu vị với nguyên liệu phổ biến tại Việt Nam.",
+          "Rà soát cách sơ chế an toàn và cách dùng theo từng địa phương."
+        ]
+      },
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Đậu phụ rán",
+        "Rau luộc"
+      ]
+    },
+    {
+      "id": "BV467",
+      "slug": "chao-am-tra-vinh",
+      "name": "Cháo ám Trà Vinh",
+      "aliases": [],
+      "region": [
+        "Đồng bằng sông Cửu Long"
+      ],
+      "province": [
+        "Vĩnh Long (Trà Vinh cũ)"
+      ],
+      "category": "Món nước",
+      "meal_type": [
+        "bữa sáng",
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Vừa",
+      "servings": 4,
+      "serving_basis": "4 tô cháo cá lóc, ăn nóng cùng rau ghém và nước chấm.",
+      "prep_time": 25,
+      "cook_time": 55,
+      "passive_time": 0,
+      "description": "Cháo ám dùng nước luộc cá lóc để nấu gạo, thêm cá gỡ xương, tôm khô và mực khô nướng cho vị ngọt sâu. Tô cháo ăn kèm rau ghém, đậu phộng và chén tương hột pha cay theo phong vị Trà Vinh.",
+      "finished_dish": "Cháo sánh vừa, thơm cá và hải sản khô, có miếng cá lóc mềm, trứng cá béo nhẹ và rau ghém giòn mát.",
+      "serving": "Múc cháo nóng vào tô, thêm cá và hành ngò. Dọn cùng giá trụng, rau đắng, bắp chuối bào, bánh tráng mè nướng và chén tương hột pha mắm nêm, chanh, ớt tùy khẩu vị.",
+      "tips": [
+        "Lọc nước luộc cá qua rây trước khi nấu cháo để loại xương nhỏ.",
+        "Gỡ cá khi còn ấm, rà lại bằng tay để bảo đảm không sót xương.",
+        "Nếu không mua được trứng cá, bỏ qua; không thay bằng trứng gà vì sẽ đổi đặc trưng món."
+      ],
+      "dish_type": [
+        "Cháo cá",
+        "Đặc sản Trà Vinh"
+      ],
+      "main_ingredient": [
+        "cá lóc",
+        "gạo tẻ",
+        "tôm khô",
+        "mực khô"
+      ],
+      "cooking_method": [
+        "luộc",
+        "ninh cháo",
+        "xào"
+      ],
+      "search_terms": [
+        "cháo ám Trà Vinh",
+        "cháo cá lóc miền Tây",
+        "cháo cá lóc với trứng cá"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Tô cháo ám Trà Vinh với cá lóc gỡ xương, hành ngò, đậu phộng và rau ghém.",
+      "ingredients": [
+        {
+          "name": "Cá lóc",
+          "quantity": 700,
+          "unit": "g",
+          "role": "main",
+          "notes": "Làm sạch; có trứng cá thì giữ riêng.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Gạo tẻ",
+          "quantity": 200,
+          "unit": "g",
+          "role": "main",
+          "notes": "Vo sạch, để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Tôm khô",
+          "quantity": 25,
+          "unit": "g",
+          "role": "main",
+          "notes": "Ngâm mềm, rửa sạch.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Mực khô",
+          "quantity": 25,
+          "unit": "g",
+          "role": "main",
+          "notes": "Nướng thơm, xé nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Hành khô",
+          "quantity": 35,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Một phần nướng, phần còn lại băm.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Gừng",
+          "quantity": 20,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Thái lát để luộc cá.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 20,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": "Thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Ngò rí",
+          "quantity": 15,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": "Rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Đậu phộng rang",
+          "quantity": 30,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": "Giã dập.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Rau đắng và rau ghém",
+          "quantity": 200,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": "Rửa sạch, để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Giá đỗ",
+          "quantity": 100,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": "Trụng nhanh nếu thích.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Bắp chuối bào",
+          "quantity": 100,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": "Ngâm nước chanh loãng, để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        },
+        {
+          "name": "Tương hột",
+          "quantity": 40,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Pha nước chấm.",
+          "scaling_rule": "linear",
+          "sequence": 13
+        },
+        {
+          "name": "Mắm nêm",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng trong chén chấm, gia giảm.",
+          "scaling_rule": "linear",
+          "sequence": 14
+        },
+        {
+          "name": "Nước cốt chanh",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Pha nước chấm.",
+          "scaling_rule": "linear",
+          "sequence": 15
+        },
+        {
+          "name": "Ớt tươi",
+          "quantity": 1,
+          "unit": "piece",
+          "role": "seasoning",
+          "notes": "Tùy chọn.",
+          "scaling_rule": "linear",
+          "sequence": 16
+        },
+        {
+          "name": "Muối",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm vừa phải.",
+          "scaling_rule": "linear",
+          "sequence": 17
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 2200,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Luộc cá và nấu cháo.",
+          "scaling_rule": "linear",
+          "sequence": 18
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Vo gạo, để ráo. Ngâm tôm khô; nướng mực khô và một phần hành khô đến khi dậy mùi."
+        },
+        {
+          "step": 2,
+          "instruction": "Làm sạch cá, cắt khúc lớn. Rửa các loại rau ghém, để ráo; thái hành lá và ngò rí."
+        },
+        {
+          "step": 3,
+          "instruction": "Pha tương hột với mắm nêm, nước cốt chanh và ớt băm; thêm từng ít nước ấm để đạt độ sệt vừa chấm."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đun sôi nước cùng gừng và hành khô nướng. Thả cá vào, hạ lửa và luộc đến khi vừa chín; vớt cá ra để nguội bớt, giữ lại nước luộc."
+        },
+        {
+          "step": 2,
+          "instruction": "Gỡ cá bỏ xương, giữ riêng phần trứng cá nếu có. Xào nhẹ cá với hành băm và ít dầu cho thơm."
+        },
+        {
+          "step": 3,
+          "instruction": "Lọc nước luộc, cho gạo, tôm khô và mực nướng vào nồi. Nấu lửa nhỏ 35–40 phút, khuấy định kỳ đến khi hạt gạo nở mềm."
+        },
+        {
+          "step": 4,
+          "instruction": "Cho cá và trứng cá vào nồi, nêm muối vừa ăn, nấu thêm 3–5 phút. Rắc hành ngò, đậu phộng và dọn cùng rau ghém, bánh tráng, chén chấm."
+        }
+      ],
+      "time_note": "Thời gian nấu phụ thuộc độ nở của gạo; khuấy đáy nồi định kỳ để cháo không bén.",
+      "total_time": 80,
+      "time_unit": "phút",
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "chao-am-tra-vinh",
+      "keywords": [
+        "Cháo ám Trà Vinh",
+        "Đồng bằng sông Cửu Long",
+        "Vĩnh Long (Trà Vinh cũ)",
+        "cá lóc",
+        "gạo tẻ",
+        "tôm khô",
+        "mực khô",
+        "cháo ám Trà Vinh",
+        "cháo cá lóc miền Tây",
+        "cháo cá lóc với trứng cá",
+        "Cháo cá",
+        "Đặc sản Trà Vinh",
+        "80 phút"
+      ],
+      "tags": {
+        "region": [
+          "Đồng bằng sông Cửu Long"
+        ],
+        "province": [
+          "Vĩnh Long (Trà Vinh cũ)"
+        ],
+        "meal_type": [
+          "bữa sáng",
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Cháo cá",
+          "Đặc sản Trà Vinh"
+        ],
+        "main_ingredient": [
+          "cá lóc",
+          "gạo tẻ",
+          "tôm khô",
+          "mực khô"
+        ],
+        "cooking_method": [
+          "luộc",
+          "ninh cháo",
+          "xào"
+        ],
+        "difficulty": "Vừa",
+        "prep_time": 25,
+        "cook_time": 55,
+        "servings": 4,
+        "spicy_level": 1,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Rau đắng",
+          "Giá trụng",
+          "Bánh tráng mè nướng"
+        ],
+        "keywords": [
+          "Cháo ám Trà Vinh",
+          "Đồng bằng sông Cửu Long",
+          "Vĩnh Long (Trà Vinh cũ)",
+          "cá lóc",
+          "gạo tẻ",
+          "tôm khô",
+          "mực khô",
+          "cháo ám Trà Vinh",
+          "cháo cá lóc miền Tây",
+          "cháo cá lóc với trứng cá",
+          "Cháo cá",
+          "Đặc sản Trà Vinh",
+          "80 phút"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://vnexpress.net/cam-nang-du-lich-tra-vinh-4821602.html",
+          "publisher": "VnExpress Du lịch",
+          "title": "Cẩm nang du lịch Trà Vinh",
+          "use": "Đối chiếu cháo ám Trà Vinh làm từ cá lóc, nước luộc cá, cá gỡ xương, trứng cá, tôm khô, mực khô và rau ăn kèm.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://vnexpress.net/10-mon-ngon-tra-vinh-hut-hon-du-khach-3126390.html",
+          "publisher": "VnExpress Du lịch",
+          "title": "10 món ngon Trà Vinh hút hồn du khách",
+          "use": "Đối chiếu món cháo ám cùng hành nướng, tôm khô, mực nướng, rau, giá và bánh tráng mè.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://vinhlong.gov.vn/gioi-thieu-tinh-vinh-long",
+          "publisher": "Cổng thông tin điện tử tỉnh Vĩnh Long",
+          "title": "Giới thiệu tỉnh Vĩnh Long",
+          "use": "Xác nhận Trà Vinh hợp nhất vào tỉnh Vĩnh Long từ ngày 1/7/2025; món giữ tên địa phương lịch sử Trà Vinh.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=IS-_KkWJx1M",
+          "publisher": "THVL Tổng Hợp",
+          "title": "Bếp Việt: Cháo ám Trà Vinh",
+          "use": "Đối chiếu nhận diện cháo ám là món cháo cá lóc đặc trưng Trà Vinh.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Cháo ám Trà Vinh cho 2 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Cháo ám Trà Vinh cho 6 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Cháo ám Trà Vinh cho 8 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/chao-am-tra-vinh-960.webp",
+          "page_url": "https://vnexpress.net/cam-nang-du-lich-tra-vinh-4821602.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Tô cháo ám Trà Vinh với cá lóc gỡ xương, hành ngò, đậu phộng và rau ghém.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức do Bếp Việt biên tập dựa trên nguồn tham khảo; định lượng và thời gian cần được nấu thử trước khi xem là bản hoàn chỉnh.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để xác nhận định lượng, thời gian và khẩu vị với nguyên liệu phổ biến tại Việt Nam.",
+          "Rà soát cách sơ chế an toàn và cách dùng theo từng địa phương."
+        ]
+      },
+      "suggested_pairings": [
+        "Rau đắng",
+        "Giá trụng",
+        "Bánh tráng mè nướng"
+      ]
+    },
+    {
+      "id": "BV468",
+      "slug": "bon-bon-xao-tom-kho-ca-mau",
+      "name": "Bồn bồn xào tôm khô Cà Mau",
+      "aliases": [],
+      "region": [
+        "Đồng bằng sông Cửu Long"
+      ],
+      "province": [
+        "Cà Mau"
+      ],
+      "category": "Món rau",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "4 phần rau xào giòn nhẹ, ăn cùng cơm nóng.",
+      "prep_time": 15,
+      "cook_time": 10,
+      "passive_time": 0,
+      "description": "Lõi non bồn bồn giữ độ giòn ngọt khi đảo nhanh trên lửa lớn cùng tôm khô và hành. Đây là món rau dân dã gắn với vùng đất mũi Cà Mau; công thức Bếp Việt cân lượng sốt để rau vẫn sáng vị.",
+      "finished_dish": "Bồn bồn trắng ngà, giòn mọng, quyện vị tôm khô và hành thơm, không ra nhiều nước.",
+      "serving": "Dọn ngay khi vừa xào xong, rắc tiêu và ăn cùng cơm trắng. Có thể dùng thêm chanh nếu muốn vị tươi hơn.",
+      "tips": [
+        "Chọn phần lõi bồn bồn non, cắt bỏ đoạn già cứng và ngâm nước muối loãng.",
+        "Để ráo kỹ trước khi cho vào chảo để rau không hấp hơi và nhũn.",
+        "Xào nhanh trên lửa lớn, không đậy nắp."
+      ],
+      "dish_type": [
+        "Món xào",
+        "Đặc sản Cà Mau"
+      ],
+      "main_ingredient": [
+        "bồn bồn",
+        "tôm khô"
+      ],
+      "cooking_method": [
+        "xào"
+      ],
+      "search_terms": [
+        "bồn bồn xào tôm khô",
+        "bồn bồn xào Cà Mau",
+        "món ngon từ bồn bồn"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Đĩa bồn bồn Cà Mau xào tôm khô, hành lá và tiêu.",
+      "ingredients": [
+        {
+          "name": "Bồn bồn non",
+          "quantity": 500,
+          "unit": "g",
+          "role": "main",
+          "notes": "Tỉa bỏ bẹ già, cắt khúc.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Tôm khô",
+          "quantity": 70,
+          "unit": "g",
+          "role": "main",
+          "notes": "Ngâm mềm rồi để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 25,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 20,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": "Cắt nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng phi hành.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Dầu hào",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Gia giảm tùy độ mặn.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Rắc sau cùng.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Có thể thêm một ít nếu chảo khô.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Tỉa bỏ phần bồn bồn già, cắt khúc vừa ăn. Ngâm nước muối loãng 10 phút, rửa sạch và để thật ráo."
+        },
+        {
+          "step": 2,
+          "instruction": "Ngâm tôm khô khoảng 10 phút cho mềm, vớt ra để ráo. Băm hành tím và cắt nhỏ hành lá."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng chảo lớn ở lửa vừa-cao, thêm dầu và phi hành tím đến khi thơm."
+        },
+        {
+          "step": 2,
+          "instruction": "Cho tôm khô vào đảo 1–2 phút. Thêm bồn bồn, tăng lửa và đảo nhanh tay khoảng 3 phút."
+        },
+        {
+          "step": 3,
+          "instruction": "Nêm dầu hào, thêm chút nước nếu cần và tiếp tục đảo đến khi bồn bồn nóng đều nhưng vẫn giòn. Cho hành lá, tiêu rồi tắt bếp."
+        }
+      ],
+      "time_note": "Tổng thời gian không gồm thời gian ngâm tôm khô; rau cần được đảo nhanh để giữ độ giòn.",
+      "total_time": 25,
+      "time_unit": "phút",
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "bon-bon-xao-tom-kho-ca-mau",
+      "keywords": [
+        "Bồn bồn xào tôm khô Cà Mau",
+        "Đồng bằng sông Cửu Long",
+        "Cà Mau",
+        "bồn bồn",
+        "tôm khô",
+        "bồn bồn xào tôm khô",
+        "bồn bồn xào Cà Mau",
+        "món ngon từ bồn bồn",
+        "Món xào",
+        "Đặc sản Cà Mau",
+        "25 phút"
+      ],
+      "tags": {
+        "region": [
+          "Đồng bằng sông Cửu Long"
+        ],
+        "province": [
+          "Cà Mau"
+        ],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Món xào",
+          "Đặc sản Cà Mau"
+        ],
+        "main_ingredient": [
+          "bồn bồn",
+          "tôm khô"
+        ],
+        "cooking_method": [
+          "xào"
+        ],
+        "difficulty": "Dễ",
+        "prep_time": 15,
+        "cook_time": 10,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Cơm trắng",
+          "Cá kho",
+          "Canh rau"
+        ],
+        "keywords": [
+          "Bồn bồn xào tôm khô Cà Mau",
+          "Đồng bằng sông Cửu Long",
+          "Cà Mau",
+          "bồn bồn",
+          "tôm khô",
+          "bồn bồn xào tôm khô",
+          "bồn bồn xào Cà Mau",
+          "món ngon từ bồn bồn",
+          "Món xào",
+          "Đặc sản Cà Mau",
+          "25 phút"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://vnexpress.net/bon-bon-xao-dan-da-4399144.html",
+          "publisher": "VnExpress Cooking",
+          "title": "Bồn bồn xào dân dã",
+          "use": "Đối chiếu nguyên liệu bồn bồn, tôm khô, hành, cách sơ chế ngâm muối và xào nhanh.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://vnexpress.net/nguoc-mien-tay-nem-mon-bon-bon-la-mieng-3011665.html",
+          "publisher": "VnExpress Du lịch",
+          "title": "Ngược miền Tây nếm món bồn bồn lạ miệng",
+          "use": "Đối chiếu bồn bồn là sản vật ẩm thực miền Tây và cách dùng trong món xào.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Bồn bồn xào tôm khô Cà Mau cho 2 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Bồn bồn xào tôm khô Cà Mau cho 6 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Bồn bồn xào tôm khô Cà Mau cho 8 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/bon-bon-xao-tom-kho-ca-mau-960.webp",
+          "page_url": "https://vnexpress.net/bon-bon-xao-dan-da-4399144.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa bồn bồn Cà Mau xào tôm khô, hành lá và tiêu.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức do Bếp Việt biên tập dựa trên nguồn tham khảo; định lượng và thời gian cần được nấu thử trước khi xem là bản hoàn chỉnh.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để xác nhận định lượng, thời gian và khẩu vị với nguyên liệu phổ biến tại Việt Nam.",
+          "Rà soát cách sơ chế an toàn và cách dùng theo từng địa phương."
+        ]
+      },
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Cá kho",
+        "Canh rau"
+      ]
+    },
+    {
+      "id": "BV469",
+      "slug": "che-bot-loc-boc-heo-quay-hue",
+      "name": "Chè bột lọc bọc heo quay Huế",
+      "aliases": [],
+      "region": [
+        "Bắc Trung Bộ"
+      ],
+      "province": [
+        "Huế"
+      ],
+      "category": "Món tráng miệng",
+      "meal_type": [
+        "tráng miệng"
+      ],
+      "difficulty": "Vừa",
+      "servings": 6,
+      "serving_basis": "6 chén chè nhỏ dùng nóng hoặc nguội.",
+      "prep_time": 35,
+      "cook_time": 45,
+      "passive_time": 0,
+      "description": "Viên bột lọc trong dai ôm nhân heo quay rim đường phèn, thả trong nước gừng ngọt thanh. Bếp Việt biên tập lượng đường vừa phải để vị mặn béo của nhân vẫn rõ, giữ nét chè mặn ngọt riêng của Huế.",
+      "finished_dish": "Viên bột lọc mềm dai, trong nhẹ, nhân heo quay đậm vị mặn ngọt; nước chè thơm gừng, không quá gắt đường.",
+      "serving": "Múc vài viên cùng nước gừng vào chén nhỏ, rắc lạc rang. Dùng ấm để cảm nhận mùi gừng hoặc thêm đá khi muốn ăn mát.",
+      "tips": [
+        "Thái heo quay thành hạt lựu nhỏ, bỏ phần bì quá cứng để viên nhân dễ bọc.",
+        "Nhồi bột với nước nóng từng ít một; dừng khi khối bột dẻo, không dính tay.",
+        "Luộc viên đến khi nổi rồi nấu thêm vài phút để lớp bột quanh nhân chín đều."
+      ],
+      "dish_type": [
+        "Chè Huế",
+        "Chè mặn ngọt"
+      ],
+      "main_ingredient": [
+        "bột năng",
+        "thịt heo quay"
+      ],
+      "cooking_method": [
+        "rim",
+        "nhồi bột",
+        "luộc"
+      ],
+      "search_terms": [
+        "chè bột lọc heo quay Huế",
+        "chè bột lọc bọc thịt quay",
+        "chè Huế mặn ngọt"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Chén chè Huế với viên bột lọc trong, nhân heo quay, nước gừng và lạc rang.",
+      "ingredients": [
+        {
+          "name": "Thịt heo quay",
+          "quantity": 180,
+          "unit": "g",
+          "role": "main",
+          "notes": "Thái hạt lựu khoảng 0,5 cm.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Bột năng",
+          "quantity": 300,
+          "unit": "g",
+          "role": "main",
+          "notes": "Giữ lại một ít để áo tay khi nặn.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Đường phèn",
+          "quantity": 170,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Chia làm phần rim nhân và nấu nước chè.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Đường cát",
+          "quantity": 25,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Gia giảm theo khẩu vị.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Gừng tươi",
+          "quantity": 35,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Một phần thái lát, một phần thái sợi.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Lạc rang",
+          "quantity": 30,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": "Giã dập, rắc khi dùng.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Nước nóng",
+          "quantity": 200,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Rót từ từ khi nhào; lượng cần dùng có thể thay đổi.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 1200,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng rim nhân và nấu nước chè.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Muối",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Tùy chọn, giúp cân vị.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Thái thịt heo quay thành hạt lựu nhỏ. Gọt vỏ gừng; một nửa thái lát, phần còn lại thái sợi."
+        },
+        {
+          "step": 2,
+          "instruction": "Cho thịt quay vào nồi nhỏ với 50 g đường phèn, 80 ml nước và chút muối. Rim lửa nhỏ 8–10 phút cho thịt thấm, vớt ra để nguội."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho bột năng vào âu, rót nước nóng từng ít một và dùng đũa trộn. Khi bột bớt nóng, nhồi đến khi khối bột dẻo mịn; đậy kín để không khô."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Ngắt bột thành viên khoảng 15 g, ấn dẹt, đặt ít nhân thịt ở giữa rồi túm kín mép và vo tròn. Xếp lên khay có phủ lớp bột mỏng."
+        },
+        {
+          "step": 2,
+          "instruction": "Đun sôi nồi nước riêng, thả từng mẻ viên bột vào. Khi viên nổi lên, nấu thêm 3–4 phút rồi vớt vào nước mát để giữ độ dai; để ráo."
+        },
+        {
+          "step": 3,
+          "instruction": "Đun 1.120 ml nước với phần đường phèn còn lại và gừng lát ở lửa nhỏ đến khi đường tan, nước thơm. Thêm đường cát nếu cần."
+        },
+        {
+          "step": 4,
+          "instruction": "Cho viên bột lọc vào nồi nước đường, đun liu riu 5 phút để thấm vị. Múc ra chén, thêm gừng sợi và lạc rang."
+        }
+      ],
+      "time_note": "Tổng thời gian tùy độ nóng và lượng nước dùng để nhào bột; chuẩn bị nhân bằng heo quay đã chín.",
+      "total_time": 80,
+      "time_unit": "phút",
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "che-bot-loc-boc-heo-quay-hue",
+      "keywords": [
+        "Chè bột lọc bọc heo quay Huế",
+        "Bắc Trung Bộ",
+        "Huế",
+        "bột năng",
+        "thịt heo quay",
+        "chè bột lọc heo quay Huế",
+        "chè bột lọc bọc thịt quay",
+        "chè Huế mặn ngọt",
+        "Chè Huế",
+        "Chè mặn ngọt",
+        "80 phút"
+      ],
+      "tags": {
+        "region": [
+          "Bắc Trung Bộ"
+        ],
+        "province": [
+          "Huế"
+        ],
+        "meal_type": [
+          "tráng miệng"
+        ],
+        "dish_type": [
+          "Chè Huế",
+          "Chè mặn ngọt"
+        ],
+        "main_ingredient": [
+          "bột năng",
+          "thịt heo quay"
+        ],
+        "cooking_method": [
+          "rim",
+          "nhồi bột",
+          "luộc"
+        ],
+        "difficulty": "Vừa",
+        "prep_time": 35,
+        "cook_time": 45,
+        "servings": 6,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Trà sen",
+          "Trà gừng"
+        ],
+        "keywords": [
+          "Chè bột lọc bọc heo quay Huế",
+          "Bắc Trung Bộ",
+          "Huế",
+          "bột năng",
+          "thịt heo quay",
+          "chè bột lọc heo quay Huế",
+          "chè bột lọc bọc thịt quay",
+          "chè Huế mặn ngọt",
+          "Chè Huế",
+          "Chè mặn ngọt",
+          "80 phút"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://khamphahue.com.vn/Truyen-thong-so/Tin-tuyen-dung/tid/Che-bot-loc-boc-thit-heo-quay.html/pid/10140/cid/313",
+          "publisher": "Khám phá Huế (HueCIT)",
+          "title": "Chè bột lọc bọc thịt heo quay",
+          "use": "Đối chiếu nguyên liệu bột lọc, heo quay, đường phèn, gừng, cách bọc nhân, nấu viên trong nước đường và dùng cùng lạc rang.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://vnexpress.net/quan-che-noi-danh-nho-mon-bot-loc-heo-quay-4522203.html",
+          "publisher": "VnExpress Du lịch",
+          "title": "Quán chè nổi danh nhờ món bột lọc heo quay",
+          "use": "Đối chiếu món chè này là món đặc trưng gắn với chè Huế và vị kết hợp ngọt mặn.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 6,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.3333333333333333,
+            "seasoning_start_factor": 0.3333333333333333,
+            "example": "Chè bột lọc bọc heo quay Huế cho 2 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.0,
+            "seasoning_start_factor": 1.0,
+            "example": "Chè bột lọc bọc heo quay Huế cho 6 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 8,
+            "main_factor": 1.3333333333333333,
+            "seasoning_start_factor": 1.3333333333333333,
+            "example": "Chè bột lọc bọc heo quay Huế cho 8 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/che-bot-loc-boc-heo-quay-hue-960.webp",
+          "page_url": "https://khamphahue.com.vn/Truyen-thong-so/Tin-tuyen-dung/tid/Che-bot-loc-boc-thit-heo-quay.html/pid/10140/cid/313",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Chén chè Huế với viên bột lọc trong, nhân heo quay, nước gừng và lạc rang.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức do Bếp Việt biên tập dựa trên nguồn tham khảo; định lượng và thời gian cần được nấu thử trước khi xem là bản hoàn chỉnh.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để xác nhận định lượng, thời gian và khẩu vị với nguyên liệu phổ biến tại Việt Nam.",
+          "Rà soát cách sơ chế an toàn và cách dùng theo từng địa phương."
+        ]
+      },
+      "suggested_pairings": [
+        "Trà sen",
+        "Trà gừng"
+      ]
+    },
+    {
+      "id": "BV470",
+      "slug": "men-men-ha-giang",
+      "name": "Mèn mén người Mông (Hà Giang cũ)",
+      "aliases": [],
+      "region": [
+        "Đông Bắc Bộ"
+      ],
+      "province": [
+        "Tuyên Quang (Hà Giang cũ)"
+      ],
+      "category": "Món chay",
+      "meal_type": [
+        "bữa sáng",
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Vừa",
+      "servings": 4,
+      "serving_basis": "4 phần mèn mén làm từ bột ngô tẻ, dùng như món tinh bột trong bữa.",
+      "prep_time": 30,
+      "cook_time": 100,
+      "passive_time": 0,
+      "description": "Mèn mén là món bột ngô hấp truyền thống của người Mông trên cao nguyên đá Đồng Văn (Hà Giang cũ, nay thuộc Tuyên Quang). Bột ngô tẻ được làm ẩm vừa đủ, sàng tơi rồi đồ hai lần; giữa hai lượt cần đảo và tách phần vón để hạt chín đều. Bếp Việt ghi lại phiên bản dùng bột ngô xay sẵn cho căn bếp gia đình.",
+      "finished_dish": "Hạt bột ngô chín mềm, tơi rời, thơm bùi tự nhiên và không nêm gia vị.",
+      "serving": "Dùng nóng cùng canh rau hoặc canh đậu; nếu ăn mặn có thể dọn kèm món kho riêng. Bản thân mèn mén giữ vị ngô tự nhiên.",
+      "tips": [
+        "Dùng bột ngô tẻ xay mịn, rây bỏ mảnh vỏ cứng; không dùng bột bắp ăn liền đã nấu chín.",
+        "Rưới nước từng ít và xoa cho bột tơi như cát ẩm, tránh để bết thành cục lớn.",
+        "Đồ hai lần và đảo tơi ở giữa; lượng nước và thời gian cần điều chỉnh theo độ mịn, độ già của ngô."
+      ],
+      "dish_type": [
+        "Món ngô truyền thống",
+        "Ẩm thực người Mông"
+      ],
+      "main_ingredient": [
+        "ngô tẻ"
+      ],
+      "cooking_method": [
+        "xay",
+        "làm ẩm",
+        "đồ hấp"
+      ],
+      "search_terms": [
+        "mèn mén Hà Giang cũ Tuyên Quang",
+        "bột ngô hấp người Mông",
+        "cơm ngô vùng cao"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Đĩa mèn mén Hà Giang vàng nhạt, hạt ngô hấp tơi xốp trong mẹt tre.",
+      "ingredients": [
+        {
+          "name": "Bột ngô tẻ xay",
+          "quantity": 500,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn loại không gia vị, không nấu chín sẵn.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Nước ấm",
+          "quantity": 320,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Rưới từng ít; có thể cần thêm hoặc bớt.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rây bột ngô để bỏ mảnh vỏ cứng và cục lớn."
+        },
+        {
+          "step": 2,
+          "instruction": "Rưới nước ấm từng ít một, dùng tay xoa và đảo để bột ẩm đều nhưng vẫn tơi; để nghỉ 10 phút rồi rây lại."
+        },
+        {
+          "step": 3,
+          "instruction": "Đun sẵn nước trong nồi hấp; lót chõ bằng vải sạch hoặc xửng có lỗ nhỏ để bột không lọt xuống."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Rải bột ngô thành lớp tơi trong chõ, hấp lần đầu khoảng 35–45 phút kể từ khi hơi nước bốc đều."
+        },
+        {
+          "step": 2,
+          "instruction": "Đổ bột ra mẹt hoặc khay rộng, để nguội bớt. Dùng tay sạch xoa tơi, tách các cục lớn; rưới thêm từng ít nước nếu còn khô."
+        },
+        {
+          "step": 3,
+          "instruction": "Rây lại rồi cho vào chõ hấp lần hai khoảng 35–45 phút đến khi bột ngô chín mềm, tơi và không còn lõi bột sống."
+        },
+        {
+          "step": 4,
+          "instruction": "Dỡ mèn mén ra khay, xới tơi lần cuối và dùng nóng với canh rau hoặc canh đậu."
+        }
+      ],
+      "time_note": "Cách làm truyền thống có thể kéo dài 2–3 giờ; thời lượng ở đây giả định bột đã xay sẵn và thay đổi theo cỡ hạt.",
+      "total_time": 130,
+      "time_unit": "phút",
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "men-men-ha-giang",
+      "keywords": [
+        "Mèn mén người Mông (Hà Giang cũ)",
+        "Đông Bắc Bộ",
+        "Tuyên Quang (Hà Giang cũ)",
+        "ngô tẻ",
+        "mèn mén Hà Giang cũ Tuyên Quang",
+        "bột ngô hấp người Mông",
+        "cơm ngô vùng cao",
+        "Món ngô truyền thống",
+        "Ẩm thực người Mông",
+        "130 phút"
+      ],
+      "tags": {
+        "region": [
+          "Đông Bắc Bộ"
+        ],
+        "province": [
+          "Tuyên Quang (Hà Giang cũ)"
+        ],
+        "meal_type": [
+          "bữa sáng",
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Món ngô truyền thống",
+          "Ẩm thực người Mông"
+        ],
+        "main_ingredient": [
+          "ngô tẻ"
+        ],
+        "cooking_method": [
+          "xay",
+          "làm ẩm",
+          "đồ hấp"
+        ],
+        "difficulty": "Vừa",
+        "prep_time": 30,
+        "cook_time": 100,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Canh rau cải",
+          "Canh đậu",
+          "Rau luộc"
+        ],
+        "keywords": [
+          "Mèn mén người Mông (Hà Giang cũ)",
+          "Đông Bắc Bộ",
+          "Tuyên Quang (Hà Giang cũ)",
+          "ngô tẻ",
+          "mèn mén Hà Giang cũ Tuyên Quang",
+          "bột ngô hấp người Mông",
+          "cơm ngô vùng cao",
+          "Món ngô truyền thống",
+          "Ẩm thực người Mông",
+          "130 phút"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.vietnamplus.vn/men-men-dac-san-doc-nhat-vo-nhi-cua-nguoi-mong-o-ha-giang/868631.vnp",
+          "publisher": "VietnamPlus",
+          "title": "Mèn mén: Đặc sản độc nhất vô nhị của người Mông ở Hà Giang",
+          "use": "Đối chiếu món ăn truyền thống từ ngô tẻ xay, làm ẩm, sàng và đồ hai lần.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://vnexpress.net/cac-mon-an-dan-toc-noi-tieng-o-ha-giang-4378973.html",
+          "publisher": "VnExpress Du lịch",
+          "title": "Các món ăn dân tộc nổi tiếng ở Hà Giang",
+          "use": "Đối chiếu mèn mén là món ăn hàng ngày truyền thống của người Mông và cách dùng cùng món canh.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://govietnam.travel/food/men-men-men-men-ngo-2/",
+          "publisher": "Go Vietnam Travel",
+          "title": "Mèn mén Tuyên Quang",
+          "use": "Đối chiếu mèn mén gắn với người Mông trên cao nguyên đá Đồng Văn, Hà Giang cũ nay thuộc Tuyên Quang.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://www.tuyenquang.gov.vn/vi/gioi-thieu/gioi-thieu-chung?id=442&type=NEWS",
+          "publisher": "Cổng thông tin điện tử tỉnh Tuyên Quang",
+          "title": "Giới thiệu chung về tỉnh Tuyên Quang mới",
+          "use": "Xác nhận Hà Giang và Tuyên Quang hợp nhất, lấy tên tỉnh Tuyên Quang từ ngày 1/7/2025.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Mèn mén người Mông (Hà Giang cũ) cho 2 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Mèn mén người Mông (Hà Giang cũ) cho 6 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Mèn mén người Mông (Hà Giang cũ) cho 8 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/men-men-ha-giang-960.webp",
+          "page_url": "https://www.vietnamplus.vn/men-men-dac-san-doc-nhat-vo-nhi-cua-nguoi-mong-o-ha-giang/868631.vnp",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa mèn mén Hà Giang vàng nhạt, hạt ngô hấp tơi xốp trong mẹt tre.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức do Bếp Việt biên tập dựa trên nguồn tham khảo; định lượng và thời gian cần được nấu thử trước khi xem là bản hoàn chỉnh.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để xác nhận định lượng, thời gian và khẩu vị với nguyên liệu phổ biến tại Việt Nam.",
+          "Rà soát cách sơ chế an toàn và cách dùng theo từng địa phương."
+        ]
+      },
+      "suggested_pairings": [
+        "Canh rau cải",
+        "Canh đậu",
+        "Rau luộc"
+      ]
+    }
+  ]
+}

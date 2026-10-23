@@ -48,6 +48,12 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (min-width: 1024px) {
+  html {
+    zoom: 0.9;
+  }
+}
+
 body {
   margin: 0;
   min-width: 320px;

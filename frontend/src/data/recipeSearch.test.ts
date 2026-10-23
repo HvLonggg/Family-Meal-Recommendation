@@ -23,6 +23,22 @@ describe('Vietnamese recipe search', () => {
     expect(matchesSearch('bun cha', ['Bún tươi', 'Lá chanh'])).toBe(false);
   });
 
+  it('searches across Vietnamese and English names and handles a small typo', () => {
+    const carp = getRecipe('ca-chep-kho-rieng')!;
+
+    expect(matchesRecipeSearch(carp, 'carp braised with galangal')).toBe(true);
+    expect(matchesRecipeSearch(carp, 'ca cheep kho rieng')).toBe(true);
+    expect(matchesSearch('canh chua', ['Canh chua cá'])).toBe(true);
+    expect(matchesRecipeSearch(getRecipe('trung-chien-rau-cu')!, 'Món gà')).toBe(false);
+  });
+
+  it('keeps similar Vietnamese dish names distinct while tolerating unaccented typos', () => {
+    expect(matchesSearch('muop dang sao trung', ['Mướp đắng xào trứng'])).toBe(true);
+    expect(matchesSearch('bau sao trung', ['Bầu xào trứng'])).toBe(true);
+    expect(matchesSearch('bau sao trung', ['Mướp đắng xào trứng'])).toBe(false);
+    expect(matchesSearch('muop dang sao trung', ['Bầu xào trứng'])).toBe(false);
+  });
+
   it('returns no invented results and supports the existing time suggestion', () => {
     expect(recipes.filter((recipe) => matchesRecipeSearch(recipe, 'khôngcómónnày'))).toEqual([]);
     expect(

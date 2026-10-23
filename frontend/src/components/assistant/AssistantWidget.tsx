@@ -22,7 +22,8 @@ import {
   getConversation,
   listConversations,
   renameConversation,
-  sendAssistantMessage,
+  streamAssistantMessage,
+  streamingText,
   type AssistantMessage,
   type ConversationSummary,
 } from '@/features/assistant/assistantApi';
@@ -35,6 +36,7 @@ import {
   type PendingAttachment,
 } from '@/features/assistant/attachments';
 import { guestStore } from '@/features/assistant/guestStore';
+import { dayPart, dayPartPrompts } from '@/features/assistant/dayPart';
 import { pickTeaser, teaserReplies } from '@/features/assistant/teasers';
 import { useSpeechRecognition, useSpeechSynthesis } from '@/features/assistant/useSpeech';
 import { useAuth } from '@/features/auth/AuthContext';
@@ -46,9 +48,10 @@ type VoiceState = 'off' | 'listening' | 'thinking' | 'speaking' | 'paused';
 
 const TEASER_SNOOZE_KEY = 'bep-viet.assistant.teaser-snooze';
 const TEASER_COUNT_KEY = 'bep-viet.assistant.teaser-count';
-const FIRST_TEASER_MS = 18_000;
-const NEXT_TEASER_MS = 120_000;
-const TEASER_VISIBLE_MS = 5_000;
+const TEASER_SNOOZE_MS = 15 * 60_000;
+const FIRST_TEASER_MS = 10_000;
+const NEXT_TEASER_MS = 55_000;
+const TEASER_VISIBLE_MS = 6_000;
 const MAX_TEASERS_PER_SESSION = 30;
 
 function safeGet(storage: 'local' | 'session', key: string) {
@@ -110,6 +113,8 @@ export function AssistantWidget() {
   const [input, setInput] = useState('');
   const [files, setFiles] = useState<PendingAttachment[]>([]);
   const [sending, setSending] = useState(false);
+  // Chữ AI đang viết dở (stream): hiện ngay thay cho dấu ba chấm chờ.
+  const [streamText, setStreamText] = useState('');
   const [notice, setNotice] = useState<string | null>(null);
   const [dragging, setDragging] = useState(false);
   const [teaser, setTeaser] = useState<string | null>(null);
@@ -187,7 +192,7 @@ export function AssistantWidget() {
 
   const dismissTeaser = () => {
     setTeaser(null);
-    safeSet('local', TEASER_SNOOZE_KEY, String(Date.now() + 30 * 60_000));
+    safeSet('local', TEASER_SNOOZE_KEY, String(Date.now() + TEASER_SNOOZE_MS));
   };
 
   // ---------------- Mở / đóng ----------------
@@ -230,7 +235,7 @@ export function AssistantWidget() {
     } else {
       log.scrollTop = log.scrollHeight;
     }
-  }, [messages, sending]);
+  }, [messages, sending, streamText]);
 
   useEffect(() => {
     document.body.classList.toggle('has-assistant-open', open);
@@ -280,27 +285,36 @@ export function AssistantWidget() {
       setInput('');
       setFiles([]);
       setSending(true);
+      setStreamText('');
       try {
-        const result = await sendAssistantMessage({
-          message: text,
-          conversation_id: member ? conversationId : null,
-          language,
-          history: member
-            ? undefined
-            : before.slice(-12).map((message) => ({
-                role: message.role,
-                content: message.content.slice(0, 6000),
-              })),
-          attachments: pending.map((file) => ({
-            name: file.name,
-            content_type: file.contentType,
-            data: file.data,
-            thumbnail: file.thumbnail,
-          })),
-          recent_recipes: before
-            .flatMap((message) => message.recipes.map((r) => r.slug))
-            .slice(-30),
-        });
+        let streamed = '';
+        const onDelta = (chunk: string) => {
+          streamed += chunk;
+          setStreamText(streamed);
+        };
+        const result = await streamAssistantMessage(
+          {
+            message: text,
+            conversation_id: member ? conversationId : null,
+            language,
+            history: member
+              ? undefined
+              : before.slice(-12).map((message) => ({
+                  role: message.role,
+                  content: message.content.slice(0, 6000),
+                })),
+            attachments: pending.map((file) => ({
+              name: file.name,
+              content_type: file.contentType,
+              data: file.data,
+              thumbnail: file.thumbnail,
+            })),
+            recent_recipes: before
+              .flatMap((message) => message.recipes.map((r) => r.slug))
+              .slice(-30),
+          },
+          { onDelta },
+        );
         const userMessage = {
           ...result.user_message,
           attachments: result.user_message.attachments.map((file, index) => ({
@@ -329,6 +343,7 @@ export function AssistantWidget() {
         return null;
       } finally {
         setSending(false);
+        setStreamText('');
       }
     },
     [conversationId, files, language, member, persistGuest, queryClient, sending, t],
@@ -569,15 +584,11 @@ export function AssistantWidget() {
         : sending || voice === 'thinking'
           ? 'thinking'
           : 'happy';
-  const hour = new Date().getHours();
-  const greeting =
-    hour < 10
-      ? t('Chào buổi sáng! Bữa sáng nay ăn gì nhỉ?')
-      : hour < 14
-        ? t('Trưa rồi! Hôm nay ăn trưa món gì đây?')
-        : t('Chào bạn! Bữa tối nay bạn ăn gì?');
+  // Lời chào và câu hỏi gợi ý theo buổi giờ Việt Nam (sáng, trưa, chiều, tối, khuya).
+  const moment = dayPartPrompts[dayPart()];
+  const greeting = t(moment.greeting);
   const starters = [
-    t('Tối nay ăn gì?'),
+    t(moment.starter),
     t('Gợi ý mâm cơm 4 người'),
     t('Món chay dưới 30 phút'),
     t('Tủ lạnh còn trứng và cà chua'),
@@ -643,7 +654,7 @@ export function AssistantWidget() {
         >
           <header className="rc-header">
             <span className="rc-header__avatar" aria-hidden="true">
-              <DragonMascot mood={mood} size={50} variant="face" />
+              <DragonMascot mood={mood} size={68} />
             </span>
             <div className="rc-header__title">
               <strong>{t('Chú Rồng')}</strong>
@@ -893,7 +904,28 @@ export function AssistantWidget() {
                     />
                   ))
                 )}
-                {sending ? (
+                {sending && streamText ? (
+                  <AssistantMessageView
+                    canSpeak={false}
+                    isLatest={false}
+                    message={{
+                      id: 'streaming',
+                      role: 'assistant',
+                      content: streamingText(streamText),
+                      created_at: new Date().toISOString(),
+                      recipes: [],
+                      suggestions: [],
+                      actions: [],
+                      attachments: [],
+                      mode: 'ai',
+                    }}
+                    onNavigate={() => setExpanded(false)}
+                    onRetry={() => undefined}
+                    onSpeak={() => undefined}
+                    onSuggestion={() => undefined}
+                    speaking={false}
+                  />
+                ) : sending ? (
                   <li
                     className="rc-message is-bot rc-typing"
                     aria-label={t('Chú Rồng đang soạn trả lời')}

@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
+import { spokenUnits, toSpokenLang } from '@/features/assistant/spokenUnits';
+
 /** Kiểu tối thiểu của Web Speech API (Chrome/Edge/Safari dùng tiền tố webkit). */
 interface SpeechRecognitionAlternativeLike {
   transcript: string;
@@ -120,16 +122,18 @@ export function useSpeechRecognition() {
   return { supported, listening, start, stop, abort };
 }
 
-/** Bỏ ký hiệu định dạng để máy đọc tự nhiên. */
-export function speakableText(markdown: string) {
-  return markdown
+/**
+ * Bỏ ký hiệu định dạng và đọc đơn vị/số thành lời (250g → 250 gam) để máy đọc tự nhiên.
+ * `lang` nhận 'vi' | 'en' hoặc dạng 'vi-VN', 'en-US'.
+ */
+export function speakableText(markdown: string, lang = 'vi') {
+  const plain = markdown
     .replace(/\*\*(.+?)\*\*/g, '$1')
     .replace(/\*(.+?)\*/g, '$1')
     .replace(/^\s*-\s+/gm, '')
     .replace(/[#>`_]/g, '')
-    .replace(/\p{Extended_Pictographic}/gu, '')
-    .replace(/\s+/g, ' ')
-    .trim();
+    .replace(/\p{Extended_Pictographic}/gu, '');
+  return spokenUnits(plain, toSpokenLang(lang)).replace(/\s+/g, ' ').trim();
 }
 
 export function useSpeechSynthesis() {
@@ -149,7 +153,7 @@ export function useSpeechSynthesis() {
         return;
       }
       window.speechSynthesis.cancel();
-      const utterance = new SpeechSynthesisUtterance(speakableText(text));
+      const utterance = new SpeechSynthesisUtterance(speakableText(text, lang));
       utterance.lang = lang;
       const voice = window.speechSynthesis
         .getVoices()

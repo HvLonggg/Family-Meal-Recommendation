@@ -12,6 +12,7 @@ import '@/styles/workspace.css';
 import '@/styles/admin.css';
 import '@/styles/community.css';
 import '@/styles/assistant.css';
+import '@/styles/cooking.css';
 
 const rootElement = document.getElementById('root');
 

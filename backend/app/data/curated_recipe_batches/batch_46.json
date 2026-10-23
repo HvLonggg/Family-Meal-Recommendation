@@ -1,0 +1,1393 @@
+{
+  "batch": 46,
+  "description": "Năm món gia đình miền Trung được đối chiếu nguồn; công thức do Bếp Việt biên tập cho mẻ bốn người, chưa nấu thử và có ảnh tạo riêng nền trong suốt.",
+  "recipes": [
+    {
+      "id": "BV556",
+      "slug": "mit-non-nau-canh-ca-chuon-quang-nam",
+      "name": "Mít non nấu canh cá chuồn Quảng Nam",
+      "aliases": [
+        "Canh mít non cá chuồn",
+        "Mít non nấu cá chuồn xứ Quảng",
+        "Canh cá chuồn mít non"
+      ],
+      "region": [
+        "Trung"
+      ],
+      "province": [
+        "Quảng Nam"
+      ],
+      "category": "Món canh",
+      "meal_type": [
+        "trưa",
+        "tối"
+      ],
+      "difficulty": "Vừa",
+      "servings": 4,
+      "serving_basis": "Một nồi canh cho bốn người, dùng chung với cơm nóng trong mâm cơm gia đình.",
+      "prep_time": 20,
+      "cook_time": 25,
+      "passive_time": 0,
+      "description": "Nồi canh dân dã kết hợp mít non từ vườn với cá chuồn vùng biển Quảng Nam. Mít được nấu mềm tới trong, cá ngọt thơm; Bếp Việt biên tập lượng nước và gia vị cho nồi gia đình, giữ vị thanh cùng chút chát dịu của mít non.",
+      "finished_dish": "Miếng mít non vàng nhạt, mềm nhưng còn nguyên cạnh nằm cùng khúc cá chuồn chín trong nước canh vàng nhẹ; điểm hành lá và rau thơm.",
+      "serving": "Múc cả nước lẫn cái vào tô, dùng nóng cùng cơm trắng. Có thể dọn nước mắm ớt xanh riêng; nêm nhẹ để vị mít vẫn rõ.",
+      "tips": [
+        "Nếu sơ chế mít tươi, thoa ít dầu lên dao và tay để hạn chế nhựa; ngâm miếng mít trong nước muối loãng rồi rửa sạch.",
+        "Chọn cá chuồn tươi hoặc đã làm sạch, bỏ mang và ruột; thấm khô trước khi nấu.",
+        "Cho cá vào nồi trước, chỉ khuấy nhẹ; thêm mít khi cá vừa săn để miếng cá không vỡ."
+      ],
+      "dish_type": [
+        "Canh cá và mít non",
+        "Món nhà xứ Quảng"
+      ],
+      "main_ingredient": [
+        "cá chuồn",
+        "mít non"
+      ],
+      "cooking_method": [
+        "nấu canh",
+        "sơ chế mít non",
+        "om cá"
+      ],
+      "search_terms": [
+        "mít non nấu canh cá chuồn",
+        "canh mít non Quảng Nam",
+        "cá chuồn nấu mít non",
+        "món canh miền Trung",
+        "canh cá chuồn xứ Quảng"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Tô canh mít non nấu cá chuồn kiểu Quảng Nam với miếng mít mềm, cá chuồn chín, hành lá và rau thơm.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Cá nục kho cà chua",
+        "Rau luộc"
+      ],
+      "recipe_family": "quang_nam_young_jackfruit_flying_fish_soup",
+      "ingredients": [
+        {
+          "name": "Cá chuồn đã làm sạch",
+          "quantity": 450,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn cá tươi, bỏ mang và ruột; có thể cắt khúc vừa ăn.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Mít non đã gọt vỏ",
+          "quantity": 450,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Cân phần ăn được; mít nguyên trái còn phần bỏ đi.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 1100,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Điều chỉnh vừa đủ ngập nguyên liệu.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 20,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, đập dập hoặc thái lát.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng phi thơm hành.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm khởi điểm, điều chỉnh theo độ mặn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 6
+        },
+        {
+          "name": "Muối",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng ướp cá và nêm canh.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 7
+        },
+        {
+          "name": "Ớt xanh",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "seasoning",
+          "notes": "Tùy chọn, để nguyên hoặc đập dập.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 12,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Rau răm",
+          "quantity": 8,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, thái vừa; cho vào cuối.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Thoa lớp dầu mỏng lên dao nếu sơ chế mít tươi. Bỏ vỏ và lõi xơ, cắt miếng dày 2 cm; ngâm nước muối loãng 10 phút, xả sạch, để ráo."
+        },
+        {
+          "step": 2,
+          "instruction": "Rửa cá, bỏ mang và ruột nếu chưa làm sạch; thấm khô, cắt khúc. Ướp với một phần muối và nước mắm trong 10 phút."
+        },
+        {
+          "step": 3,
+          "instruction": "Bóc hành tím, rửa hành lá và rau răm; thái nhỏ rau thơm. Chuẩn bị nồi nước sôi nhẹ."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đun nóng dầu, phi hành tím thơm nhẹ. Xếp cá vào nồi, trở nhẹ trong 2–3 phút cho mặt cá săn."
+        },
+        {
+          "step": 2,
+          "instruction": "Thêm nước nóng, đun sôi nhẹ rồi hạ lửa; nấu cá khoảng 7–8 phút, hớt bọt nếu có."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho mít non vào, nấu lửa vừa nhỏ thêm 12–15 phút đến khi mít mềm trong nhưng chưa bở và cá chín tới. Nêm phần nước mắm, muối còn lại."
+        },
+        {
+          "step": 4,
+          "instruction": "Tắt bếp, thêm hành lá và rau răm. Múc ra tô, tránh đảo mạnh làm nát cá."
+        }
+      ],
+      "keywords": [
+        "cá chuồn",
+        "mít non",
+        "Quảng Nam",
+        "xứ Quảng",
+        "canh gia đình"
+      ],
+      "tags": [
+        "món Trung",
+        "Quảng Nam",
+        "canh",
+        "cá",
+        "bữa cơm gia đình"
+      ],
+      "sources": [
+        {
+          "url": "https://thanhnien.vn/van-vuong-huong-mit-185268420.htm",
+          "publisher": "Báo Thanh Niên",
+          "title": "Vấn vương hương mít",
+          "use": "Xác minh việc dùng mít non nấu canh hoặc kho với cá chuồn trong bữa ăn miền Trung; định lượng và cách nấu gia đình do Bếp Việt biên tập.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://tepbac.com/tin-tuc/full/mit-non-nau-voi-ca-chuon-6120.html",
+          "publisher": "Tép Bạc",
+          "title": "Mít non nấu với cá chuồn",
+          "use": "Đối chiếu tổ hợp cá chuồn và mít non cùng trình tự nấu canh; khẩu phần và gia vị được Bếp Việt chuẩn hóa.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Cá chuồn 225 g, mít non 225 g; khoảng 550 ml nước.",
+            "instruction": "Nấu nồi nhỏ, giảm gia vị theo mức khởi điểm rồi nếm lại."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.25,
+            "example": "Cá chuồn 675 g, mít non 675 g; khoảng 1.6 lít nước.",
+            "instruction": "Nấu cá thành lớp trong nồi rộng; gia vị tăng từ từ và cân lại sau khi nếm."
+          }
+        ]
+      },
+      "total_time": 45,
+      "time_unit": "minute",
+      "time_note": "Khoảng 45 phút theo các bước tuần tự, chưa tính thời gian mua nguyên liệu.",
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/mit-non-nau-canh-ca-chuon-quang-nam-960.webp",
+          "page_url": "https://thanhnien.vn/van-vuong-huong-mit-185268420.htm",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh tạo riêng cho Bếp Việt; nguồn được dẫn chỉ dùng để biên tập nội dung, không phải nguồn ảnh.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Tô canh mít non nấu cá chuồn kiểu Quảng Nam với miếng mít mềm, cá chuồn chín, hành lá và rau thơm.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh tạo riêng bằng ImageGen; PNG gốc có nền trong suốt, bản xuất 3840 × 2160. Công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức gia đình được biên tập theo món canh mít non với cá chuồn ở xứ Quảng; cá đã làm sạch giúp nồi canh dễ nấu. Mùa cá và loại mít ảnh hưởng độ ngọt và độ chát.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để chốt lượng nước, thời gian sôi nhẹ và độ mềm của mít với cá chuồn địa phương.",
+          "Đối chiếu lượng rau thơm, ớt xanh và mức nêm với cách nấu tại gia đình Quảng Nam."
+        ]
+      }
+    },
+    {
+      "id": "BV557",
+      "slug": "thit-kho-mam-ruoc-hue",
+      "name": "Thịt kho mắm ruốc Huế",
+      "aliases": [
+        "Thịt ba chỉ kho mắm ruốc Huế",
+        "Thịt kho ruốc Huế",
+        "Thịt kho mắm ruốc miền Trung"
+      ],
+      "region": [
+        "Trung"
+      ],
+      "province": [
+        "Huế"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "trưa",
+        "tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Món kho đậm vị dùng chung cho bốn người, ăn cùng cơm và rau luộc.",
+      "prep_time": 20,
+      "cook_time": 35,
+      "passive_time": 10,
+      "description": "Ba chỉ được rang cho săn và tiết bớt mỡ, sau đó kho nhỏ lửa cùng sả, tỏi và mắm ruốc pha loãng. Bếp Việt điều chỉnh vị mặn ngọt vừa phải để mùi ruốc rõ mà không gắt, hợp dùng với cơm nóng.",
+      "finished_dish": "Miếng ba chỉ nâu hổ phách, mặt bóng sánh sốt mắm ruốc; sả tỏi thơm, ớt điểm nhẹ, thịt còn mềm.",
+      "serving": "Dọn nóng với cơm trắng, dưa leo hoặc rau luộc thanh vị. Món đã đậm nên không cần thêm nước chấm; dùng muỗng sạch khi lấy phần còn lại.",
+      "tips": [
+        "Mắm ruốc mỗi nhãn có độ mặn khác nhau; hòa với nước rồi lọc nếu lẫn cặn, chỉ nêm một phần trước.",
+        "Rang thịt lửa vừa để mỡ tiết từ từ; chắt bớt nếu nhiều nhưng giữ lại một ít để phi sả tỏi.",
+        "Kho lửa nhỏ đến khi sốt bám quanh thịt; tránh đun cạn vì mắm sẽ mặn và dễ khét."
+      ],
+      "dish_type": [
+        "Thịt kho mắm",
+        "Món mặn Huế"
+      ],
+      "main_ingredient": [
+        "thịt ba chỉ",
+        "mắm ruốc"
+      ],
+      "cooking_method": [
+        "rang thịt",
+        "phi sả tỏi",
+        "kho nhỏ lửa"
+      ],
+      "search_terms": [
+        "thịt kho mắm ruốc Huế",
+        "thịt ba chỉ kho ruốc",
+        "món mặn miền Trung",
+        "thịt kho sả mắm ruốc"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Nồi đất thịt ba chỉ kho mắm ruốc Huế màu nâu hổ phách, sả tỏi và ớt rắc nhẹ.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Rau muống luộc",
+        "Dưa leo"
+      ],
+      "recipe_family": "hue_pork_belly_mam_ruoc_braise",
+      "ingredients": [
+        {
+          "name": "Thịt ba chỉ",
+          "quantity": 500,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn phần nạc mỡ xen đều, thái khối khoảng 2 cm.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Mắm ruốc Huế",
+          "quantity": 28,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Hòa với 40 ml nước ấm rồi để lắng; nếm theo độ mặn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 2
+        },
+        {
+          "name": "Sả",
+          "quantity": 35,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Một nửa băm nhuyễn, phần còn lại thái lát.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Nước dừa tươi",
+          "quantity": 120,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Tùy chọn; có thể thay bằng nước nóng.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Đường",
+          "quantity": 18,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Bắt đầu ít, nếm cuối.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 7
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 8,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Chỉ thêm sau khi nếm mắm ruốc.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Giảm nếu thịt tiết nhiều mỡ.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Ớt đỏ",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "seasoning",
+          "notes": "Tùy chọn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 10
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Rắc cuối.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 11
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa thịt, thấm khô rồi thái khối vừa ăn. Băm sả, tỏi, hành tím; giữ riêng một ít sả lát."
+        },
+        {
+          "step": 2,
+          "instruction": "Hòa mắm ruốc với 40 ml nước ấm, để yên vài phút rồi gạn hoặc lọc phần mịn; chuẩn bị nước dừa và đường."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Cho thịt vào nồi đáy dày, rang lửa vừa 8–10 phút đến khi cạnh se và mỡ tiết ra. Chắt bớt nếu cần, giữ lại khoảng 1 thìa canh."
+        },
+        {
+          "step": 2,
+          "instruction": "Phi sả, tỏi và hành tím trong phần mỡ còn lại đến dậy mùi. Cho thịt trở lại, đảo đều."
+        },
+        {
+          "step": 3,
+          "instruction": "Thêm mắm ruốc đã lọc, đường và nước dừa. Đun sôi lăn tăn, hạ nhỏ lửa, kho 18–22 phút đến khi thịt mềm và sốt sánh bám quanh."
+        },
+        {
+          "step": 4,
+          "instruction": "Nếm lại, chỉ thêm nước mắm nếu cần. Cho ớt, tiêu và sả lát; tắt bếp khi sốt còn ẩm."
+        }
+      ],
+      "keywords": [
+        "thịt kho mắm ruốc",
+        "thịt ba chỉ",
+        "mắm ruốc Huế",
+        "sả tỏi",
+        "món ăn với cơm"
+      ],
+      "tags": [
+        "Huế",
+        "miền Trung",
+        "thịt heo",
+        "mắm ruốc",
+        "món mặn"
+      ],
+      "sources": [
+        {
+          "url": "https://vnexpress.net/cach-lam-thit-kho-mam-ruoc-dam-da-4299645.html",
+          "publisher": "VnExpress",
+          "title": "Cách làm thịt kho mắm ruốc đậm đà",
+          "use": "Đối chiếu kỹ thuật rang thịt, phi sả tỏi và kho mắm ruốc; tỷ lệ gia đình do Bếp Việt biên tập.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://giaoducthoidai.vn/tuyet-chieu-che-bien-mon-thit-kho-mam-ruoc-ngon-nhu-nguoi-hue-post247116.html",
+          "publisher": "B?o Gi?o d?c v? Th?i ??i",
+          "title": "Tuy?t chi?u ch? bi?n m?n th?t kho m?m ru?c ngon nh? ng??i Hu?",
+          "use": "X?c minh c?ch g?i m?n th?t kho m?m ru?c ki?u Hu? v? c?c th?nh ph?n ba ch?, m?m ru?c Hu?, s?, t?i, ?t; c?ng th?c m? gia ??nh do B?p Vi?t bi?n t?p.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Thịt ba chỉ 250 g, mắm ruốc 14 g, nước dừa khoảng 60 ml.",
+            "instruction": "Hòa mắm riêng, nêm từ từ; không giảm theo tỷ lệ cứng nếu mắm mặn."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.25,
+            "example": "Thịt ba chỉ 750 g, mắm ruốc khoảng 42 g, nước dừa khoảng 180 ml.",
+            "instruction": "Kho nồi rộng; nếm trước khi thêm đủ lượng mắm và gia vị."
+          }
+        ]
+      },
+      "total_time": 65,
+      "time_unit": "minute",
+      "time_note": "Khoảng 65 phút theo các bước tuần tự, chưa tính thời gian mua nguyên liệu.",
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/thit-kho-mam-ruoc-hue-960.webp",
+          "page_url": "https://vnexpress.net/cach-lam-thit-kho-mam-ruoc-dam-da-4299645.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh tạo riêng cho Bếp Việt; nguồn được dẫn chỉ dùng để biên tập nội dung, không phải nguồn ảnh.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Nồi đất thịt ba chỉ kho mắm ruốc Huế màu nâu hổ phách, sả tỏi và ớt rắc nhẹ.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh tạo riêng bằng ImageGen; PNG gốc có nền trong suốt, bản xuất 3840 × 2160. Công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức kho gia đình Bếp Việt biên tập từ món thịt kho mắm ruốc miền Trung. Nước dừa là lựa chọn làm dịu vị mặn, có thể bỏ để giữ cách nấu giản dị.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử với mắm ruốc có độ mặn khác nhau để chốt lượng nước mắm và đường.",
+          "Kiểm tra thời gian kho theo kích thước khối thịt và loại nồi."
+        ]
+      }
+    },
+    {
+      "id": "BV558",
+      "slug": "trung-vit-lon-um-bau-hue",
+      "name": "Trứng vịt lộn um bầu Huế",
+      "aliases": [
+        "Vịt lộn um bầu",
+        "Trứng lộn um bầu Huế",
+        "Hột vịt lộn um bầu"
+      ],
+      "region": [
+        "Trung"
+      ],
+      "province": [
+        "Huế"
+      ],
+      "category": "Món canh",
+      "meal_type": [
+        "tối",
+        "bữa phụ"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Nồi um cho bốn người, dùng nóng như món canh đậm đà hoặc món ăn tối nhẹ cùng cơm.",
+      "prep_time": 15,
+      "cook_time": 25,
+      "passive_time": 0,
+      "description": "Trứng vịt lộn được um với bầu non, mắm ruốc Huế và gia vị thơm như gừng, rau răm. Bếp Việt biên tập phiên bản nồi nhỏ, nêm nhẹ để vị ngọt của bầu và độ bùi của trứng cân bằng với chút mặn cay.",
+      "finished_dish": "Bát um nóng có trứng vịt lộn chín kỹ, miếng bầu xanh nhạt mềm tới còn nguyên hình và nước dùng thơm gừng, rau răm.",
+      "serving": "Múc trứng, bầu và nước dùng vào bát; dọn muối tiêu chanh riêng nếu thích. Dùng ngay khi nóng, không để nồi ở nhiệt độ phòng lâu.",
+      "tips": [
+        "Chọn trứng có nguồn gốc rõ ràng, rửa sạch vỏ và luộc chín kỹ trước khi bóc; nhặt hết mảnh vỏ nhỏ.",
+        "Hòa mắm ruốc với ít nước rồi nêm từng chút vì độ mặn mỗi loại khác nhau.",
+        "Cho rau răm, hành và gừng ở cuối; nấu bầu vừa mềm, không để nát."
+      ],
+      "dish_type": [
+        "Trứng vịt um",
+        "Món Huế"
+      ],
+      "main_ingredient": [
+        "trứng vịt lộn",
+        "bầu"
+      ],
+      "cooking_method": [
+        "luộc trứng",
+        "um bầu",
+        "nấu canh"
+      ],
+      "search_terms": [
+        "trứng vịt lộn um bầu Huế",
+        "hột vịt lộn um bầu",
+        "bầu nấu trứng vịt lộn",
+        "món ăn xứ Huế"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Tô trứng vịt lộn um bầu Huế với trứng chín, bầu non, gừng, rau răm và nước dùng nóng.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Rau muống luộc",
+        "Muối tiêu chanh"
+      ],
+      "recipe_family": "hue_duck_egg_bottle_gourd_stew",
+      "ingredients": [
+        {
+          "name": "Trứng vịt lộn",
+          "quantity": 4,
+          "unit": "quả",
+          "role": "main",
+          "notes": "Chọn trứng mới, bảo quản lạnh theo hướng dẫn của nơi bán.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Bầu non",
+          "quantity": 500,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Gọt vỏ, bỏ hạt già nếu có, cắt miếng dày khoảng 1 cm.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 650,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Có thể thêm nước nóng nếu muốn nhiều nước hơn.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Mắm ruốc Huế",
+          "quantity": 12,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Hòa loãng, nêm từ từ.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 4
+        },
+        {
+          "name": "Gừng tươi",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Một nửa băm, một nửa thái sợi.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 12,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Rau răm",
+          "quantity": 12,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, thái vừa.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng phi hành.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Ớt bột",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Tùy chọn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 10
+        },
+        {
+          "name": "Muối",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm khởi điểm.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 11
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Rắc cuối.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 12
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa vỏ trứng, cho vào nồi ngập nước lạnh. Đun sôi, hạ lửa vừa và luộc 18–20 phút; để nguội bớt, bóc nhẹ tay và nhặt mảnh vỏ."
+        },
+        {
+          "step": 2,
+          "instruction": "Gọt bầu, bỏ hạt già nếu có, rửa sạch rồi thái miếng dày 1 cm. Băm hành tím, một phần gừng; phần còn lại thái sợi. Hòa mắm ruốc với 2 thìa canh nước ấm."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Phi hành tím, gừng băm và ớt bột trong nồi nhỏ 30–45 giây, không để cháy. Thêm bầu, đảo nhẹ 1 phút rồi nêm muối và một phần mắm ruốc."
+        },
+        {
+          "step": 2,
+          "instruction": "Rót nước nóng vào, đun sôi nhẹ và nấu 5–7 phút đến khi bầu gần mềm."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho trứng đã bóc vào, hạ lửa, um thêm 4–5 phút để nóng đều và ngấm vị; không đảo mạnh."
+        },
+        {
+          "step": 4,
+          "instruction": "Nếm lại, thêm tiêu, gừng sợi, hành lá và rau răm rồi tắt bếp. Dùng nóng."
+        }
+      ],
+      "keywords": [
+        "trứng vịt lộn um bầu",
+        "mắm ruốc Huế",
+        "bầu non",
+        "gừng rau răm",
+        "món ăn Huế"
+      ],
+      "tags": [
+        "Huế",
+        "miền Trung",
+        "trứng vịt",
+        "bầu",
+        "món canh"
+      ],
+      "sources": [
+        {
+          "url": "https://vnexpress.net/doi-song-cooking-trung-vit-lon-om-bau-kieu-hue-4623787.html",
+          "publisher": "VnExpress Cooking",
+          "title": "Cách làm trứng vịt lộn om bầu kiểu Huế",
+          "use": "Đối chiếu cách kết hợp trứng vịt lộn, bầu, mắm ruốc, gừng và rau răm kiểu Huế; định lượng do Bếp Việt biên tập.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://visithue.vn/trung-lon-um-bau/",
+          "publisher": "Visit Hue",
+          "title": "Trứng lộn um bầu",
+          "use": "Xác nhận món um bầu được biết đến trong ẩm thực Huế; không sử dụng tuyên bố công dụng sức khỏe.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "2 quả trứng vịt lộn và 250 g bầu; khoảng 325 ml nước.",
+            "instruction": "Luộc mẻ nhỏ, giữ tiêu chí trứng chín kỹ; giảm gia vị từ thấp rồi nếm."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.25,
+            "example": "6 quả trứng vịt lộn và 750 g bầu; khoảng 950 ml nước.",
+            "instruction": "Dùng nồi đủ rộng để trứng nóng đều; tăng gia vị từ từ."
+          }
+        ]
+      },
+      "total_time": 40,
+      "time_unit": "minute",
+      "time_note": "Khoảng 40 phút theo các bước tuần tự, chưa tính thời gian mua nguyên liệu.",
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/trung-vit-lon-um-bau-hue-960.webp",
+          "page_url": "https://vnexpress.net/doi-song-cooking-trung-vit-lon-om-bau-kieu-hue-4623787.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh tạo riêng cho Bếp Việt; nguồn được dẫn chỉ dùng để biên tập nội dung, không phải nguồn ảnh.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Tô trứng vịt lộn um bầu Huế với trứng chín, bầu non, gừng, rau răm và nước dùng nóng.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh tạo riêng bằng ImageGen; PNG gốc có nền trong suốt, bản xuất 3840 × 2160. Công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Phiên bản gia đình Bếp Việt biên tập theo kiểu um bầu Huế, có mắm ruốc và gia vị ấm. Trứng được luộc chín trước để thao tác dễ kiểm soát; không đưa ra tuyên bố công dụng chữa bệnh.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử với cỡ trứng và bầu khác nhau để xác nhận thời gian luộc, độ chín của bầu và lượng nước.",
+          "Thử các loại mắm ruốc để chốt mức nêm khởi điểm; kiểm tra kết cấu trứng sau khi um."
+        ]
+      }
+    },
+    {
+      "id": "BV559",
+      "slug": "canh-la-lang-xu-quynh",
+      "name": "Canh lá lằng xứ Quỳnh (Nghệ An)",
+      "aliases": [
+        "Canh lằng Quỳnh Lưu",
+        "Canh lá đắng xứ Nghệ",
+        "Canh lá lằng nấu tôm"
+      ],
+      "region": [
+        "Trung"
+      ],
+      "province": [
+        "Nghệ An",
+        "Quỳnh Lưu"
+      ],
+      "category": "Món canh",
+      "meal_type": [
+        "trưa",
+        "tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một nồi canh rau cho bốn người, ăn nóng cùng cơm trắng.",
+      "prep_time": 15,
+      "cook_time": 12,
+      "passive_time": 0,
+      "description": "Lá lằng có vị đắng dịu và được người Quỳnh Lưu dùng nấu canh trong những ngày hè. Bếp Việt biên tập nồi canh với tôm tươi và cà chua để dễ cân vị; lá phải được mua từ nguồn thực phẩm đáng tin cậy, không tự hái lá rừng chưa biết tên.",
+      "finished_dish": "Tô canh xanh đậm với lá lằng thái nhỏ, tôm chín hồng và miếng cà chua mềm; nước trong, hậu vị ngọt sau chút đắng dịu.",
+      "serving": "Dùng nóng với cơm trắng; có thể ăn cùng cá rán và cà muối như mâm cơm quê. Nấu lượng vừa đủ dùng trong bữa.",
+      "tips": [
+        "Chỉ dùng lá lằng đã được nhận dạng và bán làm thực phẩm từ nguồn tin cậy; không thay bằng lá rừng chưa xác định.",
+        "Không nấu lá quá lâu; thêm gần cuối để giữ màu và vị đắng thanh.",
+        "Nếu dùng tôm khô thay tôm tươi, ngâm mềm và giảm muối/nước mắm vì tôm khô thường mặn."
+      ],
+      "dish_type": [
+        "Canh lá lằng",
+        "Món rau Nghệ An"
+      ],
+      "main_ingredient": [
+        "lá lằng",
+        "tôm"
+      ],
+      "cooking_method": [
+        "nấu canh",
+        "xào cà chua",
+        "nấu tôm"
+      ],
+      "search_terms": [
+        "canh lá lằng Quỳnh Lưu",
+        "canh lằng xứ Nghệ",
+        "lá lằng nấu tôm",
+        "canh lá đắng Nghệ An",
+        "món dân dã Nghệ An"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Tô canh lá lằng xứ Quỳnh với tôm tươi và cà chua, lá xanh thái nhỏ trong nước canh.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Cá trích rán",
+        "Cà muối"
+      ],
+      "recipe_family": "quynh_luu_la_lang_shrimp_soup",
+      "ingredients": [
+        {
+          "name": "Lá lằng thực phẩm",
+          "quantity": 120,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Dùng lá đã được nhận dạng đúng và cung cấp làm thực phẩm; nhặt và rửa kỹ.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Tôm tươi đã bóc vỏ",
+          "quantity": 150,
+          "unit": "g",
+          "role": "main",
+          "notes": "Bỏ chỉ lưng, rửa sạch và để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Cà chua nhỏ",
+          "quantity": 150,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Rửa, bổ múi cau; có thể dùng cà chua địa phương loại nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 850,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Điều chỉnh theo độ đặc mong muốn.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng phi hành và xào cà.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 12,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm khởi điểm, điều chỉnh cuối.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 7
+        },
+        {
+          "name": "Muối",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm vừa phải.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Tùy chọn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 9
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Nhặt bỏ lá úa, rửa lá lằng nhiều lần dưới vòi nước sạch, để ráo rồi thái nhỏ. Bóc vỏ tôm, rút chỉ lưng, rửa sạch; bổ cà chua múi cau."
+        },
+        {
+          "step": 2,
+          "instruction": "Băm hành tím và chuẩn bị nồi. Giữ riêng dụng cụ cho tôm sống hoặc rửa ngay sau khi sơ chế."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Phi hành với dầu đến thơm, cho cà chua vào đảo 2–3 phút cho mềm và ra màu."
+        },
+        {
+          "step": 2,
+          "instruction": "Thêm nước, đun sôi; cho tôm vào nấu 3–4 phút đến khi tôm chuyển hồng đục và chín hoàn toàn."
+        },
+        {
+          "step": 3,
+          "instruction": "Thả lá lằng vào, đun sôi lại 1–2 phút. Nêm nước mắm, muối và tiêu; nếm để vị đắng dịu, không quá mặn."
+        },
+        {
+          "step": 4,
+          "instruction": "Tắt bếp, múc ra tô và dùng nóng."
+        }
+      ],
+      "keywords": [
+        "canh lá lằng",
+        "lá lằng Quỳnh Lưu",
+        "tôm tươi",
+        "cà chua",
+        "ẩm thực Nghệ An"
+      ],
+      "tags": [
+        "Nghệ An",
+        "Quỳnh Lưu",
+        "xứ Nghệ",
+        "món canh",
+        "bữa cơm gia đình"
+      ],
+      "sources": [
+        {
+          "url": "https://thanhnien.vn/nho-vi-dang-canh-lang-mua-nang-chay-1851490953.htm",
+          "publisher": "Báo Thanh Niên",
+          "title": "Nhớ vị đắng canh lằng mùa nắng cháy",
+          "use": "Đối chiếu món canh lá lằng Quỳnh Lưu và cách nấu với cà chua cùng tôm hoặc cá.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://datafiles.nghean.gov.vn/nan-ubnd/2939/quantritintuc202412/GIOI%20THIEU%20AM%20THUC%20QC.pdf",
+          "publisher": "Cổng thông tin tỉnh Nghệ An",
+          "title": "Giới thiệu ẩm thực Quỳ Châu",
+          "use": "Tham khảo bối cảnh nguyên liệu địa phương và ẩm thực người Thái miền tây Nghệ An.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Lá lằng 60 g, tôm 75 g, cà chua 75 g; khoảng 425 ml nước.",
+            "instruction": "Nêm nhạt trước; lá khô cần kiểm tra cách ngâm và lượng riêng."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.25,
+            "example": "Lá lằng 180 g, tôm 225 g, cà chua 225 g; khoảng 1.3 lít nước.",
+            "instruction": "Cho lá ở cuối; tăng gia vị từ từ sau khi nếm."
+          }
+        ]
+      },
+      "total_time": 27,
+      "time_unit": "minute",
+      "time_note": "Khoảng 27 phút theo các bước tuần tự, chưa tính thời gian mua nguyên liệu.",
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/canh-la-lang-xu-quynh-960.webp",
+          "page_url": "https://thanhnien.vn/nho-vi-dang-canh-lang-mua-nang-chay-1851490953.htm",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh tạo riêng cho Bếp Việt; nguồn được dẫn chỉ dùng để biên tập nội dung, không phải nguồn ảnh.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Tô canh lá lằng xứ Quỳnh với tôm tươi và cà chua, lá xanh thái nhỏ trong nước canh.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh tạo riêng bằng ImageGen; PNG gốc có nền trong suốt, bản xuất 3840 × 2160. Công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Nồi canh gia đình dựa trên cách nấu lá lằng với cà chua và tôm được ghi nhận ở Quỳnh Lưu; định lượng chuẩn hóa cho bốn phần. Ưu tiên nguồn lá thực phẩm có nhận dạng rõ để tránh nhầm loài.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Xác nhận tên thực vật và nguồn cung cấp lá lằng thực phẩm trước khi đưa vào sản xuất; không khuyến khích tự hái nếu không nhận dạng chắc chắn.",
+          "Nấu thử để cân vị đắng của lá theo mùa cùng độ ngọt của tôm và cà chua."
+        ]
+      }
+    },
+    {
+      "id": "BV560",
+      "slug": "thit-luoc-tom-chua-hue",
+      "name": "Thịt luộc chấm tôm chua Huế",
+      "aliases": [
+        "Thịt luộc mắm tôm chua Huế",
+        "Thịt luộc cuốn vả tôm chua",
+        "Thịt heo luộc ăn cùng tôm chua"
+      ],
+      "region": [
+        "Trung"
+      ],
+      "province": [
+        "Huế"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "trưa",
+        "tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Đĩa thịt và rau cuốn dùng chung cho bốn người trong bữa cơm gia đình.",
+      "prep_time": 20,
+      "cook_time": 30,
+      "passive_time": 0,
+      "description": "Thịt ba chỉ luộc mềm được dọn cùng tôm chua Huế, vả, chuối xanh, dứa và rau sống để cuốn bánh tráng. Bếp Việt biên tập khẩu phần gia đình, giữ điểm cân bằng giữa vị béo của thịt, vị chua cay của tôm, vị chát dịu của quả vả và rau tươi.",
+      "finished_dish": "Đĩa thịt luộc thái mỏng bên chén tôm chua đỏ hồng, vả và chuối xanh thái lát, dứa, dưa leo, rau thơm tươi và bánh tráng cuốn.",
+      "serving": "Cuốn từng phần với rau, thịt, vả và dứa; chấm tôm chua vừa đủ. Mắm đã đậm vị nên không cần thêm nước chấm mặn.",
+      "tips": [
+        "Dùng tôm chua thành phẩm có nhãn, nguồn gốc và hạn dùng rõ; bảo quản theo hướng dẫn, lấy bằng muỗng sạch và không để lâu ngoài nhiệt độ phòng.",
+        "Cho thịt vào nước đang sôi rồi hạ lửa liu riu; thời gian phụ thuộc độ dày, luộc đến khi phần giữa chín hoàn toàn.",
+        "Thái thịt sau khi nghỉ 5–10 phút để lát cắt gọn và thịt giữ nước."
+      ],
+      "dish_type": [
+        "Thịt luộc cuốn",
+        "Món ăn Huế"
+      ],
+      "main_ingredient": [
+        "thịt ba chỉ",
+        "tôm chua"
+      ],
+      "cooking_method": [
+        "luộc thịt",
+        "cuốn bánh tráng",
+        "ăn kèm mắm"
+      ],
+      "search_terms": [
+        "thịt luộc tôm chua Huế",
+        "thịt luộc mắm tôm chua",
+        "thịt luộc cuốn vả",
+        "món ăn dân dã Huế",
+        "thịt ba chỉ luộc tôm chua"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Đĩa thịt ba chỉ luộc Huế ăn với tôm chua, quả vả, chuối xanh, dứa, rau sống và bánh tráng.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Rau sống",
+        "Dưa leo"
+      ],
+      "recipe_family": "hue_boiled_pork_tom_chua_wrap",
+      "ingredients": [
+        {
+          "name": "Thịt ba chỉ",
+          "quantity": 500,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn miếng có nạc và mỡ xen đều, rửa sạch.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Tôm chua Huế thành phẩm",
+          "quantity": 180,
+          "unit": "g",
+          "role": "side",
+          "notes": "Dùng loại sẵn ăn có nguồn gốc/hạn dùng rõ; bảo quản theo nhãn.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Quả vả",
+          "quantity": 2,
+          "unit": "quả",
+          "role": "vegetable",
+          "notes": "Rửa kỹ, thái mỏng; ngâm nước muối chanh loãng để hạn chế thâm.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Chuối xanh",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "vegetable",
+          "notes": "Gọt vỏ, thái mỏng, ngâm nước muối chanh rồi để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Dứa",
+          "quantity": 150,
+          "unit": "g",
+          "role": "accompaniment",
+          "notes": "Gọt vỏ, bỏ mắt, thái lát vừa cuốn.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Dưa leo",
+          "quantity": 150,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Rửa sạch, thái que.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Xà lách và rau thơm",
+          "quantity": 120,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa kỹ và để thật ráo.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Bánh tráng mỏng",
+          "quantity": 12,
+          "unit": "tấm",
+          "role": "wrapping",
+          "notes": "Dùng để cuốn; chọn loại phù hợp.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Gừng",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Đập dập, dùng luộc thịt.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Hành khô",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, đập dập.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Muối",
+          "quantity": 4,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Cho vào nước luộc thịt.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 1800,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Đủ ngập thịt.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa thịt dưới vòi nước. Nếu miếng quá mỏng, cuộn và buộc nhẹ bằng dây thực phẩm để dễ thái. Rửa, đập dập gừng và hành khô."
+        },
+        {
+          "step": 2,
+          "instruction": "Rửa rau, dưa leo, dứa và vả. Thái dưa leo thành que, dứa thành lát, vả và chuối xanh thành lát mỏng; ngâm riêng vả và chuối trong nước muối chanh loãng rồi để ráo."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đun sôi nước với gừng, hành khô và muối. Thả thịt vào; khi nước sôi trở lại, hạ lửa vừa nhỏ, hớt bọt và luộc 20–25 phút tùy độ dày đến khi chín hoàn toàn."
+        },
+        {
+          "step": 2,
+          "instruction": "Tắt bếp, để thịt trong nước nóng thêm 5 phút; vớt ra nghỉ 5–10 phút rồi thái mỏng ngang thớ."
+        },
+        {
+          "step": 3,
+          "instruction": "Xếp thịt ra đĩa; bày rau, vả, chuối, dứa, dưa leo, bánh tráng và tôm chua thành phần riêng để mọi người tự cuốn."
+        },
+        {
+          "step": 4,
+          "instruction": "Cuốn bánh tráng với rau, thịt, vả và dứa; chấm ít tôm chua và ăn ngay."
+        }
+      ],
+      "keywords": [
+        "thịt luộc tôm chua",
+        "thịt luộc cuốn vả",
+        "mắm tôm chua Huế",
+        "quả vả",
+        "món cuốn miền Trung"
+      ],
+      "tags": [
+        "Huế",
+        "miền Trung",
+        "thịt heo",
+        "tôm chua",
+        "món cuốn"
+      ],
+      "sources": [
+        {
+          "url": "https://vnexpress.net/doi-song-cooking-thit-luoc-tom-chua-mon-binh-dan-ngay-he-xu-hue-4606408.html",
+          "publisher": "VnExpress Cooking",
+          "title": "Cách làm thịt luộc tôm chua - món bình dân ngày hè xứ Huế",
+          "use": "Đối chiếu thịt luộc ăn với tôm chua, vả, chuối xanh, dứa, rau và bánh tráng; định lượng do Bếp Việt biên tập.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://visithue.vn/Thuc-don-vua-Bao-Dai.html/",
+          "publisher": "Visit Hue",
+          "title": "Thực đơn vua Bảo Đại",
+          "use": "Xác nhận thịt luộc tôm chua là món truyền thống trong ẩm thực Huế.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://govietnam.travel/food/mam-2/mam-tom-chua-hue/",
+          "publisher": "GoVietnam",
+          "title": "Giới thiệu mắm tôm chua Huế",
+          "use": "Đối chiếu cách dùng mắm tôm chua với thịt luộc, vả và rau quả trong bữa ăn Huế.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Thịt ba chỉ 250 g, tôm chua 90 g, 1 quả vả; khoảng 6 tấm bánh tráng.",
+            "instruction": "Luộc miếng nhỏ hơn nhưng giữ tiêu chí chín hoàn toàn; giảm rau cuốn theo khẩu phần."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.25,
+            "example": "Thịt ba chỉ 750 g, tôm chua 270 g, 3 quả vả; khoảng 18 tấm bánh tráng.",
+            "instruction": "Luộc thịt theo mẻ nếu nồi nhỏ; chia tôm chua vào chén riêng."
+          }
+        ]
+      },
+      "total_time": 50,
+      "time_unit": "minute",
+      "time_note": "Khoảng 50 phút theo các bước tuần tự, chưa tính thời gian mua nguyên liệu.",
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/thit-luoc-tom-chua-hue-960.webp",
+          "page_url": "https://vnexpress.net/doi-song-cooking-thit-luoc-tom-chua-mon-binh-dan-ngay-he-xu-hue-4606408.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh tạo riêng cho Bếp Việt; nguồn được dẫn chỉ dùng để biên tập nội dung, không phải nguồn ảnh.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa thịt ba chỉ luộc Huế ăn với tôm chua, quả vả, chuối xanh, dứa, rau sống và bánh tráng.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh tạo riêng bằng ImageGen; PNG gốc có nền trong suốt, bản xuất 3840 × 2160. Công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Mâm cuốn gia đình Bếp Việt biên tập từ cách ăn thịt luộc với tôm chua Huế; tôm chua là sản phẩm thành phẩm dùng kèm, không tự lên men theo công thức này.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Thử các loại tôm chua thành phẩm để cân lượng dùng mỗi phần; không đưa nước chấm pha sẵn vào công thức mặc định.",
+          "Kiểm tra thời gian luộc theo độ dày miếng thịt, bảo đảm chín hoàn toàn mà không khô."
+        ]
+      }
+    }
+  ]
+}

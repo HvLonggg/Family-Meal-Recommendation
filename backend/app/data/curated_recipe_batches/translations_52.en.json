@@ -1,0 +1,265 @@
+{
+  "ca-chach-sun-kho-nieu-ninh-binh": {
+    "name": "Yen Hoa Claypot-Braised Soft-Bone Loach",
+    "aliases": ["Yen Mo claypot mud loach", "Ninh Binh soft-bone loach in a claypot"],
+    "region": ["Northern Vietnam"],
+    "province": ["Ninh Binh"],
+    "category": "Savory main dish",
+    "meal_type": ["lunch", "dinner", "savory main dish"],
+    "difficulty": "Moderate",
+    "serving_basis": "One small claypot of braised fish as a main dish for four with steamed rice.",
+    "description": "Small soft-bone loaches are kept whole, seasoned with fish sauce, shallot, garlic and pepper, then slowly braised in a claypot until tender, with a thickened sauce and softened bones. Bep Viet adapts the seasoning amounts for a family meal from the method recorded by a cooperative in Yen Hoa, Yen Mo.",
+    "finished_dish": "Whole loaches are tender and savory-sweet, fragrant with shallot, garlic and pepper, in a glossy brown sauce reduced just enough to serve with hot rice.",
+    "serving": "Serve hot in the claypot, spooning the sauce over the fish. Pair with steamed rice, seasonal boiled greens or pickled vegetables; lift gently to keep the fish whole.",
+    "tips": [
+      "Choose fresh, small soft-bone loaches so they soften evenly during the long braise.",
+      "Clean away the slime carefully and keep the fish whole, following the local account; season moderately because the sauce reduces.",
+      "Keep the heat very low and check the pot bottom regularly. Add a little hot water if the sauce is nearly dry before the fish softens."
+    ],
+    "dish_type": ["Claypot-braised fish", "Ninh Binh country cooking"],
+    "main_ingredient": ["soft-bone loach", "fish sauce", "shallot"],
+    "cooking_method": ["seasoning the fish", "slow braising in a claypot"],
+    "search_terms": ["Yen Hoa claypot loach", "Ninh Binh soft-bone loach", "Yen Mo claypot fish", "Vietnamese loach braise"],
+    "image_alt": "A small claypot of whole, glossy brown soft-bone loaches braised with shallot, garlic and pepper; original Bep Viet image on transparency.",
+    "time_note": "About 8 hours 45 minutes, including 15 minutes to season and just over 8 hours of gentle braising.",
+    "suggested_pairings": ["Steamed rice", "Seasonal boiled greens", "Pickled mustard greens"],
+    "recipe_family": "ninh_binh_yen_hoa_softbone_loach_claypot",
+    "spicy_level": 0,
+    "ingredients": [
+      {"name":"Small soft-bone loaches","unit":"g","notes":"Choose fresh, small fish; keep them whole after cleaning."},
+      {"name":"Hot water","unit":"ml","notes":"Use for braising and add a little at a time if the pot dries before the fish softens."},
+      {"name":"Fish sauce","unit":"ml","notes":"Season lightly because the sauce reduces during the long braise."},
+      {"name":"Shallot","unit":"g","notes":"Peel and mince."},
+      {"name":"Garlic","unit":"g","notes":"Peel and mince."},
+      {"name":"Sugar","unit":"g","notes":"Adds gentle sweetness without making the fish taste sugary."},
+      {"name":"Salt","unit":"g","notes":"Use some to clean the fish and the rest for seasoning."},
+      {"name":"Ground black pepper","unit":"g","notes":"Divide between the marinade and the final garnish."},
+      {"name":"Seasoning powder","unit":"g","notes":"Optional; adjust to the saltiness of the fish sauce."}
+    ],
+    "tags": ["Ninh Binh", "savory main dish", "braised dish", "rustic home cooking", "family meal"],
+    "preparation_steps": [
+      "Rinse the loaches under running water. Gently rub with salt and lemon juice to remove slime, rinse again and drain. Keep them whole and use a separate board and utensils for raw fish.",
+      "Mince the shallot and garlic; measure the fish sauce, sugar, pepper and seasoning powder. Warm the claypot gradually to prevent thermal shock."
+    ],
+    "cooking_steps": [
+      "Toss the fish with fish sauce, shallot, garlic, sugar, salt, half the pepper and seasoning powder if using. Leave to season for 15 minutes.",
+      "Arrange the fish in a single layer in the claypot and add just enough hot water to moisten the bottom. Bring to a gentle simmer, then reduce the heat to its lowest setting and cover.",
+      "Braise gently for about 8 hours, checking the bottom occasionally and adding a little hot water if needed. Avoid stirring. The fish is ready when tender, the sauce is glossy brown and the small bones have softened like cartilage.",
+      "Uncover near the end to lightly thicken the sauce. Adjust the sweet-salty balance, add the remaining pepper and serve hot in the claypot."
+    ],
+    "keywords": ["soft-bone loach", "mud loach", "claypot braise", "Yen Hoa", "Yen Mo", "Ninh Binh", "Northern Vietnamese rustic cooking"]
+  },
+  "cha-da-vuong-khanh-thien": {
+    "name": "Bong Hai Square Rice-Paper Rolls",
+    "aliases": ["Khanh Thien square rice-paper rolls", "Bong Hai square fried spring rolls"],
+    "region": ["Northern Vietnam"],
+    "province": ["Ninh Binh"],
+    "category": "Fried dish",
+    "meal_type": ["lunch", "dinner", "savory main dish"],
+    "difficulty": "Moderate",
+    "serving_basis": "About 12 square rolls to share as a main or communal dish for four.",
+    "description": "Bong Hai rolls are filled with pork shoulder, wood-ear mushrooms, glass noodles and shredded water spinach, wrapped into squares in rice paper and fried golden. Bep Viet scales the ingredients for a family table based on the Khanh Thien dish documented by Ninh Binh Newspaper.",
+    "finished_dish": "Crisp golden square rolls with a tender filling of pork, wood-ear mushrooms, glass noodles and water spinach, served hot with herbs and sweet-sour dipping sauce.",
+    "serving": "Serve immediately while hot with fresh herbs and sweet-sour fish sauce. Use clean chopsticks to handle the rolls; they also go well with steamed rice as part of a family meal.",
+    "tips": [
+      "Soak the wood-ear mushrooms and noodles only until pliable, then drain thoroughly so the filling stays dry.",
+      "Cut the water spinach into fine strands so it fits neatly in the filling and keeps a slight crunch.",
+      "Fold all four corners tightly and fry in batches so the oil stays hot and the rolls brown evenly."
+    ],
+    "dish_type": ["Square fried rice-paper rolls", "Khanh Thien country cooking"],
+    "main_ingredient": ["pork shoulder", "rice paper", "water spinach"],
+    "cooking_method": ["mixing the filling", "folding square rolls", "frying"],
+    "search_terms": ["Bong Hai square rolls", "Khanh Thien fried rolls", "Ninh Binh square spring rolls", "Vietnamese pork rice-paper rolls"],
+    "image_alt": "A plate of crisp golden Bong Hai square rice-paper rolls, one cut open to show pork, noodles, wood-ear mushrooms and water spinach; original Bep Viet image on transparency.",
+    "time_note": "About 1 hour 5 minutes, including 15 minutes to soak the noodles and mushrooms.",
+    "suggested_pairings": ["Steamed rice", "Seasonal fresh herbs", "Sweet-sour fish sauce"],
+    "recipe_family": "ninh_binh_bong_hai_square_ricepaper_roll",
+    "spicy_level": 1,
+    "ingredients": [
+      {"name":"Pork shoulder","unit":"g","notes":"Finely chop or coarsely grind."},
+      {"name":"Dried wood-ear mushrooms","unit":"g","notes":"Soak until soft, rinse and slice into thin strips."},
+      {"name":"Dried glass noodles","unit":"g","notes":"Soak until soft, cut into short lengths and drain."},
+      {"name":"Water spinach","unit":"g","notes":"Choose tender stems, discard old leaves and split or cut into fine strands."},
+      {"name":"Scallions","unit":"g","notes":"Rinse and finely slice."},
+      {"name":"Culantro","unit":"g","notes":"Rinse and chop."},
+      {"name":"Chicken egg","unit":"piece","notes":"Beat to help bind the filling."},
+      {"name":"Square rice-paper wrappers","unit":"sheet","notes":"Choose thin, pliable sheets large enough to fold into square parcels."},
+      {"name":"Fish sauce","unit":"ml","notes":"Season moderately because dipping sauce is served separately."},
+      {"name":"Salt","unit":"g","notes":"Season the filling lightly."},
+      {"name":"Ground black pepper","unit":"g","notes":"Adjust to taste."},
+      {"name":"Cooking oil","unit":"ml","notes":"For frying; the amount absorbed will be lower."},
+      {"name":"Fresh herbs for serving","unit":"g","notes":"Rinse and drain well."},
+      {"name":"Sweet-sour dipping sauce","unit":"ml","notes":"Serve separately; make with fish sauce, water, sugar and lime or vinegar."}
+    ],
+    "tags": ["Ninh Binh", "savory main dish", "fried dish", "rustic home cooking", "family meal"],
+    "preparation_steps": [
+      "Soak the wood-ear mushrooms and glass noodles in clean water for about 15 minutes until pliable. Drain well; slice the mushrooms, cut the noodles short and split the water spinach into strands.",
+      "Mince the pork, scallions and culantro. Beat the egg, and rinse and set aside the fresh herbs."
+    ],
+    "cooking_steps": [
+      "Combine the pork with the mushrooms, noodles, scallions, culantro, water spinach, egg, fish sauce, salt and pepper. Divide into 12 portions.",
+      "Place one portion in the center of a rice-paper sheet. Fold all four sides into a square and press the seam closed. If the wrapper is dry, dab a little water on the edges to help them stick.",
+      "Heat the oil over medium heat. Fry the rolls in batches, turning until the wrappers are golden and crisp and the filling is cooked through. Drain on a rack or paper towels.",
+      "Serve hot with fresh herbs and sweet-sour dipping sauce."
+    ],
+    "keywords": ["Bong Hai square rolls", "Khanh Thien", "pork shoulder", "shredded water spinach", "fried rolls", "Ninh Binh"]
+  },
+  "gio-trung-non-khe": {
+    "name": "Non Khe Egg and Pork Loaf",
+    "aliases": ["Yen Mo egg loaf", "Ninh Binh egg and pork loaf"],
+    "region": ["Northern Vietnam"],
+    "province": ["Ninh Binh"],
+    "category": "Savory main dish",
+    "meal_type": ["lunch", "dinner", "traditional feast dish"],
+    "difficulty": "Advanced",
+    "serving_basis": "One large square loaf sliced thinly for a four-person meal.",
+    "description": "This square loaf from Non Khe village layers ground lean pork, pork belly and hard-boiled eggs in banana leaves, then boils and presses the wrapped loaf into shape. Bep Viet edits a smaller family batch while retaining the traditional layered structure and pressing method.",
+    "finished_dish": "A tender, fine-textured loaf with thin slices showing golden egg layered among pale pork and pork belly; gently fragrant with banana leaf and rich without being heavy.",
+    "serving": "Chill the loaf until firm, then slice. Serve with pickled onions and plain fish sauce. Wrap leftovers tightly and refrigerate promptly.",
+    "tips": [
+      "Keep the meat cold while grinding, mixing and wrapping; do not leave raw meat at room temperature for an extended period.",
+      "Arrange the eggs in offset rows and spread the meat evenly so each slice contains egg, lean pork and belly.",
+      "Boil the loaf as soon as it is wrapped and press it while hot. Because it contains ground meat, use a thermometer to confirm the center reaches at least 71°C (160°F).",
+      "Cool promptly after pressing and refrigerate. This Bep Viet recipe has not been test-cooked."
+    ],
+    "dish_type": ["Traditional egg and pork loaf", "Non Khe feast dish"],
+    "main_ingredient": ["ground pork", "pork belly", "chicken eggs"],
+    "cooking_method": ["grinding and layering", "wrapping in banana leaf", "boiling", "pressing into a square"],
+    "search_terms": ["Non Khe egg loaf", "Yen Mo egg and pork loaf", "Ninh Binh banana-leaf egg loaf", "Vietnamese layered pork loaf"],
+    "image_alt": "A banana-leaf-wrapped Non Khe egg and pork loaf, sliced to show golden eggs layered inside the pork; original Bep Viet image on transparency.",
+    "time_note": "About 9 hours 20 minutes, including 2 hours 30 minutes of boiling, 4 hours of pressing and 2 hours of chilling.",
+    "suggested_pairings": ["Pickled onions", "Plain fish sauce", "Steamed rice"],
+    "recipe_family": "ninh_binh_non_khe_egg_pork_loaf",
+    "spicy_level": 0,
+    "ingredients": [
+      {"name":"Ground lean pork","unit":"g","notes":"Choose fresh pork, keep it chilled and grind finely just before mixing."},
+      {"name":"Pork belly","unit":"g","notes":"Slice into thin strips and season with some of the seasoning."},
+      {"name":"Chicken eggs","unit":"piece","notes":"Boil fully, peel and split lengthwise with fine thread."},
+      {"name":"Fish sauce","unit":"ml","notes":"Season the lean pork and adjust for saltiness."},
+      {"name":"Salt","unit":"g","notes":"Divide between the lean pork and pork belly."},
+      {"name":"Ground black pepper","unit":"g","notes":"Add to the meat before wrapping."},
+      {"name":"MSG","unit":"g","notes":"Optional, following local seasoning preferences."},
+      {"name":"Large banana leaves","unit":"leaf","notes":"Rinse, briefly blanch until pliable and wipe dry."},
+      {"name":"Bamboo ties","unit":"strand","notes":"Use to secure the loaf tightly in its mold."},
+      {"name":"Water","unit":"ml","notes":"For boiling the loaf; top up with hot water if needed."},
+      {"name":"Pickled onions","unit":"g","notes":"Serve separately with slices of the loaf."}
+    ],
+    "tags": ["Ninh Binh", "savory main dish", "traditional dish", "Vietnamese feast", "family meal"],
+    "preparation_steps": [
+      "Keep the lean pork and pork belly chilled. Grind the lean pork finely; slice the belly into thin strips and mix separately with a little fish sauce, salt and pepper.",
+      "Boil the eggs until fully cooked, cool them quickly, peel and split each lengthwise with fine thread so the yolks stay intact.",
+      "Rinse the banana leaves, briefly blanch until pliable and wipe dry. Prepare a rectangular mold or two clean boards that can press the loaf flat."
+    ],
+    "cooking_steps": [
+      "Season the ground lean pork with the remaining fish sauce, salt, pepper and MSG if using. Mix quickly until tacky and cohesive.",
+      "Line the mold with several layers of banana leaf. Spread a layer of lean pork, arrange strips of pork belly and rows of halved eggs in an offset pattern, then cover with pork and repeat so the cut face will show an even pattern. Fold the leaves closed and tie tightly into a square parcel.",
+      "Place the loaf in gently boiling water and cook for about 2 hours 30 minutes. Keep the water at a steady gentle boil and add hot water as needed to keep the parcel submerged; confirm the center reaches at least 71°C (160°F).",
+      "While still hot, transfer the loaf to a press or between two clean boards and weigh it down moderately for about 4 hours to square and drain it. Cool, then refrigerate for at least 2 hours before unwrapping and slicing."
+    ],
+    "keywords": ["egg pork loaf", "Non Khe", "Yen Mo", "Ninh Binh", "chicken eggs", "banana leaf", "Northern Vietnamese feast dish"]
+  },
+  "chao-chan-gio-bong-hai": {
+    "name": "Bong Hai Pork Leg Chao Salad",
+    "aliases": ["Khanh Thien pork leg chao", "Ninh Binh pork leg chao"],
+    "region": ["Northern Vietnam"],
+    "province": ["Ninh Binh"],
+    "category": "Mixed savory dish",
+    "meal_type": ["lunch", "dinner", "traditional feast dish"],
+    "difficulty": "Moderate",
+    "serving_basis": "One platter of pork leg chao with wrapping greens for four at a family meal or feast.",
+    "description": "Bong Hai pork leg chao combines cooked pork leg with galangal, lemongrass, sour starfruit, lime leaf and sesame, and is wrapped in fig leaves or rice paper. Bep Viet adapts the seasoning for four based on the traditional preparation documented by Ninh Binh Newspaper.",
+    "finished_dish": "Tender pork leg with pleasantly chewy skin, fragrant spicy galangal, tart starfruit and nutty sesame, wrapped in leaves and served with a sweet-sour-salty dip.",
+    "serving": "Arrange the chao with fresh herbs, fig leaves and rice paper. Wrap small portions and dip in sweet-sour fish sauce or tuong Ban fermented soybean sauce. Serve soon after mixing so the greens stay fresh.",
+    "tips": [
+      "Choose a medium-sized pork leg with the skin and some connective tissue intact; tie it into a compact shape so it steams evenly.",
+      "Let the meat cool slightly before slicing so the lean meat and skin stay together.",
+      "Add galangal, starfruit and fish sauce gradually; the dish should be tart, fragrant and gently spicy without masking the pork.",
+      "Use a thermometer to confirm whole cuts of pork reach at least 63°C (145°F), then rest for at least 3 minutes."
+    ],
+    "dish_type": ["Mixed pork chao salad", "Bong Hai country cooking"],
+    "main_ingredient": ["pork leg", "galangal", "sour starfruit"],
+    "cooking_method": ["steaming pork leg", "thinly slicing", "tossing the chao", "wrapping in leaves"],
+    "search_terms": ["Bong Hai pork leg chao", "Khanh Thien pork chao", "Ninh Binh pork leg chao", "galangal starfruit pork salad"],
+    "image_alt": "A plate of Bong Hai pork leg chao mixed with galangal, lemongrass, sour starfruit, lime leaf and sesame, with wrapping leaves; original Bep Viet image on transparency.",
+    "time_note": "About 1 hour 20 minutes, including 10 minutes for the meat to rest and cool slightly before mixing.",
+    "suggested_pairings": ["Steamed rice", "Rice-paper wrappers", "Tuong Ban fermented soybean sauce"],
+    "recipe_family": "ninh_binh_bong_hai_pork_leg_chaosalad",
+    "spicy_level": 1,
+    "ingredients": [
+      {"name":"Boneless pork leg","unit":"g","notes":"Keep the skin on and tie into a compact piece for steaming."},
+      {"name":"Water","unit":"ml","notes":"Add to the steamer without letting it touch the steaming rack."},
+      {"name":"Fresh galangal","unit":"g","notes":"Pound finely; optionally squeeze off a little juice to season the meat."},
+      {"name":"Lemongrass","unit":"g","notes":"Thinly slice; use some under the meat and the rest in the chao."},
+      {"name":"Garlic","unit":"g","notes":"Peel and mince."},
+      {"name":"Sour starfruit","unit":"g","notes":"Rinse, trim the firm ridges and thinly slice."},
+      {"name":"Makrut lime leaves","unit":"g","notes":"Slice into very fine shreds."},
+      {"name":"White sesame seeds","unit":"g","notes":"Toast over low heat until fragrant."},
+      {"name":"Fish sauce","unit":"ml","notes":"Add a little at a time."},
+      {"name":"Salt","unit":"g","notes":"Use some to season the pork."},
+      {"name":"Sugar","unit":"g","notes":"Adjust to the tartness of the starfruit."},
+      {"name":"Fresh chili","unit":"g","notes":"Mince; optional."},
+      {"name":"Ground black pepper","unit":"g","notes":"Adjust to taste."},
+      {"name":"Fig leaves and fresh herbs","unit":"g","notes":"Rinse, drain and use to wrap the chao."},
+      {"name":"Rice-paper wrappers","unit":"sheet","notes":"May be replaced with large fig leaves for wrapping."},
+      {"name":"Tuong Ban or sweet-sour fish sauce","unit":"ml","notes":"Serve separately and season to taste."}
+    ],
+    "tags": ["Ninh Binh", "savory main dish", "mixed dish", "rustic home cooking", "family feast"],
+    "preparation_steps": [
+      "Rinse and pat dry the pork leg, then tie into a compact piece. Slice the lemongrass, pound the galangal, shred the lime leaves, toast the sesame and thinly slice the starfruit.",
+      "Rinse the fig leaves and fresh herbs and drain well. Prepare a steamer with water and rack; use a separate board for raw pork."
+    ],
+    "cooking_steps": [
+      "Line the steaming rack with some lemongrass and lime leaves, then place the pork leg on top. Steam until the thickest part reaches at least 63°C (145°F); a 600 g piece usually takes about 35–45 minutes. Rest for at least 3 minutes.",
+      "Let the meat cool slightly for about 10 minutes, then slice thinly while keeping the skin attached to the lean meat. Rub with a little galangal juice if available.",
+      "Toss the pork with the galangal, lemongrass, garlic, starfruit, lime leaves, fish sauce, salt, sugar, pepper and chili if using. Taste and balance the tart, salty and spicy notes.",
+      "Scatter over the toasted sesame and fold gently once more. Plate with fig leaves, fresh herbs, rice paper and dipping sauce."
+    ],
+    "keywords": ["pork leg chao", "Bong Hai", "Khanh Thien", "galangal", "sour starfruit", "toasted sesame", "Ninh Binh"]
+  },
+  "banh-da-vung-khanh-thien": {
+    "name": "Khanh Thien Sesame Rice Crackers",
+    "aliases": ["Phong An fan-shaped rice crackers", "Khanh Thien sesame crackers"],
+    "region": ["Northern Vietnam"],
+    "province": ["Ninh Binh"],
+    "category": "Snack",
+    "meal_type": ["snack", "side dish", "light meal"],
+    "difficulty": "Advanced",
+    "serving_basis": "About four large sesame crackers, one per person, eaten soon after grilling.",
+    "description": "Khanh Thien rice crackers are made with non-glutinous rice, sesame and salt. The batter is steamed in two thin layers, the crackers are dried until just right, then grilled over charcoal until crisp and airy. Bep Viet adapts the village process to a small home batch; drying time depends on the weather.",
+    "finished_dish": "Thin round crackers with a toasted-rice and sesame aroma, crisp and airy after charcoal grilling, best eaten freshly cooked.",
+    "serving": "Break the cracker into pieces and eat while crisp. Roasted or boiled peanuts are local-style accompaniments.",
+    "tips": [
+      "Use non-glutinous rice and grind the batter on the day of cooking; batter left too long may turn sour.",
+      "Steam two very thin layers and dry the crackers until they are just firm enough to handle but still slightly pliable.",
+      "Drying time changes with sun and humidity. Do not stack the crackers while they are still damp.",
+      "Grill one cracker at a time over moderate charcoal, turning continuously so it crisps evenly without burning."
+    ],
+    "dish_type": ["Grilled sesame rice cracker", "Khanh Thien specialty"],
+    "main_ingredient": ["non-glutinous rice", "white sesame seeds"],
+    "cooking_method": ["soaking and grinding rice", "steaming in two layers", "drying crackers", "charcoal grilling"],
+    "search_terms": ["Khanh Thien sesame rice crackers", "Phong An fan cracker", "Ninh Binh sesame cracker", "how to make Vietnamese sesame rice crackers"],
+    "image_alt": "Thin round Khanh Thien sesame rice crackers, grilled golden and covered with sesame seeds on a plate; original Bep Viet image on transparency.",
+    "time_note": "About 6 hours 45 minutes, including 2 hours of rice soaking and about 3 hours 40 minutes of drying; drying time varies with the weather.",
+    "suggested_pairings": ["Roasted peanuts", "Boiled peanuts", "Hot tea"],
+    "recipe_family": "ninh_binh_khanh_thien_sesame_rice_cracker",
+    "spicy_level": 0,
+    "ingredients": [
+      {"name":"Non-glutinous rice","unit":"g","notes":"Choose aromatic dry rice and rinse before soaking."},
+      {"name":"White sesame seeds","unit":"g","notes":"Sift clean; optionally toast lightly for extra aroma before steaming."},
+      {"name":"Coarse salt","unit":"g","notes":"Grind finely and mix evenly into the batter."},
+      {"name":"Water","unit":"ml","notes":"Use to grind the rice into a smooth, pourable batter; adjust with a little more if needed."}
+    ],
+    "tags": ["Ninh Binh", "snack", "rustic cooking", "village craft", "side dish"],
+    "preparation_steps": [
+      "Rinse the rice and soak in clean water for about 2 hours. Drain; sift the sesame and grind the salt finely.",
+      "Grind the rice with water into a smooth, pourable batter and use it promptly. Stir in the sesame and salt.",
+      "Prepare a rice-steaming pot with a clean taut cloth and a flat drying surface. After steaming, separate each cracker and dry on a clean rack until just firm, usually about 3 hours 40 minutes depending on sun and humidity."
+    ],
+    "cooking_steps": [
+      "When the water in the steamer is at a strong boil, ladle a very thin layer of batter onto the taut cloth, scatter a little sesame and cover for about 2–3 minutes until set. Spread a second thin layer over it and steam again until translucent and cooked through.",
+      "Carefully lift off the cracker and lay it flat on a clean rack. Repeat with the remaining batter. Dry until pliable but no longer wet; do not let the crackers become brittle before grilling.",
+      "Grill each cracker over moderate charcoal, turning continuously until it puffs slightly, dries crisp and smells fragrant. Serve immediately."
+    ],
+    "keywords": ["Khanh Thien sesame cracker", "Phong An fan cracker", "Ninh Binh", "non-glutinous rice", "sesame", "Vietnamese country snack"]
+  }
+}

@@ -1,4 +1,5 @@
 import { ingredientAmount, recipeMinutes, type Recipe } from '@/data/recipes';
+import { spokenUnits, toSpokenLang } from '@/features/assistant/spokenUnits';
 import type { Language } from '@/features/auth/types';
 import { translate } from '@/features/i18n/translate';
 
@@ -36,50 +37,9 @@ export function detectNarrationLang(text: string, language: Language): Narration
   return language === 'vi' || VIETNAMESE_LETTERS.test(text) ? 'vi-VN' : 'en-US';
 }
 
-const spokenUnits: Record<NarrationLang, Record<string, string>> = {
-  'vi-VN': {
-    kg: 'ki lô gam',
-    g: 'gam',
-    mg: 'mi li gam',
-    ml: 'mi li lít',
-    l: 'lít',
-    cm: 'xăng ti mét',
-    mm: 'mi li mét',
-  },
-  'en-US': {
-    kg: 'kilograms',
-    g: 'grams',
-    mg: 'milligrams',
-    ml: 'millilitres',
-    l: 'litres',
-    cm: 'centimetres',
-    mm: 'millimetres',
-    tbsp: 'tablespoons',
-    tsp: 'teaspoons',
-  },
-};
-
-const connectors: Record<NarrationLang, { degrees: string; to: string; over: string }> = {
-  'vi-VN': { degrees: 'độ C', to: 'đến', over: 'phần' },
-  'en-US': { degrees: 'degrees Celsius', to: 'to', over: 'over' },
-};
-
 /** Viết lại ký hiệu khó đọc (đơn vị, khoảng số, phân số, nhiệt độ) thành lời. */
 export function toSpokenText(text: string, lang: NarrationLang = 'vi-VN') {
-  const words = connectors[lang];
-  return text
-    .replace(/(\d)\s*°\s*C/g, `$1 ${words.degrees}`)
-    .replace(/(\d)\s*[-–]\s*(\d)/g, `$1 ${words.to} $2`)
-    .replace(/(\d)\s*\/\s*(\d)/g, `$1 ${words.over} $2`)
-    .replace(
-      /(\d)\s*(kg|mg|ml|mm|cm|tbsp|tsp|g|l)(?!\p{L})/gu,
-      (match, digit: string, unit: string) => {
-        const spoken = spokenUnits[lang][unit];
-        return spoken ? `${digit} ${spoken}` : match;
-      },
-    )
-    .replace(/\s+/g, ' ')
-    .trim();
+  return spokenUnits(text, toSpokenLang(lang)).replace(/\s+/g, ' ').trim();
 }
 
 function endSentence(text: string) {

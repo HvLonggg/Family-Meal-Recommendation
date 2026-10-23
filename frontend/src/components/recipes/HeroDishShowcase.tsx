@@ -127,7 +127,7 @@ export function HeroDishShowcase() {
         className="hero-float hero-float--top"
         to={`/recipes/${dish.slug}`}
       >
-        <span>{t('Vừa nấu xong')}</span>
+        <span>{t('Thực đơn gợi ý')}</span>
         <strong aria-live="polite" className="hero-float__swap" key={dish.slug}>
           {dish.name}
         </strong>

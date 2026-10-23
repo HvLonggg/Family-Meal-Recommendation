@@ -1,0 +1,1041 @@
+{
+  "name": "bepviet-intent",
+  "version": "1.0",
+  "trained_at": "2026-10-23T10:18:07+00:00",
+  "algorithm": "multiclass linear SVM (Crammer-Singer hinge, averaged SGD), hashed char 2-5 + word 1-2 n-grams (accented + unaccented), softmax temperature calibration",
+  "data_dir": "data",
+  "data_hash": "25d8cb3bcb0532a2",
+  "train_samples": 2719,
+  "test_samples": 483,
+  "intents": 69,
+  "label_counts": {
+    "about_free": 40,
+    "account_change_email": 40,
+    "account_change_password": 40,
+    "account_delete": 40,
+    "account_forgot_password": 40,
+    "account_login_help": 40,
+    "account_logout_all": 40,
+    "account_no_email": 40,
+    "account_profile": 39,
+    "account_register": 40,
+    "affirm": 40,
+    "bot_capabilities": 40,
+    "complaint": 40,
+    "contact_support": 40,
+    "cooking_question": 40,
+    "culinary_creative": 40,
+    "deny": 40,
+    "feature_assistant_memory": 40,
+    "feature_chat_history": 36,
+    "feature_community": 38,
+    "feature_cook_mode": 40,
+    "feature_cook_timer": 40,
+    "feature_cooked_history": 36,
+    "feature_favorites": 37,
+    "feature_lunar_vegetarian": 40,
+    "feature_narration": 39,
+    "feature_planner": 40,
+    "feature_random_meal": 40,
+    "feature_search": 40,
+    "feature_shopping_list": 33,
+    "feature_submit_recipe": 40,
+    "feature_suggestions": 39,
+    "feature_voice_commands": 40,
+    "feedback_suggestion": 40,
+    "food_culture": 38,
+    "goodbye": 40,
+    "greeting": 40,
+    "identity_creator": 40,
+    "identity_model": 40,
+    "identity_who": 40,
+    "issue_alarm_screen_off": 40,
+    "issue_microphone": 40,
+    "issue_no_sound": 40,
+    "issue_site_error": 40,
+    "out_of_scope": 40,
+    "privacy_data": 40,
+    "recipe_cook_time": 40,
+    "recipe_how_to_cook": 40,
+    "recipe_ingredients": 40,
+    "recipe_nutrition": 40,
+    "recipe_scale_servings": 40,
+    "recommend_by_diet": 40,
+    "recommend_by_ingredients": 40,
+    "recommend_by_meal": 40,
+    "recommend_by_region": 39,
+    "recommend_general": 40,
+    "recommend_quick": 40,
+    "safety_abuse": 39,
+    "safety_dangerous": 38,
+    "safety_emergency": 35,
+    "safety_medical": 40,
+    "safety_prompt_injection": 40,
+    "settings_assistant_style": 40,
+    "settings_diet": 40,
+    "settings_display": 40,
+    "settings_household": 40,
+    "settings_notifications": 39,
+    "support_ticket_status": 34,
+    "thanks_praise": 40
+  },
+  "config": {
+    "epochs": 20,
+    "learning_rate": 1.0,
+    "margin": 1.0,
+    "seed": 13
+  },
+  "temperature": 0.2189,
+  "ood": {
+    "min_confidence": 0.55,
+    "min_margin": 0.15,
+    "min_coverage": 0.3
+  },
+  "cross_validation": {
+    "accuracy": 0.8967,
+    "macro_f1": 0.8949,
+    "per_intent": {
+      "about_free": {
+        "precision": 0.9737,
+        "recall": 0.925,
+        "f1": 0.9487,
+        "support": 40
+      },
+      "account_change_email": {
+        "precision": 0.8696,
+        "recall": 1.0,
+        "f1": 0.9302,
+        "support": 40
+      },
+      "account_change_password": {
+        "precision": 0.766,
+        "recall": 0.9,
+        "f1": 0.8276,
+        "support": 40
+      },
+      "account_delete": {
+        "precision": 0.8478,
+        "recall": 0.975,
+        "f1": 0.907,
+        "support": 40
+      },
+      "account_forgot_password": {
+        "precision": 0.9444,
+        "recall": 0.85,
+        "f1": 0.8947,
+        "support": 40
+      },
+      "account_login_help": {
+        "precision": 0.8444,
+        "recall": 0.95,
+        "f1": 0.8941,
+        "support": 40
+      },
+      "account_logout_all": {
+        "precision": 0.8333,
+        "recall": 1.0,
+        "f1": 0.9091,
+        "support": 40
+      },
+      "account_no_email": {
+        "precision": 0.8824,
+        "recall": 0.75,
+        "f1": 0.8108,
+        "support": 40
+      },
+      "account_profile": {
+        "precision": 1.0,
+        "recall": 0.9231,
+        "f1": 0.96,
+        "support": 39
+      },
+      "account_register": {
+        "precision": 0.8857,
+        "recall": 0.775,
+        "f1": 0.8267,
+        "support": 40
+      },
+      "affirm": {
+        "precision": 1.0,
+        "recall": 0.825,
+        "f1": 0.9041,
+        "support": 40
+      },
+      "bot_capabilities": {
+        "precision": 0.8837,
+        "recall": 0.95,
+        "f1": 0.9157,
+        "support": 40
+      },
+      "complaint": {
+        "precision": 0.8684,
+        "recall": 0.825,
+        "f1": 0.8462,
+        "support": 40
+      },
+      "contact_support": {
+        "precision": 0.963,
+        "recall": 0.65,
+        "f1": 0.7761,
+        "support": 40
+      },
+      "cooking_question": {
+        "precision": 0.8333,
+        "recall": 0.75,
+        "f1": 0.7895,
+        "support": 40
+      },
+      "culinary_creative": {
+        "precision": 0.9583,
+        "recall": 0.575,
+        "f1": 0.7188,
+        "support": 40
+      },
+      "deny": {
+        "precision": 0.9355,
+        "recall": 0.725,
+        "f1": 0.8169,
+        "support": 40
+      },
+      "feature_assistant_memory": {
+        "precision": 0.8667,
+        "recall": 0.975,
+        "f1": 0.9176,
+        "support": 40
+      },
+      "feature_chat_history": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 36
+      },
+      "feature_community": {
+        "precision": 0.9737,
+        "recall": 0.9737,
+        "f1": 0.9737,
+        "support": 38
+      },
+      "feature_cook_mode": {
+        "precision": 0.9286,
+        "recall": 0.975,
+        "f1": 0.9512,
+        "support": 40
+      },
+      "feature_cook_timer": {
+        "precision": 0.8837,
+        "recall": 0.95,
+        "f1": 0.9157,
+        "support": 40
+      },
+      "feature_cooked_history": {
+        "precision": 0.878,
+        "recall": 1.0,
+        "f1": 0.9351,
+        "support": 36
+      },
+      "feature_favorites": {
+        "precision": 0.9024,
+        "recall": 1.0,
+        "f1": 0.9487,
+        "support": 37
+      },
+      "feature_lunar_vegetarian": {
+        "precision": 0.9091,
+        "recall": 1.0,
+        "f1": 0.9524,
+        "support": 40
+      },
+      "feature_narration": {
+        "precision": 0.881,
+        "recall": 0.9487,
+        "f1": 0.9136,
+        "support": 39
+      },
+      "feature_planner": {
+        "precision": 0.8857,
+        "recall": 0.775,
+        "f1": 0.8267,
+        "support": 40
+      },
+      "feature_random_meal": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 40
+      },
+      "feature_search": {
+        "precision": 0.9756,
+        "recall": 1.0,
+        "f1": 0.9877,
+        "support": 40
+      },
+      "feature_shopping_list": {
+        "precision": 0.9429,
+        "recall": 1.0,
+        "f1": 0.9706,
+        "support": 33
+      },
+      "feature_submit_recipe": {
+        "precision": 0.9302,
+        "recall": 1.0,
+        "f1": 0.9639,
+        "support": 40
+      },
+      "feature_suggestions": {
+        "precision": 0.8837,
+        "recall": 0.9744,
+        "f1": 0.9268,
+        "support": 39
+      },
+      "feature_voice_commands": {
+        "precision": 0.9091,
+        "recall": 1.0,
+        "f1": 0.9524,
+        "support": 40
+      },
+      "feedback_suggestion": {
+        "precision": 0.8636,
+        "recall": 0.95,
+        "f1": 0.9048,
+        "support": 40
+      },
+      "food_culture": {
+        "precision": 0.7872,
+        "recall": 0.9737,
+        "f1": 0.8706,
+        "support": 38
+      },
+      "goodbye": {
+        "precision": 0.9167,
+        "recall": 0.825,
+        "f1": 0.8684,
+        "support": 40
+      },
+      "greeting": {
+        "precision": 0.8222,
+        "recall": 0.925,
+        "f1": 0.8706,
+        "support": 40
+      },
+      "identity_creator": {
+        "precision": 0.9048,
+        "recall": 0.95,
+        "f1": 0.9268,
+        "support": 40
+      },
+      "identity_model": {
+        "precision": 0.8333,
+        "recall": 1.0,
+        "f1": 0.9091,
+        "support": 40
+      },
+      "identity_who": {
+        "precision": 0.9143,
+        "recall": 0.8,
+        "f1": 0.8533,
+        "support": 40
+      },
+      "issue_alarm_screen_off": {
+        "precision": 0.8667,
+        "recall": 0.975,
+        "f1": 0.9176,
+        "support": 40
+      },
+      "issue_microphone": {
+        "precision": 0.9744,
+        "recall": 0.95,
+        "f1": 0.962,
+        "support": 40
+      },
+      "issue_no_sound": {
+        "precision": 0.907,
+        "recall": 0.975,
+        "f1": 0.9398,
+        "support": 40
+      },
+      "issue_site_error": {
+        "precision": 0.9429,
+        "recall": 0.825,
+        "f1": 0.88,
+        "support": 40
+      },
+      "out_of_scope": {
+        "precision": 0.9167,
+        "recall": 0.825,
+        "f1": 0.8684,
+        "support": 40
+      },
+      "privacy_data": {
+        "precision": 0.725,
+        "recall": 0.725,
+        "f1": 0.725,
+        "support": 40
+      },
+      "recipe_cook_time": {
+        "precision": 0.9487,
+        "recall": 0.925,
+        "f1": 0.9367,
+        "support": 40
+      },
+      "recipe_how_to_cook": {
+        "precision": 0.825,
+        "recall": 0.825,
+        "f1": 0.825,
+        "support": 40
+      },
+      "recipe_ingredients": {
+        "precision": 0.9512,
+        "recall": 0.975,
+        "f1": 0.963,
+        "support": 40
+      },
+      "recipe_nutrition": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 40
+      },
+      "recipe_scale_servings": {
+        "precision": 0.9512,
+        "recall": 0.975,
+        "f1": 0.963,
+        "support": 40
+      },
+      "recommend_by_diet": {
+        "precision": 0.7273,
+        "recall": 0.8,
+        "f1": 0.7619,
+        "support": 40
+      },
+      "recommend_by_ingredients": {
+        "precision": 0.9512,
+        "recall": 0.975,
+        "f1": 0.963,
+        "support": 40
+      },
+      "recommend_by_meal": {
+        "precision": 0.7949,
+        "recall": 0.775,
+        "f1": 0.7848,
+        "support": 40
+      },
+      "recommend_by_region": {
+        "precision": 0.9444,
+        "recall": 0.8718,
+        "f1": 0.9067,
+        "support": 39
+      },
+      "recommend_general": {
+        "precision": 0.8298,
+        "recall": 0.975,
+        "f1": 0.8966,
+        "support": 40
+      },
+      "recommend_quick": {
+        "precision": 0.9189,
+        "recall": 0.85,
+        "f1": 0.8831,
+        "support": 40
+      },
+      "safety_abuse": {
+        "precision": 0.8605,
+        "recall": 0.9487,
+        "f1": 0.9024,
+        "support": 39
+      },
+      "safety_dangerous": {
+        "precision": 0.9667,
+        "recall": 0.7632,
+        "f1": 0.8529,
+        "support": 38
+      },
+      "safety_emergency": {
+        "precision": 1.0,
+        "recall": 0.9714,
+        "f1": 0.9855,
+        "support": 35
+      },
+      "safety_medical": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 40
+      },
+      "safety_prompt_injection": {
+        "precision": 0.9286,
+        "recall": 0.65,
+        "f1": 0.7647,
+        "support": 40
+      },
+      "settings_assistant_style": {
+        "precision": 0.8889,
+        "recall": 1.0,
+        "f1": 0.9412,
+        "support": 40
+      },
+      "settings_diet": {
+        "precision": 0.7742,
+        "recall": 0.6,
+        "f1": 0.6761,
+        "support": 40
+      },
+      "settings_display": {
+        "precision": 0.9524,
+        "recall": 1.0,
+        "f1": 0.9756,
+        "support": 40
+      },
+      "settings_household": {
+        "precision": 0.9286,
+        "recall": 0.975,
+        "f1": 0.9512,
+        "support": 40
+      },
+      "settings_notifications": {
+        "precision": 0.9355,
+        "recall": 0.7436,
+        "f1": 0.8286,
+        "support": 39
+      },
+      "support_ticket_status": {
+        "precision": 0.8919,
+        "recall": 0.9706,
+        "f1": 0.9296,
+        "support": 34
+      },
+      "thanks_praise": {
+        "precision": 0.75,
+        "recall": 0.75,
+        "f1": 0.75,
+        "support": 40
+      }
+    },
+    "folds": 5
+  },
+  "test": {
+    "accuracy": 0.7122,
+    "macro_f1": 0.7124,
+    "per_intent": {
+      "about_free": {
+        "precision": 0.6667,
+        "recall": 0.8571,
+        "f1": 0.75,
+        "support": 7
+      },
+      "account_change_email": {
+        "precision": 0.7778,
+        "recall": 1.0,
+        "f1": 0.875,
+        "support": 7
+      },
+      "account_change_password": {
+        "precision": 0.875,
+        "recall": 1.0,
+        "f1": 0.9333,
+        "support": 7
+      },
+      "account_delete": {
+        "precision": 0.6667,
+        "recall": 0.8571,
+        "f1": 0.75,
+        "support": 7
+      },
+      "account_forgot_password": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 7
+      },
+      "account_login_help": {
+        "precision": 0.7143,
+        "recall": 0.7143,
+        "f1": 0.7143,
+        "support": 7
+      },
+      "account_logout_all": {
+        "precision": 0.6667,
+        "recall": 0.5714,
+        "f1": 0.6154,
+        "support": 7
+      },
+      "account_no_email": {
+        "precision": 0.8333,
+        "recall": 0.7143,
+        "f1": 0.7692,
+        "support": 7
+      },
+      "account_profile": {
+        "precision": 0.75,
+        "recall": 0.8571,
+        "f1": 0.8,
+        "support": 7
+      },
+      "account_register": {
+        "precision": 0.7143,
+        "recall": 0.7143,
+        "f1": 0.7143,
+        "support": 7
+      },
+      "affirm": {
+        "precision": 0.8571,
+        "recall": 0.8571,
+        "f1": 0.8571,
+        "support": 7
+      },
+      "bot_capabilities": {
+        "precision": 1.0,
+        "recall": 0.8571,
+        "f1": 0.9231,
+        "support": 7
+      },
+      "complaint": {
+        "precision": 0.5,
+        "recall": 0.4286,
+        "f1": 0.4615,
+        "support": 7
+      },
+      "contact_support": {
+        "precision": 0.6,
+        "recall": 0.4286,
+        "f1": 0.5,
+        "support": 7
+      },
+      "cooking_question": {
+        "precision": 0.3846,
+        "recall": 0.7143,
+        "f1": 0.5,
+        "support": 7
+      },
+      "culinary_creative": {
+        "precision": 1.0,
+        "recall": 0.4286,
+        "f1": 0.6,
+        "support": 7
+      },
+      "deny": {
+        "precision": 0.5556,
+        "recall": 0.7143,
+        "f1": 0.625,
+        "support": 7
+      },
+      "feature_assistant_memory": {
+        "precision": 0.5833,
+        "recall": 1.0,
+        "f1": 0.7368,
+        "support": 7
+      },
+      "feature_chat_history": {
+        "precision": 1.0,
+        "recall": 0.5714,
+        "f1": 0.7273,
+        "support": 7
+      },
+      "feature_community": {
+        "precision": 0.8571,
+        "recall": 0.8571,
+        "f1": 0.8571,
+        "support": 7
+      },
+      "feature_cook_mode": {
+        "precision": 0.8571,
+        "recall": 0.8571,
+        "f1": 0.8571,
+        "support": 7
+      },
+      "feature_cook_timer": {
+        "precision": 0.75,
+        "recall": 0.8571,
+        "f1": 0.8,
+        "support": 7
+      },
+      "feature_cooked_history": {
+        "precision": 0.6667,
+        "recall": 0.5714,
+        "f1": 0.6154,
+        "support": 7
+      },
+      "feature_favorites": {
+        "precision": 0.8,
+        "recall": 0.5714,
+        "f1": 0.6667,
+        "support": 7
+      },
+      "feature_lunar_vegetarian": {
+        "precision": 1.0,
+        "recall": 0.5714,
+        "f1": 0.7273,
+        "support": 7
+      },
+      "feature_narration": {
+        "precision": 0.4444,
+        "recall": 0.5714,
+        "f1": 0.5,
+        "support": 7
+      },
+      "feature_planner": {
+        "precision": 0.3636,
+        "recall": 0.5714,
+        "f1": 0.4444,
+        "support": 7
+      },
+      "feature_random_meal": {
+        "precision": 0.75,
+        "recall": 0.8571,
+        "f1": 0.8,
+        "support": 7
+      },
+      "feature_search": {
+        "precision": 0.5,
+        "recall": 0.5714,
+        "f1": 0.5333,
+        "support": 7
+      },
+      "feature_shopping_list": {
+        "precision": 1.0,
+        "recall": 0.7143,
+        "f1": 0.8333,
+        "support": 7
+      },
+      "feature_submit_recipe": {
+        "precision": 0.6,
+        "recall": 0.8571,
+        "f1": 0.7059,
+        "support": 7
+      },
+      "feature_suggestions": {
+        "precision": 0.875,
+        "recall": 1.0,
+        "f1": 0.9333,
+        "support": 7
+      },
+      "feature_voice_commands": {
+        "precision": 0.8,
+        "recall": 0.5714,
+        "f1": 0.6667,
+        "support": 7
+      },
+      "feedback_suggestion": {
+        "precision": 0.5714,
+        "recall": 0.5714,
+        "f1": 0.5714,
+        "support": 7
+      },
+      "food_culture": {
+        "precision": 0.8333,
+        "recall": 0.7143,
+        "f1": 0.7692,
+        "support": 7
+      },
+      "goodbye": {
+        "precision": 0.875,
+        "recall": 1.0,
+        "f1": 0.9333,
+        "support": 7
+      },
+      "greeting": {
+        "precision": 1.0,
+        "recall": 0.8571,
+        "f1": 0.9231,
+        "support": 7
+      },
+      "identity_creator": {
+        "precision": 0.75,
+        "recall": 0.8571,
+        "f1": 0.8,
+        "support": 7
+      },
+      "identity_model": {
+        "precision": 1.0,
+        "recall": 0.8571,
+        "f1": 0.9231,
+        "support": 7
+      },
+      "identity_who": {
+        "precision": 0.5556,
+        "recall": 0.7143,
+        "f1": 0.625,
+        "support": 7
+      },
+      "issue_alarm_screen_off": {
+        "precision": 0.8571,
+        "recall": 0.8571,
+        "f1": 0.8571,
+        "support": 7
+      },
+      "issue_microphone": {
+        "precision": 1.0,
+        "recall": 0.8571,
+        "f1": 0.9231,
+        "support": 7
+      },
+      "issue_no_sound": {
+        "precision": 0.5455,
+        "recall": 0.8571,
+        "f1": 0.6667,
+        "support": 7
+      },
+      "issue_site_error": {
+        "precision": 0.8571,
+        "recall": 0.8571,
+        "f1": 0.8571,
+        "support": 7
+      },
+      "out_of_scope": {
+        "precision": 0.6,
+        "recall": 0.4286,
+        "f1": 0.5,
+        "support": 7
+      },
+      "privacy_data": {
+        "precision": 0.8571,
+        "recall": 0.8571,
+        "f1": 0.8571,
+        "support": 7
+      },
+      "recipe_cook_time": {
+        "precision": 0.7,
+        "recall": 1.0,
+        "f1": 0.8235,
+        "support": 7
+      },
+      "recipe_how_to_cook": {
+        "precision": 0.4,
+        "recall": 0.5714,
+        "f1": 0.4706,
+        "support": 7
+      },
+      "recipe_ingredients": {
+        "precision": 0.5455,
+        "recall": 0.8571,
+        "f1": 0.6667,
+        "support": 7
+      },
+      "recipe_nutrition": {
+        "precision": 1.0,
+        "recall": 0.7143,
+        "f1": 0.8333,
+        "support": 7
+      },
+      "recipe_scale_servings": {
+        "precision": 0.5714,
+        "recall": 0.5714,
+        "f1": 0.5714,
+        "support": 7
+      },
+      "recommend_by_diet": {
+        "precision": 1.0,
+        "recall": 0.5714,
+        "f1": 0.7273,
+        "support": 7
+      },
+      "recommend_by_ingredients": {
+        "precision": 0.6667,
+        "recall": 0.5714,
+        "f1": 0.6154,
+        "support": 7
+      },
+      "recommend_by_meal": {
+        "precision": 0.5,
+        "recall": 0.7143,
+        "f1": 0.5882,
+        "support": 7
+      },
+      "recommend_by_region": {
+        "precision": 0.5,
+        "recall": 0.5714,
+        "f1": 0.5333,
+        "support": 7
+      },
+      "recommend_general": {
+        "precision": 0.6,
+        "recall": 0.4286,
+        "f1": 0.5,
+        "support": 7
+      },
+      "recommend_quick": {
+        "precision": 0.3333,
+        "recall": 0.2857,
+        "f1": 0.3077,
+        "support": 7
+      },
+      "safety_abuse": {
+        "precision": 1.0,
+        "recall": 0.5714,
+        "f1": 0.7273,
+        "support": 7
+      },
+      "safety_dangerous": {
+        "precision": 0.3333,
+        "recall": 0.2857,
+        "f1": 0.3077,
+        "support": 7
+      },
+      "safety_emergency": {
+        "precision": 1.0,
+        "recall": 0.7143,
+        "f1": 0.8333,
+        "support": 7
+      },
+      "safety_medical": {
+        "precision": 0.7143,
+        "recall": 0.7143,
+        "f1": 0.7143,
+        "support": 7
+      },
+      "safety_prompt_injection": {
+        "precision": 1.0,
+        "recall": 0.4286,
+        "f1": 0.6,
+        "support": 7
+      },
+      "settings_assistant_style": {
+        "precision": 0.8571,
+        "recall": 0.8571,
+        "f1": 0.8571,
+        "support": 7
+      },
+      "settings_diet": {
+        "precision": 1.0,
+        "recall": 0.2857,
+        "f1": 0.4444,
+        "support": 7
+      },
+      "settings_display": {
+        "precision": 1.0,
+        "recall": 0.5714,
+        "f1": 0.7273,
+        "support": 7
+      },
+      "settings_household": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 7
+      },
+      "settings_notifications": {
+        "precision": 0.8333,
+        "recall": 0.7143,
+        "f1": 0.7692,
+        "support": 7
+      },
+      "support_ticket_status": {
+        "precision": 0.6,
+        "recall": 0.8571,
+        "f1": 0.7059,
+        "support": 7
+      },
+      "thanks_praise": {
+        "precision": 1.0,
+        "recall": 0.7143,
+        "f1": 0.8333,
+        "support": 7
+      }
+    }
+  },
+  "routed_test": {
+    "threshold": 0.8,
+    "coverage": 0.5487,
+    "accuracy_on_kept": 0.917
+  },
+  "confusions": [
+    [
+      "account_logout_all",
+      "account_login_help",
+      2
+    ],
+    [
+      "feature_favorites",
+      "feature_search",
+      2
+    ],
+    [
+      "feature_planner",
+      "recommend_by_meal",
+      2
+    ],
+    [
+      "feature_shopping_list",
+      "recipe_ingredients",
+      2
+    ],
+    [
+      "feature_lunar_vegetarian",
+      "cooking_question",
+      2
+    ],
+    [
+      "recipe_scale_servings",
+      "feature_narration",
+      2
+    ],
+    [
+      "recommend_quick",
+      "feedback_suggestion",
+      2
+    ],
+    [
+      "food_culture",
+      "recipe_ingredients",
+      2
+    ],
+    [
+      "greeting",
+      "feature_assistant_memory",
+      1
+    ],
+    [
+      "thanks_praise",
+      "complaint",
+      1
+    ],
+    [
+      "thanks_praise",
+      "feature_assistant_memory",
+      1
+    ],
+    [
+      "affirm",
+      "issue_no_sound",
+      1
+    ],
+    [
+      "deny",
+      "support_ticket_status",
+      1
+    ],
+    [
+      "deny",
+      "affirm",
+      1
+    ],
+    [
+      "identity_who",
+      "account_profile",
+      1
+    ]
+  ],
+  "gate_passed": [
+    "account_change_email",
+    "account_change_password",
+    "account_forgot_password",
+    "feature_community",
+    "feature_cook_mode",
+    "feature_random_meal",
+    "goodbye",
+    "greeting",
+    "identity_creator",
+    "identity_model",
+    "settings_household",
+    "support_ticket_status"
+  ],
+  "performance": {
+    "file_bytes": 952521,
+    "weights": 275660,
+    "features": 25604,
+    "load_ms": 32.0,
+    "load_peak_mb": 9.83,
+    "resident_mb": 2.87,
+    "infer_ms_mean": 0.64,
+    "infer_ms_p95": 1.193
+  }
+}

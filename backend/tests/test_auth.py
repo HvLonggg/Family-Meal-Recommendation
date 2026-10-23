@@ -19,13 +19,13 @@ def register_user(client: TestClient, email: str = "lan.nguyen@example.com") -> 
         json={
             "full_name": "Nguyễn Ngọc Lan",
             "email": email,
-            "password": "BepViet2026",
+            "password": "Test-Only-No-Login-2026!",
         },
     )
     assert created.status_code == 201
     login = client.post(
         "/api/v1/auth/login",
-        json={"email": email, "password": "BepViet2026"},
+        json={"email": email, "password": "Test-Only-No-Login-2026!"},
     )
     assert login.status_code == 200
     return login.json()
@@ -39,7 +39,7 @@ def test_registration_creates_account_without_otp_and_queues_welcome_email(
         json={
             "full_name": "Nguyễn Ngọc Lan",
             "email": "lan.nguyen@example.com",
-            "password": "BepViet2026",
+            "password": "Test-Only-No-Login-2026!",
         },
     )
     assert response.status_code == 201
@@ -67,7 +67,7 @@ def test_registration_creates_account_without_otp_and_queues_welcome_email(
 
     login = client.post(
         "/api/v1/auth/login",
-        json={"email": "lan.nguyen@example.com", "password": "BepViet2026"},
+        json={"email": "lan.nguyen@example.com", "password": "Test-Only-No-Login-2026!"},
     )
     assert login.status_code == 200
 
@@ -76,7 +76,7 @@ def test_registration_otp_routes_are_removed(client: TestClient) -> None:
     payload = {
         "full_name": "Nguyễn Ngọc Lan",
         "email": "lan@example.com",
-        "password": "BepViet2026",
+        "password": "Test-Only-No-Login-2026!",
     }
     assert client.post("/api/v1/auth/register/request-code", json=payload).status_code == 404
     assert client.post("/api/v1/auth/register/verify-code", json=payload).status_code == 404
@@ -86,7 +86,7 @@ def test_email_login_and_remember_controls_cookie(client: TestClient) -> None:
     register_user(client)
     email_login = client.post(
         "/api/v1/auth/login",
-        json={"email": "lan.nguyen@example.com", "password": "BepViet2026"},
+        json={"email": "lan.nguyen@example.com", "password": "Test-Only-No-Login-2026!"},
     )
     assert email_login.status_code == 200
     assert "max-age" not in email_login.headers["set-cookie"].lower()
@@ -95,7 +95,7 @@ def test_email_login_and_remember_controls_cookie(client: TestClient) -> None:
         "/api/v1/auth/login",
         json={
             "email": "lan.nguyen@example.com",
-            "password": "BepViet2026",
+            "password": "Test-Only-No-Login-2026!",
             "remember_me": True,
         },
     )
@@ -106,9 +106,12 @@ def test_email_login_and_remember_controls_cookie(client: TestClient) -> None:
 def test_phone_auth_endpoints_are_removed(client: TestClient) -> None:
     response = client.post("/api/v1/auth/phone/request", json={"phone": "0901234567"})
     assert response.status_code == 404
-    assert client.post(
-        "/api/v1/auth/login", json={"identifier": "0901234567", "password": "secret"}
-    ).status_code == 422
+    assert (
+        client.post(
+            "/api/v1/auth/login", json={"identifier": "0901234567", "password": "secret"}
+        ).status_code
+        == 422
+    )
 
 
 def test_invalid_login_uses_generic_message(client: TestClient) -> None:
@@ -152,7 +155,7 @@ def test_admin_route_enforces_role(
 
     admin_login = client.post(
         "/api/v1/auth/login",
-        json={"email": "lan.nguyen@example.com", "password": "BepViet2026"},
+        json={"email": "lan.nguyen@example.com", "password": "Test-Only-No-Login-2026!"},
     )
     admin_token = admin_login.json()["access_token"]
     allowed = client.get(
@@ -193,7 +196,7 @@ def test_email_password_reset_uses_otp_and_revokes_sessions(
 
     reset = client.post(
         "/api/v1/auth/reset-password",
-        json={"token": reset_token, "new_password": "MatKhauMoi2026"},
+        json={"token": reset_token, "new_password": "New-Test-Only-No-Login-2026!"},
     )
     assert reset.status_code == 200
     with database_session_factory() as session:
@@ -210,19 +213,19 @@ def test_email_password_reset_uses_otp_and_revokes_sessions(
 
     old_login = client.post(
         "/api/v1/auth/login",
-        json={"email": "lan.nguyen@example.com", "password": "BepViet2026"},
+        json={"email": "lan.nguyen@example.com", "password": "Test-Only-No-Login-2026!"},
     )
     new_login = client.post(
         "/api/v1/auth/login",
-        json={"email": "LAN.NGUYEN@EXAMPLE.COM", "password": "MatKhauMoi2026"},
+        json={"email": "LAN.NGUYEN@EXAMPLE.COM", "password": "New-Test-Only-No-Login-2026!"},
     )
     other_old_login = client.post(
         "/api/v1/auth/login",
-        json={"email": "other.user@example.com", "password": "BepViet2026"},
+        json={"email": "other.user@example.com", "password": "Test-Only-No-Login-2026!"},
     )
     other_new_password_login = client.post(
         "/api/v1/auth/login",
-        json={"email": "other.user@example.com", "password": "MatKhauMoi2026"},
+        json={"email": "other.user@example.com", "password": "New-Test-Only-No-Login-2026!"},
     )
     assert old_login.status_code == 401
     assert new_login.status_code == 200
@@ -246,12 +249,10 @@ def test_password_reset_invalidates_previously_issued_access_tokens(client: Test
     ).json()
     reset = client.post(
         "/api/v1/auth/reset-password",
-        json={"token": verified["reset_token"], "new_password": "MatKhauMoi2026"},
+        json={"token": verified["reset_token"], "new_password": "New-Test-Only-No-Login-2026!"},
     )
     assert reset.status_code == 200
-    rejected = client.get(
-        "/api/v1/auth/me", headers={"Authorization": f"Bearer {access_token}"}
-    )
+    rejected = client.get("/api/v1/auth/me", headers={"Authorization": f"Bearer {access_token}"})
     assert rejected.status_code == 401
 
 
@@ -263,24 +264,27 @@ def test_change_password_requires_current_password_and_revokes_old_sessions(
     bad_current = client.post(
         "/api/v1/auth/change-password",
         headers={"Authorization": f"Bearer {access_token}"},
-        json={"current_password": "WrongPass2026", "new_password": "MatKhauMoi2026"},
+        json={"current_password": "WrongPass2026", "new_password": "New-Test-Only-No-Login-2026!"},
     )
     assert bad_current.status_code == 401
 
     changed = client.post(
         "/api/v1/auth/change-password",
         headers={"Authorization": f"Bearer {access_token}"},
-        json={"current_password": "BepViet2026", "new_password": "MatKhauMoi2026"},
+        json={"current_password": "Test-Only-No-Login-2026!", "new_password": "New-Test-Only-No-Login-2026!"},
     )
     assert changed.status_code == 200
     assert "đăng nhập lại" in changed.json()["message"]
-    assert client.get(
-        "/api/v1/auth/me", headers={"Authorization": f"Bearer {access_token}"}
-    ).status_code == 401
+    assert (
+        client.get(
+            "/api/v1/auth/me", headers={"Authorization": f"Bearer {access_token}"}
+        ).status_code
+        == 401
+    )
     assert client.post("/api/v1/auth/refresh").status_code == 401
     new_login = client.post(
         "/api/v1/auth/login",
-        json={"email": "lan.nguyen@example.com", "password": "MatKhauMoi2026"},
+        json={"email": "lan.nguyen@example.com", "password": "New-Test-Only-No-Login-2026!"},
     )
     assert new_login.status_code == 200
     with database_session_factory() as session:
@@ -293,12 +297,8 @@ def test_change_password_requires_current_password_and_revokes_old_sessions(
 
 def test_otp_requests_are_rate_limited(client: TestClient) -> None:
     register_user(client)
-    first = client.post(
-        "/api/v1/auth/forgot-password", json={"email": "lan.nguyen@example.com"}
-    )
-    second = client.post(
-        "/api/v1/auth/forgot-password", json={"email": "lan.nguyen@example.com"}
-    )
+    first = client.post("/api/v1/auth/forgot-password", json={"email": "lan.nguyen@example.com"})
+    second = client.post("/api/v1/auth/forgot-password", json={"email": "lan.nguyen@example.com"})
     assert first.status_code == 200
     assert second.status_code == 429
 
@@ -426,9 +426,7 @@ def test_smtp_rejection_invalidates_challenge_and_never_returns_the_code(
         assert "development_code" not in response.json()
         with database_session_factory() as session:
             challenge = session.scalar(
-                select(EmailOtpChallenge).where(
-                    EmailOtpChallenge.email == "lan.nguyen@example.com"
-                )
+                select(EmailOtpChallenge).where(EmailOtpChallenge.email == "lan.nguyen@example.com")
             )
             assert challenge is not None
             assert challenge.consumed_at is not None

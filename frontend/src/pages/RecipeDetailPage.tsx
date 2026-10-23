@@ -3,6 +3,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router';
 
 import { AppIcon } from '@/components/common/AppIcon';
+import { CookedMark } from '@/components/recipes/CookedMark';
 import { RecipeCard } from '@/components/recipes/RecipeCard';
 import { RecipeNarrator } from '@/components/recipes/RecipeNarrator';
 import {
@@ -19,6 +20,7 @@ import {
   useUserPreferences,
 } from '@/features/account/preferences';
 import { favoriteRecipesQueryKey, type FavoriteRecipe } from '@/features/favorites/favoritesApi';
+import { cookPath } from '@/features/cooking/cookSession';
 import { buildRecipeScript } from '@/features/narration/recipeScript';
 import { useNarration } from '@/features/narration/useNarration';
 import { useRecipeCatalog } from '@/features/i18n/recipeContent';
@@ -153,9 +155,15 @@ function RecipeDetails({ recipe }: { recipe: Recipe }) {
             </span>
           </div>
           <div className="recipe-actions">
+            <Link
+              className="button button--primary recipe-actions__cook"
+              to={cookPath([{ slug: recipe.slug, servings }])}
+            >
+              <AppIcon name="chef" size={18} /> {t('Vào bếp')}
+            </Link>
             <button
               aria-pressed={isFavorite}
-              className="button button--primary"
+              className="button button--outline"
               disabled={toggleFavorite.isPending}
               onClick={() => {
                 if (!user) {
@@ -177,6 +185,7 @@ function RecipeDetails({ recipe }: { recipe: Recipe }) {
             </Link>
             <RecipeNarrator narration={narration} segments={narrationScript} />
           </div>
+          <CookedMark servings={servings} slug={recipe.slug} />
           {conflicts.length ? (
             <p className="diet-warning" role="note">
               <AppIcon name="leaf" size={18} />

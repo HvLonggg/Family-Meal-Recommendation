@@ -1,0 +1,1742 @@
+{
+  "batch": 22,
+  "description": "Năm món vùng miền được biên tập từ nguồn báo chí và tư liệu địa phương, kèm ảnh mới do Bếp Việt tạo.",
+  "recipes": [
+    {
+      "id": "BV436",
+      "slug": "cha-ruoi-tu-ky",
+      "name": "Chả rươi Tứ Kỳ",
+      "aliases": [
+        "Chả rươi Hải Dương",
+        "Chả rươi vỏ quýt"
+      ],
+      "region": [
+        "Đồng bằng Bắc Bộ"
+      ],
+      "province": [
+        "Hải Dương"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Vừa",
+      "servings": 4,
+      "serving_basis": "4 người; dùng như món mặn, ăn cùng cơm hoặc bún và rau thơm.",
+      "prep_time": 25,
+      "cook_time": 15,
+      "passive_time": 0,
+      "description": "Chả rươi là món mùa thu vùng đồng bằng Bắc Bộ, nổi tiếng ở Tứ Kỳ, Hải Dương. Rươi hòa cùng thịt heo xay, trứng, thì là và chút vỏ quýt tạo miếng chả thơm béo, mềm bên trong, vàng cạnh ngoài. Bếp Việt biên tập định lượng cho chảo gia đình, giữ gia vị vừa phải để vị rươi vẫn nổi bật.",
+      "finished_dish": "Miếng chả rươi vàng đều, chín kỹ, thơm thì là và vỏ quýt, mềm ẩm mà không bở.",
+      "serving": "Dùng chả nóng với cơm trắng hoặc bún, rau thơm và nước mắm chua dịu. Cắt miếng vừa ăn sau khi chả nghỉ vài phút.",
+      "tips": [
+        "Nếu dùng rươi đông lạnh, rã đông trong ngăn mát; loại bỏ tạp chất và không dùng nguyên liệu có mùi lạ.",
+        "Thái vỏ quýt thật mỏng và dùng lượng vừa phải để tạo hương thơm, tránh vị the đắng.",
+        "Chiên miếng chả vừa mỏng ở lửa vừa để phần giữa chín kỹ trước khi mặt ngoài sậm màu."
+      ],
+      "dish_type": [
+        "Món chiên",
+        "Đặc sản Hải Dương"
+      ],
+      "main_ingredient": [
+        "rươi",
+        "thịt heo",
+        "trứng",
+        "thì là"
+      ],
+      "cooking_method": [
+        "rán",
+        "áp chảo"
+      ],
+      "search_terms": [
+        "chả rươi Tứ Kỳ Hải Dương",
+        "chả rươi vỏ quýt",
+        "món rươi mùa thu"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Đĩa chả rươi Tứ Kỳ vàng ruộm, điểm thì là và vỏ quýt thái sợi.",
+      "ingredients": [
+        {
+          "name": "Rươi tươi hoặc rươi cấp đông",
+          "quantity": 500,
+          "unit": "g",
+          "role": "main",
+          "notes": "Rã đông an toàn trong ngăn mát nếu dùng loại cấp đông.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Thịt vai heo xay",
+          "quantity": 150,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn thịt có chút mỡ để chả mềm.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Trứng gà",
+          "quantity": 2,
+          "unit": "quả",
+          "role": "main",
+          "notes": "Đánh tan.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Thì là",
+          "quantity": 30,
+          "unit": "g",
+          "role": "main",
+          "notes": "Rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 25,
+          "unit": "g",
+          "role": "main",
+          "notes": "Thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Vỏ quýt",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Chỉ dùng lớp vỏ màu, thái thật mảnh.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm nhẹ để không át vị rươi.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Muối",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Gia giảm theo độ mặn của nước mắm.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Hạt tiêu",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Tiêu xay.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 45,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng lượng vừa đủ để áp chảo.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Rau thơm",
+          "quantity": 100,
+          "unit": "g",
+          "role": "main",
+          "notes": "Rửa sạch, để ráo và dùng kèm.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Nếu dùng rươi cấp đông, rã đông trong ngăn mát. Nhặt bỏ rơm rác, tráng nhẹ bằng nước sạch rồi để ráo; giữ lạnh trong lúc sơ chế phần còn lại."
+        },
+        {
+          "step": 2,
+          "instruction": "Rửa thì là và hành lá, để ráo rồi thái nhỏ. Bào lấy lớp vỏ màu của quýt và thái sợi thật mảnh."
+        },
+        {
+          "step": 3,
+          "instruction": "Đánh tan trứng. Trộn nhẹ rươi với thịt heo xay, trứng, thì là, hành lá, vỏ quýt, nước mắm, muối và tiêu."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng chảo chống dính với một lớp dầu mỏng ở lửa vừa. Múc hỗn hợp thành những miếng chả vừa ăn, dàn dày khoảng 1 cm."
+        },
+        {
+          "step": 2,
+          "instruction": "Chiên mỗi mặt khoảng 3–4 phút, trở nhẹ tay đến khi chả vàng đều và phần giữa chín kỹ. Điều chỉnh lửa nhỏ nếu mặt chả sậm màu quá nhanh."
+        },
+        {
+          "step": 3,
+          "instruction": "Gắp chả ra giấy thấm dầu, để nghỉ vài phút rồi dùng nóng cùng rau thơm, cơm hoặc bún."
+        }
+      ],
+      "time_note": "Thời gian chiên tùy độ dày của miếng chả và nhiệt bếp; cắt thử một miếng để kiểm tra phần giữa đã chín hoàn toàn.",
+      "total_time": 40,
+      "time_unit": "phút",
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "cha-ruoi-tu-ky",
+      "keywords": [
+        "Chả rươi Tứ Kỳ",
+        "Chả rươi Hải Dương",
+        "Chả rươi vỏ quýt",
+        "Đồng bằng Bắc Bộ",
+        "Hải Dương",
+        "rươi",
+        "thịt heo",
+        "trứng",
+        "thì là",
+        "chả rươi Tứ Kỳ Hải Dương",
+        "chả rươi vỏ quýt",
+        "món rươi mùa thu",
+        "Món chiên",
+        "Đặc sản Hải Dương",
+        "40 phút"
+      ],
+      "tags": {
+        "region": [
+          "Đồng bằng Bắc Bộ"
+        ],
+        "province": [
+          "Hải Dương"
+        ],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Món chiên",
+          "Đặc sản Hải Dương"
+        ],
+        "main_ingredient": [
+          "rươi",
+          "thịt heo",
+          "trứng",
+          "thì là"
+        ],
+        "cooking_method": [
+          "rán",
+          "áp chảo"
+        ],
+        "difficulty": "Vừa",
+        "prep_time": 25,
+        "cook_time": 15,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Cơm trắng",
+          "Bún tươi",
+          "Rau thơm",
+          "Nước mắm chua ngọt"
+        ],
+        "keywords": [
+          "Chả rươi Tứ Kỳ",
+          "Chả rươi Hải Dương",
+          "Chả rươi vỏ quýt",
+          "Đồng bằng Bắc Bộ",
+          "Hải Dương",
+          "rươi",
+          "thịt heo",
+          "trứng",
+          "thì là",
+          "chả rươi Tứ Kỳ Hải Dương",
+          "chả rươi vỏ quýt",
+          "món rươi mùa thu",
+          "Món chiên",
+          "Đặc sản Hải Dương",
+          "40 phút"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://tuoitre.vn/phunuonline/cha-ruoi-la-day-co-phai-khong-1101422267.htm",
+          "publisher": "Tuổi Trẻ Online / Phụ Nữ Online",
+          "title": "Chả rươi là đây, có phải không?",
+          "use": "Đối chiếu thành phần thường gặp gồm rươi, trứng, thịt, vỏ quýt; tham khảo cách áp chảo kiểu Tứ Kỳ trên lá chuối. Công thức trong dự án được viết mới cho chảo gia đình.",
+          "accessed_at": "2026-10-22",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://tuoitre.vn/kiem-tien-ti-nho-may-mo-uong-nuoi-ruoi-giong-thanh-cong-20231003154212499.htm",
+          "publisher": "Tuổi Trẻ Online",
+          "title": "Kiếm tiền tỉ nhờ mày mò ương nuôi rươi giống thành công",
+          "use": "Xác minh vùng rươi Tứ Kỳ, Hải Dương và mùa rươi thường vào khoảng tháng 9–11 âm lịch.",
+          "accessed_at": "2026-10-22",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Chả rươi Tứ Kỳ cho 2 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Chả rươi Tứ Kỳ cho 6 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Chả rươi Tứ Kỳ cho 8 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/cha-ruoi-tu-ky-960.webp",
+          "page_url": "https://tuoitre.vn/phunuonline/cha-ruoi-la-day-co-phai-khong-1101422267.htm",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu đặc trưng món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa chả rươi Tứ Kỳ vàng ruộm, điểm thì là và vỏ quýt thái sợi.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-22",
+          "photo_variant_note": "Ảnh món ăn được tạo riêng cho Bếp Việt; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức biên tập tại Bếp Việt từ nguồn tham khảo; định lượng và thời gian cần được nấu thử trước khi xem là bản hoàn chỉnh.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-22",
+        "needs": [
+          "Nấu thử với rươi tươi và rươi cấp đông để chuẩn hóa kết cấu, lượng trứng và thời gian chiên."
+        ]
+      },
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Bún tươi",
+        "Rau thơm",
+        "Nước mắm chua ngọt"
+      ]
+    },
+    {
+      "id": "BV437",
+      "slug": "tung-lo-mo-an-giang",
+      "name": "Tung lò mò An Giang",
+      "aliases": [
+        "Lạp xưởng bò Chăm",
+        "Tung lò mò Châu Đốc"
+      ],
+      "region": [
+        "Đồng bằng sông Cửu Long"
+      ],
+      "province": [
+        "An Giang"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "bữa phụ"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "4 người; dùng như món mặn ăn cùng cơm hoặc bún và rau sống.",
+      "prep_time": 10,
+      "cook_time": 15,
+      "passive_time": 0,
+      "description": "Tung lò mò là lạp xưởng bò gắn với cộng đồng Chăm ở An Giang, thường được nướng cho lớp vỏ thơm và hơi xém. Bếp Việt biên tập cách dùng sản phẩm làm sẵn, làm nóng chín đều rồi dọn cùng rau tươi để phù hợp bữa ăn tại nhà.",
+      "finished_dish": "Tung lò mò nướng vàng thơm, bên trong chín mọng, ăn kèm rau tươi và dưa leo.",
+      "serving": "Cắt xéo tung lò mò sau khi nướng, bày với rau sống, dưa leo và bún hoặc cơm nóng. Có thể dùng thêm chén muối tiêu chanh.",
+      "tips": [
+        "Chọn tung lò mò có nhãn, nguồn bán tin cậy và bảo quản theo hướng dẫn trên bao bì.",
+        "Nướng lửa vừa, trở đều để vỏ không cháy trước khi phần giữa nóng chín.",
+        "Nếu sản phẩm còn sống, nấu chín hoàn toàn theo hướng dẫn của nhà sản xuất; không dùng chung đĩa với phần sống."
+      ],
+      "dish_type": [
+        "Món nướng",
+        "Đặc sản Chăm"
+      ],
+      "main_ingredient": [
+        "tung lò mò",
+        "lạp xưởng bò",
+        "rau sống"
+      ],
+      "cooking_method": [
+        "nướng",
+        "áp chảo"
+      ],
+      "search_terms": [
+        "lạp xưởng bò Chăm",
+        "đặc sản Châu Đốc",
+        "tung lò mò nướng"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Đĩa tung lò mò An Giang nướng vàng, cắt lát, ăn cùng rau thơm và dưa leo.",
+      "ingredients": [
+        {
+          "name": "Tung lò mò",
+          "quantity": 500,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn loại tươi hoặc đã làm chín theo hướng dẫn nhãn hàng.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Bún tươi",
+          "quantity": 400,
+          "unit": "g",
+          "role": "main",
+          "notes": "Có thể thay bằng cơm nóng.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Xà lách",
+          "quantity": 100,
+          "unit": "g",
+          "role": "main",
+          "notes": "Nhặt lá, rửa sạch.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Rau thơm các loại",
+          "quantity": 80,
+          "unit": "g",
+          "role": "main",
+          "notes": "Húng, ngò hoặc rau địa phương.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Dưa leo",
+          "quantity": 200,
+          "unit": "g",
+          "role": "main",
+          "notes": "Rửa sạch, thái lát.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Chanh",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "seasoning",
+          "notes": "Vắt lấy nước.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Muối",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng pha muối tiêu chanh.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Hạt tiêu",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Tiêu xay.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 5,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Chỉ cần một lớp mỏng nếu áp chảo.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Đọc nhãn sản phẩm để xác định tung lò mò còn sống hay đã làm chín; rã đông trong ngăn mát nếu cần."
+        },
+        {
+          "step": 2,
+          "instruction": "Rửa và để ráo rau sống, dưa leo; pha muối tiêu với nước cốt chanh."
+        },
+        {
+          "step": 3,
+          "instruction": "Làm nóng bếp nướng hoặc chảo ở lửa vừa."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Nướng hoặc áp chảo tung lò mò, trở đều các mặt đến khi vàng thơm và nóng chín tới tâm theo hướng dẫn của nhà sản xuất."
+        },
+        {
+          "step": 2,
+          "instruction": "Để nghỉ vài phút rồi cắt xéo thành khoanh vừa ăn."
+        },
+        {
+          "step": 3,
+          "instruction": "Bày cùng rau sống, dưa leo và bún hoặc cơm; dọn muối tiêu chanh riêng."
+        }
+      ],
+      "time_note": "Thời gian làm nóng thay đổi theo đường kính và tình trạng sống/chín của tung lò mò; ưu tiên thời gian ghi trên bao bì.",
+      "total_time": 25,
+      "time_unit": "phút",
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "tung-lo-mo-an-giang",
+      "keywords": [
+        "Tung lò mò An Giang",
+        "Lạp xưởng bò Chăm",
+        "Tung lò mò Châu Đốc",
+        "Đồng bằng sông Cửu Long",
+        "An Giang",
+        "tung lò mò",
+        "lạp xưởng bò",
+        "rau sống",
+        "lạp xưởng bò Chăm",
+        "đặc sản Châu Đốc",
+        "tung lò mò nướng",
+        "Món nướng",
+        "Đặc sản Chăm",
+        "25 phút"
+      ],
+      "tags": {
+        "region": [
+          "Đồng bằng sông Cửu Long"
+        ],
+        "province": [
+          "An Giang"
+        ],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối",
+          "bữa phụ"
+        ],
+        "dish_type": [
+          "Món nướng",
+          "Đặc sản Chăm"
+        ],
+        "main_ingredient": [
+          "tung lò mò",
+          "lạp xưởng bò",
+          "rau sống"
+        ],
+        "cooking_method": [
+          "nướng",
+          "áp chảo"
+        ],
+        "difficulty": "Dễ",
+        "prep_time": 10,
+        "cook_time": 15,
+        "servings": 4,
+        "spicy_level": 1,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Bún tươi",
+          "Rau sống",
+          "Dưa leo"
+        ],
+        "keywords": [
+          "Tung lò mò An Giang",
+          "Lạp xưởng bò Chăm",
+          "Tung lò mò Châu Đốc",
+          "Đồng bằng sông Cửu Long",
+          "An Giang",
+          "tung lò mò",
+          "lạp xưởng bò",
+          "rau sống",
+          "lạp xưởng bò Chăm",
+          "đặc sản Châu Đốc",
+          "tung lò mò nướng",
+          "Món nướng",
+          "Đặc sản Chăm",
+          "25 phút"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://vnexpress.net/tung-lo-mo-dac-san-nguoi-cham-chau-doc-2923147.html",
+          "publisher": "VnExpress Du lịch",
+          "title": "Tung lò mò, đặc sản người Chăm Châu Đốc",
+          "use": "Xác minh tung lò mò là lạp xưởng bò gắn với cộng đồng Chăm ở Châu Đốc, An Giang; món được chế biến và dùng như đặc sản địa phương.",
+          "accessed_at": "2026-10-22",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://thuongmaibiengioimiennui.gov.vn/data/files/T%E1%BB%89nh%20An%20Giang%20%28dx%29.pdf",
+          "publisher": "Cục Thương mại điện tử và Kinh tế số, Bộ Công Thương",
+          "title": "Cơ sở sản xuất lạp xưởng bò Tung lò mò của người Chăm An Giang",
+          "use": "Đối chiếu cách gọi tung lò mò là lạp xưởng bò và đặc trưng lên men chua cay; nội dung công thức không sao chép.",
+          "accessed_at": "2026-10-22",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Tung lò mò An Giang cho 2 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Tung lò mò An Giang cho 6 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Tung lò mò An Giang cho 8 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/tung-lo-mo-an-giang-960.webp",
+          "page_url": "https://vnexpress.net/tung-lo-mo-dac-san-nguoi-cham-chau-doc-2923147.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu đặc trưng món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa tung lò mò An Giang nướng vàng, cắt lát, ăn cùng rau thơm và dưa leo.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-22",
+          "photo_variant_note": "Ảnh món ăn được tạo riêng cho Bếp Việt; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức biên tập tại Bếp Việt từ nguồn tham khảo; định lượng và thời gian cần được nấu thử trước khi xem là bản hoàn chỉnh.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-22",
+        "needs": [
+          "Xác minh thời gian nướng theo từng nhãn sản phẩm tung lò mò đang phân phối."
+        ]
+      },
+      "suggested_pairings": [
+        "Bún tươi",
+        "Rau sống",
+        "Dưa leo"
+      ]
+    },
+    {
+      "id": "BV438",
+      "slug": "goi-sau-dau-kho-ca-loc-an-giang",
+      "name": "Gỏi sầu đâu khô cá lóc An Giang",
+      "aliases": [
+        "Gỏi khô cá lóc lá sầu đâu",
+        "Gỏi sầu đâu An Giang"
+      ],
+      "region": [
+        "Đồng bằng sông Cửu Long"
+      ],
+      "province": [
+        "An Giang"
+      ],
+      "category": "Nộm, gỏi và dưa muối",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Vừa",
+      "servings": 4,
+      "serving_basis": "4 người; món gỏi dùng chung trong bữa cơm hoặc bữa ăn nhẹ.",
+      "prep_time": 25,
+      "cook_time": 20,
+      "passive_time": 5,
+      "description": "Gỏi sầu đâu An Giang phối hợp vị nhẫn nhẹ của lá với khô cá lóc đậm đà, thịt luộc và nước mắm me chua ngọt. Bếp Việt biên tập cách trộn theo từng mẻ nhỏ để rau giữ độ tươi và cá không bị bở.",
+      "finished_dish": "Lá sầu đâu và đu đủ giòn nhẹ, khô cá lóc thơm mặn, nước mắm me chua ngọt vừa miệng.",
+      "serving": "Trộn gỏi ngay trước bữa ăn, rắc đậu phộng rang và rau thơm. Dùng cùng cơm nóng hoặc như món khai vị.",
+      "tips": [
+        "Chọn lá sầu đâu non từ nguồn bán quen thuộc; chần nhanh rồi nếm thử để điều chỉnh độ đắng.",
+        "Nướng hoặc áp chảo khô cá đến khi chín thơm, gỡ bỏ xương trước khi trộn.",
+        "Để nước trộn nguội rồi rưới từ từ; trộn lượng vừa ăn để gỏi không ra nhiều nước."
+      ],
+      "dish_type": [
+        "Món gỏi",
+        "Đặc sản An Giang"
+      ],
+      "main_ingredient": [
+        "lá sầu đâu",
+        "khô cá lóc",
+        "thịt heo",
+        "đu đủ xanh"
+      ],
+      "cooking_method": [
+        "chần",
+        "nướng",
+        "trộn"
+      ],
+      "search_terms": [
+        "gỏi lá sầu đâu",
+        "gỏi khô cá lóc An Giang",
+        "gỏi sầu đâu nước mắm me"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Đĩa gỏi sầu đâu An Giang trộn khô cá lóc, thịt luộc, đu đủ xanh và đậu phộng.",
+      "ingredients": [
+        {
+          "name": "Lá sầu đâu non",
+          "quantity": 120,
+          "unit": "g",
+          "role": "main",
+          "notes": "Nhặt lá, rửa kỹ.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Khô cá lóc",
+          "quantity": 200,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn khô vừa mặn, nướng chín rồi gỡ xương.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Thịt ba chỉ",
+          "quantity": 150,
+          "unit": "g",
+          "role": "main",
+          "notes": "Luộc chín, để nguội và thái mỏng.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Đu đủ xanh",
+          "quantity": 250,
+          "unit": "g",
+          "role": "main",
+          "notes": "Gọt vỏ, bào sợi.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Me chín",
+          "quantity": 30,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dầm với nước ấm, lọc lấy nước cốt.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Pha nước trộn.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Đường",
+          "quantity": 20,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Gia giảm theo độ mặn của khô cá.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Nước",
+          "quantity": 30,
+          "unit": "ml",
+          "role": "process_aid",
+          "notes": "Dùng dầm me.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Ớt đỏ",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Bỏ hạt nếu muốn dịu cay.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Đậu phộng rang",
+          "quantity": 25,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Giã dập.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Rau răm",
+          "quantity": 15,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa lá sầu đâu, chần nhanh trong nước sôi khoảng 10 giây rồi xả nước mát và để ráo; nếm thử trước khi dùng."
+        },
+        {
+          "step": 2,
+          "instruction": "Bào đu đủ thành sợi, ngâm nước lạnh 5 phút rồi vắt ráo. Luộc thịt ba chỉ chín hoàn toàn, để nguội và thái mỏng."
+        },
+        {
+          "step": 3,
+          "instruction": "Nướng khô cá lóc trên lửa vừa đến khi thơm, để nguội, gỡ bỏ da cứng và xương, xé thành miếng nhỏ."
+        },
+        {
+          "step": 4,
+          "instruction": "Dầm me với nước ấm, lọc lấy nước cốt; hòa cùng nước mắm, đường, tỏi và ớt."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Nếm nước trộn và chỉnh vị chua ngọt. Nếu dùng khô cá mặn, giảm lượng nước mắm."
+        },
+        {
+          "step": 2,
+          "instruction": "Cho lá sầu đâu, đu đủ, thịt và cá vào tô rộng. Rưới nước trộn từng ít một, đảo nhẹ tay."
+        },
+        {
+          "step": 3,
+          "instruction": "Thêm rau răm, bày ra đĩa và rắc đậu phộng. Dùng ngay sau khi trộn."
+        }
+      ],
+      "time_note": "Thời gian sơ chế có thể thay đổi tùy độ mặn và độ khô của cá; ngâm cá theo hướng dẫn của nơi bán nếu cần.",
+      "total_time": 50,
+      "time_unit": "phút",
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "goi-sau-dau-kho-ca-loc-an-giang",
+      "keywords": [
+        "Gỏi sầu đâu khô cá lóc An Giang",
+        "Gỏi khô cá lóc lá sầu đâu",
+        "Gỏi sầu đâu An Giang",
+        "Đồng bằng sông Cửu Long",
+        "An Giang",
+        "lá sầu đâu",
+        "khô cá lóc",
+        "thịt heo",
+        "đu đủ xanh",
+        "gỏi lá sầu đâu",
+        "gỏi khô cá lóc An Giang",
+        "gỏi sầu đâu nước mắm me",
+        "Món gỏi",
+        "Đặc sản An Giang",
+        "50 phút"
+      ],
+      "tags": {
+        "region": [
+          "Đồng bằng sông Cửu Long"
+        ],
+        "province": [
+          "An Giang"
+        ],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Món gỏi",
+          "Đặc sản An Giang"
+        ],
+        "main_ingredient": [
+          "lá sầu đâu",
+          "khô cá lóc",
+          "thịt heo",
+          "đu đủ xanh"
+        ],
+        "cooking_method": [
+          "chần",
+          "nướng",
+          "trộn"
+        ],
+        "difficulty": "Vừa",
+        "prep_time": 25,
+        "cook_time": 20,
+        "servings": 4,
+        "spicy_level": 1,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Cơm trắng",
+          "Canh chua cá",
+          "Rau luộc"
+        ],
+        "keywords": [
+          "Gỏi sầu đâu khô cá lóc An Giang",
+          "Gỏi khô cá lóc lá sầu đâu",
+          "Gỏi sầu đâu An Giang",
+          "Đồng bằng sông Cửu Long",
+          "An Giang",
+          "lá sầu đâu",
+          "khô cá lóc",
+          "thịt heo",
+          "đu đủ xanh",
+          "gỏi lá sầu đâu",
+          "gỏi khô cá lóc An Giang",
+          "gỏi sầu đâu nước mắm me",
+          "Món gỏi",
+          "Đặc sản An Giang",
+          "50 phút"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://checkinangiang.vn/vi/detailcuisine/?id=cuisine_10350&t=goi-kho-ca-loc-sau-dau",
+          "publisher": "Cổng thông tin du lịch An Giang",
+          "title": "Gỏi khô cá lóc sầu đâu",
+          "use": "Đối chiếu thành phần đặc trưng gồm lá sầu đâu, thịt luộc, khô cá lóc và nước mắm me.",
+          "accessed_at": "2026-10-22",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://tuoitre.vn/dulichtphcm/top-5-mon-an-phai-thu-khi-ghe-tham-an-giang-10750837.htm",
+          "publisher": "Tuổi Trẻ Online",
+          "title": "Top 5 món ăn phải thử khi ghé thăm An Giang",
+          "use": "Xác minh các biến thể gỏi sầu đâu địa phương kết hợp khô cá và thịt; biên tập thành phiên bản có định lượng cho bếp gia đình.",
+          "accessed_at": "2026-10-22",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Gỏi sầu đâu khô cá lóc An Giang cho 2 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Gỏi sầu đâu khô cá lóc An Giang cho 6 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Gỏi sầu đâu khô cá lóc An Giang cho 8 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/goi-sau-dau-kho-ca-loc-an-giang-960.webp",
+          "page_url": "https://checkinangiang.vn/vi/detailcuisine/?id=cuisine_10350&t=goi-kho-ca-loc-sau-dau",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu đặc trưng món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa gỏi sầu đâu An Giang trộn khô cá lóc, thịt luộc, đu đủ xanh và đậu phộng.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-22",
+          "photo_variant_note": "Ảnh món ăn được tạo riêng cho Bếp Việt; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức biên tập tại Bếp Việt từ nguồn tham khảo; định lượng và thời gian cần được nấu thử trước khi xem là bản hoàn chỉnh.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-22",
+        "needs": [
+          "Nấu thử với lá sầu đâu theo mùa để chuẩn hóa thời gian chần và độ chua của nước trộn."
+        ]
+      },
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Canh chua cá",
+        "Rau luộc"
+      ]
+    },
+    {
+      "id": "BV439",
+      "slug": "be-thui-cau-mong-quang-nam",
+      "name": "Bê thui Cầu Mống Quảng Nam",
+      "aliases": [
+        "Bê thui Quảng Nam",
+        "Bê thui cuốn rau rừng"
+      ],
+      "region": [
+        "Duyên hải Nam Trung Bộ"
+      ],
+      "province": [
+        "Quảng Nam"
+      ],
+      "category": "Món cuốn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Vừa",
+      "servings": 4,
+      "serving_basis": "4 người; cuốn thịt bê cùng rau, bánh tráng và mắm nêm.",
+      "prep_time": 25,
+      "cook_time": 40,
+      "passive_time": 5,
+      "description": "Bê thui Cầu Mống nổi bật ở lát thịt mềm, viền da vàng thơm và cách ăn cuốn cùng rau tươi, bánh tráng, mắm nêm. Phiên bản Bếp Việt dùng miếng bê nhỏ nướng trong lò tại nhà, giữ cách bày và ăn cuốn đặc trưng.",
+      "finished_dish": "Lát bê thơm mềm có viền vàng, ăn cuốn rau và bánh tráng với mắm nêm dứa.",
+      "serving": "Xếp thịt bê, rau thơm, chuối xanh, khế và bánh tráng riêng từng nhóm. Pha mắm nêm với dứa, tỏi, ớt; cuốn đến đâu ăn đến đó.",
+      "tips": [
+        "Mua thịt bê tươi từ cơ sở có kiểm soát, giữ lạnh đến khi chế biến và tránh để thịt sống tiếp xúc với rau ăn sống.",
+        "Nướng miếng thịt có độ dày đồng đều; dùng nhiệt kế thực phẩm và để thịt nghỉ trước khi thái.",
+        "Pha mắm nêm từng ít một vì độ mặn giữa các loại mắm khác nhau."
+      ],
+      "dish_type": [
+        "Món cuốn",
+        "Đặc sản Quảng Nam"
+      ],
+      "main_ingredient": [
+        "thịt bê",
+        "bánh tráng",
+        "rau sống",
+        "mắm nêm"
+      ],
+      "cooking_method": [
+        "nướng",
+        "cuốn"
+      ],
+      "search_terms": [
+        "bê thui Cầu Mống",
+        "bê thui cuốn bánh tráng",
+        "đặc sản Điện Bàn"
+      ],
+      "spicy_level": 2,
+      "image_alt": "Đĩa bê thui Cầu Mống thái lát, cuốn cùng rau thơm, bánh tráng, khế và mắm nêm.",
+      "ingredients": [
+        {
+          "name": "Thịt bê",
+          "quantity": 700,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn miếng đùi hoặc thăn liền khối, dày đều.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Bánh tráng",
+          "quantity": 16,
+          "unit": "cái",
+          "role": "main",
+          "notes": "Chọn loại mỏng, dẻo để cuốn.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Xà lách",
+          "quantity": 100,
+          "unit": "g",
+          "role": "main",
+          "notes": "Rửa sạch, để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Rau thơm các loại",
+          "quantity": 100,
+          "unit": "g",
+          "role": "main",
+          "notes": "Húng, ngò gai và rau địa phương.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Khế chua",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "main",
+          "notes": "Thái lát mỏng.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Chuối xanh",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "main",
+          "notes": "Thái lát, ngâm nước muối loãng rồi để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Dưa leo",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "main",
+          "notes": "Thái thanh dài.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Mắm nêm",
+          "quantity": 100,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Chọn loại dùng trực tiếp hoặc pha theo nhãn.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Thơm",
+          "quantity": 100,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhỏ để pha mắm nêm.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 8,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Ớt đỏ",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhỏ, gia giảm.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Đường",
+          "quantity": 15,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm mắm nêm.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        },
+        {
+          "name": "Muối",
+          "quantity": 4,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Ướp nhẹ mặt thịt.",
+          "scaling_rule": "linear",
+          "sequence": 13
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Quét mỏng lên thịt trước khi nướng.",
+          "scaling_rule": "linear",
+          "sequence": 14
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Thấm khô thịt bê, rắc muối mỏng và để trong ngăn mát trong lúc chuẩn bị rau. Dùng thớt riêng cho thịt sống."
+        },
+        {
+          "step": 2,
+          "instruction": "Rửa, để ráo rau; thái khế, chuối xanh và dưa leo. Băm nhỏ thơm, tỏi, ớt."
+        },
+        {
+          "step": 3,
+          "instruction": "Pha mắm nêm với thơm, tỏi, ớt và đường; nếm lại trước khi dọn."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng lò ở 220°C. Áp chảo nhanh các mặt thịt bê trên chảo nóng để tạo lớp màu vàng."
+        },
+        {
+          "step": 2,
+          "instruction": "Chuyển thịt vào lò, hạ còn 180°C và nướng đến khi nhiệt độ ở phần dày nhất đạt ít nhất 63°C; để nghỉ tối thiểu 3 phút."
+        },
+        {
+          "step": 3,
+          "instruction": "Thái thịt mỏng ngang thớ. Xếp thịt cùng rau, bánh tráng và chén mắm nêm; dùng ngay."
+        }
+      ],
+      "time_note": "Thời gian nướng thay đổi theo độ dày và hình dạng miếng thịt; nhiệt kế thực phẩm đáng tin cậy hơn chỉ canh giờ.",
+      "total_time": 70,
+      "time_unit": "phút",
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "be-thui-cau-mong-quang-nam",
+      "keywords": [
+        "Bê thui Cầu Mống Quảng Nam",
+        "Bê thui Quảng Nam",
+        "Bê thui cuốn rau rừng",
+        "Duyên hải Nam Trung Bộ",
+        "Quảng Nam",
+        "thịt bê",
+        "bánh tráng",
+        "rau sống",
+        "mắm nêm",
+        "bê thui Cầu Mống",
+        "bê thui cuốn bánh tráng",
+        "đặc sản Điện Bàn",
+        "Món cuốn",
+        "Đặc sản Quảng Nam",
+        "70 phút"
+      ],
+      "tags": {
+        "region": [
+          "Duyên hải Nam Trung Bộ"
+        ],
+        "province": [
+          "Quảng Nam"
+        ],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Món cuốn",
+          "Đặc sản Quảng Nam"
+        ],
+        "main_ingredient": [
+          "thịt bê",
+          "bánh tráng",
+          "rau sống",
+          "mắm nêm"
+        ],
+        "cooking_method": [
+          "nướng",
+          "cuốn"
+        ],
+        "difficulty": "Vừa",
+        "prep_time": 25,
+        "cook_time": 40,
+        "servings": 4,
+        "spicy_level": 2,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Rau thơm",
+          "Bánh tráng",
+          "Mắm nêm"
+        ],
+        "keywords": [
+          "Bê thui Cầu Mống Quảng Nam",
+          "Bê thui Quảng Nam",
+          "Bê thui cuốn rau rừng",
+          "Duyên hải Nam Trung Bộ",
+          "Quảng Nam",
+          "thịt bê",
+          "bánh tráng",
+          "rau sống",
+          "mắm nêm",
+          "bê thui Cầu Mống",
+          "bê thui cuốn bánh tráng",
+          "đặc sản Điện Bàn",
+          "Món cuốn",
+          "Đặc sản Quảng Nam",
+          "70 phút"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://vnexpress.net/ve-quang-nam-an-dac-san-be-thui-2407825.html",
+          "publisher": "VnExpress",
+          "title": "Về Quảng Nam ăn đặc sản bê thui",
+          "use": "Xác minh bê thui Cầu Mống gắn với Điện Bàn, Quảng Nam; thịt thái lát, ăn kèm rau và bánh tráng.",
+          "accessed_at": "2026-10-22",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://tuoitre.vn/phunuonline/be-thui-cau-mong-va-cai-quan-hon-nua-the-ky-tren-duong-thien-ly-1101492516.htm",
+          "publisher": "Tuổi Trẻ Online",
+          "title": "Bê thui Cầu Mống và cái quán hơn nửa thế kỷ trên đường thiên lý",
+          "use": "Tham khảo câu chuyện địa phương và cách thưởng thức đặc sản; công thức nướng lò nhỏ là phiên bản biên tập tại nhà.",
+          "accessed_at": "2026-10-22",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Bê thui Cầu Mống Quảng Nam cho 2 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Bê thui Cầu Mống Quảng Nam cho 6 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Bê thui Cầu Mống Quảng Nam cho 8 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/be-thui-cau-mong-quang-nam-960.webp",
+          "page_url": "https://vnexpress.net/ve-quang-nam-an-dac-san-be-thui-2407825.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu đặc trưng món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa bê thui Cầu Mống thái lát, cuốn cùng rau thơm, bánh tráng, khế và mắm nêm.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-22",
+          "photo_variant_note": "Ảnh món ăn được tạo riêng cho Bếp Việt; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức biên tập tại Bếp Việt từ nguồn tham khảo; định lượng và thời gian cần được nấu thử trước khi xem là bản hoàn chỉnh.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-22",
+        "needs": [
+          "Nấu thử để điều chỉnh nhiệt lò và thời gian theo các phần thịt bê phổ biến tại địa phương."
+        ]
+      },
+      "suggested_pairings": [
+        "Rau thơm",
+        "Bánh tráng",
+        "Mắm nêm"
+      ]
+    },
+    {
+      "id": "BV440",
+      "slug": "ca-loc-nuong-trui-mien-tay",
+      "name": "Cá lóc nướng trui miền Tây",
+      "aliases": [
+        "Cá lóc nướng rơm",
+        "Cá lóc nướng trui Nam Bộ"
+      ],
+      "region": [
+        "Đồng bằng sông Cửu Long"
+      ],
+      "province": [],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Vừa",
+      "servings": 4,
+      "serving_basis": "4 người; cá nướng dùng chung, cuốn bánh tráng với rau và nước chấm.",
+      "prep_time": 20,
+      "cook_time": 35,
+      "passive_time": 0,
+      "description": "Cá lóc nướng trui là món dân dã Nam Bộ, nổi bật với cách nướng nguyên con trên lửa rơm, giữ vị ngọt tự nhiên của cá. Bếp Việt biên tập thêm cách làm tại nhà bằng lò nướng; phần cá được làm sạch nhưng giữ da để tiện chế biến.",
+      "finished_dish": "Cá chín thơm, thịt trắng tơi, lớp da xém nhẹ; cuốn rau và bánh tráng chấm nước mắm me.",
+      "serving": "Bóc lớp da xém, gỡ thịt cá và cuốn với rau sống, dưa leo, khế, chuối xanh và bánh tráng. Dọn nước mắm me riêng.",
+      "tips": [
+        "Nếu nướng trui ngoài trời theo lối truyền thống, giữ cá nguyên vảy và dùng khu vực đốt lửa an toàn, thông thoáng.",
+        "Với cách làm tại nhà, nhờ người bán làm sạch cá, giữ da và nướng đến khi thịt cá chín đục, dễ tách khỏi xương.",
+        "Không để cá sống hoặc nước rửa cá chạm vào rau ăn sống; dùng thớt và kẹp riêng."
+      ],
+      "dish_type": [
+        "Món nướng",
+        "Đặc sản miền Tây"
+      ],
+      "main_ingredient": [
+        "cá lóc",
+        "bánh tráng",
+        "rau sống",
+        "nước mắm me"
+      ],
+      "cooking_method": [
+        "nướng trui",
+        "nướng lò"
+      ],
+      "search_terms": [
+        "cá lóc nướng rơm",
+        "cá lóc nướng cuốn rau",
+        "món nướng miền Tây"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Cá lóc nướng trui miền Tây nguyên con, thịt trắng tơi, ăn kèm rau sống, bánh tráng và nước mắm me.",
+      "ingredients": [
+        {
+          "name": "Cá lóc",
+          "quantity": 800,
+          "unit": "g",
+          "role": "main",
+          "notes": "Một con cỡ vừa; làm sạch theo cách nướng tại nhà.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Bánh tráng",
+          "quantity": 16,
+          "unit": "cái",
+          "role": "main",
+          "notes": "Dùng cuốn cá và rau.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Xà lách",
+          "quantity": 100,
+          "unit": "g",
+          "role": "main",
+          "notes": "Rửa sạch, để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Rau thơm các loại",
+          "quantity": 100,
+          "unit": "g",
+          "role": "main",
+          "notes": "Rau húng, tía tô, rau răm hoặc loại sẵn có.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Dưa leo",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "main",
+          "notes": "Thái thanh.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Khế chua",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "main",
+          "notes": "Thái lát mỏng.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Chuối xanh",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "main",
+          "notes": "Thái lát và ngâm nước muối loãng.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Me chín",
+          "quantity": 30,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dầm với nước ấm, lọc lấy nước cốt.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 30,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Pha nước chấm.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Đường",
+          "quantity": 20,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Điều chỉnh vị chua ngọt.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Ớt đỏ",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhỏ, gia giảm.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        },
+        {
+          "name": "Nước",
+          "quantity": 30,
+          "unit": "ml",
+          "role": "process_aid",
+          "notes": "Dùng dầm me.",
+          "scaling_rule": "linear",
+          "sequence": 13
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Với cách nướng tại nhà, nhờ người bán làm sạch cá và giữ lớp da. Rửa nhanh, thấm thật khô; không ướp để giữ vị cá tự nhiên."
+        },
+        {
+          "step": 2,
+          "instruction": "Rửa, để ráo rau; thái dưa leo, khế và chuối xanh. Dầm me với nước ấm, lọc lấy nước cốt."
+        },
+        {
+          "step": 3,
+          "instruction": "Pha nước mắm me với đường, tỏi và ớt; nếm vị chua ngọt vừa ăn."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng lò ở 220°C. Đặt cá lên khay có lót giấy bạc, nướng khoảng 25–35 phút tùy kích thước, trở mặt một lần."
+        },
+        {
+          "step": 2,
+          "instruction": "Kiểm tra phần thịt dày nhất đã chín đục và tách khỏi xương; nếu dùng nhiệt kế thực phẩm, tâm cá cần đạt 63°C."
+        },
+        {
+          "step": 3,
+          "instruction": "Để cá nghỉ vài phút, mở dọc thân và gỡ xương lớn. Dọn nóng với bánh tráng, rau sống và nước mắm me."
+        }
+      ],
+      "time_note": "Cá nguyên con chín nhanh hay chậm tùy kích thước và lò; kiểm tra phần thịt dày sát xương trước khi dọn.",
+      "total_time": 55,
+      "time_unit": "phút",
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "ca-loc-nuong-trui-mien-tay",
+      "keywords": [
+        "Cá lóc nướng trui miền Tây",
+        "Cá lóc nướng rơm",
+        "Cá lóc nướng trui Nam Bộ",
+        "Đồng bằng sông Cửu Long",
+        "cá lóc",
+        "bánh tráng",
+        "rau sống",
+        "nước mắm me",
+        "cá lóc nướng rơm",
+        "cá lóc nướng cuốn rau",
+        "món nướng miền Tây",
+        "Món nướng",
+        "Đặc sản miền Tây",
+        "55 phút"
+      ],
+      "tags": {
+        "region": [
+          "Đồng bằng sông Cửu Long"
+        ],
+        "province": [],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Món nướng",
+          "Đặc sản miền Tây"
+        ],
+        "main_ingredient": [
+          "cá lóc",
+          "bánh tráng",
+          "rau sống",
+          "nước mắm me"
+        ],
+        "cooking_method": [
+          "nướng trui",
+          "nướng lò"
+        ],
+        "difficulty": "Vừa",
+        "prep_time": 20,
+        "cook_time": 35,
+        "servings": 4,
+        "spicy_level": 1,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Bánh tráng",
+          "Rau sống",
+          "Nước mắm me"
+        ],
+        "keywords": [
+          "Cá lóc nướng trui miền Tây",
+          "Cá lóc nướng rơm",
+          "Cá lóc nướng trui Nam Bộ",
+          "Đồng bằng sông Cửu Long",
+          "cá lóc",
+          "bánh tráng",
+          "rau sống",
+          "nước mắm me",
+          "cá lóc nướng rơm",
+          "cá lóc nướng cuốn rau",
+          "món nướng miền Tây",
+          "Món nướng",
+          "Đặc sản miền Tây",
+          "55 phút"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://vnexpress.net/ca-loc-nuong-trui-dac-san-mien-que-nam-bo-2997354.html",
+          "publisher": "VnExpress",
+          "title": "Cá lóc nướng trui, đặc sản miền quê Nam Bộ",
+          "use": "Đối chiếu đặc trưng cá lóc nướng trui miền Tây và cách ăn truyền thống; công thức trong dự án được biên tập riêng cho bếp gia đình.",
+          "accessed_at": "2026-10-22",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://thanhnien.vn/dam-da-ca-loc-nuong-mien-tay-185698556.htm",
+          "publisher": "Báo Thanh Niên",
+          "title": "Đậm đà cá lóc nướng miền Tây",
+          "use": "Tham khảo cách nướng trui bằng rơm và các loại rau, bánh tráng dùng kèm.",
+          "accessed_at": "2026-10-22",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Cá lóc nướng trui miền Tây cho 2 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Cá lóc nướng trui miền Tây cho 6 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Cá lóc nướng trui miền Tây cho 8 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/ca-loc-nuong-trui-mien-tay-960.webp",
+          "page_url": "https://vnexpress.net/ca-loc-nuong-trui-dac-san-mien-que-nam-bo-2997354.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu đặc trưng món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Cá lóc nướng trui miền Tây nguyên con, thịt trắng tơi, ăn kèm rau sống, bánh tráng và nước mắm me.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-22",
+          "photo_variant_note": "Ảnh món ăn được tạo riêng cho Bếp Việt; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức biên tập tại Bếp Việt từ nguồn tham khảo; định lượng và thời gian cần được nấu thử trước khi xem là bản hoàn chỉnh.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-22",
+        "needs": [
+          "Thử nướng các cỡ cá lóc khác nhau để điều chỉnh thời gian và cách trở cá."
+        ]
+      },
+      "suggested_pairings": [
+        "Bánh tráng",
+        "Rau sống",
+        "Nước mắm me"
+      ]
+    }
+  ]
+}

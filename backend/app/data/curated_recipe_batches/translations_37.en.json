@@ -1,0 +1,1244 @@
+{
+  "banh-dua-ca-mau": {
+    "name": "Ca Mau Pandan Rice Cakes (Bánh Rây)",
+    "aliases": [
+      "Ca Mau Banh Ray",
+      "Ca Mau pandan rice cake"
+    ],
+    "region": [
+      "Mekong Delta"
+    ],
+    "category": "Snack",
+    "meal_type": [
+      "Snack",
+      "Dessert"
+    ],
+    "difficulty": "Moderate",
+    "serving_basis": "About 8 soft coconut-filled cakes, best while still warm.",
+    "description": "Ca Mau bánh dứa, also called bánh rây, has a thin, soft glutinous-rice layer colored and scented with pandan. The batter is sifted directly into a hot pan, then folded with grated coconut and roasted peanuts. This fully plant-based home recipe is edited by Bếp Việt from the ingredients and method reported by Báo Cà Mau.",
+    "finished_dish": "Thin, soft and chewy cakes fragrant with pandan, with lightly sweet coconut and crunchy roasted peanuts.",
+    "serving": "Fold each cake while warm and serve right away for the softest texture; add a little grated coconut and crushed peanuts if desired.",
+    "tips": [
+      "Blend and strain the pandan thoroughly for a naturally green batter without fibers.",
+      "Keep the batter fluid enough to sift into a thin layer; stir before each cake because glutinous rice flour settles.",
+      "Cook over medium-low heat with the lid on for about 2 minutes so the cake steams through without dry edges."
+    ],
+    "dish_type": [
+      "Traditional cake",
+      "Vegetarian",
+      "Ca Mau specialty"
+    ],
+    "main_ingredient": [
+      "glutinous rice flour",
+      "pandan leaves",
+      "grated coconut",
+      "peanuts"
+    ],
+    "cooking_method": [
+      "blending",
+      "mixing batter",
+      "sifting into pan",
+      "covered pan-cooking"
+    ],
+    "search_terms": [
+      "Ca Mau banh dua",
+      "Ca Mau banh ray",
+      "pandan glutinous rice cake",
+      "coconut-filled pandan cake",
+      "vegetarian Mekong Delta cake"
+    ],
+    "image_alt": "Ca Mau bánh dứa (bánh rây), naturally green with pandan and folded around grated coconut and roasted peanuts, arranged on a ceramic plate; isolated on transparent background.",
+    "suggested_pairings": [
+      "Hot tea",
+      "Green tea",
+      "Fresh fruit"
+    ],
+    "time_note": "About 50 minutes, including preparation and cooking.",
+    "keywords": [
+      "bánh dứa",
+      "bánh rây",
+      "Ca Mau",
+      "glutinous rice flour",
+      "pandan",
+      "coconut",
+      "peanuts"
+    ],
+    "tags": [
+      "vegetarian",
+      "traditional cake",
+      "snack",
+      "Ca Mau"
+    ],
+    "province": [
+      "Cà Mau"
+    ],
+    "excerpt": "Ca Mau bánh dứa, also called bánh rây, has a thin, soft glutinous-rice layer colored and scented with pandan.",
+    "tip": "Blend and strain the pandan thoroughly for a naturally green batter without fibers.",
+    "time_unit": "minutes",
+    "ingredients": [
+      {
+        "name": "Glutinous rice flour",
+        "quantity": 250,
+        "unit": "g",
+        "role": "main",
+        "notes": "Use fresh, finely milled flour; sift before mixing.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fresh pandan leaves",
+        "quantity": 50,
+        "unit": "g",
+        "role": "aromatic",
+        "notes": "Wash and cut into pieces for blending and straining.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Water",
+        "quantity": 280,
+        "unit": "ml",
+        "role": "other",
+        "notes": "For blending the pandan and mixing the batter; reserve a little to adjust consistency.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Grated coconut",
+        "quantity": 160,
+        "unit": "g",
+        "role": "main",
+        "notes": "Use finely grated fresh coconut.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Granulated sugar",
+        "quantity": 55,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Adjust to taste.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Roasted peanuts",
+        "quantity": 55,
+        "unit": "g",
+        "role": "garnish",
+        "notes": "Remove the skins and crush coarsely.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Salt",
+        "quantity": 2,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "A small pinch balances the filling.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Neutral cooking oil",
+        "quantity": 6,
+        "unit": "ml",
+        "role": "other",
+        "notes": "Lightly coat a nonstick pan.",
+        "scaling_rule": "linear"
+      }
+    ],
+    "preparation_steps": [
+      "Wash and cut the pandan. Blend with about 200 ml of the water, then strain through a fine sieve; add water to reach the measured amount.",
+      "Whisk the glutinous rice flour with the pandan water and salt until smooth and thin. Rest for 10 minutes, then stir again.",
+      "Mix the grated coconut with the sugar. If needed, roast the peanuts, remove their skins and crush them."
+    ],
+    "cooking_steps": [
+      "Heat a nonstick pan over medium-low heat and brush it with a very thin film of oil. Quickly sift the batter through a fine-mesh basket or perforated ladle to form a thin round layer.",
+      "Cover for about 2 minutes, until the cake sets and turns translucent green; do not flip it.",
+      "Scatter coconut and peanuts over half the cake, fold it while warm, and transfer to a plate. Repeat with the remaining batter."
+    ],
+    "scaling": {
+      "base_servings": 4,
+      "targets": [
+        {
+          "servings": 2,
+          "main_factor": 0.5,
+          "seasoning_start_factor": 0.5,
+          "example": "Ca Mau Pandan Rice Cakes (Bánh Rây) for 2",
+          "instruction": "Scale ingredients by about 0.5; season gradually and adjust to taste."
+        },
+        {
+          "servings": 6,
+          "main_factor": 1.5,
+          "seasoning_start_factor": 1.5,
+          "example": "Ca Mau Pandan Rice Cakes (Bánh Rây) for 6",
+          "instruction": "Scale ingredients by about 1.5; season gradually and adjust to taste."
+        },
+        {
+          "servings": 8,
+          "main_factor": 2.0,
+          "seasoning_start_factor": 2.0,
+          "example": "Ca Mau Pandan Rice Cakes (Bánh Rây) for 8",
+          "instruction": "Scale ingredients by about 2; season gradually and adjust to taste."
+        }
+      ]
+    },
+    "editorial": {
+      "status": "editorial_draft",
+      "production_ready": false,
+      "test_cook_status": "not_tested",
+      "variant_note": "A fully plant-based home batch edited by Bếp Việt. The local source reports the ingredients and cooking technique but does not publish ratios.",
+      "seed_recipe": null,
+      "reviewed_at": "2026-10-23",
+      "needs": [
+        "Test batter consistency with different brands of glutinous rice flour and adjust cooking time for pan size."
+      ]
+    }
+  },
+  "banh-cong-soc-trang": {
+    "name": "Soc Trang Bánh Cống Fritters",
+    "aliases": [
+      "Soc Trang banh cong",
+      "Dai Tam banh cong",
+      "My Xuyen banh cong"
+    ],
+    "region": [
+      "Mekong Delta"
+    ],
+    "category": "Fried dish",
+    "meal_type": [
+      "Main course",
+      "Snack"
+    ],
+    "difficulty": "Moderate",
+    "serving_basis": "About 8 small bánh cống fritters, served with greens and dipping sauce.",
+    "description": "Bánh cóng from Sóc Trăng is fried in a tall cylindrical mold called a cóng. A crisp rice-flour shell surrounds mung beans and a pork-and-shrimp filling, with a whole shrimp placed on top. Bếp Việt edited a home-size batch from Ngôi Sao (VnExpress) reporting on bánh cóng in Đại Tâm, Mỹ Xuyên.",
+    "finished_dish": "Golden, crisp fritters with nutty mung beans and savory pork and shrimp, topped with a cooked shrimp.",
+    "serving": "Serve hot with lettuce, herbs, pickled vegetables and sweet-sour fish sauce.",
+    "tips": [
+      "Soak the mung beans fully, then steam until tender but still holding their shape.",
+      "Preheat the mold in the frying oil so the fritter releases easily.",
+      "Use a moderate amount of filling and steady medium heat so the center cooks before the crust darkens."
+    ],
+    "dish_type": [
+      "Traditional cake",
+      "Fried dish",
+      "Soc Trang specialty"
+    ],
+    "main_ingredient": [
+      "rice flour",
+      "mung beans",
+      "shrimp",
+      "pork"
+    ],
+    "cooking_method": [
+      "soaking",
+      "steaming",
+      "mixing batter",
+      "deep-frying"
+    ],
+    "search_terms": [
+      "Soc Trang banh cong",
+      "Dai Tam banh cong",
+      "My Xuyen banh cong",
+      "mung bean shrimp fritter"
+    ],
+    "image_alt": "Golden Soc Trang bánh cóng fritters topped with whole shrimp and served with fresh lettuce and herbs on a ceramic plate; isolated on transparent background.",
+    "suggested_pairings": [
+      "Fresh greens",
+      "Pickled carrot and papaya",
+      "Sweet-sour fish sauce"
+    ],
+    "time_note": "About 7 hours 10 minutes, including 6 hours for soaking the mung beans.",
+    "keywords": [
+      "bánh cóng",
+      "bánh cống",
+      "Soc Trang",
+      "Dai Tam",
+      "My Xuyen",
+      "mung beans",
+      "shrimp"
+    ],
+    "tags": [
+      "fried dish",
+      "traditional cake",
+      "Soc Trang specialty"
+    ],
+    "province": [
+      "Sóc Trăng"
+    ],
+    "excerpt": "Bánh cóng from Sóc Trăng is fried in a tall cylindrical mold called a cóng.",
+    "tip": "Soak the mung beans fully, then steam until tender but still holding their shape.",
+    "time_unit": "minutes",
+    "ingredients": [
+      {
+        "name": "Rice flour",
+        "quantity": 220,
+        "unit": "g",
+        "role": "main",
+        "notes": "Fine rice flour for the shell.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "All-purpose flour",
+        "quantity": 35,
+        "unit": "g",
+        "role": "other",
+        "notes": "Helps bind the batter; can be replaced with rice flour.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Water",
+        "quantity": 330,
+        "unit": "ml",
+        "role": "other",
+        "notes": "Add gradually until the batter is smooth and moderately thick.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Shelled mung beans",
+        "quantity": 120,
+        "unit": "g",
+        "role": "main",
+        "notes": "Soak for 6 hours, then steam until just tender.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fresh shrimp",
+        "quantity": 220,
+        "unit": "g",
+        "role": "main",
+        "notes": "Divide between chopped filling and 8 small whole shrimp for topping.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Ground pork",
+        "quantity": 160,
+        "unit": "g",
+        "role": "main",
+        "notes": "Choose pork with a little fat so the filling stays moist.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Shallots",
+        "quantity": 30,
+        "unit": "g",
+        "role": "aromatic",
+        "notes": "Peel and mince.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fish sauce",
+        "quantity": 15,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "Season the filling.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Sugar",
+        "quantity": 8,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Season the batter and filling lightly.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Salt",
+        "quantity": 4,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Divide between the batter and filling.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Ground black pepper",
+        "quantity": 1,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Season the filling.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Neutral cooking oil",
+        "quantity": 900,
+        "unit": "ml",
+        "role": "other",
+        "notes": "For deep-frying the molds; less oil is absorbed.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Lettuce",
+        "quantity": 120,
+        "unit": "g",
+        "role": "garnish",
+        "notes": "Wash and drain.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fresh herbs",
+        "quantity": 40,
+        "unit": "g",
+        "role": "garnish",
+        "notes": "Wash and drain.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Pickled carrot and papaya",
+        "quantity": 100,
+        "unit": "g",
+        "role": "garnish",
+        "notes": "Serve on the side.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Sweet-sour fish sauce",
+        "quantity": 120,
+        "unit": "ml",
+        "role": "garnish",
+        "notes": "For dipping.",
+        "scaling_rule": "linear"
+      }
+    ],
+    "preparation_steps": [
+      "Soak the mung beans in water for 6 hours. Rinse and steam until tender but still whole; cool.",
+      "Peel and finely chop some of the shrimp. Mix with the pork, shallot, fish sauce, sugar, salt and pepper; let season for 15 minutes. Keep 8 small shrimp whole for topping.",
+      "Whisk the rice flour and all-purpose flour with water and half the salt and sugar until smooth; rest for 15 minutes. Wash and drain the greens."
+    ],
+    "cooking_steps": [
+      "Heat oil in a deep pot. Dip a bánh cống mold or heatproof cylindrical metal mold into the hot oil to preheat it; maintain medium heat.",
+      "Fill the mold halfway with batter, add a little mung bean and pork-shrimp filling, cover with more batter almost to the rim, and place one whole shrimp on top.",
+      "Lower the mold into the hot oil. When the fritter firms up and releases from the mold, lift the mold away. Continue frying until evenly golden and crisp, turning if needed.",
+      "Drain on a rack. Fry the remaining fritters and serve hot with greens, pickles and dipping sauce."
+    ],
+    "scaling": {
+      "base_servings": 4,
+      "targets": [
+        {
+          "servings": 2,
+          "main_factor": 0.5,
+          "seasoning_start_factor": 0.5,
+          "example": "Soc Trang Bánh Cống Fritters for 2",
+          "instruction": "Scale ingredients by about 0.5; season gradually and adjust to taste."
+        },
+        {
+          "servings": 6,
+          "main_factor": 1.5,
+          "seasoning_start_factor": 1.5,
+          "example": "Soc Trang Bánh Cống Fritters for 6",
+          "instruction": "Scale ingredients by about 1.5; season gradually and adjust to taste."
+        },
+        {
+          "servings": 8,
+          "main_factor": 2.0,
+          "seasoning_start_factor": 2.0,
+          "example": "Soc Trang Bánh Cống Fritters for 8",
+          "instruction": "Scale ingredients by about 2; season gradually and adjust to taste."
+        }
+      ]
+    },
+    "editorial": {
+      "status": "editorial_draft",
+      "production_ready": false,
+      "test_cook_status": "not_tested",
+      "variant_note": "Bếp Việt scaled a family batch from the ingredients and technique reported by Ngôi Sao. The source identifies Đại Tâm, Mỹ Xuyên and the cóng mold; this is not presented as a single definitive formula.",
+      "seed_recipe": null,
+      "reviewed_at": "2026-10-23",
+      "needs": [
+        "Test frying time with different mold sizes and check that the filling cooks through at medium heat."
+      ]
+    }
+  },
+  "bun-suong-tra-vinh": {
+    "name": "Tra Vinh Bún Suông Noodle Soup",
+    "aliases": [
+      "Tra Vinh bun duong",
+      "Shrimp paste vermicelli soup"
+    ],
+    "region": [
+      "Mekong Delta"
+    ],
+    "category": "Noodle soup",
+    "meal_type": [
+      "Breakfast",
+      "Main course"
+    ],
+    "difficulty": "Advanced",
+    "serving_basis": "4 full bowls with shrimp-paste suông, pork, shrimp and fresh vegetables.",
+    "description": "Bún suông from Trà Vinh is distinguished by springy shrimp paste shaped into long tapered pieces and poached in the broth. This Bếp Việt version combines shrimp paste with a tamarind and fermented-soybean broth described across the references; seasoning and toppings vary by household.",
+    "finished_dish": "A fragrant, savory-sweet broth with a gentle reddish-brown hue, tender springy shrimp suông, pork, shrimp and crisp fresh greens.",
+    "serving": "Divide the noodles among bowls, add suông, shrimp, pork and pork hock, then ladle over hot broth and sprinkle with scallions. Serve with greens, fermented soybean sauce or tamarind fish sauce.",
+    "tips": [
+      "Pat the peeled shrimp dry before pounding and mixing so the paste turns springy instead of loose.",
+      "Chill the shrimp paste before shaping to help the suông hold its tapered form in the broth.",
+      "Simmer the broth gently and skim it often for a clean, naturally sweet flavor."
+    ],
+    "dish_type": [
+      "Noodle soup",
+      "Tra Vinh specialty"
+    ],
+    "main_ingredient": [
+      "shrimp",
+      "pork hock",
+      "pork belly",
+      "rice vermicelli"
+    ],
+    "cooking_method": [
+      "simmering broth",
+      "pounding shrimp paste",
+      "poaching",
+      "blanching"
+    ],
+    "search_terms": [
+      "Tra Vinh bun suong",
+      "bun duong",
+      "shrimp paste suong",
+      "Tra Vinh shrimp noodle soup"
+    ],
+    "image_alt": "Tra Vinh bún suông in a ceramic bowl with long shrimp-paste suông, shrimp, pork, white vermicelli and herbs; isolated on transparent background.",
+    "suggested_pairings": [
+      "Fresh herbs and bean sprouts",
+      "Fermented soybean sauce",
+      "Tamarind fish sauce"
+    ],
+    "time_note": "About 2 hours 45 minutes, including a 1-hour chill for the shrimp paste.",
+    "keywords": [
+      "bún suông",
+      "Tra Vinh",
+      "bún đuông",
+      "shrimp",
+      "shrimp paste",
+      "noodle soup"
+    ],
+    "tags": [
+      "noodle soup",
+      "Tra Vinh specialty",
+      "breakfast"
+    ],
+    "province": [
+      "Trà Vinh"
+    ],
+    "excerpt": "Bún suông from Trà Vinh is distinguished by springy shrimp paste shaped into long tapered pieces and poached in the broth.",
+    "tip": "Pat the peeled shrimp dry before pounding and mixing so the paste turns springy instead of loose.",
+    "time_unit": "minutes",
+    "ingredients": [
+      {
+        "name": "Fresh shrimp",
+        "quantity": 600,
+        "unit": "g",
+        "role": "main",
+        "notes": "Peel about 450 g for the shrimp paste; reserve the rest as a topping. Keep the heads and shells for the broth.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Pork hock",
+        "quantity": 400,
+        "unit": "g",
+        "role": "main",
+        "notes": "Cut into round pieces and blanch.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Pork belly",
+        "quantity": 200,
+        "unit": "g",
+        "role": "main",
+        "notes": "Cook and slice.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Pork skin",
+        "quantity": 60,
+        "unit": "g",
+        "role": "main",
+        "notes": "Optional; cook and slice for the topping.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fresh rice vermicelli",
+        "quantity": 600,
+        "unit": "g",
+        "role": "main",
+        "notes": "Divide into 4 portions and briefly blanch before serving.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Daikon",
+        "quantity": 250,
+        "unit": "g",
+        "role": "aromatic",
+        "notes": "Peel and cut into chunks.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Yellow onion",
+        "quantity": 120,
+        "unit": "g",
+        "role": "aromatic",
+        "notes": "Char lightly for fragrance.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Dried shrimp",
+        "quantity": 20,
+        "unit": "g",
+        "role": "aromatic",
+        "notes": "Rinse and soak until softened.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Dried squid",
+        "quantity": 20,
+        "unit": "g",
+        "role": "aromatic",
+        "notes": "Lightly toast and rinse.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Egg white",
+        "quantity": 30,
+        "unit": "g",
+        "role": "other",
+        "notes": "Binds the shrimp paste.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Tapioca starch",
+        "quantity": 18,
+        "unit": "g",
+        "role": "other",
+        "notes": "Adds springiness to the shrimp paste.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Cornstarch",
+        "quantity": 15,
+        "unit": "g",
+        "role": "other",
+        "notes": "Helps the shrimp paste hold its shape.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Tamarind",
+        "quantity": 30,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Soak in hot water and strain for its juice.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fermented soybeans",
+        "quantity": 40,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Add a mellow, savory note to the broth.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Annatto oil",
+        "quantity": 15,
+        "unit": "ml",
+        "role": "other",
+        "notes": "Season the broth and sauté the shrimp shells.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Shallots",
+        "quantity": 25,
+        "unit": "g",
+        "role": "aromatic",
+        "notes": "Mince.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Garlic",
+        "quantity": 12,
+        "unit": "g",
+        "role": "aromatic",
+        "notes": "Mince.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fish sauce",
+        "quantity": 25,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "Season the broth and shrimp paste.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Sugar",
+        "quantity": 12,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Balance the tamarind.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Salt",
+        "quantity": 6,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Season the paste and broth.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Ground black pepper",
+        "quantity": 2,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Season the shrimp paste.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Water",
+        "quantity": 2200,
+        "unit": "ml",
+        "role": "other",
+        "notes": "For simmering the broth.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Bean sprouts",
+        "quantity": 120,
+        "unit": "g",
+        "role": "garnish",
+        "notes": "Wash and drain.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Sliced banana blossom",
+        "quantity": 100,
+        "unit": "g",
+        "role": "garnish",
+        "notes": "Soak briefly in lemon water and drain.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fresh herbs",
+        "quantity": 40,
+        "unit": "g",
+        "role": "garnish",
+        "notes": "Wash and drain.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Scallions",
+        "quantity": 20,
+        "unit": "g",
+        "role": "garnish",
+        "notes": "Thinly slice.",
+        "scaling_rule": "linear"
+      }
+    ],
+    "preparation_steps": [
+      "Rinse the shrimp. Set aside 150 g whole or peeled shrimp for the topping. Peel the remaining shrimp, pat dry and reserve the heads and shells.",
+      "Finely chop and pound the peeled shrimp until sticky. Mix in the egg white, tapioca starch, cornstarch, some shallot and garlic, salt, sugar, pepper and a little annatto oil. Pound until tacky and springy, cover and refrigerate for 60 minutes.",
+      "Blanch the pork hock, pork belly and pork skin in boiling water for 2 minutes; discard the water and rinse. Char the onion and soak the dried shrimp and squid.",
+      "Wash and drain the bean sprouts and herbs. Soak sliced banana blossom in lemon water to prevent browning."
+    ],
+    "cooking_steps": [
+      "Put the pork hock and skin in a pot with the water. Bring to a boil and skim; add the charred onion, daikon, dried shrimp and dried squid. Simmer gently for about 50 minutes, until the broth is flavorful and the hock is just tender. Remove the meat and keep warm.",
+      "Sauté shallot and garlic in annatto oil. Add the shrimp heads and shells and cook until fragrant. Add a ladle of broth, simmer 2 minutes, strain, and return the liquid to the pot. Season with fish sauce, salt, sugar, fermented soybeans and tamarind juice; keep at a gentle simmer.",
+      "Use a piping bag or two spoons to shape the shrimp paste into long tapered pieces and slip them into the simmering broth. Once they float, cook 2 minutes more until done, then lift them out.",
+      "Cook the reserved shrimp until just done; slice the pork belly and skin. Briefly blanch the vermicelli and divide among bowls. Add suông, shrimp, hock, pork and skin, ladle in hot broth and finish with scallions. Serve fresh greens alongside."
+    ],
+    "scaling": {
+      "base_servings": 4,
+      "targets": [
+        {
+          "servings": 2,
+          "main_factor": 0.5,
+          "seasoning_start_factor": 0.5,
+          "example": "Tra Vinh Bún Suông Noodle Soup for 2",
+          "instruction": "Scale ingredients by about 0.5; season gradually and adjust to taste."
+        },
+        {
+          "servings": 6,
+          "main_factor": 1.5,
+          "seasoning_start_factor": 1.5,
+          "example": "Tra Vinh Bún Suông Noodle Soup for 6",
+          "instruction": "Scale ingredients by about 1.5; season gradually and adjust to taste."
+        },
+        {
+          "servings": 8,
+          "main_factor": 2.0,
+          "seasoning_start_factor": 2.0,
+          "example": "Tra Vinh Bún Suông Noodle Soup for 8",
+          "instruction": "Scale ingredients by about 2; season gradually and adjust to taste."
+        }
+      ]
+    },
+    "editorial": {
+      "status": "editorial_draft",
+      "production_ready": false,
+      "test_cook_status": "not_tested",
+      "variant_note": "Bếp Việt edited a four-bowl batch from VnExpress techniques for shrimp paste and broth. The sources describe different shrimp-paste and topping variations, so this recipe does not claim to represent every Tra Vinh shop.",
+      "seed_recipe": null,
+      "reviewed_at": "2026-10-23",
+      "needs": [
+        "Test shrimp-paste springiness with different shrimp sizes and chill times; balance tamarind, fermented soybeans and broth."
+      ]
+    }
+  },
+  "canh-bong-tha-ha-noi": {
+    "name": "Hanoi Canh Bóng Thả Soup",
+    "aliases": [
+      "Hanoi pork-rind soup",
+      "Hanoi Tet canh bong"
+    ],
+    "region": [
+      "Northern Red River Delta"
+    ],
+    "category": "Soup",
+    "meal_type": [
+      "Main course",
+      "Festive meal"
+    ],
+    "difficulty": "Advanced",
+    "serving_basis": "4 bowls of light soup with pork rind, pork tenderloin, dried shrimp and vegetables.",
+    "description": "Canh bóng thả is a delicate soup served in old-style Hanoi Tết feasts. Chicken stock is blended with the cooking liquids from dried shrimp and pork tenderloin; pork rind and vegetables are cooked just until tender so they keep their color and gentle bite.",
+    "finished_dish": "Clear, naturally sweet broth with tender pork rind, fragrant pork and dried shrimp, and colorful vegetables that retain a slight crispness.",
+    "serving": "Arrange the pork rind, vegetables, tenderloin and dried shrimp in bowls. Pour over piping-hot broth and finish with cilantro and pepper.",
+    "tips": [
+      "Soak the pork rind in concentrated glutinous-rice washing water until expanded, then deodorize it with ginger and rice wine and rinse well.",
+      "Skim the stock as it simmers and remove excess fat for a clear, delicate soup.",
+      "Heat the pork rind only until tender; long cooking can make it soft and limp."
+    ],
+    "dish_type": [
+      "Traditional soup",
+      "Hanoi festive dish",
+      "Tết dish"
+    ],
+    "main_ingredient": [
+      "pork rind",
+      "chicken stock",
+      "dried shrimp",
+      "pork tenderloin",
+      "vegetables"
+    ],
+    "cooking_method": [
+      "soaking",
+      "simmering stock",
+      "boiling",
+      "assembling soup"
+    ],
+    "search_terms": [
+      "Hanoi canh bong tha",
+      "canh bong bi",
+      "Hanoi Tet soup",
+      "pork rind and vegetable soup"
+    ],
+    "image_alt": "Hanoi canh bóng thả soup with pork rind, tenderloin, dried shrimp, shiitake mushrooms, kohlrabi, carrot and cauliflower in a patterned bowl; isolated on transparent background.",
+    "suggested_pairings": [
+      "Northern Vietnamese Tết feast",
+      "Steamed rice",
+      "Pickled onions"
+    ],
+    "time_note": "About 3 hours, including 60–90 minutes to soak the pork rind.",
+    "keywords": [
+      "canh bóng",
+      "canh bóng thả",
+      "Hanoi",
+      "pork rind",
+      "Tết feast",
+      "vegetable garnish"
+    ],
+    "tags": [
+      "soup",
+      "festive dish",
+      "Northern Tết",
+      "Hanoi cuisine"
+    ],
+    "province": [
+      "Hà Nội"
+    ],
+    "excerpt": "Canh bóng thả is a delicate soup served in old-style Hanoi Tết feasts.",
+    "tip": "Soak the pork rind in concentrated glutinous-rice washing water until expanded, then deodorize it with ginger and rice wine and rinse well.",
+    "time_unit": "minutes",
+    "ingredients": [
+      {
+        "name": "Pork rind sheets (bóng bì)",
+        "quantity": 100,
+        "unit": "g",
+        "role": "main",
+        "notes": "Soak to expand and carefully remove any odor.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Pork tenderloin",
+        "quantity": 180,
+        "unit": "g",
+        "role": "main",
+        "notes": "Use some for the cooking liquid and some sliced in the bowls.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Dried shrimp",
+        "quantity": 30,
+        "unit": "g",
+        "role": "main",
+        "notes": "Rinse and soak until soft.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Dried shiitake mushrooms",
+        "quantity": 12,
+        "unit": "g",
+        "role": "aromatic",
+        "notes": "About 6 caps; soak and trim the tough stems.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Green peas",
+        "quantity": 50,
+        "unit": "g",
+        "role": "main",
+        "notes": "Trim any strings.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Kohlrabi",
+        "quantity": 180,
+        "unit": "g",
+        "role": "main",
+        "notes": "Peel and carve into flowers or bite-size pieces.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Carrot",
+        "quantity": 100,
+        "unit": "g",
+        "role": "main",
+        "notes": "Peel and carve into flowers or bite-size pieces.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "White cauliflower",
+        "quantity": 120,
+        "unit": "g",
+        "role": "main",
+        "notes": "Cut into small florets.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Green cauliflower",
+        "quantity": 120,
+        "unit": "g",
+        "role": "main",
+        "notes": "Cut into small florets.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Chicken stock",
+        "quantity": 1400,
+        "unit": "ml",
+        "role": "main",
+        "notes": "Use clear, lightly seasoned homemade or prepared stock.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Concentrated glutinous-rice washing water",
+        "quantity": 500,
+        "unit": "ml",
+        "role": "other",
+        "notes": "For soaking the pork rind.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Rice wine",
+        "quantity": 60,
+        "unit": "ml",
+        "role": "other",
+        "notes": "For removing odor from the pork rind.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fresh ginger",
+        "quantity": 25,
+        "unit": "g",
+        "role": "aromatic",
+        "notes": "Crush some for cleaning the rind; use the rest to perfume the broth.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fish sauce",
+        "quantity": 18,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "Season the broth.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Salt",
+        "quantity": 5,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Season the broth.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Cilantro",
+        "quantity": 15,
+        "unit": "g",
+        "role": "garnish",
+        "notes": "Wash and chop.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Ground black pepper",
+        "quantity": 1,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Sprinkle before serving.",
+        "scaling_rule": "linear"
+      }
+    ],
+    "preparation_steps": [
+      "Soak the pork rind in concentrated glutinous-rice washing water for 60–90 minutes until expanded. Cut into diamond shapes, gently rub with crushed ginger and rice wine, rinse several times and squeeze lightly.",
+      "Soak the dried shrimp and shiitake until soft. Slice the pork tenderloin; peel, wash and carve the kohlrabi and carrot; cut the cauliflower and prepare the peas.",
+      "If making chicken stock from bones, strain out the bones and skim off the fat for a clear, delicate broth."
+    ],
+    "cooking_steps": [
+      "Simmer the dried shrimp in 350 ml water over low heat for 15 minutes. Simmer the pork tenderloin in another 350 ml water for about 12 minutes, until cooked; remove and slice. Strain both liquids, combine with the chicken stock, and season with fish sauce and salt.",
+      "Bring the broth to a boil. Add kohlrabi, carrot, cauliflower, peas and shiitake; cook just until tender. Lift out the vegetables and cool briefly in clean cold water to preserve color and crispness.",
+      "Add the pork rind to the broth and heat just until soft and warm, then remove. Arrange the rind and vegetables in bowls, with tenderloin and dried shrimp in the center.",
+      "Bring the broth back to a boil just before serving. Pour into the bowls and finish with cilantro and pepper."
+    ],
+    "scaling": {
+      "base_servings": 4,
+      "targets": [
+        {
+          "servings": 2,
+          "main_factor": 0.5,
+          "seasoning_start_factor": 0.5,
+          "example": "Hanoi Canh Bóng Thả Soup for 2",
+          "instruction": "Scale ingredients by about 0.5; season gradually and adjust to taste."
+        },
+        {
+          "servings": 6,
+          "main_factor": 1.5,
+          "seasoning_start_factor": 1.5,
+          "example": "Hanoi Canh Bóng Thả Soup for 6",
+          "instruction": "Scale ingredients by about 1.5; season gradually and adjust to taste."
+        },
+        {
+          "servings": 8,
+          "main_factor": 2.0,
+          "seasoning_start_factor": 2.0,
+          "example": "Hanoi Canh Bóng Thả Soup for 8",
+          "instruction": "Scale ingredients by about 2; season gradually and adjust to taste."
+        }
+      ]
+    },
+    "editorial": {
+      "status": "editorial_draft",
+      "production_ready": false,
+      "test_cook_status": "not_tested",
+      "variant_note": "Bếp Việt adjusted the quantities from the home recipe published by VnExpress Cooking. The adaptation keeps the careful rind preparation and clear broth and omits later variations such as offal or quail eggs.",
+      "seed_recipe": null,
+      "reviewed_at": "2026-10-23",
+      "needs": [
+        "Test pork-rind tenderness with different product thicknesses and adjust stock quantity to serving bowls."
+      ]
+    }
+  },
+  "banh-tai-phu-tho": {
+    "name": "Phu Tho Bánh Tai Rice Dumplings",
+    "aliases": [
+      "Phu Tho banh tai",
+      "Thịt-filled Phu Tho rice dumpling"
+    ],
+    "region": [
+      "Northern Midlands and Mountains"
+    ],
+    "category": "Homestyle dish",
+    "meal_type": [
+      "Breakfast",
+      "Snack"
+    ],
+    "difficulty": "Moderate",
+    "serving_basis": "About 12 small steamed bánh tai dumplings, served hot.",
+    "description": "Bánh tai is a savory everyday dumpling from Phú Thọ town: soft, chewy rice dough encloses pork shoulder seasoned with shallot, pepper and fish sauce, then is shaped into a curved ear-like half moon and steamed. Bếp Việt edited this family batch from the process introduced by the Phú Thọ Tourism Information and Promotion Center.",
+    "finished_dish": "Soft, slightly chewy white rice dough folded into curved half moons around a moist, peppery pork and shallot filling.",
+    "serving": "Serve hot as soon as the dumplings leave the steamer; pair with lightly seasoned fish sauce or pickled vegetables.",
+    "tips": [
+      "Soak the rice long enough for fine milling; add cold water gradually while kneading so the dough does not become too wet.",
+      "Pound and knead the dough while warm until smooth, pliable and free of cracks.",
+      "Shape a gentle curve and avoid overfilling so the seam stays closed while steaming."
+    ],
+    "dish_type": [
+      "Traditional dumpling",
+      "Phu Tho specialty"
+    ],
+    "main_ingredient": [
+      "rice",
+      "pork shoulder",
+      "shallot"
+    ],
+    "cooking_method": [
+      "soaking rice",
+      "grinding",
+      "brief boiling",
+      "pounding and kneading",
+      "steaming"
+    ],
+    "search_terms": [
+      "Phu Tho banh tai",
+      "Thi Xa Phu Tho banh tai",
+      "rice dumpling with pork",
+      "steamed banh tai"
+    ],
+    "image_alt": "Phu Tho bánh tai rice dumplings folded into curved white half moons around pork filling, one cut open on a ceramic plate; isolated on transparent background.",
+    "suggested_pairings": [
+      "Seasoned fish sauce",
+      "Pickled vegetables",
+      "Hot tea"
+    ],
+    "time_note": "About 4 hours 10 minutes, including a 3-hour rice soak.",
+    "keywords": [
+      "bánh tai",
+      "Phu Tho",
+      "Thi Xa Phu Tho",
+      "rice dough",
+      "pork shoulder",
+      "steamed dumpling"
+    ],
+    "tags": [
+      "traditional cake",
+      "Phu Tho specialty",
+      "savory",
+      "steamed dumpling"
+    ],
+    "province": [
+      "Phú Thọ"
+    ],
+    "excerpt": "Bánh tai is a savory everyday dumpling from Phú Thọ town: soft, chewy rice dough encloses pork shoulder seasoned with shallot, pepper and fish sauce, then is shaped into a curved ear-like half moon and steamed.",
+    "tip": "Soak the rice long enough for fine milling; add cold water gradually while kneading so the dough does not become too wet.",
+    "time_unit": "minutes",
+    "ingredients": [
+      {
+        "name": "Rice",
+        "quantity": 450,
+        "unit": "g",
+        "role": "main",
+        "notes": "Rinse, soak for 3 hours and drain.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Water",
+        "quantity": 350,
+        "unit": "ml",
+        "role": "other",
+        "notes": "For grinding the rice and briefly cooking the dough; divide according to how dry the rice is.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Rice flour",
+        "quantity": 70,
+        "unit": "g",
+        "role": "other",
+        "notes": "For dusting hands and adjusting the dough.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Ground pork shoulder",
+        "quantity": 280,
+        "unit": "g",
+        "role": "main",
+        "notes": "A little fat keeps the filling moist.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Shallots",
+        "quantity": 30,
+        "unit": "g",
+        "role": "aromatic",
+        "notes": "Peel and mince finely.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fish sauce",
+        "quantity": 15,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "Season the filling.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Salt",
+        "quantity": 4,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Divide between the dough and filling.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Ground black pepper",
+        "quantity": 2,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Season the filling.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Neutral cooking oil",
+        "quantity": 8,
+        "unit": "ml",
+        "role": "other",
+        "notes": "Lightly coat hands and the steamer.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Cold water",
+        "quantity": 80,
+        "unit": "ml",
+        "role": "other",
+        "notes": "Add gradually while kneading the par-cooked dough.",
+        "scaling_rule": "linear"
+      }
+    ],
+    "preparation_steps": [
+      "Rinse the rice, soak in water for 3 hours and drain. Grind with about 250 ml water until smooth; reserve the remaining water for briefly cooking and adjusting the dough.",
+      "Mix the pork with shallot, fish sauce, some of the salt and pepper; let rest for 15 minutes.",
+      "Prepare a steamer and line it with perforated parchment or brush it lightly with oil."
+    ],
+    "cooking_steps": [
+      "Put the wet ground rice in a heavy saucepan with the remaining water and a little salt. Stir over low heat until it forms a thick, pliable, partly cooked mass.",
+      "Divide the dough into pieces and briefly boil in simmering water for 4–5 minutes, until the outside firms. Drain and pound or knead while warm; add cold water a little at a time until smooth and pliable. Dust with rice flour if it sticks heavily.",
+      "Divide into 12 pieces and press or roll each into a 5 mm thick round. Add filling, fold in half and shape into a curved ear-like half moon; pinch the seam closed.",
+      "Space the dumplings in the steamer and steam over boiling water for about 15 minutes, until the wrappers look slightly translucent and the filling is cooked. Serve hot."
+    ],
+    "scaling": {
+      "base_servings": 4,
+      "targets": [
+        {
+          "servings": 2,
+          "main_factor": 0.5,
+          "seasoning_start_factor": 0.5,
+          "example": "Phu Tho Bánh Tai Rice Dumplings for 2",
+          "instruction": "Scale ingredients by about 0.5; season gradually and adjust to taste."
+        },
+        {
+          "servings": 6,
+          "main_factor": 1.5,
+          "seasoning_start_factor": 1.5,
+          "example": "Phu Tho Bánh Tai Rice Dumplings for 6",
+          "instruction": "Scale ingredients by about 1.5; season gradually and adjust to taste."
+        },
+        {
+          "servings": 8,
+          "main_factor": 2.0,
+          "seasoning_start_factor": 2.0,
+          "example": "Phu Tho Bánh Tai Rice Dumplings for 8",
+          "instruction": "Scale ingredients by about 2; season gradually and adjust to taste."
+        }
+      ]
+    },
+    "editorial": {
+      "status": "editorial_draft",
+      "production_ready": false,
+      "test_cook_status": "not_tested",
+      "variant_note": "Bếp Việt turned the rice grinding and kneading process described by Phú Thọ tourism into a family-size batch. The rice-to-water ratio and steaming time require home testing; this is not attributed to a specific artisan.",
+      "seed_recipe": null,
+      "reviewed_at": "2026-10-23",
+      "needs": [
+        "Test dough binding with freshly milled rice and confirm water adjustments based on how dry the ground rice is."
+      ]
+    }
+  }
+}

@@ -48,7 +48,7 @@ def test_admin_manages_users_and_forces_relogin(
     assert client.get("/api/v1/auth/me", headers=member).status_code in {401, 403}
     assert (
         client.post(
-            "/api/v1/auth/login", json={"email": "lan@example.com", "password": "BepViet2026"}
+            "/api/v1/auth/login", json={"email": "lan@example.com", "password": "Test-Only-No-Login-2026!"}
         ).status_code
         == 403
     )
@@ -252,7 +252,7 @@ def test_admin_sends_and_tracks_personalized_meal_suggestions(
         if kwargs["recipient"] == "fail@example.com":
             raise RuntimeError("SMTP not available")
 
-    monkeypatch.setattr("app.modules.admin.router.send_meal_suggestion_email", send_meal)
+    monkeypatch.setattr("app.modules.auth.email.send_meal_suggestion_email", send_meal)
     response = client.post(
         "/api/v1/admin/meal-suggestions/send",
         headers=admin,
@@ -267,17 +267,25 @@ def test_admin_sends_and_tracks_personalized_meal_suggestions(
     )
     assert response.status_code == 200, response.text
     body = response.json()
-    assert body["sent"] == 1
-    assert body["failed"] == 1
-    assert {row["status"] for row in body["data"]} == {"sent", "failed"}
+    # Phản hồi trả ngay với email đã xếp hàng; việc gửi chạy ở nền.
+    assert body["queued"] == 2
+    assert {row["status"] for row in body["data"]} == {"sending"}
     assert len(deliveries) == 2
     assert all(call["recipes"][0]["image_path"] == "/images/bun-cha.jpg" for call in deliveries)
 
     history = client.get("/api/v1/admin/meal-suggestions/history", headers=admin)
     assert history.status_code == 200
     assert history.json()["total"] == 2
+    assert {row["status"] for row in history.json()["data"]} == {"sent", "failed"}
     failed = next(row for row in history.json()["data"] if row["status"] == "failed")
-    assert failed["error_message"]
+    assert failed["error_message"].startswith("Email chưa gửi được:")
+
+    recipients = client.get(
+        "/api/v1/admin/meal-suggestions/recipients", headers=admin, params={"limit": 5}
+    ).json()
+    assert recipients["total"] == 1
+    assert recipients["data"][0]["email"] == "lan@example.com"
+    assert recipients["data"][0]["sent_count"] == 1
     delivered_to_member = next(
         row for row in history.json()["data"] if row["recipient_email"] == "lan@example.com"
     )
@@ -330,7 +338,7 @@ def test_meal_suggestion_names_new_recipients_and_keeps_account_names(
 
     deliveries: list[dict[str, object]] = []
     monkeypatch.setattr(
-        "app.modules.admin.router.send_meal_suggestion_email",
+        "app.modules.auth.email.send_meal_suggestion_email",
         lambda **kwargs: deliveries.append(kwargs),
     )
     base = {
@@ -459,3 +467,44 @@ def test_admin_sees_user_behaviour_and_recipe_engagement(
     assert len(platform["activity"]) == 14
     assert platform["top_recipes"][0]["slug"] == "bun-cha-ha-noi"
     assert client.get("/api/v1/admin/users/" + user_id, headers=member).status_code == 403
+
+
+def test_breakfast_suggestions_and_stale_sending_rows_expire(
+    client: TestClient,
+    database_session_factory: sessionmaker[Session],
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    from datetime import UTC, datetime, timedelta
+
+    from sqlalchemy import select
+
+    from app.modules.support.models import AdminMealSuggestionEmail
+
+    seed_recipe(database_session_factory)
+    admin = create_admin(client, database_session_factory, "admin@example.com")
+    calls: list[str] = []
+    monkeypatch.setattr(
+        "app.modules.auth.email.send_meal_suggestion_email",
+        lambda **kwargs: calls.append(str(kwargs["meal_type"])),
+    )
+    response = client.post(
+        "/api/v1/admin/meal-suggestions/send",
+        headers=admin,
+        json={
+            "recipient_emails": ["sang@example.com"],
+            "meal_type": "breakfast",
+            "recipe_slugs": ["bun-cha-ha-noi"],
+            "subject": "Gợi ý bữa sáng từ Bếp Việt",
+            "intro_message": "Bếp Việt chọn món này cho bữa sáng hôm nay.",
+        },
+    )
+    assert response.status_code == 200, response.text
+    assert calls == ["breakfast"]
+
+    with database_session_factory() as session:
+        row = session.scalars(select(AdminMealSuggestionEmail)).one()
+        row.status = "sending"
+        row.created_at = datetime.now(UTC) - timedelta(hours=1)
+        session.commit()
+    history = client.get("/api/v1/admin/meal-suggestions/history", headers=admin).json()
+    assert history["data"][0]["status"] == "failed"

@@ -39,9 +39,9 @@ describe('RegisterPage', () => {
     fireEvent.change(screen.getByLabelText('Địa chỉ email'), {
       target: { value: 'lan@example.com' },
     });
-    fireEvent.change(screen.getByLabelText('Mật khẩu'), { target: { value: 'BepViet2026' } });
+    fireEvent.change(screen.getByLabelText('Mật khẩu'), { target: { value: 'Test-Only-No-Login-2026!' } });
     fireEvent.change(screen.getByLabelText('Nhập lại mật khẩu'), {
-      target: { value: 'BepViet2026' },
+      target: { value: 'Test-Only-No-Login-2026!' },
     });
     fireEvent.click(screen.getByRole('checkbox'));
     fireEvent.click(screen.getByRole('button', { name: 'Tạo tài khoản' }));
@@ -50,7 +50,7 @@ describe('RegisterPage', () => {
       expect(apiPost).toHaveBeenCalledWith('/auth/register', {
         full_name: 'Nguyễn Ngọc Lan',
         email: 'lan@example.com',
-        password: 'BepViet2026',
+        password: 'Test-Only-No-Login-2026!',
       }),
     );
     expect(await screen.findByText('Tài khoản đã được tạo thành công.')).toBeInTheDocument();

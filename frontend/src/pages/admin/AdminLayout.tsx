@@ -79,6 +79,12 @@ const navGroups: { label: string; items: AdminNavItem[] }[] = [
         description: 'Hộp thư liên hệ và phản hồi người dùng qua email.',
         badge: (counts) => counts.tickets_open,
       },
+      {
+        to: '/admin/assistant',
+        label: 'Dạy Chú Rồng',
+        icon: 'sparkles',
+        description: 'Tải tài liệu, viết ghi chú để trợ lý hiểu thêm về Bếp Việt.',
+      },
     ],
   },
   {

@@ -5,7 +5,7 @@ import { AppIcon } from '@/components/common/AppIcon';
 import { SearchField } from '@/components/common/SearchField';
 import { RecipeCard } from '@/components/recipes/RecipeCard';
 import { recipeMinutes } from '@/data/recipes';
-import { matchesRecipeSearch, recipeSearchRank } from '@/data/recipeSearch';
+import { matchesRecipeRegion, matchesRecipeSearch, recipeSearchRank } from '@/data/recipeSearch';
 import { dietaryConflicts, useUserPreferences } from '@/features/account/preferences';
 import { useI18n } from '@/features/i18n/I18nContext';
 import { useRecipeCatalog } from '@/features/i18n/recipeContent';
@@ -60,7 +60,7 @@ export function RecipesPage() {
             (category === 'Tất cả' ||
               recipe.category === category ||
               (category === 'Món chay' && recipe.tags.includes('Món chay'))) &&
-            (region === 'Tất cả' || recipe.region === region || recipe.regions?.includes(region)) &&
+            (region === 'Tất cả' || matchesRecipeRegion(recipe, region)) &&
             (!fitMe ||
               !canPersonalize ||
               ((!preferences.max_cooking_minutes ||
@@ -86,6 +86,7 @@ export function RecipesPage() {
   const pageNumbers = Array.from({ length: pageCount }, (_, index) => index + 1).filter(
     (value) => value === 1 || value === pageCount || Math.abs(value - page) <= 1,
   );
+  const isFullCatalog = !query && category === 'Tất cả' && region === 'Tất cả' && !fitMe;
 
   const changePage = (nextPage: number) => {
     setParams((current) => {
@@ -103,7 +104,7 @@ export function RecipesPage() {
         <div className="container">
           <span className="section-label">{t('Kho món Việt')}</span>
           <h1>{t('Món ngon cho mỗi bữa nhà')}</h1>
-          <p>{t('Tìm công thức theo loại món, vùng miền và thời gian bạn có.')}</p>
+          <p>{t('Tìm món theo nhóm món, vùng miền và thời gian nấu.')}</p>
           <form
             className="catalog-search"
             onSubmit={(event) => {
@@ -152,6 +153,7 @@ export function RecipesPage() {
                 'Món ăn sáng',
                 'Món tráng miệng',
                 'Món ăn kèm',
+                'Món ăn vặt',
               ].map((item) => (
                 <button
                   className={category === item ? 'is-active' : ''}
@@ -184,7 +186,11 @@ export function RecipesPage() {
           <div className="catalog-content" ref={resultsRef}>
             <div className="catalog-results">
               <div>
-                <span>{t('{count} công thức', { count: filtered.length })}</span>
+                <span>
+                  {isFullCatalog
+                    ? t('{count} món ăn tại 3 miền Việt Nam', { count: filtered.length })
+                    : t('{count} món phù hợp', { count: filtered.length })}
+                </span>
                 <h2>{query ? t('Kết quả cho “{query}”', { query }) : t('Tất cả món ăn')}</h2>
               </div>
               <select
@@ -215,7 +221,7 @@ export function RecipesPage() {
             {filtered.length > 0 && (
               <div className="catalog-pagination">
                 <p aria-live="polite" role="status">
-                  {t('Món {from}–{to} trong {total} công thức', {
+                  {t('Món {from}–{to} trong {total} món', {
                     from: offset + 1,
                     to: Math.min(offset + pageSize, filtered.length),
                     total: filtered.length,

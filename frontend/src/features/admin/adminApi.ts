@@ -2,7 +2,7 @@ import type { ArticleList, ArticleDetail, ArticleStatus } from '@/features/artic
 import { toSearch } from '@/features/articles/articlesApi';
 import type { AdminSubmission, SubmissionStatus } from '@/features/submissions/submissionsApi';
 import type { SupportStatus, SupportTicket } from '@/features/support/supportApi';
-import { apiPatch, apiPost, apiPut, apiRequest } from '@/lib/api/client';
+import { apiDelete, apiPatch, apiPost, apiPut, apiRequest } from '@/lib/api/client';
 
 export interface Paged<T> {
   data: T[];
@@ -242,7 +242,7 @@ export function listSupportRecipients(q = '', signal?: AbortSignal) {
   );
 }
 
-export type MealType = 'lunch' | 'dinner';
+export type MealType = 'breakfast' | 'lunch' | 'dinner';
 export type MealEmailStatus = 'sending' | 'sent' | 'failed';
 
 export interface MealSuggestionEmail {
@@ -288,7 +288,8 @@ export interface MealSuggestionSendPayload {
 }
 
 export function sendMealSuggestion(payload: MealSuggestionSendPayload) {
-  return apiPost<{ data: MealSuggestionEmail[]; sent: number; failed: number }>(
+  // Email được gửi ở nền: `queued` là số email đã xếp hàng, trạng thái cuối xem trong lịch sử.
+  return apiPost<{ data: MealSuggestionEmail[]; sent: number; failed: number; queued: number }>(
     '/admin/meal-suggestions/send',
     payload,
   );
@@ -444,4 +445,95 @@ export function getAdminRecipeInsights(slug: string, signal?: AbortSignal) {
   return apiRequest<AdminRecipeInsights>(`/admin/recipes/${encodeURIComponent(slug)}/insights`, {
     signal,
   });
+}
+
+export interface MealSuggestionRecipient {
+  email: string;
+  name: string;
+  last_sent_at: string | null;
+  sent_count: number;
+}
+
+export function listMealSuggestionRecipients(params: Params, signal?: AbortSignal) {
+  return apiRequest<Paged<MealSuggestionRecipient>>(
+    `/admin/meal-suggestions/recipients${toSearch(params)}`,
+    { signal },
+  );
+}
+
+export interface KnowledgeStatus {
+  chunks: number;
+  by_type: Record<string, number>;
+  embedding_model: string | null;
+  embedded: number;
+  pending: number;
+  retrieval: 'hybrid' | 'bm25';
+  syncing: boolean;
+}
+
+export interface KnowledgeDocument {
+  id: string;
+  title: string;
+  source: 'note' | 'file';
+  file_name: string | null;
+  size_bytes: number;
+  active: boolean;
+  characters: number;
+  preview: string;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface KnowledgeDocumentDetail extends KnowledgeDocument {
+  text: string;
+}
+
+export const knowledgeKeys = {
+  documents: ['admin', 'assistant', 'documents'] as const,
+  document: (id: string) => ['admin', 'assistant', 'document', id] as const,
+};
+
+export function listKnowledgeDocuments(signal?: AbortSignal) {
+  return apiRequest<{ data: KnowledgeDocument[]; status: KnowledgeStatus }>(
+    '/admin/assistant/documents',
+    { signal },
+  );
+}
+
+export function getKnowledgeDocument(id: string, signal?: AbortSignal) {
+  return apiRequest<KnowledgeDocumentDetail>(
+    `/admin/assistant/documents/${encodeURIComponent(id)}`,
+    { signal },
+  );
+}
+
+export function teachKnowledgeNote(payload: { title: string; text: string }) {
+  return apiPost<KnowledgeDocumentDetail>('/admin/assistant/documents', payload);
+}
+
+export function uploadKnowledgeFile(payload: {
+  file_name: string;
+  content_type: string;
+  data: string;
+  title?: string;
+}) {
+  return apiPost<KnowledgeDocumentDetail>('/admin/assistant/documents/upload', payload);
+}
+
+export function updateKnowledgeDocument(
+  id: string,
+  payload: { title?: string; text?: string; active?: boolean },
+) {
+  return apiPatch<KnowledgeDocumentDetail>(
+    `/admin/assistant/documents/${encodeURIComponent(id)}`,
+    payload,
+  );
+}
+
+export function deleteKnowledgeDocument(id: string) {
+  return apiDelete(`/admin/assistant/documents/${encodeURIComponent(id)}`);
+}
+
+export function reindexKnowledge() {
+  return apiPost<KnowledgeStatus>('/admin/assistant/knowledge/reindex');
 }

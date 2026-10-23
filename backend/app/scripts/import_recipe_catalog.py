@@ -25,6 +25,7 @@ IMAGE_DIRECTORY = ROOT / "frontend/public/images/recipes"
 GENERATED_IMAGE_DIRECTORY = ROOT / "frontend/public/images/recipes-owned"
 GENERATED_IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".webp"}
 SUPPLEMENTAL_DESSERT_SOURCE = ROOT / "backend/app/data/fruit_dessert_recipes.json"
+CURATED_RECIPE_BATCH_DIRECTORY = ROOT / "backend/app/data/curated_recipe_batches"
 SERVING_OVERRIDES: dict[str, str] = json.loads(
     (ROOT / "backend/app/data/serving_overrides.json").read_text(encoding="utf-8")
 )
@@ -68,9 +69,45 @@ def recipe_category(item: dict[str, Any]) -> str:
         return "Món ăn sáng"
     if category in {"Nộm, gỏi và dưa muối", "Món cuốn", "Món ăn cùng cơm"}:
         return "Món ăn kèm"
-    if "Món chay" in item["tags"]["dish_type"]:
+    tags = item.get("tags", {})
+    meal_types = tags.get("meal_type", []) if isinstance(tags, dict) else []
+    dish_types = tags.get("dish_type", []) if isinstance(tags, dict) else []
+    meal_types = meal_types if isinstance(meal_types, list) else [meal_types]
+    dish_types = dish_types if isinstance(dish_types, list) else [dish_types]
+    if (
+        category == "Món tráng miệng"
+        or "Bánh, chè và ăn nhẹ" in category
+        or any(isinstance(value, str) and "tráng miệng" in value.casefold() for value in meal_types)
+        or any(isinstance(value, str) and "món ngọt" in value.casefold() for value in dish_types)
+    ):
+        return "Món tráng miệng"
+    if any("chay" in tag.casefold() for tag in recipe_tag_values(item)):
         return "Món chay"
+    if any(token in category.casefold() for token in ("ăn vặt", "ăn nhẹ", "bánh truyền thống", "món chiên", "dân dã")):
+        return "Món ăn vặt"
     return "Món mặn"
+
+
+def recipe_tag_values(item: dict[str, Any]) -> list[str]:
+    tags = item.get("tags", {})
+    if isinstance(tags, list):
+        return [tag for tag in tags if isinstance(tag, str)]
+    if isinstance(tags, dict):
+        return [
+            value
+            for values in tags.values()
+            if isinstance(values, list)
+            for value in values
+            if isinstance(value, str)
+        ]
+    return []
+
+
+def normalized_recipe_tags(item: dict[str, Any]) -> dict[str, Any]:
+    tags = item.get("tags", {})
+    if isinstance(tags, list):
+        return {"keywords": [tag for tag in tags if isinstance(tag, str)]}
+    return tags if isinstance(tags, dict) else {}
 
 
 def read_catalog(source: Path = SOURCE) -> list[dict[str, Any]]:
@@ -137,6 +174,57 @@ def read_supplemental_desserts(source: Path = SUPPLEMENTAL_DESSERT_SOURCE) -> li
             raise ValueError(f"{item['id']}: inconsistent total time.")
         if not item["media"][0]["image_url"].startswith("/images/recipes/edited/"):
             raise ValueError(f"{item['id']}: expected a Bếp Việt-owned image path.")
+    return items
+
+
+def read_curated_recipe_batches(
+    directory: Path = CURATED_RECIPE_BATCH_DIRECTORY,
+) -> list[dict[str, Any]]:
+    """Read fact-checked additions in numbered batches without changing the original IDs."""
+    items: list[dict[str, Any]] = []
+    for source in sorted(directory.glob("batch_*.json")):
+        payload = json.loads(source.read_text(encoding="utf-8"))
+        batch = payload.get("recipes", [])
+        if not batch:
+            raise ValueError(f"{source.name}: batch must contain at least one recipe.")
+        items.extend(batch)
+
+    if not items:
+        return []
+
+    ids = [item.get("id") for item in items]
+    expected = [f"BV{i:03}" for i in range(331, 331 + len(items))]
+    if ids != expected:
+        raise ValueError("Curated recipe batches must use unique sequential IDs starting at BV331.")
+    slugs = [recipe_slug(item) for item in items]
+    if len(set(slugs)) != len(slugs):
+        raise ValueError("Curated recipe batches contain duplicate slugs.")
+
+    for item in items:
+        for key in (
+            "name",
+            "description",
+            "ingredients",
+            "preparation_steps",
+            "cooking_steps",
+            "finished_dish",
+            "serving",
+            "tips",
+            "media",
+            "sources",
+        ):
+            if not item.get(key):
+                raise ValueError(f"{item['id']}: missing {key}.")
+        if not item["media"][0]["image_url"].startswith("/images/recipes/edited/"):
+            raise ValueError(f"{item['id']}: expected a Bếp Việt-owned image path.")
+        if any(ingredient["quantity"] <= 0 for ingredient in item["ingredients"]):
+            raise ValueError(f"{item['id']}: invalid ingredient quantity.")
+        if item["total_time"] != item["prep_time"] + item["cook_time"] + item["passive_time"]:
+            raise ValueError(f"{item['id']}: inconsistent total time.")
+        if not item["sources"][0].get("url"):
+            raise ValueError(f"{item['id']}: source URL is required.")
+        if item.get("editorial", {}).get("test_cook_status") != "not_tested":
+            raise ValueError(f"{item['id']}: mark the recipe test-cook status explicitly.")
     return items
 
 
@@ -268,7 +356,8 @@ def import_catalog(
         recipe.source_name = "Bếp Việt"
         recipe.source_url = item["sources"][0]["url"]
         recipe.status = "published"
-        content = {**item, "serving": recipe.serving, "aliases": aliases}
+        tags = normalized_recipe_tags(item)
+        content = {**item, "tags": tags, "serving": recipe.serving, "aliases": aliases}
         if recipe.image_path.startswith("/images/recipes-owned/"):
             image_alt_text = f"{item['name']}, món Việt đã nấu xong được tạo hình cho Bếp Việt."
             generated_media: dict[str, str | None] = {
@@ -288,7 +377,6 @@ def import_catalog(
                 "rights_note": generated_media["rights_note"],
             }
         recipe.content = content
-        tags = item["tags"]
         recipe.search_text = normalize_search(
             " ".join(
                 [
@@ -299,8 +387,9 @@ def import_catalog(
                     *aliases,
                     *item["region"],
                     *item["province"],
-                    *tags["dish_type"],
-                    *tags["cooking_method"],
+                    *tags.get("dish_type", []),
+                    *tags.get("cooking_method", []),
+                    *tags.get("keywords", []),
                     *[ingredient["name"] for ingredient in item["ingredients"]],
                     f"{item['total_time']} phút",
                 ]
@@ -310,11 +399,22 @@ def import_catalog(
         recipe.steps.clear()
         groups = {
             "main": "Nguyên liệu chính",
+            "vegetable": "Rau củ",
             "seasoning": "Gia vị",
             "liquid": "Nước và chất lỏng",
             "process_aid": "Hỗ trợ chế biến",
+            "aromatic": "Gia vị",
+            "garnish": "Rau thơm và phần ăn kèm",
+            "herb": "Rau thơm và phần ăn kèm",
+            "accompaniment": "Món ăn kèm",
+            "side": "Món ăn kèm",
+            "topping": "Rau thơm và phần ăn kèm",
+            "fat": "Gia vị",
+            "grain": "Nguyên liệu chính",
+            "other": "Hỗ trợ chế biến",
+            "wrapping": "Lá gói",
         }
-        for ingredient in item["ingredients"]:
+        for ingredient_position, ingredient in enumerate(item["ingredients"], start=1):
             recipe.ingredients.append(
                 RecipeIngredient(
                     group_name=groups[ingredient["role"]],
@@ -323,7 +423,7 @@ def import_catalog(
                     unit=ingredient["unit"],
                     note=ingredient["notes"],
                     scalable=ingredient["scaling_rule"] != "vessel_dependent",
-                    position=ingredient["sequence"],
+                    position=ingredient.get("sequence", ingredient_position),
                 )
             )
         for step_type, key in (("so_che", "preparation_steps"), ("thuc_hien", "cooking_steps")):
@@ -455,9 +555,21 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--source", type=Path, default=SOURCE)
     parser.add_argument("--document", type=Path, default=DOCUMENT)
+    parser.add_argument(
+        "--only-missing",
+        action="store_true",
+        help="Add missing catalog dishes without replacing existing recipe edits.",
+    )
     args = parser.parse_args()
     items = read_catalog(args.source)
     desserts = read_supplemental_desserts()
+    curated = read_curated_recipe_batches()
+    all_ids = [item["id"] for item in (*items, *desserts, *curated)]
+    all_slugs = [recipe_slug(item) for item in (*items, *desserts, *curated)]
+    if len(all_ids) != len(set(all_ids)):
+        raise ValueError("Catalog batches contain duplicate recipe IDs.")
+    if len(all_slugs) != len(set(all_slugs)):
+        raise ValueError("Catalog batches contain duplicate recipe slugs.")
     generated_images = read_generated_image_paths(items)
     images = generated_images or extract_document_images(args.document, items)
     for item in desserts:
@@ -467,10 +579,31 @@ def main() -> None:
             raise ValueError(f"{item['id']}: missing generated image {local_path}.")
         images[item["id"]] = image_path
     items.extend(desserts)
+    for item in curated:
+        image_path = item["media"][0]["image_url"]
+        local_path = ROOT / "frontend/public" / image_path.lstrip("/")
+        if not local_path.is_file():
+            raise ValueError(f"{item['id']}: missing generated image {local_path}.")
+        images[item["id"]] = image_path
+    items.extend(curated)
     with SessionLocal() as session:
-        import_legacy_recipes(session)
+        if args.only_missing:
+            existing = list(session.execute(select(Recipe.catalog_id, Recipe.slug)))
+            existing_ids = {catalog_id for catalog_id, _ in existing if catalog_id}
+            existing_slugs = {slug for _, slug in existing}
+            items = [
+                item
+                for item in items
+                if item["id"] not in existing_ids and recipe_slug(item) not in existing_slugs
+            ]
+        else:
+            import_legacy_recipes(session)
         result = import_catalog(session, items, images)
-        install_legacy_images(session)
+        if not args.only_missing:
+            install_legacy_images(session)
+        qa_recipe = session.scalar(select(Recipe).where(Recipe.slug == "thit-kho-trung-qa"))
+        if qa_recipe is not None:
+            qa_recipe.status = "hidden"
         session.commit()
         export_catalog_snapshot(session)
     print(
@@ -479,6 +612,7 @@ def main() -> None:
                 "catalog_recipes": len(items),
                 "images": len(images),
                 "generated_images": len(generated_images or {}),
+                "curated_additions": len(curated),
                 **result,
             }
         )

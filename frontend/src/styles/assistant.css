@@ -1,6 +1,3 @@
-/* ==========================================================================
-   Chú Rồng — trợ lý trò chuyện của Bếp Việt.
-   ========================================================================== */
 .rc-root {
   --rc-red: #b8402f;
   --rc-red-deep: #7d2318;
@@ -65,8 +62,9 @@ body.has-narrator .rc-root:not(.is-open) {
 }
 .dragon-mascot__arm-wave {
   transform-origin: 70px 136px;
+  animation: rc-arm-wave 2.8s ease-in-out infinite;
 }
-.dragon-mascot__pan {
+.dragon-mascot__arm-tool {
   transform-origin: 132px 138px;
   animation: rc-pan 2.4s cubic-bezier(0.45, 0, 0.4, 1) infinite;
 }
@@ -125,8 +123,188 @@ body.has-narrator .rc-root:not(.is-open) {
 .dragon-mascot.is-listening .dragon-mascot__pupils {
   transform: translateY(1px);
 }
-.dragon-mascot.is-speaking .dragon-mascot__mouth {
-  animation: rc-talk 0.3s ease-in-out infinite alternate;
+/* Kh?u h?nh theo --dragon-talk v? nh?m ?m v?; transition l?m m??t c?c tr?ng th?i. */
+.dragon-mascot {
+  --dm-mx: 1;
+  --dm-my: 1;
+  --dm-teeth: 0.8;
+  --dm-cheek: 0px;
+}
+.dragon-mascot.is-v-open {
+  --dm-mx: 1.06;
+  --dm-teeth: 1;
+}
+.dragon-mascot.is-v-round {
+  --dm-mx: 0.62;
+  --dm-my: 0.95;
+  --dm-teeth: 0.3;
+  --dm-cheek: 0.5px;
+}
+.dragon-mascot.is-v-wide {
+  --dm-mx: 1.22;
+  --dm-my: 0.55;
+  --dm-teeth: 1;
+  --dm-cheek: -1.2px;
+}
+.dragon-mascot.is-v-small {
+  --dm-mx: 0.86;
+  --dm-my: 0.6;
+  --dm-teeth: 0.5;
+}
+.dragon-mascot.is-v-mbp,
+.dragon-mascot.is-v-rest {
+  --dm-my: 0;
+}
+.dragon-mascot__mouth-open {
+  transform: scale(var(--dm-mx), calc(var(--dragon-talk, 0) * var(--dm-my)));
+  transform-origin: 100px 116.4px;
+  transition: transform 90ms ease-out;
+}
+.dragon-mascot__mouth-closed {
+  opacity: calc(1 - var(--dragon-talk, 0) * var(--dm-my) * 4);
+  transition: opacity 90ms ease-out;
+}
+/* Hàm dưới hạ theo độ mở. */
+.dragon-mascot__jaw {
+  transform: translateY(calc(var(--dragon-talk, 0) * var(--dm-my) * 3.4px));
+  transition: transform 90ms ease-out;
+}
+.dragon-mascot__teeth {
+  opacity: calc(var(--dragon-talk, 0) * var(--dm-teeth) * 4 - 0.6);
+  transform: scaleX(var(--dm-mx));
+  transform-origin: 100px 116.4px;
+  transition:
+    opacity 90ms ease-out,
+    transform 90ms ease-out;
+}
+.dragon-mascot__cavity {
+  transition:
+    stroke-width 90ms ease-out,
+    stroke 90ms ease-out;
+}
+/* Tròn môi (o/u): viền môi dày như chu môi. */
+.dragon-mascot.is-v-round .dragon-mascot__cavity {
+  stroke: #c4493a;
+  stroke-width: 2.6;
+}
+/* Mím môi (m/b/p): hai môi ép, phồng nhẹ. */
+.dragon-mascot__lips-press {
+  opacity: 0;
+  transform-origin: 100px 117.5px;
+  transition:
+    opacity 70ms ease-out,
+    transform 70ms ease-out;
+}
+.dragon-mascot.is-v-mbp .dragon-mascot__lips-press {
+  opacity: 1;
+  transform: scaleX(1.05);
+}
+.dragon-mascot.is-v-mbp .dragon-mascot__mouth-closed {
+  opacity: 0;
+}
+/* Má nhích theo hàm, nhô lên khi bè miệng. */
+.dragon-mascot__cheeks {
+  transform: translateY(calc(var(--dragon-talk, 0) * 0.9px + var(--dm-cheek)));
+  transition: transform 140ms ease-out;
+}
+/* Đầu gật nhẹ theo từng tiếng (cộng thêm vào animation lắc đầu của mood). */
+.dragon-mascot__head-talk {
+  transform: translateY(calc(var(--dragon-talk, 0) * 1.1px))
+    rotate(calc(var(--dragon-talk, 0) * -1.2deg));
+  transform-origin: 100px 124px;
+  transition: transform 160ms ease-out;
+}
+/* Thở: ngực áo phồng xẹp chậm. */
+.dragon-mascot__coat {
+  transform-origin: 100px 198px;
+  animation: dm-breathe 3.4s ease-in-out infinite;
+}
+.dragon-mascot.is-speaking:not(.is-lipsync) .dragon-mascot__mouth-open {
+  animation: dm-mouth 0.36s ease-in-out infinite alternate;
+}
+/* Khớp lời: tay đưa nhịp nhẹ nhàng, sạn đưa chậm, không khua quá lố. */
+.dragon-mascot.is-speaking.is-lipsync .dragon-mascot__arm-wave {
+  animation: dm-talk-hand 2.4s ease-in-out infinite;
+}
+.dragon-mascot.is-speaking.is-lipsync .dragon-mascot__arm-tool {
+  animation: dm-talk-tool 3.6s ease-in-out infinite;
+}
+/* Nói: tay khua theo lời, đầu gật nhẹ, chảo đưa chậm lại cho đỡ rối mắt. */
+.dragon-mascot.is-speaking:not(.is-lipsync) .dragon-mascot__arm-wave {
+  animation: dm-gesture 1.1s ease-in-out infinite;
+}
+.dragon-mascot.is-speaking .dragon-mascot__head {
+  animation: dm-nod 1.3s ease-in-out infinite;
+}
+.dragon-mascot__foot--left {
+  transform-origin: 82px 208px;
+}
+.dragon-mascot__foot--right {
+  transform-origin: 118px 208px;
+}
+/* Nghe: nghiêng đầu chăm chú, tay khum lên tai. */
+.dragon-mascot.is-listening .dragon-mascot__head {
+  animation: dm-listen 2.4s ease-in-out infinite;
+}
+.dragon-mascot.is-listening .dragon-mascot__arm-wave {
+  animation: dm-ear 2.4s ease-in-out infinite;
+}
+/* Chờ (đang canh chuông): nhịp chân, mắt liếc. */
+.dragon-mascot.is-waiting .dragon-mascot__foot--right {
+  animation: dm-tap 0.9s ease-in-out infinite;
+}
+.dragon-mascot.is-waiting .dragon-mascot__pupils {
+  animation: dm-glance 4s ease-in-out infinite;
+}
+.dragon-mascot.is-waiting .dragon-mascot__arm-tool {
+  animation-duration: 4.8s;
+}
+/* Chuông kêu: nhún nhảy, gõ chảo dồn dập, miệng há. */
+.dragon-mascot.is-alarm .dragon-mascot__float {
+  animation: dm-bounce 0.45s ease-in-out infinite;
+}
+.dragon-mascot.is-alarm .dragon-mascot__arm-tool {
+  animation: dm-bang 0.3s ease-in-out infinite alternate;
+}
+.dragon-mascot.is-alarm .dragon-mascot__arm-wave {
+  animation: dm-gesture 0.45s ease-in-out infinite;
+}
+.dragon-mascot.is-alarm:not(.is-lipsync) {
+  --dragon-talk: 0.9;
+}
+.dragon-mascot.is-alarm .dragon-mascot__foot--left {
+  animation: dm-tap 0.45s ease-in-out infinite;
+}
+.dragon-mascot.is-alarm .dragon-mascot__foot--right {
+  animation: dm-tap 0.45s ease-in-out 0.22s infinite;
+}
+/* Xong món: nhảy ăn mừng, vỗ cánh nhanh, mũ bật lên. */
+.dragon-mascot.is-celebrate .dragon-mascot__float {
+  animation: dm-jump 0.9s cubic-bezier(0.3, 0, 0.3, 1) infinite;
+}
+.dragon-mascot.is-celebrate .dragon-mascot__wing--left,
+.dragon-mascot.is-celebrate .dragon-mascot__wing--right {
+  animation-duration: 0.5s;
+}
+.dragon-mascot.is-celebrate .dragon-mascot__arm-wave {
+  animation: dm-cheer 0.9s ease-in-out infinite;
+}
+.dragon-mascot.is-celebrate .dragon-mascot__hat {
+  animation: rc-hat 0.9s ease-in-out infinite;
+}
+.dragon-mascot.is-celebrate:not(.is-lipsync) {
+  --dragon-talk: 0.75;
+}
+/* Bối rối (không hiểu, chuyện ngoài lề): nghiêng đầu, gãi đầu. */
+.dragon-mascot.is-confused .dragon-mascot__head {
+  animation: rc-head-tilt 1.6s ease-in-out infinite;
+}
+.dragon-mascot.is-confused .dragon-mascot__arm-wave {
+  animation: dm-scratch 0.8s ease-in-out infinite;
+}
+.dragon-mascot__emote {
+  transform-origin: center;
+  animation: dm-pop 0.9s ease-in-out infinite alternate;
 }
 .dragon-mascot.is-happy .dragon-mascot__hat {
   animation: rc-hat 3.4s ease-in-out infinite;
@@ -189,6 +367,23 @@ body.has-narrator .rc-root:not(.is-open) {
   }
   50% {
     transform: rotate(7deg);
+  }
+}
+/* Tên riêng: rc-wave phía dưới là vòng sáng giọng nói, trùng tên sẽ đè mất cử động vẫy tay. */
+@keyframes rc-arm-wave {
+  0%,
+  60%,
+  100% {
+    transform: rotate(0deg);
+  }
+  70% {
+    transform: rotate(14deg);
+  }
+  80% {
+    transform: rotate(-6deg);
+  }
+  90% {
+    transform: rotate(10deg);
   }
 }
 @keyframes rc-pan {
@@ -311,6 +506,169 @@ body.has-narrator .rc-root:not(.is-open) {
   }
   50% {
     transform: scale(1.5);
+  }
+}
+@keyframes dm-mouth {
+  0% {
+    transform: scaleY(0.15);
+  }
+  45% {
+    transform: scaleY(0.85);
+  }
+  100% {
+    transform: scaleY(0.4);
+  }
+}
+@keyframes dm-breathe {
+  0%,
+  100% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.012, 1.022);
+  }
+}
+@keyframes dm-talk-hand {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(9deg);
+  }
+  40% {
+    transform: rotate(3deg);
+  }
+  60% {
+    transform: rotate(11deg);
+  }
+  80% {
+    transform: rotate(2deg);
+  }
+}
+@keyframes dm-talk-tool {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+}
+@keyframes dm-gesture {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(18deg);
+  }
+  60% {
+    transform: rotate(-8deg);
+  }
+}
+@keyframes dm-nod {
+  0%,
+  100% {
+    transform: rotate(0deg) translateY(0);
+  }
+  50% {
+    transform: rotate(-2deg) translateY(1.5px);
+  }
+}
+@keyframes dm-listen {
+  0%,
+  100% {
+    transform: rotate(-7deg);
+  }
+  50% {
+    transform: rotate(-4deg) translateY(1px);
+  }
+}
+@keyframes dm-ear {
+  0%,
+  100% {
+    transform: rotate(32deg);
+  }
+  50% {
+    transform: rotate(26deg);
+  }
+}
+@keyframes dm-tap {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-16deg) translateY(-2px);
+  }
+}
+@keyframes dm-glance {
+  0%,
+  40%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50%,
+  70% {
+    transform: translate(3px, 1px);
+  }
+}
+@keyframes dm-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+@keyframes dm-bang {
+  from {
+    transform: rotate(-12deg);
+  }
+  to {
+    transform: rotate(16deg);
+  }
+}
+@keyframes dm-jump {
+  0%,
+  100% {
+    transform: translateY(0) scale(1, 1);
+  }
+  15% {
+    transform: translateY(2px) scale(1.04, 0.95);
+  }
+  50% {
+    transform: translateY(-18px) scale(0.97, 1.04);
+  }
+}
+@keyframes dm-cheer {
+  0%,
+  100% {
+    transform: rotate(40deg);
+  }
+  50% {
+    transform: rotate(58deg);
+  }
+}
+@keyframes dm-scratch {
+  0%,
+  100% {
+    transform: rotate(48deg);
+  }
+  50% {
+    transform: rotate(56deg);
+  }
+}
+@keyframes dm-pop {
+  from {
+    opacity: 0.6;
+    transform: translateY(0) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-4px) scale(1.06);
   }
 }
 @keyframes rc-talk {
@@ -510,6 +868,8 @@ body.has-narrator .rc-root:not(.is-open) {
 }
 .rc-header {
   position: relative;
+  /* Chú Rồng tràn khỏi header một chút: luôn vẽ header trên phần thân (lịch sử, tin nhắn). */
+  z-index: 2;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -530,6 +890,8 @@ body.has-narrator .rc-root:not(.is-open) {
   content: '';
 }
 .rc-header__avatar {
+  position: relative;
+  z-index: 1;
   display: grid;
   width: 50px;
   height: 50px;
@@ -645,7 +1007,49 @@ body.has-narrator .rc-root:not(.is-open) {
   font-size: 13.5px;
   line-height: 1.55;
 }
-.rc-welcome .rc-suggestions {
+.rc-welcome .rc-sources {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+}
+.rc-sources__label {
+  color: #9a7b6c;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-size: 10.5px;
+}
+.rc-sources__link {
+  display: inline-flex;
+  max-width: 100%;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid #ecd9cd;
+  border-radius: 999px;
+  padding: 3px 9px;
+  color: #7a4a36;
+  background: #fff8f3;
+  text-decoration: none;
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease;
+}
+.rc-sources__link span {
+  overflow: hidden;
+  max-width: 180px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.rc-sources__link--static {
+  cursor: default;
+}
+.rc-sources__link:not(.rc-sources__link--static):hover {
+  border-color: var(--rc-red);
+  background: #fff;
+}
+.rc-suggestions {
   justify-content: center;
 }
 .rc-message {
@@ -1196,6 +1600,7 @@ body.has-narrator .rc-root:not(.is-open) {
   height: 170px;
   place-items: center;
   border-radius: 50%;
+  /* Quầng sáng mềm thay cho khung tròn: chú rồng đứng tự do. */
   background: radial-gradient(
     circle,
     rgb(255 255 255 / 85%) 0,

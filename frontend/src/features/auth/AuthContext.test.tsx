@@ -8,6 +8,7 @@ import { AuthProvider, useAuth } from './AuthContext';
 vi.mock('@/lib/api/client', () => ({
   apiPost: vi.fn(),
   setAccessToken: vi.fn(),
+  setSessionHandlers: vi.fn(),
 }));
 
 function SessionProbe() {

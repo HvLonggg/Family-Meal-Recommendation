@@ -8,7 +8,7 @@ import {
   type PropsWithChildren,
 } from 'react';
 
-import { apiPost, setAccessToken } from '@/lib/api/client';
+import { apiPost, setAccessToken, setSessionHandlers } from '@/lib/api/client';
 import type { AuthSession, AuthUser } from '@/features/auth/types';
 
 interface LoginPayload {
@@ -22,10 +22,15 @@ interface AuthContextValue {
   isLoading: boolean;
   login: (payload: LoginPayload) => Promise<AuthUser>;
   logout: () => Promise<void>;
-/** Cập nhật hồ sơ tài khoản trong bộ nhớ. */
+  /** Phiên vừa hết hạn (không gia hạn được): trang đăng nhập hiện thông báo phù hợp. */
+  sessionExpired: boolean;
+  /** Cập nhật hồ sơ tài khoản trong bộ nhớ. */
   updateUser: (user: AuthUser) => void;
   user: AuthUser | null;
 }
+
+// Đăng xuất ở một tab thì các tab khác cũng thoát theo.
+const LOGOUT_SIGNAL_KEY = 'bep-viet.auth.logout';
 
 const AuthContext = createContext<AuthContextValue | null>(null);
 let bootstrapPromise: Promise<AuthSession | null> | null = null;
@@ -48,12 +53,40 @@ function revalidateSession() {
 export function AuthProvider({ children }: PropsWithChildren) {
   const [user, setUser] = useState<AuthUser | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [sessionExpired, setSessionExpired] = useState(false);
 
   const acceptSession = useCallback((session: AuthSession) => {
     bootstrapPromise = null;
     setAccessToken(session.access_token);
     setUser(session.user);
+    setSessionExpired(false);
   }, []);
+
+  useEffect(() => {
+    setSessionHandlers({
+      refresh: async () => {
+        const session = await revalidateSession();
+        if (session) acceptSession(session);
+        return Boolean(session);
+      },
+      expired: () => {
+        setAccessToken(null);
+        setUser(null);
+        setSessionExpired(true);
+      },
+    });
+    const handleStorage = (event: StorageEvent) => {
+      if (event.key !== LOGOUT_SIGNAL_KEY || !event.newValue) return;
+      setAccessToken(null);
+      setUser(null);
+      bootstrapPromise = null;
+    };
+    window.addEventListener('storage', handleStorage);
+    return () => {
+      setSessionHandlers(null);
+      window.removeEventListener('storage', handleStorage);
+    };
+  }, [acceptSession]);
 
   useEffect(() => {
     let active = true;
@@ -108,15 +141,21 @@ export function AuthProvider({ children }: PropsWithChildren) {
     } finally {
       setAccessToken(null);
       setUser(null);
+      setSessionExpired(false);
       bootstrapPromise = null;
+      try {
+        localStorage.setItem(LOGOUT_SIGNAL_KEY, String(Date.now()));
+      } catch {
+        // Trình duyệt chặn bộ nhớ cục bộ: tab hiện tại vẫn đăng xuất bình thường.
+      }
     }
   }, []);
 
   const updateUser = useCallback((nextUser: AuthUser) => setUser(nextUser), []);
 
   const value = useMemo(
-    () => ({ acceptSession, isLoading, login, logout, updateUser, user }),
-    [acceptSession, isLoading, login, logout, updateUser, user],
+    () => ({ acceptSession, isLoading, login, logout, sessionExpired, updateUser, user }),
+    [acceptSession, isLoading, login, logout, sessionExpired, updateUser, user],
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

@@ -14,6 +14,7 @@ export const RECIPE_SEARCH_SUGGESTIONS = [
   'Món miền Nam',
   'Món ăn sáng',
   'Món tráng miệng',
+  'Món ăn vặt',
   'Món dễ nấu',
 ] as const;
 

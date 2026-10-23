@@ -1,0 +1,1364 @@
+{
+  "batch": 45,
+  "description": "Năm món vùng Tây Bắc được đối chiếu tư liệu; công thức do Bếp Việt biên tập, ảnh món tạo riêng nền trong suốt; chưa nấu thử.",
+  "recipes": [
+    {
+      "id": "BV551",
+      "slug": "canh-bon-thai-son-la",
+      "name": "Canh bon da trâu người Thái Sơn La",
+      "aliases": [
+        "Canh bon Sơn La",
+        "Canh môn bon Tây Bắc",
+        "Canh bon người Thái"
+      ],
+      "region": [
+        "Bắc"
+      ],
+      "province": [
+        "Sơn La"
+      ],
+      "category": "Món canh",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "món canh"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Một bát canh nóng cho mỗi người, dùng cùng cơm và món mặn trong bữa cơm gia đình.",
+      "prep_time": 35,
+      "cook_time": 325,
+      "passive_time": 0,
+      "description": "Canh bon là món canh quen thuộc trong bữa cơm của một bộ phận người Thái ở Sơn La. Bản biên tập của Bếp Việt giữ các nét được ghi nhận trong tư liệu: thân bon đã sơ chế, da trâu ninh mềm, cà rừng, mắc khén và rau thơm. Thời gian ninh dài được ghi rõ để người nấu chủ động chuẩn bị.",
+      "finished_dish": "Bát canh sánh nhẹ, thân bon mềm bùi, da trâu mềm dai, điểm cà rừng và rau thơm; mùi mắc khén ấm rõ nhưng không lấn vị ngọt tự nhiên của nước dùng.",
+      "serving": "Múc canh nóng vào bát sâu lòng, chia đều thân bon và da trâu. Ăn cùng cơm nóng; có thể dọn thêm ớt tươi riêng để mỗi người tự điều chỉnh độ cay.",
+      "tips": [
+        "Chỉ mua thân bon dùng làm thực phẩm từ nguồn đáng tin cậy; gọt bỏ xơ, đeo găng khi sơ chế và ngâm nước muối loãng. Nấu chín kỹ đến khi thân bon mềm hoàn toàn; không nếm bon sống hoặc nấu dở.",
+        "Da trâu cần được làm sạch lông và ninh đến mềm trước khi cho bon vào. Nồi áp suất có thể rút ngắn thời gian, nhưng cần tuân thủ hướng dẫn của thiết bị và kiểm tra độ mềm trước khi nấu tiếp.",
+        "Cho mắc khén và rau thơm ở cuối để hương thơm rõ mà không bị nấu bay; nêm muối, nước mắm từng ít một vì da trâu và rau có thể giữ vị mặn khác nhau."
+      ],
+      "dish_type": [
+        "Canh truyền thống người Thái",
+        "Món canh Tây Bắc"
+      ],
+      "main_ingredient": [
+        "thân bon",
+        "da trâu",
+        "cà rừng",
+        "mắc khén"
+      ],
+      "cooking_method": [
+        "ninh da trâu",
+        "nấu canh",
+        "nêm mắc khén"
+      ],
+      "search_terms": [
+        "canh bon",
+        "canh bon Sơn La",
+        "canh bon người Thái",
+        "thân bon nấu da trâu",
+        "canh khoai nước Tây Bắc"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Bát canh bon người Thái Sơn La với thân bon mềm, da trâu, cà rừng và rau thơm trong nước canh sánh nhẹ; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Kho?ng 6 gi?, g?m s? ch?, ninh da tr?u kho?ng 5 gi? r?i n?u th?n bon v? rau ??n m?m.",
+      "total_time": 360,
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Ớt tươi",
+        "Rau luộc theo mùa"
+      ],
+      "recipe_family": "thai_son_la_water_taro_buffalo_skin_soup",
+      "time_unit": "minute",
+      "ingredients": [
+        {
+          "name": "Thân bon dùng làm thực phẩm",
+          "quantity": 600,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Chọn thân non từ nguồn bán thực phẩm đáng tin cậy; gọt xơ, rửa và ngâm nước muối loãng.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Da trâu đã làm sạch",
+          "quantity": 300,
+          "unit": "g",
+          "role": "main",
+          "notes": "Nhờ nơi bán làm sạch lông; rửa kỹ và cắt miếng vừa ăn.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "C? ??ng r?ng",
+          "quantity": 180,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "R?a s?ch, b? ??i qu? l?n; thay b?ng c? r?ng c?ng lo?i n?u kh? t?m ??ng gi?ng.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Bí xanh",
+          "quantity": 150,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Gọt vỏ, bỏ ruột già và cắt miếng; có thể bỏ nếu không có trong mùa.",
+          "scaling_rule": "optional",
+          "sequence": 4
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 2200,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng ninh da trâu và nấu canh; châm thêm nước sôi nếu cần.",
+          "scaling_rule": "vessel_dependent",
+          "sequence": 5
+        },
+        {
+          "name": "Hành khô",
+          "quantity": 20,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, đập dập.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Sả",
+          "quantity": 20,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Rửa sạch, đập dập và cắt khúc.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Mắc khén rang",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Rang thơm nhẹ rồi giã; nêm từ ít đến vừa.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        },
+        {
+          "name": "Lá lốt",
+          "quantity": 15,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, thái sợi.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 9
+        },
+        {
+          "name": "Thì là",
+          "quantity": 10,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, cắt khúc ngắn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 10
+        },
+        {
+          "name": "Bột gạo nếp",
+          "quantity": 12,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": "Hòa với 30 ml nước lạnh để tạo độ sánh nhẹ; có thể bỏ qua.",
+          "scaling_rule": "optional",
+          "sequence": 11
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm sau khi da trâu và rau đã mềm.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 12
+        },
+        {
+          "name": "Muối",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Chia lượng nhỏ để nêm dần.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 13
+        },
+        {
+          "name": "Ớt tươi",
+          "quantity": 5,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Thái lát, dọn riêng để tùy khẩu vị.",
+          "scaling_rule": "optional",
+          "sequence": 14
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa lại da trâu đã làm sạch, để ráo rồi cắt miếng vừa ăn. Sơ chế thân bon bằng găng tay: tước xơ, rửa nhiều lần, cắt khúc và ngâm nước muối loãng 15 phút; để ráo."
+        },
+        {
+          "step": 2,
+          "instruction": "Rửa cà rừng, bổ đôi quả lớn; gọt bí xanh và cắt miếng. Đập dập hành, sả; rang thơm mắc khén rồi giã nhỏ. Rửa và thái lá lốt, thì là."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Cho da trâu, sả và khoảng 2 lít nước vào nồi. Đun sôi, hớt bọt, hạ lửa nhỏ và ninh khoảng 5 giờ hoặc đến khi da trâu mềm; bổ sung nước sôi để da luôn ngập."
+        },
+        {
+          "step": 2,
+          "instruction": "Cho th?n bon ?? t??c x? v?o n?i n??c da tr?u, n?u nh? l?a kho?ng 15?20 ph?t ??n khi m?m. Th?m c? ??ng v? b? xanh, n?u ti?p ??n khi rau ch?n m?m."
+        },
+        {
+          "step": 3,
+          "instruction": "Hòa bột nếp với nước lạnh, khuấy vào nồi nếu muốn canh sánh nhẹ. Nêm muối và nước mắm vừa ăn; cho mắc khén, lá lốt, thì là vào, đun thêm 1–2 phút rồi tắt bếp."
+        }
+      ],
+      "keywords": [
+        "canh bon",
+        "thân bon",
+        "da trâu",
+        "mắc khén",
+        "người Thái Sơn La"
+      ],
+      "tags": [
+        "ẩm thực Thái",
+        "món Sơn La",
+        "món canh",
+        "bữa cơm gia đình",
+        "mắc khén"
+      ],
+      "sources": [
+        {
+          "url": "https://baovanhoa.vn/am-thuc/canh-bon-dac-san-cua-nui-rung-tay-bac-2006.html",
+          "publisher": "Báo Văn Hóa",
+          "title": "Canh Bon: Đặc sản của núi rừng Tây Bắc",
+          "use": "Đối chiếu món canh của người Thái ở Sơn La, thân bon, da trâu, cà rừng, mắc khén, rau thơm và thời gian ninh da trâu 5–8 giờ.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://vovworld.vn/society/canh-bon-food-delight-of-thai-ethnic-people-in-vietnams-northwest-region-1335325.vov5",
+          "publisher": "VOV5",
+          "title": "‘Canh bon’ – food delight of Thái ethnic people in Vietnam's northwest region",
+          "use": "Đối chiếu cách sơ chế thân bon, da trâu hoặc bò, mắc khén, rau thơm và bột nếp; nguồn cũng ghi nhận món ăn trong bữa gia đình người Thái.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "300 g thân bon, 150 g da trâu",
+            "instruction": "Dùng nồi nhỏ và giữ đủ nước để da trâu ngập trong suốt quá trình ninh."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.25,
+            "example": "900 g thân bon, 450 g da trâu",
+            "instruction": "Tăng lượng nước theo kích thước nồi; nêm gia vị từng ít một."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/canh-bon-thai-son-la-960.webp",
+          "page_url": "https://baovanhoa.vn/am-thuc/canh-bon-dac-san-cua-nui-rung-tay-bac-2006.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu đặc điểm món.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Bát canh bon người Thái Sơn La với thân bon mềm, da trâu, cà rừng và rau thơm trong nước canh sánh nhẹ; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh ImageGen nền trong suốt; master PNG 1374 × 1145, bản hiển thị 3840 × 2160; công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt chuẩn hóa mẻ bốn phần từ mô tả món truyền thống; giữ da trâu, thân bon và mắc khén, đồng thời ghi chú sơ chế an toàn.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để kiểm tra loại thân bon, lượng nước và thời gian ninh phù hợp với nguyên liệu bán tại địa phương.",
+          "Nhờ người am hiểu ẩm thực Thái Sơn La rà soát độ sánh, rau thơm và cách nêm mắc khén."
+        ]
+      }
+    },
+    {
+      "id": "BV552",
+      "slug": "ga-nau-mang-chua-hat-doi-hoa-binh",
+      "name": "Gà nấu măng chua hạt dổi Hòa Bình",
+      "aliases": [
+        "Canh gà măng chua hạt dổi",
+        "Gà nấu măng chua Hòa Bình",
+        "Canh gà măng chua người Mường"
+      ],
+      "region": [
+        "Bắc"
+      ],
+      "province": [
+        "Hòa Bình"
+      ],
+      "category": "Món canh",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "món canh"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một bát canh có thịt gà và măng cho mỗi người, dùng nóng cùng cơm.",
+      "prep_time": 25,
+      "cook_time": 45,
+      "passive_time": 10,
+      "description": "Món canh gà măng chua hạt dổi gắn với bữa ăn vùng Hòa Bình, nơi măng giang muối chua và gia vị hạt dổi tạo vị chua thơm ấm. Bếp Việt biên tập định lượng cho nồi gia đình, giữ cách xào săn gà cùng măng rồi om nhỏ lửa đến chín mềm.",
+      "finished_dish": "Nước canh trong vàng nhạt, chua dịu; miếng gà chín mềm nhưng còn nguyên thớ, măng giang giòn nhẹ và hạt dổi rang dậy hương núi rừng.",
+      "serving": "Múc gà, măng và nước canh đều vào bát. Rắc hành lá, rau mùi; dùng nóng với cơm trắng. Nếu măng chua đã mặn, nếm nước canh trước khi thêm muối hoặc nước mắm.",
+      "tips": [
+        "Nếm măng trước khi nấu; nếu măng mặn hoặc chua gắt, luộc nhanh một lần rồi để ráo. Không dùng măng có mùi lạ, nhớt hoặc váng bất thường.",
+        "Hạt dổi rang rất nhanh; đảo trên chảo khô đến khi thơm rồi giã nhỏ, tránh rang cháy làm đắng canh.",
+        "Nấu đến khi phần thịt sát xương chín hoàn toàn; nếu có nhiệt kế thực phẩm, phần dày nhất của gà cần đạt ít nhất 74°C."
+      ],
+      "dish_type": [
+        "Canh gà măng chua",
+        "Món Hòa Bình"
+      ],
+      "main_ingredient": [
+        "thịt gà",
+        "măng chua",
+        "hạt dổi"
+      ],
+      "cooking_method": [
+        "xào săn",
+        "om nhỏ lửa",
+        "nấu canh"
+      ],
+      "search_terms": [
+        "gà nấu măng chua hạt dổi",
+        "canh gà măng chua Hòa Bình",
+        "gà măng chua người Mường",
+        "măng giang chua nấu gà"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Bát gà nấu măng chua hạt dổi Hòa Bình với miếng gà vàng mềm, măng giang thái sợi và hành rau thơm; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 1 giờ 20 phút, gồm sơ chế, ướp ngắn và om gà với măng đến chín mềm.",
+      "total_time": 80,
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Rau cải luộc",
+        "Dưa măng chua"
+      ],
+      "recipe_family": "hoa_binh_chicken_sour_bamboo_shoot_hat_doi_soup",
+      "time_unit": "minute",
+      "ingredients": [
+        {
+          "name": "Gà ta",
+          "quantity": 900,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chặt miếng vừa ăn; thấm khô bằng khăn giấy dùng một lần.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Măng giang muối chua",
+          "quantity": 300,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Thái sợi; nếm và luộc nhanh nếu măng quá mặn hoặc chua gắt.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 2
+        },
+        {
+          "name": "Hành khô",
+          "quantity": 25,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, đập dập và băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 12,
+          "unit": "ml",
+          "role": "process_aid",
+          "notes": "Dùng phi hành và xào săn nguyên liệu.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 1400,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Châm nước sôi nếu cần trong quá trình om.",
+          "scaling_rule": "vessel_dependent",
+          "sequence": 5
+        },
+        {
+          "name": "Hạt dổi",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Rang trên chảo khô đến khi thơm rồi giã nhỏ.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 6
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 18,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng ướp gà và nêm; điều chỉnh theo độ mặn của măng.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 7
+        },
+        {
+          "name": "Muối",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm sau khi măng và gà đã hòa vị.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        },
+        {
+          "name": "Đường",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Một lượng nhỏ cân vị chua; có thể bỏ qua.",
+          "scaling_rule": "optional",
+          "sequence": 9
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 20,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Rửa sạch, cắt khúc.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 10
+        },
+        {
+          "name": "Rau mùi",
+          "quantity": 10,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, cắt nhỏ để rắc khi dọn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 11
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Chặt gà thành miếng đều, dùng khăn giấy thấm khô; rửa tay và vệ sinh dao, thớt sau khi tiếp xúc thịt sống. Ướp gà với một nửa lượng nước mắm và một nhúm hạt dổi trong 10 phút."
+        },
+        {
+          "step": 2,
+          "instruction": "Nếm măng chua, rửa hoặc luộc nhanh nếu quá mặn, để ráo. Rang hạt dổi trên chảo khô đến khi dậy mùi rồi giã nhỏ; băm hành, cắt hành lá và rau mùi."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đun nóng dầu, phi thơm hành. Cho gà vào đảo đến khi các mặt săn lại; thêm măng chua, đảo thêm 3–4 phút để măng thấm mỡ và gia vị."
+        },
+        {
+          "step": 2,
+          "instruction": "Đổ nước sôi vào vừa ngập gà và măng. Đun sôi, hớt bọt, đậy hé nắp và om lửa nhỏ khoảng 30–35 phút đến khi gà mềm và chín kỹ."
+        },
+        {
+          "step": 3,
+          "instruction": "Nêm phần nước mắm còn lại, muối và chút đường nếu cần. Cho phần hạt dổi còn lại vào cuối nồi, tắt bếp rồi rắc hành lá, rau mùi."
+        }
+      ],
+      "keywords": [
+        "gà ta",
+        "măng giang chua",
+        "hạt dổi",
+        "canh gà",
+        "Hòa Bình"
+      ],
+      "tags": [
+        "món Hòa Bình",
+        "món người Mường",
+        "món canh",
+        "măng chua",
+        "bữa cơm gia đình"
+      ],
+      "sources": [
+        {
+          "url": "https://vnexpress.net/ga-nau-mang-chua-hat-doi-cua-nguoi-hoa-binh-3327424.html",
+          "publisher": "VnExpress",
+          "title": "Gà nấu măng chua hạt dổi của người Hòa Bình",
+          "use": "Đối chiếu gà đồi, măng chua, cách ướp và xào săn trước khi thêm nước om; xác nhận hạt dổi là gia vị đặc trưng của món.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://giadinh.suckhoedoisong.vn/thit-ga-nau-mang-chua-kieu-nay-dam-bao-ngon-thanh-den-muc-ga-luoc-ga-rang-tam-thoi-bi-boi-172211102004234462.htm",
+          "publisher": "Gia đình & Xã hội",
+          "title": "Thịt gà nấu măng chua kiểu này, đảm bảo ngon thanh đến mức gà luộc, gà rang tạm thời bị 'bỏ rơi'",
+          "use": "Đối chiếu cách luộc sơ măng khi cần, rang hạt dổi, xào măng và gà rồi om lửa nhỏ; Bếp Việt tự chuẩn hóa định lượng và thời gian.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "450 g gà, 150 g măng chua",
+            "instruction": "Dùng nồi nhỏ để gà và măng vừa ngập nước; điều chỉnh muối theo măng."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.25,
+            "example": "1,35 kg gà, 450 g măng chua",
+            "instruction": "Nấu trong nồi rộng, không giảm thời gian đến khi phần gà sát xương chín hoàn toàn."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/ga-nau-mang-chua-hat-doi-hoa-binh-960.webp",
+          "page_url": "https://vnexpress.net/ga-nau-mang-chua-hat-doi-cua-nguoi-hoa-binh-3327424.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu đặc điểm món.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Bát gà nấu măng chua hạt dổi Hòa Bình với miếng gà vàng mềm, măng giang thái sợi và hành rau thơm; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh ImageGen nền trong suốt; master PNG 1536 × 1024, bản hiển thị 3840 × 2160; công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt chuẩn hóa công thức từ nguồn địa phương và báo chí; giữ măng chua, gà và hạt dổi, ghi riêng bước nếm măng để kiểm soát độ mặn.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử với măng giang các mức độ chua và mặn khác nhau để chốt lượng nước mắm.",
+          "Nhờ người am hiểu ẩm thực Hòa Bình rà soát hương vị hạt dổi và cách dùng măng địa phương."
+        ]
+      }
+    },
+    {
+      "id": "BV553",
+      "slug": "cai-meo-xao-thit-ba-chi-moc-chau",
+      "name": "Cải mèo xào thịt ba chỉ Mộc Châu",
+      "aliases": [
+        "Cải mèo xào thịt",
+        "Cải mèo xào ba chỉ",
+        "Rau cải mèo xào thịt lợn"
+      ],
+      "region": [
+        "Bắc"
+      ],
+      "province": [
+        "Sơn La"
+      ],
+      "category": "Món rau",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "món rau"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một đĩa rau xào chia bốn phần nhỏ, ăn kèm cơm trong bữa gia đình.",
+      "prep_time": 20,
+      "cook_time": 12,
+      "passive_time": 10,
+      "description": "C?i m?o l? rau b?n ??a quen thu?c ? cao nguy?n M?c Ch?u; t? li?u ??a ph??ng ghi nh?n rau c? th? x?o v?i th?t hun kh?i. B?p Vi?t bi?n t?p th?nh m?n ?n gia ??nh d?ng ba ch? t??i, x?o nhanh theo t?ng ph?n ?? cu?ng v?a ch?n, l? c?n xanh v? kh?ng ra nhi?u n??c.",
+      "finished_dish": "Đĩa cải xanh đậm với cuống còn giòn, lá vừa xẹp, xen các lát ba chỉ nâu vàng và tỏi thơm; vị mặn dịu, hậu rau ngọt nhẹ.",
+      "serving": "Trút rau ra đĩa rộng ngay khi vừa chín, rắc tiêu xay và dùng nóng với cơm. Không để rau nằm lâu trong chảo vì nhiệt dư sẽ làm lá ra nước.",
+      "tips": [
+        "Tách riêng phần cuống dày và lá; cho cuống vào trước để chín đều mà lá không bị nhũn.",
+        "Xào theo mẻ nhỏ trên lửa lớn; nếu chảo quá đầy, rau sẽ hấp hơi và ra nhiều nước.",
+        "Xì dầu và dầu hào đã mặn; nếm trước khi thêm muối. Có thể thay ba chỉ tươi bằng thịt hun khói đã chín, nhưng cần giảm gia vị mặn."
+      ],
+      "dish_type": [
+        "Món rau Mộc Châu",
+        "Món xào gia đình"
+      ],
+      "main_ingredient": [
+        "cải mèo",
+        "thịt ba chỉ",
+        "tỏi"
+      ],
+      "cooking_method": [
+        "xào nhanh",
+        "xào lửa lớn"
+      ],
+      "search_terms": [
+        "cải mèo xào thịt",
+        "cải mèo xào ba chỉ",
+        "rau cải mèo Mộc Châu",
+        "món rau Tây Bắc",
+        "cải mèo xào tỏi"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Đĩa cải mèo xào thịt ba chỉ Mộc Châu với lá xanh đậm, cuống rau giòn và lát thịt nâu vàng; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 42 phút, gồm rửa, thái, ướp ngắn và xào nhanh trên lửa lớn.",
+      "total_time": 42,
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Canh rau theo mùa",
+        "Cà muối"
+      ],
+      "recipe_family": "moc_chau_cai_meo_pork_belly_stir_fry",
+      "time_unit": "minute",
+      "ingredients": [
+        {
+          "name": "Cải mèo",
+          "quantity": 500,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Tách bẹ, rửa kỹ, để ráo; cắt cuống và lá thành đoạn riêng.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Thịt ba chỉ",
+          "quantity": 200,
+          "unit": "g",
+          "role": "main",
+          "notes": "Thái lát mỏng vừa ăn.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Mỡ lợn hoặc dầu ăn",
+          "quantity": 8,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": "Dùng lượng vừa đủ để phi tỏi và xào thịt.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, đập dập và băm nhỏ.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 4
+        },
+        {
+          "name": "Xì dầu",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm chính; chọn loại vừa mặn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 5
+        },
+        {
+          "name": "Dầu hào",
+          "quantity": 8,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Tạo vị đậm nhẹ; có thể bỏ qua.",
+          "scaling_rule": "optional",
+          "sequence": 6
+        },
+        {
+          "name": "Đường",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Cân vị đắng dịu của cải.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 7
+        },
+        {
+          "name": "Hạt tiêu",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Xay vừa, rắc sau khi xào.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Chỉ thêm nếu chảo khô trước khi cuống rau kịp mềm.",
+          "scaling_rule": "optional",
+          "sequence": 9
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa từng bẹ cải mèo dưới vòi nước, để ráo rồi cắt cuống dày và lá thành đoạn 4–5 cm riêng. Thái ba chỉ mỏng; băm tỏi."
+        },
+        {
+          "step": 2,
+          "instruction": "Ướp thịt với một nửa lượng xì dầu, đường và tiêu trong 10 phút. Pha phần xì dầu còn lại với dầu hào và 1 thìa canh nước để nêm rau."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng chảo, cho mỡ hoặc dầu vào rồi phi thơm tỏi. Cho thịt ba chỉ vào xào đến khi chín và viền thịt hơi vàng; trút ra đĩa tạm."
+        },
+        {
+          "step": 2,
+          "instruction": "Giữ chảo nóng, cho cuống cải vào đảo 1–2 phút. Thêm lá cải, đảo nhanh đến khi lá vừa xẹp; nếu chảo khô, thêm chút nước đã chuẩn bị."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho thịt trở lại chảo, rưới hỗn hợp xì dầu và dầu hào, đảo thêm 1–2 phút đến khi cải chín tới mà cuống còn giòn. Nếm lại, rắc tiêu và tắt bếp."
+        }
+      ],
+      "keywords": [
+        "cải mèo",
+        "thịt ba chỉ",
+        "xì dầu",
+        "Mộc Châu",
+        "rau Tây Bắc"
+      ],
+      "tags": [
+        "rau Mộc Châu",
+        "món xào",
+        "bữa cơm gia đình",
+        "rau theo mùa",
+        "món Tây Bắc"
+      ],
+      "sources": [
+        {
+          "url": "https://dulichmocchau.com/news/tin-tuc/dac-san-moc-chau-rau-cai-meo-896.html",
+          "publisher": "Du lịch Mộc Châu",
+          "title": "Đặc sản Mộc Châu: Rau cải mèo",
+          "use": "Đối chiếu cải mèo là rau bản địa Mộc Châu, vị hơi đắng hậu ngọt và cách dùng xào với thịt.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://www.aciar.gov.au/sites/default/files/project-page-docs/final_report_agb.2012.059.pdf",
+          "publisher": "Australian Centre for International Agricultural Research (ACIAR)",
+          "title": "Towards more profitable and sustainable vegetable farming systems in north-western Vietnam — Final report",
+          "use": "??i chi?u th? c?ng th?c c?i m?o x?o th?t hun kh?i trong t?i li?u d? ?n; c?ng th?c B?p Vi?t bi?n t?p th?nh phi?n b?n gia ??nh v?i ba ch? t??i.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "250 g cải mèo, 100 g thịt ba chỉ",
+            "instruction": "Xào bằng chảo nhỏ nhưng vẫn để lửa lớn và không cho rau quá đầy."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.25,
+            "example": "750 g cải mèo, 300 g thịt ba chỉ",
+            "instruction": "Chia rau xào thành hai mẻ để cuống chín đều và lá không ra nước."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/cai-meo-xao-thit-ba-chi-moc-chau-960.webp",
+          "page_url": "https://dulichmocchau.com/news/tin-tuc/dac-san-moc-chau-rau-cai-meo-896.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu đặc điểm món.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa cải mèo xào thịt ba chỉ Mộc Châu với lá xanh đậm, cuống rau giòn và lát thịt nâu vàng; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh ImageGen nền trong suốt; master PNG 1536 × 1024, bản hiển thị 3840 × 2160; công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "B?p Vi?t chuy?n c?ch k?t h?p c?i m?o v?i th?t hun kh?i ???c ghi nh?n t?i ??a ph??ng th?nh phi?n b?n b?a nh? d?ng ba ch? t??i; n?u th? ?? ch?t l??ng gia v?.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để chốt thời gian xào theo độ non và kích thước cuống cải mèo.",
+          "Rà soát lại độ mặn của xì dầu và dầu hào với cải chính vụ Mộc Châu."
+        ]
+      }
+    },
+    {
+      "id": "BV554",
+      "slug": "ga-nuong-mac-khen-tay-bac",
+      "name": "Gà nướng mắc khén Tây Bắc",
+      "aliases": [
+        "Gà nướng mắc khén người Thái",
+        "Gà nướng hạt mắc khén",
+        "Gà nướng gia vị Tây Bắc"
+      ],
+      "region": [
+        "Bắc"
+      ],
+      "province": [
+        "Sơn La",
+        "Điện Biên"
+      ],
+      "category": "Món nướng",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "món mặn"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Một phần tư con gà nướng cho mỗi người, ăn cùng cơm hoặc rau luộc.",
+      "prep_time": 25,
+      "cook_time": 50,
+      "passive_time": 60,
+      "description": "Gà nướng mắc khén là món nổi tiếng của người Thái vùng Tây Bắc. Bếp Việt biên tập phiên bản gà chặt miếng lớn để nướng tại nhà, giữ cách nướng lửa than vừa, để mỡ gà tự chảy và phết hỗn hợp mắc khén ở giai đoạn cuối để hương gia vị không bị khét.",
+      "finished_dish": "Miếng gà vàng nâu, da săn thơm, bên trong chín mọng; mắc khén, gừng, sả và chút ớt tạo mùi cay ấm đặc trưng mà không át vị gà.",
+      "serving": "Chặt gà thành miếng, xếp lên đĩa và dùng nóng với cơm, rau sống hoặc rau luộc. Có thể dọn thêm chẳm chéo riêng, tránh chấm quá nhiều nếu gà đã được nêm đậm.",
+      "tips": [
+        "Nướng trên than hồng ổn định, tránh ngọn lửa bùng trực tiếp; không phết thêm dầu lên gà vì mỡ gà sẽ tự chảy.",
+        "Chỉ phết phần gia vị có mắc khén sau khi mặt gà đã săn; cách này giúp hạt gia vị thơm mà không cháy đắng.",
+        "Gà phải chín hoàn toàn; dùng nhiệt kế kiểm tra phần dày nhất đạt ít nhất 74°C. Nếu dùng lò, làm nóng lò trước và xoay khay giữa chừng để chín đều."
+      ],
+      "dish_type": [
+        "Món nướng người Thái",
+        "Món mặn Tây Bắc"
+      ],
+      "main_ingredient": [
+        "thịt gà",
+        "mắc khén",
+        "sả",
+        "gừng"
+      ],
+      "cooking_method": [
+        "ướp gà",
+        "nướng than",
+        "phết gia vị"
+      ],
+      "search_terms": [
+        "gà nướng mắc khén",
+        "gà nướng Tây Bắc",
+        "gà nướng người Thái",
+        "gà nướng sả gừng mắc khén"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Đĩa gà nướng mắc khén Tây Bắc với da vàng nâu, sả, gừng và gia vị mắc khén; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 2 giờ 15 phút, gồm ướp gà một giờ và nướng đến khi chín kỹ.",
+      "total_time": 135,
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Rau luộc",
+        "Chẳm chéo"
+      ],
+      "recipe_family": "thai_northwest_vietnam_grilled_chicken_mac_khen",
+      "time_unit": "minute",
+      "ingredients": [
+        {
+          "name": "Gà ta",
+          "quantity": 1200,
+          "unit": "g",
+          "role": "main",
+          "notes": "Làm sạch, chặt làm tư hoặc chặt miếng lớn để nướng đều.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Sả",
+          "quantity": 30,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Rửa sạch; một nửa đập dập ướp, phần còn lại băm để phết cuối.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Gừng",
+          "quantity": 20,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Gọt vỏ, giã nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Mắc khén rang",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Rang thơm nhẹ rồi giã; chia một phần ướp, một phần phết cuối.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 4
+        },
+        {
+          "name": "Ớt tươi",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Bỏ hạt, băm nhỏ; điều chỉnh theo khẩu vị.",
+          "scaling_rule": "optional",
+          "sequence": 5
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 22,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng ướp gà và làm hỗn hợp phết cuối.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 6
+        },
+        {
+          "name": "Muối",
+          "quantity": 6,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm vừa, giảm nếu nước mắm mặn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 7
+        },
+        {
+          "name": "Lá chanh",
+          "quantity": 5,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Rửa sạch, thái chỉ để rắc sau khi nướng.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Hòa cùng gia vị phết lên mặt gà trong giai đoạn cuối.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Chặt gà thành tư hoặc miếng lớn, dùng khăn giấy thấm khô. Băm sả, giã gừng, rang mắc khén vừa thơm rồi giã nhỏ; chia gia vị thành phần ướp và phần phết."
+        },
+        {
+          "step": 2,
+          "instruction": "Trộn một phần sả, gừng, mắc khén, muối và một nửa nước mắm. Xoa đều lên gà, đậy kín và ướp trong ngăn mát khoảng 1 giờ; để riêng hỗn hợp phết, không để tiếp xúc với gà sống."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Chuẩn bị than cháy thành lớp hồng đều, không còn ngọn lửa lớn. Đặt gà lên vỉ cách than vừa phải, trở đều; để da săn và mỡ gà chảy tự nhiên, không phết dầu."
+        },
+        {
+          "step": 2,
+          "instruction": "Khi gà đã săn và gần chín, trộn phần mắc khén, sả, nước mắm và nước lọc còn lại; phết mỏng lên gà rồi nướng tiếp, trở mặt thường xuyên để gia vị không cháy."
+        },
+        {
+          "step": 3,
+          "instruction": "Nướng đến khi phần dày nhất của gà đạt 74°C hoặc thịt sát xương chín hoàn toàn. Gắp ra nghỉ 5 phút, chặt miếng, rắc lá chanh và dùng nóng."
+        }
+      ],
+      "keywords": [
+        "gà nướng",
+        "mắc khén",
+        "người Thái",
+        "Tây Bắc",
+        "sả gừng"
+      ],
+      "tags": [
+        "món người Thái",
+        "món Tây Bắc",
+        "món nướng",
+        "mắc khén",
+        "bữa cơm gia đình"
+      ],
+      "sources": [
+        {
+          "url": "https://www.vietnamplus.vn/mon-an-doc-dao-vung-tay-bac-ga-nuong-mac-khen-post284204.vnp",
+          "publisher": "VietnamPlus / Thông tấn xã Việt Nam",
+          "title": "Món ăn độc đáo vùng Tây Bắc - Gà nướng mắc khén",
+          "use": "Đối chiếu món gà nướng nổi tiếng của người Thái, gia vị sả gừng ớt và kỹ thuật nướng than vừa, không phết dầu, phết mắc khén sau khi gà săn.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "600 g gà, 1,5 g mắc khén",
+            "instruction": "Có thể nướng trên vỉ nhỏ hoặc lò; vẫn kiểm tra miếng dày nhất đã chín."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.25,
+            "example": "1,8 kg gà, khoảng 4,5 g mắc khén",
+            "instruction": "Nướng nhiều mẻ nếu vỉ chật để gà không hấp hơi và gia vị không cháy."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/ga-nuong-mac-khen-tay-bac-960.webp",
+          "page_url": "https://www.vietnamplus.vn/mon-an-doc-dao-vung-tay-bac-ga-nuong-mac-khen-post284204.vnp",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu đặc điểm món.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa gà nướng mắc khén Tây Bắc với da vàng nâu, sả, gừng và gia vị mắc khén; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh ImageGen nền trong suốt; master PNG 1536 × 1024, bản hiển thị 3840 × 2160; công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt chuẩn hóa gà nướng thành phần tư cho bếp nhà; kỹ thuật hương vị theo nguồn Tây Bắc và có thêm phương án kiểm tra độ chín bằng nhiệt kế.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nướng thử trên bếp than gia đình để hiệu chỉnh khoảng cách vỉ và thời gian theo kích cỡ gà.",
+          "Nhờ người am hiểu ẩm thực Thái Tây Bắc rà soát tỷ lệ mắc khén, sả và gừng."
+        ]
+      }
+    },
+    {
+      "id": "BV555",
+      "slug": "be-chao-moc-chau",
+      "name": "Bê chao Mộc Châu",
+      "aliases": [
+        "Bê chao Sơn La",
+        "Bê sữa chao gừng sả",
+        "Bê chao đặc sản Mộc Châu"
+      ],
+      "region": [
+        "Bắc"
+      ],
+      "province": [
+        "Sơn La"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "món mặn"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Một đĩa bê chao dùng chung cho bốn người, ăn nóng với cơm hoặc rau xanh.",
+      "prep_time": 25,
+      "cook_time": 15,
+      "passive_time": 20,
+      "description": "Bê chao là món đặc sản nổi tiếng của cao nguyên Mộc Châu, Sơn La. Thịt bê non được thái miếng, ướp gừng sả rồi chao nhanh trong dầu nóng; Bếp Việt biên tập định lượng gia đình, chia thịt thành mẻ nhỏ để mặt ngoài vàng giòn nhẹ mà phần thịt không bị khô.",
+      "finished_dish": "Miếng bê vàng óng, cạnh ngoài hơi giòn nhưng bên trong mềm; gừng, sả và lá chanh thơm rõ, chấm cùng tương gừng sả đậm dịu.",
+      "serving": "Vớt bê ra giấy thấm dầu, bày ngay khi còn nóng cùng gừng, sả và lá chanh chiên giòn. Dọn tương gừng sả riêng và thêm rau xanh để cân vị béo.",
+      "tips": [
+        "Thái thịt đều độ dày và thấm khô trước khi chiên để dầu không bắn và thịt chín đồng đều.",
+        "Chao từng mẻ nhỏ trong dầu nóng vừa; không để dầu bốc khói. Miếng thịt dày cần chiên đủ thời gian để chín hoàn toàn ở giữa.",
+        "Chiên gừng, sả, lá chanh riêng trong thời gian ngắn và vớt ngay khi thơm để tránh cháy đắng; không đổ nước ướp sống lên món đã chín."
+      ],
+      "dish_type": [
+        "Đặc sản Mộc Châu",
+        "Món thịt chao"
+      ],
+      "main_ingredient": [
+        "thịt bê",
+        "gừng",
+        "sả"
+      ],
+      "cooking_method": [
+        "ướp thịt",
+        "chao dầu nóng",
+        "pha tương chấm"
+      ],
+      "search_terms": [
+        "bê chao",
+        "bê chao Mộc Châu",
+        "bê chao Sơn La",
+        "thịt bê chiên gừng sả",
+        "đặc sản Mộc Châu"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Đĩa bê chao Mộc Châu vàng giòn nhẹ với gừng, sả và lá chanh, kèm chén tương gừng sả; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 1 giờ, gồm sơ chế, ướp thịt 20 phút, chao nhanh theo mẻ và pha tương chấm.",
+      "total_time": 60,
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Rau cải luộc",
+        "Tương gừng sả"
+      ],
+      "recipe_family": "moc_chau_quick_fried_veal_ginger_lemongrass",
+      "time_unit": "minute",
+      "ingredients": [
+        {
+          "name": "Thịt bê",
+          "quantity": 600,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn phần vai hoặc đùi non, thái miếng vừa ăn và thấm thật khô.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Sả",
+          "quantity": 35,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc bẹ già, thái lát mỏng; chia một phần ướp và một phần chiên thơm.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Gừng",
+          "quantity": 30,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Gọt vỏ, thái sợi; chia cho phần thịt, phần tương và phần chiên thơm.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 10,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ để ướp thịt.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 4
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Ướp vừa; tương chấm đã có vị mặn riêng.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 5
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Ướp cùng thịt.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 6
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 600,
+          "unit": "ml",
+          "role": "process_aid",
+          "notes": "Dùng chao thịt; lượng dầu thực tế còn dư sau khi chiên.",
+          "scaling_rule": "vessel_dependent",
+          "sequence": 7
+        },
+        {
+          "name": "Tương bần",
+          "quantity": 80,
+          "unit": "g",
+          "role": "accompaniment",
+          "notes": "Dùng làm nước chấm, nếm trước khi thêm đường.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Nước ấm",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Hòa loãng tương theo khẩu vị.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 9
+        },
+        {
+          "name": "Đường",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Cân vị mặn của tương; có thể bỏ qua.",
+          "scaling_rule": "optional",
+          "sequence": 10
+        },
+        {
+          "name": "Lá chanh",
+          "quantity": 4,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Rửa, thấm khô và thái sợi để chiên thơm nhanh.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 11
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Thái thịt bê thành miếng dày khoảng 1,5 cm, thấm khô. Ướp với tỏi, một phần gừng sả, nước mắm và tiêu trong 20 phút; để trong ngăn mát nếu bếp nóng."
+        },
+        {
+          "step": 2,
+          "instruction": "Khuấy tương bần với nước ấm, phần gừng băm và đường; nếm để điều chỉnh. Thái riêng gừng, sả và lá chanh dùng làm phần rắc."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đun dầu trong nồi sâu đến khi nóng vừa, không bốc khói. Chao gừng, sả và lá chanh từng phần nhỏ trong vài giây rồi vớt ra giấy thấm dầu."
+        },
+        {
+          "step": 2,
+          "instruction": "Chia thịt thành 2–3 mẻ để dầu không nguội. Thả từng mẻ vào chao đến khi mặt ngoài vàng nâu và phần giữa chín hoàn toàn; trở đều, tránh chiên quá lâu làm thịt khô."
+        },
+        {
+          "step": 3,
+          "instruction": "Vớt bê ra giấy thấm dầu, xếp lên đĩa và rắc phần gừng sả lá chanh đã chiên. Dọn cùng tương gừng và rau xanh khi thịt còn nóng."
+        }
+      ],
+      "keywords": [
+        "bê chao",
+        "thịt bê",
+        "Mộc Châu",
+        "gừng sả",
+        "tương bần"
+      ],
+      "tags": [
+        "đặc sản Mộc Châu",
+        "món Sơn La",
+        "món chiên",
+        "bữa cơm gia đình",
+        "gừng sả"
+      ],
+      "sources": [
+        {
+          "url": "https://www.vietnamplus.vn/huong-vi-thom-ngot-nuc-tieng-cua-mon-be-chao-moc-chau-post627356.vnp",
+          "publisher": "VietnamPlus / Thông tấn xã Việt Nam",
+          "title": "Hương vị thơm ngọt nức tiếng của món bê chao Mộc Châu",
+          "use": "Đối chiếu nguồn gốc Mộc Châu, thịt bê thái miếng, ướp gừng sả, chao dầu nóng và cách ăn khi còn nóng.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://scov.gov.vn/ban-sac-van-hoa/huong-vi-que-nha/den-moc-chau-ngay-lanh-thuong-thuc-dac-san-be-chao.html",
+          "publisher": "?y ban Nh? n??c v? ng??i Vi?t Nam ? n??c ngo?i (SCOV)",
+          "title": "Đến Mộc Châu ngày lạnh thưởng thức đặc sản bê chao",
+          "use": "Ngu?n ??ng l?i b?i vi?t ghi r? theo VnExpress; ??i chi?u c?ch ch?n v? ??p b? v?i s?, g?ng tr??c khi chao nhanh, c?ng c?ch ?n n?ng v?i l? chanh, rau xanh v? n??c t??ng.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "300 g thịt bê, khoảng 300 ml dầu trong nồi nhỏ",
+            "instruction": "Dùng nồi vừa để dầu đủ sâu; chiên thành mẻ nhỏ và nếm tương trước khi thêm đường."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.25,
+            "example": "900 g thịt bê, khoảng 800 ml dầu",
+            "instruction": "Chia thành nhiều mẻ, giữ dầu nóng vừa và không để mặt ngoài cháy trước khi thịt chín."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/be-chao-moc-chau-960.webp",
+          "page_url": "https://www.vietnamplus.vn/huong-vi-thom-ngot-nuc-tieng-cua-mon-be-chao-moc-chau-post627356.vnp",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu đặc điểm món.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa bê chao Mộc Châu vàng giòn nhẹ với gừng, sả và lá chanh, kèm chén tương gừng sả; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh ImageGen nền trong suốt; master PNG 1536 × 1024, bản hiển thị 3840 × 2160; công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt biên tập định lượng gia đình từ cách chao bê Mộc Châu; dầu được ghi theo lượng nồi cần dùng và thịt được chia mẻ để dễ kiểm soát.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để xác nhận độ dày miếng bê và thời gian chao giúp chín giữa mà vẫn mềm.",
+          "Rà soát cách pha tương gừng sả theo khẩu vị địa phương trước khi đánh dấu công thức đã thử."
+        ]
+      }
+    }
+  ]
+}

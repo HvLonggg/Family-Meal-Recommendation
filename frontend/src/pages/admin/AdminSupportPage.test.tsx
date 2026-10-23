@@ -16,6 +16,7 @@ const api = vi.hoisted(() => ({
   listAdminRecipes: vi.fn(),
   sendMealSuggestion: vi.fn(),
   listMealSuggestionHistory: vi.fn(),
+  listMealSuggestionRecipients: vi.fn(),
 }));
 
 vi.mock('@/features/admin/adminApi', async () => ({
@@ -98,7 +99,8 @@ beforeEach(() => {
     ),
   );
   api.listAdminRecipes.mockResolvedValue({ data: [recipe], total: 1 });
-  api.sendMealSuggestion.mockResolvedValue({ data: [], sent: 1, failed: 0 });
+  api.sendMealSuggestion.mockResolvedValue({ data: [], sent: 0, failed: 0, queued: 1 });
+  api.listMealSuggestionRecipients.mockResolvedValue({ data: [], total: 0 });
   api.listMealSuggestionHistory.mockResolvedValue({ data: [], total: 0 });
 });
 
@@ -108,7 +110,8 @@ describe('AdminSupportPage', () => {
   it('marks an opened support request as read and sends an email reply', async () => {
     renderPage();
 
-    fireEvent.click(await screen.findByRole('button', { name: /Mở yêu cầu/ }));
+    // Danh sách yêu cầu tải không đồng bộ; cho thêm thời gian khi máy chạy nhiều test song song.
+    fireEvent.click(await screen.findByRole('button', { name: /Mở yêu cầu/ }, { timeout: 5000 }));
     await waitFor(() => expect(api.markSupportTicketViewed).toHaveBeenCalledWith('support-1'));
 
     fireEvent.change(await screen.findByLabelText('Nội dung phản hồi'), {
@@ -169,8 +172,43 @@ describe('AdminSupportPage', () => {
         'Bếp Việt trân trọng gửi bạn một vài gợi ý cho bữa tối hôm nay. Các món được đề xuất để bạn dễ kết hợp thành bữa cơm ngon miệng tại nhà.',
       closing_message: 'Chúc bạn và gia đình có bữa ăn thật ngon miệng!',
     });
-    expect(await screen.findByRole('status')).toHaveTextContent(
-      'Đã gửi 1 email; 0 email chưa gửi được.',
+    expect(await screen.findByRole('status')).toHaveTextContent('Đã xử lý xong 1 email');
+  });
+
+  it('resends a past email by loading its recipient and content back into the form', async () => {
+    api.listMealSuggestionHistory.mockResolvedValue({
+      data: [
+        {
+          id: 'mail-1',
+          recipient_email: 'hoa@example.com',
+          recipient_name: 'Chị Hoa',
+          meal_type: 'breakfast',
+          subject: 'Bữa sáng nhanh gọn cho chị Hoa',
+          intro_message: 'Bếp Việt gợi ý vài món sáng nhanh gọn cho chị nhé.',
+          closing_message: 'Chúc chị ngày mới vui!',
+          recipe_data: [
+            { slug: 'bun-cha-ha-noi', name: 'Bún chả Hà Nội', excerpt: '', image_path: '' },
+          ],
+          status: 'failed',
+          attempts: 1,
+          error_message: 'Email chưa gửi được: Không kết nối được máy chủ email.',
+          sent_at: null,
+          created_at: '2026-10-20T04:45:00Z',
+        },
+      ],
+      total: 1,
+    });
+    renderPage();
+    fireEvent.click(await screen.findByRole('tab', { name: /Gửi gợi ý bữa ăn/ }));
+    fireEvent.click(await screen.findByRole('button', { name: /Gửi lại/ }));
+
+    expect(screen.getByLabelText('Tiêu đề')).toHaveValue('Bữa sáng nhanh gọn cho chị Hoa');
+    expect(screen.getByRole('button', { name: /Bữa sáng/ })).toHaveAttribute(
+      'aria-pressed',
+      'true',
     );
+    const recipients = screen.getByRole('list', { name: 'Người nhận đã chọn' });
+    expect(within(recipients).getByText('hoa@example.com')).toBeInTheDocument();
+    expect(screen.getByText('Món sẽ xuất hiện trong email')).toBeInTheDocument();
   });
 });

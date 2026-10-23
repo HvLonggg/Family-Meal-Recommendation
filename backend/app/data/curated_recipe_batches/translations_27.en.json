@@ -1,0 +1,1194 @@
+{
+  "xoi-com-ha-noi": {
+    "name": "Hanoi Green Young-Rice Sticky Rice",
+    "aliases": [
+      "Young-rice sticky rice"
+    ],
+    "region": [
+      "Red River Delta"
+    ],
+    "province": [
+      "Hà Nội"
+    ],
+    "category": "Desserts",
+    "meal_type": [
+      "Snack",
+      "Dessert"
+    ],
+    "difficulty": "Intermediate",
+    "serving_basis": "4 snack servings, about 180–200 g each.",
+    "description": "Fragrant green young rice is steamed until just tender, then folded with fluffy mung beans, lotus seeds and lightly sweetened coconut. This Bếp Việt home adaptation keeps the grains soft without oversteaming.",
+    "finished_dish": "Soft, distinct green rice grains with a gentle lotus-leaf aroma, complemented by nutty beans, lotus seeds and mildly sweet coconut.",
+    "excerpt": "A fragrant Hanoi autumn snack of young rice, mung beans, lotus seeds and coconut.",
+    "serving": "Serve warm or slightly cooled, wrapped in a clean lotus leaf or arranged on a small plate. Reduce the sugar to emphasize the rice aroma.",
+    "tips": [
+      "Fresh young rice is usually moist enough; add only a little water if it seems dry.",
+      "Steam for about 4–5 minutes, just until warm and tender; longer steaming can make the rice mushy and dull its aroma.",
+      "Drain the mung beans well before mashing so they stay fluffy."
+    ],
+    "tip": "Fresh young rice is usually moist enough; add only a little water if it seems dry.",
+    "dish_type": [
+      "Sticky rice",
+      "Young-rice dish"
+    ],
+    "main_ingredient": [
+      "young rice flakes",
+      "mung beans",
+      "lotus seeds"
+    ],
+    "cooking_method": [
+      "steaming",
+      "sticky-rice cooking",
+      "folding"
+    ],
+    "search_terms": [
+      "Hanoi young-rice sticky rice recipe",
+      "young rice with lotus seeds and mung beans",
+      "Hanoi autumn rice-flake dish"
+    ],
+    "image_alt": "Green Hanoi young-rice sticky rice with lotus seeds and coconut, served on a lotus leaf.",
+    "ingredients": [
+      {
+        "name": "Fresh young rice flakes",
+        "quantity": 300,
+        "unit": "g",
+        "role": "main",
+        "notes": "If using dried flakes, moisten according to package directions.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Split mung beans",
+        "quantity": 100,
+        "unit": "g",
+        "role": "main",
+        "notes": "Soak until tender and drain.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fresh lotus seeds",
+        "quantity": 100,
+        "unit": "g",
+        "role": "main",
+        "notes": "Remove the bitter germ; soak dried seeds if using.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Shredded coconut",
+        "quantity": 40,
+        "unit": "g",
+        "role": "main",
+        "notes": "Use mature but tender coconut.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Coconut milk",
+        "quantity": 30,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "Reduce or omit for a lighter flavor.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Sugar",
+        "quantity": 30,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Adjust to the sweetness of the rice.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Neutral cooking oil",
+        "quantity": 15,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "Use a small amount to keep the grains separate.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Salt",
+        "quantity": 2,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Lotus leaves",
+        "quantity": 4,
+        "unit": "lá",
+        "role": "process_aid",
+        "notes": "Rinse and dry; use for wrapping or lining.",
+        "scaling_rule": "linear"
+      }
+    ],
+    "preparation_steps": [
+      "Soak the mung beans in clean water for 3–4 hours, rinse and drain. If using dried lotus seeds, soak them separately until tender.",
+      "Rinse fresh lotus seeds and remove any remaining bitter germs. Wash and dry the lotus leaves, then gently separate any clumps of young rice.",
+      "If using dried rice flakes, sprinkle them with warm water a little at a time and let them soften; do not soak them in water."
+    ],
+    "cooking_steps": [
+      "Steam the mung beans until soft, then coarsely mash while warm so they remain fluffy. Simmer the lotus seeds in just enough water until tender but intact; drain.",
+      "Cook the shredded coconut with some of the sugar and a teaspoon of water until lightly translucent; set aside. Toss the rice flakes with the oil, coconut milk and remaining sugar.",
+      "Spread the rice in a lotus-leaf-lined steamer and steam over boiling water for about 4–5 minutes, until warm and tender. Do not pack it tightly or steam for too long.",
+      "Remove the rice and gently fold in the mung beans, lotus seeds and coconut. Adjust the sweetness, wrap in lotus leaves and serve warm or slightly cooled."
+    ],
+    "time_note": "Mung-bean soaking is passive time; steam the rice briefly to preserve its aroma and texture.",
+    "time_unit": "minutes",
+    "keywords": [
+      "Hanoi young-rice sticky rice",
+      "Vietnamese young rice",
+      "mung beans",
+      "lotus seeds",
+      "autumn snack",
+      "dessert",
+      "225 minutes"
+    ],
+    "tags": {
+      "region": [
+        "Vietnamese cuisine",
+        "Red River Delta"
+      ],
+      "province": [
+        "Hà Nội"
+      ],
+      "meal_type": [
+        "Snack",
+        "Dessert"
+      ],
+      "dish_type": [
+        "Sticky rice",
+        "Young-rice dish"
+      ],
+      "main_ingredient": [
+        "young rice flakes",
+        "mung beans",
+        "lotus seeds"
+      ],
+      "cooking_method": [
+        "steaming",
+        "sticky-rice cooking",
+        "folding"
+      ],
+      "difficulty": "Intermediate",
+      "prep_time": 25,
+      "cook_time": 20,
+      "servings": 4,
+      "spicy_level": 0,
+      "suitable_for_family_meal": true,
+      "suggested_pairings": [
+        "Lotus tea",
+        "Hot green tea"
+      ],
+      "total_time": 225,
+      "keywords": [
+        "Hanoi young-rice sticky rice",
+        "Vietnamese young rice",
+        "mung beans",
+        "lotus seeds",
+        "autumn snack",
+        "dessert",
+        "225 minutes"
+      ]
+    },
+    "scaling": {
+      "base_servings": 4,
+      "targets": [
+        {
+          "servings": 2,
+          "main_factor": 0.5,
+          "seasoning_start_factor": 0.5,
+          "example": "Hanoi Green Young-Rice Sticky Rice for 2",
+          "instruction": "Adjust seasoning after tasting; check doneness and texture."
+        },
+        {
+          "servings": 6,
+          "main_factor": 1.5,
+          "seasoning_start_factor": 1.5,
+          "example": "Hanoi Green Young-Rice Sticky Rice for 6",
+          "instruction": "Adjust seasoning after tasting; check doneness and texture."
+        },
+        {
+          "servings": 8,
+          "main_factor": 2.0,
+          "seasoning_start_factor": 2.0,
+          "example": "Hanoi Green Young-Rice Sticky Rice for 8",
+          "instruction": "Adjust seasoning after tasting; check doneness and texture."
+        }
+      ]
+    },
+    "editorial": {
+      "status": "editorial_draft",
+      "production_ready": false,
+      "test_cook_status": "not_tested",
+      "variant_note": "This Bếp Việt recipe is an editorial adaptation of cited references; quantities and timings should be confirmed in a test cook.",
+      "seed_recipe": null,
+      "reviewed_at": "2026-10-23",
+      "needs": [
+        "Test-cook to confirm quantities, timing and flavor with commonly available ingredients.",
+        "Review serving and seasoning against local variations."
+      ]
+    },
+    "suggested_pairings": [
+      "Lotus tea",
+      "Hot green tea"
+    ],
+    "total_time": 225
+  },
+  "cha-tom-thanh-hoa": {
+    "name": "Thanh Hóa Grilled Shrimp Rolls",
+    "aliases": [
+      "Chả tôm xứ Thanh"
+    ],
+    "region": [
+      "North Central Vietnam"
+    ],
+    "province": [
+      "Thanh Hóa"
+    ],
+    "category": "Savory dishes",
+    "meal_type": [
+      "Snack",
+      "Lunch",
+      "Dinner"
+    ],
+    "difficulty": "Intermediate",
+    "serving_basis": "4 servings, about 3–4 small rolls per person.",
+    "description": "Fresh shrimp is coarsely pounded and mixed with pork belly, shallot and cut rice noodles, then wrapped in fresh rice sheets and grilled until fragrant and lightly browned. This Bếp Việt home adaptation uses a grill pan or charcoal grill.",
+    "finished_dish": "Small lightly charred rolls with a soft, chewy rice wrapper and a moist, savory shrimp-and-pork filling; serve with herbs, pickles and dipping sauce.",
+    "excerpt": "Thanh Hóa shrimp rolls with a tender shrimp-and-pork filling and lightly grilled rice wrappers.",
+    "serving": "Serve hot with fresh herbs, green papaya pickles and sweet-and-sour fish sauce. Grill over charcoal or in a heavy pan.",
+    "tips": [
+      "Pound the shrimp in a mortar for a coarse texture; do not blend it into a paste.",
+      "Roll snugly so the rice sheet holds the filling without tearing; lightly moisten dry edges.",
+      "Grill over medium heat, turning evenly, and cook the shrimp and pork filling through before serving."
+    ],
+    "tip": "Pound the shrimp in a mortar for a coarse texture; do not blend it into a paste.",
+    "dish_type": [
+      "Grilled rolls",
+      "Vietnamese snack"
+    ],
+    "main_ingredient": [
+      "shrimp",
+      "pork belly",
+      "fresh rice sheets"
+    ],
+    "cooking_method": [
+      "pounding",
+      "rolling",
+      "grilling"
+    ],
+    "search_terms": [
+      "Thanh Hóa shrimp rolls recipe",
+      "Vietnamese grilled shrimp rolls",
+      "Thanh Hóa specialty"
+    ],
+    "image_alt": "Small Thanh Hóa grilled shrimp rolls served with fresh herbs and pickled vegetables.",
+    "ingredients": [
+      {
+        "name": "Small fresh shrimp",
+        "quantity": 400,
+        "unit": "g",
+        "role": "main",
+        "notes": "Choose firm shrimp; peel and devein.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Pork belly",
+        "quantity": 180,
+        "unit": "g",
+        "role": "main",
+        "notes": "Cut into small pieces for sautéing and mincing.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fresh rice sheets (bánh phở)",
+        "quantity": 300,
+        "unit": "g",
+        "role": "main",
+        "notes": "Reserve some sheets to cut into short strands for the filling; use the rest as wrappers.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Shallots",
+        "quantity": 25,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Finely minced.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Gấc fruit flesh",
+        "quantity": 40,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Adds natural orange-red color; optional if unavailable.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fish sauce",
+        "quantity": 15,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Ground black pepper",
+        "quantity": 2,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Salt",
+        "quantity": 3,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Neutral cooking oil",
+        "quantity": 10,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "Brush lightly on the grill or pan.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fresh herbs",
+        "quantity": 120,
+        "unit": "g",
+        "role": "accompaniment",
+        "notes": "Rinse and drain.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Green papaya",
+        "quantity": 150,
+        "unit": "g",
+        "role": "accompaniment",
+        "notes": "Shred for pickles; fresh fig or prepared pickles can be substituted.",
+        "scaling_rule": "linear"
+      }
+    ],
+    "preparation_steps": [
+      "Peel and devein the shrimp, rinse briefly and drain. Chop the pork belly; cut a small portion of the rice sheets into short strands.",
+      "Blanch the shrimp in boiling water for about 1 minute until firm. Drain and coarsely pound in a mortar; do not make a smooth paste.",
+      "Rinse and drain the herbs, and shred the green papaya. If the rice sheets have dried on the surface, soften them briefly under a damp cloth."
+    ],
+    "cooking_steps": [
+      "Sauté half the shallots, add the pork belly and cook until done and lightly golden. Finely chop the cooked pork.",
+      "Mix the pounded shrimp, pork, rice-sheet strands, remaining shallot, gấc, fish sauce, salt and pepper. Season moderately, since the rolls are served with herbs and dipping sauce.",
+      "Cut the rice sheets into pieces about 4 × 7 cm. Add a modest amount of filling to each and roll into short, snug rolls without overfilling.",
+      "Lightly oil a grill or grill pan. Cook the rolls over medium heat, turning evenly, until the wrapper has golden marks and the shrimp and pork filling is fully cooked. Serve hot with herbs and papaya pickles."
+    ],
+    "time_note": "Grill in batches over medium heat so the wrappers do not burn before the filling is cooked.",
+    "time_unit": "minutes",
+    "keywords": [
+      "Thanh Hóa grilled shrimp rolls",
+      "Vietnamese shrimp rolls",
+      "shrimp",
+      "pork belly",
+      "fresh rice sheets",
+      "North Central Vietnam",
+      "grilled snack"
+    ],
+    "tags": {
+      "region": [
+        "Vietnamese cuisine",
+        "North Central Vietnam"
+      ],
+      "province": [
+        "Thanh Hóa"
+      ],
+      "meal_type": [
+        "Snack",
+        "Lunch",
+        "Dinner"
+      ],
+      "dish_type": [
+        "Grilled rolls",
+        "Vietnamese snack"
+      ],
+      "main_ingredient": [
+        "shrimp",
+        "pork belly",
+        "fresh rice sheets"
+      ],
+      "cooking_method": [
+        "pounding",
+        "rolling",
+        "grilling"
+      ],
+      "difficulty": "Intermediate",
+      "prep_time": 35,
+      "cook_time": 25,
+      "servings": 4,
+      "spicy_level": 1,
+      "suitable_for_family_meal": true,
+      "suggested_pairings": [
+        "Fresh herbs",
+        "Green papaya pickles",
+        "Sweet-and-sour fish sauce"
+      ]
+    },
+    "scaling": {
+      "base_servings": 4,
+      "targets": [
+        {
+          "servings": 2,
+          "main_factor": 0.5,
+          "seasoning_start_factor": 0.5,
+          "example": "Thanh Hóa Grilled Shrimp Rolls for 2",
+          "instruction": "Adjust seasoning after tasting; check doneness and texture."
+        },
+        {
+          "servings": 6,
+          "main_factor": 1.5,
+          "seasoning_start_factor": 1.5,
+          "example": "Thanh Hóa Grilled Shrimp Rolls for 6",
+          "instruction": "Adjust seasoning after tasting; check doneness and texture."
+        },
+        {
+          "servings": 8,
+          "main_factor": 2.0,
+          "seasoning_start_factor": 2.0,
+          "example": "Thanh Hóa Grilled Shrimp Rolls for 8",
+          "instruction": "Adjust seasoning after tasting; check doneness and texture."
+        }
+      ]
+    },
+    "editorial": {
+      "status": "editorial_draft",
+      "production_ready": false,
+      "test_cook_status": "not_tested",
+      "variant_note": "This Bếp Việt recipe is an editorial adaptation of cited references; quantities and timings should be confirmed in a test cook.",
+      "seed_recipe": null,
+      "reviewed_at": "2026-10-23",
+      "needs": [
+        "Test-cook to confirm quantities, timing and flavor with commonly available ingredients.",
+        "Review serving and seasoning against local variations."
+      ]
+    },
+    "suggested_pairings": [
+      "Fresh herbs",
+      "Green papaya pickles",
+      "Sweet-and-sour fish sauce"
+    ]
+  },
+  "bun-ram-phu-my": {
+    "name": "Phù Mỹ Freshwater Crab Noodle Soup",
+    "aliases": [
+      "Bình Định crab noodle soup"
+    ],
+    "region": [
+      "South Central Coast"
+    ],
+    "province": [
+      "Gia Lai (former Bình Định area)"
+    ],
+    "category": "Noodle soups",
+    "meal_type": [
+      "Breakfast",
+      "Lunch"
+    ],
+    "difficulty": "Intermediate",
+    "serving_basis": "4 bowls, each with about 200 g rice vermicelli and hot crab broth.",
+    "description": "Fresh field crabs are cleaned, pounded and strained, then gently simmered until their meat and roe set into the rustic broth of Phù Mỹ. This Bếp Việt home adaptation keeps the broth focused on crab and serves herbs on the side according to preference.",
+    "finished_dish": "A hot, fragrant crab broth with naturally set crab meat and roe, served over soft rice vermicelli and balanced with lime, chili and optional herbs.",
+    "excerpt": "A rustic Phù Mỹ bowl with freshly pounded field-crab broth and rice vermicelli.",
+    "serving": "Divide the vermicelli into bowls and ladle over gently simmering crab broth. Serve toasted rice crackers, lime, chili and herbs separately; roasted peanuts are optional.",
+    "tips": [
+      "Wash the crabs thoroughly and strain through a fine sieve to remove sand and shell fragments.",
+      "Once the broth starts to simmer, avoid vigorous stirring so the crab meat can set.",
+      "Cook the crab thoroughly. Sea crab is not a direct substitute because it has a different flavor."
+    ],
+    "tip": "Wash the crabs thoroughly and strain through a fine sieve to remove sand and shell fragments.",
+    "dish_type": [
+      "Rice-vermicelli soup",
+      "Regional specialty"
+    ],
+    "main_ingredient": [
+      "freshwater field crab",
+      "fresh rice vermicelli"
+    ],
+    "cooking_method": [
+      "pounding and straining",
+      "simmering broth"
+    ],
+    "search_terms": [
+      "Phù Mỹ field-crab noodle soup",
+      "Bình Định bún rạm recipe",
+      "Trà Ổ crab noodle soup"
+    ],
+    "image_alt": "A bowl of Phù Mỹ crab noodle soup with fresh vermicelli, herbs and toasted rice cracker on the side.",
+    "ingredients": [
+      {
+        "name": "Fresh field crabs",
+        "quantity": 600,
+        "unit": "g",
+        "role": "main",
+        "notes": "Choose live, fresh crabs; wash several times to remove mud and sand.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Water",
+        "quantity": 1500,
+        "unit": "ml",
+        "role": "main",
+        "notes": "For pounding, straining and making the broth.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fresh rice vermicelli",
+        "quantity": 800,
+        "unit": "g",
+        "role": "main",
+        "notes": "Blanch briefly if chilled.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Shallots",
+        "quantity": 25,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Finely minced.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Neutral cooking oil",
+        "quantity": 15,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fish sauce",
+        "quantity": 10,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "Optional if you want to keep the broth rustic and crab-forward.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Salt",
+        "quantity": 5,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Season gradually.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Ground black pepper",
+        "quantity": 1,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Optional.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Limes",
+        "quantity": 2,
+        "unit": "quả",
+        "role": "accompaniment",
+        "notes": "Serve at the table.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fresh chilies",
+        "quantity": 2,
+        "unit": "quả",
+        "role": "accompaniment",
+        "notes": "Adjust to your heat preference.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fresh herbs",
+        "quantity": 100,
+        "unit": "g",
+        "role": "accompaniment",
+        "notes": "Rinse and serve separately; use according to preference.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Toasted rice crackers",
+        "quantity": 2,
+        "unit": "cái",
+        "role": "accompaniment",
+        "notes": "Break into pieces for serving.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Roasted peanuts",
+        "quantity": 30,
+        "unit": "g",
+        "role": "accompaniment",
+        "notes": "Optional; some local versions are served plainly without them.",
+        "scaling_rule": "linear"
+      }
+    ],
+    "preparation_steps": [
+      "Discard dead crabs, rinse repeatedly under running water, then soak in clean water for 10 minutes to release grit. Remove the shells and any inedible parts as needed.",
+      "Coarsely pound or pulse the crabs with some of the water. Add more water and press the mixture through a fine sieve. Repeat once to extract the meat and roe, then discard the shells.",
+      "Mince the shallots, rinse the herbs and prepare the lime and chilies. If the vermicelli is chilled, separate the strands and blanch briefly before serving."
+    ],
+    "cooking_steps": [
+      "Let the strained crab liquid settle for a few minutes, decant it into a pot and heat over medium. As it warms, stir the bottom gently once; then avoid stirring so the crab meat can set into clusters.",
+      "When the broth reaches a gentle simmer and the crab is fully cooked, lower the heat. Sauté the shallots separately in oil and add them to the pot; season with salt and a little fish sauce if using.",
+      "Taste the broth, simmer gently for another 3–5 minutes and turn off the heat. Place vermicelli in bowls, ladle in the hot broth and add the set crab meat.",
+      "Serve with lime, chili and toasted rice cracker. Offer the herbs and peanuts separately so diners can follow their preferred local style."
+    ],
+    "time_note": "Cleaning and pounding the crabs take most of the preparation time; simmer gently to keep the broth clear.",
+    "time_unit": "minutes",
+    "keywords": [
+      "Phù Mỹ crab noodle soup",
+      "Bình Định bún rạm",
+      "freshwater crab",
+      "rice vermicelli",
+      "South Central Vietnam",
+      "regional Vietnamese soup"
+    ],
+    "tags": {
+      "region": [
+        "Vietnamese cuisine",
+        "South Central Coast"
+      ],
+      "province": [
+        "Gia Lai (former Bình Định area)"
+      ],
+      "meal_type": [
+        "Breakfast",
+        "Lunch"
+      ],
+      "dish_type": [
+        "Rice-vermicelli soup",
+        "Regional specialty"
+      ],
+      "main_ingredient": [
+        "freshwater field crab",
+        "fresh rice vermicelli"
+      ],
+      "cooking_method": [
+        "pounding and straining",
+        "simmering broth"
+      ],
+      "difficulty": "Intermediate",
+      "prep_time": 35,
+      "cook_time": 30,
+      "servings": 4,
+      "spicy_level": 1,
+      "suitable_for_family_meal": true,
+      "suggested_pairings": [
+        "Toasted rice crackers",
+        "Fresh lime",
+        "Optional herbs"
+      ]
+    },
+    "scaling": {
+      "base_servings": 4,
+      "targets": [
+        {
+          "servings": 2,
+          "main_factor": 0.5,
+          "seasoning_start_factor": 0.5,
+          "example": "Phù Mỹ Freshwater Crab Noodle Soup for 2",
+          "instruction": "Adjust seasoning after tasting; check doneness and texture."
+        },
+        {
+          "servings": 6,
+          "main_factor": 1.5,
+          "seasoning_start_factor": 1.5,
+          "example": "Phù Mỹ Freshwater Crab Noodle Soup for 6",
+          "instruction": "Adjust seasoning after tasting; check doneness and texture."
+        },
+        {
+          "servings": 8,
+          "main_factor": 2.0,
+          "seasoning_start_factor": 2.0,
+          "example": "Phù Mỹ Freshwater Crab Noodle Soup for 8",
+          "instruction": "Adjust seasoning after tasting; check doneness and texture."
+        }
+      ]
+    },
+    "editorial": {
+      "status": "editorial_draft",
+      "production_ready": false,
+      "test_cook_status": "not_tested",
+      "variant_note": "This Bếp Việt recipe is an editorial adaptation of cited references; quantities and timings should be confirmed in a test cook.",
+      "seed_recipe": null,
+      "reviewed_at": "2026-10-23",
+      "needs": [
+        "Test-cook to confirm quantities, timing and flavor with commonly available ingredients.",
+        "Review serving and seasoning against local variations."
+      ]
+    },
+    "suggested_pairings": [
+      "Toasted rice crackers",
+      "Fresh lime",
+      "Optional herbs"
+    ],
+    "current_province": [
+      "Gia Lai"
+    ],
+    "traditional_province": [
+      "Bình Định"
+    ]
+  },
+  "rau-bo-khai-xao-trung-bac-kan": {
+    "name": "Bắc Kạn Tày-Style Bò Khai Greens with Egg",
+    "aliases": [
+      "Bò khai greens with egg",
+      "Tày-style stir-fried bò khai with egg"
+    ],
+    "region": [
+      "Northeast Vietnam"
+    ],
+    "province": [
+      "Thái Nguyên (former Bắc Kạn area)"
+    ],
+    "category": "Vegetable dishes",
+    "meal_type": [
+      "Lunch",
+      "Dinner"
+    ],
+    "difficulty": "Easy",
+    "serving_basis": "4 rice-meal servings, about 100 g raw bò khai greens per serving.",
+    "description": "Tender bò khai shoots are snapped into short lengths, quickly stir-fried with garlic and tossed with egg until just cooked. This rustic dish is associated with Tày meals in Bắc Kạn; this Bếp Việt adaptation uses family-sized portions and keeps the greens vivid.",
+    "finished_dish": "Vivid green, tender-crisp shoots coated with fully cooked egg and fragrant garlic, served hot with steamed rice.",
+    "excerpt": "A quick Bắc Kạn stir-fry of tender bò khai shoots, garlic and egg.",
+    "serving": "Transfer to a plate as soon as the egg is cooked and serve hot with steamed rice. Add a little chili if desired.",
+    "tips": [
+      "Choose young tips, remove tough stems and damaged leaves, then wash and drain thoroughly.",
+      "Stir-fry quickly over high heat to preserve the green color and avoid excess liquid.",
+      "Cook the egg through; toss just enough for it to coat the greens without becoming dry."
+    ],
+    "tip": "Choose young tips, remove tough stems and damaged leaves, then wash and drain thoroughly.",
+    "dish_type": [
+      "Stir-fried vegetables",
+      "Tày cuisine"
+    ],
+    "main_ingredient": [
+      "bò khai greens",
+      "eggs"
+    ],
+    "cooking_method": [
+      "stir-frying"
+    ],
+    "search_terms": [
+      "bò khai greens with egg",
+      "Tày food from Bắc Kạn",
+      "how to stir-fry bò khai"
+    ],
+    "image_alt": "Green bò khai shoots stir-fried with golden egg, served hot on a plate.",
+    "ingredients": [
+      {
+        "name": "Tender bò khai greens",
+        "quantity": 400,
+        "unit": "g",
+        "role": "main",
+        "notes": "Choose young tips and leaves; discard tough stems.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Eggs",
+        "quantity": 3,
+        "unit": "quả",
+        "role": "main",
+        "notes": "Lightly beat in a bowl.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Garlic",
+        "quantity": 15,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Finely minced.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Neutral cooking oil",
+        "quantity": 15,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fish sauce",
+        "quantity": 10,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "May be replaced with salt.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Salt",
+        "quantity": 2,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Reduce if using fish sauce.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Ground black pepper",
+        "quantity": 1,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Optional.",
+        "scaling_rule": "linear"
+      }
+    ],
+    "preparation_steps": [
+      "Pick the tender tips and remove tough stems and bruised leaves. Wash several times, drain thoroughly and snap into bite-sized lengths.",
+      "Mince the garlic. Crack the eggs into a bowl, add a pinch of salt and beat lightly until just combined."
+    ],
+    "cooking_steps": [
+      "Heat a pan with the oil and sauté the garlic until fragrant but not browned.",
+      "Add the bò khai and stir-fry quickly over high heat for about 2–3 minutes. Season with fish sauce or salt and cook until the stems are just tender.",
+      "Spread the greens evenly in the pan, pour in the egg and toss gently until the egg is fully cooked and clings to the greens. Avoid overcooking so they stay green.",
+      "Add pepper if using, turn off the heat and serve hot with steamed rice."
+    ],
+    "time_note": "Drain the greens thoroughly after washing so they stir-fry instead of steaming in the pan.",
+    "time_unit": "minutes",
+    "keywords": [
+      "Bắc Kạn bò khai with egg",
+      "Tày vegetable dish",
+      "bò khai greens",
+      "garlic egg stir-fry",
+      "Northeast Vietnam",
+      "quick vegetable side"
+    ],
+    "tags": {
+      "region": [
+        "Vietnamese cuisine",
+        "Northeast Vietnam"
+      ],
+      "province": [
+        "Thái Nguyên (former Bắc Kạn area)"
+      ],
+      "meal_type": [
+        "Lunch",
+        "Dinner"
+      ],
+      "dish_type": [
+        "Stir-fried vegetables",
+        "Tày cuisine"
+      ],
+      "main_ingredient": [
+        "bò khai greens",
+        "eggs"
+      ],
+      "cooking_method": [
+        "stir-frying"
+      ],
+      "difficulty": "Easy",
+      "prep_time": 15,
+      "cook_time": 10,
+      "servings": 4,
+      "spicy_level": 0,
+      "suitable_for_family_meal": true,
+      "suggested_pairings": [
+        "Steamed rice",
+        "Light vegetable soup"
+      ]
+    },
+    "scaling": {
+      "base_servings": 4,
+      "targets": [
+        {
+          "servings": 2,
+          "main_factor": 0.5,
+          "seasoning_start_factor": 0.5,
+          "example": "Bắc Kạn Tày-Style Bò Khai Greens with Egg for 2",
+          "instruction": "Adjust seasoning after tasting; check doneness and texture."
+        },
+        {
+          "servings": 6,
+          "main_factor": 1.5,
+          "seasoning_start_factor": 1.5,
+          "example": "Bắc Kạn Tày-Style Bò Khai Greens with Egg for 6",
+          "instruction": "Adjust seasoning after tasting; check doneness and texture."
+        },
+        {
+          "servings": 8,
+          "main_factor": 2.0,
+          "seasoning_start_factor": 2.0,
+          "example": "Bắc Kạn Tày-Style Bò Khai Greens with Egg for 8",
+          "instruction": "Adjust seasoning after tasting; check doneness and texture."
+        }
+      ]
+    },
+    "editorial": {
+      "status": "editorial_draft",
+      "production_ready": false,
+      "test_cook_status": "not_tested",
+      "variant_note": "This Bếp Việt recipe is an editorial adaptation of cited references; quantities and timings should be confirmed in a test cook.",
+      "seed_recipe": null,
+      "reviewed_at": "2026-10-23",
+      "needs": [
+        "Test-cook to confirm quantities, timing and flavor with commonly available ingredients.",
+        "Review serving and seasoning against local variations."
+      ]
+    },
+    "suggested_pairings": [
+      "Steamed rice",
+      "Light vegetable soup"
+    ],
+    "current_province": [
+      "Thái Nguyên"
+    ],
+    "traditional_province": [
+      "Bắc Kạn"
+    ]
+  },
+  "thit-trau-nau-la-lom-hoa-binh": {
+    "name": "Hòa Bình Buffalo Stew with Lá Lồm",
+    "aliases": [
+      "Buffalo with lá lồm",
+      "Mường-style buffalo and sour-leaf stew"
+    ],
+    "region": [
+      "Northwest Vietnam"
+    ],
+    "province": [
+      "Phú Thọ (former Hòa Bình area)"
+    ],
+    "category": "Soups and stews",
+    "meal_type": [
+      "Lunch",
+      "Dinner"
+    ],
+    "difficulty": "Intermediate",
+    "serving_basis": "4 bowls served with rice, about 150 g raw buffalo per serving.",
+    "description": "Buffalo is cleaned, lightly seared and slowly simmered with pounded lá lồm leaves and broken rice until the broth thickens slightly. This traditional Mường dish from Hòa Bình has a gentle sourness from the leaves; this Bếp Việt home adaptation uses a regular pot.",
+    "finished_dish": "Tender, savory buffalo with the gentle sourness of lá lồm and a lightly thickened broth from broken rice, fragrant with ginger and garlic.",
+    "excerpt": "A Mường-style Hòa Bình stew of tender buffalo, sour lá lồm leaves and broken rice.",
+    "serving": "Ladle hot into deep bowls and serve as a hearty soup in a rice meal. Adjust the salt and sourness after the leaves have softened.",
+    "tips": [
+      "If the buffalo has a strong aroma, rub it with ginger and rinse before cooking; searing or charring adds fragrance.",
+      "Lá lồm is naturally sour; add it gradually to avoid making the stew too tart.",
+      "Simmer gently until tender. If using a pressure cooker, follow its timing instructions and release pressure safely before opening."
+    ],
+    "tip": "If the buffalo has a strong aroma, rub it with ginger and rinse before cooking; searing or charring adds fragrance.",
+    "dish_type": [
+      "Hearty stew",
+      "Mường cuisine"
+    ],
+    "main_ingredient": [
+      "buffalo",
+      "lá lồm sour leaves",
+      "broken rice"
+    ],
+    "cooking_method": [
+      "searing",
+      "slow simmering"
+    ],
+    "search_terms": [
+      "Hòa Bình buffalo lá lồm stew",
+      "Mường sour-leaf buffalo recipe",
+      "Vietnamese buffalo and lá lồm"
+    ],
+    "image_alt": "A bowl of Hòa Bình buffalo and lá lồm stew with a lightly thickened broth, green leaves and broken rice.",
+    "ingredients": [
+      {
+        "name": "Buffalo meat",
+        "quantity": 650,
+        "unit": "g",
+        "role": "main",
+        "notes": "Choose shank or a cut with some tendon; cut into bite-sized pieces.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Lá lồm leaves",
+        "quantity": 180,
+        "unit": "g",
+        "role": "main",
+        "notes": "Rinse and pound; sourness varies by leaves and taste.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Broken rice",
+        "quantity": 50,
+        "unit": "g",
+        "role": "main",
+        "notes": "Rinse; toast lightly if desired for more aroma.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Water",
+        "quantity": 2000,
+        "unit": "ml",
+        "role": "main",
+        "notes": "Add more during simmering if needed.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Ginger",
+        "quantity": 30,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Slice some and crush the rest.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Garlic",
+        "quantity": 15,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Finely minced.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Shallots",
+        "quantity": 20,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Finely minced.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fish sauce",
+        "quantity": 15,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Salt",
+        "quantity": 5,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Season after the leaves release their sourness.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Ground black pepper",
+        "quantity": 2,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Optional.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Neutral cooking oil",
+        "quantity": 10,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "For searing the meat.",
+        "scaling_rule": "linear"
+      }
+    ],
+    "preparation_steps": [
+      "Rinse the buffalo. If needed, rub it with crushed ginger to reduce its aroma, rinse and pat dry. Cut into bite-sized pieces.",
+      "Wash the lá lồm, remove tough parts and pound the leaves to release their flavor. Rinse the broken rice, then mince the garlic and shallots.",
+      "Marinate the meat with half the shallots and garlic, fish sauce and pepper for about 15 minutes."
+    ],
+    "cooking_steps": [
+      "Heat the oil in a pot and sear the buffalo in batches until lightly browned on the outside. Add the remaining shallots and garlic and cook until fragrant.",
+      "Add the water and ginger, bring to a boil, then lower the heat. Skim the foam and simmer until the meat is nearly tender; timing depends on the cut.",
+      "Add the broken rice and continue cooking until the grains soften and the broth begins to thicken. Add the pounded lá lồm and simmer for another 15–20 minutes so its sour flavor blends into the stew.",
+      "Taste and adjust the salt and fish sauce; check that the meat is tender and fully cooked. Add pepper if desired and serve hot."
+    ],
+    "time_note": "Simmering time depends on the toughness of the buffalo cut. If the liquid reduces before the meat is tender, add a little boiling water.",
+    "time_unit": "minutes",
+    "keywords": [
+      "Hòa Bình buffalo stew",
+      "lá lồm sour leaves",
+      "Mường cuisine",
+      "buffalo meat",
+      "broken rice",
+      "Northwest Vietnam",
+      "Vietnamese stew"
+    ],
+    "tags": {
+      "region": [
+        "Vietnamese cuisine",
+        "Northwest Vietnam"
+      ],
+      "province": [
+        "Phú Thọ (former Hòa Bình area)"
+      ],
+      "meal_type": [
+        "Lunch",
+        "Dinner"
+      ],
+      "dish_type": [
+        "Hearty stew",
+        "Mường cuisine"
+      ],
+      "main_ingredient": [
+        "buffalo",
+        "lá lồm sour leaves",
+        "broken rice"
+      ],
+      "cooking_method": [
+        "searing",
+        "slow simmering"
+      ],
+      "difficulty": "Intermediate",
+      "prep_time": 30,
+      "cook_time": 150,
+      "servings": 4,
+      "spicy_level": 0,
+      "suitable_for_family_meal": true,
+      "suggested_pairings": [
+        "Steamed rice",
+        "Boiled vegetables",
+        "Sour bamboo shoots"
+      ]
+    },
+    "scaling": {
+      "base_servings": 4,
+      "targets": [
+        {
+          "servings": 2,
+          "main_factor": 0.5,
+          "seasoning_start_factor": 0.5,
+          "example": "Hòa Bình Buffalo Stew with Lá Lồm for 2",
+          "instruction": "Adjust seasoning after tasting; check doneness and texture."
+        },
+        {
+          "servings": 6,
+          "main_factor": 1.5,
+          "seasoning_start_factor": 1.5,
+          "example": "Hòa Bình Buffalo Stew with Lá Lồm for 6",
+          "instruction": "Adjust seasoning after tasting; check doneness and texture."
+        },
+        {
+          "servings": 8,
+          "main_factor": 2.0,
+          "seasoning_start_factor": 2.0,
+          "example": "Hòa Bình Buffalo Stew with Lá Lồm for 8",
+          "instruction": "Adjust seasoning after tasting; check doneness and texture."
+        }
+      ]
+    },
+    "editorial": {
+      "status": "editorial_draft",
+      "production_ready": false,
+      "test_cook_status": "not_tested",
+      "variant_note": "This Bếp Việt recipe is an editorial adaptation of cited references; quantities and timings should be confirmed in a test cook.",
+      "seed_recipe": null,
+      "reviewed_at": "2026-10-23",
+      "needs": [
+        "Test-cook to confirm quantities, timing and flavor with commonly available ingredients.",
+        "Review serving and seasoning against local variations."
+      ]
+    },
+    "suggested_pairings": [
+      "Steamed rice",
+      "Boiled vegetables",
+      "Sour bamboo shoots"
+    ],
+    "current_province": [
+      "Phú Thọ"
+    ],
+    "traditional_province": [
+      "Hòa Bình"
+    ]
+  }
+}

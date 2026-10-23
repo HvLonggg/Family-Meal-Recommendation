@@ -8,16 +8,19 @@ from __future__ import annotations
 
 import random
 import re
-import threading
 from dataclasses import dataclass, field, replace
 from datetime import datetime
-from typing import Any
+from functools import lru_cache
+from typing import Any, Literal
 from zoneinfo import ZoneInfo
 
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session, selectinload
 
+from app.modules.assistant import traits
 from app.modules.assistant.phrases import SUGGESTIONS, TEXT, TOPIC_TEXT, Language
+from app.modules.assistant.profile import topic_reply
+from app.modules.assistant.warm_cache import StaleWhileRevalidate
 
 __all__ = ["Language", "RecipeEntry", "normalize_search"]
 from app.modules.recipes.models import Recipe
@@ -44,6 +47,10 @@ class RecipeEntry:
     meal_types: tuple[str, ...]
     methods: tuple[str, ...]
     spicy: int
+    # Lời mô tả, cách dùng, mẹo (đã bỏ dấu) để nhận ra vị "ngọt thanh", "đậm đà"…
+    detail_norm: str = ""
+    # Ước lượng ml dầu/mỡ cho một khẩu phần (từ danh sách nguyên liệu).
+    oil_ml: float = 0.0
 
 
 @dataclass(slots=True)
@@ -63,6 +70,8 @@ class Intent:
     recipe: RecipeEntry | None = None
     candidates: list[RecipeEntry] = field(default_factory=list)
     topic: str | None = None
+    # Yêu cầu vị/cách nấu: "low_oil", "light_sweet"… (xem traits.py).
+    traits: list[str] = field(default_factory=list)
 
 
 @dataclass(slots=True)
@@ -77,14 +86,11 @@ class EngineReply:
 # ---------------------------------------------------------------------------
 # Kho món trong bộ nhớ, tự làm mới khi số món hoặc thời điểm cập nhật thay đổi.
 # ---------------------------------------------------------------------------
-_cache_lock = threading.Lock()
-_cache: tuple[tuple[int, Any], list[RecipeEntry]] | None = None
+_cache: StaleWhileRevalidate[list[RecipeEntry]] = StaleWhileRevalidate("recipe-catalog")
 
 
 def reset_catalog_cache() -> None:
-    global _cache
-    with _cache_lock:
-        _cache = None
+    _cache.reset()
 
 
 def _norm(value: str) -> str:
@@ -143,16 +149,16 @@ def _tag_list(tags: dict[str, Any], key: str) -> tuple[str, ...]:
 
 
 def load_catalog(session: Session) -> list[RecipeEntry]:
-    global _cache
     signature = session.execute(
         select(func.count(Recipe.id), func.max(Recipe.updated_at)).where(
             Recipe.status == "published"
         )
     ).one()
     key = (int(signature[0] or 0), signature[1])
-    with _cache_lock:
-        if _cache is not None and _cache[0] == key:
-            return _cache[1]
+    return _cache.get(session, key, _build_catalog)
+
+
+def _build_catalog(session: Session) -> list[RecipeEntry]:
     recipes = session.scalars(
         select(Recipe)
         .where(Recipe.status == "published")
@@ -162,11 +168,36 @@ def load_catalog(session: Session) -> list[RecipeEntry]:
     entries: list[RecipeEntry] = []
     for recipe in recipes:
         tags = (recipe.content or {}).get("tags") or {}
+        if not isinstance(tags, dict):
+            tags = {}  # dữ liệu nhập lỗi (tags dạng danh sách) không được làm hỏng cả chat
         ingredients = tuple(_norm(item.name) for item in recipe.ingredients)
         # Nguyên liệu tên đúng một chữ "Bơ" là bơ (butter/quả bơ), không phải thịt bò.
         fused_ingredients = tuple("bobeo" if item == "bo" else _fuse(item) for item in ingredients)
         main = _tag_list(tags, "main_ingredient")
         spicy = tags.get("spicy_level")
+        content = recipe.content or {}
+        detail = " ".join(
+            str(part)
+            for part in (
+                recipe.excerpt,
+                recipe.serving,
+                recipe.tip,
+                content.get("description") or "",
+                " ".join(map(str, content.get("tips") or []))
+                if isinstance(content.get("tips"), list)
+                else str(content.get("tips") or ""),
+                " ".join(_tag_list(tags, "keywords")),
+            )
+            if part
+        )
+        oil = sum(
+            traits.oil_amount(
+                _norm(item.name),
+                float(item.amount) if item.amount is not None else None,
+                _norm(item.unit or ""),
+            )
+            for item in recipe.ingredients
+        )
         entries.append(
             RecipeEntry(
                 slug=recipe.slug,
@@ -187,10 +218,10 @@ def load_catalog(session: Session) -> list[RecipeEntry]:
                 meal_types=_tag_list(tags, "meal_type"),
                 methods=_tag_list(tags, "cooking_method"),
                 spicy=int(spicy) if isinstance(spicy, int | float) else 0,
+                detail_norm=_norm(detail),
+                oil_ml=round(oil / max(1, recipe.base_servings), 1),
             )
         )
-    with _cache_lock:
-        _cache = (key, entries)
     return entries
 
 
@@ -202,10 +233,69 @@ def _has(text: str, *phrases: str) -> bool:
 
 
 REGION_WORDS = {
-    "Bắc": ("mien bac", "bac bo", "ha noi", "nguoi bac", "kieu bac", "north", "northern"),
-    "Trung": ("mien trung", "hue", "da nang", "quang nam", "kieu trung", "central"),
-    "Nam": ("mien nam", "nam bo", "sai gon", "kieu nam", "mien tay", "south", "southern"),
+    "Bắc": (
+        "mien bac",
+        "bac bo",
+        "ha noi",
+        "nguoi bac",
+        "kieu bac",
+        "tay bac",
+        "dong bac",
+        "hai phong",
+        "nam dinh",
+        "bac ninh",
+        "north",
+        "northern",
+    ),
+    "Trung": (
+        "mien trung",
+        "trung bo",
+        "hue",
+        "da nang",
+        "hoi an",
+        "quang nam",
+        "quang ngai",
+        "binh dinh",
+        "nghe an",
+        "nha trang",
+        "tay nguyen",
+        "kieu trung",
+        "central",
+    ),
+    "Nam": (
+        "mien nam",
+        "nam bo",
+        "sai gon",
+        "tp hcm",
+        "kieu nam",
+        "mien tay",
+        "can tho",
+        "ben tre",
+        "ca mau",
+        "south",
+        "southern",
+    ),
 }
+
+
+@lru_cache(maxsize=128)
+def macro_region(region: str) -> str:
+    """Gộp vùng chi tiết trong kho ("Bắc Trung Bộ", "Đông Nam Bộ", "Tây Nguyên"…) về Bắc/Trung/Nam.
+
+    Món "Ba miền"/"Toàn quốc" trả về "Ba miền" (hợp mọi vùng).
+    """
+    text = _norm(region)
+    if not text or text in ("ba mien", "toan quoc", "ca nuoc"):
+        return "Ba miền"
+    if "trung" in text.split() or "tay nguyen" in text:
+        return "Trung"
+    if "nam" in text.split() or "cuu long" in text or "mien tay" in text:
+        return "Nam"
+    if "bac" in text.split():
+        return "Bắc"
+    return region
+
+
 CATEGORY_WORDS = {
     "Món canh": ("canh", "mon canh", "soup"),
     "Món chay": ("chay", "an chay", "mon chay", "vegetarian", "vegan"),
@@ -329,7 +419,10 @@ def ingredient_label(word: str, language: Language = "vi") -> str:
     return INGREDIENT_LABELS.get(word, word)
 
 
-NEGATION = r"(?:khong an|khong co|khong dung|kieng|tranh|bo qua|ngoai tru|without|except|avoid)"
+NEGATION = (
+    r"(?:khong an|khong co|khong dung|kieng|tranh|bo qua|ngoai tru|di ung voi|di ung|"
+    r"allergic to|without|except|avoid)"
+)
 GREETING = ("xin chao", "chao", "chao ban", "hello", "hi", "alo", "hey", "chao rong con")
 THANKS = ("cam on", "thank", "thanks", "tks", "cam on nhe", "cam on ban")
 HELP = ("ban lam duoc gi", "giup gi", "huong dan", "ban la ai", "what can you do", "help")
@@ -368,7 +461,42 @@ TOPICS = {
     "shopping": ("di cho", "mua sam", "danh sach mua", "shopping", "grocery"),
     "favorite": ("yeu thich", "luu mon", "favorite", "favourite"),
     "account": ("dang nhap", "dang ky", "tai khoan", "mat khau", "login", "sign up", "password"),
-    "contact": ("lien he", "ho tro", "support", "contact", "gop y"),
+    "contact": (
+        "lien he",
+        "ho tro",
+        "support",
+        "support inbox",
+        "contact",
+        "gop y",
+        "dia chi",
+        "o dau",
+        "ha noi",
+        "so dien thoai",
+        "dien thoai",
+        "sdt",
+        "phone",
+        "email",
+        "gmail",
+        "hotline",
+    ),
+    "about": (
+        "nha sang lap",
+        "nguoi sang lap",
+        "ai sang lap",
+        "do ai sang lap",
+        "tac gia",
+        "hoang van long",
+        "pham thu quyen",
+        "co quyen",
+        "dau bep bep viet",
+        "ai phu trach san pham",
+        "dau bep cua bep viet",
+        "bep viet chef",
+        "founder",
+        "product lead",
+        "who founded",
+        "who created",
+    ),
     "submit": ("de xuat mon", "gui mon", "dong gop mon", "submit recipe"),
 }
 
@@ -516,8 +644,10 @@ def parse_intent(message: str, catalog: list[RecipeEntry]) -> Intent:
     if len(matches) > 1:
         intent.candidates = matches
     asks_recipe = _has(text, *RECIPE_ASK) or _has(text, "nguyen lieu", "ingredients", "bao lau")
+    intent.traits = traits.detect(text)
     filters = bool(
-        intent.meal
+        intent.traits
+        or intent.meal
         or intent.regions
         or intent.categories
         or intent.max_minutes
@@ -566,7 +696,8 @@ def _filtered(intent: Intent, catalog: list[RecipeEntry], *, strict: bool) -> li
         if "Món chay" in intent.categories and entry.category != "Món chay":
             continue
         if strict:
-            if intent.regions and entry.region not in intent.regions and entry.region != "Ba miền":
+            region = macro_region(entry.region)
+            if intent.regions and region not in intent.regions and region != "Ba miền":
                 continue
             other = intent.categories - {"Món chay"}
             if other and entry.category not in other:
@@ -584,6 +715,71 @@ def _filtered(intent: Intent, catalog: list[RecipeEntry], *, strict: bool) -> li
                 continue
         pool.append(entry)
     return pool
+
+
+# ---------------------------------------------------------------------------
+# Ghi nhớ của người dùng (khẩu vị, dị ứng, số người) áp vào mọi lần gợi ý.
+# ---------------------------------------------------------------------------
+@dataclass(slots=True)
+class Preferences:
+    exclude: list[str] = field(default_factory=list)
+    not_spicy: bool = False
+    servings: int | None = None
+    vegetarian: bool = False
+
+
+SEAFOOD = ("tom", "muc", "cua", "ngheu", "ngao", "hen", "oc")
+
+
+def preferences_from(notes: list[str]) -> Preferences:
+    prefs = Preferences()
+    for note in notes:
+        text = _norm(note)
+        for match in re.finditer(rf"{NEGATION} ((?:\w+ ?){{1,4}})", text):
+            segment = match.group(1)
+            if re.search(r"(?:^| )(?:hai san|seafood)(?: |$)", segment):
+                prefs.exclude.extend(word for word in SEAFOOD if word not in prefs.exclude)
+                continue
+            fused_segment = _fuse(segment)
+            for word in sorted(INGREDIENT_WORDS, key=len, reverse=True):
+                if re.search(rf"(?:^| ){re.escape(_fuse(word))}(?: |$)", fused_segment):
+                    if word not in prefs.exclude:
+                        prefs.exclude.append(word)
+                    break
+        if re.search(r"(?:khong|it|kieng|so|tranh) (?:an )?cay|not spicy|no spicy|mild", text):
+            prefs.not_spicy = True
+        if _has(text, "tre em", "em be", "tre nho", "kids"):
+            prefs.not_spicy = True
+        people = re.search(r"(\d{1,2})\s*(?:nguoi|thanh vien|people|persons)\b", text)
+        if people:
+            prefs.servings = max(1, min(30, int(people.group(1))))
+        if re.search(r"(?:^| )(?:an chay|vegetarian|vegan)(?: |$)", text) and not _has(
+            text, "khong an chay", "ngay ram", "mung mot", "thi thoang", "thinh thoang"
+        ):
+            prefs.vegetarian = True
+    return prefs
+
+
+def apply_preferences(intent: Intent, prefs: Preferences | None) -> Intent:
+    if prefs is None:
+        return intent
+    intent.exclude.extend(word for word in prefs.exclude if word not in intent.exclude)
+    intent.not_spicy = intent.not_spicy or prefs.not_spicy
+    intent.servings = intent.servings or prefs.servings
+    if prefs.vegetarian:
+        intent.categories.add("Món chay")
+    return intent
+
+
+def allowed(entry: RecipeEntry, prefs: Preferences | None) -> bool:
+    """Món không vi phạm ghi nhớ (dị ứng, kiêng, ăn chay, không cay)."""
+    if prefs is None:
+        return True
+    if any(_contains(entry, word) for word in prefs.exclude):
+        return False
+    if prefs.not_spicy and entry.spicy >= 2:
+        return False
+    return not (prefs.vegetarian and entry.category != "Món chay")
 
 
 def _meal_ok(entry: RecipeEntry, meal: str | None) -> bool:
@@ -632,6 +828,24 @@ def pick_recipes(
         fresh.sort(key=lambda entry: (entry.minutes, entry.difficulty != "Dễ"))
         fresh = fresh[: max(limit * 3, limit)]
         rng.shuffle(fresh)
+    if intent.regions:
+        # Hỏi "món miền Trung" thì món đặc trưng của vùng đứng trước món "Ba miền".
+        fresh.sort(key=lambda entry: macro_region(entry.region) not in intent.regions)
+    if intent.traits:
+        # Món khớp nhiều yêu cầu vị/cách nấu nhất lên đầu; cùng điểm thì giữ thứ tự ngẫu nhiên.
+        scores = {entry.slug: traits.total(entry, intent.traits) for entry in fresh}
+        ranked = sorted(fresh, key=lambda entry: scores[entry.slug], reverse=True)
+        best = ranked[: max(limit * 2, limit)]
+        top_matched, top_points = scores[best[0].slug] if best else (0, 0.0)
+        # Chỉ xáo trộn các món sát điểm món đầu để mỗi lần hỏi có món khác mà vẫn đúng ý.
+        same = [
+            entry
+            for entry in best
+            if scores[entry.slug][0] == top_matched and scores[entry.slug][1] >= top_points - 1
+        ]
+        rng.shuffle(same)
+        fresh = same + [entry for entry in best if entry not in same]
+        exact = exact and top_matched == len(intent.traits)
     return fresh[:limit], exact
 
 
@@ -670,13 +884,73 @@ MEAL_LABEL: dict[str, dict[Language, str]] = {
 }
 
 
+DayPart = Literal["sang", "trua", "chieu", "toi", "khuya"]
+
+# Buổi trong ngày theo giờ Việt Nam: (phút bắt đầu tính từ 0h, buổi). Người Việt ăn trưa
+# khoảng 11h-12h30 nên "trưa" bắt đầu từ 10h30; khuya kéo từ 21h tới 4h59.
+DAY_PARTS: tuple[tuple[int, DayPart], ...] = (
+    (5 * 60, "sang"),
+    (10 * 60 + 30, "trua"),
+    (14 * 60, "chieu"),
+    (17 * 60, "toi"),
+    (21 * 60, "khuya"),
+)
+_PART_LABEL: dict[DayPart, dict[Language, str]] = {
+    "sang": {"vi": "buổi sáng", "en": "morning"},
+    "trua": {"vi": "buổi trưa", "en": "lunchtime"},
+    "chieu": {"vi": "buổi chiều", "en": "afternoon"},
+    "toi": {"vi": "buổi tối", "en": "evening"},
+    "khuya": {"vi": "đêm khuya", "en": "late night"},
+}
+# Bữa nên gợi ý khi người dùng hỏi "ăn gì" mà không nói rõ bữa nào.
+_PART_HINT: dict[DayPart, str] = {
+    "sang": "bữa sáng (món nhanh, đủ năng lượng)",
+    "trua": "bữa trưa",
+    "chieu": "bữa tối sắp tới (chiều là lúc đi chợ, sơ chế) hoặc món ăn xế nhẹ",
+    "toi": "bữa tối",
+    "khuya": "món nhẹ bụng, dễ tiêu cho bữa khuya, hoặc lên thực đơn ngày mai",
+}
+_WEEKDAYS = ("Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy", "Chủ nhật")
+
+
+def vietnam_now(now: datetime | None = None) -> datetime:
+    return (now or datetime.now(VIETNAM)).astimezone(VIETNAM)
+
+
+def day_part(now: datetime | None = None) -> DayPart:
+    local = vietnam_now(now)
+    minute = local.hour * 60 + local.minute
+    part: DayPart = "khuya"
+    for start, name in DAY_PARTS:
+        if minute >= start:
+            part = name
+    return part
+
+
 def current_meal(now: datetime | None = None) -> str:
-    hour = (now or datetime.now(VIETNAM)).astimezone(VIETNAM).hour
-    if hour < 10:
-        return "sang"
-    if hour < 15:
-        return "trua"
-    return "toi"
+    """Bữa đang tới theo giờ Việt Nam: chiều chuẩn bị bữa tối, khuya chỉ gợi món nhẹ."""
+    return {
+        "sang": "sang",
+        "trua": "trua",
+        "chieu": "toi",
+        "toi": "toi",
+        "khuya": "an nhe",
+    }[day_part(now)]
+
+
+def moment_block(now: datetime | None = None) -> str:
+    """Cho AI biết giờ Việt Nam hiện tại để gợi ý đúng bữa."""
+    local = vietnam_now(now)
+    part = day_part(local)
+    return (
+        f"<thoi_diem>Bây giờ là {local:%H:%M} {_WEEKDAYS[local.weekday()]} {local:%d/%m/%Y} "
+        f"(giờ Việt Nam), {_PART_LABEL[part]['vi']}. Khi người dùng hỏi ăn gì mà không nói bữa "
+        f"nào, hiểu là {_PART_HINT[part]}.</thoi_diem>"
+    )
+
+
+def day_part_label(now: datetime | None, language: Language) -> str:
+    return _PART_LABEL[day_part(now)][language]
 
 
 def _context(intent: Intent, language: Language) -> str:
@@ -699,6 +973,7 @@ def _context(intent: Intent, language: Language) -> str:
         bits.append(
             f"cho {intent.servings} người" if language == "vi" else f"for {intent.servings}"
         )
+    bits.extend(traits.labels(intent.traits, language))
     return f" ({' · '.join(bits)})" if bits else ""
 
 
@@ -736,10 +1011,13 @@ def reply(
     has_images: bool = False,
     now: datetime | None = None,
     rng: random.Random | None = None,
+    preferences: Preferences | None = None,
+    hints: bool = True,
 ) -> EngineReply:
+    """``hints=False``: bỏ lời mời "bấm vào món/đổi món" để hội thoại không lặp lại gợi ý."""
     rng = rng or random.Random()
     combined = f"{message}\n{attachment_text}".strip()
-    intent = parse_intent(combined, catalog)
+    intent = apply_preferences(parse_intent(combined, catalog), preferences)
 
     def pick_text(key: str) -> str:
         return rng.choice(TEXT[key][language])
@@ -809,9 +1087,13 @@ def reply(
             )
         names = _names(picks, language)
         tail = (
-            " Bấm vào món để xem công thức, hoặc bảo mình đổi món khác nhé!"
-            if language == "vi"
-            else " Tap a dish for the recipe, or ask me for other ideas!"
+            (
+                " Bấm vào món để xem công thức, hoặc bảo mình đổi món khác nhé!"
+                if language == "vi"
+                else " Tap a dish for the recipe, or ask me for other ideas!"
+            )
+            if hints
+            else ""
         )
         if intent.servings and language == "vi":
             servings = intent.servings
@@ -824,7 +1106,10 @@ def reply(
         )
 
     if intent.kind == "topic" and intent.topic:
-        content, actions = TOPIC_TEXT[intent.topic][language]
+        if intent.topic in {"about", "contact"}:
+            content, actions = topic_reply(intent.topic, language)
+        else:
+            content, actions = TOPIC_TEXT[intent.topic][language]
         return EngineReply(
             content=content,
             actions=actions,
@@ -871,10 +1156,15 @@ def reply(
 
 
 def candidate_recipes(
-    message: str, catalog: list[RecipeEntry], *, avoid: set[str], limit: int = 10
+    message: str,
+    catalog: list[RecipeEntry],
+    *,
+    avoid: set[str],
+    limit: int = 10,
+    preferences: Preferences | None = None,
 ) -> list[RecipeEntry]:
     """Danh sách món liên quan để đưa vào ngữ cảnh cho AI."""
-    intent = parse_intent(message, catalog)
+    intent = apply_preferences(parse_intent(message, catalog), preferences)
     related = [intent.recipe] if intent.recipe else []
     picks, _ = pick_recipes(intent, catalog, avoid=avoid, limit=limit)
     seen = {entry.slug for entry in related}

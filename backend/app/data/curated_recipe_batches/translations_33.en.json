@@ -1,0 +1,914 @@
+{
+  "che-lam-thach-xa": {
+    "name": "Thach Xa Che Lam",
+    "aliases": [
+      "Thach Xa ginger and molasses rice cake",
+      "Xu Doai che lam"
+    ],
+    "region": [
+      "Northern Vietnam"
+    ],
+    "province": [
+      "Hà Nội"
+    ],
+    "category": "Dessert",
+    "meal_type": [
+      "Snack",
+      "Dessert"
+    ],
+    "difficulty": "Moderate",
+    "serving_basis": "About 24 chewy pieces served with hot tea.",
+    "description": "Che lam from Thach Xa is a Xu Doai sweet made with toasted glutinous rice flour, sugarcane molasses, ginger and roasted peanuts. Bếp Việt has edited a small home batch with a balanced chew and gentle warmth; it is not presented as an artisan household’s exact formula.",
+    "finished_dish": "Chewy, firm pieces lightly dusted with rice flour; molasses sweetness is balanced by warm ginger and nutty peanuts.",
+    "excerpt": "A chewy Xu Doai rice sweet with molasses, ginger and roasted peanuts.",
+    "serving": "Let the cake cool completely, cut into bite-size pieces and serve with green or hot tea.",
+    "tips": [
+      "Add toasted rice flour gradually so the mixture stays chewy rather than dry and crumbly.",
+      "Cook molasses over low heat, stirring constantly to prevent scorching.",
+      "Fold in the peanuts last to keep them crisp."
+    ],
+    "tip": "Add toasted rice flour gradually so the mixture stays chewy.",
+    "dish_type": [
+      "Traditional sweet",
+      "Xu Doai specialty"
+    ],
+    "main_ingredient": [
+      "glutinous rice flour",
+      "sugarcane molasses",
+      "ginger",
+      "peanuts"
+    ],
+    "cooking_method": [
+      "toasting",
+      "simmering",
+      "kneading",
+      "cooling"
+    ],
+    "search_terms": [
+      "Thach Xa che lam",
+      "Hanoi che lam",
+      "Xu Doai ginger rice cake",
+      "traditional molasses sweet"
+    ],
+    "image_alt": "Thach Xa che lam cut into square pieces dusted with rice flour and dotted with roasted peanuts, ginger and molasses, isolated on transparent background.",
+    "ingredients": [
+      {
+        "name": "Toasted glutinous rice flour",
+        "quantity": 250,
+        "unit": "g",
+        "role": "main",
+        "notes": "Toast gently until fragrant, cool and sift.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Sugarcane molasses",
+        "quantity": 180,
+        "unit": "g",
+        "role": "main",
+        "notes": "Use thick molasses without a burnt taste.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fresh ginger",
+        "quantity": 35,
+        "unit": "g",
+        "role": "aromatic",
+        "notes": "Peel and finely grate or mince.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Roasted peanuts",
+        "quantity": 70,
+        "unit": "g",
+        "role": "main",
+        "notes": "Remove skins; leave whole or coarsely crush.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Neutral oil",
+        "quantity": 8,
+        "unit": "ml",
+        "role": "other",
+        "notes": "Lightly grease the tray and knife.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Toasted glutinous rice flour",
+        "quantity": 25,
+        "unit": "g",
+        "role": "other",
+        "notes": "For dusting while shaping and cutting.",
+        "scaling_rule": "linear"
+      }
+    ],
+    "preparation_steps": [
+      "Roast the peanuts until fragrant, rub off the skins, and prepare a flat parchment-lined tray.",
+      "Toast the glutinous rice flour in a dry pan over low heat until fragrant and free-flowing; let it cool.",
+      "Sift the dusting flour and lightly oil the tray and knife."
+    ],
+    "cooking_steps": [
+      "Put molasses and ginger in a heavy saucepan. Heat gently until simmering and fragrant.",
+      "Lower the heat. Add toasted rice flour gradually, stirring briskly with a wooden spoon until a cohesive, pliable dough pulls slightly from the pan.",
+      "Fold in the peanuts. Transfer the dough to the tray and press it into a slab about 2 cm thick.",
+      "Cool completely, dust lightly with rice flour and cut into squares. Store airtight in a cool, dry place."
+    ],
+    "time_note": "About 1 hour, including cooling before cutting.",
+    "keywords": [
+      "che lam",
+      "molasses",
+      "ginger",
+      "roasted peanuts",
+      "Xu Doai",
+      "Hanoi"
+    ],
+    "tags": [
+      "dessert",
+      "traditional cake",
+      "Hanoi specialty",
+      "Thach Xa che lam",
+      "glutinous rice flour",
+      "molasses"
+    ],
+    "suggested_pairings": [
+      "Green tea",
+      "Hot tea",
+      "Ginger preserve"
+    ],
+    "time_unit": "minutes",
+    "scaling": {
+      "base_servings": 4,
+      "targets": [
+        {
+          "servings": 2,
+          "main_factor": 0.5,
+          "seasoning_start_factor": 0.5,
+          "example": "Thach Xa Che Lam for 2",
+          "instruction": "Reduce molasses and flour proportionally; stop heating once the dough comes together."
+        },
+        {
+          "servings": 6,
+          "main_factor": 1.5,
+          "seasoning_start_factor": 1.5,
+          "example": "Thach Xa Che Lam for 6",
+          "instruction": "Divide the dough into two portions for easier kneading and shaping."
+        },
+        {
+          "servings": 8,
+          "main_factor": 2.0,
+          "seasoning_start_factor": 2.0,
+          "example": "Thach Xa Che Lam for 8",
+          "instruction": "Shape two separate slabs; keep molasses warm and fold peanuts into each batch."
+        }
+      ]
+    },
+    "editorial": {
+      "status": "editorial_draft",
+      "production_ready": false,
+      "test_cook_status": "not_tested",
+      "variant_note": "A home-size adaptation based on ingredients and local che lam identity reported by a Hanoi source; ratios are Bếp Việt editorial work, not an artisan household standard.",
+      "seed_recipe": null,
+      "reviewed_at": "2026-10-23",
+      "needs": [
+        "Test chew and storage time with different molasses brands before publication."
+      ]
+    }
+  },
+  "khoai-xeo-ha-tinh": {
+    "name": "Ha Tinh Khoai Xeo",
+    "aliases": [
+      "Nghi Xuan khoai xeo",
+      "Ha Tinh dried sweet potato and sticky rice"
+    ],
+    "region": [
+      "North Central Vietnam"
+    ],
+    "province": [
+      "Hà Tĩnh"
+    ],
+    "category": "Rustic dish",
+    "meal_type": [
+      "Breakfast",
+      "Snack"
+    ],
+    "difficulty": "Easy",
+    "serving_basis": "One pot of chewy, nutty khoai xeo for four people.",
+    "description": "Khoai xeo is a rustic Ha Tinh dish made with dried sweet potato, sticky rice, beans and peanuts. Bếp Việt has edited a home method that soaks dry beans first, then gently mashes the cooked mixture so it stays chewy and textured.",
+    "finished_dish": "Soft dried sweet potato and sticky rice combine with beans and peanuts for a gently sweet, nutty dish that is not mushy.",
+    "excerpt": "A comforting Ha Tinh pot of dried sweet potato, sticky rice, beans and peanuts.",
+    "serving": "Serve warm as breakfast or a snack; add a little sesame-peanut salt if desired.",
+    "tips": [
+      "Soak dry beans and cook until tender before adding the rice.",
+      "Keep the water just level with the ingredients after adding rice; add hot water little by little if needed.",
+      "Mash lightly while hot, leaving some sweet potato pieces and beans intact."
+    ],
+    "tip": "Soak dry beans first so they cook through before the sticky rice is done.",
+    "dish_type": [
+      "Rustic dish",
+      "Ha Tinh specialty"
+    ],
+    "main_ingredient": [
+      "dried sweet potato",
+      "sticky rice",
+      "red beans",
+      "black beans",
+      "peanuts"
+    ],
+    "cooking_method": [
+      "soaking",
+      "simmering",
+      "cooking rice",
+      "light mashing"
+    ],
+    "search_terms": [
+      "Ha Tinh khoai xeo",
+      "Nghi Xuan khoai xeo",
+      "dried sweet potato sticky rice",
+      "Ha Tinh country food"
+    ],
+    "image_alt": "Ha Tinh khoai xeo, a golden-brown chewy mix of dried sweet potato, sticky rice, red and black beans and peanuts in a rustic bowl, isolated on transparent background.",
+    "ingredients": [
+      {
+        "name": "Dried sweet potato",
+        "quantity": 250,
+        "unit": "g",
+        "role": "main",
+        "notes": "Choose clean, mold-free slices; rinse quickly and drain.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Sticky rice",
+        "quantity": 120,
+        "unit": "g",
+        "role": "main",
+        "notes": "Rinse and drain.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Dried red beans",
+        "quantity": 60,
+        "unit": "g",
+        "role": "main",
+        "notes": "Pick over, rinse and soak for 6–8 hours.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Dried black beans",
+        "quantity": 60,
+        "unit": "g",
+        "role": "main",
+        "notes": "Pick over, rinse and soak for 6–8 hours.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Raw peanuts",
+        "quantity": 50,
+        "unit": "g",
+        "role": "main",
+        "notes": "Rinse briefly; roasted peanuts may be folded in at the end instead.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Sugar",
+        "quantity": 25,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Adjust to the potatoes’ natural sweetness.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Salt",
+        "quantity": 3,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Season lightly to balance sweetness.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Water",
+        "quantity": 1200,
+        "unit": "ml",
+        "role": "liquid",
+        "notes": "Barely cover the ingredients; add hot water if needed.",
+        "scaling_rule": "linear"
+      }
+    ],
+    "preparation_steps": [
+      "Pick over and rinse the red and black beans, soak in clean water for 6–8 hours, then drain.",
+      "Rinse the sticky rice. Rinse the dried sweet potato quickly to remove dust; do not soak it until soft.",
+      "Prepare a heavy-bottomed pot and keep hot water ready for topping up."
+    ],
+    "cooking_steps": [
+      "Put the sweet potato, beans, peanuts and water in a pot. Bring to a boil, skim, then simmer 25–30 minutes until the beans are nearly tender.",
+      "Add sticky rice and stir once. Simmer gently 15–20 minutes until the rice is cooked and most liquid is absorbed. Add a little hot water if needed.",
+      "Season with salt and sugar, stir gently, cover and rest 10 minutes.",
+      "Lightly mash with a wooden spoon while warm. Leave some potato pieces and beans intact; serve warm."
+    ],
+    "time_note": "About 7 hours 10 minutes, mostly for soaking the beans; soak them overnight if convenient.",
+    "keywords": [
+      "khoai xeo",
+      "Ha Tinh",
+      "Nghi Xuan",
+      "dried sweet potato",
+      "red beans",
+      "black beans",
+      "rustic food"
+    ],
+    "tags": [
+      "country food",
+      "snack",
+      "sweet potato",
+      "sticky rice",
+      "beans",
+      "peanuts",
+      "Ha Tinh khoai xeo"
+    ],
+    "suggested_pairings": [
+      "Sesame-peanut salt",
+      "Green tea",
+      "Roasted peanuts"
+    ],
+    "time_unit": "minutes",
+    "scaling": {
+      "base_servings": 4,
+      "targets": [
+        {
+          "servings": 2,
+          "main_factor": 0.5,
+          "seasoning_start_factor": 0.5,
+          "example": "Ha Tinh Khoai Xeo for 2",
+          "instruction": "Start with 500–600 ml water and add more during cooking if needed."
+        },
+        {
+          "servings": 6,
+          "main_factor": 1.5,
+          "seasoning_start_factor": 1.5,
+          "example": "Ha Tinh Khoai Xeo for 6",
+          "instruction": "Use a wide pot so ingredients cook evenly; lower the heat after adding rice."
+        },
+        {
+          "servings": 8,
+          "main_factor": 2.0,
+          "seasoning_start_factor": 2.0,
+          "example": "Ha Tinh Khoai Xeo for 8",
+          "instruction": "Cook in two batches if the pot is not large; add sugar after the rice is tender."
+        }
+      ]
+    },
+    "editorial": {
+      "status": "editorial_draft",
+      "production_ready": false,
+      "test_cook_status": "not_tested",
+      "variant_note": "This home version soaks dried beans first for reliable tenderness. The local article confirms the dish name, core ingredients and mashing action, but not the soaking step.",
+      "seed_recipe": null,
+      "reviewed_at": "2026-10-23",
+      "needs": [
+        "Test water and timing with locally available dried sweet potato and bean varieties."
+      ]
+    }
+  },
+  "mang-truc-yen-tu-xao-thit-bo": {
+    "name": "Yen Tu Bamboo Shoots Stir-Fried with Beef",
+    "aliases": [
+      "Yen Tu bamboo shoot and beef stir-fry",
+      "Quang Ninh bamboo shoots with beef"
+    ],
+    "region": [
+      "Northeast Vietnam"
+    ],
+    "province": [
+      "Quảng Ninh"
+    ],
+    "category": "Savory main dish",
+    "meal_type": [
+      "Lunch",
+      "Dinner"
+    ],
+    "difficulty": "Easy",
+    "serving_basis": "One plate of bamboo shoots and beef for four, served with rice.",
+    "description": "Firm Yen Tu bamboo shoots have a lightly bitter, nutty character and are commonly stir-fried with beef, garlic and seasoning. Bếp Việt has edited a home version that cooks fresh bamboo shoots thoroughly first and keeps the beef tender.",
+    "finished_dish": "Crisp-tender bamboo shoots carry gentle bitterness and sweetness; just-cooked beef is coated with garlic fragrance and a light pan sauce.",
+    "excerpt": "A quick Quang Ninh stir-fry of Yen Tu bamboo shoots, beef and garlic.",
+    "serving": "Serve immediately with steamed rice; fresh washed greens may accompany it as in local meals.",
+    "tips": [
+      "Fresh bamboo shoots must be prepared and boiled thoroughly before stir-frying; never taste them raw.",
+      "Quickly sear the beef in a hot pan, remove it, and return it at the end to keep it tender.",
+      "Season lightly because the pan juices concentrate as they reduce."
+    ],
+    "tip": "Boil fresh bamboo shoots thoroughly before stir-frying.",
+    "dish_type": [
+      "Stir-fry",
+      "Yen Tu specialty"
+    ],
+    "main_ingredient": [
+      "bamboo shoots",
+      "beef",
+      "garlic"
+    ],
+    "cooking_method": [
+      "boiling bamboo shoots",
+      "marinating",
+      "quick stir-frying"
+    ],
+    "search_terms": [
+      "Yen Tu bamboo shoots with beef",
+      "Quang Ninh bamboo shoot stir-fry",
+      "beef and bamboo shoot stir-fry",
+      "Yen Tu specialty"
+    ],
+    "image_alt": "Yen Tu bamboo shoots stir-fried with tender beef slices and garlic, served on a ceramic plate, isolated on transparent background.",
+    "ingredients": [
+      {
+        "name": "Fresh bamboo shoots",
+        "quantity": 400,
+        "unit": "g",
+        "role": "main",
+        "notes": "Wash, split or slice, boil thoroughly and change the water if bitterness remains.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Beef tenderloin",
+        "quantity": 300,
+        "unit": "g",
+        "role": "main",
+        "notes": "Slice thinly across the grain.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Garlic",
+        "quantity": 20,
+        "unit": "g",
+        "role": "aromatic",
+        "notes": "Peel, crush and mince.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Neutral oil",
+        "quantity": 20,
+        "unit": "ml",
+        "role": "other",
+        "notes": "Divide between the beef and bamboo shoots.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fish sauce",
+        "quantity": 15,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "Season to taste.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Oyster sauce",
+        "quantity": 10,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "Optional; omit for a lighter flavor.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Ground black pepper",
+        "quantity": 1,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Finish with pepper.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Salt",
+        "quantity": 3,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "For boiling the bamboo shoots if needed.",
+        "scaling_rule": "linear"
+      }
+    ],
+    "preparation_steps": [
+      "Rinse the shoots, remove tough outer layers and split or slice. Boil 15 minutes, discard the water and rinse; if still bitter, boil again in fresh water.",
+      "Slice the beef across the grain. Marinate 10 minutes with half the garlic, fish sauce, oyster sauce and a little pepper.",
+      "Drain the boiled shoots well and heat a wide pan."
+    ],
+    "cooking_steps": [
+      "Heat a little oil. Stir-fry the beef over high heat for 1–2 minutes until it just changes color, then transfer to a plate.",
+      "Add remaining oil and garlic. When fragrant, add the shoots and stir-fry 3–4 minutes until hot and lightly firm. Season with the remaining fish sauce.",
+      "Return the beef and toss for 30–60 seconds. Taste, add pepper and turn off the heat."
+    ],
+    "time_note": "About 50 minutes, including 10 minutes to marinate the beef and prepare the shoots.",
+    "keywords": [
+      "Yen Tu bamboo shoots",
+      "beef",
+      "Quang Ninh",
+      "stir-fry",
+      "rice dish"
+    ],
+    "tags": [
+      "savory main",
+      "stir-fry",
+      "Yen Tu",
+      "bamboo shoots with beef",
+      "Quang Ninh"
+    ],
+    "suggested_pairings": [
+      "Steamed rice",
+      "Clear vegetable soup",
+      "Fresh greens"
+    ],
+    "time_unit": "minutes",
+    "scaling": {
+      "base_servings": 4,
+      "targets": [
+        {
+          "servings": 2,
+          "main_factor": 0.5,
+          "seasoning_start_factor": 0.5,
+          "example": "Yen Tu Bamboo Shoots Stir-Fried with Beef for 2",
+          "instruction": "Scale down the main ingredients and begin with half the seasoning, adjusting after cooking."
+        },
+        {
+          "servings": 6,
+          "main_factor": 1.5,
+          "seasoning_start_factor": 1.5,
+          "example": "Yen Tu Bamboo Shoots Stir-Fried with Beef for 6",
+          "instruction": "Stir-fry in two rounds so the pan stays hot and the beef remains tender."
+        },
+        {
+          "servings": 8,
+          "main_factor": 2.0,
+          "seasoning_start_factor": 2.0,
+          "example": "Yen Tu Bamboo Shoots Stir-Fried with Beef for 8",
+          "instruction": "Use a large pan or cook in two batches; return the beef just before serving."
+        }
+      ]
+    },
+    "editorial": {
+      "status": "editorial_draft",
+      "production_ready": false,
+      "test_cook_status": "not_tested",
+      "variant_note": "A home adaptation of the Yen Tu regional dish identified by Vietnam News Agency; Bếp Việt adds household measurements and thorough boiling instructions for fresh shoots.",
+      "seed_recipe": null,
+      "reviewed_at": "2026-10-23",
+      "needs": [
+        "Confirm sourcing and seasonal differences in fresh shoots; test boiling time by shoot maturity."
+      ]
+    }
+  },
+  "canh-ot-mien-tay-nghe-an": {
+    "name": "Thai-Style Canh Ot from Western Nghe An",
+    "aliases": [
+      "Nghe An canh ot",
+      "Canh ot ga (chicken rice soup)"
+    ],
+    "region": [
+      "North Central Vietnam"
+    ],
+    "province": [
+      "Nghệ An"
+    ],
+    "category": "Soup",
+    "meal_type": [
+      "Lunch",
+      "Dinner"
+    ],
+    "difficulty": "Moderate",
+    "serving_basis": "One lightly thickened chicken and rice soup for four people.",
+    "description": "Canh ột is a rice-and-herb soup of Thai communities in western Nghe An, with variations named for their main ingredient. Bếp Việt has edited a chicken version for home cooking with young banana pith, lemongrass and soaked, coarsely pounded rice; it is not claimed as a universal village recipe.",
+    "finished_dish": "The soup is lightly thickened by softened rice, with tender chicken, delicate young banana pith and fragrant lemongrass.",
+    "excerpt": "A home-edited chicken version of the Thai rice soup from western Nghe An.",
+    "serving": "Serve hot with rice or as the main soup in a meal; offer chili salt separately.",
+    "tips": [
+      "Soak and coarsely pound the rice so it thickens the soup without forming lumps.",
+      "Cook the chicken fully before adding rice; stir the bottom of the pot as the rice softens.",
+      "Use clean young banana pith, remove mature layers and soak briefly in lightly salted water."
+    ],
+    "tip": "Add the pounded rice gradually while stirring so the soup stays smooth.",
+    "dish_type": [
+      "Traditional soup",
+      "Thai cuisine"
+    ],
+    "main_ingredient": [
+      "chicken",
+      "rice",
+      "young banana pith",
+      "lemongrass"
+    ],
+    "cooking_method": [
+      "soaking rice",
+      "simmering chicken",
+      "soup cooking",
+      "pounding rice"
+    ],
+    "search_terms": [
+      "canh ot",
+      "Nghe An canh ot",
+      "Thai chicken rice soup",
+      "western Nghe An food",
+      "canh ot ga"
+    ],
+    "image_alt": "A bowl of lightly thickened western Nghe An canh ot chicken soup with young banana pith, lemongrass and herbs, isolated on transparent background.",
+    "ingredients": [
+      {
+        "name": "Bone-in chicken",
+        "quantity": 500,
+        "unit": "g",
+        "role": "main",
+        "notes": "Cut into pieces, rinse and drain.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "White rice",
+        "quantity": 80,
+        "unit": "g",
+        "role": "main",
+        "notes": "Rinse, soak for at least 2 hours, then pound or pulse to coarse cracked grains.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Young banana pith",
+        "quantity": 180,
+        "unit": "g",
+        "role": "main",
+        "notes": "Remove mature layers, slice thinly and soak briefly in lightly salted water.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Lemongrass",
+        "quantity": 2,
+        "unit": "stalks",
+        "role": "aromatic",
+        "notes": "Bruise the stalks; slice a little tender leaf if available.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Ginger",
+        "quantity": 15,
+        "unit": "g",
+        "role": "aromatic",
+        "notes": "Slice or bruise.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Young mac khen leaves or fresh herbs",
+        "quantity": 10,
+        "unit": "g",
+        "role": "herb",
+        "notes": "Optional; rinse and chop.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Salt",
+        "quantity": 5,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Season gradually.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Water",
+        "quantity": 1500,
+        "unit": "ml",
+        "role": "liquid",
+        "notes": "Use skimmed chicken broth if preferred.",
+        "scaling_rule": "linear"
+      }
+    ],
+    "preparation_steps": [
+      "Rinse the rice and soak in clean water for about 2 hours. Drain and pound or pulse to cracked grains, not fine flour.",
+      "Clean and cut the chicken. Peel mature layers from the young banana pith, slice thinly, soak in lightly salted water for 10 minutes and rinse.",
+      "Bruise the lemongrass and ginger; rinse and drain any herbs."
+    ],
+    "cooking_steps": [
+      "Put chicken, water, lemongrass and ginger in a pot. Bring to a boil, skim and simmer about 20 minutes until the chicken is fully cooked.",
+      "Add the young banana pith and cook 5–7 minutes until just tender. Season with salt.",
+      "Sprinkle in the cracked rice gradually while stirring to prevent lumps. Simmer 15–20 minutes until the rice softens and the soup thickens lightly.",
+      "Turn off the heat, add optional herbs, taste and serve hot."
+    ],
+    "time_note": "About 3 hours 10 minutes, including the rice soak.",
+    "keywords": [
+      "canh ot",
+      "Nghe An",
+      "western Nghe An",
+      "Thai people",
+      "chicken soup",
+      "cracked rice"
+    ],
+    "tags": [
+      "soup",
+      "traditional dish",
+      "Thai cuisine",
+      "canh ot chicken",
+      "Nghe An"
+    ],
+    "suggested_pairings": [
+      "Boiled greens",
+      "Steamed rice",
+      "Chili salt"
+    ],
+    "time_unit": "minutes",
+    "scaling": {
+      "base_servings": 4,
+      "targets": [
+        {
+          "servings": 2,
+          "main_factor": 0.5,
+          "seasoning_start_factor": 0.5,
+          "example": "Thai-Style Canh Ot from Western Nghe An for 2",
+          "instruction": "Cook a smaller pot, starting with half the salt and adjusting to taste."
+        },
+        {
+          "servings": 6,
+          "main_factor": 1.5,
+          "seasoning_start_factor": 1.5,
+          "example": "Thai-Style Canh Ot from Western Nghe An for 6",
+          "instruction": "Use a wide pot and stir gently after adding rice so it softens evenly."
+        },
+        {
+          "servings": 8,
+          "main_factor": 2.0,
+          "seasoning_start_factor": 2.0,
+          "example": "Thai-Style Canh Ot from Western Nghe An for 8",
+          "instruction": "Divide chicken and broth between two pots if needed; add rice last to control thickness."
+        }
+      ]
+    },
+    "editorial": {
+      "status": "editorial_draft",
+      "production_ready": false,
+      "test_cook_status": "not_tested",
+      "variant_note": "This home recipe selects a chicken variation that local coverage confirms exists. Young banana pith and herbs are not presented as mandatory in every version of canh ột.",
+      "seed_recipe": null,
+      "reviewed_at": "2026-10-23",
+      "needs": [
+        "Test rice texture and soup thickness; verify local herb names and suitable substitutions."
+      ]
+    }
+  },
+  "ca-mat-nuong-song-giang": {
+    "name": "Song Giang Grilled Ca Mat",
+    "aliases": [
+      "Nghe An grilled ca mat",
+      "Muong Qua grilled river fish"
+    ],
+    "region": [
+      "North Central Vietnam"
+    ],
+    "province": [
+      "Nghệ An"
+    ],
+    "category": "Savory main dish",
+    "meal_type": [
+      "Lunch",
+      "Dinner"
+    ],
+    "difficulty": "Moderate",
+    "serving_basis": "One plate of grilled ca mat for four people, served with rice and greens.",
+    "description": "Ca mat from the Song Giang River is associated with Muong Qua in western Nghe An. Local reporting describes gentle cleaning followed by grilling, frying, boiling or braising; Bếp Việt has edited a simple grilled home version and does not claim it is the only traditional or ceremonial recipe.",
+    "finished_dish": "The fish is fully cooked with lightly charred skin, firm sweet flesh and a fragrant aroma.",
+    "excerpt": "A simple home-style grilled Song Giang river fish with chili salt.",
+    "serving": "Serve hot with steamed rice, boiled greens and a small bowl of green chili salt.",
+    "tips": [
+      "Choose fresh fish, keep it chilled and prepare it shortly before cooking.",
+      "Grill over medium heat and turn gently to cook evenly without breaking the fish.",
+      "Cook until the thickest part is opaque and fully done; do not serve raw or undercooked fish."
+    ],
+    "tip": "Grill over medium heat and turn gently so the fish stays intact.",
+    "dish_type": [
+      "Fish dish",
+      "Song Giang specialty"
+    ],
+    "main_ingredient": [
+      "ca mat fish",
+      "salt",
+      "green chili"
+    ],
+    "cooking_method": [
+      "cleaning",
+      "light seasoning",
+      "grilling"
+    ],
+    "search_terms": [
+      "Song Giang ca mat",
+      "Nghe An ca mat fish",
+      "grilled ca mat",
+      "Muong Qua specialty",
+      "Nghe An grilled fish"
+    ],
+    "image_alt": "Whole Song Giang ca mat grilled until lightly golden, served with green chili and herbs, isolated on a transparent background.",
+    "ingredients": [
+      {
+        "name": "Fresh ca mat fish",
+        "quantity": 600,
+        "unit": "g",
+        "role": "main",
+        "notes": "Choose intact, medium-sized fish and keep chilled until preparation.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Salt",
+        "quantity": 5,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "For a light seasoning and dipping salt.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Green chili",
+        "quantity": 20,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Grill or pound with salt for a dip.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Lime",
+        "quantity": 1,
+        "unit": "fruit",
+        "role": "seasoning",
+        "notes": "Juice, to taste.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Neutral oil",
+        "quantity": 10,
+        "unit": "ml",
+        "role": "other",
+        "notes": "Brush a very thin film on the clean grill.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fresh herbs and greens",
+        "quantity": 100,
+        "unit": "g",
+        "role": "herb",
+        "notes": "Wash thoroughly and drain; serve alongside.",
+        "scaling_rule": "linear"
+      }
+    ],
+    "preparation_steps": [
+      "Keep the fish chilled. Rinse gently, clean the gills and, for larger fish, remove the entrails; drain well.",
+      "Rub a light coating of salt over the fish and rest for 10 minutes; avoid a long marinade that could overpower its natural flavor.",
+      "Wash and drain the greens. Clean and preheat the grill."
+    ],
+    "cooking_steps": [
+      "Grill over glowing charcoal or in an oven preheated to 200°C. Turn gently after 6–8 minutes and continue until the thickest part is opaque and flakes from the bone.",
+      "Pound green chili with a little salt; add a few drops of lime if desired.",
+      "Serve the fish hot with greens and rice. Check carefully for bones while eating."
+    ],
+    "time_note": "About 50 minutes, including a 10-minute light seasoning rest.",
+    "keywords": [
+      "ca mat",
+      "Song Giang River",
+      "Nghe An",
+      "Muong Qua",
+      "grilled fish",
+      "fish dish"
+    ],
+    "tags": [
+      "savory main",
+      "grilled fish",
+      "Nghe An specialty",
+      "Song Giang ca mat"
+    ],
+    "suggested_pairings": [
+      "Steamed rice",
+      "Boiled greens",
+      "Green chili salt"
+    ],
+    "time_unit": "minutes",
+    "scaling": {
+      "base_servings": 4,
+      "targets": [
+        {
+          "servings": 2,
+          "main_factor": 0.5,
+          "seasoning_start_factor": 0.5,
+          "example": "Song Giang Grilled Ca Mat for 2",
+          "instruction": "Grill a smaller batch, keep the fish seasoning light and season the dipping salt separately."
+        },
+        {
+          "servings": 6,
+          "main_factor": 1.5,
+          "seasoning_start_factor": 1.5,
+          "example": "Song Giang Grilled Ca Mat for 6",
+          "instruction": "Use a wide grill or cook in two rounds so the fish is easy to turn."
+        },
+        {
+          "servings": 8,
+          "main_factor": 2.0,
+          "seasoning_start_factor": 2.0,
+          "example": "Song Giang Grilled Ca Mat for 8",
+          "instruction": "Use two grills or cook in rounds to maintain steady heat; do not stack the fish."
+        }
+      ]
+    },
+    "editorial": {
+      "status": "editorial_draft",
+      "production_ready": false,
+      "test_cook_status": "not_tested",
+      "variant_note": "A simple home grilling method based on local reports of ca mat and regional cooking options; it is not asserted to represent a ceremonial recipe or the only Thai community version.",
+      "seed_recipe": null,
+      "reviewed_at": "2026-10-23",
+      "needs": [
+        "Verify seasonal local naming and typical fish size; test grilling times by fish size before release."
+      ]
+    }
+  }
+}

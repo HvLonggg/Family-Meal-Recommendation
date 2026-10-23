@@ -6,7 +6,7 @@ from sqlalchemy import func, select
 from sqlalchemy.orm import Session, sessionmaker
 
 from app.modules.recipes.models import Recipe, RecipeIngredient, RecipeStep
-from app.modules.recipes.search import matches_search
+from app.modules.recipes.search import bilingual_search_text, matches_search
 from app.scripts import import_recipe_catalog as importer
 
 
@@ -86,3 +86,12 @@ def test_search_requires_matching_words() -> None:
     assert matches_search("dau phu", "Đậu phụ sốt cà chua")
     assert not matches_search("rau zzzz", "Rau muống xào tỏi")
     assert not matches_search("!!!", "Rau muống")
+    assert matches_search("ca cheep kho rieng", "Cá chép kho riềng")
+    assert matches_search(
+        "carp braised with galangal",
+        bilingual_search_text("ca-chep-kho-rieng", "Cá chép kho riềng"),
+    )
+    assert matches_search("muop dang sao trung", "Mướp đắng xào trứng")
+    assert matches_search("bau sao trung", "Bầu xào trứng")
+    assert not matches_search("bau sao trung", "Mướp đắng xào trứng")
+    assert not matches_search("muop dang sao trung", "Bầu xào trứng")

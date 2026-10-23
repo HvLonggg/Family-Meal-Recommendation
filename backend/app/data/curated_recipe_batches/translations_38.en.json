@@ -1,0 +1,300 @@
+{
+  "banh-to-quang-nam": {
+    "name": "Quang Nam Banh To",
+    "aliases": ["Quang Nam sticky rice cake", "Tet sticky rice cake"],
+    "region": ["South Central Coast"],
+    "province": ["Quang Nam"],
+    "category": "Cakes and snacks",
+    "meal_type": ["Snack", "Dessert"],
+    "difficulty": "Moderate",
+    "serving_basis": "One round cake about 18 cm across, cut into 10–12 thin slices.",
+    "description": "Banh to is a sweet sticky rice cake associated with Tet in Quang Nam. Sources describe glutinous rice, block cane sugar, ginger and sesame, steamed in a banana-leaf-lined mold. This is a small home batch using ready-ground glutinous rice flour and a shorter steaming time suited to a home mold; its proportions are not presented as a local bakery's formula.",
+    "finished_dish": "A firm, chewy amber cake with fragrant rice and ginger notes and a sesame topping; once cool, it is firm enough to slice.",
+    "excerpt": "A chewy Quang Nam sticky rice cake scented with ginger and topped with sesame.",
+    "serving": "Let the cake cool and firm before slicing. Eat it soft or pan-fry the slices in a little oil until the outside turns golden.",
+    "tips": [
+      "Let the syrup cool slightly before mixing it into the flour to prevent lumps.",
+      "Line the mold bottom completely with banana leaf and leave a little headroom for the cake to expand.",
+      "Keep the steamer water at a steady simmer and top it up with hot water if needed during the long steam."
+    ],
+    "tip": "Add the warm syrup gradually and mix until completely smooth.",
+    "dish_type": ["Traditional cake", "Quang Nam specialty"],
+    "main_ingredient": ["glutinous rice flour", "block cane sugar", "ginger", "white sesame"],
+    "cooking_method": ["making syrup", "mixing batter", "steaming"],
+    "search_terms": ["Quang Nam banh to", "Xu Quang sticky rice cake", "steamed cake with block cane sugar", "ginger sesame rice cake"],
+    "image_alt": "Amber Quang Nam banh to topped with sesame, with one piece cut to show its chewy rice interior, on a ceramic plate against a transparent background.",
+    "ingredients": [
+      {"name": "Glutinous rice flour", "quantity": 300, "unit": "g", "role": "main", "notes": "Sift; ready-ground flour is used for this small home batch.", "scaling_rule": "linear"},
+      {"name": "Block cane sugar", "quantity": 220, "unit": "g", "role": "main", "notes": "Break into pieces so it dissolves easily; coarse cane sugar can be used if block sugar is unavailable.", "scaling_rule": "linear"},
+      {"name": "Water", "quantity": 300, "unit": "ml", "role": "liquid", "notes": "For making the syrup.", "scaling_rule": "linear"},
+      {"name": "Fresh ginger", "quantity": 20, "unit": "g", "role": "aromatic", "notes": "Pound or finely grate, then squeeze out the juice.", "scaling_rule": "linear"},
+      {"name": "White sesame seeds", "quantity": 18, "unit": "g", "role": "garnish", "notes": "Toast until fragrant and cool.", "scaling_rule": "linear"},
+      {"name": "Banana leaves", "quantity": 60, "unit": "g", "role": "other", "notes": "Briefly blanch until pliable and pat dry to line the mold.", "scaling_rule": "linear"},
+      {"name": "Neutral oil", "quantity": 5, "unit": "ml", "role": "other", "notes": "Brush a thin film on the mold to prevent sticking.", "scaling_rule": "linear"}
+    ],
+    "preparation_steps": [
+      "Sift the glutinous rice flour. Toast the sesame seeds in a dry pan until fragrant, then cool. Briefly blanch the banana leaves, pat dry and line a round mold about 5 cm deep.",
+      "Put the block sugar and water in a saucepan. Heat gently until the sugar dissolves. Turn off the heat, let it cool until warm, then stir in the ginger juice.",
+      "Gradually pour the warm syrup into the flour, stirring until smooth. Strain if any lumps remain."
+    ],
+    "cooking_steps": [
+      "Brush a very thin coat of oil over the leaves in the mold. Pour in the batter and tap the mold gently to level the surface.",
+      "Set the mold in a steamer over boiling water, cover tightly and steam over medium heat for about 2 hours. Keep enough water in the pot so the steamer does not run dry.",
+      "Insert a bamboo skewer into the center. The cake is cooked when it comes out nearly clean and the surface has set. Sprinkle the sesame over the hot cake.",
+      "Remove the mold and let the cake cool in it for about 2 hours before peeling off the leaves. Slice with a lightly oiled knife; store covered in the refrigerator."
+    ],
+    "time_note": "About 4 hours 25 minutes, including steaming and cooling until firm.",
+    "keywords": ["banh to", "Quang Nam", "block cane sugar", "glutinous rice flour", "ginger", "sesame"],
+    "tags": ["traditional cake", "sweet", "Quang Nam specialty", "glutinous rice flour", "Tet"],
+    "suggested_pairings": ["Hot tea", "Toasted rice crackers", "Ginger preserve"],
+    "time_unit": "minutes",
+    "scaling": {"base_servings": 6, "targets": [
+      {"servings": 2, "main_factor": 0.33, "seasoning_start_factor": 0.33, "example": "Quang Nam Banh To for 2", "instruction": "Use a smaller mold and start checking around minute 75, since mold depth changes the steaming time."},
+      {"servings": 4, "main_factor": 0.67, "seasoning_start_factor": 0.67, "example": "Quang Nam Banh To for 4", "instruction": "Keep the mold at a similar depth so the cake cooks evenly."},
+      {"servings": 8, "main_factor": 1.33, "seasoning_start_factor": 1.33, "example": "Quang Nam Banh To for 8", "instruction": "Divide the batter between two molds instead of making one deeper cake; steam each until a skewer comes out nearly clean."}
+    ]},
+    "editorial": {"status": "editorial_draft", "production_ready": false, "test_cook_status": "not_tested", "variant_note": "A small batch uses ready-ground glutinous rice flour and cools in its mold; it is not presented as a substitute for the soaked-and-ground rice and longer drying used by bakeries.", "seed_recipe": null, "reviewed_at": "2026-10-23", "needs": ["Test chew and steaming time with different glutinous rice flours, block sugars and molds."]}
+  },
+  "cha-bo-da-nang": {
+    "name": "Da Nang Chả Bò",
+    "aliases": ["Da Nang beef sausage", "Da Thanh beef sausage"],
+    "region": ["South Central Coast"],
+    "province": ["Da Nang"],
+    "category": "Savory dish",
+    "meal_type": ["Breakfast", "Lunch", "Dinner"],
+    "difficulty": "Advanced",
+    "serving_basis": "Two small sausage rolls, about 600 g total, sliced and served with pickles or baguette.",
+    "description": "Da Nang's tourism portal describes chả bò as a local beef sausage made with trimmed beef thigh, finely ground and seasoned with onion, garlic, pepper, chili, sugar and fish sauce, then wrapped in banana leaves and boiled. Bếp Việt has adapted a small home batch, keeping the beef cold while grinding and forming two short rolls so they cook evenly.",
+    "finished_dish": "A fragrant roll with pepper and banana-leaf aromas, a smooth rosy-brown interior and a savory, gently springy beef texture.",
+    "excerpt": "A banana-leaf-wrapped Da Nang beef sausage with pepper and fish sauce.",
+    "serving": "Let the sausage cool slightly before slicing. Serve with pickled vegetables, herbs, baguette or beef porridge.",
+    "tips": [
+      "Chill the beef, grinder bowl and water before grinding so the meat stays cold and cohesive.",
+      "Wrap two short rolls tightly and seal the leaves so water cannot seep inside.",
+      "Use a clean food thermometer to confirm the center of the sausage reaches 71°C before removing it from the pot."
+    ],
+    "tip": "Keep the beef mixture cold while grinding and mixing.",
+    "dish_type": ["Meat dish", "Da Nang specialty"],
+    "main_ingredient": ["beef thigh", "fish sauce", "black pepper", "banana leaves"],
+    "cooking_method": ["cold grinding", "mixing", "banana-leaf wrapping", "boiling"],
+    "search_terms": ["Da Nang cha bo", "Da Nang beef sausage", "banana-leaf beef sausage", "Da Thanh specialty"],
+    "image_alt": "Sliced Da Nang chả bò fanned on a ceramic plate with banana leaves and a few slices of chili, isolated on a transparent background.",
+    "ingredients": [
+      {"name": "Lean beef thigh", "quantity": 600, "unit": "g", "role": "main", "notes": "Trim away tendons, dice and chill thoroughly before grinding.", "scaling_rule": "linear"},
+      {"name": "Fish sauce", "quantity": 24, "unit": "ml", "role": "seasoning", "notes": "Choose a fragrant, moderately salty fish sauce.", "scaling_rule": "linear"},
+      {"name": "Ice-cold water", "quantity": 45, "unit": "ml", "role": "liquid", "notes": "Use very cold water to keep the meat cool while grinding.", "scaling_rule": "linear"},
+      {"name": "Garlic", "quantity": 8, "unit": "g", "role": "aromatic", "notes": "Peel and pound or mince finely.", "scaling_rule": "linear"},
+      {"name": "Shallot", "quantity": 12, "unit": "g", "role": "aromatic", "notes": "Peel and mince finely.", "scaling_rule": "linear"},
+      {"name": "Ground black pepper", "quantity": 2, "unit": "g", "role": "seasoning", "notes": "Freshly ground pepper gives the best aroma.", "scaling_rule": "linear"},
+      {"name": "Sugar", "quantity": 7, "unit": "g", "role": "seasoning", "notes": "Balances the saltiness of the fish sauce.", "scaling_rule": "linear"},
+      {"name": "Salt", "quantity": 2, "unit": "g", "role": "seasoning", "notes": "Season lightly because the fish sauce is already salty.", "scaling_rule": "linear"},
+      {"name": "Dill", "quantity": 4, "unit": "g", "role": "herb", "notes": "Finely chop; use sparingly so it does not overpower the beef.", "scaling_rule": "linear"},
+      {"name": "Banana leaves", "quantity": 80, "unit": "g", "role": "other", "notes": "Wipe clean, briefly blanch until pliable and pat dry.", "scaling_rule": "linear"},
+      {"name": "Food-safe kitchen twine", "quantity": 2, "unit": "strands", "role": "other", "notes": "Tie the two sausage rolls.", "scaling_rule": "linear"}
+    ],
+    "preparation_steps": [
+      "Chill the trimmed beef in the freezer for about 20 minutes until firm but not frozen; chill the grinder bowl and ice water too.",
+      "Grind the beef in small batches, adding fish sauce, ice water and seasonings. Pulse until the meat becomes a smooth, cohesive paste without letting the grinder warm it.",
+      "Mix in the garlic, shallot and dill. Divide the mixture in half and wrap each portion tightly in banana leaves into a roll about 5 cm across. Fold both ends closed and tie with twine."
+    ],
+    "cooking_steps": [
+      "Bring a pot of water large enough to cover the rolls to a boil, then reduce to a gentle simmer. Add the rolls and boil for about 40–50 minutes, turning once halfway through.",
+      "Use a clean thermometer at the center of the thicker roll; continue cooking until it reaches at least 71°C. Drain and rest for 15 minutes before unwrapping.",
+      "Cool completely before slicing. Keep in a covered container in the refrigerator and use within a few days."
+    ],
+    "time_note": "About 1 hour 35 minutes, including a short cooling rest after boiling.",
+    "keywords": ["cha bo", "Da Nang", "beef thigh", "banana leaf", "black pepper", "fish sauce"],
+    "tags": ["savory", "meat dish", "Da Nang specialty", "beef sausage", "banana leaf"],
+    "suggested_pairings": ["Pickled vegetables", "Fresh herbs", "Baguette", "Beef porridge"],
+    "time_unit": "minutes",
+    "scaling": {"base_servings": 4, "targets": [
+      {"servings": 2, "main_factor": 0.5, "seasoning_start_factor": 0.5, "example": "Da Nang Chả Bò for 2", "instruction": "Make one small roll and check the temperature at its center."},
+      {"servings": 6, "main_factor": 1.5, "seasoning_start_factor": 1.5, "example": "Da Nang Chả Bò for 6", "instruction": "Divide the mixture into three short rolls to keep cooking even."},
+      {"servings": 8, "main_factor": 2.0, "seasoning_start_factor": 2.0, "example": "Da Nang Chả Bò for 8", "instruction": "Grind in small batches and boil in rounds if the pot is not wide enough."}
+    ]},
+    "editorial": {"status": "editorial_draft", "production_ready": false, "test_cook_status": "not_tested", "variant_note": "A home-size roll is ground and boiled in banana leaf, following the local features described by Da Nang's tourism portal; these ratios do not represent any one sausage maker.", "seed_recipe": null, "reviewed_at": "2026-10-23", "needs": ["Test how well the beef binds at different grind settings and roll sizes."]}
+  },
+  "oc-len-xao-dua-ca-mau": {
+    "name": "Ca Mau Ốc Len with Coconut",
+    "aliases": ["Whelks in coconut milk", "Lemongrass coconut ốc len"],
+    "region": ["Mekong Delta"],
+    "province": ["Ca Mau"],
+    "category": "Savory dish",
+    "meal_type": ["Snack", "Dinner"],
+    "difficulty": "Moderate",
+    "serving_basis": "One hot plate of snails for four people to share as a snack or starter.",
+    "description": "Ốc len snails live in mangrove forests and coastal mudflats in Ca Mau. Local reporting describes soaking them to release grit, cutting the pointed tail, then cooking them with coconut milk, garlic, lemongrass and Vietnamese coriander. Bếp Việt has edited a home batch using snails from a reliable food supplier and cooking them thoroughly.",
+    "finished_dish": "The cooked snails are springy and fragrant with lemongrass and garlic, coated in a lightly sweet and savory coconut sauce finished with Vietnamese coriander.",
+    "excerpt": "Mangrove snails simmered with coconut milk, lemongrass, garlic and Vietnamese coriander.",
+    "serving": "Serve hot in a shallow bowl with the coconut sauce. Bread can be used to mop up the sauce.",
+    "tips": [
+      "Choose live snails with intact shells; discard dead snails or any with an off smell before soaking.",
+      "Cut just enough of the pointed tail to open the shell for suction; do not cut so deeply that the snail breaks apart.",
+      "Cook at a steady simmer until the snails are fully cooked; discard shells that remain closed or smell unusual."
+    ],
+    "tip": "Cut only a small piece from the pointed tail of each shell.",
+    "dish_type": ["Snail dish", "Ca Mau specialty"],
+    "main_ingredient": ["ốc len snails", "coconut milk", "lemongrass", "Vietnamese coriander"],
+    "cooking_method": ["soaking", "stir-frying", "cooking in coconut milk"],
+    "search_terms": ["Ca Mau oc len with coconut", "ốc len coconut milk", "lemongrass ốc len", "Mekong Delta snail dish"],
+    "image_alt": "Ốc len snails in a thick coconut sauce with dark spiral shells, lemongrass and Vietnamese coriander, isolated on a transparent background.",
+    "ingredients": [
+      {"name": "Live ốc len snails", "quantity": 1000, "unit": "g", "role": "main", "notes": "Choose live snails with intact shells; soak and scrub thoroughly before cooking.", "scaling_rule": "linear"},
+      {"name": "Thin coconut milk", "quantity": 250, "unit": "ml", "role": "liquid", "notes": "Use the thinner coconut milk for the first stage of cooking.", "scaling_rule": "linear"},
+      {"name": "Thick coconut milk", "quantity": 250, "unit": "ml", "role": "liquid", "notes": "Add near the end for a richer, thicker sauce.", "scaling_rule": "linear"},
+      {"name": "Lemongrass", "quantity": 3, "unit": "stalks", "role": "aromatic", "notes": "Rinse and bruise; reserve a little tender green part for garnish.", "scaling_rule": "linear"},
+      {"name": "Garlic", "quantity": 12, "unit": "g", "role": "aromatic", "notes": "Peel and mince.", "scaling_rule": "linear"},
+      {"name": "Red chili", "quantity": 8, "unit": "g", "role": "seasoning", "notes": "Slice; reduce the amount for a milder dish.", "scaling_rule": "linear"},
+      {"name": "Vietnamese coriander", "quantity": 18, "unit": "g", "role": "herb", "notes": "Rinse and dry; divide between cooking and garnish.", "scaling_rule": "linear"},
+      {"name": "Neutral oil", "quantity": 15, "unit": "ml", "role": "seasoning", "notes": "For frying the garlic and lemongrass.", "scaling_rule": "linear"},
+      {"name": "Sugar", "quantity": 12, "unit": "g", "role": "seasoning", "notes": "Adjust to the sweetness of the coconut milk.", "scaling_rule": "linear"},
+      {"name": "Salt", "quantity": 5, "unit": "g", "role": "seasoning", "notes": "Season to taste.", "scaling_rule": "linear"}
+    ],
+    "preparation_steps": [
+      "Soak the snails in clean water with a few chili slices for about 1 hour to release grit. Change the water once if it becomes cloudy, then scrub the shells and rinse several times.",
+      "Use sturdy pliers or a knife to remove a small piece from the pointed tail of each shell. Rinse again to remove fragments and drain. Bruise the lemongrass, mince the garlic, slice the chili and pick over the Vietnamese coriander.",
+      "Keep the thin and thick coconut milk separate; prepare a deep pan with a lid."
+    ],
+    "cooking_steps": [
+      "Heat the oil and fry the garlic and lemongrass until fragrant. Add the snails and stir for 3–4 minutes so they heat evenly; if they release a lot of cloudy liquid, pour it off.",
+      "Add the thin coconut milk, sugar, salt and half the chili. Cover, bring to a boil, reduce to medium heat and cook, stirring a few times, until the snails are fully cooked, about 8–10 minutes after the liquid returns to a boil.",
+      "Add the thick coconut milk and most of the Vietnamese coriander. Simmer for another 2–3 minutes until the sauce thickens around the shells. Taste, finish with the remaining chili and coriander, and serve hot."
+    ],
+    "time_note": "About 1 hour 30 minutes, mostly for soaking the snails to release grit.",
+    "keywords": ["oc len", "Ca Mau", "coconut milk", "lemongrass", "Vietnamese coriander", "snails"],
+    "tags": ["savory", "snail dish", "Ca Mau specialty", "coconut milk", "Mekong Delta"],
+    "suggested_pairings": ["Baguette", "Vietnamese coriander", "Fresh chili"],
+    "time_unit": "minutes",
+    "scaling": {"base_servings": 4, "targets": [
+      {"servings": 2, "main_factor": 0.5, "seasoning_start_factor": 0.5, "example": "Ca Mau Ốc Len with Coconut for 2", "instruction": "Use a deep pan so the snails can sit in a single layer and cook evenly."},
+      {"servings": 6, "main_factor": 1.5, "seasoning_start_factor": 1.5, "example": "Ca Mau Ốc Len with Coconut for 6", "instruction": "Cook in two rounds if the pot is small so the sauce returns to a boil quickly."},
+      {"servings": 8, "main_factor": 2.0, "seasoning_start_factor": 2.0, "example": "Ca Mau Ốc Len with Coconut for 8", "instruction": "Divide into two batches; adjust salt and sugar after the coconut milk returns to a simmer."}
+    ]},
+    "editorial": {"status": "editorial_draft", "production_ready": false, "test_cook_status": "not_tested", "variant_note": "The home recipe keeps the main points reported by local newspapers, uses snails from a food supplier, and is not presented as the only way people in Ca Mau cook them.", "seed_recipe": null, "reviewed_at": "2026-10-23", "needs": ["Check cooking time and doneness with different snail sizes, shell thicknesses and coconut milk brands."]}
+  },
+  "pha-lau-bo-sai-gon": {
+    "name": "Saigon Beef Offal Stew",
+    "aliases": ["Beef Offal Pha Lau", "Beef Offal in Coconut and Five-Spice Broth"],
+    "region": ["Southeastern Vietnam"],
+    "province": ["Ho Chi Minh City"],
+    "category": "Savory dish",
+    "meal_type": ["Snack", "Dinner"],
+    "difficulty": "Moderate",
+    "serving_basis": "Four small bowls of pha lau, served with baguette and Vietnamese coriander.",
+    "description": "Beef pha lau is a familiar street food in Ho Chi Minh City. Sources describe beef offal cleaned carefully, seasoned with five-spice and aromatics, then simmered in coconut water. Bếp Việt has adapted a home-size batch with commonly available beef tripe, cooked until tender and served with baguette, Vietnamese coriander and a sweet-sour dipping sauce.",
+    "finished_dish": "Tender but slightly springy offal absorbs five-spice and coconut; the amber broth smells of ginger, star anise and cinnamon.",
+    "excerpt": "Beef offal simmered with coconut water, five-spice and warm aromatics.",
+    "serving": "Cut the offal into bite-size pieces and ladle over hot broth. Serve with crisp baguette, Vietnamese coriander and a lime dipping sauce.",
+    "tips": [
+      "Rub the offal with ginger, vinegar and rice wine, then rinse thoroughly before blanching.",
+      "Brief blanching and rinsing reduce strong aromas without over-tightening the offal before braising.",
+      "Simmer gently until the thickest pieces are tender; taste after the coconut broth reduces because its saltiness becomes more concentrated."
+    ],
+    "tip": "Clean and rinse the offal carefully before seasoning it.",
+    "dish_type": ["Offal dish", "Street food"],
+    "main_ingredient": ["beef offal", "coconut water", "five-spice", "ginger"],
+    "cooking_method": ["cleaning", "blanching", "marinating", "braising"],
+    "search_terms": ["Saigon beef pha lau", "beef offal pha lau", "beef offal coconut stew", "Saigon street food"],
+    "image_alt": "Saigon beef pha lau with tender offal in an amber coconut and five-spice broth, baguette and Vietnamese coriander, isolated on a transparent background.",
+    "ingredients": [
+      {"name": "Assorted beef offal", "quantity": 900, "unit": "g", "role": "main", "notes": "Choose tripe, honeycomb tripe or book tripe; buy pre-cleaned from a reliable source and keep chilled.", "scaling_rule": "linear"},
+      {"name": "Fresh ginger", "quantity": 50, "unit": "g", "role": "aromatic", "notes": "Use half for cleaning and half sliced for the broth.", "scaling_rule": "linear"},
+      {"name": "Rice vinegar", "quantity": 60, "unit": "ml", "role": "seasoning", "notes": "For scrubbing the offal during cleaning.", "scaling_rule": "linear"},
+      {"name": "Rice wine", "quantity": 50, "unit": "ml", "role": "seasoning", "notes": "For scrubbing and removing odors.", "scaling_rule": "linear"},
+      {"name": "Fresh coconut water", "quantity": 700, "unit": "ml", "role": "liquid", "notes": "For the braising broth.", "scaling_rule": "linear"},
+      {"name": "Thin coconut milk", "quantity": 250, "unit": "ml", "role": "liquid", "notes": "Can be made by diluting coconut milk with warm water.", "scaling_rule": "linear"},
+      {"name": "Thick coconut milk", "quantity": 150, "unit": "ml", "role": "liquid", "notes": "Add near the end for richness.", "scaling_rule": "linear"},
+      {"name": "Shallot", "quantity": 35, "unit": "g", "role": "aromatic", "notes": "Peel and mince.", "scaling_rule": "linear"},
+      {"name": "Garlic", "quantity": 20, "unit": "g", "role": "aromatic", "notes": "Peel and mince.", "scaling_rule": "linear"},
+      {"name": "Star anise", "quantity": 2, "unit": "stars", "role": "aromatic", "notes": "Dry-toast lightly until fragrant.", "scaling_rule": "linear"},
+      {"name": "Cinnamon stick", "quantity": 8, "unit": "g", "role": "aromatic", "notes": "Lightly toast and add to the pot or a spice bag.", "scaling_rule": "linear"},
+      {"name": "Five-spice powder", "quantity": 2, "unit": "g", "role": "seasoning", "notes": "Use a modest amount so it does not overpower the offal.", "scaling_rule": "linear"},
+      {"name": "Curry powder", "quantity": 2, "unit": "g", "role": "seasoning", "notes": "Adds a light orange tint without making the dish taste like curry.", "scaling_rule": "linear"},
+      {"name": "Fish sauce", "quantity": 25, "unit": "ml", "role": "seasoning", "notes": "Season the marinade and broth.", "scaling_rule": "linear"},
+      {"name": "Palm sugar", "quantity": 15, "unit": "g", "role": "seasoning", "notes": "Chop finely so it dissolves quickly.", "scaling_rule": "linear"},
+      {"name": "Annatto oil", "quantity": 15, "unit": "ml", "role": "seasoning", "notes": "For frying the aromatics and adding a light color.", "scaling_rule": "linear"},
+      {"name": "Salt", "quantity": 6, "unit": "g", "role": "seasoning", "notes": "Divide between cleaning and seasoning the broth.", "scaling_rule": "linear"},
+      {"name": "Vietnamese coriander", "quantity": 20, "unit": "g", "role": "herb", "notes": "Rinse, dry and serve alongside.", "scaling_rule": "linear"},
+      {"name": "Baguettes", "quantity": 4, "unit": "loaves", "role": "side", "notes": "Warm before serving.", "scaling_rule": "linear"},
+      {"name": "Calamansi", "quantity": 3, "unit": "fruits", "role": "seasoning", "notes": "Squeeze for the dipping sauce.", "scaling_rule": "linear"}
+    ],
+    "preparation_steps": [
+      "Rub the offal with vinegar, rice wine and half the crushed ginger. Turn it inside out, scrub the folds well and rinse several times under cold running water.",
+      "Blanch the offal in boiling water with a few ginger slices and shallot for about 3 minutes. Lift it out, rinse again, scrape away any remaining residue and cut into large pieces.",
+      "Lightly toast the star anise and cinnamon. Marinate the offal for 30 minutes with fish sauce, palm sugar, five-spice, curry powder, annatto oil, garlic and shallot."
+    ],
+    "cooking_steps": [
+      "Heat the remaining shallot and garlic in a pot until fragrant. Add the marinated offal and stir until the surfaces are firm and aromatic.",
+      "Add the coconut water, thin coconut milk, remaining ginger, star anise and cinnamon. Bring to a boil, skim, then cover and simmer gently for 60–75 minutes until the offal is tender.",
+      "Add the thick coconut milk and simmer gently for another 5 minutes. Taste and adjust salt and fish sauce; if the broth is too thick, add a little hot water.",
+      "Mix calamansi juice with a little fish sauce and sugar for a dipping sauce. Cut the offal into bite-size pieces, ladle over broth, add Vietnamese coriander and serve hot with baguette."
+    ],
+    "time_note": "About 2 hours 40 minutes, including a 30-minute marinade before braising.",
+    "keywords": ["beef pha lau", "Saigon", "beef offal", "coconut water", "five-spice", "Vietnamese coriander"],
+    "tags": ["savory", "offal", "street food", "Saigon", "coconut broth"],
+    "suggested_pairings": ["Baguette", "Vietnamese coriander", "Calamansi dipping sauce", "Fresh chili"],
+    "time_unit": "minutes",
+    "scaling": {"base_servings": 4, "targets": [
+      {"servings": 2, "main_factor": 0.5, "seasoning_start_factor": 0.5, "example": "Saigon Beef Offal Stew for 2", "instruction": "Use a small heavy-bottomed pot and check tenderness after 50 minutes of braising."},
+      {"servings": 6, "main_factor": 1.5, "seasoning_start_factor": 1.5, "example": "Saigon Beef Offal Stew for 6", "instruction": "Choose a wide pot so the offal sits under the coconut broth and cooks evenly."},
+      {"servings": 8, "main_factor": 2.0, "seasoning_start_factor": 2.0, "example": "Saigon Beef Offal Stew for 8", "instruction": "Use two pots if needed; avoid stacking the offal too deeply so the center softens evenly."}
+    ]},
+    "editorial": {"status": "editorial_draft", "production_ready": false, "test_cook_status": "not_tested", "variant_note": "This beef-offal and coconut-water version follows press descriptions of Ho Chi Minh City pha lau; the cuts and seasoning ratios can vary by stall.", "seed_recipe": null, "reviewed_at": "2026-10-23", "needs": ["Test separate tenderizing times for tripe, honeycomb tripe and book tripe; check the broth after reduction."]}
+  },
+  "che-ke-hoi-an": {
+    "name": "Hoi An Millet Sweet Porridge",
+    "aliases": ["Millet sweet porridge", "Quang Nam che ke"],
+    "region": ["South Central Coast"],
+    "province": ["Quang Nam"],
+    "category": "Dessert",
+    "meal_type": ["Snack", "Dessert"],
+    "difficulty": "Easy",
+    "serving_basis": "Four thick bowls of sweet porridge with toasted sesame rice crackers.",
+    "description": "Hoi An heritage records include millet sweet porridge among the offerings for the Doan Ngo festival. A recipe presented with guidance from a culinary artisan combines millet and mung beans and serves the porridge with toasted rice crackers for scooping. Bếp Việt has edited a plant-based batch without dairy or animal fat, cooked until thick enough to eat by spoon or with rice crackers.",
+    "finished_dish": "Soft millet grains blend with mashed mung beans into a thick golden porridge with gentle sweetness; crisp sesame crackers add contrast.",
+    "excerpt": "A traditional millet and mung bean dessert served with toasted rice crackers.",
+    "serving": "Spoon the warm or cooled porridge into small bowls. Break toasted sesame rice crackers into pieces to scoop it up.",
+    "tips": [
+      "Soak millet and mung beans separately so both soften evenly.",
+      "Stir gently but regularly once the millet thickens so it does not stick to the pot.",
+      "Add the sugar after the mung beans soften so you can adjust sweetness and thickness easily."
+    ],
+    "tip": "Stir regularly as the millet thickens to keep it from sticking to the pot.",
+    "dish_type": ["Vegetarian dish", "Dessert", "Traditional sweet porridge"],
+    "main_ingredient": ["millet", "mung beans", "sugar", "sesame rice crackers"],
+    "cooking_method": ["soaking", "simmering", "stirring until thick"],
+    "search_terms": ["Hoi An che ke", "Quang Nam millet porridge", "millet mung bean dessert", "millet porridge with rice crackers"],
+    "image_alt": "Golden Hoi An millet sweet porridge in a ceramic bowl beside a toasted sesame rice cracker; plant-based dessert isolated on transparent background.",
+    "ingredients": [
+      {"name": "Millet", "quantity": 150, "unit": "g", "role": "main", "notes": "Rinse several times until the water runs clear, then soak for 30 minutes.", "scaling_rule": "linear"},
+      {"name": "Split mung beans", "quantity": 70, "unit": "g", "role": "main", "notes": "Rinse and soak separately for 60 minutes.", "scaling_rule": "linear"},
+      {"name": "Water", "quantity": 1200, "unit": "ml", "role": "liquid", "notes": "Divide between the mung bean pot and millet pot; add more if the porridge becomes too thick.", "scaling_rule": "linear"},
+      {"name": "Sugar", "quantity": 150, "unit": "g", "role": "seasoning", "notes": "Some can be replaced with sugarcane molasses; add gradually.", "scaling_rule": "linear"},
+      {"name": "Salt", "quantity": 2, "unit": "g", "role": "seasoning", "notes": "A small pinch rounds out the sweetness.", "scaling_rule": "linear"},
+      {"name": "Vanilla", "quantity": 2, "unit": "ml", "role": "aromatic", "notes": "Optional; choose a dairy-free product to keep the recipe plant-based.", "scaling_rule": "linear"},
+      {"name": "Toasted sesame rice crackers", "quantity": 4, "unit": "pieces", "role": "side", "notes": "Choose a version made without animal fat; break into pieces for scooping.", "scaling_rule": "linear"}
+    ],
+    "preparation_steps": [
+      "Rinse the millet several times until the water is clear, soak it in clean water for 30 minutes and drain. Rinse the mung beans and soak them separately for 60 minutes.",
+      "Rinse the soaked mung beans and drain; measure the water separately for cooking the beans and millet.",
+      "Set out a heavy-bottomed pot, sugar, salt, vanilla and toasted rice crackers for after the porridge is cooked."
+    ],
+    "cooking_steps": [
+      "Put the mung beans in a pot with 350 ml water. Simmer for about 15–20 minutes until soft, then mash lightly into a thick paste.",
+      "Put the soaked millet in a separate pot with 850 ml water. Bring to a boil, reduce to low and stir regularly for about 20–25 minutes until the grains have expanded and softened.",
+      "Stir the mashed mung beans into the millet. Add the sugar and salt and cook gently for another 5–8 minutes until the porridge comes together and thickens.",
+      "Turn off the heat and stir in the vanilla, if using. Spoon into bowls and serve warm or cooled with toasted sesame rice crackers."
+    ],
+    "time_note": "About 2 hours 5 minutes, including 1 hour for soaking the millet and mung beans.",
+    "keywords": ["che ke", "Hoi An", "Quang Nam", "millet", "mung beans", "Doan Ngo festival", "vegetarian"],
+    "tags": ["vegetarian", "dessert", "traditional sweet porridge", "Hoi An", "millet"],
+    "suggested_pairings": ["Toasted sesame rice crackers", "Hot tea", "Toasted sesame seeds"],
+    "time_unit": "minutes",
+    "scaling": {"base_servings": 4, "targets": [
+      {"servings": 2, "main_factor": 0.5, "seasoning_start_factor": 0.5, "example": "Hoi An Millet Sweet Porridge for 2", "instruction": "Keep the heat low after the millet boils and stir often because a small batch thickens quickly."},
+      {"servings": 6, "main_factor": 1.5, "seasoning_start_factor": 1.5, "example": "Hoi An Millet Sweet Porridge for 6", "instruction": "Use a heavy-bottomed pot and stir for longer rather than raising the heat."},
+      {"servings": 8, "main_factor": 2.0, "seasoning_start_factor": 2.0, "example": "Hoi An Millet Sweet Porridge for 8", "instruction": "Cook the millet in a wide pot; add the sugar after the grains soften so they continue to expand."}
+    ]},
+    "editorial": {"status": "editorial_draft", "production_ready": false, "test_cook_status": "not_tested", "variant_note": "This plant-based version uses millet, mung beans, sugar and sesame rice crackers; the Hoi An festival context comes from heritage records, while the proportions are adapted for home cooking.", "seed_recipe": null, "reviewed_at": "2026-10-23", "needs": ["Test the thickness after cooling and confirm the rice crackers contain no animal fat if strict vegan preparation is required."]}
+  }
+}

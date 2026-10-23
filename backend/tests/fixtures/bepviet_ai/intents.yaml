@@ -1,0 +1,52 @@
+# Bộ intent mẫu để phát triển/test Bếp Việt AI (dữ liệu thật nằm ở app/modules/bepviet_ai/data/).
+intents:
+  - id: greeting
+    kind: smalltalk
+    description: Chào hỏi
+    answer_vi: Chào bạn! Mình là Chú Rồng của Bếp Việt. Hôm nay bạn muốn nấu món gì?
+    answer_en: Hi! I'm the Bếp Việt dragon. What would you like to cook today?
+    followups: ["Gợi ý món cho bữa tối", "Cách nấu phở bò"]
+  - id: thanks
+    kind: smalltalk
+    description: Cảm ơn
+    answer_vi: Không có gì đâu! Cần gì cứ gọi Chú Rồng nhé.
+    answer_en: You're welcome! Call me anytime.
+  - id: bot_identity
+    kind: faq
+    description: Hỏi trợ lý là ai, làm được gì
+    answer_vi: Mình là Chú Rồng, trợ lý nấu ăn của Bếp Việt. Mình gợi ý món, tra nguyên liệu, thời gian nấu và hướng dẫn từng bước theo công thức trên Bếp Việt.
+    answer_en: I'm the Bếp Việt kitchen assistant. I suggest dishes, look up ingredients and cooking times, and guide you step by step.
+  - id: contact_support
+    kind: faq
+    description: Liên hệ hỗ trợ
+    answer_vi: Bạn có thể gửi góp ý hoặc yêu cầu hỗ trợ ở trang Liên hệ của Bếp Việt; đội ngũ sẽ phản hồi qua email.
+    answer_en: You can reach Bếp Việt support from the Contact page; the team replies by email.
+    followups: ["Mở trang Liên hệ"]
+  - id: account_password
+    kind: faq
+    description: Quên mật khẩu, đổi mật khẩu
+    answer_vi: Bấm "Quên mật khẩu" ở trang Đăng nhập, nhập email đã đăng ký; Bếp Việt sẽ gửi liên kết đặt lại mật khẩu.
+    answer_en: Click "Forgot password" on the sign-in page and enter your email; we'll send a reset link.
+  - id: recipe_ingredients
+    kind: action
+    description: Hỏi nguyên liệu của một món (có thể kèm số người)
+  - id: recipe_time
+    kind: action
+    description: Hỏi món nấu mất bao lâu
+  - id: recipe_steps
+    kind: action
+    description: Hỏi cách nấu / các bước
+  - id: dish_suggest
+    kind: action
+    description: Nhờ gợi ý món ăn (theo bữa, nguyên liệu có sẵn, thời gian)
+  - id: recipe_calories
+    kind: action
+    description: Hỏi calo / dinh dưỡng của món
+  - id: safety_medical
+    kind: safety
+    description: Hỏi chế độ ăn chữa bệnh, thuốc
+    answer_vi: Mình không thể tư vấn y tế. Với bệnh lý hoặc chế độ ăn điều trị, bạn nên hỏi bác sĩ hoặc chuyên gia dinh dưỡng nhé.
+    answer_en: I can't give medical advice. For health conditions or therapeutic diets, please consult a doctor or dietitian.
+  - id: open_question
+    kind: handoff_llm
+    description: Câu mở, ngoài phạm vi trả lời có sẵn

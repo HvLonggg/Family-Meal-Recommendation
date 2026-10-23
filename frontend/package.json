@@ -6,6 +6,7 @@
   "packageManager": "pnpm@11.28.0",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/sync-curated-recipes.mjs && node scripts/build-recipe-search-index.mjs && node scripts/verify-recipe-images.mjs",
     "build": "tsc -b && vite build",
     "lint": "eslint . --max-warnings=0",
     "format": "prettier --write .",

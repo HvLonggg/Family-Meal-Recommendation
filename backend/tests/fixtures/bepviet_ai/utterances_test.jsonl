@@ -1,0 +1,48 @@
+{"text": "chào rồng con", "intent": "greeting", "lang": "vi"}
+{"text": "hello bạn", "intent": "greeting", "lang": "en"}
+{"text": "xin chào chú rồng", "intent": "greeting", "lang": "vi"}
+{"text": "hi", "intent": "greeting", "lang": "en"}
+{"text": "cảm ơn bạn nhiều", "intent": "thanks", "lang": "vi"}
+{"text": "thank u", "intent": "thanks", "lang": "en"}
+{"text": "cam on nha", "intent": "thanks", "lang": "vi"}
+{"text": "tks bạn", "intent": "thanks", "lang": "vi"}
+{"text": "bạn giúp được gì cho mình", "intent": "bot_identity", "lang": "vi"}
+{"text": "rồng là ai thế", "intent": "bot_identity", "lang": "vi"}
+{"text": "what are you", "intent": "bot_identity", "lang": "en"}
+{"text": "ban co the lam gi", "intent": "bot_identity", "lang": "en"}
+{"text": "mình muốn liên hệ bếp việt", "intent": "contact_support", "lang": "vi"}
+{"text": "email liên hệ", "intent": "contact_support", "lang": "vi"}
+{"text": "góp ý cho trang web ở đâu", "intent": "contact_support", "lang": "vi"}
+{"text": "lien he the nao", "intent": "contact_support", "lang": "en"}
+{"text": "mình quên mật khẩu rồi", "intent": "account_password", "lang": "vi"}
+{"text": "dat lai mat khau", "intent": "account_password", "lang": "vi"}
+{"text": "đăng nhập không được", "intent": "account_password", "lang": "vi"}
+{"text": "i forgot password", "intent": "account_password", "lang": "en"}
+{"text": "nguyên liệu gà luộc", "intent": "recipe_ingredients", "lang": "vi"}
+{"text": "canh chua tom can nhung gi", "intent": "recipe_ingredients", "lang": "vi"}
+{"text": "nguyên liệu phở gà cho 3 người", "intent": "recipe_ingredients", "lang": "vi"}
+{"text": "trứng chiên hành gồm nguyên liệu gì", "intent": "recipe_ingredients", "lang": "vi"}
+{"text": "canh chua cá nấu mất bao lâu", "intent": "recipe_time", "lang": "vi"}
+{"text": "pho ga nau bao lau", "intent": "recipe_time", "lang": "vi"}
+{"text": "thịt rang cháy cạnh nấu bao lâu", "intent": "recipe_time", "lang": "vi"}
+{"text": "how long does ga luoc take", "intent": "recipe_time", "lang": "en"}
+{"text": "cách làm canh chua tôm", "intent": "recipe_steps", "lang": "vi"}
+{"text": "huong dan nau pho bo", "intent": "recipe_steps", "lang": "vi"}
+{"text": "cách nấu gà luộc ngon", "intent": "recipe_steps", "lang": "vi"}
+{"text": "làm trứng chiên hành như thế nào", "intent": "recipe_steps", "lang": "vi"}
+{"text": "tối nay nấu gì", "intent": "dish_suggest", "lang": "vi"}
+{"text": "goi y mon an sang", "intent": "dish_suggest", "lang": "vi"}
+{"text": "nhà có tôm nấu gì", "intent": "dish_suggest", "lang": "vi"}
+{"text": "bữa trưa ăn gì ngon", "intent": "dish_suggest", "lang": "vi"}
+{"text": "gà luộc bao nhiêu calo", "intent": "recipe_calories", "lang": "vi"}
+{"text": "pho ga bao nhieu calo", "intent": "recipe_calories", "lang": "vi"}
+{"text": "canh chua cá nhiều calo không", "intent": "recipe_calories", "lang": "vi"}
+{"text": "calories of trung chien hanh", "intent": "recipe_calories", "lang": "en"}
+{"text": "bị tiểu đường ăn phở được không", "intent": "safety_medical", "lang": "vi"}
+{"text": "người bị gout nên ăn gì", "intent": "safety_medical", "lang": "vi"}
+{"text": "bà bầu nên kiêng gì", "intent": "safety_medical", "lang": "vi"}
+{"text": "dau da day an gi", "intent": "safety_medical", "lang": "vi"}
+{"text": "kể mình nghe về lịch sử bánh mì", "intent": "open_question", "lang": "vi"}
+{"text": "làm thơ tặng mẹ", "intent": "open_question", "lang": "vi"}
+{"text": "hôm nay trời mưa không", "intent": "open_question", "lang": "vi"}
+{"text": "ai là tổng thống mỹ", "intent": "open_question", "lang": "vi"}

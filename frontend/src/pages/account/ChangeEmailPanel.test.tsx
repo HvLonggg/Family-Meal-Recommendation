@@ -50,12 +50,12 @@ describe('ChangeEmailPanel', () => {
       target: { value: 'moi@example.com' },
     });
     fireEvent.change(screen.getByLabelText('Mật khẩu hiện tại'), {
-      target: { value: 'BepViet2026' },
+      target: { value: 'Test-Only-No-Login-2026!' },
     });
     fireEvent.click(screen.getByRole('button', { name: 'Gửi mã xác nhận' }));
 
     await waitFor(() =>
-      expect(requestEmailChange).toHaveBeenCalledWith('moi@example.com', 'BepViet2026'),
+      expect(requestEmailChange).toHaveBeenCalledWith('moi@example.com', 'Test-Only-No-Login-2026!'),
     );
     expect(await screen.findByText('moi@example.com')).toBeTruthy();
     expect(screen.getByRole('button', { name: /Gửi lại mã sau/ })).toHaveProperty('disabled', true);

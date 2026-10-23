@@ -1,7 +1,7 @@
 import { keepPreviousData, useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { useState, type FormEvent } from 'react';
+import { useRef, useState, type FormEvent } from 'react';
 
-import { AppIcon } from '@/components/common/AppIcon';
+import { AppIcon, type IconName } from '@/components/common/AppIcon';
 import { Button } from '@/components/ui/Button';
 import {
   EmptyState,
@@ -15,6 +15,7 @@ import {
   listAdminRecipes,
   listAdminSupport,
   listMealSuggestionHistory,
+  listMealSuggestionRecipients,
   listSupportRecipients,
   lookupMealRecipient,
   markSupportTicketViewed,
@@ -39,21 +40,44 @@ import { dishImage } from '@/data/dishImages';
 import { errorMessage } from '@/lib/errors';
 
 const LIMIT = 10;
+const RECIPE_PAGE_SIZE = 12;
+const RECIPIENT_PAGE_SIZE = 5;
+const HISTORY_PAGE_SIZE = 6;
+const MEAL_TYPES: MealType[] = ['breakfast', 'lunch', 'dinner'];
+const mealLabels: Record<MealType, string> = {
+  breakfast: 'Bữa sáng',
+  lunch: 'Bữa trưa',
+  dinner: 'Bữa tối',
+};
+const mealIcons: Record<MealType, IconName> = {
+  breakfast: 'sparkles',
+  lunch: 'clock',
+  dinner: 'moon',
+};
 const statuses: SupportStatus[] = ['open', 'in_progress', 'resolved'];
 const tone = (status: SupportStatus) =>
   status === 'resolved' ? 'success' : status === 'in_progress' ? 'info' : 'warning';
 const defaultSubject = (meal: MealType) =>
-  meal === 'dinner' ? 'Gợi ý bữa tối hôm nay từ Bếp Việt' : 'Gợi ý bữa trưa hôm nay từ Bếp Việt';
+  ({
+    breakfast: 'Gợi ý bữa sáng hôm nay từ Bếp Việt',
+    lunch: 'Gợi ý bữa trưa hôm nay từ Bếp Việt',
+    dinner: 'Gợi ý bữa tối hôm nay từ Bếp Việt',
+  })[meal];
 const defaultIntro = (meal: MealType) =>
-  meal === 'dinner'
-    ? 'Bếp Việt trân trọng gửi bạn một vài gợi ý cho bữa tối hôm nay. Các món được đề xuất để bạn dễ kết hợp thành bữa cơm ngon miệng tại nhà.'
-    : 'Bếp Việt trân trọng gửi bạn một vài gợi ý cho bữa trưa hôm nay. Các món được đề xuất để bạn có bữa ăn đủ vị và thuận tiện chuẩn bị.';
+  ({
+    breakfast:
+      'Bếp Việt trân trọng gửi bạn một vài gợi ý cho bữa sáng hôm nay. Các món nhanh gọn, đủ chất để bạn bắt đầu ngày mới thật năng lượng.',
+    lunch:
+      'Bếp Việt trân trọng gửi bạn một vài gợi ý cho bữa trưa hôm nay. Các món được đề xuất để bạn có bữa ăn đủ vị và thuận tiện chuẩn bị.',
+    dinner:
+      'Bếp Việt trân trọng gửi bạn một vài gợi ý cho bữa tối hôm nay. Các món được đề xuất để bạn dễ kết hợp thành bữa cơm ngon miệng tại nhà.',
+  })[meal];
 // Email đã tự ký “Thân mến, Đội ngũ Bếp Việt” ở cuối nên lời kết không lặp lại chữ ký.
 const defaultClosing = 'Chúc bạn và gia đình có bữa ăn thật ngon miệng!';
 
 interface ComposerRecipient {
   email: string;
-/** Tên tài khoản hoặc tên nhập thủ công. */
+  /** Tên tài khoản hoặc tên nhập thủ công. */
   name: string;
   source: MealRecipientSource | 'checking';
 }
@@ -370,6 +394,51 @@ function TicketCard({ ticket }: { ticket: AdminSupportTicket }) {
   );
 }
 
+type PickedRecipe = Pick<AdminRecipe, 'slug' | 'name' | 'image_path'>;
+
+/** Phân trang gọn bằng icon: ‹ 2/5 › */
+function MiniPager({
+  label,
+  onChange,
+  page,
+  pages,
+}: {
+  label: string;
+  onChange: (page: number) => void;
+  page: number;
+  pages: number;
+}) {
+  const { t } = useI18n();
+  if (pages <= 1) return null;
+  return (
+    <nav aria-label={label} className="mini-pager">
+      <button
+        aria-label={t('Trang trước')}
+        className="mini-pager__button is-prev"
+        disabled={page <= 1}
+        onClick={() => onChange(page - 1)}
+        type="button"
+      >
+        <AppIcon name="arrow" size={14} />
+      </button>
+      <span aria-live="polite">
+        <strong>{page}</strong>/{pages}
+      </span>
+      <button
+        aria-label={t('Trang sau')}
+        className="mini-pager__button"
+        disabled={page >= pages}
+        onClick={() => onChange(page + 1)}
+        type="button"
+      >
+        <AppIcon name="arrow" size={14} />
+      </button>
+    </nav>
+  );
+}
+
+const pageCount = (total: number, size: number) => Math.max(1, Math.ceil(total / size));
+
 function MealSuggestionComposer() {
   const { formatDate, t } = useI18n();
   const queryClient = useQueryClient();
@@ -378,15 +447,17 @@ function MealSuggestionComposer() {
   const [selectedRecipients, setSelectedRecipients] = useState<ComposerRecipient[]>([]);
   const [recipientSearch, setRecipientSearch] = useState('');
   const [recipeSearch, setRecipeSearch] = useState('');
-  const [selectedRecipes, setSelectedRecipes] = useState<AdminRecipe[]>([]);
+  const [recipeOffset, setRecipeOffset] = useState(0);
+  const [contactPage, setContactPage] = useState(1);
+  const [receivedSearch, setReceivedSearch] = useState('');
+  const [receivedPage, setReceivedPage] = useState(1);
+  const [historyPage, setHistoryPage] = useState(1);
+  const composerRef = useRef<HTMLFormElement>(null);
+  const [selectedRecipes, setSelectedRecipes] = useState<PickedRecipe[]>([]);
   const [subject, setSubject] = useState(defaultSubject('dinner'));
   const [intro, setIntro] = useState(defaultIntro('dinner'));
   const [closing, setClosing] = useState(defaultClosing);
-  const [sendResult, setSendResult] = useState<{
-    sent: number;
-    failed: number;
-    data: MealSuggestionEmail[];
-  } | null>(null);
+  const [queuedCount, setQueuedCount] = useState<number | null>(null);
   const recipients = useQuery({
     queryKey: ['admin', 'support-recipients', recipientSearch],
     queryFn: ({ signal }) => listSupportRecipients(recipientSearch, signal),
@@ -396,8 +467,8 @@ function MealSuggestionComposer() {
       q: recipeSearch,
       status: 'published',
       sort: 'catalog',
-      limit: 12,
-      offset: 0,
+      limit: RECIPE_PAGE_SIZE,
+      offset: recipeOffset,
     }),
     queryFn: ({ signal }) =>
       listAdminRecipes(
@@ -405,24 +476,59 @@ function MealSuggestionComposer() {
           q: recipeSearch || undefined,
           status: 'published',
           sort: 'catalog',
-          limit: 12,
-          offset: 0,
+          limit: RECIPE_PAGE_SIZE,
+          offset: recipeOffset,
         },
         signal,
       ),
     placeholderData: keepPreviousData,
   });
+  const received = useQuery({
+    queryKey: adminKeys.list('meal-suggestion-recipients', {
+      q: receivedSearch,
+      page: receivedPage,
+    }),
+    queryFn: ({ signal }) =>
+      listMealSuggestionRecipients(
+        {
+          q: receivedSearch || undefined,
+          limit: RECIPIENT_PAGE_SIZE,
+          offset: (receivedPage - 1) * RECIPIENT_PAGE_SIZE,
+        },
+        signal,
+      ),
+    placeholderData: keepPreviousData,
+  });
+  const historyOffset = (historyPage - 1) * HISTORY_PAGE_SIZE;
   const history = useQuery({
-    queryKey: adminKeys.list('meal-suggestion-history', { limit: 8, offset: 0 }),
-    queryFn: ({ signal }) => listMealSuggestionHistory({ limit: 8, offset: 0 }, signal),
+    queryKey: adminKeys.list('meal-suggestion-history', {
+      limit: HISTORY_PAGE_SIZE,
+      offset: historyOffset,
+    }),
+    queryFn: ({ signal }) =>
+      listMealSuggestionHistory({ limit: HISTORY_PAGE_SIZE, offset: historyOffset }, signal),
+    placeholderData: keepPreviousData,
+    // Email gửi ở nền: tự làm mới khi còn email đang gửi.
+    refetchInterval: (query) =>
+      query.state.data?.data.some((item) => item.status === 'sending') ? 1500 : false,
   });
   const send = useMutation({
     mutationFn: sendMealSuggestion,
     onSuccess: async (result) => {
-      setSendResult(result);
+      setQueuedCount(result.queued);
+      setHistoryPage(1);
       await queryClient.invalidateQueries({ queryKey: ['admin', 'meal-suggestion-history'] });
+      await queryClient.invalidateQueries({ queryKey: ['admin', 'meal-suggestion-recipients'] });
     },
   });
+  const sendingCount = history.data?.data.filter((item) => item.status === 'sending').length ?? 0;
+  const contacts = recipients.data?.data ?? [];
+  const contactPages = pageCount(contacts.length, RECIPIENT_PAGE_SIZE);
+  const currentContactPage = Math.min(contactPage, contactPages);
+  const visibleContacts = contacts.slice(
+    (currentContactPage - 1) * RECIPIENT_PAGE_SIZE,
+    currentContactPage * RECIPIENT_PAGE_SIZE,
+  );
   const selectedEmails = selectedRecipients.map((recipient) => recipient.email);
   const canAddRecipient = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.trim());
 
@@ -442,8 +548,8 @@ function MealSuggestionComposer() {
       ...current,
       { email: normalized, name: knownName, source: 'checking' },
     ]);
-    setSendResult(null);
-// Dùng tên hệ thống nếu email đã đăng ký.
+    setQueuedCount(null);
+    // Dùng tên hệ thống nếu email đã đăng ký.
     queryClient
       .fetchQuery({
         queryKey: ['admin', 'meal-recipient', normalized],
@@ -464,13 +570,13 @@ function MealSuggestionComposer() {
   };
   const removeRecipient = (email: string) => {
     setSelectedRecipients((current) => current.filter((item) => item.email !== email));
-    setSendResult(null);
+    setQueuedCount(null);
   };
   const toggleRecipient = (recipient: SupportRecipient) => {
     if (selectedEmails.includes(recipient.email)) removeRecipient(recipient.email);
     else addRecipient(recipient.email, recipient.name);
   };
-  const toggleRecipe = (recipe: AdminRecipe) => {
+  const toggleRecipe = (recipe: PickedRecipe) => {
     setSelectedRecipes((current) =>
       current.some((item) => item.slug === recipe.slug)
         ? current.filter((item) => item.slug !== recipe.slug)
@@ -478,13 +584,29 @@ function MealSuggestionComposer() {
           ? [...current, recipe]
           : current,
     );
-    setSendResult(null);
+    setQueuedCount(null);
   };
   const changeMealType = (value: MealType) => {
     setMealType(value);
     setSubject(defaultSubject(value));
     setIntro(defaultIntro(value));
-    setSendResult(null);
+    setQueuedCount(null);
+  };
+  /** Gửi lại: nạp người nhận và nội dung cũ vào biểu mẫu để chỉnh rồi gửi tiếp. */
+  const resendFrom = (item: MealSuggestionEmail) => {
+    setMealType(item.meal_type);
+    setSubject(item.subject);
+    setIntro(item.intro_message);
+    setClosing(item.closing_message);
+    setSelectedRecipes(
+      item.recipe_data
+        .slice(0, 4)
+        .map(({ image_path, name, slug }) => ({ image_path, name, slug })),
+    );
+    setSelectedRecipients([]);
+    setQueuedCount(null);
+    addRecipient(item.recipient_email, item.recipient_name === 'bạn' ? '' : item.recipient_name);
+    composerRef.current?.scrollIntoView?.({ behavior: 'smooth', block: 'start' });
   };
   const submit = (event: FormEvent) => {
     event.preventDefault();
@@ -506,7 +628,7 @@ function MealSuggestionComposer() {
 
   return (
     <div className="admin-support__composer-layout">
-      <form className="admin-support__composer" onSubmit={submit}>
+      <form className="admin-support__composer" onSubmit={submit} ref={composerRef}>
         <div className="admin-support__section-head">
           <div>
             <span className="admin-support__eyebrow">{t('EMAIL CÁ NHÂN HÓA')}</span>
@@ -519,7 +641,7 @@ function MealSuggestionComposer() {
 
         <fieldset className="admin-support__meal-toggle">
           <legend>{t('Dịp gợi ý')}</legend>
-          {(['lunch', 'dinner'] as const).map((meal) => (
+          {MEAL_TYPES.map((meal) => (
             <button
               aria-pressed={mealType === meal}
               className={mealType === meal ? 'is-active' : ''}
@@ -527,8 +649,8 @@ function MealSuggestionComposer() {
               onClick={() => changeMealType(meal)}
               type="button"
             >
-              <AppIcon name={meal === 'lunch' ? 'clock' : 'sparkles'} size={18} />
-              {meal === 'lunch' ? t('Bữa trưa') : t('Bữa tối')}
+              <AppIcon name={mealIcons[meal]} size={18} />
+              {t(mealLabels[meal])}
             </button>
           ))}
         </fieldset>
@@ -560,7 +682,10 @@ function MealSuggestionComposer() {
           <label className="ws-field">
             <span>{t('Hoặc chọn từ người đã liên hệ')}</span>
             <input
-              onChange={(event) => setRecipientSearch(event.target.value)}
+              onChange={(event) => {
+                setRecipientSearch(event.target.value);
+                setContactPage(1);
+              }}
               placeholder={t('Tìm theo tên hoặc email…')}
               value={recipientSearch}
             />
@@ -621,7 +746,7 @@ function MealSuggestionComposer() {
           )}
           <div className="admin-support__recipient-list">
             {recipients.isLoading ? <span>{t('Đang tải danh sách…')}</span> : null}
-            {recipients.data?.data.map((recipient) => {
+            {visibleContacts.map((recipient) => {
               const checked = selectedEmails.includes(recipient.email);
               return (
                 <label className={checked ? 'is-selected' : ''} key={recipient.email}>
@@ -639,10 +764,70 @@ function MealSuggestionComposer() {
                 </label>
               );
             })}
-            {!recipients.isLoading && !recipients.data?.data.length ? (
+            {!recipients.isLoading && !contacts.length ? (
               <span className="admin-support__hint">
                 {t('Chưa có email liên hệ khớp với tìm kiếm.')}
               </span>
+            ) : null}
+          </div>
+          <MiniPager
+            label={t('Phân trang người đã liên hệ')}
+            onChange={setContactPage}
+            page={currentContactPage}
+            pages={contactPages}
+          />
+
+          <div className="admin-support__received-head">
+            <span>
+              <AppIcon name="history" size={15} /> {t('Đã nhận gợi ý trước đây')}
+            </span>
+            <MiniPager
+              label={t('Phân trang người đã nhận gợi ý')}
+              onChange={setReceivedPage}
+              page={receivedPage}
+              pages={pageCount(received.data?.total ?? 0, RECIPIENT_PAGE_SIZE)}
+            />
+          </div>
+          <input
+            aria-label={t('Tìm người đã nhận gợi ý')}
+            className="admin-support__received-search"
+            onChange={(event) => {
+              setReceivedSearch(event.target.value);
+              setReceivedPage(1);
+            }}
+            placeholder={t('Tìm theo tên hoặc email…')}
+            value={receivedSearch}
+          />
+          <div className="admin-support__recipient-list">
+            {received.data?.data.map((recipient) => {
+              const checked = selectedEmails.includes(recipient.email);
+              return (
+                <label className={checked ? 'is-selected' : ''} key={recipient.email}>
+                  <input
+                    checked={checked}
+                    disabled={!checked && selectedRecipients.length >= 10}
+                    onChange={() =>
+                      checked
+                        ? removeRecipient(recipient.email)
+                        : addRecipient(recipient.email, recipient.name)
+                    }
+                    type="checkbox"
+                  />
+                  <span>
+                    <strong>{recipient.name}</strong>
+                    <small>{recipient.email}</small>
+                  </span>
+                  <small className="admin-support__received-meta">
+                    <AppIcon name="mail" size={12} /> {recipient.sent_count}
+                    {recipient.last_sent_at
+                      ? ` · ${formatDate(recipient.last_sent_at, { dateStyle: 'short' })}`
+                      : ''}
+                  </small>
+                </label>
+              );
+            })}
+            {!received.isLoading && !received.data?.data.length ? (
+              <span className="admin-support__hint">{t('Chưa có ai nhận gợi ý.')}</span>
             ) : null}
           </div>
         </section>
@@ -655,7 +840,10 @@ function MealSuggestionComposer() {
           <label className="ws-field">
             <span>{t('Tìm trong danh sách món đang hiển thị')}</span>
             <input
-              onChange={(event) => setRecipeSearch(event.target.value)}
+              onChange={(event) => {
+                setRecipeSearch(event.target.value);
+                setRecipeOffset(0);
+              }}
               placeholder={t('Tên món hoặc nguyên liệu…')}
               value={recipeSearch}
             />
@@ -700,6 +888,12 @@ function MealSuggestionComposer() {
               <span className="admin-support__hint">{t('Không tìm thấy món phù hợp.')}</span>
             ) : null}
           </div>
+          <MiniPager
+            label={t('Phân trang danh sách món')}
+            onChange={(page) => setRecipeOffset((page - 1) * RECIPE_PAGE_SIZE)}
+            page={Math.floor(recipeOffset / RECIPE_PAGE_SIZE) + 1}
+            pages={pageCount(recipes.data?.total ?? 0, RECIPE_PAGE_SIZE)}
+          />
           {selectedRecipes.length ? (
             <div className="admin-support__selected-recipes">
               <strong>{t('Món sẽ xuất hiện trong email')}</strong>
@@ -771,15 +965,15 @@ function MealSuggestionComposer() {
         </section>
 
         {send.isError ? <Notice tone="danger">{errorMessage(send.error, t)}</Notice> : null}
-        {sendResult ? (
-          <Notice tone={sendResult.failed ? 'warning' : 'success'}>
-            {t('Đã gửi {sent} email; {failed} email chưa gửi được.', {
-              sent: sendResult.sent,
-              failed: sendResult.failed,
-            })}
-            {sendResult.data.some((item) => item.status === 'failed')
-              ? ` ${t('Hãy kiểm tra trạng thái gửi trong lịch sử bên dưới.')}`
-              : ''}
+        {queuedCount ? (
+          <Notice tone={sendingCount ? 'info' : 'success'}>
+            {sendingCount
+              ? t('Đang gửi {count} email ở nền, trạng thái cập nhật trong lịch sử.', {
+                  count: sendingCount,
+                })
+              : t('Đã xử lý xong {count} email, xem kết quả trong lịch sử bên cạnh.', {
+                  count: queuedCount,
+                })}
           </Notice>
         ) : null}
         <div className="admin-support__submit-row">
@@ -805,6 +999,12 @@ function MealSuggestionComposer() {
             <span className="admin-support__eyebrow">{t('THEO DÕI GỬI')}</span>
             <h3>{t('Lịch sử email')}</h3>
           </div>
+          <MiniPager
+            label={t('Phân trang lịch sử email')}
+            onChange={setHistoryPage}
+            page={historyPage}
+            pages={pageCount(history.data?.total ?? 0, HISTORY_PAGE_SIZE)}
+          />
         </div>
         {history.isLoading ? (
           <LoadingBlock label={t('Đang tải lịch sử…')} />
@@ -815,7 +1015,7 @@ function MealSuggestionComposer() {
         ) : (
           <div className="admin-support__history-list">
             {history.data.data.map((item) => (
-              <SuggestionHistoryItem item={item} key={item.id} />
+              <SuggestionHistoryItem item={item} key={item.id} onResend={resendFrom} />
             ))}
           </div>
         )}
@@ -824,11 +1024,29 @@ function MealSuggestionComposer() {
   );
 }
 
-function SuggestionHistoryItem({ item }: { item: MealSuggestionEmail }) {
+function SuggestionHistoryItem({
+  item,
+  onResend,
+}: {
+  item: MealSuggestionEmail;
+  onResend: (item: MealSuggestionEmail) => void;
+}) {
   const { formatDate, t } = useI18n();
+  const when = item.sent_at ?? item.created_at;
   return (
-    <article className="admin-support__history-item">
-      <div className="admin-support__history-top">
+    <article className={`admin-support__history-item is-${item.status}`}>
+      <header className="admin-support__history-when">
+        <time dateTime={when}>
+          <strong>{formatDate(when, { timeStyle: 'short' })}</strong>
+          <span>
+            {formatDate(when, {
+              weekday: 'short',
+              day: '2-digit',
+              month: '2-digit',
+              year: 'numeric',
+            })}
+          </span>
+        </time>
         <StatusBadge
           tone={item.status === 'sent' ? 'success' : item.status === 'failed' ? 'warning' : 'info'}
         >
@@ -838,11 +1056,17 @@ function SuggestionHistoryItem({ item }: { item: MealSuggestionEmail }) {
               ? t('Thất bại')
               : t('Đang gửi')}
         </StatusBadge>
-        <span>{item.meal_type === 'dinner' ? t('Bữa tối') : t('Bữa trưa')}</span>
+      </header>
+      <div className="admin-support__history-who">
+        <strong>{item.recipient_name}</strong>
+        <a href={`mailto:${item.recipient_email}`}>{item.recipient_email}</a>
       </div>
-      <strong>{item.recipient_name}</strong>
-      <a href={`mailto:${item.recipient_email}`}>{item.recipient_email}</a>
-      <p>{item.subject}</p>
+      <p className="admin-support__history-subject">
+        <span className="admin-support__meal-chip">
+          <AppIcon name={mealIcons[item.meal_type]} size={12} /> {t(mealLabels[item.meal_type])}
+        </span>
+        {item.subject}
+      </p>
       <div className="admin-support__history-recipes">
         {item.recipe_data.slice(0, 4).map((recipe) => (
           <img
@@ -858,9 +1082,14 @@ function SuggestionHistoryItem({ item }: { item: MealSuggestionEmail }) {
       {item.error_message ? (
         <small className="admin-support__error-text">{t(item.error_message)}</small>
       ) : null}
-      <time dateTime={item.sent_at ?? item.created_at}>
-        {formatDate(item.sent_at ?? item.created_at, { dateStyle: 'medium', timeStyle: 'short' })}
-      </time>
+      <button
+        className="admin-support__resend"
+        disabled={item.status === 'sending'}
+        onClick={() => onResend(item)}
+        type="button"
+      >
+        <AppIcon name="refresh" size={14} /> {t('Gửi lại')}
+      </button>
     </article>
   );
 }

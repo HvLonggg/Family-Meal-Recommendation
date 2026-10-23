@@ -1,0 +1,1350 @@
+{
+  "batch": 51,
+  "description": "Năm món dân dã vùng cao Tây Bắc và Bắc Trung Bộ, Bếp Việt biên tập theo nguồn địa phương; ảnh món tạo mới với nền trong suốt.",
+  "recipes": [
+    {
+      "id": "BV581",
+      "slug": "nom-rau-don-lai-chau",
+      "name": "Nộm rau dớn Lai Châu",
+      "aliases": [
+        "Nộm rau dớn người Thái",
+        "Nộm pắc cút"
+      ],
+      "region": [
+        "Bắc"
+      ],
+      "province": [
+        "Lai Châu"
+      ],
+      "category": "Món rau",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "món rau"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một đĩa rau nộm cho bốn người, dùng với cơm hoặc món nướng.",
+      "prep_time": 15,
+      "cook_time": 20,
+      "passive_time": 10,
+      "total_time": 45,
+      "description": "Ngọn rau dớn non được làm tái, đồ chín rồi trộn với gừng, tỏi, rau thơm, chanh và lạc rang. Bếp Việt biên tập thành món rau thanh vị, giữ cách làm bằng hơi nước đặc trưng của người Thái Lai Châu.",
+      "finished_dish": "Rau xanh mềm giòn, vị bùi tự nhiên, quyện chua nhẹ của chanh, cay thơm của gừng tỏi và lạc rang.",
+      "serving": "Trộn lạc ngay trước khi dọn để giữ độ bùi giòn. Dùng trong bữa cơm với cơm trắng, cá nướng hoặc món mặn; ăn ngay sau khi trộn.",
+      "tips": [
+        "Chọn rau dớn non từ nguồn thực phẩm đáng tin cậy; nhặt bỏ cọng già, rửa kỹ và để ráo.",
+        "Đồ rau bằng hơi nước thay vì luộc để giữ màu và độ giòn; không nén rau quá chặt trong xửng.",
+        "Nêm chanh, muối và ớt từ từ; món nên chua dịu, không át vị rau."
+      ],
+      "dish_type": [
+        "Món nộm rau rừng",
+        "Món rau người Thái"
+      ],
+      "main_ingredient": [
+        "rau dớn non",
+        "lạc rang",
+        "gừng"
+      ],
+      "cooking_method": [
+        "đồ hơi nước",
+        "trộn nộm"
+      ],
+      "search_terms": [
+        "nộm rau dớn",
+        "nộm pắc cút",
+        "rau dớn Lai Châu",
+        "cách làm nộm rau dớn",
+        "rau rừng người Thái"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Đĩa nộm rau dớn Lai Châu xanh non trộn rau thơm, lạc rang và ớt trên đĩa gốm; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 45 phút, gồm 10 phút làm rau tái và 20 phút đồ.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Cá nướng",
+        "Thịt băm gói lá nướng"
+      ],
+      "recipe_family": "thai_lai_chau_fern_salad",
+      "keywords": [
+        "rau dớn",
+        "pắc cút",
+        "nộm rau rừng",
+        "Lai Châu",
+        "món người Thái"
+      ],
+      "tags": [
+        "ẩm thực Thái",
+        "Lai Châu",
+        "món rau",
+        "món dân dã",
+        "bữa cơm gia đình"
+      ],
+      "ingredients": [
+        {
+          "name": "Rau dớn non",
+          "quantity": 500,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Chọn ngọn non, sạch từ nguồn bán thực phẩm; bỏ cọng già.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Lạc rang",
+          "quantity": 35,
+          "unit": "g",
+          "role": "topping",
+          "notes": "Giã dập, giữ lại một ít hạt to để rắc mặt.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Rau mùi",
+          "quantity": 12,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Rau húng",
+          "quantity": 10,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Gừng",
+          "quantity": 10,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Gọt vỏ, băm hoặc giã nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 10,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Ớt tươi",
+          "quantity": 4,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhỏ; giảm hoặc bỏ nếu không ăn cay.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 7
+        },
+        {
+          "name": "Nước cốt chanh",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Vắt và lọc hạt; điều chỉnh theo độ chua.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        },
+        {
+          "name": "Muối",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm từng ít một.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 9
+        },
+        {
+          "name": "Đường",
+          "quantity": 4,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Tùy chọn, chỉ thêm để làm dịu vị chua.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 10
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Nhặt lấy ngọn rau non, bỏ cọng già; rửa kỹ nhiều lần rồi để ráo. Hong rau nơi thoáng hoặc phơi nắng nhẹ khoảng 10 phút cho rau hơi tái."
+        },
+        {
+          "step": 2,
+          "instruction": "Băm nhỏ gừng, tỏi, ớt; thái rau mùi và rau húng. Rang lạc nếu chưa rang, giã dập."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Xếp rau vào xửng, đồ bằng hơi nước khoảng 20 phút đến khi rau chín mềm nhưng còn giữ màu xanh. Lấy ra để nguội bớt."
+        },
+        {
+          "step": 2,
+          "instruction": "Trộn gừng, tỏi, ớt, nước cốt chanh, muối và đường. Nếm vị chua dịu, mặn nhẹ."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho rau dớn còn ấm vào âu, thêm rau thơm và nước trộn, đảo nhẹ. Để khoảng 5 phút cho thấm rồi rắc lạc rang trước khi dọn."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://dulich.laichau.gov.vn/vi/blog/details/nom-rau-don-250",
+          "publisher": "Cổng thông tin Du lịch Lai Châu",
+          "title": "Nộm rau dớn",
+          "use": "Đối chiếu đặc tính rau dớn, cách chọn ngọn non, làm tái, đồ khoảng 20 phút và trộn với rau thơm, ớt, gừng, tỏi, chanh, lạc.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "250 g rau dớn và khoảng 18 g lạc rang",
+            "instruction": "Đồ thành lớp mỏng để rau chín đều; nêm chanh và muối sau khi rau nguội bớt."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "750 g rau dớn và khoảng 52 g lạc rang",
+            "instruction": "Chia rau thành hai lượt đồ nếu xửng nhỏ; trộn thành mẻ sát giờ ăn."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/nom-rau-don-lai-chau-960.webp",
+          "page_url": "https://dulich.laichau.gov.vn/vi/blog/details/nom-rau-don-250",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để biên tập đặc điểm món và cách nấu.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa nộm rau dớn Lai Châu xanh non trộn rau thơm, lạc rang và ớt trên đĩa gốm; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh ImageGen mới, nền trong suốt; master PNG 1536 × 1024, bản xuất 3840 × 2160. Công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt chuẩn hóa khẩu phần gia đình từ cách làm Cổng Du lịch Lai Châu ghi nhận; giữ kỹ thuật đồ rau và nhóm gia vị truyền thống.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để xác nhận thời gian đồ phù hợp với độ non và loại rau dớn bán tại địa phương.",
+          "Nhờ người am hiểu ẩm thực Thái Lai Châu rà soát lượng chanh, lạc và cách nêm."
+        ]
+      }
+    },
+    {
+      "id": "BV582",
+      "slug": "canh-uoi-nguoi-thai-thanh-hoa",
+      "name": "Canh uôi người Thái Thanh Hóa",
+      "aliases": [
+        "Kéng kháu bứa",
+        "Canh gạo cá măng kiểu Thái xứ Thanh"
+      ],
+      "region": [
+        "Trung"
+      ],
+      "province": [
+        "Thanh Hóa"
+      ],
+      "category": "Món canh",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "món canh"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Một nồi canh sánh nhẹ cho bốn người, dùng cùng cơm trắng.",
+      "prep_time": 20,
+      "cook_time": 35,
+      "passive_time": 120,
+      "total_time": 175,
+      "description": "Canh uôi của người Thái xứ Thanh nấu gạo tẻ cùng cá suối nhỏ và măng tươi, tạo độ sánh vừa giữa canh và cháo. Bếp Việt biên tập quy trình theo nguyên liệu gia đình, giữ vị ngọt của cá và độ giòn của măng.",
+      "finished_dish": "Nồi canh sánh nhẹ, hạt gạo quyện trong nước dùng, cá nhỏ chín nguyên con và măng mềm giòn; thơm thoảng rau gia vị, có thể rắc mắc khén.",
+      "serving": "Múc canh nóng ra bát, chia đều cá và măng. Dùng cùng cơm trắng; mắc khén rang giã nhỏ có thể dọn riêng để mỗi người tự thêm.",
+      "tips": [
+        "Ngâm gạo đủ mềm rồi xay hoặc giã mịn; khuấy đều khi cho vào nồi để bột gạo không vón đáy.",
+        "Ướp cá với chút muối, cho vào khi canh đã sôi lại sau khi thêm gạo; nấu liu riu đến khi cá chín kỹ.",
+        "Châm nước sôi nếu canh đặc quá; thành phẩm sánh vừa, không đặc như cháo."
+      ],
+      "dish_type": [
+        "Canh truyền thống người Thái",
+        "Canh cá và măng"
+      ],
+      "main_ingredient": [
+        "gạo tẻ",
+        "cá suối nhỏ",
+        "măng tươi"
+      ],
+      "cooking_method": [
+        "ngâm và giã gạo",
+        "nấu canh",
+        "om liu riu"
+      ],
+      "search_terms": [
+        "canh uôi",
+        "kéng kháu bứa",
+        "canh cá gạo măng người Thái",
+        "canh uôi Thanh Hóa",
+        "món canh người Thái xứ Thanh"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Bát canh uôi Thanh Hóa sánh nhẹ với cá suối nhỏ, măng sợi và rau thơm trong bát gốm xanh trắng; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 2 giờ 55 phút, gồm 2 giờ ngâm gạo.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Rau luộc",
+        "Nộm rau rừng"
+      ],
+      "recipe_family": "thai_thanh_hoa_canhuoi_rice_fish_bamboo_soup",
+      "keywords": [
+        "canh uôi",
+        "kéng kháu bứa",
+        "cá suối",
+        "măng tươi",
+        "Thanh Hóa"
+      ],
+      "tags": [
+        "món Thanh Hóa",
+        "ẩm thực Thái",
+        "món canh",
+        "cá suối",
+        "bữa cơm gia đình"
+      ],
+      "ingredients": [
+        {
+          "name": "Gạo tẻ",
+          "quantity": 100,
+          "unit": "g",
+          "role": "grain",
+          "notes": "Vo sạch, ngâm nước 2 giờ rồi giã hoặc xay mịn.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Cá suối nhỏ",
+          "quantity": 450,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn cá tươi cỡ nhỏ, làm sạch mang và ruột; có thể để nguyên con.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Măng tươi",
+          "quantity": 180,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Chọn măng thực phẩm; thái sợi mỏng, ngâm nước muối loãng rồi xả sạch.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 1500,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng nấu canh, có thể châm thêm nước sôi.",
+          "scaling_rule": "vessel_dependent",
+          "sequence": 4
+        },
+        {
+          "name": "Hành khô",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Rau mùi",
+          "quantity": 15,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 15,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Mắc khén rang",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Giã nhỏ, dùng tùy khẩu vị.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        },
+        {
+          "name": "Muối",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Chia phần để ướp cá và nêm canh.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 9
+        },
+        {
+          "name": "Mì chính",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Tùy chọn; có thể bỏ.",
+          "scaling_rule": "optional",
+          "sequence": 10
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Vo gạo, ngâm trong nước sạch 2 giờ cho mềm, sau đó giã hoặc xay thành bột mịn; để riêng."
+        },
+        {
+          "step": 2,
+          "instruction": "Làm sạch cá, ướp với khoảng 1 g muối 10 phút. Thái măng thành sợi mỏng, ngâm nước muối loãng rồi rửa lại; thái hành lá và rau mùi."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đun sôi nước trong nồi, cho măng vào nấu khoảng 15 phút đến khi măng bớt hăng và mềm."
+        },
+        {
+          "step": 2,
+          "instruction": "Khuấy bột gạo với một ít nước lạnh cho loãng, rót từ từ vào nồi trong khi khuấy đều. Đun đến khi canh sôi lại và bắt đầu sánh."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho cá vào nồi, hạ lửa nhỏ và nấu liu riu khoảng 20 phút đến khi cá chín kỹ. Hạn chế khuấy để cá nguyên con."
+        },
+        {
+          "step": 4,
+          "instruction": "Nêm phần muối còn lại và mì chính nếu dùng. Rắc hành, rau mùi và mắc khén; tắt bếp khi rau vừa dậy mùi."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://vhds.baothanhhoa.vn/dong-ve-nho-mon-canh-uoi-40076.htm",
+          "publisher": "Báo Văn hóa và Đời sống Thanh Hóa",
+          "title": "Đông về nhớ món canh uôi",
+          "use": "Đối chiếu món canh trong bữa ăn người Thái, gạo ngâm giã, cá nhỏ, măng thái sợi, thứ tự nấu và độ sánh.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://baolamdong.vn/am-long-voi-bat-canh-uoi-135618.html",
+          "publisher": "Báo Lâm Đồng",
+          "title": "Ấm lòng với bát canh uôi",
+          "use": "Tham khảo cách ngâm, giã gạo tẻ và khuấy bột gạo khi nấu; công thức được Bếp Việt chuẩn hóa với cá suối và măng.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "50 g gạo, 225 g cá nhỏ, 90 g măng và khoảng 750 ml nước",
+            "instruction": "Nấu nồi nhỏ, khuấy bột gạo liên tục khi rót để không đóng cục."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "150 g gạo, 675 g cá nhỏ, 270 g măng và khoảng 2,25 lít nước",
+            "instruction": "Dùng nồi rộng, khuấy nhẹ ở đáy sau khi cho gạo; nêm gia vị sau khi cá chín."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/canh-uoi-nguoi-thai-thanh-hoa-960.webp",
+          "page_url": "https://vhds.baothanhhoa.vn/dong-ve-nho-mon-canh-uoi-40076.htm",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để biên tập đặc điểm món và cách nấu.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Bát canh uôi Thanh Hóa sánh nhẹ với cá suối nhỏ, măng sợi và rau thơm trong bát gốm xanh trắng; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh ImageGen mới, nền trong suốt; master PNG 1536 × 1024, bản xuất 3840 × 2160. Công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt dùng cá suối nhỏ và măng tươi theo bài viết của Báo Văn hóa và Đời sống Thanh Hóa; định lượng và khâu ngâm gạo được chuẩn hóa cho bốn phần.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để kiểm tra độ sánh theo giống gạo và kích thước cá thực tế.",
+          "Nhờ người am hiểu ẩm thực Thái Thanh Hóa rà soát lượng mắc khén và rau thơm."
+        ]
+      }
+    },
+    {
+      "id": "BV583",
+      "slug": "reu-da-nuong-lai-chau",
+      "name": "Rêu đá nướng Lai Châu",
+      "aliases": [
+        "Rêu đá vùi than",
+        "Rêu nướng lá dong người Thái"
+      ],
+      "region": [
+        "Bắc"
+      ],
+      "province": [
+        "Lai Châu"
+      ],
+      "category": "Món rau",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "món rau"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Bốn phần rêu đá nướng, dùng làm món rau ăn cùng cơm nóng.",
+      "prep_time": 25,
+      "cook_time": 20,
+      "passive_time": 0,
+      "total_time": 45,
+      "description": "Rêu đá được rửa và giã sạch cát, vắt ráo rồi tẩm sả, gừng, ớt và gia vị núi rừng trước khi gói lá dong nướng. Bếp Việt biên tập cách chia phần nhỏ để dễ nướng đều trong bữa cơm gia đình.",
+      "finished_dish": "Rêu mềm, hơi dai và ẩm, thoảng mùi sả gừng, mắc khén và lá dong nướng; bề mặt lá sậm màu nhưng phần rêu bên trong không cháy.",
+      "serving": "Bóc lớp lá ngoài, gắp rêu nóng ăn với cơm trắng và món mặn. Chỉ dùng rêu đã được nhận diện là thực phẩm và mua từ nguồn đáng tin cậy; không tự hái ở suối không rõ chất lượng.",
+      "tips": [
+        "Dùng rêu đá đã được xác định là loại ăn được, sơ chế và bán làm thực phẩm; tránh rêu lấy từ nguồn nước ô nhiễm hoặc không rõ nguồn gốc.",
+        "Rửa và giã nhiều lượt trên bề mặt sạch để loại cát, sau đó vắt thật ráo để gói không bị nhão.",
+        "Nướng ở khoảng cách vừa với than, lật đều; mở thử một gói để kiểm tra rêu nóng và chín đều trước khi dọn."
+      ],
+      "dish_type": [
+        "Món rêu nướng",
+        "Món rau người Thái"
+      ],
+      "main_ingredient": [
+        "rêu đá ăn được",
+        "lá dong",
+        "sả"
+      ],
+      "cooking_method": [
+        "làm sạch và giã rêu",
+        "ướp gia vị",
+        "gói lá dong",
+        "nướng than"
+      ],
+      "search_terms": [
+        "rêu đá nướng",
+        "rêu đá vùi than Lai Châu",
+        "rêu nướng lá dong",
+        "món rêu người Thái",
+        "đặc sản rêu đá"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Đĩa rêu đá nướng Lai Châu trong gói lá dong mở hé, phần rêu xanh sẫm trộn sả gừng; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 45 phút, gồm sơ chế và nướng bằng than.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Canh rau",
+        "Thịt băm gói lá nướng"
+      ],
+      "recipe_family": "thai_lai_chau_grilled_edible_stream_moss",
+      "keywords": [
+        "rêu đá",
+        "rêu nướng",
+        "lá dong",
+        "mắc khén",
+        "Lai Châu"
+      ],
+      "tags": [
+        "ẩm thực Thái",
+        "Lai Châu",
+        "món nướng",
+        "món rau",
+        "đặc sản Tây Bắc"
+      ],
+      "ingredients": [
+        {
+          "name": "Rêu đá ăn được đã làm sạch",
+          "quantity": 500,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chỉ dùng loại được nhận diện và bán làm thực phẩm; để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Lá dong",
+          "quantity": 4,
+          "unit": "lá",
+          "role": "wrapping",
+          "notes": "Rửa sạch, lau khô; có thể lót thêm lá thứ hai nếu lá mỏng.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Sả",
+          "quantity": 20,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Rửa sạch, băm nhỏ phần non.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Gừng",
+          "quantity": 12,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Gọt vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Ớt bột",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Giảm hoặc bỏ theo khẩu vị.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 5
+        },
+        {
+          "name": "Mắc khén rang",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Rang nhẹ, giã nhỏ.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 6
+        },
+        {
+          "name": "Hạt dổi rang",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Giã nhỏ; dùng lượng vừa phải.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 7
+        },
+        {
+          "name": "Muối",
+          "quantity": 4,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm từng ít một.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "fat",
+          "notes": "Trộn lượng nhỏ để giữ độ ẩm khi nướng.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Trải rêu trên rổ, xả nhiều lượt bằng nước sạch. Đặt lên thớt sạch, dùng chày gỗ giã nhẹ vài lượt rồi rửa lại đến khi hết cát; vắt thật ráo."
+        },
+        {
+          "step": 2,
+          "instruction": "Băm sả và gừng. Rang nhẹ mắc khén, hạt dổi rồi giã nhỏ; trộn với ớt bột, muối và dầu."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Trộn rêu với hỗn hợp gia vị, để thấm khoảng 5 phút. Chia thành bốn phần, đặt từng phần lên lá dong và gói kín thành gói dẹt."
+        },
+        {
+          "step": 2,
+          "instruction": "Nướng gói lá trên vỉ đặt cách than hồng vừa phải khoảng 8–10 phút mỗi mặt, lật đều. Nếu dùng lò nướng, nướng ở 200°C khoảng 18–20 phút và lật giữa chừng."
+        },
+        {
+          "step": 3,
+          "instruction": "Khi lá sậm màu và rêu nóng chín bên trong, nhấc ra để nghỉ 2 phút rồi mở gói. Kiểm tra một gói trước khi dọn."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://dulich.laichau.gov.vn/vi/blog/details/reu-da-251",
+          "publisher": "Cổng thông tin Du lịch Lai Châu",
+          "title": "Rêu đá",
+          "use": "Đối chiếu sơ chế rêu bằng cách rửa, giã loại cát; cách nêm sả, gừng, ớt, hạt dổi và gói lá dong vùi tro/than.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://dantocphattrien.vietnamnet.vn/am-thuc-lai-chau-niu-chan-du-khach-24407.html",
+          "publisher": "Báo Dân tộc và Phát triển",
+          "title": "Ẩm thực Lai Châu níu chân du khách",
+          "use": "Tham khảo hình thức sơ chế rêu suối và gói lá để nướng than trong ẩm thực người Thái Lai Châu.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "250 g rêu đá ăn được và 2 lá dong",
+            "instruction": "Gói phần mỏng, nướng lửa than vừa và kiểm tra nhiệt độ ở giữa gói."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "750 g rêu đá ăn được và 6 lá dong",
+            "instruction": "Nướng nhiều mẻ để gói không chồng lên nhau; nêm lại sau khi trộn."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/reu-da-nuong-lai-chau-960.webp",
+          "page_url": "https://dulich.laichau.gov.vn/vi/blog/details/reu-da-251",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để biên tập đặc điểm món và cách nấu.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa rêu đá nướng Lai Châu trong gói lá dong mở hé, phần rêu xanh sẫm trộn sả gừng; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh ImageGen mới, nền trong suốt; master PNG 1536 × 1024, bản xuất 3840 × 2160. Công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt giữ cách giã rêu, ướp gia vị vùng cao và gói lá dong theo Cổng Du lịch Lai Châu; thay cách vùi tro bằng hướng dẫn nướng vỉ/lò dễ áp dụng tại nhà.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử với rêu đá thực phẩm đã sơ chế để đánh giá độ ráo, độ dai và thời gian nướng.",
+          "Nhờ người am hiểu ẩm thực Thái Lai Châu kiểm tra gia vị và nhận diện món trong ảnh."
+        ]
+      }
+    },
+    {
+      "id": "BV584",
+      "slug": "mang-nom-hoa-ban-lai-chau",
+      "name": "Măng nộm hoa ban Lai Châu",
+      "aliases": [
+        "Nộm măng hoa ban",
+        "Măng đắng nộm hoa ban người Thái"
+      ],
+      "region": [
+        "Bắc"
+      ],
+      "province": [
+        "Lai Châu"
+      ],
+      "category": "Món rau",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "món rau"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Một đĩa nộm mùa hoa ban cho bốn người, dùng làm khai vị hoặc ăn cùng cơm.",
+      "prep_time": 25,
+      "cook_time": 25,
+      "passive_time": 30,
+      "total_time": 80,
+      "description": "Món nộm mùa xuân của người Thái Lai Châu kết hợp măng đắng luộc kỹ, cánh hoa ban và cá suối nướng gỡ thịt. Bếp Việt biên tập phần gia vị chanh, tỏi, ớt và rau thơm cân bằng để món có vị bùi, chua nhẹ và thơm.",
+      "finished_dish": "Sợi măng còn độ giòn, cánh hoa ban mềm thanh, cá nướng tơi ngọt; nước chanh tỏi ớt quyện rau húng, rau mùi và lạc rang.",
+      "serving": "Trộn sát giờ ăn để hoa và rau không ra nước. Dọn như món rau đầu bữa hoặc ăn cùng xôi nếp nương, cơm lam.",
+      "tips": [
+        "Chỉ dùng hoa ban được xác định là hoa ăn được, thu hái sạch từ nguồn đáng tin cậy; nhặt cánh dày và rửa nhẹ.",
+        "Măng đắng cần ngâm nước muối rồi luộc hai lần, bỏ nước luộc và để ráo trước khi trộn.",
+        "Nướng cá đến khi chín hoàn toàn, gỡ kỹ xương; trộn nộm ngay trước khi dọn để giữ độ tươi."
+      ],
+      "dish_type": [
+        "Món nộm mùa xuân",
+        "Món rau người Thái"
+      ],
+      "main_ingredient": [
+        "măng đắng",
+        "hoa ban ăn được",
+        "cá suối"
+      ],
+      "cooking_method": [
+        "ngâm và luộc măng",
+        "nướng cá",
+        "trộn nộm"
+      ],
+      "search_terms": [
+        "măng nộm hoa ban",
+        "nộm hoa ban Lai Châu",
+        "nộm măng đắng hoa ban",
+        "món hoa ban người Thái",
+        "salad măng hoa ban"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Đĩa măng nộm hoa ban Lai Châu với cánh hoa tím nhạt, măng sợi, cá suối nướng, rau thơm và lạc; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 1 giờ 20 phút, gồm 30 phút ngâm măng.",
+      "suggested_pairings": [
+        "Xôi nếp nương",
+        "Cơm lam",
+        "Thịt nướng"
+      ],
+      "recipe_family": "thai_lai_chau_bamboo_shoot_ban_flower_salad",
+      "keywords": [
+        "măng nộm hoa ban",
+        "hoa ban",
+        "măng đắng",
+        "cá suối nướng",
+        "Lai Châu"
+      ],
+      "tags": [
+        "Lai Châu",
+        "ẩm thực Thái",
+        "món mùa xuân",
+        "món rau",
+        "măng rừng"
+      ],
+      "ingredients": [
+        {
+          "name": "Măng đắng",
+          "quantity": 350,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Chọn măng thực phẩm; thái sợi, ngâm muối và luộc kỹ hai lần.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Cánh hoa ban ăn được",
+          "quantity": 100,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Chọn hoa sạch từ nguồn đáng tin cậy; nhặt cánh dày, rửa nhẹ và để ráo.",
+          "scaling_rule": "seasonal",
+          "sequence": 2
+        },
+        {
+          "name": "Cá suối",
+          "quantity": 250,
+          "unit": "g",
+          "role": "main",
+          "notes": "Làm sạch, nướng chín hoàn toàn rồi gỡ thịt, kiểm tra xương.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Lạc rang",
+          "quantity": 30,
+          "unit": "g",
+          "role": "topping",
+          "notes": "Giã dập.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Rau húng",
+          "quantity": 12,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Rau mùi",
+          "quantity": 12,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 8,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhuyễn.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Ớt tươi",
+          "quantity": 4,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhỏ hoặc thái lát; tùy chỉnh theo khẩu vị.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        },
+        {
+          "name": "Nước cốt chanh",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Lọc bỏ hạt.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 9
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 12,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm từ từ để không át vị hoa và măng.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 10
+        },
+        {
+          "name": "Muối",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng ngâm măng và nêm nước trộn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 11
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Thái măng đắng thành sợi vừa ăn, ngâm trong nước muối loãng khoảng 30 phút. Rửa cánh hoa ban nhẹ tay; băm tỏi, ớt, thái rau húng và rau mùi."
+        },
+        {
+          "step": 2,
+          "instruction": "Làm sạch cá suối và chuẩn bị vỉ nướng. Rang lạc nếu cần, sau đó giã dập."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đổ bỏ nước ngâm măng. Luộc măng trong nước sôi khoảng 10 phút, đổ bỏ nước rồi luộc lần hai thêm 10–15 phút đến khi chín; để ráo hoàn toàn."
+        },
+        {
+          "step": 2,
+          "instruction": "Nướng cá trên than hoặc chảo nướng đến khi thịt chín đục và dễ róc xương. Gỡ thịt thành miếng nhỏ, kiểm tra kỹ xương."
+        },
+        {
+          "step": 3,
+          "instruction": "Khuấy nước cốt chanh, nước mắm, tỏi, ớt và chút muối. Cho măng, hoa ban, cá, rau húng và rau mùi vào âu."
+        },
+        {
+          "step": 4,
+          "instruction": "Rưới nước trộn từng ít một, đảo nhẹ cho thấm. Nếm lại, rắc lạc rang và dọn ngay."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://dulich.laichau.gov.vn/vi/blog/details/mang-nom-hoa-ban-1159",
+          "publisher": "Cổng thông tin Du lịch Lai Châu",
+          "title": "Măng nộm hoa ban",
+          "use": "Đối chiếu món ăn dân dã người Thái Lai Châu, cách xử lý măng đắng (ngâm muối, luộc hai lần), chọn cánh hoa ban, nướng cá suối và trộn chanh, tỏi, ớt, rau thơm.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://www.vietnamplus.vn/5-mon-ngon-du-khach-khong-nen-bo-lo-khi-ghe-tham-chien-truong-xua-dien-bien-post940293.vnp",
+          "publisher": "Vietnam+ (TTXVN)",
+          "title": "5 món ngon du khách không nên bỏ lỡ khi ghé thăm chiến trường xưa Điện Biên",
+          "use": "Tham khảo cách ăn măng đắng luộc cùng chẩm chéo và việc ngâm muối để dịu vị đắng.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "175 g măng, 50 g cánh hoa ban, 125 g cá suối",
+            "instruction": "Giữ đủ hai lần luộc măng; nêm nước chanh và nước mắm sau khi trộn thử."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "525 g măng, 150 g cánh hoa ban, 375 g cá suối",
+            "instruction": "Luộc măng thành mẻ riêng và trộn nộm ngay trước khi dọn; chỉ tăng gia vị sau khi nếm."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/mang-nom-hoa-ban-lai-chau-960.webp",
+          "page_url": "https://dulich.laichau.gov.vn/vi/blog/details/mang-nom-hoa-ban-1159",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để biên tập đặc điểm món và cách nấu.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa măng nộm hoa ban Lai Châu với cánh hoa tím nhạt, măng sợi, cá suối nướng, rau thơm và lạc; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh ImageGen mới, nền trong suốt; master PNG 1536 × 1024, bản xuất 3840 × 2160. Công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt biên tập từ hướng dẫn của Cổng Du lịch Lai Châu; giữ măng đắng, hoa ban, cá suối nướng và nhóm gia vị được nguồn ghi nhận, bổ sung định lượng cho gia đình.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử vào mùa hoa ban với nguyên liệu thực phẩm đã xác định để rà soát độ chua, vị đắng và lượng nước trộn.",
+          "Nhờ người am hiểu ẩm thực Thái Lai Châu xác nhận cánh hoa sử dụng, cách sơ chế và phần cá."
+        ]
+      }
+    },
+    {
+      "id": "BV585",
+      "slug": "nhua-pho-thit-bam-goi-la-nuong-tay-bac",
+      "name": "Nhứa pho thịt băm gói lá nướng Tây Bắc",
+      "aliases": [
+        "Nhứa pho người Thái",
+        "Thịt băm gói lá nướng mắc khén"
+      ],
+      "region": [
+        "Bắc"
+      ],
+      "province": [
+        "S?n La"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "món mặn"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Bốn gói thịt nướng, chia ăn cùng cơm hoặc xôi nếp nương.",
+      "prep_time": 20,
+      "cook_time": 25,
+      "passive_time": 15,
+      "total_time": 60,
+      "description": "Nhứa pho là thịt băm trộn gia vị thơm như sả, gừng, tỏi và mắc khén, gói trong lá dong hoặc lá chuối rồi nướng trên than. Bếp Việt chia thành gói nhỏ để dễ chín đều, giữ thịt mềm và hương lá nướng.",
+      "finished_dish": "Gói lá vàng sậm, bên trong là thịt vai băm chín mềm, thơm sả gừng, hành tỏi và mắc khén; không khô, không cháy cạnh.",
+      "serving": "Dọn nóng cùng cơm trắng hoặc xôi nếp nương. Mở gói tại bàn và dùng đĩa sạch riêng; không đặt lại thịt chín lên đĩa từng đựng thịt sống.",
+      "tips": [
+        "Chọn nạc vai có chút mỡ để phần thịt băm không khô; ướp khoảng 15 phút cho gia vị thấm.",
+        "Gói thịt thành lớp dẹt vừa phải bằng 2–3 lớp lá dong hoặc lá chuối; gói quá dày sẽ lâu chín.",
+        "Nướng cách than vừa đủ, lật thường xuyên; thịt heo xay cần đạt ít nhất 71°C ở tâm."
+      ],
+      "dish_type": [
+        "Món thịt gói lá nướng",
+        "Món Thái Tây Bắc"
+      ],
+      "main_ingredient": [
+        "thịt heo nạc vai",
+        "lá dong",
+        "mắc khén"
+      ],
+      "cooking_method": [
+        "băm thịt",
+        "ướp gia vị",
+        "gói lá",
+        "nướng than"
+      ],
+      "search_terms": [
+        "nhứa pho",
+        "thịt băm gói lá nướng",
+        "thịt nướng lá dong mắc khén",
+        "món người Thái Tây Bắc",
+        "nhứa pho Sơn La"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Đĩa nhứa pho Tây Bắc gồm gói lá dong nướng vàng và phần thịt băm sả gừng mắc khén vừa mở; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 1 giờ, gồm 15 phút ướp thịt.",
+      "suggested_pairings": [
+        "Xôi nếp nương",
+        "Cơm trắng",
+        "Rau luộc"
+      ],
+      "recipe_family": "thai_northwest_nhua_pho_leaf_grilled_minced_pork",
+      "keywords": [
+        "nhứa pho",
+        "thịt băm gói lá",
+        "lá dong",
+        "mắc khén",
+        "món Thái Tây Bắc"
+      ],
+      "tags": [
+        "món người Thái",
+        "món Tây Bắc",
+        "món nướng",
+        "mắc khén",
+        "bữa cơm gia đình"
+      ],
+      "ingredients": [
+        {
+          "name": "Thịt heo nạc vai",
+          "quantity": 500,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn phần có chút mỡ; băm nhỏ bằng dao hoặc xay thô.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Lá dong",
+          "quantity": 4,
+          "unit": "lá",
+          "role": "wrapping",
+          "notes": "Rửa sạch, lau khô; có thể thay bằng lá chuối.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Sả",
+          "quantity": 20,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Rửa sạch, băm nhỏ phần non.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Hành khô",
+          "quantity": 20,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 8,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Gừng",
+          "quantity": 10,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Gọt vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 15,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Rau thơm",
+          "quantity": 10,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Mắc khén rang",
+          "quantity": 1.5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Rang nhẹ, giã nhỏ.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 9
+        },
+        {
+          "name": "Ớt tươi",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhỏ; tùy chọn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 10
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm từ từ theo độ mặn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 11
+        },
+        {
+          "name": "Muối",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm vừa phải.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 12
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Băm thịt vai thô để còn cảm nhận thớ thịt. Băm sả, hành khô, tỏi, gừng, hành lá và rau thơm."
+        },
+        {
+          "step": 2,
+          "instruction": "Trộn thịt với các gia vị và mắc khén, để ướp 15 phút. Rửa lá dong, lau khô, cắt thành miếng đủ gói."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Chia thịt thành bốn phần dẹt. Đặt từng phần lên 2–3 lớp lá, gấp kín thành gói chữ nhật; dùng tăm tre cố định nếu cần."
+        },
+        {
+          "step": 2,
+          "instruction": "Nướng trên vỉ cách than hồng vừa phải khoảng 10–12 phút mỗi mặt, trở đều để lá sậm vàng mà không cháy xém. Có thể nướng trong lò ở 200°C khoảng 20–25 phút, lật giữa chừng."
+        },
+        {
+          "step": 3,
+          "instruction": "Dùng nhiệt kế kiểm tra phần thịt dày nhất đạt ít nhất 71°C. Để nghỉ 2 phút, mở gói và dọn nóng."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://nhandan.vn/nhua-pho-tay-bac-post666663.html",
+          "publisher": "Báo Nhân Dân",
+          "title": "“Nhứa pho” Tây Bắc",
+          "use": "Đối chiếu tên món người Thái, phần thịt vai có nạc mỡ, gia vị hành, ớt, tỏi, sả, gừng, rau thơm, mắc khén; ướp 15 phút, gói lá và nướng than.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart",
+          "publisher": "USDA Food Safety and Inspection Service",
+          "title": "Safe Minimum Internal Temperature Chart",
+          "use": "Tham khảo nhiệt độ an toàn tối thiểu 160°F/71.1°C cho thịt heo xay.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "250 g thịt vai và 2 lá dong lớn",
+            "instruction": "Chia thành hai gói mỏng; kiểm tra nhiệt độ ở giữa gói trước khi ăn."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "750 g thịt vai và 6 lá dong lớn",
+            "instruction": "Nướng theo mẻ, chừa khoảng trống giữa các gói để than làm nóng đều; nêm lại trước khi gói."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/nhua-pho-thit-bam-goi-la-nuong-tay-bac-960.webp",
+          "page_url": "https://nhandan.vn/nhua-pho-tay-bac-post666663.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để biên tập đặc điểm món và cách nấu.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa nhứa pho Tây Bắc gồm gói lá dong nướng vàng và phần thịt băm sả gừng mắc khén vừa mở; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh ImageGen mới, nền trong suốt; master PNG 1536 × 1024, bản xuất 3840 × 2160. Công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt chuẩn hóa nhứa pho thành bốn gói nhỏ cho bếp gia đình, giữ nguyên thịt vai, gia vị Tây Bắc, thời gian ướp và kỹ thuật gói lá/nướng được Báo Nhân Dân ghi nhận.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để rà soát độ dày gói, thời gian nướng và mức mắc khén phù hợp bếp gia đình.",
+          "Nhờ người am hiểu ẩm thực Thái Tây Bắc rà soát cách gọi nhứa pho và cách phối rau thơm."
+        ]
+      }
+    }
+  ]
+}

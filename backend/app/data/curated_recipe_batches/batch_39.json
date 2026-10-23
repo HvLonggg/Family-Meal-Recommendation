@@ -1,0 +1,354 @@
+{
+  "batch": 39,
+  "description": "Năm món vùng miền được biên tập từ nguồn du lịch địa phương, báo chí và tư liệu ẩm thực; công thức Bếp Việt ghi rõ phạm vi mẻ thử và thao tác an toàn.",
+  "recipes": [
+    {
+      "id": "BV521",
+      "slug": "banh-xeo-bong-dien-dien",
+      "name": "Bánh xèo bông điên điển",
+      "aliases": ["Bánh xèo mùa nước nổi", "Bánh xèo hoa điên điển"],
+      "region": ["Đồng bằng sông Cửu Long"],
+      "province": ["An Giang", "Đồng Tháp"],
+      "category": "Bánh và ăn vặt",
+      "meal_type": ["bữa trưa", "bữa tối"],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Khoảng 8 bánh cỡ vừa, mỗi người 2 bánh; ăn cùng rau sống và nước mắm me.",
+      "prep_time": 25,
+      "cook_time": 35,
+      "passive_time": 20,
+      "description": "Bánh xèo bông điên điển gắn với mùa nước nổi miền Tây, khi hoa vàng được cho vào phần nhân thay vì chỉ dùng làm rau ăn kèm. Bếp Việt biên tập mẻ gia đình với tôm, ba chỉ, giá và bông điên điển theo mùa; bột có cốt dừa loãng để vỏ thơm béo nhưng vẫn giòn. Chỉ dùng hoa thực phẩm có nguồn thu hái an toàn, rửa kỹ và để ráo.",
+      "finished_dish": "Bánh vàng mỏng, viền giòn, nhân tôm thịt vừa chín và hoa điên điển còn nguyên cánh; vị béo nhẹ được cân bằng bằng rau sống và nước mắm me.",
+      "serving": "Ăn ngay khi bánh còn nóng. Bẻ miếng bánh, cuốn với rau xà lách và rau thơm rồi chấm nước mắm me; không để bánh chồng lên nhau lâu vì hơi nước làm mềm vỏ.",
+      "tips": [
+        "Để bột nghỉ 20 phút rồi khuấy lại; nếu bột đặc, thêm nước từng ít một để bánh tráng mỏng.",
+        "Lau khô hoa điên điển sau khi rửa để dầu không bắn và mặt bánh không bị ỉu.",
+        "Đậy nắp ngắn để nhân chín, sau đó mở nắp và giữ lửa vừa cho viền bánh ráo giòn."
+      ],
+      "dish_type": ["Bánh mặn", "Món mùa nước nổi"],
+      "main_ingredient": ["bột gạo", "bông điên điển", "tôm", "thịt ba chỉ"],
+      "cooking_method": ["pha bột", "đổ bánh", "áp chảo"],
+      "search_terms": ["bánh xèo bông điên điển", "bánh xèo mùa nước nổi", "bánh xèo An Giang", "hoa điên điển nấu món gì"],
+      "spicy_level": 1,
+      "image_alt": "Bánh xèo bông điên điển miền Tây vàng giòn, lộ nhân tôm thịt, giá và hoa điên điển trên đĩa gốm; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 1 giờ 20 phút, gồm 20 phút để bột nghỉ; thời gian chiên tùy kích thước chảo.",
+      "total_time": 80,
+      "suggested_pairings": ["Rau sống", "Nước mắm me", "Dưa leo"],
+      "width": 3840,
+      "height": 2160,
+      "recipe_family": "mekong_sesbania_banh_xeo",
+      "time_unit": "minute",
+      "ingredients": [
+        {"name":"Bột gạo","quantity":250,"unit":"g","role":"main","notes":"Rây mịn để bột không vón.","scaling_rule":"linear","sequence":1},
+        {"name":"Nước cốt dừa loãng","quantity":200,"unit":"ml","role":"liquid","notes":"Có thể pha cốt dừa đặc với nước lọc.","scaling_rule":"linear","sequence":2},
+        {"name":"Nước lọc","quantity":250,"unit":"ml","role":"liquid","notes":"Điều chỉnh để bột đủ loãng, dễ tráng.","scaling_rule":"linear","sequence":3},
+        {"name":"Tôm tươi","quantity":200,"unit":"g","role":"main","notes":"Bóc vỏ, bỏ chỉ lưng.","scaling_rule":"linear","sequence":4},
+        {"name":"Thịt ba chỉ","quantity":180,"unit":"g","role":"main","notes":"Thái lát mỏng.","scaling_rule":"linear","sequence":5},
+        {"name":"Bông điên điển","quantity":150,"unit":"g","role":"vegetable","notes":"Dùng hoa thực phẩm có nguồn gốc rõ ràng; nhặt bỏ cuống già, rửa và để thật ráo.","scaling_rule":"linear","sequence":6},
+        {"name":"Giá đỗ","quantity":150,"unit":"g","role":"vegetable","notes":"Rửa sạch, để ráo.","scaling_rule":"linear","sequence":7},
+        {"name":"Bột nghệ","quantity":3,"unit":"g","role":"seasoning","notes":"Cho màu vàng nhẹ.","scaling_rule":"taste_adjusted","sequence":8},
+        {"name":"Hành lá","quantity":20,"unit":"g","role":"aromatic","notes":"Thái nhỏ.","scaling_rule":"linear","sequence":9},
+        {"name":"Muối","quantity":4,"unit":"g","role":"seasoning","notes":"Nêm phần bột.","scaling_rule":"taste_adjusted","sequence":10},
+        {"name":"Dầu ăn","quantity":45,"unit":"ml","role":"other","notes":"Chia lượng nhỏ cho các lượt chiên.","scaling_rule":"linear","sequence":11},
+        {"name":"Nước mắm","quantity":45,"unit":"ml","role":"seasoning","notes":"Pha nước chấm.","scaling_rule":"taste_adjusted","sequence":12},
+        {"name":"Me chín","quantity":25,"unit":"g","role":"seasoning","notes":"Dầm với nước ấm, lọc lấy nước cốt.","scaling_rule":"linear","sequence":13},
+        {"name":"Đường","quantity":25,"unit":"g","role":"seasoning","notes":"Điều chỉnh theo độ chua của me.","scaling_rule":"taste_adjusted","sequence":14}
+      ],
+      "preparation_steps": [
+        {"step":1,"instruction":"Khuấy bột gạo với nước cốt dừa loãng, nước lọc, bột nghệ và muối đến khi mịn. Trộn hành lá vào bột, để nghỉ 20 phút rồi khuấy lại."},
+        {"step":2,"instruction":"Rửa tôm, bóc vỏ và bỏ chỉ lưng; thịt ba chỉ thái lát mỏng. Nhặt hoa điên điển, rửa nhẹ nhiều lần và để thật ráo; rửa giá và rau sống."},
+        {"step":3,"instruction":"Dầm me với khoảng 60 ml nước ấm, lọc lấy nước cốt. Khuấy cùng nước mắm, đường và 60 ml nước ấm; nếm, thêm tỏi ớt nếu thích."}
+      ],
+      "cooking_steps": [
+        {"step":1,"instruction":"Làm nóng chảo chống dính cỡ 20–22 cm, quét một lớp dầu mỏng. Xếp vài lát ba chỉ và tôm, đảo đến khi tôm vừa chuyển màu."},
+        {"step":2,"instruction":"Rót một vá bột quanh lòng chảo, nghiêng chảo để bột phủ thành lớp mỏng. Rải một ít giá và bông điên điển lên nửa mặt bánh."},
+        {"step":3,"instruction":"Đậy nắp 2–3 phút cho nhân chín. Mở nắp, hạ lửa vừa và chiên thêm 2–4 phút đến khi viền vàng giòn, rồi gập đôi bánh."},
+        {"step":4,"instruction":"Gắp bánh ra đĩa có lót giấy thấm dầu. Lặp lại với phần nguyên liệu còn lại, giữ bánh thành một lớp để vỏ không hấp hơi."}
+      ],
+      "keywords": ["bánh xèo", "hoa điên điển", "An Giang", "mùa nước nổi", "tôm thịt"],
+      "tags": ["bánh mặn", "món miền Tây", "theo mùa", "tôm", "bông điên điển"],
+      "sources": [
+        {"url":"https://govietnam.travel/food/banh-xeo-2/banh-xeo-bong-dien-dien/","publisher":"GoVietnam","title":"Bánh xèo bông điên điển","use":"Đối chiếu liên hệ với mùa nước nổi, cách cho hoa điên điển vào nhân và tổ hợp bột gạo, nước cốt dừa, tôm, thịt, giá; tỷ lệ và quy trình bếp nhà do Bếp Việt biên tập.","accessed_at":"2026-10-23","type":"editorial_reference"}
+      ],
+      "scaling": {"base_servings":4,"targets":[
+        {"servings":2,"main_factor":0.5,"seasoning_start_factor":0.5,"example":"Khoảng 4 bánh vừa","instruction":"Dùng chảo nhỏ; cho hoa và giá vừa đủ để nhân không làm rách bánh."},
+        {"servings":6,"main_factor":1.5,"seasoning_start_factor":1.25,"example":"Khoảng 12 bánh vừa","instruction":"Chiên thành nhiều mẻ, nêm nước chấm sau khi nếm độ chua của me."}
+      ]},
+      "media": [{"image_url":"/images/recipes/edited/banh-xeo-bong-dien-dien-960.webp","page_url":"https://govietnam.travel/food/banh-xeo-2/banh-xeo-bong-dien-dien/","source":"Bếp Việt","author":"Bếp Việt","license":null,"rights_status":"project","rights_note":"Ảnh được tạo mới cho Bếp Việt; nguồn chỉ dùng để biên tập và xác minh món ăn.","width":3840,"height":2160,"orientation":"landscape","preferred_width_met":true,"alt_text":"Bánh xèo bông điên điển miền Tây vàng giòn, lộ nhân tôm thịt, giá và hoa điên điển trên đĩa gốm; ảnh Bếp Việt nền trong suốt.","verified_dish_match":true,"visual_review_date":"2026-10-23","photo_variant_note":"Ảnh Bếp Việt tạo mới, nền trong suốt; ảnh minh họa theo công thức biên tập, chưa nấu thử."}],
+      "editorial": {"status":"editorial_draft","production_ready":false,"test_cook_status":"not_tested","variant_note":"Mẻ gia đình dùng chảo nhỏ; hoa điên điển chỉ dùng khi là nguyên liệu thực phẩm có nguồn thu hái an toàn và đang đúng mùa.","seed_recipe":null,"reviewed_at":"2026-10-23","needs":["Nấu thử độ giòn với các loại bột gạo và chảo gia đình khác nhau."]}
+    },
+    {
+      "id": "BV522",
+      "slug": "com-lam-nep-nuong-tay-bac",
+      "name": "Cơm lam nếp nương Tây Bắc",
+      "aliases": ["Cơm lam Tây Bắc", "Cơm lam ống tre nếp nương"],
+      "region": ["Tây Bắc"],
+      "province": ["Sơn La", "Điện Biên", "Lào Cai"],
+      "category": "Món ăn kèm",
+      "meal_type": ["bữa trưa", "bữa tối", "bữa phụ"],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Bốn ống tre nhỏ, mỗi người một ống; dùng kèm muối vừng hoặc món nướng.",
+      "prep_time": 20,
+      "cook_time": 50,
+      "passive_time": 480,
+      "description": "Cơm lam là cách nấu nếp trong ống tre hoặc nứa trên bếp lửa, được ghi nhận ở nhiều tỉnh Tây Bắc. Bếp Việt biên tập mẻ gia đình dùng nếp nương ngâm qua đêm, chút muối và gừng; cơm chín dẻo, thơm mùi nếp mới cùng lớp màng tre non. Từng vùng và gia đình có cách nêm, loại ống và món ăn kèm riêng.",
+      "finished_dish": "Nếp chín dẻo đều trong ống tre, hạt bóng mềm, phảng phất hương tre nướng; ăn cùng muối vừng rang bùi.",
+      "serving": "Để ống cơm nguội bớt rồi bóc lớp tre già, giữ lại lớp màng non bọc quanh cơm. Cắt khúc vừa ăn và dùng với muối vừng; có thể ăn kèm cá suối hoặc thịt nướng.",
+      "tips": [
+        "Ngâm nếp đủ thời gian rồi để ráo để cơm chín đều, không sượng ở giữa.",
+        "Chỉ cho gạo đến khoảng hai phần ba ống và chừa chỗ cho nếp nở.",
+        "Xoay ống thường xuyên trên than hồng; không để một mặt áp lửa quá lâu vì tre dễ cháy xém trước khi cơm chín."
+      ],
+      "dish_type": ["Cơm nếp", "Món truyền thống vùng cao"],
+      "main_ingredient": ["gạo nếp nương", "ống tre", "mè trắng", "lạc"],
+      "cooking_method": ["ngâm nếp", "nướng ống tre"],
+      "search_terms": ["cơm lam nếp nương", "cơm lam Tây Bắc", "cơm nấu ống tre", "cơm lam ăn với gì"],
+      "spicy_level": 0,
+      "image_alt": "Bốn ống cơm lam nếp nương nướng vàng trên đĩa gốm, một ống tách lộ hạt nếp dẻo và bát muối vừng; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 9 giờ 10 phút, gồm thời gian ngâm nếp qua đêm; thời gian nướng thay đổi theo kích thước ống và độ nóng của than.",
+      "total_time": 550,
+      "suggested_pairings": ["Muối vừng", "Cá suối nướng", "Thịt lợn nướng"],
+      "width": 3840,
+      "height": 2160,
+      "recipe_family": "northwest_bamboo_tube_sticky_rice",
+      "time_unit": "minute",
+      "ingredients": [
+        {"name":"Gạo nếp nương","quantity":500,"unit":"g","role":"main","notes":"Nhặt sạch, vo nhẹ để không vỡ hạt.","scaling_rule":"linear","sequence":1},
+        {"name":"Ống tre non","quantity":4,"unit":"ống","role":"wrapping","notes":"Ống tươi, sạch, dài khoảng 25–30 cm; chừa một đầu có mắt tre.","scaling_rule":"vessel_dependent","sequence":2},
+        {"name":"Nước lọc","quantity":500,"unit":"ml","role":"liquid","notes":"Dùng ngâm và làm ẩm nếp; lượng cho vào ống vừa xâm xấp mặt gạo.","scaling_rule":"taste_adjusted","sequence":3},
+        {"name":"Muối","quantity":4,"unit":"g","role":"seasoning","notes":"Trộn cùng nếp trước khi cho vào ống.","scaling_rule":"taste_adjusted","sequence":4},
+        {"name":"Gừng tươi","quantity":12,"unit":"g","role":"aromatic","notes":"Thái sợi mảnh; tùy chọn theo khẩu vị.","scaling_rule":"linear","sequence":5},
+        {"name":"Mè trắng","quantity":20,"unit":"g","role":"accompaniment","notes":"Rang để làm muối vừng ăn kèm.","scaling_rule":"linear","sequence":6},
+        {"name":"Lạc rang","quantity":35,"unit":"g","role":"accompaniment","notes":"Giã dập, trộn với mè và chút muối.","scaling_rule":"linear","sequence":7}
+      ],
+      "preparation_steps": [
+        {"step":1,"instruction":"Vo nếp nhẹ tay, ngâm với nước sạch 6–8 giờ hoặc qua đêm. Xả lại, để ráo rồi trộn với muối và gừng thái sợi."},
+        {"step":2,"instruction":"Rửa sạch mặt trong ống tre, để ráo. Chia nếp vào bốn ống, chỉ lấp khoảng hai phần ba thể tích; thêm nước vừa xâm xấp mặt nếp."},
+        {"step":3,"instruction":"Nút miệng ống bằng lá chuối sạch hoặc một lớp lá tre non; chuẩn bị bếp than hồng đều, không có ngọn lửa lớn."}
+      ],
+      "cooking_steps": [
+        {"step":1,"instruction":"Đặt các ống lên vỉ cách than vừa phải. Xoay từng ống liên tục để tre nóng đều và không cháy sém một phía."},
+        {"step":2,"instruction":"Nướng khoảng 40–50 phút tùy độ dày ống. Khi hơi thơm mùi nếp chín, lớp tre co lại và đầu ống không còn nước sôi trào, lấy một ống kiểm tra hạt cơm."},
+        {"step":3,"instruction":"Gắp ống ra, để nghỉ 5 phút rồi bóc lớp tre ngoài khi còn ấm; giữ lại lớp màng mỏng áp sát cơm. Rang mè, giã lạc và trộn thành muối vừng dùng kèm."}
+      ],
+      "keywords": ["cơm lam", "nếp nương", "Tây Bắc", "ống tre", "muối vừng"],
+      "tags": ["cơm nếp", "món ăn vùng cao", "món ăn kèm", "gạo nếp"],
+      "sources": [
+        {"url":"https://vha.vn/tin-tuc/Len-Tay-Bac-nho-an-com-lam-nep-nuong-30048","publisher":"VnExpress / Hiệp hội Du lịch Việt Nam","title":"Lên Tây Bắc nhớ ăn cơm lam nếp nương","use":"Đối chiếu tập quán nấu nếp trong ống tre/nứa, ngâm nếp, nướng và cách ăn cùng muối vừng; tỷ lệ mẻ nhỏ do Bếp Việt biên tập.","accessed_at":"2026-10-23","type":"editorial_reference"}
+      ],
+      "scaling": {"base_servings":4,"targets":[
+        {"servings":2,"main_factor":0.5,"seasoning_start_factor":0.5,"example":"Hai ống cơm lam nhỏ","instruction":"Dùng hai ống có kích thước tương đương; không nén chặt nếp."},
+        {"servings":6,"main_factor":1.5,"seasoning_start_factor":1.25,"example":"Sáu ống cơm lam nhỏ","instruction":"Nướng theo từng mẻ nếu vỉ không đủ chỗ xoay đều các ống."}
+      ]},
+      "media": [{"image_url":"/images/recipes/edited/com-lam-nep-nuong-tay-bac-960.webp","page_url":"https://vha.vn/tin-tuc/Len-Tay-Bac-nho-an-com-lam-nep-nuong-30048","source":"Bếp Việt","author":"Bếp Việt","license":null,"rights_status":"project","rights_note":"Ảnh được tạo mới cho Bếp Việt; nguồn chỉ dùng để biên tập và xác minh món ăn.","width":3840,"height":2160,"orientation":"landscape","preferred_width_met":true,"alt_text":"Bốn ống cơm lam nếp nương nướng vàng trên đĩa gốm, một ống tách lộ hạt nếp dẻo và bát muối vừng; ảnh Bếp Việt nền trong suốt.","verified_dish_match":true,"visual_review_date":"2026-10-23","photo_variant_note":"Ảnh Bếp Việt tạo mới, nền trong suốt; ảnh minh họa theo công thức biên tập, chưa nấu thử."}],
+      "editorial": {"status":"editorial_draft","production_ready":false,"test_cook_status":"not_tested","variant_note":"Thiết bị bếp nhà có thể dùng vỉ nướng than ngoài trời; không đốt ống tre trong phòng kín. Thời gian nướng thay đổi theo kích thước ống.","seed_recipe":null,"reviewed_at":"2026-10-23","needs":["Thử độ chín với ống tre nhiều độ dày và lượng nước ngâm khác nhau."]}
+    },
+    {
+      "id": "BV523",
+      "slug": "banh-canh-ghe-vung-tau",
+      "name": "Bánh canh ghẹ Vũng Tàu",
+      "aliases": ["Bánh canh ghẹ biển Vũng Tàu"],
+      "region": ["Đông Nam Bộ"],
+      "province": ["Vũng Tàu"],
+      "category": "Món nước",
+      "meal_type": ["bữa trưa", "bữa tối"],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Bốn tô vừa, mỗi tô có một phần ghẹ và sợi bánh canh.",
+      "prep_time": 25,
+      "cook_time": 50,
+      "passive_time": 0,
+      "description": "Bánh canh ghẹ là món nước biển quen thuộc ở Vũng Tàu; nước dùng thường nấu từ ghẹ cùng xương heo, tạo vị ngọt đậm mà không cần nêm quá nhiều. Bếp Việt biên tập phiên bản gia đình dùng bánh canh sợi dày, ghẹ xanh, hành và chút dầu điều để giữ màu nước dùng ấm, trong.",
+      "finished_dish": "Tô bánh canh nóng có sợi dày mềm dai, thịt ghẹ ngọt, nước dùng thơm vị hải sản và lớp hành ngò xanh vừa đủ.",
+      "serving": "Xếp bánh canh vào tô, chan nước dùng sôi, thêm thịt ghẹ và hành ngò. Dùng nóng với tiêu, chanh và ớt tùy khẩu vị.",
+      "tips": [
+        "Chọn ghẹ còn tươi, vỏ nguyên; hấp ghẹ riêng giúp thịt không bị bở khi nấu nước dùng.",
+        "Hớt bọt khi hầm xương để nước dùng trong và vị ngọt sạch.",
+        "Chần bánh canh riêng nếu sợi có nhiều bột áo, tránh làm nồi nước dùng quá sánh."
+      ],
+      "dish_type": ["Món nước hải sản", "Đặc sản Vũng Tàu"],
+      "main_ingredient": ["ghẹ xanh", "bánh canh", "xương heo"],
+      "cooking_method": ["hầm nước dùng", "hấp ghẹ", "chần sợi"],
+      "search_terms": ["bánh canh ghẹ Vũng Tàu", "bánh canh cua ghẹ", "món ngon Vũng Tàu", "bánh canh hải sản"],
+      "spicy_level": 0,
+      "image_alt": "Tô bánh canh ghẹ Vũng Tàu có sợi bánh canh dày, thịt ghẹ và càng ghẹ trong nước dùng vàng nhẹ; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 1 giờ 15 phút, gồm sơ chế, hầm nước dùng và nấu ghẹ; dùng bánh canh tươi giúp rút ngắn thời gian.",
+      "total_time": 75,
+      "suggested_pairings": ["Ớt tươi", "Chanh", "Rau thơm"],
+      "width": 3840,
+      "height": 2160,
+      "recipe_family": "vung_tau_crab_noodle_soup",
+      "time_unit": "minute",
+      "ingredients": [
+        {"name":"Ghẹ xanh","quantity":800,"unit":"g","role":"main","notes":"Chọn ghẹ tươi, rửa sạch; chia phần hấp và lấy thịt.","scaling_rule":"linear","sequence":1},
+        {"name":"Xương ống heo","quantity":400,"unit":"g","role":"main","notes":"Chần nhanh, rửa sạch trước khi hầm.","scaling_rule":"linear","sequence":2},
+        {"name":"Bánh canh sợi dày","quantity":600,"unit":"g","role":"main","notes":"Sợi tươi hoặc sợi đóng gói theo hướng dẫn trên bao bì.","scaling_rule":"linear","sequence":3},
+        {"name":"Hành tím","quantity":50,"unit":"g","role":"aromatic","notes":"Bóc vỏ, đập dập; một phần phi thơm.","scaling_rule":"linear","sequence":4},
+        {"name":"Hành lá và ngò rí","quantity":35,"unit":"g","role":"garnish","notes":"Rửa sạch, thái nhỏ.","scaling_rule":"linear","sequence":5},
+        {"name":"Dầu điều","quantity":10,"unit":"ml","role":"seasoning","notes":"Tạo màu nhẹ; không bắt buộc.","scaling_rule":"taste_adjusted","sequence":6},
+        {"name":"Nước mắm","quantity":25,"unit":"ml","role":"seasoning","notes":"Nêm cuối, điều chỉnh theo độ mặn của nước dùng.","scaling_rule":"taste_adjusted","sequence":7},
+        {"name":"Muối","quantity":6,"unit":"g","role":"seasoning","notes":"Nêm nước dùng.","scaling_rule":"taste_adjusted","sequence":8},
+        {"name":"Đường phèn","quantity":10,"unit":"g","role":"seasoning","notes":"Tạo hậu ngọt dịu.","scaling_rule":"taste_adjusted","sequence":9},
+        {"name":"Tiêu đen","quantity":2,"unit":"g","role":"seasoning","notes":"Dùng khi hoàn thiện.","scaling_rule":"taste_adjusted","sequence":10}
+      ],
+      "preparation_steps": [
+        {"step":1,"instruction":"Chần xương ống trong nước sôi 3 phút, rửa sạch. Ghẹ chà rửa vỏ, bỏ phần yếm và mang, để ráo."},
+        {"step":2,"instruction":"Hành tím bóc vỏ, đập dập; hành lá và ngò rí rửa sạch, thái nhỏ. Nếu bánh canh có lớp bột áo dày, xả nhanh và để ráo."}
+      ],
+      "cooking_steps": [
+        {"step":1,"instruction":"Cho xương vào nồi với 1,8 lít nước. Đun sôi, hớt bọt rồi hầm nhỏ lửa 35 phút; lọc nước dùng nếu cần."},
+        {"step":2,"instruction":"Hấp ghẹ 8–10 phút đến khi vỏ chuyển đỏ cam và thịt vừa chín. Để nguội bớt, gỡ thịt, giữ lại một ít càng nguyên để bày tô."},
+        {"step":3,"instruction":"Phi hành tím với dầu điều, cho thịt ghẹ vào đảo nhẹ 1 phút. Trút phần này vào nồi nước dùng, nêm nước mắm, muối và đường phèn."},
+        {"step":4,"instruction":"Chần bánh canh theo hướng dẫn trên bao bì, chia vào bốn tô. Chan nước dùng đang sôi, thêm thịt ghẹ, càng ghẹ, hành ngò và tiêu."}
+      ],
+      "keywords": ["bánh canh ghẹ", "Vũng Tàu", "ghẹ xanh", "món nước", "hải sản"],
+      "tags": ["món nước", "hải sản", "Vũng Tàu", "ghẹ"],
+      "sources": [
+        {"url":"https://govietnam.travel/destination/vung-tau-city-cluster-front-beach-back-beach-christ-the-king-statue-lighthouse-bach-dinh-villa/","publisher":"GoVietnam","title":"Vũng Tàu: cụm Bãi Trước, Bãi Sau và ẩm thực địa phương","use":"Đối chiếu bánh canh ghẹ là đặc sản Vũng Tàu, sợi bánh canh dày và nước dùng từ ghẹ cùng xương heo; lượng nguyên liệu và quy trình mẻ gia đình do Bếp Việt biên tập.","accessed_at":"2026-10-23","type":"editorial_reference"}
+      ],
+      "scaling": {"base_servings":4,"targets":[
+        {"servings":2,"main_factor":0.5,"seasoning_start_factor":0.5,"example":"Hai tô bánh canh ghẹ","instruction":"Giữ một ghẹ nhỏ mỗi tô hoặc chia ghẹ lớn; nêm lại nước dùng sau khi gỡ thịt."},
+        {"servings":6,"main_factor":1.5,"seasoning_start_factor":1.25,"example":"Sáu tô bánh canh ghẹ","instruction":"Hầm thêm xương và nước thay vì tăng muối theo cùng tỷ lệ; nêm sau cùng."}
+      ]},
+      "media": [{"image_url":"/images/recipes/edited/banh-canh-ghe-vung-tau-960.webp","page_url":"https://govietnam.travel/destination/vung-tau-city-cluster-front-beach-back-beach-christ-the-king-statue-lighthouse-bach-dinh-villa/","source":"Bếp Việt","author":"Bếp Việt","license":null,"rights_status":"project","rights_note":"Ảnh được tạo mới cho Bếp Việt; nguồn chỉ dùng để biên tập và xác minh món ăn.","width":3840,"height":2160,"orientation":"landscape","preferred_width_met":true,"alt_text":"Tô bánh canh ghẹ Vũng Tàu có sợi bánh canh dày, thịt ghẹ và càng ghẹ trong nước dùng vàng nhẹ; ảnh Bếp Việt nền trong suốt.","verified_dish_match":true,"visual_review_date":"2026-10-23","photo_variant_note":"Ảnh Bếp Việt tạo mới, nền trong suốt; ảnh minh họa theo công thức biên tập, chưa nấu thử."}],
+      "editorial": {"status":"editorial_draft","production_ready":false,"test_cook_status":"not_tested","variant_note":"Dùng bánh canh tươi hoặc đóng gói loại sợi dày; độ sánh và thời gian chần phụ thuộc nhãn hàng.","seed_recipe":null,"reviewed_at":"2026-10-23","needs":["Thử tỷ lệ nước dùng và sợi bánh canh tươi tại bếp gia đình."]}
+    },
+    {
+      "id": "BV524",
+      "slug": "bo-mot-nang-muoi-kien-vang-krong-pa",
+      "name": "Bò một nắng muối kiến vàng Krông Pa",
+      "aliases": ["Bò một nắng Gia Lai", "Bò một nắng chấm muối kiến vàng"],
+      "region": ["Tây Nguyên"],
+      "province": ["Gia Lai"],
+      "category": "Món ăn kèm",
+      "meal_type": ["bữa trưa", "bữa tối", "bữa phụ"],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một đĩa 500 g bò đã chế biến, chia ăn cùng rau và bánh tráng cho 3–4 người.",
+      "prep_time": 10,
+      "cook_time": 12,
+      "passive_time": 0,
+      "description": "Bò một nắng chấm muối kiến vàng là cặp món đặc trưng gắn với Krông Pa, Gia Lai và văn hóa ẩm thực Tây Nguyên. Thịt bò được tẩm ướp, phơi nắng một ngày rồi làm chín khi dùng; bản Bếp Việt dành cho bếp nhà sử dụng sản phẩm bò một nắng đã chế biến, đóng gói từ cơ sở đủ điều kiện, làm nóng nhanh trên vỉ và chấm cùng muối kiến vàng thực phẩm.",
+      "finished_dish": "Thịt bò một nắng nóng thơm, mặt ngoài xém nhẹ mà thớ bên trong còn mềm; muối kiến vàng có vị mặn, chua cay và thơm gia vị.",
+      "serving": "Để thịt nghỉ 3 phút rồi thái ngang thớ. Dùng cùng muối kiến vàng, rau thơm hoặc bánh tráng; xem hướng dẫn bảo quản và làm chín trên bao bì sản phẩm.",
+      "tips": [
+        "Chọn sản phẩm bò một nắng có nhãn, hạn dùng và hướng dẫn bảo quản rõ ràng; rã đông trong ngăn mát nếu sản phẩm đang đông lạnh.",
+        "Làm nóng vỉ trước, nướng nhanh từng mặt và tránh nướng kéo dài khiến thịt khô dai.",
+        "Muối kiến vàng có thể chứa dị nguyên từ côn trùng; kiểm tra thành phần và tránh dùng khi có dị ứng liên quan."
+      ],
+      "dish_type": ["Món nướng", "Đặc sản Gia Lai"],
+      "main_ingredient": ["bò một nắng", "muối kiến vàng"],
+      "cooking_method": ["nướng", "thái ngang thớ"],
+      "search_terms": ["bò một nắng muối kiến vàng", "bò một nắng Krông Pa", "đặc sản Gia Lai", "món nướng Tây Nguyên"],
+      "spicy_level": 2,
+      "image_alt": "Thịt bò một nắng Gia Lai đã nướng và thái lát trên đĩa gốm, kèm bát muối kiến vàng và miếng chanh; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 22 phút khi dùng bò một nắng đã chế biến; thời gian ướp và phơi của sản phẩm truyền thống không tính trong công thức làm nóng này.",
+      "total_time": 22,
+      "suggested_pairings": ["Rau thơm", "Bánh tráng", "Cơm lam"],
+      "width": 3840,
+      "height": 2160,
+      "recipe_family": "krong_pa_one_sun_beef",
+      "time_unit": "minute",
+      "ingredients": [
+        {"name":"Bò một nắng đã chế biến","quantity":500,"unit":"g","role":"main","notes":"Mua sản phẩm có nhãn và bảo quản đúng hướng dẫn; rã đông trong ngăn mát nếu cần.","scaling_rule":"linear","sequence":1},
+        {"name":"Muối kiến vàng thực phẩm","quantity":35,"unit":"g","role":"seasoning","notes":"Dùng sản phẩm đóng gói có nguồn gốc rõ ràng; kiểm tra thành phần dị nguyên.","scaling_rule":"taste_adjusted","sequence":2},
+        {"name":"Chanh","quantity":1,"unit":"quả","role":"accompaniment","notes":"Cắt miếng, dùng tùy khẩu vị.","scaling_rule":"linear","sequence":3},
+        {"name":"Rau thơm","quantity":80,"unit":"g","role":"accompaniment","notes":"Rửa sạch và để ráo.","scaling_rule":"linear","sequence":4},
+        {"name":"Bánh tráng","quantity":8,"unit":"cái","role":"accompaniment","notes":"Dùng cuốn nếu thích.","scaling_rule":"linear","sequence":5}
+      ],
+      "preparation_steps": [
+        {"step":1,"instruction":"Kiểm tra nhãn, hạn sử dụng và tình trạng bảo quản của bò một nắng cùng muối kiến vàng. Nếu đông lạnh, rã đông trong ngăn mát rồi thấm khô bề mặt."},
+        {"step":2,"instruction":"Rửa rau thơm, để ráo; cắt chanh thành miếng. Làm nóng vỉ nướng hoặc chảo gang trên lửa vừa."}
+      ],
+      "cooking_steps": [
+        {"step":1,"instruction":"Quét rất mỏng dầu lên vỉ nếu cần. Nướng bò một nắng khoảng 2–3 phút mỗi mặt, lật một lần đến khi nóng đều và xém nhẹ; tuân theo hướng dẫn riêng của nhà sản xuất."},
+        {"step":2,"instruction":"Gắp thịt ra, để nghỉ 3 phút rồi thái ngang thớ thành lát mỏng. Bày cùng muối kiến vàng, rau thơm, chanh và bánh tráng."}
+      ],
+      "keywords": ["bò một nắng", "muối kiến vàng", "Krông Pa", "Gia Lai", "Tây Nguyên"],
+      "tags": ["đặc sản vùng miền", "Tây Nguyên", "món nướng", "bò"],
+      "sources": [
+        {"url":"https://baogialai.com.vn/bo-mot-nang-muoi-kien-vang-thien-an-chat-luong-lam-nen-thuong-hieu-post126271.html","publisher":"Báo Gia Lai","title":"Bò một nắng muối kiến vàng Thiên Ân: Chất lượng làm nên thương hiệu","use":"Đối chiếu đặc sản bò một nắng muối kiến vàng tại Krông Pa, khâu tẩm ướp và phơi nắng; công thức Bếp Việt chỉ hướng dẫn làm nóng sản phẩm đã chế biến để phù hợp bếp nhà và an toàn thực phẩm.","accessed_at":"2026-10-23","type":"editorial_reference"},
+        {"url":"https://baogialai.com.vn/muoi-kien-net-doc-dao-trong-am-thuc-tay-nguyen-post24641.html","publisher":"Báo Gia Lai","title":"Muối kiến – nét độc đáo trong ẩm thực Tây Nguyên","use":"Đối chiếu muối kiến vàng là gia vị dùng kèm bò một nắng trong ẩm thực Tây Nguyên.","accessed_at":"2026-10-23","type":"editorial_reference"}
+      ],
+      "scaling": {"base_servings":4,"targets":[
+        {"servings":2,"main_factor":0.5,"seasoning_start_factor":0.5,"example":"250 g bò một nắng đã chế biến","instruction":"Làm nóng theo từng mẻ nhỏ, tránh nướng quá lửa; lượng muối chấm tùy vị."},
+        {"servings":6,"main_factor":1.5,"seasoning_start_factor":1.25,"example":"750 g bò một nắng đã chế biến","instruction":"Nướng nhiều mẻ để giữ nhiệt vỉ; không tăng lượng muối chấm tuyến tính nếu đã đủ vị."}
+      ]},
+      "media": [{"image_url":"/images/recipes/edited/bo-mot-nang-muoi-kien-vang-krong-pa-960.webp","page_url":"https://baogialai.com.vn/bo-mot-nang-muoi-kien-vang-thien-an-chat-luong-lam-nen-thuong-hieu-post126271.html","source":"Bếp Việt","author":"Bếp Việt","license":null,"rights_status":"project","rights_note":"Ảnh được tạo mới cho Bếp Việt; nguồn chỉ dùng để biên tập và xác minh món ăn.","width":3840,"height":2160,"orientation":"landscape","preferred_width_met":true,"alt_text":"Thịt bò một nắng Gia Lai đã nướng và thái lát trên đĩa gốm, kèm bát muối kiến vàng và miếng chanh; ảnh Bếp Việt nền trong suốt.","verified_dish_match":true,"visual_review_date":"2026-10-23","photo_variant_note":"Ảnh Bếp Việt tạo mới, nền trong suốt; ảnh minh họa theo công thức biên tập, chưa nấu thử."}],
+      "editorial": {"status":"editorial_draft","production_ready":false,"test_cook_status":"not_tested","variant_note":"Công thức này làm nóng sản phẩm bò một nắng đã chế biến, không hướng dẫn phơi thịt sống ngoài trời; tuân theo nhãn sản phẩm và lưu ý dị ứng với muối kiến.","seed_recipe":null,"reviewed_at":"2026-10-23","needs":["Rà soát hướng dẫn nhiệt độ và thời gian theo từng loại bò một nắng bán sẵn trước khi phát hành chính thức."]}
+    },
+    {
+      "id": "BV525",
+      "slug": "chao-canh-ca-loc-quang-binh",
+      "name": "Cháo canh cá lóc Quảng Bình",
+      "aliases": ["Cháo canh Quảng Bình", "Cháo bột cá lóc Quảng Bình"],
+      "region": ["Bắc Trung Bộ"],
+      "province": ["Quảng Bình"],
+      "category": "Món nước",
+      "meal_type": ["bữa sáng", "bữa trưa"],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Bốn tô vừa, mỗi tô có sợi bột dày, cá lóc và rau cải xanh.",
+      "prep_time": 25,
+      "cook_time": 40,
+      "passive_time": 0,
+      "description": "Cháo canh là món đặc sản dân dã của Quảng Bình; tên gọi có chữ cháo nhưng thành phẩm là tô canh với sợi bột mì hoặc bột gạo dày, cá lóc, thịt và rau cải. Bếp Việt biên tập phiên bản cá lóc nấu với xương heo, củ nén và nghệ; phần sợi dùng loại tươi bán sẵn để rút gọn thao tác tại nhà.",
+      "finished_dish": "Sợi bột dày mềm dai nằm trong nước dùng nóng, cá lóc vàng nhẹ và rau cải xanh vừa chín; nước có độ sánh nhẹ, không đặc như cháo gạo.",
+      "serving": "Múc khi còn sôi nóng, rắc hành lá và tiêu. Có thể ăn kèm ram giòn theo thói quen địa phương; thêm ớt nếu thích vị cay.",
+      "tips": [
+        "Chọn sợi cháo canh tươi hoặc đóng gói, đọc hướng dẫn thời gian nấu để sợi không bở.",
+        "Luộc cá vừa chín rồi gỡ xương kỹ; lọc nước luộc và hớt bọt để nước dùng sạch vị.",
+        "Cho rau cải vào sau cùng, nước sôi lại là tắt bếp để rau giữ màu và độ giòn."
+      ],
+      "dish_type": ["Món nước", "Đặc sản Quảng Bình"],
+      "main_ingredient": ["cá lóc", "sợi cháo canh", "rau cải xanh"],
+      "cooking_method": ["ninh nước dùng", "luộc cá", "nấu sợi"],
+      "search_terms": ["cháo canh cá lóc Quảng Bình", "cháo canh Quảng Bình", "cháo bột cá lóc", "đặc sản Đồng Hới"],
+      "spicy_level": 1,
+      "image_alt": "Tô cháo canh cá lóc Quảng Bình với sợi bột dày, cá lóc nghệ, rau cải xanh và hành trong nước dùng; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 1 giờ 5 phút với sợi tươi bán sẵn; thời gian nấu có thể thay đổi theo loại sợi.",
+      "total_time": 65,
+      "suggested_pairings": ["Ram giòn", "Ớt tươi", "Rau cải xanh"],
+      "width": 3840,
+      "height": 2160,
+      "recipe_family": "quang_binh_chao_canh_snakehead",
+      "time_unit": "minute",
+      "ingredients": [
+        {"name":"Cá lóc","quantity":600,"unit":"g","role":"main","notes":"Làm sạch, cắt khúc; có thể dùng cá đã phi lê và giữ xương để nấu nước.","scaling_rule":"linear","sequence":1},
+        {"name":"Xương ống heo","quantity":350,"unit":"g","role":"main","notes":"Chần nhanh và rửa sạch.","scaling_rule":"linear","sequence":2},
+        {"name":"Sợi cháo canh tươi","quantity":600,"unit":"g","role":"main","notes":"Chọn loại sợi bột mì hoặc bột gạo dày; làm theo hướng dẫn nếu là sợi khô.","scaling_rule":"linear","sequence":3},
+        {"name":"Rau cải xanh","quantity":120,"unit":"g","role":"vegetable","notes":"Rửa sạch, thái khúc vừa ăn.","scaling_rule":"linear","sequence":4},
+        {"name":"Củ nén","quantity":25,"unit":"g","role":"aromatic","notes":"Bóc vỏ, đập dập; có thể thay bằng hành tím nếu khó tìm.","scaling_rule":"linear","sequence":5},
+        {"name":"Bột nghệ","quantity":3,"unit":"g","role":"seasoning","notes":"Dùng ướp cá để lên màu nhẹ.","scaling_rule":"taste_adjusted","sequence":6},
+        {"name":"Nước mắm","quantity":25,"unit":"ml","role":"seasoning","notes":"Nêm cá và nước dùng, chia làm hai lần.","scaling_rule":"taste_adjusted","sequence":7},
+        {"name":"Muối","quantity":6,"unit":"g","role":"seasoning","notes":"Điều chỉnh theo độ mặn của nước mắm.","scaling_rule":"taste_adjusted","sequence":8},
+        {"name":"Dầu ăn","quantity":20,"unit":"ml","role":"other","notes":"Dùng phi củ nén và xào cá.","scaling_rule":"linear","sequence":9},
+        {"name":"Hành lá","quantity":25,"unit":"g","role":"garnish","notes":"Rửa sạch, thái nhỏ.","scaling_rule":"linear","sequence":10},
+        {"name":"Tiêu đen","quantity":2,"unit":"g","role":"seasoning","notes":"Rắc khi hoàn thiện.","scaling_rule":"taste_adjusted","sequence":11}
+      ],
+      "preparation_steps": [
+        {"step":1,"instruction":"Chần xương heo 3 phút trong nước sôi, rửa sạch. Cá lóc làm sạch, cắt khúc; ướp với một nửa nước mắm, bột nghệ và chút muối trong 10 phút."},
+        {"step":2,"instruction":"Rau cải rửa sạch, thái khúc. Củ nén bóc vỏ, đập dập; hành lá rửa sạch, thái nhỏ. Chuẩn bị sợi cháo canh theo hướng dẫn trên bao bì."}
+      ],
+      "cooking_steps": [
+        {"step":1,"instruction":"Hầm xương với 1,5 lít nước trong 30 phút, hớt bọt thường xuyên. Luộc cá riêng đến khi vừa chín, gắp ra gỡ thịt, lọc nước luộc cá vào nồi nước dùng."},
+        {"step":2,"instruction":"Phi thơm củ nén với dầu ăn. Cho cá đã gỡ vào đảo nhẹ 1–2 phút cùng phần nước mắm còn lại, tránh làm nát miếng cá."},
+        {"step":3,"instruction":"Nêm nước dùng với muối, tiêu và nước mắm cho vừa. Thả sợi cháo canh vào nồi, nấu theo thời gian trên bao bì đến khi sợi mềm dai và nước hơi sánh."},
+        {"step":4,"instruction":"Cho cá và rau cải vào nồi, đun sôi lại khoảng 1 phút rồi tắt bếp. Múc ra tô, rắc hành lá và tiêu, dùng nóng."}
+      ],
+      "keywords": ["cháo canh", "Quảng Bình", "cá lóc", "Đồng Hới", "rau cải"],
+      "tags": ["món nước", "đặc sản miền Trung", "cá lóc", "bữa sáng"],
+      "sources": [
+        {"url":"https://dukhach.quangbinh.gov.vn/web/dukhach/chi-tiet-tin/-/view-article/1/13978710067427/1730341008786","publisher":"Cổng thông tin du khách Quảng Bình","title":"Cháo canh – món ngon dân dã của Quảng Bình","use":"Đối chiếu cháo canh là món địa phương, có sợi mì hoặc bột gạo, cá lóc và rau cải; nội dung mẻ cá lóc nấu xương heo được Bếp Việt biên tập.","accessed_at":"2026-10-23","type":"editorial_reference"},
+        {"url":"https://vtcnews.vn/bi-quyet-nau-mon-chao-canh-ca-loc-chuan-vi-quang-binh-ar766750.html","publisher":"VTC News","title":"Bí quyết nấu món cháo canh cá lóc chuẩn vị Quảng Bình","use":"Tham khảo thao tác nấu sợi bột và nấu cùng cá lóc; tỷ lệ gia đình được Bếp Việt chuẩn hóa.","accessed_at":"2026-10-23","type":"editorial_reference"}
+      ],
+      "scaling": {"base_servings":4,"targets":[
+        {"servings":2,"main_factor":0.5,"seasoning_start_factor":0.5,"example":"Hai tô cháo canh cá lóc","instruction":"Nêm nước dùng từ từ sau khi thêm nước luộc cá, vì độ đậm của cá thay đổi theo nguyên liệu."},
+        {"servings":6,"main_factor":1.5,"seasoning_start_factor":1.25,"example":"Sáu tô cháo canh cá lóc","instruction":"Nấu sợi thành từng lượt nếu nồi nhỏ để sợi không hút hết nước dùng."}
+      ]},
+      "media": [{"image_url":"/images/recipes/edited/chao-canh-ca-loc-quang-binh-960.webp","page_url":"https://dukhach.quangbinh.gov.vn/web/dukhach/chi-tiet-tin/-/view-article/1/13978710067427/1730341008786","source":"Bếp Việt","author":"Bếp Việt","license":null,"rights_status":"project","rights_note":"Ảnh được tạo mới cho Bếp Việt; nguồn chỉ dùng để biên tập và xác minh món ăn.","width":3840,"height":2160,"orientation":"landscape","preferred_width_met":true,"alt_text":"Tô cháo canh cá lóc Quảng Bình với sợi bột dày, cá lóc nghệ, rau cải xanh và hành trong nước dùng; ảnh Bếp Việt nền trong suốt.","verified_dish_match":true,"visual_review_date":"2026-10-23","photo_variant_note":"Ảnh Bếp Việt tạo mới, nền trong suốt; ảnh minh họa theo công thức biên tập, chưa nấu thử."}],
+      "editorial": {"status":"editorial_draft","production_ready":false,"test_cook_status":"not_tested","variant_note":"Có thể thay sợi tươi bằng sợi khô theo hướng dẫn bao bì; công thức này là phiên bản cá lóc, không khẳng định là biến thể duy nhất của Quảng Bình.","seed_recipe":null,"reviewed_at":"2026-10-23","needs":["Nấu thử độ sánh với sợi bột mì và sợi bột gạo từ các nhà sản xuất khác nhau."]}
+    }
+  ]
+}

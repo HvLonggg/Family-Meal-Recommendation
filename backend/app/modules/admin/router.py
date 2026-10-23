@@ -1,3 +1,4 @@
+import logging
 from datetime import UTC, date, datetime, timedelta
 from typing import Annotated, Any
 from uuid import UUID
@@ -15,10 +16,13 @@ from app.modules.admin import insights
 from app.modules.admin.email_schemas import (
     MealSuggestionEmailListResponse,
     MealSuggestionEmailResponse,
+    MealSuggestionRecipient,
+    MealSuggestionRecipientListResponse,
     MealSuggestionRecipientLookup,
     MealSuggestionSendRequest,
     MealSuggestionSendResponse,
 )
+from app.modules.admin.meal_emails import expire_stale_sending, queue_meal_suggestions
 from app.modules.admin.schemas import (
     ActivityKind,
     AdminActivityResponse,
@@ -61,8 +65,19 @@ from app.modules.articles.service import (
     to_detail,
     to_summary,
 )
+from app.modules.assistant import documents, knowledge
+from app.modules.assistant.models import AssistantKnowledgeDocument
+from app.modules.assistant.schemas import (
+    KnowledgeDocumentDetail,
+    KnowledgeDocumentList,
+    KnowledgeDocumentOut,
+    KnowledgeDocumentUpdate,
+    KnowledgeFileIn,
+    KnowledgeNoteIn,
+    KnowledgeStatus,
+)
 from app.modules.auth.dependencies import require_admin
-from app.modules.auth.email import send_meal_suggestion_email, send_support_reply_email
+from app.modules.auth.email import describe_delivery_error, send_support_reply_email
 from app.modules.auth.models import AuthIdentity, User
 from app.modules.auth.security import hash_password
 from app.modules.auth.service import EmailAlreadyExistsError, revoke_all_sessions
@@ -89,6 +104,8 @@ from app.modules.support.schemas import (
     SupportTicketUpdate,
 )
 from app.modules.support.service import ticket_reference
+
+logger = logging.getLogger("bep_viet.admin")
 
 router = APIRouter(prefix="/admin", dependencies=[Depends(require_admin)])
 
@@ -831,12 +848,11 @@ def reply_to_support_ticket(
             reference=ticket_reference(ticket.id),
         )
     except Exception as exc:
+        logger.warning("Support reply email failed: %s", describe_delivery_error(exc))
         ticket = session.get(SupportTicket, ticket_id)
         if ticket is not None:
             ticket.reply_status = "failed"
-            ticket.reply_last_error = (
-                "Email chưa gửi được. Hãy kiểm tra cấu hình email rồi thử lại."
-            )
+            ticket.reply_last_error = describe_delivery_error(exc)
             session.commit()
         raise AdminEmailDeliveryError(
             "Email phản hồi chưa gửi được. Vui lòng thử lại sau."
@@ -928,7 +944,7 @@ def send_meal_suggestions(
     ]
     users = list(session.scalars(select(User).where(User.email.in_(payload.recipient_emails))))
     users_by_email = {user.email: user for user in users if user.email}
-    results = []
+    results: list[AdminMealSuggestionEmail] = []
     for email in payload.recipient_emails:
         user = users_by_email.get(email)
         recent_ticket = None
@@ -962,41 +978,17 @@ def send_meal_suggestions(
             attempts=1,
         )
         session.add(delivery)
-        session.commit()
-        try:
-            send_meal_suggestion_email(
-                recipient=email,
-                recipient_name=recipient_name,
-                meal_type=payload.meal_type,
-                subject=payload.subject,
-                intro_message=payload.intro_message,
-                closing_message=payload.closing_message,
-                recipes=recipe_data,
-            )
-        except Exception:
-            failed = session.get(AdminMealSuggestionEmail, delivery.id)
-            if failed is not None:
-                failed.status = "failed"
-                failed.error_message = (
-                    "Email chưa gửi được. Hãy kiểm tra cấu hình email rồi thử gửi lại."
-                )
-                session.commit()
-                session.refresh(failed)
-                results.append(MealSuggestionEmailResponse.model_validate(failed))
-            continue
-        sent = session.get(AdminMealSuggestionEmail, delivery.id)
-        if sent is not None:
-            sent.status = "sent"
-            sent.sent_at = datetime.now(UTC)
-            sent.error_message = None
-            session.commit()
-            session.refresh(sent)
-            results.append(MealSuggestionEmailResponse.model_validate(sent))
-
-    sent_count = sum(item.status == "sent" for item in results)
-    return MealSuggestionSendResponse(
-        data=results, sent=sent_count, failed=len(results) - sent_count
+        results.append(delivery)
+    session.commit()
+    response = MealSuggestionSendResponse(
+        data=[MealSuggestionEmailResponse.model_validate(item) for item in results],
+        sent=0,
+        failed=0,
+        queued=len(results),
     )
+    # Trả kết quả ngay; email được gửi song song ở nền, lịch sử tự cập nhật trạng thái.
+    queue_meal_suggestions(session.get_bind(), [delivery.id for delivery in results])
+    return response
 
 
 @router.get(
@@ -1023,6 +1015,60 @@ def meal_suggestion_recipient(
 
 
 @router.get(
+    "/meal-suggestions/recipients",
+    response_model=MealSuggestionRecipientListResponse,
+    summary="List people who already received meal suggestion emails",
+)
+def meal_suggestion_recipients(
+    session: DatabaseSession,
+    q: Annotated[str | None, Query(max_length=100)] = None,
+    limit: Annotated[int, Query(ge=1, le=50)] = 5,
+    offset: Offset = 0,
+) -> MealSuggestionRecipientListResponse:
+    conditions = [AdminMealSuggestionEmail.status == "sent"]
+    if q and q.strip():
+        pattern = f"%{q.strip()}%"
+        conditions.append(
+            or_(
+                AdminMealSuggestionEmail.recipient_email.ilike(pattern),
+                AdminMealSuggestionEmail.recipient_name.ilike(pattern),
+            )
+        )
+    grouped = (
+        select(
+            AdminMealSuggestionEmail.recipient_email.label("email"),
+            func.max(AdminMealSuggestionEmail.sent_at).label("last_sent_at"),
+            func.count(AdminMealSuggestionEmail.id).label("sent_count"),
+        )
+        .where(*conditions)
+        .group_by(AdminMealSuggestionEmail.recipient_email)
+    )
+    total = session.scalar(select(func.count()).select_from(grouped.subquery())) or 0
+    rows = session.execute(
+        grouped.order_by(func.max(AdminMealSuggestionEmail.sent_at).desc())
+        .limit(limit)
+        .offset(offset)
+    ).all()
+    data = []
+    for row in rows:
+        latest_name = session.scalar(
+            select(AdminMealSuggestionEmail.recipient_name)
+            .where(AdminMealSuggestionEmail.recipient_email == row.email)
+            .order_by(AdminMealSuggestionEmail.created_at.desc())
+            .limit(1)
+        )
+        data.append(
+            MealSuggestionRecipient(
+                email=row.email,
+                name=latest_name or row.email,
+                last_sent_at=row.last_sent_at,
+                sent_count=row.sent_count,
+            )
+        )
+    return MealSuggestionRecipientListResponse(data=data, total=total)
+
+
+@router.get(
     "/meal-suggestions/history",
     response_model=MealSuggestionEmailListResponse,
     summary="List meal suggestion email history",
@@ -1032,6 +1078,7 @@ def meal_suggestion_email_history(
     limit: Limit = 20,
     offset: Offset = 0,
 ) -> MealSuggestionEmailListResponse:
+    expire_stale_sending(session)
     total = _count(session, _counter(AdminMealSuggestionEmail))
     items = session.scalars(
         select(AdminMealSuggestionEmail)
@@ -1042,3 +1089,111 @@ def meal_suggestion_email_history(
     return MealSuggestionEmailListResponse(
         data=[MealSuggestionEmailResponse.model_validate(item) for item in items], total=total
     )
+
+
+@router.get(
+    "/assistant/knowledge",
+    response_model=KnowledgeStatus,
+    summary="Assistant RAG knowledge base status",
+)
+def assistant_knowledge_status(session: DatabaseSession) -> KnowledgeStatus:
+    return KnowledgeStatus.model_validate(knowledge.knowledge_status(session))
+
+
+@router.post(
+    "/assistant/knowledge/reindex",
+    response_model=KnowledgeStatus,
+    status_code=status.HTTP_202_ACCEPTED,
+    summary="Rebuild the assistant RAG knowledge base in the background",
+)
+def assistant_knowledge_reindex(session: DatabaseSession) -> KnowledgeStatus:
+    knowledge.ensure_fresh(session.get_bind(), force=True)
+    return KnowledgeStatus.model_validate(knowledge.knowledge_status(session))
+
+
+def _document_out(item: AssistantKnowledgeDocument) -> KnowledgeDocumentOut:
+    out = KnowledgeDocumentOut.model_validate(item)
+    out.characters = len(item.text)
+    out.preview = " ".join(item.text.split())[:240]
+    return out
+
+
+def _document_detail(item: AssistantKnowledgeDocument) -> KnowledgeDocumentDetail:
+    return KnowledgeDocumentDetail(**_document_out(item).model_dump(), text=item.text)
+
+
+@router.get(
+    "/assistant/documents",
+    response_model=KnowledgeDocumentList,
+    summary="Knowledge taught to the assistant by admins",
+)
+def assistant_documents(session: DatabaseSession) -> KnowledgeDocumentList:
+    return KnowledgeDocumentList(
+        data=[_document_out(item) for item in documents.list_documents(session)],
+        status=KnowledgeStatus.model_validate(knowledge.knowledge_status(session)),
+    )
+
+
+@router.post(
+    "/assistant/documents",
+    response_model=KnowledgeDocumentDetail,
+    status_code=status.HTTP_201_CREATED,
+    summary="Teach the assistant a written note",
+)
+def teach_assistant_note(
+    payload: KnowledgeNoteIn, session: DatabaseSession, admin: AdminUser
+) -> KnowledgeDocumentDetail:
+    item = documents.create_note(session, admin, title=payload.title, text=payload.text)
+    return _document_detail(item)
+
+
+@router.post(
+    "/assistant/documents/upload",
+    response_model=KnowledgeDocumentDetail,
+    status_code=status.HTTP_201_CREATED,
+    summary="Teach the assistant from a .docx, .pptx, .txt, .md or .csv file",
+)
+def teach_assistant_file(
+    payload: KnowledgeFileIn, session: DatabaseSession, admin: AdminUser
+) -> KnowledgeDocumentDetail:
+    item = documents.create_from_file(
+        session,
+        admin,
+        file_name=payload.file_name,
+        content_type=payload.content_type,
+        data_url=payload.data,
+        title=payload.title,
+    )
+    return _document_detail(item)
+
+
+@router.get(
+    "/assistant/documents/{document_id}",
+    response_model=KnowledgeDocumentDetail,
+    summary="Read a taught document",
+)
+def assistant_document(document_id: UUID, session: DatabaseSession) -> KnowledgeDocumentDetail:
+    return _document_detail(documents.get_document(session, document_id))
+
+
+@router.patch(
+    "/assistant/documents/{document_id}",
+    response_model=KnowledgeDocumentDetail,
+    summary="Edit, enable or disable a taught document",
+)
+def update_assistant_document(
+    document_id: UUID, payload: KnowledgeDocumentUpdate, session: DatabaseSession
+) -> KnowledgeDocumentDetail:
+    item = documents.update_document(
+        session, document_id, title=payload.title, text=payload.text, active=payload.active
+    )
+    return _document_detail(item)
+
+
+@router.delete(
+    "/assistant/documents/{document_id}",
+    status_code=status.HTTP_204_NO_CONTENT,
+    summary="Remove a taught document from the assistant",
+)
+def delete_assistant_document(document_id: UUID, session: DatabaseSession) -> None:
+    documents.delete_document(session, document_id)

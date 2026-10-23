@@ -1,0 +1,1229 @@
+{
+  "batch": 53,
+  "description": "Năm đặc sản dân dã Quảng Ngãi và Tam Kỳ, Bếp Việt biên tập theo nguồn địa phương; ảnh món tạo mới riêng với nền trong suốt.",
+  "recipes": [
+    {
+      "id": "BV591",
+      "slug": "ram-bap-quang-ngai",
+      "name": "Ram bắp Quảng Ngãi",
+      "aliases": [
+        "Chả ram bắp Quảng Ngãi",
+        "Ram bắp xứ Quảng"
+      ],
+      "region": [
+        "Trung"
+      ],
+      "province": [
+        "Quảng Ngãi"
+      ],
+      "category": "Món chiên",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "món khai vị",
+        "bữa phụ"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Một đĩa khoảng 16 cuốn ram bắp nhỏ, dùng làm món ăn kèm hoặc món khai vị cho bốn người.",
+      "prep_time": 25,
+      "cook_time": 25,
+      "passive_time": 10,
+      "total_time": 60,
+      "description": "Ram bắp Quảng Ngãi cuốn nhân bắp nếp non với thịt heo, tôm, khoai sọ, hành tím và hẹ trong lớp bánh tráng mỏng rồi chiên vàng. Bếp Việt biên tập khẩu phần gia đình từ cách làm địa phương; giữ vị ngọt dẻo của bắp và cuốn ram nhỏ giòn.",
+      "finished_dish": "Cuốn ram nhỏ vàng giòn, bên trong là nhân bắp dẻo ngọt, thơm hẹ và tiêu, có vị đậm nhẹ của thịt heo và tôm.",
+      "serving": "Dọn nóng cùng rau sống, dưa leo và nước mắm tỏi ớt chua ngọt. Có thể đặt ram trong lá bánh tráng cùng rau rồi cuốn ăn.",
+      "tips": [
+        "Chọn bắp nếp non vừa, hạt ngậm sữa; bắp quá non nhiều nước, bắp già dễ cứng.",
+        "Xào nhân đến khi ráo và để nguội trước khi cuốn để bánh tráng không rách hoặc bắn dầu.",
+        "Cuốn thanh nhỏ và chiên từng mẻ; đừng trở ram cho đến khi mặt dưới đã se."
+      ],
+      "dish_type": [
+        "Ram bắp",
+        "Món cuốn chiên Quảng Ngãi"
+      ],
+      "main_ingredient": [
+        "bắp nếp non",
+        "bánh tráng cuốn ram",
+        "thịt heo và tôm"
+      ],
+      "cooking_method": [
+        "bào và giã bắp",
+        "xào nhân",
+        "cuốn bánh tráng",
+        "chiên ngập dầu"
+      ],
+      "search_terms": [
+        "ram bắp Quảng Ngãi",
+        "chả ram bắp",
+        "ram bắp xứ Quảng",
+        "cách làm ram bắp Quảng Ngãi"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Đĩa ram bắp Quảng Ngãi vàng giòn, vài cuốn nhỏ có một cuốn cắt lộ nhân bắp nếp non; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 1 giờ, gồm 10 phút để nhân nguội trước khi cuốn.",
+      "suggested_pairings": [
+        "Rau sống",
+        "Dưa leo",
+        "Nước mắm tỏi ớt"
+      ],
+      "recipe_family": "quang_ngai_ram_bap_young_corn_roll",
+      "keywords": [
+        "ram bắp",
+        "bắp nếp non",
+        "món Quảng Ngãi",
+        "ram chiên"
+      ],
+      "tags": [
+        "Quảng Ngãi",
+        "ẩm thực xứ Quảng",
+        "món chiên",
+        "món dân dã",
+        "món ăn gia đình"
+      ],
+      "ingredients": [
+        {
+          "name": "Bắp nếp non, tách hạt",
+          "quantity": 300,
+          "unit": "g",
+          "role": "main",
+          "notes": "Bào mỏng khỏi cùi rồi giã sơ cho hạt hơi dập, không xay nhuyễn.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Thịt heo xay",
+          "quantity": 100,
+          "unit": "g",
+          "role": "protein",
+          "notes": "Chọn thịt nạc vai có chút mỡ để nhân không khô.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Tôm tươi bóc vỏ",
+          "quantity": 100,
+          "unit": "g",
+          "role": "protein",
+          "notes": "Băm nhỏ; có thể bỏ nếu muốn làm phiên bản chay.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Khoai sọ",
+          "quantity": 100,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Gọt vỏ, bào sợi rồi băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Bánh tráng cuốn ram",
+          "quantity": 16,
+          "unit": "tấm",
+          "role": "wrapper",
+          "notes": "Chọn loại mỏng, dai, cỡ nhỏ; có thể cắt tấm lớn làm đôi.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 20,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Hẹ",
+          "quantity": 20,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 12,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm vừa; lượng muối của từng loại nước mắm khác nhau.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        },
+        {
+          "name": "Đường",
+          "quantity": 4,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Tùy chọn, làm dịu vị mặn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 9
+        },
+        {
+          "name": "Tiêu đen xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng tiêu mới xay nếu có.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 10
+        },
+        {
+          "name": "Muối",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm vừa.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 11
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 700,
+          "unit": "ml",
+          "role": "frying_oil",
+          "notes": "Dùng lượng đủ ngập ram trong chảo nhỏ; không nhất thiết hấp thụ hết.",
+          "scaling_rule": "vessel_dependent",
+          "sequence": 12
+        },
+        {
+          "name": "Rau sống",
+          "quantity": 150,
+          "unit": "g",
+          "role": "serving",
+          "notes": "Rửa sạch, để thật ráo.",
+          "scaling_rule": "linear",
+          "sequence": 13
+        },
+        {
+          "name": "Dưa leo",
+          "quantity": 150,
+          "unit": "g",
+          "role": "serving",
+          "notes": "Rửa sạch, thái lát.",
+          "scaling_rule": "linear",
+          "sequence": 14
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa bắp, dùng dao bào hạt khỏi cùi rồi giã sơ trong cối cho hạt bắp dập và hơi kết dính. Băm tôm, bào khoai sọ, băm hành tím và thái nhỏ hẹ."
+        },
+        {
+          "step": 2,
+          "instruction": "Đun 1 thìa canh dầu trong chảo, phi hành tím khoảng 30 giây. Cho thịt heo và tôm vào đảo đến khi vừa chín; thêm khoai sọ, bắp, nước mắm, đường, muối và tiêu, xào 4–5 phút đến khi nhân dẻo và không còn nước đọng. Trộn hẹ vào, dàn nhân ra đĩa và để nguội 10 phút."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Chia nhân thành 16 phần. Đặt từng phần lên bánh tráng, cuốn thành thanh nhỏ dài khoảng 7–8 cm, gập kín hai đầu; nếu bánh khô, chấm rất ít nước lên mép để dán."
+        },
+        {
+          "step": 2,
+          "instruction": "Đun dầu ở lửa vừa đến khoảng 165–170°C. Thả ram thành từng mẻ, để yên đến khi vỏ se rồi mới lật; chiên tổng cộng 4–6 phút mỗi mẻ đến khi vàng đều. Vớt ra rổ cho ráo dầu."
+        },
+        {
+          "step": 3,
+          "instruction": "Dọn ram còn nóng cùng rau sống, dưa leo và chén nước mắm tỏi ớt chua ngọt."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://danviet.vn/ram-bap-mon-ngon-xu-quang-nghe-la-nhung-de-lam-an-ngon-1084786-d162945.html",
+          "publisher": "Báo Dân Việt",
+          "title": "Ram bắp, món ngon xứ Quảng nghe lạ nhưng dễ làm, ăn ngon",
+          "use": "Đối chiếu ram bắp là món đặc sản Quảng Ngãi; bắp nếp, khoai sọ, hành/hẹ, gia vị và vỏ ram; nhân được xào sơ, cuốn nhỏ rồi chiên ngập dầu.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://sovhttdl.quangngai.gov.vn/danh-muc-cot-phai/tin-tuc/hoat-dong-du-lich/chuan-bi-khai-mac-le-hoi-don-an-phu-.html",
+          "publisher": "Sở Văn hóa, Thể thao và Du lịch tỉnh Quảng Ngãi",
+          "title": "Chuẩn bị khai mạc Lễ hội “Don An Phú”",
+          "use": "Xác nhận ram bắp nằm trong nhóm món dân gian, truyền thống được phục vụ tại lễ hội địa phương ở Quảng Ngãi.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "150 g bắp, 50 g thịt heo, 50 g tôm và khoảng 8 tấm bánh tráng",
+            "instruction": "Cuốn 8 thanh nhỏ; chiên thành một mẻ nhỏ và bắt đầu nêm với chưa đến nửa lượng gia vị."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "450 g bắp, 150 g thịt heo, 150 g tôm và khoảng 24 tấm bánh tráng",
+            "instruction": "Xào nhân thành hai mẻ để nhanh ráo; cuốn và chiên từng mẻ nhỏ."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/ram-bap-quang-ngai-960.webp",
+          "page_url": "https://danviet.vn/ram-bap-mon-ngon-xu-quang-nghe-la-nhung-de-lam-an-ngon-1084786-d162945.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để biên tập đặc điểm món và cách nấu.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa ram bắp Quảng Ngãi vàng giòn, vài cuốn nhỏ có một cuốn cắt lộ nhân bắp nếp non; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh ImageGen mới; PNG master 1536 × 1024 px có alpha. Web 960 px và canvas 3840 × 2160 là các bản xuất resize, canvas 4K không phải master. Công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt chuẩn hóa lượng nhân cho bốn người, thêm thịt và tôm theo cách làm được ghi nhận ở nguồn địa phương; công thức biên tập ưu tiên xào nhân chín trước khi cuốn.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử để cân chỉnh độ ẩm nhân theo giống bắp và loại bánh tráng cuốn ram.",
+          "Nhờ người Quảng Ngãi rà soát tỷ lệ khoai sọ, hẹ và gia vị trong bản khẩu phần gia đình."
+        ]
+      }
+    },
+    {
+      "id": "BV592",
+      "slug": "banh-bo-quang-ngai",
+      "name": "Bánh bó Quảng Ngãi",
+      "aliases": [
+        "Bánh bó xứ Quảng",
+        "Bánh bó ngày Tết Quảng Ngãi"
+      ],
+      "region": [
+        "Trung"
+      ],
+      "province": [
+        "Quảng Ngãi"
+      ],
+      "category": "Bánh ngọt",
+      "meal_type": [
+        "bữa phụ",
+        "món tráng miệng",
+        "món ngày Tết"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Một đòn bánh bó nhỏ cắt thành khoảng 12 lát, dùng trà và chia cho bốn người.",
+      "prep_time": 25,
+      "cook_time": 25,
+      "passive_time": 40,
+      "total_time": 90,
+      "description": "Bánh bó là bánh nếp ép thành đòn, gắn với mâm bánh ngày xuân ở Quảng Ngãi. Bột nếp rang được kết dính bằng nước đường, trộn cùng phần mứt rim từ dừa, dứa, cà rốt, bí đao, cà chua và gừng. Bếp Việt biên tập lượng nhỏ, dùng bột nếp rang sẵn tại nhà để phù hợp gian bếp gia đình.",
+      "finished_dish": "Lát bánh trắng dẻo thơm, xen những sợi mứt nhiều màu; có vị ngọt dịu, béo bùi của dừa, thơm dứa và cay ấm nhẹ của gừng.",
+      "serving": "Để bánh nguội và se mặt rồi cắt lát mỏng bằng dao hơi thoa dầu. Dùng với trà nóng; bọc kín phần còn lại và dùng trong ngày.",
+      "tips": [
+        "Thái phần mứt thành sợi mảnh, rim đến khi gần cạn nước rồi để nguội hẳn để bột không nhão.",
+        "Rang bột nếp trên lửa nhỏ và đảo liên tục để bột khô thơm mà không đổi màu.",
+        "Rót nước đường nóng từng ít một vào bột; dừng khi bột vừa kết dính, vì độ hút nước của bột có thể khác nhau."
+      ],
+      "dish_type": [
+        "Bánh nếp ép truyền thống",
+        "Bánh Tết Quảng Ngãi"
+      ],
+      "main_ingredient": [
+        "bột nếp rang",
+        "dừa nạo",
+        "mứt trái cây"
+      ],
+      "cooking_method": [
+        "rim mứt",
+        "rang bột nếp",
+        "nấu nước đường",
+        "nhồi và bó bánh"
+      ],
+      "search_terms": [
+        "bánh bó Quảng Ngãi",
+        "bánh bó xứ Quảng",
+        "bánh bó ngày Tết",
+        "cách làm bánh bó"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Bánh bó Quảng Ngãi dạng đòn nếp trắng cắt lát, mặt cắt có sợi mứt dừa, dứa, cà rốt và bí đao nhiều màu; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 1 giờ 30 phút, gồm thời gian để mứt nguội và bánh se trước khi cắt.",
+      "suggested_pairings": [
+        "Trà nóng",
+        "Trà gừng",
+        "Mâm bánh ngày Tết"
+      ],
+      "recipe_family": "quang_ngai_banh_bo_pressed_glutinous_fruit_cake",
+      "keywords": [
+        "bánh bó",
+        "bánh bó Quảng Ngãi",
+        "bánh nếp",
+        "mứt trái cây"
+      ],
+      "tags": [
+        "Quảng Ngãi",
+        "ẩm thực xứ Quảng",
+        "bánh truyền thống",
+        "món ngày Tết",
+        "bánh nếp"
+      ],
+      "ingredients": [
+        {
+          "name": "Bột nếp",
+          "quantity": 300,
+          "unit": "g",
+          "role": "grain",
+          "notes": "Dùng bột nếp thực phẩm; rang khô trên chảo trước khi nhào.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Dừa nạo",
+          "quantity": 80,
+          "unit": "g",
+          "role": "fruit",
+          "notes": "Chọn cơm dừa tươi, thái sợi mảnh.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Dứa",
+          "quantity": 100,
+          "unit": "g",
+          "role": "fruit",
+          "notes": "Gọt vỏ, bỏ mắt, thái sợi.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Cà rốt",
+          "quantity": 60,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Gọt vỏ, thái sợi mảnh.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Bí đao",
+          "quantity": 80,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Gọt vỏ, bỏ ruột, thái sợi.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Cà chua chín chắc",
+          "quantity": 60,
+          "unit": "g",
+          "role": "fruit",
+          "notes": "Bỏ hạt nhiều nước, thái sợi.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Gừng tươi",
+          "quantity": 10,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Gọt vỏ, thái sợi thật mảnh.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Đường",
+          "quantity": 230,
+          "unit": "g",
+          "role": "sweetener",
+          "notes": "Chia 90 g rim mứt và 140 g nấu nước đường.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 100,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng nấu nước đường để kết dính bột.",
+          "scaling_rule": "vessel_dependent",
+          "sequence": 9
+        },
+        {
+          "name": "Muối",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Một nhúm nhỏ làm vị ngọt cân bằng.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 10
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Thái dừa, dứa, cà rốt, bí đao, cà chua và gừng thành sợi mảnh. Cho phần nguyên liệu này với 90 g đường vào chảo, trộn đều và để 10 phút cho đường tan."
+        },
+        {
+          "step": 2,
+          "instruction": "Rang bột nếp trong chảo khô ở lửa nhỏ 8–10 phút, đảo liên tục đến khi bột thơm và khô tơi; không để bột ngả vàng. Chuyển bột ra âu lớn."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đặt chảo mứt lên lửa vừa nhỏ, rim và đảo nhẹ 12–15 phút đến khi sợi quả trong hơn và nước gần cạn. Trải mứt ra đĩa cho nguội hoàn toàn khoảng 20 phút."
+        },
+        {
+          "step": 2,
+          "instruction": "Đun phần đường còn lại với 100 ml nước đến khi đường tan và si-rô sôi nhẹ 4–5 phút. Tắt bếp, rót si-rô còn nóng từng ít một vào bột nếp, vừa rót vừa trộn đến khi thành khối dẻo kết dính; có thể không cần dùng hết si-rô."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho mứt đã nguội vào khối bột, nhào nhanh cho phân bố đều. Cán hoặc dàn thành tấm dày 1.5–2 cm, cuộn chặt thành đòn bằng giấy nến hoặc màng bọc thực phẩm chịu nhiệt độ phòng; để yên 20 phút cho bánh se rồi cắt lát."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.dulichvn.org.vn/index.php/item/quang-ngai-ngot-ngao-banh-bo-ngay-xuan-49127",
+          "publisher": "Cổng thông tin Du lịch Việt Nam (dẫn nguồn Báo Đắk Lắk)",
+          "title": "Quảng Ngãi: Ngọt ngào bánh bó ngày xuân",
+          "use": "Đối chiếu tên bánh bó, tập quán làm bánh dịp xuân ở Quảng Ngãi, nhóm nguyên liệu mứt trái cây, bột nếp rang, nước đường, cách bó thành đòn rồi cắt lát.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "150 g bột nếp, khoảng 115 g đường và nửa lượng mứt trái cây",
+            "instruction": "Dùng chảo nhỏ để rim mứt, rót si-rô từng chút vì mẻ bột ít hút nước hơn."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "450 g bột nếp, khoảng 345 g đường và 1,5 lần lượng mứt",
+            "instruction": "Rang bột thành hai lượt; trộn và bó bánh thành hai đòn để khối bột không nguội quá nhanh."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/banh-bo-quang-ngai-960.webp",
+          "page_url": "https://www.dulichvn.org.vn/index.php/item/quang-ngai-ngot-ngao-banh-bo-ngay-xuan-49127",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để biên tập đặc điểm món và cách nấu.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Bánh bó Quảng Ngãi dạng đòn nếp trắng cắt lát, mặt cắt có sợi mứt dừa, dứa, cà rốt và bí đao nhiều màu; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh ImageGen mới; PNG master 1536 × 1024 px có alpha. Web 960 px và canvas 3840 × 2160 là các bản xuất resize, canvas 4K không phải master. Công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Nguồn ghi bột nếp được rang, xay mịn và phơi sương; bản biên tập dùng bột nếp đóng gói rồi rang khô tại nhà. Tỷ lệ nước đường được chuẩn hóa để tạo bánh bó quy mô nhỏ.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử để xác nhận lượng si-rô cần thiết theo độ khô của từng loại bột nếp.",
+          "Nhờ người Quảng Ngãi rà soát tỷ lệ các loại mứt và cách bó bánh trong phiên bản gia đình."
+        ]
+      }
+    },
+    {
+      "id": "BV593",
+      "slug": "banh-no-quang-ngai",
+      "name": "Bánh nổ Quảng Ngãi",
+      "aliases": [
+        "Bánh nổ ngày Tết Quảng Ngãi",
+        "Bánh nếp nổ xứ Quảng"
+      ],
+      "region": [
+        "Trung"
+      ],
+      "province": [
+        "Quảng Ngãi"
+      ],
+      "category": "Bánh ngọt",
+      "meal_type": [
+        "bữa phụ",
+        "món tráng miệng",
+        "món ngày Tết"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Một khuôn bánh nhỏ cắt khoảng 16 miếng, tương đương bốn phần ăn nhẹ.",
+      "prep_time": 15,
+      "cook_time": 20,
+      "passive_time": 30,
+      "total_time": 65,
+      "description": "Bánh nổ Quảng Ngãi làm từ nếp rang nổ, đường và gừng. Hạt nếp nổ được xên nhanh với si-rô gừng, ép thật chặt vào khuôn rồi để khô và cắt lát. Bếp Việt biên tập cách làm tại nhà bằng nếp nổ thực phẩm đã rang sẵn, giữ kỹ thuật kết dính, ép khuôn và hương gừng truyền thống.",
+      "finished_dish": "Miếng bánh vuông màu ngà, nhẹ và giòn xốp; các hạt nếp nổ kết dính bằng lớp đường mỏng thơm gừng.",
+      "serving": "Để bánh nguội hẳn mới cắt để mép không vụn. Dùng với trà nóng; cất trong hộp kín sau khi bánh nguội.",
+      "tips": [
+        "Chọn nếp nổ giòn, khô và không có mùi ôi; hạt mềm sẽ làm bánh dai.",
+        "Nấu si-rô đến khi hơi sánh nhưng chưa chuyển màu caramel đậm để bánh không cứng và đắng.",
+        "Ép hỗn hợp thật chặt khi còn nóng; thao tác nhanh vì si-rô nguội sẽ khó kết dính."
+      ],
+      "dish_type": [
+        "Bánh nếp nổ ép khuôn",
+        "Bánh Tết Quảng Ngãi"
+      ],
+      "main_ingredient": [
+        "nếp nổ",
+        "đường",
+        "gừng"
+      ],
+      "cooking_method": [
+        "nấu si-rô gừng",
+        "trộn nếp nổ",
+        "ép khuôn",
+        "để khô"
+      ],
+      "search_terms": [
+        "bánh nổ Quảng Ngãi",
+        "bánh nổ xứ Quảng",
+        "bánh nếp nổ",
+        "cách làm bánh nổ"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Những miếng bánh nổ Quảng Ngãi hình vuông màu ngà, ép từ hạt nếp nổ kết dính bằng si-rô gừng; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 1 giờ 5 phút, gồm 30 phút để bánh se và nguội trước khi cắt.",
+      "suggested_pairings": [
+        "Trà nóng",
+        "Trà gừng",
+        "Mâm bánh ngày Tết"
+      ],
+      "recipe_family": "quang_ngai_banh_no_puffed_glutinous_rice_cake",
+      "keywords": [
+        "bánh nổ",
+        "nếp nổ",
+        "bánh nổ Quảng Ngãi",
+        "bánh Tết"
+      ],
+      "tags": [
+        "Quảng Ngãi",
+        "ẩm thực xứ Quảng",
+        "bánh truyền thống",
+        "món ngày Tết",
+        "nếp nổ"
+      ],
+      "ingredients": [
+        {
+          "name": "Nếp nổ thực phẩm",
+          "quantity": 250,
+          "unit": "g",
+          "role": "grain",
+          "notes": "Dùng nếp nổ hoặc nếp rang nổ đã nổ phồng, mua từ nguồn thực phẩm đáng tin cậy.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Đường",
+          "quantity": 130,
+          "unit": "g",
+          "role": "sweetener",
+          "notes": "Nấu thành si-rô để kết dính hạt nếp.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Gừng tươi",
+          "quantity": 25,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Gọt vỏ, thái sợi mảnh.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 75,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng nấu si-rô.",
+          "scaling_rule": "vessel_dependent",
+          "sequence": 4
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Chuẩn bị khuôn vuông khoảng 16 × 16 cm, lót giấy nến. Kiểm tra nếp nổ, bỏ hạt cháy hoặc còn cứng; tách nhẹ các cụm dính vào nhau."
+        },
+        {
+          "step": 2,
+          "instruction": "Gọt vỏ gừng, thái sợi mảnh. Đong sẵn nếp nổ và đặt một chiếc phới chịu nhiệt cạnh bếp để có thể trộn ngay khi si-rô vừa đạt."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Cho đường, nước và gừng vào chảo nhỏ. Đun lửa vừa, khuấy đến khi đường tan; tiếp tục sôi nhẹ 5–7 phút đến khi si-rô hơi sánh và bám thành dòng mảnh trên thìa."
+        },
+        {
+          "step": 2,
+          "instruction": "Nhấc chảo khỏi bếp, cho nếp nổ vào ngay. Đảo nhanh và nhẹ đến khi si-rô phủ đều các hạt."
+        },
+        {
+          "step": 3,
+          "instruction": "Đổ hỗn hợp vào khuôn đã lót giấy, phủ một lớp giấy nến lên trên rồi dùng đáy cốc phẳng ép thật chặt. Để ở nơi khô mát 30 phút cho bánh se hoàn toàn, lấy ra và cắt 16 miếng."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://scov.gov.vn/ban-sac-van-hoa/huong-vi-que-nha/banh-no-quang-ngai.html",
+          "publisher": "Ủy ban Nhà nước về người Việt Nam ở nước ngoài (SCOV)",
+          "title": "Bánh nổ Quảng Ngãi",
+          "use": "Đối chiếu ba thành phần nếp, đường, gừng; kỹ thuật rang nếp nổ, xên đường với gừng, trộn, nén khuôn, sấy nhẹ và cắt lát.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "125 g nếp nổ, khoảng 65 g đường và 12 g gừng",
+            "instruction": "Dùng nồi nhỏ và ép thành lớp bánh mỏng để si-rô phủ đều."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "375 g nếp nổ, khoảng 195 g đường và 38 g gừng",
+            "instruction": "Nấu si-rô thành hai lượt nếu nồi nhỏ; ép từng khuôn khi hỗn hợp còn nóng."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/banh-no-quang-ngai-960.webp",
+          "page_url": "https://scov.gov.vn/ban-sac-van-hoa/huong-vi-que-nha/banh-no-quang-ngai.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để biên tập đặc điểm món và cách nấu.",
+          "width": 1312,
+          "height": 1199,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Những miếng bánh nổ Quảng Ngãi hình vuông màu ngà, ép từ hạt nếp nổ kết dính bằng si-rô gừng; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh ImageGen mới; PNG master 1312 × 1199 px có alpha. Web 960 px và canvas 3840 × 2160 là các bản xuất resize, canvas 4K không phải master. Công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Nguồn mô tả rang nếp cho nổ tại chỗ, xên với đường và gừng, nén khuôn và sấy nhẹ. Bản bếp gia đình dùng nếp nổ thực phẩm đã rang sẵn để tránh yêu cầu thiết bị nổ gạo chuyên dụng.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử để xác nhận độ sánh si-rô và lực ép phù hợp với nếp nổ bán sẵn.",
+          "Nhờ người Quảng Ngãi rà soát độ dày và độ giòn của phiên bản khuôn nhỏ."
+        ]
+      }
+    },
+    {
+      "id": "BV594",
+      "slug": "xu-xoa-quang-ngai",
+      "name": "Xu xoa Quảng Ngãi",
+      "aliases": [
+        "Xoa xoa Quảng Ngãi",
+        "Xu xoa rong biển xứ Quảng"
+      ],
+      "region": [
+        "Trung"
+      ],
+      "province": [
+        "Quảng Ngãi"
+      ],
+      "category": "Món tráng miệng",
+      "meal_type": [
+        "bữa phụ",
+        "món tráng miệng"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Bốn chén xu xoa lạnh với nước đường gừng, dùng tráng miệng hoặc giải nhiệt.",
+      "prep_time": 15,
+      "cook_time": 45,
+      "passive_time": 300,
+      "total_time": 360,
+      "description": "Xu xoa Quảng Ngãi là thạch trong làm từ rong biển tự nhiên ven ghềnh đá. Rong khô được ngâm, rửa nhiều lần, nấu với nước và chút chanh đến khi mềm rã, sau đó lọc và để đông. Bếp Việt biên tập khẩu phần nhỏ, ăn cùng nước đường nấu gừng tươi như cách thưởng thức địa phương.",
+      "finished_dish": "Thạch rong biển trong, mềm giòn mát lạnh, chan nước đường gừng vàng nhạt thơm dịu.",
+      "serving": "Cắt xu xoa thành khối nhỏ, chia vào chén, chan nước đường gừng đã nguội. Thêm đá viên ngay trước khi ăn nếu thích.",
+      "tips": [
+        "Chỉ dùng rong xu xoa khô bán làm thực phẩm từ nguồn đáng tin cậy; không tự hái rong ở bãi biển.",
+        "Rửa và nhặt cát, vỏ sò nhiều lần; lưới lọc mịn giúp thạch trong và không lợn cợn.",
+        "Không cho quá nhiều nước cốt chanh; nấu đến khi rong rã rồi lọc khi còn nóng."
+      ],
+      "dish_type": [
+        "Thạch rong biển",
+        "Món giải nhiệt Quảng Ngãi"
+      ],
+      "main_ingredient": [
+        "rong biển khô làm xu xoa",
+        "gừng tươi",
+        "đường"
+      ],
+      "cooking_method": [
+        "ngâm và rửa rong",
+        "nấu rong biển",
+        "lọc và làm đông",
+        "nấu nước đường gừng"
+      ],
+      "search_terms": [
+        "xu xoa Quảng Ngãi",
+        "xoa xoa Quảng Ngãi",
+        "xu xoa rong biển",
+        "cách nấu xu xoa"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Chén thủy tinh xu xoa Quảng Ngãi trong mờ cắt khối, chan nước đường gừng vàng nhạt; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 6 giờ, phần lớn là 4 giờ ngâm rong và 1 giờ làm lạnh cho thạch đông.",
+      "suggested_pairings": [
+        "Nước đường gừng",
+        "Đá viên",
+        "Trái cây tươi"
+      ],
+      "recipe_family": "quang_ngai_xu_xoa_seaweed_jelly",
+      "keywords": [
+        "xu xoa",
+        "xoa xoa",
+        "rong biển",
+        "nước đường gừng",
+        "Quảng Ngãi"
+      ],
+      "tags": [
+        "Quảng Ngãi",
+        "món tráng miệng",
+        "rong biển",
+        "món giải nhiệt",
+        "ẩm thực địa phương"
+      ],
+      "ingredients": [
+        {
+          "name": "Rong biển khô làm xu xoa",
+          "quantity": 70,
+          "unit": "g",
+          "role": "seaweed",
+          "notes": "Dùng loại rong xu xoa đã sơ chế, bán làm thực phẩm; nhặt bỏ cát và vỏ sò.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Nước lọc để nấu thạch",
+          "quantity": 1800,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Có thể điều chỉnh nhẹ tùy loại rong và độ đông mong muốn.",
+          "scaling_rule": "vessel_dependent",
+          "sequence": 2
+        },
+        {
+          "name": "Nước cốt chanh",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "acid",
+          "notes": "Vắt và lọc hạt; giúp rong mềm rã khi nấu.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 3
+        },
+        {
+          "name": "Đường",
+          "quantity": 100,
+          "unit": "g",
+          "role": "sweetener",
+          "notes": "Dùng nấu nước đường gừng; điều chỉnh khẩu vị.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 4
+        },
+        {
+          "name": "Gừng tươi",
+          "quantity": 20,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Gọt vỏ, thái sợi.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Nước lọc để nấu nước đường",
+          "quantity": 250,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng nấu si-rô gừng.",
+          "scaling_rule": "vessel_dependent",
+          "sequence": 6
+        },
+        {
+          "name": "Đá viên",
+          "quantity": 300,
+          "unit": "g",
+          "role": "serving",
+          "notes": "Tùy chọn, thêm khi dọn.",
+          "scaling_rule": "optional",
+          "sequence": 7
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Trải rong khô ra, nhặt bỏ cát, vỏ sò và vụn lạ. Rửa qua nhiều lần nước sạch đến khi nước rửa bớt đục, rồi ngâm rong trong nước mát 4 giờ."
+        },
+        {
+          "step": 2,
+          "instruction": "Vớt rong, xả lại hai lần và để ráo. Gọt gừng, thái sợi mảnh; vắt nước cốt chanh và lọc bỏ hạt."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Cho rong đã ngâm vào nồi với 1,8 lít nước và nước cốt chanh. Đun sôi rồi hạ nhỏ lửa, khuấy và nấu 30–35 phút đến khi rong mềm rã."
+        },
+        {
+          "step": 2,
+          "instruction": "Lọc hỗn hợp còn nóng qua rây thật mịn hoặc khăn sạch vào khay. Để nguội tự nhiên rồi làm lạnh khoảng 1 giờ cho đông chắc."
+        },
+        {
+          "step": 3,
+          "instruction": "Trong lúc thạch nguội, đun 250 ml nước với đường và gừng 5–7 phút. Tắt bếp, để si-rô nguội; nếm và thêm chút nước nếu muốn vị nhẹ."
+        },
+        {
+          "step": 4,
+          "instruction": "Cắt xu xoa thành khối, chia bốn chén, chan nước đường gừng và thêm đá viên nếu dùng."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://baovanhoa.vn/du-lich/quang-ngai-thu-phu-xu-xoa-do-lua-mua-nang-247371.html",
+          "publisher": "Báo Văn Hóa",
+          "title": "Quảng Ngãi: Thủ phủ xu xoa đỏ lửa mùa nắng",
+          "use": "Đối chiếu xu xoa làm từ rong biển mọc trên ghềnh đá ven biển Quảng Ngãi; ngâm, rửa kỹ, nấu với chanh, lọc, để đông; ăn với nước đường gừng.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "35 g rong khô, khoảng 900 ml nước nấu thạch và nửa lượng nước đường",
+            "instruction": "Dùng nồi vừa; rửa kỹ rong và giảm nước đường theo khẩu vị."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "105 g rong khô, khoảng 2,7 lít nước nấu thạch",
+            "instruction": "Chia nồi nếu cần để rong mềm rã đều; lọc qua khăn sạch trước khi làm đông."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/xu-xoa-quang-ngai-960.webp",
+          "page_url": "https://baovanhoa.vn/du-lich/quang-ngai-thu-phu-xu-xoa-do-lua-mua-nang-247371.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để biên tập đặc điểm món và cách nấu.",
+          "width": 1448,
+          "height": 1086,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Chén thủy tinh xu xoa Quảng Ngãi trong mờ cắt khối, chan nước đường gừng vàng nhạt; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh ImageGen mới; PNG master 1448 × 1086 px có alpha. Web 960 px và canvas 3840 × 2160 là các bản xuất resize, canvas 4K không phải master. Công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt chuẩn hóa lượng rong và nước cho mẻ nhỏ theo kỹ thuật ngâm, nấu, lọc, làm đông và chan nước đường gừng được báo địa phương ghi nhận.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử để xác nhận tỷ lệ nước theo độ nở và khả năng tạo đông của từng loại rong khô.",
+          "Nhờ người làm xu xoa ở Quảng Ngãi rà soát thời gian nấu và lượng chanh của mẻ gia đình."
+        ]
+      }
+    },
+    {
+      "id": "BV595",
+      "slug": "mit-hong-tam-ky",
+      "name": "Mít hông Tam Kỳ",
+      "aliases": [
+        "Mít hông Quảng Nam",
+        "Mít hông xứ Quảng"
+      ],
+      "region": [
+        "Trung"
+      ],
+      "province": [
+        "Đà Nẵng",
+        "Tam Kỳ (Quảng Nam cũ)"
+      ],
+      "category": "Món ăn vặt",
+      "meal_type": [
+        "bữa phụ",
+        "món tráng miệng"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Khoảng 12–16 múi mít hông nhỏ, chia thành bốn phần ăn nhẹ.",
+      "prep_time": 20,
+      "cook_time": 30,
+      "passive_time": 0,
+      "total_time": 50,
+      "description": "Mít hông Tam Kỳ là món quà quê gắn với vùng Tam Kỳ, nay thuộc phía nam thành phố Đà Nẵng. Múi mít chín được bỏ hạt, hạt luộc nghiền và nêm nhẹ, nhồi trở lại vào múi rồi hấp. Bếp Việt chuẩn hóa lượng nhỏ, giữ cách ăn với dừa nạo và đậu phộng rang.",
+      "finished_dish": "Múi mít chín mềm ngọt, bên trong có nhân hạt mít bùi mịn; dừa nạo và đậu phộng rang thêm vị béo thơm.",
+      "serving": "Rắc dừa nạo và đậu phộng ngay trước khi ăn. Dùng ấm hoặc ở nhiệt độ phòng như món ăn nhẹ.",
+      "tips": [
+        "Chọn mít chín thơm nhưng múi còn nguyên, không quá nhũn để dễ rạch và nhồi nhân.",
+        "Luộc hạt đến khi xuyên mềm rồi bóc lớp vỏ lụa trước khi nghiền để nhân mịn.",
+        "Hấp nhẹ vừa đủ nóng; hấp quá lâu làm múi mít nhũn và dễ rách."
+      ],
+      "dish_type": [
+        "Món mít hấp truyền thống",
+        "Đặc sản Tam Kỳ"
+      ],
+      "main_ingredient": [
+        "múi mít chín",
+        "hạt mít",
+        "dừa nạo"
+      ],
+      "cooking_method": [
+        "tách hạt mít",
+        "luộc và nghiền hạt",
+        "nhồi múi mít",
+        "hấp"
+      ],
+      "search_terms": [
+        "mít hông Tam Kỳ",
+        "mít hông Quảng Nam",
+        "mít hông xứ Quảng",
+        "cách làm mít hông"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Đĩa mít hông Tam Kỳ gồm múi mít chín nhồi nhân hạt mít nghiền, rắc dừa nạo và đậu phộng rang; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 50 phút, gồm luộc hạt mít và hấp các múi đã nhồi.",
+      "suggested_pairings": [
+        "Trà nóng",
+        "Dừa nạo",
+        "Đậu phộng rang"
+      ],
+      "recipe_family": "tam_ky_mit_hong_steamed_stuffed_ripe_jackfruit",
+      "keywords": [
+        "mít hông",
+        "mít chín",
+        "hạt mít",
+        "Tam Kỳ",
+        "Quảng Nam"
+      ],
+      "tags": [
+        "Tam Kỳ",
+        "Quảng Nam",
+        "Đà Nẵng",
+        "món ăn vặt",
+        "món hấp",
+        "ẩm thực địa phương"
+      ],
+      "ingredients": [
+        {
+          "name": "Múi mít chín đã bỏ hạt",
+          "quantity": 500,
+          "unit": "g",
+          "role": "fruit",
+          "notes": "Giữ lại phần múi nguyên vẹn để rạch và nhồi.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Hạt mít đã bóc vỏ cứng",
+          "quantity": 220,
+          "unit": "g",
+          "role": "seed",
+          "notes": "Rửa sạch; luộc mềm rồi bóc lớp vỏ lụa nếu còn.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Đường",
+          "quantity": 15,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Trộn với hạt mít nghiền, gia giảm theo độ ngọt của mít.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 3
+        },
+        {
+          "name": "Muối",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Một nhúm nhỏ nêm nhân hạt.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 4
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Chỉ thêm nếu nhân hạt nghiền quá khô.",
+          "scaling_rule": "optional",
+          "sequence": 5
+        },
+        {
+          "name": "Dừa nạo",
+          "quantity": 40,
+          "unit": "g",
+          "role": "topping",
+          "notes": "Rắc lên khi dọn.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Đậu phộng rang",
+          "quantity": 25,
+          "unit": "g",
+          "role": "topping",
+          "notes": "Giã dập, rắc lên khi dọn.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Tách múi mít chín, bỏ hạt nếu chưa tách và giữ múi không bị rách. Rạch một đường dọc ở mỗi múi để tạo túi nhỏ."
+        },
+        {
+          "step": 2,
+          "instruction": "Rửa hạt mít, bóc lớp vỏ cứng nếu còn. Chuẩn bị xửng hấp và giã dập đậu phộng rang."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Cho hạt mít vào nồi nước, luộc sôi nhẹ 15–20 phút đến khi xiên đũa xuyên mềm. Để ráo, bóc lớp vỏ lụa nâu nếu còn, nghiền hạt với đường và muối thành nhân bùi mịn; thêm ít nước nếu cần."
+        },
+        {
+          "step": 2,
+          "instruction": "Nhồi nhân hạt vào từng múi mít, không ép quá đầy để múi không rách. Xếp vào xửng khi nước đã sôi, đậy nắp và hấp 10–12 phút cho múi nóng mềm."
+        },
+        {
+          "step": 3,
+          "instruction": "Chuyển mít hông ra đĩa, rắc dừa nạo và đậu phộng rang giã dập. Dọn ấm hoặc để nguội bớt trước khi ăn."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://danangfantasticity.com/en/wandering-through-da-nangs-street-food-paradise",
+          "publisher": "Cổng thông tin Du lịch thành phố Đà Nẵng (Danang Fantasticity)",
+          "title": "Wandering Through Da Nang’s Street Food Paradise",
+          "use": "Đối chiếu mít hông Tam Kỳ là món truyền thống miền nam thành phố; dùng múi mít chín, hạt mít luộc nghiền, nêm, nhồi lại vào múi rồi hấp; ăn với dừa nạo và đậu phộng rang.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "250 g múi mít chín và khoảng 110 g hạt mít",
+            "instruction": "Dùng xửng nhỏ, xếp mít thành một lớp để phần nhân nóng đều."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "750 g múi mít chín và khoảng 330 g hạt mít",
+            "instruction": "Luộc hạt thành hai lượt nếu nồi nhỏ; hấp mít theo lớp, không chồng quá dày."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/mit-hong-tam-ky-960.webp",
+          "page_url": "https://danangfantasticity.com/en/wandering-through-da-nangs-street-food-paradise",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để biên tập đặc điểm món và cách nấu.",
+          "width": 1459,
+          "height": 1078,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa mít hông Tam Kỳ gồm múi mít chín nhồi nhân hạt mít nghiền, rắc dừa nạo và đậu phộng rang; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh ImageGen mới; PNG master 1459 × 1078 px có alpha. Web 960 px và canvas 3840 × 2160 là các bản xuất resize, canvas 4K không phải master. Công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt định lượng khẩu phần từ cách làm Du lịch Đà Nẵng ghi nhận: múi mít chín, hạt luộc nghiền nêm, nhồi lại vào múi rồi hấp, ăn với dừa và đậu phộng.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử để xác nhận thời gian luộc hạt theo kích cỡ và độ già của hạt mít.",
+          "Nhờ người Tam Kỳ rà soát cách nêm nhân và độ mềm mong muốn của múi sau khi hấp."
+        ]
+      }
+    }
+  ]
+}

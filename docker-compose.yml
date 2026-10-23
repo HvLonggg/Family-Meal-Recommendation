@@ -6,7 +6,8 @@ services:
       POSTGRES_USER: ${POSTGRES_USER:-bep_viet}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-bep_viet_local}
     ports:
-      - "${POSTGRES_PORT:-5432}:5432"
+      # Chỉ mở trên máy này (127.0.0.1): máy khác trong mạng không truy cập được CSDL.
+      - "127.0.0.1:${POSTGRES_PORT:-5432}:5432"
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-bep_viet} -d ${POSTGRES_DB:-bep_viet}"]
       interval: 5s
@@ -51,14 +52,24 @@ services:
       BEP_VIET_FACEBOOK_CLIENT_SECRET: ${BEP_VIET_FACEBOOK_CLIENT_SECRET:-}
       BEP_VIET_ANTHROPIC_API_KEY: ${BEP_VIET_ANTHROPIC_API_KEY:-}
       BEP_VIET_ASSISTANT_MODEL: ${BEP_VIET_ASSISTANT_MODEL:-claude-opus-5-5}
+      BEP_VIET_GEMINI_API_KEY: ${BEP_VIET_GEMINI_API_KEY:-}
+      BEP_VIET_GEMINI_MODEL: ${BEP_VIET_GEMINI_MODEL:-gemini-flash-lite-latest}
+      BEP_VIET_ASSISTANT_PROVIDER: ${BEP_VIET_ASSISTANT_PROVIDER:-auto}
+      BEP_VIET_GEMINI_EMBEDDING_MODEL: ${BEP_VIET_GEMINI_EMBEDDING_MODEL:-gemini-embedding-2}
+      BEP_VIET_RAG_TOP_K: ${BEP_VIET_RAG_TOP_K:-6}
+      BEP_VIET_AI_MODE: ${BEP_VIET_AI_MODE:-shadow}
+      BEP_VIET_AI_MIN_CONFIDENCE: ${BEP_VIET_AI_MIN_CONFIDENCE:-0.8}
+      BEP_VIET_AI_MIN_PRECISION: ${BEP_VIET_AI_MIN_PRECISION:-0.95}
+      BEP_VIET_WEB_PUSH_VAPID_PRIVATE_KEY: ${BEP_VIET_WEB_PUSH_VAPID_PRIVATE_KEY:-}
+      BEP_VIET_WEB_PUSH_SUBJECT: ${BEP_VIET_WEB_PUSH_SUBJECT:-}
     ports:
-      - "${BACKEND_PORT:-8000}:8000"
+      - "127.0.0.1:${BACKEND_PORT:-8000}:8000"
     depends_on:
       db:
         condition: service_healthy
     command: >-
       sh -c "alembic upgrade head &&
-      uvicorn app.main:app --host 0.0.0.0 --port 8000"
+      uvicorn app.main:app --host 0.0.0.0 --port 8000 --no-server-header --no-date-header"
     healthcheck:
       test:
         [

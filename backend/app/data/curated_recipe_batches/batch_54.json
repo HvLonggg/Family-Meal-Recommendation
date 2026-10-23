@@ -1,0 +1,1348 @@
+{
+  "batch": 54,
+  "description": "Năm món Khmer, Hoa và miền sông nước Nam Bộ được Bếp Việt biên tập theo nguồn địa phương; gồm thức quà nếp, món ăn sáng và món xôi bánh. Ảnh món được tạo mới với nền trong suốt.",
+  "recipes": [
+    {
+      "id": "BV596",
+      "slug": "banh-ong-khmer-soc-trang",
+      "name": "Bánh ống Khmer Sóc Trăng",
+      "aliases": [
+        "Bánh ống lá dứa",
+        "Bánh ống gạo Khmer"
+      ],
+      "region": [
+        "Nam"
+      ],
+      "province": [
+        "Sóc Trăng"
+      ],
+      "category": "Món bánh",
+      "meal_type": [
+        "bữa xế",
+        "món tráng miệng",
+        "món ăn vặt"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Khoảng 8 bánh ống nhỏ cho bốn người, dùng nóng hoặc ấm.",
+      "prep_time": 45,
+      "cook_time": 20,
+      "passive_time": 240,
+      "total_time": 305,
+      "description": "Bánh ống Khmer Sóc Trăng làm từ gạo ngâm, xay cùng nước lá dứa rồi hấp trong khuôn ống. Bếp Việt biên tập khẩu phần gia đình theo cách làm được ghi nhận tại địa phương, dùng dừa nạo, mè rang và đường khi ăn.",
+      "finished_dish": "Bánh hấp mềm xốp, thơm mùi lá dứa và gạo, ăn cùng dừa nạo, mè rang và chút đường.",
+      "serving": "Gỡ bánh khỏi khuôn khi còn ấm, rắc dừa nạo, mè rang và đường. Ăn trong ngày để bánh giữ độ mềm.",
+      "tips": [
+        "Ngâm gạo đủ thời gian rồi để ráo kỹ trước khi xay; hỗn hợp nên ẩm tơi, không nhão.",
+        "Chỉ đổ bột đến khoảng hai phần ba khuôn để hơi nước lưu thông và bánh nở đều.",
+        "Làm nóng khuôn trước, hấp từng mẻ nhỏ; thao tác cẩn thận vì khuôn và hơi nước rất nóng."
+      ],
+      "dish_type": [
+        "Bánh hấp Khmer",
+        "Thức quà Sóc Trăng"
+      ],
+      "main_ingredient": [
+        "gạo tẻ",
+        "nước lá dứa",
+        "dừa nạo"
+      ],
+      "cooking_method": [
+        "ngâm gạo",
+        "xay bột gạo",
+        "hấp khuôn ống"
+      ],
+      "search_terms": [
+        "bánh ống Khmer",
+        "bánh ống Sóc Trăng",
+        "bánh ống lá dứa",
+        "cách làm bánh ống gạo"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Bánh ống Khmer Sóc Trăng hấp màu xanh lá dứa, rắc dừa nạo và mè rang, xếp trên đĩa trọn vẹn; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 5 giờ 5 phút, gồm 4 giờ ngâm gạo.",
+      "suggested_pairings": [
+        "Trà nóng",
+        "Nước dừa tươi",
+        "Trái cây theo mùa"
+      ],
+      "recipe_family": "khmer_soc_trang_banh_ong_rice_tube_cake",
+      "keywords": [
+        "bánh ống",
+        "bánh ống Khmer",
+        "Sóc Trăng",
+        "lá dứa",
+        "bánh hấp"
+      ],
+      "tags": [
+        "Sóc Trăng",
+        "ẩm thực Khmer",
+        "bánh truyền thống",
+        "món ăn vặt",
+        "món chay"
+      ],
+      "ingredients": [
+        {
+          "name": "Gạo thơm",
+          "quantity": 200,
+          "unit": "g",
+          "role": "grain",
+          "notes": "Vo sạch, ngâm riêng; chọn gạo mới, thơm.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Gạo tẻ địa phương",
+          "quantity": 150,
+          "unit": "g",
+          "role": "grain",
+          "notes": "Vo sạch và ngâm cùng gạo thơm; có thể dùng gạo tẻ hạt dài.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Lá dứa",
+          "quantity": 30,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Rửa sạch, xay với nước rồi lọc lấy nước lá dứa.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Nước lá dứa",
+          "quantity": 180,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Xay lá dứa với nước rồi lọc; dùng lượng vừa đủ để xay gạo.",
+          "scaling_rule": "vessel_dependent",
+          "sequence": 4
+        },
+        {
+          "name": "Dừa nạo",
+          "quantity": 120,
+          "unit": "g",
+          "role": "topping",
+          "notes": "Dừa tươi nạo sợi, dùng rắc khi ăn.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Đường",
+          "quantity": 25,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng rắc hoặc trộn nhẹ với dừa theo khẩu vị.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 6
+        },
+        {
+          "name": "Mè trắng",
+          "quantity": 12,
+          "unit": "g",
+          "role": "topping",
+          "notes": "Rang thơm, để nguội.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Muối",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Một nhúm nhỏ làm đậm vị gạo.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Vo riêng hai loại gạo, ngâm trong nước sạch khoảng 4 giờ. Để ráo 20–30 phút; xay với nước lá dứa thành hỗn hợp bột ẩm mịn, rồi rây để loại hạt lợn cợn."
+        },
+        {
+          "step": 2,
+          "instruction": "Rang mè trên chảo khô đến khi dậy mùi. Chuẩn bị khuôn bánh ống sạch, mở xửng và đun nước sôi; đặt khuôn vào xửng cho nóng."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Trộn muối vào bột gạo. Cho bột vào khuôn ống đã nóng, không nén chặt và chỉ đổ khoảng hai phần ba khuôn."
+        },
+        {
+          "step": 2,
+          "instruction": "Đậy xửng, hấp khoảng 2–3 phút mỗi mẻ đến khi bánh kết lại và chín mềm. Dùng dụng cụ phù hợp lấy bánh ra, lặp lại với phần bột còn lại."
+        },
+        {
+          "step": 3,
+          "instruction": "Dọn bánh lúc còn ấm với dừa nạo, mè rang và đường. Điều chỉnh lượng đường trên từng phần ăn."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://baosoctrang.org.vn/van-hoa-the-thao/201911/den-soc-trang-dung-quen-banh-ong-banh-dua-a71231e/",
+          "publisher": "Báo Sóc Trăng",
+          "title": "Đến Sóc Trăng đừng quên bánh ống, bánh dứa",
+          "use": "Đối chiếu nguồn gốc bánh ống trong văn hóa Khmer Sóc Trăng, cách phối gạo, ngâm gạo, xay với nước lá dứa, hấp trong ống và ăn cùng dừa nạo, mè, đường.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "175 g gạo và khoảng 60 g dừa nạo",
+            "instruction": "Hấp thành các mẻ nhỏ để bánh chín đều; nêm đường theo khẩu vị."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "525 g gạo và khoảng 180 g dừa nạo",
+            "instruction": "Xay bột theo mẻ nếu máy nhỏ; giữ xửng sôi ổn định trong lúc hấp."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/banh-ong-khmer-soc-trang-960.webp",
+          "page_url": "https://baosoctrang.org.vn/van-hoa-the-thao/201911/den-soc-trang-dung-quen-banh-ong-banh-dua-a71231e/",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để biên tập đặc điểm món và cách nấu.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Bánh ống Khmer Sóc Trăng hấp màu xanh lá dứa, rắc dừa nạo và mè rang, xếp trên đĩa trọn vẹn; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh ImageGen gốc 1536 × 1024 px, nền trong suốt; WebP đáp ứng được xuất từ PNG gốc. Công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt chuẩn hóa tỷ lệ bột và thời gian hấp cho khuôn gia đình; giữ kỹ thuật ngâm, xay gạo và hấp bánh ống được nguồn địa phương ghi nhận.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử với khuôn ống và loại gạo sẵn có để chốt độ mịn, độ ẩm của bột và thời gian hấp mỗi mẻ.",
+          "Nhờ người làm bánh Khmer Sóc Trăng rà soát cách phối gạo và phần ăn kèm."
+        ]
+      }
+    },
+    {
+      "id": "BV597",
+      "slug": "bun-goi-da-soc-trang",
+      "name": "Bún gỏi dà Sóc Trăng",
+      "aliases": [
+        "Bún gỏi dà Mỹ Xuyên",
+        "Bún gỏi cuốn nước Sóc Trăng"
+      ],
+      "region": [
+        "Nam"
+      ],
+      "province": [
+        "Sóc Trăng"
+      ],
+      "category": "Món bún",
+      "meal_type": [
+        "bữa sáng",
+        "bữa trưa",
+        "món nước"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Bốn tô bún với thịt, tôm, rau và nước dùng chua dịu chan riêng hoặc chan vừa đủ.",
+      "prep_time": 35,
+      "cook_time": 75,
+      "passive_time": 0,
+      "total_time": 110,
+      "description": "Bún gỏi dà là món bún đặc trưng của Sóc Trăng, gợi cách ăn gỏi cuốn nhưng dùng bún, tôm, thịt, rau sống, đậu phộng và nước dùng vị me. Bếp Việt biên tập cách nấu nồi nhỏ với tương hột và nước xương, giữ nước dùng chan riêng để rau không bị mềm.",
+      "finished_dish": "Tô bún có tôm hồng, thịt heo mềm, rau tươi, đậu phộng rang và nước dùng chua ngọt nhẹ, thơm tương hột.",
+      "serving": "Xếp bún và rau vào tô, thêm thịt, tôm và đậu phộng. Chan nước dùng nóng vừa đủ hoặc để riêng bên cạnh; dọn chanh và ớt tùy chọn.",
+      "tips": [
+        "Hớt bọt khi ninh xương để nước dùng trong và vị thanh.",
+        "Nêm nước me và tương hột từ từ; vị chua ngọt nên dịu, không lấn vị tôm thịt.",
+        "Chần bún nhanh nếu dùng bún tươi, để ráo và chỉ chan nước dùng ngay trước khi ăn."
+      ],
+      "dish_type": [
+        "Món bún Sóc Trăng",
+        "Bún nước và rau sống"
+      ],
+      "main_ingredient": [
+        "bún tươi",
+        "tôm",
+        "thịt heo"
+      ],
+      "cooking_method": [
+        "ninh nước dùng",
+        "luộc tôm và thịt",
+        "chan bún"
+      ],
+      "search_terms": [
+        "bún gỏi dà Sóc Trăng",
+        "bún gỏi dà Mỹ Xuyên",
+        "cách nấu bún gỏi dà",
+        "bún tôm thịt miền Tây"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Tô bún gỏi dà Sóc Trăng với bún, tôm, thịt heo, rau sống, đậu phộng và nước dùng me; đặt trên đĩa trọn vẹn, ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 1 giờ 50 phút, gồm thời gian ninh nước dùng.",
+      "suggested_pairings": [
+        "Rau sống",
+        "Chanh tươi",
+        "Ớt tươi"
+      ],
+      "recipe_family": "soc_trang_bun_goi_da_shrimp_pork_tamarind_noodles",
+      "keywords": [
+        "bún gỏi dà",
+        "Sóc Trăng",
+        "Mỹ Xuyên",
+        "bún tôm thịt",
+        "nước dùng me"
+      ],
+      "tags": [
+        "Sóc Trăng",
+        "món bún",
+        "ẩm thực miền Tây",
+        "bữa sáng",
+        "món gia đình"
+      ],
+      "ingredients": [
+        {
+          "name": "Bún tươi",
+          "quantity": 700,
+          "unit": "g",
+          "role": "grain",
+          "notes": "Chần nhanh qua nước sôi nếu cần, để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Tôm đất hoặc tôm sú nhỏ",
+          "quantity": 250,
+          "unit": "g",
+          "role": "main",
+          "notes": "Rửa sạch, bỏ chỉ lưng; giữ vỏ để luộc lấy vị ngọt nếu thích.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Thịt ba chỉ",
+          "quantity": 300,
+          "unit": "g",
+          "role": "main",
+          "notes": "Rửa sạch, luộc chín rồi thái lát mỏng.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Xương heo",
+          "quantity": 400,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chần sơ rồi rửa sạch để nấu nước dùng.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Nước",
+          "quantity": 1800,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng ninh xương; châm nước sôi nếu cần.",
+          "scaling_rule": "vessel_dependent",
+          "sequence": 5
+        },
+        {
+          "name": "Me chín",
+          "quantity": 35,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dầm với nước nóng, lọc lấy nước cốt.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 6
+        },
+        {
+          "name": "Tương hột",
+          "quantity": 45,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Giã dập hoặc xay thô.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 7
+        },
+        {
+          "name": "Đường",
+          "quantity": 18,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm từ từ cho vị chua ngọt dịu.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm cuối cùng theo độ mặn của tương hột.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 9
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 10,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, đập dập.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Xà lách",
+          "quantity": 120,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Rửa kỹ, để ráo, xé miếng vừa ăn.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Rau thơm",
+          "quantity": 40,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rau quế, húng hoặc rau thơm ăn bún; rửa sạch.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        },
+        {
+          "name": "Giá đỗ",
+          "quantity": 150,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Rửa sạch, để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 13
+        },
+        {
+          "name": "Đậu phộng rang",
+          "quantity": 35,
+          "unit": "g",
+          "role": "topping",
+          "notes": "Giã dập vừa.",
+          "scaling_rule": "linear",
+          "sequence": 14
+        },
+        {
+          "name": "Hành phi",
+          "quantity": 20,
+          "unit": "g",
+          "role": "topping",
+          "notes": "Dùng rắc mặt, tùy chọn.",
+          "scaling_rule": "optional",
+          "sequence": 15
+        },
+        {
+          "name": "Chanh và ớt",
+          "quantity": 30,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Dọn riêng để mỗi người điều chỉnh.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 16
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Chần xương heo trong nước sôi 2 phút, đổ bỏ nước rồi rửa sạch. Rửa tôm và thịt; rửa, để ráo rau sống, giá và rau thơm."
+        },
+        {
+          "step": 2,
+          "instruction": "Dầm me với khoảng 100 ml nước nóng, lọc bỏ hạt. Giã dập tương hột, đập dập tỏi; rang và giã đậu phộng nếu chưa rang."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Cho xương vào nồi cùng 1,8 lít nước, đun sôi rồi hớt bọt. Hạ lửa, ninh khoảng 50 phút; giữ nồi sôi nhẹ."
+        },
+        {
+          "step": 2,
+          "instruction": "Cho thịt ba chỉ vào nồi nước dùng, luộc khoảng 20 phút đến khi chín; vớt ra để nguội bớt rồi thái lát. Cho tôm vào nồi, luộc 3–5 phút đến khi vừa chín, vớt ra bóc vỏ."
+        },
+        {
+          "step": 3,
+          "instruction": "Lọc nước dùng nếu cần. Khuấy nước me, tương hột, đường và nước mắm vào nồi; đun nhỏ lửa 5 phút rồi nếm vị chua ngọt mặn hài hòa."
+        },
+        {
+          "step": 4,
+          "instruction": "Chia bún, rau sống, giá, thịt và tôm vào bốn tô; thêm đậu phộng, hành phi. Chan nước dùng nóng vừa đủ hoặc phục vụ riêng, dọn kèm chanh và ớt."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://vnexpress.net/bun-goi-da-dac-san-it-du-khach-biet-den-o-mien-tay-3936040.html",
+          "publisher": "VnExpress",
+          "title": "Bún gỏi dà - đặc sản ít du khách biết đến ở miền Tây",
+          "use": "Đối chiếu cách ăn gợi gỏi cuốn, thành phần bún, tôm, thịt, rau sống, đậu phộng và nước dùng có me, tương hột; công thức gia đình được Bếp Việt chuẩn hóa.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://vietnamtourism.vn/index.php/news/items/333",
+          "publisher": "Cục Du lịch Quốc gia Việt Nam",
+          "title": "Bún gỏi dà Sóc Trăng",
+          "use": "Xác nhận đặc sản gắn với Mỹ Xuyên, Sóc Trăng và phong cách dùng bún, rau, tôm thịt cùng nước dùng.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "350 g bún, 125 g tôm, 150 g thịt và khoảng 900 ml nước",
+            "instruction": "Nêm me và tương hột từng ít một; giữ rau sống riêng đến lúc dọn."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "1,05 kg bún, 375 g tôm, 450 g thịt và khoảng 2,7 lít nước",
+            "instruction": "Ninh xương trong nồi đủ rộng; luộc tôm theo mẻ để không quá chín."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/bun-goi-da-soc-trang-960.webp",
+          "page_url": "https://vietnamtourism.vn/index.php/news/items/333",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để biên tập đặc điểm món và cách nấu.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Tô bún gỏi dà Sóc Trăng với bún, tôm, thịt heo, rau sống, đậu phộng và nước dùng me; đặt trên đĩa trọn vẹn, ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh ImageGen gốc 1536 × 1024 px, nền trong suốt; WebP đáp ứng được xuất từ PNG gốc. Công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt chuẩn hóa nồi nước dùng nhỏ và phần bún, thịt, tôm cho bốn người dựa trên mô tả món Sóc Trăng; giữ vị me, tương hột và cách dùng với rau sống.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử để xác nhận độ chua ngọt của nước dùng với loại me và tương hột khác nhau.",
+          "Nhờ người địa phương Mỹ Xuyên rà soát tỷ lệ rau, tôm thịt và cách chan nước dùng."
+        ]
+      }
+    },
+    {
+      "id": "BV598",
+      "slug": "hu-tieu-ca-ri-vinh-chau",
+      "name": "Hủ tiếu cà ri Vĩnh Châu",
+      "aliases": [
+        "Hủ tiếu vịt cà ri Vĩnh Châu",
+        "Bún cà ri vịt Vĩnh Châu"
+      ],
+      "region": [
+        "Nam"
+      ],
+      "province": [
+        "Sóc Trăng"
+      ],
+      "category": "Món hủ tiếu",
+      "meal_type": [
+        "bữa sáng",
+        "bữa trưa",
+        "món nước"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Bốn tô hủ tiếu với vịt cà ri nước cốt dừa và rau ăn kèm.",
+      "prep_time": 35,
+      "cook_time": 75,
+      "passive_time": 30,
+      "total_time": 140,
+      "description": "Hủ tiếu cà ri Vĩnh Châu kết hợp sợi hủ tiếu với vịt nấu cà ri, sả và nước cốt dừa. Bếp Việt biên tập nồi gia đình theo đặc sản được nguồn du lịch Sóc Trăng ghi nhận, dùng vịt xiêm, khoai và gia vị cà ri vừa phải.",
+      "finished_dish": "Thịt vịt mềm, khoai bùi trong nước cà ri vàng thơm sả và nước cốt dừa; hủ tiếu dai, ăn cùng giá và rau thơm.",
+      "serving": "Chia hủ tiếu, thịt vịt và khoai vào tô; chan nước cà ri nóng. Dọn giá, rau thơm và chanh riêng.",
+      "tips": [
+        "Chọn vịt xiêm tươi, làm sạch kỹ và để ráo trước khi ướp.",
+        "Ướp vịt ít nhất 30 phút để sả và cà ri thấm; xào vịt trước khi thêm nước.",
+        "Nấu lửa nhỏ để thịt mềm mà nước cốt dừa không sôi trào; thêm nước nóng nếu nước sốt quá đặc."
+      ],
+      "dish_type": [
+        "Món cà ri vịt",
+        "Đặc sản Vĩnh Châu"
+      ],
+      "main_ingredient": [
+        "vịt xiêm",
+        "hủ tiếu",
+        "nước cốt dừa"
+      ],
+      "cooking_method": [
+        "ướp vịt",
+        "xào gia vị cà ri",
+        "nấu liu riu"
+      ],
+      "search_terms": [
+        "hủ tiếu cà ri Vĩnh Châu",
+        "bún cà ri vịt Sóc Trăng",
+        "cà ri vịt Vĩnh Châu",
+        "đặc sản Vĩnh Châu"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Tô hủ tiếu cà ri Vĩnh Châu với sợi hủ tiếu, vịt xiêm, khoai và nước cà ri cốt dừa, rau thơm bên cạnh; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 2 giờ 20 phút, gồm 30 phút ướp vịt.",
+      "suggested_pairings": [
+        "Giá đỗ",
+        "Rau quế",
+        "Chanh tươi"
+      ],
+      "recipe_family": "vinh_chau_duck_curry_rice_noodles",
+      "keywords": [
+        "hủ tiếu cà ri",
+        "Vĩnh Châu",
+        "vịt xiêm",
+        "Sóc Trăng",
+        "cà ri nước cốt dừa"
+      ],
+      "tags": [
+        "Vĩnh Châu",
+        "Sóc Trăng",
+        "món hủ tiếu",
+        "món vịt",
+        "ẩm thực miền Tây"
+      ],
+      "ingredients": [
+        {
+          "name": "Vịt xiêm",
+          "quantity": 900,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chặt miếng vừa ăn, làm sạch và để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Hủ tiếu khô",
+          "quantity": 320,
+          "unit": "g",
+          "role": "grain",
+          "notes": "Ngâm và trụng theo hướng dẫn trên bao bì; để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Nước cốt dừa",
+          "quantity": 400,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng loại nguyên chất; khuấy đều trước khi đong.",
+          "scaling_rule": "vessel_dependent",
+          "sequence": 3
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 700,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng nấu mềm thịt vịt.",
+          "scaling_rule": "vessel_dependent",
+          "sequence": 4
+        },
+        {
+          "name": "Khoai môn",
+          "quantity": 250,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Gọt vỏ, cắt khối; có thể thay một phần bằng khoai lang.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Sả",
+          "quantity": 45,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm một phần, phần còn lại đập dập.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 25,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 12,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Bột cà ri",
+          "quantity": 18,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Chọn loại vừa cay, điều chỉnh theo khẩu vị.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 9
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Chia một phần để ướp, nêm lại cuối cùng.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 10
+        },
+        {
+          "name": "Đường",
+          "quantity": 12,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm cân vị, không làm ngọt gắt.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 11
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "fat",
+          "notes": "Dùng xào sả, hành và vịt.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        },
+        {
+          "name": "Giá đỗ",
+          "quantity": 180,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Rửa sạch, để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 13
+        },
+        {
+          "name": "Rau quế",
+          "quantity": 25,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, để ráo, dọn ăn kèm.",
+          "scaling_rule": "linear",
+          "sequence": 14
+        },
+        {
+          "name": "Chanh",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "garnish",
+          "notes": "Cắt múi, dọn riêng.",
+          "scaling_rule": "linear",
+          "sequence": 15
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa vịt, chặt miếng vừa ăn và để thật ráo. Ướp với một nửa bột cà ri, một phần nước mắm, đường và sả băm trong 30 phút."
+        },
+        {
+          "step": 2,
+          "instruction": "Gọt khoai môn, cắt khối vừa; ngâm nhanh trong nước rồi để ráo. Băm hành tím, tỏi và sả; rửa giá, rau quế. Ngâm hủ tiếu khô theo hướng dẫn."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đun nóng dầu, phi thơm hành tím, tỏi và sả. Cho phần cà ri còn lại vào đảo nhanh khoảng 20 giây, tránh để cháy."
+        },
+        {
+          "step": 2,
+          "instruction": "Cho vịt đã ướp vào xào đến khi săn mặt. Thêm nước lọc, đun sôi rồi hớt bọt; hạ lửa, đậy hé nắp và nấu 40–45 phút đến khi vịt gần mềm."
+        },
+        {
+          "step": 3,
+          "instruction": "Thêm khoai môn, nấu khoảng 15 phút đến khi khoai mềm. Rót nước cốt dừa vào, đun liu riu thêm 8–10 phút; nêm phần nước mắm còn lại."
+        },
+        {
+          "step": 4,
+          "instruction": "Trụng hủ tiếu vừa mềm, chia vào tô. Xếp vịt và khoai lên trên, chan nước cà ri nóng; dùng với giá, rau quế và chanh."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.vietnamairlines.com/in/vi/plan-book/travel/travel-guide/dac-san-soc-trang",
+          "publisher": "Vietnam Airlines",
+          "title": "10 đặc sản Sóc Trăng đáng thử khiến thực khách quên lối về",
+          "use": "Đối chiếu hủ tiếu cà ri Vĩnh Châu dùng vịt xiêm, sợi hủ tiếu, sả và nước cốt dừa.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://thegioihoinhap.vn/doc-dao-nhu-thit-vit-bun-ca-ri/",
+          "publisher": "Thế Giới Hội Nhập",
+          "title": "Độc đáo như thịt vịt bún cà ri",
+          "use": "Tham khảo cách chế biến vịt cà ri địa phương, sơ chế và ướp vịt, mùi sả và cách ăn cùng rau, giá; công thức được Bếp Việt biên tập.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "450 g vịt, 160 g hủ tiếu khô và 200 ml nước cốt dừa",
+            "instruction": "Dùng nồi vừa khít để vịt chín trong ít nước; nêm cà ri từng ít một."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "1,35 kg vịt, 480 g hủ tiếu khô và 600 ml nước cốt dừa",
+            "instruction": "Nấu vịt thành lớp vừa trong nồi rộng; thêm nước sôi nếu nồi cạn trước khi thịt mềm."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/hu-tieu-ca-ri-vinh-chau-960.webp",
+          "page_url": "https://www.vietnamairlines.com/in/vi/plan-book/travel/travel-guide/dac-san-soc-trang",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để biên tập đặc điểm món và cách nấu.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Tô hủ tiếu cà ri Vĩnh Châu với sợi hủ tiếu, vịt xiêm, khoai và nước cà ri cốt dừa, rau thơm bên cạnh; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh ImageGen gốc 1536 × 1024 px, nền trong suốt; WebP đáp ứng được xuất từ PNG gốc. Công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt chuẩn hóa món vịt cà ri ăn với hủ tiếu theo đặc sản Vĩnh Châu được nguồn du lịch ghi nhận; lựa chọn khoai môn và tỷ lệ nước cốt dừa là cách biên tập cho bữa gia đình.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử để xác nhận thời gian mềm của vịt xiêm và độ sánh phù hợp của nước cà ri.",
+          "Nhờ người nấu món cà ri Vĩnh Châu rà soát gia vị, rau ăn kèm và loại hủ tiếu địa phương."
+        ]
+      }
+    },
+    {
+      "id": "BV599",
+      "slug": "xoi-xiem-chau-doc",
+      "name": "Xôi Xiêm Châu Đốc",
+      "aliases": [
+        "Xôi Xiêm An Giang",
+        "Xôi Xiêm sầu riêng"
+      ],
+      "region": [
+        "Nam"
+      ],
+      "province": [
+        "An Giang"
+      ],
+      "category": "Món xôi",
+      "meal_type": [
+        "bữa xế",
+        "món tráng miệng",
+        "món ăn vặt"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Bốn phần xôi dẻo thơm nước cốt dừa, dùng cùng sốt trứng đường thốt nốt.",
+      "prep_time": 20,
+      "cook_time": 40,
+      "passive_time": 180,
+      "total_time": 240,
+      "description": "Xôi Xiêm là thức quà được nhắc đến ở Châu Đốc, nấu từ nếp với nước cốt dừa và có thể tạo mùi bằng lá dứa, sầu riêng. Bếp Việt biên tập phiên bản gia đình ăn cùng sốt trứng, đường thốt nốt và dừa, tách sốt khỏi xửng hấp để dễ kiểm soát độ sánh.",
+      "finished_dish": "Hạt nếp dẻo bóng, thơm cốt dừa và lá dứa, ăn với sốt trứng đường thốt nốt sánh nhẹ và sầu riêng tùy chọn.",
+      "serving": "Múc xôi còn ấm ra đĩa, chan sốt trứng vừa đủ; thêm múi sầu riêng tươi nếu dùng. Dọn ngay.",
+      "tips": [
+        "Ngâm nếp ít nhất 3 giờ rồi để ráo để hạt chín đều khi hấp.",
+        "Khuấy sốt trứng liên tục trên lửa nhỏ; không để sôi mạnh để trứng không vón.",
+        "Sầu riêng có mùi vị nổi bật, dùng lượng vừa phải hoặc bỏ qua nếu muốn vị dừa thanh hơn."
+      ],
+      "dish_type": [
+        "Xôi ngọt miền Tây",
+        "Thức quà Châu Đốc"
+      ],
+      "main_ingredient": [
+        "nếp",
+        "nước cốt dừa",
+        "trứng"
+      ],
+      "cooking_method": [
+        "ngâm nếp",
+        "hấp xôi",
+        "nấu sốt trứng"
+      ],
+      "search_terms": [
+        "xôi Xiêm Châu Đốc",
+        "xôi Xiêm An Giang",
+        "xôi sầu riêng cốt dừa",
+        "cách làm xôi Xiêm"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Đĩa xôi Xiêm Châu Đốc với xôi nếp cốt dừa, sốt trứng màu hổ phách, lá dứa và múi sầu riêng bên cạnh; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 4 giờ, gồm 3 giờ ngâm nếp.",
+      "suggested_pairings": [
+        "Trà nóng",
+        "Sầu riêng tươi",
+        "Nước trà đá"
+      ],
+      "recipe_family": "chau_doc_xoi_xiem_coconut_egg_sauce_sticky_rice",
+      "keywords": [
+        "xôi Xiêm",
+        "Châu Đốc",
+        "An Giang",
+        "xôi sầu riêng",
+        "đường thốt nốt"
+      ],
+      "tags": [
+        "Châu Đốc",
+        "An Giang",
+        "món xôi",
+        "món ngọt",
+        "ẩm thực miền Tây"
+      ],
+      "ingredients": [
+        {
+          "name": "Nếp",
+          "quantity": 350,
+          "unit": "g",
+          "role": "grain",
+          "notes": "Vo sạch, ngâm 3 giờ rồi để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Nước cốt dừa",
+          "quantity": 220,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng một phần trộn nếp và phần còn lại nấu sốt.",
+          "scaling_rule": "vessel_dependent",
+          "sequence": 2
+        },
+        {
+          "name": "Lá dứa",
+          "quantity": 2,
+          "unit": "lá",
+          "role": "aromatic",
+          "notes": "Rửa sạch, buộc gọn để hấp cùng nếp.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Đường thốt nốt",
+          "quantity": 70,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Bào nhỏ hoặc cắt vụn để dễ tan.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 4
+        },
+        {
+          "name": "Trứng gà",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "main",
+          "notes": "Đánh tan nhẹ trước khi nấu sốt.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Sầu riêng",
+          "quantity": 100,
+          "unit": "g",
+          "role": "topping",
+          "notes": "Tách múi, bỏ hạt; dùng tùy chọn.",
+          "scaling_rule": "optional",
+          "sequence": 6
+        },
+        {
+          "name": "Muối",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Chia một nhúm cho nếp và sốt.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 7
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Vo nếp đến khi nước tương đối trong, ngâm 3 giờ trong nước sạch rồi để ráo. Rửa lá dứa, buộc gọn; bào nhỏ đường thốt nốt."
+        },
+        {
+          "step": 2,
+          "instruction": "Lắc đều lon nước cốt dừa. Đánh tan trứng trong tô chịu nhiệt, chuẩn bị một nồi nhỏ để nấu sốt và xửng hấp."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Trộn nếp với khoảng 120 ml nước cốt dừa và một nhúm muối. Trải nếp lên xửng có lót vải sạch, đặt lá dứa lên trên và hấp 25–30 phút đến khi nếp trong, dẻo."
+        },
+        {
+          "step": 2,
+          "instruction": "Trong nồi nhỏ, hòa phần nước cốt dừa còn lại với đường thốt nốt và chút muối. Đun lửa nhỏ đến khi đường tan; múc vài thìa hỗn hợp ấm rót từ từ vào trứng, khuấy đều."
+        },
+        {
+          "step": 3,
+          "instruction": "Đổ hỗn hợp trứng vào nồi qua rây, khuấy liên tục trên lửa nhỏ 5–7 phút đến khi sốt sánh phủ mặt thìa; không để sôi mạnh."
+        },
+        {
+          "step": 4,
+          "instruction": "Chia xôi ra đĩa, chan sốt khi còn ấm và thêm sầu riêng nếu dùng. Dọn ngay."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://thanhnien.vn/kham-pha-mon-ngon-doc-dao-cua-mien-bien-gioi-tay-nam-xoi-xiem-18523041412193409.htm",
+          "publisher": "Báo Thanh Niên",
+          "title": "Khám phá món ngon độc đáo của miền biên giới Tây Nam - xôi xiêm",
+          "use": "Đối chiếu xôi Xiêm gắn với Châu Đốc, cách nấu xôi với dừa và sầu riêng, ăn cùng sốt trứng đường thốt nốt.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://www.traveloka.com/vi-vn/explore/culinary/dac-san-chau-doc-an-giang/154920",
+          "publisher": "Traveloka",
+          "title": "Đặc sản Châu Đốc An Giang",
+          "use": "Tham khảo hương vị lá dứa, nước cốt dừa, trứng, đường và sầu riêng trong biến thể xôi Xiêm.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "175 g nếp, 110 ml nước cốt dừa và nửa quả trứng đánh tan",
+            "instruction": "Hấp nếp thành lớp mỏng; nấu sốt trên lửa thật nhỏ."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "525 g nếp, 330 ml nước cốt dừa và 1–2 quả trứng tùy độ sánh",
+            "instruction": "Hấp thành hai lớp hoặc hai mẻ; nấu sốt trong nồi rộng và khuấy đều."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/xoi-xiem-chau-doc-960.webp",
+          "page_url": "https://thanhnien.vn/kham-pha-mon-ngon-doc-dao-cua-mien-bien-gioi-tay-nam-xoi-xiem-18523041412193409.htm",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để biên tập đặc điểm món và cách nấu.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa xôi Xiêm Châu Đốc với xôi nếp cốt dừa, sốt trứng màu hổ phách, lá dứa và múi sầu riêng bên cạnh; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh ImageGen gốc 1536 × 1024 px, nền trong suốt; WebP đáp ứng được xuất từ PNG gốc. Công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt biên tập phần xôi hấp và sốt trứng riêng để tiện nấu tại nhà; giữ các hương vị dừa, lá dứa, sầu riêng và đường thốt nốt được nguồn về Châu Đốc mô tả.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử để kiểm tra thời gian hấp theo loại nếp và độ sánh của sốt.",
+          "Nhờ người làm xôi Xiêm Châu Đốc rà soát tỷ lệ trứng, dừa và cách dùng sầu riêng."
+        ]
+      }
+    },
+    {
+      "id": "BV600",
+      "slug": "com-dep-khmer-soc-trang",
+      "name": "Cốm dẹp Khmer Sóc Trăng",
+      "aliases": [
+        "Cốm dẹp trộn dừa",
+        "Cốm dẹp Ok Om Bok"
+      ],
+      "region": [
+        "Nam"
+      ],
+      "province": [
+        "Sóc Trăng"
+      ],
+      "category": "Món ngọt",
+      "meal_type": [
+        "bữa xế",
+        "món tráng miệng",
+        "món chay"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Bốn phần cốm dẹp trộn dừa, dùng sau khi cốm nghỉ cho mềm.",
+      "prep_time": 10,
+      "cook_time": 0,
+      "passive_time": 15,
+      "total_time": 25,
+      "description": "Cốm dẹp là thức quà Khmer gắn với Sóc Trăng và lễ Ok Om Bok, làm từ nếp non giã dẹp rồi trộn dừa nạo, đường và nước dừa. Bếp Việt biên tập cách trộn mẻ nhỏ, để cốm nghỉ ngắn cho thấm mềm trước khi dùng.",
+      "finished_dish": "Hạt cốm dẹp mềm dẻo, thơm nếp non và dừa tươi, vị ngọt nhẹ, béo dịu.",
+      "serving": "Dọn cốm sau khi trộn và nghỉ khoảng 15 phút. Có thể gói từng phần trong lá chuối sạch hoặc ăn bằng thìa.",
+      "tips": [
+        "Dùng cốm dẹp mới, khô ráo và có nguồn gốc thực phẩm đáng tin cậy.",
+        "Rưới nước dừa từng ít một; cốm cần mềm dẻo nhưng không nhão.",
+        "Nêm đường sau khi trộn thử vì cốm và dừa có độ ngọt khác nhau."
+      ],
+      "dish_type": [
+        "Thức quà Khmer",
+        "Món nếp trộn dừa"
+      ],
+      "main_ingredient": [
+        "cốm dẹp",
+        "dừa nạo",
+        "nước dừa"
+      ],
+      "cooking_method": [
+        "trộn cốm",
+        "ủ mềm"
+      ],
+      "search_terms": [
+        "cốm dẹp Sóc Trăng",
+        "cốm dẹp Khmer",
+        "cốm dẹp Ok Om Bok",
+        "cách làm cốm dẹp trộn dừa"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Đĩa cốm dẹp Khmer Sóc Trăng trộn dừa nạo và đường, điểm lá chuối xanh, đĩa trọn vẹn; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 25 phút, gồm 15 phút để cốm thấm mềm.",
+      "suggested_pairings": [
+        "Trà nóng",
+        "Chuối chín",
+        "Trái cây theo mùa"
+      ],
+      "recipe_family": "khmer_soc_trang_com_dep_flattened_young_rice_coconut",
+      "keywords": [
+        "cốm dẹp",
+        "Sóc Trăng",
+        "Khmer",
+        "Ok Om Bok",
+        "nếp non",
+        "món chay"
+      ],
+      "tags": [
+        "Sóc Trăng",
+        "ẩm thực Khmer",
+        "món chay",
+        "món ngọt",
+        "lễ Ok Om Bok"
+      ],
+      "ingredients": [
+        {
+          "name": "Cốm dẹp",
+          "quantity": 250,
+          "unit": "g",
+          "role": "grain",
+          "notes": "Chọn cốm dẹp nếp non sạch, không ẩm mốc.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Dừa nạo",
+          "quantity": 160,
+          "unit": "g",
+          "role": "topping",
+          "notes": "Dừa tươi nạo sợi; để riêng ít sợi rắc mặt.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Nước dừa tươi",
+          "quantity": 120,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Rót từ từ, lượng thực dùng tùy độ khô của cốm.",
+          "scaling_rule": "vessel_dependent",
+          "sequence": 3
+        },
+        {
+          "name": "Đường",
+          "quantity": 35,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng đường cát hoặc đường thốt nốt bào mịn, nêm theo khẩu vị.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 4
+        },
+        {
+          "name": "Muối",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Một nhúm nhỏ làm rõ vị dừa.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 5
+        },
+        {
+          "name": "Lá chuối",
+          "quantity": 2,
+          "unit": "lá",
+          "role": "wrapping",
+          "notes": "Rửa sạch, lau khô; dùng lót hoặc gói phần ăn.",
+          "scaling_rule": "optional",
+          "sequence": 6
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Nhặt bỏ tạp chất khỏi cốm dẹp. Nạo dừa, để riêng một ít sợi làm phần rắc mặt; lọc nước dừa nếu có cặn."
+        },
+        {
+          "step": 2,
+          "instruction": "Lau sạch lá chuối và cắt thành miếng để lót đĩa hoặc gói từng phần. Chuẩn bị đường và muối."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Cho cốm dẹp vào âu rộng, trộn với dừa nạo, đường và một nhúm muối."
+        },
+        {
+          "step": 2,
+          "instruction": "Rưới nước dừa từng ít một, vừa rưới vừa đảo nhẹ để cốm hút ẩm đều. Dừng khi hạt cốm dẻo mềm nhưng vẫn tơi."
+        },
+        {
+          "step": 3,
+          "instruction": "Đậy âu, để cốm nghỉ khoảng 15 phút cho thấm. Nếm lại, điều chỉnh đường nếu cần, rắc phần dừa còn lại và dọn."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://vovworld.vn/vi-VN/sac-mau-cac-dan-toc-viet-nam/mon-com-dep-cua-nguoi-khmer-1355590.vov5",
+          "publisher": "VOV5 - Đài Tiếng nói Việt Nam",
+          "title": "Món cốm dẹp của người Khmer",
+          "use": "Đối chiếu cốm dẹp gắn với người Khmer, Sóc Trăng và lễ Ok Om Bok; cách trộn cốm đã giã với dừa nạo, đường, nước dừa và để thấm.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://nongthon.vietnamtourism.gov.vn/soc-trang-com-dep-dam-da-huong-vi-que-huong/",
+          "publisher": "Cục Du lịch Quốc gia Việt Nam - Du lịch nông thôn",
+          "title": "Sóc Trăng: Cốm dẹp đậm đà hương vị quê hương",
+          "use": "Xác nhận nguồn gốc Sóc Trăng và cách làm cốm dẹp truyền thống từ nếp non giã dẹp.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "125 g cốm dẹp, 80 g dừa và khoảng 60 ml nước dừa",
+            "instruction": "Rưới nước dừa từng thìa, để cốm nghỉ rồi mới đánh giá độ mềm."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "375 g cốm dẹp, 240 g dừa và khoảng 180 ml nước dừa",
+            "instruction": "Trộn trong âu rộng để nước dừa phân bố đều; chỉnh lượng đường sau khi cốm đã mềm."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/com-dep-khmer-soc-trang-960.webp",
+          "page_url": "https://vovworld.vn/vi-VN/sac-mau-cac-dan-toc-viet-nam/mon-com-dep-cua-nguoi-khmer-1355590.vov5",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để biên tập đặc điểm món và cách nấu.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa cốm dẹp Khmer Sóc Trăng trộn dừa nạo và đường, điểm lá chuối xanh, đĩa trọn vẹn; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh ImageGen gốc 1536 × 1024 px, nền trong suốt; WebP đáp ứng được xuất từ PNG gốc. Công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt chuẩn hóa lượng nước dừa và thời gian nghỉ cho cốm dẹp đóng gói sẵn; giữ cách trộn nếp non với dừa, nước dừa và đường được nguồn Khmer địa phương ghi nhận.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử với các độ khô khác nhau của cốm dẹp để chốt lượng nước dừa và thời gian nghỉ.",
+          "Nhờ người làm cốm dẹp Khmer Sóc Trăng rà soát độ ngọt và cách dùng trong dịp Ok Om Bok."
+        ]
+      }
+    }
+  ]
+}

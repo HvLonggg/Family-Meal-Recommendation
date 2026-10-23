@@ -3,11 +3,7 @@ import type { Translate, TranslateVars } from '@/features/i18n/I18nContext';
 
 type MealComponent = Pick<Recipe, 'category' | 'name' | 'slug'>;
 
-function renderCopy(
-  source: string,
-  vars?: TranslateVars,
-  translate?: Translate,
-) {
+function renderCopy(source: string, vars?: TranslateVars, translate?: Translate) {
   if (translate) return translate(source, vars);
   if (!vars) return source;
   return source.replace(/\{(\w+)\}/g, (match, key: string) =>
@@ -45,10 +41,18 @@ export function describeMealComposition(items: MealComponent[], translate?: Tran
   }
 
   if (!items.length) {
-    return renderCopy('Mâm cơm được phối vị hài hòa, thân thuộc và dễ thưởng thức.', undefined, translate);
+    return renderCopy(
+      'Mâm cơm được phối vị hài hòa, thân thuộc và dễ thưởng thức.',
+      undefined,
+      translate,
+    );
   }
   if (items.length === 1) {
-    return renderCopy('{dish} là điểm nhấn cho bữa cơm nhà trọn vị.', { dish: items[0]!.name }, translate);
+    return renderCopy(
+      '{dish} là điểm nhấn cho bữa cơm nhà trọn vị.',
+      { dish: items[0]!.name },
+      translate,
+    );
   }
 
   const [highlight, ...supporting] = items.map((item) => item.name);

@@ -10,10 +10,10 @@ from app.modules.recipes.models import Recipe, RecipeIngredient
 def register_and_login(client: TestClient, email: str) -> dict[str, str]:
     registered = client.post(
         "/api/v1/auth/register",
-        json={"full_name": "Nguyễn An", "email": email, "password": "BepViet2026"},
+        json={"full_name": "Nguyễn An", "email": email, "password": "Test-Only-No-Login-2026!"},
     )
     assert registered.status_code == 201
-    response = client.post("/api/v1/auth/login", json={"email": email, "password": "BepViet2026"})
+    response = client.post("/api/v1/auth/login", json={"email": email, "password": "Test-Only-No-Login-2026!"})
     assert response.status_code == 200
     return {"Authorization": f"Bearer {response.json()['access_token']}"}
 
@@ -266,9 +266,12 @@ def test_bulk_meal_save_and_completion_history_are_private_and_persisted(
     assert history.status_code == 200
     assert history.json()["total"] == 1
     assert len(history.json()["data"][0]["items"]) == 2
-    assert client.get(
-        "/api/v1/planner/history/meals?through=2026-10-07", headers=other_headers
-    ).json()["data"] == []
+    assert (
+        client.get(
+            "/api/v1/planner/history/meals?through=2026-10-07", headers=other_headers
+        ).json()["data"]
+        == []
+    )
 
     status_update = client.patch(
         "/api/v1/planner/meals/status",

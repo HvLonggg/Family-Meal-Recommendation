@@ -1,4 +1,5 @@
 import fruitPlatterImage from '@/assets/recipes/trai-cay-trang-mieng.jpg';
+import { estimateRecipeNutrition } from '@/data/nutritionEstimate';
 import { getRecipe, recipeMinutes, recipes, type Recipe } from '@/data/recipes';
 
 export type MealRole = 'main' | 'soup' | 'vegetable' | 'vegetarian' | 'side' | 'dessert';
@@ -203,7 +204,11 @@ export function getRandomDishCatalog(): RandomDish[] {
         fromRecipe(
           recipe.slug,
           role,
-          { calories: null, protein: null, vegetableGrams: null },
+          estimateRecipeNutrition(recipe) ?? {
+            calories: null,
+            protein: null,
+            vegetableGrams: null,
+          },
           profiles,
         ),
       );
@@ -256,9 +261,8 @@ export function calculateMealStats(slots: MealSlot[]) {
       protein: 0,
       vegetableGrams: 0,
       maxMinutes: 0,
-      hasNutrition: dishes.every(
-        (dish) => dish.calories !== null && dish.protein !== null && dish.vegetableGrams !== null,
-      ),
+      // Hiện chỉ số khi có ít nhất một món ước tính được; món thiếu dữ liệu được tính là 0.
+      hasNutrition: dishes.some((dish) => dish.calories !== null),
     },
   );
 }

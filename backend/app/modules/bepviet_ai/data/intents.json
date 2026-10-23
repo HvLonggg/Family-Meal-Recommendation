@@ -1,0 +1,487 @@
+{
+  "version": 1,
+  "updated": "2026-10-23",
+  "notes": "Taxonomy ý định của Chú Rồng (AI riêng Bếp Việt). Câu trả lời do đội ngũ Bếp Việt tự biên soạn, chỉ mô tả tính năng có thật trong ứng dụng. Xem README.md.",
+  "intents": [
+    {
+      "id": "greeting", "kind": "smalltalk", "group": "smalltalk",
+      "description": "Chào hỏi, mở đầu cuộc trò chuyện, gọi Chú Rồng.",
+      "answer_vi": "Chào bạn! Mình là Chú Rồng, trợ lý bếp của Bếp Việt. Hôm nay bạn muốn mình gợi ý món, lên thực đơn hay hỗ trợ gì về tài khoản nè?",
+      "answer_en": "Hi there! I'm Chef Dragon, Bep Viet's kitchen assistant. Would you like dish ideas, help planning meals, or help with your account?",
+      "followups": {"vi": ["Hôm nay ăn gì?", "Món nhanh dưới 30 phút", "Lên kế hoạch tuần"], "en": ["What should I cook today?", "Quick dishes under 30 minutes", "Plan my week"]}
+    },
+    {
+      "id": "goodbye", "kind": "smalltalk", "group": "smalltalk",
+      "description": "Chào tạm biệt, kết thúc trò chuyện.",
+      "answer_vi": "Cảm ơn bạn đã ghé Bếp Việt! Chúc bạn nấu ngon và cả nhà ăn thật vui. Cần gì cứ gọi Chú Rồng nhé.",
+      "answer_en": "Thanks for stopping by Bep Viet! Happy cooking and enjoy your meal. Call on Chef Dragon anytime.",
+      "followups": {"vi": [], "en": []}
+    },
+    {
+      "id": "thanks_praise", "kind": "smalltalk", "group": "smalltalk",
+      "description": "Cảm ơn, khen Chú Rồng hoặc khen Bếp Việt.",
+      "answer_vi": "Cảm ơn bạn nhiều nha! Lời động viên của bạn giúp đội ngũ Bếp Việt cố gắng hơn mỗi ngày. Bạn cần mình giúp thêm gì không?",
+      "answer_en": "Thank you so much! Your kind words keep the Bep Viet team going. Is there anything else I can help with?",
+      "followups": {"vi": ["Gợi ý món tối nay", "Góp ý cho Bếp Việt"], "en": ["Dinner ideas", "Send feedback"]}
+    },
+    {
+      "id": "affirm", "kind": "smalltalk", "group": "smalltalk",
+      "description": "Đồng ý / xác nhận ngắn (ừ, ok, đúng rồi, được). Phụ thuộc ngữ cảnh lượt trước; bộ định tuyến nên tiếp tục hành động đang chờ.",
+      "answer_vi": "Tuyệt! Mình làm tiếp ngay nhé.",
+      "answer_en": "Great! Let's carry on.",
+      "followups": {"vi": [], "en": []}
+    },
+    {
+      "id": "deny", "kind": "smalltalk", "group": "smalltalk",
+      "description": "Từ chối / phủ định ngắn (không, thôi, chưa cần). Phụ thuộc ngữ cảnh lượt trước.",
+      "answer_vi": "Không sao đâu! Khi nào cần, bạn cứ nói mình nhé.",
+      "answer_en": "No problem! Just let me know whenever you need me.",
+      "followups": {"vi": ["Gợi ý món khác", "Xem kế hoạch tuần"], "en": ["Other dish ideas", "See my weekly plan"]}
+    },
+    {
+      "id": "identity_who", "kind": "faq", "group": "identity",
+      "description": "Hỏi trợ lý là ai, tên gì, là người hay máy.",
+      "answer_vi": "Mình là Chú Rồng — trợ lý AI của Bếp Việt. Mình giúp bạn tìm món, gợi ý thực đơn hợp khẩu vị và gia đình, hướng dẫn nấu từng bước trong chế độ \"Vào bếp\" và giải đáp cách dùng Bếp Việt.",
+      "answer_en": "I'm Chef Dragon, Bep Viet's AI assistant. I help you find dishes, suggest menus that suit your family, guide you step by step in Cook mode and answer questions about using Bep Viet.",
+      "followups": {"vi": ["Bạn làm được gì?", "Hôm nay ăn gì?"], "en": ["What can you do?", "What should I cook today?"]}
+    },
+    {
+      "id": "identity_creator", "kind": "faq", "group": "identity",
+      "description": "Hỏi ai tạo ra / ai phát triển trợ lý, công ty nào làm.",
+      "answer_vi": "Mình được đội ngũ Bếp Việt phát triển để đồng hành cùng căn bếp gia đình Việt. Nếu bạn có góp ý cho đội ngũ, hãy gửi qua trang Liên hệ (/contact) nhé — mọi ý kiến đều được đọc kỹ.",
+      "answer_en": "I was built by the Bep Viet team to help Vietnamese home kitchens. If you have feedback for the team, please send it through the Contact page (/contact) — every message is read.",
+      "followups": {"vi": ["Góp ý cho Bếp Việt"], "en": ["Send feedback"]}
+    },
+    {
+      "id": "identity_model", "kind": "faq", "group": "identity",
+      "description": "Hỏi dùng model/công nghệ gì, có phải ChatGPT/Gemini/Claude không, prompt hệ thống là gì (hỏi tò mò, không cố vượt rào).",
+      "answer_vi": "Mình là Chú Rồng, trợ lý AI do đội ngũ Bếp Việt phát triển và tinh chỉnh riêng cho chuyện bếp núc Việt. Về chi tiết kỹ thuật bên trong hệ thống, mình xin phép không chia sẻ. Còn nấu gì, nấu sao thì bạn cứ hỏi mình nhé!",
+      "answer_en": "I'm Chef Dragon, an AI assistant developed and tuned by the Bep Viet team for Vietnamese home cooking. I'd rather not go into the technical details of the system, but ask me anything about what to cook and how!",
+      "followups": {"vi": ["Bạn làm được gì?"], "en": ["What can you do?"]}
+    },
+    {
+      "id": "bot_capabilities", "kind": "faq", "group": "identity",
+      "description": "Hỏi trợ lý làm được gì, giúp được gì, cách dùng trợ lý.",
+      "answer_vi": "Mình có thể giúp bạn:\n1. Gợi ý món theo bữa, nguyên liệu sẵn có, vùng miền hay chế độ ăn.\n2. Tra nguyên liệu, thời gian nấu, dinh dưỡng và cách nấu từng món trong kho món Bếp Việt.\n3. Hướng dẫn dùng Kế hoạch, Quay mâm, Vào bếp, hẹn giờ, tài khoản và cài đặt.\nBạn cũng có thể nói \"Nhớ giúp mình: nhà mình không ăn cay\" để mình ghi nhớ khẩu vị.",
+      "answer_en": "I can help you:\n1. Suggest dishes by meal, ingredients on hand, region or diet.\n2. Look up ingredients, cooking time, nutrition and steps for dishes in the Bep Viet catalog.\n3. Explain the Planner, Meal spinner, Cook mode, timers, your account and settings.\nYou can also say \"Remember: we don't eat spicy food\" and I'll keep it in mind.",
+      "followups": {"vi": ["Hôm nay ăn gì?", "Cách lên kế hoạch tuần", "Chế độ Vào bếp là gì?"], "en": ["What should I cook today?", "How do I plan my week?", "What is Cook mode?"]}
+    },
+    {
+      "id": "about_free", "kind": "faq", "group": "care_account",
+      "description": "Hỏi Bếp Việt có miễn phí không, có mất phí, gói trả phí, quảng cáo.",
+      "answer_vi": "Có bạn nhé. Bạn có thể tra cứu công thức, quay mâm cơm và lên kế hoạch bữa ăn hoàn toàn miễn phí. Tạo tài khoản (cũng miễn phí) giúp đồng bộ món yêu thích, kế hoạch và cài đặt trên nhiều thiết bị.",
+      "answer_en": "Yes. Browsing recipes, spinning meals and planning are completely free. A free account lets you sync your favourites, plans and settings across devices.",
+      "followups": {"vi": ["Cách tạo tài khoản"], "en": ["How do I sign up?"]}
+    },
+    {
+      "id": "account_register", "kind": "faq", "group": "care_account",
+      "description": "Hỏi cách đăng ký / tạo tài khoản, lỗi khi đăng ký (mật khẩu không hợp lệ, email đã dùng).",
+      "answer_vi": "Tạo tài khoản Bếp Việt chỉ mất một phút:\n1. Bấm \"Tạo tài khoản miễn phí\" ở trang Đăng nhập (hoặc vào /register).\n2. Nhập họ tên, email và mật khẩu tối thiểu 8 ký tự, có cả chữ cái và chữ số; đồng ý Điều khoản.\n3. Bấm tạo tài khoản — bạn đăng nhập được ngay và sẽ nhận email chào mừng.\nNếu báo email đã được dùng, có thể bạn đã đăng ký trước đó: hãy thử \"Quên mật khẩu?\" nhé.",
+      "answer_en": "Creating a Bep Viet account takes a minute:\n1. Click \"Create a free account\" on the sign-in page (or go to /register).\n2. Enter your name, email and a password of at least 8 characters with letters and numbers; accept the Terms.\n3. Submit — you can sign in right away and will receive a welcome email.\nIf the email is already in use, you may have signed up before: try \"Forgot password?\".",
+      "followups": {"vi": ["Quên mật khẩu", "Không nhận được email"], "en": ["Forgot password", "Didn't receive the email"]}
+    },
+    {
+      "id": "account_login_help", "kind": "faq", "group": "care_account",
+      "description": "Không đăng nhập được, báo sai thông tin, bị đăng xuất / phiên hết hạn, hỏi đăng nhập bằng Google.",
+      "answer_vi": "Mình rất tiếc vì bạn gặp khó khi đăng nhập. Bạn thử lần lượt:\n1. Kiểm tra đúng email đã đăng ký và mật khẩu (phân biệt chữ hoa, chữ thường).\n2. Nếu quên mật khẩu, bấm \"Quên mật khẩu?\" để nhận mã OTP qua email.\n3. Nếu thấy \"Phiên đăng nhập đã hết hạn\", chỉ cần đăng nhập lại; tick \"Ghi nhớ thiết bị này\" để giữ phiên lâu hơn.\n4. Tải lại trang hoặc thử trình duyệt khác.\nVẫn chưa được thì bạn gửi yêu cầu ở trang Liên hệ (/contact), chủ đề \"Tài khoản & đăng nhập\", mình sẽ hỗ trợ qua email.",
+      "answer_en": "Sorry you're having trouble signing in. Please try:\n1. Check you're using the registered email and the right password (case-sensitive).\n2. If you forgot it, click \"Forgot password?\" to get a code by email.\n3. If you see \"Your session has expired\", just sign in again; tick \"Remember this device\" to stay signed in longer.\n4. Reload the page or try another browser.\nStill stuck? Send a request on the Contact page (/contact) with the \"Account & sign-in\" topic and we'll reply by email.",
+      "followups": {"vi": ["Quên mật khẩu", "Liên hệ hỗ trợ"], "en": ["Forgot password", "Contact support"]}
+    },
+    {
+      "id": "account_forgot_password", "kind": "faq", "group": "care_account",
+      "description": "Quên mật khẩu, muốn lấy lại / khôi phục / đặt lại mật khẩu khi KHÔNG đăng nhập được.",
+      "answer_vi": "Bạn lấy lại mật khẩu như sau:\n1. Ở trang Đăng nhập, bấm \"Quên mật khẩu?\".\n2. Nhập đúng email đã đăng ký rồi bấm \"Gửi mã OTP qua email\".\n3. Nhập mã 5 chữ số trong email (mã có thời hạn), sau đó tạo mật khẩu mới.\nChưa thấy mã thì xem thêm mục Spam/Quảng cáo; bạn có thể yêu cầu mã mới sau 60 giây.",
+      "answer_en": "To reset your password:\n1. On the sign-in page, click \"Forgot password?\".\n2. Enter your registered email and click to send the code.\n3. Enter the 5-digit code from the email (it expires after a while), then create a new password.\nNo code? Check your Spam/Promotions folder; you can request a new code after 60 seconds.",
+      "followups": {"vi": ["Không nhận được mã", "Đổi mật khẩu"], "en": ["I didn't get the code", "Change password"]}
+    },
+    {
+      "id": "account_change_password", "kind": "faq", "group": "care_account",
+      "description": "Muốn đổi mật khẩu khi ĐANG đăng nhập (biết mật khẩu cũ).",
+      "answer_vi": "Bạn đổi mật khẩu như sau:\n1. Vào Tài khoản → \"Đổi mật khẩu & bảo mật\".\n2. Nhập mật khẩu hiện tại và mật khẩu mới (tối thiểu 8 ký tự, có chữ cái và chữ số; đừng dùng lại mật khẩu của tài khoản khác).\n3. Bấm \"Đổi mật khẩu\".\nNếu nghi có người khác dùng tài khoản, bạn bấm thêm \"Đăng xuất mọi thiết bị\" ở cùng trang.",
+      "answer_en": "To change your password:\n1. Go to Account → \"Password & security\".\n2. Enter your current password and a new one (at least 8 characters with letters and numbers; don't reuse passwords from other accounts).\n3. Click \"Change password\".\nIf you think someone else used your account, also click \"Sign out of all devices\" on the same page.",
+      "followups": {"vi": ["Đăng xuất mọi thiết bị", "Quên mật khẩu"], "en": ["Sign out everywhere", "Forgot password"]}
+    },
+    {
+      "id": "account_change_email", "kind": "faq", "group": "care_account",
+      "description": "Muốn đổi email đăng nhập / email tài khoản.",
+      "answer_vi": "Bạn đổi email đăng nhập như sau:\n1. Vào Tài khoản → \"Đổi mật khẩu & bảo mật\" → phần \"Đổi email\".\n2. Nhập email mới và mật khẩu hiện tại để xác minh chính bạn.\n3. Nhập mã xác nhận được gửi tới EMAIL MỚI.\nĐổi xong, email cũ sẽ nhận thông báo và từ đó bạn đăng nhập bằng email mới. Email mới cần khác email hiện tại và chưa dùng cho tài khoản Bếp Việt nào khác.",
+      "answer_en": "To change your sign-in email:\n1. Go to Account → \"Password & security\" → \"Change email\".\n2. Enter the new email and your current password.\n3. Enter the confirmation code sent to the NEW address.\nYour old email gets a notice once it's done, and from then on you sign in with the new email. The new address must differ from the current one and not belong to another Bep Viet account.",
+      "followups": {"vi": ["Không nhận được mã xác nhận"], "en": ["I didn't get the code"]}
+    },
+    {
+      "id": "account_no_email", "kind": "faq", "group": "care_issue",
+      "description": "Không nhận được email: mã OTP, mã xác nhận đổi email, email chào mừng, email nhắc món.",
+      "answer_vi": "Mình xin lỗi vì email chưa tới tay bạn. Bạn kiểm tra giúp mình:\n1. Mục Spam, Quảng cáo hoặc Promotions trong hộp thư.\n2. Email đã nhập có đúng không (khi đổi email, mã được gửi tới email MỚI).\n3. Chờ khoảng 60 giây rồi bấm gửi lại mã; tránh bấm liên tục vì hệ thống giới hạn số lần gửi.\nNếu vẫn không thấy, bạn gửi yêu cầu ở trang Liên hệ (/contact) kèm email đã dùng, đội ngũ sẽ kiểm tra giúp bạn.",
+      "answer_en": "Sorry the email hasn't arrived. Please check:\n1. Your Spam, Promotions or Updates folders.\n2. That the address you typed is correct (when changing email, the code goes to the NEW address).\n3. Wait about 60 seconds, then request a new code; avoid repeated clicks because sending is rate-limited.\nStill nothing? Send a request on the Contact page (/contact) with the email you used and the team will look into it.",
+      "followups": {"vi": ["Liên hệ hỗ trợ"], "en": ["Contact support"]}
+    },
+    {
+      "id": "account_delete", "kind": "faq", "group": "care_account",
+      "description": "Muốn xóa tài khoản, hủy tài khoản, xóa dữ liệu vĩnh viễn.",
+      "answer_vi": "Mình tiếc khi bạn muốn rời Bếp Việt. Hiện ứng dụng chưa có nút tự xóa tài khoản, bạn làm như sau:\n1. (Tùy chọn) Tải dữ liệu trước: Tài khoản → Cài đặt → Thông báo & riêng tư → \"Tải dữ liệu của tôi\".\n2. Vào trang Liên hệ (/contact), chọn chủ đề \"Tài khoản & đăng nhập\" và ghi rõ yêu cầu xóa tài khoản.\n3. Đội ngũ sẽ phản hồi qua email trong 1–2 ngày làm việc.\nNếu có điều gì khiến bạn chưa hài lòng, bạn chia sẻ thêm để Bếp Việt cải thiện nhé.",
+      "answer_en": "We're sorry to see you go. There's no self-service delete button yet, so:\n1. (Optional) Download your data first: Account → Settings → Notifications & privacy → \"Download my data\".\n2. Go to the Contact page (/contact), choose the \"Account & sign-in\" topic and ask to delete your account.\n3. The team will reply by email within 1–2 business days.\nIf something disappointed you, we'd love to hear it so we can improve.",
+      "followups": {"vi": ["Tải dữ liệu của tôi", "Liên hệ hỗ trợ"], "en": ["Download my data", "Contact support"]}
+    },
+    {
+      "id": "account_logout_all", "kind": "faq", "group": "care_account",
+      "description": "Đăng xuất, đăng xuất khỏi mọi thiết bị, nghi bị người lạ đăng nhập / lộ tài khoản.",
+      "answer_vi": "Để bảo vệ tài khoản:\n1. Vào Tài khoản → \"Đổi mật khẩu & bảo mật\".\n2. Bấm \"Đăng xuất mọi thiết bị\" — mọi phiên đăng nhập sẽ bị thoát, bạn đăng nhập lại.\n3. Nếu nghi bị lộ, hãy đổi mật khẩu ngay ở cùng trang.\nMẹo: luôn đăng xuất sau khi dùng máy tính công cộng.",
+      "answer_en": "To secure your account:\n1. Go to Account → \"Password & security\".\n2. Click \"Sign out of all devices\" — every session ends and you sign in again.\n3. If you suspect a leak, change your password right away on the same page.\nTip: always sign out after using a public computer.",
+      "followups": {"vi": ["Đổi mật khẩu"], "en": ["Change password"]}
+    },
+    {
+      "id": "account_profile", "kind": "faq", "group": "care_account",
+      "description": "Đổi họ tên, ảnh đại diện, ẩn tên trên câu chuyện.",
+      "answer_vi": "Bạn chỉnh hồ sơ như sau:\n1. Vào \"Tài khoản của tôi\" (Tổng quan hồ sơ).\n2. Sửa họ tên rồi bấm \"Lưu hồ sơ\"; bấm \"Đổi ảnh\" để tải ảnh đại diện JPG, PNG hoặc WebP (ảnh được cắt vuông và nén tự động).\n3. Muốn đăng câu chuyện dưới tên \"Thành viên Bếp Việt\", tắt \"Hiện tên và ảnh trên câu chuyện\" trong Cài đặt → Thông báo & riêng tư.",
+      "answer_en": "To edit your profile:\n1. Open \"My account\" (Profile overview).\n2. Edit your name and click \"Save profile\"; click \"Change photo\" to upload a JPG, PNG or WebP avatar (cropped square and compressed automatically).\n3. To post stories as \"Bep Viet member\", turn off \"Show my name and photo on stories\" in Settings → Notifications & privacy.",
+      "followups": {"vi": [], "en": []}
+    },
+    {
+      "id": "privacy_data", "kind": "faq", "group": "care_account",
+      "description": "Hỏi về quyền riêng tư: dữ liệu dùng làm gì, ai xem được, tải/xuất dữ liệu cá nhân, Chú Rồng nhớ gì về tôi.",
+      "answer_vi": "Bếp Việt chỉ dùng thông tin bạn khai báo (gia đình, khẩu vị, dị ứng…) để gợi ý món và tính khẩu phần cho bạn.\n1. Món yêu thích và kế hoạch được lưu riêng cho tài khoản của bạn.\n2. Ghi nhớ của Chú Rồng chỉ bạn thấy; xem, sửa hoặc xóa trong Cài đặt → Chú Rồng → \"Ghi nhớ của Chú Rồng\".\n3. Tải toàn bộ dữ liệu (tệp JSON gồm hồ sơ, thiết lập, món yêu thích, kế hoạch, bài viết) tại Cài đặt → Thông báo & riêng tư → \"Tải dữ liệu của tôi\".\nChi tiết xem Chính sách bảo mật; muốn xóa tài khoản, bạn gửi yêu cầu ở trang Liên hệ.",
+      "answer_en": "Bep Viet only uses what you tell us (household, tastes, allergies…) to suggest dishes and work out servings.\n1. Favourites and plans are private to your account.\n2. Chef Dragon's memories are visible only to you; view, edit or delete them in Settings → Chef Dragon → \"Chef Dragon's memory\".\n3. Download everything (a JSON file with profile, settings, favourites, plans and posts) in Settings → Notifications & privacy → \"Download my data\".\nSee the Privacy policy for details; to delete your account, send a request on the Contact page.",
+      "followups": {"vi": ["Xóa tài khoản", "Quản lý ghi nhớ của Chú Rồng"], "en": ["Delete my account", "Manage Chef Dragon's memory"]}
+    },
+    {
+      "id": "settings_household", "kind": "faq", "group": "care_feature",
+      "description": "Khai báo thành viên gia đình, khẩu phần tự khớp số người, số suất mỗi bữa.",
+      "answer_vi": "Để khẩu phần tự khớp với nhà bạn:\n1. Vào Tài khoản → Cài đặt → Bữa ăn → \"Gia đình & khẩu phần\".\n2. Thêm từng thành viên kèm tuổi và sức ăn, hoặc gõ mô tả như \"bố mẹ và bạn nhỏ 12 tuổi\" rồi bấm \"Gợi ý thành viên từ mô tả\".\n3. Bấm \"Lưu cài đặt\".\nBếp Việt sẽ quy đổi ra số suất (trẻ nhỏ và người lớn tuổi ăn ít hơn) và áp dụng khi bạn xem công thức hay thêm món vào kế hoạch. Muốn cố định số suất thì chọn \"Tự đặt\".",
+      "answer_en": "To match servings to your household:\n1. Go to Account → Settings → Meals → \"Household & servings\".\n2. Add each member with age and appetite, or type a description like \"2 parents and a 12 year old\" and use the suggestion button.\n3. Click \"Save settings\".\nBep Viet converts this into servings (children and older adults eat less) and applies it to recipes and your plan. Choose \"Manual\" for a fixed number.",
+      "followups": {"vi": ["Khai báo dị ứng", "Lên kế hoạch tuần"], "en": ["Set allergies", "Plan my week"]}
+    },
+    {
+      "id": "settings_diet", "kind": "faq", "group": "care_feature",
+      "description": "Cài đặt chế độ ăn, dị ứng, nguyên liệu cần tránh, độ cay, vùng miền yêu thích, thời gian nấu tối đa.",
+      "answer_vi": "Bạn thiết lập khẩu vị như sau:\n1. Vào Tài khoản → Cài đặt → Bữa ăn → \"Khẩu vị & chế độ ăn\".\n2. Chọn chế độ ăn (chay, không thịt heo, không thịt bò, không hải sản, ít muối, ít đường, ít dầu), ghi dị ứng hoặc nguyên liệu cần tránh, độ cay, vùng miền yêu thích và thời gian nấu tối đa mỗi món.\n3. Bấm \"Lưu cài đặt\".\nBếp Việt dùng thông tin này để gợi ý món và cảnh báo khi món có thể không hợp. Cảnh báo chỉ mang tính tham khảo — với dị ứng nặng, bạn luôn kiểm tra kỹ nguyên liệu nhé.",
+      "answer_en": "To set your tastes:\n1. Go to Account → Settings → Meals → \"Tastes & diet\".\n2. Pick diets (vegetarian, no pork, no beef, no seafood, low salt, low sugar, less oil), list allergies or ingredients to avoid, spice level, favourite regions and max cooking time per dish.\n3. Click \"Save settings\".\nBep Viet uses this to suggest dishes and warn you when one may not suit you. Warnings are only a guide — with serious allergies, always double-check ingredients.",
+      "followups": {"vi": ["Gợi ý món hợp chế độ ăn của tôi"], "en": ["Dishes that fit my diet"]}
+    },
+    {
+      "id": "settings_display", "kind": "faq", "group": "care_feature",
+      "description": "Đổi ngôn ngữ (Việt/Anh), cỡ chữ to hơn, giảm chuyển động/hiệu ứng.",
+      "answer_vi": "Bạn vào Tài khoản → Cài đặt → Chung → \"Ngôn ngữ & hiển thị\":\n1. Ngôn ngữ: Tiếng Việt hoặc English.\n2. Cỡ chữ: Mặc định hoặc Lớn hơn.\n3. Giảm chuyển động: tắt hiệu ứng và vòng quay cho giao diện tĩnh hơn.\nThay đổi áp dụng ngay cho toàn bộ giao diện và được lưu theo tài khoản.",
+      "answer_en": "Go to Account → Settings → General → \"Language & display\":\n1. Language: Tiếng Việt or English.\n2. Text size: Default or Larger.\n3. Reduce motion: turns off animations and the spinner.\nChanges apply instantly and are saved to your account.",
+      "followups": {"vi": [], "en": []}
+    },
+    {
+      "id": "settings_notifications", "kind": "faq", "group": "care_feature",
+      "description": "Email nhắc món, nhắc kế hoạch tuần, thông báo duyệt bài; bật/tắt email từ Bếp Việt.",
+      "answer_vi": "Bạn quản lý email thông báo tại Tài khoản → Cài đặt → Thông báo & riêng tư → \"Kế hoạch & thông báo\":\n1. \"Email nhắc món trong kế hoạch\": nhắc bữa trưa lúc 11:00 và bữa tối lúc 17:00 (giờ Việt Nam), chỉ gửi khi bữa đó đã có món.\n2. \"Nhắc kế hoạch tuần\": email nhắc lên thực đơn vào cuối tuần.\n3. \"Cập nhật bài đăng của tôi\": báo khi câu chuyện hoặc món bạn đề xuất được duyệt.\nBật/tắt rồi bấm \"Lưu cài đặt\" là xong.",
+      "answer_en": "Manage email notifications in Account → Settings → Notifications & privacy → \"Planner & notifications\":\n1. \"Meal reminder emails\": lunch at 11:00 and dinner at 17:00 (Vietnam time), only when that meal has dishes planned.\n2. \"Weekly plan reminder\": a weekend email to plan your menu.\n3. \"Updates on my posts\": when your stories or recipe suggestions are reviewed.\nToggle them and click \"Save settings\".",
+      "followups": {"vi": ["Không nhận được email"], "en": ["Didn't receive the email"]}
+    },
+    {
+      "id": "settings_assistant_style", "kind": "faq", "group": "care_feature",
+      "description": "Đổi tính cách Chú Rồng, chế độ trả treo / nói chuyện lầy, nghiêm túc hơn.",
+      "answer_vi": "Bạn chọn giọng trò chuyện của mình tại Tài khoản → Cài đặt → Chú Rồng → \"Tính cách Chú Rồng\":\n1. Tắt \"Chế độ trả treo\": mình trả lời thông minh, dí dỏm, nhẹ nhàng.\n2. Bật \"Chế độ trả treo\": mình cà khịa, trêu lại bạn cho vui — nhưng nội dung món ăn vẫn chính xác như nhau.",
+      "answer_en": "Choose my chat style in Account → Settings → Chef Dragon → \"Chef Dragon's personality\":\n1. Sassy mode off: smart, witty and friendly.\n2. Sassy mode on: I tease you a bit — recipe facts stay exactly the same.",
+      "followups": {"vi": [], "en": []}
+    },
+    {
+      "id": "feature_search", "kind": "faq", "group": "care_feature",
+      "description": "Cách tìm món trong kho món (Món ăn), lọc, sắp xếp, tìm theo tên hoặc nguyên liệu.",
+      "answer_vi": "Bạn tìm món như sau:\n1. Mở mục \"Món ăn\" (Kho món Việt) trên thanh điều hướng.\n2. Gõ tên món hoặc nguyên liệu vào ô tìm kiếm; dùng bộ lọc và sắp xếp như \"Nấu nhanh nhất\" hay \"Hợp chế độ ăn của tôi\".\n3. Bấm vào món để xem nguyên liệu, các bước, mẹo, rồi thêm vào kế hoạch hoặc \"Vào bếp\".\nKhông ra kết quả thì thử từ khóa ngắn hơn hoặc bỏ bớt bộ lọc nhé. Bạn cũng có thể hỏi thẳng mình, ví dụ \"món nào có cá và cà chua?\".",
+      "answer_en": "To find a dish:\n1. Open \"Dishes\" (the recipe catalog) in the navigation bar.\n2. Type a dish name or ingredient; use filters and sorting such as \"Quickest\" or \"Fits my diet\".\n3. Open a dish to see ingredients, steps and tips, then add it to your plan or start Cook mode.\nNo results? Try a shorter keyword or fewer filters. You can also just ask me, e.g. \"dishes with fish and tomato?\".",
+      "followups": {"vi": ["Gợi ý món từ nguyên liệu có sẵn"], "en": ["Ideas from what I have"]}
+    },
+    {
+      "id": "feature_random_meal", "kind": "faq", "group": "care_feature",
+      "description": "Cách dùng Quay mâm / mâm cơm ngẫu nhiên / Bữa cơm gia đình.",
+      "answer_vi": "\"Quay mâm\" giúp bạn có ngay một mâm cơm đủ vị:\n1. Mở \"Quay mâm\" trên thanh điều hướng, chọn số món (3–6) và tiêu chuẩn gợi ý.\n2. Bấm \"Quay món\" từng ô hoặc \"Quay đủ cả mâm\"; muốn đổi món nào thì chọn ô đó rồi quay lại.\n3. Bấm \"Lưu mâm cơm này\" — tối đa 8 mâm gần nhất được giữ lại để dùng lại nhanh.\nNgoài ra mục \"Bữa cơm\" có sẵn các mâm gợi ý gồm món mặn, canh và rau mà bạn thêm thẳng vào kế hoạch.",
+      "answer_en": "The Meal spinner builds a balanced family meal:\n1. Open \"Spin a meal\", choose 3–6 dishes and a suggestion style.\n2. Spin each slot or the whole tray; select a slot and spin again to swap it.\n3. Click \"Save this meal\" — up to 8 recent meals are kept for quick reuse.\nThe \"Family meals\" page also offers ready-made sets (main, soup and greens) you can add straight to your plan.",
+      "followups": {"vi": ["Lên kế hoạch tuần"], "en": ["Plan my week"]}
+    },
+    {
+      "id": "feature_suggestions", "kind": "faq", "group": "care_feature",
+      "description": "Trang Gợi ý món và Nhu cầu dinh dưỡng hoạt động thế nào, gợi ý dựa vào đâu.",
+      "answer_vi": "Bếp Việt có hai trang gợi ý:\n1. \"Gợi ý món\": chọn một ưu tiên (nấu nhanh, thanh nhẹ, dễ làm, hợp trẻ nhỏ…) và Bếp Việt rút gọn món phù hợp, dựa trên chế độ ăn, vùng miền và thời gian bạn đặt trong Cài đặt.\n2. \"Nhu cầu dinh dưỡng\": gợi ý theo mục tiêu bữa ăn phổ thông như cân bằng, ít dầu, cho trẻ nhỏ.\nNếu chưa có món phù hợp, thử nới lỏng thiết lập khẩu vị trong Cài đặt. Gợi ý phục vụ bữa ăn thường ngày, không thay thế tư vấn dinh dưỡng hay chẩn đoán y khoa.",
+      "answer_en": "Bep Viet has two suggestion pages:\n1. \"Dish suggestions\": pick a priority (quick, light, easy, kid-friendly…) and Bep Viet narrows down dishes using the diet, regions and time in your Settings.\n2. \"Nutrition needs\": ideas for common meal goals such as balanced, low-oil or for children.\nNo matches? Try relaxing your taste settings. Suggestions are for everyday meals and don't replace nutrition or medical advice.",
+      "followups": {"vi": ["Hôm nay ăn gì?", "Cài đặt khẩu vị"], "en": ["What should I cook today?", "Taste settings"]}
+    },
+    {
+      "id": "feature_favorites", "kind": "faq", "group": "care_feature",
+      "description": "Lưu món yêu thích, xem lại món đã lưu, bỏ lưu.",
+      "answer_vi": "Lưu món yêu thích rất nhanh:\n1. Bấm biểu tượng trái tim trên thẻ món hoặc trang món.\n2. Xem lại tất cả trong \"Món yêu thích\" (menu tài khoản).\n3. Bấm lại trái tim để bỏ lưu.\nBạn cần đăng nhập để món được đồng bộ với tài khoản trên mọi thiết bị; bộ sưu tập này chỉ riêng bạn thấy.",
+      "answer_en": "Saving favourites is quick:\n1. Tap the heart icon on a dish card or recipe page.\n2. Find them all under \"Favourite dishes\" in the account menu.\n3. Tap the heart again to remove one.\nSign in so favourites sync to your account on every device; the collection is private to you.",
+      "followups": {"vi": [], "en": []}
+    },
+    {
+      "id": "feature_planner", "kind": "faq", "group": "care_feature",
+      "description": "Cách lên kế hoạch / thực đơn tuần, thêm món vào bữa, sửa khẩu phần, xóa món khỏi kế hoạch, xem lịch sử kế hoạch.",
+      "answer_vi": "Lên thực đơn tuần trên Bếp Việt:\n1. Mở \"Kế hoạch\", bấm dấu + ở bữa sáng, trưa hoặc tối của ngày bạn muốn.\n2. Tìm món theo tên hoặc nguyên liệu, chọn một hay nhiều món rồi lưu; từ trang món bạn cũng có thể bấm \"Thêm vào kế hoạch\".\n3. Chỉnh khẩu phần bằng nút tăng/giảm, xóa món không cần, và đánh dấu đã nấu khi xong.\nCác bữa đã qua sẽ nằm trong \"Lịch sử kế hoạch\" để bạn xem lại hoặc đưa lại vào kế hoạch.",
+      "answer_en": "To plan your week on Bep Viet:\n1. Open \"Planner\" and click + on breakfast, lunch or dinner for a day.\n2. Search by name or ingredient, pick one or more dishes and save; you can also click \"Add to plan\" on a recipe page.\n3. Adjust servings with the +/- buttons, remove dishes, and mark them cooked when done.\nPast meals move to \"Plan history\", where you can review or re-add them.",
+      "followups": {"vi": ["Tạo danh sách đi chợ", "Lịch âm và ngày chay"], "en": ["Make a shopping list", "Lunar calendar & vegetarian days"]}
+    },
+    {
+      "id": "feature_shopping_list", "kind": "faq", "group": "care_feature",
+      "description": "Danh sách đi chợ / mua sắm nguyên liệu từ kế hoạch.",
+      "answer_vi": "Bếp Việt tự tổng hợp nguyên liệu từ kế hoạch của bạn:\n1. Thêm món vào \"Kế hoạch\" cho những ngày cần nấu.\n2. Bấm \"Tạo danh sách mua sắm\" và chọn khoảng thời gian.\n3. Danh sách gom nguyên liệu theo nhóm, đã tính theo khẩu phần; thêm hoặc bớt món thì danh sách tự cập nhật.",
+      "answer_en": "Bep Viet builds a shopping list from your plan:\n1. Add dishes to the \"Planner\" for the days you'll cook.\n2. Click \"Create shopping list\" and choose the date range.\n3. Ingredients are grouped and scaled to your servings; the list updates when you change the plan.",
+      "followups": {"vi": ["Lên kế hoạch tuần"], "en": ["Plan my week"]}
+    },
+    {
+      "id": "feature_lunar_vegetarian", "kind": "faq", "group": "care_feature",
+      "description": "Lịch âm trong kế hoạch, ngày ăn chay mùng 1 và rằm, đánh dấu ngày chay.",
+      "answer_vi": "Kế hoạch của Bếp Việt hỗ trợ âm lịch và ngày chay:\n1. Đầu trang Kế hoạch luôn hiện cả dương lịch và âm lịch (giờ Việt Nam). Muốn lịch chính là âm lịch, vào Cài đặt → Thông báo & riêng tư → \"Lịch hiển thị chính\".\n2. Bật \"Tự đánh dấu ăn chay mùng 1 và rằm\" để các ngày này được tô vàng và tự đánh dấu chay.\n3. Bấm biểu tượng lá ở đầu mỗi ngày để tự bật/tắt ngày chay; ngày chay sẽ ưu tiên gợi ý món chay khi bạn thêm món.",
+      "answer_en": "The Planner supports the lunar calendar and vegetarian days:\n1. The planner header always shows both solar and lunar dates (Vietnam time). To make lunar the main calendar, go to Settings → Notifications & privacy → \"Main calendar\".\n2. Turn on \"Auto-mark the 1st and 15th lunar days as vegetarian\" to highlight them.\n3. Tap the leaf icon at the top of any day to toggle it; vegetarian days prioritise vegetarian dishes when you add meals.",
+      "followups": {"vi": ["Gợi ý món chay"], "en": ["Vegetarian dish ideas"]}
+    },
+    {
+      "id": "feature_cook_mode", "kind": "faq", "group": "care_feature",
+      "description": "Chế độ Vào bếp là gì, cách dùng, nấu từng bước, nấu cả bữa, Chú Rồng phụ bếp, nấu tiếp từ bước đang dở.",
+      "answer_vi": "\"Vào bếp\" là chế độ nấu từng bước cùng Chú Rồng phụ bếp:\n1. Mở một món (hoặc một bữa trong Kế hoạch) rồi bấm \"Vào bếp\".\n2. Bếp Việt liệt kê nguyên liệu theo số người, rồi đọc từng bước; bật \"Trợ lý giọng nói\" để điều khiển rảnh tay.\n3. Vướng chỗ nào cứ hỏi mình ngay trong lúc nấu (ví dụ \"cá bị dính chảo thì sao?\"); cần đợi thì hẹn giờ.\nNếu thoát giữa chừng, lần sau bạn có thể \"Nấu tiếp từ bước\" đang dở. Nấu xong, món được ghi vào \"Món đã nấu\".",
+      "answer_en": "Cook mode walks you through a dish step by step with Chef Dragon as your sous-chef:\n1. Open a recipe (or a planned meal) and tap \"Cook\".\n2. You get the ingredients for your number of people, then each step; turn on the voice assistant for hands-free control.\n3. Ask me anything while cooking (e.g. \"the fish is sticking, what now?\"), and set timers when you need to wait.\nIf you leave midway, you can resume from the step you were on. Finished dishes go into \"Cooked dishes\".",
+      "followups": {"vi": ["Hẹn giờ khi nấu", "Lệnh giọng nói"], "en": ["Timers while cooking", "Voice commands"]}
+    },
+    {
+      "id": "feature_cook_timer", "kind": "faq", "group": "care_feature",
+      "description": "Cách hẹn giờ / báo thức / chuông khi nấu, thêm phút, hỏi còn bao lâu (hướng dẫn tính năng, không phải sự cố chuông).",
+      "answer_vi": "Trong chế độ \"Vào bếp\", bạn hẹn giờ như sau:\n1. Bấm nút hẹn giờ ở bước có thời gian, hoặc nói \"hẹn giờ 10 phút\".\n2. Cần thêm thời gian thì bấm \"Thêm 1 phút\" hoặc nói \"chưa xong, nhắc tôi sau 5 phút\".\n3. Hỏi \"còn bao nhiêu phút\" để mình báo thời gian còn lại; trong lúc chờ, bạn cứ làm bước kế tiếp.\nMuốn chuông kêu cả khi khóa màn hình, bấm \"Bật chuông\" và cho phép thông báo.",
+      "answer_en": "In Cook mode you can set timers:\n1. Tap the timer button on a timed step, or say \"set a timer for 10 minutes\".\n2. Need more time? Tap \"+1 minute\" or say \"not done, remind me in 5 minutes\".\n3. Ask \"how many minutes left\" for the remaining time; keep working on the next step meanwhile.\nTo hear the alarm with the screen locked, tap \"Enable alarm\" and allow notifications.",
+      "followups": {"vi": ["Chuông không kêu khi tắt màn hình"], "en": ["Alarm doesn't ring with screen off"]}
+    },
+    {
+      "id": "feature_voice_commands", "kind": "faq", "group": "care_feature",
+      "description": "Điều khiển bằng giọng nói khi nấu: nói gì để sang bước, đọc lại, quay lại; trò chuyện giọng nói với Chú Rồng.",
+      "answer_vi": "Bật \"Trợ lý giọng nói\" trong chế độ Vào bếp, rồi nói:\n1. \"Xong rồi\" để sang bước tiếp, \"chưa xong\" để mình chờ.\n2. \"Đọc lại\" để nghe lại bước, \"quay lại bước trước\" để lùi một bước.\n3. \"Hẹn giờ 10 phút\", \"còn bao nhiêu phút\", hoặc hỏi bất cứ điều gì về món đang nấu.\nỞ khung chat Chú Rồng, bạn cũng có thể bấm micro để nói thay vì gõ. Cần cho phép trình duyệt dùng micro nhé.",
+      "answer_en": "Turn on the voice assistant in Cook mode, then say:\n1. \"Done\" to move on, \"not done yet\" to make me wait.\n2. \"Read again\" to repeat a step, \"go back\" for the previous step.\n3. \"Set a timer for 10 minutes\", \"how many minutes left\", or ask anything about the dish.\nIn the Chef Dragon chat you can tap the mic to speak instead of typing. Your browser needs microphone permission.",
+      "followups": {"vi": ["Micro không hoạt động"], "en": ["Microphone not working"]}
+    },
+    {
+      "id": "feature_cooked_history", "kind": "faq", "group": "care_feature",
+      "description": "Đánh dấu đã nấu, xem lịch sử món đã nấu, số lần nấu, bỏ đánh dấu.",
+      "answer_vi": "Bếp Việt ghi lại những món bạn đã nấu:\n1. Nấu xong trong chế độ Vào bếp, hoặc bấm \"Đánh dấu đã nấu\" ở trang món hay trong Kế hoạch.\n2. Xem toàn bộ ở Tài khoản → \"Món đã nấu\", kèm số lần nấu và lần gần nhất.\n3. Lỡ đánh dấu nhầm thì bạn xóa bản ghi đó trong \"Món đã nấu\" hoặc bỏ đánh dấu trong Kế hoạch.",
+      "answer_en": "Bep Viet keeps a log of what you cook:\n1. Finish a dish in Cook mode, or tap \"Mark as cooked\" on a recipe page or in the Planner.\n2. See everything under Account → \"Cooked dishes\", with how often and when you last cooked it.\n3. Marked by mistake? Remove that record in \"Cooked dishes\" or unmark it in the Planner.",
+      "followups": {"vi": [], "en": []}
+    },
+    {
+      "id": "feature_narration", "kind": "faq", "group": "care_feature",
+      "description": "Nghe đọc công thức / thuyết minh / đọc to công thức trên trang món: cách dùng, tốc độ, âm lượng, chọn phần.",
+      "answer_vi": "Trên trang món, bấm \"Nghe hướng dẫn\" để nghe đọc công thức:\n1. Trình phát đọc lần lượt giới thiệu, nguyên liệu, các bước và mẹo.\n2. Bạn tạm dừng, nghe tiếp, chuyển \"Đoạn trước\"/\"Đoạn tiếp theo\" hoặc chọn phần muốn nghe.\n3. Chỉnh \"Tốc độ đọc\" và \"Âm lượng\" ngay trên trình phát.\nGiọng đọc dùng giọng có sẵn của thiết bị; nếu phát âm chưa chuẩn, bạn có thể cài thêm giọng tiếng Việt trong cài đặt ngôn ngữ của máy.",
+      "answer_en": "On a recipe page, tap \"Listen to recipe\":\n1. The player reads the introduction, ingredients, steps and tips in order.\n2. Pause, resume, jump to the previous/next part or choose a part.\n3. Adjust reading speed and volume right on the player.\nIt uses your device's built-in voices; if pronunciation is off, add a Vietnamese voice in your system language settings.",
+      "followups": {"vi": ["Không nghe thấy tiếng"], "en": ["I can't hear anything"]}
+    },
+    {
+      "id": "feature_community", "kind": "faq", "group": "care_feature",
+      "description": "Bài viết, viết/chia sẻ câu chuyện bếp, sửa bài, trạng thái duyệt bài của tôi.",
+      "answer_vi": "Bạn chia sẻ câu chuyện bếp như sau:\n1. Đăng nhập, chọn \"Chia sẻ câu chuyện bếp\" (hoặc vào /stories/new) và viết bài.\n2. Gửi bài để ban biên tập xem xét — thường trong 1–3 ngày làm việc; bài chưa tự động hiển thị công khai.\n3. Theo dõi trạng thái và ghi chú phản hồi trong Tài khoản → \"Câu chuyện của tôi\".\nCác bài đã duyệt xuất hiện ở mục \"Bài viết\".",
+      "answer_en": "To share a kitchen story:\n1. Sign in, choose \"Share a kitchen story\" (or go to /stories/new) and write it.\n2. Submit it for review — the editors usually respond within 1–3 business days; it isn't public until approved.\n3. Track status and feedback in Account → \"My stories\".\nApproved posts appear under \"Articles\".",
+      "followups": {"vi": ["Gửi công thức của tôi"], "en": ["Submit my recipe"]}
+    },
+    {
+      "id": "feature_submit_recipe", "kind": "faq", "group": "care_feature",
+      "description": "Gửi / đăng / đề xuất công thức món ăn của mình, yêu cầu khi gửi, bao lâu được duyệt, sửa đề xuất.",
+      "answer_vi": "Bạn đề xuất món nhà mình như sau:\n1. Bấm \"Đăng món\" trên thanh điều hướng (/submit-recipe).\n2. Điền tên món rõ ràng, ít nhất 2 nguyên liệu kèm định lượng, ít nhất 2 bước thực hiện, khẩu phần, thời gian và ảnh tự chụp đủ sáng, không watermark. Bản nháp được tự lưu trên máy.\n3. Bấm \"Gửi đề xuất\". Ban biên tập thường xem xét trong 1–3 ngày làm việc; theo dõi trạng thái và phản hồi trong Tài khoản → \"Món tôi đề xuất\".\nBạn sửa được đề xuất khi chưa duyệt; đã duyệt thì không chỉnh sửa được nữa.",
+      "answer_en": "To suggest your family recipe:\n1. Click \"Post a dish\" in the navigation (/submit-recipe).\n2. Add a clear name, at least 2 ingredients with amounts, at least 2 steps, servings, time and a well-lit photo you took without watermarks. Drafts are saved on your device.\n3. Click \"Submit\". Editors usually review within 1–3 business days; track status and feedback in Account → \"My recipe suggestions\".\nYou can edit a suggestion until it's approved.",
+      "followups": {"vi": ["Viết câu chuyện bếp"], "en": ["Write a kitchen story"]}
+    },
+    {
+      "id": "feature_assistant_memory", "kind": "faq", "group": "care_feature",
+      "description": "Chú Rồng ghi nhớ thông tin về tôi: cách dạy nhớ, xem, sửa, quên/xóa ghi nhớ.",
+      "answer_vi": "Mình có thể ghi nhớ khẩu vị để gợi ý hợp với bạn hơn:\n1. Trong khung chat, nói \"Nhớ giúp mình: nhà mình không ăn cay, có 4 người\".\n2. Xem, sửa hoặc xóa từng ghi nhớ tại Tài khoản → Cài đặt → Chú Rồng → \"Ghi nhớ của Chú Rồng\".\n3. Bấm \"Quên tất cả\" nếu muốn mình xóa sạch.\nGhi nhớ chỉ riêng bạn thấy và dùng được.",
+      "answer_en": "I can remember your preferences to suggest better dishes:\n1. In the chat, say \"Remember: we don't eat spicy food, 4 people\".\n2. View, edit or delete memories in Account → Settings → Chef Dragon → \"Chef Dragon's memory\".\n3. Click \"Forget everything\" to wipe them all.\nOnly you can see and use your memories.",
+      "followups": {"vi": ["Xóa lịch sử trò chuyện"], "en": ["Delete chat history"]}
+    },
+    {
+      "id": "feature_chat_history", "kind": "faq", "group": "care_feature",
+      "description": "Lịch sử trò chuyện với Chú Rồng: xem lại, tìm, đổi tên, xóa cuộc trò chuyện, trò chuyện mới.",
+      "answer_vi": "Lịch sử trò chuyện nằm ngay trong khung chat Chú Rồng:\n1. Bấm \"Lịch sử trò chuyện\" để xem lại hoặc tìm cuộc trò chuyện cũ; bấm \"Trò chuyện mới\" để bắt đầu lại.\n2. Đổi tên hoặc xóa từng cuộc trò chuyện, hay \"Xóa toàn bộ lịch sử\".\n3. Khi chưa đăng nhập, lịch sử chỉ lưu trên trình duyệt này; đăng nhập để lưu vào tài khoản.",
+      "answer_en": "Your chat history lives in the Chef Dragon window:\n1. Open \"Chat history\" to review or search old chats; click \"New chat\" to start fresh.\n2. Rename or delete a chat, or \"Delete all history\".\n3. When signed out, history stays in this browser only; sign in to keep it in your account.",
+      "followups": {"vi": ["Quản lý ghi nhớ"], "en": ["Manage memories"]}
+    },
+    {
+      "id": "issue_no_sound", "kind": "faq", "group": "care_issue",
+      "description": "Không nghe thấy tiếng: đọc công thức không phát âm thanh, Chú Rồng không nói, giọng đọc sai/lạ.",
+      "answer_vi": "Mình xin lỗi vì bạn chưa nghe được tiếng. Bạn thử giúp mình:\n1. Tăng âm lượng thiết bị, tắt chế độ im lặng, và kiểm tra nút \"Tắt tiếng\"/\"Âm lượng\" trên trình phát.\n2. Bấm phát lại sau khi chạm vào trang (một số trình duyệt chặn tự phát âm thanh).\n3. Nếu giọng đọc lạ hoặc sai dấu, cài thêm giọng tiếng Việt trong cài đặt ngôn ngữ của máy rồi tải lại trang.\nNếu trình duyệt báo \"chưa hỗ trợ đọc thành tiếng\", bạn thử Chrome, Edge hoặc Safari bản mới nhé.",
+      "answer_en": "Sorry you can't hear anything. Please try:\n1. Turn up the device volume, switch off silent mode, and check the mute/volume controls on the player.\n2. Tap the page, then press play again (some browsers block autoplay audio).\n3. If the voice sounds odd, add a Vietnamese (or English) voice in your system language settings and reload.\nIf the browser says text-to-speech isn't supported, try an up-to-date Chrome, Edge or Safari.",
+      "followups": {"vi": ["Micro không hoạt động", "Báo lỗi"], "en": ["Microphone not working", "Report a bug"]}
+    },
+    {
+      "id": "issue_microphone", "kind": "faq", "group": "care_issue",
+      "description": "Micro không hoạt động, Chú Rồng không nghe được giọng nói, không nhận diện giọng nói.",
+      "answer_vi": "Mình xin lỗi vì micro chưa hoạt động. Bạn kiểm tra giúp mình:\n1. Khi trình duyệt hỏi, chọn \"Cho phép\" dùng micro; nếu lỡ chặn, bấm biểu tượng ổ khóa cạnh thanh địa chỉ → cho phép Micro, rồi tải lại trang.\n2. Đảm bảo không có ứng dụng khác đang chiếm micro và micro không bị tắt trên máy.\n3. Nếu thấy \"Trình duyệt này chưa hỗ trợ nhận diện giọng nói\", hãy dùng Chrome, Edge hoặc Safari bản mới.\nTrong lúc đó, bạn vẫn có thể bấm nút hoặc gõ để điều khiển.",
+      "answer_en": "Sorry the microphone isn't working. Please check:\n1. Choose \"Allow\" when the browser asks; if you blocked it, click the lock icon by the address bar → allow Microphone, then reload.\n2. Make sure no other app is using the mic and it isn't muted on your device.\n3. If you see \"This browser doesn't support speech recognition\", use an up-to-date Chrome, Edge or Safari.\nMeanwhile you can still tap the buttons or type.",
+      "followups": {"vi": ["Lệnh giọng nói", "Báo lỗi"], "en": ["Voice commands", "Report a bug"]}
+    },
+    {
+      "id": "issue_alarm_screen_off", "kind": "faq", "group": "care_issue",
+      "description": "Chuông hẹn giờ không kêu khi tắt / khóa màn hình hoặc chuyển ứng dụng, không nhận thông báo.",
+      "answer_vi": "Để chuông kêu cả khi bạn khóa màn hình:\n1. Trong chế độ Vào bếp, bấm \"Bật chuông\" và chọn \"Cho phép\" thông báo.\n2. Nếu trước đó đã chặn, mở cài đặt trang web của trình duyệt (biểu tượng ổ khóa) và cho phép Thông báo lại.\n3. Kiểm tra máy không ở chế độ Không làm phiền và âm lượng thông báo đang bật.\nNếu trình duyệt không hỗ trợ thông báo, chuông chỉ kêu khi ứng dụng đang mở — bạn để màn hình sáng trong lúc chờ nhé.",
+      "answer_en": "To hear the alarm with the screen locked:\n1. In Cook mode, tap \"Enable alarm\" and allow notifications.\n2. If you blocked them before, open the site settings (lock icon) and allow Notifications again.\n3. Make sure Do Not Disturb is off and notification volume is on.\nIf the browser doesn't support notifications, the alarm only rings while the app is open — keep the screen on while you wait.",
+      "followups": {"vi": ["Cách hẹn giờ"], "en": ["How to set a timer"]}
+    },
+    {
+      "id": "issue_site_error", "kind": "faq", "group": "care_issue",
+      "description": "Báo lỗi trang web/ứng dụng: không tải được, trắng trang, chậm, nút không bấm được, lỗi lưu dữ liệu, ảnh không hiện.",
+      "answer_vi": "Mình rất tiếc vì sự cố này. Bạn thử nhanh:\n1. Tải lại trang và kiểm tra kết nối mạng.\n2. Đăng xuất rồi đăng nhập lại, hoặc thử trình duyệt khác.\n3. Nếu vẫn lỗi, gửi yêu cầu ở trang Liên hệ (/contact) với chủ đề \"Báo lỗi ứng dụng\": ghi rõ bạn đang làm gì, điều gì xảy ra, thiết bị và trình duyệt đang dùng.\nĐội ngũ sẽ phản hồi qua email trong 1–2 ngày làm việc. Cảm ơn bạn đã báo để Bếp Việt sửa sớm!",
+      "answer_en": "Sorry about this. Quick things to try:\n1. Reload the page and check your connection.\n2. Sign out and back in, or try another browser.\n3. If it persists, send a request on the Contact page (/contact) with the \"Bug report\" topic: what you were doing, what happened, and your device and browser.\nThe team replies by email within 1–2 business days. Thanks for helping us fix it!",
+      "followups": {"vi": ["Liên hệ hỗ trợ"], "en": ["Contact support"]}
+    },
+    {
+      "id": "contact_support", "kind": "faq", "group": "care_support",
+      "description": "Muốn liên hệ hỗ trợ, gặp nhân viên / người thật, hỏi email/số điện thoại/hotline, giờ làm việc.",
+      "answer_vi": "Bạn liên hệ đội ngũ Bếp Việt như sau:\n1. Mở trang \"Liên hệ\" (/contact) — tại đây có thông tin liên hệ chính thức và biểu mẫu hỗ trợ.\n2. Chọn chủ đề phù hợp (Câu hỏi chung, Tài khoản & đăng nhập, Công thức & nội dung, Kế hoạch bữa ăn, Báo lỗi ứng dụng, Hợp tác), điền tiêu đề và nội dung.\n3. Bấm \"Gửi yêu cầu\" và giữ lại mã yêu cầu.\nĐội ngũ sẽ phản hồi qua email trong 1–2 ngày làm việc.",
+      "answer_en": "To reach the Bep Viet team:\n1. Open the \"Contact\" page (/contact) — it lists the official contact details and a support form.\n2. Pick a topic (General, Account & sign-in, Recipes & content, Meal planning, Bug report, Partnership) and fill in the subject and message.\n3. Click \"Send request\" and keep your request ID.\nThe team replies by email within 1–2 business days.",
+      "followups": {"vi": ["Theo dõi yêu cầu đã gửi"], "en": ["Track my request"]}
+    },
+    {
+      "id": "support_ticket_status", "kind": "faq", "group": "care_support",
+      "description": "Hỏi tình trạng yêu cầu hỗ trợ đã gửi, sao chưa được trả lời, mã yêu cầu.",
+      "answer_vi": "Bạn theo dõi yêu cầu như sau:\n1. Đăng nhập rồi mở trang \"Liên hệ\" (/contact).\n2. Xem mục \"Yêu cầu bạn đã gửi\" — mỗi yêu cầu có chủ đề, thời gian và trạng thái (đang chờ, đang xử lý, đã giải quyết).\n3. Phản hồi được gửi qua email bạn đã cung cấp, thường trong 1–2 ngày làm việc; nhớ xem cả mục Spam.\nMình xin lỗi nếu bạn đã phải chờ lâu — nếu quá hạn, bạn cứ gửi thêm yêu cầu kèm mã cũ để đội ngũ ưu tiên kiểm tra.",
+      "answer_en": "To track a request:\n1. Sign in and open the \"Contact\" page (/contact).\n2. See \"Your requests\" — each shows its topic, time and status (open, in progress, resolved).\n3. Replies go to the email you provided, usually within 1–2 business days; check Spam too.\nSorry if you've been waiting — if it's overdue, send a follow-up with your request ID so the team can prioritise it.",
+      "followups": {"vi": ["Liên hệ hỗ trợ"], "en": ["Contact support"]}
+    },
+    {
+      "id": "complaint", "kind": "faq", "group": "care_support",
+      "description": "Khách phàn nàn, bực bội, khiếu nại về chất lượng, trải nghiệm tệ, công thức sai, gợi ý dở (không chửi bới).",
+      "answer_vi": "Mình thật lòng xin lỗi vì trải nghiệm chưa tốt này, và cảm ơn bạn đã nói thẳng với mình. Để đội ngũ xử lý tận gốc:\n1. Bạn mô tả ngắn điều gì đã xảy ra (món nào, trang nào, lúc nào) ngay tại đây hoặc ở trang Liên hệ (/contact).\n2. Nếu là công thức sai, chọn chủ đề \"Công thức & nội dung\"; nếu là lỗi ứng dụng, chọn \"Báo lỗi ứng dụng\".\n3. Đội ngũ sẽ phản hồi qua email trong 1–2 ngày làm việc.\nTrong lúc chờ, mình vẫn có thể giúp bạn ngay — bạn đang cần gì nhất?",
+      "answer_en": "I'm truly sorry this wasn't a good experience, and thank you for telling me directly. So the team can fix it properly:\n1. Briefly describe what happened (which dish or page, and when) here or on the Contact page (/contact).\n2. Choose \"Recipes & content\" for a wrong recipe, or \"Bug report\" for an app problem.\n3. The team will reply by email within 1–2 business days.\nIn the meantime I can still help right now — what do you need most?",
+      "followups": {"vi": ["Liên hệ hỗ trợ", "Báo lỗi"], "en": ["Contact support", "Report a bug"]}
+    },
+    {
+      "id": "feedback_suggestion", "kind": "faq", "group": "care_support",
+      "description": "Góp ý, đề xuất tính năng mới, mong muốn thêm món/thêm chức năng (giọng tích cực/trung tính).",
+      "answer_vi": "Cảm ơn bạn đã góp ý — những đề xuất như vậy giúp Bếp Việt tốt hơn mỗi ngày! Bạn gửi chi tiết ở trang Liên hệ (/contact), chủ đề \"Câu hỏi chung\" (hoặc \"Công thức & nội dung\" nếu là món ăn). Nếu muốn món nhà bạn có mặt trên Bếp Việt, bạn có thể tự \"Đăng món\" để ban biên tập xem xét.",
+      "answer_en": "Thank you for the idea — suggestions like this make Bep Viet better! Please send the details on the Contact page (/contact) under \"General\" (or \"Recipes & content\" for dishes). If you'd like your family recipe on Bep Viet, you can submit it via \"Post a dish\" for the editors to review.",
+      "followups": {"vi": ["Gửi công thức của tôi"], "en": ["Submit my recipe"]}
+    },
+    {
+      "id": "recipe_ingredients", "kind": "action", "group": "culinary", "handler": "ingredients",
+      "description": "Hỏi nguyên liệu / cần chuẩn bị gì cho món X. Slot: dish (bắt buộc), servings (tùy chọn). Thiếu dish thì hỏi lại món nào.",
+      "answer_vi": "Bạn muốn xem nguyên liệu của món nào? Bạn cho mình tên món nhé.",
+      "answer_en": "Which dish would you like the ingredients for?",
+      "followups": {"vi": ["Cách nấu món này", "Nấu mất bao lâu?"], "en": ["How to cook it", "How long does it take?"]}
+    },
+    {
+      "id": "recipe_cook_time", "kind": "action", "group": "culinary", "handler": "cook_time",
+      "description": "Hỏi thời gian sơ chế / nấu / tổng thời gian món X. Slot: dish.",
+      "answer_vi": "Bạn muốn biết thời gian nấu của món nào?",
+      "answer_en": "Which dish do you want the cooking time for?",
+      "followups": {"vi": ["Nguyên liệu món này", "Món nhanh dưới 30 phút"], "en": ["Ingredients", "Quick dishes under 30 minutes"]}
+    },
+    {
+      "id": "recipe_nutrition", "kind": "action", "group": "culinary", "handler": "nutrition",
+      "description": "Hỏi calo / năng lượng / đạm / dinh dưỡng của món X, ăn có béo không. Slot: dish. Trả lời số ước tính theo một khẩu phần người lớn, kèm lưu ý tham khảo.",
+      "answer_vi": "Bạn muốn xem calo của món nào? Lưu ý số liệu là ước tính theo một khẩu phần người lớn, chỉ để tham khảo.",
+      "answer_en": "Which dish do you want calories for? Figures are estimates per adult serving, for reference only.",
+      "followups": {"vi": ["Gợi ý món ít dầu"], "en": ["Low-oil dish ideas"]}
+    },
+    {
+      "id": "recipe_how_to_cook", "kind": "action", "group": "culinary", "handler": "steps",
+      "description": "Hỏi cách nấu / công thức / các bước làm món X có trong kho món. Slot: dish. (Câu hỏi kỹ thuật chung không gắn món cụ thể → cooking_question.)",
+      "answer_vi": "Bạn muốn mình hướng dẫn nấu món nào?",
+      "answer_en": "Which dish would you like to cook?",
+      "followups": {"vi": ["Vào bếp nấu từng bước", "Nguyên liệu món này"], "en": ["Cook it step by step", "Ingredients"]}
+    },
+    {
+      "id": "recipe_scale_servings", "kind": "action", "group": "culinary", "handler": "scale_servings",
+      "description": "Hỏi nguyên liệu/định lượng khi nấu món X cho N người, tăng giảm khẩu phần. Slot: dish, servings.",
+      "answer_vi": "Bạn cho mình biết món nào và nấu cho mấy người nhé, mình quy đổi định lượng ngay.",
+      "answer_en": "Tell me the dish and how many people, and I'll scale the amounts.",
+      "followups": {"vi": ["Khai báo gia đình để tự tính khẩu phần"], "en": ["Set up my household"]}
+    },
+    {
+      "id": "recommend_general", "kind": "action", "group": "culinary", "handler": "recommend",
+      "description": "Hỏi chung chung hôm nay ăn gì / nấu gì / gợi ý món, không kèm tiêu chí rõ ràng.",
+      "answer_vi": "Để mình gợi ý cho trúng, bạn cho mình biết thêm: bữa nào, nhà mấy người, hay tủ lạnh đang có gì nhé?",
+      "answer_en": "To suggest the right dish, tell me a bit more: which meal, how many people, or what's in your fridge?",
+      "followups": {"vi": ["Món nhanh dưới 30 phút", "Gợi ý mâm cơm gia đình", "Quay mâm"], "en": ["Quick dishes", "Family meal ideas", "Spin a meal"]}
+    },
+    {
+      "id": "recommend_by_meal", "kind": "action", "group": "culinary", "handler": "recommend",
+      "description": "Gợi ý món theo bữa/thời điểm: sáng, trưa, tối, khuya, cuối tuần, đãi khách, ngày Tết, trời mưa/lạnh/nóng. Slot: meal_time.",
+      "answer_vi": "Bạn đang cần gợi ý cho bữa nào: sáng, trưa hay tối?",
+      "answer_en": "Which meal are you planning: breakfast, lunch or dinner?",
+      "followups": {"vi": ["Thêm vào kế hoạch"], "en": ["Add to plan"]}
+    },
+    {
+      "id": "recommend_by_ingredients", "kind": "action", "group": "culinary", "handler": "recommend",
+      "description": "Gợi ý món từ nguyên liệu đang có (tủ lạnh còn trứng, cà chua…). Slot: ingredients (danh sách).",
+      "answer_vi": "Nhà bạn đang có những nguyên liệu gì? Kể mình nghe vài thứ, mình tìm món hợp nhất.",
+      "answer_en": "What ingredients do you have? List a few and I'll find the best matches.",
+      "followups": {"vi": ["Món nhanh dưới 30 phút"], "en": ["Quick dishes"]}
+    },
+    {
+      "id": "recommend_by_region", "kind": "action", "group": "culinary", "handler": "recommend",
+      "description": "Gợi ý món theo vùng miền / đặc sản: Bắc, Trung, Nam, Huế, Hà Nội, miền Tây… Slot: region.",
+      "answer_vi": "Bạn muốn món miền nào: Bắc, Trung hay Nam?",
+      "answer_en": "Which region would you like: North, Central or South Vietnam?",
+      "followups": {"vi": [], "en": []}
+    },
+    {
+      "id": "recommend_by_diet", "kind": "action", "group": "culinary", "handler": "recommend",
+      "description": "Gợi ý món theo chế độ ăn / đối tượng: chay, ít dầu, ít muối, ít đường, giảm cân, trẻ nhỏ, người già, không hải sản… Slot: diet. (Bệnh lý cụ thể → safety_medical.)",
+      "answer_vi": "Bạn đang theo chế độ ăn nào: chay, ít dầu, ít muối, ít đường hay cho trẻ nhỏ?",
+      "answer_en": "Which diet: vegetarian, low-oil, low-salt, low-sugar or kid-friendly?",
+      "followups": {"vi": ["Lưu chế độ ăn vào cài đặt"], "en": ["Save my diet in settings"]}
+    },
+    {
+      "id": "recommend_quick", "kind": "action", "group": "culinary", "handler": "recommend",
+      "description": "Gợi ý món nhanh, dễ, ít bước, dưới N phút, cho người bận rộn/mới tập nấu. Slot: max_minutes.",
+      "answer_vi": "Bạn có khoảng bao nhiêu phút để nấu? Mình lọc món vừa thời gian cho bạn.",
+      "answer_en": "How many minutes do you have? I'll filter dishes that fit.",
+      "followups": {"vi": [], "en": []}
+    },
+    {
+      "id": "safety_medical", "kind": "safety", "group": "safety",
+      "description": "Hỏi ăn uống theo bệnh lý / thuốc / thai kỳ / dị ứng (không khẩn cấp): tiểu đường, gout, huyết áp, bầu ăn được không, trẻ dưới 1 tuổi, tương tác thuốc.",
+      "answer_vi": "Câu hỏi này liên quan đến sức khỏe nên mình không thể thay bác sĩ hay chuyên gia dinh dưỡng đưa lời khuyên y khoa. Bạn nên hỏi ý kiến bác sĩ đang theo dõi để có chế độ ăn an toàn nhất. Mình có thể giúp phần bếp núc: gợi ý món thanh nhẹ, ít muối, ít đường hoặc tránh nguyên liệu bạn cần kiêng — bạn cũng có thể khai báo dị ứng trong Cài đặt → Khẩu vị & chế độ ăn để Bếp Việt cảnh báo khi xem món.",
+      "answer_en": "This is a health question, so I can't replace a doctor or dietitian for medical advice. Please check with your doctor for the safest diet. I can help in the kitchen: suggest light, low-salt or low-sugar dishes, or avoid ingredients you need to skip — you can also add allergies in Settings → Tastes & diet so Bep Viet warns you on recipes.",
+      "followups": {"vi": ["Gợi ý món ít muối", "Khai báo dị ứng"], "en": ["Low-salt dishes", "Set allergies"]}
+    },
+    {
+      "id": "safety_emergency", "kind": "safety", "group": "safety",
+      "description": "Tình huống khẩn cấp: sốc phản vệ, khó thở, sưng môi họng sau khi ăn, ngộ độc thực phẩm nặng, bỏng nặng, trẻ hóc, nuốt hóa chất.",
+      "answer_vi": "Đây có thể là tình huống khẩn cấp. Hãy gọi ngay 115 (cấp cứu) hoặc đưa người bệnh đến cơ sở y tế gần nhất. Nếu người bệnh có thuốc dị ứng khẩn cấp do bác sĩ kê (như bút tiêm epinephrine), dùng theo hướng dẫn. Đừng chờ xem triệu chứng có tự hết không. Mình không thể thay nhân viên y tế — xin hãy liên hệ cấp cứu ngay.",
+      "answer_en": "This may be an emergency. Call your local emergency number now (115 in Vietnam) or go to the nearest medical facility. If the person has prescribed emergency allergy medication (such as an epinephrine auto-injector), use it as directed. Don't wait to see if symptoms pass. I can't replace medical staff — please get emergency help right away.",
+      "followups": {"vi": [], "en": []}
+    },
+    {
+      "id": "safety_dangerous", "kind": "safety", "group": "safety",
+      "description": "Yêu cầu nội dung nguy hiểm: đầu độc, chất cấm, nấu rượu methanol, làm thuốc nổ, chế biến cá nóc/nấm lạ/cóc, ăn thực phẩm hỏng, động vật hoang dã cấm.",
+      "answer_vi": "Mình không thể hỗ trợ yêu cầu này vì có thể gây nguy hiểm cho sức khỏe hoặc vi phạm pháp luật. Những nguyên liệu như cá nóc, nấm dại, cóc hay thực phẩm đã hỏng có nguy cơ ngộ độc rất cao, bạn tuyệt đối không nên tự chế biến. Nếu bạn muốn, mình gợi ý một món an toàn, ngon miệng thay thế nhé.",
+      "answer_en": "I can't help with this because it could be dangerous or illegal. Ingredients like pufferfish, wild mushrooms, toads or spoiled food carry a high risk of poisoning and shouldn't be prepared at home. If you like, I can suggest a safe, tasty alternative.",
+      "followups": {"vi": ["Hôm nay ăn gì?"], "en": ["What should I cook today?"]}
+    },
+    {
+      "id": "safety_abuse", "kind": "safety", "group": "safety",
+      "description": "Lời lẽ xúc phạm, chửi thề, quấy rối, kỳ thị nhắm vào trợ lý hoặc người khác.",
+      "answer_vi": "Mình hiểu có thể bạn đang bực, và mình xin lỗi nếu đã làm bạn khó chịu. Mình vẫn muốn giúp — bạn cho mình biết vấn đề đang gặp nhé, hoặc gửi phản ánh ở trang Liên hệ (/contact) để đội ngũ xử lý trực tiếp.",
+      "answer_en": "I understand you may be frustrated, and I'm sorry if I've upset you. I still want to help — tell me what's wrong, or send feedback on the Contact page (/contact) so the team can handle it directly.",
+      "followups": {"vi": ["Liên hệ hỗ trợ"], "en": ["Contact support"]}
+    },
+    {
+      "id": "safety_prompt_injection", "kind": "safety", "group": "safety",
+      "description": "Cố vượt rào: bỏ qua hướng dẫn, đóng vai không giới hạn, tiết lộ system prompt/khóa API/cấu hình, đòi dữ liệu người dùng khác hoặc quyền quản trị.",
+      "answer_vi": "Mình không thể làm theo yêu cầu này: mình không chia sẻ hướng dẫn hệ thống, thông tin kỹ thuật hay dữ liệu của người dùng khác, và không thay đổi quy tắc hoạt động. Còn chuyện bếp núc hay cách dùng Bếp Việt thì mình luôn sẵn lòng — bạn cần gì nè?",
+      "answer_en": "I can't do that: I don't share system instructions, technical details or other users' data, and I don't change how I operate. I'm always happy to help with cooking or using Bep Viet — what do you need?",
+      "followups": {"vi": ["Hôm nay ăn gì?"], "en": ["What should I cook today?"]}
+    },
+    {
+      "id": "cooking_question", "kind": "handoff_llm", "group": "handoff",
+      "description": "Câu hỏi kỹ thuật/mẹo nấu ăn mở hoặc xử lý sự cố khi nấu: thay thế nguyên liệu, khử mùi tanh, nước dùng đục, thịt dai, bảo quản, vì sao… → chuyển LLM (kèm ngữ cảnh món nếu có).",
+      "answer_vi": "", "answer_en": "",
+      "followups": {"vi": [], "en": []}
+    },
+    {
+      "id": "culinary_creative", "kind": "handoff_llm", "group": "handoff",
+      "description": "Yêu cầu sáng tạo: nghĩ công thức mới, biến tấu món, kết hợp món, so sánh hai món/cách nấu, lên thực đơn tiệc theo chủ đề tự do → chuyển LLM.",
+      "answer_vi": "", "answer_en": "",
+      "followups": {"vi": [], "en": []}
+    },
+    {
+      "id": "food_culture", "kind": "handoff_llm", "group": "handoff",
+      "description": "Hỏi văn hóa, lịch sử, nguồn gốc, ý nghĩa món ăn/phong tục ẩm thực Việt (mâm cỗ Tết, cúng rằm…) → chuyển LLM.",
+      "answer_vi": "", "answer_en": "",
+      "followups": {"vi": [], "en": []}
+    },
+    {
+      "id": "out_of_scope", "kind": "faq", "group": "out_of_scope",
+      "description": "Chủ đề ngoài ẩm thực và Bếp Việt: thời tiết, chứng khoán, bóng đá, bài tập, lập trình, chính trị, tình cảm… Trả lời cố định, không gọi LLM để tiết kiệm chi phí.",
+      "answer_vi": "Câu này nằm ngoài chuyên môn bếp núc của mình rồi. Mình là Chú Rồng của Bếp Việt nên giỏi nhất là gợi ý món, lên thực đơn và hướng dẫn nấu ăn. Bạn có muốn mình giúp chuyện ăn uống hôm nay không?",
+      "answer_en": "That's outside my kitchen expertise. I'm Bep Viet's Chef Dragon, best at suggesting dishes, planning menus and guiding you through cooking. Can I help with today's meals?",
+      "followups": {"vi": ["Hôm nay ăn gì?", "Bạn làm được gì?"], "en": ["What should I cook today?", "What can you do?"]}
+    }
+  ]
+}

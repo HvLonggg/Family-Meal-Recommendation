@@ -64,17 +64,17 @@ describe('ForgotPasswordPage', () => {
     );
 
     fireEvent.change(screen.getByLabelText('Mật khẩu mới'), {
-      target: { value: 'MatKhauMoi2026' },
+      target: { value: 'New-Test-Only-No-Login-2026!' },
     });
     fireEvent.change(screen.getByLabelText('Nhập lại mật khẩu'), {
-      target: { value: 'MatKhauMoi2026' },
+      target: { value: 'New-Test-Only-No-Login-2026!' },
     });
     fireEvent.click(screen.getByRole('button', { name: 'Cập nhật mật khẩu' }));
 
     expect(await screen.findByText('lan.nguyen@example.com')).toBeInTheDocument();
     expect(apiPost).toHaveBeenNthCalledWith(3, '/auth/reset-password', {
       token: 'a-valid-reset-token-that-is-long-enough',
-      new_password: 'MatKhauMoi2026',
+      new_password: 'New-Test-Only-No-Login-2026!',
     });
 
     fireEvent.click(screen.getByRole('link', { name: 'Đăng nhập bằng email này' }));

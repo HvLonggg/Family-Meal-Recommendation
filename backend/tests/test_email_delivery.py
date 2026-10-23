@@ -348,3 +348,55 @@ def test_gmail_api_rejection_is_not_reported_as_success(monkeypatch: pytest.Monk
             )
     finally:
         get_settings.cache_clear()
+
+
+def test_delivery_errors_are_explained_without_secrets() -> None:
+    import smtplib
+
+    from app.modules.auth.email import EmailDeliveryError, describe_delivery_error
+
+    def wrapped(cause: BaseException) -> EmailDeliveryError:
+        error = EmailDeliveryError("SMTP delivery failed.")
+        error.__cause__ = cause
+        return error
+
+    auth = describe_delivery_error(wrapped(smtplib.SMTPAuthenticationError(535, b"bad")))
+    assert "mật khẩu ứng dụng" in auth
+    assert "Không kết nối" in describe_delivery_error(wrapped(TimeoutError()))
+    assert "refresh token" in describe_delivery_error(
+        EmailDeliveryError("Gmail OAuth token refresh failed: invalid_grant.")
+    )
+    assert describe_delivery_error(RuntimeError("boom")).startswith("Email chưa gửi được:")
+
+
+def test_smtp_send_retries_transient_errors_but_not_bad_credentials(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    import smtplib
+    from email.message import EmailMessage
+
+    from app.modules.auth import email as auth_email
+
+    monkeypatch.setattr(auth_email.time, "sleep", lambda _seconds: None)
+    calls: list[int] = []
+
+    def flaky(_message: EmailMessage) -> None:
+        calls.append(1)
+        if len(calls) < 3:
+            error = auth_email.EmailDeliveryError("SMTP delivery failed.")
+            error.__cause__ = TimeoutError()
+            raise error
+
+    auth_email._with_retries(flaky, EmailMessage())
+    assert len(calls) == 3
+
+    def bad_login(_message: EmailMessage) -> None:
+        calls.append(1)
+        error = auth_email.EmailDeliveryError("SMTP delivery failed.")
+        error.__cause__ = smtplib.SMTPAuthenticationError(535, b"bad credentials")
+        raise error
+
+    calls.clear()
+    with pytest.raises(auth_email.EmailDeliveryError):
+        auth_email._with_retries(bad_login, EmailMessage())
+    assert len(calls) == 1

@@ -246,9 +246,7 @@ def list_past_meals(
     total = session.scalar(select(func.count()).select_from(group_statement.subquery())) or 0
     groups = list(
         session.execute(
-            group_statement.order_by(
-                UserMealPlanItem.plan_date.desc(), UserMealPlanItem.meal_type
-            )
+            group_statement.order_by(UserMealPlanItem.plan_date.desc(), UserMealPlanItem.meal_type)
             .limit(limit)
             .offset(offset)
         )
@@ -271,6 +269,28 @@ def list_past_meals(
     for item in items:
         by_group.setdefault((item.plan_date, item.meal_type), []).append(item)
     return [(*key, by_group.get(key, [])) for key in group_keys], total
+
+
+def set_item_status(
+    session: Session, *, user_id: UUID, item: UserMealPlanItem, completion_status: str
+) -> None:
+    """Đổi trạng thái một món trong kế hoạch và ghi lịch sử; người gọi tự commit."""
+    if item.completion_status == completion_status:
+        return
+    item.completion_status = completion_status
+    session.flush()
+    action = "reopened" if completion_status == "planned" else completion_status
+    _record_event(session, user_id=user_id, item=item, action=action)
+
+
+def meal_status(items: list[UserMealPlanItem]) -> str:
+    """Trạng thái cả bữa: hoàn thành khi mọi món đã nấu, bỏ qua khi mọi món bị bỏ qua."""
+    statuses = {item.completion_status for item in items}
+    if statuses == {"completed"}:
+        return "completed"
+    if statuses == {"skipped"}:
+        return "skipped"
+    return "planned"
 
 
 def update_meal_status(

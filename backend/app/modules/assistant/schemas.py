@@ -77,6 +77,12 @@ class ActionLink(BaseModel):
     to: str
 
 
+class SourceRef(BaseModel):
+    title: str
+    url: str
+    kind: str
+
+
 class AttachmentMeta(BaseModel):
     name: str
     content_type: str
@@ -94,6 +100,7 @@ class MessageOut(BaseModel):
     suggestions: list[str] = Field(default_factory=list)
     actions: list[ActionLink] = Field(default_factory=list)
     attachments: list[AttachmentMeta] = Field(default_factory=list)
+    sources: list[SourceRef] = Field(default_factory=list)
     mode: ReplyMode | None = None
 
 
@@ -144,3 +151,118 @@ class AssistantStatus(BaseModel):
     name: str
     accepts: list[str]
     max_attachments: int
+
+
+class KnowledgeStatus(BaseModel):
+    chunks: int
+    by_type: dict[str, int]
+    embedding_model: str | None
+    embedded: int
+    pending: int
+    retrieval: Literal["hybrid", "bm25"]
+    syncing: bool
+
+
+MemoryKind = Literal["allergy", "diet", "household", "note"]
+
+
+class MemoryOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: UUID
+    content: str
+    kind: MemoryKind
+    created_at: datetime
+    updated_at: datetime
+
+
+class MemoryList(BaseModel):
+    data: list[MemoryOut]
+    limit: int
+
+
+class MemoryIn(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    content: str = Field(min_length=1, max_length=200)
+
+    @field_validator("content")
+    @classmethod
+    def clean_content(cls, value: str) -> str:
+        cleaned = " ".join(value.split())
+        if len(cleaned) < 2:
+            raise ValueError("Ghi nhớ quá ngắn.")
+        return cleaned
+
+
+def _clean_title(value: str | None) -> str | None:
+    if value is None:
+        return None
+    cleaned = " ".join(value.split())
+    if not cleaned:
+        raise ValueError("Tiêu đề không được để trống.")
+    return cleaned
+
+
+class KnowledgeDocumentOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: UUID
+    title: str
+    source: Literal["note", "file"]
+    file_name: str | None
+    size_bytes: int
+    active: bool
+    characters: int = 0
+    preview: str = ""
+    created_at: datetime
+    updated_at: datetime
+
+
+class KnowledgeDocumentDetail(KnowledgeDocumentOut):
+    text: str
+
+
+class KnowledgeDocumentList(BaseModel):
+    data: list[KnowledgeDocumentOut]
+    status: KnowledgeStatus
+
+
+class KnowledgeNoteIn(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    title: str = Field(min_length=1, max_length=200)
+    text: str = Field(min_length=10, max_length=200_000)
+
+    @field_validator("title")
+    @classmethod
+    def clean_title(cls, value: str | None) -> str | None:
+        return _clean_title(value)
+
+
+class KnowledgeFileIn(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    file_name: str = Field(min_length=1, max_length=255)
+    content_type: str = Field(default="", max_length=120)
+    # Data URL của tệp (tối đa 8 MB trước khi mã hóa base64).
+    data: str = Field(min_length=16, max_length=11_200_000)
+    title: str | None = Field(default=None, max_length=200)
+
+    @field_validator("title")
+    @classmethod
+    def clean_title(cls, value: str | None) -> str | None:
+        return _clean_title(value) if value and value.strip() else None
+
+
+class KnowledgeDocumentUpdate(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    title: str | None = Field(default=None, min_length=1, max_length=200)
+    text: str | None = Field(default=None, min_length=10, max_length=200_000)
+    active: bool | None = None
+
+    @field_validator("title")
+    @classmethod
+    def clean_title(cls, value: str | None) -> str | None:
+        return _clean_title(value)

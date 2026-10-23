@@ -1,0 +1,681 @@
+{
+  "ca-keo-kho-rau-ram-mien-tay": {
+    "name": "Mekong-style braised goby with Vietnamese coriander",
+    "aliases": [
+      "Braised goby with Vietnamese coriander",
+      "Clay-pot goby with rau ram",
+      "Peppery braised goby with Vietnamese coriander"
+    ],
+    "region": [
+      "Southern Vietnam"
+    ],
+    "province": [
+      "Mekong Delta",
+      "Cà Mau",
+      "Bạc Liêu"
+    ],
+    "category": "Main dish",
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
+    "difficulty": "Easy",
+    "serving_basis": "One small clay pot of braised fish for four people, served with steamed rice and boiled vegetables.",
+    "description": "Braised goby with Vietnamese coriander is a familiar Southern Vietnamese family meal. Small goby are gently simmered with fish sauce, pepper and layers of rau ram so the herb infuses the fish. Bếp Việt standardizes the amounts for four servings and uses coconut caramel for a glossy brown finish in a clay or heavy-bottomed pot.",
+    "finished_dish": "Whole goby are tender and coated in a glossy brown braising sauce; rau ram is fragrant, with a warm finish of pepper and chili.",
+    "serving": "Serve hot in the clay pot with steamed rice. Add cucumber or boiled vegetables to balance the savory-sweet sauce.",
+    "tips": [
+      "Choose fresh fish and ask the fishmonger to clean it; rinse briefly, then drain well before seasoning.",
+      "Marinate for about 15 minutes and layer rau ram between the fish; gently shake the pot instead of stirring so the fish stays intact.",
+      "Fish sauce saltiness varies. Taste the sauce before reducing it, and add hot water if the pot dries too quickly."
+    ],
+    "dish_type": [
+      "Southern Vietnamese braised fish",
+      "Rice dish"
+    ],
+    "main_ingredient": [
+      "goby",
+      "Vietnamese coriander",
+      "fish sauce"
+    ],
+    "cooking_method": [
+      "seasoning fish",
+      "gentle braising",
+      "braising with Vietnamese coriander"
+    ],
+    "search_terms": [
+      "Southern Vietnamese braised goby",
+      "goby with rau ram",
+      "Mekong Delta fish dish",
+      "clay-pot goby"
+    ],
+    "spicy_level": 1,
+    "image_alt": "Mekong-style clay pot of whole goby braised with Vietnamese coriander, glossy brown sauce, pepper and chili; Bếp Việt image on a transparent background.",
+    "time_note": "About 50 minutes, including preparation, marinating and gentle braising.",
+    "suggested_pairings": [
+      "Steamed rice",
+      "Boiled vegetables",
+      "Cucumber"
+    ],
+    "recipe_family": "mekong_goby_braised_vietnamese_coriander",
+    "ingredients": [
+      {
+        "name": "Cleaned goby",
+        "unit": "g",
+        "notes": "Choose fresh fish, ask the fishmonger to clean it, then drain before seasoning."
+      },
+      {
+        "name": "Vietnamese coriander (rau ram)",
+        "unit": "g",
+        "notes": "Pick the leaves, wash and drain; divide into two portions."
+      },
+      {
+        "name": "Fish sauce",
+        "unit": "ml",
+        "notes": "Divide between the marinade and braising sauce."
+      },
+      {
+        "name": "Coconut caramel",
+        "unit": "ml",
+        "notes": "Use enough for an amber-brown color; coconut-sugar caramel may be substituted."
+      },
+      {
+        "name": "Sugar",
+        "unit": "g",
+        "notes": "Adjust to the saltiness of the fish sauce."
+      },
+      {
+        "name": "Hot water",
+        "unit": "ml",
+        "notes": "Add gradually for braising; the fish does not need to be submerged."
+      },
+      {
+        "name": "Ground black pepper",
+        "unit": "g",
+        "notes": "Season the fish and add a little more at the end."
+      },
+      {
+        "name": "Red chili",
+        "unit": "piece",
+        "notes": "Bruise it or leave it whole, depending on heat preference."
+      },
+      {
+        "name": "Salt",
+        "unit": "g",
+        "notes": "Use only a small pinch when rinsing the fish if needed."
+      }
+    ],
+    "preparation_steps": [
+      "Briefly rinse the cleaned goby under fresh water and drain. Pick and wash the rau ram; reserve a few tender sprigs for serving.",
+      "Mix the fish with fish sauce, coconut caramel, sugar, pepper and chili. Marinate for 15 minutes in the pot you will use, layering rau ram between the fish."
+    ],
+    "cooking_steps": [
+      "Set the pot over medium heat until the marinade begins to simmer. Pour hot water down the side of the pot, cover loosely and lower the heat.",
+      "Braise gently for 20–25 minutes until the fish is cooked and the sauce lightly thickened. Shake the pot gently once or twice; do not stir vigorously.",
+      "Taste and simmer uncovered for a few minutes if you want a thicker sauce. Finish with pepper and the remaining rau ram, then serve hot."
+    ],
+    "tags": [
+      "Southern Vietnamese",
+      "Mekong Delta",
+      "main dish",
+      "rice dish",
+      "braised fish"
+    ],
+    "keywords": [
+      "goby",
+      "Vietnamese coriander",
+      "coconut caramel",
+      "Mekong Delta dish"
+    ]
+  },
+  "canh-bau-tom-kho-nam-bo": {
+    "name": "Southern Vietnamese bottle-gourd soup with dried shrimp",
+    "aliases": [
+      "Bottle-gourd soup with dried shrimp",
+      "Mekong-style gourd and dried shrimp soup",
+      "Bottle gourd and dried shrimp soup with scallions"
+    ],
+    "region": [
+      "Southern Vietnam"
+    ],
+    "province": [
+      "Southern Vietnam",
+      "Mekong Delta"
+    ],
+    "category": "Soup",
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
+    "difficulty": "Easy",
+    "serving_basis": "Four bowls of light soup, served hot with a family meal.",
+    "description": "Bottle-gourd soup with dried shrimp is a gently sweet soup often served with Southern Vietnamese home meals. The dried shrimp are soaked and simmered first to build a naturally savory broth; the gourd is added near the end so it stays green and just tender. This Bếp Việt version uses thin slices for easy preparation and everyday cooking.",
+    "finished_dish": "A clear, lightly sweet broth with tender pale-green gourd slices, softened dried shrimp, scallions and cilantro.",
+    "serving": "Ladle the hot soup into a bowl and finish with scallions and cilantro. Serve with steamed rice and a braised or roasted dish.",
+    "tips": [
+      "Soak the dried shrimp in warm water for 10 minutes and rinse to remove surface grit and excess salt; strain and reserve the soaking water if you want a stronger broth.",
+      "Add the gourd only after the broth is boiling and cook until just tender; overcooking makes it mushy and clouds the soup.",
+      "Taste before adding fish sauce because dried shrimp can already be salty."
+    ],
+    "dish_type": [
+      "Gourd and shrimp soup",
+      "Everyday Vietnamese soup"
+    ],
+    "main_ingredient": [
+      "bottle gourd",
+      "dried shrimp"
+    ],
+    "cooking_method": [
+      "soaking dried shrimp",
+      "simmering soup broth",
+      "cooking bottle gourd"
+    ],
+    "search_terms": [
+      "bottle-gourd soup with dried shrimp",
+      "Southern Vietnamese gourd soup",
+      "Mekong-style bottle gourd soup",
+      "light shrimp soup"
+    ],
+    "spicy_level": 0,
+    "image_alt": "A bowl of Southern Vietnamese bottle-gourd soup with dried shrimp, pale-green gourd slices in clear broth, scallions and cilantro; Bếp Việt image on a transparent background.",
+    "time_note": "About 40 minutes, including soaking the shrimp and simmering the broth.",
+    "suggested_pairings": [
+      "Steamed rice",
+      "Braised fish",
+      "Boiled greens"
+    ],
+    "recipe_family": "southern_vietnam_gourd_soup_dried_shrimp",
+    "ingredients": [
+      {
+        "name": "Young bottle gourd",
+        "unit": "g",
+        "notes": "Peel if the skin is mature; remove spongy seeds from larger gourds, then slice."
+      },
+      {
+        "name": "Dried shrimp",
+        "unit": "g",
+        "notes": "Rinse, soak in warm water for 10 minutes and rinse again; strain and reserve the soaking water."
+      },
+      {
+        "name": "Water",
+        "unit": "ml",
+        "notes": "Use to simmer the shrimp and cook the soup."
+      },
+      {
+        "name": "Shallot",
+        "unit": "g",
+        "notes": "Peel and mince; briefly sauté if desired."
+      },
+      {
+        "name": "Neutral cooking oil",
+        "unit": "ml",
+        "notes": "Optional; omit for a lighter broth."
+      },
+      {
+        "name": "Fish sauce",
+        "unit": "ml",
+        "notes": "Add gradually after simmering the shrimp."
+      },
+      {
+        "name": "Salt",
+        "unit": "g",
+        "notes": "Adjust to the saltiness of the dried shrimp."
+      },
+      {
+        "name": "Sugar",
+        "unit": "g",
+        "notes": "Optional, in a small amount to balance the broth."
+      },
+      {
+        "name": "Scallions",
+        "unit": "g",
+        "notes": "Wash and finely slice."
+      },
+      {
+        "name": "Cilantro",
+        "unit": "g",
+        "notes": "Wash and finely chop."
+      }
+    ],
+    "preparation_steps": [
+      "Rinse the dried shrimp and soak them in warm water for 10 minutes until softened. Rinse once more and strain the soaking water if you plan to use it.",
+      "Peel and wash the gourd, then slice it thinly. Slice the scallions and cilantro, and mince the shallot."
+    ],
+    "cooking_steps": [
+      "Warm the oil in a pot and lightly sauté the shallot. Add the water and dried shrimp, adding some strained soaking water if desired. Bring to a boil, then simmer for about 15 minutes.",
+      "Season with salt and a little fish sauce. Once the broth returns to a boil, add the gourd and cook for 2–4 minutes, until tender and slightly translucent.",
+      "Taste, turn off the heat before the gourd softens too much, then add scallions and cilantro and ladle into a bowl."
+    ],
+    "tags": [
+      "Southern Vietnamese",
+      "Mekong Delta",
+      "soup",
+      "family meal",
+      "easy recipe"
+    ],
+    "keywords": [
+      "bottle gourd",
+      "dried shrimp",
+      "light soup",
+      "Southern Vietnamese dish"
+    ]
+  },
+  "tep-dong-rang-la-chanh": {
+    "name": "Pan-roasted freshwater shrimp with lime leaf",
+    "aliases": [
+      "Tiny freshwater shrimp stir-fried with lime leaves",
+      "Pan-roasted small freshwater shrimp with lime leaves",
+      "Tiny shrimp roasted with pork fat"
+    ],
+    "region": [
+      "Southern Vietnam"
+    ],
+    "province": [
+      "Mekong Delta",
+      "Southern Vietnam"
+    ],
+    "category": "Main dish",
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
+    "difficulty": "Easy",
+    "serving_basis": "One small plate of crisp shrimp to serve with steamed rice and boiled vegetables.",
+    "description": "Tép đồng rang lá chanh is a rustic dish of tiny freshwater shrimp dry-roasted first, then finished with rendered pork fat, shallot and lime leaf. The Bếp Việt family version uses a restrained sweet-salty seasoning and keeps the two-stage roasting method so the shrimp dry before they are seasoned.",
+    "finished_dish": "Tiny freshwater shrimp are golden-red, dry-roasted and lightly glossy, with a fragrant scattering of finely shredded lime leaf.",
+    "serving": "Serve hot as a small side dish with steamed rice, boiled greens or vegetable soup. Add a little lime juice if you prefer a brighter finish.",
+    "tips": [
+      "Choose fresh shrimp, rinse well and drain completely; remaining water makes the shrimp take longer to dry.",
+      "Dry-roast over medium-high heat until the shrimp turn pink and dry, then add the fat and seasoning so they remain crisp rather than tough.",
+      "Slice the lime leaf very finely and add it at the end to preserve its aroma."
+    ],
+    "dish_type": [
+      "Pan-roasted freshwater shrimp",
+      "Mekong Delta rice dish"
+    ],
+    "main_ingredient": [
+      "tiny freshwater shrimp",
+      "lime leaf"
+    ],
+    "cooking_method": [
+      "cleaning freshwater shrimp",
+      "dry-roasting",
+      "seasoning and roasting"
+    ],
+    "search_terms": [
+      "freshwater shrimp with lime leaf",
+      "tép đồng rang lá chanh",
+      "Mekong Delta shrimp dish",
+      "crispy tiny shrimp"
+    ],
+    "spicy_level": 1,
+    "image_alt": "A ceramic plate of golden-red pan-roasted tiny freshwater shrimp with finely shredded lime leaf; Bếp Việt image on a transparent background.",
+    "time_note": "About 35 minutes, including cleaning, dry-roasting and seasoning the shrimp.",
+    "suggested_pairings": [
+      "Steamed rice",
+      "Boiled vegetables",
+      "Vegetable soup"
+    ],
+    "recipe_family": "mekong_tiny_freshwater_shrimp_pan_roasted_lime_leaf",
+    "ingredients": [
+      {
+        "name": "Tiny freshwater shrimp",
+        "unit": "g",
+        "notes": "Choose fresh shrimp, remove debris, rinse and drain thoroughly."
+      },
+      {
+        "name": "Pork fat",
+        "unit": "g",
+        "notes": "Cut into small cubes and render in the pan."
+      },
+      {
+        "name": "Pork cracklings",
+        "unit": "g",
+        "notes": "Optional; remove when golden and crisp."
+      },
+      {
+        "name": "Shallots",
+        "unit": "g",
+        "notes": "Peel and thinly slice."
+      },
+      {
+        "name": "Lime leaves",
+        "unit": "leaves",
+        "notes": "Wash, dry and cut into fine strips."
+      },
+      {
+        "name": "Fish sauce",
+        "unit": "ml",
+        "notes": "Season after the shrimp have been dry-roasted."
+      },
+      {
+        "name": "Sugar",
+        "unit": "g",
+        "notes": "Balances the savory seasoning; adjust to taste."
+      },
+      {
+        "name": "Salt",
+        "unit": "g",
+        "notes": "Use very little, only if needed."
+      },
+      {
+        "name": "Black pepper",
+        "unit": "g",
+        "notes": "Coarsely ground."
+      },
+      {
+        "name": "Lime juice",
+        "unit": "ml",
+        "notes": "Optional; add at the end for a brighter flavor."
+      }
+    ],
+    "preparation_steps": [
+      "Pick through the shrimp, rinse in lightly salted water, rinse again and drain thoroughly. Do not marinate with fish sauce before roasting.",
+      "Dice the pork fat, slice the shallots and finely shred the lime leaves. Mix the fish sauce and sugar with a tablespoon of water."
+    ],
+    "cooking_steps": [
+      "Heat a pan and add the shrimp without seasoning. Stir over medium-high heat until the moisture evaporates and the shrimp turn pink-red.",
+      "Move the shrimp to one side. Render the pork fat in the same pan until golden; add shallots and stir until fragrant, then mix everything together.",
+      "Pour in the fish-sauce mixture, lower the heat and stir until it lightly coats the shrimp. Add the cracklings and pepper, then taste.",
+      "Turn off the heat and fold in the lime leaf and a few drops of lime juice if desired. Serve hot."
+    ],
+    "tags": [
+      "Southern Vietnamese",
+      "Mekong Delta",
+      "main dish",
+      "freshwater shrimp",
+      "rice dish"
+    ],
+    "keywords": [
+      "small freshwater shrimp",
+      "lime leaves",
+      "dry-roasted dish",
+      "Southern Vietnamese food"
+    ]
+  },
+  "ca-tim-nuong-mo-hanh-mien-tay": {
+    "name": "Southern Vietnamese grilled eggplant with scallion oil",
+    "aliases": [
+      "Grilled eggplant with scallion oil",
+      "Grilled eggplant with scallion oil and fish sauce",
+      "Southern Vietnamese grilled eggplant"
+    ],
+    "region": [
+      "Southern Vietnam"
+    ],
+    "province": [
+      "Southern Vietnam",
+      "Mekong Delta"
+    ],
+    "category": "Vegetable dish",
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
+    "difficulty": "Easy",
+    "serving_basis": "One plate of split grilled eggplant to serve as a vegetable side for four.",
+    "description": "Grilled eggplant with scallion oil is a familiar Southern Vietnamese vegetable side. The eggplant is grilled until tender, its charred skin is peeled back, then it is dressed with scallion oil and garlic-chili fish sauce. This Bếp Việt home version keeps the simple presentation and offers roasted peanuts as an optional finish.",
+    "finished_dish": "Tender grilled eggplant with a few charred purple edges, topped with scallion oil, garlic-chili fish sauce and a little crushed roasted peanut.",
+    "serving": "Split the eggplant lengthwise and serve whole or cut into pieces. Eat warm with steamed rice as a vegetable side.",
+    "tips": [
+      "Choose firm, glossy eggplant of moderate size so the flesh softens before the skin becomes too charred.",
+      "For an oven version, preheat to 220°C and turn the eggplant once; test with a skewer to ensure the flesh is fully tender.",
+      "Pour hot oil over the scallions so they soften but stay green; season the fish sauce lightly because the eggplant absorbs it quickly."
+    ],
+    "dish_type": [
+      "Grilled vegetable side",
+      "Southern Vietnamese side dish"
+    ],
+    "main_ingredient": [
+      "eggplant",
+      "scallions",
+      "fish sauce"
+    ],
+    "cooking_method": [
+      "grilling eggplant",
+      "making scallion oil",
+      "mixing garlic-chili fish sauce"
+    ],
+    "search_terms": [
+      "Southern Vietnamese grilled eggplant",
+      "grilled eggplant with scallion oil",
+      "Mekong Delta eggplant side",
+      "Vietnamese cà tím nướng"
+    ],
+    "spicy_level": 1,
+    "image_alt": "A plate of Southern Vietnamese grilled eggplant topped with scallion oil, garlic-chili fish sauce and crushed peanuts; Bếp Việt image on a transparent background.",
+    "time_note": "About 30 minutes, including preparing the eggplant, grilling and making scallion oil.",
+    "suggested_pairings": [
+      "Steamed rice",
+      "Braised fish",
+      "Vegetable soup"
+    ],
+    "recipe_family": "southern_vietnam_grilled_eggplant_scallion_oil",
+    "ingredients": [
+      {
+        "name": "Long purple eggplant",
+        "unit": "g",
+        "notes": "Choose 2–3 medium eggplants; wash and keep the stems attached."
+      },
+      {
+        "name": "Scallions",
+        "unit": "g",
+        "notes": "Wash, drain and finely slice."
+      },
+      {
+        "name": "Neutral cooking oil",
+        "unit": "ml",
+        "notes": "Heat and pour over the scallions for the topping."
+      },
+      {
+        "name": "Fish sauce",
+        "unit": "ml",
+        "notes": "Mix into the dipping dressing; adjust for saltiness."
+      },
+      {
+        "name": "Sugar",
+        "unit": "g",
+        "notes": "Dissolve with the fish sauce and water."
+      },
+      {
+        "name": "Water",
+        "unit": "ml",
+        "notes": "For the dipping dressing."
+      },
+      {
+        "name": "Garlic",
+        "unit": "g",
+        "notes": "Peel and mince."
+      },
+      {
+        "name": "Chili",
+        "unit": "piece",
+        "notes": "Mince; remove the seeds for less heat."
+      },
+      {
+        "name": "Roasted peanuts",
+        "unit": "g",
+        "notes": "Optional; crush and sprinkle before serving."
+      }
+    ],
+    "preparation_steps": [
+      "Wash the eggplant and pat it dry. Prick a few shallow holes in the skin with a toothpick or knife tip so steam can escape while grilling.",
+      "Slice the scallions and mince the garlic and chili. Stir the fish sauce, sugar and water together until the sugar dissolves, then add the garlic and chili."
+    ],
+    "cooking_steps": [
+      "Preheat the oven to 220°C or prepare a charcoal grill. Grill the eggplants for 15–20 minutes, turning once, until the skins are blistered and the flesh is fully tender.",
+      "Heat the oil until hot and pour it over the scallions. Let the eggplant cool slightly, then peel away the larger charred pieces of skin.",
+      "Split the eggplant lengthwise and gently spread the flesh on a plate. Add scallion oil and garlic-chili fish sauce, finish with peanuts if desired, and serve warm."
+    ],
+    "tags": [
+      "Southern Vietnamese",
+      "Mekong Delta",
+      "vegetable dish",
+      "easy recipe",
+      "side dish"
+    ],
+    "keywords": [
+      "eggplant",
+      "scallion oil",
+      "vegetable dish",
+      "Mekong Delta"
+    ]
+  },
+  "kho-quet-tom-kho-top-mo-nam-bo": {
+    "name": "Southern Vietnamese kho quẹt with dried shrimp and pork cracklings",
+    "aliases": [
+      "Mekong-style caramelized dipping sauce with shrimp",
+      "Kho quet with pork and shrimp",
+      "Mekong-style kho quet with dried shrimp and pork cracklings"
+    ],
+    "region": [
+      "Southern Vietnam"
+    ],
+    "province": [
+      "Southern Vietnam",
+      "Mekong Delta"
+    ],
+    "category": "Side dish",
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
+    "difficulty": "Easy",
+    "serving_basis": "One small pot of kho quẹt with a plate of boiled vegetables for four people to share with rice.",
+    "description": "Kho quẹt with dried shrimp and pork cracklings is a savory dipping sauce associated with everyday Southern Vietnamese meals. Dried shrimp, fish sauce and pepper are gently simmered until lightly thickened, then the crisp pork is added for richness. Bếp Việt balances the salty-sweet sauce for a family serving and pairs it with boiled vegetables.",
+    "finished_dish": "A small clay pot of amber-brown, lightly thickened kho quẹt with dried shrimp, pork cracklings, pepper and chili, served beside boiled green beans, carrots and okra.",
+    "serving": "Set the small pot in the middle of the table and dip the boiled vegetables a little at a time. Serve with steamed rice or crisp rice cakes if desired.",
+    "tips": [
+      "Soak the dried shrimp for 5–10 minutes, then taste one before seasoning because salt levels vary.",
+      "Render the pork over medium heat until crisp but not burnt; drain most of the fat and keep only about one tablespoon to sauté the aromatics.",
+      "Once the fish-sauce mixture begins to thicken, lower the heat and turn it off slightly early because the sauce will continue to thicken as it cools."
+    ],
+    "dish_type": [
+      "Southern Vietnamese dipping sauce",
+      "Kho quẹt with dried shrimp"
+    ],
+    "main_ingredient": [
+      "dried shrimp",
+      "pork belly",
+      "fish sauce",
+      "pork cracklings"
+    ],
+    "cooking_method": [
+      "rendering pork cracklings",
+      "sautéing dried shrimp",
+      "slow-simmering fish sauce",
+      "boiling vegetables"
+    ],
+    "search_terms": [
+      "kho quẹt",
+      "Southern Vietnamese kho quẹt",
+      "dried shrimp and pork crackling dip",
+      "kho quẹt with boiled vegetables"
+    ],
+    "spicy_level": 1,
+    "image_alt": "A rustic clay pot of glossy Southern Vietnamese kho quẹt with dried shrimp and pork cracklings, served with boiled vegetables; Bếp Việt image on a transparent background.",
+    "time_note": "About 45 minutes, including soaking the shrimp, rendering pork, simmering the sauce and boiling vegetables.",
+    "suggested_pairings": [
+      "Boiled vegetables",
+      "Steamed rice",
+      "Crisp rice cakes"
+    ],
+    "recipe_family": "southern_vietnam_kho_quet_dried_shrimp_pork_cracklings",
+    "ingredients": [
+      {
+        "name": "Pork belly",
+        "unit": "g",
+        "notes": "Cut into small dice to render into pork cracklings."
+      },
+      {
+        "name": "Dried shrimp",
+        "unit": "g",
+        "notes": "Soak in warm water for 5–10 minutes and drain."
+      },
+      {
+        "name": "Fish sauce",
+        "unit": "ml",
+        "notes": "Choose a fragrant variety and add gradually; reduce if very salty."
+      },
+      {
+        "name": "Water",
+        "unit": "ml",
+        "notes": "Mix with the fish sauce so the sauce simmers evenly."
+      },
+      {
+        "name": "Sugar",
+        "unit": "g",
+        "notes": "Balance the savory sauce; start with less if preferred."
+      },
+      {
+        "name": "Shallots",
+        "unit": "g",
+        "notes": "Peel and mince."
+      },
+      {
+        "name": "Garlic",
+        "unit": "g",
+        "notes": "Peel and mince."
+      },
+      {
+        "name": "Black pepper",
+        "unit": "g",
+        "notes": "Coarsely grind; reserve a little for serving."
+      },
+      {
+        "name": "Red chili",
+        "unit": "piece",
+        "notes": "Leave whole or slice, depending on heat preference."
+      },
+      {
+        "name": "Scallions",
+        "unit": "g",
+        "notes": "Wash and finely slice."
+      },
+      {
+        "name": "Green beans",
+        "unit": "g",
+        "notes": "Trim and cut into pieces for dipping."
+      },
+      {
+        "name": "Carrot",
+        "unit": "g",
+        "notes": "Peel and cut into batons."
+      },
+      {
+        "name": "Okra",
+        "unit": "g",
+        "notes": "Wash and trim the stems; leave small pods whole."
+      },
+      {
+        "name": "Salt",
+        "unit": "g",
+        "notes": "Season the vegetable cooking water."
+      }
+    ],
+    "preparation_steps": [
+      "Soak the dried shrimp in warm water for 5–10 minutes, rinse and drain. Dice the pork belly, and mince the shallots and garlic.",
+      "Wash the green beans, carrot and okra and cut them into dipping-size pieces. Stir the fish sauce, water and sugar together until combined."
+    ],
+    "cooking_steps": [
+      "Put the pork belly in a cool pan and render it over medium heat until the fat is released and the cracklings turn golden and crisp. Remove the cracklings and drain most of the fat, leaving about 15 ml.",
+      "Sauté the shallots and garlic in the remaining fat until fragrant. Add the dried shrimp and stir until firm and aromatic.",
+      "Pour in the fish-sauce mixture and add the pepper and chili. Bring to a boil, then simmer over low heat for 8–12 minutes until lightly thickened. Return the cracklings, taste, turn off the heat and add scallions.",
+      "Bring a pot of lightly salted water to a boil. Cook the green beans, carrot and okra just until tender, drain and serve with the warm kho quẹt."
+    ],
+    "tags": [
+      "Southern Vietnamese",
+      "Mekong Delta",
+      "side dish",
+      "kho quẹt",
+      "family meal"
+    ],
+    "keywords": [
+      "kho quet dipping sauce",
+      "dried shrimp",
+      "pork cracklings",
+      "boiled vegetables",
+      "Mekong Delta"
+    ]
+  }
+}

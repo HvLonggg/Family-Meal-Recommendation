@@ -1,0 +1,1332 @@
+{
+  "batch": 50,
+  "description": "Năm món cơm nhà Việt được đối chiếu nguồn báo chí và biên tập định lượng cho bốn người; kèm ảnh mới nền trong suốt.",
+  "recipes": [
+    {
+      "id": "BV576",
+      "slug": "canh-rau-ngot-nau-tom",
+      "name": "Canh rau ngót nấu tôm",
+      "aliases": [
+        "Canh rau ngót tôm tươi",
+        "Canh ngót nấu tôm",
+        "Rau ngót nấu tôm đất"
+      ],
+      "region": [
+        "Ba miền"
+      ],
+      "province": [],
+      "category": "Món canh",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một nồi canh thanh nhẹ cho bốn người, dùng cùng cơm và món mặn.",
+      "prep_time": 15,
+      "cook_time": 12,
+      "passive_time": 0,
+      "total_time": 27,
+      "description": "Rau ngót vò nhẹ nấu với tôm tươi tạo nồi canh xanh, nước ngọt dịu, hợp bữa cơm gia đình ngày thường. Bếp Việt chuẩn hóa định lượng cho bốn người và giữ cách nấu nhanh để rau không bị sẫm màu.",
+      "finished_dish": "Lá rau ngót mềm vừa, còn xanh; tôm ngọt chắc trong nước canh trong, nêm nhẹ mắm và tiêu.",
+      "serving": "Múc nóng ra tô, rắc hành lá và tiêu. Dùng trong bữa với cơm trắng và món kho hoặc món rim.",
+      "tips": [
+        "Chỉ vò rau ngót vừa dập lá; vò quá kỹ hoặc nấu lâu làm canh dễ đục và rau mất màu xanh.",
+        "Tôm nhỏ có thể giã hoặc băm thô; nếu dùng tôm lớn, cắt hạt lựu để dễ ăn.",
+        "Nêm nước mắm sau cùng từng ít một để giữ vị ngọt tự nhiên của rau và tôm."
+      ],
+      "dish_type": [
+        "Canh rau gia đình",
+        "Món canh nấu tôm",
+        "Món ăn cùng cơm"
+      ],
+      "main_ingredient": [
+        "rau ngót",
+        "tôm đất",
+        "nước mắm"
+      ],
+      "cooking_method": [
+        "nấu canh",
+        "luộc rau nhanh",
+        "nấu với tôm"
+      ],
+      "search_terms": [
+        "canh rau ngót nấu tôm",
+        "canh rau ngót tôm tươi",
+        "món canh nhanh cho bữa cơm",
+        "rau ngót nấu tôm đất"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Tô canh rau ngót xanh nấu tôm tươi trong nước dùng thanh, rắc hành lá và tiêu; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 27 phút, gồm nhặt rau, sơ chế tôm và nấu nhanh.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Cá kho",
+        "Thịt rim"
+      ],
+      "recipe_family": "sweet_leaf_shrimp_soup",
+      "ingredients": [
+        {
+          "name": "Rau ngót",
+          "quantity": 250,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Nhặt lá non, rửa sạch và vò nhẹ.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Tôm đất đã bóc vỏ",
+          "quantity": 180,
+          "unit": "g",
+          "role": "main",
+          "notes": "Rút chỉ lưng; băm hoặc giã dập thô.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 10,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Rửa sạch, thái nhỏ để rắc lên tô.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 1000,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Thêm nếu muốn nước canh loãng hơn.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm sau khi rau vừa chín.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 6
+        },
+        {
+          "name": "Muối",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Ướp nhẹ tôm và nêm canh.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 7
+        },
+        {
+          "name": "Tiêu đen xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng một phần với tôm, phần còn lại khi dọn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Nhặt bỏ cọng già, rửa rau ngót vài lần rồi vò nhẹ cho lá hơi dập. Bóc vỏ tôm, rút chỉ lưng, băm thô; trộn tôm với một phần muối và tiêu."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đun sôi nước trong nồi. Cho tôm vào từng ít một, khuấy tơi; hớt bọt khi nước sôi lại."
+        },
+        {
+          "step": 2,
+          "instruction": "Hạ lửa vừa, cho rau ngót vào và nấu 2–3 phút kể từ khi nước sôi trở lại, đến khi lá vừa mềm và vẫn xanh."
+        },
+        {
+          "step": 3,
+          "instruction": "Nêm nước mắm và phần muối còn lại cho vừa ăn. Tắt bếp, rắc hành lá và tiêu rồi dùng nóng."
+        }
+      ],
+      "keywords": [
+        "rau ngót",
+        "tôm đất",
+        "món canh thanh nhẹ",
+        "bữa cơm gia đình"
+      ],
+      "tags": [
+        "món canh",
+        "món ba miền",
+        "nấu tôm",
+        "bữa cơm nhà"
+      ],
+      "sources": [
+        {
+          "url": "https://ngoisao.vnexpress.net/canh-rau-ngot-nau-tom-3939295.html",
+          "publisher": "Ngôi Sao - VnExpress",
+          "title": "Canh rau ngót nấu tôm",
+          "use": "Đối chiếu cách kết hợp rau ngót với tôm và kỹ thuật vò nhẹ rau, nấu ngắn trong nước sôi; Bếp Việt tự biên tập định lượng.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://vnexpress.net/doi-song-cooking-nau-canh-rau-ngot-dung-cach-4936129.html",
+          "publisher": "VnExpress Cooking",
+          "title": "Nấu canh rau ngót đúng cách",
+          "use": "Đối chiếu lưu ý vò rau vừa phải và chỉ nấu đến khi rau vừa mềm; công thức là bản biên tập riêng.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/canh-rau-ngot-nau-tom-960.webp",
+          "page_url": "https://ngoisao.vnexpress.net/canh-rau-ngot-nau-tom-3939295.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu món ăn.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Tô canh rau ngót xanh nấu tôm tươi trong nước dùng thanh, rắc hành lá và tiêu; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh tạo mới bằng ImageGen, PNG gốc có alpha; các bản WebP dùng cho giao diện. Công thức chưa nấu thử."
+        }
+      ],
+      "variant_note": "Nấu tôm tươi với rau ngót vò nhẹ theo cách canh gia đình phổ biến; lượng tôm, nước và gia vị được chuẩn hóa cho bốn phần.",
+      "needs": [
+        "Nấu thử để chốt lượng nước theo loại rau và cỡ tôm.",
+        "Đối chiếu mức nêm theo độ mặn của nước mắm."
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Giảm một nửa nguyên liệu chính, nêm gia vị từ từ.",
+            "instruction": "Dùng nồi/chảo vừa khẩu phần; nếm lại trước khi thêm nước mắm hoặc muối."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "Tăng khoảng một lần rưỡi nguyên liệu chính; tăng gia vị thận trọng.",
+            "instruction": "Chia nguyên liệu xào thành mẻ để giữ nhiệt; điều chỉnh lượng nước canh vừa đủ."
+          }
+        ]
+      },
+      "time_unit": "minute",
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Nấu tôm tươi với rau ngót vò nhẹ theo cách canh gia đình phổ biến; lượng tôm, nước và gia vị được chuẩn hóa cho bốn phần.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để chốt lượng nước theo loại rau và cỡ tôm.",
+          "Đối chiếu mức nêm theo độ mặn của nước mắm."
+        ]
+      }
+    },
+    {
+      "id": "BV577",
+      "slug": "ga-xao-sa-ot",
+      "name": "Gà xào sả ớt",
+      "aliases": [
+        "Thịt gà xào sả ớt",
+        "Gà xào sả ớt ăn cơm",
+        "Gà xào lăn sả ớt"
+      ],
+      "region": [
+        "Ba miền"
+      ],
+      "province": [],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một đĩa gà xào đậm thơm cho bốn người ăn cùng cơm trắng.",
+      "prep_time": 20,
+      "cook_time": 12,
+      "passive_time": 15,
+      "total_time": 47,
+      "description": "Thịt đùi gà thái miếng được ướp với sả, tỏi và nước mắm rồi xào nhanh trên lửa lớn. Sả thái lát, lá chanh và ớt làm dậy hương, tạo món mặn quen thuộc dễ ghép vào thực đơn cơm nhà.",
+      "finished_dish": "Miếng gà chín mềm, săn mặt và bám gia vị; sả thơm rõ, ớt cay nhẹ, lá chanh thoảng hương.",
+      "serving": "Dọn nóng cùng cơm trắng. Gia giảm ớt theo khẩu vị; có thể dùng ớt sừng bỏ hạt nếu nấu cho trẻ nhỏ.",
+      "tips": [
+        "Thái gà đồng đều để thịt chín cùng lúc; thấm khô trước khi ướp để gia vị bám tốt.",
+        "Xào thành một lớp trên chảo nóng; nếu chảo nhỏ, chia hai mẻ để gà săn thay vì ra nhiều nước.",
+        "Không cho lá chanh quá sớm; đảo nhanh ở cuối để giữ mùi thơm."
+      ],
+      "dish_type": [
+        "Món gà xào",
+        "Món mặn ăn cơm",
+        "Món xào sả ớt"
+      ],
+      "main_ingredient": [
+        "thịt đùi gà",
+        "sả",
+        "ớt"
+      ],
+      "cooking_method": [
+        "ướp thịt",
+        "xào lửa lớn",
+        "xào sả ớt"
+      ],
+      "search_terms": [
+        "gà xào sả ớt",
+        "thịt gà xào sả",
+        "gà xào cay nhẹ",
+        "món gà ăn cơm"
+      ],
+      "spicy_level": 2,
+      "image_alt": "Đĩa gà xào sả ớt vàng nâu với sả thái lát, ớt đỏ và lá chanh; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 47 phút, gồm ướp gà 15 phút và xào nhanh trên chảo nóng.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Rau luộc",
+        "Dưa leo"
+      ],
+      "recipe_family": "lemongrass_chili_chicken_stir_fry",
+      "ingredients": [
+        {
+          "name": "Thịt đùi gà lọc xương",
+          "quantity": 500,
+          "unit": "g",
+          "role": "main",
+          "notes": "Bỏ da nếu muốn món nhẹ hơn; cắt miếng vừa ăn.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Sả",
+          "quantity": 80,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Chia phần gốc thái lát và phần còn lại băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhuyễn.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Ớt đỏ",
+          "quantity": 15,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Bỏ hạt hoặc giảm lượng để món dịu cay.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 4
+        },
+        {
+          "name": "Lá chanh",
+          "quantity": 4,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, thái sợi nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng một phần để ướp gà.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 6
+        },
+        {
+          "name": "Dầu hào",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Có thể giảm nếu muốn vị thanh hơn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 7
+        },
+        {
+          "name": "Đường",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Cân vị mặn của nước mắm.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng khi ướp và rắc lúc dọn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 9
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "process_aid",
+          "notes": "Dùng phi sả tỏi và xào gà.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Mè rang",
+          "quantity": 5,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Rắc sau cùng, có thể bỏ qua.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Thấm khô thịt gà, thái miếng dài vừa ăn. Thái lát mỏng một phần sả, phần còn lại băm; băm tỏi, thái ớt và lá chanh."
+        },
+        {
+          "step": 2,
+          "instruction": "Trộn gà với nước mắm, dầu hào, đường, tiêu, một nửa sả băm và một nửa tỏi. Đậy kín, ướp 15 phút trong ngăn mát."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng dầu, phi sả thái lát đến thơm vàng nhạt rồi gắp ra để riêng. Cho phần tỏi và sả băm còn lại vào chảo, đảo nhanh đến khi dậy mùi."
+        },
+        {
+          "step": 2,
+          "instruction": "Cho gà vào chảo nóng, dàn thành lớp vừa phải và xào lửa lớn đến khi miếng gà săn, chín hoàn toàn; đảo đều để không cháy đáy."
+        },
+        {
+          "step": 3,
+          "instruction": "Thêm ớt, sả đã phi và lá chanh, nếm lại gia vị rồi đảo thêm khoảng một phút. Tắt bếp, rắc mè rang và dùng nóng."
+        }
+      ],
+      "keywords": [
+        "gà xào sả ớt",
+        "thịt đùi gà",
+        "sả",
+        "lá chanh",
+        "món dễ nấu"
+      ],
+      "tags": [
+        "món mặn",
+        "món ăn ba miền",
+        "món xào",
+        "ăn cùng cơm"
+      ],
+      "sources": [
+        {
+          "url": "https://vnexpress.net/doi-song-cooking-cach-lam-mon-ga-xao-sa-ot-4882412.html",
+          "publisher": "VnExpress Cooking",
+          "title": "Cách làm món gà xào sả ớt",
+          "use": "Đối chiếu nguyên liệu gà đùi, sả, ớt, lá chanh và kỹ thuật ướp rồi xào lửa lớn; Bếp Việt chuẩn hóa định lượng.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/ga-xao-sa-ot-960.webp",
+          "page_url": "https://vnexpress.net/doi-song-cooking-cach-lam-mon-ga-xao-sa-ot-4882412.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu món ăn.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa gà xào sả ớt vàng nâu với sả thái lát, ớt đỏ và lá chanh; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh tạo mới bằng ImageGen, PNG gốc có alpha; các bản WebP dùng cho giao diện. Công thức chưa nấu thử."
+        }
+      ],
+      "variant_note": "Dùng đùi gà lọc xương, chia sả thành phần thái lát và phần băm; mức cay linh hoạt theo khẩu vị gia đình.",
+      "needs": [
+        "Nấu thử để cân đối nước mắm và dầu hào theo nhãn sản phẩm.",
+        "Xác nhận độ chín theo kích thước miếng gà và loại chảo."
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Giảm một nửa nguyên liệu chính, nêm gia vị từ từ.",
+            "instruction": "Dùng nồi/chảo vừa khẩu phần; nếm lại trước khi thêm nước mắm hoặc muối."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "Tăng khoảng một lần rưỡi nguyên liệu chính; tăng gia vị thận trọng.",
+            "instruction": "Chia nguyên liệu xào thành mẻ để giữ nhiệt; điều chỉnh lượng nước canh vừa đủ."
+          }
+        ]
+      },
+      "time_unit": "minute",
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Dùng đùi gà lọc xương, chia sả thành phần thái lát và phần băm; mức cay linh hoạt theo khẩu vị gia đình.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để cân đối nước mắm và dầu hào theo nhãn sản phẩm.",
+          "Xác nhận độ chín theo kích thước miếng gà và loại chảo."
+        ]
+      }
+    },
+    {
+      "id": "BV578",
+      "slug": "so-long-xao-sa-ot",
+      "name": "Sò lông xào sả ớt",
+      "aliases": [
+        "Sò lông xào sả cay",
+        "Sò lông xào sả tỏi ớt",
+        "Sò lông xào cay ăn cơm"
+      ],
+      "region": [
+        "Nam"
+      ],
+      "province": [
+        "Duyên hải Nam Trung Bộ",
+        "Nam Bộ"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một đĩa sò lông xào cho bốn người; lượng sò mua còn vỏ để sơ chế và tách thịt.",
+      "prep_time": 15,
+      "cook_time": 12,
+      "passive_time": 90,
+      "total_time": 117,
+      "description": "Sò lông được ngâm nhả cát, luộc vừa mở miệng rồi tách thịt, xào nhanh với sả, tỏi và ớt. Cách làm giữ vị ngọt của sò, hợp dùng nóng trong bữa cơm hoặc làm món ăn chơi.",
+      "finished_dish": "Thịt sò săn mềm, áo lớp gia vị mỏng; sả thơm, tỏi vàng nhẹ và ớt tạo vị cay tùy chỉnh.",
+      "serving": "Dọn nóng cùng cơm trắng. Chọn sò còn sống, rửa kỹ và bỏ những con có mùi lạ hoặc không mở sau khi luộc.",
+      "tips": [
+        "Ngâm sò khoảng một giờ trong nước vo gạo hoặc nước muối loãng để nhả cát, sau đó chà rửa nhiều lần.",
+        "Luộc chỉ đến khi sò vừa mở vỏ; tách lấy thịt và không xào quá lâu để tránh dai.",
+        "Nếu sò mặn tự nhiên, giảm nước mắm và nếm trước khi thêm muối."
+      ],
+      "dish_type": [
+        "Món sò xào",
+        "Món hải sản ăn cơm",
+        "Món xào sả ớt"
+      ],
+      "main_ingredient": [
+        "sò lông",
+        "sả",
+        "tỏi",
+        "ớt"
+      ],
+      "cooking_method": [
+        "ngâm sò nhả cát",
+        "luộc mở vỏ",
+        "xào nhanh lửa lớn"
+      ],
+      "search_terms": [
+        "sò lông xào sả ớt",
+        "sò lông xào sả tỏi",
+        "món sò xào cay",
+        "món hải sản dễ làm"
+      ],
+      "spicy_level": 2,
+      "image_alt": "Đĩa thịt sò lông xào sả ớt với tỏi và lát sả vàng nhẹ; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Kho?ng 117 ph?t n?u ng?m 90 ph?t; s? n?n ng?m 1?2 gi? ?? nh? c?t, th?i gian x?o th?c t? ng?n.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Rau luộc",
+        "Rau răm"
+      ],
+      "recipe_family": "cockles_stir_fried_lemongrass_chili",
+      "ingredients": [
+        {
+          "name": "Sò lông sống còn vỏ",
+          "quantity": 1000,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn vỏ khép chặt; sau luộc tách lấy phần thịt.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Nước vo gạo hoặc nước muối loãng",
+          "quantity": 1500,
+          "unit": "ml",
+          "role": "process_aid",
+          "notes": "Dùng ngâm sò nhả cát, không dùng lại để nấu.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Muối",
+          "quantity": 5,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": "Hòa loãng với nước nếu không dùng nước vo gạo.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Sả",
+          "quantity": 100,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc bẹ già, băm nhỏ hoặc thái lát mỏng.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Ớt đỏ",
+          "quantity": 15,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Thái lát; giảm lượng nếu muốn cay nhẹ.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 6
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "process_aid",
+          "notes": "Dùng phi thơm sả và tỏi.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm từ từ tùy độ mặn của sò.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        },
+        {
+          "name": "Đường",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Cân vị mặn và cay.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 9
+        },
+        {
+          "name": "Hạt nêm",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Có thể thay bằng một nhúm muối.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 10
+        },
+        {
+          "name": "Tiêu đen xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Rắc sau khi tắt bếp.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 11
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Ngâm sò trong nước vo gạo hoặc nước muối loãng khoảng 60 phút. Chà rửa từng vỏ dưới vòi nước; loại bỏ sò chết, vỏ nứt hoặc có mùi bất thường."
+        },
+        {
+          "step": 2,
+          "instruction": "Băm sả, tỏi và thái ớt. Đun nồi nước sôi, cho sò vào luộc khoảng 3 phút đến khi vỏ mở; vớt ra để nguội bớt, tách thịt và bỏ vỏ. Bỏ những con không mở."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng dầu trên chảo, phi tỏi thơm rồi cho sả vào đảo đến khi dậy mùi."
+        },
+        {
+          "step": 2,
+          "instruction": "Cho thịt sò vào xào nhanh trên lửa lớn. Nêm nước mắm, đường và hạt nêm, đảo 3–4 phút đến khi thịt săn và vừa thấm."
+        },
+        {
+          "step": 3,
+          "instruction": "Thêm ớt, đảo thêm khoảng một phút rồi tắt bếp. Rắc tiêu, nếm lại và dọn nóng."
+        }
+      ],
+      "keywords": [
+        "sò lông",
+        "sả ớt",
+        "món hải sản",
+        "sò lông xào"
+      ],
+      "tags": [
+        "món mặn",
+        "món Nam Bộ",
+        "món hải sản",
+        "món ăn cùng cơm"
+      ],
+      "sources": [
+        {
+          "url": "https://vtcnews.vn/cach-lam-mon-so-long-xao-sa-ot-thom-ngon-kho-cuong-ar1008031.html",
+          "publisher": "VTC News",
+          "title": "Cách làm món sò lông xào sả ớt thơm ngon khó cưỡng",
+          "use": "Đối chiếu định lượng sò còn vỏ, bước ngâm nhả cát, luộc tách thịt và thời gian xào ngắn; Bếp Việt biên tập gia vị và lưu ý an toàn.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/so-long-xao-sa-ot-960.webp",
+          "page_url": "https://vtcnews.vn/cach-lam-mon-so-long-xao-sa-ot-thom-ngon-kho-cuong-ar1008031.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu món ăn.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa thịt sò lông xào sả ớt với tỏi và lát sả vàng nhẹ; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh tạo mới bằng ImageGen, PNG gốc có alpha; các bản WebP dùng cho giao diện. Công thức chưa nấu thử."
+        }
+      ],
+      "variant_note": "Giữ sò còn vỏ ở định lượng mua vào; thịt được luộc mở vỏ, tách ra rồi xào nhanh để tránh dai.",
+      "needs": [
+        "Nấu thử để hiệu chỉnh thời gian luộc theo kích cỡ sò.",
+        "Xác nhận lượng gia vị theo độ mặn tự nhiên của sò."
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Giảm một nửa nguyên liệu chính, nêm gia vị từ từ.",
+            "instruction": "Dùng nồi/chảo vừa khẩu phần; nếm lại trước khi thêm nước mắm hoặc muối."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "Tăng khoảng một lần rưỡi nguyên liệu chính; tăng gia vị thận trọng.",
+            "instruction": "Chia nguyên liệu xào thành mẻ để giữ nhiệt; điều chỉnh lượng nước canh vừa đủ."
+          }
+        ]
+      },
+      "time_unit": "minute",
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Giữ sò còn vỏ ở định lượng mua vào; thịt được luộc mở vỏ, tách ra rồi xào nhanh để tránh dai.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để hiệu chỉnh thời gian luộc theo kích cỡ sò.",
+          "Xác nhận lượng gia vị theo độ mặn tự nhiên của sò."
+        ]
+      }
+    },
+    {
+      "id": "BV579",
+      "slug": "canh-bap-cai-cuon-thit",
+      "name": "Canh bắp cải cuộn thịt",
+      "aliases": [
+        "Canh bắp cải cuốn thịt băm",
+        "Bắp cải cuộn thịt nấu canh",
+        "Canh bắp cải cuộn thịt heo"
+      ],
+      "region": [
+        "Ba miền"
+      ],
+      "province": [],
+      "category": "Món canh",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một nồi canh có khoảng tám cuộn bắp cải nhân thịt, chia cho bốn người.",
+      "prep_time": 25,
+      "cook_time": 20,
+      "passive_time": 10,
+      "total_time": 55,
+      "description": "Lá bắp cải chần mềm cuộn nhân thịt heo và mộc nhĩ, nấu trong nước dùng nhẹ cùng cà rốt. Món canh gia đình có cuộn rau gọn đẹp, vị ngọt dịu và dễ kết hợp với cơm.",
+      "finished_dish": "Cuộn bắp cải mềm nhưng còn nguyên dáng, nhân thịt chín mọng; nước canh trong vừa, thơm hành ngò.",
+      "serving": "Múc mỗi người vài cuộn cùng nước dùng nóng, ăn với cơm trắng và món mặn ít nước.",
+      "tips": [
+        "Chần lá vừa mềm để dễ cuốn, không để lá rách hoặc nhũn.",
+        "Buộc cuộn bằng đoạn hành lá đã chần; đặt mép gấp úp xuống khi nấu để cuộn không bung.",
+        "Đun lửa liu riu đến khi nhân chín hoàn toàn; không để sôi mạnh làm vỡ cuộn."
+      ],
+      "dish_type": [
+        "Canh bắp cải cuộn",
+        "Canh thịt heo",
+        "Món canh gia đình"
+      ],
+      "main_ingredient": [
+        "bắp cải",
+        "thịt heo xay",
+        "mộc nhĩ",
+        "cà rốt"
+      ],
+      "cooking_method": [
+        "chần lá cải",
+        "cuộn nhân thịt",
+        "nấu canh lửa nhỏ"
+      ],
+      "search_terms": [
+        "canh bắp cải cuộn thịt",
+        "bắp cải cuốn thịt băm",
+        "canh cuộn thịt heo",
+        "món canh gia đình"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Tô canh bắp cải cuộn thịt buộc hành lá, có cà rốt và nước dùng trong; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 55 phút, gồm ngâm mộc nhĩ 10 phút, cuộn lá và nấu canh.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Thịt kho",
+        "Cá rim"
+      ],
+      "recipe_family": "cabbage_roll_pork_soup",
+      "ingredients": [
+        {
+          "name": "Bắp cải",
+          "quantity": 500,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Chọn bẹ lá to, tách lá nguyên để cuộn; phần thừa thái miếng nấu canh.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Thịt heo xay",
+          "quantity": 250,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn thịt có chút mỡ để nhân không khô.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Mộc nhĩ khô",
+          "quantity": 8,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Ngâm nở, rửa sạch và băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Cà rốt",
+          "quantity": 80,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Gọt vỏ, thái khoanh hoặc miếng nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhuyễn.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 35,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Chần lá dài để buộc cuộn; thái nhỏ phần còn lại.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Ngò rí",
+          "quantity": 8,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Rửa sạch, cắt nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Nước dùng heo hoặc nước lọc",
+          "quantity": 1200,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng nước dùng sẵn hoặc nước lọc.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 5,
+          "unit": "ml",
+          "role": "process_aid",
+          "notes": "Phi hành tím nếu nấu bằng nước lọc.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm phần nhân và nước canh.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 10
+        },
+        {
+          "name": "Muối",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm nước canh từng ít một.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 11
+        },
+        {
+          "name": "Tiêu đen xay",
+          "quantity": 1.5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Trộn nhân và rắc nhẹ khi dọn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 12
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Ngâm mộc nhĩ trong nước ấm 10 phút, rửa sạch và băm nhỏ. Tách 8 lá bắp cải nguyên, rửa sạch; chần nhanh đến khi lá mềm dẻo. Chần phần hành lá dài để làm dây buộc."
+        },
+        {
+          "step": 2,
+          "instruction": "Trộn thịt heo xay với mộc nhĩ, hành tím, một phần nước mắm và tiêu. Chia nhân thành 8 phần, đặt vào lá cải, gấp hai mép rồi cuộn; buộc nhẹ bằng hành lá."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đun nước dùng đến sôi lăn tăn. Nếu dùng nước lọc, phi thơm hành tím với dầu trước rồi thêm nước. Cho cà rốt vào nấu khoảng 3 phút."
+        },
+        {
+          "step": 2,
+          "instruction": "Xếp cuộn bắp cải vào nồi, đặt phần mép gấp xuống dưới. Hạ lửa vừa nhỏ, đậy hé nắp và nấu khoảng 15–17 phút đến khi nhân chín hoàn toàn; hớt bọt để nước canh trong."
+        },
+        {
+          "step": 3,
+          "instruction": "Nêm nước mắm, muối cho vừa. Tắt bếp, thêm hành lá thái nhỏ và ngò rí; múc nhẹ tay để giữ nguyên cuộn."
+        }
+      ],
+      "keywords": [
+        "bắp cải cuộn thịt",
+        "canh bắp cải",
+        "thịt heo xay",
+        "mộc nhĩ"
+      ],
+      "tags": [
+        "món canh",
+        "món ăn ba miền",
+        "bữa cơm gia đình",
+        "có thể chuẩn bị trước"
+      ],
+      "sources": [
+        {
+          "url": "https://vtcnews.vn/mon-ngon-moi-ngay-canh-bap-cai-cuon-thit-ar598704.html",
+          "publisher": "VTC News",
+          "title": "Món ngon mỗi ngày: Canh bắp cải cuộn thịt",
+          "use": "Đối chiếu thịt xay, mộc nhĩ, cà rốt, hành lá; kỹ thuật chần lá, cuộn và nấu thành canh.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://vnexpress.net/bap-cai-cuon-thit-3176713.html",
+          "publisher": "VnExpress Đời sống",
+          "title": "Bắp cải cuốn thịt",
+          "use": "Tham khảo kỹ thuật chần lá cho mềm và gói nhân gọn; công thức canh và định lượng do Bếp Việt biên tập.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/canh-bap-cai-cuon-thit-960.webp",
+          "page_url": "https://vtcnews.vn/mon-ngon-moi-ngay-canh-bap-cai-cuon-thit-ar598704.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu món ăn.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Tô canh bắp cải cuộn thịt buộc hành lá, có cà rốt và nước dùng trong; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh tạo mới bằng ImageGen, PNG gốc có alpha; các bản WebP dùng cho giao diện. Công thức chưa nấu thử."
+        }
+      ],
+      "variant_note": "Nhân thịt xay và mộc nhĩ cuộn trong lá bắp cải, buộc bằng hành lá rồi nấu nhẹ trong nước dùng; bản này được chuẩn hóa thành món canh.",
+      "needs": [
+        "Nấu thử để kiểm tra thời gian chín theo độ dày lá và kích cỡ cuộn.",
+        "Đối chiếu lượng nước mắm khi dùng nước dùng xương đã nêm."
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Giảm một nửa nguyên liệu chính, nêm gia vị từ từ.",
+            "instruction": "Dùng nồi/chảo vừa khẩu phần; nếm lại trước khi thêm nước mắm hoặc muối."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "Tăng khoảng một lần rưỡi nguyên liệu chính; tăng gia vị thận trọng.",
+            "instruction": "Chia nguyên liệu xào thành mẻ để giữ nhiệt; điều chỉnh lượng nước canh vừa đủ."
+          }
+        ]
+      },
+      "time_unit": "minute",
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Nhân thịt xay và mộc nhĩ cuộn trong lá bắp cải, buộc bằng hành lá rồi nấu nhẹ trong nước dùng; bản này được chuẩn hóa thành món canh.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để kiểm tra thời gian chín theo độ dày lá và kích cỡ cuộn.",
+          "Đối chiếu lượng nước mắm khi dùng nước dùng xương đã nêm."
+        ]
+      }
+    },
+    {
+      "id": "BV580",
+      "slug": "bo-xao-hoa-thien-ly",
+      "name": "Bò xào hoa thiên lý",
+      "aliases": [
+        "Thịt bò xào bông thiên lý",
+        "Bò xào bông thiên lý tóp mỡ",
+        "Hoa thiên lý xào thịt bò"
+      ],
+      "region": [
+        "Ba miền"
+      ],
+      "province": [],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một đĩa bò xào hoa thiên lý nóng cho bốn người ăn cùng cơm.",
+      "prep_time": 15,
+      "cook_time": 15,
+      "passive_time": 15,
+      "total_time": 45,
+      "description": "Thịt bò thái ngang thớ xào nhanh với hoa thiên lý tươi, tạo món ăn có vị ngọt mềm và sắc xanh giòn nhẹ. Bếp Việt chọn cách dùng tóp mỡ nhỏ như một biến thể gia đình được ghi nhận trong nguồn tham khảo.",
+      "finished_dish": "Thịt bò mềm, hoa thiên lý vừa chín tới vẫn xanh; tóp mỡ giòn tạo điểm béo nhẹ.",
+      "serving": "Dọn ngay khi còn nóng với cơm trắng; không để món xào chờ lâu vì hoa xuống màu và bò dễ dai.",
+      "tips": [
+        "Thái bò ngang thớ và ướp ngắn; xào bò thành mẻ nhỏ trên lửa lớn rồi trút ra trước.",
+        "Nhặt bỏ cuống già, rửa nhẹ hoa thiên lý và để thật ráo để khi xào không ra nhiều nước.",
+        "Cho bò và tóp mỡ trở lại chảo ở cuối, đảo nhanh để giữ hoa xanh và thịt mềm."
+      ],
+      "dish_type": [
+        "Món bò xào",
+        "Món xào hoa thiên lý",
+        "Món mặn ăn cơm"
+      ],
+      "main_ingredient": [
+        "thịt bò",
+        "hoa thiên lý",
+        "tỏi",
+        "mỡ heo"
+      ],
+      "cooking_method": [
+        "ướp thịt bò",
+        "xào lửa lớn",
+        "xào rau vừa chín"
+      ],
+      "search_terms": [
+        "bò xào hoa thiên lý",
+        "thịt bò xào bông thiên lý",
+        "bò xào bông thiên lý tóp mỡ",
+        "hoa thiên lý xào thịt bò"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Đĩa thịt bò xào hoa thiên lý xanh cùng tóp mỡ vàng giòn và tỏi; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 45 phút, gồm 15 phút ướp bò và xào nhanh theo từng mẻ.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Canh rau ngót",
+        "Cà pháo"
+      ],
+      "recipe_family": "beef_stir_fried_tonkin_jasmine",
+      "ingredients": [
+        {
+          "name": "Thịt bò thăn hoặc bắp",
+          "quantity": 400,
+          "unit": "g",
+          "role": "main",
+          "notes": "Thái lát mỏng ngang thớ.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Hoa thiên lý",
+          "quantity": 250,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Nhặt cuống già, rửa nhẹ và để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Mỡ heo",
+          "quantity": 80,
+          "unit": "g",
+          "role": "main",
+          "notes": "Thái hạt lựu để thắng tóp mỡ; có thể bỏ qua, thay bằng dầu ăn.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Dầu hào",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng ướp bò.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 5
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm phần hoa và điều chỉnh cuối.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 6
+        },
+        {
+          "name": "Đường",
+          "quantity": 4,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Cân vị cho thịt bò và hoa.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 7
+        },
+        {
+          "name": "Hạt nêm",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng ít, có thể bỏ qua.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        },
+        {
+          "name": "Tiêu đen xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng khi ướp và rắc lúc dọn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 9
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Thấm khô bò, thái lát mỏng ngang thớ. Trộn bò với dầu hào, đường, một ít nước mắm, tiêu và một nửa tỏi; để ướp 15 phút trong ngăn mát."
+        },
+        {
+          "step": 2,
+          "instruction": "Nhặt hoa thiên lý, bỏ cuống già và bông úa, rửa nhẹ rồi để thật ráo. Thái mỡ heo hạt lựu."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Cho mỡ heo vào chảo nguội, thắng trên lửa vừa đến khi ra mỡ và tóp vàng giòn. Vớt tóp ra, giữ lại một ít mỡ nước trong chảo."
+        },
+        {
+          "step": 2,
+          "instruction": "Tăng lửa, phi phần tỏi còn lại rồi xào bò nhanh theo mẻ đến khi vừa săn; trút ra đĩa để thịt không dai."
+        },
+        {
+          "step": 3,
+          "instruction": "Dùng lại chảo, cho hoa thiên lý vào đảo nhanh 2–3 phút, nêm nước mắm còn lại và hạt nêm. Khi hoa vừa chín, cho bò và tóp mỡ trở lại, đảo khoảng 30 giây rồi tắt bếp."
+        }
+      ],
+      "keywords": [
+        "thịt bò",
+        "hoa thiên lý",
+        "bò xào bông thiên lý",
+        "món thanh nhẹ"
+      ],
+      "tags": [
+        "món mặn",
+        "món xào",
+        "món ăn ba miền",
+        "bữa cơm gia đình"
+      ],
+      "sources": [
+        {
+          "url": "https://vtcnews.vn/cach-lam-bo-xao-hoa-thien-ly-thom-ngon-ar1008041.html",
+          "publisher": "VTC News",
+          "title": "Cách làm bò xào hoa thiên lý thơm ngon",
+          "use": "Đối chiếu kỹ thuật thái bò ngang thớ, thắng tóp mỡ và xào riêng bò với hoa thiên lý trong thời gian ngắn.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://www.cet.edu.vn/cach-lam-thit-bo-xao-bong-thien-ly",
+          "publisher": "CET - Kỹ thuật chế biến món ăn",
+          "title": "Bữa cơm thêm ngon với cách làm thịt bò xào bông thiên lý",
+          "use": "Đối chiếu tỷ lệ thịt bò và hoa, cách ướp ngắn, xào lửa lớn và dùng nóng với cơm; công thức được Bếp Việt biên tập.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/bo-xao-hoa-thien-ly-960.webp",
+          "page_url": "https://vtcnews.vn/cach-lam-bo-xao-hoa-thien-ly-thom-ngon-ar1008041.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu món ăn.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa thịt bò xào hoa thiên lý xanh cùng tóp mỡ vàng giòn và tỏi; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh tạo mới bằng ImageGen, PNG gốc có alpha; các bản WebP dùng cho giao diện. Công thức chưa nấu thử."
+        }
+      ],
+      "variant_note": "Xào bò và hoa thiên lý riêng rồi kết hợp cuối cùng; tóp mỡ là lựa chọn gia đình được đối chiếu nguồn, có thể bỏ qua nếu muốn món nhẹ hơn.",
+      "needs": [
+        "Nấu thử để kiểm tra lượng mỡ và độ mặn theo nước mắm thực tế.",
+        "Xác nhận độ non của hoa thiên lý theo mùa thu hoạch."
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Giảm một nửa nguyên liệu chính, nêm gia vị từ từ.",
+            "instruction": "Dùng nồi/chảo vừa khẩu phần; nếm lại trước khi thêm nước mắm hoặc muối."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "Tăng khoảng một lần rưỡi nguyên liệu chính; tăng gia vị thận trọng.",
+            "instruction": "Chia nguyên liệu xào thành mẻ để giữ nhiệt; điều chỉnh lượng nước canh vừa đủ."
+          }
+        ]
+      },
+      "time_unit": "minute",
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Xào bò và hoa thiên lý riêng rồi kết hợp cuối cùng; tóp mỡ là lựa chọn gia đình được đối chiếu nguồn, có thể bỏ qua nếu muốn món nhẹ hơn.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để kiểm tra lượng mỡ và độ mặn theo nước mắm thực tế.",
+          "Xác nhận độ non của hoa thiên lý theo mùa thu hoạch."
+        ]
+      }
+    }
+  ]
+}

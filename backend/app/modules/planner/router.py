@@ -30,6 +30,7 @@ from app.modules.planner.service import (
     list_plan_history,
     list_plan_items,
     list_vegetarian_days,
+    meal_status,
     remove_plan_item,
     save_plan_item,
     save_plan_meal,
@@ -206,7 +207,7 @@ def past_meals(
         PlanMealHistoryGroup(
             plan_date=plan_date,
             meal_type=meal_type,
-            completion_status=items[0].completion_status,
+            completion_status=meal_status(items),
             items=[PlanItemResponse.model_validate(item) for item in items],
         )
         for plan_date, meal_type, items in groups

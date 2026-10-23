@@ -1,0 +1,1322 @@
+{
+  "ca-bong-song-tra-kho-tieu-quang-ngai": {
+    "name": "Quang Ngai Tra River Goby Braised with Pepper",
+    "aliases": [
+      "Tra River goby braised with pepper",
+      "Quang Ngai pepper-braised goby"
+    ],
+    "region": [
+      "South Central Coast"
+    ],
+    "province": [
+      "Quảng Ngãi"
+    ],
+    "category": "Main dish",
+    "meal_type": [
+      "Lunch",
+      "Dinner"
+    ],
+    "difficulty": "Easy",
+    "serving_basis": "One small pot of fish served with steamed rice for four.",
+    "description": "Small gobies simmer gently with fish sauce, black pepper and a little chili until firm and glazed. Bếp Việt edits this home-style version for a family meal, keeping the Tra River specialty's peppery aroma and balanced savory-sweet finish.",
+    "finished_dish": "Whole gobies are firm and peppery, coated in a light glossy sauce fragrant with shallot.",
+    "excerpt": "Whole gobies are firm and peppery, coated in a light glossy sauce fragrant with shallot.",
+    "serving": "Serve hot with steamed rice and boiled greens; spoon a little braising sauce over the rice.",
+    "tips": [
+      "Choose fresh small gobies; rinse gently and drain well so they stay intact.",
+      "Season with fish sauce early, then taste near the end because the sauce will reduce.",
+      "Braise over low heat and gently shake the pot instead of stirring."
+    ],
+    "tip": "Choose fresh small gobies; rinse gently and drain well so they stay intact.",
+    "dish_type": [
+      "Braised dish",
+      "Quang Ngai specialty"
+    ],
+    "main_ingredient": [
+      "goby",
+      "black pepper"
+    ],
+    "cooking_method": [
+      "marinating",
+      "braising"
+    ],
+    "search_terms": [
+      "Tra River goby",
+      "pepper-braised goby",
+      "Quang Ngai braised fish"
+    ],
+    "image_alt": "A rustic pot of glossy Tra River goby braised with black pepper, red chili and scallion.",
+    "ingredients": [
+      {
+        "name": "Small gobies",
+        "quantity": 600,
+        "unit": "g",
+        "role": "main",
+        "notes": "Clean and leave whole.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Shallots",
+        "quantity": 30,
+        "unit": "g",
+        "role": "aromatic",
+        "notes": "Peeled and minced.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fish sauce",
+        "quantity": 30,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "Adjust to taste.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Sugar",
+        "quantity": 15,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "For gentle sweetness and color.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Caramel sauce",
+        "quantity": 10,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "Homemade caramel may be used.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Ground black pepper",
+        "quantity": 2,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Reserve some for finishing.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Red chili",
+        "quantity": 1,
+        "unit": "quả",
+        "role": "seasoning",
+        "notes": "Leave whole or slice.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Neutral cooking oil",
+        "quantity": 15,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "For sautéing shallot.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Water",
+        "quantity": 100,
+        "unit": "ml",
+        "role": "liquid",
+        "notes": "Add enough to nearly cover fish.",
+        "scaling_rule": "linear"
+      }
+    ],
+    "preparation_steps": [
+      {
+        "step": 1,
+        "instruction": "Gently rinse fish until water runs clear, remove gills and entrails if present, then drain well."
+      },
+      {
+        "step": 2,
+        "instruction": "Marinate fish with fish sauce, sugar, caramel and half the pepper for 10 minutes."
+      },
+      {
+        "step": 3,
+        "instruction": "Peel and mince shallots; prepare chili and a heavy-bottomed pot."
+      }
+    ],
+    "cooking_steps": [
+      {
+        "step": 1,
+        "instruction": "Heat oil and sauté shallot until fragrant. Arrange fish and marinade in the pot, then add water and chili."
+      },
+      {
+        "step": 2,
+        "instruction": "Bring to a gentle simmer, skim if needed, lower heat and braise 20–25 minutes, gently shaking the pot occasionally."
+      },
+      {
+        "step": 3,
+        "instruction": "When sauce is lightly glossy and fish firm, taste, add remaining pepper and turn off heat."
+      }
+    ],
+    "time_note": "Smaller fish absorb seasoning quickly; avoid reducing the sauce until dry so the fish stays moist.",
+    "time_unit": "minutes",
+    "keywords": [
+      "Quang Ngai Tra River Goby Braised with Pepper",
+      "South Central Coast",
+      "Quảng Ngãi",
+      "goby",
+      "black pepper",
+      "Tra River goby",
+      "pepper-braised goby",
+      "Quang Ngai braised fish",
+      "Braised dish",
+      "Quang Ngai specialty",
+      "60 minutes"
+    ],
+    "tags": {
+      "region": [
+        "South Central Coast"
+      ],
+      "province": [
+        "Quảng Ngãi"
+      ],
+      "meal_type": [
+        "lunch",
+        "dinner"
+      ],
+      "dish_type": [
+        "Braised dish",
+        "Quang Ngai specialty"
+      ],
+      "main_ingredient": [
+        "goby",
+        "black pepper"
+      ],
+      "cooking_method": [
+        "marinating",
+        "braising"
+      ],
+      "difficulty": "Easy",
+      "suitable_for_family_meal": true,
+      "suggested_pairings": [
+        "Steamed rice",
+        "Boiled water spinach",
+        "Light vegetable soup"
+      ],
+      "keywords": [
+        "Quang Ngai Tra River Goby Braised with Pepper",
+        "South Central Coast",
+        "Quảng Ngãi",
+        "goby",
+        "black pepper",
+        "Tra River goby",
+        "pepper-braised goby",
+        "Quang Ngai braised fish",
+        "Braised dish",
+        "Quang Ngai specialty",
+        "60 minutes"
+      ]
+    },
+    "scaling": {
+      "base_servings": 4,
+      "targets": [
+        {
+          "servings": 2,
+          "main_factor": 0.5,
+          "seasoning_start_factor": 0.5,
+          "example": "Quang Ngai Tra River Goby Braised with Pepper for 2",
+          "instruction": "Adjust seasoning to taste; check doneness and texture."
+        },
+        {
+          "servings": 6,
+          "main_factor": 1.5,
+          "seasoning_start_factor": 1.5,
+          "example": "Quang Ngai Tra River Goby Braised with Pepper for 6",
+          "instruction": "Adjust seasoning to taste; check doneness and texture."
+        },
+        {
+          "servings": 8,
+          "main_factor": 2.0,
+          "seasoning_start_factor": 2.0,
+          "example": "Quang Ngai Tra River Goby Braised with Pepper for 8",
+          "instruction": "Adjust seasoning to taste; check doneness and texture."
+        }
+      ]
+    },
+    "editorial": {
+      "variant_note": "Edited by Bếp Việt from references; quantities and timing need a test cook before finalization.",
+      "needs": [
+        "Test-cook salt level, braising time and quantities for small fish.",
+        "Check goby availability and seasonal cleaning guidance."
+      ]
+    },
+    "suggested_pairings": [
+      "Steamed rice",
+      "Boiled water spinach",
+      "Light vegetable soup"
+    ]
+  },
+  "chao-hau-vung-tau": {
+    "name": "Vung Tau Oyster Porridge",
+    "aliases": [
+      "Vung Tau seafood oyster porridge"
+    ],
+    "region": [
+      "Southeast Vietnam"
+    ],
+    "province": [
+      "TP. Hồ Chí Minh (Bà Rịa - Vũng Tàu cũ)"
+    ],
+    "category": "Breakfast",
+    "meal_type": [
+      "Breakfast",
+      "Lunch",
+      "Dinner"
+    ],
+    "difficulty": "Easy",
+    "serving_basis": "Four medium bowls, served hot.",
+    "description": "Rice simmers into lightly creamy porridge; oysters are briefly sautéed and added near the end to preserve their briny sweetness. Fried shallot, scallion, cilantro and pepper make a warming bowl; Bếp Việt edits this for home cooking.",
+    "finished_dish": "Soft rice grains in a lightly thickened broth, with plump oysters and fragrant pepper and herbs.",
+    "excerpt": "Soft rice grains in a lightly thickened broth, with plump oysters and fragrant pepper and herbs.",
+    "serving": "Ladle into bowls and finish with fried shallot, scallion, cilantro and pepper; thinly sliced banana blossom is optional.",
+    "tips": [
+      "Use cleaned oysters kept properly chilled, and cook through.",
+      "Sauté oysters just until firm and add near the end to avoid a rubbery texture.",
+      "Add hot water if porridge thickens, and stir the bottom regularly."
+    ],
+    "tip": "Use cleaned oysters kept properly chilled, and cook through.",
+    "dish_type": [
+      "Rice porridge",
+      "Vung Tau dish"
+    ],
+    "main_ingredient": [
+      "oysters",
+      "long-grain rice",
+      "glutinous rice"
+    ],
+    "cooking_method": [
+      "simmering porridge",
+      "sautéing"
+    ],
+    "search_terms": [
+      "seafood oyster porridge",
+      "Vung Tau oyster porridge",
+      "easy oyster dish"
+    ],
+    "image_alt": "A lightly creamy oyster porridge topped with oysters, fried shallot, scallion and pepper.",
+    "ingredients": [
+      {
+        "name": "Long-grain rice",
+        "quantity": 180,
+        "unit": "g",
+        "role": "main",
+        "notes": "Rinsed.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Glutinous rice",
+        "quantity": 30,
+        "unit": "g",
+        "role": "main",
+        "notes": "Rinsed; adds body.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Shucked oysters",
+        "quantity": 350,
+        "unit": "g",
+        "role": "main",
+        "notes": "Clean, drain and keep chilled until cooking.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Straw mushrooms",
+        "quantity": 120,
+        "unit": "g",
+        "role": "main",
+        "notes": "Halve larger mushrooms.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Shallots",
+        "quantity": 25,
+        "unit": "g",
+        "role": "aromatic",
+        "notes": "Mince some for oysters; fry the rest golden.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fresh ginger",
+        "quantity": 10,
+        "unit": "g",
+        "role": "aromatic",
+        "notes": "Cut into fine matchsticks.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Neutral cooking oil",
+        "quantity": 15,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "For sautéing oysters.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Water or mild stock",
+        "quantity": 1600,
+        "unit": "ml",
+        "role": "liquid",
+        "notes": "Adjust to desired consistency.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fish sauce",
+        "quantity": 20,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "Add gradually.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Scallions",
+        "quantity": 20,
+        "unit": "g",
+        "role": "garnish",
+        "notes": "Finely sliced.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Cilantro",
+        "quantity": 10,
+        "unit": "g",
+        "role": "garnish",
+        "notes": "Washed and chopped.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Ground black pepper",
+        "quantity": 2,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "For finishing.",
+        "scaling_rule": "linear"
+      }
+    ],
+    "preparation_steps": [
+      {
+        "step": 1,
+        "instruction": "Rinse the rice, soak 15 minutes, then drain."
+      },
+      {
+        "step": 2,
+        "instruction": "Rinse oysters gently, remove shell fragments and drain; keep chilled during prep."
+      },
+      {
+        "step": 3,
+        "instruction": "Halve large mushrooms; mince shallot and slice ginger, scallions and cilantro."
+      }
+    ],
+    "cooking_steps": [
+      {
+        "step": 1,
+        "instruction": "Add both rice types and water. Boil, lower heat, leave lid ajar and simmer 30–35 minutes until tender, stirring periodically."
+      },
+      {
+        "step": 2,
+        "instruction": "Heat oil and sauté some shallot and ginger. Cook mushrooms 2 minutes, then add oysters and toss until just firm."
+      },
+      {
+        "step": 3,
+        "instruction": "Stir oysters into porridge, season and cook 3–5 minutes until done. Turn off heat and garnish with scallion, cilantro, pepper and fried shallot."
+      }
+    ],
+    "time_note": "Simmering time varies by rice; add oysters near the end and cook through without overcooking.",
+    "time_unit": "minutes",
+    "keywords": [
+      "Vung Tau Oyster Porridge",
+      "Southeast Vietnam",
+      "TP. Hồ Chí Minh (Bà Rịa - Vũng Tàu cũ)",
+      "oysters",
+      "long-grain rice",
+      "glutinous rice",
+      "seafood oyster porridge",
+      "Vung Tau oyster porridge",
+      "easy oyster dish",
+      "Rice porridge",
+      "Vung Tau dish",
+      "60 minutes"
+    ],
+    "tags": {
+      "region": [
+        "Southeast Vietnam"
+      ],
+      "province": [
+        "TP. Hồ Chí Minh (Bà Rịa - Vũng Tàu cũ)"
+      ],
+      "meal_type": [
+        "breakfast",
+        "lunch",
+        "dinner"
+      ],
+      "dish_type": [
+        "Rice porridge",
+        "Vung Tau dish"
+      ],
+      "main_ingredient": [
+        "oysters",
+        "long-grain rice",
+        "glutinous rice"
+      ],
+      "cooking_method": [
+        "simmering porridge",
+        "sautéing"
+      ],
+      "difficulty": "Easy",
+      "suitable_for_family_meal": true,
+      "suggested_pairings": [
+        "Thinly sliced banana blossom",
+        "Fresh herbs",
+        "Chili fish sauce"
+      ],
+      "keywords": [
+        "Vung Tau Oyster Porridge",
+        "Southeast Vietnam",
+        "TP. Hồ Chí Minh (Bà Rịa - Vũng Tàu cũ)",
+        "oysters",
+        "long-grain rice",
+        "glutinous rice",
+        "seafood oyster porridge",
+        "Vung Tau oyster porridge",
+        "easy oyster dish",
+        "Rice porridge",
+        "Vung Tau dish",
+        "60 minutes"
+      ]
+    },
+    "scaling": {
+      "base_servings": 4,
+      "targets": [
+        {
+          "servings": 2,
+          "main_factor": 0.5,
+          "seasoning_start_factor": 0.5,
+          "example": "Vung Tau Oyster Porridge for 2",
+          "instruction": "Adjust seasoning to taste; check doneness and texture."
+        },
+        {
+          "servings": 6,
+          "main_factor": 1.5,
+          "seasoning_start_factor": 1.5,
+          "example": "Vung Tau Oyster Porridge for 6",
+          "instruction": "Adjust seasoning to taste; check doneness and texture."
+        },
+        {
+          "servings": 8,
+          "main_factor": 2.0,
+          "seasoning_start_factor": 2.0,
+          "example": "Vung Tau Oyster Porridge for 8",
+          "instruction": "Adjust seasoning to taste; check doneness and texture."
+        }
+      ]
+    },
+    "editorial": {
+      "variant_note": "Edited by Bếp Việt from documented Vung Tau oyster porridge; home quantities are suggestions and have not been test-cooked.",
+      "needs": [
+        "Test-cook consistency and water levels for different rice varieties.",
+        "Review chilled storage and oyster doneness guidance before release."
+      ]
+    },
+    "suggested_pairings": [
+      "Thinly sliced banana blossom",
+      "Fresh herbs",
+      "Chili fish sauce"
+    ]
+  },
+  "mit-non-kho-nam-chay": {
+    "name": "Vegetarian Braised Young Jackfruit with Straw Mushrooms",
+    "aliases": [
+      "Young jackfruit braised with mushrooms and tofu",
+      "Vegetarian braised young jackfruit"
+    ],
+    "region": [
+      "Across Vietnam"
+    ],
+    "province": [],
+    "category": "Vegetarian",
+    "meal_type": [
+      "Lunch",
+      "Dinner"
+    ],
+    "difficulty": "Easy",
+    "serving_basis": "One shared braise for a four-person meal.",
+    "description": "Tender young jackfruit is braised with straw mushrooms and tofu in soy, lemongrass and vegetarian fish-sauce broth. Bếp Việt edits this home version so the sauce reduces lightly while ingredients keep their shape.",
+    "finished_dish": "Tender jackfruit with sweet mushrooms and tofu in a lightly reduced lemongrass sauce.",
+    "excerpt": "Tender jackfruit with sweet mushrooms and tofu in a lightly reduced lemongrass sauce.",
+    "serving": "Serve with rice and cilantro or leek greens. Check seasonings are plant-based for a fully vegan meal.",
+    "tips": [
+      "If fresh jackfruit is sticky with latex, boil it for 5 minutes and drain before pan-frying.",
+      "Briefly pan-frying jackfruit and tofu helps the pieces hold their shape.",
+      "Use vegetarian fish sauce; do not use regular fish sauce for a vegetarian meal."
+    ],
+    "tip": "If fresh jackfruit is sticky with latex, boil it for 5 minutes and drain before pan-frying.",
+    "dish_type": [
+      "Vegetarian braise",
+      "Young jackfruit dish"
+    ],
+    "main_ingredient": [
+      "young jackfruit",
+      "straw mushrooms",
+      "tofu"
+    ],
+    "cooking_method": [
+      "pan-frying",
+      "braising"
+    ],
+    "search_terms": [
+      "young jackfruit braised with mushrooms",
+      "easy vegetarian dish",
+      "vegetarian braise"
+    ],
+    "image_alt": "Young jackfruit with straw mushrooms and tofu in glossy sauce, finished with chili and herbs.",
+    "ingredients": [
+      {
+        "name": "Young jackfruit",
+        "quantity": 350,
+        "unit": "g",
+        "role": "main",
+        "notes": "Peeled, cored and cubed.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Straw mushrooms",
+        "quantity": 200,
+        "unit": "g",
+        "role": "main",
+        "notes": "Halved if large.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Firm tofu",
+        "quantity": 200,
+        "unit": "g",
+        "role": "main",
+        "notes": "Patted dry and cubed.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Lemongrass",
+        "quantity": 20,
+        "unit": "g",
+        "role": "aromatic",
+        "notes": "Finely minced.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Leek",
+        "quantity": 30,
+        "unit": "g",
+        "role": "aromatic",
+        "notes": "Mince white part; slice greens.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Soy sauce",
+        "quantity": 25,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "Use a variety suited to taste.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Vegetarian fish sauce",
+        "quantity": 20,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "Check label for vegan meal.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Sugar",
+        "quantity": 8,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Adjust to jackfruit sweetness.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Annatto oil",
+        "quantity": 15,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "For color; neutral oil works.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Water",
+        "quantity": 400,
+        "unit": "ml",
+        "role": "liquid",
+        "notes": "Adjust to nearly cover ingredients.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Red chili",
+        "quantity": 1,
+        "unit": "quả",
+        "role": "seasoning",
+        "notes": "Omit if avoiding heat.",
+        "scaling_rule": "linear"
+      }
+    ],
+    "preparation_steps": [
+      {
+        "step": 1,
+        "instruction": "Cut jackfruit into bite-size pieces. If sticky, parboil 5 minutes, rinse and drain."
+      },
+      {
+        "step": 2,
+        "instruction": "Pat tofu dry and cube; clean the mushrooms."
+      },
+      {
+        "step": 3,
+        "instruction": "Mince lemongrass and leek white; slice the leek greens and chili."
+      }
+    ],
+    "cooking_steps": [
+      {
+        "step": 1,
+        "instruction": "Pan-fry jackfruit in a little oil until lightly golden; remove. Fry tofu until its surfaces set."
+      },
+      {
+        "step": 2,
+        "instruction": "Sauté lemongrass and leek in annatto oil. Cook mushrooms until just tender, then add jackfruit, water, soy, vegetarian fish sauce and sugar."
+      },
+      {
+        "step": 3,
+        "instruction": "Bring to a gentle boil, lower heat and braise 15–20 minutes. Add tofu halfway; taste, add leek greens and chili, and turn off heat when sauce thickens lightly."
+      }
+    ],
+    "time_note": "Fresh and pre-cooked jackfruit vary in tenderness; adjust timing so pieces do not break apart.",
+    "time_unit": "minutes",
+    "keywords": [
+      "Vegetarian Braised Young Jackfruit with Straw Mushrooms",
+      "Across Vietnam",
+      "young jackfruit",
+      "straw mushrooms",
+      "tofu",
+      "young jackfruit braised with mushrooms",
+      "easy vegetarian dish",
+      "vegetarian braise",
+      "Vegetarian braise",
+      "Young jackfruit dish",
+      "50 minutes"
+    ],
+    "tags": {
+      "region": [
+        "Across Vietnam"
+      ],
+      "province": [],
+      "meal_type": [
+        "lunch",
+        "dinner"
+      ],
+      "dish_type": [
+        "Vegetarian braise",
+        "Young jackfruit dish"
+      ],
+      "main_ingredient": [
+        "young jackfruit",
+        "straw mushrooms",
+        "tofu"
+      ],
+      "cooking_method": [
+        "pan-frying",
+        "braising"
+      ],
+      "difficulty": "Easy",
+      "suitable_for_family_meal": true,
+      "suggested_pairings": [
+        "Steamed rice",
+        "Light mushroom soup",
+        "Boiled greens"
+      ],
+      "keywords": [
+        "Vegetarian Braised Young Jackfruit with Straw Mushrooms",
+        "Across Vietnam",
+        "young jackfruit",
+        "straw mushrooms",
+        "tofu",
+        "young jackfruit braised with mushrooms",
+        "easy vegetarian dish",
+        "vegetarian braise",
+        "Vegetarian braise",
+        "Young jackfruit dish",
+        "50 minutes"
+      ]
+    },
+    "scaling": {
+      "base_servings": 4,
+      "targets": [
+        {
+          "servings": 2,
+          "main_factor": 0.5,
+          "seasoning_start_factor": 0.5,
+          "example": "Vegetarian Braised Young Jackfruit with Straw Mushrooms for 2",
+          "instruction": "Adjust seasoning to taste; check doneness and texture."
+        },
+        {
+          "servings": 6,
+          "main_factor": 1.5,
+          "seasoning_start_factor": 1.5,
+          "example": "Vegetarian Braised Young Jackfruit with Straw Mushrooms for 6",
+          "instruction": "Adjust seasoning to taste; check doneness and texture."
+        },
+        {
+          "servings": 8,
+          "main_factor": 2.0,
+          "seasoning_start_factor": 2.0,
+          "example": "Vegetarian Braised Young Jackfruit with Straw Mushrooms for 8",
+          "instruction": "Adjust seasoning to taste; check doneness and texture."
+        }
+      ]
+    },
+    "editorial": {
+      "variant_note": "A vegetarian home dish based on common ingredients and braising methods; edited by Bếp Việt and not test-cooked.",
+      "needs": [
+        "Test-cook timing for seasonal and pre-processed jackfruit.",
+        "Review seasoning labels for vegan suitability when required."
+      ]
+    },
+    "suggested_pairings": [
+      "Steamed rice",
+      "Light mushroom soup",
+      "Boiled greens"
+    ]
+  },
+  "cha-ca-la-vong-ha-noi": {
+    "name": "Hanoi Cha Ca La Vong",
+    "aliases": [
+      "Cha Ca La Vong",
+      "Hanoi turmeric fish with dill"
+    ],
+    "region": [
+      "Northern Vietnam"
+    ],
+    "province": [
+      "Hà Nội"
+    ],
+    "category": "Main dish",
+    "meal_type": [
+      "Lunch",
+      "Dinner"
+    ],
+    "difficulty": "Moderate",
+    "serving_basis": "Four portions served with vermicelli, herbs and peanuts.",
+    "description": "Catfish is marinated with galangal, turmeric and fermented rice, then cooked in two stages so it browns outside and stays tender inside; dill and scallion are tossed in just before serving. Bếp Việt adapts the home method for an oven or air fryer before a final pan toss.",
+    "finished_dish": "Golden turmeric fish fragrant with galangal and fermented rice, tossed with dill and scallion and served with vermicelli, peanuts and seasoned shrimp paste.",
+    "excerpt": "Golden turmeric fish fragrant with galangal and fermented rice, tossed with dill and scallion and served with vermicelli, peanuts and seasoned shrimp paste.",
+    "serving": "Bring the pan to the table and serve with vermicelli, peanuts, herbs and lime-chili shrimp paste.",
+    "tips": [
+      "In an air fryer or oven, arrange fish in one layer and cook just until done; do not dry it out.",
+      "Fermented rice varies in acidity, so taste the marinade before adding lime or vinegar.",
+      "Add dill and scallion at the end so they wilt but keep their color."
+    ],
+    "tip": "In an air fryer or oven, arrange fish in one layer and cook just until done; do not dry it out.",
+    "dish_type": [
+      "Pan-seared fish",
+      "Hanoi specialty"
+    ],
+    "main_ingredient": [
+      "catfish",
+      "dill",
+      "galangal"
+    ],
+    "cooking_method": [
+      "marinating",
+      "roasting",
+      "pan-searing"
+    ],
+    "search_terms": [
+      "Cha Ca La Vong",
+      "Hanoi dill fish",
+      "Hanoi fish dish"
+    ],
+    "image_alt": "Golden Hanoi cha ca with dill, scallion, roasted peanuts and fresh vermicelli.",
+    "ingredients": [
+      {
+        "name": "Catfish fillet",
+        "quantity": 700,
+        "unit": "g",
+        "role": "main",
+        "notes": "Skin on or off, cut thick.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fresh galangal",
+        "quantity": 35,
+        "unit": "g",
+        "role": "aromatic",
+        "notes": "Pounded or blended.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fresh turmeric",
+        "quantity": 15,
+        "unit": "g",
+        "role": "aromatic",
+        "notes": "Pounded or use ground turmeric.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fermented rice paste",
+        "quantity": 45,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "Strained.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fermented shrimp paste",
+        "quantity": 20,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "For marinade and dip.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fish sauce",
+        "quantity": 15,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "Adjust to shrimp-paste saltiness.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Sugar",
+        "quantity": 8,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Balances acidity.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Neutral oil or pork fat",
+        "quantity": 30,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "Divide between roasting and pan-tossing.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Dill",
+        "quantity": 120,
+        "unit": "g",
+        "role": "main",
+        "notes": "Washed and cut long.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Scallions",
+        "quantity": 80,
+        "unit": "g",
+        "role": "main",
+        "notes": "Washed and cut into lengths.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fresh rice vermicelli",
+        "quantity": 600,
+        "unit": "g",
+        "role": "side",
+        "notes": "Briefly blanch.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Roasted peanuts",
+        "quantity": 50,
+        "unit": "g",
+        "role": "garnish",
+        "notes": "Coarsely crushed.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fresh herbs",
+        "quantity": 80,
+        "unit": "g",
+        "role": "side",
+        "notes": "Washed and drained.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Lime",
+        "quantity": 1,
+        "unit": "quả",
+        "role": "seasoning",
+        "notes": "For the shrimp-paste dip.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fresh chili",
+        "quantity": 1,
+        "unit": "quả",
+        "role": "seasoning",
+        "notes": "Use to taste.",
+        "scaling_rule": "linear"
+      }
+    ],
+    "preparation_steps": [
+      {
+        "step": 1,
+        "instruction": "Pat catfish dry, check for pin bones and cut into serving pieces."
+      },
+      {
+        "step": 2,
+        "instruction": "Mix galangal, turmeric, fermented rice, shrimp paste, fish sauce and sugar. Coat fish, cover and marinate refrigerated for 45–60 minutes."
+      },
+      {
+        "step": 3,
+        "instruction": "Wash dill, scallions and herbs and cut into lengths. Mix shrimp paste with lime and chili for serving."
+      }
+    ],
+    "cooking_steps": [
+      {
+        "step": 1,
+        "instruction": "Preheat oven to 220°C or prepare the air fryer. Arrange fish in one layer, brush with oil and cook 8–12 minutes, turning once, until just done and lightly golden."
+      },
+      {
+        "step": 2,
+        "instruction": "Heat remaining oil in a pan. Briefly sear each side if fish needs more color."
+      },
+      {
+        "step": 3,
+        "instruction": "Add dill and scallion and toss 30–60 seconds until just wilted. Serve immediately with vermicelli, peanuts, herbs and seasoned shrimp paste."
+      }
+    ],
+    "time_note": "Keep fish chilled while marinating; cooking time depends on thickness and appliance.",
+    "time_unit": "minutes",
+    "keywords": [
+      "Hanoi Cha Ca La Vong",
+      "Northern Vietnam",
+      "Hà Nội",
+      "catfish",
+      "dill",
+      "galangal",
+      "Cha Ca La Vong",
+      "Hanoi dill fish",
+      "Hanoi fish dish",
+      "Pan-seared fish",
+      "Hanoi specialty",
+      "110 minutes"
+    ],
+    "tags": {
+      "region": [
+        "Northern Vietnam"
+      ],
+      "province": [
+        "Hà Nội"
+      ],
+      "meal_type": [
+        "lunch",
+        "dinner"
+      ],
+      "dish_type": [
+        "Pan-seared fish",
+        "Hanoi specialty"
+      ],
+      "main_ingredient": [
+        "catfish",
+        "dill",
+        "galangal"
+      ],
+      "cooking_method": [
+        "marinating",
+        "roasting",
+        "pan-searing"
+      ],
+      "difficulty": "Moderate",
+      "suitable_for_family_meal": true,
+      "suggested_pairings": [
+        "Fresh vermicelli",
+        "Roasted peanuts",
+        "Fresh herbs and lime shrimp paste"
+      ],
+      "keywords": [
+        "Hanoi Cha Ca La Vong",
+        "Northern Vietnam",
+        "Hà Nội",
+        "catfish",
+        "dill",
+        "galangal",
+        "Cha Ca La Vong",
+        "Hanoi dill fish",
+        "Hanoi fish dish",
+        "Pan-seared fish",
+        "Hanoi specialty",
+        "110 minutes"
+      ]
+    },
+    "scaling": {
+      "base_servings": 4,
+      "targets": [
+        {
+          "servings": 2,
+          "main_factor": 0.5,
+          "seasoning_start_factor": 0.5,
+          "example": "Hanoi Cha Ca La Vong for 2",
+          "instruction": "Adjust seasoning to taste; check doneness and texture."
+        },
+        {
+          "servings": 6,
+          "main_factor": 1.5,
+          "seasoning_start_factor": 1.5,
+          "example": "Hanoi Cha Ca La Vong for 6",
+          "instruction": "Adjust seasoning to taste; check doneness and texture."
+        },
+        {
+          "servings": 8,
+          "main_factor": 2.0,
+          "seasoning_start_factor": 2.0,
+          "example": "Hanoi Cha Ca La Vong for 8",
+          "instruction": "Adjust seasoning to taste; check doneness and texture."
+        }
+      ]
+    },
+    "editorial": {
+      "variant_note": "Bếp Việt adapts the method for home ovens or air fryers; not test-cooked and not a restaurant's own process.",
+      "needs": [
+        "Test-cook with common ovens and air fryers to confirm timing.",
+        "Review raw fish handling and shrimp-paste storage."
+      ]
+    },
+    "suggested_pairings": [
+      "Fresh vermicelli",
+      "Roasted peanuts",
+      "Fresh herbs and lime shrimp paste"
+    ]
+  },
+  "banh-thuan-quang-nam": {
+    "name": "Quang Nam Banh Thuan Flower Cakes",
+    "aliases": [
+      "Quang Nam banh thuong",
+      "Hoi An banh thuan"
+    ],
+    "region": [
+      "South Central Coast"
+    ],
+    "province": [
+      "Đà Nẵng (Quảng Nam cũ)"
+    ],
+    "category": "Dessert",
+    "meal_type": [
+      "Dessert",
+      "Snack"
+    ],
+    "difficulty": "Moderate",
+    "serving_basis": "About 12 small cakes, depending on mold size.",
+    "description": "Quang Nam banh thuan has flower-like petals and fragrant egg aroma, traditionally made for Tet, family rites and guests. Bếp Việt edits a small home batch with arrowroot starch, eggs and sugar baked in a small mold; texture varies with starch and mold.",
+    "finished_dish": "Pale golden cakes bloom into petals, smell of egg and have a lightly dry exterior with an airy crumb.",
+    "excerpt": "Pale golden cakes bloom into petals, smell of egg and have a lightly dry exterior with an airy crumb.",
+    "serving": "Cool on a rack and serve with hot tea; store airtight once completely cool.",
+    "tips": [
+      "Sift arrowroot starch and beat eggs thoroughly for a smooth batter.",
+      "Preheat mold and brush lightly with oil so petals form cleanly.",
+      "When using an oven instead of the traditional mold, test a small batch because mold and heat affect rise."
+    ],
+    "tip": "Sift arrowroot starch and beat eggs thoroughly for a smooth batter.",
+    "dish_type": [
+      "Traditional cake",
+      "Quang Nam specialty"
+    ],
+    "main_ingredient": [
+      "arrowroot starch",
+      "eggs",
+      "sugar"
+    ],
+    "cooking_method": [
+      "whisking",
+      "mold-baking"
+    ],
+    "search_terms": [
+      "Quang Nam banh thuan",
+      "Quang Nam flower cakes",
+      "Central Vietnamese Tet cake"
+    ],
+    "image_alt": "A stack of golden flower-shaped banh thuan cakes with airy centers.",
+    "ingredients": [
+      {
+        "name": "Arrowroot starch",
+        "quantity": 250,
+        "unit": "g",
+        "role": "main",
+        "notes": "Sift finely; grind if coarse.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Chicken eggs",
+        "quantity": 4,
+        "unit": "quả",
+        "role": "main",
+        "notes": "Bring to room temperature.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Granulated sugar",
+        "quantity": 150,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Adjust to taste.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Tapioca starch",
+        "quantity": 25,
+        "unit": "g",
+        "role": "main",
+        "notes": "Adds slight chew.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Vanilla extract",
+        "quantity": 5,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "Use a little.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Salt",
+        "quantity": 1,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "A small pinch.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Neutral oil",
+        "quantity": 5,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "For brushing the mold.",
+        "scaling_rule": "linear"
+      }
+    ],
+    "preparation_steps": [
+      {
+        "step": 1,
+        "instruction": "Sift arrowroot starch, tapioca starch and salt; preheat oven to 170°C for an oven-safe mold."
+      },
+      {
+        "step": 2,
+        "instruction": "Beat eggs and sugar until pale and thick; add vanilla."
+      },
+      {
+        "step": 3,
+        "instruction": "Sift starch into eggs in batches, fold until smooth and rest for 10–15 minutes."
+      }
+    ],
+    "cooking_steps": [
+      {
+        "step": 1,
+        "instruction": "Preheat a banh thuan mold or small muffin pan. Brush lightly with oil and fill each cavity about two-thirds full."
+      },
+      {
+        "step": 2,
+        "instruction": "For cast-iron or copper molds, cover and bake per instructions until golden and a tester comes clean. In an oven pan, bake 12–16 minutes and check early."
+      },
+      {
+        "step": 3,
+        "instruction": "Cool on a rack. For a drier crust, dry gently at 90°C for about 10 minutes, then cool completely."
+      }
+    ],
+    "time_note": "This small-batch home method is an adaptation; traditional molds and starch types can produce different textures.",
+    "time_unit": "minutes",
+    "keywords": [
+      "Quang Nam Banh Thuan Flower Cakes",
+      "South Central Coast",
+      "Đà Nẵng (Quảng Nam cũ)",
+      "arrowroot starch",
+      "eggs",
+      "sugar",
+      "Quang Nam banh thuan",
+      "Quang Nam flower cakes",
+      "Central Vietnamese Tet cake",
+      "Traditional cake",
+      "Quang Nam specialty",
+      "60 minutes"
+    ],
+    "tags": {
+      "region": [
+        "South Central Coast"
+      ],
+      "province": [
+        "Đà Nẵng (Quảng Nam cũ)"
+      ],
+      "meal_type": [
+        "dessert",
+        "snack"
+      ],
+      "dish_type": [
+        "Traditional cake",
+        "Quang Nam specialty"
+      ],
+      "main_ingredient": [
+        "arrowroot starch",
+        "eggs",
+        "sugar"
+      ],
+      "cooking_method": [
+        "whisking",
+        "mold-baking"
+      ],
+      "difficulty": "Moderate",
+      "suitable_for_family_meal": true,
+      "suggested_pairings": [
+        "Hot tea",
+        "Candied ginger",
+        "Lotus tea"
+      ],
+      "keywords": [
+        "Quang Nam Banh Thuan Flower Cakes",
+        "South Central Coast",
+        "Đà Nẵng (Quảng Nam cũ)",
+        "arrowroot starch",
+        "eggs",
+        "sugar",
+        "Quang Nam banh thuan",
+        "Quang Nam flower cakes",
+        "Central Vietnamese Tet cake",
+        "Traditional cake",
+        "Quang Nam specialty",
+        "60 minutes"
+      ]
+    },
+    "scaling": {
+      "base_servings": 4,
+      "targets": [
+        {
+          "servings": 2,
+          "main_factor": 0.5,
+          "seasoning_start_factor": 0.5,
+          "example": "Quang Nam Banh Thuan Flower Cakes for 2",
+          "instruction": "Adjust seasoning to taste; check doneness and texture."
+        },
+        {
+          "servings": 6,
+          "main_factor": 1.5,
+          "seasoning_start_factor": 1.5,
+          "example": "Quang Nam Banh Thuan Flower Cakes for 6",
+          "instruction": "Adjust seasoning to taste; check doneness and texture."
+        },
+        {
+          "servings": 8,
+          "main_factor": 2.0,
+          "seasoning_start_factor": 2.0,
+          "example": "Quang Nam Banh Thuan Flower Cakes for 8",
+          "instruction": "Adjust seasoning to taste; check doneness and texture."
+        }
+      ]
+    },
+    "editorial": {
+      "variant_note": "Small-batch recipe edited by Bếp Việt from banh thuan references; home molds need a test cook to confirm heat and rise.",
+      "needs": [
+        "Test traditional and home molds to confirm temperature and timing.",
+        "Verify arrowroot starch sourcing and suitable local substitutions."
+      ]
+    },
+    "suggested_pairings": [
+      "Hot tea",
+      "Candied ginger",
+      "Lotus tea"
+    ]
+  }
+}

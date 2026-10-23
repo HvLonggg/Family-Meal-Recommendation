@@ -30,6 +30,7 @@ const { authState, updateUser, basePreferences } = vi.hoisted(() => ({
     notify_weekly_plan: true,
     notify_story_updates: true,
     show_name_on_stories: true,
+    assistant_sassy: false,
     admin_notify_pending: true,
     admin_landing: 'admin',
     computed_portions: 0,
@@ -58,14 +59,16 @@ vi.mock('@/features/account/accountApi', () => ({
   exportAccountData: vi.fn(),
 }));
 
-function renderSettings() {
-  return render(
+function renderSettings(tab?: string, entry = '/account/settings') {
+  const view = render(
     <QueryClientProvider client={new QueryClient()}>
-      <MemoryRouter>
+      <MemoryRouter initialEntries={[entry]}>
         <SettingsPage />
       </MemoryRouter>
     </QueryClientProvider>,
   );
+  if (tab) fireEvent.click(screen.getByRole('tab', { name: new RegExp(tab) }));
+  return view;
 }
 
 afterEach(() => {
@@ -82,7 +85,7 @@ describe('SettingsPage', () => {
         computed_servings: 3,
       }),
     );
-    renderSettings();
+    renderSettings('Bữa ăn');
 
     fireEvent.change(screen.getByLabelText('Mô tả bữa ăn của nhà bạn'), {
       target: { value: 'Gia đình nhỏ 3 người: 2 bố mẹ và bạn nhỏ 12 tuổi' },
@@ -103,7 +106,7 @@ describe('SettingsPage', () => {
     vi.mocked(savePreferences).mockImplementation((preferences: UserPreferences) =>
       Promise.resolve(preferences),
     );
-    renderSettings();
+    renderSettings('Thông báo');
 
     expect(screen.getByText(/Lịch chạy theo giờ Việt Nam \(GMT\+7\)/)).toBeInTheDocument();
     expect(screen.getByText(/Hôm nay .* · Ngày \d+ tháng \d+/)).toBeInTheDocument();
@@ -122,7 +125,7 @@ describe('SettingsPage', () => {
     vi.mocked(savePreferences).mockImplementation((preferences: UserPreferences) =>
       Promise.resolve(preferences),
     );
-    renderSettings();
+    renderSettings('Thông báo');
 
     const reminderToggle = screen.getByRole('switch', {
       name: /Email nhắc món trong kế hoạch/,
@@ -136,8 +139,25 @@ describe('SettingsPage', () => {
     expect(saved.email_meal_plan_reminders).toBe(false);
   });
 
+  it('turns on the sassy assistant mode', async () => {
+    vi.mocked(savePreferences).mockImplementation((preferences: UserPreferences) =>
+      Promise.resolve(preferences),
+    );
+    renderSettings('Chú Rồng');
+
+    const sassy = screen.getByRole('switch', { name: /Chế độ trả treo/ });
+    expect(sassy).not.toBeChecked();
+    expect(screen.getByText(/trả lời thông minh, dí dỏm/)).toBeInTheDocument();
+    fireEvent.click(screen.getByText('Chế độ trả treo'));
+    expect(screen.getByText(/láo nhưng vẫn trả lời đúng/)).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Lưu cài đặt' }));
+
+    await waitFor(() => expect(savePreferences).toHaveBeenCalledTimes(1));
+    expect(vi.mocked(savePreferences).mock.calls[0]![0].assistant_sassy).toBe(true);
+  });
+
   it('switches to manual servings', () => {
-    renderSettings();
+    renderSettings('Bữa ăn');
     fireEvent.click(screen.getByRole('button', { name: 'Tự đặt' }));
     fireEvent.click(screen.getByRole('button', { name: 'Tăng khẩu phần' }));
     expect(screen.getByText('5 suất')).toBeInTheDocument();
@@ -145,17 +165,30 @@ describe('SettingsPage', () => {
 
   it('shows administrator settings only to administrators', () => {
     renderSettings();
-    expect(screen.queryByText('Thiết lập quản trị')).not.toBeInTheDocument();
+    expect(screen.queryByRole('tab', { name: /Quản trị/ })).not.toBeInTheDocument();
+    expect(screen.getByRole('tab', { name: /Bữa ăn/ })).toBeInTheDocument();
     cleanup();
 
     authState.role = 'admin';
     renderSettings();
-    expect(screen.getByText('Thiết lập quản trị')).toBeInTheDocument();
     expect(screen.getByText('Ngôn ngữ & hiển thị')).toBeInTheDocument();
     // Quản trị viên không cần phần cá nhân hóa bữa ăn của người dùng.
-    for (const title of ['Gia đình & khẩu phần', 'Khẩu vị & chế độ ăn', 'Kế hoạch & thông báo']) {
-      expect(screen.queryByText(title)).not.toBeInTheDocument();
-    }
-    expect(screen.queryByText('Trang mở sau khi đăng nhập')).not.toBeInTheDocument();
+    expect(screen.queryByRole('tab', { name: /Bữa ăn/ })).not.toBeInTheDocument();
+    expect(screen.queryByRole('tab', { name: /Thông báo/ })).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole('tab', { name: /Quản trị/ }));
+    expect(screen.getByText('Thiết lập quản trị')).toBeInTheDocument();
+    expect(screen.queryByText('Ngôn ngữ & hiển thị')).not.toBeInTheDocument();
+  });
+
+  it('shows one group at a time and opens the tab a link points to', () => {
+    renderSettings();
+    expect(screen.getByText('Ngôn ngữ & hiển thị')).toBeInTheDocument();
+    expect(screen.queryByText('Gia đình & khẩu phần')).not.toBeInTheDocument();
+    cleanup();
+
+    renderSettings(undefined, '/account/settings#memories');
+    expect(screen.getByRole('tab', { name: /Chú Rồng/ })).toHaveAttribute('aria-selected', 'true');
+    expect(screen.getByText('Tính cách Chú Rồng')).toBeInTheDocument();
+    expect(screen.queryByText('Ngôn ngữ & hiển thị')).not.toBeInTheDocument();
   });
 });

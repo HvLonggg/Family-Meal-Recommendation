@@ -1,7 +1,13 @@
 """Tập hợp model để Alembic nạp đầy đủ metadata."""
 
 from app.modules.articles.models import Article
-from app.modules.assistant.models import AssistantConversation, AssistantMessage
+from app.modules.assistant.models import (
+    AssistantConversation,
+    AssistantKnowledgeChunk,
+    AssistantKnowledgeDocument,
+    AssistantMemory,
+    AssistantMessage,
+)
 from app.modules.auth.models import (
     AuthIdentity,
     EmailOtpChallenge,
@@ -10,6 +16,7 @@ from app.modules.auth.models import (
     SecurityEmailOutbox,
     User,
 )
+from app.modules.cooking.models import UserCookLog, UserCookTimer, UserPushSubscription
 from app.modules.favorites.models import UserFavoriteRecipe
 from app.modules.planner.models import (
     MealPlanEmailReminder,
@@ -25,6 +32,9 @@ from app.modules.support.models import AdminMealSuggestionEmail, SupportTicket
 __all__ = [
     "Article",
     "AssistantConversation",
+    "AssistantKnowledgeChunk",
+    "AssistantKnowledgeDocument",
+    "AssistantMemory",
     "AssistantMessage",
     "RecipeSubmission",
     "SupportTicket",
@@ -44,4 +54,7 @@ __all__ = [
     "UserMealPlanEvent",
     "UserVegetarianDay",
     "MealPlanEmailReminder",
+    "UserCookLog",
+    "UserCookTimer",
+    "UserPushSubscription",
 ]

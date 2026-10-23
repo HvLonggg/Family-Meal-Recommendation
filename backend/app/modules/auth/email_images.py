@@ -5,7 +5,9 @@ from io import BytesIO
 from PIL import Image, ImageChops, ImageFilter, ImageOps
 
 # 1200px gives a sharp 2x rendition at the email template's 544px display width.
-EMAIL_DISH_SIZE = (1200, 760)
+# Gấp đôi khổ hiển thị 544 px trong email: nét trên màn hình retina mà thư vẫn nhẹ.
+EMAIL_DISH_SIZE = (1088, 690)
+EMAIL_DISH_MAX_BYTES = 320_000
 MAX_SOURCE_PIXELS = 24_000_000
 _SHADOW_COLOR = (70, 42, 28)
 
@@ -59,7 +61,10 @@ def compose_dish_cutout(
             else canvas.resize(candidate_size, Image.Resampling.LANCZOS)
         )
         output = BytesIO()
-        image.save(output, "PNG", optimize=True, compress_level=8)
+        # Bảng 256 màu giữ nền trong suốt mà nhẹ hơn ~4 lần, giúp thư đi nhanh trên mạng yếu.
+        image.quantize(
+            colors=256, method=Image.Quantize.FASTOCTREE, dither=Image.Dither.FLOYDSTEINBERG
+        ).save(output, "PNG", optimize=True)
         encoded = output.getvalue()
         if max_bytes is None or len(encoded) <= max_bytes:
             return encoded

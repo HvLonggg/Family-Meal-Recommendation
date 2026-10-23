@@ -1,0 +1,1866 @@
+{
+  "batch": 23,
+  "description": "Năm món vùng miền được biên tập từ báo chí, cơ sở dữ liệu du lịch và tư liệu địa phương; có cơm, phở trộn, bánh cuốn và món mặn gia đình.",
+  "recipes": [
+    {
+      "id": "BV441",
+      "slug": "com-ga-tam-ky",
+      "name": "Cơm gà Tam Kỳ",
+      "aliases": [
+        "Cơm gà xé Tam Kỳ",
+        "Cơm gà xứ Quảng"
+      ],
+      "region": [
+        "Nam Trung Bộ"
+      ],
+      "province": [
+        "Quảng Nam"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Vừa",
+      "servings": 4,
+      "serving_basis": "4 phần cơm vàng nấu nước luộc gà, dùng cùng gà xé trộn rau răm và đồ chua.",
+      "prep_time": 25,
+      "cook_time": 45,
+      "passive_time": 0,
+      "description": "Cơm gà Tam Kỳ có hạt cơm vàng thơm nấu bằng nước luộc gà, ăn cùng thịt gà ta luộc rồi xé trộn hành tím và rau răm. Bếp Việt biên tập phần ăn gia đình theo nét Tam Kỳ: gà được luộc chín một lượt, cơm nấu riêng bằng nước dùng, dọn kèm đồ chua và mắm tỏi; cách trình bày này giữ rõ đặc trưng Tam Kỳ thay vì đổi tên món cơm gà Hội An.",
+      "finished_dish": "Cơm vàng bóng, hạt tơi mềm; gà xé săn ngọt quyện rau răm, hành tím, dưa chua và chén mắm tỏi ớt.",
+      "serving": "Xới cơm nóng thành phần riêng, bày gà xé trộn rau răm bên cạnh. Dọn với đu đủ ngâm chua ngọt, rau sống và nước mắm tỏi ớt; có thể thêm bát nước luộc gà nóng.",
+      "tips": [
+        "Luộc gà vừa chín tới; phần dày nhất của đùi cần đạt ít nhất 74°C rồi để nghỉ trước khi xé.",
+        "Rang gạo sơ với chút mỡ gà và nghệ trước khi nấu để hạt cơm thơm, tơi và lên màu đều.",
+        "Trộn rau răm, hành tím và nước mắm vào gà sát lúc ăn để thịt không ra nước."
+      ],
+      "dish_type": [
+        "Cơm gà",
+        "Đặc sản Quảng Nam"
+      ],
+      "main_ingredient": [
+        "gà ta",
+        "gạo tẻ",
+        "rau răm"
+      ],
+      "cooking_method": [
+        "luộc",
+        "nấu cơm",
+        "trộn"
+      ],
+      "search_terms": [
+        "cơm gà Tam Kỳ xứ Quảng",
+        "cơm gà vàng nghệ",
+        "gà xé rau răm ăn cơm"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Đĩa cơm gà Tam Kỳ với cơm vàng nấu nước luộc gà, gà xé rau răm, hành tím và đu đủ ngâm.",
+      "time_note": "Thời gian luộc thay đổi theo kích thước gà; dùng nhiệt kế thực phẩm để xác nhận gà chín an toàn.",
+      "total_time": 70,
+      "suggested_pairings": [
+        "Đu đủ ngâm chua ngọt",
+        "Rau răm",
+        "Nước mắm tỏi ớt"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "com-ga-tam-ky",
+      "time_unit": "phút",
+      "ingredients": [
+        {
+          "name": "Gà ta nguyên con",
+          "quantity": 1.2,
+          "unit": "kg",
+          "role": "main",
+          "notes": "Chọn gà tươi, làm sạch; bỏ phần nội tạng riêng.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Gạo tẻ thơm",
+          "quantity": 400,
+          "unit": "g",
+          "role": "main",
+          "notes": "Vo nhanh, để ráo trước khi rang sơ.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Nước luộc gà",
+          "quantity": 650,
+          "unit": "ml",
+          "role": "main",
+          "notes": "Lượng vừa đủ nấu cơm; điều chỉnh theo loại gạo.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 100,
+          "unit": "g",
+          "role": "main",
+          "notes": "Một phần luộc cùng gà, phần còn lại thái mỏng trộn gà.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Gừng tươi",
+          "quantity": 35,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Đập dập để luộc gà.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Bột nghệ",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Tạo màu cơm vàng nhẹ, không dùng quá nhiều.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Rau răm",
+          "quantity": 30,
+          "unit": "g",
+          "role": "main",
+          "notes": "Rửa sạch, để ráo và thái vừa.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Đu đủ xanh",
+          "quantity": 180,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": "Bào sợi làm đồ chua ăn kèm.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Cà rốt",
+          "quantity": 80,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": "Bào sợi, trộn cùng đu đủ.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 45,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Chia dùng cho gà trộn, nước chấm và đồ chua.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 12,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhỏ để pha nước chấm.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Chanh",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "seasoning",
+          "notes": "Vắt lấy nước, nêm nước chấm.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        },
+        {
+          "name": "Đường",
+          "quantity": 28,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm nước chấm và đồ chua.",
+          "scaling_rule": "linear",
+          "sequence": 13
+        },
+        {
+          "name": "Muối",
+          "quantity": 10,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Gia giảm theo khẩu vị.",
+          "scaling_rule": "linear",
+          "sequence": 14
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm gà và nước chấm.",
+          "scaling_rule": "linear",
+          "sequence": 15
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa sạch gà, để ráo. Đập dập gừng và một nửa hành tím; phần hành còn lại thái mỏng. Rửa rau răm, để thật ráo."
+        },
+        {
+          "step": 2,
+          "instruction": "Bào đu đủ và cà rốt thành sợi. Trộn với một nhúm muối trong 10 phút, vắt nhẹ rồi ngâm cùng giấm, đường và chút nước mắm."
+        },
+        {
+          "step": 3,
+          "instruction": "Vo gạo nhanh, để ráo. Chuẩn bị nồi cơm, nước mắm, tỏi, chanh và ớt để pha nước chấm."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Cho gà vào nồi cùng gừng, hành tím, muối và nước vừa ngập. Đun sôi rồi hạ lửa, hớt bọt và luộc đến khi phần đùi dày đạt ít nhất 74°C; vớt ra để nghỉ 10 phút."
+        },
+        {
+          "step": 2,
+          "instruction": "Rang gạo với một thìa cà phê mỡ gà hoặc dầu ăn đến khi hạt trong. Hòa bột nghệ vào nước luộc gà nóng, nêm nhạt rồi dùng lượng nước phù hợp để nấu cơm chín tơi."
+        },
+        {
+          "step": 3,
+          "instruction": "Lọc bỏ xương gà, xé thịt thành miếng vừa. Trộn nhẹ cùng hành tím, rau răm, một ít nước mắm, tiêu và nước cốt chanh."
+        },
+        {
+          "step": 4,
+          "instruction": "Pha phần nước mắm còn lại với tỏi, chanh, đường và ớt. Xới cơm ra đĩa, bày gà xé và đồ chua bên cạnh, dùng ngay khi còn nóng."
+        }
+      ],
+      "keywords": [
+        "Cơm gà Tam Kỳ",
+        "Cơm gà xé Tam Kỳ",
+        "Cơm gà xứ Quảng",
+        "Nam Trung Bộ",
+        "Quảng Nam",
+        "gà ta",
+        "gạo tẻ",
+        "rau răm",
+        "Cơm gà",
+        "Đặc sản Quảng Nam",
+        "cơm gà Tam Kỳ xứ Quảng",
+        "cơm gà vàng nghệ",
+        "gà xé rau răm ăn cơm",
+        "70 phút"
+      ],
+      "tags": {
+        "region": [
+          "Nam Trung Bộ"
+        ],
+        "province": [
+          "Quảng Nam"
+        ],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Cơm gà",
+          "Đặc sản Quảng Nam"
+        ],
+        "main_ingredient": [
+          "gà ta",
+          "gạo tẻ",
+          "rau răm"
+        ],
+        "cooking_method": [
+          "luộc",
+          "nấu cơm",
+          "trộn"
+        ],
+        "difficulty": "Vừa",
+        "prep_time": 25,
+        "cook_time": 45,
+        "servings": 4,
+        "spicy_level": 1,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Đu đủ ngâm chua ngọt",
+          "Rau răm",
+          "Nước mắm tỏi ớt"
+        ],
+        "keywords": [
+          "Cơm gà Tam Kỳ",
+          "Cơm gà xé Tam Kỳ",
+          "Cơm gà xứ Quảng",
+          "Nam Trung Bộ",
+          "Quảng Nam",
+          "gà ta",
+          "gạo tẻ",
+          "rau răm",
+          "Cơm gà",
+          "Đặc sản Quảng Nam",
+          "cơm gà Tam Kỳ xứ Quảng",
+          "cơm gà vàng nghệ",
+          "gà xé rau răm ăn cơm",
+          "70 phút"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://csdl.vietnamtourism.gov.vn/rest/?item=1192",
+          "publisher": "Cơ sở dữ liệu ngành Du lịch, Cục Du lịch Quốc gia Việt Nam",
+          "title": "Cơm gà Bà Luận Tam Kỳ",
+          "use": "Đối chiếu nguồn gốc thương hiệu Tam Kỳ, cách luộc gà và các kiểu ăn kèm của món cơm gà.",
+          "accessed_at": "2026-10-22",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://vnexpress.net/com-ga-tam-ky-mieng-ngon-nho-lau-2916170.html",
+          "publisher": "VnExpress Du lịch",
+          "title": "Cơm gà Tam Kỳ, miếng ngon nhớ lâu",
+          "use": "Đối chiếu cơm vàng nấu nước luộc gà, gà xé trộn rau răm, hành tím, đu đủ ngâm và mắm tỏi; nội dung công thức được Bếp Việt biên tập lại.",
+          "accessed_at": "2026-10-22",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Cơm gà Tam Kỳ cho 2 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Cơm gà Tam Kỳ cho 6 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Cơm gà Tam Kỳ cho 8 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/com-ga-tam-ky-960.webp",
+          "page_url": "https://csdl.vietnamtourism.gov.vn/rest/?item=1192",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu đặc trưng món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa cơm gà Tam Kỳ với cơm vàng nấu nước luộc gà, gà xé rau răm, hành tím và đu đủ ngâm.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-22",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức được Bếp Việt biên tập từ nguồn tham khảo; định lượng và thời gian cần được nấu thử trước khi xem là bản hoàn chỉnh.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-22",
+        "needs": [
+          "Thử lại tỷ lệ nước cho các loại gạo phổ biến và điều chỉnh lượng nghệ theo màu mong muốn.",
+          "Nấu thử để chuẩn hóa khối lượng gà, thời gian luộc và độ chua của đồ ăn kèm."
+        ]
+      }
+    },
+    {
+      "id": "BV442",
+      "slug": "pho-chua-lang-son",
+      "name": "Phở chua Lạng Sơn",
+      "aliases": [
+        "Phở chua xứ Lạng",
+        "Phở trộn chua ngọt Lạng Sơn"
+      ],
+      "region": [
+        "Đông Bắc Bộ"
+      ],
+      "province": [
+        "Lạng Sơn"
+      ],
+      "category": "Món nước",
+      "meal_type": [
+        "bữa sáng",
+        "bữa trưa"
+      ],
+      "difficulty": "Vừa",
+      "servings": 4,
+      "serving_basis": "4 đĩa phở trộn chua ngọt, có thịt xá xíu, khoai lang chiên, lạc rang và rau thơm.",
+      "prep_time": 25,
+      "cook_time": 30,
+      "passive_time": 0,
+      "description": "Phở chua Lạng Sơn là món phở trộn khô với bánh phở mềm, thịt xá xíu, khoai lang chiên giòn, lạc rang và rau thơm; nước sốt chua ngọt được chan vừa đủ để các thành phần thấm vị mà vẫn giữ độ giòn. Bếp Việt biên tập khẩu phần gia đình, dùng thịt vai áp chảo thay cho quay nguyên tảng và nêm sốt theo hướng dễ cân chỉnh.",
+      "finished_dish": "Bánh phở bóng nhẹ, thịt xá xíu mềm, khoai lang giòn và lạc bùi; sốt chua ngọt quyện vừa đủ, rau thơm giữ vị tươi.",
+      "serving": "Chia bánh phở vào đĩa sâu lòng, xếp thịt, khoai chiên, dưa chuột, rau thơm và lạc rang lên trên. Rưới sốt từng ít một, trộn nhẹ và ăn ngay để khoai vẫn giòn.",
+      "tips": [
+        "Ngâm khoai lang đã thái vào nước lạnh pha chút muối rồi thấm thật khô trước khi chiên để khoai ít thâm và giòn hơn.",
+        "Nấu sốt đến khi vừa sánh; nếm chua, ngọt và mặn trước khi chan vì độ chua của giấm hoặc quất khác nhau.",
+        "Chỉ trộn bánh phở cùng sốt ngay trước khi ăn, không chan quá nhiều làm món bị nhão."
+      ],
+      "dish_type": [
+        "Phở trộn",
+        "Đặc sản Lạng Sơn"
+      ],
+      "main_ingredient": [
+        "bánh phở",
+        "thịt lợn",
+        "khoai lang"
+      ],
+      "cooking_method": [
+        "luộc",
+        "áp chảo",
+        "chiên",
+        "trộn"
+      ],
+      "search_terms": [
+        "phở trộn chua ngọt",
+        "phở chua có khoai lang chiên",
+        "đặc sản xứ Lạng"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Đĩa phở chua Lạng Sơn với bánh phở, thịt xá xíu, khoai lang chiên, lạc rang, rau thơm và chén nước dùng.",
+      "time_note": "Thời gian không tính lúc ngâm khoai; điều chỉnh lượng sốt theo khẩu vị chua ngọt của gia đình.",
+      "total_time": 55,
+      "suggested_pairings": [
+        "Rau thơm",
+        "Dưa chuột",
+        "Lạc rang"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "pho-chua-lang-son",
+      "time_unit": "phút",
+      "ingredients": [
+        {
+          "name": "Bánh phở tươi",
+          "quantity": 600,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn sợi bánh phở bản vừa, chần nhanh trước khi trộn.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Thịt nạc vai",
+          "quantity": 450,
+          "unit": "g",
+          "role": "main",
+          "notes": "Cắt thành miếng dày để áp chảo rồi thái lát.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Khoai lang",
+          "quantity": 250,
+          "unit": "g",
+          "role": "main",
+          "notes": "Gọt vỏ, thái sợi vừa và ngâm nước lạnh.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Dưa chuột",
+          "quantity": 180,
+          "unit": "g",
+          "role": "main",
+          "notes": "Thái sợi hoặc lát mỏng.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Rau thơm tổng hợp",
+          "quantity": 80,
+          "unit": "g",
+          "role": "main",
+          "notes": "Rau mùi, húng và rau răm, rửa sạch.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Lạc rang",
+          "quantity": 40,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Giã dập vừa, không nghiền thành bột.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Hành phi",
+          "quantity": 25,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng loại tự phi hoặc mua sẵn còn giòn.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 35,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng cho phần sốt chua ngọt.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Giấm gạo",
+          "quantity": 35,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm dần, thay đổi tùy độ chua.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Đường",
+          "quantity": 35,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Hòa tan trong sốt.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 10,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhỏ cho vào sốt.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Ớt đỏ",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "seasoning",
+          "notes": "Bỏ hạt nếu muốn vị cay nhẹ.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        },
+        {
+          "name": "Bột năng",
+          "quantity": 6,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Hòa với nước lạnh để tạo độ sánh nhẹ.",
+          "scaling_rule": "linear",
+          "sequence": 13
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Chia dùng áp chảo thịt và chiên khoai.",
+          "scaling_rule": "linear",
+          "sequence": 14
+        },
+        {
+          "name": "Ngũ vị hương",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Tùy chọn, dùng lượng nhỏ để ướp thịt.",
+          "scaling_rule": "linear",
+          "sequence": 15
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm thịt.",
+          "scaling_rule": "linear",
+          "sequence": 16
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Thái thịt vai thành miếng dài, ướp với nước mắm, tiêu, tỏi băm và chút ngũ vị hương trong 15 phút."
+        },
+        {
+          "step": 2,
+          "instruction": "Gọt khoai lang, thái sợi, ngâm nước muối loãng rồi rửa và thấm thật khô. Rửa rau thơm, thái dưa chuột và giã dập lạc rang."
+        },
+        {
+          "step": 3,
+          "instruction": "Hòa nước mắm, giấm, đường và một ít nước ấm. Hòa riêng bột năng với nước lạnh để sẵn."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng chảo với một ít dầu. Áp chảo thịt ở lửa vừa, trở đều đến khi chín hẳn và có mặt xém nâu; thêm một thìa nước để thịt không khô. Để nguội bớt rồi thái lát mỏng."
+        },
+        {
+          "step": 2,
+          "instruction": "Chiên khoai lang trong dầu nóng đến khi vàng giòn, vớt ra giấy thấm dầu. Chần bánh phở theo hướng dẫn bao bì, để ráo và tơi nhẹ."
+        },
+        {
+          "step": 3,
+          "instruction": "Đun hỗn hợp nước mắm, giấm, đường với tỏi và ớt. Nếm cân bằng chua ngọt, thêm từ từ bột năng pha loãng và khuấy đến khi sốt sánh nhẹ rồi tắt bếp."
+        },
+        {
+          "step": 4,
+          "instruction": "Chia bánh phở ra đĩa, xếp thịt, khoai lang, dưa chuột, rau thơm, hành phi và lạc rang. Chan lượng sốt vừa đủ và dùng ngay."
+        }
+      ],
+      "keywords": [
+        "Phở chua Lạng Sơn",
+        "Phở chua xứ Lạng",
+        "Phở trộn chua ngọt Lạng Sơn",
+        "Đông Bắc Bộ",
+        "Lạng Sơn",
+        "bánh phở",
+        "thịt lợn",
+        "khoai lang",
+        "Phở trộn",
+        "Đặc sản Lạng Sơn",
+        "phở trộn chua ngọt",
+        "phở chua có khoai lang chiên",
+        "đặc sản xứ Lạng",
+        "55 phút"
+      ],
+      "tags": {
+        "region": [
+          "Đông Bắc Bộ"
+        ],
+        "province": [
+          "Lạng Sơn"
+        ],
+        "meal_type": [
+          "bữa sáng",
+          "bữa trưa"
+        ],
+        "dish_type": [
+          "Phở trộn",
+          "Đặc sản Lạng Sơn"
+        ],
+        "main_ingredient": [
+          "bánh phở",
+          "thịt lợn",
+          "khoai lang"
+        ],
+        "cooking_method": [
+          "luộc",
+          "áp chảo",
+          "chiên",
+          "trộn"
+        ],
+        "difficulty": "Vừa",
+        "prep_time": 25,
+        "cook_time": 30,
+        "servings": 4,
+        "spicy_level": 1,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Rau thơm",
+          "Dưa chuột",
+          "Lạc rang"
+        ],
+        "keywords": [
+          "Phở chua Lạng Sơn",
+          "Phở chua xứ Lạng",
+          "Phở trộn chua ngọt Lạng Sơn",
+          "Đông Bắc Bộ",
+          "Lạng Sơn",
+          "bánh phở",
+          "thịt lợn",
+          "khoai lang",
+          "Phở trộn",
+          "Đặc sản Lạng Sơn",
+          "phở trộn chua ngọt",
+          "phở chua có khoai lang chiên",
+          "đặc sản xứ Lạng",
+          "55 phút"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://hayan.vn/vao-bep/cach-lam-pho-chua-lang-son-thom-ngon-don-gian-ngay-tai-nha-p1489.html",
+          "publisher": "HAY ĂN",
+          "title": "Cách làm phở chua Lạng Sơn thơm ngon, đơn giản ngay tại nhà",
+          "use": "Đối chiếu thành phần bánh phở, thịt, khoai lang, lạc rang, rau sống và cách trình bày món phở trộn.",
+          "accessed_at": "2026-10-22",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://songv.langson.gov.vn/upload/105396/20251211/flatten-compress_tk_btdn_2d7d8.pdf",
+          "publisher": "Sở Ngoại vụ tỉnh Lạng Sơn",
+          "title": "Ẩm thực Xứ Lạng",
+          "use": "Xác nhận phở chua là món đặc sản của Lạng Sơn và đối chiếu đặc trưng sốt chua ngọt; công thức gia đình do Bếp Việt biên tập.",
+          "accessed_at": "2026-10-22",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Phở chua Lạng Sơn cho 2 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Phở chua Lạng Sơn cho 6 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Phở chua Lạng Sơn cho 8 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/pho-chua-lang-son-960.webp",
+          "page_url": "https://hayan.vn/vao-bep/cach-lam-pho-chua-lang-son-thom-ngon-don-gian-ngay-tai-nha-p1489.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu đặc trưng món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa phở chua Lạng Sơn với bánh phở, thịt xá xíu, khoai lang chiên, lạc rang, rau thơm và chén nước dùng.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-22",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức được Bếp Việt biên tập từ nguồn tham khảo; định lượng và thời gian cần được nấu thử trước khi xem là bản hoàn chỉnh.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-22",
+        "needs": [
+          "Điều chỉnh tỷ lệ sốt theo loại bánh phở và độ chua của giấm có sẵn.",
+          "Nấu thử để xác định thời gian chiên khoai giữ giòn sau khi chan sốt."
+        ]
+      }
+    },
+    {
+      "id": "BV443",
+      "slug": "banh-cuon-phu-ly",
+      "name": "Bánh cuốn Phủ Lý",
+      "aliases": [
+        "Bánh cuốn chả Phủ Lý",
+        "Bánh cuốn chả nướng Hà Nam"
+      ],
+      "region": [
+        "Đồng bằng Bắc Bộ"
+      ],
+      "province": [
+        "Hà Nam"
+      ],
+      "category": "Bánh và ăn sáng",
+      "meal_type": [
+        "bữa sáng",
+        "bữa phụ"
+      ],
+      "difficulty": "Vừa",
+      "servings": 4,
+      "serving_basis": "4 suất bánh cuốn nóng nhân thịt, ăn chan nước mắm cùng chả nướng và hành phi.",
+      "prep_time": 35,
+      "cook_time": 35,
+      "passive_time": 20,
+      "description": "Bánh cuốn Phủ Lý nổi bật với lớp bánh gạo mềm dai, hành phi thơm béo, bát nước mắm chan đậm vị và phần chả thịt nướng ăn kèm. Bếp Việt biên tập cách làm tại nhà bằng chảo chống dính thay cho nồi tráng bánh, giữ lại nét ăn bánh nóng cùng chả nướng của Phủ Lý.",
+      "finished_dish": "Lớp bánh mỏng mềm ôm nhân thịt mộc nhĩ, phủ hành phi vàng; chả nướng xém cạnh và nước chấm mặn ngọt làm món ăn tròn vị.",
+      "serving": "Dọn bánh cuốn nóng trên đĩa, rắc hành phi, đặt chả nướng bên cạnh. Chan nước mắm ấm vào bát nhỏ, thêm rau thơm và ớt tùy khẩu vị.",
+      "tips": [
+        "Để bột nghỉ khoảng 20 phút và khuấy lại trước mỗi lượt tráng để bánh mềm, không lắng bột.",
+        "Phết lớp dầu thật mỏng lên chảo chống dính, tráng bánh ở lửa vừa và đậy nắp ngắn để bánh chín đều mà không khô.",
+        "Nướng chả đến khi chín hoàn toàn và xém cạnh; tránh ép quá mạnh làm miếng chả mất nước."
+      ],
+      "dish_type": [
+        "Bánh cuốn",
+        "Đặc sản Phủ Lý"
+      ],
+      "main_ingredient": [
+        "bột gạo",
+        "thịt lợn",
+        "mộc nhĩ"
+      ],
+      "cooking_method": [
+        "tráng",
+        "nướng",
+        "pha nước chấm"
+      ],
+      "search_terms": [
+        "bánh cuốn ăn chả nướng",
+        "bánh cuốn Hà Nam",
+        "bữa sáng bánh cuốn nóng"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Đĩa bánh cuốn Phủ Lý nhân thịt mộc nhĩ, hành phi vàng, chả nướng và bát nước mắm chua ngọt.",
+      "time_note": "Thời gian tráng phụ thuộc đường kính chảo; giữ chảo nóng ổn định và tráng mỏng từng lớp.",
+      "total_time": 90,
+      "suggested_pairings": [
+        "Chả nướng",
+        "Rau thơm",
+        "Nước mắm ấm"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "banh-cuon-phu-ly",
+      "time_unit": "phút",
+      "ingredients": [
+        {
+          "name": "Bột gạo",
+          "quantity": 250,
+          "unit": "g",
+          "role": "main",
+          "notes": "Dùng bột gạo tẻ mịn.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Bột năng",
+          "quantity": 35,
+          "unit": "g",
+          "role": "main",
+          "notes": "Tạo độ dai nhẹ cho bánh.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 650,
+          "unit": "ml",
+          "role": "process_aid",
+          "notes": "Điều chỉnh thêm nếu bột quá đặc.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Thịt lợn xay",
+          "quantity": 250,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chia làm nhân bánh và chả nướng.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Mộc nhĩ khô",
+          "quantity": 12,
+          "unit": "g",
+          "role": "main",
+          "notes": "Ngâm nở, rửa sạch và băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 100,
+          "unit": "g",
+          "role": "main",
+          "notes": "Một phần làm nhân, phần còn lại thái mỏng phi vàng.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 45,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng cho nhân, chả và nước chấm.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Đường",
+          "quantity": 28,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Pha nước chấm.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Giấm gạo",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Có thể thay bằng nước cốt chanh.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm nhân và chả.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 35,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng tráng bánh và phi hành.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Rau thơm",
+          "quantity": 60,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": "Rửa sạch, để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 8,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhỏ để pha nước chấm.",
+          "scaling_rule": "linear",
+          "sequence": 13
+        },
+        {
+          "name": "Ớt đỏ",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "seasoning",
+          "notes": "Thái lát hoặc bỏ qua.",
+          "scaling_rule": "linear",
+          "sequence": 14
+        },
+        {
+          "name": "Muối",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Chia dùng cho bột và nhân.",
+          "scaling_rule": "linear",
+          "sequence": 15
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Ngâm mộc nhĩ đến khi nở, rửa sạch và băm nhỏ. Thái hành tím; giữ riêng một phần để phi hành."
+        },
+        {
+          "step": 2,
+          "instruction": "Trộn bột gạo, bột năng, nước và một nhúm muối đến khi mịn. Để bột nghỉ 20 phút, sau đó khuấy đều."
+        },
+        {
+          "step": 3,
+          "instruction": "Trộn thịt xay với mộc nhĩ, hành tím, một ít nước mắm và tiêu. Phần thịt dành làm chả viên thành miếng dẹt, nêm thêm chút tiêu và nước mắm."
+        },
+        {
+          "step": 4,
+          "instruction": "Pha nước mắm với đường, giấm và nước ấm; nếm vị chua ngọt dịu. Băm tỏi, thái ớt và rửa rau thơm."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Phi hành tím với dầu ở lửa nhỏ đến khi vàng giòn, vớt ra để ráo. Dùng một phần dầu hành để quét chảo."
+        },
+        {
+          "step": 2,
+          "instruction": "Xào phần nhân thịt với chút dầu đến khi chín hoàn toàn, tơi thơm rồi tắt bếp."
+        },
+        {
+          "step": 3,
+          "instruction": "Nướng chả bằng chảo nướng hoặc nồi chiên không dầu ở 190°C, trở mặt đến khi chín giữa và xém vàng hai mặt."
+        },
+        {
+          "step": 4,
+          "instruction": "Làm nóng chảo chống dính ở lửa vừa thấp, quét dầu thật mỏng. Múc một vá bột, nghiêng chảo cho bột phủ lớp mỏng, đậy nắp khoảng 40–60 giây đến khi bánh trong và chín. Gỡ bánh ra, cho nhân vào giữa rồi cuộn lại."
+        },
+        {
+          "step": 5,
+          "instruction": "Lặp lại đến hết bột và nhân. Dọn bánh nóng với hành phi, chả nướng, rau thơm và nước chấm."
+        }
+      ],
+      "keywords": [
+        "Bánh cuốn Phủ Lý",
+        "Bánh cuốn chả Phủ Lý",
+        "Bánh cuốn chả nướng Hà Nam",
+        "Đồng bằng Bắc Bộ",
+        "Hà Nam",
+        "bột gạo",
+        "thịt lợn",
+        "mộc nhĩ",
+        "Bánh cuốn",
+        "Đặc sản Phủ Lý",
+        "bánh cuốn ăn chả nướng",
+        "bánh cuốn Hà Nam",
+        "bữa sáng bánh cuốn nóng",
+        "70 phút"
+      ],
+      "tags": {
+        "region": [
+          "Đồng bằng Bắc Bộ"
+        ],
+        "province": [
+          "Hà Nam"
+        ],
+        "meal_type": [
+          "bữa sáng",
+          "bữa phụ"
+        ],
+        "dish_type": [
+          "Bánh cuốn",
+          "Đặc sản Phủ Lý"
+        ],
+        "main_ingredient": [
+          "bột gạo",
+          "thịt lợn",
+          "mộc nhĩ"
+        ],
+        "cooking_method": [
+          "tráng",
+          "nướng",
+          "pha nước chấm"
+        ],
+        "difficulty": "Vừa",
+        "prep_time": 35,
+        "cook_time": 35,
+        "servings": 4,
+        "spicy_level": 1,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Chả nướng",
+          "Rau thơm",
+          "Nước mắm ấm"
+        ],
+        "keywords": [
+          "Bánh cuốn Phủ Lý",
+          "Bánh cuốn chả Phủ Lý",
+          "Bánh cuốn chả nướng Hà Nam",
+          "Đồng bằng Bắc Bộ",
+          "Hà Nam",
+          "bột gạo",
+          "thịt lợn",
+          "mộc nhĩ",
+          "Bánh cuốn",
+          "Đặc sản Phủ Lý",
+          "bánh cuốn ăn chả nướng",
+          "bánh cuốn Hà Nam",
+          "bữa sáng bánh cuốn nóng",
+          "70 phút"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.vietnamairlines.com/go/vi/plan-book/travel/travel-guide/banh-cuon-phu-ly",
+          "publisher": "Vietnam Airlines",
+          "title": "Bánh cuốn Phủ Lý có gì gây thương nhớ? Gợi ý 7 quán ăn là mê",
+          "use": "Đối chiếu đặc trưng bánh gạo mềm dai, hành phi, nước chấm chan và chả nướng; phương pháp chảo chống dính là bản biên tập tại nhà.",
+          "accessed_at": "2026-10-22",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://suckhoedoisong.vn/banh-cuon-phu-ly.html",
+          "publisher": "Báo Sức khỏe và Đời sống",
+          "title": "Bánh cuốn Phủ Lý",
+          "use": "Đối chiếu nhận diện bánh cuốn Phủ Lý là đặc sản địa phương; nội dung công thức được Bếp Việt biên tập.",
+          "accessed_at": "2026-10-22",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Bánh cuốn Phủ Lý cho 2 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Bánh cuốn Phủ Lý cho 6 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Bánh cuốn Phủ Lý cho 8 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/banh-cuon-phu-ly-960.webp",
+          "page_url": "https://www.vietnamairlines.com/go/vi/plan-book/travel/travel-guide/banh-cuon-phu-ly",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu đặc trưng món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa bánh cuốn Phủ Lý nhân thịt mộc nhĩ, hành phi vàng, chả nướng và bát nước mắm chua ngọt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-22",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức được Bếp Việt biên tập từ nguồn tham khảo; định lượng và thời gian cần được nấu thử trước khi xem là bản hoàn chỉnh.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-22",
+        "needs": [
+          "Thử tỷ lệ bột với các loại bột gạo đóng gói khác nhau để bánh mỏng nhưng không rách.",
+          "Nấu thử phần chả để chuẩn hóa độ mặn khi ăn cùng nước chấm chan."
+        ]
+      }
+    },
+    {
+      "id": "BV444",
+      "slug": "ga-dot-la-chuc-o-thum",
+      "name": "Gà đốt lá chúc Ô Thum",
+      "aliases": [
+        "Gà đốt Ô Thum",
+        "Gà đốt lá chúc Tri Tôn"
+      ],
+      "region": [
+        "Đồng bằng sông Cửu Long"
+      ],
+      "province": [
+        "An Giang"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Vừa",
+      "servings": 4,
+      "serving_basis": "1 con gà khoảng 1,5 kg nấu cùng sả, tỏi và lá chúc, dùng với rau sống và nước chấm.",
+      "prep_time": 35,
+      "cook_time": 55,
+      "passive_time": 20,
+      "description": "Gà đốt lá chúc Ô Thum gắn với vùng Bảy Núi, An Giang và cách nấu của cộng đồng Khmer địa phương. Gà được ướp sả, tỏi, ớt cùng lá chúc có hương thơm nồng, lót thêm sả và lá dưới đáy nồi để đốt đến khi da vàng, thịt chín mềm. Bếp Việt biên tập cách làm bằng nồi gang có nắp kín để gia đình dễ thực hiện và kiểm soát độ chín.",
+      "finished_dish": "Gà vàng thơm lớp lá chúc và sả, da ráo giòn nhẹ, thịt bên trong mềm ẩm; nước chấm muối lá chúc dậy vị chua cay.",
+      "serving": "Chặt gà thành miếng vừa ăn, rắc lá chúc thái sợi. Dọn cùng gỏi bắp cải rau răm, dưa leo và chén muối lá chúc; ăn nóng khi da còn thơm.",
+      "tips": [
+        "Dùng gà tươi khoảng 1,3–1,6 kg để dễ chín đều trong nồi gia đình; không đốt gà đông lạnh chưa rã đông hoàn toàn.",
+        "Giữ nắp nồi kín, đặt sả dưới đáy để hạn chế cháy khét; kiểm tra nhiệt độ phần đùi đạt ít nhất 74°C trước khi dùng.",
+        "Lá chúc có mùi đậm hơn lá chanh; nếu không tìm được, thay bằng vỏ chanh bào và lá chanh, nhưng hương vị sẽ khác bản địa."
+      ],
+      "dish_type": [
+        "Gà đốt",
+        "Đặc sản Bảy Núi"
+      ],
+      "main_ingredient": [
+        "gà ta",
+        "lá chúc",
+        "sả"
+      ],
+      "cooking_method": [
+        "ướp",
+        "đốt nồi",
+        "nướng áp nhiệt"
+      ],
+      "search_terms": [
+        "gà đốt lá chúc An Giang",
+        "gà đốt Ô Thum Tri Tôn",
+        "món gà vùng Bảy Núi"
+      ],
+      "spicy_level": 2,
+      "image_alt": "Gà đốt lá chúc Ô Thum vàng giòn bày trên đĩa cùng gỏi bắp cải rau răm và chén muối ớt lá chúc.",
+      "time_note": "Nguồn địa phương mô tả thời gian đốt khoảng 40 phút; phiên bản nồi gia đình cần căn theo cỡ gà và xác nhận nhiệt độ chín an toàn.",
+      "total_time": 110,
+      "suggested_pairings": [
+        "Gỏi bắp cải rau răm",
+        "Dưa leo",
+        "Muối lá chúc"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "ga-dot-la-chuc-o-thum",
+      "time_unit": "phút",
+      "ingredients": [
+        {
+          "name": "Gà ta nguyên con",
+          "quantity": 1.5,
+          "unit": "kg",
+          "role": "main",
+          "notes": "Làm sạch, để ráo; chọn cỡ vừa để nồi gia đình giữ nhiệt tốt.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Sả cây",
+          "quantity": 90,
+          "unit": "g",
+          "role": "main",
+          "notes": "Một phần băm để ướp, phần còn lại đập dập lót nồi.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Lá chúc",
+          "quantity": 18,
+          "unit": "g",
+          "role": "main",
+          "notes": "Thái sợi; giữ riêng một phần để làm muối chấm.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 25,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhuyễn để ướp gà.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Ớt đỏ",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "seasoning",
+          "notes": "Tùy chọn, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm phần ướp gà.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Muối",
+          "quantity": 10,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Chia dùng cho gà và nước chấm.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Đường",
+          "quantity": 8,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Giúp cân vị mặn cay.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Quét mỏng lên gà và đáy nồi.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Bắp cải",
+          "quantity": 250,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": "Thái sợi để làm gỏi ăn kèm.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Rau răm",
+          "quantity": 25,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": "Rửa sạch, để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Chanh",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "seasoning",
+          "notes": "Dùng cho muối chấm và gỏi.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm gà hoặc nước chấm.",
+          "scaling_rule": "linear",
+          "sequence": 13
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm sạch gà, thấm khô. Băm sả, tỏi và ớt; thái mỏng lá chúc, giữ riêng một ít để rắc sau khi nấu."
+        },
+        {
+          "step": 2,
+          "instruction": "Trộn sả băm, tỏi, ớt, nước mắm, muối, đường và tiêu. Xoa đều hỗn hợp vào mặt trong và ngoài gà, ướp trong ngăn mát ít nhất 30 phút."
+        },
+        {
+          "step": 3,
+          "instruction": "Thái sợi bắp cải, rửa rau răm và để ráo. Giã một phần lá chúc với muối, ớt và nước cốt chanh để làm chén chấm."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Lót đáy nồi gang dày bằng sả đập dập và vài lá chúc, thêm một ít dầu. Đặt gà lên trên, đậy kín nắp."
+        },
+        {
+          "step": 2,
+          "instruction": "Đặt nồi lên bếp ở lửa vừa đến khi nồi nóng và nghe tiếng sôi nhẹ, sau đó hạ lửa nhỏ. Nấu khoảng 45–55 phút tùy cỡ gà; không mở nắp liên tục."
+        },
+        {
+          "step": 3,
+          "instruction": "Kiểm tra phần đùi dày nhất đạt ít nhất 74°C; nếu chưa chín, đậy nắp và tiếp tục nấu từng 5 phút. Tắt bếp, để gà nghỉ 10 phút rồi chặt miếng."
+        },
+        {
+          "step": 4,
+          "instruction": "Trộn bắp cải với rau răm, chút nước cốt chanh và muối. Rắc lá chúc lên gà, dọn cùng gỏi và chén muối lá chúc."
+        }
+      ],
+      "keywords": [
+        "Gà đốt lá chúc Ô Thum",
+        "Gà đốt Ô Thum",
+        "Gà đốt lá chúc Tri Tôn",
+        "Đồng bằng sông Cửu Long",
+        "An Giang",
+        "gà ta",
+        "lá chúc",
+        "sả",
+        "Gà đốt",
+        "Đặc sản Bảy Núi",
+        "gà đốt lá chúc An Giang",
+        "gà đốt Ô Thum Tri Tôn",
+        "món gà vùng Bảy Núi",
+        "90 phút"
+      ],
+      "tags": {
+        "region": [
+          "Đồng bằng sông Cửu Long"
+        ],
+        "province": [
+          "An Giang"
+        ],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Gà đốt",
+          "Đặc sản Bảy Núi"
+        ],
+        "main_ingredient": [
+          "gà ta",
+          "lá chúc",
+          "sả"
+        ],
+        "cooking_method": [
+          "ướp",
+          "đốt nồi",
+          "nướng áp nhiệt"
+        ],
+        "difficulty": "Vừa",
+        "prep_time": 35,
+        "cook_time": 55,
+        "servings": 4,
+        "spicy_level": 2,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Gỏi bắp cải rau răm",
+          "Dưa leo",
+          "Muối lá chúc"
+        ],
+        "keywords": [
+          "Gà đốt lá chúc Ô Thum",
+          "Gà đốt Ô Thum",
+          "Gà đốt lá chúc Tri Tôn",
+          "Đồng bằng sông Cửu Long",
+          "An Giang",
+          "gà ta",
+          "lá chúc",
+          "sả",
+          "Gà đốt",
+          "Đặc sản Bảy Núi",
+          "gà đốt lá chúc An Giang",
+          "gà đốt Ô Thum Tri Tôn",
+          "món gà vùng Bảy Núi",
+          "90 phút"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://sgtt.thesaigontimes.vn/ban-do-am-thuc-ve-xu-mam-thuong-thuc-mon-ga-dot-o-thum/",
+          "publisher": "Sài Gòn Tiếp Thị",
+          "title": "Về xứ mắm thưởng thức món gà đốt Ô Thum",
+          "use": "Đối chiếu cách ướp sả, tỏi, ớt, lá chúc; nấu trong nồi lót sả và lá chúc; món ăn kèm tại Ô Thum.",
+          "accessed_at": "2026-10-22",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://www.dulichvn.org.vn/index.php/item/ga-dot-o-thum-tru-danh-vung-bay-nui-an-giang-42116",
+          "publisher": "Cục Du lịch Quốc gia Việt Nam",
+          "title": "Gà đốt Ô Thum trứ danh vùng Bảy Núi (An Giang)",
+          "use": "Đối chiếu nguyên liệu gà ta, lá chúc, sả, tỏi, cách đốt nồi và nước chấm địa phương; thời lượng đã được Bếp Việt hiệu chỉnh cho an toàn tại nhà.",
+          "accessed_at": "2026-10-22",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Gà đốt lá chúc Ô Thum cho 2 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Gà đốt lá chúc Ô Thum cho 6 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Gà đốt lá chúc Ô Thum cho 8 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/ga-dot-la-chuc-o-thum-960.webp",
+          "page_url": "https://sgtt.thesaigontimes.vn/ban-do-am-thuc-ve-xu-mam-thuong-thuc-mon-ga-dot-o-thum/",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu đặc trưng món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Gà đốt lá chúc Ô Thum vàng giòn bày trên đĩa cùng gỏi bắp cải rau răm và chén muối ớt lá chúc.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-22",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức được Bếp Việt biên tập từ nguồn tham khảo; định lượng và thời gian cần được nấu thử trước khi xem là bản hoàn chỉnh.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-22",
+        "needs": [
+          "Thử nghiệm theo cỡ nồi và loại bếp; thời gian chín cần được xác nhận bằng nhiệt kế thực phẩm.",
+          "Có thể giảm ớt hoặc thay lá chúc bằng lá chanh và vỏ chanh khi nguyên liệu địa phương khó mua."
+        ]
+      }
+    },
+    {
+      "id": "BV445",
+      "slug": "don-quang-ngai",
+      "name": "Don Quảng Ngãi",
+      "aliases": [
+        "Tô don Quảng Ngãi",
+        "Don sông Trà"
+      ],
+      "region": [
+        "Nam Trung Bộ"
+      ],
+      "province": [
+        "Quảng Ngãi"
+      ],
+      "category": "Món nước",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Vừa",
+      "servings": 4,
+      "serving_basis": "4 tô don nấu nước luộc don trong, ăn kèm bánh tráng nướng, hành và ớt xanh.",
+      "prep_time": 25,
+      "cook_time": 20,
+      "passive_time": 0,
+      "description": "Don là loài nhuyễn thể nước lợ gắn với sông Trà và sông Vệ ở Quảng Ngãi. Món ăn giữ vị ngọt tự nhiên của don trong phần nước luộc thanh, điểm hành, rau thơm và ớt; khi ăn thường bẻ bánh tráng nướng vào tô. Bếp Việt biên tập khẩu phần gia đình từ cách ăn địa phương, hướng dẫn lọc kỹ nước luộc để loại cát và nấu chín don hoàn toàn.",
+      "finished_dish": "Nước don trong, ngọt dịu vị biển sông; thịt don nhỏ mềm, hành xanh và ớt tạo hương thơm, bánh tráng nướng thêm độ giòn bùi.",
+      "serving": "Múc don và nước dùng nóng vào tô, rắc hành lá, rau mùi, tiêu và ớt xanh. Bẻ bánh tráng nướng thành miếng vừa ăn rồi cho vào tô hoặc dùng riêng bên cạnh.",
+      "tips": [
+        "Chọn don còn sống, có nguồn gốc rõ; ngâm và thay nước vài lần để don nhả cát trước khi nấu.",
+        "Lọc nước luộc qua rây mịn hoặc vải sạch sau khi tách thịt để loại cát còn sót.",
+        "Bánh tráng nên bẻ vào tô ngay trước khi ăn để giữ chút giòn; nêm nước mắm và ớt riêng theo khẩu vị."
+      ],
+      "dish_type": [
+        "Món nhuyễn thể",
+        "Đặc sản Quảng Ngãi"
+      ],
+      "main_ingredient": [
+        "don",
+        "bánh tráng nướng",
+        "hành lá"
+      ],
+      "cooking_method": [
+        "luộc",
+        "lọc nước dùng",
+        "nấu canh"
+      ],
+      "search_terms": [
+        "don Quảng Ngãi",
+        "don sông Trà",
+        "tô don ăn bánh tráng nướng"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Tô don Quảng Ngãi với thịt don trong nước dùng thanh, bánh tráng nướng bẻ miếng, hành lá, rau thơm và ớt xanh.",
+      "time_note": "Thời gian ngâm và nhả cát không tính vào thời gian nấu; thời gian đun phụ thuộc kích thước và độ tươi của don.",
+      "total_time": 45,
+      "suggested_pairings": [
+        "Bánh tráng nướng",
+        "Ớt xanh",
+        "Rau mùi"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "don-quang-ngai",
+      "time_unit": "phút",
+      "ingredients": [
+        {
+          "name": "Don tươi nguyên vỏ",
+          "quantity": 1,
+          "unit": "kg",
+          "role": "main",
+          "notes": "Chọn don sống, còn khép vỏ; ngâm và rửa kỹ để nhả cát.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 1.8,
+          "unit": "lít",
+          "role": "main",
+          "notes": "Dùng luộc don; lượng nước có thể điều chỉnh theo độ đậm mong muốn.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Bánh tráng gạo",
+          "quantity": 2,
+          "unit": "tấm",
+          "role": "main",
+          "notes": "Nướng phồng, bẻ miếng để ăn kèm.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 25,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Bóc vỏ, thái mỏng.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 35,
+          "unit": "g",
+          "role": "main",
+          "notes": "Thái nhỏ, dùng khi dọn.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Rau mùi",
+          "quantity": 15,
+          "unit": "g",
+          "role": "main",
+          "notes": "Rửa sạch, thái vừa.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Ớt xanh",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "seasoning",
+          "notes": "Thái lát, gia giảm theo khẩu vị.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm từng ít để không át vị ngọt tự nhiên của don.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Muối",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm nước dùng sau khi lọc.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Rắc khi dọn.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 8,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng phi hành tím nhẹ, có thể bỏ qua.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Nhặt bỏ don vỡ hoặc có mùi lạ. Ngâm don trong nước sạch, thay nước vài lần và đảo nhẹ để nhả cát; rửa lại trước khi nấu."
+        },
+        {
+          "step": 2,
+          "instruction": "Nướng bánh tráng đến khi phồng giòn rồi để nguội. Rửa hành lá, rau mùi và ớt; thái nhỏ để riêng."
+        },
+        {
+          "step": 3,
+          "instruction": "Thái mỏng hành tím. Chuẩn bị rây mịn hoặc vải sạch để lọc nước luộc sau khi don mở vỏ."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đun sôi nước trong nồi lớn, cho don vào và đảo đều đến khi vỏ mở. Bỏ những con không mở sau khi nấu; không nếm nước luộc khi don còn sống."
+        },
+        {
+          "step": 2,
+          "instruction": "Vớt don ra, để nguội vừa đủ cầm rồi tách lấy thịt. Lọc toàn bộ nước luộc qua rây mịn hoặc vải sạch, để lắng cặn rồi rót phần nước trong sang nồi khác."
+        },
+        {
+          "step": 3,
+          "instruction": "Phi hành tím với chút dầu đến thơm, cho thịt don vào đảo nhanh. Đổ phần nước dùng đã lọc vào, đun sôi nhẹ thêm vài phút để don chín kỹ; nêm muối và nước mắm vừa vị."
+        },
+        {
+          "step": 4,
+          "instruction": "Múc don cùng nước dùng nóng ra tô. Thêm hành lá, rau mùi, tiêu và ớt xanh; bẻ bánh tráng nướng vào tô hoặc dọn riêng để ăn kèm."
+        }
+      ],
+      "keywords": [
+        "Don Quảng Ngãi",
+        "Tô don Quảng Ngãi",
+        "Don sông Trà",
+        "Nam Trung Bộ",
+        "Quảng Ngãi",
+        "don",
+        "bánh tráng nướng",
+        "hành lá",
+        "Món nhuyễn thể",
+        "Đặc sản Quảng Ngãi",
+        "don Quảng Ngãi",
+        "don sông Trà",
+        "tô don ăn bánh tráng nướng",
+        "45 phút"
+      ],
+      "tags": {
+        "region": [
+          "Nam Trung Bộ"
+        ],
+        "province": [
+          "Quảng Ngãi"
+        ],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Món nhuyễn thể",
+          "Đặc sản Quảng Ngãi"
+        ],
+        "main_ingredient": [
+          "don",
+          "bánh tráng nướng",
+          "hành lá"
+        ],
+        "cooking_method": [
+          "luộc",
+          "lọc nước dùng",
+          "nấu canh"
+        ],
+        "difficulty": "Vừa",
+        "prep_time": 25,
+        "cook_time": 20,
+        "servings": 4,
+        "spicy_level": 1,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Bánh tráng nướng",
+          "Ớt xanh",
+          "Rau mùi"
+        ],
+        "keywords": [
+          "Don Quảng Ngãi",
+          "Tô don Quảng Ngãi",
+          "Don sông Trà",
+          "Nam Trung Bộ",
+          "Quảng Ngãi",
+          "don",
+          "bánh tráng nướng",
+          "hành lá",
+          "Món nhuyễn thể",
+          "Đặc sản Quảng Ngãi",
+          "don Quảng Ngãi",
+          "don sông Trà",
+          "tô don ăn bánh tráng nướng",
+          "45 phút"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://baoquangngai.vn/channel/2047/202102/phai-long-am-thuc-song-tra-3043267/",
+          "publisher": "Báo Quảng Ngãi",
+          "title": "Phải lòng ẩm thực sông Trà",
+          "use": "Đối chiếu don là đặc sản gắn với sông Trà, cách ăn cùng bánh tráng nướng và nét nêm nếm giản dị; công thức gia đình được Bếp Việt biên tập.",
+          "accessed_at": "2026-10-22",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://vnexpress.net/cam-nang-du-lich-quang-ngai-4631099.html",
+          "publisher": "VnExpress Du lịch",
+          "title": "Cẩm nang Du lịch Quảng Ngãi 2024: Điểm đến, đặc sản, lưu trú",
+          "use": "Đối chiếu cách luộc don, tách thịt, lọc nước dùng và ăn với bánh tráng nướng, hành, rau thơm, ớt; nội dung được Bếp Việt viết lại.",
+          "accessed_at": "2026-10-22",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Don Quảng Ngãi cho 2 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Don Quảng Ngãi cho 6 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Don Quảng Ngãi cho 8 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/don-quang-ngai-960.webp",
+          "page_url": "https://baoquangngai.vn/channel/2047/202102/phai-long-am-thuc-song-tra-3043267/",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu đặc trưng món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Tô don Quảng Ngãi với thịt don trong nước dùng thanh, bánh tráng nướng bẻ miếng, hành lá, rau thơm và ớt xanh.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-22",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức được Bếp Việt biên tập từ nguồn tham khảo; định lượng và thời gian cần được nấu thử trước khi xem là bản hoàn chỉnh.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-22",
+        "needs": [
+          "Thử nấu với don từ các nguồn cung ứng khác nhau để chuẩn hóa tỷ lệ nước và độ mặn tự nhiên.",
+          "Kiểm tra độ nhả cát và thời gian đun theo kích thước don; hướng dẫn loại bỏ don không mở vỏ cần được giữ rõ."
+        ]
+      }
+    }
+  ]
+}

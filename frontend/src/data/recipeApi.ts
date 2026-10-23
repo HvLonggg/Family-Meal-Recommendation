@@ -1,9 +1,12 @@
 import { getRecipe, replaceRecipeCatalog, type Recipe } from '@/data/recipes';
+import editedImages from '@/data/recipeImageAssets.json';
 import { apiRequest } from '@/lib/api/client';
+import { UserFacingError } from '@/lib/errors';
 
 interface CatalogContent {
   aliases?: string[];
   region?: string[];
+  province?: string[];
   category?: string;
   passive_time?: number;
   finished_dish?: string;
@@ -19,6 +22,13 @@ interface CatalogContent {
   tags?: Record<string, string[] | string | number | boolean>;
   display_image?: { source: string; rights_status: string; page_url?: string; license?: string };
   media?: { source: string; page_url: string; rights_status: string; license?: string | null }[];
+}
+
+interface EditedCatalogImage {
+  src: string;
+  srcSet: string;
+  master: string;
+  alt: string;
 }
 
 export interface ApiRecipe {
@@ -54,6 +64,7 @@ export function adaptRecipe(item: ApiRecipe, idToSlug: Map<string, string>): Rec
   const content = item.content;
   const fallback = getRecipe(item.slug);
   const image = content.display_image ?? content.media?.[0];
+  const catalogImage = (editedImages as Record<string, EditedCatalogImage>)[item.slug];
   const editedImage =
     fallback?.imageKind === 'project' && fallback.imageSrcSet
       ? fallback
@@ -66,7 +77,15 @@ export function adaptRecipe(item: ApiRecipe, idToSlug: Map<string, string>): Rec
             imageAlt: item.image_alt,
             imageCredit: 'Ảnh minh họa của Bếp Việt được biên tập bởi tác giả',
           }
-        : undefined;
+        : catalogImage
+          ? {
+              image: catalogImage.src,
+              imageSrcSet: catalogImage.srcSet,
+              imageMaster: catalogImage.master,
+              imageAlt: catalogImage.alt,
+              imageCredit: 'Ảnh minh họa của Bếp Việt được biên tập bởi tác giả',
+            }
+          : undefined;
   const ingredients: Recipe['ingredients'] = [];
   for (const ingredient of item.ingredients) {
     let group = ingredients.find((entry) => entry.group === ingredient.group_name);
@@ -89,6 +108,7 @@ export function adaptRecipe(item: ApiRecipe, idToSlug: Map<string, string>): Rec
     catalogId: item.catalog_id ?? undefined,
     name: item.name,
     aliases: content.aliases ?? [],
+    provinces: content.province ?? [],
     excerpt: item.excerpt,
     image: editedImage?.image ?? item.image_path,
     imageSrcSet: editedImage?.imageSrcSet,
@@ -147,6 +167,26 @@ export function adaptRecipe(item: ApiRecipe, idToSlug: Map<string, string>): Rec
 
 export type CatalogLoadProgress = (progress: number) => void;
 
+async function readStaticCatalog() {
+  const response = await fetch('/data/recipe-catalog.json', {
+    signal: AbortSignal.timeout(5000),
+  });
+  if (!response.ok) throw new Error('Recipe snapshot unavailable.');
+  return (await response.json()) as { data: ApiRecipe[]; total: number };
+}
+
+function supplementCatalog(apiCatalog: ApiRecipe[], staticCatalog: ApiRecipe[]) {
+  const slugs = new Set(apiCatalog.map((recipe) => recipe.slug));
+  const catalogIds = new Set(apiCatalog.flatMap((recipe) => recipe.catalog_id ?? []));
+  const missingRecipes = staticCatalog.filter(
+    (recipe) =>
+      recipe.slug !== 'thit-kho-trung-qa' &&
+      !slugs.has(recipe.slug) &&
+      (!recipe.catalog_id || !catalogIds.has(recipe.catalog_id)),
+  );
+  return [...apiCatalog, ...missingRecipes];
+}
+
 export async function loadRecipeCatalog(onProgress: CatalogLoadProgress = () => undefined) {
   onProgress(12);
   try {
@@ -155,11 +195,7 @@ export async function loadRecipeCatalog(onProgress: CatalogLoadProgress = () => 
   } catch (error) {
     try {
       onProgress(20);
-      const response = await fetch('/data/recipe-catalog.json', {
-        signal: AbortSignal.timeout(5000),
-      });
-      if (!response.ok) throw error;
-      const snapshot = (await response.json()) as { data: ApiRecipe[]; total: number };
+      const snapshot = await readStaticCatalog();
       onProgress(84);
       installCatalog(snapshot.data, snapshot.total);
       onProgress(92);
@@ -176,7 +212,7 @@ function installCatalog(catalog: ApiRecipe[], total: number) {
     catalog.length !== total ||
     new Set(catalog.map((item) => item.slug)).size !== total
   )
-    throw new Error('Kho món chưa được tải đầy đủ.');
+    throw new UserFacingError('Kho món chưa được tải đầy đủ.');
   const ids = new Map(
     catalog.flatMap((item) => (item.catalog_id ? [[item.catalog_id, item.slug] as const] : [])),
   );
@@ -204,7 +240,9 @@ async function loadApiCatalog(onProgress: CatalogLoadProgress) {
       }),
     ),
   );
-  const catalog = [...first.data, ...pages.flatMap((page) => page.data)];
-  installCatalog(catalog, first.total);
+  const apiCatalog = [...first.data, ...pages.flatMap((page) => page.data)];
+  const snapshot = await readStaticCatalog().catch(() => undefined);
+  const catalog = snapshot ? supplementCatalog(apiCatalog, snapshot.data) : apiCatalog;
+  installCatalog(catalog, catalog.length);
   onProgress(92);
 }

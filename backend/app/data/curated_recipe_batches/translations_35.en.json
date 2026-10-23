@@ -1,0 +1,826 @@
+{
+  "batch": 35,
+  "language": "en",
+  "recipes": [
+    {
+      "id": "BV501",
+      "slug": "banh-khoai-ca-kinh-hue",
+      "name": "Hue Lagoon Rabbitfish Pancake",
+      "category": "Savory dishes",
+      "description": "This Hue lagoon specialty pairs small rabbitfish with a thin rice-flour batter, bean sprouts and scallions. Bep Viet adapts it for a family kitchen, keeping the fish at the center and seasoning it lightly to accompany the dipping sauce.",
+      "serving_basis": "4 small cakes, served hot with raw vegetables and dipping sauce.",
+      "finished_dish": "The cake is golden and crispy at the edges, the middle is soft and fragrant with rice flour; The goby fish is cooked to perfection, with a natural sweetness mixed with bean sprouts and onions.",
+      "serving": "Serve immediately while the cake is still hot with washed raw vegetables. Can be served with chili garlic fish sauce or thick Hue-style dipping sauce; Season separately to taste.",
+      "tips": [
+        "Choose a small, firm-bodied orca; Clean the gills and intestines, pat dry before sauteing.",
+        "Mix enough flour to cover the bottom of the pan in a thin layer so that the cake is crispy but not crumbly.",
+        "Only add the bean sprouts at the end and cover briefly so that the bean sprouts are just hot and don't release too much juice."
+      ],
+      "image_alt": "Crispy yellow Hue goby fish cake, with small fish, bean sprouts and green onions, served on a ceramic plate.",
+      "time_note": "Frying time depends on the thickness of the cake and the size of the fish; Make sure the fish is completely cooked before serving.",
+      "region": [
+        "North Central Vietnam"
+      ],
+      "province": [
+        "Thừa Thiên Huế"
+      ],
+      "meal_type": [
+        "breakfast",
+        "snack",
+        "dinner"
+      ],
+      "difficulty": "Moderate",
+      "dish_type": [
+        "Savory rice cake",
+        "Hue lagoon specialty"
+      ],
+      "main_ingredient": [
+        "cetacean",
+        "rice flour",
+        "bean sprouts"
+      ],
+      "cooking_method": [
+        "prepare the batter",
+        "pan-fry",
+        "fried cake"
+      ],
+      "search_terms": [
+        "Orca fish cake",
+        "Dam Chuon banh mi cake",
+        "Hue dish with whale fish"
+      ],
+      "suggested_pairings": [
+        "Fresh herbs and greens",
+        "Garlic-chili fish sauce"
+      ],
+      "keywords": [
+        "Hue Lagoon Rabbitfish Pancake",
+        "North Central Vietnam",
+        "Thừa Thiên Huế",
+        "cetacean",
+        "rice flour",
+        "Dam Chuon banh mi cake",
+        "60 minutes"
+      ],
+      "ingredients": [
+        [
+          "Small rabbitfish",
+          "g",
+          "Clean and leave whole if the fish is small."
+        ],
+        [
+          "Rice flour",
+          "g",
+          "Sift until fine."
+        ],
+        [
+          "Water",
+          "ml",
+          "Add slowly to adjust the thinness of the powder."
+        ],
+        [
+          "Mung bean sprouts",
+          "g",
+          "Rinse and drain well."
+        ],
+        [
+          "Scallions",
+          "g",
+          "Finely chop."
+        ],
+        [
+          "Cooking oil",
+          "ml",
+          "Use just enough for the pan."
+        ],
+        [
+          "Salt",
+          "g",
+          "Season the fish and flour lightly."
+        ],
+        [
+          "Ground black pepper",
+          "g",
+          "Optional."
+        ]
+      ],
+      "preparation_steps": [
+        "Scale, remove gills and guts of fish; Wash quickly, drain and pat dry. Marinate fish with salt and pepper for 10 minutes.",
+        "Stir rice flour with water and remaining salt until the mixture is smooth and slightly thin; Let the dough rest for 10 minutes.",
+        "Wash bean sprouts, chop green onions and prepare raw vegetables and dipping sauce to serve."
+      ],
+      "cooking_steps": [
+        "Heat a small non-stick pan with a little oil. Saute the fish over medium heat until both sides are firm and almost cooked, then remove to a plate.",
+        "Brush a thin layer of oil, place the fish in the pan and pour the batter into a thin layer around the fish. Sprinkle bean sprouts and green onions on top.",
+        "Cover for about 2-3 minutes until the dough surface is firm, open the lid and fry further until the edges are golden and crispy. Fold the cake gently and serve hot."
+      ],
+      "tags": {
+        "region": [
+          "North Central Vietnam"
+        ],
+        "province": [
+          "Thừa Thiên Huế"
+        ],
+        "meal_type": [
+          "breakfast",
+          "snack",
+          "dinner"
+        ],
+        "dish_type": [
+          "Savory rice cake",
+          "Hue lagoon specialty"
+        ],
+        "main_ingredient": [
+          "cetacean",
+          "rice flour",
+          "bean sprouts"
+        ],
+        "cooking_method": [
+          "prepare the batter",
+          "pan-fry",
+          "fried cake"
+        ],
+        "difficulty": "Moderate",
+        "prep_time": 25,
+        "cook_time": 25,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Fresh herbs and greens",
+          "Garlic-chili fish sauce"
+        ],
+        "keywords": [
+          "Hue Lagoon Rabbitfish Pancake",
+          "Dam Chuon banh mi cake",
+          "Hue dish with whale fish"
+        ]
+      }
+    },
+    {
+      "id": "BV502",
+      "slug": "nem-lui-hue",
+      "name": "Huế Nem Lụi Lemongrass Skewers",
+      "category": "Grilled dish",
+      "description": "Huế nem lụi are seasoned ground meat wrapped around lemongrass stalks and grilled, commonly eaten as rolls with rice paper, noodles and herbs. This Bếp Việt batch adds shrimp and pork fat for a juicy texture.",
+      "serving_basis": "About 12 nem lụi skewers served with rice vermicelli and fresh herbs.",
+      "finished_dish": "Golden grilled skewers smell of lemongrass and remain tender; serve with herbs, green banana, cucumber, noodles and dipping sauce.",
+      "serving": "Wrap a skewer, noodles and herbs in rice paper, then dip in sauce.",
+      "tips": [
+        "Knead the mixture until sticky so it adheres to the lemongrass.",
+        "Chill the mixture so it absorbs seasoning and is easier to shape.",
+        "Turn the skewers halfway through grilling for even browning."
+      ],
+      "image_alt": "Golden Huế nem lụi grilled around lemongrass, served with vermicelli, herbs, cucumber and rice paper; transparent background.",
+      "time_note": "About 3 hours 55 minutes, including 3 hours of chilling time.",
+      "region": [
+        "North Central Vietnam"
+      ],
+      "province": [
+        "Huế"
+      ],
+      "meal_type": [
+        "main course",
+        "snack"
+      ],
+      "difficulty": "Intermediate",
+      "dish_type": [
+        "Grilled dish",
+        "Huế specialty"
+      ],
+      "main_ingredient": [
+        "pork",
+        "shrimp",
+        "lemongrass"
+      ],
+      "cooking_method": [
+        "marinating",
+        "kneading",
+        "grilling"
+      ],
+      "search_terms": [
+        "Huế nem lụi",
+        "lemongrass pork skewers",
+        "Vietnamese grilled pork rolls"
+      ],
+      "suggested_pairings": [
+        "Fresh rice vermicelli",
+        "Rice paper",
+        "Fresh herbs"
+      ],
+      "keywords": [
+        "nem lụi",
+        "Huế",
+        "pork",
+        "shrimp",
+        "lemongrass",
+        "grilled food",
+        "rice paper"
+      ],
+      "ingredients": [
+        [
+          "Ground pork",
+          "g",
+          "Use pork shoulder."
+        ],
+        [
+          "Fresh shrimp",
+          "g",
+          "Peel, devein and mince."
+        ],
+        [
+          "Pork fat",
+          "g",
+          "Dice very finely."
+        ],
+        [
+          "Egg yolk",
+          "piece",
+          "Helps bind the meat."
+        ],
+        [
+          "Lemongrass stalks",
+          "stalks",
+          "Mince 2; use the rest as skewers."
+        ],
+        [
+          "Shallots",
+          "g",
+          "Peel and mince."
+        ],
+        [
+          "Tapioca starch",
+          "g",
+          "Helps bind the mixture."
+        ],
+        [
+          "Fish sauce",
+          "ml",
+          "Season the mixture."
+        ],
+        [
+          "Brown sugar",
+          "g",
+          "Season the mixture."
+        ],
+        [
+          "Black pepper",
+          "g",
+          "Freshly ground."
+        ],
+        [
+          "Salt",
+          "g",
+          "Season lightly."
+        ],
+        [
+          "Fresh rice vermicelli",
+          "g",
+          "Blanch if needed."
+        ],
+        [
+          "Rice paper",
+          "sheets",
+          "For wrapping."
+        ],
+        [
+          "Mixed fresh herbs",
+          "g",
+          "Wash and drain."
+        ],
+        [
+          "Cucumber",
+          "g",
+          "Cut into batons."
+        ],
+        [
+          "Green banana",
+          "g",
+          "Slice thinly and soak in lemon water."
+        ],
+        [
+          "Fermented bean dipping sauce",
+          "ml",
+          "Serve alongside."
+        ]
+      ],
+      "preparation_steps": [
+        "Mince shrimp, shallot and tender lemongrass; dice the pork fat finely.",
+        "Combine pork, shrimp, fat, egg yolk, lemongrass, shallot, starch, fish sauce, sugar, pepper and salt. Knead until sticky and cohesive.",
+        "Cover and chill for at least 3 hours. Wash herbs; slice cucumber and green banana; prepare noodles and rice paper."
+      ],
+      "cooking_steps": [
+        "With damp hands, wrap portions of meat evenly around lemongrass stalks.",
+        "Grill at 180°C for about 13–15 minutes, turning halfway, until cooked and golden.",
+        "Serve hot with noodles, herbs, green banana, cucumber, rice paper and dipping sauce."
+      ],
+      "tags": {
+        "region": [
+          "North Central Vietnam"
+        ],
+        "province": [
+          "Huế"
+        ],
+        "meal_type": [
+          "main course",
+          "snack"
+        ],
+        "dish_type": [
+          "Grilled dish",
+          "Huế specialty"
+        ],
+        "main_ingredient": [
+          "pork",
+          "shrimp",
+          "lemongrass"
+        ],
+        "cooking_method": [
+          "marinating",
+          "kneading",
+          "grilling"
+        ],
+        "difficulty": "Intermediate",
+        "prep_time": 30,
+        "cook_time": 25,
+        "servings": 4,
+        "spicy_level": 1,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Fresh rice vermicelli",
+          "Rice paper",
+          "Fresh herbs"
+        ],
+        "keywords": [
+          "nem lụi",
+          "Huế",
+          "pork",
+          "shrimp",
+          "lemongrass",
+          "grilled food",
+          "rice paper"
+        ]
+      }
+    },
+    {
+      "id": "BV503",
+      "slug": "ca-tim-kho-dau-hu-chay",
+      "name": "Vegetarian Braised Eggplant and Tofu",
+      "category": "Vegetarian dishes",
+      "description": "Tender eggplant and lightly fried tofu are gently braised with soy sauce and black pepper for an easy, home-style vegetarian meal. Bep Viet keeps the braising liquid light enough to coat the ingredients, with optional leek and chili for aroma without excess salt.",
+      "serving_basis": "4 servings of braised dish eaten with rice in a family vegetarian meal.",
+      "finished_dish": "The eggplant is soft but still in pieces, the tofu is soaked in soy sauce, the stock is light and fragrant with pepper.",
+      "serving": "Serve hot with white rice, sprinkled with green onions or coriander. Serve with boiled vegetables or cucumber to balance the strong taste.",
+      "tips": [
+        "Choose firm eggplants, cut them and soak them in diluted salt water to limit browning.",
+        "Pan-frying or pan-frying the tofu helps the tofu retain its shape when braised.",
+        "Season with soy sauce slowly; The amount of stock reduces during cooking so you need to taste it at the end."
+      ],
+      "image_alt": "Eggplant braised with soft vegetarian tofu in a clay pot, seasoned with green onions and pepper.",
+      "time_note": "Do not braise for too long after the eggplant is soft so that the eggplant pieces do not fall apart.",
+      "region": [
+        "All regions"
+      ],
+      "province": [],
+      "meal_type": [
+        "lunch",
+        "dinner"
+      ],
+      "difficulty": "Easy",
+      "dish_type": [
+        "Braised dish",
+        "Family vegetarian dish"
+      ],
+      "main_ingredient": [
+        "eggplant",
+        "tofu"
+      ],
+      "cooking_method": [
+        "pan-fry",
+        "braising"
+      ],
+      "search_terms": [
+        "Eggplant braised with vegetarian tofu",
+        "Easy to cook vegetarian dish",
+        "eggplant braised in soy sauce"
+      ],
+      "suggested_pairings": [
+        "Steamed rice",
+        "blanched greens"
+      ],
+      "keywords": [
+        "Vegetarian Braised Eggplant and Tofu",
+        "All regions",
+        "vegetarian dish",
+        "eggplant",
+        "tofu",
+        "soy sauce",
+        "40 minutes"
+      ],
+      "ingredients": [
+        [
+          "Eggplant",
+          "g",
+          "Cut into bite-sized pieces, soak in diluted salt water and drain."
+        ],
+        [
+          "Firm tofu",
+          "g",
+          "Cut into square pieces, pat dry."
+        ],
+        [
+          "Soy sauce",
+          "ml",
+          "Choose a suitable type of vegetarian dish."
+        ],
+        [
+          "Leek",
+          "g",
+          "Sliced; Use the white part to fry."
+        ],
+        [
+          "Water",
+          "ml",
+          "You can partially replace it with vegetable broth."
+        ],
+        [
+          "Sugar",
+          "g",
+          "Balance the saltiness of the soy sauce."
+        ],
+        [
+          "Cooking oil",
+          "ml",
+          "Use sauerkraut and saute the beans."
+        ],
+        [
+          "Ground black pepper",
+          "g",
+          "For finishing."
+        ]
+      ],
+      "preparation_steps": [
+        "Cut the eggplant into pieces about 3 cm thick, soak in salt water for 10 minutes, then quickly wash and drain.",
+        "Cut tofu into bite-sized pieces, use a clean towel to blot the surface so that when pan-frying, less oil splashes.",
+        "Mix soy sauce, sugar and filtered water; Slice the boa-ro onion."
+      ],
+      "cooking_steps": [
+        "Saute the tofu with a little oil until the sides are lightly golden, then take it out.",
+        "Stir-fry the boron in the pot, add the eggplant and stir gently for about 2 minutes.",
+        "Add tofu and soy sauce mixture, bring to a boil, then reduce heat to low, cover and simmer for 12–15 minutes.",
+        "Open the lid, stir gently once and cook more until the eggplant is soft and the stock coats the ingredients. Taste again, sprinkle with pepper and turn off the stove."
+      ],
+      "tags": {
+        "region": [
+          "All regions"
+        ],
+        "province": [],
+        "meal_type": [
+          "lunch",
+          "dinner"
+        ],
+        "dish_type": [
+          "Braised dish",
+          "Family vegetarian dish"
+        ],
+        "main_ingredient": [
+          "eggplant",
+          "tofu"
+        ],
+        "cooking_method": [
+          "pan-fry",
+          "braising"
+        ],
+        "difficulty": "Easy",
+        "prep_time": 15,
+        "cook_time": 25,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Steamed rice",
+          "blanched greens"
+        ],
+        "keywords": [
+          "Eggplant braised with vegetarian tofu",
+          "Easy to cook vegetarian dish",
+          "eggplant braised in soy sauce"
+        ]
+      }
+    },
+    {
+      "id": "BV504",
+      "slug": "banh-tai-yen-mien-tay",
+      "name": "Mekong Delta Bánh Tai Yến",
+      "category": "Dessert",
+      "description": "Bánh tai yến is a Mekong Delta snack with a flared rim resembling a bird’s nest, made with rice flour, tapioca starch, coconut milk and sugar. This Bếp Việt batch rests the batter before frying individual cakes.",
+      "serving_basis": "About 10 small cakes, best served hot.",
+      "finished_dish": "The center puffs soft and chewy while the thin rim spreads and crisps to a golden brown; mildly sweet with coconut aroma.",
+      "serving": "Drain briefly and eat hot while the rim is crisp.",
+      "tips": [
+        "Rest the batter for about 4 hours, as described in the cultural reference.",
+        "Stir the batter before each scoop because flour may settle.",
+        "Pour a modest amount into hot oil so the rim flares and center puffs."
+      ],
+      "image_alt": "Golden-brown Mekong Delta bánh tai yến with flared crisp edges and a puffed center; transparent background.",
+      "time_note": "About 4 hours 35 minutes, mostly batter resting time.",
+      "region": [
+        "Mekong Delta"
+      ],
+      "province": [
+        "Southern Mekong Delta"
+      ],
+      "meal_type": [
+        "snack",
+        "dessert"
+      ],
+      "difficulty": "Easy",
+      "dish_type": [
+        "Fried cake",
+        "Mekong Delta specialty"
+      ],
+      "main_ingredient": [
+        "rice flour",
+        "tapioca starch",
+        "coconut milk"
+      ],
+      "cooking_method": [
+        "mixing batter",
+        "resting",
+        "deep-frying"
+      ],
+      "search_terms": [
+        "Mekong Delta bánh tai yến",
+        "coconut bánh tai yến",
+        "bird-nest cake"
+      ],
+      "suggested_pairings": [
+        "Hot tea",
+        "Coconut milk",
+        "Ripe banana"
+      ],
+      "keywords": [
+        "bánh tai yến",
+        "Mekong Delta",
+        "rice flour",
+        "tapioca starch",
+        "coconut milk",
+        "fried cake"
+      ],
+      "ingredients": [
+        [
+          "Rice flour",
+          "g",
+          "Sift."
+        ],
+        [
+          "Tapioca starch",
+          "g",
+          "Adds a light chew."
+        ],
+        [
+          "Coconut milk",
+          "ml",
+          "Stir before measuring."
+        ],
+        [
+          "Water",
+          "ml",
+          "Adjust batter consistency."
+        ],
+        [
+          "Sugar",
+          "g",
+          "Dissolve into the batter."
+        ],
+        [
+          "Salt",
+          "g",
+          "Balances the sweetness."
+        ],
+        [
+          "Cooking oil",
+          "ml",
+          "Enough for frying individual cakes."
+        ]
+      ],
+      "preparation_steps": [
+        "Sift rice flour and tapioca starch into a bowl.",
+        "Dissolve sugar and salt in coconut milk and water; whisk into the flour until smooth.",
+        "Cover and rest the batter for about 4 hours. Stir before frying."
+      ],
+      "cooking_steps": [
+        "Heat oil in a deep pan over medium heat. Ladle a small amount of batter into the center.",
+        "Fry until the center puffs and the rim curls and turns golden. Turn gently if needed.",
+        "Drain on paper towels and serve hot."
+      ],
+      "tags": {
+        "region": [
+          "Mekong Delta"
+        ],
+        "province": [
+          "Southern Mekong Delta"
+        ],
+        "meal_type": [
+          "snack",
+          "dessert"
+        ],
+        "dish_type": [
+          "Fried cake",
+          "Mekong Delta specialty"
+        ],
+        "main_ingredient": [
+          "rice flour",
+          "tapioca starch",
+          "coconut milk"
+        ],
+        "cooking_method": [
+          "mixing batter",
+          "resting",
+          "deep-frying"
+        ],
+        "difficulty": "Easy",
+        "prep_time": 15,
+        "cook_time": 20,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Hot tea",
+          "Coconut milk",
+          "Ripe banana"
+        ],
+        "keywords": [
+          "bánh tai yến",
+          "Mekong Delta",
+          "rice flour",
+          "tapioca starch",
+          "coconut milk",
+          "fried cake"
+        ]
+      }
+    },
+    {
+      "id": "BV505",
+      "slug": "banh-gung-khmer-soc-trang",
+      "name": "Khmer Ginger Cake from Sóc Trăng",
+      "category": "Traditional cake",
+      "description": "Bánh gừng, called Num-khơ-nhây in Khmer, is a traditional Khmer Southern Vietnamese cake served during festivals, holidays and celebrations in Sóc Trăng. Sticky-rice flour and egg dough is shaped like ginger roots, fried and coated with sugar.",
+      "serving_basis": "About 12 small ginger-shaped cakes coated with crystallized sugar.",
+      "finished_dish": "Ginger-root shapes have a crisp, airy shell with a white sugar coating and a sweet, rich rice-and-egg flavor.",
+      "serving": "Let dry completely and serve with tea; store airtight in a dry place.",
+      "tips": [
+        "Do not drop the cakes into very hot oil; it can harden them before they rise.",
+        "Fry until golden and firm, then drain before glazing.",
+        "Stir gently in the glaze until sugar turns white and crystallizes on the cakes."
+      ],
+      "image_alt": "Sóc Trăng Khmer bánh gừng shaped like ginger roots, fried golden and coated in white sugar; transparent background.",
+      "time_note": "About 1 hour 30 minutes, including draining and drying time.",
+      "region": [
+        "Mekong Delta"
+      ],
+      "province": [
+        "Sóc Trăng"
+      ],
+      "meal_type": [
+        "snack",
+        "dessert"
+      ],
+      "difficulty": "Intermediate",
+      "dish_type": [
+        "Traditional fried cake",
+        "Khmer Southern Vietnamese food"
+      ],
+      "main_ingredient": [
+        "sticky-rice flour",
+        "eggs",
+        "sugar"
+      ],
+      "cooking_method": [
+        "kneading",
+        "shaping",
+        "frying",
+        "sugar coating"
+      ],
+      "search_terms": [
+        "Sóc Trăng Khmer ginger cake",
+        "Num-khơ-nhây",
+        "Khmer ginger-root cake"
+      ],
+      "suggested_pairings": [
+        "Hot tea",
+        "Green tea"
+      ],
+      "keywords": [
+        "bánh gừng Khmer",
+        "Num-khơ-nhây",
+        "Sóc Trăng",
+        "Khmer Southern Vietnam",
+        "sticky-rice flour",
+        "festival cake"
+      ],
+      "ingredients": [
+        [
+          "Sticky-rice flour",
+          "g",
+          "Sift."
+        ],
+        [
+          "Eggs",
+          "pieces",
+          "Bring to room temperature."
+        ],
+        [
+          "Sugar",
+          "g",
+          "Mix into the dough."
+        ],
+        [
+          "Salt",
+          "g",
+          "Balances sweetness."
+        ],
+        [
+          "Water",
+          "ml",
+          "Add gradually only if the dough needs moisture."
+        ],
+        [
+          "Cooking oil",
+          "ml",
+          "Enough for deep-frying."
+        ],
+        [
+          "Granulated sugar",
+          "g",
+          "For the coating."
+        ],
+        [
+          "Water",
+          "ml",
+          "For the syrup."
+        ],
+        [
+          "Lime juice",
+          "ml",
+          "Add to the syrup."
+        ]
+      ],
+      "preparation_steps": [
+        "Combine sticky-rice flour, sugar and salt. Beat the eggs lightly and knead into the flour until soft and pliable; add water a little at a time if dry.",
+        "Divide into 12 pieces, roll each into a rope and shape into a ridged ginger root. Let the surface dry for about 10 minutes.",
+        "Prepare a deep pan, paper towels and a rack for drying the cakes."
+      ],
+      "cooking_steps": [
+        "Heat oil over low to medium heat; do not let it get too hot. Test with a small piece of dough: it should rise gradually.",
+        "Fry in batches until evenly golden, firm and crisp. Drain, then air-dry for 20–30 minutes.",
+        "Simmer sugar, water and lime juice until syrupy. Lower the heat and gently toss in the cakes until the sugar turns white and crystallizes.",
+        "Let the cakes dry completely before storing airtight."
+      ],
+      "tags": {
+        "region": [
+          "Mekong Delta"
+        ],
+        "province": [
+          "Sóc Trăng"
+        ],
+        "meal_type": [
+          "snack",
+          "dessert"
+        ],
+        "dish_type": [
+          "Traditional fried cake",
+          "Khmer Southern Vietnamese food"
+        ],
+        "main_ingredient": [
+          "sticky-rice flour",
+          "eggs",
+          "sugar"
+        ],
+        "cooking_method": [
+          "kneading",
+          "shaping",
+          "frying",
+          "sugar coating"
+        ],
+        "difficulty": "Intermediate",
+        "prep_time": 25,
+        "cook_time": 20,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Hot tea",
+          "Green tea"
+        ],
+        "keywords": [
+          "bánh gừng Khmer",
+          "Num-khơ-nhây",
+          "Sóc Trăng",
+          "Khmer Southern Vietnam",
+          "sticky-rice flour",
+          "festival cake"
+        ]
+      }
+    }
+  ]
+}

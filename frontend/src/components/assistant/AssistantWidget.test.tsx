@@ -18,9 +18,23 @@ const api = vi.hoisted(() => ({
 }));
 const authState = vi.hoisted(() => ({ user: null as null | { id: string } }));
 
+// Mặc định buổi tối (giờ Việt Nam) để câu gợi ý nhanh cố định trong test.
+vi.mock('@/features/assistant/dayPart', async (importActual) => ({
+  ...(await importActual<object>()),
+  dayPart: () => 'toi',
+}));
+
 vi.mock('@/features/assistant/assistantApi', async () => ({
   ...(await vi.importActual<typeof AssistantApi>('@/features/assistant/assistantApi')),
   ...api,
+  // Luồng trả lời dùng chung kịch bản với sendAssistantMessage và phát một đoạn chữ trước.
+  streamAssistantMessage: async (
+    payload: AssistantApi.ChatPayload,
+    handlers: { onDelta: (text: string) => void },
+  ) => {
+    handlers.onDelta('Đang viết…');
+    return (await api.sendAssistantMessage(payload)) as AssistantApi.ChatResult;
+  },
 }));
 vi.mock('@/features/auth/AuthContext', () => ({
   useAuth: () => ({ user: authState.user }),
@@ -121,6 +135,30 @@ describe('AssistantWidget', () => {
     expect(second.recent_recipes).toEqual(['canh-chua-ca']);
   });
 
+  it('shows the reply while it is being written, before the full answer arrives', async () => {
+    let finish: (value: unknown) => void = () => undefined;
+    api.sendAssistantMessage.mockImplementationOnce(
+      () =>
+        new Promise((resolve) => {
+          finish = resolve;
+        }),
+    );
+    renderWidget();
+    fireEvent.click(screen.getByRole('button', { name: 'Mở trợ lý Chú Rồng' }));
+    const panel = screen.getByRole('dialog');
+    // Câu gợi ý nhanh theo buổi giờ Việt Nam (test cố định buổi tối).
+    fireEvent.click(within(panel).getByRole('button', { name: 'Tối nay ăn gì?' }));
+    expect(await within(panel).findByText('Đang viết…')).toBeInTheDocument();
+    finish({
+      conversation_id: null,
+      title: 'Tối nay ăn gì?',
+      user_message: { ...reply('Tối nay ăn gì?'), id: 'u1', role: 'user', mode: null },
+      reply: reply('Tối nay ăn **Canh chua cá** nhé!', { id: 'r1' }),
+    });
+    expect(await within(panel).findByText('Canh chua cá')).toBeInTheDocument();
+    expect(within(panel).queryByText('Đang viết…')).not.toBeInTheDocument();
+  });
+
   it('keeps guest history in the browser and reopens past chats', async () => {
     renderWidget();
     fireEvent.click(screen.getByRole('button', { name: 'Mở trợ lý Chú Rồng' }));
@@ -152,12 +190,15 @@ describe('AssistantWidget', () => {
   });
 
   it('marks a failed message and resends it', async () => {
-    api.sendAssistantMessage.mockRejectedValueOnce(new Error('Mất kết nối'));
+    api.sendAssistantMessage.mockRejectedValueOnce(new TypeError('Failed to fetch /internal/path'));
     renderWidget();
     fireEvent.click(screen.getByRole('button', { name: 'Mở trợ lý Chú Rồng' }));
     const panel = screen.getByRole('dialog');
     fireEvent.click(within(panel).getByRole('button', { name: 'Gợi ý mâm cơm 4 người' }));
-    expect(await within(panel).findByRole('alert')).toHaveTextContent('Mất kết nối');
+    // Lỗi mạng/lập trình không bao giờ hiện nguyên văn cho người dùng.
+    const alert = await within(panel).findByRole('alert');
+    expect(alert).toHaveTextContent('Đã có lỗi xảy ra. Vui lòng thử lại.');
+    expect(alert).not.toHaveTextContent('internal');
     fireEvent.click(within(panel).getByRole('button', { name: /Gửi lại/ }));
     expect(await within(panel).findByRole('link', { name: /Canh chua cá/ })).toBeInTheDocument();
   });

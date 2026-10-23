@@ -15,26 +15,29 @@ def cutout_webp(size: tuple[int, int] = (800, 600)) -> bytes:
     return output.getvalue()
 
 
-def test_dish_image_is_a_crisp_transparent_png_without_a_baked_in_background() -> None:
-    dish = Image.open(BytesIO(compose_dish_cutout(cutout_webp())))
-
-    assert dish.format == "PNG"
+def test_dish_image_is_a_light_transparent_png_without_a_baked_in_background() -> None:
+    encoded = compose_dish_cutout(cutout_webp())
+    image = Image.open(BytesIO(encoded))
+    # PNG bảng màu 256 vẫn giữ nền trong suốt, nhẹ để gửi nhanh trên mạng yếu.
+    assert image.format == "PNG"
+    assert image.mode == "P"
+    dish = image.convert("RGBA")
     assert dish.size == EMAIL_DISH_SIZE
-    assert dish.mode == "RGBA"
     red, green, blue, alpha = dish.getpixel((EMAIL_DISH_SIZE[0] // 2, EMAIL_DISH_SIZE[1] // 2))
-    assert red > 150 and green < 90 and blue < 90 and alpha == 255
-    assert dish.getpixel((8, 8)) == (0, 0, 0, 0)
+    # Món đặc (bảng màu có thể làm tròn alpha 255 thành 254), nền quanh món trong suốt.
+    assert red > 150 and green < 90 and blue < 90 and alpha >= 250
+    assert dish.getpixel((8, 8))[3] == 0
     assert dish.getchannel("A").getbbox() is not None
 
 
 def test_dish_image_resizes_to_fit_an_email_attachment_budget() -> None:
     encoded = compose_dish_cutout(cutout_webp(), max_bytes=50_000)
-    dish = Image.open(BytesIO(encoded))
+    image = Image.open(BytesIO(encoded))
 
-    assert dish.format == "PNG"
-    assert dish.width < EMAIL_DISH_SIZE[0]
+    assert image.format == "PNG"
+    assert image.width <= EMAIL_DISH_SIZE[0]
     assert len(encoded) <= 50_000
-    assert dish.getpixel((0, 0))[3] == 0
+    assert image.convert("RGBA").getpixel((0, 0))[3] == 0
 
 
 def test_dish_image_rejects_empty_or_broken_images() -> None:
@@ -67,9 +70,8 @@ def test_meal_email_uses_the_cutout_image_and_falls_back_to_the_catalog_photo(
     assert source == "cid:bep-viet-meal-0"
     assert inline is not None
     assert inline[2:] == ("image/png", "thit-kho.png")
-    rendered = Image.open(BytesIO(inline[1]))
+    rendered = Image.open(BytesIO(inline[1])).convert("RGBA")
     assert rendered.size == EMAIL_DISH_SIZE
-    assert rendered.mode == "RGBA"
     assert rendered.getpixel((8, 8))[3] == 0
 
     fallback, fallback_inline = auth_email._email_image_source(

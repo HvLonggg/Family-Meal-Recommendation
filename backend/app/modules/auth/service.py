@@ -72,6 +72,11 @@ class OtpRateLimitError(DomainError):
     status_code = status.HTTP_429_TOO_MANY_REQUESTS
 
 
+class LoginRateLimitError(DomainError):
+    code = "LOGIN_RATE_LIMITED"
+    status_code = status.HTTP_429_TOO_MANY_REQUESTS
+
+
 class OAuthProviderNotConfiguredError(DomainError):
     code = "OAUTH_PROVIDER_NOT_CONFIGURED"
     status_code = status.HTTP_503_SERVICE_UNAVAILABLE
@@ -342,8 +347,7 @@ def create_email_otp_challenge(
     session.execute(
         update(EmailOtpChallenge)
         .where(
-            (EmailOtpChallenge.expires_at <= now)
-            | (EmailOtpChallenge.consumed_at.is_not(None)),
+            (EmailOtpChallenge.expires_at <= now) | (EmailOtpChallenge.consumed_at.is_not(None)),
             EmailOtpChallenge.pending_password_hash.is_not(None),
         )
         .values(pending_password_hash=None, pending_full_name=None)
@@ -431,9 +435,7 @@ def verify_email_otp_challenge(
     session: Session, *, challenge_id: UUID, code: str, purpose: str
 ) -> EmailOtpChallenge:
     challenge = session.scalar(
-        select(EmailOtpChallenge)
-        .where(EmailOtpChallenge.id == challenge_id)
-        .with_for_update()
+        select(EmailOtpChallenge).where(EmailOtpChallenge.id == challenge_id).with_for_update()
     )
     if challenge is None or challenge.purpose != purpose or challenge.consumed_at is not None:
         raise InvalidOtpError("Mã xác thực không hợp lệ hoặc đã hết hạn.")

@@ -15,6 +15,8 @@ import { RecipesPage } from '@/pages/RecipesPage';
 vi.mock('@/lib/api/client', () => ({
   apiRequest: vi.fn(),
   apiPost: vi.fn().mockRejectedValue(new Error('Unauthenticated')),
+  setAccessToken: vi.fn(),
+  setSessionHandlers: vi.fn(),
 }));
 const originalCatalog = [...recipes];
 const apiRecipe = fixture as ApiRecipe;
@@ -82,7 +84,8 @@ describe('database recipe catalog', () => {
       (dish) => dish.sourceKey === 'catalog-204',
     )!;
     expect(candidate.href).toBe('/recipes/catalog-204');
-    expect(calculateMealStats([{ role: 'main', dish: candidate }]).hasNutrition).toBe(false);
+    // Món từ kho được ước tính dinh dưỡng theo định lượng nguyên liệu.
+    expect(calculateMealStats([{ role: 'main', dish: candidate }]).hasNutrition).toBe(true);
 
     const { container } = render(
       <AppProviders>
@@ -91,7 +94,7 @@ describe('database recipe catalog', () => {
         </MemoryRouter>
       </AppProviders>,
     );
-    expect(screen.getByText('205 công thức')).toBeInTheDocument();
+    expect(screen.getByText('205 món ăn tại 3 miền Việt Nam')).toBeInTheDocument();
     expect(container.querySelectorAll('.recipe-card')).toHaveLength(9);
     const firstPageTitle = container.querySelector('.recipe-card h3')!.textContent;
     fireEvent.click(screen.getByRole('button', { name: 'Trang tiếp' }));

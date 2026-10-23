@@ -17,7 +17,7 @@ describe('toSpokenText', () => {
       'Nướng 180 độ C trong 10 đến 15 phút',
     );
     expect(toSpokenText('Dùng 1/2 quả chanh, khúc 40 cm')).toBe(
-      'Dùng 1 phần 2 quả chanh, khúc 40 xăng ti mét',
+      'Dùng nửa quả chanh, khúc 40 xen ti mét',
     );
   });
 

@@ -1,0 +1,1655 @@
+{
+  "batch": 31,
+  "description": "Món Việt vùng miền và món nhà được đối chiếu nguồn; Bếp Việt biên tập công thức tại nhà, chưa nấu thử.",
+  "recipes": [
+    {
+      "id": "BV481",
+      "slug": "ca-bong-song-tra-kho-tieu-quang-ngai",
+      "name": "Cá bống sông Trà kho tiêu Quảng Ngãi",
+      "aliases": [
+        "Cá bống kho tiêu sông Trà",
+        "Cá bống kho tiêu Quảng Ngãi"
+      ],
+      "region": [
+        "Nam Trung Bộ"
+      ],
+      "province": [
+        "Quảng Ngãi"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một niêu cá nhỏ dùng cùng cơm trắng cho 4 người.",
+      "prep_time": 20,
+      "cook_time": 30,
+      "passive_time": 10,
+      "description": "Cá bống nhỏ được kho liu riu với nước mắm, tiêu và chút ớt đến khi săn chắc, bóng màu cánh gián. Bếp Việt biên tập cách nấu gọn cho bữa cơm nhà, giữ điểm nhấn tiêu thơm và vị mặn ngọt vừa phải của cá bống sông Trà.",
+      "finished_dish": "Cá nguyên con săn chắc, thấm tiêu, nước kho sánh mỏng và thơm hành.",
+      "serving": "Dùng nóng với cơm trắng và rau luộc; rưới vừa phải nước kho lên cơm.",
+      "tips": [
+        "Chọn cá nhỏ còn tươi; rửa nhẹ nhiều lần và để ráo để cá không nát.",
+        "Nêm nước mắm trước, nếm lại gần cuối vì nước kho sẽ cô đặc.",
+        "Kho lửa nhỏ, lắc nhẹ nồi thay vì đảo bằng đũa."
+      ],
+      "dish_type": [
+        "Món kho",
+        "Đặc sản Quảng Ngãi"
+      ],
+      "main_ingredient": [
+        "cá bống",
+        "tiêu đen"
+      ],
+      "cooking_method": [
+        "ướp",
+        "kho"
+      ],
+      "search_terms": [
+        "cá bống sông Trà",
+        "cá bống kho tiêu",
+        "món cá kho Quảng Ngãi"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Niêu cá bống sông Trà kho tiêu màu nâu bóng, điểm ớt đỏ và hành lá.",
+      "ingredients": [
+        {
+          "name": "Cá bống nhỏ",
+          "quantity": 600,
+          "unit": "g",
+          "role": "main",
+          "notes": "Làm sạch, để nguyên con.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 30,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 30,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Gia giảm theo độ mặn.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Đường",
+          "quantity": 15,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng tạo vị dịu và màu kho.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Nước màu",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Có thể thay bằng nước hàng tự thắng.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Tiêu đen xay",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Chia một phần để rắc sau khi kho.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Ớt đỏ",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "seasoning",
+          "notes": "Để nguyên hoặc cắt lát.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng phi hành.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 100,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Đổ vừa xâm xấp cá.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa cá nhẹ tay nhiều lần đến khi nước trong, bỏ mang và ruột nếu còn; để ráo hoàn toàn."
+        },
+        {
+          "step": 2,
+          "instruction": "Ướp cá với nước mắm, đường, nước màu và một nửa lượng tiêu trong 10 phút."
+        },
+        {
+          "step": 3,
+          "instruction": "Bóc vỏ, băm hành tím; chuẩn bị ớt và nồi đáy dày."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng dầu, phi hành tím vừa thơm. Xếp cá cùng phần nước ướp vào nồi, thêm nước và ớt."
+        },
+        {
+          "step": 2,
+          "instruction": "Đun đến khi sôi lăn tăn, hớt bọt nếu có rồi hạ lửa nhỏ. Kho 20–25 phút, thỉnh thoảng lắc nồi."
+        },
+        {
+          "step": 3,
+          "instruction": "Khi nước kho sánh mỏng và cá săn, nếm lại, rắc phần tiêu còn lại rồi tắt bếp."
+        }
+      ],
+      "time_note": "Cá càng nhỏ càng nhanh thấm; tránh kho cạn khô để thịt cá không xác.",
+      "total_time": 60,
+      "time_unit": "phút",
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "ca-bong-song-tra-kho-tieu-quang-ngai",
+      "keywords": [
+        "Cá bống sông Trà kho tiêu Quảng Ngãi",
+        "Nam Trung Bộ",
+        "Quảng Ngãi",
+        "cá bống",
+        "tiêu đen",
+        "cá bống sông Trà",
+        "cá bống kho tiêu",
+        "món cá kho Quảng Ngãi",
+        "Món kho",
+        "Đặc sản Quảng Ngãi",
+        "60 phút"
+      ],
+      "tags": {
+        "region": [
+          "Nam Trung Bộ"
+        ],
+        "province": [
+          "Quảng Ngãi"
+        ],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Món kho",
+          "Đặc sản Quảng Ngãi"
+        ],
+        "main_ingredient": [
+          "cá bống",
+          "tiêu đen"
+        ],
+        "cooking_method": [
+          "ướp",
+          "kho"
+        ],
+        "difficulty": "Dễ",
+        "prep_time": 20,
+        "cook_time": 30,
+        "servings": 4,
+        "spicy_level": 1,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Cơm trắng",
+          "Rau muống luộc",
+          "Canh rau thanh"
+        ],
+        "keywords": [
+          "Cá bống sông Trà kho tiêu Quảng Ngãi",
+          "Nam Trung Bộ",
+          "Quảng Ngãi",
+          "cá bống",
+          "tiêu đen",
+          "cá bống sông Trà",
+          "cá bống kho tiêu",
+          "món cá kho Quảng Ngãi",
+          "Món kho",
+          "Đặc sản Quảng Ngãi",
+          "60 phút"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://vnexpress.net/thoi-su/dac-san-ca-bong-song-tra-kho-tieu-cua-nguoi-quang-ngai-3602611.html",
+          "publisher": "VnExpress",
+          "title": "Đặc sản cá bống sông Trà kho tiêu của người Quảng Ngãi",
+          "use": "Đối chiếu cá bống sông Trà, cách ướp tiêu, ớt, nước mắm và kho nhỏ lửa; định lượng Bếp Việt biên tập lại.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://ngoisao.vnexpress.net/ca-bong-song-tra-ai-di-xa-cung-nho-2907341.html",
+          "publisher": "Ngôi Sao",
+          "title": "Cá bống sông Trà - ai đi xa cũng nhớ",
+          "use": "Đối chiếu cách sơ chế, ướp cá và dùng niêu đất trong cách nấu gia đình.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Cá bống sông Trà kho tiêu Quảng Ngãi cho 2 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Cá bống sông Trà kho tiêu Quảng Ngãi cho 6 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Cá bống sông Trà kho tiêu Quảng Ngãi cho 8 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/ca-bong-song-tra-kho-tieu-quang-ngai-960.webp",
+          "page_url": "https://vnexpress.net/thoi-su/dac-san-ca-bong-song-tra-kho-tieu-cua-nguoi-quang-ngai-3602611.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Niêu cá bống sông Trà kho tiêu màu nâu bóng, điểm ớt đỏ và hành lá.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức Bếp Việt biên tập từ nguồn tham khảo; định lượng và thời gian cần nấu thử trước khi xem là bản hoàn chỉnh.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để xác nhận độ mặn, thời gian kho và định lượng cho cá cỡ nhỏ.",
+          "Kiểm tra khả năng tìm mua cá bống và hướng dẫn sơ chế theo mùa."
+        ]
+      },
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Rau muống luộc",
+        "Canh rau thanh"
+      ]
+    },
+    {
+      "id": "BV482",
+      "slug": "chao-hau-vung-tau",
+      "name": "Cháo hàu Vũng Tàu",
+      "aliases": [
+        "Cháo hàu biển Vũng Tàu"
+      ],
+      "region": [
+        "Đông Nam Bộ"
+      ],
+      "province": [
+        "TP. Hồ Chí Minh (Bà Rịa - Vũng Tàu cũ)"
+      ],
+      "category": "Món ăn sáng",
+      "meal_type": [
+        "bữa sáng",
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Bốn bát cháo vừa, dùng nóng.",
+      "prep_time": 20,
+      "cook_time": 40,
+      "passive_time": 0,
+      "description": "Gạo nấu nhừ thành cháo sánh nhẹ, hàu được xào nhanh rồi cho vào gần cuối để giữ vị ngọt biển. Hành phi, hành lá, rau mùi và tiêu làm bát cháo thơm ấm; công thức Bếp Việt được biên tập theo khẩu vị gia đình.",
+      "finished_dish": "Hạt gạo nở mềm, nước cháo sánh vừa, hàu chín mọng và thơm tiêu hành.",
+      "serving": "Múc ra bát, thêm hành phi, hành lá, rau mùi và tiêu; có thể ăn kèm bắp chuối thái mỏng.",
+      "tips": [
+        "Chọn hàu đã được làm sạch, giữ lạnh đúng cách và nấu chín hoàn toàn.",
+        "Xào hàu vừa săn rồi cho vào cháo ở cuối để tránh dai.",
+        "Thêm nước nóng nếu cháo đặc trong lúc ninh; khuấy đáy nồi thường xuyên."
+      ],
+      "dish_type": [
+        "Cháo",
+        "Món ăn Vũng Tàu"
+      ],
+      "main_ingredient": [
+        "hàu",
+        "gạo tẻ",
+        "gạo nếp"
+      ],
+      "cooking_method": [
+        "ninh cháo",
+        "xào"
+      ],
+      "search_terms": [
+        "cháo hàu biển",
+        "cháo hàu Vũng Tàu",
+        "món hàu dễ nấu"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Bát cháo hàu sánh nhẹ với hàu tươi, hành phi, hành lá và tiêu.",
+      "ingredients": [
+        {
+          "name": "Gạo tẻ",
+          "quantity": 180,
+          "unit": "g",
+          "role": "main",
+          "notes": "Vo sạch.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Gạo nếp",
+          "quantity": 30,
+          "unit": "g",
+          "role": "main",
+          "notes": "Vo sạch; giúp cháo sánh hơn.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Hàu đã tách vỏ",
+          "quantity": 350,
+          "unit": "g",
+          "role": "main",
+          "notes": "Làm sạch, để ráo và giữ lạnh đến lúc nấu.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Nấm rơm",
+          "quantity": 120,
+          "unit": "g",
+          "role": "main",
+          "notes": "Cắt đôi nếu nấm lớn.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 25,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Một phần băm để xào hàu, một phần phi vàng.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Gừng tươi",
+          "quantity": 10,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Thái sợi mảnh.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng xào hàu.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Nước lọc hoặc nước dùng nhạt",
+          "quantity": 1600,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Điều chỉnh theo độ đặc mong muốn.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm từ từ.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 20,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Rau mùi",
+          "quantity": 10,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Nhặt rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Tiêu đen xay",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng khi hoàn thiện.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Vo gạo tẻ và gạo nếp, ngâm 15 phút rồi để ráo."
+        },
+        {
+          "step": 2,
+          "instruction": "Rửa hàu nhẹ nhàng, bỏ mảnh vỏ nếu có và để ráo; giữ lạnh khi sơ chế."
+        },
+        {
+          "step": 3,
+          "instruction": "Bổ đôi nấm lớn; băm hành tím, thái gừng, hành lá và rau mùi."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Cho hai loại gạo và nước vào nồi. Đun sôi, hạ lửa, hé nắp và ninh 30–35 phút đến khi gạo nở mềm; khuấy định kỳ."
+        },
+        {
+          "step": 2,
+          "instruction": "Làm nóng dầu, phi thơm một phần hành tím và gừng. Xào nấm 2 phút, thêm hàu và đảo nhanh đến khi vừa săn."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho hỗn hợp hàu vào cháo, nêm nước mắm và nấu thêm 3–5 phút đến khi hàu chín. Tắt bếp, rắc hành lá, rau mùi, tiêu và hành phi."
+        }
+      ],
+      "time_note": "Thời gian ninh phụ thuộc loại gạo; hàu nên thêm vào cuối và nấu chín vừa đủ.",
+      "total_time": 60,
+      "time_unit": "phút",
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "chao-hau-vung-tau",
+      "keywords": [
+        "Cháo hàu Vũng Tàu",
+        "Đông Nam Bộ",
+        "TP. Hồ Chí Minh (Bà Rịa - Vũng Tàu cũ)",
+        "hàu",
+        "gạo tẻ",
+        "gạo nếp",
+        "cháo hàu biển",
+        "cháo hàu Vũng Tàu",
+        "món hàu dễ nấu",
+        "Cháo",
+        "Món ăn Vũng Tàu",
+        "60 phút"
+      ],
+      "tags": {
+        "region": [
+          "Đông Nam Bộ"
+        ],
+        "province": [
+          "TP. Hồ Chí Minh (Bà Rịa - Vũng Tàu cũ)"
+        ],
+        "meal_type": [
+          "bữa sáng",
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Cháo",
+          "Món ăn Vũng Tàu"
+        ],
+        "main_ingredient": [
+          "hàu",
+          "gạo tẻ",
+          "gạo nếp"
+        ],
+        "cooking_method": [
+          "ninh cháo",
+          "xào"
+        ],
+        "difficulty": "Dễ",
+        "prep_time": 20,
+        "cook_time": 40,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Bắp chuối thái mỏng",
+          "Rau thơm",
+          "Nước mắm ớt"
+        ],
+        "keywords": [
+          "Cháo hàu Vũng Tàu",
+          "Đông Nam Bộ",
+          "TP. Hồ Chí Minh (Bà Rịa - Vũng Tàu cũ)",
+          "hàu",
+          "gạo tẻ",
+          "gạo nếp",
+          "cháo hàu biển",
+          "cháo hàu Vũng Tàu",
+          "món hàu dễ nấu",
+          "Cháo",
+          "Món ăn Vũng Tàu",
+          "60 phút"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://vnexpress.net/chao-hau-va-banh-khot-cho-buoi-chieu-o-bien-vung-tau-3342390.html",
+          "publisher": "VnExpress Du lịch",
+          "title": "Cháo hàu và bánh khọt cho buổi chiều ở biển Vũng Tàu",
+          "use": "Đối chiếu gạo tẻ, gạo nếp, hàu xào sơ rồi cho vào cháo chín; ghi nhận món gắn với Vũng Tàu.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://vnexpress.net/5-goi-y-cho-bua-trua-cuoi-tuan-o-vung-tau-3226356.html",
+          "publisher": "VnExpress Du lịch",
+          "title": "5 gợi ý cho bữa trưa cuối tuần ở Vũng Tàu",
+          "use": "Đối chiếu nấm rơm, hành ngò, tiêu và vị ngọt béo của hàu.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Cháo hàu Vũng Tàu cho 2 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Cháo hàu Vũng Tàu cho 6 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Cháo hàu Vũng Tàu cho 8 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/chao-hau-vung-tau-960.webp",
+          "page_url": "https://vnexpress.net/chao-hau-va-banh-khot-cho-buoi-chieu-o-bien-vung-tau-3342390.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Bát cháo hàu sánh nhẹ với hàu tươi, hành phi, hành lá và tiêu.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức Bếp Việt biên tập dựa trên cách nấu cháo hàu được ghi nhận tại Vũng Tàu; định lượng là gợi ý tại nhà và chưa nấu thử.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để xác nhận độ sánh và lượng nước phù hợp với từng loại gạo.",
+          "Rà soát hướng dẫn bảo quản lạnh và nấu chín hàu trước khi phát hành."
+        ]
+      },
+      "suggested_pairings": [
+        "Bắp chuối thái mỏng",
+        "Rau thơm",
+        "Nước mắm ớt"
+      ]
+    },
+    {
+      "id": "BV483",
+      "slug": "mit-non-kho-nam-chay",
+      "name": "Mít non kho nấm chay",
+      "aliases": [
+        "Mít non kho nấm và đậu hũ",
+        "Mít non kho chay"
+      ],
+      "region": [
+        "Ba miền"
+      ],
+      "province": [],
+      "category": "Món chay",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một đĩa món kho dùng chung cho bữa cơm 4 người.",
+      "prep_time": 20,
+      "cook_time": 30,
+      "passive_time": 0,
+      "description": "Mít non có thớ bùi, được kho cùng nấm rơm và đậu hũ trong nước tương, sả và nước mắm chay. Công thức Bếp Việt biên tập để phần sốt sánh vừa và nguyên liệu vẫn giữ dáng.",
+      "finished_dish": "Mít non mềm bùi, nấm ngọt, đậu hũ thấm sốt nâu nhẹ và thơm sả.",
+      "serving": "Dọn nóng với cơm trắng, rau mùi hoặc hành boa-rô; kiểm tra gia vị thuần thực vật nếu cần món thuần chay.",
+      "tips": [
+        "Luộc mít non 5 phút nếu dùng mít tươi có nhiều mủ; để ráo trước khi chiên sơ.",
+        "Chiên sơ mít và đậu hũ giúp miếng kho đứng dáng hơn.",
+        "Dùng nước mắm chay, không thay bằng nước mắm cá nếu cần món chay."
+      ],
+      "dish_type": [
+        "Món kho chay",
+        "Món từ mít non"
+      ],
+      "main_ingredient": [
+        "mít non",
+        "nấm rơm",
+        "đậu hũ"
+      ],
+      "cooking_method": [
+        "chiên sơ",
+        "kho"
+      ],
+      "search_terms": [
+        "mít non kho nấm",
+        "món chay dễ nấu",
+        "món kho chay"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Đĩa mít non kho nấm rơm và đậu hũ trong sốt sánh, điểm ớt và rau xanh.",
+      "ingredients": [
+        {
+          "name": "Mít non",
+          "quantity": 350,
+          "unit": "g",
+          "role": "main",
+          "notes": "Gọt vỏ, bỏ lõi, cắt miếng vừa ăn.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Nấm rơm",
+          "quantity": 200,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chẻ đôi nếu nấm lớn.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Đậu hũ trắng",
+          "quantity": 200,
+          "unit": "g",
+          "role": "main",
+          "notes": "Thấm ráo, cắt khối vuông.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Sả",
+          "quantity": 20,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Hành boa-rô",
+          "quantity": 30,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm gốc, thái lá.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Nước tương",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Chọn loại phù hợp khẩu vị.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Nước mắm chay",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Kiểm tra nhãn nếu cần thuần chay.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Đường",
+          "quantity": 8,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Gia giảm theo vị mít.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Dầu điều",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Tạo màu; có thể thay dầu ăn.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 400,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Gia giảm để xăm xắp.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Ớt đỏ",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "seasoning",
+          "notes": "Bỏ qua nếu không ăn cay.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Cắt mít vừa ăn. Nếu mít tươi có nhiều mủ, luộc sơ 5 phút rồi xả sạch và để ráo."
+        },
+        {
+          "step": 2,
+          "instruction": "Thấm đậu hũ cho ráo, cắt khối; làm sạch nấm."
+        },
+        {
+          "step": 3,
+          "instruction": "Băm sả và phần gốc boa-rô; thái lát phần lá boa-rô và ớt."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Áp chảo mít với ít dầu đến khi vài mặt hơi vàng; gắp ra. Chiên đậu hũ đến khi mặt ngoài se lại."
+        },
+        {
+          "step": 2,
+          "instruction": "Phi thơm sả và gốc boa-rô với dầu điều. Xào nấm vừa mềm, thêm mít, nước, nước tương, nước mắm chay và đường."
+        },
+        {
+          "step": 3,
+          "instruction": "Đun sôi nhẹ, hạ lửa kho 15–20 phút. Cho đậu hũ vào giữa thời gian; nếm lại, thêm boa-rô lá và ớt, tắt bếp khi sốt sánh."
+        }
+      ],
+      "time_note": "Mít non tươi và mít sơ chế sẵn có độ mềm khác nhau; điều chỉnh thời gian để miếng mít không nát.",
+      "total_time": 50,
+      "time_unit": "phút",
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "mit-non-kho-nam-chay",
+      "keywords": [
+        "Mít non kho nấm chay",
+        "Ba miền",
+        "mít non",
+        "nấm rơm",
+        "đậu hũ",
+        "mít non kho nấm",
+        "món chay dễ nấu",
+        "món kho chay",
+        "Món kho chay",
+        "Món từ mít non",
+        "50 phút"
+      ],
+      "tags": {
+        "region": [
+          "Ba miền"
+        ],
+        "province": [],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Món kho chay",
+          "Món từ mít non"
+        ],
+        "main_ingredient": [
+          "mít non",
+          "nấm rơm",
+          "đậu hũ"
+        ],
+        "cooking_method": [
+          "chiên sơ",
+          "kho"
+        ],
+        "difficulty": "Dễ",
+        "prep_time": 20,
+        "cook_time": 30,
+        "servings": 4,
+        "spicy_level": 1,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Cơm trắng",
+          "Canh nấm thanh",
+          "Rau luộc"
+        ],
+        "keywords": [
+          "Mít non kho nấm chay",
+          "Ba miền",
+          "mít non",
+          "nấm rơm",
+          "đậu hũ",
+          "mít non kho nấm",
+          "món chay dễ nấu",
+          "món kho chay",
+          "Món kho chay",
+          "Món từ mít non",
+          "50 phút"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://monngonmoingay.com/mit-non-kho-nam/",
+          "publisher": "Món Ngon Mỗi Ngày",
+          "title": "Mít non kho nấm",
+          "use": "Đối chiếu món chay dùng mít non, nấm rơm, đậu hũ, boa-rô và nước mắm chay; Bếp Việt diễn đạt và biên tập định lượng.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://baovinhlong.com.vn/van-hoa-giai-tri/201712/dua-vao-bep-voi-mit-non-2871503/",
+          "publisher": "Báo Vĩnh Long",
+          "title": "Đưa vào bếp với mít non",
+          "use": "Tham khảo cách dùng mít non trong bữa chay gia đình miền Nam.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Mít non kho nấm chay cho 2 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Mít non kho nấm chay cho 6 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Mít non kho nấm chay cho 8 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/mit-non-kho-nam-chay-960.webp",
+          "page_url": "https://monngonmoingay.com/mit-non-kho-nam/",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa mít non kho nấm rơm và đậu hũ trong sốt sánh, điểm ớt và rau xanh.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Món chay tham khảo nguyên liệu và cách kho phổ biến; nội dung được Bếp Việt biên tập, chưa nấu thử.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để xác nhận độ chín của mít theo mùa và loại sơ chế.",
+          "Rà soát nhãn gia vị để bảo đảm món thuần chay khi người dùng yêu cầu."
+        ]
+      },
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Canh nấm thanh",
+        "Rau luộc"
+      ]
+    },
+    {
+      "id": "BV484",
+      "slug": "cha-ca-la-vong-ha-noi",
+      "name": "Chả cá Lã Vọng Hà Nội",
+      "aliases": [
+        "Chả cá Lã Vọng",
+        "Chả cá thì là Hà Nội"
+      ],
+      "region": [
+        "Miền Bắc"
+      ],
+      "province": [
+        "Hà Nội"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Bốn phần cá ăn cùng bún, rau thơm và lạc rang.",
+      "prep_time": 25,
+      "cook_time": 25,
+      "passive_time": 60,
+      "description": "Cá lăng ướp riềng, nghệ và mẻ được làm chín hai lượt để ngoài vàng thơm, trong vẫn mềm; khi ăn đảo nóng cùng thì là và hành. Bếp Việt biên tập cách làm tại nhà, linh hoạt dùng lò nướng hoặc nồi chiên trước khi hoàn thiện trên chảo.",
+      "finished_dish": "Miếng cá vàng nghệ, thơm riềng mẻ, được áo thì là và hành nóng; ăn cùng bún, lạc rang và mắm tôm pha.",
+      "serving": "Đặt chảo cá nóng giữa bàn; ăn cùng bún, lạc rang, rau thơm và mắm tôm pha chanh ớt.",
+      "tips": [
+        "Nếu dùng nồi chiên hoặc lò, xếp cá một lớp và nướng đến khi vừa chín; không làm khô cá.",
+        "Mẻ có vị chua khác nhau, nên nếm hỗn hợp ướp trước khi thêm chanh hoặc giấm.",
+        "Cho thì là và hành vào chảo cuối cùng để rau vừa mềm, không thâm."
+      ],
+      "dish_type": [
+        "Món cá áp chảo",
+        "Đặc sản Hà Nội"
+      ],
+      "main_ingredient": [
+        "cá lăng",
+        "thì là",
+        "riềng"
+      ],
+      "cooking_method": [
+        "ướp",
+        "nướng",
+        "áp chảo"
+      ],
+      "search_terms": [
+        "chả cá Lã Vọng",
+        "chả cá thì là",
+        "món cá Hà Nội"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Chảo chả cá Lã Vọng vàng nghệ với thì là, hành lá, lạc rang và bún tươi.",
+      "ingredients": [
+        {
+          "name": "Cá lăng phi lê",
+          "quantity": 700,
+          "unit": "g",
+          "role": "main",
+          "notes": "Bỏ da hoặc giữ da, cắt miếng dày.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Riềng tươi",
+          "quantity": 35,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Giã hoặc xay nhuyễn.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Nghệ tươi",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Giã nhuyễn hoặc dùng bột nghệ.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Mẻ",
+          "quantity": 45,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Lọc bỏ bã.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Mắm tôm",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng ướp và pha chấm.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Điều chỉnh theo độ mặn mắm tôm.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Đường",
+          "quantity": 8,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Cân bằng vị chua.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Dầu ăn hoặc mỡ lợn",
+          "quantity": 30,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Chia cho nướng và đảo chảo.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Thì là",
+          "quantity": 120,
+          "unit": "g",
+          "role": "main",
+          "notes": "Rửa sạch, cắt khúc dài.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 80,
+          "unit": "g",
+          "role": "main",
+          "notes": "Rửa sạch, cắt khúc.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Bún tươi",
+          "quantity": 600,
+          "unit": "g",
+          "role": "side",
+          "notes": "Trụng nóng.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Lạc rang",
+          "quantity": 50,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Giã dập.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        },
+        {
+          "name": "Rau thơm",
+          "quantity": 80,
+          "unit": "g",
+          "role": "side",
+          "notes": "Rửa sạch, để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 13
+        },
+        {
+          "name": "Chanh",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "seasoning",
+          "notes": "Pha mắm tôm.",
+          "scaling_rule": "linear",
+          "sequence": 14
+        },
+        {
+          "name": "Ớt tươi",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "seasoning",
+          "notes": "Dùng tùy mức cay.",
+          "scaling_rule": "linear",
+          "sequence": 15
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Thấm khô cá lăng, kiểm tra xương dăm rồi cắt miếng vừa ăn."
+        },
+        {
+          "step": 2,
+          "instruction": "Trộn riềng, nghệ, mẻ, mắm tôm, nước mắm và đường. Áo đều cá, đậy kín và ướp lạnh 45–60 phút."
+        },
+        {
+          "step": 3,
+          "instruction": "Rửa thì là, hành và rau thơm; cắt khúc. Pha mắm tôm với chanh và ớt để dùng riêng."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng lò 220°C hoặc nồi chiên. Xếp cá một lớp, phết dầu và nướng 8–12 phút, trở một lần, đến khi vừa chín và có cạnh vàng."
+        },
+        {
+          "step": 2,
+          "instruction": "Làm nóng chảo với dầu còn lại. Áp chảo nhanh từng mặt nếu cá cần thêm màu."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho thì là và hành vào chảo, đảo 30–60 giây đến khi vừa xẹp. Dọn ngay cùng bún, lạc, rau thơm và mắm tôm pha."
+        }
+      ],
+      "time_note": "Giữ lạnh cá trong thời gian ướp; độ chín phụ thuộc độ dày miếng và thiết bị.",
+      "total_time": 110,
+      "time_unit": "phút",
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "cha-ca-la-vong-ha-noi",
+      "keywords": [
+        "Chả cá Lã Vọng Hà Nội",
+        "Miền Bắc",
+        "Hà Nội",
+        "cá lăng",
+        "thì là",
+        "riềng",
+        "chả cá Lã Vọng",
+        "chả cá thì là",
+        "món cá Hà Nội",
+        "Món cá áp chảo",
+        "Đặc sản Hà Nội",
+        "110 phút"
+      ],
+      "tags": {
+        "region": [
+          "Miền Bắc"
+        ],
+        "province": [
+          "Hà Nội"
+        ],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Món cá áp chảo",
+          "Đặc sản Hà Nội"
+        ],
+        "main_ingredient": [
+          "cá lăng",
+          "thì là",
+          "riềng"
+        ],
+        "cooking_method": [
+          "ướp",
+          "nướng",
+          "áp chảo"
+        ],
+        "difficulty": "Trung bình",
+        "prep_time": 25,
+        "cook_time": 25,
+        "servings": 4,
+        "spicy_level": 1,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Bún tươi",
+          "Lạc rang",
+          "Rau thơm và mắm tôm chanh"
+        ],
+        "keywords": [
+          "Chả cá Lã Vọng Hà Nội",
+          "Miền Bắc",
+          "Hà Nội",
+          "cá lăng",
+          "thì là",
+          "riềng",
+          "chả cá Lã Vọng",
+          "chả cá thì là",
+          "món cá Hà Nội",
+          "Món cá áp chảo",
+          "Đặc sản Hà Nội",
+          "110 phút"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://vnexpress.net/doi-song-cooking-cach-lam-cha-ca-la-vong-dung-chuan-ha-noi-4988463.html",
+          "publisher": "VnExpress Cooking",
+          "title": "Cách làm chả cá Lã Vọng đúng chuẩn Hà Nội",
+          "use": "Đối chiếu cá lăng, riềng, nghệ, mẻ, mắm tôm, thao tác hai lượt và cách hoàn thiện với thì là, hành; công thức Bếp Việt dùng thiết bị gia đình.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://vnexpress.net/nhung-mon-an-nghe-ten-la-nho-ha-noi-4800990.html",
+          "publisher": "VnExpress Du lịch",
+          "title": "Những món ăn 'nghe tên là nhớ Hà Nội'",
+          "use": "Đối chiếu cách phục vụ chả cá cùng bún, mắm tôm và lạc rang.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Chả cá Lã Vọng Hà Nội cho 2 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Chả cá Lã Vọng Hà Nội cho 6 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Chả cá Lã Vọng Hà Nội cho 8 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/cha-ca-la-vong-ha-noi-960.webp",
+          "page_url": "https://vnexpress.net/doi-song-cooking-cach-lam-cha-ca-la-vong-dung-chuan-ha-noi-4988463.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Chảo chả cá Lã Vọng vàng nghệ với thì là, hành lá, lạc rang và bún tươi.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt biên tập cách dùng lò/nồi chiên tại nhà; công thức chưa được nấu thử và không thay thế quy trình riêng của từng quán.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để xác nhận thời gian với lò và nồi chiên phổ biến.",
+          "Rà soát an toàn sơ chế cá sống và bảo quản mắm tôm."
+        ]
+      },
+      "suggested_pairings": [
+        "Bún tươi",
+        "Lạc rang",
+        "Rau thơm và mắm tôm chanh"
+      ]
+    },
+    {
+      "id": "BV485",
+      "slug": "banh-thuan-quang-nam",
+      "name": "Bánh thuẫn Quảng Nam",
+      "aliases": [
+        "Bánh thửng xứ Quảng",
+        "Bánh thuẫn Hội An"
+      ],
+      "region": [
+        "Nam Trung Bộ"
+      ],
+      "province": [
+        "Đà Nẵng (Quảng Nam cũ)"
+      ],
+      "category": "Món tráng miệng",
+      "meal_type": [
+        "tráng miệng",
+        "ăn nhẹ"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Khoảng 12 chiếc bánh nhỏ, tùy kích thước khuôn.",
+      "prep_time": 20,
+      "cook_time": 25,
+      "passive_time": 15,
+      "description": "Bánh thuẫn xứ Quảng có cánh nở như hoa, thơm trứng và thường được làm dịp Tết, giỗ hoặc để mời khách. Bếp Việt biên tập mẻ nhỏ dùng bột bình tinh, trứng và đường, nướng bằng khuôn nhỏ tại nhà; cấu trúc bánh tùy loại bột và khuôn.",
+      "finished_dish": "Bánh vàng nhạt, nở thành cánh hoa, thơm trứng, mặt ngoài ráo nhẹ và ruột xốp.",
+      "serving": "Để bánh nguội trên rack rồi dùng với trà nóng; cất trong hộp kín khi nguội hoàn toàn.",
+      "tips": [
+        "Rây bột bình tinh và đánh trứng kỹ để hỗn hợp mịn.",
+        "Làm nóng khuôn, chỉ phết lớp dầu mỏng để cánh bánh rõ.",
+        "Dùng lò thay khuôn gang truyền thống thì nướng mẻ thử vì khuôn và nhiệt ảnh hưởng độ nở."
+      ],
+      "dish_type": [
+        "Bánh truyền thống",
+        "Đặc sản xứ Quảng"
+      ],
+      "main_ingredient": [
+        "bột bình tinh",
+        "trứng",
+        "đường"
+      ],
+      "cooking_method": [
+        "đánh bông",
+        "nướng khuôn"
+      ],
+      "search_terms": [
+        "bánh thuẫn Quảng Nam",
+        "bánh thuẫn xứ Quảng",
+        "bánh ngày Tết miền Trung"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Những chiếc bánh thuẫn vàng hình hoa mai, ruột xốp, bày thành cụm nhỏ.",
+      "ingredients": [
+        {
+          "name": "Bột bình tinh",
+          "quantity": 250,
+          "unit": "g",
+          "role": "main",
+          "notes": "Rây mịn; nghiền lại nếu bột thô.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Trứng gà",
+          "quantity": 4,
+          "unit": "quả",
+          "role": "main",
+          "notes": "Để về nhiệt độ phòng.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Đường cát",
+          "quantity": 150,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Gia giảm theo khẩu vị.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Bột năng",
+          "quantity": 25,
+          "unit": "g",
+          "role": "main",
+          "notes": "Tạo độ dai nhẹ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Vani",
+          "quantity": 5,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng lượng nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Muối",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Một nhúm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 5,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng quét khuôn.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rây bột bình tinh, bột năng và muối; làm nóng lò 170°C nếu dùng khuôn nướng lò."
+        },
+        {
+          "step": 2,
+          "instruction": "Đánh trứng cùng đường đến khi sáng màu và sánh; thêm vani."
+        },
+        {
+          "step": 3,
+          "instruction": "Rây bột vào hỗn hợp trứng từng phần, trộn nhẹ đến hết vón; để nghỉ 10–15 phút."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng khuôn bánh thuẫn hoặc khuôn muffin nhỏ. Quét dầu rất mỏng, chia bột đến khoảng hai phần ba khuôn."
+        },
+        {
+          "step": 2,
+          "instruction": "Với khuôn gang/đồng, đậy nắp và nướng theo hướng dẫn đến khi bánh vàng, xiên thử không dính bột. Với khuôn lò, nướng 12–16 phút, kiểm tra sớm."
+        },
+        {
+          "step": 3,
+          "instruction": "Để nguội trên rack. Muốn vỏ ráo hơn, sấy nhẹ ở 90°C khoảng 10 phút rồi làm nguội hoàn toàn."
+        }
+      ],
+      "time_note": "Mẻ nhỏ và thiết bị gia đình là phương án tham khảo; khuôn truyền thống và loại bột có thể cho kết cấu khác.",
+      "total_time": 60,
+      "time_unit": "phút",
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "banh-thuan-quang-nam",
+      "keywords": [
+        "Bánh thuẫn Quảng Nam",
+        "Nam Trung Bộ",
+        "Đà Nẵng (Quảng Nam cũ)",
+        "bột bình tinh",
+        "trứng",
+        "đường",
+        "bánh thuẫn Quảng Nam",
+        "bánh thuẫn xứ Quảng",
+        "bánh ngày Tết miền Trung",
+        "Bánh truyền thống",
+        "Đặc sản xứ Quảng",
+        "60 phút"
+      ],
+      "tags": {
+        "region": [
+          "Nam Trung Bộ"
+        ],
+        "province": [
+          "Đà Nẵng (Quảng Nam cũ)"
+        ],
+        "meal_type": [
+          "tráng miệng",
+          "ăn nhẹ"
+        ],
+        "dish_type": [
+          "Bánh truyền thống",
+          "Đặc sản xứ Quảng"
+        ],
+        "main_ingredient": [
+          "bột bình tinh",
+          "trứng",
+          "đường"
+        ],
+        "cooking_method": [
+          "đánh bông",
+          "nướng khuôn"
+        ],
+        "difficulty": "Trung bình",
+        "prep_time": 20,
+        "cook_time": 25,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Trà nóng",
+          "Mứt gừng",
+          "Trà sen"
+        ],
+        "keywords": [
+          "Bánh thuẫn Quảng Nam",
+          "Nam Trung Bộ",
+          "Đà Nẵng (Quảng Nam cũ)",
+          "bột bình tinh",
+          "trứng",
+          "đường",
+          "bánh thuẫn Quảng Nam",
+          "bánh thuẫn xứ Quảng",
+          "bánh ngày Tết miền Trung",
+          "Bánh truyền thống",
+          "Đặc sản xứ Quảng",
+          "60 phút"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://quangnamtourism.com.vn/banh-thuan-quang-nam/",
+          "publisher": "Quảng Nam Tourism",
+          "title": "Bánh thuẫn Quảng Nam món đặc sản ngọt thanh truyền thống lâu đời",
+          "use": "Đối chiếu vùng Quảng Nam, hình cánh hoa, bột bình tinh/bột năng, trứng, đường và cách nướng khuôn; mẻ nhỏ do Bếp Việt biên tập.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://sites.google.com/site/danangdacsan/banh-keo-dac-san/banh-thuan",
+          "publisher": "Đặc Sản Đà Nẵng",
+          "title": "Bánh thuẫn",
+          "use": "Đối chiếu tên gọi, nguyên liệu và vai trò bánh thuẫn trong dịp Tết xứ Quảng.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Bánh thuẫn Quảng Nam cho 2 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Bánh thuẫn Quảng Nam cho 6 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Bánh thuẫn Quảng Nam cho 8 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/banh-thuan-quang-nam-960.webp",
+          "page_url": "https://quangnamtourism.com.vn/banh-thuan-quang-nam/",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Những chiếc bánh thuẫn vàng hình hoa mai, ruột xốp, bày thành cụm nhỏ.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức mẻ nhỏ do Bếp Việt biên tập từ mô tả món bánh thuẫn; phương án khuôn gia đình cần nấu thử để xác nhận nhiệt và độ nở.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử với khuôn thuẫn truyền thống và khuôn gia đình để xác nhận nhiệt, thời gian.",
+          "Xác nhận nguồn gốc bột bình tinh và cách thay thế phù hợp tại địa phương."
+        ]
+      },
+      "suggested_pairings": [
+        "Trà nóng",
+        "Mứt gừng",
+        "Trà sen"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1379 @@
+{
+  "batch": 47,
+  "description": "Năm món cơm nhà Nam Bộ được đối chiếu nguồn; công thức Bếp Việt biên tập cho khẩu phần gia đình, chưa nấu thử, kèm ảnh tạo mới nền trong suốt.",
+  "recipes": [
+    {
+      "id": "BV561",
+      "slug": "ca-keo-kho-rau-ram-mien-tay",
+      "name": "Cá kèo kho rau răm miền Tây",
+      "aliases": [
+        "Cá kèo kho rau răm",
+        "Cá kèo kho tộ rau răm",
+        "Cá kèo kho tiêu rau răm"
+      ],
+      "region": [
+        "Nam"
+      ],
+      "province": [
+        "Đồng bằng sông Cửu Long",
+        "Cà Mau",
+        "Bạc Liêu"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một nồi cá kho vừa cho bốn người ăn cùng cơm trắng và rau luộc.",
+      "prep_time": 20,
+      "cook_time": 30,
+      "passive_time": 0,
+      "total_time": 50,
+      "description": "Cá kèo kho rau răm là món cá kho quen thuộc trong bữa cơm Nam Bộ: cá nhỏ kho liu riu với nước mắm, tiêu và rau răm xếp xen kẽ để thấm hương. Bếp Việt chuẩn hóa lượng gia vị cho bốn phần, dùng nước màu dừa để lên sắc nâu óng và kho trong nồi đất hoặc nồi đáy dày.",
+      "finished_dish": "Cá kèo nguyên con săn mềm, thấm lớp nước kho nâu bóng; rau răm thơm rõ, tiêu và ớt tạo hậu vị ấm.",
+      "serving": "Dọn nóng trong nồi đất cùng cơm trắng. Ăn kèm dưa leo hoặc rau luộc để cân vị mặn ngọt.",
+      "tips": [
+        "Chọn cá còn tươi, nhờ nơi bán sơ chế; rửa nhanh, để thật ráo rồi mới ướp để cá không nhạt vị.",
+        "Ướp cá khoảng 15 phút và xếp rau răm thành lớp xen kẽ; trở nhẹ bằng cách lắc nồi để thân cá không nát.",
+        "Nước mắm mặn khác nhau, nếm nước kho trước khi rút cạn và thêm nước nóng nếu nồi cạn quá sớm."
+      ],
+      "dish_type": [
+        "Món cá kho Nam Bộ",
+        "Món ăn cùng cơm"
+      ],
+      "main_ingredient": [
+        "cá kèo",
+        "rau răm",
+        "nước mắm"
+      ],
+      "cooking_method": [
+        "ướp cá",
+        "kho liu riu",
+        "kho với rau răm"
+      ],
+      "search_terms": [
+        "cá kèo kho rau răm",
+        "cá kèo miền Tây",
+        "món cá kho Nam Bộ",
+        "cá kèo kho tộ"
+      ],
+      "image_alt": "Nồi đất cá kèo kho rau răm miền Tây, cá nguyên con phủ nước kho nâu bóng cùng tiêu và ớt; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 50 phút, gồm sơ chế, ướp cá và kho liu riu.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Rau luộc",
+        "Dưa leo"
+      ],
+      "recipe_family": "mekong_goby_braised_vietnamese_coriander",
+      "ingredients": [
+        {
+          "name": "Cá kèo đã sơ chế",
+          "quantity": 600,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn cá tươi, nhờ nơi bán làm sạch; để ráo trước khi ướp.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Rau răm",
+          "quantity": 45,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Nhặt lá, rửa sạch; để ráo và chia làm hai phần.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 30,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Chia một phần để ướp, phần còn lại để nêm nước kho.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 3
+        },
+        {
+          "name": "Nước màu dừa",
+          "quantity": 12,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng lượng vừa đủ tạo màu nâu hổ phách; có thể thay bằng nước hàng.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Đường",
+          "quantity": 14,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Điều chỉnh theo độ mặn của nước mắm.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 5
+        },
+        {
+          "name": "Nước lọc nóng",
+          "quantity": 160,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Thêm từng phần để kho; không cần ngập cá.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Tiêu đen xay",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Rắc khi ướp và thêm một ít lúc hoàn tất.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 7
+        },
+        {
+          "name": "Ớt đỏ",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "seasoning",
+          "notes": "Đập dập hoặc để nguyên; tùy mức ăn cay.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        },
+        {
+          "name": "Muối",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Chỉ dùng một nhúm nhỏ khi rửa cá nếu cần.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 9
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa nhanh cá kèo đã sơ chế dưới nước sạch, để ráo. Nhặt và rửa rau răm; giữ lại vài ngọn non để dọn."
+        },
+        {
+          "step": 2,
+          "instruction": "Trộn cá với nước mắm, nước màu dừa, đường, tiêu và ớt. Ướp 15 phút trong nồi sẽ dùng để kho; xếp rau răm xen giữa các lớp cá."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đặt nồi lên bếp, đun lửa vừa đến khi nước ướp sôi lăn tăn. Rót nước nóng quanh thành nồi, đậy hé nắp và hạ lửa nhỏ."
+        },
+        {
+          "step": 2,
+          "instruction": "Kho 20–25 phút đến khi cá chín tới và nước kho sánh nhẹ. Trong lúc kho chỉ lắc nồi nhẹ một vài lần, không đảo mạnh."
+        },
+        {
+          "step": 3,
+          "instruction": "Mở nắp, nếm lại và kho thêm vài phút nếu muốn nước sệt hơn. Rắc tiêu và rau răm còn lại, tắt bếp và dọn nóng."
+        }
+      ],
+      "keywords": [
+        "Cá kèo",
+        "rau răm",
+        "nước màu dừa",
+        "món miền Tây"
+      ],
+      "tags": [
+        "món Nam Bộ",
+        "món miền Tây",
+        "món mặn",
+        "món ăn cùng cơm",
+        "cá kho"
+      ],
+      "sources": [
+        {
+          "url": "https://vnexpress.net/bong-keo-nam-bo-2358644.html",
+          "publisher": "VnExpress Đời sống",
+          "title": "Bống kèo Nam Bộ",
+          "use": "Đối chiếu tập quán kho cá kèo trong bữa cơm Nam Bộ, cách dùng rau răm thay hành và xếp xen lớp cá với rau; định lượng tại đây do Bếp Việt biên tập.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://thanhnien.vn/mon-ngon-de-lam-ca-keo-kho-rau-ram-dam-da-bua-que-giua-thi-thanh-185603624.htm",
+          "publisher": "Báo Thanh Niên",
+          "title": "Món ngon dễ làm: Cá kèo kho rau răm đậm đà bữa quê giữa thị thành",
+          "use": "Đối chiếu tên món và cách kho rau răm; công thức được chuẩn hóa riêng cho khẩu phần gia đình.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/ca-keo-kho-rau-ram-mien-tay-960.webp",
+          "page_url": "https://vnexpress.net/bong-keo-nam-bo-2358644.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu món ăn.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Nồi đất cá kèo kho rau răm miền Tây, cá nguyên con phủ nước kho nâu bóng cùng tiêu và ớt; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh tạo riêng bằng ImageGen; PNG gốc 1536 × 1024 có alpha, bản giao diện xuất WebP và bản PNG 3840 × 2160. Công thức chưa nấu thử."
+        }
+      ],
+      "variant_note": "Giữ đặc trưng rau răm xếp xen với cá kèo; lượng nước và gia vị được chuẩn hóa để có thể nấu bằng nồi gia đình.",
+      "needs": [
+        "Nấu thử để xác nhận lượng nước theo kích thước cá và nồi.",
+        "Đối chiếu độ mặn với loại nước mắm địa phương."
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "300 g cá kèo, 22 g rau răm, nêm khoảng 13 ml nước mắm",
+            "instruction": "Kho trong nồi nhỏ; giữ lửa thấp và nếm trước khi thêm phần nước mắm còn lại."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "900 g cá kèo, 68 g rau răm, nêm khoảng 36 ml nước mắm",
+            "instruction": "Chia cá thành lớp vừa nồi, tăng thời gian kho thêm vài phút nếu cá lớn; điều chỉnh nước mắm sau khi cá chín."
+          }
+        ]
+      },
+      "time_unit": "minute",
+      "spicy_level": 1,
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Giữ đặc trưng rau răm xếp xen với cá kèo; lượng nước và gia vị được chuẩn hóa để có thể nấu bằng nồi gia đình.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để xác nhận lượng nước theo kích thước cá và nồi.",
+          "Đối chiếu độ mặn với loại nước mắm địa phương."
+        ]
+      }
+    },
+    {
+      "id": "BV562",
+      "slug": "canh-bau-tom-kho-nam-bo",
+      "name": "Canh bầu nấu tôm khô Nam Bộ",
+      "aliases": [
+        "Canh bầu tôm khô",
+        "Canh bầu nấu tôm khô miền Tây",
+        "Canh bầu tôm khô hành lá"
+      ],
+      "region": [
+        "Nam"
+      ],
+      "province": [
+        "Nam Bộ",
+        "Đồng bằng sông Cửu Long"
+      ],
+      "category": "Món canh",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Bốn chén canh thanh, dùng nóng trong bữa cơm gia đình.",
+      "prep_time": 15,
+      "cook_time": 25,
+      "passive_time": 0,
+      "total_time": 40,
+      "description": "Canh bầu nấu tôm khô là món canh dịu ngọt thường có trong bữa cơm gia đình miền Nam. Tôm khô được ngâm mềm và ninh để lấy vị ngọt tự nhiên, sau đó mới cho bầu vào nấu vừa chín để giữ màu xanh và độ mềm mát. Công thức Bếp Việt dùng lát bầu mỏng, dễ chuẩn bị và phù hợp bữa cơm thường ngày.",
+      "finished_dish": "Nước canh trong, ngọt nhẹ từ tôm khô; lát bầu xanh nhạt mềm vừa, điểm hành lá và ngò rí.",
+      "serving": "Múc canh ra tô khi còn nóng, rắc hành lá và ngò rí. Dùng cùng cơm trắng và món kho hoặc món rang.",
+      "tips": [
+        "Ngâm tôm khô trong nước ấm 10 phút, rửa lại để giảm bụi và vị mặn bề mặt; giữ lại nước ngâm đã lọc nếu muốn tăng vị.",
+        "Cho bầu vào khi nước canh đang sôi và nấu vừa chín tới; nấu lâu làm bầu mềm nhũn và nước kém trong.",
+        "Nếm nước dùng trước khi thêm nước mắm vì tôm khô vốn đã có độ mặn."
+      ],
+      "dish_type": [
+        "Canh rau củ nấu tôm",
+        "Món canh gia đình"
+      ],
+      "main_ingredient": [
+        "bầu",
+        "tôm khô"
+      ],
+      "cooking_method": [
+        "ngâm tôm khô",
+        "ninh nước canh",
+        "nấu bầu"
+      ],
+      "search_terms": [
+        "canh bầu nấu tôm khô",
+        "canh bầu miền Nam",
+        "canh bầu tôm khô",
+        "món canh thanh mát"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Tô canh bầu nấu tôm khô Nam Bộ với lát bầu xanh nhạt trong nước dùng trong, điểm tôm khô và hành ngò; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 40 phút, gồm ngâm tôm và ninh nước canh.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Cá kho",
+        "Rau luộc"
+      ],
+      "recipe_family": "southern_vietnam_gourd_soup_dried_shrimp",
+      "ingredients": [
+        {
+          "name": "Bầu non",
+          "quantity": 650,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Gọt vỏ nếu vỏ già, bỏ ruột xốp nếu quả lớn; cắt lát mỏng vừa ăn.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Tôm khô",
+          "quantity": 40,
+          "unit": "g",
+          "role": "main",
+          "notes": "Rửa nhanh, ngâm nước ấm 10 phút rồi rửa lại; giữ nước ngâm đã lọc.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 1100,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng ninh tôm và nấu canh.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 12,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ; phi thơm nhẹ nếu muốn.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 8,
+          "unit": "ml",
+          "role": "other",
+          "notes": "Có thể bỏ qua để giữ nước canh thanh.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm từng ít một sau khi tôm đã ninh.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 6
+        },
+        {
+          "name": "Muối",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Điều chỉnh theo độ mặn của tôm khô.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 7
+        },
+        {
+          "name": "Đường",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Tùy chọn, dùng lượng nhỏ để cân vị.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 12,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Ngò rí",
+          "quantity": 8,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa tôm khô, ngâm nước ấm 10 phút cho mềm rồi rửa sạch. Lọc nước ngâm qua rây nếu dùng để nấu."
+        },
+        {
+          "step": 2,
+          "instruction": "Gọt và rửa bầu, cắt lát mỏng vừa ăn. Thái hành lá, ngò rí; băm hành tím."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đun nóng dầu trong nồi, phi hành tím vừa thơm. Thêm nước lọc và tôm khô (có thể thêm phần nước ngâm đã lọc), đun sôi rồi hạ lửa ninh khoảng 15 phút."
+        },
+        {
+          "step": 2,
+          "instruction": "Nêm muối và một ít nước mắm. Khi nước sôi trở lại, cho bầu vào, nấu 2–4 phút đến khi lát bầu vừa mềm và chuyển trong."
+        },
+        {
+          "step": 3,
+          "instruction": "Nếm lại, tắt bếp ngay để bầu không nhũn. Rắc hành lá, ngò rí và múc ra tô."
+        }
+      ],
+      "keywords": [
+        "Bầu",
+        "tôm khô",
+        "canh thanh",
+        "món Nam Bộ"
+      ],
+      "tags": [
+        "món canh",
+        "món Nam Bộ",
+        "món miền Tây",
+        "bữa cơm gia đình",
+        "món dễ nấu"
+      ],
+      "sources": [
+        {
+          "url": "https://vnexpress.net/doi-song-cooking-canh-bau-tom-4481255.html",
+          "publisher": "VnExpress Cooking",
+          "title": "Cách nấu canh bầu tôm ngon ngọt thanh hương vị đồng quê",
+          "use": "Đối chiếu cách kết hợp bầu với tôm khô/tôm đồng, ninh tôm trước rồi cho bầu vào sau để giữ độ chín tới; Bếp Việt biên tập lại định lượng và bước nấu.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://vnexpress.net/doi-song-cooking-nau-canh-bau-nen-bam-nao-hay-thai-4800606.html",
+          "publisher": "VnExpress Cooking",
+          "title": "Nấu canh bầu nên băm, nạo hay thái?",
+          "use": "Đối chiếu thói quen nấu canh bầu ở gia đình miền Tây và cách cắt miếng để giữ độ giòn mát.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/canh-bau-tom-kho-nam-bo-960.webp",
+          "page_url": "https://vnexpress.net/doi-song-cooking-canh-bau-tom-4481255.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu món ăn.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Tô canh bầu nấu tôm khô Nam Bộ với lát bầu xanh nhạt trong nước dùng trong, điểm tôm khô và hành ngò; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh tạo riêng bằng ImageGen; PNG gốc 1536 × 1024 có alpha, bản giao diện xuất WebP và bản PNG 3840 × 2160. Công thức chưa nấu thử."
+        }
+      ],
+      "variant_note": "Dùng tôm khô ngâm mềm để nấu nhanh; canh được nêm vừa nhẹ và bầu chỉ chín tới.",
+      "needs": [
+        "Nấu thử để chốt thời gian ninh theo độ khô và cỡ tôm.",
+        "Điều chỉnh lượng nước mắm theo độ mặn của tôm khô."
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "325 g bầu, 20 g tôm khô và khoảng 550 ml nước",
+            "instruction": "Ninh trong nồi nhỏ; nếm nước dùng trước khi cho bầu để không cần nêm quá tay."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "975 g bầu, 60 g tôm khô và khoảng 1,65 l nước",
+            "instruction": "Nấu bầu thành hai mẻ nếu nồi chật để lát bầu chín đồng đều."
+          }
+        ]
+      },
+      "time_unit": "minute",
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Dùng tôm khô ngâm mềm để nấu nhanh; canh được nêm vừa nhẹ và bầu chỉ chín tới.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để chốt thời gian ninh theo độ khô và cỡ tôm.",
+          "Điều chỉnh lượng nước mắm theo độ mặn của tôm khô."
+        ]
+      }
+    },
+    {
+      "id": "BV563",
+      "slug": "tep-dong-rang-la-chanh",
+      "name": "Tép đồng rang lá chanh",
+      "aliases": [
+        "Tép rang lá chanh",
+        "Tôm đồng nhỏ rang lá chanh",
+        "Tép đồng rang mỡ"
+      ],
+      "region": [
+        "Nam"
+      ],
+      "province": [
+        "Đồng bằng sông Cửu Long",
+        "Nam Bộ"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một đĩa tép rang nhỏ làm món mặn ăn kèm cơm trắng và rau luộc.",
+      "prep_time": 15,
+      "cook_time": 20,
+      "passive_time": 0,
+      "total_time": 35,
+      "description": "Tép đồng rang lá chanh là món ăn dân dã, dùng tép nhỏ rang khô trước rồi mới thêm mỡ, hành và gia vị để tép bóng giòn, thơm lá chanh. Bếp Việt biên tập khẩu phần gia đình với vị mặn ngọt nhẹ, giữ nguyên cách rang hai lửa để tép ráo trước khi nêm.",
+      "finished_dish": "Tép đồng vàng đỏ, rang ráo và bóng nhẹ, thoảng mùi lá chanh thái chỉ; phần tép giòn thơm, không ngập dầu.",
+      "serving": "Dọn nóng thành đĩa nhỏ cùng cơm trắng, rau luộc hoặc canh rau. Vắt thêm chút chanh nếu thích vị dịu.",
+      "tips": [
+        "Chọn tép đồng tươi, rửa kỹ và để ráo hoàn toàn; nước đọng sẽ làm tép lâu khô.",
+        "Rang tép không gia vị ở lửa vừa lớn đến khi ráo và chuyển đỏ, rồi mới cho mỡ cùng gia vị để tép thấm mà không dai.",
+        "Thái lá chanh thật mảnh và cho vào sau cùng để giữ mùi thơm."
+      ],
+      "dish_type": [
+        "Món tép rang",
+        "Món mặn miền Tây"
+      ],
+      "main_ingredient": [
+        "tép đồng",
+        "lá chanh"
+      ],
+      "cooking_method": [
+        "sơ chế tép",
+        "rang khô",
+        "rang với gia vị"
+      ],
+      "search_terms": [
+        "tép đồng rang lá chanh",
+        "tép rang lá chanh",
+        "tép đồng rang mỡ",
+        "món tép ăn với cơm"
+      ],
+      "image_alt": "Đĩa tép đồng rang lá chanh vàng đỏ, bóng nhẹ với lá chanh thái chỉ; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 35 phút, gồm làm sạch tép, rang ráo và nêm gia vị.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Rau luộc",
+        "Canh rau"
+      ],
+      "recipe_family": "mekong_tiny_freshwater_shrimp_pan_roasted_lime_leaf",
+      "ingredients": [
+        {
+          "name": "Tép đồng",
+          "quantity": 400,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn tép tươi, nhặt bỏ tạp chất; rửa sạch và để thật ráo.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Mỡ lợn",
+          "quantity": 25,
+          "unit": "g",
+          "role": "main",
+          "notes": "Cắt hạt lựu nhỏ để lấy mỡ rang tép.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Tóp mỡ",
+          "quantity": 30,
+          "unit": "g",
+          "role": "other",
+          "notes": "Tùy chọn; vớt ra khi vàng giòn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 3
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 20,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, thái lát mỏng.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Lá chanh",
+          "quantity": 5,
+          "unit": "lá",
+          "role": "herb",
+          "notes": "Rửa sạch, lau khô rồi thái chỉ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 18,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm sau khi tép đã rang ráo.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 6
+        },
+        {
+          "name": "Đường",
+          "quantity": 8,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Cân vị mặn ngọt, có thể giảm.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 7
+        },
+        {
+          "name": "Muối",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng rất ít để nêm nếu cần.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        },
+        {
+          "name": "Tiêu đen",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Xay vừa.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 9
+        },
+        {
+          "name": "Nước cốt chanh",
+          "quantity": 5,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Tùy chọn, thêm cuối cùng để vị dịu.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 10
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Nhặt sạch tép, rửa qua nước muối loãng rồi xả sạch. Để ráo trên rổ; không ướp mắm trước khi rang."
+        },
+        {
+          "step": 2,
+          "instruction": "Thái mỡ lợn thành hạt lựu, thái hành tím và lá chanh thành lát mảnh. Pha nước mắm với đường và một thìa nước lọc."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng chảo, cho tép vào rang ở lửa vừa lớn và đảo liên tục đến khi nước bốc hơi, tép ráo và chuyển màu đỏ hồng."
+        },
+        {
+          "step": 2,
+          "instruction": "Gạt tép sang một bên. Cho mỡ lợn vào cùng chảo, rán đến khi tóp mỡ vàng; thêm hành tím, đảo thơm rồi trộn đều với tép."
+        },
+        {
+          "step": 3,
+          "instruction": "Rót hỗn hợp nước mắm đường quanh chảo, hạ lửa vừa nhỏ và đảo đến khi gia vị bám bóng vào tép. Thêm tóp mỡ và tiêu, nếm lại."
+        },
+        {
+          "step": 4,
+          "instruction": "Tắt bếp, trộn lá chanh thái chỉ và vài giọt chanh nếu muốn. Dọn ngay khi nóng."
+        }
+      ],
+      "keywords": [
+        "Tép đồng",
+        "lá chanh",
+        "món rang",
+        "món Nam Bộ"
+      ],
+      "tags": [
+        "món miền Tây",
+        "món mặn",
+        "tép đồng",
+        "món ăn cùng cơm",
+        "món dân dã"
+      ],
+      "sources": [
+        {
+          "url": "https://vnexpress.net/doi-song-cooking-rang-tep-dong-4677709.html",
+          "publisher": "VnExpress Cooking",
+          "title": "Mẹo rang tép đồng không cần cắt râu",
+          "use": "Đối chiếu nguyên liệu tép đồng, lá chanh và kỹ thuật rang ráo trước rồi mới thêm mỡ, hành và gia vị; công thức được Bếp Việt tự chuẩn hóa.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://vnexpress.net/5-mon-dan-da-nen-thu-khi-ve-mien-tay-3962065.html",
+          "publisher": "VnExpress Du lịch",
+          "title": "5 món dân dã nên thử khi về miền Tây",
+          "use": "Tham khảo bối cảnh dùng các món tép đồng trong bữa ăn dân dã miền Tây.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/tep-dong-rang-la-chanh-960.webp",
+          "page_url": "https://vnexpress.net/doi-song-cooking-rang-tep-dong-4677709.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu món ăn.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa tép đồng rang lá chanh vàng đỏ, bóng nhẹ với lá chanh thái chỉ; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh tạo riêng bằng ImageGen; PNG gốc 1536 × 1024 có alpha, bản giao diện xuất WebP và bản PNG 3840 × 2160. Công thức chưa nấu thử."
+        }
+      ],
+      "variant_note": "Giữ kỹ thuật rang tép ráo trước khi nêm; lượng mỡ và đường được tiết chế cho bữa cơm gia đình.",
+      "needs": [
+        "Nấu thử để xác nhận độ khô phù hợp với cỡ tép tươi ở từng mùa.",
+        "Nếm tôm khô/tép trước khi gia giảm nước mắm."
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "200 g tép đồng, 12 g mỡ và khoảng 9 ml nước mắm",
+            "instruction": "Dùng chảo nhỏ để tép tiếp xúc đều mặt chảo, đảo liên tục cho ráo."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "600 g tép đồng, 38 g mỡ và khoảng 27 ml nước mắm",
+            "instruction": "Rang thành hai mẻ trên chảo gia đình để tép không hấp hơi lẫn nhau."
+          }
+        ]
+      },
+      "time_unit": "minute",
+      "spicy_level": 1,
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Giữ kỹ thuật rang tép ráo trước khi nêm; lượng mỡ và đường được tiết chế cho bữa cơm gia đình.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để xác nhận độ khô phù hợp với cỡ tép tươi ở từng mùa.",
+          "Nếm tôm khô/tép trước khi gia giảm nước mắm."
+        ]
+      }
+    },
+    {
+      "id": "BV564",
+      "slug": "ca-tim-nuong-mo-hanh-mien-tay",
+      "name": "Cà tím nướng mỡ hành miền Tây",
+      "aliases": [
+        "Cà tím nướng mỡ hành",
+        "Cà tím nướng mỡ hành nước mắm",
+        "Cà tím nướng kiểu Nam Bộ"
+      ],
+      "region": [
+        "Nam"
+      ],
+      "province": [
+        "Nam Bộ",
+        "Đồng bằng sông Cửu Long"
+      ],
+      "category": "Món rau",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một đĩa cà tím nướng xẻ dọc, dùng làm món rau ăn cùng cơm.",
+      "prep_time": 10,
+      "cook_time": 20,
+      "passive_time": 0,
+      "total_time": 30,
+      "description": "Cà tím nướng mỡ hành là món rau phụ quen thuộc ở miền Nam: cà được nướng đến khi mềm thơm, bóc bớt lớp vỏ cháy rồi chan mỡ hành và nước mắm tỏi ớt. Bếp Việt giữ cách dọn giản dị, thêm đậu phộng rang tùy chọn và hướng dẫn nướng bằng lò hoặc bếp than tại nhà.",
+      "finished_dish": "Quả cà tím nướng mềm, vỏ tím sém được bóc gọn; mặt ruột trắng ngà thấm mỡ hành, nước mắm tỏi ớt và chút đậu phộng rang.",
+      "serving": "Rạch dọc quả cà và dọn nguyên trên đĩa hoặc cắt khúc. Dùng nóng như món rau ăn cùng cơm trắng.",
+      "tips": [
+        "Chọn quả cà tím chắc, vỏ bóng, kích thước vừa để ruột chín đều trước khi vỏ cháy quá.",
+        "Nếu dùng lò nướng, làm nóng trước ở 220°C và trở cà một lần; kiểm tra bằng xiên, ruột phải mềm hoàn toàn.",
+        "Rót dầu đang nóng lên hành lá để hành chín thơm nhưng vẫn giữ màu xanh; nêm nước mắm vừa đủ vì cà hút vị nhanh."
+      ],
+      "dish_type": [
+        "Món rau nướng",
+        "Món ăn kèm miền Nam"
+      ],
+      "main_ingredient": [
+        "cà tím",
+        "hành lá",
+        "nước mắm"
+      ],
+      "cooking_method": [
+        "nướng cà tím",
+        "làm mỡ hành",
+        "pha nước mắm tỏi ớt"
+      ],
+      "search_terms": [
+        "cà tím nướng mỡ hành",
+        "cà tím nướng miền Tây",
+        "cà tím nướng nước mắm",
+        "món rau ăn cơm"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Đĩa cà tím nướng mỡ hành miền Tây, ruột cà mềm phủ hành lá, nước mắm tỏi ớt và đậu phộng; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 30 phút, gồm sơ chế cà, nướng và làm mỡ hành.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Cá kho",
+        "Canh rau"
+      ],
+      "recipe_family": "southern_vietnam_grilled_eggplant_scallion_oil",
+      "ingredients": [
+        {
+          "name": "Cà tím dài",
+          "quantity": 600,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Chọn 2–3 quả vừa, rửa sạch, giữ cuống.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 35,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Rửa sạch, để ráo và thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 35,
+          "unit": "ml",
+          "role": "other",
+          "notes": "Đun nóng để rưới lên hành làm mỡ hành.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Pha nước chấm; gia giảm theo độ mặn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 4
+        },
+        {
+          "name": "Đường",
+          "quantity": 12,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Hòa tan với nước mắm và nước.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 5
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng pha nước chấm.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 8,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Ớt",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "seasoning",
+          "notes": "Băm nhỏ; bỏ hạt nếu muốn ít cay.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        },
+        {
+          "name": "Đậu phộng rang",
+          "quantity": 15,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Giã dập, rắc tùy chọn khi dọn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 9
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa cà, thấm khô. Dùng tăm hoặc mũi dao châm vài lỗ nông trên vỏ để hơi thoát ra khi nướng."
+        },
+        {
+          "step": 2,
+          "instruction": "Thái hành lá, băm tỏi và ớt. Hòa nước mắm, đường và nước lọc; khuấy cho tan rồi thêm tỏi, ớt."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng lò ở 220°C hoặc chuẩn bị bếp than. Nướng cà 15–20 phút, trở một lần, đến khi vỏ sém và ruột mềm hoàn toàn."
+        },
+        {
+          "step": 2,
+          "instruction": "Đun nóng dầu ăn đến khi vừa nóng già, rót lên hành lá trong bát để làm mỡ hành. Để cà nguội bớt rồi bóc các mảng vỏ cháy lớn."
+        },
+        {
+          "step": 3,
+          "instruction": "Rạch dọc cà, dàn nhẹ ruột trên đĩa. Rưới mỡ hành và nước mắm tỏi ớt, thêm đậu phộng rang nếu thích; dùng nóng."
+        }
+      ],
+      "keywords": [
+        "Cà tím",
+        "mỡ hành",
+        "món rau",
+        "Nam Bộ"
+      ],
+      "tags": [
+        "món rau",
+        "món Nam Bộ",
+        "món miền Tây",
+        "món ăn kèm",
+        "món dễ nấu"
+      ],
+      "sources": [
+        {
+          "url": "https://ngoisao.vnexpress.net/10-mon-dan-da-ton-com-cua-nguoi-mien-tay-3470627.html",
+          "publisher": "Ngôi Sao VnExpress",
+          "title": "10 món dân dã tốn cơm của người miền Tây",
+          "use": "Đối chiếu cà tím nướng là món phụ quen thuộc ở miền Tây và cách dọn với mỡ hành, nước mắm tỏi ớt; định lượng do Bếp Việt chuẩn hóa.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://vietworld.world/tin-tuc/cong-dong-nguoi-viet/van-hoa-am-thuc-nguoi-viet-o-nam-bo",
+          "publisher": "Viet World",
+          "title": "Văn hóa ẩm thực người Việt ở Nam Bộ",
+          "use": "Tham khảo cách dùng rau, củ và món ăn dân dã trong bữa cơm Nam Bộ.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/ca-tim-nuong-mo-hanh-mien-tay-960.webp",
+          "page_url": "https://ngoisao.vnexpress.net/10-mon-dan-da-ton-com-cua-nguoi-mien-tay-3470627.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu món ăn.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa cà tím nướng mỡ hành miền Tây, ruột cà mềm phủ hành lá, nước mắm tỏi ớt và đậu phộng; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh tạo riêng bằng ImageGen; PNG gốc 1536 × 1024 có alpha, bản giao diện xuất WebP và bản PNG 3840 × 2160. Công thức chưa nấu thử."
+        }
+      ],
+      "variant_note": "Nướng nguyên quả đến mềm, bóc vỏ sém rồi dọn với mỡ hành; nước mắm được pha riêng để người ăn tự điều chỉnh.",
+      "needs": [
+        "Nấu thử để chốt thời gian theo kích thước cà và thiết bị nướng.",
+        "Điều chỉnh nước mắm theo khẩu vị gia đình."
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "300 g cà tím, khoảng 18 g hành lá và 10 ml nước mắm",
+            "instruction": "Nướng một quả lớn; pha nước chấm riêng và chỉ rưới vừa đủ."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "900 g cà tím, khoảng 52 g hành lá và 30 ml nước mắm",
+            "instruction": "Nướng thành nhiều mẻ, chia phần dầu hành để cà không bị ngập sốt."
+          }
+        ]
+      },
+      "time_unit": "minute",
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Nướng nguyên quả đến mềm, bóc vỏ sém rồi dọn với mỡ hành; nước mắm được pha riêng để người ăn tự điều chỉnh.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để chốt thời gian theo kích thước cà và thiết bị nướng.",
+          "Điều chỉnh nước mắm theo khẩu vị gia đình."
+        ]
+      }
+    },
+    {
+      "id": "BV565",
+      "slug": "kho-quet-tom-kho-top-mo-nam-bo",
+      "name": "Kho quẹt tôm khô tóp mỡ Nam Bộ",
+      "aliases": [
+        "Tôm kho quẹt",
+        "Kho quẹt tôm thịt",
+        "Kho quẹt miền Tây"
+      ],
+      "region": [
+        "Nam"
+      ],
+      "province": [
+        "Nam Bộ",
+        "Đồng bằng sông Cửu Long"
+      ],
+      "category": "Món ăn kèm",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một niêu kho quẹt nhỏ kèm đĩa rau củ luộc để chấm, đủ cho bốn người ăn cùng cơm.",
+      "prep_time": 20,
+      "cook_time": 25,
+      "passive_time": 0,
+      "total_time": 45,
+      "description": "Kho quẹt tôm khô tóp mỡ là món chấm đậm vị gắn với bữa cơm dân dã Nam Bộ. Tôm khô, nước mắm và tiêu được đun liu riu đến khi sánh, sau đó thêm tóp mỡ để tạo vị béo giòn; Bếp Việt cân lại vị mặn ngọt cho khẩu phần gia đình và gợi ý dọn cùng rau củ luộc.",
+      "finished_dish": "Niêu đất kho quẹt nâu hổ phách sánh nhẹ, có tôm khô, tóp mỡ, tiêu và lát ớt; bên cạnh là đĩa đậu que, cà rốt và đậu bắp luộc.",
+      "serving": "Đặt niêu nhỏ ở giữa bàn, dùng rau củ luộc chấm từng ít một; có thể dọn thêm cơm cháy hoặc cơm nóng.",
+      "tips": [
+        "Ngâm tôm khô 5–10 phút rồi để ráo; nếm thử trước khi nêm vì từng loại tôm khô có độ mặn khác nhau.",
+        "Rán mỡ lửa vừa để tóp mỡ vàng giòn mà không cháy; chắt bớt mỡ, chỉ giữ lại một thìa để phi thơm hành tỏi.",
+        "Khi nước mắm bắt đầu sánh, hạ lửa nhỏ và tắt bếp sớm một chút vì sốt tiếp tục đặc khi nguội."
+      ],
+      "dish_type": [
+        "Món chấm Nam Bộ",
+        "Kho quẹt tôm khô"
+      ],
+      "main_ingredient": [
+        "tôm khô",
+        "thịt ba chỉ",
+        "nước mắm",
+        "tóp mỡ"
+      ],
+      "cooking_method": [
+        "rán tóp mỡ",
+        "xào tôm khô",
+        "kho nước mắm liu riu",
+        "luộc rau củ"
+      ],
+      "search_terms": [
+        "kho quẹt",
+        "kho quẹt tôm khô tóp mỡ",
+        "tôm kho quẹt miền Tây",
+        "kho quẹt chấm rau củ"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Niêu đất kho quẹt tôm khô tóp mỡ nâu sánh, ăn kèm đĩa rau củ luộc; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 45 phút, gồm ngâm tôm, rán tóp mỡ, kho sốt và luộc rau.",
+      "suggested_pairings": [
+        "Rau củ luộc",
+        "Cơm trắng",
+        "Cơm cháy"
+      ],
+      "recipe_family": "southern_vietnam_kho_quet_dried_shrimp_pork_cracklings",
+      "ingredients": [
+        {
+          "name": "Thịt ba chỉ",
+          "quantity": 180,
+          "unit": "g",
+          "role": "main",
+          "notes": "Cắt hạt lựu nhỏ để rán ra tóp mỡ.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Tôm khô",
+          "quantity": 35,
+          "unit": "g",
+          "role": "main",
+          "notes": "Ngâm nước ấm 5–10 phút rồi để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 55,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nên chọn loại thơm, nêm từng phần; có thể giảm nếu mặn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 3
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 70,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Pha loãng nước mắm để sốt sôi đều.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Đường",
+          "quantity": 18,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Cân vị mặn ngọt; có thể bắt đầu với lượng ít hơn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 5
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 20,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 10,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Tiêu đen",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Xay dập; cho một phần khi kho, phần còn lại lúc dọn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        },
+        {
+          "name": "Ớt đỏ",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "seasoning",
+          "notes": "Để nguyên hoặc thái lát; tùy khẩu vị.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 9
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 12,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Đậu que",
+          "quantity": 180,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Tước xơ, cắt khúc; luộc làm món chấm.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Cà rốt",
+          "quantity": 150,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Gọt vỏ, cắt que vừa ăn.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        },
+        {
+          "name": "Đậu bắp",
+          "quantity": 180,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Rửa sạch, cắt cuống; để nguyên quả nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 13
+        },
+        {
+          "name": "Muối",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng nêm nước luộc rau.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 14
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Ngâm tôm khô trong nước ấm 5–10 phút cho mềm, rửa sạch và để ráo. Cắt thịt ba chỉ thành hạt lựu, băm hành tím và tỏi."
+        },
+        {
+          "step": 2,
+          "instruction": "Rửa đậu que, cà rốt, đậu bắp; cắt vừa ăn. Pha nước mắm với nước lọc và đường, khuấy cho tan."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Cho thịt ba chỉ vào chảo nguội, rán lửa vừa đến khi mỡ chảy ra và tóp mỡ vàng giòn. Vớt tóp mỡ ra, chắt bớt mỡ, giữ lại khoảng 15 ml."
+        },
+        {
+          "step": 2,
+          "instruction": "Phi thơm hành tím và tỏi trong phần mỡ còn lại. Cho tôm khô vào đảo đến khi săn và dậy mùi."
+        },
+        {
+          "step": 3,
+          "instruction": "Rót hỗn hợp nước mắm, nước và đường vào chảo; thêm tiêu, ớt. Đun sôi rồi hạ lửa nhỏ 8–12 phút đến khi sốt sánh nhẹ. Cho tóp mỡ trở lại, nếm và tắt bếp; rắc hành lá."
+        },
+        {
+          "step": 4,
+          "instruction": "Đun sôi nồi nước với chút muối. Luộc lần lượt đậu que, cà rốt và đậu bắp vừa chín, vớt ra để ráo. Dọn rau với niêu kho quẹt còn ấm."
+        }
+      ],
+      "keywords": [
+        "Kho quẹt",
+        "tôm khô",
+        "tóp mỡ",
+        "rau củ luộc",
+        "Nam Bộ"
+      ],
+      "tags": [
+        "món ăn kèm",
+        "món Nam Bộ",
+        "món miền Tây",
+        "kho quẹt",
+        "món ăn cùng cơm"
+      ],
+      "sources": [
+        {
+          "url": "https://vnexpress.net/tom-kho-quet-2307163.html",
+          "publisher": "VnExpress Đời sống",
+          "title": "Tôm kho quẹt",
+          "use": "Đối chiếu nguồn gốc Nam Bộ, thành phần tôm khô, mỡ lợn, nước mắm, tiêu và kỹ thuật kho liu riu đến khi sánh; Bếp Việt viết lại định lượng và cách dùng.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://vnexpress.net/kho-quet-ca-keo-rau-dang-nhung-mon-an-dam-chat-mien-tay-3318628.html",
+          "publisher": "VnExpress Du lịch",
+          "title": "Kho quẹt, cá kèo rau đắng - những món ăn đậm chất miền Tây",
+          "use": "Đối chiếu cách dọn kho quẹt cùng cơm cháy hoặc rau củ trong bữa ăn dân dã miền Tây.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/kho-quet-tom-kho-top-mo-nam-bo-960.webp",
+          "page_url": "https://vnexpress.net/tom-kho-quet-2307163.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu món ăn.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Niêu đất kho quẹt tôm khô tóp mỡ nâu sánh, ăn kèm đĩa rau củ luộc; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh tạo riêng bằng ImageGen; PNG gốc 1536 × 1024 có alpha, bản giao diện xuất WebP và bản PNG 3840 × 2160. Công thức chưa nấu thử."
+        }
+      ],
+      "variant_note": "Tôm khô và tóp mỡ tạo nên phiên bản kho quẹt dùng chấm rau củ; độ sánh cuối được điều chỉnh để không quá mặn hoặc khô cứng.",
+      "needs": [
+        "Nấu thử để cân bằng độ mặn theo từng loại nước mắm và tôm khô.",
+        "Xác nhận lượng rau luộc phù hợp với khẩu phần bốn người."
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "90 g thịt ba chỉ, 18 g tôm khô và khoảng 28 ml nước mắm",
+            "instruction": "Dùng nồi nhỏ và giảm thời gian cô sốt; thêm tóp mỡ sau cùng để giữ giòn."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "270 g thịt ba chỉ, 52 g tôm khô và khoảng 82 ml nước mắm",
+            "instruction": "Kho sốt trước rồi nếm, điều chỉnh nước mắm và đường từng ít một; luộc rau thành mẻ."
+          }
+        ]
+      },
+      "time_unit": "minute",
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Tôm khô và tóp mỡ tạo nên phiên bản kho quẹt dùng chấm rau củ; độ sánh cuối được điều chỉnh để không quá mặn hoặc khô cứng.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để cân bằng độ mặn theo từng loại nước mắm và tôm khô.",
+          "Xác nhận lượng rau luộc phù hợp với khẩu phần bốn người."
+        ]
+      }
+    }
+  ]
+}

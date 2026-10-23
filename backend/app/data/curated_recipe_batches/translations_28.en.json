@@ -1,0 +1,1226 @@
+{
+  "canh-rau-san-chua-nau-suon-phu-tho": {
+    "name": "Phú Thọ Sour Cassava-Leaf and Pork Rib Soup",
+    "aliases": [],
+    "region": [
+      "Northern Midlands and Mountains"
+    ],
+    "province": [
+      "Phú Thọ"
+    ],
+    "category": "Soup",
+    "meal_type": [
+      "Lunch",
+      "Dinner"
+    ],
+    "difficulty": "Easy",
+    "serving_basis": "4 shared bowls for a family meal.",
+    "description": "Fermented cassava leaves simmer with pork ribs for a gently sour, earthy soup associated with Phú Thọ home cooking. This Bếp Việt home adaptation keeps the seasoning light so the leaves and rib broth remain distinct.",
+    "finished_dish": "Tender ribs and soft cassava leaves in a gently sour, savory broth with fragrant shallot.",
+    "excerpt": "Tender ribs and soft cassava leaves in a gently sour, savory broth with fragrant shallot.",
+    "serving": "Ladle into bowls and serve hot with steamed rice and a lightly seasoned main dish. Taste only after the leaves soften, since preserved leaves may already be salty.",
+    "tips": [
+      "Use properly prepared, fermented cassava leaves; never use raw leaves.",
+      "Squeeze out some brine and taste before rinsing so the leaves do not become bland.",
+      "Season with salt or fish sauce at the end because preserved leaves can already be salty."
+    ],
+    "tip": "Use properly prepared, fermented cassava leaves; never use raw leaves.",
+    "dish_type": [
+      "Sour soup",
+      "Phú Thọ specialty"
+    ],
+    "main_ingredient": [
+      "fermented cassava leaves",
+      "pork ribs"
+    ],
+    "cooking_method": [
+      "sautéing",
+      "simmering",
+      "soup-making"
+    ],
+    "search_terms": [
+      "Phú Thọ sour cassava-leaf soup",
+      "pork rib and fermented cassava leaves"
+    ],
+    "image_alt": "A bowl of fermented cassava-leaf soup with tender pork ribs and scallions.",
+    "ingredients": [
+      {
+        "name": "Pork ribs",
+        "quantity": 600,
+        "unit": "g",
+        "role": "main",
+        "notes": "Cut into serving pieces.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fermented cassava leaves",
+        "quantity": 350,
+        "unit": "g",
+        "role": "main",
+        "notes": "Squeeze out excess brine and taste for saltiness.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Shallot",
+        "quantity": 30,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Peeled and minced.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Water",
+        "quantity": 1500,
+        "unit": "ml",
+        "role": "liquid",
+        "notes": "Adjust to just cover the ribs.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Neutral cooking oil",
+        "quantity": 10,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "For sautéing the shallot.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fish sauce",
+        "quantity": 10,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "Add at the end if needed.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Ground black pepper",
+        "quantity": 1,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Optional.",
+        "scaling_rule": "linear"
+      }
+    ],
+    "preparation_steps": [
+      {
+        "step": 1,
+        "instruction": "Rinse the ribs, soak briefly in lightly salted water, then blanch for 2 minutes. Discard the water and rinse again."
+      },
+      {
+        "step": 2,
+        "instruction": "Squeeze the cassava leaves to remove excess brine and taste. If too salty or sharply sour, rinse once quickly and drain."
+      },
+      {
+        "step": 3,
+        "instruction": "Peel and mince the shallot."
+      }
+    ],
+    "cooking_steps": [
+      {
+        "step": 1,
+        "instruction": "Heat the oil and sauté the shallot until fragrant. Add the ribs, brown lightly, then add fish sauce and pepper."
+      },
+      {
+        "step": 2,
+        "instruction": "Add water and bring to a boil. Lower the heat, skim the surface and simmer for 30–35 minutes until the ribs are nearly tender."
+      },
+      {
+        "step": 3,
+        "instruction": "Add the cassava leaves and simmer 15–20 minutes until tender and their sourness blends into the broth. Taste, adjust only if needed, and turn off the heat."
+      }
+    ],
+    "time_note": "Simmering time varies by rib cut; cook the cassava leaves until tender while keeping their strands intact.",
+    "time_unit": "minutes",
+    "keywords": [
+      "Phú Thọ Sour Cassava-Leaf and Pork Rib Soup",
+      "Northern Midlands and Mountains",
+      "Phú Thọ",
+      "fermented cassava leaves",
+      "pork ribs",
+      "Phú Thọ sour cassava-leaf soup",
+      "pork rib and fermented cassava leaves",
+      "Sour soup",
+      "Phú Thọ specialty",
+      "70 minutes"
+    ],
+    "tags": {
+      "region": [
+        "Northern Midlands and Mountains"
+      ],
+      "province": [
+        "Phú Thọ"
+      ],
+      "meal_type": [
+        "lunch",
+        "dinner"
+      ],
+      "dish_type": [
+        "Sour soup",
+        "Phú Thọ specialty"
+      ],
+      "main_ingredient": [
+        "fermented cassava leaves",
+        "pork ribs"
+      ],
+      "cooking_method": [
+        "sautéing",
+        "simmering",
+        "soup-making"
+      ],
+      "difficulty": "Easy",
+      "suitable_for_family_meal": true,
+      "suggested_pairings": [
+        "Steamed rice",
+        "Fried tofu",
+        "Boiled greens"
+      ],
+      "keywords": [
+        "Phú Thọ Sour Cassava-Leaf and Pork Rib Soup",
+        "Northern Midlands and Mountains",
+        "Phú Thọ",
+        "fermented cassava leaves",
+        "pork ribs",
+        "Phú Thọ sour cassava-leaf soup",
+        "pork rib and fermented cassava leaves",
+        "Sour soup",
+        "Phú Thọ specialty",
+        "70 minutes"
+      ]
+    },
+    "scaling": {
+      "base_servings": 4,
+      "targets": [
+        {
+          "servings": 2,
+          "main_factor": 0.5,
+          "seasoning_start_factor": 0.5,
+          "example": "Phú Thọ Sour Cassava-Leaf and Pork Rib Soup for 2",
+          "instruction": "Adjust seasoning to taste; check doneness and texture."
+        },
+        {
+          "servings": 6,
+          "main_factor": 1.5,
+          "seasoning_start_factor": 1.5,
+          "example": "Phú Thọ Sour Cassava-Leaf and Pork Rib Soup for 6",
+          "instruction": "Adjust seasoning to taste; check doneness and texture."
+        },
+        {
+          "servings": 8,
+          "main_factor": 2.0,
+          "seasoning_start_factor": 2.0,
+          "example": "Phú Thọ Sour Cassava-Leaf and Pork Rib Soup for 8",
+          "instruction": "Adjust seasoning to taste; check doneness and texture."
+        }
+      ]
+    },
+    "editorial": {
+      "variant_note": "Home-edited by Bếp Việt based on references; quantities and timings need a test cook before production approval.",
+      "needs": [
+        "Test-cook to verify quantities, timing and flavor with locally available ingredients.",
+        "Review preparation and regional serving details after cooking."
+      ]
+    },
+    "suggested_pairings": [
+      "Steamed rice",
+      "Fried tofu",
+      "Boiled greens"
+    ]
+  },
+  "chao-am-tra-vinh": {
+    "name": "Trà Vinh Cháo Ám Snakehead Fish Porridge",
+    "aliases": [],
+    "region": [
+      "Mekong Delta"
+    ],
+    "province": [
+      "Vinh Long (formerly Tra Vinh)"
+    ],
+    "category": "Noodle and rice dishes",
+    "meal_type": [
+      "Breakfast",
+      "Lunch",
+      "Dinner"
+    ],
+    "difficulty": "Intermediate",
+    "serving_basis": "4 bowls of snakehead fish porridge, served hot with fresh greens and dipping sauce.",
+    "description": "Snakehead fish cooking broth becomes the base for rice porridge, enriched with boneless fish, dried shrimp and toasted dried squid. The Trà Vinh-style bowl is served with fresh greens, peanuts and a savory chili bean dip.",
+    "finished_dish": "A gently thick porridge fragrant with fish and dried seafood, with tender snakehead, soft fish roe and crisp fresh greens.",
+    "excerpt": "A gently thick porridge fragrant with fish and dried seafood, with tender snakehead, soft fish roe and crisp fresh greens.",
+    "serving": "Ladle the hot porridge into bowls and top with fish, scallion and cilantro. Serve with blanched bean sprouts, bitter greens, shredded banana blossom, sesame rice crackers and a bean-sauce dip seasoned with fermented fish sauce, lime and chili to taste.",
+    "tips": [
+      "Strain the fish broth before cooking the rice to remove small bones.",
+      "Flake the fish while warm and check carefully for remaining bones.",
+      "If fish roe is unavailable, omit it; chicken egg would change the dish’s character."
+    ],
+    "tip": "Strain the fish broth before cooking the rice to remove small bones.",
+    "dish_type": [
+      "Fish porridge",
+      "Trà Vinh specialty"
+    ],
+    "main_ingredient": [
+      "snakehead fish",
+      "rice",
+      "dried shrimp",
+      "dried squid"
+    ],
+    "cooking_method": [
+      "boiling",
+      "simmering porridge",
+      "sautéing"
+    ],
+    "search_terms": [
+      "Trà Vinh cháo ám",
+      "snakehead fish porridge",
+      "Mekong fish porridge"
+    ],
+    "image_alt": "A bowl of Trà Vinh cháo ám with flaked snakehead fish, scallion, cilantro, peanuts and fresh greens.",
+    "ingredients": [
+      {
+        "name": "Snakehead fish",
+        "quantity": 700,
+        "unit": "g",
+        "role": "main",
+        "notes": "Cleaned; reserve the roe separately if present.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Long-grain rice",
+        "quantity": 200,
+        "unit": "g",
+        "role": "main",
+        "notes": "Rinsed and drained.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Dried shrimp",
+        "quantity": 25,
+        "unit": "g",
+        "role": "main",
+        "notes": "Soak until soft and rinse.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Dried squid",
+        "quantity": 25,
+        "unit": "g",
+        "role": "main",
+        "notes": "Toast until fragrant and tear into small pieces.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Shallot",
+        "quantity": 35,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Toast some; mince the rest.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fresh ginger",
+        "quantity": 20,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Slice for the fish broth.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Scallions",
+        "quantity": 20,
+        "unit": "g",
+        "role": "process_aid",
+        "notes": "Chopped.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Cilantro",
+        "quantity": 15,
+        "unit": "g",
+        "role": "process_aid",
+        "notes": "Washed and chopped.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Roasted peanuts",
+        "quantity": 30,
+        "unit": "g",
+        "role": "process_aid",
+        "notes": "Coarsely crushed.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Bitter greens and fresh herbs",
+        "quantity": 200,
+        "unit": "g",
+        "role": "process_aid",
+        "notes": "Washed and drained.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Bean sprouts",
+        "quantity": 100,
+        "unit": "g",
+        "role": "process_aid",
+        "notes": "Briefly blanch if desired.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Shredded banana blossom",
+        "quantity": 100,
+        "unit": "g",
+        "role": "process_aid",
+        "notes": "Soak in diluted lime water and drain.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fermented soybean paste",
+        "quantity": 40,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "For the dipping sauce.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fermented anchovy sauce",
+        "quantity": 15,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "For the dip; adjust to taste.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Lime juice",
+        "quantity": 20,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "For the dip.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fresh chili",
+        "quantity": 1,
+        "unit": "piece",
+        "role": "seasoning",
+        "notes": "Optional.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Salt",
+        "quantity": 5,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Season lightly.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Water",
+        "quantity": 2200,
+        "unit": "ml",
+        "role": "liquid",
+        "notes": "For poaching the fish and cooking porridge.",
+        "scaling_rule": "linear"
+      }
+    ],
+    "preparation_steps": [
+      {
+        "step": 1,
+        "instruction": "Rinse and drain the rice. Soak the dried shrimp; toast the dried squid and some shallot until fragrant."
+      },
+      {
+        "step": 2,
+        "instruction": "Clean the fish and cut it into large sections. Wash and drain the greens; chop the scallions and cilantro."
+      },
+      {
+        "step": 3,
+        "instruction": "Mix the fermented soybean paste with fermented anchovy sauce, lime juice and minced chili; add warm water gradually to reach a dipping consistency."
+      }
+    ],
+    "cooking_steps": [
+      {
+        "step": 1,
+        "instruction": "Bring water to a boil with ginger and toasted shallot. Add the fish, lower the heat and poach until just cooked. Remove the fish, cool slightly and reserve the broth."
+      },
+      {
+        "step": 2,
+        "instruction": "Flake the fish and remove all bones; reserve any roe separately. Briefly sauté the fish with minced shallot and a little oil."
+      },
+      {
+        "step": 3,
+        "instruction": "Strain the broth and add the rice, dried shrimp and toasted squid. Simmer for 35–40 minutes, stirring periodically, until the rice is soft."
+      },
+      {
+        "step": 4,
+        "instruction": "Add the fish and roe, season lightly with salt and simmer for 3–5 minutes. Top with scallion, cilantro and peanuts; serve with greens, rice crackers and the dipping sauce."
+      }
+    ],
+    "time_note": "Cooking time depends on the rice; stir the bottom of the pot regularly to prevent sticking.",
+    "time_unit": "minutes",
+    "keywords": [
+      "Trà Vinh Cháo Ám Snakehead Fish Porridge",
+      "Mekong Delta",
+      "Vinh Long (formerly Tra Vinh)",
+      "snakehead fish",
+      "rice",
+      "dried shrimp",
+      "dried squid",
+      "Trà Vinh cháo ám",
+      "snakehead fish porridge",
+      "Mekong fish porridge",
+      "Fish porridge",
+      "Trà Vinh specialty",
+      "80 minutes"
+    ],
+    "tags": {
+      "region": [
+        "Mekong Delta"
+      ],
+      "province": [
+        "Vinh Long (formerly Tra Vinh)"
+      ],
+      "meal_type": [
+        "breakfast",
+        "lunch",
+        "dinner"
+      ],
+      "dish_type": [
+        "Fish porridge",
+        "Trà Vinh specialty"
+      ],
+      "main_ingredient": [
+        "snakehead fish",
+        "rice",
+        "dried shrimp",
+        "dried squid"
+      ],
+      "cooking_method": [
+        "boiling",
+        "simmering porridge",
+        "sautéing"
+      ],
+      "difficulty": "Intermediate",
+      "suitable_for_family_meal": true,
+      "suggested_pairings": [
+        "Bitter greens",
+        "Blanched bean sprouts",
+        "Sesame rice crackers"
+      ],
+      "keywords": [
+        "Trà Vinh Cháo Ám Snakehead Fish Porridge",
+        "Mekong Delta",
+        "Vinh Long (formerly Tra Vinh)",
+        "snakehead fish",
+        "rice",
+        "dried shrimp",
+        "dried squid",
+        "Trà Vinh cháo ám",
+        "snakehead fish porridge",
+        "Mekong fish porridge",
+        "Fish porridge",
+        "Trà Vinh specialty",
+        "80 minutes"
+      ]
+    },
+    "scaling": {
+      "base_servings": 4,
+      "targets": [
+        {
+          "servings": 2,
+          "main_factor": 0.5,
+          "seasoning_start_factor": 0.5,
+          "example": "Trà Vinh Cháo Ám Snakehead Fish Porridge for 2",
+          "instruction": "Adjust seasoning to taste; check doneness and texture."
+        },
+        {
+          "servings": 6,
+          "main_factor": 1.5,
+          "seasoning_start_factor": 1.5,
+          "example": "Trà Vinh Cháo Ám Snakehead Fish Porridge for 6",
+          "instruction": "Adjust seasoning to taste; check doneness and texture."
+        },
+        {
+          "servings": 8,
+          "main_factor": 2.0,
+          "seasoning_start_factor": 2.0,
+          "example": "Trà Vinh Cháo Ám Snakehead Fish Porridge for 8",
+          "instruction": "Adjust seasoning to taste; check doneness and texture."
+        }
+      ]
+    },
+    "editorial": {
+      "variant_note": "Home-edited by Bếp Việt based on references; quantities and timings need a test cook before production approval.",
+      "needs": [
+        "Test-cook to verify quantities, timing and flavor with locally available ingredients.",
+        "Review preparation and regional serving details after cooking."
+      ]
+    },
+    "suggested_pairings": [
+      "Bitter greens",
+      "Blanched bean sprouts",
+      "Sesame rice crackers"
+    ]
+  },
+  "bon-bon-xao-tom-kho-ca-mau": {
+    "name": "Cà Mau Stir-Fried Bồn Bồn with Dried Shrimp",
+    "aliases": [],
+    "region": [
+      "Mekong Delta"
+    ],
+    "province": [
+      "Cà Mau"
+    ],
+    "category": "Vegetable dishes",
+    "meal_type": [
+      "Lunch",
+      "Dinner"
+    ],
+    "difficulty": "Easy",
+    "serving_basis": "4 portions of lightly crisp stir-fried vegetables to serve with rice.",
+    "description": "Tender bồn bồn shoots stay crisp and sweet when quickly stir-fried over high heat with dried shrimp and shallot. This simple vegetable dish is associated with Cà Mau; the Bếp Việt adaptation keeps the sauce light so the vegetable remains the focus.",
+    "finished_dish": "Ivory-white, crisp bồn bồn shoots coated with savory dried shrimp and fragrant shallot, without excess liquid.",
+    "excerpt": "Ivory-white, crisp bồn bồn shoots coated with savory dried shrimp and fragrant shallot, without excess liquid.",
+    "serving": "Serve as soon as the stir-fry is done, finished with black pepper and steamed rice. Add a little lime if you prefer a brighter flavor.",
+    "tips": [
+      "Use tender inner bồn bồn shoots and trim any tough ends; soak briefly in light salt water.",
+      "Drain thoroughly before stir-frying so the shoots do not steam and soften.",
+      "Cook quickly over high heat without covering the pan."
+    ],
+    "tip": "Use tender inner bồn bồn shoots and trim any tough ends; soak briefly in light salt water.",
+    "dish_type": [
+      "Stir-fry",
+      "Cà Mau specialty"
+    ],
+    "main_ingredient": [
+      "bồn bồn shoots",
+      "dried shrimp"
+    ],
+    "cooking_method": [
+      "stir-frying"
+    ],
+    "search_terms": [
+      "Cà Mau bồn bồn stir-fry",
+      "stir-fried water cress shoots with dried shrimp"
+    ],
+    "image_alt": "A plate of Cà Mau bồn bồn shoots stir-fried with dried shrimp, scallion and black pepper.",
+    "ingredients": [
+      {
+        "name": "Tender bồn bồn shoots",
+        "quantity": 500,
+        "unit": "g",
+        "role": "main",
+        "notes": "Trim away tough outer parts and cut into lengths.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Dried shrimp",
+        "quantity": 70,
+        "unit": "g",
+        "role": "main",
+        "notes": "Soak until soft, then drain.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Shallot",
+        "quantity": 25,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Minced.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Scallions",
+        "quantity": 20,
+        "unit": "g",
+        "role": "process_aid",
+        "notes": "Chopped.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Neutral cooking oil",
+        "quantity": 15,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "For sautéing the shallot.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Oyster sauce",
+        "quantity": 15,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "Adjust to taste for saltiness.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Ground black pepper",
+        "quantity": 1,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "For finishing.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Water",
+        "quantity": 15,
+        "unit": "ml",
+        "role": "liquid",
+        "notes": "Add a splash only if the pan is dry.",
+        "scaling_rule": "linear"
+      }
+    ],
+    "preparation_steps": [
+      {
+        "step": 1,
+        "instruction": "Trim the tough parts of the shoots and cut into serving lengths. Soak in lightly salted water for 10 minutes, rinse and drain very well."
+      },
+      {
+        "step": 2,
+        "instruction": "Soak the dried shrimp for about 10 minutes until softened, then drain. Mince the shallot and chop the scallions."
+      }
+    ],
+    "cooking_steps": [
+      {
+        "step": 1,
+        "instruction": "Heat a large pan over medium-high heat, add the oil and sauté the shallot until fragrant."
+      },
+      {
+        "step": 2,
+        "instruction": "Add the dried shrimp and stir-fry for 1–2 minutes. Add the shoots, raise the heat and toss quickly for about 3 minutes."
+      },
+      {
+        "step": 3,
+        "instruction": "Season with oyster sauce and add a splash of water only if needed. Toss until hot but still crisp; add scallion and pepper, then turn off the heat."
+      }
+    ],
+    "time_note": "Total time excludes soaking the dried shrimp; stir-fry the shoots briefly to retain their crunch.",
+    "time_unit": "minutes",
+    "keywords": [
+      "Cà Mau Stir-Fried Bồn Bồn with Dried Shrimp",
+      "Mekong Delta",
+      "Cà Mau",
+      "bồn bồn shoots",
+      "dried shrimp",
+      "Cà Mau bồn bồn stir-fry",
+      "stir-fried water cress shoots with dried shrimp",
+      "Stir-fry",
+      "Cà Mau specialty",
+      "25 minutes"
+    ],
+    "tags": {
+      "region": [
+        "Mekong Delta"
+      ],
+      "province": [
+        "Cà Mau"
+      ],
+      "meal_type": [
+        "lunch",
+        "dinner"
+      ],
+      "dish_type": [
+        "Stir-fry",
+        "Cà Mau specialty"
+      ],
+      "main_ingredient": [
+        "bồn bồn shoots",
+        "dried shrimp"
+      ],
+      "cooking_method": [
+        "stir-frying"
+      ],
+      "difficulty": "Easy",
+      "suitable_for_family_meal": true,
+      "suggested_pairings": [
+        "Steamed rice",
+        "Braised fish",
+        "Vegetable soup"
+      ],
+      "keywords": [
+        "Cà Mau Stir-Fried Bồn Bồn with Dried Shrimp",
+        "Mekong Delta",
+        "Cà Mau",
+        "bồn bồn shoots",
+        "dried shrimp",
+        "Cà Mau bồn bồn stir-fry",
+        "stir-fried water cress shoots with dried shrimp",
+        "Stir-fry",
+        "Cà Mau specialty",
+        "25 minutes"
+      ]
+    },
+    "scaling": {
+      "base_servings": 4,
+      "targets": [
+        {
+          "servings": 2,
+          "main_factor": 0.5,
+          "seasoning_start_factor": 0.5,
+          "example": "Cà Mau Stir-Fried Bồn Bồn with Dried Shrimp for 2",
+          "instruction": "Adjust seasoning to taste; check doneness and texture."
+        },
+        {
+          "servings": 6,
+          "main_factor": 1.5,
+          "seasoning_start_factor": 1.5,
+          "example": "Cà Mau Stir-Fried Bồn Bồn with Dried Shrimp for 6",
+          "instruction": "Adjust seasoning to taste; check doneness and texture."
+        },
+        {
+          "servings": 8,
+          "main_factor": 2.0,
+          "seasoning_start_factor": 2.0,
+          "example": "Cà Mau Stir-Fried Bồn Bồn with Dried Shrimp for 8",
+          "instruction": "Adjust seasoning to taste; check doneness and texture."
+        }
+      ]
+    },
+    "editorial": {
+      "variant_note": "Home-edited by Bếp Việt based on references; quantities and timings need a test cook before production approval.",
+      "needs": [
+        "Test-cook to verify quantities, timing and flavor with locally available ingredients.",
+        "Review preparation and regional serving details after cooking."
+      ]
+    },
+    "suggested_pairings": [
+      "Steamed rice",
+      "Braised fish",
+      "Vegetable soup"
+    ]
+  },
+  "che-bot-loc-boc-heo-quay-hue": {
+    "name": "Huế Tapioca Dumpling and Roasted Pork Sweet Soup",
+    "aliases": [],
+    "region": [
+      "North Central Vietnam"
+    ],
+    "province": [
+      "Huế"
+    ],
+    "category": "Dessert",
+    "meal_type": [
+      "Dessert"
+    ],
+    "difficulty": "Intermediate",
+    "serving_basis": "6 small bowls, served warm or chilled.",
+    "description": "Chewy, translucent tapioca dumplings enclose pork roasted and gently candied with rock sugar, then simmer in a light ginger syrup. This Bếp Việt home adaptation moderates the sweetness so the savory, rich filling remains clear, reflecting Huế’s distinctive sweet-and-savory dessert.",
+    "finished_dish": "Soft, chewy, slightly translucent dumplings with a savory-sweet roasted pork center in fragrant ginger syrup that is not overly sweet.",
+    "excerpt": "Soft, chewy, slightly translucent dumplings with a savory-sweet roasted pork center in fragrant ginger syrup that is not overly sweet.",
+    "serving": "Spoon a few dumplings and ginger syrup into small bowls and finish with roasted peanuts. Serve warm for the ginger aroma or over ice for a cool dessert.",
+    "tips": [
+      "Dice the roast pork finely and trim away any overly tough skin so the filling is easy to wrap.",
+      "Knead the tapioca starch with hot water gradually, stopping when the dough is pliable and no longer sticky.",
+      "Once the dumplings float, simmer them for a few more minutes so the dough cooks evenly around the filling."
+    ],
+    "tip": "Dice the roast pork finely and trim away any overly tough skin so the filling is easy to wrap.",
+    "dish_type": [
+      "Huế dessert",
+      "Sweet-and-savory dessert"
+    ],
+    "main_ingredient": [
+      "tapioca starch",
+      "roasted pork"
+    ],
+    "cooking_method": [
+      "simmering",
+      "kneading",
+      "boiling"
+    ],
+    "search_terms": [
+      "Huế tapioca dumplings with roasted pork",
+      "sweet soup with savory pork filling",
+      "Huế sweet and savory dessert"
+    ],
+    "image_alt": "A bowl of Huế tapioca dumpling dessert with translucent wrappers, roasted pork filling, ginger syrup and peanuts.",
+    "ingredients": [
+      {
+        "name": "Roasted pork",
+        "quantity": 180,
+        "unit": "g",
+        "role": "main",
+        "notes": "Finely diced, about 0.5 cm.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Tapioca starch",
+        "quantity": 300,
+        "unit": "g",
+        "role": "main",
+        "notes": "Reserve a little for dusting your hands.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Rock sugar",
+        "quantity": 170,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Divide between the filling and syrup.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Granulated sugar",
+        "quantity": 25,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Adjust to taste.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fresh ginger",
+        "quantity": 35,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Slice some and julienne the rest.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Roasted peanuts",
+        "quantity": 30,
+        "unit": "g",
+        "role": "process_aid",
+        "notes": "Coarsely crushed for serving.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Hot water",
+        "quantity": 200,
+        "unit": "ml",
+        "role": "liquid",
+        "notes": "Add gradually while kneading; the amount may vary.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Water",
+        "quantity": 1200,
+        "unit": "ml",
+        "role": "liquid",
+        "notes": "For simmering the filling and making the syrup.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Salt",
+        "quantity": 1,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Optional, to balance the flavor.",
+        "scaling_rule": "linear"
+      }
+    ],
+    "preparation_steps": [
+      {
+        "step": 1,
+        "instruction": "Dice the roast pork finely. Peel the ginger; slice half and julienne the rest."
+      },
+      {
+        "step": 2,
+        "instruction": "Put the pork in a small pan with 50 g rock sugar, 80 ml water and a pinch of salt. Simmer over low heat for 8–10 minutes until coated, then cool."
+      },
+      {
+        "step": 3,
+        "instruction": "Put the tapioca starch in a bowl and stir in hot water a little at a time. When cool enough to handle, knead until smooth and pliable; cover to prevent drying."
+      }
+    ],
+    "cooking_steps": [
+      {
+        "step": 1,
+        "instruction": "Pinch off roughly 15 g portions, flatten, place a little pork filling in the center, seal the edges and roll into balls. Set on a lightly dusted tray."
+      },
+      {
+        "step": 2,
+        "instruction": "Bring a separate pot of water to a boil and cook the dumplings in batches. After they float, boil for 3–4 minutes, then transfer to cool water to keep them chewy; drain."
+      },
+      {
+        "step": 3,
+        "instruction": "Simmer the remaining 1,120 ml water with the rest of the rock sugar and sliced ginger until the sugar dissolves and the syrup is fragrant. Add granulated sugar if needed."
+      },
+      {
+        "step": 4,
+        "instruction": "Add the dumplings to the ginger syrup and simmer gently for 5 minutes to absorb the flavor. Serve in bowls with julienned ginger and roasted peanuts."
+      }
+    ],
+    "time_note": "Total time varies with the water temperature and amount used to knead the dough; this recipe starts with cooked roast pork.",
+    "time_unit": "minutes",
+    "keywords": [
+      "Huế Tapioca Dumpling and Roasted Pork Sweet Soup",
+      "North Central Vietnam",
+      "Huế",
+      "tapioca starch",
+      "roasted pork",
+      "Huế tapioca dumplings with roasted pork",
+      "sweet soup with savory pork filling",
+      "Huế sweet and savory dessert",
+      "Huế dessert",
+      "Sweet-and-savory dessert",
+      "80 minutes"
+    ],
+    "tags": {
+      "region": [
+        "North Central Vietnam"
+      ],
+      "province": [
+        "Huế"
+      ],
+      "meal_type": [
+        "dessert"
+      ],
+      "dish_type": [
+        "Huế dessert",
+        "Sweet-and-savory dessert"
+      ],
+      "main_ingredient": [
+        "tapioca starch",
+        "roasted pork"
+      ],
+      "cooking_method": [
+        "simmering",
+        "kneading",
+        "boiling"
+      ],
+      "difficulty": "Intermediate",
+      "suitable_for_family_meal": true,
+      "suggested_pairings": [
+        "Lotus tea",
+        "Ginger tea"
+      ],
+      "keywords": [
+        "Huế Tapioca Dumpling and Roasted Pork Sweet Soup",
+        "North Central Vietnam",
+        "Huế",
+        "tapioca starch",
+        "roasted pork",
+        "Huế tapioca dumplings with roasted pork",
+        "sweet soup with savory pork filling",
+        "Huế sweet and savory dessert",
+        "Huế dessert",
+        "Sweet-and-savory dessert",
+        "80 minutes"
+      ]
+    },
+    "scaling": {
+      "base_servings": 6,
+      "targets": [
+        {
+          "servings": 2,
+          "main_factor": 0.3333333333333333,
+          "seasoning_start_factor": 0.3333333333333333,
+          "example": "Huế Tapioca Dumpling and Roasted Pork Sweet Soup for 2",
+          "instruction": "Adjust seasoning to taste; check doneness and texture."
+        },
+        {
+          "servings": 6,
+          "main_factor": 1.0,
+          "seasoning_start_factor": 1.0,
+          "example": "Huế Tapioca Dumpling and Roasted Pork Sweet Soup for 6",
+          "instruction": "Adjust seasoning to taste; check doneness and texture."
+        },
+        {
+          "servings": 8,
+          "main_factor": 1.3333333333333333,
+          "seasoning_start_factor": 1.3333333333333333,
+          "example": "Huế Tapioca Dumpling and Roasted Pork Sweet Soup for 8",
+          "instruction": "Adjust seasoning to taste; check doneness and texture."
+        }
+      ]
+    },
+    "editorial": {
+      "variant_note": "Home-edited by Bếp Việt based on references; quantities and timings need a test cook before production approval.",
+      "needs": [
+        "Test-cook to verify quantities, timing and flavor with locally available ingredients.",
+        "Review preparation and regional serving details after cooking."
+      ]
+    },
+    "suggested_pairings": [
+      "Lotus tea",
+      "Ginger tea"
+    ]
+  },
+  "men-men-ha-giang": {
+    "name": "Hmong Mèn Mén from former Hà Giang",
+    "aliases": [],
+    "region": [
+      "Northeast Vietnam"
+    ],
+    "province": [
+      "Tuyen Quang (formerly Ha Giang)"
+    ],
+    "category": "Vegetarian dishes",
+    "meal_type": [
+      "Breakfast",
+      "Lunch",
+      "Dinner"
+    ],
+    "difficulty": "Intermediate",
+    "serving_basis": "4 portions of steamed ground field corn, served as the meal’s staple.",
+    "description": "Mèn mén is a traditional steamed corn dish of the Hmong people on the Đồng Văn Karst Plateau in former Hà Giang, now part of Tuyên Quang. Finely milled field corn is moistened, loosened and steamed twice, with the mixture fluffed between rounds so it cooks evenly. This Bếp Việt home version uses ready-ground cornmeal.",
+    "finished_dish": "Soft, fluffy grains of steamed corn with a naturally nutty aroma and no added seasoning.",
+    "excerpt": "Soft, fluffy grains of steamed corn with a naturally nutty aroma and no added seasoning.",
+    "serving": "Serve hot with vegetable or bean soup; a separately served braise can accompany it for a non-vegetarian meal. The mèn mén itself keeps the natural flavor of corn.",
+    "tips": [
+      "Use finely milled field corn and sift out any hard hull pieces; do not use precooked instant polenta.",
+      "Sprinkle water in gradually and rub the meal until loose like damp sand, avoiding large clumps.",
+      "Steam twice and fluff the grains between rounds; water and timing depend on the grind and maturity of the corn."
+    ],
+    "tip": "Use finely milled field corn and sift out any hard hull pieces; do not use precooked instant polenta.",
+    "dish_type": [
+      "Traditional corn dish",
+      "Hmong cuisine"
+    ],
+    "main_ingredient": [
+      "field corn"
+    ],
+    "cooking_method": [
+      "milling",
+      "moistening",
+      "steaming"
+    ],
+    "search_terms": [
+      "Hmong mèn mén from former Hà Giang province",
+      "Hmong steamed cornmeal",
+      "steamed ground field corn"
+    ],
+    "image_alt": "A small bamboo tray of pale-golden Hà Giang mèn mén with fluffy steamed corn grains.",
+    "ingredients": [
+      {
+        "name": "Finely ground field corn",
+        "quantity": 500,
+        "unit": "g",
+        "role": "main",
+        "notes": "Plain, uncooked cornmeal with no seasoning.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Warm water",
+        "quantity": 320,
+        "unit": "ml",
+        "role": "liquid",
+        "notes": "Sprinkle gradually; the amount may vary.",
+        "scaling_rule": "linear"
+      }
+    ],
+    "preparation_steps": [
+      {
+        "step": 1,
+        "instruction": "Sift the cornmeal to remove hard hull pieces and large lumps."
+      },
+      {
+        "step": 2,
+        "instruction": "Sprinkle in warm water gradually, rubbing and tossing until evenly damp but still loose. Rest for 10 minutes, then sift again."
+      },
+      {
+        "step": 3,
+        "instruction": "Bring water to a simmer in a steamer. Line the insert with clean cloth or use a fine perforated basket so the meal does not fall through."
+      }
+    ],
+    "cooking_steps": [
+      {
+        "step": 1,
+        "instruction": "Spread the cornmeal loosely in the steamer and steam for the first round, about 35–45 minutes once steady steam rises."
+      },
+      {
+        "step": 2,
+        "instruction": "Transfer to a wide tray and cool slightly. With clean hands, rub the grains loose and break up large clumps; sprinkle in a little more water if still dry."
+      },
+      {
+        "step": 3,
+        "instruction": "Sift again and return to the steamer for a second 35–45 minute round, until the corn is tender, fluffy and no longer raw in the center."
+      },
+      {
+        "step": 4,
+        "instruction": "Transfer to a tray, fluff once more and serve hot with vegetable or bean soup."
+      }
+    ],
+    "time_note": "Traditional preparation can take 2–3 hours; this estimate assumes the corn is already milled and varies with grind size.",
+    "time_unit": "minutes",
+    "keywords": [
+      "Hmong Mèn Mén from former Hà Giang",
+      "Northeast Vietnam",
+      "Tuyen Quang (formerly Ha Giang)",
+      "field corn",
+      "Hmong mèn mén from former Hà Giang province",
+      "Hmong steamed cornmeal",
+      "steamed ground field corn",
+      "Traditional corn dish",
+      "Hmong cuisine",
+      "130 minutes"
+    ],
+    "tags": {
+      "region": [
+        "Northeast Vietnam"
+      ],
+      "province": [
+        "Tuyen Quang (formerly Ha Giang)"
+      ],
+      "meal_type": [
+        "breakfast",
+        "lunch",
+        "dinner"
+      ],
+      "dish_type": [
+        "Traditional corn dish",
+        "Hmong cuisine"
+      ],
+      "main_ingredient": [
+        "field corn"
+      ],
+      "cooking_method": [
+        "milling",
+        "moistening",
+        "steaming"
+      ],
+      "difficulty": "Intermediate",
+      "suitable_for_family_meal": true,
+      "suggested_pairings": [
+        "Mustard-green soup",
+        "Bean soup",
+        "Boiled greens"
+      ],
+      "keywords": [
+        "Hmong Mèn Mén from former Hà Giang",
+        "Northeast Vietnam",
+        "Tuyen Quang (formerly Ha Giang)",
+        "field corn",
+        "Hmong mèn mén from former Hà Giang province",
+        "Hmong steamed cornmeal",
+        "steamed ground field corn",
+        "Traditional corn dish",
+        "Hmong cuisine",
+        "130 minutes"
+      ]
+    },
+    "scaling": {
+      "base_servings": 4,
+      "targets": [
+        {
+          "servings": 2,
+          "main_factor": 0.5,
+          "seasoning_start_factor": 0.5,
+          "example": "Hmong Mèn Mén from former Hà Giang for 2",
+          "instruction": "Adjust seasoning to taste; check doneness and texture."
+        },
+        {
+          "servings": 6,
+          "main_factor": 1.5,
+          "seasoning_start_factor": 1.5,
+          "example": "Hmong Mèn Mén from former Hà Giang for 6",
+          "instruction": "Adjust seasoning to taste; check doneness and texture."
+        },
+        {
+          "servings": 8,
+          "main_factor": 2.0,
+          "seasoning_start_factor": 2.0,
+          "example": "Hmong Mèn Mén from former Hà Giang for 8",
+          "instruction": "Adjust seasoning to taste; check doneness and texture."
+        }
+      ]
+    },
+    "editorial": {
+      "variant_note": "Home-edited by Bếp Việt based on references; quantities and timings need a test cook before production approval.",
+      "needs": [
+        "Test-cook to verify quantities, timing and flavor with locally available ingredients.",
+        "Review preparation and regional serving details after cooking."
+      ]
+    },
+    "suggested_pairings": [
+      "Mustard-green soup",
+      "Bean soup",
+      "Boiled greens"
+    ]
+  }
+}

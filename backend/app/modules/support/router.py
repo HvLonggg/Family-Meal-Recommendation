@@ -8,6 +8,7 @@ from sqlalchemy.orm import Session
 
 from app.core.config import get_settings
 from app.core.exceptions import DomainError
+from app.core.net import client_ip
 from app.db.session import get_db_session
 from app.modules.auth.dependencies import get_current_user, get_optional_user
 from app.modules.auth.models import User
@@ -56,8 +57,8 @@ def create_ticket(
             id=fake_id, reference=ticket_reference(fake_id), message=message
         )
 
-    client_ip = request.client.host if request.client else "unknown"
-    requester_key = token_digest(f"support:{client_ip}")
+    caller_ip = client_ip(request)
+    requester_key = token_digest(f"support:{caller_ip}")
     recent = session.scalar(
         select(func.count())
         .select_from(SupportTicket)
