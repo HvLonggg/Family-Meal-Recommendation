@@ -15,6 +15,7 @@ from app.modules.auth.models import User
 from app.modules.auth.security import token_digest
 from app.modules.support.models import SupportTicket
 from app.modules.support.schemas import (
+    SupportContactSettings,
     SupportTicketCreate,
     SupportTicketListResponse,
     SupportTicketReceipt,
@@ -24,8 +25,17 @@ from app.modules.support.service import ticket_reference
 
 router = APIRouter(prefix="/support")
 HOURLY_LIMIT = 5
+RESPONSE_SLA_BUSINESS_HOURS = 24
 
 DatabaseSession = Annotated[Session, Depends(get_db_session)]
+
+
+@router.get("/contact-info", response_model=SupportContactSettings, summary="Support contact info")
+def support_contact_info() -> SupportContactSettings:
+    return SupportContactSettings(
+        support_email=get_settings().support_email,
+        response_sla_business_hours=RESPONSE_SLA_BUSINESS_HOURS,
+    )
 
 
 class SupportRateLimitError(DomainError):
@@ -47,14 +57,17 @@ def create_ticket(
 ) -> SupportTicketReceipt:
     support_email = get_settings().support_email
     message = (
-        f"Bếp Việt đã tiếp nhận yêu cầu và đưa nội dung vào hàng đợi gửi tới {support_email}. "
-        "Chúng tôi sẽ phản hồi qua email trong 1–2 ngày làm việc."
+        "Yêu cầu đã được tiếp nhận. Bếp Việt sẽ phản hồi qua email người gửi "
+        "trong vòng 24 giờ làm việc."
     )
     if payload.website:
         # Bot điền trường ẩn: trả về như thành công để không lộ cơ chế chặn.
         fake_id = uuid4()
         return SupportTicketReceipt(
-            id=fake_id, reference=ticket_reference(fake_id), message=message
+            id=fake_id,
+            reference=ticket_reference(fake_id),
+            message=message,
+            support_email=support_email,
         )
 
     caller_ip = client_ip(request)
@@ -84,7 +97,10 @@ def create_ticket(
     session.add(ticket)
     session.commit()
     return SupportTicketReceipt(
-        id=ticket.id, reference=ticket_reference(ticket.id), message=message
+        id=ticket.id,
+        reference=ticket_reference(ticket.id),
+        message=message,
+        support_email=support_email,
     )
 
 
@@ -100,6 +116,12 @@ def my_tickets(
             .limit(50)
         )
     )
-    return SupportTicketListResponse(
-        data=[SupportTicketResponse.model_validate(item) for item in items], total=len(items)
-    )
+    responses = []
+    for item in items:
+        response = SupportTicketResponse.model_validate(item)
+        if item.reply_status != "sent" or item.reply_sent_at is None:
+            response = response.model_copy(
+                update={"reply_subject": None, "reply_message": None, "reply_sent_at": None}
+            )
+        responses.append(response)
+    return SupportTicketListResponse(data=responses, total=len(items))

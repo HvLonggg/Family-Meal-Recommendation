@@ -34,7 +34,10 @@ beforeEach(() => {
 
 describe('database recipe catalog', () => {
   it('keeps recipe details, source photo credit and ingredient scaling rules', () => {
-    const recipe = adaptRecipe(apiRecipe, new Map([['BV141', 'canh-rau-ngot-thit-bam']]));
+    const recipe = adaptRecipe(
+      { ...apiRecipe, slug: 'reference-only-fixture' },
+      new Map([['BV141', 'canh-rau-ngot-thit-bam']]),
+    );
     expect(recipe.imageKind).toBe('reference');
     expect(recipe.imageCredit).toBe('Cookbeo');
     expect(recipe.preparation).toHaveLength(2);

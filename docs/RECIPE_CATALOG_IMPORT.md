@@ -1,6 +1,6 @@
 # Kho món ăn Bếp Việt
 
-Kho hiện có **589 món ăn tại ba miền Việt Nam**: 300 hồ sơ `BV001`–`BV300` từ `BEP_VIET_300_recipes.json`, 30 món tráng miệng trái cây `BV301`–`BV330`, 255 món vùng miền trong 51 batch tiếp theo (`BV331`–`BV585`) và bốn món cũ được giữ lại. Bốn món đã có được cập nhật tại chỗ. Mỗi hồ sơ có nguyên liệu, định lượng, sơ chế, cách nấu, thành phẩm, cách dùng, mẹo, thời gian chờ và món ăn kèm.
+Kho hiện có **770 món ăn tại ba miền Việt Nam**, tiếp tục hướng tới mục tiêu 1.000 món: 300 hồ sơ `BV001`–`BV300` từ `BEP_VIET_300_recipes.json`, 30 món tráng miệng trái cây `BV301`–`BV330`, 436 món gia đình và vùng miền trong 87 batch (`BV331`–`BV766`) và bốn món cũ được giữ lại. Mỗi hồ sơ có nguyên liệu, định lượng, sơ chế, cách nấu, thành phẩm, cách dùng, mẹo, thời gian chờ và món ăn kèm.
 
 Chạy tại thư mục `backend` sau khi PostgreSQL đã sẵn sàng:
 
@@ -25,4 +25,4 @@ Giao diện tải toàn bộ kho từ `/api/v1/recipes/catalog`, từng trang 10
 
 Các URL giao diện dùng tiếng Anh: `/recipes`, `/meals`, `/random-meal`, `/planner`, `/suggestions`, `/nutrition`, `/articles`, `/favorites`, `/submit-recipe`, `/account`, `/admin` và các trang đăng nhập. Địa chỉ tiếng Việt cũ được chuyển sang địa chỉ mới, giữ mã món, query và hash. Tên món và nội dung giao diện vẫn là tiếng Việt.
 
-Phần cách dùng hiển thị trực tiếp nội dung Bếp Việt biên soạn; các chỉnh sửa cụ thể được lưu trong `backend/app/data/serving_overrides.json`. Nguồn tham khảo và trạng thái biên tập được giữ trong `content` của từng hồ sơ. Ảnh từ bộ 300 món có trạng thái `reference_only`, chưa xác nhận quyền phát hành; ứng dụng ghi nhận nguồn ảnh riêng, không gắn nhãn ảnh này là ảnh sở hữu của Bếp Việt. 30 món tráng miệng và 255 món vùng miền bổ sung có ảnh minh họa Bếp Việt tạo mới. Tất cả 589 món có ảnh cục bộ trong bản build; các công thức bổ sung được biên tập từ nguồn tham khảo và chưa có kết quả nấu thử. Dinh dưỡng chỉ hiển thị khi có dữ liệu xác minh.
+Phần cách dùng hiển thị trực tiếp nội dung Bếp Việt biên soạn; các chỉnh sửa cụ thể được lưu trong `backend/app/data/serving_overrides.json`. Nguồn tham khảo và trạng thái biên tập được giữ trong `content` của từng hồ sơ. Ảnh từ bộ 300 món có trạng thái `reference_only`, chưa xác nhận quyền phát hành; ứng dụng ghi nhận nguồn ảnh riêng, không gắn nhãn ảnh này là ảnh sở hữu của Bếp Việt. 30 món tráng miệng và 436 món bổ sung có ảnh minh họa Bếp Việt tạo mới. Cả 770 món đều có ảnh cục bộ trong bản build; các công thức bổ sung được biên tập từ nguồn tham khảo và chưa có kết quả nấu thử. Dinh dưỡng chỉ hiển thị khi có dữ liệu xác minh.

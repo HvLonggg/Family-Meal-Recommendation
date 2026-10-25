@@ -53,11 +53,13 @@ for (const filename of batches) {
   }
 }
 
+const primaryMedia = (recipe) => (Array.isArray(recipe.media) ? recipe.media[0] : recipe.media);
+
 const expectedIds = recipes.map((recipe, index) => `BV${String(index + 331).padStart(3, '0')}`);
 if (recipes.some((recipe, index) => recipe.id !== expectedIds[index])) {
   throw new Error('Curated batches must be contiguous from BV331 with no duplicate IDs.');
 }
-if (recipes.some((recipe) => !recipe.slug || !recipe.media?.[0]?.image_url)) {
+if (recipes.some((recipe) => !recipe.slug || !primaryMedia(recipe)?.image_url)) {
   throw new Error('A curated recipe is missing its slug or image path.');
 }
 
@@ -87,10 +89,15 @@ function recipeCategory(recipe) {
 const ingredientGroups = {
   main: 'Nguyên liệu chính',
   protein: 'Nguyên liệu chính',
+  meat: 'Nguyên liệu chính',
   seafood: 'Nguyên liệu chính',
+  mushroom: 'Rau củ',
   fruit: 'Nguyên liệu chính',
   seaweed: 'Nguyên liệu chính',
   seed: 'Nguyên liệu chính',
+  legume: 'Nguyên liệu chính',
+  staple: 'Nguyên liệu chính',
+  tofu: 'Nguyên liệu chính',
   vegetable: 'Rau củ',
   seasoning: 'Gia vị',
   condiment: 'Gia vị',
@@ -119,14 +126,21 @@ const ingredientGroups = {
   coating: 'Lớp áo chiên',
   plant_protein: 'Nguyên liệu chính',
   dressing: 'Nước trộn',
+  dipping: 'Nước chấm',
+  oil: 'Gia vị',
+  pickle: 'Món ăn kèm',
+  binder: 'Hỗ trợ chế biến',
+  thickener: 'Hỗ trợ chế biến',
+  equipment: 'Hỗ trợ chế biến',
 };
 
 function asApiRecipe(recipe) {
-  const media = recipe.media[0];
+  const media = primaryMedia(recipe);
   const grouped = new Map();
   recipe.ingredients.forEach((ingredient, index) => {
     const groupName = ingredientGroups[ingredient.role];
-    if (!groupName) throw new Error(`${recipe.id}: unsupported ingredient role ${ingredient.role}.`);
+    if (!groupName)
+      throw new Error(`${recipe.id}: unsupported ingredient role ${ingredient.role}.`);
     const items = grouped.get(groupName) ?? [];
     items.push({
       group_name: groupName,
@@ -204,6 +218,10 @@ function mergeTranslation(source, english) {
   ]) {
     addTranslation(source[key], english[key]);
   }
+  const sourceMedia = primaryMedia(source);
+  if (sourceMedia?.alt_text) {
+    addTranslation(sourceMedia.alt_text, english.media_alt_text ?? english.image_alt);
+  }
   for (const key of [
     'region',
     'province',
@@ -217,6 +235,9 @@ function mergeTranslation(source, english) {
     'tips',
   ]) {
     addTranslation(source[key], english[key]);
+  }
+  if (Array.isArray(source.tips) && Array.isArray(english.tips)) {
+    addTranslation(source.tips.join('\n'), english.tips.join('\n'));
   }
   source.ingredients.forEach((ingredient, index) => {
     const translated = english.ingredients?.[index];
@@ -232,7 +253,13 @@ function mergeTranslation(source, english) {
     }
   });
   for (const key of ['preparation_steps', 'cooking_steps']) {
-    source[key].forEach((step, index) => addTranslation(step.instruction, english[key]?.[index]));
+    source[key].forEach((step, index) => {
+      const translatedStep = english[key]?.[index];
+      addTranslation(
+        step.instruction,
+        typeof translatedStep === 'string' ? translatedStep : translatedStep?.instruction,
+      );
+    });
   }
   const sourceTags = source.tags ?? {};
   const englishTags = english.tags ?? {};
@@ -240,24 +267,38 @@ function mergeTranslation(source, english) {
 }
 
 const existingIds = new Set(snapshot.data.map((recipe) => recipe.catalog_id).filter(Boolean));
+const refreshCuratedIds = new Set(
+  String(process.env.BEPVIET_REFRESH_CURATED_IDS ?? '')
+    .split(',')
+    .map((id) => id.trim())
+    .filter(Boolean),
+);
 const existingIndexById = new Map(
-  snapshot.data.flatMap((recipe, index) =>
-    recipe.catalog_id ? [[recipe.catalog_id, index]] : [],
-  ),
+  snapshot.data.flatMap((recipe, index) => (recipe.catalog_id ? [[recipe.catalog_id, index]] : [])),
 );
 const catalogIdSet = new Set(recipes.map((recipe) => recipe.id));
-const missingEarlier = [...catalogIdSet].filter((id) => Number(id.slice(2)) < 496 && !existingIds.has(id));
+const missingEarlier = [...catalogIdSet].filter(
+  (id) => Number(id.slice(2)) < 496 && !existingIds.has(id),
+);
 if (missingEarlier.length) {
-  throw new Error(`The snapshot is missing earlier curated recipes: ${missingEarlier.slice(0, 8).join(', ')}.`);
+  throw new Error(
+    `The snapshot is missing earlier curated recipes: ${missingEarlier.slice(0, 8).join(', ')}.`,
+  );
 }
 
 let added = 0;
 let updated = 0;
 for (const recipe of recipes) {
-  if (Number(recipe.id.slice(2)) < 496) continue;
   mergeTranslation(recipe, sidecars.get(recipe.id) ?? sidecars.get(recipe.slug));
+  if (Number(recipe.id.slice(2)) < 496 && !refreshCuratedIds.has(recipe.id)) {
+    const media = primaryMedia(recipe);
+    const image = imageRegistry[recipe.slug];
+    if (image && media?.alt_text) image.alt = media.alt_text;
+    continue;
+  }
 
-  const imageBase = recipe.media[0].image_url.replace(/-(?:480|960|1536|1600|3840)\.webp$/, '');
+  const media = primaryMedia(recipe);
+  const imageBase = media.image_url.replace(/-(?:480|960|1536|1600|3840)\.webp$/, '');
   const availableVariants = [];
   for (const width of [480, 960, 1536, 3840]) {
     const imagePath = `${imageBase}-${width}.webp`;
@@ -277,7 +318,7 @@ for (const recipe of recipes) {
     src: availableVariants.find((variant) => variant.width === 960).imagePath,
     srcSet: availableVariants.map((variant) => `${variant.imagePath} ${variant.width}w`).join(', '),
     master: availableVariants.at(-1).imagePath,
-    alt: recipe.media[0].alt_text ?? recipe.image_alt,
+    alt: media.alt_text ?? recipe.image_alt,
   };
   imageRegistry[recipe.slug] = image;
   const row = asApiRecipe(recipe);
@@ -306,17 +347,21 @@ for (const recipe of snapshot.data) {
       if (error?.code !== 'ENOENT') throw error;
     }
   }
-  const imageExists = variants.length > 0
-    ? true
-    : await stat(path.join(frontendRoot, 'public', recipe.image_path.replace(/^\//, '')))
-        .then(() => true)
-        .catch((error) => {
-          if (error?.code === 'ENOENT') return false;
-          throw error;
-        });
+  const imageExists =
+    variants.length > 0
+      ? true
+      : await stat(path.join(frontendRoot, 'public', recipe.image_path.replace(/^\//, '')))
+          .then(() => true)
+          .catch((error) => {
+            if (error?.code === 'ENOENT') return false;
+            throw error;
+          });
   if (!imageExists) continue;
   imageRegistry[recipe.slug] = {
-    src: variants.find((variant) => variant.width === 960)?.src ?? variants[0]?.src ?? recipe.image_path,
+    src:
+      variants.find((variant) => variant.width === 960)?.src ??
+      variants[0]?.src ??
+      recipe.image_path,
     ...(variants.length > 1
       ? { srcSet: variants.map((variant) => `${variant.src} ${variant.width}w`).join(', ') }
       : {}),
@@ -336,10 +381,16 @@ snapshot.data.sort((left, right) => {
   return leftId - rightId || left.name.localeCompare(right.name, 'vi');
 });
 snapshot.total = snapshot.data.length;
+const catalogSlugs = new Set(snapshot.data.map((recipe) => recipe.slug));
+for (const slug of Object.keys(imageRegistry)) {
+  if (!catalogSlugs.has(slug)) delete imageRegistry[slug];
+}
 
 await Promise.all([
   writeFile(snapshotPath, `${JSON.stringify(snapshot)}\n`, 'utf8'),
   writeFile(imageRegistryPath, `${JSON.stringify(imageRegistry, null, 2)}\n`, 'utf8'),
   writeFile(translationPath, `${JSON.stringify(translations, null, 2)}\n`, 'utf8'),
 ]);
-console.log(`Synchronized ${added} new and ${updated} existing curated recipes into the fallback catalog.`);
+console.log(
+  `Synchronized ${added} new and ${updated} existing curated recipes into the fallback catalog.`,
+);

@@ -1,0 +1,1319 @@
+{
+  "batch": 76,
+  "description": "Năm món hải sản ven biển và đặc sản vùng miền, biên tập từ nguồn ẩm thực Việt Nam đáng tin cậy; chưa nấu thử.",
+  "recipes": [
+    {
+      "id": "BV706",
+      "slug": "banh-canh-cha-ca-quy-nhon",
+      "name": "Bánh canh chả cá Quy Nhơn",
+      "aliases": [
+        "Bánh canh chả cá Bình Định",
+        "Bánh canh cá Quy Nhơn"
+      ],
+      "region": [
+        "Trung Bộ"
+      ],
+      "province": [
+        "Bình Định"
+      ],
+      "category": "Món nước",
+      "meal_type": [
+        "bữa sáng",
+        "bữa trưa",
+        "bữa tối",
+        "mâm cơm gia đình"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Bốn tô bánh canh nóng, mỗi tô có chả cá chiên và chả cá hấp.",
+      "prep_time": 25,
+      "cook_time": 50,
+      "passive_time": 0,
+      "total_time": 75,
+      "description": "Đặc sản phố biển Quy Nhơn với nước dùng trong ngọt từ xương cá, sợi bánh canh dai mềm và hai loại chả cá hấp, chiên. Bếp Việt dùng sợi bánh canh tươi mua sẵn để rút gọn công đoạn, giữ cách ăn nóng cùng hành, tiêu và ớt.",
+      "finished_dish": "Nước dùng trong, thơm nhẹ mùi cá; sợi bánh canh mềm dai, chả cá hấp ngọt và chả cá chiên thơm.",
+      "serving": "Chia bánh canh vào tô, chan nước dùng nóng và xếp chả cá lên trên. Rắc hành lá, ngò rí, hành phi; dùng với chanh và ớt.",
+      "tips": [
+        "Chọn xương đầu cá còn tươi, bỏ mang và phần máu bầm để nước dùng trong, không tanh.",
+        "Nấu sợi bánh canh riêng theo hướng dẫn trên gói rồi mới chia tô để nước dùng không bị đục hoặc sánh.",
+        "Nếu tự làm chả từ cá sống, hấp hoặc chiên đến khi phần giữa đạt ít nhất 63°C; dùng thớt và đĩa riêng cho cá sống."
+      ],
+      "dish_type": [
+        "Bánh canh chả cá"
+      ],
+      "main_ingredient": [
+        "xương cá",
+        "chả cá",
+        "bánh canh"
+      ],
+      "cooking_method": [
+        "ninh nước dùng",
+        "luộc bánh",
+        "nấu"
+      ],
+      "search_terms": [
+        "bánh canh chả cá Quy Nhơn",
+        "bánh canh chả cá Bình Định",
+        "đặc sản Quy Nhơn"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Tô bánh canh chả cá Quy Nhơn với chả hấp, chả chiên, hành lá và nước dùng trong.",
+      "time_note": "Khoảng 75 phút; ninh xương cá 35–40 phút, luộc sợi riêng để giữ nước dùng trong.",
+      "suggested_pairings": [
+        "Ớt tươi hoặc tương ớt",
+        "Chanh",
+        "Rau sống"
+      ],
+      "recipe_family": "banh_canh_cha_ca_quy_nhon",
+      "keywords": [
+        "Quy Nhơn",
+        "Bình Định",
+        "chả cá",
+        "bánh canh"
+      ],
+      "tags": [
+        "món nước",
+        "hải sản",
+        "đặc sản vùng miền",
+        "Trung Bộ",
+        "bữa ăn gia đình"
+      ],
+      "ingredients": [
+        {
+          "name": "Xương và đầu cá biển",
+          "quantity": 700,
+          "unit": "g",
+          "role": "stock",
+          "notes": "Rửa nhanh, bỏ mang và máu bầm; ưu tiên xương cá thu hoặc cá biển thịt trắng.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 1800,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng ninh nước dùng.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Bánh canh tươi",
+          "quantity": 600,
+          "unit": "g",
+          "role": "grain",
+          "notes": "Chọn sợi bánh canh bột gạo hoặc bột pha bột mì; luộc riêng.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Chả cá hấp đã chín",
+          "quantity": 180,
+          "unit": "g",
+          "role": "main",
+          "notes": "Mua loại làm từ cá biển; cắt lát vừa ăn.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Chả cá chiên đã chín",
+          "quantity": 180,
+          "unit": "g",
+          "role": "main",
+          "notes": "Cắt lát vừa ăn; nếu dùng chả sống, nấu chín hoàn toàn.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 30,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, đập dập.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm dần theo độ mặn.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Muối",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Chia phần để nêm nước dùng.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Đường",
+          "quantity": 6,
+          "unit": "g",
+          "role": "sweetener",
+          "notes": "Nêm nhẹ để cân vị.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 25,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Ngò rí",
+          "quantity": 15,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Hành phi",
+          "quantity": 15,
+          "unit": "g",
+          "role": "topping",
+          "notes": "Dùng rắc khi dọn.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        },
+        {
+          "name": "Tiêu đen",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Xay hoặc giã dập.",
+          "scaling_rule": "linear",
+          "sequence": 13
+        },
+        {
+          "name": "Ớt tươi",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Thái lát, dùng tùy khẩu vị.",
+          "scaling_rule": "linear",
+          "sequence": 14
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Bỏ mang, rửa nhanh xương đầu cá dưới vòi nước lạnh và để ráo. Rửa tay, dao và bề mặt sau khi sơ chế cá sống."
+        },
+        {
+          "step": 2,
+          "instruction": "Đập dập hành tím; thái lát chả cá. Rửa, để ráo rồi thái hành lá và ngò rí."
+        },
+        {
+          "step": 3,
+          "instruction": "Chuẩn bị bánh canh, nồi nước dùng và các gia vị; để riêng nguyên liệu sống khỏi rau ăn kèm."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Cho xương cá, hành tím và nước vào nồi. Đun sôi, hớt bọt rồi hạ lửa ninh 35–40 phút; lọc bỏ xương và giữ nước dùng nóng."
+        },
+        {
+          "step": 2,
+          "instruction": "Nêm nước dùng với nước mắm, muối và đường. Trụng bánh canh riêng đến độ mềm theo hướng dẫn của loại bánh, để ráo rồi chia vào bốn tô."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho chả cá hấp và chiên vào nồi nước dùng, nấu sôi nhẹ 3–4 phút đến khi nóng kỹ. Chan lên bánh, thêm hành lá, ngò rí, hành phi và tiêu; dùng ngay với ớt, chanh."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://binhdinh.gov.vn/du-khach/dac-san-binh-dinh/banh-canh-cha-ca3.html",
+          "publisher": "Cổng thông tin điện tử tỉnh Bình Định",
+          "title": "Bánh canh chả cá",
+          "use": "Xác nhận đây là đặc sản Quy Nhơn, nước dùng từ xương và đầu cá, sợi bánh canh bột gạo pha bột mì, cùng hai loại chả hấp và chiên.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://binhdinh.gov.vn/du-khach/dac-san-binh-dinh/cha-ca-quy-nhon3.html",
+          "publisher": "Cổng thông tin điện tử tỉnh Bình Định",
+          "title": "Chả cá Quy Nhơn",
+          "use": "Đối chiếu chả cá làm từ cá tươi, quết cùng gia vị và chế biến theo cách hấp hoặc chiên.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-fresh-and-frozen-seafood-safely",
+          "publisher": "U.S. Food and Drug Administration",
+          "title": "Selecting and Serving Fresh and Frozen Seafood Safely",
+          "use": "Tham khảo nhiệt độ an toàn cho cá và cách bảo quản, xử lý hải sản sống.",
+          "accessed_at": "2026-10-24",
+          "type": "food_safety_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Dùng 350 g xương cá, 300 g bánh canh và mỗi loại chả 90 g; nêm gia vị từ ít hơn một nửa.",
+            "instruction": "Nấu trong nồi vừa; nêm từ ít rồi điều chỉnh sau khi hải sản chín."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "Dùng khoảng 1 kg xương cá, 900 g bánh canh và mỗi loại chả 270 g; nêm gia vị tăng chậm.",
+            "instruction": "Nấu theo mẻ nếu nồi nhỏ; nêm gia vị tăng chậm hơn lượng nguyên liệu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/banh-canh-cha-ca-quy-nhon-960.webp",
+          "page_url": null,
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo mới riêng cho Bếp Việt bằng ImageGen; nguồn tham khảo chỉ dùng để biên tập và đối chiếu món ăn.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Tô bánh canh chả cá Quy Nhơn với sợi bánh mềm dai, chả cá hấp và chiên, hành lá.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh PNG nền alpha được tạo riêng cho Bếp Việt, xuất master 4K và WebP responsive; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức gia đình dùng bánh canh tươi và chả cá đã nấu chín sẵn; vị nước dùng được chuẩn hóa cho bốn tô.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử để chốt độ mặn, loại sợi bánh và lượng nước dùng phù hợp với chả cá địa phương."
+        ]
+      }
+    },
+    {
+      "id": "BV707",
+      "slug": "muc-mot-nang-nuong-muoi-ot-phan-thiet",
+      "name": "Mực một nắng nướng muối ớt Phan Thiết",
+      "aliases": [
+        "Mực một nắng Phan Thiết nướng",
+        "Mực nướng muối ớt Bình Thuận"
+      ],
+      "region": [
+        "Trung Bộ"
+      ],
+      "province": [
+        "Bình Thuận"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "mâm cơm gia đình",
+        "món đãi khách"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một đĩa mực một nắng nướng để chia bốn người, ăn cùng cơm hoặc rau.",
+      "prep_time": 15,
+      "cook_time": 10,
+      "passive_time": 10,
+      "total_time": 35,
+      "description": "Mực lá Phan Thiết chỉ phơi qua một lần nắng nên se mặt mà vẫn dẻo ngọt. Nướng nhanh với muối ớt làm dậy vị mặn cay, thơm mùi biển; Bếp Việt chuẩn hóa lượng gia vị vừa đủ cho bữa cơm nhà.",
+      "finished_dish": "Thân mực săn, xém nhẹ và thơm, bên trong trắng đục, dẻo ngọt; muối ớt bám mỏng, không lấn vị mực.",
+      "serving": "Thái mực xéo thành miếng, bày với chanh và rau thơm. Ăn nóng cùng cơm trắng hoặc cuốn bánh tráng, rau sống.",
+      "tips": [
+        "Chọn mực một nắng có nguồn gốc rõ ràng, được giữ lạnh; rã đông qua đêm trong ngăn mát nếu mua đông lạnh.",
+        "Thấm khô mực trước khi nướng để hạn chế bắn dầu và giúp mặt mực xém đều.",
+        "Nướng đến khi thân mực trắng đục và phần dày nhất đạt 63°C; không dùng lại đĩa từng đựng mực sống."
+      ],
+      "dish_type": [
+        "Món nướng hải sản"
+      ],
+      "main_ingredient": [
+        "mực một nắng"
+      ],
+      "cooking_method": [
+        "ướp",
+        "nướng"
+      ],
+      "search_terms": [
+        "mực một nắng nướng muối ớt Phan Thiết",
+        "mực một nắng Bình Thuận",
+        "mực nướng muối ớt"
+      ],
+      "spicy_level": 2,
+      "image_alt": "Mực một nắng Phan Thiết nướng muối ớt, xém vàng nhẹ, bày cùng chanh.",
+      "time_note": "Khoảng 35 phút, gồm 10 phút ướp; nướng ngắn mỗi mặt để mực không dai.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Rau sống",
+        "Chanh"
+      ],
+      "recipe_family": "muc_mot_nang_nuong_muoi_ot_phan_thiet",
+      "keywords": [
+        "mực một nắng",
+        "Phan Thiết",
+        "Bình Thuận",
+        "nướng muối ớt"
+      ],
+      "tags": [
+        "món mặn",
+        "hải sản",
+        "đặc sản vùng miền",
+        "Trung Bộ",
+        "món nướng"
+      ],
+      "ingredients": [
+        {
+          "name": "Mực lá một nắng",
+          "quantity": 600,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn mực Phan Thiết còn dẻo, có bao gói và bảo quản lạnh.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Muối",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng lượng vừa vì mực đã có vị mặn biển.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Ớt đỏ",
+          "quantity": 8,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhuyễn, giảm lượng nếu ăn ít cay.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "cooking_fat",
+          "notes": "Trộn với muối ớt để phết mỏng.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Nước cốt chanh",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "acid",
+          "notes": "Pha cùng muối ớt.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Chanh",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "fruit",
+          "notes": "Cắt miếng để ăn kèm.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Nếu mực đông lạnh, rã đông trong ngăn mát tủ lạnh. Thấm khô, rạch nhẹ vài đường trên phần thân dày và để riêng dụng cụ đã chạm mực sống."
+        },
+        {
+          "step": 2,
+          "instruction": "Giã hoặc băm ớt; trộn với muối, dầu ăn và nước cốt chanh thành hỗn hợp sệt."
+        },
+        {
+          "step": 3,
+          "instruction": "Phết gia vị mỏng lên hai mặt mực, để ướp 10 phút trong ngăn mát; làm nóng vỉ hoặc chảo nướng."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Nướng mực trên vỉ nóng vừa cao khoảng 3–5 phút mỗi mặt, tùy độ dày, trở một lần để mực xém nhẹ."
+        },
+        {
+          "step": 2,
+          "instruction": "Kiểm tra phần dày nhất đã trắng đục và đạt ít nhất 63°C; lấy mực ra đĩa sạch, nghỉ 2 phút."
+        },
+        {
+          "step": 3,
+          "instruction": "Thái xéo thành miếng vừa ăn, dùng nóng với chanh và cơm hoặc rau cuốn."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://sanphamvungmien.vn/data/files/Web%20S%E1%BA%A3n%20ph%E1%BA%A9m%20%C4%91%E1%BA%B7c%20tr%C6%B0ng%20T%E1%BB%89nh%20B%C3%ACnh%20Thu%E1%BA%ADn%20%28dx%29.pdf",
+          "publisher": "Bộ Công Thương - Chương trình Sản phẩm vùng miền",
+          "title": "Sản phẩm đặc trưng tỉnh Bình Thuận",
+          "use": "Xác nhận mực một nắng Phan Thiết làm từ mực lá phơi một lần rồi bảo quản lạnh; nướng muối ớt là một cách chế biến đặc trưng.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-fresh-and-frozen-seafood-safely",
+          "publisher": "U.S. Food and Drug Administration",
+          "title": "Selecting and Serving Fresh and Frozen Seafood Safely",
+          "use": "Tham khảo cách rã đông trong tủ lạnh và nhiệt độ nấu an toàn cho hải sản.",
+          "accessed_at": "2026-10-24",
+          "type": "food_safety_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Dùng 300 g mực, 2–3 g muối, 4 g ớt và 5 ml dầu; nếm rồi mới thêm muối.",
+            "instruction": "Nấu trong nồi vừa; nêm từ ít rồi điều chỉnh sau khi hải sản chín."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "Dùng 900 g mực, 7 g muối, 12 g ớt và 15 ml dầu; nướng thành nhiều mẻ.",
+            "instruction": "Nấu theo mẻ nếu nồi nhỏ; nêm gia vị tăng chậm hơn lượng nguyên liệu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/muc-mot-nang-nuong-muoi-ot-phan-thiet-960.webp",
+          "page_url": null,
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo mới riêng cho Bếp Việt bằng ImageGen; nguồn tham khảo chỉ dùng để biên tập và đối chiếu món ăn.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa mực một nắng Phan Thiết nướng muối ớt, thân mực xém thơm và ăn kèm chanh.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh PNG nền alpha được tạo riêng cho Bếp Việt, xuất master 4K và WebP responsive; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Giữ kỹ thuật nướng muối ớt của mực một nắng Phan Thiết; lượng cay và mặn được điều chỉnh cho bữa cơm gia đình.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử để chốt thời gian nướng theo độ dày và độ ráo của từng mẻ mực."
+        ]
+      }
+    },
+    {
+      "id": "BV708",
+      "slug": "ghe-luoc-ham-ninh-phu-quoc",
+      "name": "Ghẹ Hàm Ninh luộc chấm muối tiêu chanh",
+      "aliases": [
+        "Ghẹ Hàm Ninh luộc",
+        "Ghẹ Phú Quốc chấm muối tiêu chanh"
+      ],
+      "region": [
+        "Nam Bộ"
+      ],
+      "province": [
+        "Kiên Giang"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "mâm cơm gia đình",
+        "món đãi khách"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Bốn phần ghẹ luộc, khoảng một con cỡ vừa mỗi người.",
+      "prep_time": 20,
+      "cook_time": 20,
+      "passive_time": 0,
+      "total_time": 40,
+      "description": "Ghẹ Hàm Ninh nổi tiếng với thịt ngọt chắc. Cách chế biến được giữ giản dị: luộc ghẹ tươi vừa chín tới rồi chấm muối tiêu chanh để vị biển và chút cay thơm của tiêu Phú Quốc nổi bật.",
+      "finished_dish": "Mai ghẹ đỏ tươi, thịt trắng đục, chắc và ngọt; chén chấm mặn chua thơm tiêu, không át vị ghẹ.",
+      "serving": "Bày ghẹ nóng trên đĩa lớn, kèm chén muối tiêu chanh và rau thơm. Bóc đến đâu ăn đến đó; chuẩn bị đĩa riêng cho vỏ.",
+      "tips": [
+        "Chọn ghẹ còn sống, vỏ nguyên và được giữ mát; không dùng ghẹ đã chết trước khi nấu.",
+        "Dùng bàn chải chà sạch mai và chân dưới vòi nước; giữ ghẹ sống tách khỏi rau, chanh và thực phẩm ăn liền.",
+        "Luộc đến khi mai đỏ, thịt chắc và trắng đục; dọn ra đĩa sạch, cất phần thừa vào tủ lạnh trong vòng hai giờ."
+      ],
+      "dish_type": [
+        "Ghẹ luộc"
+      ],
+      "main_ingredient": [
+        "ghẹ Hàm Ninh"
+      ],
+      "cooking_method": [
+        "luộc"
+      ],
+      "search_terms": [
+        "ghẹ Hàm Ninh luộc",
+        "ghẹ Phú Quốc muối tiêu chanh",
+        "đặc sản làng chài Hàm Ninh"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Đĩa ghẹ Hàm Ninh luộc đỏ tươi cùng chén muối tiêu chanh.",
+      "time_note": "Khoảng 40 phút; luộc thêm vài phút nếu ghẹ lớn, đến khi thịt chắc và trắng đục.",
+      "suggested_pairings": [
+        "Muối tiêu chanh",
+        "Rau thơm",
+        "Cơm trắng"
+      ],
+      "recipe_family": "ghe_luoc_ham_ninh",
+      "keywords": [
+        "ghẹ Hàm Ninh",
+        "Phú Quốc",
+        "muối tiêu chanh",
+        "hải sản"
+      ],
+      "tags": [
+        "món mặn",
+        "hải sản",
+        "đặc sản vùng miền",
+        "Nam Bộ",
+        "mâm cơm gia đình"
+      ],
+      "ingredients": [
+        {
+          "name": "Ghẹ Hàm Ninh còn sống",
+          "quantity": 1200,
+          "unit": "g",
+          "role": "main",
+          "notes": "Khoảng 4 con cỡ vừa; chọn ghẹ tươi và giữ lạnh trước khi nấu.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 2000,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng luộc ghẹ.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Muối",
+          "quantity": 8,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Cho vào nước luộc.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Muối hạt",
+          "quantity": 8,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Pha chén chấm.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Tiêu đen",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Rang thơm nhẹ rồi giã dập.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Chanh",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "fruit",
+          "notes": "Vắt lấy nước cốt, cắt thêm vài miếng nếu thích.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Ớt đỏ",
+          "quantity": 4,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Thái lát, dùng tùy khẩu vị.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Kiểm tra ghẹ còn sống và vỏ nguyên. Dùng bàn chải chà mai, bụng và chân dưới vòi nước lạnh; rửa tay và dụng cụ sau khi chạm ghẹ sống."
+        },
+        {
+          "step": 2,
+          "instruction": "Đun sẵn nồi nước với muối. Rang tiêu nhanh trên chảo khô, giã dập; vắt chanh và chuẩn bị ớt."
+        },
+        {
+          "step": 3,
+          "instruction": "Trộn muối hạt với tiêu, nước cốt chanh và ớt thành chén chấm; đặt riêng khỏi khu vực sơ chế ghẹ."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Khi nước sôi mạnh, dùng kẹp hạ ghẹ vào nồi, đậy nắp và đun sôi lại."
+        },
+        {
+          "step": 2,
+          "instruction": "Luộc khoảng 12–18 phút tùy kích cỡ, đến khi mai đỏ đều, thịt ở khớp chân chắc và trắng đục. Gỡ thử một khớp lớn để kiểm tra."
+        },
+        {
+          "step": 3,
+          "instruction": "Gắp ghẹ ra đĩa sạch, để nguội vừa ăn rồi dùng với muối tiêu chanh. Bỏ ghẹ chết trước khi luộc và cất phần thừa lạnh trong vòng hai giờ."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://dulich.phuquoc.gov.vn/iv/detailnews/?id=news_43&t=den-phu-quoc-an-ghe-ham-ninh",
+          "publisher": "Cổng thông tin Du lịch Phú Quốc",
+          "title": "Đến Phú Quốc ăn ghẹ Hàm Ninh",
+          "use": "Nêu ghẹ Hàm Ninh vừa đánh bắt còn sống, chọn cỡ vừa, rửa sạch, luộc chín tới và ăn ngay; khuyên không luộc lâu để giữ vị ngọt.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://dulich.phuquoc.gov.vn/vi/langchaihamninh",
+          "publisher": "Cổng thông tin Du lịch Phú Quốc",
+          "title": "Làng Chài Hàm Ninh",
+          "use": "Mô tả ghẹ vừa bắt lên đem luộc, thịt chắc, chấm muối tiêu chanh; đối chiếu tên món và cách phục vụ.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-fresh-and-frozen-seafood-safely",
+          "publisher": "U.S. Food and Drug Administration",
+          "title": "Selecting and Serving Fresh and Frozen Seafood Safely",
+          "use": "Tham khảo cách chọn, giữ lạnh và nấu chín ghẹ đến khi thịt chắc, trắng đục.",
+          "accessed_at": "2026-10-24",
+          "type": "food_safety_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Dùng 600 g ghẹ, 1 lít nước, 4 g muối luộc và một nửa lượng muối tiêu chanh.",
+            "instruction": "Nấu trong nồi vừa; nêm từ ít rồi điều chỉnh sau khi hải sản chín."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "Dùng 1,8 kg ghẹ và 3 lít nước; chia thành hai mẻ để nước sôi trở lại nhanh.",
+            "instruction": "Nấu theo mẻ nếu nồi nhỏ; nêm gia vị tăng chậm hơn lượng nguyên liệu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/ghe-luoc-ham-ninh-phu-quoc-960.webp",
+          "page_url": null,
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo mới riêng cho Bếp Việt bằng ImageGen; nguồn tham khảo chỉ dùng để biên tập và đối chiếu món ăn.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Ghẹ Hàm Ninh luộc đỏ tươi bày cùng muối tiêu chanh.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh PNG nền alpha được tạo riêng cho Bếp Việt, xuất master 4K và WebP responsive; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Giữ cách ăn ghẹ Hàm Ninh luộc tươi với muối tiêu chanh; thời gian được nêu theo cỡ ghẹ gia đình thường mua.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử với cỡ ghẹ địa phương để xác nhận thời gian luộc và độ đậm của chén chấm."
+        ]
+      }
+    },
+    {
+      "id": "BV709",
+      "slug": "mat-ca-ngu-tiem-thuoc-bac-phu-yen",
+      "name": "Mắt cá ngừ đại dương tiềm thuốc Bắc Phú Yên",
+      "aliases": [
+        "Mắt cá ngừ Phú Yên tiềm thuốc Bắc",
+        "Mắt cá ngừ đại dương hầm thuốc Bắc"
+      ],
+      "region": [
+        "Trung Bộ"
+      ],
+      "province": [
+        "Phú Yên"
+      ],
+      "category": "Món canh",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "mâm cơm gia đình",
+        "món đãi khách"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Bốn chén nhỏ mắt cá ngừ tiềm, mỗi người một phần.",
+      "prep_time": 25,
+      "cook_time": 60,
+      "passive_time": 0,
+      "total_time": 85,
+      "description": "Món đặc sản Tuy Hòa tận dụng phần mắt cá ngừ đại dương, tiềm chậm với gói thảo mộc nấu ăn, táo tàu, kỷ tử và gừng. Nước tiềm thơm dịu, phần quanh mắt mềm béo; Bếp Việt chuẩn hóa thành bốn chén nhỏ, không gán công dụng chữa bệnh.",
+      "finished_dish": "Mắt cá mềm nhưng còn nguyên, nước tiềm trong thơm gừng và thảo mộc, vị mặn dịu với hậu ngọt từ táo tàu.",
+      "serving": "Múc từng mắt cá cùng nước tiềm vào chén đất còn nóng. Dùng với rau tía tô, hành lá và bánh mì hoặc bún tươi.",
+      "tips": [
+        "Mua mắt cá đã làm sạch từ nguồn hải sản uy tín, giữ lạnh và rã đông trong ngăn mát; không dùng sản phẩm có mùi chua, khai hoặc ôi.",
+        "Dùng gói thảo mộc thực phẩm có nhãn thành phần, không dùng hỗn hợp dược liệu không rõ nguồn gốc.",
+        "Tiềm đến khi phần thịt dày nhất đạt 63°C và mềm; giữ riêng dao, thớt và đĩa đã chạm mắt cá sống."
+      ],
+      "dish_type": [
+        "Mắt cá ngừ tiềm"
+      ],
+      "main_ingredient": [
+        "mắt cá ngừ đại dương",
+        "thảo mộc nấu ăn"
+      ],
+      "cooking_method": [
+        "chần sơ",
+        "tiềm cách thủy"
+      ],
+      "search_terms": [
+        "mắt cá ngừ đại dương tiềm thuốc Bắc Phú Yên",
+        "mắt cá ngừ Tuy Hòa",
+        "đèn pha đại dương"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Chén đất mắt cá ngừ đại dương tiềm thuốc Bắc với táo tàu, kỷ tử và gừng.",
+      "time_note": "Khoảng 85 phút; tiềm nhỏ lửa 50–60 phút đến khi mềm và chín kỹ.",
+      "suggested_pairings": [
+        "Bánh mì",
+        "Bún tươi",
+        "Rau tía tô"
+      ],
+      "recipe_family": "mat_ca_ngu_tiem_thuoc_bac",
+      "keywords": [
+        "mắt cá ngừ",
+        "Phú Yên",
+        "tiềm thuốc Bắc",
+        "hải sản"
+      ],
+      "tags": [
+        "món canh",
+        "hải sản",
+        "đặc sản vùng miền",
+        "Trung Bộ",
+        "món tiềm"
+      ],
+      "ingredients": [
+        {
+          "name": "Mắt cá ngừ đại dương đã làm sạch",
+          "quantity": 600,
+          "unit": "g",
+          "role": "main",
+          "notes": "Mua từ nguồn uy tín, giữ lạnh; rã đông trong ngăn mát nếu cần.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Gói thảo mộc nấu ăn",
+          "quantity": 25,
+          "unit": "g",
+          "role": "other",
+          "notes": "Chọn gói thuốc Bắc dùng làm thực phẩm có nhãn thành phần rõ ràng.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Táo tàu khô",
+          "quantity": 25,
+          "unit": "g",
+          "role": "fruit",
+          "notes": "Rửa nhanh, bỏ hạt nếu quả lớn.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Kỷ tử khô",
+          "quantity": 10,
+          "unit": "g",
+          "role": "fruit",
+          "notes": "Rửa nhanh, để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Gừng tươi",
+          "quantity": 50,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Một nửa thái lát để tiềm, phần còn lại dùng chần sơ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 20,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, đập dập.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 900,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Chia cho bước chần và nồi tiềm.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm cuối để giữ vị dịu.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Muối",
+          "quantity": 4,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng một ít để chần và nêm.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Tiêu đen",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Giã dập nhẹ.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 20,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Lá tía tô",
+          "quantity": 20,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, để ráo và ăn kèm.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rã đông mắt cá trong ngăn mát nếu cần. Kiểm tra mùi và bao gói; thấm khô bằng khăn giấy, không để hải sản sống ở nhiệt độ phòng."
+        },
+        {
+          "step": 2,
+          "instruction": "Rửa nhanh táo tàu, kỷ tử và gói thảo mộc thực phẩm. Thái gừng, đập hành tím; chuẩn bị nồi có xửng để chưng cách thủy."
+        },
+        {
+          "step": 3,
+          "instruction": "Đun sôi 500 ml nước với vài lát gừng và một nhúm muối; chuẩn bị chén đất hoặc tô chịu nhiệt có nắp."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Chần mắt cá trong nước gừng sôi 1–2 phút, vớt ra để ráo. Chia mắt cá, gói thảo mộc, táo tàu, kỷ tử, hành tím và gừng vào bốn chén chịu nhiệt; thêm 400 ml nước."
+        },
+        {
+          "step": 2,
+          "instruction": "Đặt chén vào xửng trên nồi nước đang sôi nhẹ, đậy nắp và chưng cách thủy 50–60 phút. Châm thêm nước sôi vào nồi ngoài nếu cạn."
+        },
+        {
+          "step": 3,
+          "instruction": "Kiểm tra phần thịt dày nhất đạt ít nhất 63°C và mềm. Nêm nước mắm, tiêu; rắc hành lá, dùng nóng cùng tía tô và bánh mì hoặc bún."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://phuyentourism.gov.vn/thongtin/bandodulich.pdf",
+          "publisher": "Trung tâm Xúc tiến Đầu tư, Thương mại và Du lịch Phú Yên",
+          "title": "Bản đồ du lịch Phú Yên",
+          "use": "Xác nhận mắt cá ngừ đại dương là đặc sản Phú Yên và cách chưng cách thủy với gia vị.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://govietnam.travel/food/mat-ca-ngu-dai-duong-tiem-thuoc-bac-2/",
+          "publisher": "Go Vietnam",
+          "title": "Mắt cá ngừ đại dương tiềm thuốc bắc",
+          "use": "Đối chiếu tên món và cách tiềm mắt cá ngừ với thuốc bắc, táo tàu và kỷ tử; định lượng và cách nấu tại nhà do Bếp Việt chuẩn hóa.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-fresh-and-frozen-seafood-safely",
+          "publisher": "U.S. Food and Drug Administration",
+          "title": "Selecting and Serving Fresh and Frozen Seafood Safely",
+          "use": "Tham khảo cách rã đông trong tủ lạnh và nhiệt độ an toàn cho cá.",
+          "accessed_at": "2026-10-24",
+          "type": "food_safety_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Dùng 300 g mắt cá, nửa gói thảo mộc, 12 g táo tàu, 5 g kỷ tử và khoảng 450 ml nước tiềm.",
+            "instruction": "Nấu trong nồi vừa; nêm từ ít rồi điều chỉnh sau khi hải sản chín."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "Dùng 900 g mắt cá, 38 g thảo mộc, 38 g táo tàu và 15 g kỷ tử; chưng theo nhiều chén.",
+            "instruction": "Nấu theo mẻ nếu nồi nhỏ; nêm gia vị tăng chậm hơn lượng nguyên liệu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/mat-ca-ngu-tiem-thuoc-bac-phu-yen-960.webp",
+          "page_url": null,
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo mới riêng cho Bếp Việt bằng ImageGen; nguồn tham khảo chỉ dùng để biên tập và đối chiếu món ăn.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Chén đất mắt cá ngừ Phú Yên tiềm thuốc Bắc, điểm táo tàu, kỷ tử và gừng.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh PNG nền alpha được tạo riêng cho Bếp Việt, xuất master 4K và WebP responsive; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Giữ món mắt cá ngừ tiềm thảo mộc đặc trưng Tuy Hòa, chuẩn hóa lượng cho bữa gia đình và không đưa ra tuyên bố sức khỏe.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử để chốt thời gian tiềm theo kích cỡ mắt cá và độ mạnh của gói thảo mộc."
+        ]
+      }
+    },
+    {
+      "id": "BV710",
+      "slug": "cha-nhum-phu-quoc",
+      "name": "Chả nhum Phú Quốc",
+      "aliases": [
+        "Chả nhum biển Phú Quốc",
+        "Chả nhum ăn với bánh đa"
+      ],
+      "region": [
+        "Nam Bộ"
+      ],
+      "province": [
+        "Kiên Giang"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "mâm cơm gia đình",
+        "món đãi khách"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Một đĩa chả nhum chiên ăn cùng bánh đa mè, rau sống và chuối chát cho bốn người.",
+      "prep_time": 25,
+      "cook_time": 15,
+      "passive_time": 0,
+      "total_time": 40,
+      "description": "Chả nhum là đặc sản biển Phú Quốc: thịt nhum tươi được quết cùng hành, tiêu và nước mắm rồi chiên vàng. Bếp Việt chia hỗn hợp thành miếng nhỏ để dễ lật, giữ cách ăn cùng bánh đa mè dày, rau sống và chuối chát.",
+      "finished_dish": "Miếng chả nhum vàng thơm, phần giữa vừa se và mềm béo; tiêu, hành và nước mắm làm dậy vị biển.",
+      "serving": "Xếp chả nhum nóng lên đĩa, ăn cùng bánh đa mè, rau sống và chuối chát thái mỏng. Dùng như món mặn hoặc cuốn bánh tráng.",
+      "tips": [
+        "Mua thịt nhum đã tách từ nơi bán hải sản uy tín, giữ lạnh đến khi chế biến; rã đông trong ngăn mát nếu cần.",
+        "Không nêm nhiều nước mắm vì thịt nhum có vị biển đậm; chiên thử một miếng nhỏ rồi điều chỉnh.",
+        "Dùng chảo và đĩa sạch; chiên chả đến khi phần giữa đạt ít nhất 63°C, không ăn sống phần nhum còn lại."
+      ],
+      "dish_type": [
+        "Chả hải sản chiên"
+      ],
+      "main_ingredient": [
+        "thịt nhum biển",
+        "hành lá",
+        "bánh đa mè"
+      ],
+      "cooking_method": [
+        "quết",
+        "chiên áp chảo"
+      ],
+      "search_terms": [
+        "chả nhum Phú Quốc",
+        "chả nhum biển",
+        "nhum biển chiên",
+        "đặc sản Phú Quốc"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Chả nhum Phú Quốc chiên vàng với bánh đa mè, rau sống và chuối chát.",
+      "time_note": "Khoảng 40 phút; chiên từng miếng nhỏ để chả chín giữa mà không cháy mặt.",
+      "suggested_pairings": [
+        "Bánh đa mè",
+        "Rau sống",
+        "Chuối chát"
+      ],
+      "recipe_family": "cha_nhum_phu_quoc",
+      "keywords": [
+        "chả nhum",
+        "nhum biển",
+        "Phú Quốc",
+        "Kiên Giang"
+      ],
+      "tags": [
+        "món mặn",
+        "hải sản",
+        "đặc sản vùng miền",
+        "Nam Bộ",
+        "mâm cơm gia đình"
+      ],
+      "ingredients": [
+        {
+          "name": "Thịt nhum biển đã tách sạch",
+          "quantity": 250,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn loại tươi hoặc cấp đông có nguồn gốc rõ ràng.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 25,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Rửa sạch, thái thật nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 12,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Gia giảm theo độ mặn của thịt nhum.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Tiêu đen",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Giã dập hoặc xay thô.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 30,
+          "unit": "ml",
+          "role": "cooking_fat",
+          "notes": "Dùng chiên áp chảo từng mẻ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Bánh đa mè dày",
+          "quantity": 120,
+          "unit": "g",
+          "role": "accompaniment",
+          "notes": "Nướng hoặc bẻ miếng để ăn kèm.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Rau sống các loại",
+          "quantity": 120,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Nhặt, rửa kỹ và để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Chuối chát",
+          "quantity": 80,
+          "unit": "g",
+          "role": "fruit",
+          "notes": "Thái lát mỏng, ngâm nước chanh loãng rồi để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Nếu thịt nhum đông lạnh, rã đông trong ngăn mát. Để ráo, kiểm tra mùi và bao gói; giữ lạnh cho đến khi trộn."
+        },
+        {
+          "step": 2,
+          "instruction": "Rửa, để ráo rau sống; thái mỏng chuối chát và ngâm trong nước chanh loãng để hạn chế thâm."
+        },
+        {
+          "step": 3,
+          "instruction": "Thái hành lá thật nhỏ, giã tiêu; chuẩn bị bánh đa và một đĩa sạch để đựng chả đã chiên."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Cho thịt nhum vào âu, dùng muỗng dằm nhẹ rồi quết cùng hành lá, nước mắm và tiêu đến khi hỗn hợp quyện. Giữ âu lạnh nếu chưa chiên ngay."
+        },
+        {
+          "step": 2,
+          "instruction": "Làm nóng lớp dầu mỏng trong chảo ở lửa vừa. Múc từng muỗng hỗn hợp, dàn thành miếng dày khoảng 1 cm; chiên 2–3 phút mỗi mặt đến khi vàng và phần giữa đạt ít nhất 63°C."
+        },
+        {
+          "step": 3,
+          "instruction": "Gắp chả ra đĩa sạch có lót giấy thấm dầu. Dọn nóng cùng bánh đa mè, rau sống và chuối chát."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://phuquoc.angiang.gov.vn/nhum-phu-quoc",
+          "publisher": "Cổng thông tin điện tử Đặc khu Phú Quốc",
+          "title": "Nhum Phú Quốc",
+          "use": "Xác nhận nhum là hải sản địa phương; chả nhum được quết với tiêu, hành và nước mắm rồi chiên vàng, ăn với bánh đa mè, rau sống và chuối chát.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-fresh-and-frozen-seafood-safely",
+          "publisher": "U.S. Food and Drug Administration",
+          "title": "Selecting and Serving Fresh and Frozen Seafood Safely",
+          "use": "Tham khảo cách giữ lạnh hải sản sống và nhiệt độ nấu an toàn.",
+          "accessed_at": "2026-10-24",
+          "type": "food_safety_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Dùng 125 g thịt nhum, 12 g hành lá, 6 ml nước mắm và 1 g tiêu; nêm sau khi chiên thử một miếng.",
+            "instruction": "Chiên trong chảo nhỏ thành hai mẻ, không dàn chả quá dày."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "Dùng 375 g thịt nhum, 38 g hành lá, 18 ml nước mắm và 3 g tiêu; gia giảm theo độ mặn.",
+            "instruction": "Chiên nhiều mẻ để nhiệt chảo ổn định, giữ chả đã chiên nóng đến khi dọn."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/cha-nhum-phu-quoc-960.webp",
+          "page_url": null,
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo mới riêng cho Bếp Việt bằng ImageGen; nguồn tham khảo chỉ dùng để biên tập và đối chiếu món ăn.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Chả nhum Phú Quốc chiên vàng với bánh đa mè, rau sống và chuối chát.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh PNG nền alpha được tạo riêng cho Bếp Việt, xuất master 4K và WebP responsive; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Giữ cách quết nhum với hành, tiêu, nước mắm rồi chiên vàng; tạo miếng nhỏ để phù hợp chảo gia đình.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử để chốt độ kết dính của từng mẻ thịt nhum và thời gian chiên phù hợp."
+        ]
+      }
+    }
+  ]
+}

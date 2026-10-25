@@ -676,7 +676,7 @@ html,
 body,
 #root {
   max-width: 100%;
-/* `clip` chặn tràn mà không làm hỏng `position: sticky`. */
+  /* `clip` chặn tràn mà không làm hỏng `position: sticky`. */
   overflow-x: clip;
 }
 

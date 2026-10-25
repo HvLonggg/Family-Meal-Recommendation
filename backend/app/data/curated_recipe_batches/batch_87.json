@@ -1,0 +1,1528 @@
+{
+  "batch": 87,
+  "description": "Năm món gia đình Việt từ gà và ngan, gồm món canh, món kho, món xào và món nước.",
+  "recipes": [
+    {
+      "id": "BV762",
+      "slug": "canh-ga-nau-khoai-tay",
+      "name": "Canh gà nấu khoai tây",
+      "aliases": [
+        "Canh gà khoai tây cà rốt",
+        "Canh khoai tây nấu thịt gà"
+      ],
+      "region": [
+        "Toàn quốc"
+      ],
+      "province": [],
+      "category": "Món canh",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "bữa ăn gia đình"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một nồi canh vừa cho bốn người ăn cùng cơm.",
+      "prep_time": 15,
+      "cook_time": 35,
+      "passive_time": 0,
+      "total_time": 50,
+      "description": "Thịt gà nấu cùng khoai tây, cà rốt và hành tây tạo vị ngọt dịu, nước canh trong và dễ ăn. Món hợp với bữa cơm gia đình những ngày cần một món nóng, đủ rau củ.",
+      "finished_dish": "Thịt gà chín mềm, khoai tây và cà rốt vừa bở nhưng còn nguyên miếng; nước canh trong, có vị ngọt tự nhiên và nêm vừa miệng.",
+      "serving": "Múc nóng ra tô, rắc hành lá, ngò rí và chút tiêu; dùng cùng cơm trắng.",
+      "tips": [
+        "Chọn phần đùi hoặc cánh gà có xương để nước canh ngọt hơn.",
+        "Cho khoai tây sau cà rốt vài phút để hai loại củ chín gần cùng lúc mà không nát.",
+        "Hớt bọt khi nước vừa sôi để nước canh trong; nêm nước mắm ở cuối để giữ mùi thơm."
+      ],
+      "dish_type": [
+        "Món canh",
+        "Canh gia đình"
+      ],
+      "main_ingredient": [
+        "thịt gà",
+        "khoai tây",
+        "cà rốt"
+      ],
+      "cooking_method": [
+        "xào",
+        "nấu canh"
+      ],
+      "search_terms": [
+        "canh gà nấu khoai tây",
+        "canh gà khoai tây cà rốt",
+        "canh khoai tây nấu thịt gà",
+        "món canh gà dễ nấu"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Tô canh gà nấu khoai tây với cà rốt, hành tây và hành lá trong nước dùng vàng trong.",
+      "time_note": "Khoảng 50 phút; thời gian nấu thay đổi theo kích thước miếng gà và củ.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Rau luộc",
+        "Cà muối"
+      ],
+      "recipe_family": "chicken_potato_soup",
+      "keywords": [
+        "gà",
+        "khoai tây",
+        "cà rốt",
+        "canh gia đình"
+      ],
+      "tags": [
+        "món canh",
+        "thịt gà",
+        "dễ nấu",
+        "bữa ăn gia đình"
+      ],
+      "ingredients": [
+        {
+          "name": "Thịt gà có xương",
+          "quantity": 500,
+          "unit": "g",
+          "role": "protein",
+          "notes": "Chặt miếng vừa ăn; thấm khô bằng giấy bếp nếu bề mặt còn ướt; không xối rửa dưới vòi nước.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Khoai tây",
+          "quantity": 300,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Gọt vỏ, cắt miếng vừa; ngâm nước để không thâm.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Cà rốt",
+          "quantity": 120,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Gọt vỏ, thái khoanh dày khoảng 1 cm.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Hành tây",
+          "quantity": 100,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Bổ múi cau.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Nước",
+          "quantity": 1200,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Có thể thay một phần bằng nước dùng gà nhạt.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 12,
+          "unit": "ml",
+          "role": "oil",
+          "notes": "Dùng để phi hành và xào gà.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm từ từ theo khẩu vị.",
+          "scaling_rule": "seasoning",
+          "sequence": 8
+        },
+        {
+          "name": "Muối",
+          "quantity": 4,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng nêm nước canh.",
+          "scaling_rule": "seasoning",
+          "sequence": 9
+        },
+        {
+          "name": "Hạt nêm",
+          "quantity": 4,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Có thể bỏ qua nếu dùng nước dùng đã nêm.",
+          "scaling_rule": "seasoning",
+          "sequence": 10
+        },
+        {
+          "name": "Hành lá và ngò rí",
+          "quantity": 12,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Rắc khi dọn.",
+          "scaling_rule": "seasoning",
+          "sequence": 12
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Chặt gà thành miếng vừa ăn; thấm khô bằng giấy bếp nếu bề mặt còn ướt, không xối rửa dưới vòi nước. Gọt vỏ khoai tây, cà rốt; cắt miếng tương đương để củ chín đều. Dùng dao, thớt riêng cho thịt sống và vệ sinh sau khi sơ chế."
+        },
+        {
+          "step": 2,
+          "instruction": "Băm hành tím, bổ hành tây thành múi cau. Thái hành lá và ngò rí, để riêng phần dùng rắc sau cùng."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đun nóng dầu trong nồi, phi hành tím đến khi thơm. Cho gà vào đảo đến khi mặt thịt săn lại."
+        },
+        {
+          "step": 2,
+          "instruction": "Thêm nước, đun sôi rồi hớt bọt. Hạ lửa vừa và nấu khoảng 15 phút, đến khi gà gần chín."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho cà rốt vào nấu khoảng 5 phút rồi thêm khoai tây. Nấu tiếp đến khi thịt gà chín hoàn toàn và các loại củ vừa mềm."
+        },
+        {
+          "step": 4,
+          "instruction": "Thêm hành tây, nêm muối, hạt nêm và nước mắm. Đun thêm vài phút, nếm lại rồi tắt bếp; rắc hành lá, ngò rí và tiêu. Dùng nhiệt kế thực phẩm kiểm tra phần thịt dày nhất đạt 74°C (165°F) trước khi dọn."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://monngonmoingay.com/canh-ga-nau-khoai-tay/",
+          "publisher": "Món Ngon Mỗi Ngày",
+          "title": "Canh gà nấu khoai tây",
+          "use": "Đối chiếu tên món, tổ hợp gà với khoai tây, cà rốt, hành tây và trình tự xào gà rồi nấu canh.",
+          "accessed_at": "2026-10-25",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart",
+          "publisher": "USDA Food Safety and Inspection Service",
+          "title": "Safe Minimum Internal Temperature Chart",
+          "use": "Đối chiếu nhiệt độ an toàn tối thiểu 74 °C cho gia cầm, đo bằng nhiệt kế thực phẩm.",
+          "accessed_at": "2026-10-25",
+          "type": "food_safety_reference"
+        },
+        {
+          "url": "https://ask.fsis.usda.gov/article/Should-I-wash-chicken-or-other-poultry-before-cooking",
+          "publisher": "USDA Food Safety and Inspection Service",
+          "title": "Should I wash chicken or other poultry before cooking?",
+          "use": "Đối chiếu khuyến nghị không rửa gia cầm sống để tránh nước thịt bắn gây nhiễm chéo; làm chín ở nhiệt độ an toàn.",
+          "accessed_at": "2026-10-25",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Giảm lượng gà và rau củ một nửa; nêm gia vị từ ít.",
+            "instruction": "Dùng nồi nhỏ và giảm nước để giữ vị canh đậm vừa."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.3,
+            "example": "Tăng gà và rau củ khoảng một lần rưỡi; nếm lại nước canh.",
+            "instruction": "Dùng nồi đủ rộng để gà và củ chín đều."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/canh-ga-nau-khoai-tay-960.webp",
+          "page_url": "https://monngonmoingay.com/canh-ga-nau-khoai-tay/",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập công thức.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Tô canh gà nấu khoai tây với cà rốt, hành tây và hành lá trong nước dùng vàng trong.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-25",
+          "photo_variant_note": "PNG gốc 1374×1145 có alpha; canvas WebP 3840×2160 được upscale từ ảnh gốc, không phải độ phân giải native 4K. Công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Biên tập bằng lời riêng từ nguồn tham khảo; cần nấu thử để xác nhận định lượng và thời gian.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-25",
+        "needs": [
+          "Nấu thử để xác nhận định lượng và thời gian thực tế."
+        ]
+      },
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "id": "BV763",
+      "slug": "ga-kho-tieu",
+      "name": "Gà kho tiêu",
+      "aliases": [
+        "Thịt gà kho tiêu",
+        "Gà kho tiêu đen"
+      ],
+      "region": [
+        "Toàn quốc"
+      ],
+      "province": [],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "bữa ăn gia đình"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một món kho ăn cùng cơm cho bốn người.",
+      "prep_time": 15,
+      "cook_time": 35,
+      "passive_time": 20,
+      "total_time": 70,
+      "description": "Miếng gà săn mặt được kho liu riu với nước mắm, nước màu và tiêu đen, vị mặn ngọt vừa phải, thơm ấm. Món ăn hợp với cơm nóng và rau luộc trong bữa cơm nhà.",
+      "finished_dish": "Thịt gà chín mềm nhưng không rời xương, nước kho sánh nhẹ bám quanh miếng thịt; mùi tiêu rõ mà không át vị gà.",
+      "serving": "Dọn nóng trong đĩa sâu lòng, rắc hành lá và tiêu mới xay; ăn kèm cơm trắng.",
+      "tips": [
+        "Ướp gà ít nhất 20 phút để thịt thấm hành, tiêu và nước mắm.",
+        "Áp chảo gà trước khi kho giúp miếng thịt săn và nước kho thơm hơn.",
+        "Thêm nước nóng từng ít một nếu nước kho cạn trước khi thịt mềm."
+      ],
+      "dish_type": [
+        "Món kho",
+        "Món mặn gia đình"
+      ],
+      "main_ingredient": [
+        "thịt gà",
+        "tiêu đen"
+      ],
+      "cooking_method": [
+        "áp chảo",
+        "kho"
+      ],
+      "search_terms": [
+        "gà kho tiêu",
+        "thịt gà kho tiêu",
+        "gà kho tiêu đen",
+        "món gà ăn với cơm"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Đĩa gà kho tiêu với miếng gà vàng nâu, nước kho sánh và hành lá.",
+      "time_note": "Khoảng 70 phút gồm 20 phút ướp; thời gian kho tùy phần gà và kích thước miếng.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Rau muống luộc",
+        "Canh rau ngót"
+      ],
+      "recipe_family": "chicken_black_pepper_braise",
+      "keywords": [
+        "gà kho",
+        "tiêu đen",
+        "nước màu",
+        "món mặn"
+      ],
+      "tags": [
+        "món kho",
+        "thịt gà",
+        "dễ nấu",
+        "bữa ăn gia đình"
+      ],
+      "ingredients": [
+        {
+          "name": "Thịt gà có xương",
+          "quantity": 700,
+          "unit": "g",
+          "role": "protein",
+          "notes": "Chặt miếng vừa ăn; thấm khô bằng giấy bếp nếu bề mặt còn ướt; không xối rửa dưới vòi nước.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 25,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, thái lát hoặc băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Tiêu đen",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Giã dập; chia một phần để rắc sau khi kho.",
+          "scaling_rule": "seasoning",
+          "sequence": 3
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 30,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng 20 ml để ướp, phần còn lại để nêm khi kho.",
+          "scaling_rule": "seasoning",
+          "sequence": 4
+        },
+        {
+          "name": "Đường",
+          "quantity": 15,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Điều chỉnh theo khẩu vị.",
+          "scaling_rule": "seasoning",
+          "sequence": 5
+        },
+        {
+          "name": "Nước màu",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng lượng vừa đủ tạo màu cánh gián.",
+          "scaling_rule": "seasoning",
+          "sequence": 6
+        },
+        {
+          "name": "Muối",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm nhẹ vì nước mắm đã mặn.",
+          "scaling_rule": "seasoning",
+          "sequence": 7
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 12,
+          "unit": "ml",
+          "role": "oil",
+          "notes": "Dùng để áp chảo gà.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Nước nóng",
+          "quantity": 180,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Thêm từ từ khi kho nếu cần.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 10,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Thái nhỏ để rắc sau khi tắt bếp.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Ớt",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "seasoning",
+          "notes": "Tùy chọn, bỏ hạt nếu muốn giảm cay.",
+          "scaling_rule": "seasoning",
+          "sequence": 11
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Chặt gà thành miếng vừa ăn; thấm khô nếu bề mặt còn ướt, không xối rửa dưới vòi nước. Giã dập tiêu, thái hành tím và cắt nhỏ hành lá. Dùng riêng dao, thớt cho thịt sống; rửa tay và vệ sinh dụng cụ sau khi sơ chế."
+        },
+        {
+          "step": 2,
+          "instruction": "Ướp gà với hành tím, khoảng 20 ml nước mắm, một nửa lượng tiêu và chút muối trong 20 phút."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng dầu trong nồi hoặc chảo sâu lòng. Áp chảo gà hai mặt đến khi bề mặt săn nhẹ, rồi chắt bớt dầu nếu còn nhiều."
+        },
+        {
+          "step": 2,
+          "instruction": "Thêm nước mắm còn lại, đường và nước màu; đảo để gia vị phủ đều. Rót nước nóng vào, đậy nắp và đun sôi."
+        },
+        {
+          "step": 3,
+          "instruction": "Hạ lửa nhỏ, kho khoảng 25–30 phút. Thỉnh thoảng đảo nhẹ và thêm chút nước nóng nếu nước kho cạn trước khi gà chín mềm."
+        },
+        {
+          "step": 4,
+          "instruction": "Nếm lại độ mặn ngọt, mở nắp đun thêm đến khi nước kho sánh nhẹ. Tắt bếp, thêm phần tiêu còn lại và hành lá. Dùng nhiệt kế thực phẩm kiểm tra phần thịt dày nhất đạt 74°C (165°F) trước khi dọn."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://cookpad.com/vn/cong-thuc/4530306",
+          "publisher": "Cookpad Việt Nam",
+          "title": "Gà kho tiêu",
+          "use": "Đối chiếu tên món, cách ướp gà với tiêu và hành, áp chảo trước rồi kho với nước mắm, đường và nước màu.",
+          "accessed_at": "2026-10-25",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart",
+          "publisher": "USDA Food Safety and Inspection Service",
+          "title": "Safe Minimum Internal Temperature Chart",
+          "use": "Đối chiếu nhiệt độ an toàn tối thiểu 74 °C cho gia cầm, đo bằng nhiệt kế thực phẩm.",
+          "accessed_at": "2026-10-25",
+          "type": "food_safety_reference"
+        },
+        {
+          "url": "https://ask.fsis.usda.gov/article/Should-I-wash-chicken-or-other-poultry-before-cooking",
+          "publisher": "USDA Food Safety and Inspection Service",
+          "title": "Should I wash chicken or other poultry before cooking?",
+          "use": "Đối chiếu khuyến nghị không rửa gia cầm sống để tránh nước thịt bắn gây nhiễm chéo; làm chín ở nhiệt độ an toàn.",
+          "accessed_at": "2026-10-25",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Giảm lượng gà và gia vị một nửa; nếm nước kho trước khi thêm tiếp.",
+            "instruction": "Chọn nồi nhỏ để phần nước kho không bị cạn quá nhanh."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.3,
+            "example": "Tăng lượng gà khoảng một lần rưỡi; điều chỉnh tiêu và nước mắm theo khẩu vị.",
+            "instruction": "Kho theo mẻ nếu nồi quá chật để gà áp chảo đều."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/ga-kho-tieu-960.webp",
+          "page_url": "https://cookpad.com/vn/cong-thuc/4530306",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập công thức.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa gà kho tiêu với miếng gà vàng nâu, nước kho sánh và hành lá.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-25",
+          "photo_variant_note": "PNG gốc 1536×1024 có alpha; canvas WebP 3840×2160 được upscale từ ảnh gốc, không phải độ phân giải native 4K. Công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Biên tập bằng lời riêng từ nguồn tham khảo; cần nấu thử để xác nhận định lượng và thời gian.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-25",
+        "needs": [
+          "Nấu thử để xác nhận định lượng và thời gian thực tế."
+        ]
+      },
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "id": "BV764",
+      "slug": "ga-xao-thom-bong-cai",
+      "name": "Gà xào thơm bông cải",
+      "aliases": [
+        "Gà xào dứa bông cải",
+        "Gà xào bông cải với thơm"
+      ],
+      "region": [
+        "Toàn quốc"
+      ],
+      "province": [],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "bữa ăn gia đình"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một đĩa món xào dùng chung cho bốn người.",
+      "prep_time": 15,
+      "cook_time": 15,
+      "passive_time": 0,
+      "total_time": 30,
+      "description": "Thịt gà xào cùng bông cải, thơm và ớt chuông tạo vị ngọt dịu, chua nhẹ, có độ giòn của rau củ. Món lên bàn nhanh, hợp ăn nóng cùng cơm trắng.",
+      "finished_dish": "Gà chín mềm, bông cải xanh và trắng còn độ giòn, thơm vừa chín tới; nước sốt sánh nhẹ, bám đều mà không đọng thành vũng.",
+      "serving": "Dọn ra đĩa rộng, rắc hành lá, ngò rí và tiêu; dùng khi còn nóng.",
+      "tips": [
+        "Ướp gà với một ít bột bắp để thịt giữ nước khi xào nhanh.",
+        "Chần bông cải ngắn rồi để ráo giúp rau giữ màu và không ra nhiều nước trong chảo.",
+        "Cho thơm vào gần cuối để miếng quả còn nguyên và không làm sốt quá chua."
+      ],
+      "dish_type": [
+        "Món xào",
+        "Món gà gia đình"
+      ],
+      "main_ingredient": [
+        "thịt gà",
+        "bông cải",
+        "thơm"
+      ],
+      "cooking_method": [
+        "chần",
+        "xào"
+      ],
+      "search_terms": [
+        "gà xào thơm bông cải",
+        "gà xào dứa bông cải",
+        "gà xào bông cải với thơm",
+        "gà xào rau củ ăn cơm"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Đĩa gà xào thơm bông cải xanh, bông cải trắng và ớt chuông đỏ.",
+      "time_note": "Khoảng 30 phút; chần rau vừa đủ để khi xào vẫn giữ độ giòn.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Canh bí xanh",
+        "Rau luộc"
+      ],
+      "recipe_family": "chicken_pineapple_broccoli_stir_fry",
+      "keywords": [
+        "gà",
+        "thơm",
+        "dứa",
+        "bông cải",
+        "món xào"
+      ],
+      "tags": [
+        "món xào",
+        "thịt gà",
+        "rau củ",
+        "bữa ăn gia đình"
+      ],
+      "ingredients": [
+        {
+          "name": "Thịt gà lọc xương",
+          "quantity": 400,
+          "unit": "g",
+          "role": "protein",
+          "notes": "Thái lát vừa ăn.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Bông cải xanh",
+          "quantity": 150,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Tách thành nhánh nhỏ, rửa sạch.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Bông cải trắng",
+          "quantity": 150,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Tách nhánh nhỏ, rửa sạch.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Thơm chín",
+          "quantity": 180,
+          "unit": "g",
+          "role": "fruit",
+          "notes": "Gọt vỏ, bỏ mắt và cắt miếng vừa.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Ớt chuông đỏ",
+          "quantity": 70,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Bỏ hạt, cắt miếng vuông.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 10,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Gừng",
+          "quantity": 8,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Nước tương",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Chia một phần để ướp gà, phần còn lại để nêm.",
+          "scaling_rule": "seasoning",
+          "sequence": 8
+        },
+        {
+          "name": "Dầu hào",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Có thể thay bằng dầu hào chay nếu cần.",
+          "scaling_rule": "seasoning",
+          "sequence": 9
+        },
+        {
+          "name": "Bột bắp",
+          "quantity": 8,
+          "unit": "g",
+          "role": "thickener",
+          "notes": "Dùng một nửa để ướp gà, phần còn lại hòa nước tạo sốt.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Nước",
+          "quantity": 60,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Hòa với bột bắp để tạo sốt sánh nhẹ.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "oil",
+          "notes": "Dùng để xào.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        },
+        {
+          "name": "Đường",
+          "quantity": 4,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Tùy chọn, cân bằng vị chua của thơm.",
+          "scaling_rule": "seasoning",
+          "sequence": 13
+        },
+        {
+          "name": "Hành lá và ngò rí",
+          "quantity": 12,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 14
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Rắc trước khi dọn.",
+          "scaling_rule": "seasoning",
+          "sequence": 15
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Thái gà thành lát mỏng vừa ăn. Ướp với 8 ml nước tương, một nửa bột bắp và chút tiêu trong 10 phút."
+        },
+        {
+          "step": 2,
+          "instruction": "Tách bông cải thành nhánh nhỏ, rửa sạch rồi chần nhanh trong nước sôi. Vớt ra để ráo; cắt thơm và ớt chuông thành miếng vừa."
+        },
+        {
+          "step": 3,
+          "instruction": "Băm tỏi, gừng; thái hành lá và ngò rí. Hòa phần bột bắp còn lại với nước, để riêng."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng dầu, phi thơm tỏi và gừng. Cho gà vào xào trên lửa vừa đến khi săn và gần chín."
+        },
+        {
+          "step": 2,
+          "instruction": "Thêm bông cải, một ít nước, phần nước tương còn lại và dầu hào; đảo đến khi rau vừa chín tới."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho thơm và ớt chuông vào chảo. Rót từ từ nước bột bắp, đảo đều đến khi sốt áo nhẹ quanh nguyên liệu."
+        },
+        {
+          "step": 4,
+          "instruction": "Nếm lại, thêm chút đường nếu thơm chua. Tắt bếp khi gà chín hoàn toàn, trộn hành lá và ngò rí rồi dọn nóng. Dùng nhiệt kế thực phẩm kiểm tra phần thịt dày nhất đạt 74°C (165°F) trước khi dọn."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://monngonmoingay.com/ga-xao-thom-bong-cai/",
+          "publisher": "Món Ngon Mỗi Ngày",
+          "title": "Gà xào thơm bông cải",
+          "use": "Đối chiếu tên món, các nguyên liệu gà, hai loại bông cải, thơm, ớt chuông và thứ tự xào rau củ.",
+          "accessed_at": "2026-10-25",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart",
+          "publisher": "USDA Food Safety and Inspection Service",
+          "title": "Safe Minimum Internal Temperature Chart",
+          "use": "Đối chiếu nhiệt độ an toàn tối thiểu 74 °C cho gia cầm, đo bằng nhiệt kế thực phẩm.",
+          "accessed_at": "2026-10-25",
+          "type": "food_safety_reference"
+        },
+        {
+          "url": "https://ask.fsis.usda.gov/article/Should-I-wash-chicken-or-other-poultry-before-cooking",
+          "publisher": "USDA Food Safety and Inspection Service",
+          "title": "Should I wash chicken or other poultry before cooking?",
+          "use": "Đối chiếu khuyến nghị không rửa gia cầm sống để tránh nước thịt bắn gây nhiễm chéo; làm chín ở nhiệt độ an toàn.",
+          "accessed_at": "2026-10-25",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Giảm thịt gà và rau củ một nửa; pha sốt trước rồi nêm vừa đủ.",
+            "instruction": "Xào nhanh trên lửa vừa đến lớn, tránh để bông cải ra nước."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.3,
+            "example": "Tăng nguyên liệu chính khoảng một lần rưỡi; điều chỉnh nước sốt từ từ.",
+            "instruction": "Xào thành hai mẻ nếu chảo nhỏ để rau vẫn giòn."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/ga-xao-thom-bong-cai-960.webp",
+          "page_url": "https://monngonmoingay.com/ga-xao-thom-bong-cai/",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập công thức.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa gà xào thơm bông cải xanh, bông cải trắng và ớt chuông đỏ.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-25",
+          "photo_variant_note": "PNG gốc 1536×1024 có alpha; canvas WebP 3840×2160 được upscale từ ảnh gốc, không phải độ phân giải native 4K. Công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Biên tập bằng lời riêng từ nguồn tham khảo; cần nấu thử để xác nhận định lượng và thời gian.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-25",
+        "needs": [
+          "Nấu thử để xác nhận định lượng và thời gian thực tế."
+        ]
+      },
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "id": "BV765",
+      "slug": "thit-ngan-om-sau",
+      "name": "Thịt ngan om sấu",
+      "aliases": [
+        "Ngan om sấu",
+        "Canh ngan om sấu"
+      ],
+      "region": [
+        "Miền Bắc"
+      ],
+      "province": [
+        "Hà Nội"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "bữa ăn gia đình"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Một nồi ngan om dùng cho bốn người, ăn cùng cơm hoặc bún.",
+      "prep_time": 20,
+      "cook_time": 40,
+      "passive_time": 25,
+      "total_time": 85,
+      "description": "Ngan om chậm với sấu, gừng và sả cho thịt mềm, nước om có vị chua thanh dễ ăn. Món hợp dùng trong bữa cơm nhà hoặc đổi vị khi sấu vào mùa.",
+      "finished_dish": "Thịt ngan chín mềm nhưng còn miếng, nước om thơm gừng sả và chua nhẹ; sấu được dầm vừa đủ để nước không quá gắt.",
+      "serving": "Rắc hành lá và mùi tàu trước khi dọn; dùng nóng cùng cơm trắng hoặc bún tươi.",
+      "tips": [
+        "Xát ngan với muối và gừng rồi rửa sạch để giảm mùi đặc trưng.",
+        "Ướp thịt trước khi xào săn giúp gia vị bám đều và nước om thơm hơn.",
+        "Dầm sấu từng quả, nếm sau mỗi lần để kiểm soát độ chua."
+      ],
+      "dish_type": [
+        "Món om",
+        "Món ngan"
+      ],
+      "main_ingredient": [
+        "thịt ngan",
+        "quả sấu"
+      ],
+      "cooking_method": [
+        "ướp",
+        "xào săn",
+        "om"
+      ],
+      "search_terms": [
+        "thịt ngan om sấu",
+        "ngan om sấu",
+        "canh ngan om sấu",
+        "món ngan nấu sấu"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Tô thịt ngan om sấu với miếng ngan chín mềm, quả sấu xanh, hành lá và mùi tàu.",
+      "time_note": "Khoảng 85 phút gồm 25 phút ướp; độ mềm tùy kích thước và độ già của ngan.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Bún tươi",
+        "Rau muống luộc"
+      ],
+      "recipe_family": "muscovy_duck_sour_dracontomelon_braise",
+      "keywords": [
+        "ngan",
+        "sấu",
+        "gừng",
+        "sả",
+        "món om"
+      ],
+      "tags": [
+        "món om",
+        "thịt ngan",
+        "món gia đình",
+        "miền Bắc"
+      ],
+      "ingredients": [
+        {
+          "name": "Thịt ngan",
+          "quantity": 800,
+          "unit": "g",
+          "role": "protein",
+          "notes": "Chặt miếng vừa ăn; thấm khô bằng giấy bếp nếu bề mặt còn ướt; không xối rửa thịt ngan sống dưới vòi nước.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Quả sấu",
+          "quantity": 7,
+          "unit": "quả",
+          "role": "vegetable",
+          "notes": "Cạo sạch vỏ, rửa và khía nhẹ quanh quả.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Gừng",
+          "quantity": 25,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Một phần thái lát để khử mùi, phần còn lại băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Sả",
+          "quantity": 30,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Hai nhánh đập dập, phần còn lại băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 25,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 12,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng ướp và nêm ở cuối.",
+          "scaling_rule": "seasoning",
+          "sequence": 7
+        },
+        {
+          "name": "Muối",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Điều chỉnh theo khẩu vị.",
+          "scaling_rule": "seasoning",
+          "sequence": 8
+        },
+        {
+          "name": "Đường",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Giảm nếu sấu ít chua.",
+          "scaling_rule": "seasoning",
+          "sequence": 9
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 12,
+          "unit": "ml",
+          "role": "oil",
+          "notes": "Dùng phi thơm và xào săn ngan.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Nước",
+          "quantity": 900,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Điều chỉnh để nước vừa ngập thịt.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Hành lá và mùi tàu",
+          "quantity": 18,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        },
+        {
+          "name": "Ớt",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "seasoning",
+          "notes": "Tùy chọn.",
+          "scaling_rule": "seasoning",
+          "sequence": 13
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Thấm khô thịt ngan bằng giấy bếp nếu bề mặt còn ướt; không rửa ngan sống dưới vòi nước. Chặt miếng vừa ăn trên thớt riêng, rửa tay và vệ sinh dao, thớt sau khi sơ chế."
+        },
+        {
+          "step": 2,
+          "instruction": "Cạo vỏ sấu và khía nhẹ quanh quả. Băm hành tím, tỏi, gừng và một phần sả; đập dập phần sả còn lại."
+        },
+        {
+          "step": 3,
+          "instruction": "Ướp ngan với hành, tỏi, gừng, sả băm, muối và đường trong khoảng 20–25 phút. Thái nhỏ hành lá và mùi tàu."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng dầu trong nồi, phi thơm phần hành, tỏi và sả. Cho ngan đã ướp vào đảo đến khi thịt săn và dậy mùi."
+        },
+        {
+          "step": 2,
+          "instruction": "Thêm nước và sả đập dập, đun sôi rồi hạ lửa. Om khoảng 25 phút, đậy hé nắp để thịt mềm từ từ."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho sấu vào om tiếp khoảng 15 phút hoặc đến khi thịt chín mềm. Dầm từng quả sấu vào nước om, nếm độ chua rồi nêm nước mắm."
+        },
+        {
+          "step": 4,
+          "instruction": "Tắt bếp khi vị chua mặn hài hòa. Rắc hành lá và mùi tàu; dùng nóng cùng cơm hoặc bún. Dùng nhiệt kế thực phẩm kiểm tra phần thịt dày nhất đạt 74°C (165°F) trước khi dọn."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://cookpad.com/vn/cong-thuc/16807126",
+          "publisher": "Cookpad Việt Nam",
+          "title": "Thịt Ngan Om Sấu",
+          "use": "Đối chiếu nguyên liệu ngan, sấu, gừng, sả, hành tỏi, bước ướp thịt rồi xào săn và om đến mềm.",
+          "accessed_at": "2026-10-25",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart",
+          "publisher": "USDA Food Safety and Inspection Service",
+          "title": "Safe Minimum Internal Temperature Chart",
+          "use": "Đối chiếu nhiệt độ an toàn tối thiểu 74 °C cho gia cầm, đo bằng nhiệt kế thực phẩm.",
+          "accessed_at": "2026-10-25",
+          "type": "food_safety_reference"
+        },
+        {
+          "url": "https://ask.fsis.usda.gov/article/Should-I-wash-chicken-or-other-poultry-before-cooking",
+          "publisher": "USDA Food Safety and Inspection Service",
+          "title": "Should I wash chicken or other poultry before cooking?",
+          "use": "Đối chiếu khuyến nghị không rửa gia cầm sống để tránh nước thịt bắn gây nhiễm chéo; làm chín ở nhiệt độ an toàn.",
+          "accessed_at": "2026-10-25",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Dùng khoảng 400 g ngan và 3–4 quả sấu; nêm gia vị từ ít.",
+            "instruction": "Nấu trong nồi nhỏ và dầm sấu từng quả để vừa độ chua."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.3,
+            "example": "Tăng ngan và nước khoảng một lần rưỡi; điều chỉnh sấu theo độ chua.",
+            "instruction": "Chọn nồi đủ lớn để miếng ngan ngập đều trong nước om."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/thit-ngan-om-sau-960.webp",
+          "page_url": "https://cookpad.com/vn/cong-thuc/16807126",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập công thức.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Tô thịt ngan om sấu với miếng ngan chín mềm, quả sấu xanh, hành lá và mùi tàu.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-25",
+          "photo_variant_note": "PNG gốc 1312×1199 có alpha; canvas WebP 3840×2160 được upscale từ ảnh gốc, không phải độ phân giải native 4K. Công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Biên tập bằng lời riêng từ nguồn tham khảo; cần nấu thử để xác nhận định lượng và thời gian.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-25",
+        "needs": [
+          "Nấu thử để xác nhận định lượng và thời gian thực tế."
+        ]
+      },
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "id": "BV766",
+      "slug": "bun-ngan-mang",
+      "name": "Bún ngan măng",
+      "aliases": [
+        "Bún ngan măng tươi",
+        "Bún ngan nước"
+      ],
+      "region": [
+        "Miền Bắc"
+      ],
+      "province": [],
+      "category": "Món nước",
+      "meal_type": [
+        "bữa sáng",
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Bốn tô bún chan nước luộc ngan và măng.",
+      "prep_time": 25,
+      "cook_time": 60,
+      "passive_time": 0,
+      "total_time": 85,
+      "description": "Ngan luộc lấy nước dùng, ăn cùng bún tươi và măng đã luộc kỹ; phần thịt chặt riêng để mỗi tô có đủ thịt và rau thơm. Nước dùng có vị ngọt tự nhiên, hợp bữa sáng hoặc bữa chính.",
+      "finished_dish": "Nước dùng nóng, trong vừa, thơm gừng sả; thịt ngan chín mềm, măng không còn vị hăng và bún giữ sợi dai mềm.",
+      "serving": "Chia bún vào tô, xếp thịt ngan và măng, chan nước dùng nóng; ăn kèm nước mắm gừng tỏi và rau thơm nếu thích.",
+      "tips": [
+        "Luộc măng tươi mở vung 2–3 lượt, đổ bỏ nước sau mỗi lượt rồi mới cho vào nước dùng.",
+        "Luộc ngan ở lửa vừa và kiểm tra phần thịt dày nhất đã chín trước khi vớt ra.",
+        "Nêm nước dùng sau khi măng đã nấu cùng để vị mặn không bị đậm quá."
+      ],
+      "dish_type": [
+        "Món nước",
+        "Bún"
+      ],
+      "main_ingredient": [
+        "thịt ngan",
+        "măng",
+        "bún tươi"
+      ],
+      "cooking_method": [
+        "luộc",
+        "nấu nước dùng"
+      ],
+      "search_terms": [
+        "bún ngan măng",
+        "bún ngan măng tươi",
+        "bún ngan nước",
+        "món bún từ ngan"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Tô bún ngan măng với thịt ngan, măng tươi đã nấu mềm, hành lá và nước dùng nóng.",
+      "time_note": "Khoảng 85 phút; ngan có thể cần lâu hơn nếu con lớn hoặc thịt dày.",
+      "suggested_pairings": [
+        "Rau thơm",
+        "Nước mắm gừng",
+        "Chanh và ớt"
+      ],
+      "recipe_family": "rice_vermicelli_muscovy_duck_bamboo_shoot_soup",
+      "keywords": [
+        "bún",
+        "ngan",
+        "măng",
+        "nước dùng"
+      ],
+      "tags": [
+        "món nước",
+        "thịt ngan",
+        "bún",
+        "bữa ăn gia đình"
+      ],
+      "ingredients": [
+        {
+          "name": "Thịt ngan",
+          "quantity": 900,
+          "unit": "g",
+          "role": "protein",
+          "notes": "Thấm khô ngan bằng giấy bếp nếu bề mặt còn ướt; không xối rửa ngan sống dưới vòi nước.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Măng tươi",
+          "quantity": 400,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Thái hoặc xé sợi; luộc kỹ và bỏ nước luộc.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Bún tươi",
+          "quantity": 600,
+          "unit": "g",
+          "role": "grain",
+          "notes": "Trụng nhanh qua nước sôi, để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Nước",
+          "quantity": 2500,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng luộc ngan và làm nước dùng.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Sả",
+          "quantity": 2,
+          "unit": "nhánh",
+          "role": "aromatic",
+          "notes": "Rửa sạch, đập dập.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Gừng",
+          "quantity": 30,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Một phần dùng làm sạch ngan, phần còn lại thái lát nấu nước.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 20,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, đập dập.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm nước dùng và pha nước chấm.",
+          "scaling_rule": "seasoning",
+          "sequence": 8
+        },
+        {
+          "name": "Hạt nêm",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Tùy chọn; nêm sau khi nước dùng sôi.",
+          "scaling_rule": "seasoning",
+          "sequence": 9
+        },
+        {
+          "name": "Muối",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng làm sạch ngan và nêm nước dùng.",
+          "scaling_rule": "seasoning",
+          "sequence": 10
+        },
+        {
+          "name": "Đường",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Tùy chọn để cân vị nước chấm.",
+          "scaling_rule": "seasoning",
+          "sequence": 11
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 10,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ để pha nước chấm.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        },
+        {
+          "name": "Hành lá và mùi tàu",
+          "quantity": 20,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 13
+        },
+        {
+          "name": "Chanh",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "seasoning",
+          "notes": "Vắt lấy nước, dùng kèm hoặc pha nước chấm.",
+          "scaling_rule": "seasoning",
+          "sequence": 14
+        },
+        {
+          "name": "Ớt",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "seasoning",
+          "notes": "Tùy chọn, thái lát.",
+          "scaling_rule": "seasoning",
+          "sequence": 15
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Thấm khô ngan bằng giấy bếp nếu bề mặt còn ướt; không rửa ngan sống dưới vòi nước. Dùng dao, thớt riêng, rửa tay và vệ sinh dụng cụ sau khi sơ chế. Đập dập sả và hành tím; thái gừng thành lát."
+        },
+        {
+          "step": 2,
+          "instruction": "Thái hoặc xé măng tươi thành lát hay sợi vừa ăn. Luộc trong nồi mở vung với chút muối khoảng 5 phút kể từ khi nước sôi rồi đổ bỏ nước. Luộc lại với nước mới 1–2 lần, rửa sạch và để ráo."
+        },
+        {
+          "step": 3,
+          "instruction": "Rửa rau thơm, thái hành lá và mùi tàu. Chuẩn bị bún tươi và pha nước mắm với tỏi, chanh, đường, ớt theo khẩu vị."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Cho ngan vào nồi cùng nước, sả, gừng và hành tím. Đun sôi, hớt bọt rồi hạ lửa, luộc nhẹ khoảng 45–55 phút tùy độ dày của thịt."
+        },
+        {
+          "step": 2,
+          "instruction": "Xiên vào phần thịt dày nhất để kiểm tra; khi thịt chín hoàn toàn, vớt ngan ra để nguội bớt rồi chặt miếng vừa ăn."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho măng đã luộc vào nồi nước dùng, nấu khoảng 15 phút. Nêm nước mắm, muối và hạt nêm vừa vị; hớt bớt mỡ nếu muốn nước dùng nhẹ hơn."
+        },
+        {
+          "step": 4,
+          "instruction": "Trụng bún nhanh bằng nước sôi, chia vào tô. Xếp thịt ngan, măng và rau thơm lên trên, chan nước dùng nóng và dọn cùng nước mắm gừng tỏi. Dùng nhiệt kế thực phẩm kiểm tra phần thịt dày nhất đạt 74°C (165°F) trước khi dọn."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://cookpad.com/vn/cong-thuc/1720761",
+          "publisher": "Cookpad Việt Nam",
+          "title": "Bún Ngan",
+          "use": "Đối chiếu tổ hợp ngan luộc, măng nấu trong nước luộc, bún tươi và cách dùng gừng, sả, rau thơm.",
+          "accessed_at": "2026-10-25",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart",
+          "publisher": "USDA Food Safety and Inspection Service",
+          "title": "Safe Minimum Internal Temperature Chart",
+          "use": "Đối chiếu nhiệt độ an toàn tối thiểu 74 °C cho gia cầm, đo bằng nhiệt kế thực phẩm.",
+          "accessed_at": "2026-10-25",
+          "type": "food_safety_reference"
+        },
+        {
+          "url": "https://ask.fsis.usda.gov/article/Should-I-wash-chicken-or-other-poultry-before-cooking",
+          "publisher": "USDA Food Safety and Inspection Service",
+          "title": "Should I wash chicken or other poultry before cooking?",
+          "use": "Đối chiếu khuyến nghị không rửa gia cầm sống để tránh nước thịt bắn gây nhiễm chéo; làm chín ở nhiệt độ an toàn.",
+          "accessed_at": "2026-10-25",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://beptruong.edu.vn/cach-nau-bun-ngan-mang-tuoi",
+          "publisher": "Bếp Trưởng Á Âu",
+          "title": "Cách Nấu Bún Ngan Măng Tươi Hà Nội Ngọt Thanh Dễ Làm",
+          "use": "Đối chiếu cách gọi bún ngan măng tươi phổ biến ở miền Bắc; thành phần ngan, măng, bún và sơ chế măng tươi bằng cách luộc mở vung 2–3 lượt.",
+          "accessed_at": "2026-10-25",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Dùng nửa lượng ngan, măng và bún; giữ đủ nước để luộc thịt.",
+            "instruction": "Nêm nước dùng sau khi măng đã chín để tránh quá mặn."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.3,
+            "example": "Tăng lượng ngan, măng và bún khoảng một lần rưỡi; tăng nước tùy nồi.",
+            "instruction": "Luộc ngan và nấu măng trong nồi riêng nếu nồi nước dùng không đủ rộng."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/bun-ngan-mang-960.webp",
+          "page_url": "https://cookpad.com/vn/cong-thuc/1720761",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập công thức.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Tô bún ngan măng với thịt ngan, măng tươi đã nấu mềm, hành lá và nước dùng nóng.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-25",
+          "photo_variant_note": "PNG gốc 1374×1145 có alpha; canvas WebP 3840×2160 được upscale từ ảnh gốc, không phải độ phân giải native 4K. Công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Biên tập bằng lời riêng từ nguồn tham khảo; cần nấu thử để xác nhận định lượng và thời gian.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-25",
+        "needs": [
+          "Nấu thử để xác nhận định lượng và thời gian thực tế."
+        ]
+      },
+      "width": 3840,
+      "height": 2160
+    }
+  ]
+}

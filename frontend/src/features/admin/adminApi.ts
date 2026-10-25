@@ -209,6 +209,7 @@ export function updateSupportTicket(
 }
 
 export interface AdminSupportTicket extends SupportTicket {
+  admin_note: string | null;
   notification_attempts: number;
   notification_sent_at: string | null;
   viewed_at: string | null;
@@ -244,6 +245,28 @@ export function listSupportRecipients(q = '', signal?: AbortSignal) {
 
 export type MealType = 'breakfast' | 'lunch' | 'dinner';
 export type MealEmailStatus = 'sending' | 'sent' | 'failed';
+export type MealEmailProvider = 'smtp' | 'gmail_api';
+
+export interface MealSuggestionDeliveryStatus {
+  ready: boolean;
+  provider: MealEmailProvider;
+  reason_code:
+    | 'ready'
+    | 'smtp_unconfigured'
+    | 'smtp_authorization'
+    | 'smtp_unreachable'
+    | 'gmail_api_unconfigured'
+    | 'gmail_api_authorization'
+    | 'gmail_api_unreachable'
+    | 'gmail_api_rate_limited'
+    | 'gmail_api_temporarily_unavailable';
+}
+
+export function getMealSuggestionDeliveryStatus(signal?: AbortSignal) {
+  return apiRequest<MealSuggestionDeliveryStatus>('/admin/meal-suggestions/delivery-status', {
+    signal,
+  });
+}
 
 export interface MealSuggestionEmail {
   id: string;

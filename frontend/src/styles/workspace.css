@@ -2151,6 +2151,10 @@ html[data-reduce-motion='true'] *::after {
   padding: 16px 18px;
   background: white;
 }
+.ticket-list li > div:first-child {
+  min-width: 0;
+  flex: 1;
+}
 .ticket-list strong,
 .ticket-list small {
   display: block;
@@ -2166,6 +2170,29 @@ html[data-reduce-motion='true'] *::after {
   margin: 8px 0 0;
   color: var(--color-text-secondary);
   font-size: 13px;
+}
+.ticket-list__reply {
+  margin-top: 12px;
+  border-left: 3px solid var(--color-primary);
+  border-radius: 0 10px 10px 0;
+  padding: 10px 12px;
+  background: var(--ws-surface-soft, #fbf6ef);
+}
+.ticket-list__reply > strong {
+  color: var(--ws-ink);
+  font-size: 13px;
+}
+.ticket-list__reply > small {
+  margin-top: 2px;
+}
+.ticket-list__reply > p {
+  display: block;
+  margin: 8px 0 0;
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
 }
 .faq-layout {
   display: grid;

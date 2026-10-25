@@ -1,0 +1,805 @@
+{
+  "bun-giam-nuoc-hue": {
+    "name": "Hue Bún Giấm Nuốc (Lagoon Jellyfish Vermicelli)",
+    "aliases": [
+      "Hue bun giam nuoc",
+      "Hue bun giam nuot"
+    ],
+    "region": [
+      "Central Vietnam"
+    ],
+    "province": [
+      "Hue City"
+    ],
+    "category": "Noodle soup",
+    "meal_type": [
+      "lunch",
+      "dinner",
+      "noodle soup",
+      "family meal"
+    ],
+    "difficulty": "Easy",
+    "serving_basis": "One shared four-person family meal dish.",
+    "description": "A Hue noodle bowl pairing crisp lagoon jellyfish with braised shrimp, pork belly and crab in a gently sour tomato broth seasoned with fermented shrimp paste. Fresh herbs, peanuts and toasted rice crackers add contrasting textures.",
+    "finished_dish": "The broth is bright and lightly sour, the shrimp savory, the pork tender, and the drained jellyfish cool and crisp.",
+    "serving": "Arrange vermicelli, herbs, jellyfish, shrimp and pork in bowls. Ladle hot crab broth over them just before serving; finish with peanuts and serve with toasted rice crackers and chili.",
+    "tips": [
+      "Use cleaned, chilled jellyfish from a traceable seller and follow the vendor’s preparation instructions.",
+      "Soak the jellyfish only in cooled guava-leaf and fig-leaf water; do not simmer it in the broth, so it retains its crispness.",
+      "Add fermented shrimp paste gradually because its saltiness varies; taste the broth after the tomatoes and crab have released their flavor."
+    ],
+    "dish_type": [
+      "Hue family noodle soup"
+    ],
+    "main_ingredient": [
+      "fresh rice vermicelli",
+      "lagoon jellyfish",
+      "shrimp",
+      "freshwater crab"
+    ],
+    "cooking_method": [
+      "braising",
+      "crab broth simmering",
+      "assembling"
+    ],
+    "search_terms": [
+      "Hue bun giam nuoc",
+      "Hue lagoon jellyfish vermicelli",
+      "Vietnamese jellyfish noodle soup"
+    ],
+    "image_alt": "A bowl of Hue bun giam nuoc with white vermicelli, translucent jellyfish, shrimp, pork belly, tomatoes and herbs, isolated on transparent background.",
+    "time_note": "About 85 minutes including soaking and preparation; add the jellyfish only when assembling the bowl.",
+    "suggested_pairings": [
+      "Toasted rice crackers",
+      "Fresh herbs",
+      "Fresh chili"
+    ],
+    "recipe_family": "bun_giam_nuoc_hue",
+    "spicy_level": 1,
+    "ingredients": [
+      {
+        "name": "Cleaned lagoon jellyfish",
+        "unit": "g",
+        "notes": "Rinse and drain following the seller’s directions."
+      },
+      {
+        "name": "Peeled fresh shrimp",
+        "unit": "g",
+        "notes": "Choose fresh shrimp with a clean, natural aroma."
+      },
+      {
+        "name": "Ground freshwater crab",
+        "unit": "g",
+        "notes": "Mix with water and strain for crab broth; reserve roe if available."
+      },
+      {
+        "name": "Pork belly",
+        "unit": "g",
+        "notes": "Slice thinly or cut into small pieces."
+      },
+      {
+        "name": "Fresh rice vermicelli",
+        "unit": "g",
+        "notes": "Divide into four portions."
+      },
+      {
+        "name": "Cherry tomatoes",
+        "unit": "g",
+        "notes": "Halve."
+      },
+      {
+        "name": "Banana blossom",
+        "unit": "g",
+        "notes": "Slice thinly and soak briefly in clean water with a little lemon."
+      },
+      {
+        "name": "Bean sprouts",
+        "unit": "g",
+        "notes": "Rinse and drain."
+      },
+      {
+        "name": "Lettuce",
+        "unit": "g",
+        "notes": "Pick and wash well."
+      },
+      {
+        "name": "Fresh herbs and Vietnamese balm",
+        "unit": "g",
+        "notes": "Rinse and drain."
+      },
+      {
+        "name": "Guava leaves",
+        "unit": "lá",
+        "notes": "For soaking the jellyfish; discard afterward."
+      },
+      {
+        "name": "Fig leaves",
+        "unit": "lá",
+        "notes": "For soaking the jellyfish; discard afterward."
+      },
+      {
+        "name": "Shallot",
+        "unit": "g",
+        "notes": "Peel and mince."
+      },
+      {
+        "name": "Hue fermented shrimp paste",
+        "unit": "g",
+        "notes": "Dilute and strain if needed."
+      },
+      {
+        "name": "Fish sauce",
+        "unit": "ml",
+        "notes": "Divide between the shrimp and broth."
+      },
+      {
+        "name": "Roasted peanuts",
+        "unit": "g",
+        "notes": "Remove skins and crush coarsely."
+      },
+      {
+        "name": "Rice crackers",
+        "unit": "cái",
+        "notes": "Toast until crisp and break into pieces."
+      },
+      {
+        "name": "Sugar",
+        "unit": "g",
+        "notes": "Adjust to the acidity of the tomatoes."
+      },
+      {
+        "name": "Salt",
+        "unit": "g",
+        "notes": "Season gradually."
+      },
+      {
+        "name": "Ground black pepper",
+        "unit": "g",
+        "notes": "For the shrimp marinade."
+      },
+      {
+        "name": "Neutral cooking oil",
+        "unit": "ml",
+        "notes": "For braising the shrimp and sautéing shallot."
+      },
+      {
+        "name": "Water",
+        "unit": "ml",
+        "notes": "Adjust the strength of the crab broth."
+      },
+      {
+        "name": "Fresh chili",
+        "unit": "g",
+        "notes": "Slice and serve to taste."
+      }
+    ],
+    "tags": [
+      "Central Vietnam",
+      "Hue City",
+      "noodle soup",
+      "seafood",
+      "family meal"
+    ],
+    "preparation_steps": [
+      "Soak the prepared jellyfish in cooled guava-leaf and fig-leaf water for about 15 minutes. Lift out, rinse gently as directed by the seller and drain thoroughly.",
+      "Rinse and peel the shrimp; marinate for 10 minutes with half the shallot, pepper and a little fish sauce. Slice the pork belly.",
+      "Mix the ground crab with water and strain through a fine sieve. Wash and prepare the tomatoes, banana blossom and fresh herbs."
+    ],
+    "cooking_steps": [
+      "Heat a little oil and sauté half the remaining shallot. Add the shrimp and braise gently until just firm and pink; set aside.",
+      "Bring the strained crab liquid to a gentle simmer, stirring lightly at first. Once the crab mixture sets and rises, lift it into a bowl.",
+      "Sauté the remaining shallot and soften the tomatoes. Add them to the crab broth. Dilute and strain the fermented shrimp paste into the pot; season with fish sauce, sugar and salt, then simmer gently.",
+      "Cook the pork belly in the broth until fully done, then slice. Taste and adjust the broth to a mild sour, balanced savoriness.",
+      "Divide vermicelli, herbs, jellyfish, shrimp and pork among bowls. Ladle over hot broth and crab, top with peanuts and chili, and serve with toasted rice crackers."
+    ],
+    "keywords": [
+      "Hue noodles",
+      "lagoon jellyfish",
+      "braised shrimp",
+      "crab broth",
+      "Central Vietnamese soup"
+    ]
+  },
+  "canh-chua-ca-dia-mien-trung": {
+    "name": "Central Vietnamese Sour Rabbitfish Soup",
+    "aliases": [
+      "Sour rabbitfish soup",
+      "Rabbitfish soup with pineapple"
+    ],
+    "region": [
+      "Central Vietnam"
+    ],
+    "province": [
+      "Hue City"
+    ],
+    "category": "Soup",
+    "meal_type": [
+      "lunch",
+      "dinner",
+      "soup",
+      "family meal"
+    ],
+    "difficulty": "Easy",
+    "serving_basis": "One shared four-person family meal dish.",
+    "description": "Rabbitfish simmers with tomato, pineapple, tamarind and greens for a light sour soup. This is Bếp Việt’s home-style adaptation; rabbitfish may be sourced from safe local aquaculture in Hue, without presenting the recipe as exclusive to a single lagoon.",
+    "finished_dish": "The fish is just cooked and firm; tamarind, pineapple and tomato give the broth a mild, balanced sourness, while the greens remain fresh.",
+    "serving": "Serve hot with steamed rice; add chili fish sauce if desired. Add the water spinach and sprouts at the end so they retain color and a little bite.",
+    "tips": [
+      "Choose farmed rabbitfish or fish from a legal, traceable source; clean it well and keep it chilled until cooking.",
+      "Avoid stirring after adding the fish so the pieces stay intact; cook until the flesh is opaque and fully done.",
+      "Adjust tamarind and sugar after the fish cooks because the acidity of tamarind and sweetness of pineapple vary."
+    ],
+    "dish_type": [
+      "Central Vietnamese home-style fish soup"
+    ],
+    "main_ingredient": [
+      "rabbitfish",
+      "pineapple",
+      "tomato",
+      "water spinach"
+    ],
+    "cooking_method": [
+      "sautéing tomato",
+      "simmering"
+    ],
+    "search_terms": [
+      "sour rabbitfish soup",
+      "central Vietnamese rabbitfish soup",
+      "Vietnamese soup with rabbitfish and pineapple",
+      "Hue rabbitfish soup"
+    ],
+    "image_alt": "A bowl of sour rabbitfish soup with fish pieces, pineapple, tomato and water spinach in a blue-and-white ceramic bowl, transparent background.",
+    "time_note": "About 55 minutes including a short fish marinade.",
+    "suggested_pairings": [
+      "Steamed rice",
+      "Boiled greens",
+      "Chili fish sauce"
+    ],
+    "recipe_family": "canh_chua_ca_dia",
+    "spicy_level": 1,
+    "ingredients": [
+      {
+        "name": "Cleaned rabbitfish",
+        "unit": "g",
+        "notes": "Use farmed or legally sourced fish; cut into serving pieces."
+      },
+      {
+        "name": "Tomatoes",
+        "unit": "quả",
+        "notes": "Cut into wedges."
+      },
+      {
+        "name": "Pineapple",
+        "unit": "g",
+        "notes": "Peel, core and slice."
+      },
+      {
+        "name": "Tamarind",
+        "unit": "g",
+        "notes": "Soak in warm water and strain for the juice."
+      },
+      {
+        "name": "Water spinach",
+        "unit": "g",
+        "notes": "Pick, rinse and cut into short lengths."
+      },
+      {
+        "name": "Bean sprouts",
+        "unit": "g",
+        "notes": "Rinse and drain."
+      },
+      {
+        "name": "Shallot",
+        "unit": "g",
+        "notes": "Peel and mince."
+      },
+      {
+        "name": "Scallions",
+        "unit": "g",
+        "notes": "Chop finely."
+      },
+      {
+        "name": "Sawtooth coriander",
+        "unit": "g",
+        "notes": "Rinse and chop."
+      },
+      {
+        "name": "Fish sauce",
+        "unit": "ml",
+        "notes": "Divide between the fish and broth."
+      },
+      {
+        "name": "Salt",
+        "unit": "g",
+        "notes": "Season gradually."
+      },
+      {
+        "name": "Sugar",
+        "unit": "g",
+        "notes": "Balance the sourness."
+      },
+      {
+        "name": "Neutral cooking oil",
+        "unit": "ml",
+        "notes": "For sautéing shallot."
+      },
+      {
+        "name": "Water",
+        "unit": "ml",
+        "notes": "A mild stock may replace part of the water."
+      },
+      {
+        "name": "Fresh chili",
+        "unit": "g",
+        "notes": "Slice and add to taste."
+      }
+    ],
+    "tags": [
+      "Central Vietnam",
+      "Hue City",
+      "soup",
+      "fish",
+      "family meal"
+    ],
+    "preparation_steps": [
+      "Rinse and pat the rabbitfish dry, then cut into serving pieces. Marinate for 10 minutes with a little salt and fish sauce.",
+      "Wash the tomatoes, pineapple, greens, bean sprouts and herbs. Soak the tamarind in warm water and strain the juice."
+    ],
+    "cooking_steps": [
+      "Sauté the shallot in oil, add the tomatoes and cook until softened and juicy.",
+      "Add water, pineapple and tamarind juice. Bring to a gentle boil, then season with fish sauce, salt and sugar.",
+      "Add the rabbitfish and simmer over medium heat until just fully cooked; avoid stirring so the pieces remain intact.",
+      "Add water spinach and bean sprouts and briefly return to a boil. Turn off the heat, scatter scallions, sawtooth coriander and chili, then serve hot."
+    ],
+    "keywords": [
+      "rabbitfish",
+      "sour soup",
+      "pineapple",
+      "Central Vietnam fish dish"
+    ]
+  },
+  "banh-uot-thit-nuong-kim-long": {
+    "name": "Kim Long Grilled Pork with Steamed Rice Sheets",
+    "aliases": [
+      "Hue grilled pork rice sheets",
+      "Kim Long banh uot with grilled pork"
+    ],
+    "region": [
+      "Central Vietnam"
+    ],
+    "province": [
+      "Hue City"
+    ],
+    "category": "Rice rolls and accompaniments",
+    "meal_type": [
+      "breakfast",
+      "lunch",
+      "dinner",
+      "rice rolls"
+    ],
+    "difficulty": "Easy",
+    "serving_basis": "A shared platter for four.",
+    "description": "Soft steamed rice sheets wrap lemongrass-marinated pork belly grilled with shallot, pepper, fish sauce and five-spice. Fresh herbs and a sweet-sour fish sauce dressing balance the savory meat. Bếp Việt uses ready-made fresh rice sheets for a practical home version.",
+    "finished_dish": "The pork is browned at the edges yet tender, the rice sheets soft and supple, and the herbs fresh; the dipping sauce is savory, gently sweet, sour and mildly spicy.",
+    "serving": "Wrap pork and fresh herbs in the rice sheets and dip in garlic-chili fish sauce. Grill only what you will serve so the meat stays tender.",
+    "tips": [
+      "Marinate long enough for the lemongrass and five-spice to infuse the pork; cut pieces evenly so they cook at the same rate.",
+      "Use a grill pan or oven if charcoal is unavailable; avoid very high heat, which can dry the meat.",
+      "Keep the rice sheets covered to prevent drying and adjust chili separately for children."
+    ],
+    "dish_type": [
+      "Hue rice-sheet rolls"
+    ],
+    "main_ingredient": [
+      "pork belly",
+      "steamed rice sheets",
+      "lemongrass",
+      "fresh herbs"
+    ],
+    "cooking_method": [
+      "marinating",
+      "grilling",
+      "rolling"
+    ],
+    "search_terms": [
+      "Kim Long grilled pork rice sheets",
+      "Hue banh uot with grilled pork",
+      "Hue grilled pork rolls",
+      "banh uot Kim Long"
+    ],
+    "image_alt": "A platter of Kim Long steamed rice sheets with lemongrass grilled pork, fresh herbs and garlic chili fish sauce, transparent background.",
+    "time_note": "About 165 minutes including the pork marinade; grilling takes about 20 minutes.",
+    "suggested_pairings": [
+      "Fresh herbs",
+      "Cucumber",
+      "Garlic chili fish sauce"
+    ],
+    "recipe_family": "banh_uot_thit_nuong_kim_long",
+    "spicy_level": 1,
+    "ingredients": [
+      {
+        "name": "Pork belly",
+        "unit": "g",
+        "notes": "Choose firm pork and slice thinly."
+      },
+      {
+        "name": "Fresh steamed rice sheets",
+        "unit": "g",
+        "notes": "Keep covered so they remain soft."
+      },
+      {
+        "name": "Lemongrass",
+        "unit": "cây",
+        "notes": "Finely mince the tender lower part."
+      },
+      {
+        "name": "Shallot",
+        "unit": "g",
+        "notes": "Peel and mince."
+      },
+      {
+        "name": "Garlic",
+        "unit": "g",
+        "notes": "Mince; divide between the marinade and dipping sauce."
+      },
+      {
+        "name": "Fish sauce",
+        "unit": "ml",
+        "notes": "Divide between the marinade and dipping sauce."
+      },
+      {
+        "name": "Five-spice powder",
+        "unit": "g",
+        "notes": "Use moderately so it does not overwhelm the pork."
+      },
+      {
+        "name": "Ground black pepper",
+        "unit": "g",
+        "notes": "For the marinade."
+      },
+      {
+        "name": "Sugar",
+        "unit": "g",
+        "notes": "Divide between the marinade and dipping sauce."
+      },
+      {
+        "name": "Toasted sesame seeds",
+        "unit": "g",
+        "notes": "Sprinkle over the grilled pork."
+      },
+      {
+        "name": "Neutral cooking oil",
+        "unit": "ml",
+        "notes": "Lightly brush the grill or pan."
+      },
+      {
+        "name": "Lettuce and fresh herbs",
+        "unit": "g",
+        "notes": "Rinse and drain."
+      },
+      {
+        "name": "Cucumber",
+        "unit": "quả",
+        "notes": "Rinse and cut into batons."
+      },
+      {
+        "name": "Lime juice",
+        "unit": "ml",
+        "notes": "For the dipping sauce."
+      },
+      {
+        "name": "Fresh chili",
+        "unit": "g",
+        "notes": "Mince or slice to taste."
+      },
+      {
+        "name": "Water",
+        "unit": "ml",
+        "notes": "For the dipping sauce."
+      }
+    ],
+    "tags": [
+      "Central Vietnam",
+      "Hue City",
+      "rice rolls",
+      "pork",
+      "family meal"
+    ],
+    "preparation_steps": [
+      "Slice the pork belly thinly. Mix with lemongrass, shallot, half the garlic, 20 ml fish sauce, five-spice, pepper and 15 g sugar; cover and marinate in the refrigerator for about 2 hours.",
+      "Wash and drain the herbs, cut the cucumber into batons. Mix the remaining fish sauce, sugar, water and lime juice for the dip; add garlic and chili to taste."
+    ],
+    "cooking_steps": [
+      "Heat a grill, grill pan or cast-iron pan and brush lightly with oil. Grill the pork in batches, turning until browned, fragrant and cooked without drying it out.",
+      "Warm the rice sheets gently over steam until pliable, then sprinkle toasted sesame over the pork.",
+      "Wrap the pork and herbs in the rice sheets or arrange them on a platter for self-rolling. Serve at once with garlic-chili fish sauce."
+    ],
+    "keywords": [
+      "Kim Long, Hue",
+      "Hue City",
+      "steamed rice sheets",
+      "grilled pork",
+      "rice roll"
+    ]
+  },
+  "ca-nuc-kho-mit-non-mien-trung": {
+    "name": "Central Vietnamese Braised Scad with Young Jackfruit",
+    "aliases": [
+      "Braised scad with young jackfruit",
+      "Vietnamese cá nục kho mít"
+    ],
+    "region": [
+      "Central Vietnam"
+    ],
+    "province": [],
+    "category": "Savory dishes",
+    "meal_type": [
+      "lunch",
+      "dinner",
+      "braised dish",
+      "family meal"
+    ],
+    "difficulty": "Easy",
+    "serving_basis": "One shared four-person family meal dish.",
+    "description": "Small scad braises gently with young jackfruit, pork belly and sugarcane juice, seasoned with turmeric, pepper and chili. This rustic Central Vietnamese family dish is especially good served hot with rice.",
+    "finished_dish": "The fish and jackfruit are tender but hold their shape; the sauce is lightly reduced, amber-brown and balanced between savory and sweet.",
+    "serving": "Serve hot with steamed rice and boiled or fresh greens. Spoon a little braising sauce over the rice and take care with the fish bones.",
+    "tips": [
+      "Peel young jackfruit under running water or soak it in lightly salted water to limit sticky sap; briefly fry the pieces to help them hold their shape.",
+      "Line the pot with sugarcane if available for a mild sweetness; simmer over low heat and avoid turning the fish repeatedly.",
+      "Choose fresh fish and keep it chilled before cooking; braise until the fish is fully cooked and the sauce has reduced slightly."
+    ],
+    "dish_type": [
+      "Central Vietnamese braise"
+    ],
+    "main_ingredient": [
+      "scad",
+      "young jackfruit",
+      "pork belly",
+      "sugarcane juice"
+    ],
+    "cooking_method": [
+      "marinating",
+      "light frying",
+      "braising"
+    ],
+    "search_terms": [
+      "braised scad with young jackfruit",
+      "Central Vietnamese cá nục kho mít",
+      "Vietnamese fish braised with young jackfruit",
+      "ca nuc kho mit non"
+    ],
+    "image_alt": "A rustic clay pot of central Vietnamese braised scad and young jackfruit with glossy sauce, scallion and chili, isolated on transparent background.",
+    "time_note": "About 100 minutes including marinating; braise until the fish is thoroughly cooked and the jackfruit tender.",
+    "suggested_pairings": [
+      "Steamed rice",
+      "Boiled greens",
+      "Fresh herbs"
+    ],
+    "recipe_family": "ca_nuc_kho_mit_non",
+    "spicy_level": 2,
+    "ingredients": [
+      {
+        "name": "Scad",
+        "unit": "g",
+        "notes": "Clean well; cut in half if the fish is large."
+      },
+      {
+        "name": "Young jackfruit",
+        "unit": "g",
+        "notes": "Peel the spiny rind, remove the core and cut into chunks."
+      },
+      {
+        "name": "Pork belly",
+        "unit": "g",
+        "notes": "Slice."
+      },
+      {
+        "name": "Sugarcane",
+        "unit": "khúc",
+        "notes": "Cut into thin strips to line the pot; optional."
+      },
+      {
+        "name": "Sugarcane juice",
+        "unit": "ml",
+        "notes": "Adds natural sweetness to the braise."
+      },
+      {
+        "name": "Fresh turmeric",
+        "unit": "g",
+        "notes": "Crush for juice and reserve a few slices."
+      },
+      {
+        "name": "Garlic",
+        "unit": "g",
+        "notes": "Mince."
+      },
+      {
+        "name": "Scallions",
+        "unit": "g",
+        "notes": "Chop; add at the end."
+      },
+      {
+        "name": "Bird’s-eye chili",
+        "unit": "g",
+        "notes": "Crush or leave whole to control the heat."
+      },
+      {
+        "name": "Fish sauce",
+        "unit": "ml",
+        "notes": "Divide between the marinade and pot."
+      },
+      {
+        "name": "Sugar",
+        "unit": "g",
+        "notes": "Divide between the caramel and braise."
+      },
+      {
+        "name": "Seasoning powder",
+        "unit": "g",
+        "notes": "Reduce to taste."
+      },
+      {
+        "name": "Ground black pepper",
+        "unit": "g",
+        "notes": "Mix into the marinade."
+      },
+      {
+        "name": "Neutral cooking oil",
+        "unit": "ml",
+        "notes": "For lightly frying jackfruit and making caramel."
+      },
+      {
+        "name": "Water",
+        "unit": "ml",
+        "notes": "Combine with sugarcane juice for braising."
+      }
+    ],
+    "tags": [
+      "Central Vietnam",
+      "savory dish",
+      "braise",
+      "fish",
+      "family meal"
+    ],
+    "preparation_steps": [
+      "Rinse and drain the scad. Peel the young jackfruit under running water, remove the core, cut into roughly 3 cm chunks and briefly blanch if needed; slice the pork belly.",
+      "Crush the turmeric for its juice and mince the garlic and scallion. Mix fish sauce, sugar, seasoning powder, pepper, turmeric and chili; divide the mixture between fish and pork and marinate for about 20 minutes."
+    ],
+    "cooking_steps": [
+      "Lightly fry the jackfruit in a little oil until its surface is just golden; remove. Make a light amber caramel with some of the sugar and oil, then sauté the garlic.",
+      "Add the scad and gently sear both sides until firm and coated with color. Line a pot with sugarcane, then layer the fish, jackfruit and pork; add the remaining marinade, sugarcane juice and water.",
+      "Bring to a boil, cover and reduce to a low simmer for about 40–50 minutes until the fish is fully cooked, jackfruit tender and sauce lightly reduced. Adjust seasoning, scatter scallion and serve hot."
+    ],
+    "keywords": [
+      "scad",
+      "young jackfruit",
+      "braised fish",
+      "Central Vietnam",
+      "sugarcane juice"
+    ]
+  },
+  "goi-toi-ly-son": {
+    "name": "Lý Sơn Young Garlic Stem Salad",
+    "aliases": [
+      "Lý Sơn garlic scape salad",
+      "Quảng Ngãi garlic stem salad"
+    ],
+    "region": [
+      "Central Vietnam"
+    ],
+    "province": [
+      "Quang Ngai Province"
+    ],
+    "category": "Accompaniments",
+    "meal_type": [
+      "lunch",
+      "dinner",
+      "vegetable dish",
+      "family meal"
+    ],
+    "difficulty": "Easy",
+    "serving_basis": "One shared four-person salad.",
+    "description": "Lý Sơn garlic flower stems are steamed until just tender, then tossed with fresh herbs, roasted peanuts and a light sweet-sour fish-sauce dressing. The salad has a gentle garlic aroma and works as a fresh vegetable side with rice.",
+    "finished_dish": "The stems are tender with a slight bite, lightly coated in dressing and tossed with fresh herbs and crunchy peanuts; no excess liquid pools on the plate.",
+    "serving": "Dress just before serving and scatter peanuts on top. Pair with steamed rice and a braised or grilled dish.",
+    "tips": [
+      "Choose fresh, tender garlic flower stems without bruises; remove any dry outer layer before rinsing.",
+      "Steam only until just tender, then drain and cool before dressing so the stems do not turn limp and watery.",
+      "Add the dressing gradually and balance the sour, salty and sweet notes; serve chili separately for children."
+    ],
+    "dish_type": [
+      "Central Vietnamese vegetable salad"
+    ],
+    "main_ingredient": [
+      "garlic flower stems",
+      "peanuts",
+      "fresh herbs"
+    ],
+    "cooking_method": [
+      "steaming",
+      "tossing"
+    ],
+    "search_terms": [
+      "Ly Son garlic stem salad",
+      "Vietnamese garlic scape salad",
+      "Quang Ngai garlic salad",
+      "goi toi Ly Son",
+      "garlic flower stem salad"
+    ],
+    "image_alt": "A platter of Lý Sơn garlic stem salad with steamed garlic scapes, fresh herbs, roasted peanuts and red chili, transparent background.",
+    "time_note": "About 30 minutes including time to cool and drain the steamed stems.",
+    "suggested_pairings": [
+      "Steamed rice",
+      "Braised fish",
+      "Grilled meat"
+    ],
+    "recipe_family": "goi_toi_ly_son",
+    "spicy_level": 1,
+    "ingredients": [
+      {
+        "name": "Lý Sơn garlic flower stems",
+        "unit": "g",
+        "notes": "Remove tough outer layers, rinse and cut into short lengths."
+      },
+      {
+        "name": "Roasted peanuts",
+        "unit": "g",
+        "notes": "Remove skins and crush coarsely."
+      },
+      {
+        "name": "Fresh herbs",
+        "unit": "g",
+        "notes": "Rinse, drain and chop as needed."
+      },
+      {
+        "name": "Fish sauce",
+        "unit": "ml",
+        "notes": "For the dressing."
+      },
+      {
+        "name": "Lime juice",
+        "unit": "ml",
+        "notes": "Add gradually to taste."
+      },
+      {
+        "name": "Sugar",
+        "unit": "g",
+        "notes": "Dissolve into the dressing."
+      },
+      {
+        "name": "Fresh chili",
+        "unit": "g",
+        "notes": "Mince and add to taste."
+      },
+      {
+        "name": "Water",
+        "unit": "ml",
+        "notes": "Dilute the dressing if needed."
+      }
+    ],
+    "tags": [
+      "Central Vietnam",
+      "Quang Ngai Province",
+      "vegetable dish",
+      "accompaniment",
+      "family meal"
+    ],
+    "preparation_steps": [
+      "Remove dry outer layers from the garlic flower stems, rinse and cut into bite-size lengths. Rinse and drain the herbs; roast and crush the peanuts if not already prepared.",
+      "Stir together fish sauce, lime juice, sugar and water until the sugar dissolves. Taste for a gentle sweet-sour-salty balance."
+    ],
+    "cooking_steps": [
+      "Arrange the garlic stems in a steamer and steam until just tender but still slightly crisp. Remove and let them cool and drain.",
+      "Place the stems in a bowl, add the herbs and a little dressing at a time, then toss gently. Adjust the seasoning.",
+      "Transfer to a platter, top with peanuts and chili, and serve promptly while fresh."
+    ],
+    "keywords": [
+      "Ly Son",
+      "garlic flower stem",
+      "garlic scape",
+      "Vietnamese salad",
+      "vegetable side"
+    ]
+  }
+}

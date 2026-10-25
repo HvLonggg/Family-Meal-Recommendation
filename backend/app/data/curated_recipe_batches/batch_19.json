@@ -753,357 +753,341 @@
     },
     {
       "id": "BV423",
-      "slug": "ca-kho-vu-dai",
-      "name": "Cá kho Vũ Đại",
+      "slug": "ca-loc-kho-chuoi-xanh",
+      "name": "Cá lóc kho chuối xanh",
       "aliases": [
-        "Cá kho Đại Hoàng",
-        "Cá kho làng Vũ Đại",
-        "Cá trắm kho niêu đất Hà Nam"
+        "Cá quả kho chuối xanh",
+        "Cá lóc kho chuối"
       ],
       "region": [
-        "Đồng bằng Bắc Bộ"
+        "Ba miền"
       ],
-      "province": [
-        "Ninh Bình"
-      ],
-      "category": "Món ăn cùng cơm",
+      "province": [],
+      "category": "Món mặn",
       "meal_type": [
         "bữa trưa",
-        "bữa tối",
-        "dịp lễ Tết"
+        "bữa tối"
       ],
-      "difficulty": "Trung bình",
-      "servings": 6,
-      "serving_basis": "6 phần cá trắm đen kho niêu cùng riềng, gừng, thịt ba chỉ và nước màu.",
-      "prep_time": 45,
-      "cook_time": 240,
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một nồi cá lóc kho chuối xanh cho bốn người, dùng cùng cơm nóng.",
+      "prep_time": 25,
+      "cook_time": 35,
       "passive_time": 30,
-      "description": "Cá kho Vũ Đại gắn với làng Đại Hoàng, nổi bật bởi cá trắm đen kho chậm trong niêu cùng riềng, gừng, hành và gia vị đồng quê. Bếp Việt biên tập phiên bản bếp nhà với lửa nhỏ và thời gian rút gọn hơn cách kho làng nghề, giữ miếng cá săn và thấm vị.",
-      "finished_dish": "Khúc cá trắm đen nâu óng, thịt săn chắc, thơm riềng gừng và nước kho cô lại đậm đà để ăn cùng cơm nóng.",
-      "serving": "Gắp cá nhẹ tay ra đĩa, rưới một ít nước kho và dùng cùng cơm trắng, dưa muối hoặc rau luộc.",
+      "description": "Cá lóc kho chuối xanh là món ăn đậm vị cho bữa cơm gia đình: cá được ướp nước mắm, tiêu và ớt rồi kho cùng chuối xanh đến khi thấm màu caramel. Bếp Việt biên tập cách nấu tại nhà, giữ chuối mềm bùi nhưng còn miếng và phần nước kho vừa sánh.",
+      "finished_dish": "Khúc cá lóc săn mềm nằm xen chuối xanh vàng nâu, phủ lớp nước kho mặn ngọt thơm tiêu và hành.",
+      "serving": "Gắp cá và chuối ra đĩa sâu lòng, rưới chút nước kho lên trên. Dùng nóng với cơm trắng và rau luộc.",
       "tips": [
-        "Lót riềng dưới đáy niêu và xếp cá thành lớp để hạn chế bén nồi.",
-        "Giữ lửa nhỏ ổn định, châm nước sôi quanh thành nồi khi cần; không đảo cá trong lúc kho.",
-        "Thời gian kho làng nghề có thể kéo dài nhiều giờ hơn; phiên bản này cần theo dõi độ mềm và mức nước thường xuyên."
+        "Ngâm chuối xanh trong nước có muối và chanh sau khi gọt để hạn chế thâm.",
+        "Ướp cá khoảng 30 phút rồi áp chảo nhẹ cho săn trước khi thêm nước.",
+        "Kho lửa nhỏ, châm nước nóng nếu cần và không đảo mạnh để cá không vỡ."
       ],
       "dish_type": [
         "Món mặn",
-        "Đặc sản Hà Nam xưa",
         "Món kho"
       ],
       "main_ingredient": [
-        "cá trắm đen",
-        "riềng",
-        "thịt ba chỉ"
+        "cá lóc",
+        "chuối xanh"
       ],
       "cooking_method": [
         "ướp",
-        "kho chậm"
+        "áp chảo",
+        "kho"
       ],
       "search_terms": [
-        "cá kho niêu đất",
-        "món kho miền Bắc",
-        "cá kho Đại Hoàng"
+        "cá lóc kho chuối xanh",
+        "cá quả kho chuối xanh",
+        "cá lóc kho chuối",
+        "món cá kho ăn với cơm"
       ],
       "spicy_level": 1,
-      "image_alt": "Niêu đất cá kho Vũ Đại với khúc cá trắm đen nâu óng, riềng, gừng và ớt đỏ.",
+      "image_alt": "Cá lóc kho chuối xanh với khúc cá săn, chuối thấm nước kho caramel và ớt đỏ; ảnh Bếp Việt nền trong suốt.",
       "ingredients": [
         {
-          "name": "Cá trắm đen",
-          "quantity": 1500,
+          "name": "Cá lóc làm sạch",
+          "quantity": 800,
           "unit": "g",
           "role": "main",
-          "notes": "Cắt khúc dày, làm sạch và để ráo.",
+          "notes": "Cắt khúc dày, thấm khô.",
           "scaling_rule": "linear",
           "sequence": 1
         },
         {
-          "name": "Thịt ba chỉ",
-          "quantity": 220,
-          "unit": "g",
-          "role": "main",
-          "notes": "Thái miếng vừa, có cả nạc và mỡ.",
+          "name": "Chuối xanh",
+          "quantity": 3,
+          "unit": "quả",
+          "role": "vegetable",
+          "notes": "Gọt vỏ mỏng, cắt khúc vừa ăn.",
           "scaling_rule": "linear",
           "sequence": 2
         },
         {
-          "name": "Riềng",
-          "quantity": 120,
-          "unit": "g",
-          "role": "seasoning",
-          "notes": "Một nửa thái lát lót đáy, một nửa giã dập.",
+          "name": "Chanh",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "acid",
+          "notes": "Vắt lấy nước để ngâm chuối.",
           "scaling_rule": "linear",
           "sequence": 3
         },
         {
-          "name": "Gừng",
-          "quantity": 40,
+          "name": "Hành tím",
+          "quantity": 30,
           "unit": "g",
-          "role": "seasoning",
-          "notes": "Thái lát, đập dập nhẹ.",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, một nửa thái lát, một nửa băm.",
           "scaling_rule": "linear",
           "sequence": 4
         },
         {
-          "name": "Hành tím",
-          "quantity": 50,
+          "name": "Tỏi",
+          "quantity": 15,
           "unit": "g",
-          "role": "seasoning",
-          "notes": "Bóc vỏ, đập dập.",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
           "scaling_rule": "linear",
           "sequence": 5
         },
         {
           "name": "Ớt tươi",
-          "quantity": 10,
-          "unit": "g",
+          "quantity": 3,
+          "unit": "quả",
           "role": "seasoning",
-          "notes": "Để nguyên quả hoặc cắt đôi.",
-          "scaling_rule": "linear",
+          "notes": "Một quả thái lát, phần còn lại để nguyên.",
+          "scaling_rule": "taste_adjusted",
           "sequence": 6
         },
         {
           "name": "Nước mắm",
-          "quantity": 65,
+          "quantity": 45,
           "unit": "ml",
           "role": "seasoning",
-          "notes": "Nêm cá và nước kho.",
-          "scaling_rule": "linear",
+          "notes": "Nêm cá và phần nước kho.",
+          "scaling_rule": "taste_adjusted",
           "sequence": 7
         },
         {
-          "name": "Nước màu",
-          "quantity": 20,
+          "name": "Giấm",
+          "quantity": 30,
           "unit": "ml",
-          "role": "seasoning",
-          "notes": "Tạo màu nâu cánh gián.",
+          "role": "acid",
+          "notes": "Dùng khử mùi tanh cá.",
           "scaling_rule": "linear",
           "sequence": 8
         },
         {
-          "name": "Nước dừa tươi",
-          "quantity": 500,
+          "name": "Tương ớt",
+          "quantity": 15,
           "unit": "ml",
-          "role": "liquid",
-          "notes": "Dùng kho cá, có thể thay một phần bằng nước nóng.",
-          "scaling_rule": "linear",
+          "role": "condiment",
+          "notes": "Tạo màu và vị cay dịu.",
+          "scaling_rule": "taste_adjusted",
           "sequence": 9
         },
         {
-          "name": "Cơm mẻ",
-          "quantity": 50,
-          "unit": "ml",
-          "role": "seasoning",
-          "notes": "Lọc lấy nước, tạo vị chua nhẹ.",
-          "scaling_rule": "linear",
+          "name": "Đường",
+          "quantity": 24,
+          "unit": "g",
+          "role": "sweetener",
+          "notes": "Chia một phần làm nước màu.",
+          "scaling_rule": "taste_adjusted",
           "sequence": 10
         },
         {
-          "name": "Tiêu đen",
-          "quantity": 3,
-          "unit": "g",
-          "role": "seasoning",
-          "notes": "Giã dập.",
+          "name": "Dầu ăn",
+          "quantity": 30,
+          "unit": "ml",
+          "role": "frying_oil",
+          "notes": "Dùng áp chảo cá và phi hành.",
           "scaling_rule": "linear",
           "sequence": 11
         },
         {
+          "name": "Nước nóng",
+          "quantity": 500,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Châm đến gần mặt cá khi kho.",
+          "scaling_rule": "vessel_dependent",
+          "sequence": 12
+        },
+        {
           "name": "Muối",
-          "quantity": 8,
+          "quantity": 5,
           "unit": "g",
           "role": "seasoning",
-          "notes": "Nêm ban đầu, gia giảm theo nước mắm.",
-          "scaling_rule": "linear",
-          "sequence": 12
+          "notes": "Dùng sơ chế và nêm nhẹ.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 13
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm cá và hoàn thiện.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 14
         }
       ],
       "preparation_steps": [
         {
           "step": 1,
-          "instruction": "Làm sạch cá, bỏ màng đen trong bụng và cắt khúc dày. Thấm ráo; thái riềng, gừng, hành và thịt ba chỉ."
+          "instruction": "Rửa cá, cắt khúc; chà nhẹ với muối và giấm, để vài phút rồi rửa sạch, thấm khô."
         },
         {
           "step": 2,
-          "instruction": "Ướp cá với nước mắm, nước màu, cơm mẻ đã lọc, tiêu và một phần hành gừng trong 30 phút."
+          "instruction": "Gọt mỏng vỏ chuối, cắt khúc và ngâm trong nước pha muối cùng nước cốt chanh để chuối không thâm."
         },
         {
           "step": 3,
-          "instruction": "Lót đáy niêu bằng riềng thái lát, xếp cá và thịt xen kẽ, rải riềng giã, hành, gừng và ớt lên trên."
+          "instruction": "Băm tỏi, thái hành và ớt. Ướp cá với nước mắm, tiêu, tương ớt, đường, tỏi và ớt trong 30 phút."
         }
       ],
       "cooking_steps": [
         {
           "step": 1,
-          "instruction": "Rót nước dừa quanh thành niêu đến gần mặt cá. Đun lửa vừa đến khi sôi nhẹ, hớt bọt rồi hạ lửa nhỏ."
+          "instruction": "Đun phần đường còn lại với một ít nước đến màu cánh gián; thêm dầu, phi hành tím thơm."
         },
         {
           "step": 2,
-          "instruction": "Kho liu riu khoảng 3–4 giờ, đậy hé nắp. Khi nước cạn, châm từng ít nước sôi quanh thành niêu; không khuấy cá."
+          "instruction": "Xếp cá vào áp chảo hai mặt đến khi săn. Cho chuối xanh và phần nước ướp vào, đảo nhẹ cho thấm."
         },
         {
           "step": 3,
-          "instruction": "Nếm lại phần nước kho, chỉnh mặn ngọt và tiếp tục kho đến khi cá săn, nước sánh. Tắt bếp, để nghỉ 15 phút rồi dọn với cơm nóng."
+          "instruction": "Rót nước nóng gần xâm xấp mặt cá, đậy nắp kho lửa vừa đến khi sôi rồi hạ nhỏ. Kho khoảng 25–30 phút, thỉnh thoảng lắc nồi; nếm lại và đun đến khi chuối mềm, nước kho sánh."
         }
       ],
-      "time_note": "Đây là phiên bản bếp nhà rút gọn; cách kho làng nghề truyền thống thường lâu hơn đáng kể.",
-      "total_time": 315,
+      "time_note": "Khoảng 1 giờ 30 phút, gồm 30 phút ướp cá.",
+      "total_time": 90,
       "time_unit": "phút",
-      "width": 1536,
-      "height": 1024,
-      "recipe_family": "ca-kho-vu-dai",
+      "width": 3840,
+      "height": 2160,
+      "recipe_family": "ca-loc-kho-chuoi-xanh",
       "keywords": [
-        "Cá kho Vũ Đại",
-        "Cá kho Đại Hoàng",
-        "Cá kho làng Vũ Đại",
-        "Cá trắm kho niêu đất Hà Nam",
-        "Đồng bằng Bắc Bộ",
-        "Ninh Bình",
-        "cá trắm đen",
-        "riềng",
-        "thịt ba chỉ",
-        "cá kho niêu đất",
-        "món kho miền Bắc",
-        "cá kho Đại Hoàng",
-        "Món mặn",
-        "Đặc sản Hà Nam xưa",
-        "Món kho",
-        "315 phút"
+        "Cá lóc kho chuối xanh",
+        "Cá quả kho chuối xanh",
+        "Ba miền",
+        "cá lóc",
+        "chuối xanh",
+        "cá kho",
+        "món mặn"
       ],
       "tags": {
         "region": [
-          "Đồng bằng Bắc Bộ"
+          "Ba miền"
         ],
-        "province": [
-          "Ninh Bình"
-        ],
+        "province": [],
         "meal_type": [
           "bữa trưa",
-          "bữa tối",
-          "dịp lễ Tết"
+          "bữa tối"
         ],
         "dish_type": [
           "Món mặn",
-          "Đặc sản Hà Nam xưa",
           "Món kho"
         ],
         "main_ingredient": [
-          "cá trắm đen",
-          "riềng",
-          "thịt ba chỉ"
+          "cá lóc",
+          "chuối xanh"
         ],
         "cooking_method": [
           "ướp",
-          "kho chậm"
+          "áp chảo",
+          "kho"
         ],
-        "difficulty": "Trung bình",
-        "prep_time": 45,
-        "cook_time": 240,
-        "servings": 6,
+        "difficulty": "Dễ",
+        "prep_time": 25,
+        "cook_time": 35,
+        "servings": 4,
         "spicy_level": 1,
         "suitable_for_family_meal": true,
         "suggested_pairings": [
           "Cơm trắng",
-          "Dưa cải muối",
-          "Rau luộc"
+          "Rau luộc",
+          "Canh rau"
         ],
         "keywords": [
-          "Cá kho Vũ Đại",
-          "Cá kho Đại Hoàng",
-          "Cá kho làng Vũ Đại",
-          "Cá trắm kho niêu đất Hà Nam",
-          "Đồng bằng Bắc Bộ",
-          "Ninh Bình",
-          "cá trắm đen",
-          "riềng",
-          "thịt ba chỉ",
-          "cá kho niêu đất",
-          "món kho miền Bắc",
-          "cá kho Đại Hoàng",
-          "Món mặn",
-          "Đặc sản Hà Nam xưa",
-          "Món kho",
-          "315 phút"
+          "Cá lóc kho chuối xanh",
+          "Cá quả kho chuối xanh",
+          "Ba miền",
+          "cá lóc",
+          "chuối xanh",
+          "cá kho",
+          "món mặn"
         ]
       },
       "sources": [
         {
-          "url": "https://baophapluat.vn/dac-san-ca-kho-lang-vu-dai-lam-qua-bieu-y-nghia-cho-ngay-tet-post431844.html",
-          "publisher": "Báo Pháp Luật Việt Nam",
-          "title": "Đặc sản cá kho làng Vũ Đại",
-          "use": "Đối chiếu cá kho Đại Hoàng/Vũ Đại là món cổ truyền của địa phương và đặc trưng vị đồng quê Bắc Bộ.",
-          "accessed_at": "2026-10-22",
-          "type": "editorial_reference"
-        },
-        {
-          "url": "https://cakhocotruyen.vn/",
-          "publisher": "Cá kho cổ truyền Vũ Đại",
-          "title": "Cá kho làng Vũ Đại",
-          "use": "Tham khảo nhóm nguyên liệu cá trắm đen, thịt ba chỉ, riềng, mẻ và kho trong nhiều giờ; công thức rút gọn do Bếp Việt biên tập.",
-          "accessed_at": "2026-10-22",
+          "url": "https://www.dienmayxanh.com/vao-bep/2-cach-lam-ca-loc-kho-chuoi-xanh-deo-bui-hap-dan-dam-da-huong-13683",
+          "publisher": "Điện máy XANH",
+          "title": "2 cách làm cá lóc kho chuối xanh dẻo bùi hấp dẫn đậm đà hương vị",
+          "use": "Đối chiếu nguyên liệu cá lóc, chuối xanh và các bước ướp, áp chảo rồi kho; Bếp Việt viết lại và cân đối định lượng cho bốn phần ăn.",
+          "accessed_at": "2026-10-24",
           "type": "editorial_reference"
         }
       ],
       "scaling": {
-        "base_servings": 6,
+        "base_servings": 4,
         "targets": [
           {
             "servings": 2,
-            "main_factor": 0.3333333333333333,
-            "seasoning_start_factor": 0.3333333333333333,
-            "example": "Cá kho Vũ Đại cho 2 người",
-            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "400 g cá lóc, 1–2 quả chuối xanh",
+            "instruction": "Nêm nước mắm và ớt từ từ, châm nước vừa đủ xâm xấp."
+          },
+          {
+            "servings": 4,
+            "main_factor": 1.0,
+            "seasoning_start_factor": 1.0,
+            "example": "800 g cá lóc, 3 quả chuối xanh",
+            "instruction": "Theo lượng cơ sở của công thức."
           },
           {
             "servings": 6,
-            "main_factor": 1.0,
-            "seasoning_start_factor": 1.0,
-            "example": "Cá kho Vũ Đại cho 6 người",
-            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
-          },
-          {
-            "servings": 8,
-            "main_factor": 1.3333333333333333,
-            "seasoning_start_factor": 1.3333333333333333,
-            "example": "Cá kho Vũ Đại cho 8 người",
-            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "1,2 kg cá lóc, 4–5 quả chuối xanh",
+            "instruction": "Kho bằng nồi rộng, xếp cá thành một lớp để cá chín đều."
           }
         ]
       },
       "media": [
         {
-          "image_url": "/images/recipes/edited/ca-kho-vu-dai-960.webp",
-          "page_url": "https://baophapluat.vn/dac-san-ca-kho-lang-vu-dai-lam-qua-bieu-y-nghia-cho-ngay-tet-post431844.html",
+          "image_url": "/images/recipes/edited/ca-loc-kho-chuoi-xanh-960.webp",
+          "page_url": "https://www.dienmayxanh.com/vao-bep/2-cach-lam-ca-loc-kho-chuoi-xanh-deo-bui-hap-dan-dam-da-huong-13683",
           "source": "Bếp Việt",
           "author": "Bếp Việt",
           "license": null,
           "rights_status": "project",
-          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu đặc trưng món ăn.",
-          "width": 1536,
-          "height": 1024,
+          "rights_note": "Ảnh minh họa được tạo riêng hoặc biên tập cho Bếp Việt; nguồn chỉ dùng để kiểm chứng và biên tập công thức.",
+          "width": 3840,
+          "height": 2160,
           "orientation": "landscape",
           "preferred_width_met": true,
-          "alt_text": "Niêu đất cá kho Vũ Đại với khúc cá trắm đen nâu óng, riềng, gừng và ớt đỏ.",
+          "alt_text": "Cá lóc kho chuối xanh với khúc cá săn, chuối thấm nước kho caramel và ớt đỏ; ảnh Bếp Việt nền trong suốt.",
           "verified_dish_match": true,
-          "visual_review_date": "2026-10-22",
-          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo; công thức biên tập, chưa nấu thử."
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh gốc PNG 1536 × 1024 có nền trong suốt; các bản giao diện được đặt trên canvas 3840 × 2160."
         }
       ],
       "editorial": {
         "status": "editorial_draft",
         "production_ready": false,
         "test_cook_status": "not_tested",
-        "variant_note": "Công thức biên tập tại Bếp Việt từ nguồn tham khảo; định lượng và thời gian cần được nấu thử trước khi xem là bản hoàn chỉnh.",
+        "variant_note": "Cá lóc kho chuối xanh là món kho bếp nhà; độ chín của chuối và độ sánh của nước kho thay đổi theo kích cỡ nồi và độ xanh của chuối.",
         "seed_recipe": null,
-        "reviewed_at": "2026-10-22",
+        "reviewed_at": "2026-10-24",
         "needs": [
-          "Nấu thử thời gian kho trên bếp gia đình để cá săn mà không khô.",
-          "Đối chiếu vị chua của mẻ và lượng nước màu với khẩu vị địa phương."
+          "Nấu thử để chốt lượng nước kho và thời gian mềm chuối trên bếp gia đình.",
+          "Đối chiếu độ mặn theo loại nước mắm trước khi hoàn thiện."
         ]
       },
       "suggested_pairings": [
         "Cơm trắng",
-        "Dưa cải muối",
-        "Rau luộc"
+        "Rau luộc",
+        "Canh rau"
       ]
     },
     {

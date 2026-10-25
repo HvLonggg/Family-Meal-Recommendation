@@ -13,7 +13,8 @@
       "serving": "Serve hot as part of a rice meal.",
       "tips": [
         "Strain the fish broth carefully and check the meat for pin bones.",
-        "Add greens near the end so they stay bright and tender."
+        "Add greens near the end so they stay bright and tender.",
+        "Add the mustard greens to the simmering broth and cook briefly so they stay green and tender."
       ],
       "image_alt": "Clear field perch soup with green mustard leaves and fine ginger; transparent background.",
       "time_note": "About 50 minutes.",
@@ -150,7 +151,11 @@
           "ginger",
           "Vietnamese soup"
         ]
-      }
+      },
+      "aliases": [
+        "Field perch and mustard greens soup",
+        "Mustard greens soup with field perch"
+      ]
     },
     {
       "id": "BV507",
@@ -163,7 +168,8 @@
       "serving": "Plate and top with crushed roasted peanuts; serve immediately after mixing.",
       "tips": [
         "Cool the cooked shrimp and pork completely before mixing.",
-        "Add dressing gradually and toss gently to keep pomelo segments whole."
+        "Add dressing gradually and toss gently to keep pomelo segments whole.",
+        "Add the dressing a little at a time and toss just before serving so the pomelo segments keep their shape."
       ],
       "image_alt": "Pomelo salad with shrimp, thin pork slices, carrot, Vietnamese coriander and roasted peanuts; transparent background.",
       "time_note": "About 45 minutes.",
@@ -312,7 +318,11 @@
           "Vietnamese coriander",
           "peanuts"
         ]
-      }
+      },
+      "aliases": [
+        "Pomelo salad with shrimp and pork belly",
+        "Central-style pomelo salad"
+      ]
     },
     {
       "id": "BV508",
@@ -368,7 +378,7 @@
         "Hot tea"
       ],
       "keywords": [
-        "mì gà tần",
+        "Herbal chicken noodle soup",
         "Hanoi",
         "braised chicken",
         "Chinese herbs",
@@ -492,14 +502,18 @@
           "Hot tea"
         ],
         "keywords": [
-          "mì gà tần",
+          "Herbal chicken noodle soup",
           "Hanoi",
           "braised chicken",
           "Chinese herbs",
           "mugwort",
           "egg noodles"
         ]
-      }
+      },
+      "aliases": [
+        "Hanoi chicken mi tiem",
+        "Hanoi herbal-braised chicken noodles"
+      ]
     },
     {
       "id": "BV509",
@@ -512,7 +526,8 @@
       "serving": "Cut into pieces, pour over warm coconut sauce and sprinkle with sesame.",
       "tips": [
         "Strain the leaf juice finely for a smooth batter.",
-        "Stir continuously while heating the batter to prevent lumps."
+        "Stir continuously while heating the batter to prevent lumps.",
+        "Steam until the cakes are set and fully cooked; let them cool slightly before slicing to keep them from sticking to the knife."
       ],
       "image_alt": "Green lá mơ steamed cake topped with coconut sauce and toasted sesame; transparent background.",
       "time_note": "About 45 minutes.",
@@ -656,7 +671,11 @@
           "steamed cake",
           "sesame"
         ]
-      }
+      },
+      "aliases": [
+        "Southern Vietnamese mo-leaf cakes",
+        "Mo-leaf cakes with coconut milk"
+      ]
     },
     {
       "id": "BV510",
@@ -669,7 +688,8 @@
       "serving": "Serve hot with steamed rice and spoon the peppercorn sauce over the seitan.",
       "tips": [
         "Pat seitan dry so it browns instead of steaming.",
-        "Check labels on sauces to ensure they suit your vegetarian diet."
+        "Check labels on sauces to ensure they suit your vegetarian diet.",
+        "Season lightly at first because the braising liquid will reduce; add the green peppercorns at the end to preserve their aroma."
       ],
       "image_alt": "Vegetarian seitan slices braised with green peppercorns in a glossy sauce; transparent background.",
       "time_note": "About 40 minutes.",
@@ -804,7 +824,11 @@
           "vegetarian braise",
           "coconut water"
         ]
-      }
+      },
+      "aliases": [
+        "Vegetarian braised wheat gluten with green peppercorn",
+        "Wheat gluten braised with green peppercorn"
+      ]
     }
   ]
 }

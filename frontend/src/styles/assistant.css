@@ -868,48 +868,58 @@ body.has-narrator .rc-root:not(.is-open) {
 }
 .rc-header {
   position: relative;
-  /* Chú Rồng tràn khỏi header một chút: luôn vẽ header trên phần thân (lịch sử, tin nhắn). */
   z-index: 2;
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 14px 12px 14px 16px;
+  gap: 14px;
+  min-height: 86px;
+  padding: 12px 16px;
   color: #fff;
   background:
     radial-gradient(90% 140% at 0% 0%, rgb(255 255 255 / 16%), transparent 55%),
     linear-gradient(120deg, #c64a3b 0%, #9b2c1f 55%, #6f1f15 100%);
 }
 .rc-header::after {
-  position: absolute;
-  right: 0;
-  bottom: -1px;
-  left: 0;
-  height: 14px;
-  border-radius: 14px 14px 0 0;
-  background: #fffcf8;
-  content: '';
+  display: none;
 }
 .rc-header__avatar {
   position: relative;
   z-index: 1;
   display: grid;
-  width: 50px;
-  height: 50px;
-  flex: 0 0 auto;
+  width: 62px;
+  height: 62px;
+  flex: 0 0 62px;
   place-items: center;
-  margin: -6px -2px -6px -4px;
-  filter: drop-shadow(0 6px 10px rgb(40 8 4 / 35%));
+  overflow: hidden;
+  border: 1px solid rgb(255 248 238 / 34%);
+  border-radius: 20px;
+  background:
+    radial-gradient(ellipse at 50% 25%, rgb(255 255 255 / 22%), transparent 70%),
+    linear-gradient(145deg, rgb(255 255 255 / 15%), rgb(255 255 255 / 5%));
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 18%),
+    0 5px 12px rgb(69 24 13 / 19%);
+}
+.rc-header__avatar .dragon-mascot {
+  display: block;
+  width: 46px;
+  height: auto;
+  transform: translateY(2px);
+  filter: drop-shadow(0 3px 4px rgb(62 21 13 / 24%));
 }
 .rc-header__title {
+  position: relative;
+  z-index: 1;
   display: grid;
   flex: 1;
-  gap: 2px;
+  gap: 4px;
   min-width: 0;
 }
 .rc-header__title strong {
   font-size: 16px;
   font-weight: 800;
   letter-spacing: -0.01em;
+  line-height: 1.15;
 }
 .rc-header__title small {
   display: flex;
@@ -918,6 +928,7 @@ body.has-narrator .rc-root:not(.is-open) {
   overflow: hidden;
   color: rgb(255 240 228 / 88%);
   font-size: 12px;
+  line-height: 1.35;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -930,8 +941,11 @@ body.has-narrator .rc-root:not(.is-open) {
   box-shadow: 0 0 0 3px rgb(110 231 168 / 25%);
 }
 .rc-header__actions {
+  position: relative;
+  z-index: 1;
   display: flex;
-  gap: 2px;
+  flex: 0 0 auto;
+  gap: 3px;
 }
 .rc-icon-button {
   display: grid;

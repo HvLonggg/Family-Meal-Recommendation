@@ -1,5 +1,6 @@
 import { recipeMinutes, type Recipe } from '@/data/recipes';
 import { describeMealComposition } from '@/data/mealComposition';
+import { seededShuffle } from '@/lib/seededShuffle';
 
 export type HomeMealSuggestion = {
   id: string;
@@ -21,8 +22,13 @@ function pickRecipe(candidates: Recipe[], index: number, excluded: Set<string>) 
   return undefined;
 }
 
-export function createHomeMealSuggestions(catalog: Recipe[]): HomeMealSuggestion[] {
+export function createHomeMealSuggestions(
+  catalog: Recipe[],
+  seed = 'bep-viet',
+): HomeMealSuggestion[] {
   if (!catalog.length) return [];
+
+  const anchors = seededShuffle(catalog, seed, (recipe) => recipe.slug);
 
   const mains = catalog.filter((recipe) => ['Món mặn', 'Món chay'].includes(recipe.category));
   const soups = catalog.filter((recipe) => recipe.category === 'Món canh');
@@ -31,7 +37,7 @@ export function createHomeMealSuggestions(catalog: Recipe[]): HomeMealSuggestion
   );
   const fallback = catalog;
 
-  return catalog.map((anchor, index) => {
+  return anchors.map((anchor, index) => {
     const selected = new Set<string>();
     const isMain = ['Món mặn', 'Món chay'].includes(anchor.category);
     const isSoup = anchor.category === 'Món canh';

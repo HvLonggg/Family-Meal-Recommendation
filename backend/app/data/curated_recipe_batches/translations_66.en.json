@@ -1,0 +1,602 @@
+{
+  "rau-mam-da-sa-pa-luoc-xi-dau": {
+    "name": "Sa Pa Stone Mustard Greens with Soy Dip",
+    "aliases": [
+      "Boiled Sa Pa stone mustard greens with soy sauce",
+      "Stone mustard greens with garlic soy dip"
+    ],
+    "region": [
+      "Northern Vietnam"
+    ],
+    "province": [
+      "Lao Cai Province"
+    ],
+    "category": "Vegetable dish",
+    "meal_type": [
+      "lunch",
+      "dinner",
+      "vegetarian dish",
+      "side dish"
+    ],
+    "difficulty": "Easy",
+    "serving_basis": "A shared vegetable side for a four-person family meal.",
+    "description": "Sa Pa stone mustard greens have crisp stems and a mild sweetness. A quick boil and garlic-chili soy dip make a simple side for a home meal.",
+    "finished_dish": "The stems are tender yet crisp and bright green; the soy dip is gently savory with fragrant garlic.",
+    "serving": "Drain the greens and serve with the soy dip alongside rice and a braised or pan-fried dish.",
+    "tips": [
+      "Choose fresh firm shoots without bruising.",
+      "Avoid overboiling so the greens stay crisp.",
+      "Add soy sauce gradually because saltiness varies by brand."
+    ],
+    "dish_type": [
+      "Boiled greens",
+      "Mountain vegetable dish"
+    ],
+    "main_ingredient": [
+      "stone mustard greens",
+      "soy sauce",
+      "garlic",
+      "chili"
+    ],
+    "cooking_method": [
+      "boiling",
+      "mixing a dipping sauce"
+    ],
+    "search_terms": [
+      "Sa Pa stone mustard greens with soy dip",
+      "boiled stone mustard greens with garlic soy",
+      "Sa Pa rau mầm đá",
+      "rau mầm đá luộc xì dầu"
+    ],
+    "image_alt": "A plate of crisp boiled Sa Pa stone mustard greens with garlic-chili soy dip.",
+    "time_note": "About 16 minutes; boiling time varies with the size and tenderness of the shoots.",
+    "suggested_pairings": [
+      "Steamed rice",
+      "Pan-fried meat",
+      "Braised fish"
+    ],
+    "recipe_family": "rau_mam_da_luoc_xi_dau",
+    "spicy_level": 0,
+    "ingredients": [
+      {
+        "name": "Stone mustard greens",
+        "unit": "g",
+        "notes": "Trim tough parts and keep tender stems and leaves."
+      },
+      {
+        "name": "Soy sauce",
+        "unit": "ml",
+        "notes": "For the dipping sauce."
+      },
+      {
+        "name": "Garlic",
+        "unit": "g",
+        "notes": "Peel and mince."
+      },
+      {
+        "name": "Red chili",
+        "unit": "g",
+        "notes": "Mince; adjust to taste."
+      },
+      {
+        "name": "Sugar",
+        "unit": "g",
+        "notes": "Balances the salty flavor."
+      },
+      {
+        "name": "Salt",
+        "unit": "g",
+        "notes": "For the boiling water."
+      },
+      {
+        "name": "Water",
+        "unit": "ml",
+        "notes": "Enough to cover the greens."
+      }
+    ],
+    "tags": [
+      "Northern Vietnam",
+      "Lao Cai Province",
+      "boiled greens",
+      "family meal"
+    ],
+    "preparation_steps": [
+      "Remove bruised leaves and tough stems. Rinse gently several times and drain; separate oversized buds for even cooking.",
+      "Mince the garlic and chili. Stir soy sauce with sugar and a spoonful of warm water, then add the aromatics."
+    ],
+    "cooking_steps": [
+      "Bring salted water to a boil. Add the greens and boil for about 3–5 minutes; check the stems and remove when just tender.",
+      "Drain the greens, arrange on a plate, and serve with the garlic-chili soy dip."
+    ],
+    "keywords": [
+      "stone mustard greens",
+      "Sa Pa",
+      "Lao Cai Province",
+      "vegetarian side",
+      "soy dip"
+    ]
+  },
+  "rau-sam-luoc-cham-nuoc-mam-toi-hue": {
+    "name": "Hue Boiled Purslane with Garlic Fish Sauce",
+    "aliases": [
+      "Hue rau sam with garlic fish sauce",
+      "Boiled purslane with garlic fish sauce"
+    ],
+    "region": [
+      "Central Vietnam"
+    ],
+    "province": [
+      "Hue City"
+    ],
+    "category": "Vegetable dish",
+    "meal_type": [
+      "lunch",
+      "dinner",
+      "side dish"
+    ],
+    "difficulty": "Easy",
+    "serving_basis": "A shared vegetable side for a four-person family meal.",
+    "description": "Boiled purslane is a rustic vegetable dish noted in Hue food culture. Tender greens retain a fresh flavor and pair with fragrant garlic fish sauce.",
+    "finished_dish": "The stems are tender-crisp and the leaves remain intact; the dip is savory, garlicky and lightly tart.",
+    "serving": "Drain the greens and serve with garlic fish sauce as a vegetable side with steamed rice.",
+    "tips": [
+      "Choose young, firm stems without yellowing.",
+      "Rinse gently to avoid bruising the leaves.",
+      "Season the fish sauce first, then add lime and sugar gradually."
+    ],
+    "dish_type": [
+      "Boiled greens",
+      "Central Vietnamese vegetable dish"
+    ],
+    "main_ingredient": [
+      "purslane",
+      "fish sauce",
+      "garlic",
+      "lime"
+    ],
+    "cooking_method": [
+      "boiling",
+      "mixing a dipping sauce"
+    ],
+    "search_terms": [
+      "Hue boiled purslane with garlic fish sauce",
+      "boiled purslane",
+      "rau sam Huế",
+      "rau sam luộc chấm mắm tỏi"
+    ],
+    "image_alt": "A plate of Hue boiled purslane with reddish-green stems and a bowl of garlic-chili fish sauce.",
+    "time_note": "About 15 minutes; boiling time varies with the tenderness of the greens.",
+    "suggested_pairings": [
+      "Steamed rice",
+      "Braised fish",
+      "Braised tofu"
+    ],
+    "recipe_family": "rau_sam_luoc_nuoc_mam_toi",
+    "spicy_level": 1,
+    "ingredients": [
+      {
+        "name": "Purslane",
+        "unit": "g",
+        "notes": "Trim old roots and damaged stems."
+      },
+      {
+        "name": "Fish sauce",
+        "unit": "ml",
+        "notes": "For the dipping sauce."
+      },
+      {
+        "name": "Garlic",
+        "unit": "g",
+        "notes": "Peel and mince."
+      },
+      {
+        "name": "Red chili",
+        "unit": "g",
+        "notes": "Mince; adjust to taste."
+      },
+      {
+        "name": "Lime",
+        "unit": "ml",
+        "notes": "Juice for the dip."
+      },
+      {
+        "name": "Sugar",
+        "unit": "g",
+        "notes": "Balances the sour and salty flavors."
+      },
+      {
+        "name": "Salt",
+        "unit": "g",
+        "notes": "For the boiling water."
+      },
+      {
+        "name": "Water",
+        "unit": "ml",
+        "notes": "Enough to cover the greens."
+      }
+    ],
+    "tags": [
+      "Central Vietnam",
+      "Hue City",
+      "boiled greens",
+      "family meal"
+    ],
+    "preparation_steps": [
+      "Trim roots and old stems. Rinse the greens several times in clean water and drain.",
+      "Mince the garlic and chili. Stir fish sauce with sugar and lime juice, add the aromatics, and taste."
+    ],
+    "cooking_steps": [
+      "Bring salted water to a boil. Add the purslane and boil for about 2–3 minutes, until the stems are just tender; drain.",
+      "Arrange the greens on a plate and serve with garlic fish sauce. For a fully plant-based version, replace fish sauce with soy sauce."
+    ],
+    "keywords": [
+      "purslane",
+      "Hue City",
+      "Central Vietnam",
+      "boiled greens",
+      "garlic fish sauce"
+    ]
+  },
+  "ngon-su-su-luoc-cham-mam-toi-ot-tam-dao": {
+    "name": "Tam Đảo Chayote Shoots with Garlic-Chili Fish Sauce",
+    "aliases": [
+      "Tam Đảo boiled chayote shoots",
+      "Boiled chayote shoots with garlic chili fish sauce"
+    ],
+    "region": [
+      "Northern Vietnam"
+    ],
+    "province": [
+      "Vinh Phuc Province"
+    ],
+    "category": "Vegetable dish",
+    "meal_type": [
+      "lunch",
+      "dinner",
+      "side dish"
+    ],
+    "difficulty": "Easy",
+    "serving_basis": "A shared vegetable side for a four-person family meal.",
+    "description": "Young Tam Đảo chayote shoots are quickly boiled to keep their green color and crisp sweetness. A garlic-chili fish sauce dip gives this familiar mountain vegetable a savory finish.",
+    "finished_dish": "The leaves are tender and the stems remain crisp; the dip has fragrant garlic, chili and a light sweet-sour balance.",
+    "serving": "Drain the greens, arrange on a plate and serve warm with the garlic-chili dip alongside rice and a savory dish.",
+    "tips": [
+      "Choose young shoots with green leaves and non-fibrous stems.",
+      "Peel fibers from older stems and snap into serving lengths.",
+      "Boil in rapidly simmering water and avoid overcooking."
+    ],
+    "dish_type": [
+      "Boiled greens",
+      "Tam Đảo specialty"
+    ],
+    "main_ingredient": [
+      "chayote shoots",
+      "fish sauce",
+      "garlic",
+      "chili"
+    ],
+    "cooking_method": [
+      "boiling",
+      "mixing a dipping sauce"
+    ],
+    "search_terms": [
+      "Tam Đảo boiled chayote shoots",
+      "chayote shoots with garlic chili fish sauce",
+      "ngọn su su luộc Tam Đảo",
+      "su su luộc chấm mắm tỏi ớt"
+    ],
+    "image_alt": "A plate of crisp green Tam Đảo chayote shoots with a bowl of garlic-chili fish sauce.",
+    "time_note": "About 19 minutes; boiling time varies with stem maturity.",
+    "suggested_pairings": [
+      "Steamed rice",
+      "Pan-fried meat",
+      "Fried tofu"
+    ],
+    "recipe_family": "ngon_su_su_luoc_mam_toi",
+    "spicy_level": 2,
+    "ingredients": [
+      {
+        "name": "Young chayote shoots",
+        "unit": "g",
+        "notes": "Peel fibers from older stems and snap into serving lengths."
+      },
+      {
+        "name": "Fish sauce",
+        "unit": "ml",
+        "notes": "For the dipping sauce."
+      },
+      {
+        "name": "Garlic",
+        "unit": "g",
+        "notes": "Peel and mince."
+      },
+      {
+        "name": "Red chili",
+        "unit": "g",
+        "notes": "Mince; adjust to taste."
+      },
+      {
+        "name": "Lime",
+        "unit": "ml",
+        "notes": "Juice for the dip."
+      },
+      {
+        "name": "Sugar",
+        "unit": "g",
+        "notes": "Balances the sour and salty flavors."
+      },
+      {
+        "name": "Salt",
+        "unit": "g",
+        "notes": "For the boiling water."
+      },
+      {
+        "name": "Water",
+        "unit": "ml",
+        "notes": "Enough to cover the shoots."
+      }
+    ],
+    "tags": [
+      "Northern Vietnam",
+      "Vinh Phuc Province",
+      "Tam Đảo",
+      "boiled greens"
+    ],
+    "preparation_steps": [
+      "Snap the shoots into serving lengths, remove yellow leaves and fibrous stems, rinse and drain.",
+      "Mince the garlic and chili. Stir fish sauce with sugar, lime juice and a spoonful of warm water, then add the aromatics."
+    ],
+    "cooking_steps": [
+      "Bring salted water to a boil. Add the shoots and boil for about 4–6 minutes; check the stems for tenderness.",
+      "Drain the shoots, arrange on a plate and serve with the garlic-chili fish sauce."
+    ],
+    "keywords": [
+      "chayote shoots",
+      "Tam Đảo",
+      "Vinh Phuc Province",
+      "boiled greens",
+      "fish sauce"
+    ]
+  },
+  "rau-bo-khai-luoc-ba-be": {
+    "name": "Ba Bể Boiled Bò Khai Wild Greens",
+    "aliases": [
+      "Boiled bò khai greens from Ba Bể",
+      "Bắc Kạn bò khai greens with garlic fish sauce"
+    ],
+    "region": [
+      "Northern Vietnam"
+    ],
+    "province": [
+      "Bac Kan Province"
+    ],
+    "category": "Vegetable dish",
+    "meal_type": [
+      "lunch",
+      "dinner",
+      "side dish"
+    ],
+    "difficulty": "Easy",
+    "serving_basis": "A shared vegetable side for a four-person family meal.",
+    "description": "Bò khai is a wild green associated with Ba Bể, Bắc Kạn. A brief boil keeps the shoots green and crisp; Bếp Việt pairs them with a garlic-chili dip for a home meal.",
+    "finished_dish": "The deep-green shoots are tender yet crisp with their characteristic wild-green aroma; the dip is savory and fragrant.",
+    "serving": "Drain the greens and serve with garlic-chili fish sauce and steamed rice.",
+    "tips": [
+      "Rinse and gently rub the greens as described in the source to reduce their distinctive aroma.",
+      "Discard overly fibrous stems.",
+      "Serve soon after boiling rather than leaving the greens in hot water."
+    ],
+    "dish_type": [
+      "Boiled greens",
+      "Ba Bể wild greens"
+    ],
+    "main_ingredient": [
+      "bò khai greens",
+      "fish sauce",
+      "garlic",
+      "chili"
+    ],
+    "cooking_method": [
+      "boiling",
+      "mixing a dipping sauce"
+    ],
+    "search_terms": [
+      "Ba Bể boiled bò khai greens",
+      "Bắc Kạn bò khai luộc",
+      "Bo khai greens with fish-sauce dip",
+      "Ba Be wild greens"
+    ],
+    "image_alt": "A plate of deep-green boiled bò khai shoots from Ba Bể with garlic-chili fish sauce.",
+    "time_note": "About 22 minutes; boiling time varies with the stems.",
+    "suggested_pairings": [
+      "Steamed rice",
+      "Grilled fish",
+      "Pan-fried meat"
+    ],
+    "recipe_family": "rau_bo_khai_luoc",
+    "spicy_level": 1,
+    "ingredients": [
+      {
+        "name": "Bò khai greens",
+        "unit": "g",
+        "notes": "Trim fibrous stems, rinse and gently rub."
+      },
+      {
+        "name": "Fish sauce",
+        "unit": "ml",
+        "notes": "For the dipping sauce."
+      },
+      {
+        "name": "Garlic",
+        "unit": "g",
+        "notes": "Peel and mince."
+      },
+      {
+        "name": "Red chili",
+        "unit": "g",
+        "notes": "Mince; adjust to taste."
+      },
+      {
+        "name": "Lime",
+        "unit": "ml",
+        "notes": "Juice for the dip."
+      },
+      {
+        "name": "Salt",
+        "unit": "g",
+        "notes": "For the boiling water."
+      },
+      {
+        "name": "Water",
+        "unit": "ml",
+        "notes": "Enough to cover the greens."
+      }
+    ],
+    "tags": [
+      "Northern Vietnam",
+      "Bac Kan Province",
+      "Ba Bể",
+      "wild greens"
+    ],
+    "preparation_steps": [
+      "Remove fibrous stems and damaged leaves. Rinse well, gently rub along the stems as described by the source, rinse again and drain.",
+      "Mince the garlic and chili. Mix fish sauce with lime juice and a spoonful of warm water."
+    ],
+    "cooking_steps": [
+      "Bring salted water to a boil. Add the greens and boil for about 3–5 minutes, until the stems are just tender; remove promptly.",
+      "Drain the greens, arrange on a plate and serve with the garlic-chili fish sauce."
+    ],
+    "keywords": [
+      "bò khai",
+      "Ba Bể",
+      "Bac Kan Province",
+      "wild greens",
+      "boiled greens"
+    ]
+  },
+  "bong-bi-luoc-cham-kho-quet": {
+    "name": "Southern Vietnamese Pumpkin Blossoms with Kho Quẹt",
+    "aliases": [
+      "Boiled pumpkin blossoms with kho quẹt",
+      "Bông bí luộc ăn cùng kho quẹt miền Tây"
+    ],
+    "region": [
+      "Southern Vietnam"
+    ],
+    "province": [],
+    "category": "Vegetable dish",
+    "meal_type": [
+      "lunch",
+      "dinner",
+      "side dish"
+    ],
+    "difficulty": "Easy",
+    "serving_basis": "A shared vegetable side with dipping sauce for a four-person family meal.",
+    "description": "Tender-crisp pumpkin blossoms served with thick, savory-sweet kho quẹt are a rustic pairing in Southern Vietnamese home cooking. Bếp Việt standardizes the vegetable and dip portions for four.",
+    "finished_dish": "The petals are tender and the stems lightly crisp; kho quẹt is thick, savory-sweet, fragrant with pepper and dried shrimp.",
+    "serving": "Arrange the blossoms on a platter and serve the kho quẹt in a bowl for dipping. Eat warm with steamed rice.",
+    "tips": [
+      "Choose fresh flowers with firm stems and no bruised petals.",
+      "Rinse gently so the petals do not tear; remove the stamens if the flowers are large.",
+      "Simmer the kho quẹt over low heat until glossy, then adjust the seasoning."
+    ],
+    "dish_type": [
+      "Boiled vegetables",
+      "Mekong Delta dish"
+    ],
+    "main_ingredient": [
+      "pumpkin blossoms",
+      "pork belly",
+      "dried shrimp",
+      "fish sauce"
+    ],
+    "cooking_method": [
+      "boiling",
+      "simmering dipping sauce"
+    ],
+    "search_terms": [
+      "pumpkin blossoms with kho quẹt",
+      "Mekong Delta boiled pumpkin blossoms",
+      "bông bí luộc chấm kho quẹt",
+      "bông bí miền Tây"
+    ],
+    "image_alt": "A platter of golden pumpkin blossoms beside a bowl of glossy kho quẹt with pork and dried shrimp.",
+    "time_note": "About 33 minutes; boiling time varies with blossom size.",
+    "suggested_pairings": [
+      "Steamed rice",
+      "Clay-pot braised fish",
+      "Sour soup"
+    ],
+    "recipe_family": "bong_bi_luoc_kho_quet",
+    "spicy_level": 1,
+    "ingredients": [
+      {
+        "name": "Young pumpkin blossoms",
+        "unit": "g",
+        "notes": "Remove tough stem ends and stamens if needed."
+      },
+      {
+        "name": "Pork belly",
+        "unit": "g",
+        "notes": "Dice small."
+      },
+      {
+        "name": "Dried shrimp",
+        "unit": "g",
+        "notes": "Soak until soft and drain."
+      },
+      {
+        "name": "Fish sauce",
+        "unit": "ml",
+        "notes": "Season the kho quẹt."
+      },
+      {
+        "name": "Sugar",
+        "unit": "g",
+        "notes": "Adjust the sweetness."
+      },
+      {
+        "name": "Shallot",
+        "unit": "g",
+        "notes": "Mince."
+      },
+      {
+        "name": "Black pepper",
+        "unit": "g",
+        "notes": "Crush coarsely."
+      },
+      {
+        "name": "Chili",
+        "unit": "g",
+        "notes": "Add to taste."
+      },
+      {
+        "name": "Water",
+        "unit": "ml",
+        "notes": "For blanching and the sauce."
+      }
+    ],
+    "tags": [
+      "Southern Vietnam",
+      "Mekong Delta",
+      "boiled vegetables",
+      "family meal"
+    ],
+    "preparation_steps": [
+      "Trim the blossoms, remove fibrous stem ends and discard damaged petals. Rinse quickly and drain.",
+      "Soak the dried shrimp until soft and rinse again. Dice the pork belly, mince the shallot and crush the pepper."
+    ],
+    "cooking_steps": [
+      "Render the pork belly in a pan over medium heat until lightly golden. Add shallot and dried shrimp and stir until fragrant.",
+      "Add fish sauce, sugar and 100 ml water. Simmer over low heat until glossy and thick; season with pepper and chili.",
+      "Bring the remaining water to a boil. Add pumpkin blossoms and boil for about 2–3 minutes until the stems are just tender. Drain and serve with kho quẹt."
+    ],
+    "keywords": [
+      "pumpkin blossoms",
+      "Caramelized fish-sauce dip",
+      "Mekong Delta",
+      "Southern Vietnam",
+      "boiled vegetables"
+    ]
+  }
+}

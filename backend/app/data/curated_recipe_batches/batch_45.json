@@ -61,7 +61,7 @@
       ],
       "spicy_level": 1,
       "image_alt": "Bát canh bon người Thái Sơn La với thân bon mềm, da trâu, cà rừng và rau thơm trong nước canh sánh nhẹ; ảnh Bếp Việt nền trong suốt.",
-      "time_note": "Kho?ng 6 gi?, g?m s? ch?, ninh da tr?u kho?ng 5 gi? r?i n?u th?n bon v? rau ??n m?m.",
+      "time_note": "Khoảng 6 giờ, gồm sơ chế, ninh da trâu khoảng 5 giờ rồi nấu thân bon và rau đến mềm.",
       "total_time": 360,
       "suggested_pairings": [
         "Cơm trắng",
@@ -90,11 +90,11 @@
           "sequence": 2
         },
         {
-          "name": "C? ??ng r?ng",
+          "name": "Cà rừng",
           "quantity": 180,
           "unit": "g",
           "role": "vegetable",
-          "notes": "R?a s?ch, b? ??i qu? l?n; thay b?ng c? r?ng c?ng lo?i n?u kh? t?m ??ng gi?ng.",
+          "notes": "Rửa sạch, bổ đôi quả lớn; chỉ dùng loại cà rừng ăn được, có nguồn thực phẩm rõ ràng.",
           "scaling_rule": "linear",
           "sequence": 3
         },
@@ -215,7 +215,7 @@
         },
         {
           "step": 2,
-          "instruction": "Cho th?n bon ?? t??c x? v?o n?i n??c da tr?u, n?u nh? l?a kho?ng 15?20 ph?t ??n khi m?m. Th?m c? ??ng v? b? xanh, n?u ti?p ??n khi rau ch?n m?m."
+          "instruction": "Cho thân bon đã tước xơ vào nồi nước da trâu, nấu nhỏ lửa khoảng 15–20 phút đến khi mềm. Thêm cà rừng và bí xanh, nấu tiếp đến khi rau chín mềm."
         },
         {
           "step": 3,
@@ -606,7 +606,7 @@
       "prep_time": 20,
       "cook_time": 12,
       "passive_time": 10,
-      "description": "C?i m?o l? rau b?n ??a quen thu?c ? cao nguy?n M?c Ch?u; t? li?u ??a ph??ng ghi nh?n rau c? th? x?o v?i th?t hun kh?i. B?p Vi?t bi?n t?p th?nh m?n ?n gia ??nh d?ng ba ch? t??i, x?o nhanh theo t?ng ph?n ?? cu?ng v?a ch?n, l? c?n xanh v? kh?ng ra nhi?u n??c.",
+      "description": "Cải mèo là rau bản địa quen thuộc ở cao nguyên Mộc Châu; tư liệu địa phương ghi nhận rau có thể xào với thịt hun khói. Bếp Việt biên tập thành món ăn gia đình dùng ba chỉ tươi, xào nhanh theo từng phần để cuống vừa chín, lá còn xanh và không ra nhiều nước.",
       "finished_dish": "Đĩa cải xanh đậm với cuống còn giòn, lá vừa xẹp, xen các lát ba chỉ nâu vàng và tỏi thơm; vị mặn dịu, hậu rau ngọt nhẹ.",
       "serving": "Trút rau ra đĩa rộng ngay khi vừa chín, rắc tiêu xay và dùng nóng với cơm. Không để rau nằm lâu trong chảo vì nhiệt dư sẽ làm lá ra nước.",
       "tips": [
@@ -779,7 +779,7 @@
           "url": "https://www.aciar.gov.au/sites/default/files/project-page-docs/final_report_agb.2012.059.pdf",
           "publisher": "Australian Centre for International Agricultural Research (ACIAR)",
           "title": "Towards more profitable and sustainable vegetable farming systems in north-western Vietnam — Final report",
-          "use": "??i chi?u th? c?ng th?c c?i m?o x?o th?t hun kh?i trong t?i li?u d? ?n; c?ng th?c B?p Vi?t bi?n t?p th?nh phi?n b?n gia ??nh v?i ba ch? t??i.",
+          "use": "Đối chiếu thông tin về cải mèo xào thịt hun khói trong tài liệu dự án; Bếp Việt biên tập phiên bản gia đình dùng ba chỉ tươi.",
           "accessed_at": "2026-10-23",
           "type": "editorial_reference"
         }
@@ -826,7 +826,7 @@
         "status": "editorial_draft",
         "production_ready": false,
         "test_cook_status": "not_tested",
-        "variant_note": "B?p Vi?t chuy?n c?ch k?t h?p c?i m?o v?i th?t hun kh?i ???c ghi nh?n t?i ??a ph??ng th?nh phi?n b?n b?a nh? d?ng ba ch? t??i; n?u th? ?? ch?t l??ng gia v?.",
+        "variant_note": "Cải mèo xào thịt hun khói được tư liệu địa phương ghi nhận; Bếp Việt biên tập thành phiên bản bữa nhà dùng ba chỉ tươi. Cần nấu thử để chốt lượng gia vị.",
         "seed_recipe": null,
         "reviewed_at": "2026-10-23",
         "needs": [
@@ -1302,9 +1302,9 @@
         },
         {
           "url": "https://scov.gov.vn/ban-sac-van-hoa/huong-vi-que-nha/den-moc-chau-ngay-lanh-thuong-thuc-dac-san-be-chao.html",
-          "publisher": "?y ban Nh? n??c v? ng??i Vi?t Nam ? n??c ngo?i (SCOV)",
+          "publisher": "Ủy ban Nhà nước về người Việt Nam ở nước ngoài (SCOV)",
           "title": "Đến Mộc Châu ngày lạnh thưởng thức đặc sản bê chao",
-          "use": "Ngu?n ??ng l?i b?i vi?t ghi r? theo VnExpress; ??i chi?u c?ch ch?n v? ??p b? v?i s?, g?ng tr??c khi chao nhanh, c?ng c?ch ?n n?ng v?i l? chanh, rau xanh v? n??c t??ng.",
+          "use": "Nguồn dẫn lại bài viết về bê chao Mộc Châu; đối chiếu cách ướp bê với sả, gừng trước khi chao nhanh và cách dùng nóng cùng lá chanh, rau xanh, nước chấm.",
           "accessed_at": "2026-10-23",
           "type": "editorial_reference"
         }

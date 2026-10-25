@@ -22,7 +22,7 @@ def brand_context(language: str) -> str:
             f"Public contact and support inbox: {support_email}.\n"
             f"Phone: {CONTACT_PHONE}. Address: {CONTACT_ADDRESS}.\n"
             "Support hours: Monday–Friday, 08:30–17:30 (GMT+7).\n"
-            "Typical response: 1–2 business days.\n"
+            "Typical response: within 24 business hours.\n"
             "</thong_tin_bep_viet>"
         )
     return (
@@ -33,7 +33,7 @@ def brand_context(language: str) -> str:
         f"Email liên hệ và hòm thư hỗ trợ: {support_email}.\n"
         f"Điện thoại: {CONTACT_PHONE}. Địa chỉ: {CONTACT_ADDRESS}.\n"
         "Giờ hỗ trợ: Thứ Hai–Thứ Sáu, 08:30–17:30 (GMT+7).\n"
-        "Thường phản hồi trong 1–2 ngày làm việc.\n"
+        "Thường phản hồi trong vòng 24 giờ làm việc.\n"
         "</thong_tin_bep_viet>"
     )
 
@@ -60,12 +60,12 @@ def topic_reply(topic: str, language: str) -> tuple[str, list[dict[str, str]]]:
         return (
             f"Bếp Việt contact and support inbox: {support_email}; phone: {CONTACT_PHONE}; "
             f"address: {CONTACT_ADDRESS}. Support hours are Monday–Friday, 08:30–17:30 (GMT+7), "
-            "with replies usually within 1–2 business days.",
+            "with replies usually within 24 business hours.",
             [{"label": "Contact support", "to": "/contact"}],
         )
     return (
         f"Email liên hệ và hòm thư hỗ trợ Bếp Việt: {support_email}; điện thoại: {CONTACT_PHONE}; "
         f"địa chỉ: {CONTACT_ADDRESS}. Giờ hỗ trợ từ Thứ Hai đến Thứ Sáu, 08:30–17:30 (GMT+7); "
-        "thường phản hồi trong 1–2 ngày làm việc.",
+        "thường phản hồi trong vòng 24 giờ làm việc.",
         [{"label": "Liên hệ hỗ trợ", "to": "/contact"}],
     )

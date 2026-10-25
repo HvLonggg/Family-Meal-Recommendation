@@ -249,7 +249,7 @@ SITE_GUIDE: tuple[tuple[str, str, str, str], ...] = (
         "Liên hệ hỗ trợ",
         "/contact",
         "Trang Liên hệ (/contact) cho gửi yêu cầu hỗ trợ tới đội ngũ Bếp Việt; thường phản hồi "
-        "trong 1–2 ngày làm việc.",
+        "trong vòng 24 giờ làm việc.",
     ),
 )
 

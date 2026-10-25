@@ -630,10 +630,10 @@
     {
       "id": "BV473",
       "slug": "bun-sua-nha-trang",
-      "name": "Bún sứa Nha Trang",
+      "name": "Bún sứa cá liệt Nha Trang",
       "aliases": [
-        "Bún cá sứa Nha Trang",
-        "Bún sứa Khánh Hòa"
+        "Bún sứa cá liệt",
+        "Bún cá liệt Nha Trang"
       ],
       "region": [
         "Nam Trung Bộ"
@@ -648,13 +648,13 @@
       ],
       "difficulty": "Trung bình",
       "servings": 4,
-      "serving_basis": "4 tô bún sứa với chả cá, nước dùng cá biển trong và rau ghém.",
+      "serving_basis": "4 tô bún sứa cá liệt với chả cá biển, nước dùng trong và rau ghém.",
       "prep_time": 25,
       "cook_time": 60,
       "passive_time": 0,
-      "description": "Bún sứa Nha Trang gây nhớ bởi sứa biển trắng trong giòn sần sật, chả cá dai thơm và nước dùng thanh nấu từ cá liệt hoặc xương cá. Bếp Việt biên tập theo hướng nước trong, vị cá rõ; dùng sứa thực phẩm đã sơ chế và nêm mắm ruốc ở mức vừa.",
-      "finished_dish": "Nước dùng trong, ngọt thanh từ cá; sứa còn giòn, chả cá nóng và rau sống tươi mát.",
-      "serving": "Chần bún, xếp sứa và chả cá vào tô, chan nước dùng nóng. Dọn cùng giá, rau thơm, chanh, ớt và chén mắm ruốc để nêm theo khẩu vị.",
+      "description": "Bún sứa cá liệt Nha Trang có nước dùng trong nấu từ cá liệt, thêm thịt cá gỡ, chả cá biển và sứa đã sơ chế giòn sần sật. Dọn cùng bún tươi, giá, rau thơm; mắm ruốc, chanh và ớt để riêng.",
+      "finished_dish": "Nước dùng trong, ngọt dịu từ cá liệt; sứa giữ độ giòn, thịt cá và chả cá biển mềm dai, ăn cùng bún và rau thơm.",
+      "serving": "Cho bún, sứa, thịt cá gỡ và chả cá biển vào tô; chan nước dùng cá liệt nóng, thêm giá, hành và rau mùi. Dọn mắm ruốc, chanh, ớt riêng để nêm theo khẩu vị.",
       "tips": [
         "Chọn cá liệt hoặc cá biển tươi ít xương dăm; hớt bọt thường xuyên để nước dùng trong.",
         "Dùng sứa đã sơ chế theo nhãn, trụng nhanh nếu sản phẩm yêu cầu; không đun lâu vì sứa sẽ teo và mất độ giòn.",
@@ -676,13 +676,14 @@
         "trụng sứa"
       ],
       "search_terms": [
-        "bún sứa Nha Trang",
-        "bún cá sứa",
+        "bún sứa cá liệt Nha Trang",
         "bún sứa cá liệt",
+        "bún cá liệt Nha Trang",
+        "cá liệt nấu nước dùng",
         "món nước Khánh Hòa"
       ],
       "spicy_level": 0,
-      "image_alt": "Bún sứa Nha Trang với sứa trắng trong, chả cá hấp, rau thơm và nước dùng cá biển trong veo.",
+      "image_alt": "Bún sứa cá liệt Nha Trang với sứa trắng trong, chả cá biển, rau thơm và nước dùng cá liệt.",
       "time_note": "Khoảng 1 giờ 25 phút, phần lớn là thời gian ninh nước dùng.",
       "total_time": 85,
       "suggested_pairings": [
@@ -696,11 +697,11 @@
       "time_unit": "phút",
       "ingredients": [
         {
-          "name": "Cá liệt hoặc cá biển nhỏ",
+          "name": "Cá liệt",
           "quantity": 600,
           "unit": "g",
           "role": "main",
-          "notes": "Chọn cá tươi từ nguồn tin cậy; làm sạch và bỏ mang.",
+          "notes": "Chọn cá liệt tươi từ nguồn tin cậy; làm sạch và bỏ mang.",
           "scaling_rule": "linear",
           "sequence": 1
         },
@@ -882,25 +883,32 @@
         }
       ],
       "keywords": [
-        "Bún sứa Nha Trang",
-        "bún cá sứa",
-        "cá liệt",
+        "Bún sứa cá liệt Nha Trang",
+        "bún sứa cá liệt",
+        "cá liệt nấu nước dùng",
         "sứa biển",
-        "chả cá",
+        "chả cá biển",
         "món Nha Trang",
         "bữa sáng"
       ],
       "tags": [
         "đặc sản vùng miền",
         "món nước",
-        "món hải sản"
+        "món hải sản",
+        "Bún sứa cá liệt Nha Trang",
+        "bún sứa cá liệt",
+        "cá liệt nấu nước dùng",
+        "sứa biển",
+        "chả cá biển",
+        "món Nha Trang",
+        "bữa sáng"
       ],
       "sources": [
         {
           "url": "https://vietnamnet.vn/mon-bun-giai-nhiet-dai-gion-san-sat-khach-moi-rang-thuong-thuc-o-nha-trang-802144.html",
           "publisher": "VietNamNet",
           "title": "Món bún “giải nhiệt” dai giòn sần sật, khách “mỏi răng” thưởng thức ở Nha Trang",
-          "use": "Đối chiếu sứa nhỏ đã làm sạch, nước dùng nấu cá liệt, chả cá và cách dọn cùng bún, giá, rau sống; công thức Bếp Việt chuẩn hóa thành lượng dùng tại nhà.",
+          "use": "Đối chiếu đặc trưng Nha Trang: sứa giòn đã làm sạch, nước dùng trong nấu từ cá liệt, chả cá và cách dọn cùng bún, giá, rau sống; Bếp Việt biên tập định lượng tại nhà.",
           "accessed_at": "2026-10-23",
           "type": "editorial_reference"
         },
@@ -908,7 +916,7 @@
           "url": "https://vnexpress.net/8-mon-dac-san-nha-trang-giau-nang-luong-4924571.html",
           "publisher": "VnExpress",
           "title": "8 món đặc sản Nha Trang giàu năng lượng",
-          "use": "Đối chiếu nhận diện bún sứa là đặc sản Nha Trang và cấu trúc món có sứa, chả cá, nước dùng cá biển.",
+          "use": "Đối chiếu nhận diện bún sứa là món đặc sản Nha Trang có sứa, chả cá và nước dùng cá biển; phần cá liệt được kiểm chứng theo bài VietNamNet về món bún sứa địa phương.",
           "accessed_at": "2026-10-23",
           "type": "editorial_reference"
         }
@@ -952,7 +960,7 @@
           "height": 1024,
           "orientation": "landscape",
           "preferred_width_met": true,
-          "alt_text": "Bún sứa Nha Trang với sứa trắng trong, chả cá hấp, rau thơm và nước dùng cá biển trong veo.",
+          "alt_text": "Bún sứa cá liệt Nha Trang với sứa trắng trong, chả cá biển, rau thơm và nước dùng cá liệt.",
           "verified_dish_match": true,
           "visual_review_date": "2026-10-23",
           "photo_variant_note": "Ảnh do Bếp Việt tạo mới, tách nền trong suốt; công thức biên tập, chưa nấu thử."
@@ -962,7 +970,7 @@
         "status": "editorial_draft",
         "production_ready": false,
         "test_cook_status": "not_tested",
-        "variant_note": "Bếp Việt biên tập theo nét nước dùng cá trong và sứa giòn của Nha Trang; công thức không dùng nước hầm xương heo.",
+        "variant_note": "Công thức này ghi rõ cá liệt làm nước dùng, đi cùng sứa và chả cá biển. Tên và cụm tìm kiếm được tách khỏi biến thể bún cá sứa Nha Trang khác để tránh nhập lẫn món.",
         "seed_recipe": null,
         "reviewed_at": "2026-10-23",
         "needs": [

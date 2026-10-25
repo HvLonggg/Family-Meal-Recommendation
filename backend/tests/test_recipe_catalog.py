@@ -95,3 +95,4 @@ def test_search_requires_matching_words() -> None:
     assert matches_search("bau sao trung", "Bầu xào trứng")
     assert not matches_search("bau sao trung", "Mướp đắng xào trứng")
     assert not matches_search("muop dang sao trung", "Bầu xào trứng")
+    assert not matches_search("bun cha", "Gà rang gừng; gà, bún, mì và chanh")

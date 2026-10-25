@@ -35,7 +35,9 @@ function oneEditApart(left: string, right: string) {
 
 function matchesTerm(term: string, words: string[], allowPrefix: boolean) {
   if (words.includes(term)) return true;
-  if (allowPrefix && term.length >= 3 && words.some((word) => word.startsWith(term))) return true;
+  if (allowPrefix && term.length >= 4 && words.some((word) => word.startsWith(term))) return true;
+  if ((term === 'sao' && words.includes('xao')) || (term === 'xao' && words.includes('sao')))
+    return true;
   // Avoid fuzzy matching short Vietnamese words such as “cá”, “gà”, and “rau”.
   return term.length >= 4 && words.some((word) => oneEditApart(term, word));
 }

@@ -1,0 +1,93 @@
+{
+  "batch": 83,
+  "canvas": {
+    "width": 3840,
+    "height": 2160,
+    "format": "WebP",
+    "background": "transparent"
+  },
+  "native_format": "PNG",
+  "export_master_format": "PNG",
+  "assets": [
+    {
+      "id": "BV742",
+      "slug": "vit-nau-khom",
+      "native_file": "output/recipe-images/native/vit-nau-khom.png",
+      "native_pixels": [1536, 1024],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/vit-nau-khom.png",
+      "export_master_pixels": [3840, 2160],
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/vit-nau-khom-480.webp", "pixels": [480, 270], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/vit-nau-khom-960.webp", "pixels": [960, 540], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/vit-nau-khom-1536.webp", "pixels": [1536, 864], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/vit-nau-khom-3840.webp", "pixels": [3840, 2160], "has_alpha": true}
+      ],
+      "photo_variant_note": "Generated transparent food cutout; native output is 1536×1024. The 3840×2160 export uses a transparent contain canvas and is an upscaled export, not native 4K."
+    },
+    {
+      "id": "BV743",
+      "slug": "ngan-nuong-ngu-vi",
+      "native_file": "output/recipe-images/native/ngan-nuong-ngu-vi.png",
+      "native_pixels": [1536, 1024],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/ngan-nuong-ngu-vi.png",
+      "export_master_pixels": [3840, 2160],
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/ngan-nuong-ngu-vi-480.webp", "pixels": [480, 270], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/ngan-nuong-ngu-vi-960.webp", "pixels": [960, 540], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/ngan-nuong-ngu-vi-1536.webp", "pixels": [1536, 864], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/ngan-nuong-ngu-vi-3840.webp", "pixels": [3840, 2160], "has_alpha": true}
+      ],
+      "photo_variant_note": "Generated transparent food cutout; native output is 1536×1024. The 3840×2160 export uses a transparent contain canvas and is an upscaled export, not native 4K."
+    },
+    {
+      "id": "BV744",
+      "slug": "me-ga-kho-thom",
+      "native_file": "output/recipe-images/native/me-ga-kho-thom.png",
+      "native_pixels": [1536, 1024],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/me-ga-kho-thom.png",
+      "export_master_pixels": [3840, 2160],
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/me-ga-kho-thom-480.webp", "pixels": [480, 270], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/me-ga-kho-thom-960.webp", "pixels": [960, 540], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/me-ga-kho-thom-1536.webp", "pixels": [1536, 864], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/me-ga-kho-thom-3840.webp", "pixels": [3840, 2160], "has_alpha": true}
+      ],
+      "photo_variant_note": "Generated transparent food cutout; native output is 1536×1024. The 3840×2160 export uses a transparent contain canvas and is an upscaled export, not native 4K."
+    },
+    {
+      "id": "BV745",
+      "slug": "vit-nuong-chao",
+      "native_file": "output/recipe-images/native/vit-nuong-chao.png",
+      "native_pixels": [1536, 1024],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/vit-nuong-chao.png",
+      "export_master_pixels": [3840, 2160],
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/vit-nuong-chao-480.webp", "pixels": [480, 270], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/vit-nuong-chao-960.webp", "pixels": [960, 540], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/vit-nuong-chao-1536.webp", "pixels": [1536, 864], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/vit-nuong-chao-3840.webp", "pixels": [3840, 2160], "has_alpha": true}
+      ],
+      "photo_variant_note": "Generated transparent food cutout; native output is 1536×1024. The 3840×2160 export uses a transparent contain canvas and is an upscaled export, not native 4K."
+    },
+    {
+      "id": "BV746",
+      "slug": "ga-xao-bap-cai",
+      "native_file": "output/recipe-images/native/ga-xao-bap-cai.png",
+      "native_pixels": [1536, 1024],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/ga-xao-bap-cai.png",
+      "export_master_pixels": [3840, 2160],
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/ga-xao-bap-cai-480.webp", "pixels": [480, 270], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/ga-xao-bap-cai-960.webp", "pixels": [960, 540], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/ga-xao-bap-cai-1536.webp", "pixels": [1536, 864], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/ga-xao-bap-cai-3840.webp", "pixels": [3840, 2160], "has_alpha": true}
+      ],
+      "photo_variant_note": "Generated transparent food cutout; native output is 1536×1024. The 3840×2160 export uses a transparent contain canvas and is an upscaled export, not native 4K."
+    }
+  ]
+}

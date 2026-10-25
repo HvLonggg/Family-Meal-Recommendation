@@ -1,0 +1,878 @@
+{
+  "ga-hap-mam-nhi-nam-bo": {
+    "name": "Southern Vietnamese Chicken in Fish Sauce",
+    "aliases": [
+      "Chicken steamed in fish sauce",
+      "Southern-style fish-sauce chicken"
+    ],
+    "region": [
+      "South"
+    ],
+    "province": [],
+    "category": "Savory dish",
+    "meal_type": [
+      "lunch",
+      "dinner",
+      "family meal",
+      "dish for guests"
+    ],
+    "difficulty": "Medium",
+    "serving_basis": "One free-range chicken of about 1.4 kg for four people.",
+    "description": "Free-range chicken cooks in a fish-sauce glaze with shallots, garlic, sugar and chili sauce. The Southern-style method keeps the meat juicy and the skin amber and glossy, with a balanced savory-sweet finish. Bếp Việt edits the sauce quantity for a family meal.",
+    "finished_dish": "The chicken is fully cooked and juicy, with glossy golden-brown skin; the sauce is lightly thickened and fragrant with shallots and garlic.",
+    "serving": "Cut into portions, spoon over the sauce and finish with lime leaves. Serve hot with steamed rice, blanched greens or cucumber.",
+    "tips": [
+      "Make shallow pricks in the breast and thighs so the sauce penetrates sooner.",
+      "Season the fish sauce gradually because saltiness varies; keep the heat moderate so the glaze does not reduce before the chicken cooks through.",
+      "Check that the meat near the bone is fully cooked and keep raw-poultry tools separate from ready-to-eat food."
+    ],
+    "dish_type": [
+      "Fish-sauce chicken"
+    ],
+    "main_ingredient": [
+      "free-range chicken",
+      "first-press fish sauce",
+      "shallots"
+    ],
+    "cooking_method": [
+      "marinating",
+      "steaming",
+      "simmering in sauce"
+    ],
+    "search_terms": [
+      "chicken steamed in fish sauce",
+      "fish-sauce chicken",
+      "Southern Vietnamese chicken",
+      "chicken in fish sauce glaze",
+      "chicken for a rice meal"
+    ],
+    "image_alt": "Whole free-range chicken in a glossy fish-sauce glaze, served on a ceramic platter, transparent background.",
+    "time_note": "About 90 minutes, including 20 minutes of marinating; cooking time varies with chicken size and pot thickness.",
+    "suggested_pairings": [
+      "Steamed rice",
+      "Blanched greens",
+      "Cucumber"
+    ],
+    "recipe_family": "chicken_hap_mam_nhi",
+    "keywords": [
+      "free-range chicken",
+      "fish sauce",
+      "Southern Vietnam",
+      "steamed dish"
+    ],
+    "tags": [
+      "poultry",
+      "savory dish",
+      "Southern Vietnamese cuisine",
+      "family meal"
+    ],
+    "ingredients": [
+      {
+        "name": "Cleaned free-range chicken",
+        "unit": "g",
+        "notes": "Cut whole or split along the back; prick breast and thighs lightly."
+      },
+      {
+        "name": "First-press fish sauce",
+        "unit": "ml",
+        "notes": "Choose a fragrant, mildly salty variety; adjust after tasting."
+      },
+      {
+        "name": "Shallots",
+        "unit": "g",
+        "notes": "Finely chop half and slice the rest."
+      },
+      {
+        "name": "Garlic",
+        "unit": "g",
+        "notes": "Finely chopped."
+      },
+      {
+        "name": "Onion",
+        "unit": "g",
+        "notes": "Cut into wedges."
+      },
+      {
+        "name": "Chili sauce",
+        "unit": "g",
+        "notes": "Use less for a milder dish."
+      },
+      {
+        "name": "Sugar",
+        "unit": "g",
+        "notes": "Adjust to the saltiness of the fish sauce."
+      },
+      {
+        "name": "Seasoning powder",
+        "unit": "g",
+        "notes": "Optional; reduce or omit."
+      },
+      {
+        "name": "Ground black pepper",
+        "unit": "g",
+        "notes": "Use part of it in the sauce."
+      },
+      {
+        "name": "Annatto oil",
+        "unit": "ml",
+        "notes": "Adds a light amber color."
+      },
+      {
+        "name": "Water",
+        "unit": "ml",
+        "notes": "Helps the chicken cook evenly."
+      },
+      {
+        "name": "Lime leaves",
+        "unit": "g",
+        "notes": "Bruise half and finely slice the rest for garnish."
+      },
+      {
+        "name": "Green peppercorns",
+        "unit": "g",
+        "notes": "Optional."
+      }
+    ],
+    "preparation_steps": [
+      {
+        "step": 1,
+        "instruction": "Clean the chicken, pat dry and make shallow pricks in the breast and thighs. Rub with salt and ginger or lime to remove odor, then rinse."
+      },
+      {
+        "step": 2,
+        "instruction": "Chop shallots and garlic; cut the onion into wedges. Whisk fish sauce, chili sauce, sugar, seasoning powder, pepper and water until dissolved."
+      },
+      {
+        "step": 3,
+        "instruction": "Rub about one third of the sauce and the chopped shallots over the chicken. Refrigerate for 20 minutes and keep the remaining sauce separate."
+      }
+    ],
+    "cooking_steps": [
+      {
+        "step": 1,
+        "instruction": "Warm annatto oil in a heavy-bottomed pot and fry shallots, garlic and green peppercorns, if using, until fragrant."
+      },
+      {
+        "step": 2,
+        "instruction": "Pour in the remaining sauce, add onion and bring to a gentle boil. Add the chicken and turn so the sauce coats every side."
+      },
+      {
+        "step": 3,
+        "instruction": "Cover and cook over medium-low heat for about 35–45 minutes, turning the chicken occasionally and spooning sauce over it."
+      },
+      {
+        "step": 4,
+        "instruction": "Once the meat near the bone is fully cooked, uncover and reduce the sauce briefly until glossy. Add lime leaves, taste and turn off the heat."
+      }
+    ],
+    "spicy_level": 1
+  },
+  "vit-om-hoa-chuoi-dien-bien": {
+    "name": "Dien Bien Duck Braised with Banana Blossom",
+    "aliases": [
+      "Duck braised with banana blossom and Vietnamese prickly ash",
+      "Dien Bien-style duck with banana blossom"
+    ],
+    "region": [
+      "North"
+    ],
+    "province": [
+      "Dien Bien"
+    ],
+    "category": "Savory dish",
+    "meal_type": [
+      "lunch",
+      "dinner",
+      "family meal",
+      "dish for guests"
+    ],
+    "difficulty": "Medium",
+    "serving_basis": "About 1.5 kg of cut duck for four people.",
+    "description": "Duck is marinated with ginger, lemongrass, chili and Vietnamese prickly ash, then slowly braised in a banana-leaf parcel with banana blossom. The dish is associated with Dien Bien; the meat turns tender while the blossom stays lightly nutty and the highland spices remain fragrant.",
+    "finished_dish": "The duck is tender and fully cooked, the banana blossom retains its strands, and the parcel smells of banana leaf, Vietnamese prickly ash, ginger and lemongrass.",
+    "serving": "Open the parcel while hot and transfer the duck and blossom to a deep serving plate. Serve with sticky or steamed rice and greens.",
+    "tips": [
+      "Soak sliced banana blossom in salted lemon water, then rinse to limit browning and astringency.",
+      "Marinate the duck fully and wrap snugly without compressing the parcel so heat can circulate.",
+      "Keep the heat low and check the water at the bottom of the pot; cook the duck through near the bone."
+    ],
+    "dish_type": [
+      "Northwestern-style braised duck"
+    ],
+    "main_ingredient": [
+      "duck",
+      "banana blossom",
+      "Vietnamese prickly ash"
+    ],
+    "cooking_method": [
+      "marinating",
+      "wrapping in banana leaf",
+      "braising"
+    ],
+    "search_terms": [
+      "Dien Bien duck with banana blossom",
+      "duck braised with banana blossom",
+      "duck with Vietnamese prickly ash",
+      "Northwestern banana-leaf duck"
+    ],
+    "image_alt": "Dien Bien duck braised with banana blossom, ginger, lemongrass and Vietnamese prickly ash in a ceramic bowl, transparent background.",
+    "time_note": "About 4 hours 40 minutes, including one hour of marinating and nearly three hours of braising; tenderness depends on the duck.",
+    "suggested_pairings": [
+      "Steamed rice",
+      "Sticky rice",
+      "Blanched greens"
+    ],
+    "recipe_family": "duck_om_hoa_chuoi_dien_bien",
+    "keywords": [
+      "duck",
+      "forest banana blossom",
+      "Vietnamese prickly ash",
+      "Dien Bien",
+      "Northwest Vietnam"
+    ],
+    "tags": [
+      "poultry",
+      "savory dish",
+      "Northwestern Vietnamese cuisine",
+      "family meal"
+    ],
+    "ingredients": [
+      {
+        "name": "Duck meat",
+        "unit": "g",
+        "notes": "Cut into large serving pieces; clean thoroughly and drain."
+      },
+      {
+        "name": "Banana blossom",
+        "unit": "g",
+        "notes": "Slice thinly, soak in salted lemon water and rinse."
+      },
+      {
+        "name": "Banana leaves",
+        "unit": "leaves",
+        "notes": "Wash and soften over a flame or briefly blanch before wrapping."
+      },
+      {
+        "name": "Lemongrass",
+        "unit": "g",
+        "notes": "Bruise and cut into lengths; reserve some for the parcel."
+      },
+      {
+        "name": "Ginger",
+        "unit": "g",
+        "notes": "Crush or cut into thin strips."
+      },
+      {
+        "name": "Fresh chili",
+        "unit": "g",
+        "notes": "Slice and adjust to taste."
+      },
+      {
+        "name": "Toasted Vietnamese prickly ash",
+        "unit": "g",
+        "notes": "Toast lightly and crush."
+      },
+      {
+        "name": "Shallots",
+        "unit": "g",
+        "notes": "Finely chopped."
+      },
+      {
+        "name": "Fish sauce",
+        "unit": "ml",
+        "notes": "Season lightly and adjust at the end."
+      },
+      {
+        "name": "Salt",
+        "unit": "g",
+        "notes": "For marinating the duck."
+      },
+      {
+        "name": "Water",
+        "unit": "ml",
+        "notes": "Add to the bottom of the pot; top up as needed."
+      },
+      {
+        "name": "Cooking oil",
+        "unit": "ml",
+        "notes": "For briefly frying the shallots."
+      }
+    ],
+    "preparation_steps": [
+      {
+        "step": 1,
+        "instruction": "Clean the duck, rub with salt and ginger, rinse and cut into large pieces. Drain well before marinating."
+      },
+      {
+        "step": 2,
+        "instruction": "Slice the banana blossom thinly, soak in salted lemon water for about 10 minutes, rinse and squeeze dry. Soften the banana leaves."
+      },
+      {
+        "step": 3,
+        "instruction": "Crush the Vietnamese prickly ash, chop the shallots, and bruise the lemongrass and ginger. Mix the duck with aromatics, chili, Vietnamese prickly ash, salt and fish sauce; marinate for 60 minutes."
+      },
+      {
+        "step": 4,
+        "instruction": "Lay out the leaves, add some lemongrass and blossom, place the duck on top, cover with remaining blossom and wrap securely."
+      }
+    ],
+    "cooking_steps": [
+      {
+        "step": 1,
+        "instruction": "Warm the oil and briefly fry a little shallot until fragrant, then let it cool slightly; it may also be mixed into the duck before wrapping."
+      },
+      {
+        "step": 2,
+        "instruction": "Place the parcel in a heavy pot, add water to the bottom and cover. Once it boils, lower the heat."
+      },
+      {
+        "step": 3,
+        "instruction": "Braise on low for 21⁄2–3 hours, checking the water periodically and adding hot water if it evaporates. Turn the parcel once."
+      },
+      {
+        "step": 4,
+        "instruction": "Open a corner to check the meat near the bone. When tender and fully cooked, turn off the heat, rest five minutes, then open and serve."
+      }
+    ],
+    "spicy_level": 2
+  },
+  "ga-hap-bia": {
+    "name": "Vietnamese Beer-Steamed Chicken",
+    "aliases": [
+      "Free-range chicken steamed with beer and lemongrass",
+      "Beer-steamed chicken with lime leaves"
+    ],
+    "region": [
+      "All regions"
+    ],
+    "province": [],
+    "category": "Savory dish",
+    "meal_type": [
+      "lunch",
+      "dinner",
+      "family meal",
+      "dish for guests"
+    ],
+    "difficulty": "Easy",
+    "serving_basis": "One free-range chicken weighing about 1.8–2 kg for four to five people.",
+    "description": "A whole free-range chicken is steamed over beer with lemongrass, ginger, onion and lime leaves. Steam keeps the skin golden and the meat moist with a gentle aromatic finish; it is a practical weekend or guest meal.",
+    "finished_dish": "The chicken is evenly cooked with lightly golden skin and moist meat; lemongrass, ginger and lime leaf fragrance does not overpower it.",
+    "serving": "Cut into portions and plate with cucumber and herbs. Serve hot with lime-pepper salt or ginger dipping sauce.",
+    "tips": [
+      "Keep the chicken on a rack above the beer so it steams rather than boils in the liquid.",
+      "Avoid repeatedly opening the lid so the pot retains heat.",
+      "Cooking time depends on the bird's weight; check the thickest part of the thigh near the bone."
+    ],
+    "dish_type": [
+      "Steamed chicken"
+    ],
+    "main_ingredient": [
+      "free-range chicken",
+      "beer",
+      "lemongrass"
+    ],
+    "cooking_method": [
+      "beer steaming",
+      "steaming"
+    ],
+    "search_terms": [
+      "beer-steamed chicken",
+      "chicken steamed with lemongrass and ginger",
+      "free-range chicken with lime leaves",
+      "how to steam a whole chicken",
+      "chicken for guests"
+    ],
+    "image_alt": "Whole Vietnamese free-range chicken steamed over beer with lemongrass and ginger, transparent background.",
+    "time_note": "About 85 minutes for a chicken close to 2 kg; increase the steaming time for a larger bird.",
+    "suggested_pairings": [
+      "Steamed rice",
+      "Lime-pepper salt",
+      "Cucumber"
+    ],
+    "recipe_family": "chicken_hap_bia",
+    "keywords": [
+      "free-range chicken",
+      "beer",
+      "lemongrass",
+      "ginger",
+      "lime leaves"
+    ],
+    "tags": [
+      "poultry",
+      "steamed dish",
+      "savory dish",
+      "family meal"
+    ],
+    "ingredients": [
+      {
+        "name": "Cleaned free-range chicken",
+        "unit": "g",
+        "notes": "Leave whole; use a bird around 1.8–2 kg."
+      },
+      {
+        "name": "Bia",
+        "unit": "ml",
+        "notes": "Pour into the bottom of the steamer, not directly over the chicken."
+      },
+      {
+        "name": "Lemongrass",
+        "unit": "g",
+        "notes": "Bruise and cut into lengths."
+      },
+      {
+        "name": "Ginger",
+        "unit": "g",
+        "notes": "Crush and cut into large slices."
+      },
+      {
+        "name": "Dried shallots",
+        "unit": "g",
+        "notes": "Bruise."
+      },
+      {
+        "name": "Onion",
+        "unit": "g",
+        "notes": "Cut into wedges."
+      },
+      {
+        "name": "Lime leaves",
+        "unit": "g",
+        "notes": "Leave whole or bruise lightly."
+      },
+      {
+        "name": "Coarse salt",
+        "unit": "g",
+        "notes": "Season the beer and lightly season the chicken."
+      },
+      {
+        "name": "Green peppercorns",
+        "unit": "g",
+        "notes": "Optional; lightly crushed."
+      },
+      {
+        "name": "Lime",
+        "unit": "limes",
+        "notes": "For dipping salt with pepper."
+      }
+    ],
+    "preparation_steps": [
+      {
+        "step": 1,
+        "instruction": "Clean the chicken, rub gently with salt and ginger, rinse and drain. Tie the wings and legs neatly if needed so it sits securely on the rack."
+      },
+      {
+        "step": 2,
+        "instruction": "Bruise the lemongrass, ginger and shallots; cut the onion into wedges. Wash and drain the lime leaves."
+      },
+      {
+        "step": 3,
+        "instruction": "Pour beer into the pot and add rock salt. Arrange aromatics and lime leaves beneath the steaming rack."
+      }
+    ],
+    "cooking_steps": [
+      {
+        "step": 1,
+        "instruction": "Set the rack over the pot, place the chicken above the beer and cover tightly."
+      },
+      {
+        "step": 2,
+        "instruction": "Bring to strong steam over high heat for 5–6 minutes, then reduce to medium and steam another 45–50 minutes."
+      },
+      {
+        "step": 3,
+        "instruction": "Check the thickest part of the thigh; if not cooked through, steam in additional five-minute intervals. Do not leave the lid open long."
+      },
+      {
+        "step": 4,
+        "instruction": "Turn off the heat and let the chicken rest covered for a few minutes. Chop and serve with lime-pepper salt and greens."
+      }
+    ],
+    "spicy_level": 0
+  },
+  "chim-cut-chien-bo": {
+    "name": "Vietnamese Butter-Fried Quail",
+    "aliases": [
+      "Garlic-butter fried quail",
+      "Butter-fried quail with wild lime leaves"
+    ],
+    "region": [
+      "All regions"
+    ],
+    "province": [],
+    "category": "Savory dish",
+    "meal_type": [
+      "dinner",
+      "snack",
+      "dish for guests"
+    ],
+    "difficulty": "Medium",
+    "serving_basis": "About five small quails, enough for two people with accompaniments.",
+    "description": "Quail is marinated with ginger, lemongrass, garlic and wild lime leaves, fried until golden, then quickly tossed with garlic butter. The skin is fragrant and crisp while the meat stays tender; cucumber and Vietnamese coriander balance the richness.",
+    "finished_dish": "The quail are deep golden, crisp outside and cooked through inside, lightly coated in garlic butter and fragrant wild lime leaves.",
+    "serving": "Serve hot straight after tossing with butter, alongside cucumber, Vietnamese coriander and lime chili. Lime-pepper salt also works well.",
+    "tips": [
+      "Pat the quail dry before frying to reduce splatter and help the skin crisp.",
+      "Fry over medium heat so meat near the bone cooks before the skin darkens too much.",
+      "Toss with butter briefly over low heat so the sauce does not split."
+    ],
+    "dish_type": [
+      "Fried quail"
+    ],
+    "main_ingredient": [
+      "quail",
+      "butter",
+      "wild lime leaves"
+    ],
+    "cooking_method": [
+      "marinating",
+      "deep-frying",
+      "tossing with garlic butter"
+    ],
+    "search_terms": [
+      "butter-fried quail",
+      "garlic-butter quail",
+      "quail with wild lime leaves",
+      "quail snack",
+      "crispy fried quail"
+    ],
+    "image_alt": "Golden butter-fried quail with garlic, wild lime leaves and cucumber, transparent background.",
+    "time_note": "About 75 minutes, including 30–35 minutes of marinating; fry in batches to keep oil temperature steady.",
+    "suggested_pairings": [
+      "Cucumber",
+      "Vietnamese coriander",
+      "Lime-pepper salt"
+    ],
+    "recipe_family": "chim_cut_chien_bo",
+    "keywords": [
+      "quail",
+      "garlic butter",
+      "wild lime leaves",
+      "fried dish"
+    ],
+    "tags": [
+      "poultry",
+      "fried dish",
+      "snack",
+      "dish for guests"
+    ],
+    "ingredients": [
+      {
+        "name": "Cleaned quail",
+        "unit": "g",
+        "notes": "About five birds; remove the tail gland and drain."
+      },
+      {
+        "name": "Unsalted butter",
+        "unit": "g",
+        "notes": "For the finishing sauce after frying."
+      },
+      {
+        "name": "Cooking oil",
+        "unit": "ml",
+        "notes": "Enough for deep or near-deep frying; not the absorbed amount."
+      },
+      {
+        "name": "Garlic",
+        "unit": "g",
+        "notes": "Finely chopped."
+      },
+      {
+        "name": "Ginger",
+        "unit": "g",
+        "notes": "Use some for cleaning and chop the rest."
+      },
+      {
+        "name": "Lemongrass",
+        "unit": "g",
+        "notes": "Finely chopped."
+      },
+      {
+        "name": "Shallots",
+        "unit": "g",
+        "notes": "Finely chopped."
+      },
+      {
+        "name": "Wild lime leaves",
+        "unit": "g",
+        "notes": "Wash and drain."
+      },
+      {
+        "name": "Fish sauce",
+        "unit": "ml",
+        "notes": "For the marinade."
+      },
+      {
+        "name": "Oyster sauce",
+        "unit": "ml",
+        "notes": "Adds a gentle savory note."
+      },
+      {
+        "name": "Five-spice powder",
+        "unit": "g",
+        "notes": "Use moderately."
+      },
+      {
+        "name": "Turmeric powder",
+        "unit": "g",
+        "notes": "Adds a light golden color."
+      },
+      {
+        "name": "Sugar",
+        "unit": "g",
+        "notes": "Balances the savory seasoning."
+      },
+      {
+        "name": "Ground black pepper",
+        "unit": "g",
+        "notes": "Add to the marinade."
+      },
+      {
+        "name": "Coarse salt",
+        "unit": "g",
+        "notes": "For cleaning; rinse off thoroughly."
+      },
+      {
+        "name": "Ginger wine",
+        "unit": "ml",
+        "notes": "For cleaning and removing odor."
+      },
+      {
+        "name": "Cucumber",
+        "unit": "g",
+        "notes": "Slice for serving."
+      },
+      {
+        "name": "Vietnamese coriander",
+        "unit": "g",
+        "notes": "Pick and wash the leaves."
+      }
+    ],
+    "preparation_steps": [
+      {
+        "step": 1,
+        "instruction": "Clean the quail, remove the tail gland, split lightly through the breast and flatten. Rub with salt and ginger wine, rinse and pat dry."
+      },
+      {
+        "step": 2,
+        "instruction": "Chop garlic, shallots, lemongrass and ginger. Keep a few wild lime leaves for frying and mix the rest into the seasoning."
+      },
+      {
+        "step": 3,
+        "instruction": "Marinate the quail with fish sauce, oyster sauce, five-spice, turmeric, sugar, pepper, aromatics and wild lime leaves for 30–35 minutes."
+      }
+    ],
+    "cooking_steps": [
+      {
+        "step": 1,
+        "instruction": "Brush off excess marinade and heat oil over medium heat. Fry in batches, turning until golden and cooked through near the bone."
+      },
+      {
+        "step": 2,
+        "instruction": "Drain on a rack. Quickly fry a few reserved wild lime leaves and set aside."
+      },
+      {
+        "step": 3,
+        "instruction": "Remove most of the oil, leaving about one tablespoon. Fry garlic and lemongrass until fragrant, lower the heat and melt in the butter."
+      },
+      {
+        "step": 4,
+        "instruction": "Add the quail and toss for about one minute until lightly coated in garlic butter. Turn off the heat and serve with cucumber and Vietnamese coriander."
+      }
+    ],
+    "spicy_level": 1
+  },
+  "vit-om-rieng-me": {
+    "name": "Vietnamese Duck Braised with Galangal and Fermented Rice",
+    "aliases": [
+      "Duck braised with galangal, me and shrimp paste",
+      "Duck with galangal and fermented rice"
+    ],
+    "region": [
+      "All regions"
+    ],
+    "province": [],
+    "category": "Savory dish",
+    "meal_type": [
+      "lunch",
+      "dinner",
+      "family meal"
+    ],
+    "difficulty": "Medium",
+    "serving_basis": "One duck weighing about 1.5 kg for four people.",
+    "description": "Cut duck is marinated with galangal, fermented rice, shrimp paste and turmeric, then seared and slowly braised until tender. The gentle tang of me balances galangal's earthy fragrance; serve the sauce over noodles or with rice.",
+    "finished_dish": "The duck is tender and well seasoned; the sauce is lightly thickened, fragrant with galangal and shrimp paste, and gently sour from fermented rice.",
+    "serving": "Spoon the duck and sauce into a bowl and finish with chopped rice-paddy herb, culantro and Vietnamese balm. Serve hot with rice noodles or rice.",
+    "tips": [
+      "Rub the duck with salt and ginger wine or lime, then rinse thoroughly to reduce its odor.",
+      "Strain the fermented rice and taste its sourness before adding the full amount.",
+      "Simmer gently after bringing the pot to a boil; use less water for a thicker sauce to serve with rice."
+    ],
+    "dish_type": [
+      "Galangal-braised duck"
+    ],
+    "main_ingredient": [
+      "duck",
+      "galangal",
+      "fermented rice"
+    ],
+    "cooking_method": [
+      "marinating",
+      "searing",
+      "braising"
+    ],
+    "search_terms": [
+      "duck braised with galangal and fermented rice",
+      "duck with shrimp paste",
+      "duck cooked with me",
+      "tangy braised duck",
+      "duck with rice noodles"
+    ],
+    "image_alt": "Bowl of Vietnamese duck braised with galangal and fermented rice, golden-brown sauce and herbs, transparent background.",
+    "time_note": "About 125 minutes, including 40 minutes of marinating; braising time varies with the duck.",
+    "suggested_pairings": [
+      "Fresh rice noodles",
+      "Steamed rice",
+      "Rice-paddy herb",
+      "Vietnamese balm"
+    ],
+    "recipe_family": "duck_om_rieng_me",
+    "keywords": [
+      "duck",
+      "galangal",
+      "me fermented rice",
+      "shrimp paste",
+      "braised dish"
+    ],
+    "tags": [
+      "poultry",
+      "savory dish",
+      "braised dish",
+      "family meal"
+    ],
+    "ingredients": [
+      {
+        "name": "Duck meat",
+        "unit": "g",
+        "notes": "Cut into portions; trim thick excess fat if desired."
+      },
+      {
+        "name": "Ground galangal",
+        "unit": "g",
+        "notes": "Use about two thirds for marinating and the rest near the end."
+      },
+      {
+        "name": "Strained fermented-rice starter",
+        "unit": "ml",
+        "notes": "Strain and add gradually to adjust the sourness."
+      },
+      {
+        "name": "Fermented shrimp paste",
+        "unit": "ml",
+        "notes": "Reduce or omit to taste."
+      },
+      {
+        "name": "Turmeric powder",
+        "unit": "g",
+        "notes": "Adds a light golden color."
+      },
+      {
+        "name": "Dried shallots",
+        "unit": "g",
+        "notes": "Finely chopped."
+      },
+      {
+        "name": "Garlic",
+        "unit": "g",
+        "notes": "Finely chopped."
+      },
+      {
+        "name": "Ginger",
+        "unit": "g",
+        "notes": "Use some for cleaning and slice the rest."
+      },
+      {
+        "name": "Lemongrass",
+        "unit": "g",
+        "notes": "Finely chopped or thinly sliced."
+      },
+      {
+        "name": "Fresh chili",
+        "unit": "g",
+        "notes": "Optional."
+      },
+      {
+        "name": "Fish sauce",
+        "unit": "ml",
+        "notes": "Season again once the duck is tender."
+      },
+      {
+        "name": "Sugar",
+        "unit": "g",
+        "notes": "Balances sour and savory notes."
+      },
+      {
+        "name": "Cooking oil",
+        "unit": "ml",
+        "notes": "For frying the aromatics and searing the duck."
+      },
+      {
+        "name": "Water",
+        "unit": "ml",
+        "notes": "Add to just cover the duck; use more for noodle soup."
+      },
+      {
+        "name": "Rice paddy herb",
+        "unit": "g",
+        "notes": "Wash and chop for serving."
+      },
+      {
+        "name": "Sawtooth coriander",
+        "unit": "g",
+        "notes": "Wash and chop."
+      },
+      {
+        "name": "Skunkvine leaves",
+        "unit": "g",
+        "notes": "Wash and chop."
+      },
+      {
+        "name": "Fresh rice vermicelli",
+        "unit": "g",
+        "notes": "Serve on the side if desired."
+      }
+    ],
+    "preparation_steps": [
+      {
+        "step": 1,
+        "instruction": "Clean the duck, rub with salt and ginger wine or lime, rinse several times and cut into portions."
+      },
+      {
+        "step": 2,
+        "instruction": "Strain the fermented rice. Chop shallots, garlic, lemongrass and chili; reserve some ground galangal for the end."
+      },
+      {
+        "step": 3,
+        "instruction": "Marinate the duck with most of the galangal, fermented rice, shrimp paste, turmeric, half the shallots and garlic, and fish sauce for 30–40 minutes."
+      }
+    ],
+    "cooking_steps": [
+      {
+        "step": 1,
+        "instruction": "Heat oil in a pot and fry remaining shallots, garlic and lemongrass until fragrant. Add the duck and sear over medium heat until the surface firms."
+      },
+      {
+        "step": 2,
+        "instruction": "Add enough water to just cover the duck, bring to a boil, then lower the heat. Skim, cover and braise for 35–40 minutes."
+      },
+      {
+        "step": 3,
+        "instruction": "Add reserved galangal and braise another 10–15 minutes until tender. Adjust fermented rice, fish sauce, shrimp paste and sugar."
+      },
+      {
+        "step": 4,
+        "instruction": "Add chili if using, turn off the heat and finish with rice-paddy herb, culantro and Vietnamese balm. Serve with rice or noodles."
+      }
+    ],
+    "spicy_level": 1
+  }
+}

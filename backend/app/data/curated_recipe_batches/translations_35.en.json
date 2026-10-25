@@ -22,7 +22,7 @@
         "North Central Vietnam"
       ],
       "province": [
-        "Thừa Thiên Huế"
+        "Thua Thien Hue (former province)"
       ],
       "meal_type": [
         "breakfast",
@@ -56,7 +56,7 @@
       "keywords": [
         "Hue Lagoon Rabbitfish Pancake",
         "North Central Vietnam",
-        "Thừa Thiên Huế",
+        "Thua Thien Hue (former province)",
         "cetacean",
         "rice flour",
         "Dam Chuon banh mi cake",
@@ -119,7 +119,7 @@
           "North Central Vietnam"
         ],
         "province": [
-          "Thừa Thiên Huế"
+          "Thua Thien Hue (former province)"
         ],
         "meal_type": [
           "breakfast",
@@ -155,7 +155,11 @@
           "Dam Chuon banh mi cake",
           "Hue dish with whale fish"
         ]
-      }
+      },
+      "aliases": [
+        "Dam Chuon lagoon rabbitfish banh khoai",
+        "Lang Chuon-style banh khoai"
+      ]
     },
     {
       "id": "BV502",
@@ -177,7 +181,7 @@
         "North Central Vietnam"
       ],
       "province": [
-        "Huế"
+        "Hue City"
       ],
       "meal_type": [
         "main course",
@@ -209,8 +213,8 @@
         "Fresh herbs"
       ],
       "keywords": [
-        "nem lụi",
-        "Huế",
+        "Hue lemongrass pork skewers",
+        "Hue City",
         "pork",
         "shrimp",
         "lemongrass",
@@ -319,7 +323,7 @@
           "North Central Vietnam"
         ],
         "province": [
-          "Huế"
+          "Hue City"
         ],
         "meal_type": [
           "main course",
@@ -351,15 +355,19 @@
           "Fresh herbs"
         ],
         "keywords": [
-          "nem lụi",
-          "Huế",
+          "Hue lemongrass pork skewers",
+          "Hue City",
           "pork",
           "shrimp",
           "lemongrass",
           "grilled food",
           "rice paper"
         ]
-      }
+      },
+      "aliases": [
+        "Hue lemongrass pork skewers",
+        "Hue grilled lemongrass pork"
+      ]
     },
     {
       "id": "BV503",
@@ -505,7 +513,11 @@
           "Easy to cook vegetarian dish",
           "eggplant braised in soy sauce"
         ]
-      }
+      },
+      "aliases": [
+        "Vegetarian braised eggplant with tofu",
+        "Braised eggplant with tofu"
+      ]
     },
     {
       "id": "BV504",
@@ -559,7 +571,7 @@
         "Ripe banana"
       ],
       "keywords": [
-        "bánh tai yến",
+        "Bird's-nest cake",
         "Mekong Delta",
         "rice flour",
         "tapioca starch",
@@ -650,14 +662,18 @@
           "Ripe banana"
         ],
         "keywords": [
-          "bánh tai yến",
+          "Bird's-nest cake",
           "Mekong Delta",
           "rice flour",
           "tapioca starch",
           "coconut milk",
           "fried cake"
         ]
-      }
+      },
+      "aliases": [
+        "Mekong Delta bird's-nest cakes",
+        "Coconut milk bird's-nest cakes"
+      ]
     },
     {
       "id": "BV505",
@@ -679,7 +695,7 @@
         "Mekong Delta"
       ],
       "province": [
-        "Sóc Trăng"
+        "Soc Trang Province"
       ],
       "meal_type": [
         "snack",
@@ -703,7 +719,7 @@
       ],
       "search_terms": [
         "Sóc Trăng Khmer ginger cake",
-        "Num-khơ-nhây",
+        "Num-kho-nhay ginger cake",
         "Khmer ginger-root cake"
       ],
       "suggested_pairings": [
@@ -711,9 +727,9 @@
         "Green tea"
       ],
       "keywords": [
-        "bánh gừng Khmer",
-        "Num-khơ-nhây",
-        "Sóc Trăng",
+        "Khmer ginger cake",
+        "Num-kho-nhay ginger cake",
+        "Soc Trang Province",
         "Khmer Southern Vietnam",
         "sticky-rice flour",
         "festival cake"
@@ -781,7 +797,7 @@
           "Mekong Delta"
         ],
         "province": [
-          "Sóc Trăng"
+          "Soc Trang Province"
         ],
         "meal_type": [
           "snack",
@@ -813,14 +829,19 @@
           "Green tea"
         ],
         "keywords": [
-          "bánh gừng Khmer",
-          "Num-khơ-nhây",
-          "Sóc Trăng",
+          "Khmer ginger cake",
+          "Num-kho-nhay ginger cake",
+          "Soc Trang Province",
           "Khmer Southern Vietnam",
           "sticky-rice flour",
           "festival cake"
         ]
-      }
+      },
+      "aliases": [
+        "Num-kho-nhay ginger cake",
+        "Khmer ginger-root cakes",
+        "Soc Trang ginger cakes"
+      ]
     }
   ]
 }

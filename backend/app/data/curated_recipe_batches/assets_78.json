@@ -1,0 +1,88 @@
+{
+  "batch": 78,
+  "canvas": {
+    "width": 3840,
+    "height": 2160,
+    "format": "WebP",
+    "background": "transparent"
+  },
+  "native_format": "PNG",
+  "export_master_format": "PNG",
+  "assets": [
+    {
+      "id": "BV717",
+      "slug": "ca-basa-kho-thom",
+      "native_file": "output/recipe-images/native/ca-basa-kho-thom.png",
+      "native_pixels": [1374, 1145],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/ca-basa-kho-thom.png",
+      "export_master_pixels": [3840, 2160],
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/ca-basa-kho-thom-480.webp", "pixels": [480, 270], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/ca-basa-kho-thom-960.webp", "pixels": [960, 540], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/ca-basa-kho-thom-1536.webp", "pixels": [1536, 864], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/ca-basa-kho-thom-3840.webp", "pixels": [3840, 2160], "has_alpha": true}
+      ]
+    },
+    {
+      "id": "BV718",
+      "slug": "dau-que-xao-thit-heo",
+      "native_file": "output/recipe-images/native/dau-que-xao-thit-heo.png",
+      "native_pixels": [1536, 1024],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/dau-que-xao-thit-heo.png",
+      "export_master_pixels": [3840, 2160],
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/dau-que-xao-thit-heo-480.webp", "pixels": [480, 270], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/dau-que-xao-thit-heo-960.webp", "pixels": [960, 540], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/dau-que-xao-thit-heo-1536.webp", "pixels": [1536, 864], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/dau-que-xao-thit-heo-3840.webp", "pixels": [3840, 2160], "has_alpha": true}
+      ]
+    },
+    {
+      "id": "BV719",
+      "slug": "cai-lan-xao-nam-dui-ga-chay",
+      "native_file": "output/recipe-images/native/cai-lan-xao-nam-dui-ga-chay.png",
+      "native_pixels": [1536, 1024],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/cai-lan-xao-nam-dui-ga-chay.png",
+      "export_master_pixels": [3840, 2160],
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/cai-lan-xao-nam-dui-ga-chay-480.webp", "pixels": [480, 270], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/cai-lan-xao-nam-dui-ga-chay-960.webp", "pixels": [960, 540], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/cai-lan-xao-nam-dui-ga-chay-1536.webp", "pixels": [1536, 864], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/cai-lan-xao-nam-dui-ga-chay-3840.webp", "pixels": [3840, 2160], "has_alpha": true}
+      ]
+    },
+    {
+      "id": "BV720",
+      "slug": "ga-nuong-muoi-ot",
+      "native_file": "output/recipe-images/native/ga-nuong-muoi-ot.png",
+      "native_pixels": [1536, 1024],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/ga-nuong-muoi-ot.png",
+      "export_master_pixels": [3840, 2160],
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/ga-nuong-muoi-ot-480.webp", "pixels": [480, 270], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/ga-nuong-muoi-ot-960.webp", "pixels": [960, 540], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/ga-nuong-muoi-ot-1536.webp", "pixels": [1536, 864], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/ga-nuong-muoi-ot-3840.webp", "pixels": [3840, 2160], "has_alpha": true}
+      ]
+    },
+    {
+      "id": "BV721",
+      "slug": "canh-bi-do-nau-tom-tuoi",
+      "native_file": "output/recipe-images/native/canh-bi-do-nau-tom-tuoi.png",
+      "native_pixels": [1312, 1199],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/canh-bi-do-nau-tom-tuoi.png",
+      "export_master_pixels": [3840, 2160],
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/canh-bi-do-nau-tom-tuoi-480.webp", "pixels": [480, 270], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/canh-bi-do-nau-tom-tuoi-960.webp", "pixels": [960, 540], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/canh-bi-do-nau-tom-tuoi-1536.webp", "pixels": [1536, 864], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/canh-bi-do-nau-tom-tuoi-3840.webp", "pixels": [3840, 2160], "has_alpha": true}
+      ]
+    }
+  ]
+}

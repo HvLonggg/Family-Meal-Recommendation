@@ -985,17 +985,16 @@
     },
     {
       "id": "BV484",
-      "slug": "cha-ca-la-vong-ha-noi",
-      "name": "Chả cá Lã Vọng Hà Nội",
+      "slug": "ca-nuong-rieng-me",
+      "name": "Cá nướng riềng mẻ",
       "aliases": [
-        "Chả cá Lã Vọng",
-        "Chả cá thì là Hà Nội"
+        "Cá trắm nướng riềng mẻ"
       ],
       "region": [
         "Miền Bắc"
       ],
       "province": [
-        "Hà Nội"
+        "Miền Bắc"
       ],
       "category": "Món mặn",
       "meal_type": [
@@ -1004,290 +1003,267 @@
       ],
       "difficulty": "Trung bình",
       "servings": 4,
-      "serving_basis": "Bốn phần cá ăn cùng bún, rau thơm và lạc rang.",
+      "serving_basis": "Một con cá khoảng 900 g, chia bốn phần; dùng với cơm hoặc bún và rau thơm.",
       "prep_time": 25,
-      "cook_time": 25,
+      "cook_time": 35,
       "passive_time": 60,
-      "description": "Cá lăng ướp riềng, nghệ và mẻ được làm chín hai lượt để ngoài vàng thơm, trong vẫn mềm; khi ăn đảo nóng cùng thì là và hành. Bếp Việt biên tập cách làm tại nhà, linh hoạt dùng lò nướng hoặc nồi chiên trước khi hoàn thiện trên chảo.",
-      "finished_dish": "Miếng cá vàng nghệ, thơm riềng mẻ, được áo thì là và hành nóng; ăn cùng bún, lạc rang và mắm tôm pha.",
-      "serving": "Đặt chảo cá nóng giữa bàn; ăn cùng bún, lạc rang, rau thơm và mắm tôm pha chanh ớt.",
+      "description": "Cá trắm được ướp riềng, sả, nghệ và mẻ chua dịu rồi nướng đến khi da vàng thơm, thịt bên trong còn ẩm. Đây là món nướng quen thuộc ở miền Bắc, dùng cùng rau thơm và nước chấm.",
+      "finished_dish": "Cá nướng vàng thơm mùi riềng sả, thịt chín mềm, có vị chua dịu của mẻ và cay nhẹ tùy cách nêm.",
+      "serving": "Dọn cá nóng với cơm trắng hoặc bún, rau thơm và nước mắm chua ngọt pha tỏi ớt.",
       "tips": [
-        "Nếu dùng nồi chiên hoặc lò, xếp cá một lớp và nướng đến khi vừa chín; không làm khô cá.",
-        "Mẻ có vị chua khác nhau, nên nếm hỗn hợp ướp trước khi thêm chanh hoặc giấm.",
-        "Cho thì là và hành vào chảo cuối cùng để rau vừa mềm, không thâm."
+        "Khứa vài đường nông hai bên thân cá để gia vị thấm đều và cá chín ổn định hơn.",
+        "Ướp cá trong ngăn mát ít nhất một giờ; không để cá sống ở nhiệt độ phòng trong thời gian dài.",
+        "Thời gian nướng thay đổi theo kích thước cá và thiết bị; kiểm tra phần thịt dày nhất đã chín trước khi dùng."
       ],
       "dish_type": [
-        "Món cá áp chảo",
-        "Đặc sản Hà Nội"
+        "Món cá nướng",
+        "Món gia đình miền Bắc"
       ],
       "main_ingredient": [
-        "cá lăng",
-        "thì là",
-        "riềng"
+        "cá trắm",
+        "riềng",
+        "mẻ",
+        "sả"
       ],
       "cooking_method": [
         "ướp",
-        "nướng",
-        "áp chảo"
+        "nướng"
       ],
+      "recipe_family": "ca_nuong_rieng_me",
       "search_terms": [
-        "chả cá Lã Vọng",
-        "chả cá thì là",
-        "món cá Hà Nội"
+        "cá nướng riềng mẻ",
+        "cá trắm nướng",
+        "món cá miền Bắc",
+        "món nướng ăn cơm"
       ],
       "spicy_level": 1,
-      "image_alt": "Chảo chả cá Lã Vọng vàng nghệ với thì là, hành lá, lạc rang và bún tươi.",
+      "image_alt": "Cá trắm nướng riềng mẻ vàng thơm trên đĩa men xanh trắng cùng rau thơm, ảnh món do Bếp Việt tạo.",
       "ingredients": [
         {
-          "name": "Cá lăng phi lê",
-          "quantity": 700,
+          "name": "Cá trắm",
+          "quantity": 900,
           "unit": "g",
           "role": "main",
-          "notes": "Bỏ da hoặc giữ da, cắt miếng dày.",
+          "notes": "Làm sạch, để nguyên con hoặc khứa mặt; chọn cá cỡ 800 g–1 kg.",
           "scaling_rule": "linear",
           "sequence": 1
         },
         {
           "name": "Riềng tươi",
-          "quantity": 35,
+          "quantity": 80,
           "unit": "g",
           "role": "aromatic",
-          "notes": "Giã hoặc xay nhuyễn.",
+          "notes": "Rửa sạch, giã hoặc xay nhỏ.",
           "scaling_rule": "linear",
           "sequence": 2
+        },
+        {
+          "name": "Sả",
+          "quantity": 60,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Mẻ",
+          "quantity": 120,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Lọc mịn trước khi ướp.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Mắm tôm",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Gia giảm theo độ mặn.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 30,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Chia khoảng 15 ml cho phần ướp và 15 ml cho nước chấm.",
+          "scaling_rule": "linear",
+          "sequence": 6
         },
         {
           "name": "Nghệ tươi",
           "quantity": 15,
           "unit": "g",
           "role": "aromatic",
-          "notes": "Giã nhuyễn hoặc dùng bột nghệ.",
-          "scaling_rule": "linear",
-          "sequence": 3
-        },
-        {
-          "name": "Mẻ",
-          "quantity": 45,
-          "unit": "ml",
-          "role": "seasoning",
-          "notes": "Lọc bỏ bã.",
-          "scaling_rule": "linear",
-          "sequence": 4
-        },
-        {
-          "name": "Mắm tôm",
-          "quantity": 20,
-          "unit": "ml",
-          "role": "seasoning",
-          "notes": "Dùng ướp và pha chấm.",
-          "scaling_rule": "linear",
-          "sequence": 5
-        },
-        {
-          "name": "Nước mắm",
-          "quantity": 15,
-          "unit": "ml",
-          "role": "seasoning",
-          "notes": "Điều chỉnh theo độ mặn mắm tôm.",
-          "scaling_rule": "linear",
-          "sequence": 6
-        },
-        {
-          "name": "Đường",
-          "quantity": 8,
-          "unit": "g",
-          "role": "seasoning",
-          "notes": "Cân bằng vị chua.",
+          "notes": "Giã nhỏ; có thể thay bằng khoảng 1 thìa cà phê bột nghệ.",
           "scaling_rule": "linear",
           "sequence": 7
         },
         {
-          "name": "Dầu ăn hoặc mỡ lợn",
-          "quantity": 30,
-          "unit": "ml",
-          "role": "seasoning",
-          "notes": "Chia cho nướng và đảo chảo.",
+          "name": "Hành tím",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
           "scaling_rule": "linear",
           "sequence": 8
         },
         {
-          "name": "Thì là",
-          "quantity": 120,
+          "name": "Tỏi",
+          "quantity": 15,
           "unit": "g",
-          "role": "main",
-          "notes": "Rửa sạch, cắt khúc dài.",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ; chia một phần pha nước chấm.",
           "scaling_rule": "linear",
           "sequence": 9
         },
         {
-          "name": "Hành lá",
-          "quantity": 80,
-          "unit": "g",
-          "role": "main",
-          "notes": "Rửa sạch, cắt khúc.",
+          "name": "Dầu ăn",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "oil",
+          "notes": "Chia một phần để phết cá khi nướng.",
           "scaling_rule": "linear",
           "sequence": 10
         },
         {
-          "name": "Bún tươi",
-          "quantity": 600,
+          "name": "Đường",
+          "quantity": 23,
           "unit": "g",
-          "role": "side",
-          "notes": "Trụng nóng.",
+          "role": "seasoning",
+          "notes": "Chia khoảng 8 g cho phần ướp, phần còn lại pha nước chấm.",
           "scaling_rule": "linear",
           "sequence": 11
         },
         {
-          "name": "Lạc rang",
-          "quantity": 50,
+          "name": "Hạt nêm",
+          "quantity": 5,
           "unit": "g",
-          "role": "garnish",
-          "notes": "Giã dập.",
+          "role": "seasoning",
+          "notes": "Có thể giảm nếu mắm tôm mặn.",
           "scaling_rule": "linear",
           "sequence": 12
         },
         {
-          "name": "Rau thơm",
-          "quantity": 80,
+          "name": "Tiêu xay",
+          "quantity": 2,
           "unit": "g",
-          "role": "side",
-          "notes": "Rửa sạch, để ráo.",
+          "role": "seasoning",
+          "notes": null,
           "scaling_rule": "linear",
           "sequence": 13
-        },
-        {
-          "name": "Chanh",
-          "quantity": 1,
-          "unit": "quả",
-          "role": "seasoning",
-          "notes": "Pha mắm tôm.",
-          "scaling_rule": "linear",
-          "sequence": 14
         },
         {
           "name": "Ớt tươi",
           "quantity": 1,
           "unit": "quả",
           "role": "seasoning",
-          "notes": "Dùng tùy mức cay.",
+          "notes": "Bỏ qua nếu không ăn cay.",
+          "scaling_rule": "linear",
+          "sequence": 14
+        },
+        {
+          "name": "Thì là",
+          "quantity": 40,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, dùng trang trí hoặc ăn kèm.",
           "scaling_rule": "linear",
           "sequence": 15
+        },
+        {
+          "name": "Rau thơm và xà lách",
+          "quantity": 150,
+          "unit": "g",
+          "role": "side",
+          "notes": "Rửa sạch, để ráo; chọn rau sẵn có.",
+          "scaling_rule": "linear",
+          "sequence": 16
+        },
+        {
+          "name": "Bún tươi",
+          "quantity": 400,
+          "unit": "g",
+          "role": "side",
+          "notes": "Ăn kèm tùy chọn; có thể dùng cơm trắng.",
+          "scaling_rule": "linear",
+          "sequence": 17
+        },
+        {
+          "name": "Nước cốt chanh",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "acid",
+          "notes": "Dùng pha nước chấm.",
+          "scaling_rule": "linear",
+          "sequence": 18
+        },
+        {
+          "name": "Gừng tươi",
+          "quantity": 5,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhỏ để pha nước chấm.",
+          "scaling_rule": "linear",
+          "sequence": 19
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 75,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng pha nước chấm.",
+          "scaling_rule": "linear",
+          "sequence": 20
         }
       ],
       "preparation_steps": [
         {
           "step": 1,
-          "instruction": "Thấm khô cá lăng, kiểm tra xương dăm rồi cắt miếng vừa ăn."
+          "instruction": "Làm sạch cá, bỏ mang và ruột, chà nhẹ với muối và chanh rồi rửa lại, thấm thật khô. Khứa vài đường chéo nông ở hai bên thân."
         },
         {
           "step": 2,
-          "instruction": "Trộn riềng, nghệ, mẻ, mắm tôm, nước mắm và đường. Áo đều cá, đậy kín và ướp lạnh 45–60 phút."
+          "instruction": "Giã hoặc xay riềng, sả, nghệ, hành tím và tỏi. Lọc mẻ qua rây để bỏ bã."
         },
         {
           "step": 3,
-          "instruction": "Rửa thì là, hành và rau thơm; cắt khúc. Pha mắm tôm với chanh và ớt để dùng riêng."
+          "instruction": "Trộn riềng, sả, nghệ, mẻ, mắm tôm, nước mắm, đường, hạt nêm, tiêu và một phần dầu. Xoa đều lên cá, kể cả bụng cá; đậy kín, ướp lạnh ít nhất 1 giờ."
+        },
+        {
+          "step": 4,
+          "instruction": "Rửa rau thơm, để ráo. Pha nước chấm theo tỷ lệ 1 phần nước mắm, 1 phần đường, 1 phần nước cốt chanh và 5 phần nước; thêm tỏi, gừng, ớt băm."
         }
       ],
       "cooking_steps": [
         {
           "step": 1,
-          "instruction": "Làm nóng lò 220°C hoặc nồi chiên. Xếp cá một lớp, phết dầu và nướng 8–12 phút, trở một lần, đến khi vừa chín và có cạnh vàng."
+          "instruction": "Làm nóng lò ở khoảng 200°C hoặc chuẩn bị bếp than. Phết dầu mỏng lên vỉ và đặt cá lên."
         },
         {
           "step": 2,
-          "instruction": "Làm nóng chảo với dầu còn lại. Áp chảo nhanh từng mặt nếu cá cần thêm màu."
+          "instruction": "Nướng, trở mặt một lần và phết thêm chút dầu khi cần. Điều chỉnh thời gian theo cỡ cá và thiết bị; kiểm tra phần thịt dày nhất chín tới, không để cá cháy khô."
         },
         {
           "step": 3,
-          "instruction": "Cho thì là và hành vào chảo, đảo 30–60 giây đến khi vừa xẹp. Dọn ngay cùng bún, lạc, rau thơm và mắm tôm pha."
+          "instruction": "Dọn cá khi còn nóng cùng rau thơm, bún hoặc cơm trắng và bát nước chấm."
         }
       ],
-      "time_note": "Giữ lạnh cá trong thời gian ướp; độ chín phụ thuộc độ dày miếng và thiết bị.",
-      "total_time": 110,
+      "time_note": "Ướp cá trong ngăn mát; thời gian nướng là ước tính và thay đổi theo kích thước cá, độ nóng của lò hoặc bếp than.",
+      "total_time": 120,
       "time_unit": "phút",
       "width": 1536,
       "height": 1024,
-      "recipe_family": "cha-ca-la-vong-ha-noi",
-      "keywords": [
-        "Chả cá Lã Vọng Hà Nội",
-        "Miền Bắc",
-        "Hà Nội",
-        "cá lăng",
-        "thì là",
-        "riềng",
-        "chả cá Lã Vọng",
-        "chả cá thì là",
-        "món cá Hà Nội",
-        "Món cá áp chảo",
-        "Đặc sản Hà Nội",
-        "110 phút"
-      ],
-      "tags": {
-        "region": [
-          "Miền Bắc"
-        ],
-        "province": [
-          "Hà Nội"
-        ],
-        "meal_type": [
-          "bữa trưa",
-          "bữa tối"
-        ],
-        "dish_type": [
-          "Món cá áp chảo",
-          "Đặc sản Hà Nội"
-        ],
-        "main_ingredient": [
-          "cá lăng",
-          "thì là",
-          "riềng"
-        ],
-        "cooking_method": [
-          "ướp",
-          "nướng",
-          "áp chảo"
-        ],
-        "difficulty": "Trung bình",
-        "prep_time": 25,
-        "cook_time": 25,
-        "servings": 4,
-        "spicy_level": 1,
-        "suitable_for_family_meal": true,
-        "suggested_pairings": [
-          "Bún tươi",
-          "Lạc rang",
-          "Rau thơm và mắm tôm chanh"
-        ],
-        "keywords": [
-          "Chả cá Lã Vọng Hà Nội",
-          "Miền Bắc",
-          "Hà Nội",
-          "cá lăng",
-          "thì là",
-          "riềng",
-          "chả cá Lã Vọng",
-          "chả cá thì là",
-          "món cá Hà Nội",
-          "Món cá áp chảo",
-          "Đặc sản Hà Nội",
-          "110 phút"
-        ]
-      },
       "sources": [
         {
-          "url": "https://vnexpress.net/doi-song-cooking-cach-lam-cha-ca-la-vong-dung-chuan-ha-noi-4988463.html",
+          "url": "https://vnexpress.net/ca-nuong-rieng-me-mon-ngon-cuoi-tuan-4298483.html",
           "publisher": "VnExpress Cooking",
-          "title": "Cách làm chả cá Lã Vọng đúng chuẩn Hà Nội",
-          "use": "Đối chiếu cá lăng, riềng, nghệ, mẻ, mắm tôm, thao tác hai lượt và cách hoàn thiện với thì là, hành; công thức Bếp Việt dùng thiết bị gia đình.",
-          "accessed_at": "2026-10-23",
-          "type": "editorial_reference"
-        },
-        {
-          "url": "https://vnexpress.net/nhung-mon-an-nghe-ten-la-nho-ha-noi-4800990.html",
-          "publisher": "VnExpress Du lịch",
-          "title": "Những món ăn 'nghe tên là nhớ Hà Nội'",
-          "use": "Đối chiếu cách phục vụ chả cá cùng bún, mắm tôm và lạc rang.",
-          "accessed_at": "2026-10-23",
+          "title": "Hướng dẫn cách làm cá nướng riềng mẻ đơn giản, nhanh chóng",
+          "accessed_at": "2026-10-24",
+          "use": "Đối chiếu cá nguyên con cỡ 800 g–1 kg, riềng, sả, mẻ, mắm tôm, cách ướp lạnh và nướng; công thức và câu chữ do Bếp Việt biên tập.",
           "type": "editorial_reference"
         }
       ],
@@ -1297,61 +1273,134 @@
           {
             "servings": 2,
             "main_factor": 0.5,
-            "seasoning_start_factor": 0.5,
-            "example": "Chả cá Lã Vọng Hà Nội cho 2 người",
-            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+            "seasoning_start_factor": 0.65,
+            "example": "Cá nướng riềng mẻ cho 2 người",
+            "instruction": "Điều chỉnh nguyên liệu chính theo số phần; nêm gia vị từng lượt rồi nếm lại."
           },
           {
             "servings": 6,
             "main_factor": 1.5,
-            "seasoning_start_factor": 1.5,
-            "example": "Chả cá Lã Vọng Hà Nội cho 6 người",
-            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+            "seasoning_start_factor": 1.4,
+            "example": "Cá nướng riềng mẻ cho 6 người",
+            "instruction": "Điều chỉnh nguyên liệu chính theo số phần; nêm gia vị từng lượt rồi nếm lại."
           },
           {
             "servings": 8,
-            "main_factor": 2.0,
-            "seasoning_start_factor": 2.0,
-            "example": "Chả cá Lã Vọng Hà Nội cho 8 người",
-            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+            "main_factor": 2,
+            "seasoning_start_factor": 1.7,
+            "example": "Cá nướng riềng mẻ cho 8 người",
+            "instruction": "Điều chỉnh nguyên liệu chính theo số phần; nêm gia vị từng lượt rồi nếm lại."
           }
+        ],
+        "rules": [
+          "Định lượng là bản biên tập tham khảo cho gia đình; nếm và điều chỉnh theo nguyên liệu thực tế.",
+          "Gia vị mặn, ngọt, chua, cay tăng từ từ; không nhân máy móc theo số phần.",
+          "Thời gian phụ thuộc kích thước nguyên liệu và thiết bị; kiểm tra độ chín trước khi dọn."
         ]
       },
+      "suggested_pairings": [
+        "Cơm trắng hoặc bún tươi",
+        "Rau thơm",
+        "Nước mắm chua ngọt"
+      ],
       "media": [
         {
-          "image_url": "/images/recipes/edited/cha-ca-la-vong-ha-noi-960.webp",
-          "page_url": "https://vnexpress.net/doi-song-cooking-cach-lam-cha-ca-la-vong-dung-chuan-ha-noi-4988463.html",
+          "image_url": "/images/recipes/edited/ca-nuong-rieng-me-960.webp",
+          "page_url": "https://vnexpress.net/ca-nuong-rieng-me-mon-ngon-cuoi-tuan-4298483.html",
           "source": "Bếp Việt",
           "author": "Bếp Việt",
           "license": null,
           "rights_status": "project",
-          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu món ăn.",
+          "rights_note": "Ảnh món ăn được tạo mới dành riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để xác minh món và kỹ thuật chế biến.",
           "width": 1536,
           "height": 1024,
           "orientation": "landscape",
           "preferred_width_met": true,
-          "alt_text": "Chảo chả cá Lã Vọng vàng nghệ với thì là, hành lá, lạc rang và bún tươi.",
+          "alt_text": "Cá trắm nướng riềng mẻ nguyên con trên đĩa men xanh trắng cùng rau thơm, ảnh món do Bếp Việt tạo.",
           "verified_dish_match": true,
-          "visual_review_date": "2026-10-23",
-          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo; công thức biên tập, chưa nấu thử."
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh minh họa do Bếp Việt tạo mới; công thức đã được biên tập nhưng chưa nấu thử."
         }
       ],
       "editorial": {
         "status": "editorial_draft",
         "production_ready": false,
         "test_cook_status": "not_tested",
-        "variant_note": "Bếp Việt biên tập cách dùng lò/nồi chiên tại nhà; công thức chưa được nấu thử và không thay thế quy trình riêng của từng quán.",
+        "variant_note": "Bếp Việt biên tập công thức tại nhà từ các nguồn đã dẫn; định lượng và thời gian cần được nấu thử trước khi xem là bản chuẩn.",
         "seed_recipe": null,
-        "reviewed_at": "2026-10-23",
+        "reviewed_at": "2026-10-24",
         "needs": [
-          "Nấu thử để xác nhận thời gian với lò và nồi chiên phổ biến.",
-          "Rà soát an toàn sơ chế cá sống và bảo quản mắm tôm."
+          "Nấu thử để xác nhận định lượng gia vị và thời gian nướng theo thiết bị gia đình.",
+          "Rà soát an toàn khi sơ chế cá sống, bảo quản cá ướp và kiểm tra độ chín."
         ]
       },
-      "suggested_pairings": [
-        "Bún tươi",
-        "Lạc rang",
-        "Rau thơm và mắm tôm chanh"
+      "tags": {
+        "region": [
+          "Miền Bắc"
+        ],
+        "province": [
+          "Miền Bắc"
+        ],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Món cá nướng",
+          "Món gia đình miền Bắc"
+        ],
+        "main_ingredient": [
+          "cá trắm",
+          "riềng",
+          "mẻ",
+          "sả"
+        ],
+        "cooking_method": [
+          "ướp",
+          "nướng"
+        ],
+        "difficulty": "Trung bình",
+        "prep_time": 25,
+        "cook_time": 35,
+        "servings": 4,
+        "spicy_level": 1,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Cơm trắng hoặc bún tươi",
+          "Rau thơm",
+          "Nước mắm chua ngọt"
+        ],
+        "keywords": [
+          "Cá nướng riềng mẻ",
+          "Cá trắm nướng riềng mẻ",
+          "cá nướng riềng mẻ",
+          "cá trắm nướng",
+          "món cá miền Bắc",
+          "món nướng ăn cơm",
+          "cá trắm",
+          "riềng",
+          "mẻ",
+          "sả",
+          "Món cá nướng",
+          "Món gia đình miền Bắc",
+          "120 phút"
+        ],
+        "recipe_family": "ca_nuong_rieng_me"
+      },
+      "keywords": [
+        "Cá nướng riềng mẻ",
+        "Cá trắm nướng riềng mẻ",
+        "cá nướng riềng mẻ",
+        "cá trắm nướng",
+        "món cá miền Bắc",
+        "món nướng ăn cơm",
+        "cá trắm",
+        "riềng",
+        "mẻ",
+        "sả",
+        "Món cá nướng",
+        "Món gia đình miền Bắc",
+        "120 phút"
       ]
     },
     {

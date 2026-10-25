@@ -39,7 +39,9 @@ describe('RegisterPage', () => {
     fireEvent.change(screen.getByLabelText('Địa chỉ email'), {
       target: { value: 'lan@example.com' },
     });
-    fireEvent.change(screen.getByLabelText('Mật khẩu'), { target: { value: 'Test-Only-No-Login-2026!' } });
+    fireEvent.change(screen.getByLabelText('Mật khẩu'), {
+      target: { value: 'Test-Only-No-Login-2026!' },
+    });
     fireEvent.change(screen.getByLabelText('Nhập lại mật khẩu'), {
       target: { value: 'Test-Only-No-Login-2026!' },
     });

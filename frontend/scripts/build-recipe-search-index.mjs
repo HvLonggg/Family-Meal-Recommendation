@@ -14,6 +14,9 @@ const [snapshotText, dictionaryText] = await Promise.all([
 ]);
 const snapshot = JSON.parse(snapshotText);
 const dictionary = JSON.parse(dictionaryText);
+if (!Array.isArray(snapshot.data) || snapshot.data.length !== snapshot.total) {
+  throw new Error('Recipe search index requires a complete static catalog snapshot.');
+}
 
 function stringsIn(value) {
   if (typeof value === 'string') return [value];
@@ -38,7 +41,9 @@ const index = {};
 for (const recipe of snapshot.data) {
   const content = recipe.content ?? {};
   const ingredientItems = recipeIngredients(recipe);
-  const names = [...new Set([recipe.name, ...(content.aliases ?? [])].map(translate).filter(Boolean))];
+  const names = [
+    ...new Set([recipe.name, ...(content.aliases ?? [])].map(translate).filter(Boolean)),
+  ];
   const sourceFields = [
     recipe.excerpt,
     recipe.region,
@@ -64,11 +69,15 @@ for (const recipe of snapshot.data) {
     content.tags,
     ingredientItems.map((item) => [item.group_name, item.name, item.unit]),
   ];
-  const ingredientTerms = [...new Set(
-    ingredientItems.map((item) => translate(item.name)).filter(Boolean),
-  )];
+  const ingredientTerms = [
+    ...new Set(ingredientItems.map((item) => translate(item.name)).filter(Boolean)),
+  ];
   const fields = [...new Set(stringsIn(sourceFields).map(translate).filter(Boolean))];
   index[recipe.slug] = { names, ingredients: ingredientTerms, fields };
+}
+
+if (Object.keys(index).length !== snapshot.total) {
+  throw new Error('Recipe search index is missing one or more catalog recipes.');
 }
 
 const output = `${JSON.stringify(index)}\n`;

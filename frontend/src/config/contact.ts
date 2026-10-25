@@ -20,7 +20,7 @@ export const contactInfo = {
     import.meta.env.VITE_CONTACT_ADDRESS?.trim() ||
     DEFAULT_MAP_QUERY,
   workingHours: 'Thứ Hai – Thứ Sáu, 08:30 – 17:30 (GMT+7)',
-  responseTime: 'Phản hồi trong 1–2 ngày làm việc',
+  responseTime: 'Phản hồi trong vòng 24 giờ làm việc',
 };
 
 export function phoneHref(phone: string) {

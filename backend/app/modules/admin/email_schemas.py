@@ -7,6 +7,24 @@ from pydantic import BaseModel, ConfigDict, EmailStr, Field, field_validator, mo
 MealType = Literal["breakfast", "lunch", "dinner"]
 MealEmailStatus = Literal["sending", "sent", "failed"]
 RecipientSource = Literal["user", "support", "new"]
+EmailProvider = Literal["smtp", "gmail_api"]
+EmailDeliveryReason = Literal[
+    "ready",
+    "smtp_unconfigured",
+    "smtp_authorization",
+    "smtp_unreachable",
+    "gmail_api_unconfigured",
+    "gmail_api_authorization",
+    "gmail_api_unreachable",
+    "gmail_api_rate_limited",
+    "gmail_api_temporarily_unavailable",
+]
+
+
+class MealSuggestionDeliveryStatus(BaseModel):
+    ready: bool
+    provider: EmailProvider
+    reason_code: EmailDeliveryReason
 
 
 class MealSuggestionSendRequest(BaseModel):

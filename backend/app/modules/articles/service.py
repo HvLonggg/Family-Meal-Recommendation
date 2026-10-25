@@ -195,7 +195,7 @@ def update_article(
     _apply_cover(article, payload.cover_image, remove=payload.remove_cover)
 
     if is_admin and article.author_id != user.id:
-# Giữ trạng thái hiện tại khi biên tập, trừ khi yêu cầu xuất bản.
+        # Giữ trạng thái hiện tại khi biên tập, trừ khi yêu cầu xuất bản.
         if payload.submit and article.status != "published":
             article.status = "published"
     else:

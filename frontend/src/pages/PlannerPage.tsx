@@ -646,7 +646,9 @@ export function PlannerPage() {
                                                         name: recipeText(item.recipe.name),
                                                       })
                                                 }
-                                                aria-pressed={item.completion_status === 'completed'}
+                                                aria-pressed={
+                                                  item.completion_status === 'completed'
+                                                }
                                                 className="planner-dish__cooked"
                                                 disabled={cookedMutation.isPending}
                                                 onClick={() => cookedMutation.mutate(item)}

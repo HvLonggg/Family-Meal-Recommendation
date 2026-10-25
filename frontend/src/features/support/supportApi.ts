@@ -31,6 +31,16 @@ export interface SupportTicketReceipt {
   id: string;
   reference: string;
   message: string;
+  support_email: string;
+}
+
+export interface SupportContactSettings {
+  support_email: string;
+  response_sla_business_hours: number;
+}
+
+export function getSupportContactInfo(signal?: AbortSignal) {
+  return apiRequest<SupportContactSettings>('/support/contact-info', { signal });
 }
 
 export interface SupportTicket {
@@ -41,7 +51,10 @@ export interface SupportTicket {
   subject: string;
   message: string;
   status: SupportStatus;
-  admin_note: string | null;
+  reply_status: 'not_sent' | 'sending' | 'sent' | 'failed';
+  reply_subject: string | null;
+  reply_message: string | null;
+  reply_sent_at: string | null;
   created_at: string;
   updated_at: string;
 }

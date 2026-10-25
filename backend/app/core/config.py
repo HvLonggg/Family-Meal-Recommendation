@@ -30,8 +30,8 @@ class Settings(BaseSettings):
     email_otp_expire_minutes: int = Field(default=5, ge=2, le=15)
     session_expire_hours: int = Field(default=12, ge=1, le=72)
     oauth_state_expire_minutes: int = Field(default=10, ge=5, le=20)
-    # "gmail_api" sends through Gmail's HTTPS API for hosts that block outbound SMTP ports.
-    email_provider: Literal["smtp", "gmail_api"] = "smtp"
+    # Auto prefers a configured Gmail API account; otherwise it uses configured SMTP.
+    email_provider: Literal["auto", "smtp", "gmail_api"] = "auto"
     email_smtp_host: str | None = "smtp.gmail.com"
     email_smtp_port: int = Field(default=587, ge=1, le=65535)
     email_smtp_username: str | None = "hvlongg@gmail.com"
@@ -100,7 +100,8 @@ class Settings(BaseSettings):
             raise ValueError("Production phải cấu hình SMTP hoặc Gmail API để gửi OTP email.")
         if (
             self.app_env == "production"
-            and self.email_provider == "smtp"
+            and self.email_delivery_provider == "smtp"
+            and self.email_enabled
             and not (self.email_use_ssl or self.email_starttls)
         ):
             raise ValueError("Production phải mã hóa kết nối SMTP bằng SSL hoặc STARTTLS.")
@@ -117,15 +118,25 @@ class Settings(BaseSettings):
 
     @property
     def email_enabled(self) -> bool:
+        if self.email_provider == "auto":
+            return self.gmail_api_configured or self.smtp_configured
         if self.email_provider == "gmail_api":
-            return bool(
-                self.email_gmail_client_id
-                and self.email_gmail_client_secret
-                and self.email_gmail_client_secret.get_secret_value()
-                and self.email_gmail_refresh_token
-                and self.email_gmail_refresh_token.get_secret_value()
-                and self.email_from_address
-            )
+            return self.gmail_api_configured
+        return self.smtp_configured
+
+    @property
+    def gmail_api_configured(self) -> bool:
+        return bool(
+            self.email_gmail_client_id
+            and self.email_gmail_client_secret
+            and self.email_gmail_client_secret.get_secret_value()
+            and self.email_gmail_refresh_token
+            and self.email_gmail_refresh_token.get_secret_value()
+            and self.email_from_address
+        )
+
+    @property
+    def smtp_configured(self) -> bool:
         password = self.email_smtp_password.get_secret_value() if self.email_smtp_password else ""
         return bool(
             self.email_smtp_host
@@ -133,6 +144,14 @@ class Settings(BaseSettings):
             and password
             and self.email_from_address
         )
+
+    @property
+    def email_delivery_provider(self) -> Literal["smtp", "gmail_api"]:
+        if self.email_provider != "auto":
+            return self.email_provider
+        if self.gmail_api_configured:
+            return "gmail_api"
+        return "smtp"
 
 
 @lru_cache

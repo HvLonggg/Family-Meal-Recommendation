@@ -6,6 +6,7 @@ import { formatMinutes, recipeMinutes, type Recipe } from '@/data/recipes';
 import { useAuth } from '@/features/auth/AuthContext';
 import { favoriteRecipesQueryKey, type FavoriteRecipe } from '@/features/favorites/favoritesApi';
 import { apiPost, apiRequest } from '@/lib/api/client';
+import { fitDishCutout } from '@/lib/fitDishCutout';
 import { useI18n } from '@/features/i18n/I18nContext';
 
 export function RecipeCard({ recipe, eager = false }: { recipe: Recipe; eager?: boolean }) {
@@ -44,6 +45,7 @@ export function RecipeCard({ recipe, eager = false }: { recipe: Recipe; eager?: 
           <img
             alt={recipe.imageAlt}
             decoding="async"
+            onLoad={(event) => fitDishCutout(event.currentTarget)}
             loading={eager ? 'eager' : 'lazy'}
             sizes="(min-width: 1320px) 390px, (min-width: 960px) 30vw, (min-width: 680px) 45vw, 90vw"
             src={recipe.image}

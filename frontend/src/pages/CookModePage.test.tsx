@@ -277,7 +277,7 @@ describe('CookModePage', () => {
     });
     await userSays('tối qua đội nào thắng vậy');
     await waitFor(() => expect(lastSpeech()).toContain('nồi canh đang chờ'));
-    expect(screen.getByText('Chú Rồng chưa hiểu lắm')).toBeInTheDocument();
+    await waitFor(() => expect(screen.getByText('Chú Rồng chưa hiểu lắm')).toBeInTheDocument());
 
     // Gõ chữ thay cho micro; AI tắt (handled=false) thì dùng bộ lệnh trên máy.
     api.askCompanion.mockResolvedValueOnce({ ...companion('', 'none'), handled: false });

@@ -1,189 +1,189 @@
 {
   "batch": 61,
-  "description": "N?m m?n gia c?m v? m?n canh ???c bi?n t?p t? ngu?n b?o ch?, du l?ch v? c?ng th?c gia ??nh Vi?t; kh?u ph?n chu?n h?a b?n ng??i, ch?a n?u th?.",
+  "description": "Năm món gia cầm và món nước được biên tập từ nguồn báo chí, du lịch và công thức gia đình Việt; khẩu phần chuẩn hóa cho bốn người, công thức chưa nấu thử.",
   "recipes": [
     {
       "id": "BV631",
       "slug": "chao-vit-thanh-da",
-      "name": "Ch?o v?t Thanh ?a",
+      "name": "Cháo vịt Thanh Đa",
       "aliases": [
-        "Ch?o v?t ki?u Thanh ?a",
-        "V?t lu?c ?n ch?o"
+        "Cháo vịt kiểu Thanh Đa",
+        "Vịt luộc ăn cháo"
       ],
       "region": [
         "Nam"
       ],
       "province": [
-        "Th?nh ph? H? Ch? Minh"
+        "Thành phố Hồ Chí Minh"
       ],
-      "category": "M?n n??c",
+      "category": "Món nước",
       "meal_type": [
-        "b?a tr?a",
-        "b?a t?i",
-        "m?n ch?nh"
+        "bữa trưa",
+        "bữa tối",
+        "món chính"
       ],
-      "difficulty": "Trung b?nh",
+      "difficulty": "Trung bình",
       "servings": 4,
-      "serving_basis": "M?t m?n d?ng chung trong m?m c?m ho?c b?a ?n gia ??nh b?n ng??i.",
+      "serving_basis": "Một món dùng chung trong mâm cơm hoặc bữa ăn gia đình bốn người.",
       "prep_time": 25,
       "cook_time": 60,
       "passive_time": 0,
       "total_time": 85,
-      "description": "V?t lu?c ch?n t?i ???c d?ng v?i ch?o g?o n?u t? n??c lu?c, ?n k?m g?ng, h?nh v? rau th?m. T?n Thanh ?a g?n v?i c?m qu?n ch?o v?t l?u n?m ? Th?nh ph? H? Ch? Minh; B?p Vi?t bi?n t?p kh?u ph?n gia ??nh t? c?ch n?u v?t v? ch?o ph? bi?n, kh?ng nh?n ??y l? c?ng th?c ??c quy?n c?a m?t qu?n.",
-      "finished_dish": "H?t g?o n? m?m nh?ng kh?ng qu? ??c, n??c ch?o th?m g?ng; th?t v?t m?m, da nguy?n mi?ng v? ch?n n??c m?m g?ng c? v? m?n cay d?u.",
-      "serving": "M?c ch?o n?ng v?o t?, r?c h?nh l?, rau m?i v? ti?u. Ch?t v?t th?nh mi?ng, d?ng ri?ng v?i rau s?ng v? n??c m?m g?ng pha lo?ng.",
+      "description": "Vịt luộc chín tới được dùng với cháo gạo nấu từ nước luộc, ăn kèm gừng, hành và rau thơm. Tên Thanh Đa gắn với các quán cháo vịt lâu năm ở Thành phố Hồ Chí Minh; Bếp Việt biên tập khẩu phần gia đình từ cách nấu vịt và cháo phổ biến, không nhận đây là công thức độc quyền của một quán.",
+      "finished_dish": "Hạt gạo nở mềm nhưng không quá đặc, nước cháo thơm gừng; thịt vịt mềm, da nguyên miếng và chén nước mắm gừng có vị mặn cay dịu.",
+      "serving": "Múc cháo nóng vào tô, rắc hành lá, rau mùi và tiêu. Chặt vịt thành miếng, dùng riêng với rau sống và nước mắm gừng pha loãng.",
       "tips": [
-        "L?m s?ch v?t v?i mu?i v? g?ng; tr?ng l?i, ?? r?o.",
-        "Gi? l?a liu riu v? h?t b?t ?? n??c lu?c trong, kh?ng l?m v?t kh?.",
-        "Ch? rang g?o ??n khi th?m, kh?ng rang s?m m?u."
+        "Làm sạch vịt với muối và gừng, tráng lại rồi để ráo.",
+        "Giữ lửa liu riu và hớt bọt để nước luộc trong, không làm vịt khô.",
+        "Chỉ rang gạo đến khi thơm, không rang sẫm màu."
       ],
       "dish_type": [
-        "Ch?o v?t",
-        "M?n v?t",
-        "M?n n??c"
+        "Cháo vịt",
+        "Món vịt",
+        "Món nước"
       ],
       "main_ingredient": [
-        "V?t",
-        "G?o"
+        "Vịt",
+        "Gạo"
       ],
       "cooking_method": [
-        "Lu?c",
-        "N?u ch?o"
+        "Luộc",
+        "Nấu cháo"
       ],
       "search_terms": [
-        "ch?o v?t Thanh ?a",
-        "ch?o v?t S?i G?n",
-        "ch?o v?t g?o rang",
-        "c?ch n?u ch?o v?t",
+        "cháo vịt Thanh Đa",
+        "cháo vịt Sài Gòn",
+        "cháo vịt gạo rang",
+        "cách nấu cháo vịt",
         "duck porridge Thanh Da"
       ],
       "spicy_level": 1,
-      "image_alt": "T? ch?o v?t n?ng v?i h?t g?o n? m?m, th?t v?t ch?t mi?ng, h?nh l? v? g?ng; b?n c?nh l? ch?n n??c m?m g?ng.",
-      "time_note": "Kho?ng 85 ph?t, g?m 0 ph?t ch?; th?i gian th?c t? t?y k?ch c? nguy?n li?u v? thi?t b?.",
+      "image_alt": "Tô cháo vịt nóng với hạt gạo nở mềm, thịt vịt chặt miếng, hành lá và gừng; bên cạnh là chén nước mắm gừng.",
+      "time_note": "Khoảng 85 phút; thời gian thực tế tùy kích cỡ vịt và loại gạo.",
       "suggested_pairings": [
-        "G?i b?p chu?i",
-        "Rau th?m",
-        "N??c m?m g?ng"
+        "Gỏi bắp chuối",
+        "Rau thơm",
+        "Nước mắm gừng"
       ],
       "recipe_family": "duck_porridge_thanh_da_style",
       "keywords": [
-        "ch?o v?t",
-        "Thanh ?a",
-        "v?t",
-        "g?o"
+        "cháo vịt",
+        "Thanh Đa",
+        "vịt",
+        "gạo"
       ],
       "tags": [
-        "Th?nh ph? H? Ch? Minh",
-        "mi?n Nam",
-        "ch?o",
-        "th?t tr?ng"
+        "Thành phố Hồ Chí Minh",
+        "miền Nam",
+        "cháo",
+        "thịt trắng"
       ],
       "ingredients": [
         {
-          "name": "V?t l?m s?ch",
+          "name": "Vịt làm sạch",
           "quantity": 1200,
           "unit": "g",
           "role": "protein",
-          "notes": "Ch?n v?t ?? l?m s?ch, c?n t??i.",
+          "notes": "Chọn vịt đã làm sạch, còn tươi.",
           "scaling_rule": "linear",
           "sequence": 1
         },
         {
-          "name": "G?o t?",
+          "name": "Gạo tẻ",
           "quantity": 180,
           "unit": "g",
           "role": "grain",
-          "notes": "Vo nhanh, ?? r?o.",
+          "notes": "Vo nhanh, để ráo.",
           "scaling_rule": "linear",
           "sequence": 2
         },
         {
-          "name": "G?o n?p",
+          "name": "Gạo nếp",
           "quantity": 40,
           "unit": "g",
           "role": "grain",
-          "notes": "Vo c?ng g?o t? ?? ch?o s?nh nh?.",
+          "notes": "Vo cùng gạo tẻ để cháo sánh nhẹ.",
           "scaling_rule": "linear",
           "sequence": 3
         },
         {
-          "name": "G?ng",
+          "name": "Gừng",
           "quantity": 55,
           "unit": "g",
           "role": "aromatic",
-          "notes": "M?t n?a ??p d?p lu?c v?t, ph?n c?n l?i th?i s?i pha n??c ch?m.",
+          "notes": "Một nửa đập dập luộc vịt, phần còn lại thái sợi pha nước chấm.",
           "scaling_rule": "linear",
           "sequence": 4
         },
         {
-          "name": "H?nh t?m",
+          "name": "Hành tím",
           "quantity": 25,
           "unit": "g",
           "role": "aromatic",
-          "notes": "N??ng s? ho?c ??p d?p.",
+          "notes": "Nướng sơ hoặc đập dập.",
           "scaling_rule": "linear",
           "sequence": 5
         },
         {
-          "name": "H?nh l?",
+          "name": "Hành lá",
           "quantity": 25,
           "unit": "g",
           "role": "herb",
-          "notes": "R?a s?ch, th?i nh?.",
+          "notes": "Rửa sạch, thái nhỏ.",
           "scaling_rule": "linear",
           "sequence": 6
         },
         {
-          "name": "Rau m?i",
+          "name": "Rau mùi",
           "quantity": 15,
           "unit": "g",
           "role": "herb",
-          "notes": "R?a s?ch, th?i nh?.",
+          "notes": "Rửa sạch, thái nhỏ.",
           "scaling_rule": "linear",
           "sequence": 7
         },
         {
-          "name": "Mu?i",
+          "name": "Muối",
           "quantity": 8,
           "unit": "g",
           "role": "seasoning",
-          "notes": "Chia cho n??c lu?c v? ch?o.",
+          "notes": "Chia cho nước luộc và cháo.",
           "scaling_rule": "taste_adjusted",
           "sequence": 8
         },
         {
-          "name": "N??c m?m",
+          "name": "Nước mắm",
           "quantity": 25,
           "unit": "ml",
           "role": "seasoning",
-          "notes": "D?ng n?m ch?o v? pha n??c ch?m.",
+          "notes": "Dùng nêm cháo và pha nước chấm.",
           "scaling_rule": "taste_adjusted",
           "sequence": 9
         },
         {
-          "name": "???ng",
+          "name": "Đường",
           "quantity": 8,
           "unit": "g",
           "role": "seasoning",
-          "notes": "Pha ch?n n??c m?m g?ng.",
+          "notes": "Pha chén nước mắm gừng.",
           "scaling_rule": "taste_adjusted",
           "sequence": 10
         },
         {
-          "name": "?t t??i",
+          "name": "Ớt tươi",
           "quantity": 5,
           "unit": "g",
           "role": "seasoning",
-          "notes": "Th?i l?t, t?y ch?n.",
+          "notes": "Thái lát, tùy chọn.",
           "scaling_rule": "taste_adjusted",
           "sequence": 11
         },
         {
-          "name": "N??c l?c",
+          "name": "Nước lọc",
           "quantity": 2400,
           "unit": "ml",
           "role": "liquid",
-          "notes": "D?ng lu?c v?t v? n?u ch?o.",
+          "notes": "Dùng luộc vịt và nấu cháo.",
           "scaling_rule": "linear",
           "sequence": 12
         }
@@ -191,41 +191,41 @@
       "preparation_steps": [
         {
           "step": 1,
-          "instruction": "X?t v?t v?i mu?i v? g?ng ??p d?p, r?a s?ch, ?? r?o. Vo g?o t? v? n?p; ?? ri?ng."
+          "instruction": "Xát vịt với muối và gừng đập dập, rửa sạch, để ráo. Vo gạo tẻ và nếp; để riêng."
         },
         {
           "step": 2,
-          "instruction": "N??ng s? h?nh t?m. Th?i g?ng c?n l?i th?nh s?i; chu?n b? h?nh l?, rau m?i v? ?t."
+          "instruction": "Nướng sơ hành tím. Thái gừng còn lại thành sợi; chuẩn bị hành lá, rau mùi và ớt."
         }
       ],
       "cooking_steps": [
         {
           "step": 1,
-          "instruction": "Cho v?t v?o n?i v?i kho?ng 2 l?t n??c, h?nh t?m, g?ng ??p d?p v? m?t ph?n mu?i. ?un s?i, h?t b?t, h? l?a v? lu?c liu riu 35?45 ph?t ??n khi ph?n ??i ch?n; v?t v?t ra, gi? n??c lu?c."
+          "instruction": "Cho vịt vào nồi với khoảng 2 lít nước, hành tím, gừng đập dập và một phần muối. Đun sôi, hớt bọt, hạ lửa và luộc liu riu 35–45 phút đến khi phần đùi chín; vớt vịt ra, giữ nước luộc."
         },
         {
           "step": 2,
-          "instruction": "Rang g?o tr?n ch?o kh? 3?4 ph?t ??n khi th?m. Cho g?o v?o n??c lu?c ?? l?c, th?m n??c n?ng n?u c?n; n?u nh? l?a 25?30 ph?t, khu?y th?nh tho?ng ??n khi h?t g?o n? m?m."
+          "instruction": "Rang gạo trên chảo khô 3–4 phút đến khi thơm. Cho gạo vào nước luộc đã lọc, thêm nước nóng nếu cần; nấu nhỏ lửa 25–30 phút, thỉnh thoảng khuấy đến khi hạt gạo nở mềm."
         },
         {
           "step": 3,
-          "instruction": "N?m ch?o b?ng n??c m?m v? mu?i. Pha n??c m?m v?i g?ng s?i, ???ng, ?t v? ?t n??c ?m. Ch?t v?t, r?c h?nh l?, rau m?i, ti?u v? d?ng n?ng."
+          "instruction": "Nêm cháo bằng nước mắm và muối. Pha nước mắm với gừng sợi, đường, ớt và ít nước ấm. Chặt vịt, rắc hành lá, rau mùi và tiêu lên cháo, dùng nóng."
         }
       ],
       "sources": [
         {
           "url": "https://vietnamnews.vn/sunday/restaurant-review/298912/chao-vit-thanh-da-hot-and-happening-duck.html",
           "publisher": "Vietnam News",
-          "title": "Ch?o V?t Thanh ?a: hot and happening duck",
-          "use": "Ghi nh?n t?n g?i Thanh ?a g?n v?i c?c qu?n ch?o v?t t?i Th?nh ph? H? Ch? Minh; d?ng l?m tham chi?u v? b?i c?nh m?n, kh?ng d?ng l?m c?ng th?c ??nh l??ng.",
+          "title": "Chao Vit Thanh Da: hot and happening duck",
+          "use": "Ghi nhận tên gọi Thanh Đa gắn với các quán cháo vịt tại Thành phố Hồ Chí Minh; dùng làm tham chiếu bối cảnh món, không dùng làm công thức định lượng.",
           "accessed_at": "2026-10-24",
           "type": "editorial_reference"
         },
         {
           "url": "https://www.youtube.com/watch?v=yLry2A-b6S8",
-          "publisher": "V?nh Khuy?n L?",
-          "title": "Ch?o v?t Thanh ?a / c?ch n?u ch?o v?t",
-          "use": "Tham kh?o s? ch? v? lu?c v?t, d?ng n??c lu?c n?u ch?o v? c?ch ?n c?ng n??c m?m g?ng; B?p Vi?t t? chu?n h?a ??nh l??ng b?n ph?n.",
+          "publisher": "Vĩnh Khuyên Lê",
+          "title": "Cháo vịt Thanh Đa / cách nấu cháo vịt",
+          "use": "Tham khảo sơ chế và luộc vịt, dùng nước luộc nấu cháo và cách ăn cùng nước mắm gừng; Bếp Việt tự chuẩn hóa định lượng bốn phần.",
           "accessed_at": "2026-10-24",
           "type": "editorial_reference"
         }
@@ -238,15 +238,15 @@
             "servings": 2,
             "main_factor": 0.5,
             "seasoning_start_factor": 0.45,
-            "example": "D?ng m?t n?a nguy?n li?u ch?nh, n?m gia v? t? ?t h?n m?t n?a r?i ?i?u ch?nh.",
-            "instruction": "Gi? nguy?n nguy?n t?c l?m ch?n k? gia c?m v? n?m l?i ? cu?i."
+            "example": "Dùng một nửa nguyên liệu chính, nêm gia vị từ ít hơn một nửa rồi điều chỉnh.",
+            "instruction": "Giữ nguyên nguyên tắc làm chín kỹ gia cầm và nêm lại ở cuối."
           },
           {
             "servings": 6,
             "main_factor": 1.5,
             "seasoning_start_factor": 1.2,
-            "example": "T?ng nguy?n li?u ch?nh kho?ng m?t l?n r??i, gia v? t?ng t? t?.",
-            "instruction": "D?ng n?i ?? r?ng; kh?ng nh?n gia v? m?n theo t? l? c?ng."
+            "example": "Tăng nguyên liệu chính khoảng một lần rưỡi, gia vị tăng từ từ.",
+            "instruction": "Dùng nồi đủ rộng; không nhân gia vị mặn theo tỷ lệ cứng."
           }
         ]
       },
@@ -254,202 +254,201 @@
         {
           "image_url": "/images/recipes/edited/chao-vit-thanh-da-960.webp",
           "page_url": null,
-          "source": "B?p Vi?t",
-          "author": "B?p Vi?t",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
           "license": null,
           "rights_status": "project",
-          "rights_note": "?nh ???c t?o m?i cho B?p Vi?t; ngu?n tham kh?o ch? d?ng ?? bi?n t?p danh t?nh m?n, nguy?n li?u v? k? thu?t.",
+          "rights_note": "Ảnh được tạo mới cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập danh tính món, nguyên liệu và kỹ thuật.",
           "width": 3840,
           "height": 2160,
           "orientation": "landscape",
           "preferred_width_met": true,
-          "alt_text": "T? ch?o v?t n?ng v?i h?t g?o n? m?m, th?t v?t ch?t mi?ng, h?nh l? v? g?ng; b?n c?nh l? ch?n n??c m?m g?ng.",
+          "alt_text": "Tô cháo vịt nóng với hạt gạo nở mềm, thịt vịt chặt miếng, hành lá và gừng; bên cạnh là chén nước mắm gừng.",
           "verified_dish_match": true,
           "visual_review_date": "2026-10-24",
-          "photo_variant_note": "?nh ImageGen m?i; master PNG alpha l?u t?i output/recipe-images/native. C?c WebP 480/960/1536/3840 ???c xu?t tr?n canvas 3840?2160; k?ch th??c master s? ???c ghi ri?ng trong assets_61.json."
+          "photo_variant_note": "Ảnh minh họa mới; master PNG alpha lưu tại output/recipe-images/native. Các WebP 480/960/1536/3840 được xuất trên canvas 3840 × 2160; kích thước master được ghi riêng trong assets_61.json."
         }
       ],
       "editorial": {
         "status": "editorial_draft",
         "production_ready": false,
         "test_cook_status": "not_tested",
-        "variant_note": "Ngu?n b?o ch? x?c nh?n t?n qu?n/m?n Thanh ?a; c?c t? l? g?o, n??c, gia v? v? th?i gian l? b?n chu?n h?a t?i nh? c?a B?p Vi?t, ch?a n?u th?.",
+        "variant_note": "Nguồn báo chí xác nhận tên quán/món Thanh Đa; các tỷ lệ gạo, nước, gia vị và thời gian là bản chuẩn hóa tại nhà của Bếp Việt, chưa nấu thử.",
         "seed_recipe": null,
         "reviewed_at": "2026-10-24",
-        "needs": "N?u th? ?? ?i?u ch?nh t? l? g?o/n??c theo lo?i g?o v? ?? ??c mong mu?n; x?c nh?n nhi?t ?? ch?n v?t tr??c khi ph?c v?."
+        "needs": "Nấu thử để điều chỉnh tỷ lệ gạo/nước theo loại gạo và độ đặc mong muốn; xác nhận vịt chín kỹ trước khi phục vụ."
       }
     },
     {
       "id": "BV632",
       "slug": "ga-ro-ti-nuoc-dua-mien-nam",
-      "name": "G? r? ti n??c d?a mi?n Nam",
+      "name": "Gà rô ti nước dừa miền Nam",
       "aliases": [
-        "G? r?-ti",
-        "G? r? ti n??c d?a"
+        "Gà rô-ti",
+        "Gà rô ti nước dừa"
       ],
       "region": [
         "Nam"
       ],
       "province": [],
-      "category": "M?n m?n",
+      "category": "Món mặn",
       "meal_type": [
-        "b?a tr?a",
-        "b?a t?i",
-        "m?n ch?nh"
+        "bữa trưa",
+        "bữa tối",
+        "món chính"
       ],
-      "difficulty": "D?",
+      "difficulty": "Dễ",
       "servings": 4,
-      "serving_basis": "M?t m?n d?ng chung trong m?m c?m ho?c b?a ?n gia ??nh b?n ng??i.",
+      "serving_basis": "Một món dùng chung trong mâm cơm hoặc bữa ăn gia đình bốn người.",
       "prep_time": 20,
       "cook_time": 45,
       "passive_time": 30,
       "total_time": 95,
-      "description": "G? ???c ??p gia v? th?m, ?p ch?o cho da v?ng r?i rim v?i n??c d?a t??i ??n khi n??c s?t s?nh b?ng. ??y l? m?n g? r? ti ki?u gia ??nh ph? bi?n ? mi?n Nam; B?p Vi?t chu?n h?a c?ch rim v? l??ng n??c d?a cho b?n ng??i.",
-      "finished_dish": "Mi?ng g? n?u v?ng, th?t m?m nh?ng c?n ch?c; n??c d?a c? l?i th?nh l?p s?t m?n ng?t nh?, th?m t?i v? ng? v? h??ng.",
-      "serving": "D?n n?ng v?i c?m tr?ng ho?c b?nh m?, th?m d?a leo v? rau x? l?ch. R??i ?t s?t l?n g? ngay tr??c khi ?n.",
+      "description": "Gà được ướp gia vị thơm, áp chảo cho da vàng rồi rim với nước dừa tươi đến khi nước sốt sánh bóng. Đây là món gà rô ti kiểu gia đình phổ biến ở miền Nam; Bếp Việt chuẩn hóa cách rim và lượng nước dừa cho bốn người.",
+      "finished_dish": "Miếng gà nâu vàng, thịt mềm nhưng còn chắc; nước dừa cô lại thành lớp sốt mặn ngọt nhẹ, thơm tỏi và ngũ vị hương.",
+      "serving": "Dọn nóng với cơm trắng hoặc bánh mì, thêm dưa leo và rau xà lách. Rưới ít sốt lên gà ngay trước khi ăn.",
       "tips": [
-        "??p g? trong ng?n m?t; ?? r?o m?t tr??c khi ?p ch?o ?? da l?n m?u.",
-        "D?ng n??c d?a t??i kh?ng ???ng; n?m s?t tr??c khi th?m ???ng ho?c n??c t??ng.",
-        "Ph?n th?t d?y nh?t c?n ??t t?i thi?u 74?C."
+        "Ướp gà trong ngăn mát; để ráo mặt trước khi áp chảo để da lên màu.",
+        "Dùng nước dừa tươi không đường; nếm sốt trước khi thêm đường hoặc nước tương.",
+        "Phần thịt dày nhất cần đạt tối thiểu 74°C."
       ],
       "dish_type": [
-        "M?n g?",
-        "M?n rim"
+        "Món gà",
+        "Món rim"
       ],
       "main_ingredient": [
-        "G?",
-        "N??c d?a"
+        "Gà",
+        "Nước dừa"
       ],
       "cooking_method": [
-        "??p",
-        "?p ch?o",
+        "Ướp",
+        "Áp chảo",
         "Rim"
       ],
       "search_terms": [
-        "g? r? ti n??c d?a",
-        "g? r? ti mi?n Nam",
-        "g? r?-ti",
-        "g? rim n??c d?a",
-        "Vietnamese coconut braised chicken"
+        "gà rô ti nước dừa",
+        "gà rô ti miền Nam",
+        "gà rô-ti",
+        "gà rim nước dừa"
       ],
       "spicy_level": 0,
-      "image_alt": "??i g? r? ti v?ng n?u ph? s?t n??c d?a s?nh nh?, ?i?m h?nh l? v? ti?u, b?y tr?n ??a s? tr?ng.",
-      "time_note": "Kho?ng 95 ph?t, g?m 30 ph?t ch?; th?i gian th?c t? t?y k?ch c? nguy?n li?u v? thi?t b?.",
+      "image_alt": "Đùi gà rô ti vàng nâu phủ sốt nước dừa sánh nhẹ, điểm hành lá và tiêu, bày trên đĩa sứ trắng.",
+      "time_note": "Khoảng 95 phút, gồm 30 phút ướp; thời gian thực tế tùy kích cỡ nguyên liệu và thiết bị.",
       "suggested_pairings": [
-        "C?m tr?ng",
-        "B?nh m?",
-        "D?a leo"
+        "Cơm trắng",
+        "Bánh mì",
+        "Dưa leo"
       ],
       "recipe_family": "southern_coconut_roti_chicken",
       "keywords": [
-        "g? r? ti",
-        "n??c d?a",
-        "m?n mi?n Nam",
-        "g? rim"
+        "gà rô ti",
+        "nước dừa",
+        "món miền Nam",
+        "gà rim"
       ],
       "tags": [
-        "mi?n Nam",
-        "m?n g?",
-        "m?n rim",
-        "th?t tr?ng"
+        "miền Nam",
+        "món gà",
+        "món rim",
+        "thịt trắng"
       ],
       "ingredients": [
         {
-          "name": "??i g? g?c t?",
+          "name": "Đùi gà góc tư",
           "quantity": 1200,
           "unit": "g",
           "role": "protein",
-          "notes": "Ch?t ??i kh?c l?n; th?m kh?.",
+          "notes": "Chặt đùi thành khúc lớn; thấm khô.",
           "scaling_rule": "linear",
           "sequence": 1
         },
         {
-          "name": "N??c d?a t??i",
+          "name": "Nước dừa tươi",
           "quantity": 600,
           "unit": "ml",
           "role": "liquid",
-          "notes": "Kh?ng d?ng n??c d?a c? ???ng.",
+          "notes": "Không dùng nước dừa có đường.",
           "scaling_rule": "linear",
           "sequence": 2
         },
         {
-          "name": "T?i",
+          "name": "Tỏi",
           "quantity": 18,
           "unit": "g",
           "role": "aromatic",
-          "notes": "B?m nh?.",
+          "notes": "Băm nhỏ.",
           "scaling_rule": "linear",
           "sequence": 3
         },
         {
-          "name": "H?nh t?m",
+          "name": "Hành tím",
           "quantity": 25,
           "unit": "g",
           "role": "aromatic",
-          "notes": "B?m nh?.",
+          "notes": "Băm nhỏ.",
           "scaling_rule": "linear",
           "sequence": 4
         },
         {
-          "name": "N??c t??ng",
+          "name": "Nước tương",
           "quantity": 30,
           "unit": "ml",
           "role": "seasoning",
-          "notes": "Ch?n lo?i d?u m?n.",
+          "notes": "Chọn loại dịu mặn.",
           "scaling_rule": "taste_adjusted",
           "sequence": 5
         },
         {
-          "name": "D?u h?o",
+          "name": "Dầu hào",
           "quantity": 15,
           "unit": "ml",
           "role": "seasoning",
-          "notes": "C? th? b? qua n?u c?n tr?nh th?nh ph?n h?i s?n.",
+          "notes": "Có thể bỏ qua nếu cần tránh thành phần hải sản.",
           "scaling_rule": "taste_adjusted",
           "sequence": 6
         },
         {
-          "name": "Ng? v? h??ng",
+          "name": "Ngũ vị hương",
           "quantity": 2,
           "unit": "g",
           "role": "seasoning",
-          "notes": "Kho?ng 1/2 th?a c? ph?.",
+          "notes": "Khoảng nửa thìa cà phê.",
           "scaling_rule": "taste_adjusted",
           "sequence": 7
         },
         {
-          "name": "???ng",
+          "name": "Đường",
           "quantity": 12,
           "unit": "g",
           "role": "seasoning",
-          "notes": "Gia gi?m theo ?? ng?t n??c d?a.",
+          "notes": "Gia giảm theo độ ngọt của nước dừa.",
           "scaling_rule": "taste_adjusted",
           "sequence": 8
         },
         {
-          "name": "D?u ?n",
+          "name": "Dầu ăn",
           "quantity": 15,
           "unit": "ml",
           "role": "cooking_fat",
-          "notes": "D?ng ?p ch?o g?.",
+          "notes": "Dùng áp chảo gà.",
           "scaling_rule": "linear",
           "sequence": 9
         },
         {
-          "name": "Ti?u ?en",
+          "name": "Tiêu đen",
           "quantity": 1,
           "unit": "g",
           "role": "seasoning",
-          "notes": "R?c khi d?n.",
+          "notes": "Rắc khi dọn.",
           "scaling_rule": "taste_adjusted",
           "sequence": 10
         },
         {
-          "name": "Mu?i",
+          "name": "Muối",
           "quantity": 3,
           "unit": "g",
           "role": "seasoning",
-          "notes": "N?m ?t, ch?nh sau khi s?t c?.",
+          "notes": "Nêm ít, chỉnh sau khi sốt cô.",
           "scaling_rule": "taste_adjusted",
           "sequence": 11
         }
@@ -457,41 +456,41 @@
       "preparation_steps": [
         {
           "step": 1,
-          "instruction": "R?a g?, th?m th?t kh?. Tr?n t?i, h?nh t?m, n??c t??ng, d?u h?o, ng? v? h??ng, ???ng v? mu?i; xoa ??u l?n g?, ??y k?n v? ??p l?nh 30 ph?t."
+          "instruction": "Rửa gà, thấm thật khô. Trộn tỏi, hành tím, nước tương, dầu hào, ngũ vị hương, đường và muối; xoa đều lên gà, đậy kín và ướp lạnh 30 phút."
         },
         {
           "step": 2,
-          "instruction": "L?y g? kh?i t? l?nh kho?ng 10 ph?t tr??c khi n?u; gi? l?i ph?n n??c ??p ?? rim."
+          "instruction": "Lấy gà khỏi tủ lạnh khoảng 10 phút trước khi nấu; giữ lại phần nước ướp để rim."
         }
       ],
       "cooking_steps": [
         {
           "step": 1,
-          "instruction": "L?m n?ng d?u trong ch?o ??y d?y. G?t b?t h?nh t?i b?m b?n ngo?i r?i ?p ch?o g? ? l?a v?a, tr? ??u ??n khi c?c m?t v?ng nh?."
+          "instruction": "Làm nóng dầu trong chảo đáy dày. Gạt bớt hành tỏi bám ngoài rồi áp chảo gà ở lửa vừa, trở đều đến khi các mặt vàng nhẹ."
         },
         {
           "step": 2,
-          "instruction": "?? n??c d?a v? ph?n n??c ??p v?o; ?un s?i r?i h? l?a nh?, ??y h? n?p v? rim 30?35 ph?t. Tr? g? v?i l?n; th?m ch?t n??c n?ng n?u s?t c?n tr??c khi g? ch?n."
+          "instruction": "Đổ nước dừa và phần nước ướp vào; đun sôi rồi hạ lửa nhỏ, đậy hé nắp và rim 30–35 phút. Trở gà vài lần; thêm chút nước nóng nếu sốt cạn trước khi gà chín."
         },
         {
           "step": 3,
-          "instruction": "M? n?p, rim th?m 5?8 ph?t ?? s?t s?nh ph? ??u. Ki?m tra ph?n d?y nh?t ??t 74?C, n?m l?i ?? m?n ng?t, r?c ti?u v? d?n n?ng."
+          "instruction": "Mở nắp, rim thêm 5–8 phút để sốt sánh phủ đều. Kiểm tra phần dày nhất đạt 74°C, nếm lại độ mặn ngọt, rắc tiêu và dọn nóng."
         }
       ],
       "sources": [
         {
           "url": "https://www.nhahangquangon.com/huong-dan-lam-ga-ro-ti/",
-          "publisher": "Nh? h?ng Qu? Ngon",
-          "title": "H??ng d?n l?m g? r?-ti",
-          "use": "??i chi?u c?ch ??p g? b?ng n??c d?a, n??c t??ng, ng? v? h??ng v? c?ch ?p ch?o/rim; B?p Vi?t ?i?u ch?nh l??ng cho gia ??nh.",
+          "publisher": "Nhà hàng Quá Ngon",
+          "title": "Hướng dẫn làm gà rô-ti",
+          "use": "Đối chiếu cách ướp gà bằng nước dừa, nước tương, ngũ vị hương và cách áp chảo/rim; Bếp Việt điều chỉnh lượng cho gia đình.",
           "accessed_at": "2026-10-24",
           "type": "editorial_reference"
         },
         {
           "url": "https://monngonmoingay.com/ga-ro-ti/",
-          "publisher": "M?n Ngon M?i Ng?y",
-          "title": "C?ch l?m g? r? ti th?m m?m cho b?a c?m gia ??nh",
-          "use": "??i chi?u k? thu?t x?o s?n g? tr??c khi rim v?i n??c d?a v? ho?n thi?n ph?n s?t.",
+          "publisher": "Món Ngon Mỗi Ngày",
+          "title": "Cách làm gà rô ti thơm mềm cho bữa cơm gia đình",
+          "use": "Đối chiếu kỹ thuật xào săn gà trước khi rim với nước dừa và hoàn thiện phần sốt.",
           "accessed_at": "2026-10-24",
           "type": "editorial_reference"
         }
@@ -504,15 +503,15 @@
             "servings": 2,
             "main_factor": 0.5,
             "seasoning_start_factor": 0.45,
-            "example": "D?ng m?t n?a nguy?n li?u ch?nh, n?m gia v? t? ?t h?n m?t n?a r?i ?i?u ch?nh.",
-            "instruction": "Gi? nguy?n nguy?n t?c l?m ch?n k? gia c?m v? n?m l?i ? cu?i."
+            "example": "Dùng một nửa nguyên liệu chính, nêm gia vị từ ít hơn một nửa rồi điều chỉnh.",
+            "instruction": "Giữ nguyên nguyên tắc làm chín kỹ gia cầm và nêm lại ở cuối."
           },
           {
             "servings": 6,
             "main_factor": 1.5,
             "seasoning_start_factor": 1.2,
-            "example": "T?ng nguy?n li?u ch?nh kho?ng m?t l?n r??i, gia v? t?ng t? t?.",
-            "instruction": "D?ng n?i ?? r?ng; kh?ng nh?n gia v? m?n theo t? l? c?ng."
+            "example": "Tăng nguyên liệu chính khoảng một lần rưỡi, gia vị tăng từ từ.",
+            "instruction": "Dùng nồi đủ rộng; không nhân gia vị mặn theo tỷ lệ cứng."
           }
         ]
       },
@@ -520,222 +519,220 @@
         {
           "image_url": "/images/recipes/edited/ga-ro-ti-nuoc-dua-mien-nam-960.webp",
           "page_url": null,
-          "source": "B?p Vi?t",
-          "author": "B?p Vi?t",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
           "license": null,
           "rights_status": "project",
-          "rights_note": "?nh ???c t?o m?i cho B?p Vi?t; ngu?n tham kh?o ch? d?ng ?? bi?n t?p danh t?nh m?n, nguy?n li?u v? k? thu?t.",
+          "rights_note": "Ảnh được tạo mới cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập danh tính món, nguyên liệu và kỹ thuật.",
           "width": 3840,
           "height": 2160,
           "orientation": "landscape",
           "preferred_width_met": true,
-          "alt_text": "??i g? r? ti v?ng n?u ph? s?t n??c d?a s?nh nh?, ?i?m h?nh l? v? ti?u, b?y tr?n ??a s? tr?ng.",
+          "alt_text": "Đùi gà rô ti vàng nâu phủ sốt nước dừa sánh nhẹ, điểm hành lá và tiêu, bày trên đĩa sứ trắng.",
           "verified_dish_match": true,
           "visual_review_date": "2026-10-24",
-          "photo_variant_note": "?nh ImageGen m?i; master PNG alpha l?u t?i output/recipe-images/native. C?c WebP 480/960/1536/3840 ???c xu?t tr?n canvas 3840?2160; k?ch th??c master s? ???c ghi ri?ng trong assets_61.json."
+          "photo_variant_note": "Ảnh minh họa mới; master PNG alpha lưu tại output/recipe-images/native. Các WebP 480/960/1536/3840 được xuất trên canvas 3840 × 2160; kích thước master được ghi riêng trong assets_61.json."
         }
       ],
       "editorial": {
         "status": "editorial_draft",
         "production_ready": false,
         "test_cook_status": "not_tested",
-        "variant_note": "B?p Vi?t chu?n h?a m?n r? ti n??c d?a ki?u gia ??nh t? c?ng th?c tham kh?o; c?ch g?i ?mi?n Nam? m? t? phong c?ch ph? bi?n, kh?ng kh?ng ??nh xu?t x? ??c quy?n.",
+        "variant_note": "Bếp Việt chuẩn hóa món rô ti nước dừa kiểu gia đình từ công thức tham khảo; cách gọi “miền Nam” mô tả phong cách phổ biến, không khẳng định xuất xứ độc quyền.",
         "seed_recipe": null,
         "reviewed_at": "2026-10-24",
-        "needs": "N?u th? ?? ch?t th?i gian theo k?ch th??c ??i g? v? l??ng n??c s?t; r? so?t d? ?ng/nh?n d?u h?o n?u thay th?."
+        "needs": "Nấu thử để chốt thời gian theo kích thước đùi gà và lượng nước sốt; rà soát dị ứng/nhãn dầu hào nếu thay thế."
       }
     },
     {
       "id": "BV633",
       "slug": "canh-ga-la-giang-binh-dinh",
-      "name": "Canh g? l? giang ki?u B?nh ??nh",
+      "name": "Canh gà lá giang kiểu Bình Định",
       "aliases": [
-        "G? n?u l? giang",
-        "Canh l? giang th?t g?"
+        "Gà nấu lá giang",
+        "Canh lá giang thịt gà"
       ],
       "region": [
-        "Trung B?"
+        "Trung Bộ"
       ],
       "province": [
-        "B?nh ??nh"
+        "Bình Định"
       ],
-      "category": "M?n canh",
+      "category": "Món canh",
       "meal_type": [
-        "b?a tr?a",
-        "b?a t?i",
-        "m?n canh"
+        "bữa trưa",
+        "bữa tối",
+        "món canh"
       ],
-      "difficulty": "D?",
+      "difficulty": "Dễ",
       "servings": 4,
-      "serving_basis": "M?t m?n d?ng chung trong m?m c?m ho?c b?a ?n gia ??nh b?n ng??i.",
+      "serving_basis": "Một món dùng chung trong mâm cơm hoặc bữa ăn gia đình bốn người.",
       "prep_time": 20,
       "cook_time": 30,
       "passive_time": 15,
       "total_time": 65,
-      "description": "Th?t g? x?o s?n r?i n?u v?i l? giang v? d?p ?? t?o v? chua d?u, th?m s? v? rau th?m. B?o B?nh ??nh ghi nh?n canh l? giang n?u c?ng th?t g? l? m?n quen thu?c trong b?a c?m ??a ph??ng; c?ng th?c n?y l? b?n gia ??nh B?p Vi?t bi?n t?p theo c?ch n?u ???c b?o ??a ph??ng m? t?.",
-      "finished_dish": "N??c canh chua thanh, th?m s?; th?t g? ch?n m?m, l? giang v?a ti?t v? chua, kh?ng n?u qu? l?u ?? n??c kh?ng ch?t.",
-      "serving": "M?c canh n?ng, th?m ng? om, ng? gai v? ?t t?y th?ch. D?ng c?ng c?m tr?ng v? m?n rau lu?c.",
+      "description": "Thịt gà xào săn rồi nấu với lá giang vò nhẹ để tạo vị chua dịu, thơm sả và rau thơm. Báo Bình Định ghi nhận canh lá giang nấu cùng thịt gà là món quen thuộc trong bữa cơm địa phương; công thức này là bản gia đình Bếp Việt biên tập theo cách nấu được báo địa phương mô tả.",
+      "finished_dish": "Nước canh chua thanh, thơm sả; thịt gà chín mềm, lá giang vừa tiết vị chua, không nấu quá lâu để nước không chát.",
+      "serving": "Múc canh nóng, thêm ngò om, ngò gai và ớt tùy thích. Dùng cùng cơm trắng và món rau luộc.",
       "tips": [
-        "Nh?t l? giang, b? c?ng gi?, v? nh? tr??c khi cho v?o n?i.",
-        "N?m chua t? t? v? ?? chua l? thay ??i theo m?a v? ?? non.",
-        "Kh?ng ?? n?i canh s?i l?u sau khi cho l? ?? gi? v? thanh."
+        "Nhặt lá giang, bỏ cọng già, vò nhẹ trước khi cho vào nồi.",
+        "Nếm độ chua từ từ vì độ chua lá thay đổi theo mùa và độ non.",
+        "Không để nồi canh sôi lâu sau khi cho lá để giữ vị thanh."
       ],
       "dish_type": [
-        "M?n canh",
-        "M?n g?"
+        "Món canh",
+        "Món gà"
       ],
       "main_ingredient": [
-        "G?",
-        "L? giang"
+        "Gà",
+        "Lá giang"
       ],
       "cooking_method": [
-        "??p",
-        "X?o s?n",
-        "N?u canh"
+        "Ướp",
+        "Xào săn",
+        "Nấu canh"
       ],
       "search_terms": [
-        "canh g? l? giang B?nh ??nh",
-        "g? n?u l? giang",
-        "canh l? giang mi?n Trung",
-        "canh g? chua",
-        "chicken and giang leaves soup"
+        "canh gà lá giang Bình Định",
+        "gà nấu lá giang",
+        "canh lá giang miền Trung",
+        "canh gà chua"
       ],
       "spicy_level": 1,
-      "image_alt": "B?t canh g? l? giang v?i mi?ng g? ch?n, l? xanh v? s?, n??c canh trong h?i chua, b?y tr?n n?n trong su?t.",
-      "time_note": "Kho?ng 65 ph?t, g?m 15 ph?t ch?; th?i gian th?c t? t?y k?ch c? nguy?n li?u v? thi?t b?.",
+      "image_alt": "Bát canh gà lá giang với miếng gà chín, lá xanh và sả, nước canh trong hơi chua, bày trên nền trong suốt.",
+      "time_note": "Khoảng 65 phút, gồm 15 phút ướp; thời gian thực tế tùy kích cỡ nguyên liệu và thiết bị.",
       "suggested_pairings": [
-        "C?m tr?ng",
-        "Rau lu?c",
-        "C? ph?o"
+        "Cơm trắng",
+        "Rau luộc",
+        "Cà pháo"
       ],
       "recipe_family": "binh_dinh_chicken_giang_leaf_soup",
       "keywords": [
-        "g?",
-        "l? giang",
-        "B?nh ??nh",
-        "canh chua"
+        "gà",
+        "lá giang",
+        "Bình Định"
       ],
       "tags": [
-        "B?nh ??nh",
-        "Trung B?",
-        "m?n canh",
-        "th?t tr?ng"
+        "Bình Định",
+        "Trung Bộ",
+        "món canh",
+        "thịt trắng"
       ],
       "ingredients": [
         {
-          "name": "Th?t g? ch?t mi?ng",
+          "name": "Thịt gà chặt miếng",
           "quantity": 700,
           "unit": "g",
           "role": "protein",
-          "notes": "Ch?n ??i ho?c ph?n g? c? x??ng.",
+          "notes": "Chọn đùi hoặc phần gà có xương.",
           "scaling_rule": "linear",
           "sequence": 1
         },
         {
-          "name": "L? giang",
+          "name": "Lá giang",
           "quantity": 140,
           "unit": "g",
           "role": "vegetable",
-          "notes": "Nh?t l? non, r?a s?ch.",
+          "notes": "Nhặt lá non, rửa sạch.",
           "scaling_rule": "linear",
           "sequence": 2
         },
         {
-          "name": "S?",
+          "name": "Sả",
           "quantity": 2,
-          "unit": "c?y",
+          "unit": "cây",
           "role": "aromatic",
-          "notes": "??p d?p, c?t kh?c.",
+          "notes": "Đập dập, cắt khúc.",
           "scaling_rule": "linear",
           "sequence": 3
         },
         {
-          "name": "H?nh t?m",
+          "name": "Hành tím",
           "quantity": 20,
           "unit": "g",
           "role": "aromatic",
-          "notes": "B?m nh?.",
+          "notes": "Băm nhỏ.",
           "scaling_rule": "linear",
           "sequence": 4
         },
         {
-          "name": "T?i",
+          "name": "Tỏi",
           "quantity": 12,
           "unit": "g",
           "role": "aromatic",
-          "notes": "B?m nh?.",
+          "notes": "Băm nhỏ.",
           "scaling_rule": "linear",
           "sequence": 5
         },
         {
-          "name": "N??c m?m",
+          "name": "Nước mắm",
           "quantity": 20,
           "unit": "ml",
           "role": "seasoning",
-          "notes": "Chia cho ??p v? n?m.",
+          "notes": "Chia cho ướp và nêm.",
           "scaling_rule": "taste_adjusted",
           "sequence": 6
         },
         {
-          "name": "Mu?i",
+          "name": "Muối",
           "quantity": 5,
           "unit": "g",
           "role": "seasoning",
-          "notes": "Chia cho ??p v? n?m.",
+          "notes": "Chia cho ướp và nêm.",
           "scaling_rule": "taste_adjusted",
           "sequence": 7
         },
         {
-          "name": "???ng",
+          "name": "Đường",
           "quantity": 6,
           "unit": "g",
           "role": "seasoning",
-          "notes": "C?n b?ng v? chua.",
+          "notes": "Cân bằng vị chua.",
           "scaling_rule": "taste_adjusted",
           "sequence": 8
         },
         {
-          "name": "D?u ?n",
+          "name": "Dầu ăn",
           "quantity": 12,
           "unit": "ml",
           "role": "cooking_fat",
-          "notes": "D?ng x?o g?.",
+          "notes": "Dùng xào gà.",
           "scaling_rule": "linear",
           "sequence": 9
         },
         {
-          "name": "N??c l?c",
+          "name": "Nước lọc",
           "quantity": 1300,
           "unit": "ml",
           "role": "liquid",
-          "notes": "C? th? thay m?t ph?n b?ng n??c d?ng g? nh?t.",
+          "notes": "Có thể thay một phần bằng nước dùng gà nhạt.",
           "scaling_rule": "linear",
           "sequence": 10
         },
         {
-          "name": "Ng? gai",
+          "name": "Ngò gai",
           "quantity": 10,
           "unit": "g",
           "role": "herb",
-          "notes": "R?a s?ch, th?i nh?.",
+          "notes": "Rửa sạch, thái nhỏ.",
           "scaling_rule": "linear",
           "sequence": 11
         },
         {
-          "name": "Ng? om",
+          "name": "Ngò om",
           "quantity": 10,
           "unit": "g",
           "role": "herb",
-          "notes": "R?a s?ch, th?i nh?.",
+          "notes": "Rửa sạch, thái nhỏ.",
           "scaling_rule": "linear",
           "sequence": 12
         },
         {
-          "name": "?t t??i",
+          "name": "Ớt tươi",
           "quantity": 4,
           "unit": "g",
           "role": "seasoning",
-          "notes": "Th?i l?t, t?y ch?n.",
+          "notes": "Thái lát, tùy chọn.",
           "scaling_rule": "taste_adjusted",
           "sequence": 13
         }
@@ -743,41 +740,41 @@
       "preparation_steps": [
         {
           "step": 1,
-          "instruction": "R?a g?, ?? r?o r?i ??p v?i m?t n?a n??c m?m, m?t ?t mu?i v? h?nh t?m trong 15 ph?t."
+          "instruction": "Rửa gà, để ráo rồi ướp với một nửa nước mắm, một ít muối và hành tím trong 15 phút."
         },
         {
           "step": 2,
-          "instruction": "Nh?t v? r?a l? giang, v? nh? t?ng n?m. ??p d?p s?; b?m t?i, th?i ng? gai v? ng? om."
+          "instruction": "Nhặt và rửa lá giang, vò nhẹ từng nắm. Đập dập sả; băm tỏi, thái ngò gai và ngò om."
         }
       ],
       "cooking_steps": [
         {
           "step": 1,
-          "instruction": "?un n?ng d?u, phi th?m t?i v? ph?n h?nh t?m c?n l?i. Cho g? c?ng s? v?o ??o ??n khi m?t th?t s?n."
+          "instruction": "Đun nóng dầu, phi thơm tỏi và phần hành tím còn lại. Cho gà cùng sả vào đảo đến khi mặt thịt săn."
         },
         {
           "step": 2,
-          "instruction": "Th?m n??c, ?un s?i v? h?t b?t; h? l?a, n?u 20?25 ph?t ??n khi g? ch?n."
+          "instruction": "Thêm nước, đun sôi và hớt bọt; hạ lửa, nấu 20–25 phút đến khi gà chín."
         },
         {
           "step": 3,
-          "instruction": "Cho l? giang v?o n?i, n?u s?i l?i 2?3 ph?t. N?m ph?n n??c m?m c?n l?i, mu?i v? ???ng theo ?? chua; t?t b?p, th?m ng? om, ng? gai v? ?t."
+          "instruction": "Cho lá giang vào nồi, nấu sôi lại 2–3 phút. Nêm phần nước mắm còn lại, muối và đường theo độ chua; tắt bếp, thêm ngò om, ngò gai và ớt."
         }
       ],
       "sources": [
         {
           "url": "https://baobinhdinh.vn/viewer.aspx?mabb=36027&macm=48",
-          "publisher": "B?o ?i?n t? B?nh ??nh",
-          "title": "L? giang d?n d?",
-          "use": "B?i b?o ??a ph??ng ghi nh?n l? giang n?u c?ng c?c ph?n th?t g? l? m?n canh ???c ng??i d?n B?nh ??nh ?a chu?ng; d?ng l?m c?n c? v? b?i c?nh m?n, kh?ng l?m ngu?n ??nh l??ng.",
+          "publisher": "Báo điện tử Bình Định",
+          "title": "Lá giang dân dã",
+          "use": "Bài báo địa phương ghi nhận lá giang nấu cùng các phần thịt gà là món canh được người dân Bình Định ưa chuộng; dùng làm căn cứ về bối cảnh món, không làm nguồn định lượng.",
           "accessed_at": "2026-10-24",
           "type": "editorial_reference"
         },
         {
           "url": "https://cdn.baogialai.com.vn/files/5c3372a3262899340db80c413f513189e4cdd5ec2c3d9c2163a3cde99cacc52aaeb501b02b39974eb3dca138e0bab22d/21979103.pdf",
-          "publisher": "B?o Gia Lai, ?n ph?m B?nh ??nh",
-          "title": "B?i vi?t v? canh l? giang",
-          "use": "Tham kh?o c?ch s? ch? v? ??p g?, cho l? v?o sau ?? gi? v? chua d?u; B?p Vi?t bi?n t?p l??ng d?ng v? th? t? n?u cho b?n ng??i.",
+          "publisher": "Báo Gia Lai, ấn phẩm Bình Định",
+          "title": "Bài viết về canh lá giang",
+          "use": "Tham khảo cách sơ chế và đập gà, cho lá vào sau để giữ vị chua dịu; Bếp Việt biên tập lượng dùng và thứ tự nấu cho bốn người.",
           "accessed_at": "2026-10-24",
           "type": "editorial_reference"
         }
@@ -790,15 +787,15 @@
             "servings": 2,
             "main_factor": 0.5,
             "seasoning_start_factor": 0.45,
-            "example": "D?ng m?t n?a nguy?n li?u ch?nh, n?m gia v? t? ?t h?n m?t n?a r?i ?i?u ch?nh.",
-            "instruction": "Gi? nguy?n nguy?n t?c l?m ch?n k? gia c?m v? n?m l?i ? cu?i."
+            "example": "Dùng một nửa nguyên liệu chính, nêm gia vị từ ít hơn một nửa rồi điều chỉnh.",
+            "instruction": "Giữ nguyên nguyên tắc làm chín kỹ gia cầm và nêm lại ở cuối."
           },
           {
             "servings": 6,
             "main_factor": 1.5,
             "seasoning_start_factor": 1.2,
-            "example": "T?ng nguy?n li?u ch?nh kho?ng m?t l?n r??i, gia v? t?ng t? t?.",
-            "instruction": "D?ng n?i ?? r?ng; kh?ng nh?n gia v? m?n theo t? l? c?ng."
+            "example": "Tăng nguyên liệu chính khoảng một lần rưỡi, gia vị tăng từ từ.",
+            "instruction": "Dùng nồi đủ rộng; không nhân gia vị mặn theo tỷ lệ cứng."
           }
         ]
       },
@@ -806,241 +803,240 @@
         {
           "image_url": "/images/recipes/edited/canh-ga-la-giang-binh-dinh-960.webp",
           "page_url": null,
-          "source": "B?p Vi?t",
-          "author": "B?p Vi?t",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
           "license": null,
           "rights_status": "project",
-          "rights_note": "?nh ???c t?o m?i cho B?p Vi?t; ngu?n tham kh?o ch? d?ng ?? bi?n t?p danh t?nh m?n, nguy?n li?u v? k? thu?t.",
+          "rights_note": "Ảnh được tạo mới cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập danh tính món, nguyên liệu và kỹ thuật.",
           "width": 3840,
           "height": 2160,
           "orientation": "landscape",
           "preferred_width_met": true,
-          "alt_text": "B?t canh g? l? giang v?i mi?ng g? ch?n, l? xanh v? s?, n??c canh trong h?i chua, b?y tr?n n?n trong su?t.",
+          "alt_text": "Bát canh gà lá giang với miếng gà chín, lá xanh và sả, nước canh trong hơi chua, bày trên nền trong suốt.",
           "verified_dish_match": true,
           "visual_review_date": "2026-10-24",
-          "photo_variant_note": "?nh ImageGen m?i; master PNG alpha l?u t?i output/recipe-images/native. C?c WebP 480/960/1536/3840 ???c xu?t tr?n canvas 3840?2160; k?ch th??c master s? ???c ghi ri?ng trong assets_61.json."
+          "photo_variant_note": "Ảnh minh họa mới; master PNG alpha lưu tại output/recipe-images/native. Các WebP 480/960/1536/3840 được xuất trên canvas 3840 × 2160; kích thước master được ghi riêng trong assets_61.json."
         }
       ],
       "editorial": {
         "status": "editorial_draft",
         "production_ready": false,
         "test_cook_status": "not_tested",
-        "variant_note": "Ngu?n ??a ph??ng ghi nh?n m?n canh l? giang v?i th?t g? trong b?a c?m B?nh ??nh; B?p Vi?t chu?n h?a t? l? v? thao t?c, kh?ng g?i ??y l? m?n ??c s?n ??c quy?n.",
+        "variant_note": "Nguồn địa phương ghi nhận món canh lá giang với thịt gà trong bữa cơm Bình Định; Bếp Việt chuẩn hóa tỷ lệ và thao tác, không gọi đây là món đặc sản độc quyền.",
         "seed_recipe": null,
         "reviewed_at": "2026-10-24",
-        "needs": "N?u th? ?? ?i?u ch?nh l??ng l? giang theo m?a; r? so?t ?? chua v? ?? ch?n g? theo ph?n th?t s? d?ng."
+        "needs": "Nấu thử để điều chỉnh lượng lá giang theo mùa; rà soát độ chua và độ chín gà theo phần thịt sử dụng."
       }
     },
     {
       "id": "BV634",
       "slug": "lau-ga-tien-yen-nau-bong-ruou",
-      "name": "L?u g? Ti?n Y?n n?u b?ng r??u",
+      "name": "Lẩu gà Tiên Yên nấu bằng bỗng rượu",
       "aliases": [
-        "L?u g? n?u b?ng r??u",
-        "L?u g? Ti?n Y?n"
+        "Lẩu gà nấu bằng bỗng rượu",
+        "Lẩu gà Tiên Yên"
       ],
       "region": [
-        "B?c"
+        "Bắc"
       ],
       "province": [
-        "Qu?ng Ninh"
+        "Quảng Ninh"
       ],
-      "category": "M?n l?u",
+      "category": "Món lẩu",
       "meal_type": [
-        "b?a t?i",
-        "m?n ch?nh",
-        "m?n l?u"
+        "bữa tối",
+        "món chính",
+        "món lẩu"
       ],
-      "difficulty": "Trung b?nh",
+      "difficulty": "Trung bình",
       "servings": 4,
-      "serving_basis": "M?t m?n d?ng chung trong m?m c?m ho?c b?a ?n gia ??nh b?n ng??i.",
+      "serving_basis": "Một món dùng chung trong mâm cơm hoặc bữa ăn gia đình bốn người.",
       "prep_time": 25,
       "cook_time": 50,
       "passive_time": 30,
       "total_time": 105,
-      "description": "G? Ti?n Y?n ???c ??p v?i c?m r??u, g?ng v? h?nh, sau ?? n?u trong n??c d?ng c? b?ng r??u, n?m v? rau nh?ng. B?o Qu?ng Ninh ghi nh?n ??y l? m?n do m?t ch? qu?n ? Ti?n Y?n s?ng t?o t? nguy?n li?u ??a ph??ng; B?p Vi?t bi?n t?p th?nh n?i l?u gia ??nh, kh?ng xem ??y l? c?ng th?c c? truy?n duy nh?t.",
-      "finished_dish": "N??c l?u th?m chua d?u c?a b?ng r??u, v? ng?t t? g? v? n?m; th?t g? s?n, rau v?a ch?n v? n??c d?ng kh?ng qu? cay.",
-      "serving": "??t n?i l?u s?i l?n t?n gi?a b?n, nh?ng rau theo t?ng l??t. D?ng v?i b?n ho?c c?m n?ng v? ch?n n??c t??ng pha d?u m?.",
+      "description": "Gà Tiên Yên được ướp với cơm rượu, gừng và hành, sau đó nấu trong nước dùng có bỗng rượu, nấm và rau nhúng. Báo Quảng Ninh ghi nhận đây là món do một chủ quán ở Tiên Yên sáng tạo từ nguyên liệu địa phương; Bếp Việt biên tập thành nồi lẩu gia đình, không xem đây là công thức cổ truyền duy nhất.",
+      "finished_dish": "Nước lẩu thơm chua dịu của bỗng rượu, vị ngọt từ gà và nấm; thịt gà săn, rau vừa chín và nước dùng không quá cay.",
+      "serving": "Đặt nồi lẩu sôi lăn tăn giữa bàn, nhúng rau theo từng lượt. Dùng với bún hoặc cơm nóng và chén nước tương pha dầu mè.",
       "tips": [
-        "D?ng b?ng r??u n?p s?ch, m?i th?m d?u; kh?ng d?ng b?ng ?? c? m?i l?.",
-        "??p g? trong ng?n m?t v? kh?ng t?i s? d?ng n??c ??p s?ng l?m n??c ch?m.",
-        "Cho rau nh?ng v?o t?ng ?t ?? n??c l?u kh?ng ngu?i."
+        "Dùng bỗng rượu nếp sạch, mới, thơm dịu; không dùng bỗng đã có mùi lạ.",
+        "Ướp gà trong ngăn mát và không tái sử dụng nước ướp sống làm nước chấm.",
+        "Cho rau nhúng vào từng ít để nước lẩu không nguội."
       ],
       "dish_type": [
-        "M?n l?u",
-        "M?n g?"
+        "Món lẩu",
+        "Món gà"
       ],
       "main_ingredient": [
-        "G? Ti?n Y?n",
-        "B?ng r??u",
-        "N?m"
+        "Gà Tiên Yên",
+        "Bỗng rượu",
+        "Nấm"
       ],
       "cooking_method": [
-        "??p",
-        "N?u l?u"
+        "Ướp",
+        "Nấu lẩu"
       ],
       "search_terms": [
-        "l?u g? Ti?n Y?n n?u b?ng r??u",
-        "l?u g? b?ng r??u",
-        "g? Ti?n Y?n",
-        "l?u g? Qu?ng Ninh",
-        "Tien Yen chicken rice wine hotpot"
+        "lẩu gà Tiên Yên nấu bỗng rượu",
+        "lẩu gà bỗng rượu",
+        "gà Tiên Yên",
+        "lẩu gà Quảng Ninh"
       ],
       "spicy_level": 1,
-      "image_alt": "N?i l?u g? Ti?n Y?n n?u b?ng r??u n?ng v?i mi?ng g?, n?m h??ng, n?m v? rau xanh; b?y trong n?i ??t, kh?ng ch?.",
-      "time_note": "Kho?ng 105 ph?t, g?m 30 ph?t ch?; th?i gian th?c t? t?y k?ch c? nguy?n li?u v? thi?t b?.",
+      "image_alt": "Nồi lẩu gà Tiên Yên nấu bằng bỗng rượu nóng với miếng gà, nấm hương, nấm và rau xanh; bày trong nồi đất, không chữ.",
+      "time_note": "Khoảng 105 phút, gồm 30 phút ướp; thời gian thực tế tùy kích cỡ nguyên liệu và thiết bị.",
       "suggested_pairings": [
-        "B?n t??i",
-        "C?i th?o",
-        "Rau mu?ng"
+        "Bún tươi",
+        "Cải thảo",
+        "Rau muống"
       ],
       "recipe_family": "tien_yen_chicken_rice_ferment_hotpot",
       "keywords": [
-        "g? Ti?n Y?n",
-        "b?ng r??u",
-        "Qu?ng Ninh",
-        "l?u"
+        "gà Tiên Yên",
+        "bỗng rượu",
+        "Quảng Ninh",
+        "lẩu"
       ],
       "tags": [
-        "Qu?ng Ninh",
-        "Ti?n Y?n",
-        "mi?n B?c",
-        "m?n l?u",
-        "th?t tr?ng"
+        "Quảng Ninh",
+        "Tiên Yên",
+        "miền Bắc",
+        "món lẩu",
+        "thịt trắng"
       ],
       "ingredients": [
         {
-          "name": "G? ta ch?t mi?ng",
+          "name": "Gà ta chặt miếng",
           "quantity": 1200,
           "unit": "g",
           "role": "protein",
-          "notes": "?u ti?n g? Ti?n Y?n n?u c? ngu?n r?; d?ng g? ta thay th? v?n n?u ???c.",
+          "notes": "Ưu tiên gà Tiên Yên nếu có nguồn rõ; dùng gà ta thay thế vẫn phù hợp.",
           "scaling_rule": "linear",
           "sequence": 1
         },
         {
-          "name": "C?m r??u n?p",
+          "name": "Cơm rượu nếp",
           "quantity": 180,
           "unit": "g",
           "role": "seasoning",
-          "notes": "Ch?n c?m r??u n?p m?i, kh?ng qu? ng?t.",
+          "notes": "Chọn cơm rượu nếp mới, không quá ngọt.",
           "scaling_rule": "linear",
           "sequence": 2
         },
         {
-          "name": "B?ng r??u n?p",
+          "name": "Bỗng rượu nếp",
           "quantity": 180,
           "unit": "g",
           "role": "seasoning",
-          "notes": "Khu?y v?i n??c d?ng r?i l?c b? th? n?u c?n.",
+          "notes": "Khuấy với nước dùng rồi lọc bỏ bã thô nếu cần.",
           "scaling_rule": "linear",
           "sequence": 3
         },
         {
-          "name": "N??c d?ng g?",
+          "name": "Nước dùng gà",
           "quantity": 1400,
           "unit": "ml",
           "role": "liquid",
-          "notes": "N??c d?ng nh?t, ?? n?u ch?n.",
+          "notes": "Dùng nước dùng nhạt để nấu lẩu.",
           "scaling_rule": "linear",
           "sequence": 4
         },
         {
-          "name": "G?ng",
+          "name": "Gừng",
           "quantity": 35,
           "unit": "g",
           "role": "aromatic",
-          "notes": "Th?i s?i.",
+          "notes": "Thái sợi.",
           "scaling_rule": "linear",
           "sequence": 5
         },
         {
-          "name": "H?nh t?m",
+          "name": "Hành tím",
           "quantity": 30,
           "unit": "g",
           "role": "aromatic",
-          "notes": "B?c v?, th?i l?t.",
+          "notes": "Bóc vỏ, thái lát.",
           "scaling_rule": "linear",
           "sequence": 6
         },
         {
-          "name": "N?m h??ng",
+          "name": "Nấm hương",
           "quantity": 100,
           "unit": "g",
           "role": "vegetable",
-          "notes": "Ng?m m?m n?u kh?, b? ch?n c?ng.",
+          "notes": "Ngâm mềm nếu dùng nấm khô, bỏ chân cứng.",
           "scaling_rule": "linear",
           "sequence": 7
         },
         {
-          "name": "N?m s?",
+          "name": "Nấm sò",
           "quantity": 180,
           "unit": "g",
           "role": "vegetable",
-          "notes": "T?ch v?a ?n.",
+          "notes": "Tách vừa ăn.",
           "scaling_rule": "linear",
           "sequence": 8
         },
         {
-          "name": "C?i th?o",
+          "name": "Cải thảo",
           "quantity": 250,
           "unit": "g",
           "role": "vegetable",
-          "notes": "R?a s?ch, c?t kh?c.",
+          "notes": "Rửa sạch, cắt khúc.",
           "scaling_rule": "linear",
           "sequence": 9
         },
         {
-          "name": "Rau mu?ng",
+          "name": "Rau muống",
           "quantity": 200,
           "unit": "g",
           "role": "vegetable",
-          "notes": "Nh?t, r?a s?ch.",
+          "notes": "Nhặt, rửa sạch.",
           "scaling_rule": "linear",
           "sequence": 10
         },
         {
-          "name": "H?nh l?",
+          "name": "Hành lá",
           "quantity": 25,
           "unit": "g",
           "role": "herb",
-          "notes": "C?t kh?c.",
+          "notes": "Cắt khúc.",
           "scaling_rule": "linear",
           "sequence": 11
         },
         {
-          "name": "N??c m?m",
+          "name": "Nước mắm",
           "quantity": 25,
           "unit": "ml",
           "role": "seasoning",
-          "notes": "N?m t?ng ?t m?t.",
+          "notes": "Nêm từng ít một.",
           "scaling_rule": "taste_adjusted",
           "sequence": 12
         },
         {
-          "name": "???ng",
+          "name": "Đường",
           "quantity": 8,
           "unit": "g",
           "role": "seasoning",
-          "notes": "?i?u ch?nh theo ?? chua c?a b?ng.",
+          "notes": "Điều chỉnh theo độ chua của bỗng.",
           "scaling_rule": "taste_adjusted",
           "sequence": 13
         },
         {
-          "name": "Sa t?",
+          "name": "Sa tế",
           "quantity": 10,
           "unit": "g",
           "role": "seasoning",
-          "notes": "D?ng t?y kh?u v?.",
+          "notes": "Dùng tùy khẩu vị.",
           "scaling_rule": "taste_adjusted",
           "sequence": 14
         },
         {
-          "name": "Mu?i",
+          "name": "Muối",
           "quantity": 5,
           "unit": "g",
           "role": "seasoning",
-          "notes": "N?m n??c d?ng.",
+          "notes": "Nêm nước dùng.",
           "scaling_rule": "taste_adjusted",
           "sequence": 15
         }
@@ -1048,41 +1044,41 @@
       "preparation_steps": [
         {
           "step": 1,
-          "instruction": "R?a g?, ch?t mi?ng v?a ?n v? ?? r?o. ??p g? v?i c?m r??u, m?t n?a g?ng, h?nh t?m v? m?t ?t mu?i trong ng?n m?t 30 ph?t."
+          "instruction": "Rửa gà, chặt miếng vừa ăn và để ráo. Ướp gà với cơm rượu, một nửa gừng, hành tím và một ít muối trong ngăn mát 30 phút."
         },
         {
           "step": 2,
-          "instruction": "Ng?m m?m n?m h??ng n?u d?ng lo?i kh?. R?a n?m s?, c?i th?o, rau mu?ng v? h?nh l?; chu?n b? n??c d?ng ?? n?u ch?n."
+          "instruction": "Ngâm mềm nấm hương nếu dùng loại khô. Rửa nấm sò, cải thảo, rau muống và hành lá; chuẩn bị nước dùng để nấu lẩu."
         }
       ],
       "cooking_steps": [
         {
           "step": 1,
-          "instruction": "?un s?i n??c d?ng g?, cho b?ng r??u ?? khu?y v? l?c v?o c?ng ph?n g?ng c?n l?i; n?m s? n??c m?m v? mu?i."
+          "instruction": "Đun sôi nước dùng gà, khuấy bỗng rượu vào rồi lọc qua rây cùng phần gừng còn lại; nêm sơ nước mắm và muối."
         },
         {
           "step": 2,
-          "instruction": "Cho g? ?? ??p v?o n?i, ?un s?i r?i h? nh? l?a, n?u 25?30 ph?t ??n khi g? ch?n. Th?m n?m h??ng, n?m s? v? n?u th?m 5 ph?t."
+          "instruction": "Cho gà đã ướp vào nồi, đun sôi rồi hạ nhỏ lửa, nấu 25–30 phút đến khi gà chín. Thêm nấm hương, nấm sò và nấu thêm 5 phút."
         },
         {
           "step": 3,
-          "instruction": "Chuy?n n?i l?n b?p l?u, n?m l?i v? chua m?n ng?t, th?m sa t? n?u th?ch. Nh?ng c?i th?o, rau mu?ng v? h?nh l? t?ng l??t; d?ng n?ng."
+          "instruction": "Chuyển nồi lên bếp lẩu, nếm lại vị chua mặn ngọt, thêm sa tế nếu thích. Nhúng cải thảo, rau muống và hành lá từng lượt; dùng nóng."
         }
       ],
       "sources": [
         {
           "url": "https://tuoitre.vn/dulichtphcm/an-gi/lau-ga-tien-yen-nau-bong-ruou-c12a38608.html",
-          "publisher": "Tu?i Tr? (d?n ngu?n B?o Qu?ng Ninh)",
-          "title": "L?u g? Ti?n Y?n n?u b?ng r??u",
-          "use": "Ngu?n t??ng thu?t m?n do ch? nh? h?ng ? Ti?n Y?n t? ph?t tri?n; ??i chi?u g? Ti?n Y?n, c?m/b?ng r??u, g?ng, h?nh, n?m, rau v? c?ch ??p/n?u. B?p Vi?t chu?n h?a kh?u ph?n, n??c d?ng v? th?i gian.",
+          "publisher": "Tuổi Trẻ (dẫn nguồn Báo Quảng Ninh)",
+          "title": "Lẩu gà Tiên Yên nấu bằng bỗng rượu",
+          "use": "Nguồn tường thuật món do chủ nhà hàng ở Tiên Yên tự phát triển; đối chiếu gà Tiên Yên, cơm/bỗng rượu, gừng, hành, nấm, rau và cách ướp/nấu. Bếp Việt chuẩn hóa khẩu phần, nước dùng và thời gian.",
           "accessed_at": "2026-10-24",
           "type": "editorial_reference"
         },
         {
           "url": "https://dulich.quangninh.gov.vn/Trang/ChiTietTinTuc.aspx?nid=3371",
-          "publisher": "C?ng th?ng tin Du l?ch Qu?ng Ninh",
-          "title": "L?u g? Ti?n Y?n n?u b?ng r??u",
-          "use": "??i chi?u nguy?n li?u v? quy tr?nh m?n ???c gi?i thi?u t?i Qu?ng Ninh, ??ng th?i x?c ??nh ??y l? s?ng t?o c?a ng??i n?u ???c ph?ng v?n.",
+          "publisher": "Cổng thông tin Du lịch Quảng Ninh",
+          "title": "Lẩu gà Tiên Yên nấu bằng bỗng rượu",
+          "use": "Đối chiếu nguyên liệu và quy trình món được giới thiệu tại Quảng Ninh, đồng thời xác định đây là sáng tạo của người nấu được phỏng vấn.",
           "accessed_at": "2026-10-24",
           "type": "editorial_reference"
         }
@@ -1095,15 +1091,15 @@
             "servings": 2,
             "main_factor": 0.5,
             "seasoning_start_factor": 0.45,
-            "example": "D?ng m?t n?a nguy?n li?u ch?nh, n?m gia v? t? ?t h?n m?t n?a r?i ?i?u ch?nh.",
-            "instruction": "Gi? nguy?n nguy?n t?c l?m ch?n k? gia c?m v? n?m l?i ? cu?i."
+            "example": "Dùng một nửa nguyên liệu chính, nêm gia vị từ ít hơn một nửa rồi điều chỉnh.",
+            "instruction": "Giữ nguyên nguyên tắc làm chín kỹ gia cầm và nêm lại ở cuối."
           },
           {
             "servings": 6,
             "main_factor": 1.5,
             "seasoning_start_factor": 1.2,
-            "example": "T?ng nguy?n li?u ch?nh kho?ng m?t l?n r??i, gia v? t?ng t? t?.",
-            "instruction": "D?ng n?i ?? r?ng; kh?ng nh?n gia v? m?n theo t? l? c?ng."
+            "example": "Tăng nguyên liệu chính khoảng một lần rưỡi, gia vị tăng từ từ.",
+            "instruction": "Dùng nồi đủ rộng; không nhân gia vị mặn theo tỷ lệ cứng."
           }
         ]
       },
@@ -1111,268 +1107,267 @@
         {
           "image_url": "/images/recipes/edited/lau-ga-tien-yen-nau-bong-ruou-960.webp",
           "page_url": null,
-          "source": "B?p Vi?t",
-          "author": "B?p Vi?t",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
           "license": null,
           "rights_status": "project",
-          "rights_note": "?nh ???c t?o m?i cho B?p Vi?t; ngu?n tham kh?o ch? d?ng ?? bi?n t?p danh t?nh m?n, nguy?n li?u v? k? thu?t.",
+          "rights_note": "Ảnh được tạo mới cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập danh tính món, nguyên liệu và kỹ thuật.",
           "width": 3840,
           "height": 2160,
           "orientation": "landscape",
           "preferred_width_met": true,
-          "alt_text": "N?i l?u g? Ti?n Y?n n?u b?ng r??u n?ng v?i mi?ng g?, n?m h??ng, n?m v? rau xanh; b?y trong n?i ??t, kh?ng ch?.",
+          "alt_text": "Nồi lẩu gà Tiên Yên nấu bằng bỗng rượu nóng với miếng gà, nấm hương, nấm và rau xanh; bày trong nồi đất, không chữ.",
           "verified_dish_match": true,
           "visual_review_date": "2026-10-24",
-          "photo_variant_note": "?nh ImageGen m?i; master PNG alpha l?u t?i output/recipe-images/native. C?c WebP 480/960/1536/3840 ???c xu?t tr?n canvas 3840?2160; k?ch th??c master s? ???c ghi ri?ng trong assets_61.json."
+          "photo_variant_note": "Ảnh minh họa mới; master PNG alpha lưu tại output/recipe-images/native. Các WebP 480/960/1536/3840 được xuất trên canvas 3840 × 2160; kích thước master được ghi riêng trong assets_61.json."
         }
       ],
       "editorial": {
         "status": "editorial_draft",
         "production_ready": false,
         "test_cook_status": "not_tested",
-        "variant_note": "B?o Qu?ng Ninh ghi nh?n m?n n?y l? s?ng t?o c?a m?t ch? qu?n t?i Ti?n Y?n, kh?ng ph?i chu?n c?ng th?c truy?n ??i. B?p Vi?t thay ??i t? l? cho n?i b?n ng??i, th?m rau nh?ng ph? bi?n v? ghi r? ??y l? b?n bi?n t?p gia ??nh.",
+        "variant_note": "Báo Quảng Ninh ghi nhận món này là sáng tạo của một chủ quán tại Tiên Yên, không phải chuẩn công thức truyền đời. Bếp Việt thay đổi tỷ lệ cho nồi bốn người, thêm rau nhúng phổ biến và ghi rõ đây là bản biên tập gia đình.",
         "seed_recipe": null,
         "reviewed_at": "2026-10-24",
-        "needs": "N?u th? ?? c?n b?ng ?? chua/m?i men theo t?ng lo?i b?ng r??u; x?c nh?n th?i gian ch?n g? v? an to?n nhi?t ?? tr??c khi xu?t b?n."
+        "needs": "Nấu thử để cân bằng độ chua/mùi men theo từng loại bỗng rượu; xác nhận thời gian chín gà và an toàn nhiệt độ trước khi xuất bản."
       }
     },
     {
       "id": "BV635",
       "slug": "bun-vit-mang-chua",
-      "name": "B?n v?t m?ng chua",
+      "name": "Bún vịt măng chua",
       "aliases": [
-        "B?n m?ng v?t chua",
-        "B?n v?t n?u m?ng chua"
+        "Bún măng vịt chua",
+        "Bún vịt nấu măng chua"
       ],
       "region": [
-        "Ba mi?n"
+        "Ba miền"
       ],
       "province": [],
-      "category": "M?n n??c",
+      "category": "Món nước",
       "meal_type": [
-        "b?a s?ng",
-        "b?a tr?a",
-        "m?n ch?nh",
-        "m?n n??c"
+        "bữa sáng",
+        "bữa trưa",
+        "món chính",
+        "món nước"
       ],
-      "difficulty": "Trung b?nh",
+      "difficulty": "Trung bình",
       "servings": 4,
-      "serving_basis": "M?t m?n d?ng chung trong m?m c?m ho?c b?a ?n gia ??nh b?n ng??i.",
+      "serving_basis": "Một món dùng chung trong mâm cơm hoặc bữa ăn gia đình bốn người.",
       "prep_time": 35,
       "cook_time": 55,
       "passive_time": 15,
       "total_time": 105,
-      "description": "Th?t v?t lu?c ch?n m?ng, ?n c?ng m?ng chua ?? x?o ng?m, m?c gi? v? b?n trong n??c d?ng ninh t? x??ng v?t. B?p Vi?t bi?n t?p kh?u ph?n gia ??nh theo c?ng th?c B?n v?t m?ng chua c?a VnExpress Cooking; m?n ???c gi?i thi?u nh? m?t l?a ch?n b?n v?t, kh?ng g?n cho ri?ng m?t v?ng.",
-      "finished_dish": "N??c d?ng trong ng?t, m?ng chua d?u v? th?m, th?t v?t m?m m?ng; m?c gi? dai nh? t?o th?m k?t c?u.",
-      "serving": "Ch?n b?n r?i x?p v?o t? c?ng th?t v?t th?i, m?ng v? m?c. Chan n??c d?ng ?ang n?ng, th?m h?nh l?, m?i t?u v? h?ng ch?. D?n k?m ch?n m?m g?ng.",
+      "description": "Thịt vịt luộc chín mềm, ăn cùng măng chua đã xào ngấm, mọc giò và bún trong nước dùng ninh từ xương vịt. Bếp Việt biên tập khẩu phần gia đình theo công thức bún vịt măng chua của VnExpress Cooking; món được giới thiệu như một lựa chọn bún vịt, không gắn cho riêng một vùng.",
+      "finished_dish": "Nước dùng trong ngọt, măng chua dịu và thơm, thịt vịt mềm mọng; mọc giò dai nhẹ tạo thêm kết cấu.",
+      "serving": "Chần bún rồi xếp vào tô cùng thịt vịt thái, măng và mọc. Chan nước dùng đang nóng, thêm hành lá, mùi tàu và húng chũi. Dọn kèm chén mắm gừng.",
       "tips": [
-        "R?a v?t v?i g?ng v? r??u tr?ng, b? phao c?u ?? gi?m m?i.",
-        "Lu?c v?t ? l?a nh? v? ng?m th?m sau khi t?t b?p ?? th?t m?ng; ?i?u ch?nh th?i gian theo k?ch c?.",
-        "Lu?c m?ng chua qua v?i l?n n??c n?u v? qu? g?t, sau ?? x?o ri?ng tr??c khi cho v?o n??c d?ng."
+        "Rửa vịt với gừng và rượu trắng, bỏ phao câu để giảm mùi.",
+        "Luộc vịt ở lửa nhỏ và ngâm thêm sau khi tắt bếp để thịt mọng; điều chỉnh thời gian theo kích cỡ.",
+        "Luộc măng chua qua vài lần nước nếu vị quá gắt, sau đó xào riêng trước khi cho vào nước dùng."
       ],
       "dish_type": [
-        "M?n b?n",
-        "M?n v?t",
-        "M?n n??c"
+        "Món bún",
+        "Món vịt",
+        "Món nước"
       ],
       "main_ingredient": [
-        "V?t",
-        "M?ng chua",
-        "B?n"
+        "Vịt",
+        "Măng chua",
+        "Bún"
       ],
       "cooking_method": [
-        "Lu?c v?t",
-        "X?o m?ng",
-        "N?u n??c d?ng"
+        "Luộc vịt",
+        "Xào măng",
+        "Nấu nước dùng"
       ],
       "search_terms": [
-        "b?n v?t m?ng chua",
-        "b?n m?ng v?t chua",
-        "b?n v?t m?ng",
-        "b?n v?t",
-        "duck noodles sour bamboo"
+        "bún vịt măng chua",
+        "bún măng vịt chua",
+        "bún vịt măng",
+        "bún vịt"
       ],
       "spicy_level": 1,
-      "image_alt": "T? b?n v?t m?ng chua v?i th?t v?t th?i, m?ng chua, vi?n m?c v? h?nh rau th?m trong n??c d?ng n?ng.",
-      "time_note": "Kho?ng 105 ph?t; g?m 15 ph?t ng?m v?t sau lu?c, th?i gian c? th? ??i theo k?ch c? v?t.",
+      "image_alt": "Tô bún vịt măng chua với thịt vịt thái, măng chua, viên mọc và hành rau thơm trong nước dùng nóng.",
+      "time_note": "Khoảng 105 phút; gồm 15 phút ngâm vịt sau luộc, thời gian có thể đổi theo kích cỡ vịt.",
       "suggested_pairings": [
-        "M?m g?ng",
-        "Rau th?m",
-        "?t t??i"
+        "Mắm gừng",
+        "Rau thơm",
+        "Ớt tươi"
       ],
       "recipe_family": "duck_sour_bamboo_noodle_soup",
       "keywords": [
-        "b?n v?t",
-        "m?ng chua",
-        "v?t",
-        "m?n n??c"
+        "bún vịt",
+        "măng chua",
+        "vịt",
+        "món nước"
       ],
       "tags": [
-        "b?n",
-        "m?n v?t",
-        "m?ng chua",
-        "th?t tr?ng"
+        "bún",
+        "món vịt",
+        "măng chua",
+        "thịt trắng"
       ],
       "ingredients": [
         {
-          "name": "V?t l?m s?ch",
+          "name": "Vịt làm sạch",
           "quantity": 1600,
           "unit": "g",
           "role": "protein",
-          "notes": "Ch?n v?t v?a, l?m s?ch v? b? phao c?u.",
+          "notes": "Chọn vịt vừa, làm sạch và bỏ phao câu.",
           "scaling_rule": "linear",
           "sequence": 1
         },
         {
-          "name": "M?ng chua",
+          "name": "Măng chua",
           "quantity": 400,
           "unit": "g",
           "role": "vegetable",
-          "notes": "Th?i mi?ng v?a, lu?c v? x? n?u chua g?t.",
+          "notes": "Thái miếng vừa, luộc và xả nếu chua gắt.",
           "scaling_rule": "linear",
           "sequence": 2
         },
         {
-          "name": "Gi? s?ng",
+          "name": "Giò sống",
           "quantity": 220,
           "unit": "g",
           "role": "protein",
-          "notes": "Ch?n lo?i t??i, n?m nh?.",
+          "notes": "Chọn loại tươi, nêm nhẹ.",
           "scaling_rule": "linear",
           "sequence": 3
         },
         {
-          "name": "B?n t??i",
+          "name": "Bún tươi",
           "quantity": 800,
           "unit": "g",
           "role": "grain",
-          "notes": "Ch?n nhanh tr??c khi chia t?.",
+          "notes": "Chần nhanh trước khi chia tô.",
           "scaling_rule": "linear",
           "sequence": 4
         },
         {
-          "name": "N?m h??ng kh?",
+          "name": "Nấm hương khô",
           "quantity": 12,
           "unit": "g",
           "role": "vegetable",
-          "notes": "Ng?m m?m, b?m nh? m?t ph?n tr?n m?c.",
+          "notes": "Ngâm mềm, băm nhỏ một phần trộn mọc.",
           "scaling_rule": "linear",
           "sequence": 5
         },
         {
-          "name": "M?c nh? kh?",
+          "name": "Mộc nhĩ khô",
           "quantity": 8,
           "unit": "g",
           "role": "vegetable",
-          "notes": "Ng?m n?, r?a s?ch, b?m nh?.",
+          "notes": "Ngâm nở, rửa sạch, băm nhỏ.",
           "scaling_rule": "linear",
           "sequence": 6
         },
         {
-          "name": "G?ng",
+          "name": "Gừng",
           "quantity": 55,
           "unit": "g",
           "role": "aromatic",
-          "notes": "??p d?p; chia cho lu?c v?t v? pha m?m g?ng.",
+          "notes": "Đập dập; chia cho luộc vịt và pha mắm gừng.",
           "scaling_rule": "linear",
           "sequence": 7
         },
         {
-          "name": "H?nh kh?",
+          "name": "Hành khô",
           "quantity": 30,
           "unit": "g",
           "role": "aromatic",
-          "notes": "B?c v?, ??p d?p; gi? l?i m?t ?t ?? phi m?ng.",
+          "notes": "Bóc vỏ, đập dập; giữ lại một ít để phi măng.",
           "scaling_rule": "linear",
           "sequence": 8
         },
         {
-          "name": "H?nh l?",
+          "name": "Hành lá",
           "quantity": 30,
           "unit": "g",
           "role": "herb",
-          "notes": "R?a s?ch, th?i nh?.",
+          "notes": "Rửa sạch, thái nhỏ.",
           "scaling_rule": "linear",
           "sequence": 9
         },
         {
-          "name": "M?i t?u",
+          "name": "Mùi tàu",
           "quantity": 15,
           "unit": "g",
           "role": "herb",
-          "notes": "R?a s?ch, th?i nh?.",
+          "notes": "Rửa sạch, thái nhỏ.",
           "scaling_rule": "linear",
           "sequence": 10
         },
         {
-          "name": "H?ng ch?",
+          "name": "Húng chũi",
           "quantity": 15,
           "unit": "g",
           "role": "herb",
-          "notes": "Nh?t v? r?a s?ch.",
+          "notes": "Nhặt và rửa sạch.",
           "scaling_rule": "linear",
           "sequence": 11
         },
         {
-          "name": "R??u tr?ng",
+          "name": "Rượu trắng",
           "quantity": 25,
           "unit": "ml",
           "role": "seasoning",
-          "notes": "D?ng x?t v?t kh? m?i r?i r?a l?i.",
+          "notes": "Dùng xát vịt khử mùi rồi rửa lại.",
           "scaling_rule": "linear",
           "sequence": 12
         },
         {
-          "name": "N??c m?m",
+          "name": "Nước mắm",
           "quantity": 35,
           "unit": "ml",
           "role": "seasoning",
-          "notes": "Chia n?m n??c d?ng, m?ng v? n??c ch?m.",
+          "notes": "Chia nêm nước dùng, măng và nước chấm.",
           "scaling_rule": "taste_adjusted",
           "sequence": 13
         },
         {
-          "name": "Mu?i",
+          "name": "Muối",
           "quantity": 8,
           "unit": "g",
           "role": "seasoning",
-          "notes": "D?ng v?a ??, n?m l?i ? cu?i.",
+          "notes": "Dùng vừa đủ, nêm lại ở cuối.",
           "scaling_rule": "taste_adjusted",
           "sequence": 14
         },
         {
-          "name": "???ng",
+          "name": "Đường",
           "quantity": 10,
           "unit": "g",
           "role": "seasoning",
-          "notes": "Chia m?t ?t ?? pha m?m g?ng.",
+          "notes": "Chia một ít để pha mắm gừng.",
           "scaling_rule": "taste_adjusted",
           "sequence": 15
         },
         {
-          "name": "N??c l?c",
+          "name": "Nước lọc",
           "quantity": 2600,
           "unit": "ml",
           "role": "liquid",
-          "notes": "D?ng lu?c v?t v? ninh n??c d?ng.",
+          "notes": "Dùng luộc vịt và ninh nước dùng.",
           "scaling_rule": "linear",
           "sequence": 16
         },
         {
-          "name": "Chanh",
+          "name": "Mỡ vịt",
           "quantity": 25,
           "unit": "g",
           "role": "seasoning",
-          "notes": "V?t l?y n??c pha m?m g?ng.",
+          "notes": "Vớt từ nồi luộc vịt để xào măng.",
           "scaling_rule": "linear",
           "sequence": 17
         },
         {
-          "name": "?t t??i",
+          "name": "Ớt tươi",
           "quantity": 5,
           "unit": "g",
           "role": "seasoning",
-          "notes": "B? h?t, b?m nh?; d?ng cho n??c ch?m.",
+          "notes": "Bỏ hạt, băm nhỏ; dùng cho nước chấm.",
           "scaling_rule": "taste_adjusted",
           "sequence": 18
         }
@@ -1380,33 +1375,33 @@
       "preparation_steps": [
         {
           "step": 1,
-          "instruction": "X?t v?t v?i r??u tr?ng v? g?ng ??p d?p, r?a s?ch, c?t b? phao c?u. ?? r?o; r?a l?ng m? ri?ng n?u s? d?ng."
+          "instruction": "Xát vịt với rượu trắng và gừng đập dập, rửa sạch, cắt bỏ phao câu. Để ráo; rửa lòng mề riêng nếu sử dụng."
         },
         {
           "step": 2,
-          "instruction": "Ng?m n?m h??ng v? m?c nh? cho n?, r?a s?ch r?i b?m nh?. Tr?n gi? s?ng v?i n?m, n?m nh? v? qu?t ??n khi d?o. Chu?n b? m?ng, b?n v? c?c lo?i rau."
+          "instruction": "Ngâm nấm hương và mộc nhĩ cho nở, rửa sạch rồi băm nhỏ. Trộn giò sống với nấm, nêm nhẹ và quết đến khi dẻo. Chuẩn bị măng, bún và các loại rau."
         }
       ],
       "cooking_steps": [
         {
           "step": 1,
-          "instruction": "Cho v?t v?o n?i n??c v?i g?ng, h?nh kh? v? ch?t mu?i. ?un s?i nh?, h?t b?t r?i h? l?a; lu?c ??n khi v?t ch?n, t?t b?p v? ng?m th?m 15 ph?t. V?t v?t ra, l?c th?t; cho x??ng tr? l?i n?i ninh ?? l?y n??c d?ng."
+          "instruction": "Cho vịt vào nồi nước cùng gừng, hành khô và chút muối. Đun sôi nhẹ, hớt bọt rồi hạ lửa; luộc đến khi vịt chín, tắt bếp và ngâm thêm 15 phút. Vớt vịt ra để nguội; lọc thịt. Cho xương trở lại nồi ninh lấy nước dùng."
         },
         {
           "step": 2,
-          "instruction": "Lu?c m?ng chua 2?3 l?n n??c n?u chua g?t, r?a v? ?? r?o. Phi th?m h?nh kh?, cho m?ng v?o x?o k? v?i ch?t n??c m?m v? m?t ?t m? n?i t? n?i v?t."
+          "instruction": "Luộc măng chua 2–3 lần nước nếu chua gắt, rửa và để ráo. Phi thơm hành khô, cho măng vào xào kỹ với chút nước mắm và ít mỡ vịt vớt từ nồi."
         },
         {
           "step": 3,
-          "instruction": "L?c n??c d?ng, ?un s?i l?i r?i th? t?ng vi?n m?c v?o; khi m?c n?i, th?m m?ng v? n?u th?m 8?10 ph?t. N?m n??c m?m, mu?i cho v?a. Ch?n b?n, x?p v?t v? rau v?o t?, chan n??c d?ng n?ng."
+          "instruction": "Lọc nước dùng, đun sôi lại rồi thả từng viên mọc vào; khi mọc nổi, thêm măng và nấu thêm 8–10 phút. Nêm nước mắm, muối cho vừa. Chần bún, xếp vịt và rau vào tô, chan nước dùng nóng."
         }
       ],
       "sources": [
         {
           "url": "https://vnexpress.net/doi-song-cooking-bun-vit-mang-chua-4918915.html",
           "publisher": "VnExpress Cooking",
-          "title": "C?ch n?u b?n v?t m?ng chua",
-          "use": "??i chi?u danh t?nh m?n, nguy?n li?u (v?t, m?ng chua, gi? s?ng, n?m h??ng, m?c nh?, g?ng, h?nh, b?n), k? thu?t lu?c v?t, x?o m?ng v? n?u m?c. B?p Vi?t gi?m ??nh l??ng cho b?n ng??i v? bi?n t?p tr?nh t? n?u.",
+          "title": "Cách nấu bún vịt măng chua",
+          "use": "Đối chiếu danh tính món, nguyên liệu vịt, măng chua, giò sống, nấm hương, mộc nhĩ, gừng, hành và bún; tham khảo kỹ thuật luộc vịt, xào măng và nấu mọc. Bếp Việt giảm định lượng cho bốn người và biên tập trình tự nấu.",
           "accessed_at": "2026-10-24",
           "type": "editorial_reference"
         }
@@ -1419,15 +1414,15 @@
             "servings": 2,
             "main_factor": 0.5,
             "seasoning_start_factor": 0.45,
-            "example": "D?ng m?t n?a nguy?n li?u ch?nh, n?m gia v? t? ?t h?n m?t n?a r?i ?i?u ch?nh.",
-            "instruction": "Gi? nguy?n nguy?n t?c l?m ch?n k? gia c?m v? n?m l?i ? cu?i."
+            "example": "Dùng một nửa nguyên liệu chính, nêm gia vị từ ít hơn một nửa rồi điều chỉnh.",
+            "instruction": "Giữ nguyên nguyên tắc làm chín kỹ gia cầm và nêm lại ở cuối."
           },
           {
             "servings": 6,
             "main_factor": 1.5,
             "seasoning_start_factor": 1.2,
-            "example": "T?ng nguy?n li?u ch?nh kho?ng m?t l?n r??i, gia v? t?ng t? t?.",
-            "instruction": "D?ng n?i ?? r?ng; kh?ng nh?n gia v? m?n theo t? l? c?ng."
+            "example": "Tăng nguyên liệu chính khoảng một lần rưỡi, gia vị tăng từ từ.",
+            "instruction": "Dùng nồi đủ rộng; không nhân gia vị mặn theo tỷ lệ cứng."
           }
         ]
       },
@@ -1435,31 +1430,31 @@
         {
           "image_url": "/images/recipes/edited/bun-vit-mang-chua-960.webp",
           "page_url": null,
-          "source": "B?p Vi?t",
-          "author": "B?p Vi?t",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
           "license": null,
           "rights_status": "project",
-          "rights_note": "?nh t?o m?i cho B?p Vi?t; ngu?n tham kh?o ch? d?ng ?? bi?n t?p m?n v? k? thu?t.",
+          "rights_note": "Ảnh tạo mới cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập món và kỹ thuật.",
           "width": 3840,
           "height": 2160,
           "orientation": "landscape",
           "preferred_width_met": true,
-          "alt_text": "T? b?n v?t m?ng chua v?i th?t v?t th?i, m?ng chua, vi?n m?c v? h?nh rau th?m trong n??c d?ng n?ng.",
+          "alt_text": "Tô bún vịt măng chua với thịt vịt thái, măng chua, viên mọc và hành rau thơm trong nước dùng nóng.",
           "verified_dish_match": true,
           "visual_review_date": "2026-10-24",
-          "photo_variant_note": "?nh ImageGen ri?ng; master PNG alpha t?i output/recipe-images/native; WebP 480/960/1536/3840 tr?n canvas 3840?2160."
+          "photo_variant_note": "Ảnh minh họa riêng; master PNG alpha tại output/recipe-images/native; WebP 480/960/1536/3840 trên canvas 3840 × 2160."
         }
       ],
       "editorial": {
         "status": "editorial_draft",
         "production_ready": false,
         "test_cook_status": "not_tested",
-        "variant_note": "B?p Vi?t bi?n t?p c?ng th?c VnExpress Cooking cho b?n ph?n, gi?m l??ng v?t v? gi? c?c k? thu?t ch?nh; kh?ng g?n m?n cho m?t ??a ph??ng c? th?.",
+        "variant_note": "Bếp Việt biên tập công thức VnExpress Cooking cho bốn phần, giảm lượng vịt và giữ các kỹ thuật chính; không gắn món cho một địa phương cụ thể.",
         "seed_recipe": null,
         "reviewed_at": "2026-10-24",
         "needs": [
-          "N?u th? ?? ch?t th?i gian lu?c theo k?ch c? v?t v? ?? chua c?a m?ng.",
-          "X?c nh?n ?? dai c?a m?c khi d?ng gi? s?ng kh?c nh?n hi?u."
+          "Nấu thử để chốt thời gian luộc theo kích cỡ vịt và độ chua của măng.",
+          "Xác nhận độ dai của mọc khi dùng giò sống khác nhãn hiệu."
         ]
       }
     }

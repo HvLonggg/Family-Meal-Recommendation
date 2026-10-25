@@ -1,0 +1,88 @@
+{
+  "batch": 82,
+  "canvas": {
+    "width": 3840,
+    "height": 2160,
+    "format": "WebP",
+    "background": "transparent"
+  },
+  "native_format": "PNG",
+  "export_master_format": "PNG",
+  "assets": [
+    {
+      "id": "BV737",
+      "slug": "cai-thia-xao-nam-dong-co",
+      "native_file": "output/recipe-images/native/cai-thia-xao-nam-dong-co.png",
+      "native_pixels": [1536, 1024],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/cai-thia-xao-nam-dong-co.png",
+      "export_master_pixels": [3840, 2160],
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/cai-thia-xao-nam-dong-co-480.webp", "pixels": [480, 270], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/cai-thia-xao-nam-dong-co-960.webp", "pixels": [960, 540], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/cai-thia-xao-nam-dong-co-1536.webp", "pixels": [1536, 864], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/cai-thia-xao-nam-dong-co-3840.webp", "pixels": [3840, 2160], "has_alpha": true}
+      ]
+    },
+    {
+      "id": "BV738",
+      "slug": "dau-hu-xao-gia",
+      "native_file": "output/recipe-images/native/dau-hu-xao-gia.png",
+      "native_pixels": [1536, 1024],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/dau-hu-xao-gia.png",
+      "export_master_pixels": [3840, 2160],
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/dau-hu-xao-gia-480.webp", "pixels": [480, 270], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/dau-hu-xao-gia-960.webp", "pixels": [960, 540], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/dau-hu-xao-gia-1536.webp", "pixels": [1536, 864], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/dau-hu-xao-gia-3840.webp", "pixels": [3840, 2160], "has_alpha": true}
+      ]
+    },
+    {
+      "id": "BV739",
+      "slug": "canh-rong-bien-dau-hu-chay",
+      "native_file": "output/recipe-images/native/canh-rong-bien-dau-hu-chay.png",
+      "native_pixels": [1312, 1199],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/canh-rong-bien-dau-hu-chay.png",
+      "export_master_pixels": [3840, 2160],
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/canh-rong-bien-dau-hu-chay-480.webp", "pixels": [480, 270], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/canh-rong-bien-dau-hu-chay-960.webp", "pixels": [960, 540], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/canh-rong-bien-dau-hu-chay-1536.webp", "pixels": [1536, 864], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/canh-rong-bien-dau-hu-chay-3840.webp", "pixels": [3840, 2160], "has_alpha": true}
+      ]
+    },
+    {
+      "id": "BV740",
+      "slug": "bap-cai-cuon-chay",
+      "native_file": "output/recipe-images/native/bap-cai-cuon-chay.png",
+      "native_pixels": [1536, 1024],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/bap-cai-cuon-chay.png",
+      "export_master_pixels": [3840, 2160],
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/bap-cai-cuon-chay-480.webp", "pixels": [480, 270], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/bap-cai-cuon-chay-960.webp", "pixels": [960, 540], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/bap-cai-cuon-chay-1536.webp", "pixels": [1536, 864], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/bap-cai-cuon-chay-3840.webp", "pixels": [3840, 2160], "has_alpha": true}
+      ]
+    },
+    {
+      "id": "BV741",
+      "slug": "rau-den-luoc-cham-tuong",
+      "native_file": "output/recipe-images/native/rau-den-luoc-cham-tuong.png",
+      "native_pixels": [1536, 1024],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/rau-den-luoc-cham-tuong.png",
+      "export_master_pixels": [3840, 2160],
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/rau-den-luoc-cham-tuong-480.webp", "pixels": [480, 270], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/rau-den-luoc-cham-tuong-960.webp", "pixels": [960, 540], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/rau-den-luoc-cham-tuong-1536.webp", "pixels": [1536, 864], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/rau-den-luoc-cham-tuong-3840.webp", "pixels": [3840, 2160], "has_alpha": true}
+      ]
+    }
+  ]
+}

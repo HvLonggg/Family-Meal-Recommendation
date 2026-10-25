@@ -1,0 +1,1433 @@
+{
+  "batch": 71,
+  "description": "Năm món gia cầm thân thuộc với cách làm khác nhau; biên tập từ nguồn ẩm thực Việt, chưa nấu thử.",
+  "recipes": [
+    {
+      "id": "BV681",
+      "slug": "com-ga-xoi-mo",
+      "name": "Cơm gà xối mỡ",
+      "aliases": [
+        "Cơm gà chiên giòn",
+        "Cơm gà xối mỡ kiểu gia đình"
+      ],
+      "region": [
+        "Ba miền"
+      ],
+      "province": [],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "mâm cơm gia đình"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Bốn phần cơm, mỗi phần có một miếng gà chiên và rau ăn kèm.",
+      "prep_time": 25,
+      "cook_time": 55,
+      "passive_time": 30,
+      "total_time": 110,
+      "description": "Gà được ướp, luộc chín tới rồi để ráo trước khi chiên vàng giòn; phần nước luộc dùng nấu cơm và cơm nguội rang cùng trứng. Dưa leo, cà chua, cà rốt và củ cải tươi giúp bữa ăn cân vị.",
+      "finished_dish": "Da gà vàng giòn, thịt chín mọng; hạt cơm săn tơi, thơm mùi tỏi và trứng, không khô.",
+      "serving": "Xếp cơm và gà cạnh nhau, dùng nóng với dưa leo, cà chua, củ cải cà rốt ngâm chua và chén xì dầu hoặc nước mắm chua ngọt.",
+      "tips": [
+        "Để gà nguội và thật ráo trước khi chiên để dầu ít bắn và da dễ giòn.",
+        "Dùng nước luộc đã lọc để nấu cơm; để cơm nguội trước khi trộn trứng để hạt cơm không bết.",
+        "Chiên theo mẻ, không xếp chật chảo; kiểm tra phần thịt sát xương đã chín."
+      ],
+      "dish_type": [
+        "Cơm gà xối mỡ"
+      ],
+      "main_ingredient": [
+        "thịt gà",
+        "gạo",
+        "trứng gà"
+      ],
+      "cooking_method": [
+        "ướp",
+        "luộc",
+        "chiên ngập dầu",
+        "rang cơm"
+      ],
+      "search_terms": [
+        "cơm gà xối mỡ",
+        "gà chiên ăn cơm",
+        "cơm chiên trứng với gà",
+        "món gà dễ nấu"
+      ],
+      "spicy_level": 0,
+      "image_alt": "vi",
+      "time_note": "Khoảng 110 phút gồm thời gian ướp và làm nguội; có thể nấu cơm trong lúc gà ráo.",
+      "suggested_pairings": [
+        "Dưa leo",
+        "Cà chua",
+        "Đồ chua cà rốt, củ cải"
+      ],
+      "recipe_family": "com_ga_xoi_mo",
+      "keywords": [
+        "gà chiên",
+        "cơm rang trứng",
+        "cơm gia đình",
+        "món mặn"
+      ],
+      "tags": [
+        "món gia cầm",
+        "món mặn",
+        "cơm gia đình"
+      ],
+      "ingredients": [
+        {
+          "name": "Thịt gà chặt miếng",
+          "quantity": 750,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn phần đùi, cánh hoặc nửa con chặt miếng.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Gạo tẻ",
+          "quantity": 300,
+          "unit": "g",
+          "role": "grain",
+          "notes": "Vo sạch; dùng nước luộc gà đã lọc để nấu.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Trứng gà",
+          "quantity": 2,
+          "unit": "quả",
+          "role": "main",
+          "notes": "Đánh tan rồi trộn với cơm đã nguội.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhỏ, chia phần ướp gà và rang cơm.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Gừng",
+          "quantity": 20,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Thái lát để luộc cùng gà.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Đầu hành lá",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Cho vào nồi luộc gà.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Nước tương",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng ướp gà hoặc chấm khi ăn.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Muối",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Chia một phần để ướp và nêm nước luộc.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Đường",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Tạo vị dịu cho phần ướp.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 800,
+          "unit": "ml",
+          "role": "fat",
+          "notes": "Lượng dầu dùng chiên; phần hút vào món sẽ ít hơn.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Dưa leo",
+          "quantity": 150,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Thái lát để ăn kèm.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Cà chua",
+          "quantity": 150,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Thái múi cau hoặc lát.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        },
+        {
+          "name": "Cà rốt",
+          "quantity": 100,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Thái sợi, rửa sạch và để ráo để ăn kèm.",
+          "scaling_rule": "linear",
+          "sequence": 13
+        },
+        {
+          "name": "Củ cải trắng",
+          "quantity": 100,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Thái sợi, rửa sạch và để ráo để ăn kèm.",
+          "scaling_rule": "linear",
+          "sequence": 14
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa sạch gà, chặt miếng vừa ăn và thấm khô. Băm tỏi; thái lát gừng, rửa sạch đầu hành."
+        },
+        {
+          "step": 2,
+          "instruction": "Ướp gà với tỏi, nước tương, đường và một phần muối trong khoảng 30 phút. Giữ lạnh trong thời gian ướp."
+        },
+        {
+          "step": 3,
+          "instruction": "Thái dưa leo, cà chua; thái sợi cà rốt và củ cải, ngâm nước đá rồi để ráo để rau củ giòn khi ăn kèm."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đun nồi nước cùng gừng, đầu hành và phần muối còn lại. Cho gà vào luộc lửa vừa đến khi vừa chín; vớt ra để nguội và ráo hoàn toàn, giữ lại nước luộc đã lọc."
+        },
+        {
+          "step": 2,
+          "instruction": "Đun nóng dầu trong nồi sâu. Chiên gà theo mẻ ở lửa vừa đến khi da vàng giòn và thịt chín kỹ gần xương; để ráo trên rack."
+        },
+        {
+          "step": 3,
+          "instruction": "Nấu gạo với nước luộc gà theo lượng nước phù hợp với loại gạo. Khi cơm chín, xới ra khay cho nguội bớt."
+        },
+        {
+          "step": 4,
+          "instruction": "Phi thơm phần tỏi còn lại với ít dầu, cho cơm vào đảo tơi. Rưới trứng đã đánh, đảo nhanh đến khi trứng bám hạt cơm và cơm nóng săn."
+        },
+        {
+          "step": 5,
+          "instruction": "Dọn cơm rang cùng gà chiên, dưa leo, cà chua, cà rốt và củ cải tươi; dùng kèm nước tương hoặc nước chấm tùy khẩu vị."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://ngoisao.vnexpress.net/com-ga-xoi-mo-3251750.html",
+          "publisher": "Ngôi Sao / VnExpress",
+          "title": "Cơm gà xối mỡ",
+          "use": "Đối chiếu gà ướp, luộc với gừng và đầu hành, để ráo rồi chiên; dùng nước luộc nấu cơm, trộn trứng vào cơm nguội và rang với tỏi. Định lượng được Bếp Việt biên tập.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Dùng khoảng 375 g gà, 150 g gạo và 1 quả trứng; nêm gia vị từ ít hơn một nửa.",
+            "instruction": "Dùng nồi nhỏ hơn để luộc gà và chiên theo mẻ; điều chỉnh lượng nước theo gạo."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "Tăng gà lên khoảng 1,1 kg, gạo 450 g và 3 trứng; gia vị tăng chậm hơn.",
+            "instruction": "Nấu cơm nhiều mẻ nếu cần, chiên gà không quá chật để da vàng đều."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/com-ga-xoi-mo-960.webp",
+          "page_url": null,
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo mới riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập và đối chiếu món ăn.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "vi",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh PNG alpha được tạo riêng cho Bếp Việt, xuất master 4K và WebP responsive; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt giữ trình tự luộc gà, tận dụng nước dùng nấu cơm rồi chiên gà và rang cơm trứng; khẩu phần và gia vị đã được chuẩn hóa cho bữa nhà.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử để chốt định lượng, thời gian và cân bằng gia vị theo nguyên liệu thực tế."
+        ]
+      }
+    },
+    {
+      "id": "BV682",
+      "slug": "canh-ga-nhoi-com",
+      "name": "Cánh gà nhồi cốm",
+      "aliases": [
+        "Cánh gà nhồi cốm non",
+        "Cánh gà chiên cốm"
+      ],
+      "region": [
+        "Bắc"
+      ],
+      "province": [
+        "Hà Nội"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa tối",
+        "mâm cơm gia đình",
+        "món đãi khách"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Sáu cánh gà nhồi cốm, dùng cho bốn người như món mặn ăn cùng cơm.",
+      "prep_time": 30,
+      "cook_time": 35,
+      "passive_time": 0,
+      "total_time": 65,
+      "description": "Cánh gà rút xương được nhồi giò sống, nấm hương và cốm non, hấp sơ để giữ nhân rồi áo thêm trứng và cốm trước khi chiên vàng. Hương cốm thơm dịu, lớp ngoài giòn nhẹ.",
+      "finished_dish": "Cánh gà giữ nguyên dáng, nhân chín kết dính, lớp cốm vàng xanh thơm và không cháy sẫm.",
+      "serving": "Dọn nóng cùng dưa leo, rau thơm và cơm trắng; khi cắt, để cánh nghỉ vài phút để nhân không rời.",
+      "tips": [
+        "Rút xương nhẹ tay và chừa đầu khớp để cánh không rách.",
+        "Chia cốm thành phần trộn nhân và phần áo ngoài; không nhồi quá chặt vì nhân nở khi hấp.",
+        "Để cánh nguội sau hấp và ráo bề mặt trước khi áo trứng, lăn cốm rồi chiên.",
+        "Chiên lửa vừa để cánh chín kỹ mà cốm không sậm màu."
+      ],
+      "dish_type": [
+        "Cánh gà nhồi cốm"
+      ],
+      "main_ingredient": [
+        "cánh gà",
+        "cốm non",
+        "giò sống"
+      ],
+      "cooking_method": [
+        "rút xương",
+        "nhồi nhân",
+        "hấp",
+        "chiên"
+      ],
+      "search_terms": [
+        "cánh gà nhồi cốm",
+        "gà nhồi cốm Hà Nội",
+        "cánh gà chiên cốm",
+        "món ngon từ cốm"
+      ],
+      "spicy_level": 0,
+      "image_alt": "vi",
+      "time_note": "Khoảng 65 phút; gồm rút xương, nhồi nhân, hấp sơ và chiên.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Dưa leo",
+        "Rau thơm"
+      ],
+      "recipe_family": "canh_ga_nhoi_com",
+      "keywords": [
+        "cánh gà",
+        "cốm non",
+        "món Hà Nội",
+        "món chiên"
+      ],
+      "tags": [
+        "món gia cầm",
+        "món mặn",
+        "món Bắc",
+        "món đãi khách"
+      ],
+      "ingredients": [
+        {
+          "name": "Cánh gà",
+          "quantity": 6,
+          "unit": "cái",
+          "role": "main",
+          "notes": "Rút xương, chừa lại phần khớp cuối để giữ dáng.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Cốm non",
+          "quantity": 200,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chia khoảng 130 g trộn nhân và 70 g áo ngoài.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Giò sống",
+          "quantity": 100,
+          "unit": "g",
+          "role": "main",
+          "notes": "Giữ lạnh đến khi trộn nhân.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Nấm hương khô",
+          "quantity": 8,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Ngâm mềm, vắt ráo rồi băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Hành khô",
+          "quantity": 20,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Lòng đỏ trứng gà",
+          "quantity": 2,
+          "unit": "cái",
+          "role": "binder",
+          "notes": "Đánh tan để áo cánh trước khi lăn cốm.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng lượng vừa phải vì giò sống đã có vị.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Trộn vào phần nhân.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 500,
+          "unit": "ml",
+          "role": "fat",
+          "notes": "Dùng để chiên; lượng hấp thụ thực tế thấp hơn.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Rau mùi",
+          "quantity": 10,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, dùng trang trí và ăn kèm.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa cánh gà, lọc xương cẩn thận và chừa đầu khớp. Ngâm nấm hương cho mềm rồi băm nhỏ."
+        },
+        {
+          "step": 2,
+          "instruction": "Băm hành khô; trộn giò sống với nấm, hành, nước mắm, tiêu và khoảng 130 g cốm cho quyện."
+        },
+        {
+          "step": 3,
+          "instruction": "Nhồi lượng nhân vừa đủ vào từng cánh, vuốt kín miệng và xếp lên xửng có lót giấy nến."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Hấp cánh gà khoảng 10 phút để nhân se lại. Lấy ra, để nguội và thấm khô bề mặt."
+        },
+        {
+          "step": 2,
+          "instruction": "Đánh tan lòng đỏ trứng. Phết trứng lên cánh rồi lăn qua phần cốm còn lại, ấn nhẹ để hạt bám đều."
+        },
+        {
+          "step": 3,
+          "instruction": "Đun nóng dầu ở lửa vừa. Chiên cánh theo mẻ, trở đều đến khi lớp cốm vàng và thịt gà chín kỹ; để ráo dầu."
+        },
+        {
+          "step": 4,
+          "instruction": "Để nghỉ vài phút rồi dọn nóng với rau mùi, dưa leo và cơm trắng."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://vnexpress.net/canh-ga-nhoi-com-4311193.html",
+          "publisher": "VnExpress Cooking",
+          "title": "Cánh gà nhồi cốm",
+          "use": "Đối chiếu tên món, cánh rút xương chừa một đầu, phần nhân gồm giò sống, cốm, nấm hương, hành; hấp khoảng 10 phút, áo lòng đỏ và cốm rồi rán. Định lượng được Bếp Việt chuẩn hóa.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://vov.vn/doi-song/nhung-mon-ngon-tu-com-chi-mua-thu-ha-noi-moi-co-424666.vov",
+          "publisher": "VOV",
+          "title": "Những món ngon từ cốm chỉ mùa thu Hà Nội mới có",
+          "use": "Đối chiếu liên hệ văn hóa giữa món cánh gà nhồi cốm và ẩm thực mùa cốm Hà Nội; không dùng làm nguồn định lượng công thức.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Dùng 3 cánh, 100 g cốm, 50 g giò sống và 1 lòng đỏ; giảm gia vị nhẹ tay.",
+            "instruction": "Hấp một mẻ nhỏ và chiên trong chảo vừa để lớp cốm không ngấm dầu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "Dùng 9 cánh, 300 g cốm và 150 g giò sống; làm nhân theo từng lượt.",
+            "instruction": "Hấp nhiều lượt nếu xửng chật; chiên theo mẻ, tránh ép sát cánh."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/canh-ga-nhoi-com-960.webp",
+          "page_url": null,
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo mới riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập và đối chiếu món ăn.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "vi",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh PNG alpha được tạo riêng cho Bếp Việt, xuất master 4K và WebP responsive; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt giữ cách làm cánh rút xương, nhồi giò sống-cốm-nấm, hấp rồi áo cốm chiên theo nguồn VnExpress; gắn Hà Nội theo nguồn văn hóa VOV.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử để chốt định lượng, thời gian và cân bằng gia vị theo nguyên liệu thực tế."
+        ]
+      }
+    },
+    {
+      "id": "BV683",
+      "slug": "chim-cau-bam-xuc-phong-tom",
+      "name": "Chim câu bằm xúc phồng tôm",
+      "aliases": [
+        "Chim bồ câu bằm xúc bánh phồng tôm",
+        "Chim câu xào rau răm ăn với phồng tôm"
+      ],
+      "region": [
+        "Ba miền"
+      ],
+      "province": [],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa tối",
+        "món khai vị",
+        "món ăn chơi",
+        "món đãi khách"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một đĩa chim câu bằm ăn cùng phồng tôm, đủ cho bốn người dùng khai vị hoặc món ăn chơi.",
+      "prep_time": 25,
+      "cook_time": 20,
+      "passive_time": 0,
+      "total_time": 45,
+      "description": "Thịt chim câu bằm được xào nhanh với hành tỏi, ớt, hành tây và rau răm. Phồng tôm giòn dùng để xúc tạo tương phản với phần thịt mềm thơm; Bếp Việt chọn lọc riêng thịt để món phù hợp bữa gia đình.",
+      "finished_dish": "Thịt chim săn nhưng không khô, rau răm thơm rõ, gia vị vừa; phồng tôm giữ giòn khi dọn.",
+      "serving": "Dọn nhân chim nóng trong đĩa sâu lòng, rắc lạc rang và hành phi; bày phồng tôm chiên riêng để xúc từng miếng.",
+      "tips": [
+        "Lọc bỏ xương nhỏ và băm thịt riêng; không băm lẫn xương để tránh mảnh xương trong món.",
+        "Xào thịt trên lửa lớn, chia mẻ nếu chảo nhỏ để thịt săn thay vì ra nước.",
+        "Cho rau răm và hành lá vào cuối cùng, đảo nhanh để giữ hương.",
+        "Chiên phồng tôm ở dầu đủ nóng rồi để ráo trước khi dọn."
+      ],
+      "dish_type": [
+        "Chim câu bằm xúc phồng tôm"
+      ],
+      "main_ingredient": [
+        "thịt chim câu",
+        "phồng tôm",
+        "rau răm"
+      ],
+      "cooking_method": [
+        "lọc xương",
+        "băm thịt",
+        "xào nhanh",
+        "chiên phồng tôm"
+      ],
+      "search_terms": [
+        "chim câu bằm xúc phồng tôm",
+        "chim bồ câu xào rau răm",
+        "món chim câu dễ làm",
+        "món ăn với phồng tôm"
+      ],
+      "spicy_level": 1,
+      "image_alt": "vi",
+      "time_note": "Khoảng 45 phút; gồm sơ chế, lọc xương và xào nhanh phần thịt.",
+      "suggested_pairings": [
+        "Phồng tôm",
+        "Rau răm",
+        "Dưa leo"
+      ],
+      "recipe_family": "chim_cau_bam_xuc_phong_tom",
+      "keywords": [
+        "chim câu",
+        "chim bồ câu",
+        "rau răm",
+        "phồng tôm",
+        "món khai vị"
+      ],
+      "tags": [
+        "món gia cầm",
+        "món mặn",
+        "món khai vị",
+        "món đãi khách"
+      ],
+      "ingredients": [
+        {
+          "name": "Chim bồ câu ra ràng",
+          "quantity": 2,
+          "unit": "con",
+          "role": "main",
+          "notes": "Làm sạch, lọc thịt khỏi xương và băm vừa; giữ xương để nấu nước dùng nếu muốn.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Phồng tôm",
+          "quantity": 100,
+          "unit": "g",
+          "role": "accompaniment",
+          "notes": "Chiên giòn hoặc dùng loại đã chiên sẵn.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Hành khô",
+          "quantity": 40,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Ớt sừng đỏ",
+          "quantity": 15,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Bỏ hạt nếu muốn giảm cay, thái hạt lựu.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Rau răm",
+          "quantity": 35,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, thái rối.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 25,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Thái nhỏ, để riêng phần đầu trắng.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Hành tây",
+          "quantity": 100,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Thái hạt lựu nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm dần cho vừa vị.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Dầu hào",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Tạo vị đậm dịu.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Hạt nêm",
+          "quantity": 4,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Có thể giảm hoặc bỏ.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Rắc một phần khi xào, phần còn lại lúc dọn.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        },
+        {
+          "name": "Lạc rang",
+          "quantity": 25,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Giã dập.",
+          "scaling_rule": "linear",
+          "sequence": 13
+        },
+        {
+          "name": "Hành phi",
+          "quantity": 10,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Rắc khi dọn.",
+          "scaling_rule": "linear",
+          "sequence": 14
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "fat",
+          "notes": "Dùng xào thịt chim.",
+          "scaling_rule": "linear",
+          "sequence": 15
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm sạch chim, lọc hết thịt khỏi xương và băm vừa. Không băm lẫn xương; có thể giữ xương để ninh nước dùng riêng."
+        },
+        {
+          "step": 2,
+          "instruction": "Băm hành khô, tỏi; thái ớt, hành tây, hành lá và rau răm. Giã dập lạc rang."
+        },
+        {
+          "step": 3,
+          "instruction": "Khuấy nước mắm với dầu hào, hạt nêm và tiêu. Kiểm tra gói phồng tôm; nếu là loại sống, chuẩn bị nồi dầu riêng để chiên."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đun nóng dầu, phi thơm hành khô và tỏi. Cho thịt chim vào xào lửa lớn đến khi săn và ráo nước."
+        },
+        {
+          "step": 2,
+          "instruction": "Nêm hỗn hợp nước mắm-dầu hào; đảo đều. Thêm hành tây và ớt, xào nhanh đến khi hành vừa mềm."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho hành lá và rau răm vào, đảo nhanh rồi tắt bếp. Nếm lại và điều chỉnh gia vị."
+        },
+        {
+          "step": 4,
+          "instruction": "Nếu dùng phồng tôm sống, chiên từng ít một trong dầu nóng đến khi nở giòn, vớt ra để ráo. Dọn thịt chim nóng cùng phồng tôm, lạc và hành phi."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://vnexpress.net/doi-song-cooking-chim-cau-bam-xuc-phong-tom-4543309.html",
+          "publisher": "VnExpress Cooking",
+          "title": "Cách làm chim câu bằm xúc phồng tôm",
+          "use": "Đối chiếu tên món, chim câu, phồng tôm, hành tỏi, ớt, rau răm, hành lá và kỹ thuật xào thịt nhanh. Bếp Việt chọn cách lọc thịt bỏ xương trước khi băm để tránh mảnh xương, đồng thời biên tập định lượng.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Dùng 1 con chim, 50 g phồng tôm và nửa lượng gia vị; chiên thịt một mẻ nhỏ.",
+            "instruction": "Chọn chảo nhỏ nhưng đủ rộng để thịt tiếp xúc nhiệt đều."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "Dùng 3 con chim, 150 g phồng tôm; nêm tăng dần và xào theo mẻ.",
+            "instruction": "Xào riêng từng mẻ thịt rồi trộn nhanh với rau thơm trước khi dọn."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/chim-cau-bam-xuc-phong-tom-960.webp",
+          "page_url": null,
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo mới riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập và đối chiếu món ăn.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "vi",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh PNG alpha được tạo riêng cho Bếp Việt, xuất master 4K và WebP responsive; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Nguồn VnExpress mô tả cả cách băm chim có xương; Bếp Việt biên tập thành phiên bản lọc xương trước, giữ nguyên cách xào rau răm và ăn xúc với phồng tôm để phù hợp bữa gia đình.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử để chốt định lượng, thời gian và cân bằng gia vị theo nguyên liệu thực tế."
+        ]
+      }
+    },
+    {
+      "id": "BV684",
+      "slug": "vit-om-chuoi-dau",
+      "name": "Vịt om chuối đậu",
+      "aliases": [
+        "Vịt om chuối xanh đậu phụ",
+        "Vịt nấu chuối đậu"
+      ],
+      "region": [
+        "Ba miền"
+      ],
+      "province": [],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "mâm cơm gia đình"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Khoảng 1,2 kg vịt chặt miếng cùng chuối xanh và đậu phụ, dùng cho bốn người.",
+      "prep_time": 25,
+      "cook_time": 60,
+      "passive_time": 30,
+      "total_time": 115,
+      "description": "Vịt được ướp gừng, sả và gia vị cơ bản, om mềm cùng chuối xanh rồi thêm đậu phụ chiên vàng. Chuối bùi, đậu phụ thấm nước om và thịt vịt thơm tạo nên món ăn đậm đà cho bữa cơm.",
+      "finished_dish": "Thịt vịt mềm nhưng không bở, chuối chín bùi còn nguyên miếng, đậu phụ vàng thấm nước om sánh nhẹ.",
+      "serving": "Dọn nóng cùng cơm trắng hoặc bún tươi; múc đủ thịt, chuối và đậu trong mỗi phần.",
+      "tips": [
+        "Chà vịt với gừng và rượu trắng rồi rửa sạch, thấm ráo để giảm mùi.",
+        "Ngâm chuối xanh trong nước muối loãng sau khi gọt để hạn chế thâm.",
+        "Om vịt gần mềm rồi mới cho chuối; cho đậu phụ sau cùng để miếng không vỡ.",
+        "Không đun quá mạnh sau khi thêm chuối, đảo nhẹ tay."
+      ],
+      "dish_type": [
+        "Vịt om chuối đậu"
+      ],
+      "main_ingredient": [
+        "thịt vịt",
+        "chuối xanh",
+        "đậu phụ"
+      ],
+      "cooking_method": [
+        "ướp",
+        "chiên đậu phụ",
+        "xào săn",
+        "om"
+      ],
+      "search_terms": [
+        "vịt om chuối đậu",
+        "vịt nấu chuối xanh",
+        "vịt om đậu phụ",
+        "món vịt ăn cơm"
+      ],
+      "spicy_level": 0,
+      "image_alt": "vi",
+      "time_note": "Khoảng 115 phút gồm 30 phút ướp; vịt già hoặc miếng lớn cần om lâu hơn.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Bún tươi",
+        "Rau thơm"
+      ],
+      "recipe_family": "vit_om_chuoi_dau",
+      "keywords": [
+        "vịt om",
+        "chuối xanh",
+        "đậu phụ",
+        "món gia cầm",
+        "món ăn gia đình"
+      ],
+      "tags": [
+        "món gia cầm",
+        "món mặn",
+        "món om",
+        "bữa cơm gia đình"
+      ],
+      "ingredients": [
+        {
+          "name": "Thịt vịt chặt miếng",
+          "quantity": 1200,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn vịt làm sạch, chặt vừa ăn.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Chuối xanh",
+          "quantity": 400,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Gọt vỏ, cắt khúc và ngâm nước muối loãng.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Đậu phụ",
+          "quantity": 300,
+          "unit": "g",
+          "role": "main",
+          "notes": "Cắt miếng vuông, chiên vàng trước khi om.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Sả",
+          "quantity": 30,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Đập dập, phần non băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Hành tăm",
+          "quantity": 25,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Đập dập hoặc băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Gừng",
+          "quantity": 20,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Một nửa dùng sơ chế, phần còn lại thái sợi.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Rượu trắng",
+          "quantity": 30,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng khử mùi vịt khi sơ chế.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Bột nghệ",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Tạo màu vàng nhẹ, có thể bỏ.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm dần theo độ mặn.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Muối",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Chia một phần để ướp.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Đường",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Cân vị mặn và thơm sả.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng một phần khi ướp.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "fat",
+          "notes": "Dùng xào vịt và hành sả.",
+          "scaling_rule": "linear",
+          "sequence": 13
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 700,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Cho từ từ để tạo nước om, có thể gia giảm.",
+          "scaling_rule": "linear",
+          "sequence": 14
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Chà vịt với gừng đập dập và rượu trắng, rửa sạch rồi chặt miếng vừa ăn. Thấm khô."
+        },
+        {
+          "step": 2,
+          "instruction": "Ướp vịt với nước mắm, muối, đường, tiêu và bột nghệ khoảng 30 phút. Đập dập sả, hành tăm; gọt chuối, cắt khúc và ngâm nước muối loãng."
+        },
+        {
+          "step": 3,
+          "instruction": "Cắt đậu phụ thành miếng vuông rồi chiên vàng các mặt. Thái gừng còn lại thành sợi."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đun nóng dầu, phi thơm sả, hành tăm và gừng. Cho vịt vào xào đến khi săn và bề mặt đổi màu."
+        },
+        {
+          "step": 2,
+          "instruction": "Thêm nước vừa gần ngập thịt, đậy nắp và om lửa nhỏ khoảng 35–45 phút đến khi vịt gần mềm; hớt bọt nếu có."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho chuối xanh vào om thêm khoảng 10 phút. Khi chuối gần mềm, thêm đậu phụ chiên và nêm lại nước mắm, muối cho vừa."
+        },
+        {
+          "step": 4,
+          "instruction": "Om thêm vài phút cho đậu thấm nước, tắt bếp khi vịt mềm nhưng còn nguyên miếng. Dọn nóng với cơm hoặc bún."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://vit29.com/vit-om-chuoi-dau-cho-bua-an-dinh-duong-la-mieng.html",
+          "publisher": "Vịt 29",
+          "title": "Vịt om chuối đậu cho bữa ăn dinh dưỡng, lạ miệng",
+          "use": "Đối chiếu vịt, chuối xanh, đậu phụ, sả, hành tăm và quy trình ướp, xào vịt, om mềm rồi thêm chuối và đậu phụ. Bếp Việt biên tập lượng nước, thời gian và gia vị cho bốn người.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Dùng 600 g vịt, 200 g chuối và 150 g đậu phụ; nêm ít hơn một nửa rồi điều chỉnh.",
+            "instruction": "Om trong nồi nhỏ, thêm nước vừa đủ và kiểm tra chuối sớm hơn."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "Dùng khoảng 1,8 kg vịt, 600 g chuối và 450 g đậu; tăng gia vị từ từ.",
+            "instruction": "Om trong nồi rộng; có thể cần thêm thời gian để vịt chín đều."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/vit-om-chuoi-dau-960.webp",
+          "page_url": null,
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo mới riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập và đối chiếu món ăn.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "vi",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh PNG alpha được tạo riêng cho Bếp Việt, xuất master 4K và WebP responsive; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt biên tập phiên bản gia đình theo nguồn Vịt 29, tập trung vịt- chuối xanh-đậu phụ với sả và hành tăm; không thêm mẻ hay riềng để giữ khác biệt với món vịt om riềng mẻ trong kho.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử để chốt định lượng, thời gian và cân bằng gia vị theo nguyên liệu thực tế."
+        ]
+      }
+    },
+    {
+      "id": "BV685",
+      "slug": "canh-ga-dau-trang-khoai-mon",
+      "name": "Canh gà đậu trắng khoai môn",
+      "aliases": [
+        "Canh thịt gà đậu trắng khoai môn",
+        "Canh gà nấu đậu trắng và khoai môn"
+      ],
+      "region": [
+        "Ba miền"
+      ],
+      "province": [],
+      "category": "Món canh",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "mâm cơm gia đình"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Nồi canh gồm 500 g thịt đùi gà, đậu trắng tươi và khoai môn, dùng cho bốn người.",
+      "prep_time": 20,
+      "cook_time": 45,
+      "passive_time": 15,
+      "total_time": 80,
+      "description": "Đùi gà áp chảo sơ rồi nấu mềm cùng đậu trắng tươi và khoai môn. Nước canh ngọt dịu, khoai bùi và đậu mềm tạo món canh đủ chất, dễ ăn trong bữa cơm gia đình.",
+      "finished_dish": "Thịt gà chín mềm, đậu trắng bở vừa, khoai môn bùi nhưng không tan; nước canh trong nhẹ và thơm hành ngò.",
+      "serving": "Múc nóng, rắc hành lá và ngò gai; dùng cùng cơm trắng. Nêm sau cùng để vị canh thanh, không quá mặn.",
+      "tips": [
+        "Dùng đậu trắng tươi; nếu thay bằng đậu khô, cần ngâm và nấu mềm riêng trước.",
+        "Áp chảo gà nhanh để mặt thịt săn, không cần chiên vàng kỹ.",
+        "Cắt khoai môn miếng đồng đều và khuấy nhẹ để khoai không vỡ.",
+        "Hớt bọt đầu nồi và nêm gia vị từng ít một."
+      ],
+      "dish_type": [
+        "Canh gà đậu trắng khoai môn"
+      ],
+      "main_ingredient": [
+        "thịt đùi gà",
+        "đậu trắng tươi",
+        "khoai môn"
+      ],
+      "cooking_method": [
+        "ướp",
+        "áp chảo",
+        "nấu canh"
+      ],
+      "search_terms": [
+        "canh gà đậu trắng khoai môn",
+        "canh thịt gà khoai môn",
+        "canh gà nấu đậu trắng",
+        "món canh dễ nấu"
+      ],
+      "spicy_level": 0,
+      "image_alt": "vi",
+      "time_note": "Khoảng 80 phút gồm 15 phút ướp; dùng đậu trắng tươi để rút ngắn thời gian.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Rau luộc",
+        "Nước mắm ớt"
+      ],
+      "recipe_family": "canh_ga_dau_trang_khoai_mon",
+      "keywords": [
+        "canh gà",
+        "đậu trắng",
+        "khoai môn",
+        "món canh gia đình"
+      ],
+      "tags": [
+        "món gia cầm",
+        "món canh",
+        "món dễ ăn",
+        "bữa cơm gia đình"
+      ],
+      "ingredients": [
+        {
+          "name": "Thịt đùi gà",
+          "quantity": 500,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chặt miếng vuông vừa ăn.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Đậu trắng tươi",
+          "quantity": 200,
+          "unit": "g",
+          "role": "main",
+          "notes": "Tách hạt, rửa sạch; không dùng loại khô nếu chưa ngâm.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Khoai môn",
+          "quantity": 200,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Gọt vỏ, cắt quân cờ vừa.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 15,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Thái nhỏ để rắc khi dọn.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Ngò gai",
+          "quantity": 10,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "fat",
+          "notes": "Dùng áp chảo gà.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 1200,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Có thể gia giảm để điều chỉnh độ đậm của nước canh.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Hạt nêm",
+          "quantity": 6,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Chia một phần để ướp, phần còn lại nêm canh.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm ở cuối nếu cần.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng một phần ướp gà, một phần rắc khi dọn.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa thịt đùi gà, chặt miếng vừa, ướp với một phần hạt nêm và tiêu trong 15 phút."
+        },
+        {
+          "step": 2,
+          "instruction": "Tách và rửa đậu trắng tươi. Gọt khoai môn, cắt quân cờ; rửa, thái hành lá và ngò gai."
+        },
+        {
+          "step": 3,
+          "instruction": "Đun nóng dầu trong chảo, áp chảo gà nhanh các mặt cho thịt săn rồi nhấc ra."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Cho gà vào nồi cùng nước lọc và đậu trắng. Đun sôi nhẹ, hớt bọt rồi hạ lửa, nấu khoảng 15 phút."
+        },
+        {
+          "step": 2,
+          "instruction": "Thêm khoai môn, nấu tiếp 15–20 phút đến khi gà, đậu và khoai vừa mềm; khuấy nhẹ để khoai không nát."
+        },
+        {
+          "step": 3,
+          "instruction": "Nêm phần hạt nêm còn lại và nước mắm cho vừa. Tắt bếp, thêm hành lá, ngò gai và tiêu rồi múc ra dùng nóng."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://vnexpress.net/canh-thit-ga-dau-trang-khoai-mon-4310973.html",
+          "publisher": "VnExpress Cooking",
+          "title": "Canh thịt gà đậu trắng khoai môn",
+          "use": "Đối chiếu nguyên liệu thịt đùi gà, đậu trắng tươi, khoai môn, hành tươi và ngò gai; giữ kỹ thuật áp chảo gà rồi nấu cùng đậu và khoai đến mềm. Bếp Việt thêm lượng nước và chuẩn hóa định lượng gia vị.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Dùng 250 g gà, 100 g đậu, 100 g khoai môn và khoảng 600 ml nước.",
+            "instruction": "Dùng nồi nhỏ và nấu liu riu; nếm lại trước khi tăng gia vị."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "Tăng lên 750 g gà, 300 g đậu, 300 g khoai và khoảng 1,8 lít nước.",
+            "instruction": "Chọn nồi rộng, hớt bọt và điều chỉnh nước để canh không loãng."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/canh-ga-dau-trang-khoai-mon-960.webp",
+          "page_url": null,
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo mới riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập và đối chiếu món ăn.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "vi",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh PNG alpha được tạo riêng cho Bếp Việt, xuất master 4K và WebP responsive; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt giữ nguyên bộ nguyên liệu chính và trình tự áp chảo gà rồi nấu đậu trắng, khoai môn theo VnExpress; khẩu phần và nêm nếm được chuẩn hóa cho nồi canh gia đình.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử để chốt định lượng, thời gian và cân bằng gia vị theo nguyên liệu thực tế."
+        ]
+      }
+    }
+  ]
+}

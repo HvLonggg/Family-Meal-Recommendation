@@ -1,0 +1,88 @@
+{
+  "batch": 73,
+  "canvas": {
+    "width": 3840,
+    "height": 2160,
+    "format": "WebP",
+    "background": "transparent"
+  },
+  "native_format": "PNG",
+  "export_master_format": "PNG",
+  "assets": [
+    {
+      "id": "BV691",
+      "slug": "ca-tai-tuong-chien-xu-vinh-long",
+      "native_file": "output/recipe-images/native/ca-tai-tuong-chien-xu-vinh-long.png",
+      "native_pixels": [1536, 1024],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/ca-tai-tuong-chien-xu-vinh-long.png",
+      "export_master_pixels": [3840, 2160],
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/ca-tai-tuong-chien-xu-vinh-long-480.webp", "pixels": [480, 270], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/ca-tai-tuong-chien-xu-vinh-long-960.webp", "pixels": [960, 540], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/ca-tai-tuong-chien-xu-vinh-long-1536.webp", "pixels": [1536, 864], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/ca-tai-tuong-chien-xu-vinh-long-3840.webp", "pixels": [3840, 2160], "has_alpha": true}
+      ]
+    },
+    {
+      "id": "BV692",
+      "slug": "bo-nhung-me-buon-ma-thuot",
+      "native_file": "output/recipe-images/native/bo-nhung-me-buon-ma-thuot.png",
+      "native_pixels": [1536, 1024],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/bo-nhung-me-buon-ma-thuot.png",
+      "export_master_pixels": [3840, 2160],
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/bo-nhung-me-buon-ma-thuot-480.webp", "pixels": [480, 270], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/bo-nhung-me-buon-ma-thuot-960.webp", "pixels": [960, 540], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/bo-nhung-me-buon-ma-thuot-1536.webp", "pixels": [1536, 864], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/bo-nhung-me-buon-ma-thuot-3840.webp", "pixels": [3840, 2160], "has_alpha": true}
+      ]
+    },
+    {
+      "id": "BV693",
+      "slug": "tep-dong-rang-khe",
+      "native_file": "output/recipe-images/native/tep-dong-rang-khe.png",
+      "native_pixels": [1536, 1024],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/tep-dong-rang-khe.png",
+      "export_master_pixels": [3840, 2160],
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/tep-dong-rang-khe-480.webp", "pixels": [480, 270], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/tep-dong-rang-khe-960.webp", "pixels": [960, 540], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/tep-dong-rang-khe-1536.webp", "pixels": [1536, 864], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/tep-dong-rang-khe-3840.webp", "pixels": [3840, 2160], "has_alpha": true}
+      ]
+    },
+    {
+      "id": "BV694",
+      "slug": "canh-chua-ca-can-nam-o",
+      "native_file": "output/recipe-images/native/canh-chua-ca-can-nam-o.png",
+      "native_pixels": [1312, 1199],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/canh-chua-ca-can-nam-o.png",
+      "export_master_pixels": [3840, 2160],
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/canh-chua-ca-can-nam-o-480.webp", "pixels": [480, 270], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/canh-chua-ca-can-nam-o-960.webp", "pixels": [960, 540], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/canh-chua-ca-can-nam-o-1536.webp", "pixels": [1536, 864], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/canh-chua-ca-can-nam-o-3840.webp", "pixels": [3840, 2160], "has_alpha": true}
+      ]
+    },
+    {
+      "id": "BV695",
+      "slug": "mang-truc-yen-tu-xao-toi",
+      "native_file": "output/recipe-images/native/mang-truc-yen-tu-xao-toi.png",
+      "native_pixels": [1536, 1024],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/mang-truc-yen-tu-xao-toi.png",
+      "export_master_pixels": [3840, 2160],
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/mang-truc-yen-tu-xao-toi-480.webp", "pixels": [480, 270], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/mang-truc-yen-tu-xao-toi-960.webp", "pixels": [960, 540], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/mang-truc-yen-tu-xao-toi-1536.webp", "pixels": [1536, 864], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/mang-truc-yen-tu-xao-toi-3840.webp", "pixels": [3840, 2160], "has_alpha": true}
+      ]
+    }
+  ]
+}

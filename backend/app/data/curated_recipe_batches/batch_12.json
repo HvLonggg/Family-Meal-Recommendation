@@ -7,7 +7,6 @@
       "slug": "banh-xeo-mien-tay",
       "name": "Bánh xèo miền Tây",
       "aliases": [
-        "Bánh xèo Nam Bộ",
         "Bánh xèo tôm thịt miền Tây"
       ],
       "region": [
@@ -23,12 +22,12 @@
       ],
       "difficulty": "Trung bình",
       "servings": 4,
-      "serving_basis": "4 bánh xèo cỡ lớn, nhân tôm thịt và giá, dùng cuốn rau sống với nước mắm chua ngọt.",
+      "serving_basis": "4 bánh xèo cỡ lớn kiểu miền Tây, nhân tôm thịt và giá, cuốn rau sống với nước mắm chua ngọt.",
       "prep_time": 25,
       "cook_time": 40,
       "passive_time": 30,
-      "description": "Bánh xèo miền Tây thường đổ cỡ lớn, viền mỏng giòn, thân bánh mềm hơn; nhân tôm thịt và giá ăn cùng rau vườn, nước mắm chua ngọt.",
-      "finished_dish": "Lớp vỏ vàng nghệ mỏng, rìa giòn rộm ôm phần nhân tôm ngọt, thịt ba chỉ mềm và giá vừa chín tới. Vị béo nhẹ của nước cốt dừa cân bằng với rau vườn tươi và chén nước mắm chua ngọt.",
+      "description": "Bánh xèo cỡ lớn kiểu miền Tây có rìa mỏng giòn, nhân tôm, thịt ba chỉ và giá. Biến thể bột của công thức này phối bột gạo với bột chiên giòn, trứng, nước có ga và nước cốt dừa; ăn cuốn rau sống, chấm nước mắm.",
+      "finished_dish": "Vỏ bánh vàng nghệ, rìa giòn, phần giữa chín mềm; nhân tôm thịt và giá còn rõ vị. Nước có ga cùng bột chiên giòn tạo lớp vỏ giòn, nước cốt dừa làm bột thơm béo nhẹ; rau sống và nước mắm giúp cân vị.",
       "serving": "Đặt bánh nóng lên đĩa lớn, dọn cùng lá cải, xà lách, rau thơm và đồ chua. Xé miếng bánh cuốn với rau hoặc bánh tráng, chấm nước mắm chua ngọt.",
       "tips": [
         "Để bột nghỉ khoảng 30 phút giúp bánh lên vỏ đều; khuấy lại trước mỗi lần múc.",
@@ -44,7 +43,9 @@
         "bột gạo",
         "tôm",
         "thịt ba chỉ",
-        "giá đỗ"
+        "giá đỗ",
+        "bột chiên giòn",
+        "nước có ga"
       ],
       "cooking_method": [
         "pha bột",
@@ -53,13 +54,14 @@
       ],
       "search_terms": [
         "bánh xèo miền Tây",
-        "bánh xèo Nam Bộ",
         "bánh xèo tôm thịt",
+        "bột chiên giòn",
+        "nước có ga",
         "món miền Tây",
         "món cuốn rau sống"
       ],
       "spicy_level": 1,
-      "image_alt": "Bánh xèo miền Tây Bếp Việt vàng giòn, nhân tôm thịt, dọn cùng rau sống và nước mắm chua ngọt.",
+      "image_alt": "Bánh xèo miền Tây cỡ lớn, vỏ vàng giòn nhân tôm thịt và giá, ăn cùng rau sống.",
       "ingredients": [
         {
           "name": "Bột gạo",
@@ -290,7 +292,7 @@
           "url": "https://vnexpress.net/doi-song-cooking-banh-xeo-mien-tay-4654925.html",
           "publisher": "VnExpress Cooking",
           "title": "Cách làm bánh xèo miền Tây",
-          "use": "Đối chiếu kích thước bánh miền Tây, bột pha nước có ga và nước cốt dừa, nhân tôm thịt giá, cách đổ bánh giòn và ăn cuốn rau; định lượng được Bếp Việt biên tập cho 4 người.",
+          "use": "Đối chiếu biến thể bánh xèo miền Tây cỡ lớn: bột gạo pha bột chiên giòn, trứng, nước có ga và nước cốt dừa; nhân tôm thịt, giá, cách đổ bánh giòn và ăn cuốn rau. Bếp Việt biên tập định lượng cho 4 người.",
           "accessed_at": "2026-10-22",
           "type": "editorial_reference"
         }
@@ -346,7 +348,9 @@
           "bột gạo",
           "tôm",
           "thịt ba chỉ",
-          "giá đỗ"
+          "giá đỗ",
+          "bột chiên giòn",
+          "nước có ga"
         ],
         "cooking_method": [
           "pha bột",
@@ -362,7 +366,6 @@
         "suggested_pairings": [],
         "keywords": [
           "Bánh xèo miền Tây",
-          "Bánh xèo Nam Bộ",
           "Bánh xèo tôm thịt miền Tây",
           "Nam",
           "Nhiều địa phương",
@@ -371,14 +374,15 @@
           "thịt ba chỉ",
           "giá đỗ",
           "bánh xèo miền Tây",
-          "bánh xèo Nam Bộ",
           "bánh xèo tôm thịt",
           "món miền Tây",
           "món cuốn rau sống",
           "Bánh mặn",
           "Món chính",
           "Món cuốn ăn kèm rau",
-          "95 phút"
+          "95 phút",
+          "bột chiên giòn",
+          "nước có ga"
         ],
         "recipe_family": "banh-xeo-mien-tay"
       },
@@ -395,7 +399,7 @@
           "height": 1024,
           "orientation": "landscape",
           "preferred_width_met": true,
-          "alt_text": "Bánh xèo miền Tây Bếp Việt vàng giòn, nhân tôm thịt, dọn cùng rau sống và nước mắm chua ngọt.",
+          "alt_text": "Bánh xèo miền Tây cỡ lớn, vỏ vàng giòn nhân tôm thịt và giá, ăn cùng rau sống.",
           "verified_dish_match": true,
           "visual_review_date": "2026-10-22",
           "photo_variant_note": "Ảnh món ăn được tạo riêng cho Bếp Việt; công thức chưa được nấu thử."
@@ -405,7 +409,7 @@
         "status": "editorial_draft",
         "production_ready": false,
         "test_cook_status": "not_tested",
-        "variant_note": "Bếp Việt biên tập theo nguồn tham khảo đã dẫn; định lượng và thời gian cần nấu thử trước khi xem là bản chuẩn.",
+        "variant_note": "Bếp Việt giữ riêng biến thể miền Tây theo nguồn VnExpress Cooking: bột gạo, bột chiên giòn, trứng, nước có ga và nước cốt dừa. Cách pha này được ghi rõ để phân biệt với công thức BV258 có nền bột khác.",
         "seed_recipe": null,
         "reviewed_at": "2026-10-22",
         "needs": [

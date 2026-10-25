@@ -45,6 +45,53 @@ LEGACY_IMAGES = {
     "bun-cha-ha-noi": "auth/bun-cha-pho-hoi.webp",
     "pho-ga-gia-dinh": "auth/pho-bep-nha.webp",
 }
+INGREDIENT_GROUPS = {
+    "main": "Nguyên liệu chính",
+    "protein": "Nguyên liệu chính",
+    "meat": "Nguyên liệu chính",
+    "seafood": "Nguyên liệu chính",
+    "fruit": "Nguyên liệu chính",
+    "mushroom": "Rau củ",
+    "seed": "Nguyên liệu chính",
+    "seaweed": "Nguyên liệu chính",
+    "grain": "Nguyên liệu chính",
+    "staple": "Nguyên liệu chính",
+    "legume": "Nguyên liệu chính",
+    "tofu": "Nguyên liệu chính",
+    "plant_protein": "Nguyên liệu chính",
+    "vegetable": "Rau củ",
+    "seasoning": "Gia vị",
+    "condiment": "Gia vị",
+    "acid": "Gia vị",
+    "sweetener": "Gia vị",
+    "frying_oil": "Gia vị",
+    "oil": "Gia vị",
+    "cooking_fat": "Gia vị",
+    "aromatic": "Gia vị",
+    "fat": "Gia vị",
+    "seasoning_base": "Gia vị",
+    "dipping": "Gia vị",
+    "dressing": "Gia vị",
+    "pickle": "Món ăn kèm",
+    "liquid": "Nước và chất lỏng",
+    "stock": "Nước và chất lỏng",
+    "process_aid": "Hỗ trợ chế biến",
+    "cleaning": "Hỗ trợ chế biến",
+    "equipment": "Hỗ trợ chế biến",
+    "binder": "Hỗ trợ chế biến",
+    "thickener": "Hỗ trợ chế biến",
+    "other": "Hỗ trợ chế biến",
+    "garnish": "Rau thơm và phần ăn kèm",
+    "herb": "Rau thơm và phần ăn kèm",
+    "topping": "Rau thơm và phần ăn kèm",
+    "accompaniment": "Món ăn kèm",
+    "side": "Món ăn kèm",
+    "serving": "Món ăn kèm",
+    "coating": "Lớp áo chiên",
+    "wrapping": "Lá gói",
+    "wrapper": "Lá gói",
+    "gelatin_source": "Nguyên liệu tạo đông",
+}
 
 
 def recipe_slug(item: dict[str, Any]) -> str:
@@ -83,7 +130,10 @@ def recipe_category(item: dict[str, Any]) -> str:
         return "Món tráng miệng"
     if any("chay" in tag.casefold() for tag in recipe_tag_values(item)):
         return "Món chay"
-    if any(token in category.casefold() for token in ("ăn vặt", "ăn nhẹ", "bánh truyền thống", "món chiên", "dân dã")):
+    if any(
+        token in category.casefold()
+        for token in ("ăn vặt", "ăn nhẹ", "bánh truyền thống", "món chiên", "dân dã")
+    ):
         return "Món ăn vặt"
     return "Món mặn"
 
@@ -108,6 +158,13 @@ def normalized_recipe_tags(item: dict[str, Any]) -> dict[str, Any]:
     if isinstance(tags, list):
         return {"keywords": [tag for tag in tags if isinstance(tag, str)]}
     return tags if isinstance(tags, dict) else {}
+
+
+def primary_media(item: dict[str, Any]) -> dict[str, Any]:
+    media = item.get("media")
+    if isinstance(media, list):
+        return media[0] if media else {}
+    return media if isinstance(media, dict) else {}
 
 
 def read_catalog(source: Path = SOURCE) -> list[dict[str, Any]]:
@@ -172,7 +229,7 @@ def read_supplemental_desserts(source: Path = SUPPLEMENTAL_DESSERT_SOURCE) -> li
             raise ValueError(f"{item['id']}: invalid ingredient quantity.")
         if item["total_time"] != item["prep_time"] + item["cook_time"] + item["passive_time"]:
             raise ValueError(f"{item['id']}: inconsistent total time.")
-        if not item["media"][0]["image_url"].startswith("/images/recipes/edited/"):
+        if not primary_media(item).get("image_url", "").startswith("/images/recipes/edited/"):
             raise ValueError(f"{item['id']}: expected a Bếp Việt-owned image path.")
     return items
 
@@ -215,7 +272,7 @@ def read_curated_recipe_batches(
         ):
             if not item.get(key):
                 raise ValueError(f"{item['id']}: missing {key}.")
-        if not item["media"][0]["image_url"].startswith("/images/recipes/edited/"):
+        if not primary_media(item).get("image_url", "").startswith("/images/recipes/edited/"):
             raise ValueError(f"{item['id']}: expected a Bếp Việt-owned image path.")
         if any(ingredient["quantity"] <= 0 for ingredient in item["ingredients"]):
             raise ValueError(f"{item['id']}: invalid ingredient quantity.")
@@ -225,6 +282,14 @@ def read_curated_recipe_batches(
             raise ValueError(f"{item['id']}: source URL is required.")
         if item.get("editorial", {}).get("test_cook_status") != "not_tested":
             raise ValueError(f"{item['id']}: mark the recipe test-cook status explicitly.")
+        unknown_roles = sorted(
+            {ingredient.get("role") for ingredient in item["ingredients"]}
+            - INGREDIENT_GROUPS.keys()
+        )
+        if unknown_roles:
+            raise ValueError(
+                f"{item['id']}: unsupported ingredient roles: {', '.join(unknown_roles)}."
+            )
     return items
 
 
@@ -349,15 +414,22 @@ def import_catalog(
         recipe.prep_minutes = item["prep_time"]
         recipe.cook_minutes = item["cook_time"]
         recipe.base_servings = item["servings"]
-        recipe.image_path = (image_paths or {}).get(item["id"], item["media"][0]["image_url"])
-        recipe.image_alt = item["media"][0]["alt_text"]
+        media = primary_media(item)
+        recipe.image_path = (image_paths or {}).get(item["id"], media["image_url"])
+        recipe.image_alt = media.get("alt_text") or item.get("image_alt") or item["name"]
         recipe.serving = SERVING_OVERRIDES.get(slug, item["serving"])
         recipe.tip = "\n".join(item["tips"])
         recipe.source_name = "Bếp Việt"
         recipe.source_url = item["sources"][0]["url"]
         recipe.status = "published"
         tags = normalized_recipe_tags(item)
-        content = {**item, "tags": tags, "serving": recipe.serving, "aliases": aliases}
+        content = {
+            **item,
+            "media": [media],
+            "tags": tags,
+            "serving": recipe.serving,
+            "aliases": aliases,
+        }
         if recipe.image_path.startswith("/images/recipes-owned/"):
             image_alt_text = f"{item['name']}, món Việt đã nấu xong được tạo hình cho Bếp Việt."
             generated_media: dict[str, str | None] = {
@@ -397,27 +469,10 @@ def import_catalog(
         )
         recipe.ingredients.clear()
         recipe.steps.clear()
-        groups = {
-            "main": "Nguyên liệu chính",
-            "vegetable": "Rau củ",
-            "seasoning": "Gia vị",
-            "liquid": "Nước và chất lỏng",
-            "process_aid": "Hỗ trợ chế biến",
-            "aromatic": "Gia vị",
-            "garnish": "Rau thơm và phần ăn kèm",
-            "herb": "Rau thơm và phần ăn kèm",
-            "accompaniment": "Món ăn kèm",
-            "side": "Món ăn kèm",
-            "topping": "Rau thơm và phần ăn kèm",
-            "fat": "Gia vị",
-            "grain": "Nguyên liệu chính",
-            "other": "Hỗ trợ chế biến",
-            "wrapping": "Lá gói",
-        }
         for ingredient_position, ingredient in enumerate(item["ingredients"], start=1):
             recipe.ingredients.append(
                 RecipeIngredient(
-                    group_name=groups[ingredient["role"]],
+                    group_name=INGREDIENT_GROUPS[ingredient["role"]],
                     name=ingredient["name"],
                     amount=Decimal(str(ingredient["quantity"])),
                     unit=ingredient["unit"],
@@ -573,14 +628,14 @@ def main() -> None:
     generated_images = read_generated_image_paths(items)
     images = generated_images or extract_document_images(args.document, items)
     for item in desserts:
-        image_path = item["media"][0]["image_url"]
+        image_path = primary_media(item)["image_url"]
         local_path = ROOT / "frontend/public" / image_path.lstrip("/")
         if not local_path.is_file():
             raise ValueError(f"{item['id']}: missing generated image {local_path}.")
         images[item["id"]] = image_path
     items.extend(desserts)
     for item in curated:
-        image_path = item["media"][0]["image_url"]
+        image_path = primary_media(item)["image_url"]
         local_path = ROOT / "frontend/public" / image_path.lstrip("/")
         if not local_path.is_file():
             raise ValueError(f"{item['id']}: missing generated image {local_path}.")

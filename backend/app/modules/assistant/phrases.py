@@ -127,7 +127,7 @@ TOPIC_TEXT: dict[str, dict[Language, tuple[str, list[dict[str, str]]]]] = {
     },
     "contact": {
         "vi": (
-            "Cần hỗ trợ từ đội ngũ Bếp Việt? Gửi yêu cầu ở trang Liên hệ, mình sẽ phản hồi qua email trong 1–2 ngày làm việc.",
+            "Cần hỗ trợ từ đội ngũ Bếp Việt? Gửi yêu cầu ở trang Liên hệ, mình sẽ phản hồi qua email trong vòng 24 giờ làm việc.",
             [{"label": "Liên hệ hỗ trợ", "to": "/contact"}],
         ),
         "en": (

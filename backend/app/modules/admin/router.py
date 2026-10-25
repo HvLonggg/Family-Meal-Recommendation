@@ -14,6 +14,7 @@ from app.core.images import decode_image_data_url
 from app.db.session import get_db_session
 from app.modules.admin import insights
 from app.modules.admin.email_schemas import (
+    MealSuggestionDeliveryStatus,
     MealSuggestionEmailListResponse,
     MealSuggestionEmailResponse,
     MealSuggestionRecipient,
@@ -77,7 +78,11 @@ from app.modules.assistant.schemas import (
     KnowledgeStatus,
 )
 from app.modules.auth.dependencies import require_admin
-from app.modules.auth.email import describe_delivery_error, send_support_reply_email
+from app.modules.auth.email import (
+    describe_delivery_error,
+    email_delivery_status,
+    send_support_reply_email,
+)
 from app.modules.auth.models import AuthIdentity, User
 from app.modules.auth.security import hash_password
 from app.modules.auth.service import EmailAlreadyExistsError, revoke_all_sessions
@@ -127,6 +132,11 @@ class AdminActionForbiddenError(DomainError):
 
 class AdminEmailDeliveryError(DomainError):
     code = "ADMIN_EMAIL_DELIVERY_FAILED"
+    status_code = status.HTTP_503_SERVICE_UNAVAILABLE
+
+
+class MealSuggestionDeliveryUnavailableError(DomainError):
+    code = "EMAIL_DELIVERY_UNAVAILABLE"
     status_code = status.HTTP_503_SERVICE_UNAVAILABLE
 
 
@@ -922,6 +932,13 @@ def send_meal_suggestions(
     session: DatabaseSession,
     admin: AdminUser,
 ) -> MealSuggestionSendResponse:
+    settings = get_settings()
+    if settings.app_env != "test" and not settings.email_enabled:
+        raise MealSuggestionDeliveryUnavailableError(
+            "Dịch vụ gửi email hiện chưa sẵn sàng. Vui lòng kiểm tra trạng thái "
+            "nhà cung cấp email rồi thử lại."
+        )
+
     recipes_by_slug = {
         recipe.slug: recipe
         for recipe in session.scalars(
@@ -989,6 +1006,20 @@ def send_meal_suggestions(
     # Trả kết quả ngay; email được gửi song song ở nền, lịch sử tự cập nhật trạng thái.
     queue_meal_suggestions(session.get_bind(), [delivery.id for delivery in results])
     return response
+
+
+@router.get(
+    "/meal-suggestions/delivery-status",
+    response_model=MealSuggestionDeliveryStatus,
+    summary="Check whether meal suggestion emails can be delivered",
+)
+def meal_suggestion_delivery_status() -> MealSuggestionDeliveryStatus:
+    ready, provider, reason_code = email_delivery_status()
+    return MealSuggestionDeliveryStatus(
+        ready=ready,
+        provider=provider,
+        reason_code=reason_code,
+    )
 
 
 @router.get(

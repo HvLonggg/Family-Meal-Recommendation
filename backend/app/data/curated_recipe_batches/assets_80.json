@@ -1,0 +1,250 @@
+{
+  "batch": 80,
+  "assets": [
+    {
+      "id": "BV727",
+      "slug": "bong-cai-xao-toi",
+      "native_file": "output/recipe-images/native/bong-cai-xao-toi.png",
+      "native_pixels": [
+        1448,
+        1086
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/bong-cai-xao-toi.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/bong-cai-xao-toi-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/bong-cai-xao-toi-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/bong-cai-xao-toi-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/bong-cai-xao-toi-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "id": "BV728",
+      "slug": "cai-ngong-xao-toi",
+      "native_file": "output/recipe-images/native/cai-ngong-xao-toi.png",
+      "native_pixels": [
+        1448,
+        1086
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/cai-ngong-xao-toi.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/cai-ngong-xao-toi-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/cai-ngong-xao-toi-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/cai-ngong-xao-toi-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/cai-ngong-xao-toi-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "id": "BV729",
+      "slug": "canh-sup-lo-thap-cam-chay",
+      "native_file": "output/recipe-images/native/canh-sup-lo-thap-cam-chay.png",
+      "native_pixels": [
+        1448,
+        1086
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/canh-sup-lo-thap-cam-chay.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/canh-sup-lo-thap-cam-chay-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/canh-sup-lo-thap-cam-chay-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/canh-sup-lo-thap-cam-chay-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/canh-sup-lo-thap-cam-chay-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "id": "BV730",
+      "slug": "dau-dua-xao-nam-rom-chay",
+      "native_file": "output/recipe-images/native/dau-dua-xao-nam-rom-chay.png",
+      "native_pixels": [
+        1448,
+        1086
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/dau-dua-xao-nam-rom-chay.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/dau-dua-xao-nam-rom-chay-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/dau-dua-xao-nam-rom-chay-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/dau-dua-xao-nam-rom-chay-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/dau-dua-xao-nam-rom-chay-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "id": "BV731",
+      "slug": "nam-kim-cham-xao-gia-do",
+      "native_file": "output/recipe-images/native/nam-kim-cham-xao-gia-do.png",
+      "native_pixels": [
+        1448,
+        1086
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/nam-kim-cham-xao-gia-do.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/nam-kim-cham-xao-gia-do-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/nam-kim-cham-xao-gia-do-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/nam-kim-cham-xao-gia-do-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/nam-kim-cham-xao-gia-do-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    }
+  ]
+}

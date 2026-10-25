@@ -1,0 +1,828 @@
+{
+  "com-ga-hoi-an": {
+    "name": "Hoi An chicken rice",
+    "aliases": [
+      "Hoi An shredded chicken rice",
+      "Quang Nam chicken rice"
+    ],
+    "category": "Savory dishes",
+    "description": "Fragrant yellow rice with chicken broth served with shredded chicken, Vietnamese coriander and mildly sour carrot and papaya salad; A typical dish of Hoi An.",
+    "serving_basis": "4 plates of rice; about a quarter of a raw chicken including the bones per person.",
+    "finished_dish": "The golden rice grains are fragrant with the scent of turmeric and chicken broth, eaten with tender chicken, Vietnamese coriander and crispy sweet and sour salad.",
+    "serving": "Serve hot rice with shredded chicken, salad and a cup of broth. Season with fish sauce, pepper or chili according to taste.",
+    "time_note": "Total time includes operation and waiting time; Actual time depends on the kitchen and the size of the ingredients.",
+    "difficulty": "Easy",
+    "region": [
+      "Central Vietnam"
+    ],
+    "province": [
+      "Quang Nam"
+    ],
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
+    "suggested_pairings": [],
+    "tips": [
+      "Use enough chicken broth so that the rice is cooked through, not mushy.",
+      "Let the chicken cool down before shredding so that the meat fibers are neat and don't burn your hands.",
+      "The salad is only mixed with laksa leaves close to the time of eating to maintain freshness."
+    ],
+    "recipe_family": "com_ga_hoi_an",
+    "ingredients": [
+      {
+        "name": "Free-range chicken",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "White rice",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Chicken stock",
+        "unit": "ml",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Onion",
+        "unit": "bulb",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Green papaya",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Carrot",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Vietnamese coriander",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Lettuce",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Garlic",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Turmeric powder",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Fish sauce",
+        "unit": "ml",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Rice vinegar",
+        "unit": "ml",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Sugar",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Salt",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Pepper",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Cooking oil",
+        "unit": "ml",
+        "notes": "Clean, drain and season to taste."
+      }
+    ],
+    "preparation_steps": [
+      "Clean and drain chicken; lightly wash rice. Slice the onion thinly, soak in cold water to reduce its sharpness and then drain.",
+      "Grate papaya and carrot, mix vinegar with a little sugar and salt; Let it soak while cooking rice.",
+      "Wash coriander and lettuce and drain; Chop garlic, prepare turmeric powder."
+    ],
+    "cooking_steps": [
+      "Boil the chicken in a pot of water with salt and a portion of turmeric powder until cooked; Take it out and let it cool, reserving the boiling water.",
+      "Saut\u00e9 the garlic with oil, add the rice and stir gently until the seeds are firm; Cook with chicken broth according to the amount of water appropriate to the type of rice.",
+      "Tear or slice the chicken into bite-sized pieces. Mix chicken with onions, coriander and a little fish sauce, vinegar, and pepper; Mix papaya and carrot salad and taste the sweet and sour taste.",
+      "Compress the rice into a dome on a plate, arrange the chicken and salad next to it; Serve with lettuce and a cup of hot chicken broth."
+    ],
+    "tags": {
+      "region": [
+        "Central Vietnam"
+      ],
+      "province": [
+        "Quang Nam"
+      ],
+      "meal_type": [
+        "lunch",
+        "dinner"
+      ],
+      "dish_type": [
+        "Rice dish",
+        "Hoi An specialty",
+        "Vietnamese family dish"
+      ],
+      "main_ingredient": [
+        "free-range chicken",
+        "rice",
+        "Vietnamese coriander"
+      ],
+      "cooking_method": [
+        "boil",
+        "cook rice",
+        "mix salad"
+      ],
+      "difficulty": "Easy",
+      "suggested_pairings": [],
+      "keywords": [
+        "Hoi An chicken rice",
+        "Hoi An shredded chicken rice",
+        "Quang Nam chicken rice",
+        "turmeric yellow rice",
+        "Central chicken rice",
+        "papaya salad",
+        "free-range chicken",
+        "rice",
+        "Vietnamese coriander",
+        "Quang Nam"
+      ],
+      "recipe_family": "com_ga_hoi_an"
+    },
+    "media_alt_text": "Complete Hoi An chicken rice, new illustration by Bep Viet, transparent background separation."
+  },
+  "nem-nuong-chay-hoi-an": {
+    "name": "Hoi An vegetarian grilled spring rolls",
+    "aliases": [
+      "Vegetarian grilled spring rolls",
+      "Hoi An vegetarian grilled spring rolls"
+    ],
+    "category": "Vegetarian dishes",
+    "description": "Grilled fragrant vegetarian spring rolls, served with raw vegetables, pickles, rice paper rolls and a bowl of mildly spicy sweet and sour vegetarian sauce.",
+    "serving_basis": "4 rolls, 2 spring roll skewers each.",
+    "finished_dish": "Hot vegetarian spring rolls, golden brown on the outside, chewy and soft on the inside; Herbs and pickles create a balanced grilled taste.",
+    "serving": "Roll spring rolls with vegetables, cucumber and pickles in rice paper; dipping in vegetarian sauce. Use immediately while the spring rolls are still hot.",
+    "time_note": "Total time includes operation and waiting time; Actual time depends on the kitchen and the size of the ingredients.",
+    "difficulty": "Easy",
+    "region": [
+      "Central Vietnam"
+    ],
+    "province": [
+      "Quang Nam"
+    ],
+    "meal_type": [
+      "snack",
+      "dinner",
+      "side dish"
+    ],
+    "suggested_pairings": [],
+    "tips": [
+      "Squeeze the vegetarian slices thoroughly so that the mixture is not mushy.",
+      "Soak bamboo skewers before grilling to limit burning.",
+      "Check the label of vegetarian slices and vegetarian fish sauce if needed to ensure veganism."
+    ],
+    "recipe_family": "nem_nuong_chay",
+    "ingredients": [
+      {
+        "name": "Vegetarian pork slices",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Wheat flour",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Tapioca starch",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Minced lemongrass",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Soy sauce",
+        "unit": "ml",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Sugar",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Ground black pepper",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Cooking oil",
+        "unit": "ml",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Rice paper",
+        "unit": "pieces",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Lettuce and fresh herbs",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Cucumber",
+        "unit": "piece",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Pickled carrots and radishes",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Plant-based fish sauce",
+        "unit": "ml",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Lime juice",
+        "unit": "ml",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Water",
+        "unit": "ml",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Fresh chili",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      }
+    ],
+    "preparation_steps": [
+      "Soak the vegetarian pork slices according to package instructions, squeeze thoroughly, then tear or chop.",
+      "Mix vegetarian slices with flour, tapioca starch, lemongrass, soy sauce, sugar, pepper and a spoonful of oil until sticky; let rest 15 minutes.",
+      "Wash vegetables, slice cucumber; Prepare pickles. Mix vegetarian fish sauce with lemon juice, filtered water, sugar and chili."
+    ],
+    "cooking_steps": [
+      "Divide the mixture into bite-sized portions and shape it around soaked bamboo skewers; Press gently to make the spring roll adhere firmly.",
+      "Steam the spring rolls for about 8 minutes to shape, let cool, then brush with a thin layer of oil.",
+      "Grill on a grill pan, oven or air fryer over medium heat, turning evenly until the spring rolls are golden brown and hot through the center.",
+      "Serve spring rolls with raw vegetables, cucumber, pickles, rice paper and vegetarian dipping sauce. Roll right before eating."
+    ],
+    "tags": {
+      "region": [
+        "Central Vietnam"
+      ],
+      "province": [
+        "Quang Nam"
+      ],
+      "meal_type": [
+        "snack",
+        "dinner",
+        "side dish"
+      ],
+      "dish_type": [
+        "Vegetarian dishes",
+        "Grilled dish",
+        "Hoi An cuisine"
+      ],
+      "main_ingredient": [
+        "vegetarian pork slices",
+        "lemongrass",
+        "fresh herbs"
+      ],
+      "cooking_method": [
+        "grill",
+        "steam",
+        "roll"
+      ],
+      "difficulty": "Easy",
+      "suggested_pairings": [],
+      "keywords": [
+        "Hoi An vegetarian grilled spring rolls",
+        "Vegetarian grilled spring rolls",
+        "Hoi An vegetarian grilled spring rolls",
+        "Hoi An vegetarian grilled spring rolls",
+        "Easy to cook vegetarian dish",
+        "vegetarian dipping sauce",
+        "vegetarian pork slices",
+        "lemongrass",
+        "fresh herbs",
+        "Quang Nam"
+      ],
+      "recipe_family": "nem_nuong_chay"
+    },
+    "media_alt_text": "Hoi An vegetarian grilled spring rolls complete, new illustration by Bep Viet, transparent background."
+  },
+  "bun-bo-hue-chay": {
+    "name": "Vegetarian Hue beef noodle soup",
+    "aliases": [
+      "Hue style vegetarian beef noodle soup",
+      "Vegetarian Bun Hue"
+    ],
+    "category": "Vegetarian dishes",
+    "description": "Large bowl of vermicelli noodles in fragrant lemongrass vegetable broth, vegetarian satay and vegetarian pork floss; Eat with tofu, mushrooms, vegetarian rolls and herbs.",
+    "serving_basis": "4 bowls of noodle soup; The formula uses entirely plant ingredients.",
+    "finished_dish": "Mild orange-red broth, fragrant with lemongrass and vegetables; Chewy noodles, mushrooms and tofu absorb flavor, and accompanying vegetables maintain freshness.",
+    "serving": "Serve hot with raw vegetables, banana ears and lemon. Adjust the vegetarian satay separately to control spiciness.",
+    "time_note": "Total time includes operation and waiting time; Actual time depends on the kitchen and the size of the ingredients.",
+    "difficulty": "Easy",
+    "region": [
+      "Central Vietnam"
+    ],
+    "province": [
+      "Hue"
+    ],
+    "meal_type": [
+      "breakfast",
+      "lunch",
+      "dinner"
+    ],
+    "suggested_pairings": [],
+    "tips": [
+      "Only use vegetarian fish sauce and vegetarian seasoning; Check labels to avoid spices with animal ingredients.",
+      "Stew the vegetables over low heat and skim the foam to clear the broth.",
+      "Add the satay a little at a time because the spiciness of chili and satay are different."
+    ],
+    "recipe_family": "bun_bo_hue_chay",
+    "ingredients": [
+      {
+        "name": "Big noodles",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Tofu",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Vegetarian sausage",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Straw mushrooms",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Dried shiitake mushrooms",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "American corn",
+        "unit": "whole",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Daikon",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Cassava root",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Pineapple",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Water",
+        "unit": "ml",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Lemongrass",
+        "unit": "piece",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Garlic",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Shallots",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Fresh chili",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Annatto oil",
+        "unit": "ml",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Vegetarian shrimp paste",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Vegetarian seasoning powder",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Rock sugar",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Mung bean sprouts",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Split water spinach and herbs",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Shredded banana blossom",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      }
+    ],
+    "preparation_steps": [
+      "Wash and soak shiitake mushrooms until soft; Sliced \u200b\u200btofu, sliced \u200b\u200bvegetarian patties. Prepare corn, radish, cassava and pineapple and cut into pieces.",
+      "Crush the lemongrass and partially chop it; Minced garlic and purple onion. Wash water spinach, bean sprouts, banana ears and herbs and drain.",
+      "Pick out the shiitake mushrooms and keep the filtered soaking water separate. Quickly boil vermicelli according to package instructions."
+    ],
+    "cooking_steps": [
+      "Add water with corn, radish, cassava, pineapple, onion if any and mushroom soaking water into the pot; Simmer for about 30 minutes, skim foam and strain or keep vegetables as desired.",
+      "Pan-fried golden tofu. Fry garlic, shallots, and minced lemongrass with cashew oil; Add chili and vegetarian shrimp paste, stir until fragrant and then mix into the pot of broth.",
+      "Stir-fry straw mushrooms and shiitake mushrooms with a little vegetarian seasoning; Add mushrooms, vegetarian patties and tofu to the broth, cook for another 5 minutes. Season with rock sugar and vegetarian seasoning to taste.",
+      "Put vermicelli in a bowl, pour hot broth and toppings; Served with bean sprouts, split water spinach, banana ears, herbs and lemon."
+    ],
+    "tags": {
+      "region": [
+        "Central Vietnam"
+      ],
+      "province": [
+        "Hue"
+      ],
+      "meal_type": [
+        "breakfast",
+        "lunch",
+        "dinner"
+      ],
+      "dish_type": [
+        "Vegetarian dishes",
+        "Noodle dishes",
+        "Hue cuisine"
+      ],
+      "main_ingredient": [
+        "Large noodles",
+        "vegetables",
+        "tofu",
+        "mushrooms"
+      ],
+      "cooking_method": [
+        "simmering",
+        "broth simmering",
+        "fry"
+      ],
+      "difficulty": "Easy",
+      "suggested_pairings": [],
+      "keywords": [
+        "Vegetarian Hue beef noodle soup",
+        "Hue style vegetarian beef noodle soup",
+        "Vegetarian Bun Hue",
+        "Hue beef noodle soup is vegan",
+        "Vegetarian fish sauce",
+        "Central vegetarian dishes",
+        "Large noodles",
+        "vegetables",
+        "tofu",
+        "mushrooms",
+        "Hue"
+      ],
+      "recipe_family": "bun_bo_hue_chay"
+    },
+    "media_alt_text": "Complete vegetarian Hue beef noodle soup, new illustration by Bep Viet, transparent background."
+  },
+  "mi-quang-chay-hoi-an": {
+    "name": "Hoi An Vegetarian Quang Noodles",
+    "aliases": [
+      "Vegetarian Quang noodles",
+      "Vegetarian Mushroom Quang Noodles"
+    ],
+    "category": "Vegetarian dishes",
+    "description": "Quang yellow and turmeric noodles are served with a moderate amount of vegetable broth, tofu, mushrooms, raw vegetables, peanuts and crispy rice paper.",
+    "serving_basis": "4 bowls of mixed noodles; The amount of water is less than that of noodle soup.",
+    "finished_dish": "Turmeric yellow noodles have a thin layer of broth rich in mushrooms and vegetables, served with raw vegetables, roasted peanuts and sesame rice paper.",
+    "serving": "Mix the noodles while still hot, break the rice paper into each bite to keep it crispy.",
+    "time_note": "Total time includes operation and waiting time; Actual time depends on the kitchen and the size of the ingredients.",
+    "difficulty": "Easy",
+    "region": [
+      "Central Vietnam"
+    ],
+    "province": [
+      "Quang Nam"
+    ],
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
+    "suggested_pairings": [],
+    "tips": [
+      "Hoi An Quang noodles use little broth; Cook just enough to coat the topping and soften the fibers.",
+      "Drain the vegetables and noodles before placing them in bowls so the broth doesn't dilute.",
+      "Use vegan broth and soy sauce; Don't add regular fish sauce."
+    ],
+    "recipe_family": "mi_quang_chay",
+    "ingredients": [
+      {
+        "name": "Quang noodles",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Tofu",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "King oyster mushrooms",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Shiitake mushrooms",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Vegetable stock",
+        "unit": "ml",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Lettuce and fresh herbs",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Shredded banana blossom",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Mung bean sprouts",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Roasted peanuts",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Sesame rice crackers",
+        "unit": "pieces",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Shallots",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Garlic",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Turmeric powder",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Soy sauce",
+        "unit": "ml",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Sugar",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Annatto oil",
+        "unit": "ml",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Scallions",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Fresh chili",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      }
+    ],
+    "preparation_steps": [
+      "Sliced \u200b\u200btofu, sliced \u200b\u200bchicken thigh mushrooms; Wash and soak shiitake mushrooms if using dry ones.",
+      "Wash raw vegetables, bean sprouts and banana ears and drain. Purple onion, minced garlic; crushed roasted peanuts.",
+      "Toss the noodles according to the instructions for the type of noodles you are using; Keep warm and gently separate the fibers."
+    ],
+    "cooking_steps": [
+      "Saute tofu until golden. Saute shallots and garlic with cashew oil; Stir-fry the mushrooms, season with soy sauce, sugar and turmeric powder.",
+      "Add vegetable broth, simmer for 10 minutes to absorb flavor from mushrooms and beans; Taste again. Keep the broth just enough to cover a little, do not make a bowl of watery soup.",
+      "Arrange raw vegetables and bean sprouts in a bowl, add noodles, tofu and mushrooms. Make a bowl of broth, sprinkle with green onions and peanuts; Served with sesame rice paper and chili."
+    ],
+    "tags": {
+      "region": [
+        "Central Vietnam"
+      ],
+      "province": [
+        "Quang Nam"
+      ],
+      "meal_type": [
+        "lunch",
+        "dinner"
+      ],
+      "dish_type": [
+        "Vegetarian dishes",
+        "Mixed noodles",
+        "Hoi An cuisine"
+      ],
+      "main_ingredient": [
+        "Quang noodles",
+        "tofu",
+        "mushrooms"
+      ],
+      "cooking_method": [
+        "stir-fry",
+        "simmer until glazed",
+        "toss"
+      ],
+      "difficulty": "Easy",
+      "suggested_pairings": [],
+      "keywords": [
+        "Hoi An Vegetarian Quang Noodles",
+        "Vegetarian Quang noodles",
+        "Vegetarian Mushroom Quang Noodles",
+        "Hoi An vegetarian Quang noodles",
+        "Easy to cook vegetarian dish",
+        "sesame rice crackers",
+        "Quang noodles",
+        "tofu",
+        "mushrooms",
+        "Quang Nam"
+      ],
+      "recipe_family": "mi_quang_chay"
+    },
+    "media_alt_text": "Complete Hoi An Vegetarian Quang Noodles, new illustration by Bep Viet, transparent background."
+  },
+  "che-bap-hoi-an": {
+    "name": "Hoi An corn sweet soup",
+    "aliases": [
+      "Cam Nam corn sweet soup",
+      "Hoi An corn sweet soup"
+    ],
+    "category": "Cakes, sweet soups and snacks",
+    "description": "Cam Nam sticky corn sweet soup, soft and supple corn kernels in a light layer of water; Add a little coconut milk when serving.",
+    "serving_basis": "4 medium dessert dessert bowls.",
+    "finished_dish": "Fragrant soft corn kernels in light, sweet tea; Coconut milk adds fat but doesn't overpower the corn flavor.",
+    "serving": "Serve warm or cool; Drizzle with coconut milk right before eating to preserve the aroma and consistency.",
+    "time_note": "Total time includes operation and waiting time; Actual time depends on the kitchen and the size of the ingredients.",
+    "difficulty": "Easy",
+    "region": [
+      "Central Vietnam"
+    ],
+    "province": [
+      "Quang Nam"
+    ],
+    "meal_type": [
+      "dessert",
+      "snack"
+    ],
+    "suggested_pairings": [],
+    "tips": [
+      "Prioritize Cam Nam young sticky corn if available; The naturally sweeter the corn, the less sugar it needs.",
+      "Mix tapioca starch with cold water first to avoid clumping.",
+      "Add sugar slowly and stop when the corn flavor is still clear."
+    ],
+    "recipe_family": "che_bap",
+    "ingredients": [
+      {
+        "name": "Young waxy corn",
+        "unit": "whole",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Water",
+        "unit": "ml",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Rock sugar",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Tapioca starch",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Coconut milk",
+        "unit": "ml",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Salt",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Pandan leaves",
+        "unit": "leaf",
+        "notes": "Clean, drain and season to taste."
+      }
+    ],
+    "preparation_steps": [
+      "Peel the corn and wash it; Use a knife to thinly slice the corn kernels, keeping the pulp to cook fragrant water.",
+      "Mix tapioca starch with a little cold water until dissolved. Prepare rock sugar and coconut milk separately."
+    ],
+    "cooking_steps": [
+      "Put the corn pulp in a pot of water, boil for about 15 minutes to get the sweetness, then remove the pulp.",
+      "Add corn kernels and pandan leaves to the pot, stir gently, and cook until the kernels are soft. Add rock sugar and a little salt, taste sweet.",
+      "Pour dissolved tapioca starch into a small stream, pouring and stirring until the tea thickens slightly; Turn off the stove.",
+      "Warm the coconut milk separately. Scoop the sweet soup into a bowl, add a spoonful of coconut milk when eating; Serve warm or cool."
+    ],
+    "tags": {
+      "region": [
+        "Central Vietnam"
+      ],
+      "province": [
+        "Quang Nam"
+      ],
+      "meal_type": [
+        "dessert",
+        "snack"
+      ],
+      "dish_type": [
+        "Dessert",
+        "Vietnamese tea",
+        "Hoi An specialty"
+      ],
+      "main_ingredient": [
+        "sticky corn",
+        "coconut milk"
+      ],
+      "cooking_method": [
+        "cook tea",
+        "simmer corn cobs"
+      ],
+      "difficulty": "Easy",
+      "suggested_pairings": [],
+      "keywords": [
+        "Hoi An corn sweet soup",
+        "Cam Nam corn sweet soup",
+        "Hoi An corn sweet soup",
+        "Cam Nam corn tea",
+        "Hoi An corn sweet soup",
+        "Central dessert",
+        "sticky corn",
+        "coconut milk",
+        "Quang Nam"
+      ],
+      "recipe_family": "che_bap"
+    },
+    "media_alt_text": "Complete Hoi An corn sweet soup, new illustration by Bep Viet, transparent background."
+  }
+}

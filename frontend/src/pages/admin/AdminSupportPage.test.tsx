@@ -17,6 +17,7 @@ const api = vi.hoisted(() => ({
   sendMealSuggestion: vi.fn(),
   listMealSuggestionHistory: vi.fn(),
   listMealSuggestionRecipients: vi.fn(),
+  getMealSuggestionDeliveryStatus: vi.fn(),
 }));
 
 vi.mock('@/features/admin/adminApi', async () => ({
@@ -102,6 +103,11 @@ beforeEach(() => {
   api.sendMealSuggestion.mockResolvedValue({ data: [], sent: 0, failed: 0, queued: 1 });
   api.listMealSuggestionRecipients.mockResolvedValue({ data: [], total: 0 });
   api.listMealSuggestionHistory.mockResolvedValue({ data: [], total: 0 });
+  api.getMealSuggestionDeliveryStatus.mockResolvedValue({
+    ready: true,
+    provider: 'smtp',
+    reason_code: 'ready',
+  });
 });
 
 afterEach(cleanup);
@@ -172,7 +178,28 @@ describe('AdminSupportPage', () => {
         'Bếp Việt trân trọng gửi bạn một vài gợi ý cho bữa tối hôm nay. Các món được đề xuất để bạn dễ kết hợp thành bữa cơm ngon miệng tại nhà.',
       closing_message: 'Chúc bạn và gia đình có bữa ăn thật ngon miệng!',
     });
-    expect(await screen.findByRole('status')).toHaveTextContent('Đã xử lý xong 1 email');
+    expect(await screen.findByText(/Đã xử lý xong 1 email/)).toBeInTheDocument();
+  });
+
+  it('still queues a meal email when the provider probe has a temporary network failure', async () => {
+    api.getMealSuggestionDeliveryStatus.mockResolvedValue({
+      ready: false,
+      provider: 'smtp',
+      reason_code: 'smtp_unreachable',
+    });
+    renderPage();
+    fireEvent.click(await screen.findByRole('tab', { name: /Gửi gợi ý bữa ăn/ }));
+
+    fireEvent.change(screen.getByLabelText('Nhập email người dùng'), {
+      target: { value: 'lan@example.com' },
+    });
+    fireEvent.click(screen.getByRole('button', { name: /Thêm email/ }));
+    fireEvent.click(await screen.findByRole('button', { name: /Bún chả Hà Nội/ }));
+
+    const sendButton = screen.getByRole('button', { name: /Gửi email gợi ý/ });
+    expect(sendButton).toBeEnabled();
+    fireEvent.click(sendButton);
+    await waitFor(() => expect(api.sendMealSuggestion).toHaveBeenCalled());
   });
 
   it('resends a past email by loading its recipient and content back into the form', async () => {

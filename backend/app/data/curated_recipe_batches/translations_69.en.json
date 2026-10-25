@@ -1,0 +1,597 @@
+{
+  "ca-kinh-nuong-gung-kieu-hue": {
+    "name": "Hue-Style Ginger-Grilled Rabbitfish",
+    "aliases": [
+      "Hue grilled rabbitfish",
+      "Ginger-marinated grilled rabbitfish"
+    ],
+    "region": [
+      "Central Vietnam"
+    ],
+    "province": [
+      "Hue"
+    ],
+    "category": "Savory dish",
+    "meal_type": [
+      "lunch",
+      "dinner",
+      "family meal"
+    ],
+    "difficulty": "Medium",
+    "serving_basis": "One shared grilled fish portion for four people.",
+    "description": "Fresh rabbitfish is marinated with ginger, a little lime and seasoning, then grilled until lightly charred outside and moist inside. Roasted peanuts add a nutty finish; rice wine in the marinade is optional.",
+    "finished_dish": "The fish is fully cooked, opaque and easy to flake, with lightly browned skin and a fragrant ginger aroma.",
+    "serving": "Carefully remove the bones, top with roasted peanuts and serve hot with herbs, rice or rice paper.",
+    "tips": [
+      "Choose legally sourced fish with clear eyes and firm flesh; clean the gills and innards, then pat dry.",
+      "Make a few shallow cuts through the thickest parts so the seasoning penetrates and the fish cooks evenly.",
+      "The 15 ml rice wine is optional and used only in the marinade; some alcohol evaporates during uncovered grilling, but complete evaporation cannot be guaranteed. Omit it if alcohol must be avoided.",
+      "Adjust grilling time to the fish size and check that the thickest part reaches at least 63°C; do not rely on timing alone."
+    ],
+    "dish_type": [
+      "Grilled fish"
+    ],
+    "main_ingredient": [
+      "rabbitfish"
+    ],
+    "cooking_method": [
+      "ginger marination",
+      "charcoal or grill cooking"
+    ],
+    "search_terms": [
+      "Hue grilled rabbitfish",
+      "ginger rabbitfish",
+      "Central Vietnamese fish dish",
+      "grilled fish with rice"
+    ],
+    "image_alt": "Hue-style ginger-grilled rabbitfish with a golden surface on a ceramic plate, served with roasted peanuts and herbs; transparent background.",
+    "time_note": "About 60 minutes including a 15-minute marinade; adjust grilling time to fish size and verify doneness.",
+    "suggested_pairings": [
+      "Steamed rice",
+      "Fresh herbs and rice paper",
+      "A light vegetable soup"
+    ],
+    "recipe_family": "hue_ginger_grilled_rabbitfish",
+    "spicy_level": 1,
+    "ingredients": [
+      {
+        "name": "Cleaned rabbitfish",
+        "unit": "g",
+        "notes": "Choose fresh fish from a traceable source; leave small fish whole or score larger fish."
+      },
+      {
+        "name": "Fresh ginger",
+        "unit": "g",
+        "notes": "Peel and julienne or lightly crush."
+      },
+      {
+        "name": "Rice wine",
+        "unit": "ml",
+        "notes": "Optional for the marinade; omit if alcohol must be avoided."
+      },
+      {
+        "name": "Lime juice",
+        "unit": "ml",
+        "notes": "Use part of the juice in the marinade."
+      },
+      {
+        "name": "Salt",
+        "unit": "g",
+        "notes": "Adjust to taste."
+      },
+      {
+        "name": "Ground black pepper",
+        "unit": "g",
+        "notes": "For the marinade."
+      },
+      {
+        "name": "Cooking oil",
+        "unit": "ml",
+        "notes": "Lightly oil the grill."
+      },
+      {
+        "name": "Roasted peanuts",
+        "unit": "g",
+        "notes": "Coarsely crush and sprinkle before serving."
+      },
+      {
+        "name": "Fresh herbs",
+        "unit": "g",
+        "notes": "Wash, drain and serve alongside."
+      }
+    ],
+    "tags": [
+      "Central Vietnam",
+      "fish",
+      "grilled dish"
+    ],
+    "preparation_steps": [
+      "Clean the fish, remove the gills and innards, rinse briefly and pat thoroughly dry. Score the thickest parts shallowly.",
+      "Mix ginger, lime juice, salt, pepper and optional rice wine. Rub over the fish and marinate for 15 minutes; omit the wine and add a little more lime if avoiding alcohol."
+    ],
+    "cooking_steps": [
+      "Heat a grill or charcoal grate and brush it lightly with oil. Grill the fish over medium heat, turning gently for even cooking.",
+      "Grill for about 8–10 minutes per side depending on size. Check that the thickest part reaches at least 63°C and the flesh is opaque and flakes easily; avoid burning the skin.",
+      "Transfer to a serving plate, top with roasted peanuts and serve hot with herbs, rice or rice paper."
+    ],
+    "keywords": [
+      "rabbitfish",
+      "ginger",
+      "grilling",
+      "Hue",
+      "Central Vietnam",
+      "savory dish"
+    ]
+  },
+  "ca-chuon-chien-cu-nen-xu-quang": {
+    "name": "Quang-Style Fried Flying Fish with Vietnamese shallot-like allium",
+    "aliases": [
+      "Flying fish fried with Vietnamese shallot-like allium",
+      "Stuffed flying fish with Vietnamese shallot-like allium"
+    ],
+    "region": [
+      "Central Vietnam"
+    ],
+    "province": [],
+    "category": "Savory dish",
+    "meal_type": [
+      "lunch",
+      "dinner",
+      "family meal"
+    ],
+    "difficulty": "Medium",
+    "serving_basis": "Four fish portions served with rice and vegetables.",
+    "description": "Flying fish is slit open, seasoned with garlic, shallot, chili and salt, filled with lightly crushed Vietnamese shallot-like allium, then pan-fried until golden. The aromatic allium adds a fragrant note to this rustic Quang-style fish dish.",
+    "finished_dish": "The fish is cooked through with a lightly crisp golden exterior and moist flesh scented with Vietnamese shallot-like allium and garlic.",
+    "serving": "Serve hot with steamed rice and fresh or boiled vegetables. Add lime-chili fish sauce if you prefer a bolder finish.",
+    "tips": [
+      "Choose fresh fish from a traceable source; clean the cavity and pat dry to reduce oil splatter.",
+      "Lightly crush Vietnamese shallot-like allium instead of grinding it finely to preserve its characteristic aroma.",
+      "Use a moderate amount of oil for shallow frying; keep the heat at medium so the fish and filling cook evenly.",
+      "Check that the thickest flesh reaches at least 63°C and is opaque and easy to flake before serving."
+    ],
+    "dish_type": [
+      "Seasoned stuffed fried fish"
+    ],
+    "main_ingredient": [
+      "flying fish",
+      "Vietnamese shallot-like allium"
+    ],
+    "cooking_method": [
+      "Vietnamese shallot-like allium marination",
+      "shallow frying"
+    ],
+    "search_terms": [
+      "Quang flying fish with Vietnamese shallot-like allium",
+      "flying fish fried with Vietnamese shallot-like allium",
+      "Central Vietnamese fried fish",
+      "Vietnamese shallot-like allium fish dish"
+    ],
+    "image_alt": "Golden fried flying fish filled with Vietnamese shallot-like allium, garlic, shallot and chili on a ceramic plate; transparent background.",
+    "time_note": "About 60 minutes including a 15-minute marinade; cook over medium heat and check doneness near the backbone.",
+    "suggested_pairings": [
+      "Steamed rice",
+      "Fresh or boiled vegetables",
+      "Lime-chili fish sauce"
+    ],
+    "recipe_family": "quang_fried_flyingfish_cu_nen",
+    "spicy_level": 2,
+    "ingredients": [
+      {
+        "name": "Cleaned flying fish",
+        "unit": "g",
+        "notes": "Slit along the body, remove the innards and rinse well."
+      },
+      {
+        "name": "Vietnamese shallot-like allium",
+        "unit": "g",
+        "notes": "Peel, rinse and lightly crush; do not grind finely."
+      },
+      {
+        "name": "Garlic",
+        "unit": "g",
+        "notes": "Peel and pound with shallot and chili."
+      },
+      {
+        "name": "Shallots",
+        "unit": "g",
+        "notes": "Peel and lightly pound."
+      },
+      {
+        "name": "Red chili",
+        "unit": "g",
+        "notes": "Pound with garlic; reduce for a milder dish."
+      },
+      {
+        "name": "Salt",
+        "unit": "g",
+        "notes": "For the marinade."
+      },
+      {
+        "name": "Ground black pepper",
+        "unit": "g",
+        "notes": "Optional."
+      },
+      {
+        "name": "Cooking oil",
+        "unit": "ml",
+        "notes": "For frying; reduce for shallow frying."
+      }
+    ],
+    "tags": [
+      "Central Vietnam",
+      "seafood",
+      "savory dish"
+    ],
+    "preparation_steps": [
+      "Clean the fish, remove the gills and innards, and pat thoroughly dry. Slit along the body while keeping the backbone intact so the fish can fold closed.",
+      "Pound garlic, shallot, chili and salt; lightly crush the Vietnamese shallot-like allium separately. Mix the seasoning and rub it inside the fish. Marinate for 15 minutes."
+    ],
+    "cooking_steps": [
+      "Heat enough oil to cover the pan by 1–2 cm over medium heat; use less oil for shallow frying.",
+      "Fold the fish closed, lower it gently into the pan and fry each side until golden. Turn carefully so the filling stays in place; lower the heat if the seasoning darkens too quickly.",
+      "Check that the thickest flesh beside the backbone reaches at least 63°C and turns opaque and flaky. Drain briefly on paper towels and serve hot."
+    ],
+    "keywords": [
+      "flying fish",
+      "Vietnamese shallot-like allium",
+      "Quang region",
+      "Central Vietnam",
+      "fried dish"
+    ]
+  },
+  "lau-oc-buou-com-me-mien-tay": {
+    "name": "Mekong-Style Apple Snail and Fermented Rice Hotpot",
+    "aliases": [
+      "Apple snail hotpot with green banana and fermented rice",
+      "Mekong apple snail and tofu hotpot"
+    ],
+    "region": [
+      "Southern Vietnam"
+    ],
+    "province": [],
+    "category": "Hotpot",
+    "meal_type": [
+      "lunch",
+      "dinner",
+      "family meal"
+    ],
+    "difficulty": "Medium",
+    "serving_basis": "One family hotpot for four people.",
+    "description": "Apple snails, green banana, tofu and pork belly make a gently sour hotpot with fermented rice, coconut water and the aroma of Vietnamese perilla and wild betel leaves. Serve in the center of the table with rice vermicelli.",
+    "finished_dish": "The broth is hot and gently sour; the snails are fully cooked and tender, while banana and tofu keep their shape.",
+    "serving": "Keep the hotpot at a gentle simmer and serve with fresh rice vermicelli and greens. Offer fish sauce or chili salt on the side.",
+    "tips": [
+      "Choose live snails with intact shells and no off smell. If using shelled snail meat, keep it refrigerated and use it the same day.",
+      "Purge live snails, scrub and boil until the shells open; discard any that remain closed, remove the gut and cook the meat thoroughly.",
+      "Strain the fermented rice for a smooth broth and season gradually because acidity and salt vary by batch.",
+      "Do not leave the hotpot at room temperature for long; keep it hot while serving and chill leftovers promptly."
+    ],
+    "dish_type": [
+      "Snail hotpot"
+    ],
+    "main_ingredient": [
+      "apple snails",
+      "green banana",
+      "fermented rice"
+    ],
+    "cooking_method": [
+      "cleaning and boiling snails",
+      "stir-frying ingredients",
+      "hotpot simmering"
+    ],
+    "search_terms": [
+      "Mekong apple snail fermented rice hotpot",
+      "apple snail and green banana hotpot",
+      "fermented rice snail hotpot",
+      "Mekong snail dish"
+    ],
+    "image_alt": "Mekong-style fermented rice hotpot with fully cooked apple snails, green banana, tofu, pork belly, Vietnamese perilla and wild betel leaves; transparent background.",
+    "time_note": "About 31⁄2 hours including snail purging; quicker when using safely cleaned shelled snail meat.",
+    "suggested_pairings": [
+      "Fresh rice vermicelli",
+      "Water spinach or water mimosa",
+      "Chili fish sauce"
+    ],
+    "recipe_family": "mekong_snail_rice_ferment_hotpot",
+    "spicy_level": 1,
+    "ingredients": [
+      {
+        "name": "Live apple snails",
+        "unit": "g",
+        "notes": "Choose live snails with intact shells; weight includes shells."
+      },
+      {
+        "name": "Pork belly",
+        "unit": "g",
+        "notes": "Cut into bite-size pieces."
+      },
+      {
+        "name": "Firm tofu",
+        "unit": "g",
+        "notes": "Cut into cubes and lightly fry."
+      },
+      {
+        "name": "Green banana",
+        "unit": "g",
+        "notes": "Peel, cut into chunks and soak briefly in diluted salted water."
+      },
+      {
+        "name": "Fresh coconut water",
+        "unit": "ml",
+        "notes": "Forms the base of the hotpot broth."
+      },
+      {
+        "name": "Fermented rice",
+        "unit": "g",
+        "notes": "Strain and adjust according to acidity."
+      },
+      {
+        "name": "Vietnamese perilla",
+        "unit": "g",
+        "notes": "Wash and shred."
+      },
+      {
+        "name": "Wild betel leaves",
+        "unit": "g",
+        "notes": "Wash and shred."
+      },
+      {
+        "name": "Garlic",
+        "unit": "g",
+        "notes": "Finely mince."
+      },
+      {
+        "name": "Turmeric powder",
+        "unit": "g",
+        "notes": "For a light golden color."
+      },
+      {
+        "name": "Fish sauce",
+        "unit": "ml",
+        "notes": "Season after the broth simmers."
+      },
+      {
+        "name": "Sugar",
+        "unit": "g",
+        "notes": "Balances the fermented rice acidity."
+      },
+      {
+        "name": "Salt",
+        "unit": "g",
+        "notes": "For purging and seasoning; divide as needed."
+      },
+      {
+        "name": "Cooking oil",
+        "unit": "ml",
+        "notes": "For frying garlic and stir-frying meat and snail."
+      },
+      {
+        "name": "Fresh rice vermicelli",
+        "unit": "g",
+        "notes": "Serve alongside; briefly blanch before serving."
+      }
+    ],
+    "tags": [
+      "Southern Vietnam",
+      "hotpot",
+      "snail"
+    ],
+    "preparation_steps": [
+      "Purge live snails in clean water for 2 hours, changing the water at least once. Scrub shells and discard any broken, dead or foul-smelling snails.",
+      "Boil snails until shells open and the meat is cooked; discard unopened snails. Remove the meat, operculum and gut, rinse and drain. Keep pre-shelled snail meat refrigerated until cooking.",
+      "Peel green bananas, cut into chunks and soak briefly in diluted salted water; blanch and drain. Slice pork, lightly fry tofu, strain fermented rice and shred the herbs."
+    ],
+    "cooking_steps": [
+      "Heat oil and fry the garlic. Add pork belly and stir until firm; add the boiled snail meat and turmeric and stir briefly until fragrant.",
+      "Pour in coconut water and about 400 ml water, then add strained fermented rice. Bring to a gentle boil and skim; add pork, banana and tofu and simmer until the banana is just tender.",
+      "Season gradually with fish sauce, sugar and salt. Add the snails and simmer for several minutes until steaming hot throughout; avoid prolonged cooking, which makes them tough.",
+      "Add the perilla and wild betel leaves, turn off the heat or transfer to a hotpot cooker and maintain a gentle simmer. Serve with fresh vermicelli and greens."
+    ],
+    "keywords": [
+      "apple snail",
+      "fermented rice",
+      "green banana",
+      "Mekong Delta",
+      "hotpot"
+    ]
+  },
+  "muc-sua-rim-man-ngot-mien-trung": {
+    "name": "Central Vietnamese Sweet-and-Savory Rice Squid",
+    "aliases": [
+      "Sweet-savory rice squid",
+      "Fish-sauce glazed baby squid"
+    ],
+    "region": [
+      "Central Vietnam"
+    ],
+    "province": [],
+    "category": "Seafood",
+    "meal_type": [
+      "lunch",
+      "dinner",
+      "family meal",
+      "side dish"
+    ],
+    "difficulty": "Easy",
+    "serving_basis": "One plate of glazed squid served with rice for four people.",
+    "description": "Small rice squid, also called baby squid, is cooked first and quickly glazed with fish sauce, sugar, garlic and chili sauce. The savory-sweet balance is adjustable; a brief glaze keeps the squid tender with a light, glossy coating.",
+    "finished_dish": "The squid is opaque and tender-firm, with a thin glaze clinging to each piece and no large pool of liquid.",
+    "serving": "Serve hot with steamed rice, finished with scallion or a few fresh chili slices. Stop cooking once the glaze coats the squid.",
+    "tips": [
+      "Choose fresh rice squid with intact bodies and no off smell; handle gently to avoid rupturing the ink sacs.",
+      "Steam or briefly blanch the squid until just cooked, then drain well; this shortens the glazing time and helps prevent toughness.",
+      "Mix the glaze at roughly one part fish sauce, one part sugar and two parts chili sauce; reduce the chili sauce for a milder dish.",
+      "Glaze briefly over medium heat until the sauce clings. Seafood should be fully cooked, but avoid prolonged cooking once the squid has firmed up."
+    ],
+    "dish_type": [
+      "Glazed squid"
+    ],
+    "main_ingredient": [
+      "rice squid"
+    ],
+    "cooking_method": [
+      "steaming or blanching",
+      "fish-sauce and sugar glaze"
+    ],
+    "search_terms": [
+      "Central Vietnamese sweet-savory rice squid",
+      "rice squid fish-sauce glaze",
+      "garlic chili baby squid",
+      "glazed squid with rice"
+    ],
+    "image_alt": "A plate of sweet-savory rice squid with a light glossy fish-sauce, garlic and chili glaze, scallion and red chili; transparent background.",
+    "time_note": "About 35 minutes; glaze briefly after cooking the squid to keep it tender.",
+    "suggested_pairings": [
+      "Steamed rice",
+      "Boiled vegetables",
+      "A light vegetable soup"
+    ],
+    "recipe_family": "central_rice_squid_savory_sweet_glaze",
+    "spicy_level": 2,
+    "ingredients": [
+      {
+        "name": "Cleaned rice squid (baby squid)",
+        "unit": "g",
+        "notes": "Leave small squid whole; pat dry after cleaning."
+      },
+      {
+        "name": "Fish sauce",
+        "unit": "ml",
+        "notes": "For the glaze."
+      },
+      {
+        "name": "Sugar",
+        "unit": "g",
+        "notes": "Adjust to the saltiness of the fish sauce."
+      },
+      {
+        "name": "Chili sauce",
+        "unit": "ml",
+        "notes": "Reduce to 10–15 ml for a milder flavor."
+      },
+      {
+        "name": "Garlic",
+        "unit": "g",
+        "notes": "Finely mince."
+      },
+      {
+        "name": "Cooking oil",
+        "unit": "ml",
+        "notes": "For frying garlic."
+      },
+      {
+        "name": "Scallion",
+        "unit": "g",
+        "notes": "Slice and add after turning off the heat."
+      },
+      {
+        "name": "Red chili",
+        "unit": "g",
+        "notes": "Optional; thinly slice."
+      }
+    ],
+    "tags": [
+      "Central Vietnam",
+      "seafood",
+      "side dish"
+    ],
+    "preparation_steps": [
+      "Rinse the squid briefly, remove the eyes and transparent quill if needed, keep any roe sacs intact and drain thoroughly.",
+      "Mix fish sauce, sugar and chili sauce at roughly a 1:1:2 ratio until dissolved. Adjust the chili sauce to taste."
+    ],
+    "cooking_steps": [
+      "Steam the squid for 3–4 minutes or briefly blanch in boiling water until opaque and cooked through; drain. Check that the thickest body reaches at least 63°C.",
+      "Fry the garlic in oil until fragrant, add the squid and toss briefly. If it releases excess liquid, pour it off before adding the glaze.",
+      "Pour in the glaze and toss over medium heat for 2–3 minutes until it lightly coats the squid. Turn off the heat as soon as the squid is firm and coated; do not cook it for long.",
+      "Finish with scallion and optional chili, then serve hot with rice."
+    ],
+    "keywords": [
+      "rice squid",
+      "baby squid",
+      "sweet and savory glaze",
+      "Central Vietnam",
+      "seafood"
+    ]
+  },
+  "dua-sap-cau-ke-tra-vinh": {
+    "name": "Cau Ke Wax Coconut, Tra Vinh",
+    "aliases": [
+      "Tra Vinh wax coconut",
+      "Cau Ke thick-flesh coconut"
+    ],
+    "region": [
+      "Southern Vietnam"
+    ],
+    "province": [
+      "Vinh Long (formerly Tra Vinh)"
+    ],
+    "category": "Fresh fruit dessert",
+    "meal_type": [
+      "dessert",
+      "light snack"
+    ],
+    "difficulty": "Easy",
+    "serving_basis": "One wax coconut split into two light dessert portions.",
+    "description": "Cau Ke wax coconut from former Tra Vinh (now part of Vinh Long) has unusually thick, soft flesh and a viscous coconut liquid. Eating it plain highlights the creamy texture of this regional coconut variety.",
+    "finished_dish": "The coconut flesh is thick, soft and fragrant, with a lightly viscous liquid rather than the thin water of an ordinary coconut.",
+    "serving": "Split the fruit and scoop the flesh together with a little of its viscous liquid. Chill the whole fruit first if desired; no sugar, milk or other fruit is needed.",
+    "tips": [
+      "Buy from a seller who identifies the Cau Ke source; the thickness varies from fruit to fruit.",
+      "The shell is hard. Ask the seller to open it or use suitable tools on a stable surface.",
+      "Refrigerate the cut fruit and use it soon; do not leave it at room temperature for long.",
+      "This is served as a single fresh fruit, without mixed fruit or added toppings."
+    ],
+    "dish_type": [
+      "Fresh fruit"
+    ],
+    "main_ingredient": [
+      "wax coconut"
+    ],
+    "cooking_method": [
+      "optional chilling",
+      "splitting and scooping"
+    ],
+    "search_terms": [
+      "Cau Ke wax coconut",
+      "Tra Vinh wax coconut",
+      "Mekong thick-flesh coconut",
+      "plain wax coconut"
+    ],
+    "image_alt": "A single Cau Ke wax coconut cut in half, showing thick creamy-white flesh and its viscous center, with no other fruit; transparent background.",
+    "time_note": "About 10 minutes to prepare; chill the whole fruit for 30 minutes if you prefer it cold.",
+    "suggested_pairings": [
+      "Serve on its own as fresh fruit dessert"
+    ],
+    "recipe_family": "tra_vinh_cau_ke_wax_coconut_fresh",
+    "spicy_level": 0,
+    "ingredients": [
+      {
+        "name": "Wax coconut from Cau Ke",
+        "unit": "whole",
+        "notes": "Choose a clearly sourced fruit with thick flesh; ask the seller to open it if unfamiliar with the hard shell."
+      }
+    ],
+    "tags": [
+      "Southern Vietnam",
+      "fresh fruit",
+      "Cau Ke specialty"
+    ],
+    "preparation_steps": [
+      "Wash the outer shell and dry it. If unfamiliar with opening coconuts, ask the seller to open it; keep the fruit on a stable surface.",
+      "Chill the whole fruit for about 30 minutes if desired. No sugar, milk or other fruit is required."
+    ],
+    "cooking_steps": [
+      "Split the wax coconut and check that the flesh smells and looks fresh; do not use it if it has an off smell or signs of spoilage.",
+      "Scoop the thick flesh with a little of its viscous liquid into two small bowls and enjoy it plain as fresh fruit."
+    ],
+    "keywords": [
+      "wax coconut",
+      "Cau Ke",
+      "Tra Vinh",
+      "Vinh Long",
+      "fresh fruit",
+      "dessert"
+    ]
+  }
+}

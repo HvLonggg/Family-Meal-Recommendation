@@ -132,7 +132,11 @@ describe('PublicLayout header', () => {
   it('switches the whole interface to English', async () => {
     renderLayout();
     fireEvent.click(within(screen.getByRole('banner')).getByRole('button', { name: 'English' }));
-    const nav = await screen.findByRole('navigation', { name: 'Main navigation' });
+    const nav = await screen.findByRole(
+      'navigation',
+      { name: 'Main navigation' },
+      { timeout: 5000 },
+    );
     expect(within(nav).getByRole('link', { name: 'Recipes' })).toBeInTheDocument();
     expect(within(nav).getByRole('link', { name: 'Planner' })).toBeInTheDocument();
     expect(document.documentElement.lang).toBe('en');

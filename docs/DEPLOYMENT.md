@@ -36,6 +36,8 @@ Không commit giá trị thật của bất kỳ biến bí mật nào; chỉ nh
 
 Render free chặn cổng SMTP 25/465/587, nên production gửi mail qua Gmail API (cổng 443) bằng chính tài khoản Gmail đang dùng.
 
+Để cấu hình Gmail API khi phát triển local (kể cả Docker không kết nối được SMTP), làm theo mục [Gmail API configuration for local development](AUTHENTICATION_SECURITY.md#gmail-api-configuration-for-local-development). Không dùng chung OAuth client của Google Sign-In.
+
 1. Google Cloud Console → **APIs & Services** → bật **Gmail API**.
 2. **OAuth consent screen**: thêm scope `https://www.googleapis.com/auth/gmail.send`, rồi bấm **Publish app** để chuyển sang **In production**. Nếu để *Testing*, refresh token hết hạn sau 7 ngày và email ngừng gửi.
 3. **Credentials** → **Create OAuth client ID** → loại **Desktop app**.
@@ -91,8 +93,9 @@ Thu hồi quyền tại <https://myaccount.google.com/permissions> sẽ vô hi�
 ## 5. Kiểm tra sau triển khai
 
 - Trang chủ và `/recipes` hiển thị đủ món; F5 tại một trang con không bị 404.
-- Đăng ký tài khoản mới, nhận được email OTP; đăng nhập rồi tải lại trang vẫn giữ phiên.
+- Đăng ký tài khoản mới và nhận email chào mừng; dùng chức năng quên mật khẩu để kiểm tra OTP email.
 - Gửi yêu cầu hỗ trợ; email thông báo đến `BEP_VIET_SUPPORT_EMAIL`.
+- Với tài khoản quản trị, kiểm tra `GET /api/v1/admin/meal-suggestions/delivery-status` trước khi gửi gợi ý món.
 - Xem log trên Render nếu có lỗi `Gmail OAuth token refresh failed: invalid_grant` (token bị thu hồi/hết hạn → làm lại mục 2.4).
 
 ## Giới hạn của gói miễn phí

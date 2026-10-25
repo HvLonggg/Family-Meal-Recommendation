@@ -1,0 +1,1307 @@
+{
+  "batch": 68,
+  "description": "Món miền Tây từ củ hủ dừa, tép rang nước cốt dừa, bánh hỏi bò đun và cá thòi lòi; kèm một loại trái cây tráng miệng riêng.",
+  "recipes": [
+    {
+      "id": "BV666",
+      "slug": "goi-cu-hu-dua-tom-thit-ben-tre",
+      "name": "Gỏi củ hủ dừa tôm thịt Bến Tre",
+      "aliases": [
+        "Gỏi củ hủ dừa",
+        "Gỏi củ hủ dừa tôm thịt"
+      ],
+      "region": [
+        "Nam Bộ"
+      ],
+      "province": [
+        "Bến Tre"
+      ],
+      "category": "Món trộn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "món khai vị",
+        "mâm cơm gia đình"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một đĩa gỏi dùng chung cho bốn người.",
+      "prep_time": 30,
+      "cook_time": 20,
+      "passive_time": 0,
+      "total_time": 50,
+      "description": "Củ hủ dừa giòn mát được trộn cùng tôm, thịt ba chỉ, rau răm và nước mắm chua ngọt. Bếp Việt giữ vị thanh, để rau thơm và đậu phộng làm điểm nhấn thay vì át vị ngọt tự nhiên của nguyên liệu.",
+      "finished_dish": "Sợi củ hủ dừa còn độ giòn, tôm vừa chín tới, thịt mềm; nước trộn chua ngọt bám nhẹ và không đọng thành vũng.",
+      "serving": "Trộn sát giờ ăn, rắc đậu phộng rang và hành phi sau cùng. Dọn cùng bánh phồng tôm hoặc bánh tráng nướng nếu dùng làm món khai vị.",
+      "tips": [
+        "Ngâm củ hủ dừa đã thái trong nước mát có ít chanh để giữ màu; để thật ráo trước khi trộn.",
+        "Luộc tôm vừa chuyển hồng và thịt vừa chín kỹ; làm nguội rồi mới trộn để rau không héo.",
+        "Pha nước trộn riêng, nêm chua ngọt cân bằng rồi rưới từng phần để gỏi không bị mặn hoặc ra nhiều nước."
+      ],
+      "dish_type": [
+        "Gỏi củ hủ dừa"
+      ],
+      "main_ingredient": [
+        "củ hủ dừa",
+        "tôm",
+        "thịt ba chỉ"
+      ],
+      "cooking_method": [
+        "luộc",
+        "pha nước trộn",
+        "trộn gỏi"
+      ],
+      "search_terms": [
+        "gỏi củ hủ dừa tôm thịt Bến Tre",
+        "gỏi củ hủ dừa",
+        "gỏi dừa non tôm thịt",
+        "món khai vị miền Tây"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Đĩa gỏi củ hủ dừa Bến Tre với tôm luộc, thịt ba chỉ, cà rốt, rau răm, đậu phộng và hành phi, trên nền trong suốt.",
+      "time_note": "Khoảng 50 phút; luộc tôm và thịt theo kích thước thực tế, để nguội trước khi trộn.",
+      "suggested_pairings": [
+        "Bánh phồng tôm",
+        "Bánh tráng nướng",
+        "Cơm gia đình"
+      ],
+      "recipe_family": "goi_cu_hu_dua_tom_thit_ben_tre",
+      "keywords": [
+        "gỏi",
+        "củ hủ dừa",
+        "tôm",
+        "thịt heo",
+        "Bến Tre",
+        "món miền Tây"
+      ],
+      "tags": [
+        "món trộn",
+        "Nam Bộ",
+        "món khai vị"
+      ],
+      "ingredients": [
+        {
+          "name": "Củ hủ dừa",
+          "quantity": 500,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Thái sợi vừa; ngâm nước mát pha chanh rồi để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Tôm sú",
+          "quantity": 250,
+          "unit": "g",
+          "role": "protein",
+          "notes": "Rửa sạch, bỏ chỉ lưng.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Thịt ba chỉ",
+          "quantity": 200,
+          "unit": "g",
+          "role": "protein",
+          "notes": "Chọn miếng nạc mỡ cân đối.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Cà rốt",
+          "quantity": 80,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Thái sợi mảnh.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Rau răm",
+          "quantity": 15,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, để ráo, thái vừa.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Đậu phộng rang",
+          "quantity": 25,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Giã dập, không nghiền mịn.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Hành phi",
+          "quantity": 12,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Để riêng, thêm lúc dọn.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 35,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Pha nước trộn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        },
+        {
+          "name": "Nước cốt chanh",
+          "quantity": 30,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Có thể thay một phần bằng giấm gạo.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 9
+        },
+        {
+          "name": "Đường",
+          "quantity": 25,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Điều chỉnh theo độ chua của chanh.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 10
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 8,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Ớt đỏ",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhỏ, tùy chọn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 12
+        },
+        {
+          "name": "Muối",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng cho nước luộc.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 13
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 1200,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng luộc thịt và tôm.",
+          "scaling_rule": "linear",
+          "sequence": 14
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa riêng tôm, thịt và rau. Thái củ hủ dừa, ngâm nước chanh loãng rồi để ráo; thái cà rốt, rau răm."
+        },
+        {
+          "step": 2,
+          "instruction": "Nấu sôi nước với chút muối, luộc thịt đến khi chín kỹ; vớt ra để nguội rồi thái lát mỏng."
+        },
+        {
+          "step": 3,
+          "instruction": "Luộc tôm trong nước sôi vừa đến khi chuyển hồng và đục đều; vớt ra, để nguội, bóc vỏ nếu muốn."
+        },
+        {
+          "step": 4,
+          "instruction": "Khuấy nước mắm, nước cốt chanh và đường cho tan; thêm tỏi, ớt rồi nếm lại."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Cho củ hủ dừa, cà rốt, thịt và tôm vào âu lớn. Rưới nước trộn từng ít một và đảo nhẹ."
+        },
+        {
+          "step": 2,
+          "instruction": "Để gỏi thấm 5–7 phút, thêm rau răm và trộn lần cuối; chắt bớt nước nếu có."
+        },
+        {
+          "step": 3,
+          "instruction": "Bày ra đĩa, rắc đậu phộng rang và hành phi ngay trước khi dùng."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://bentretourism.vn/vi/detailnews/?id=news_1375&t=goi-cu-hu-dua-tom-thit-tinh-tuy-am-thuc-ben-tre",
+          "publisher": "Cổng thông tin du lịch Bến Tre",
+          "title": "Gỏi củ hủ dừa tôm thịt – Tinh túy ẩm thực Bến Tre",
+          "use": "Đối chiếu tên món, địa phương, củ hủ dừa kết hợp tôm thịt và rau gia vị; Bếp Việt tự biên tập định lượng và trình tự nấu.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://bentretourism.vn/vi/detailnews/?id=cuisine_25&t=goi-cu-hu-dua-thom-ngon-ngay-tet",
+          "publisher": "Cổng thông tin du lịch Bến Tre",
+          "title": "Gỏi củ hủ dừa thơm ngon ngày Tết",
+          "use": "Tham khảo cách sơ chế và phối hợp nguyên liệu trong gỏi củ hủ dừa địa phương.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Giảm nguyên liệu theo khẩu phần, nêm gia vị từ ít hơn một nửa rồi điều chỉnh.",
+            "instruction": "Giữ thời gian gần như cũ với món hấp, luộc hoặc nướng; kiểm tra độ chín trước khi dọn."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "Tăng nguyên liệu chính theo số người; gia vị tăng từ từ và nếm lại.",
+            "instruction": "Dùng nồi hoặc chảo đủ rộng; chia mẻ khi cần để món chín đều."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/goi-cu-hu-dua-tom-thit-ben-tre-960.webp",
+          "page_url": null,
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo mới riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập tên món, nguyên liệu và kỹ thuật.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa gỏi củ hủ dừa Bến Tre với tôm luộc, thịt ba chỉ, cà rốt, rau răm, đậu phộng và hành phi, trên nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh ImageGen riêng, PNG RGBA nền trong suốt; master PNG và WebP được xuất ở nhiều kích thước. Công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt đối chiếu cách gọi, nguyên liệu và kỹ thuật với nguồn đã dẫn; định lượng và trình tự được biên tập cho khẩu phần gia đình, cần nấu thử.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử để xác nhận định lượng, thời gian và cân bằng gia vị theo nguyên liệu thực tế."
+        ]
+      }
+    },
+    {
+      "id": "BV667",
+      "slug": "tep-rang-dua-ben-tre",
+      "name": "Tép rang dừa Bến Tre",
+      "aliases": [
+        "Tép rang nước cốt dừa",
+        "Tép bạc rang dừa",
+        "Tép rang dừa Mỹ Hưng"
+      ],
+      "region": [
+        "Nam Bộ"
+      ],
+      "province": [
+        "Bến Tre"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "mâm cơm gia đình"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Món mặn ăn cùng cơm cho bốn người.",
+      "prep_time": 15,
+      "cook_time": 20,
+      "passive_time": 0,
+      "total_time": 35,
+      "description": "Tép bạc rang nhanh trong nước cốt dừa nhất đến khi đỏ au, thấm vị béo ngọt vừa phải. Món dân dã xứ dừa thường ăn cùng cơm nóng; Bếp Việt biên tập lượng gia vị theo khẩu phần gia đình.",
+      "finished_dish": "Tép chín đỏ cam, giữ dáng, được phủ lớp nước cốt dừa bóng nhẹ; vị ngọt tự nhiên đi cùng độ béo thơm mà không quá mặn.",
+      "serving": "Dọn nóng trong đĩa nhỏ, dùng với cơm trắng và rau luộc hoặc canh thanh vị.",
+      "tips": [
+        "Chọn tép thật tươi, vỏ mềm; để ráo kỹ để nước trong chảo không bị loãng.",
+        "Đợi nước cốt dừa sôi bùng rồi mới cho tép vào; chỉ hạ lửa sau khi tép chuyển đỏ để giữ tép săn.",
+        "Đảo nhẹ tay và dừng khi sốt vừa áo bóng quanh tép, tránh rang quá lâu làm tép khô hoặc bở."
+      ],
+      "dish_type": [
+        "Món mặn ăn cơm",
+        "Đặc sản Bến Tre"
+      ],
+      "main_ingredient": [
+        "tép bạc",
+        "nước cốt dừa"
+      ],
+      "cooking_method": [
+        "sơ chế",
+        "rang",
+        "rim cạn"
+      ],
+      "search_terms": [
+        "tép rang dừa Bến Tre",
+        "tép bạc rang nước cốt dừa",
+        "món mặn ăn cơm miền Tây",
+        "đặc sản xứ dừa"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Đĩa tép bạc rang nước cốt dừa đỏ cam, phủ sốt bóng nhẹ, trên nền trong suốt.",
+      "time_note": "Khoảng 35 phút; món chín nhanh, thời gian rang thay đổi theo cỡ tép và độ rộng của chảo.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Rau luộc",
+        "Canh rau thanh vị"
+      ],
+      "recipe_family": "tep_rang_dua_ben_tre",
+      "keywords": [
+        "tép rang dừa",
+        "tép bạc",
+        "Bến Tre",
+        "nước cốt dừa",
+        "món ăn cơm",
+        "Nam Bộ"
+      ],
+      "tags": [
+        "món mặn",
+        "Nam Bộ",
+        "đặc sản vùng miền",
+        "món ăn gia đình"
+      ],
+      "ingredients": [
+        {
+          "name": "Tép bạc tươi",
+          "quantity": 500,
+          "unit": "g",
+          "role": "seafood",
+          "notes": "Chọn tép còn tươi, vỏ mềm; nhặt bỏ tép hỏng.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Nước cốt dừa nhất",
+          "quantity": 200,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Ưu tiên nước cốt dừa vắt lần đầu để món rang thơm và béo.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Đường",
+          "quantity": 10,
+          "unit": "g",
+          "role": "sweetener",
+          "notes": "Gia giảm theo độ ngọt tự nhiên của tép.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 3
+        },
+        {
+          "name": "Muối",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm vừa đủ để cân vị béo.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 4
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Nhặt bỏ tép hỏng, rửa nhanh bằng nước sạch rồi để thật ráo. Với tép lớn, có thể cắt bớt râu nhọn; giữ vỏ để tép lên màu đẹp và không bở."
+        },
+        {
+          "step": 2,
+          "instruction": "Đong nước cốt dừa nhất, chuẩn bị đường và muối. Dùng chảo rộng để tép tiếp xúc nhiệt đều."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đun nước cốt dừa trong chảo ở lửa lớn đến khi sôi bùng. Cho đường và muối vào khuấy tan, sau đó trút tép vào ngay và đảo đều."
+        },
+        {
+          "step": 2,
+          "instruction": "Khi tép chuyển đỏ cam và chín đều, hạ lửa nhỏ. Đảo nhẹ đến khi nước cốt sánh lại, áo quanh tép; tắt bếp khi còn một lớp sốt bóng mỏng, tránh rang quá khô."
+        },
+        {
+          "step": 3,
+          "instruction": "Dọn nóng cùng cơm trắng. Nếu dùng tép cỡ lớn, kiểm tra phần thịt dày nhất đã chín trước khi tắt bếp."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://vnexpress.net/tep-rang-dua-ben-tre-4126042.html",
+          "publisher": "VnExpress Du lịch",
+          "title": "Tép rang dừa Bến Tre",
+          "use": "Đối chiếu tên món, đặc sản Bến Tre, cách dùng tép bạc tươi và nước cốt dừa nhất, nêm đường muối, rang lửa lớn đến khi tép đỏ rồi hạ lửa rim thấm. Bếp Việt tự biên tập định lượng và khẩu phần.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://hiephoiduabentre.vn/thanh-phu-cong-bo-va-trao-van-bang-bao-ho-nhan-hieu-tep-rang-dua-my-hung",
+          "publisher": "Hiệp hội Dừa tỉnh Bến Tre",
+          "title": "Thạnh Phú công bố và trao văn bằng bảo hộ nhãn hiệu Tép rang dừa Mỹ Hưng",
+          "use": "Đối chiếu tên gọi địa phương và ghi nhận món tép rang nước cốt dừa truyền thống xứ dừa.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Giảm tép và nước cốt dừa theo khẩu phần; bắt đầu với ít hơn một nửa lượng muối, đường rồi nếm lại.",
+            "instruction": "Dùng chảo nhỏ, vẫn đợi nước cốt dừa sôi trước khi cho tép vào và dừng khi sốt vừa áo."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "Tăng lượng tép và nước cốt dừa; gia vị tăng từ từ để giữ vị béo ngọt cân bằng.",
+            "instruction": "Rang thành hai mẻ nếu chảo không đủ rộng để tép chín đều và không bị hấp trong nước."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/tep-rang-dua-ben-tre-960.webp",
+          "page_url": null,
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu món và kỹ thuật chế biến.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa tép bạc rang nước cốt dừa đỏ cam, phủ sốt bóng nhẹ.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh ImageGen PNG RGBA nền trong suốt; bản gốc, master 4K và các bản WebP được lưu trong dự án."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Tên món, nguyên liệu chính và cách rang được đối chiếu tư liệu về tép rang dừa Bến Tre; định lượng gia đình do Bếp Việt biên tập.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử để chốt lượng đường, muối và độ sánh phù hợp với tép theo mùa."
+        ]
+      }
+    },
+    {
+      "id": "BV668",
+      "slug": "banh-hoi-bo-dun-ben-tre",
+      "name": "Bánh hỏi bò đun Bến Tre",
+      "aliases": [
+        "Bánh hỏi bò nướng Bến Tre",
+        "Bò đun cuốn bánh hỏi"
+      ],
+      "region": [
+        "Nam Bộ"
+      ],
+      "province": [
+        "Bến Tre"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "mâm cơm gia đình"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Một mâm bánh hỏi bò đun dùng chung cho bốn người.",
+      "prep_time": 35,
+      "cook_time": 35,
+      "passive_time": 15,
+      "total_time": 85,
+      "description": "Bánh hỏi phết mỡ hành ăn cùng bò đun nướng than, cuốn bên trong có mỡ heo, lạp xưởng và đậu phộng. Dọn kèm thơm, khế chua, chuối chát, rau thơm và chén nước mắm chua ngọt theo cách ăn quen thuộc ở Bến Tre.",
+      "finished_dish": "Cuốn bò thơm xém, nhân béo bùi vừa phải; bánh hỏi mềm, mỡ hành thơm và rau quả chua chát làm món ăn cân vị.",
+      "serving": "Xếp bánh hỏi và bò nướng thành phần riêng, dọn cùng rau, thơm, khế, chuối chát và nước mắm. Có thể cuốn từng miếng hoặc trộn trong đĩa.",
+      "tips": [
+        "Thái bò ngang thớ và lát đủ mỏng để cuốn nhanh chín.",
+        "Không nhồi quá nhiều mỡ, lạp xưởng và đậu phộng để cuốn không bung khi nướng.",
+        "Nướng đến khi thịt bò chín hoàn toàn; dùng kẹp và đĩa riêng cho thịt sống, thịt chín."
+      ],
+      "dish_type": [
+        "Bánh hỏi bò đun"
+      ],
+      "main_ingredient": [
+        "thịt bò",
+        "bánh hỏi",
+        "lạp xưởng",
+        "mỡ heo"
+      ],
+      "cooking_method": [
+        "ướp",
+        "cuốn",
+        "nướng than",
+        "pha nước chấm"
+      ],
+      "search_terms": [
+        "bánh hỏi bò đun Bến Tre",
+        "bò đun cuốn bánh hỏi",
+        "bánh hỏi bò nướng",
+        "đặc sản Bến Tre"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Bánh hỏi phết mỡ hành ăn cùng các cuốn bò đun nướng nhân lạp xưởng, mỡ heo và đậu phộng, dọn rau quả và nước mắm, nền trong suốt.",
+      "time_note": "Khoảng 85 phút; thời gian nướng tùy độ dày cuốn, thịt bò phải chín hoàn toàn.",
+      "suggested_pairings": [
+        "Rau thơm",
+        "Thơm",
+        "Khế chua",
+        "Chuối chát"
+      ],
+      "recipe_family": "banh_hoi_bo_dun_ben_tre",
+      "keywords": [
+        "bánh hỏi",
+        "bò đun",
+        "Bến Tre",
+        "bò nướng",
+        "mâm cơm miền Tây"
+      ],
+      "tags": [
+        "món mặn",
+        "Nam Bộ",
+        "đặc sản vùng miền"
+      ],
+      "ingredients": [
+        {
+          "name": "Bánh hỏi",
+          "quantity": 600,
+          "unit": "g",
+          "role": "grain",
+          "notes": "Chọn bánh tươi, tơi mềm; hấp nóng trước khi dọn.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Thịt bò mềm",
+          "quantity": 500,
+          "unit": "g",
+          "role": "protein",
+          "notes": "Thái lát mỏng ngang thớ.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Mỡ heo",
+          "quantity": 100,
+          "unit": "g",
+          "role": "protein",
+          "notes": "Thái miếng nhỏ để làm phần cuốn.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Lạp xưởng",
+          "quantity": 100,
+          "unit": "g",
+          "role": "protein",
+          "notes": "Hấp chín rồi áp chảo nhẹ, thái thanh.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Đậu phộng rang",
+          "quantity": 30,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Giã dập.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 20,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhỏ để ướp thịt bò.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 45,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Chia cho phần ướp và nước chấm.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 7
+        },
+        {
+          "name": "Đường",
+          "quantity": 30,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Chia cho phần ướp và nước chấm.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Ướp thịt bò.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 9
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 30,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Thái nhỏ, làm mỡ hành.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 35,
+          "unit": "ml",
+          "role": "cooking_fat",
+          "notes": "Dùng làm mỡ hành và nướng.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Nước cốt chanh",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng pha nước chấm.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 12
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 8,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhỏ cho nước chấm.",
+          "scaling_rule": "linear",
+          "sequence": 13
+        },
+        {
+          "name": "Ớt",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhỏ, tùy chọn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 14
+        },
+        {
+          "name": "Nước ấm",
+          "quantity": 120,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng pha nước chấm.",
+          "scaling_rule": "linear",
+          "sequence": 15
+        },
+        {
+          "name": "Rau thơm",
+          "quantity": 120,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Nhặt rửa sạch, để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 16
+        },
+        {
+          "name": "Thơm",
+          "quantity": 150,
+          "unit": "g",
+          "role": "fruit",
+          "notes": "Gọt vỏ, thái lát mỏng.",
+          "scaling_rule": "linear",
+          "sequence": 17
+        },
+        {
+          "name": "Khế chua",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "vegetable",
+          "notes": "Rửa sạch, thái lát mỏng.",
+          "scaling_rule": "linear",
+          "sequence": 18
+        },
+        {
+          "name": "Chuối chát",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "fruit",
+          "notes": "Thái lát, ngâm nước muối loãng rồi để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 19
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Thái thịt bò ngang thớ. Luộc mỡ heo đến chín, để nguội rồi thái hạt lựu; hấp lạp xưởng chín, áp chảo cho vàng nhẹ rồi thái thanh."
+        },
+        {
+          "step": 2,
+          "instruction": "Ướp thịt bò với hành tím, một phần nước mắm, đường và tiêu khoảng 15 phút."
+        },
+        {
+          "step": 3,
+          "instruction": "Rửa, để ráo rau thơm; gọt thơm, thái khế và chuối chát. Ngâm chuối trong nước muối loãng để hạn chế thâm rồi để ráo."
+        },
+        {
+          "step": 4,
+          "instruction": "Thái hành lá nhỏ. Khuấy nước mắm, chanh, đường, tỏi, ớt và nước ấm thành nước chấm chua ngọt."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Cuốn từng lát bò quanh một ít mỡ heo, lạp xưởng và đậu phộng; ghim bằng tăm hoặc đặt mép cuốn xuống dưới."
+        },
+        {
+          "step": 2,
+          "instruction": "Nướng trên than hồng hoặc chảo nướng ở lửa vừa, trở đều đến khi bò chín hoàn toàn và mặt ngoài xém thơm."
+        },
+        {
+          "step": 3,
+          "instruction": "Làm nóng bánh hỏi theo hướng dẫn bao bì. Đun dầu nóng vừa, tắt bếp, cho hành lá vào khuấy thành mỡ hành rồi phết lên bánh."
+        },
+        {
+          "step": 4,
+          "instruction": "Dọn bò đun cùng bánh hỏi, rau thơm, thơm, khế, chuối chát và nước chấm."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://vnexpress.net/banh-hoi-bo-dun-thom-nuc-o-ben-tre-3709310.html",
+          "publisher": "VnExpress Du lịch",
+          "title": "Bánh hỏi bò đun thơm nức ở Bến Tre",
+          "use": "Đối chiếu cách gọi và nguồn gốc Bến Tre; bài mô tả bò thái mỏng cuốn mỡ heo, lạp xưởng, đậu phộng rồi nướng, ăn cùng bánh hỏi phết mỡ hành, rau quả và nước mắm. Định lượng do Bếp Việt biên tập.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Giảm nguyên liệu theo khẩu phần, gia giảm gia vị từ từ rồi nếm lại.",
+            "instruction": "Giữ nguyên kỹ thuật, kiểm tra độ chín trước khi dọn."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "Tăng nguyên liệu theo số người, không tăng gia vị theo tỷ lệ cứng.",
+            "instruction": "Chia mẻ hoặc dùng dụng cụ đủ rộng để món chín đều."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/banh-hoi-bo-dun-ben-tre-960.webp",
+          "page_url": null,
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo mới riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập món và kỹ thuật.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Bánh hỏi phết mỡ hành ăn cùng các cuốn bò đun nướng nhân lạp xưởng, mỡ heo và đậu phộng, dọn rau quả và nước mắm, nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh ImageGen PNG RGBA nền trong suốt; WebP xuất trên canvas 3840 × 2160. Công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt đối chiếu tên món, nguyên liệu và cách dùng với nguồn đã dẫn; định lượng được biên tập cho khẩu phần gia đình.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử để kiểm tra định lượng và thời gian theo nguyên liệu, dụng cụ thực tế."
+        ]
+      }
+    },
+    {
+      "id": "BV669",
+      "slug": "ca-thoi-loi-nuong-muoi-ot-ca-mau",
+      "name": "Cá thòi lòi nướng muối ớt Cà Mau",
+      "aliases": [
+        "Cá thòi lòi nướng",
+        "Cá thòi lòi nướng muối ớt"
+      ],
+      "region": [
+        "Nam Bộ"
+      ],
+      "province": [
+        "Cà Mau"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "món nướng",
+        "mâm cơm gia đình"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Bốn phần cá nướng.",
+      "prep_time": 25,
+      "cook_time": 25,
+      "passive_time": 15,
+      "total_time": 65,
+      "description": "Cá thòi lòi vùng đất bãi Cà Mau được làm sạch, ướp muối ớt rồi nướng đến khi da xém thơm và thịt vừa chín. Bếp Việt giữ cách nêm gọn, dọn kèm rau thơm, dưa leo và chanh để vị cá là chính.",
+      "finished_dish": "Da cá thơm xém, thịt bên trong trắng và còn ẩm; lớp muối ớt mặn cay vừa phải, không cháy khét.",
+      "serving": "Gỡ thịt cá khi còn nóng, ăn cùng rau thơm, dưa leo và muối ớt chanh; dùng kèm cơm trắng hoặc cuốn bánh tráng.",
+      "tips": [
+        "Chọn cá tươi, làm sạch bùn và nhớt kỹ; để ráo trước khi ướp.",
+        "Khứa nhẹ thân cá để gia vị bám đều; ướp ngắn để không làm thịt cá ra nước.",
+        "Nướng trên than hồng hoặc lò đã làm nóng; trở nhẹ tay và kiểm tra phần dày nhất đã chín đục."
+      ],
+      "dish_type": [
+        "Cá thòi lòi nướng muối ớt"
+      ],
+      "main_ingredient": [
+        "cá thòi lòi",
+        "muối",
+        "ớt"
+      ],
+      "cooking_method": [
+        "sơ chế",
+        "ướp",
+        "nướng"
+      ],
+      "search_terms": [
+        "cá thòi lòi nướng muối ớt Cà Mau",
+        "cá thòi lòi nướng",
+        "cá nướng muối ớt",
+        "đặc sản Cà Mau"
+      ],
+      "spicy_level": 2,
+      "image_alt": "Cá thòi lòi Cà Mau nướng muối ớt trên đĩa oval cùng dưa leo, rau thơm và chanh, da xém vàng, ảnh nền trong suốt.",
+      "time_note": "Khoảng 65 phút gồm thời gian ướp; nướng đến khi thịt cá đục đều và dễ tách khỏi xương.",
+      "suggested_pairings": [
+        "Rau thơm",
+        "Dưa leo",
+        "Cơm trắng",
+        "Bánh tráng"
+      ],
+      "recipe_family": "ca_thoi_loi_nuong_muoi_ot_ca_mau",
+      "keywords": [
+        "cá thòi lòi",
+        "muối ớt",
+        "cá nướng",
+        "Cà Mau",
+        "món miền Tây"
+      ],
+      "tags": [
+        "món mặn",
+        "Nam Bộ",
+        "món nướng"
+      ],
+      "ingredients": [
+        {
+          "name": "Cá thòi lòi",
+          "quantity": 800,
+          "unit": "g",
+          "role": "protein",
+          "notes": "Làm sạch bùn, nhớt, bỏ mang và ruột; để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Muối hạt",
+          "quantity": 8,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Giã nhuyễn với ớt.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 2
+        },
+        {
+          "name": "Ớt đỏ",
+          "quantity": 12,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Điều chỉnh theo khả năng ăn cay.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 3
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 10,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, giã cùng muối ớt.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Nước cốt chanh",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Cho vào hỗn hợp ướp.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 5
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "cooking_fat",
+          "notes": "Phết mỏng để cá không dính vỉ.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Rau thơm",
+          "quantity": 100,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Nhặt rửa sạch, để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Dưa leo",
+          "quantity": 150,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Rửa sạch, thái lát.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Chanh",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "garnish",
+          "notes": "Cắt múi để ăn kèm.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Rắc lượng nhỏ vào phần ướp.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 10
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa cá nhiều lần dưới vòi nước, làm sạch bùn, mang và ruột; dùng dao cạo nhẹ phần nhớt, rửa lại rồi thấm khô."
+        },
+        {
+          "step": 2,
+          "instruction": "Khứa vài đường nông hai bên thân cá để gia vị thấm đều."
+        },
+        {
+          "step": 3,
+          "instruction": "Giã muối, ớt và tỏi; trộn nước cốt chanh, tiêu và dầu ăn thành hỗn hợp sệt. Ướp cá khoảng 15 phút."
+        },
+        {
+          "step": 4,
+          "instruction": "Nhặt, rửa rau thơm và dưa leo; để ráo, chuẩn bị than hoặc làm nóng lò nướng."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng vỉ hoặc lò ở khoảng 200°C. Phết dầu mỏng lên vỉ, đặt cá lên nướng."
+        },
+        {
+          "step": 2,
+          "instruction": "Nướng khoảng 8–12 phút mỗi mặt tùy kích thước, trở nhẹ một lần; phết lại chút gia vị nếu cá khô."
+        },
+        {
+          "step": 3,
+          "instruction": "Kiểm tra phần thịt dày nhất: cá chín khi thịt đục đều và tách khỏi xương dễ dàng. Gắp ra đĩa."
+        },
+        {
+          "step": 4,
+          "instruction": "Dọn nóng với rau thơm, dưa leo, chanh và cơm hoặc bánh tráng."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://thanhnien.vn/ve-ca-mau-an-ca-thoi-loi-185721538.htm",
+          "publisher": "Báo Thanh Niên",
+          "title": "Về Cà Mau ăn cá thòi lòi",
+          "use": "Đối chiếu loài cá, cách nướng muối ớt, rau ăn kèm và đặc trưng ẩm thực Cà Mau; thời gian và định lượng được Bếp Việt chuẩn hóa.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://www.camau.gov.vn/wps/portal/?1dmy&page=trangchitiet&urile=wcm%3Apath%3A/camaulibrary/camauofsite/gioithieu/dacsan",
+          "publisher": "Cổng thông tin tỉnh Cà Mau",
+          "title": "Đặc sản Cà Mau",
+          "use": "Tham khảo bối cảnh địa phương và nguyên liệu cá thòi lòi, không sao chép công thức nguồn.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Giảm nguyên liệu theo khẩu phần, nêm gia vị từ ít hơn một nửa rồi điều chỉnh.",
+            "instruction": "Giữ thời gian gần như cũ với món hấp, luộc hoặc nướng; kiểm tra độ chín trước khi dọn."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "Tăng nguyên liệu chính theo số người; gia vị tăng từ từ và nếm lại.",
+            "instruction": "Dùng nồi hoặc chảo đủ rộng; chia mẻ khi cần để món chín đều."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/ca-thoi-loi-nuong-muoi-ot-ca-mau-960.webp",
+          "page_url": null,
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo mới riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập tên món, nguyên liệu và kỹ thuật.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Cá thòi lòi Cà Mau nướng muối ớt trên đĩa oval cùng dưa leo, rau thơm và chanh, da xém vàng, ảnh nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh ImageGen riêng, PNG RGBA nền trong suốt; master PNG và WebP được xuất ở nhiều kích thước. Công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt đối chiếu cách gọi, nguyên liệu và kỹ thuật với nguồn đã dẫn; định lượng và trình tự được biên tập cho khẩu phần gia đình, cần nấu thử.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử để xác nhận định lượng, thời gian và cân bằng gia vị theo nguyên liệu thực tế."
+        ]
+      }
+    },
+    {
+      "id": "BV670",
+      "slug": "buoi-da-xanh-ben-tre",
+      "name": "Bưởi da xanh Bến Tre tráng miệng",
+      "aliases": [
+        "Bưởi da xanh Bến Tre",
+        "Múi bưởi da xanh"
+      ],
+      "region": [
+        "Nam Bộ"
+      ],
+      "province": [
+        "Bến Tre"
+      ],
+      "category": "Món tráng miệng",
+      "meal_type": [
+        "món tráng miệng",
+        "sau bữa ăn"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một quả bưởi tách thành bốn phần.",
+      "prep_time": 20,
+      "cook_time": 0,
+      "passive_time": 15,
+      "total_time": 35,
+      "description": "Bưởi da xanh Bến Tre được tách múi và dọn riêng như phần trái cây tráng miệng, không trộn thêm loại quả hay sốt. Tép bưởi hồng, ráo và vị ngọt thanh giúp kết thúc bữa cơm nhẹ nhàng.",
+      "finished_dish": "Múi bưởi tách nguyên, tép căng và ráo, vị ngọt thanh, không đắng hay the; dùng mát nhưng không quá lạnh.",
+      "serving": "Tách múi, bỏ hạt nếu có và xếp lên đĩa lạnh. Dọn riêng từng phần sau bữa ăn; không thêm đường hoặc trái cây khác.",
+      "tips": [
+        "Rửa sạch vỏ trước khi bổ để dao không kéo bụi bẩn vào phần múi.",
+        "Bóc bỏ cùi trắng dày và tách màng từng múi để ăn dễ hơn, tránh làm vỡ tép.",
+        "Làm mát ngắn trong ngăn mát; không ngâm múi trong nước để giữ độ ráo tự nhiên."
+      ],
+      "dish_type": [
+        "Bưởi da xanh tách múi"
+      ],
+      "main_ingredient": [
+        "bưởi da xanh Bến Tre"
+      ],
+      "cooking_method": [
+        "rửa",
+        "gọt vỏ",
+        "tách múi",
+        "làm mát"
+      ],
+      "search_terms": [
+        "bưởi da xanh Bến Tre tráng miệng",
+        "múi bưởi da xanh",
+        "trái cây sau bữa cơm",
+        "bưởi Bến Tre"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Một quả bưởi da xanh Bến Tre nguyên vỏ đặt cạnh đĩa chỉ gồm các múi bưởi hồng, không có loại quả khác, nền trong suốt.",
+      "time_note": "Khoảng 35 phút gồm làm mát ngắn; không nấu, dọn riêng từng múi sau bữa ăn.",
+      "suggested_pairings": [
+        "Dùng riêng sau bữa cơm",
+        "Trà nóng"
+      ],
+      "recipe_family": "buoi_da_xanh_ben_tre",
+      "keywords": [
+        "bưởi da xanh",
+        "Bến Tre",
+        "trái cây tráng miệng",
+        "múi bưởi",
+        "Nam Bộ"
+      ],
+      "tags": [
+        "món tráng miệng",
+        "trái cây",
+        "Nam Bộ"
+      ],
+      "ingredients": [
+        {
+          "name": "Bưởi da xanh Bến Tre",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "fruit",
+          "notes": "Chọn quả chín, vỏ xanh hoặc xanh vàng, cầm chắc và không dập.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa sạch và lau khô cả quả trước khi bổ."
+        },
+        {
+          "step": 2,
+          "instruction": "Cắt bỏ hai đầu quả, rạch vỏ theo múi rồi bóc bỏ toàn bộ lớp cùi trắng dày."
+        },
+        {
+          "step": 3,
+          "instruction": "Tách từng múi, nhẹ tay gỡ màng và bỏ hạt nếu có; giữ nguyên tép để không chảy nước."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Không cần nấu. Xếp múi bưởi lên đĩa sạch, làm mát ngắn trong ngăn mát rồi dùng riêng sau bữa cơm."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://ipvietnam.gov.vn/web/guest/phat-trien-chi-dan-ia-ly/-/asset_publisher/SGA9PgvmYtWI/content/bao-ho-chi-dan-ia-ly-ben-tre-cho-san-pham-buoi-da-xa-1?inheritRedirect=false&redirect=https%3A%2F%2Fipvietnam.gov.vn%2Fweb%2Fguest/phat-trien-chi-dan-ia-ly%3Fp_lifecycle%3D0",
+          "publisher": "Cục Sở hữu trí tuệ Việt Nam",
+          "title": "Bảo hộ chỉ dẫn địa lý Bến Tre cho sản phẩm bưởi da xanh",
+          "use": "Đối chiếu tên gọi, vùng trồng Bến Tre và đặc tính tép hồng, ráo, vị ngọt thanh. Cách rửa, tách múi và dọn riêng là hướng dẫn sơ chế của Bếp Việt.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Giảm nguyên liệu theo khẩu phần, gia giảm gia vị từ từ rồi nếm lại.",
+            "instruction": "Giữ nguyên kỹ thuật, kiểm tra độ chín trước khi dọn."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "Tăng nguyên liệu theo số người, không tăng gia vị theo tỷ lệ cứng.",
+            "instruction": "Chia mẻ hoặc dùng dụng cụ đủ rộng để món chín đều."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/buoi-da-xanh-ben-tre-960.webp",
+          "page_url": null,
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo mới riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập món và kỹ thuật.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Một quả bưởi da xanh Bến Tre nguyên vỏ đặt cạnh đĩa chỉ gồm các múi bưởi hồng, không có loại quả khác, nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh ImageGen PNG RGBA nền trong suốt; WebP xuất trên canvas 3840 × 2160. Công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt đối chiếu tên món, nguyên liệu và cách dùng với nguồn đã dẫn; định lượng được biên tập cho khẩu phần gia đình.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử để kiểm tra định lượng và thời gian theo nguyên liệu, dụng cụ thực tế."
+        ]
+      }
+    }
+  ]
+}

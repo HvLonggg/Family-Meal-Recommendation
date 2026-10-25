@@ -12,6 +12,7 @@ import {
 } from '@/components/ui/Workspace';
 import {
   adminKeys,
+  getMealSuggestionDeliveryStatus,
   listAdminRecipes,
   listAdminSupport,
   listMealSuggestionHistory,
@@ -74,6 +75,26 @@ const defaultIntro = (meal: MealType) =>
   })[meal];
 // Email đã tự ký “Thân mến, Đội ngũ Bếp Việt” ở cuối nên lời kết không lặp lại chữ ký.
 const defaultClosing = 'Chúc bạn và gia đình có bữa ăn thật ngon miệng!';
+const deliveryStatusMessages = {
+  smtp_unconfigured: 'Chưa cấu hình đầy đủ tài khoản gửi email.',
+  smtp_authorization:
+    'Gmail từ chối đăng nhập SMTP. Kiểm tra đúng địa chỉ gửi và mật khẩu ứng dụng Gmail còn hiệu lực.',
+  smtp_unreachable:
+    'Không thể kết nối Gmail SMTP từ môi trường đang chạy. Cổng SMTP bị từ chối; hãy cấu hình Gmail API qua HTTPS.',
+  gmail_api_unconfigured: 'Gmail API chưa được cấp đủ thông tin OAuth để gửi email.',
+  gmail_api_authorization:
+    'Gmail API chưa cấp quyền gửi thư. Kiểm tra quyền gmail.send và refresh token.',
+  gmail_api_unreachable: 'Không thể kết nối Gmail API qua HTTPS lúc này.',
+  gmail_api_rate_limited: 'Gmail đang giới hạn yêu cầu. Vui lòng đợi một chút rồi thử gửi lại.',
+  gmail_api_temporarily_unavailable:
+    'Gmail API đang gặp sự cố tạm thời. Vui lòng đợi ít phút rồi thử lại.',
+} as const;
+const blockingDeliveryReasons: ReadonlySet<string> = new Set([
+  'smtp_unconfigured',
+  'smtp_authorization',
+  'gmail_api_unconfigured',
+  'gmail_api_authorization',
+]);
 
 interface ComposerRecipient {
   email: string;
@@ -458,6 +479,15 @@ function MealSuggestionComposer() {
   const [intro, setIntro] = useState(defaultIntro('dinner'));
   const [closing, setClosing] = useState(defaultClosing);
   const [queuedCount, setQueuedCount] = useState<number | null>(null);
+  const deliveryStatus = useQuery({
+    queryKey: ['admin', 'meal-suggestion-delivery-status'],
+    queryFn: ({ signal }) => getMealSuggestionDeliveryStatus(signal),
+    staleTime: 30_000,
+    refetchInterval: 60_000,
+  });
+  const deliveryNeedsSetup =
+    Boolean(deliveryStatus.data && !deliveryStatus.data.ready) &&
+    blockingDeliveryReasons.has(deliveryStatus.data?.reason_code ?? '');
   const recipients = useQuery({
     queryKey: ['admin', 'support-recipients', recipientSearch],
     queryFn: ({ signal }) => listSupportRecipients(recipientSearch, signal),
@@ -638,6 +668,27 @@ function MealSuggestionComposer() {
             {selectedRecipients.length}/10 {t('người nhận')} · {selectedRecipes.length}/4 {t('món')}
           </span>
         </div>
+        {deliveryStatus.isLoading ? (
+          <Notice>{t('Đang kiểm tra kết nối gửi email…')}</Notice>
+        ) : deliveryStatus.isError ? (
+          <Notice tone="warning">
+            {t('Không kiểm tra được trạng thái email. Bạn vẫn có thể gửi và theo dõi lịch sử.')}
+          </Notice>
+        ) : deliveryStatus.data?.ready ? (
+          <Notice tone="success">
+            {t('Email đang sẵn sàng gửi qua {provider}.', {
+              provider: deliveryStatus.data.provider === 'gmail_api' ? 'Gmail API' : 'Gmail SMTP',
+            })}
+          </Notice>
+        ) : (
+          <Notice tone="danger">
+            {t(
+              deliveryStatus.data?.reason_code && deliveryStatus.data.reason_code !== 'ready'
+                ? deliveryStatusMessages[deliveryStatus.data.reason_code]
+                : 'Email chưa sẵn sàng gửi.',
+            )}
+          </Notice>
+        )}
 
         <fieldset className="admin-support__meal-toggle">
           <legend>{t('Dịp gợi ý')}</legend>
@@ -980,6 +1031,7 @@ function MealSuggestionComposer() {
           <span>{t('Kiểm tra người nhận và nội dung trước khi gửi.')}</span>
           <Button
             disabled={
+              deliveryNeedsSetup ||
               !selectedRecipients.length ||
               !selectedRecipes.length ||
               subject.trim().length < 4 ||

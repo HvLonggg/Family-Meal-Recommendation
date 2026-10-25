@@ -1,0 +1,237 @@
+{
+  "batch": 63,
+  "native_format": "PNG",
+  "canvas": {
+    "width": 3840,
+    "height": 2160,
+    "format": "WebP",
+    "background": "transparent"
+  },
+  "assets": [
+    {
+      "id": "BV641",
+      "slug": "cai-meo-luoc-cham-trung",
+      "native_file": "output/recipe-images/native/cai-meo-luoc-cham-trung.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "canvas_export_file": "output/recipe-images/4k/cai-meo-luoc-cham-trung.png",
+      "canvas_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/cai-meo-luoc-cham-trung-480.webp",
+          "pixels": [
+            480,
+            270
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/cai-meo-luoc-cham-trung-960.webp",
+          "pixels": [
+            960,
+            540
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/cai-meo-luoc-cham-trung-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/cai-meo-luoc-cham-trung-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BV642",
+      "slug": "ngong-cai-luoc-cham-trung",
+      "native_file": "output/recipe-images/native/ngong-cai-luoc-cham-trung.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "canvas_export_file": "output/recipe-images/4k/ngong-cai-luoc-cham-trung.png",
+      "canvas_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/ngong-cai-luoc-cham-trung-480.webp",
+          "pixels": [
+            480,
+            270
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/ngong-cai-luoc-cham-trung-960.webp",
+          "pixels": [
+            960,
+            540
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/ngong-cai-luoc-cham-trung-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/ngong-cai-luoc-cham-trung-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BV643",
+      "slug": "rau-don-luoc-mam-toi-ot",
+      "native_file": "output/recipe-images/native/rau-don-luoc-mam-toi-ot.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "canvas_export_file": "output/recipe-images/4k/rau-don-luoc-mam-toi-ot.png",
+      "canvas_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/rau-don-luoc-mam-toi-ot-480.webp",
+          "pixels": [
+            480,
+            270
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/rau-don-luoc-mam-toi-ot-960.webp",
+          "pixels": [
+            960,
+            540
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/rau-don-luoc-mam-toi-ot-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/rau-don-luoc-mam-toi-ot-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BV644",
+      "slug": "rau-lui-luoc-mam-cua-gia-lai",
+      "native_file": "output/recipe-images/native/rau-lui-luoc-mam-cua-gia-lai.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "canvas_export_file": "output/recipe-images/4k/rau-lui-luoc-mam-cua-gia-lai.png",
+      "canvas_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/rau-lui-luoc-mam-cua-gia-lai-480.webp",
+          "pixels": [
+            480,
+            270
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/rau-lui-luoc-mam-cua-gia-lai-960.webp",
+          "pixels": [
+            960,
+            540
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/rau-lui-luoc-mam-cua-gia-lai-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/rau-lui-luoc-mam-cua-gia-lai-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BV645",
+      "slug": "dau-dua-luoc-sot-me",
+      "native_file": "output/recipe-images/native/dau-dua-luoc-sot-me.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "canvas_export_file": "output/recipe-images/4k/dau-dua-luoc-sot-me.png",
+      "canvas_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/dau-dua-luoc-sot-me-480.webp",
+          "pixels": [
+            480,
+            270
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/dau-dua-luoc-sot-me-960.webp",
+          "pixels": [
+            960,
+            540
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/dau-dua-luoc-sot-me-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/dau-dua-luoc-sot-me-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ]
+        }
+      ]
+    }
+  ]
+}

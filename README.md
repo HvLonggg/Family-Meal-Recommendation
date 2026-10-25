@@ -28,7 +28,7 @@ Việc chuẩn bị bữa cơm hằng ngày thường gặp những câu hỏi q
 - **Đề xuất món:** người dùng đã đăng nhập có thể gửi món ăn mới cho hệ thống.
 - **Giao diện responsive:** sử dụng được trên máy tính, máy tính bảng và điện thoại.
 
-OTP email cần cấu hình SMTP để gửi thư thật; khi chạy development chưa có SMTP, API trả mã thử để kiểm tra luồng. Cấu hình và nguyên tắc phiên/tài khoản được ghi tại [docs/AUTHENTICATION_SECURITY.md](docs/AUTHENTICATION_SECURITY.md). Đăng nhập Facebook chưa được kích hoạt.
+Email OTP và thông báo cần cấu hình SMTP hoặc Gmail API để gửi thư thật; cấu hình `auto` tự chọn kênh đã có đủ thông tin. Chỉ môi trường test mới trả mã OTP trong phản hồi API. Cấu hình và nguyên tắc phiên/tài khoản được ghi tại [docs/AUTHENTICATION_SECURITY.md](docs/AUTHENTICATION_SECURITY.md). Đăng nhập Facebook chưa được kích hoạt.
 
 ## Ứng dụng thực tế
 

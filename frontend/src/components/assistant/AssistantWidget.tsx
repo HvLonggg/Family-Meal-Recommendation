@@ -654,7 +654,7 @@ export function AssistantWidget() {
         >
           <header className="rc-header">
             <span className="rc-header__avatar" aria-hidden="true">
-              <DragonMascot mood={mood} size={68} />
+              <DragonMascot mood={mood} size={52} />
             </span>
             <div className="rc-header__title">
               <strong>{t('Chú Rồng')}</strong>

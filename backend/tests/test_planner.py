@@ -13,7 +13,9 @@ def register_and_login(client: TestClient, email: str) -> dict[str, str]:
         json={"full_name": "Nguyễn An", "email": email, "password": "Test-Only-No-Login-2026!"},
     )
     assert registered.status_code == 201
-    response = client.post("/api/v1/auth/login", json={"email": email, "password": "Test-Only-No-Login-2026!"})
+    response = client.post(
+        "/api/v1/auth/login", json={"email": email, "password": "Test-Only-No-Login-2026!"}
+    )
     assert response.status_code == 200
     return {"Authorization": f"Bearer {response.json()['access_token']}"}
 

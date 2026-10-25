@@ -149,7 +149,7 @@ def request_email_otp_code(
     settings = get_settings()
     if not settings.email_enabled and settings.app_env != "test":
         raise EmailServiceUnavailableError(
-            "Dịch vụ email chưa sẵn sàng. Hãy cấu hình Gmail SMTP và thử lại."
+            "Dịch vụ email chưa được cấu hình đầy đủ. Vui lòng thử lại sau."
         )
     challenge, code = create_email_otp_challenge(
         session,

@@ -9,23 +9,25 @@ import { RecipeCard } from '@/components/recipes/RecipeCard';
 import { RecipeSearchSuggestions } from '@/components/recipes/RecipeSearchSuggestions';
 import { ShowcaseCarousel } from '@/components/recipes/ShowcaseCarousel';
 import { createHomeMealSuggestions } from '@/data/homeMealSuggestions';
-import { recipes } from '@/data/recipes';
 import { useAuth } from '@/features/auth/AuthContext';
 import { useI18n } from '@/features/i18n/I18nContext';
 import { useRecipeCatalog } from '@/features/i18n/recipeContent';
-import { pageLoadSeed, seededShuffle } from '@/lib/seededShuffle';
+import { seededShuffle } from '@/lib/seededShuffle';
 
 export function HomePage() {
   const [query, setQuery] = useState('');
+  const [entrySeed] = useState(() => `${Date.now()}-${Math.random().toString(36).slice(2)}`);
   const navigate = useNavigate();
   const { t } = useI18n();
-  const [mealSuggestions] = useState(() => createHomeMealSuggestions(recipes));
   const { user } = useAuth();
   const catalog = useRecipeCatalog();
-// Đổi thứ tự món khi tải trang hoặc đổi tài khoản.
+  const mealSuggestions = useMemo(
+    () => createHomeMealSuggestions(catalog, entrySeed),
+    [catalog, entrySeed],
+  );
   const featuredRecipes = useMemo(
-    () => seededShuffle(catalog, `${pageLoadSeed}:${user?.id ?? 'guest'}`, (recipe) => recipe.slug),
-    [catalog, user?.id],
+    () => seededShuffle(catalog, `${entrySeed}:${user?.id ?? 'guest'}`, (recipe) => recipe.slug),
+    [catalog, entrySeed, user?.id],
   );
 
   const submitSearch = (event: React.FormEvent) => {

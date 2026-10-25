@@ -16,7 +16,7 @@ from app.modules.support.models import AdminMealSuggestionEmail
 
 logger = logging.getLogger("bep_viet.admin.meal_emails")
 
-# Gmail cho phép vài kết nối SMTP song song; 4 luồng đủ nhanh mà không bị giới hạn.
+# Giới hạn số thư gửi song song để tránh vượt quota Gmail.
 MAX_PARALLEL_SENDS = 4
 # Lâu hơn hạn chót gửi + các lần thử lại, để không đánh dấu nhầm email vẫn đang gửi.
 STALE_SENDING_AFTER = timedelta(minutes=15)

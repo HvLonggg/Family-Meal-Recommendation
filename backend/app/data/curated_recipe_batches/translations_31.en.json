@@ -9,7 +9,7 @@
       "South Central Coast"
     ],
     "province": [
-      "Quảng Ngãi"
+      "Quang Ngai Province"
     ],
     "category": "Main dish",
     "meal_type": [
@@ -153,7 +153,7 @@
     "keywords": [
       "Quang Ngai Tra River Goby Braised with Pepper",
       "South Central Coast",
-      "Quảng Ngãi",
+      "Quang Ngai Province",
       "goby",
       "black pepper",
       "Tra River goby",
@@ -168,7 +168,7 @@
         "South Central Coast"
       ],
       "province": [
-        "Quảng Ngãi"
+        "Quang Ngai Province"
       ],
       "meal_type": [
         "lunch",
@@ -196,7 +196,7 @@
       "keywords": [
         "Quang Ngai Tra River Goby Braised with Pepper",
         "South Central Coast",
-        "Quảng Ngãi",
+        "Quang Ngai Province",
         "goby",
         "black pepper",
         "Tra River goby",
@@ -255,7 +255,7 @@
       "Southeast Vietnam"
     ],
     "province": [
-      "TP. Hồ Chí Minh (Bà Rịa - Vũng Tàu cũ)"
+      "Ho Chi Minh City (including former Ba Ria - Vung Tau Province)"
     ],
     "category": "Breakfast",
     "meal_type": [
@@ -425,7 +425,7 @@
     "keywords": [
       "Vung Tau Oyster Porridge",
       "Southeast Vietnam",
-      "TP. Hồ Chí Minh (Bà Rịa - Vũng Tàu cũ)",
+      "Ho Chi Minh City (including former Ba Ria - Vung Tau Province)",
       "oysters",
       "long-grain rice",
       "glutinous rice",
@@ -441,7 +441,7 @@
         "Southeast Vietnam"
       ],
       "province": [
-        "TP. Hồ Chí Minh (Bà Rịa - Vũng Tàu cũ)"
+        "Ho Chi Minh City (including former Ba Ria - Vung Tau Province)"
       ],
       "meal_type": [
         "breakfast",
@@ -471,7 +471,7 @@
       "keywords": [
         "Vung Tau Oyster Porridge",
         "Southeast Vietnam",
-        "TP. Hồ Chí Minh (Bà Rịa - Vũng Tàu cũ)",
+        "Ho Chi Minh City (including former Ba Ria - Vung Tau Province)",
         "oysters",
         "long-grain rice",
         "glutinous rice",
@@ -783,307 +783,6 @@
       "Boiled greens"
     ]
   },
-  "cha-ca-la-vong-ha-noi": {
-    "name": "Hanoi Cha Ca La Vong",
-    "aliases": [
-      "Cha Ca La Vong",
-      "Hanoi turmeric fish with dill"
-    ],
-    "region": [
-      "Northern Vietnam"
-    ],
-    "province": [
-      "Hà Nội"
-    ],
-    "category": "Main dish",
-    "meal_type": [
-      "Lunch",
-      "Dinner"
-    ],
-    "difficulty": "Moderate",
-    "serving_basis": "Four portions served with vermicelli, herbs and peanuts.",
-    "description": "Catfish is marinated with galangal, turmeric and fermented rice, then cooked in two stages so it browns outside and stays tender inside; dill and scallion are tossed in just before serving. Bếp Việt adapts the home method for an oven or air fryer before a final pan toss.",
-    "finished_dish": "Golden turmeric fish fragrant with galangal and fermented rice, tossed with dill and scallion and served with vermicelli, peanuts and seasoned shrimp paste.",
-    "excerpt": "Golden turmeric fish fragrant with galangal and fermented rice, tossed with dill and scallion and served with vermicelli, peanuts and seasoned shrimp paste.",
-    "serving": "Bring the pan to the table and serve with vermicelli, peanuts, herbs and lime-chili shrimp paste.",
-    "tips": [
-      "In an air fryer or oven, arrange fish in one layer and cook just until done; do not dry it out.",
-      "Fermented rice varies in acidity, so taste the marinade before adding lime or vinegar.",
-      "Add dill and scallion at the end so they wilt but keep their color."
-    ],
-    "tip": "In an air fryer or oven, arrange fish in one layer and cook just until done; do not dry it out.",
-    "dish_type": [
-      "Pan-seared fish",
-      "Hanoi specialty"
-    ],
-    "main_ingredient": [
-      "catfish",
-      "dill",
-      "galangal"
-    ],
-    "cooking_method": [
-      "marinating",
-      "roasting",
-      "pan-searing"
-    ],
-    "search_terms": [
-      "Cha Ca La Vong",
-      "Hanoi dill fish",
-      "Hanoi fish dish"
-    ],
-    "image_alt": "Golden Hanoi cha ca with dill, scallion, roasted peanuts and fresh vermicelli.",
-    "ingredients": [
-      {
-        "name": "Catfish fillet",
-        "quantity": 700,
-        "unit": "g",
-        "role": "main",
-        "notes": "Skin on or off, cut thick.",
-        "scaling_rule": "linear"
-      },
-      {
-        "name": "Fresh galangal",
-        "quantity": 35,
-        "unit": "g",
-        "role": "aromatic",
-        "notes": "Pounded or blended.",
-        "scaling_rule": "linear"
-      },
-      {
-        "name": "Fresh turmeric",
-        "quantity": 15,
-        "unit": "g",
-        "role": "aromatic",
-        "notes": "Pounded or use ground turmeric.",
-        "scaling_rule": "linear"
-      },
-      {
-        "name": "Fermented rice paste",
-        "quantity": 45,
-        "unit": "ml",
-        "role": "seasoning",
-        "notes": "Strained.",
-        "scaling_rule": "linear"
-      },
-      {
-        "name": "Fermented shrimp paste",
-        "quantity": 20,
-        "unit": "ml",
-        "role": "seasoning",
-        "notes": "For marinade and dip.",
-        "scaling_rule": "linear"
-      },
-      {
-        "name": "Fish sauce",
-        "quantity": 15,
-        "unit": "ml",
-        "role": "seasoning",
-        "notes": "Adjust to shrimp-paste saltiness.",
-        "scaling_rule": "linear"
-      },
-      {
-        "name": "Sugar",
-        "quantity": 8,
-        "unit": "g",
-        "role": "seasoning",
-        "notes": "Balances acidity.",
-        "scaling_rule": "linear"
-      },
-      {
-        "name": "Neutral oil or pork fat",
-        "quantity": 30,
-        "unit": "ml",
-        "role": "seasoning",
-        "notes": "Divide between roasting and pan-tossing.",
-        "scaling_rule": "linear"
-      },
-      {
-        "name": "Dill",
-        "quantity": 120,
-        "unit": "g",
-        "role": "main",
-        "notes": "Washed and cut long.",
-        "scaling_rule": "linear"
-      },
-      {
-        "name": "Scallions",
-        "quantity": 80,
-        "unit": "g",
-        "role": "main",
-        "notes": "Washed and cut into lengths.",
-        "scaling_rule": "linear"
-      },
-      {
-        "name": "Fresh rice vermicelli",
-        "quantity": 600,
-        "unit": "g",
-        "role": "side",
-        "notes": "Briefly blanch.",
-        "scaling_rule": "linear"
-      },
-      {
-        "name": "Roasted peanuts",
-        "quantity": 50,
-        "unit": "g",
-        "role": "garnish",
-        "notes": "Coarsely crushed.",
-        "scaling_rule": "linear"
-      },
-      {
-        "name": "Fresh herbs",
-        "quantity": 80,
-        "unit": "g",
-        "role": "side",
-        "notes": "Washed and drained.",
-        "scaling_rule": "linear"
-      },
-      {
-        "name": "Lime",
-        "quantity": 1,
-        "unit": "quả",
-        "role": "seasoning",
-        "notes": "For the shrimp-paste dip.",
-        "scaling_rule": "linear"
-      },
-      {
-        "name": "Fresh chili",
-        "quantity": 1,
-        "unit": "quả",
-        "role": "seasoning",
-        "notes": "Use to taste.",
-        "scaling_rule": "linear"
-      }
-    ],
-    "preparation_steps": [
-      {
-        "step": 1,
-        "instruction": "Pat catfish dry, check for pin bones and cut into serving pieces."
-      },
-      {
-        "step": 2,
-        "instruction": "Mix galangal, turmeric, fermented rice, shrimp paste, fish sauce and sugar. Coat fish, cover and marinate refrigerated for 45–60 minutes."
-      },
-      {
-        "step": 3,
-        "instruction": "Wash dill, scallions and herbs and cut into lengths. Mix shrimp paste with lime and chili for serving."
-      }
-    ],
-    "cooking_steps": [
-      {
-        "step": 1,
-        "instruction": "Preheat oven to 220°C or prepare the air fryer. Arrange fish in one layer, brush with oil and cook 8–12 minutes, turning once, until just done and lightly golden."
-      },
-      {
-        "step": 2,
-        "instruction": "Heat remaining oil in a pan. Briefly sear each side if fish needs more color."
-      },
-      {
-        "step": 3,
-        "instruction": "Add dill and scallion and toss 30–60 seconds until just wilted. Serve immediately with vermicelli, peanuts, herbs and seasoned shrimp paste."
-      }
-    ],
-    "time_note": "Keep fish chilled while marinating; cooking time depends on thickness and appliance.",
-    "time_unit": "minutes",
-    "keywords": [
-      "Hanoi Cha Ca La Vong",
-      "Northern Vietnam",
-      "Hà Nội",
-      "catfish",
-      "dill",
-      "galangal",
-      "Cha Ca La Vong",
-      "Hanoi dill fish",
-      "Hanoi fish dish",
-      "Pan-seared fish",
-      "Hanoi specialty",
-      "110 minutes"
-    ],
-    "tags": {
-      "region": [
-        "Northern Vietnam"
-      ],
-      "province": [
-        "Hà Nội"
-      ],
-      "meal_type": [
-        "lunch",
-        "dinner"
-      ],
-      "dish_type": [
-        "Pan-seared fish",
-        "Hanoi specialty"
-      ],
-      "main_ingredient": [
-        "catfish",
-        "dill",
-        "galangal"
-      ],
-      "cooking_method": [
-        "marinating",
-        "roasting",
-        "pan-searing"
-      ],
-      "difficulty": "Moderate",
-      "suitable_for_family_meal": true,
-      "suggested_pairings": [
-        "Fresh vermicelli",
-        "Roasted peanuts",
-        "Fresh herbs and lime shrimp paste"
-      ],
-      "keywords": [
-        "Hanoi Cha Ca La Vong",
-        "Northern Vietnam",
-        "Hà Nội",
-        "catfish",
-        "dill",
-        "galangal",
-        "Cha Ca La Vong",
-        "Hanoi dill fish",
-        "Hanoi fish dish",
-        "Pan-seared fish",
-        "Hanoi specialty",
-        "110 minutes"
-      ]
-    },
-    "scaling": {
-      "base_servings": 4,
-      "targets": [
-        {
-          "servings": 2,
-          "main_factor": 0.5,
-          "seasoning_start_factor": 0.5,
-          "example": "Hanoi Cha Ca La Vong for 2",
-          "instruction": "Adjust seasoning to taste; check doneness and texture."
-        },
-        {
-          "servings": 6,
-          "main_factor": 1.5,
-          "seasoning_start_factor": 1.5,
-          "example": "Hanoi Cha Ca La Vong for 6",
-          "instruction": "Adjust seasoning to taste; check doneness and texture."
-        },
-        {
-          "servings": 8,
-          "main_factor": 2.0,
-          "seasoning_start_factor": 2.0,
-          "example": "Hanoi Cha Ca La Vong for 8",
-          "instruction": "Adjust seasoning to taste; check doneness and texture."
-        }
-      ]
-    },
-    "editorial": {
-      "variant_note": "Bếp Việt adapts the method for home ovens or air fryers; not test-cooked and not a restaurant's own process.",
-      "needs": [
-        "Test-cook with common ovens and air fryers to confirm timing.",
-        "Review raw fish handling and shrimp-paste storage."
-      ]
-    },
-    "suggested_pairings": [
-      "Fresh vermicelli",
-      "Roasted peanuts",
-      "Fresh herbs and lime shrimp paste"
-    ]
-  },
   "banh-thuan-quang-nam": {
     "name": "Quang Nam Banh Thuan Flower Cakes",
     "aliases": [
@@ -1094,7 +793,7 @@
       "South Central Coast"
     ],
     "province": [
-      "Đà Nẵng (Quảng Nam cũ)"
+      "Da Nang City (including former Quang Nam Province)"
     ],
     "category": "Dessert",
     "meal_type": [
@@ -1223,7 +922,7 @@
     "keywords": [
       "Quang Nam Banh Thuan Flower Cakes",
       "South Central Coast",
-      "Đà Nẵng (Quảng Nam cũ)",
+      "Da Nang City (including former Quang Nam Province)",
       "arrowroot starch",
       "eggs",
       "sugar",
@@ -1239,7 +938,7 @@
         "South Central Coast"
       ],
       "province": [
-        "Đà Nẵng (Quảng Nam cũ)"
+        "Da Nang City (including former Quang Nam Province)"
       ],
       "meal_type": [
         "dessert",
@@ -1268,7 +967,7 @@
       "keywords": [
         "Quang Nam Banh Thuan Flower Cakes",
         "South Central Coast",
-        "Đà Nẵng (Quảng Nam cũ)",
+        "Da Nang City (including former Quang Nam Province)",
         "arrowroot starch",
         "eggs",
         "sugar",
@@ -1318,5 +1017,216 @@
       "Candied ginger",
       "Lotus tea"
     ]
+  },
+  "ca-nuong-rieng-me": {
+    "name": "Northern Vietnamese grilled fish with galangal and fermented rice",
+    "aliases": [
+      "Grilled carp with galangal and fermented rice"
+    ],
+    "region": [
+      "Northern Vietnam"
+    ],
+    "province": [
+      "Northern Vietnam"
+    ],
+    "category": "Main dish",
+    "meal_type": [
+      "Lunch",
+      "Dinner"
+    ],
+    "difficulty": "Moderate",
+    "serving_basis": "One fish around 900 g, divided among four and served with rice or vermicelli and fresh herbs.",
+    "description": "Carp is marinated with galangal, lemongrass, turmeric and fermented rice, then grilled until fragrant and golden while the flesh stays moist. This Northern Vietnamese home-style dish is served with herbs and a dipping sauce.",
+    "finished_dish": "Golden grilled carp with a fragrant galangal and lemongrass crust, tender flesh, gentle tang from fermented rice and optional chili heat.",
+    "excerpt": "Whole carp marinated with galangal, lemongrass and fermented rice, grilled until golden and served with herbs.",
+    "serving": "Serve hot with steamed rice or vermicelli, fresh herbs and a sweet-sour fish sauce dip with garlic and chili.",
+    "tips": [
+      "Score the fish shallowly on both sides so the marinade reaches the flesh and it grills evenly.",
+      "Marinate in the refrigerator for at least one hour; do not leave raw fish at room temperature for an extended period.",
+      "Grilling time varies with fish size and equipment; check the thickest part is cooked before serving."
+    ],
+    "tip": "Grilling time varies with fish size and equipment; check the thickest part is cooked before serving.",
+    "dish_type": [
+      "Grilled fish",
+      "Northern Vietnamese home cooking"
+    ],
+    "main_ingredient": [
+      "carp",
+      "galangal",
+      "fermented rice",
+      "lemongrass"
+    ],
+    "cooking_method": [
+      "marinating",
+      "grilling"
+    ],
+    "search_terms": [
+      "grilled carp with galangal",
+      "grilled fish with fermented rice",
+      "Northern Vietnamese fish dish"
+    ],
+    "image_alt": "Whole Vietnamese grilled carp marinated with galangal and fermented rice on a blue-and-white platter with herbs; original Bếp Việt artwork.",
+    "preparation_steps": [
+      "Clean the fish, remove the gills and innards, rub lightly with salt and lime, rinse and pat dry. Score a few shallow diagonal cuts on both sides.",
+      "Pound or grind the galangal, lemongrass, turmeric, shallot and garlic. Strain the fermented rice starter.",
+      "Mix the aromatics with fermented rice, shrimp paste, fish sauce, sugar, seasoning powder, pepper and some of the oil. Rub over the fish and inside the cavity; cover and marinate in the refrigerator for at least 1 hour.",
+      "Wash and drain the fresh herbs. Mix fish sauce for dipping with water, sugar, lime, minced garlic and chili."
+    ],
+    "cooking_steps": [
+      "Heat the oven to about 200°C or prepare a charcoal grill. Lightly oil the rack and place the fish on it.",
+      "Grill, turning once and brushing with a little oil if needed. Adjust the time to the size of the fish and the equipment; check the thickest part and avoid scorching or drying the flesh.",
+      "Serve the fish hot with herbs, vermicelli or steamed rice and the dipping sauce."
+    ],
+    "time_note": "Marinate the fish under refrigeration. Grilling time is an estimate and varies with fish size, oven and charcoal heat.",
+    "time_unit": "minutes",
+    "keywords": [
+      "grilled carp with galangal and fermented rice",
+      "Northern Vietnamese grilled fish",
+      "Vietnamese grilled carp"
+    ],
+    "tags": {
+      "region": [
+        "Northern Vietnam"
+      ],
+      "province": [
+        "Northern Vietnam"
+      ],
+      "meal_type": [
+        "Lunch",
+        "Dinner"
+      ],
+      "dish_type": [
+        "Grilled fish",
+        "Northern Vietnamese home cooking"
+      ],
+      "main_ingredient": [
+        "carp",
+        "galangal",
+        "fermented rice",
+        "lemongrass"
+      ],
+      "cooking_method": [
+        "marinating",
+        "grilling"
+      ],
+      "difficulty": "Moderate",
+      "keywords": [
+        "grilled carp with galangal and fermented rice",
+        "Northern Vietnamese grilled fish"
+      ]
+    },
+    "editorial": {
+      "status": "editorial_draft",
+      "test_cook_status": "not_tested",
+      "variant_note": "Edited by Bếp Việt for a home oven or charcoal grill; the recipe has not been test-cooked."
+    },
+    "suggested_pairings": [
+      "Steamed rice or fresh vermicelli",
+      "Fresh herbs",
+      "Sweet-sour fish sauce dip"
+    ],
+    "ingredients": [
+      {
+        "name": "Carp",
+        "unit": "g",
+        "notes": "Cleaned; grill whole or score the sides. Choose a fish around 800 g–1 kg."
+      },
+      {
+        "name": "Fresh galangal",
+        "unit": "g",
+        "notes": "Washed and pounded or finely ground."
+      },
+      {
+        "name": "Lemongrass",
+        "unit": "g",
+        "notes": "Finely minced."
+      },
+      {
+        "name": "Fermented rice starter",
+        "unit": "ml",
+        "notes": "Strained to remove coarse solids."
+      },
+      {
+        "name": "Shrimp paste",
+        "unit": "ml",
+        "notes": "Adjust for saltiness."
+      },
+      {
+        "name": "Fish sauce",
+        "unit": "ml",
+        "notes": "Total amount for the marinade and dipping sauce."
+      },
+      {
+        "name": "Fresh turmeric",
+        "unit": "g",
+        "notes": "Pounded; or use about 1 teaspoon ground turmeric."
+      },
+      {
+        "name": "Shallot",
+        "unit": "g",
+        "notes": "Peeled and minced."
+      },
+      {
+        "name": "Garlic",
+        "unit": "g",
+        "notes": "Peeled and minced; reserve some for the dipping sauce."
+      },
+      {
+        "name": "Cooking oil",
+        "unit": "ml",
+        "notes": "Reserve a little for brushing while grilling."
+      },
+      {
+        "name": "Sugar",
+        "unit": "g",
+        "notes": "Use about 8 g in the marinade and the rest in the dipping sauce."
+      },
+      {
+        "name": "Seasoning powder",
+        "unit": "g",
+        "notes": "Reduce if the shrimp paste is salty."
+      },
+      {
+        "name": "Ground black pepper",
+        "unit": "g",
+        "notes": null
+      },
+      {
+        "name": "Fresh chili",
+        "unit": "piece",
+        "notes": "Optional; use in the marinade or dipping sauce."
+      },
+      {
+        "name": "Dill",
+        "unit": "g",
+        "notes": "Washed; for serving or garnish."
+      },
+      {
+        "name": "Fresh herbs and lettuce",
+        "unit": "g",
+        "notes": "Washed and drained; choose what is available."
+      },
+      {
+        "name": "Fresh rice vermicelli",
+        "unit": "g",
+        "notes": "Optional; steamed rice can be served instead."
+      },
+      {
+        "name": "Lime juice",
+        "unit": "ml",
+        "notes": "For the dipping sauce."
+      },
+      {
+        "name": "Fresh ginger",
+        "unit": "g",
+        "notes": "Minced for the dipping sauce."
+      },
+      {
+        "name": "Water",
+        "unit": "ml",
+        "notes": "For the dipping sauce."
+      }
+    ],
+    "media_alt_text": "Whole grass carp grilled with galangal and fermented rice, served on a blue-and-white plate with fresh herbs. Image created for Bep Viet."
   }
 }

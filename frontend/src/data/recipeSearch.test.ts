@@ -25,11 +25,26 @@ describe('Vietnamese recipe search', () => {
 
   it('searches across Vietnamese and English names and handles a small typo', () => {
     const carp = getRecipe('ca-chep-kho-rieng')!;
+    const soup = getRecipe('canh-chua-ca')!;
 
     expect(matchesRecipeSearch(carp, 'carp braised with galangal')).toBe(true);
     expect(matchesRecipeSearch(carp, 'ca cheep kho rieng')).toBe(true);
+    expect(matchesRecipeSearch(soup, 'Vietnamese sour fish soup')).toBe(true);
+    expect(matchesRecipeSearch(soup, 'cá sour fish')).toBe(true);
     expect(matchesSearch('canh chua', ['Canh chua cá'])).toBe(true);
     expect(matchesRecipeSearch(getRecipe('trung-chien-rau-cu')!, 'Món gà')).toBe(false);
+  });
+
+  it('recognizes English vegetarian filters without returning unrelated dishes', () => {
+    const vegetarian = {
+      ...getRecipe('rau-muong-xao-toi')!,
+      category: 'Món chay' as const,
+      tags: ['Món chay'],
+    };
+
+    expect(matchesRecipeSearch(vegetarian, 'vegetarian')).toBe(true);
+    expect(matchesRecipeSearch(vegetarian, 'vegan')).toBe(true);
+    expect(matchesRecipeSearch(getRecipe('ca-chep-kho-rieng')!, 'vegan')).toBe(false);
   });
 
   it('keeps similar Vietnamese dish names distinct while tolerating unaccented typos', () => {

@@ -271,7 +271,10 @@ def test_change_password_requires_current_password_and_revokes_old_sessions(
     changed = client.post(
         "/api/v1/auth/change-password",
         headers={"Authorization": f"Bearer {access_token}"},
-        json={"current_password": "Test-Only-No-Login-2026!", "new_password": "New-Test-Only-No-Login-2026!"},
+        json={
+            "current_password": "Test-Only-No-Login-2026!",
+            "new_password": "New-Test-Only-No-Login-2026!",
+        },
     )
     assert changed.status_code == 200
     assert "đăng nhập lại" in changed.json()["message"]

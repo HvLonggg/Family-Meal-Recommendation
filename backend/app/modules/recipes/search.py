@@ -19,29 +19,101 @@ def matches_region(query: str, values: list[str]) -> bool:
 
     groups = {
         "bac": {
-            "dong bang song hong", "dong bang bac bo", "trung du va mien nui bac bo",
-            "trung du mien nui phia bac", "dong bac bo", "dong bac", "tay bac bo",
-            "tay bac", "red river delta", "northern vietnam", "northern",
-            "hanoi", "hai phong", "quang ninh", "cao bang", "lang son", "bac giang",
-            "thai nguyen", "phu tho", "yen bai", "lao cai", "dien bien", "son la",
-            "hoa binh", "tuyen quang", "nam dinh", "ninh binh", "thai binh",
-            "hai duong", "hung yen", "bac ninh", "ha nam",
+            "dong bang song hong",
+            "dong bang bac bo",
+            "trung du va mien nui bac bo",
+            "trung du mien nui phia bac",
+            "dong bac bo",
+            "dong bac",
+            "tay bac bo",
+            "tay bac",
+            "red river delta",
+            "northern vietnam",
+            "northern",
+            "hanoi",
+            "hai phong",
+            "quang ninh",
+            "cao bang",
+            "lang son",
+            "bac giang",
+            "thai nguyen",
+            "phu tho",
+            "yen bai",
+            "lao cai",
+            "dien bien",
+            "son la",
+            "hoa binh",
+            "tuyen quang",
+            "nam dinh",
+            "ninh binh",
+            "thai binh",
+            "hai duong",
+            "hung yen",
+            "bac ninh",
+            "ha nam",
         },
         "trung": {
-            "bac trung bo", "nam trung bo", "duyen hai nam trung bo", "duyen hai mien trung",
-            "trung bo", "central vietnam", "central coast", "central", "tay nguyen",
-            "thanh hoa", "nghe an", "ha tinh", "quang binh", "quang tri", "hue",
-            "thua thien hue", "da nang", "quang nam", "quang ngai", "binh dinh",
-            "phu yen", "khanh hoa", "ninh thuan", "binh thuan", "gia lai", "kon tum",
-            "dak lak", "dak nong", "lam dong",
+            "bac trung bo",
+            "nam trung bo",
+            "duyen hai nam trung bo",
+            "duyen hai mien trung",
+            "trung bo",
+            "central vietnam",
+            "central coast",
+            "central",
+            "tay nguyen",
+            "thanh hoa",
+            "nghe an",
+            "ha tinh",
+            "quang binh",
+            "quang tri",
+            "hue",
+            "thua thien hue",
+            "da nang",
+            "quang nam",
+            "quang ngai",
+            "binh dinh",
+            "phu yen",
+            "khanh hoa",
+            "ninh thuan",
+            "binh thuan",
+            "gia lai",
+            "kon tum",
+            "dak lak",
+            "dak nong",
+            "lam dong",
         },
         "nam": {
-            "dong nam bo", "dong bang song cuu long", "nam bo", "tay nam bo", "mien tay",
-            "mekong delta", "southern vietnam", "southern", "south", "ho chi minh",
-            "sai gon", "binh phuoc", "tay ninh", "binh duong", "dong nai", "ba ria",
-            "vung tau", "long an", "tien giang", "ben tre", "tra vinh", "vinh long",
-            "dong thap", "an giang", "kien giang", "can tho", "hau giang", "soc trang",
-            "bac lieu", "ca mau",
+            "dong nam bo",
+            "dong bang song cuu long",
+            "nam bo",
+            "tay nam bo",
+            "mien tay",
+            "mekong delta",
+            "southern vietnam",
+            "southern",
+            "south",
+            "ho chi minh",
+            "sai gon",
+            "binh phuoc",
+            "tay ninh",
+            "binh duong",
+            "dong nai",
+            "ba ria",
+            "vung tau",
+            "long an",
+            "tien giang",
+            "ben tre",
+            "tra vinh",
+            "vinh long",
+            "dong thap",
+            "an giang",
+            "kien giang",
+            "can tho",
+            "hau giang",
+            "soc trang",
+            "bac lieu",
+            "ca mau",
         },
     }
     aliases = {
@@ -54,7 +126,10 @@ def matches_region(query: str, values: list[str]) -> bool:
         return False
     cues = groups[group]
     return any(
-        value == cue or f" {cue} " in f" {value} " or value.startswith(f"{cue} ") or value.endswith(f" {cue}")
+        value == cue
+        or f" {cue} " in f" {value} "
+        or value.startswith(f"{cue} ")
+        or value.endswith(f" {cue}")
         for value in regions
         for cue in cues
     )
@@ -89,9 +164,22 @@ def _one_edit_apart(left: str, right: str) -> bool:
 def english_search_index() -> dict[str, dict[str, list[str]]]:
     path = Path(__file__).resolve().parents[2] / "data" / "recipe-search-en.json"
     try:
-        return json.loads(path.read_text(encoding="utf-8"))
+        payload = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
         return {}
+    if not isinstance(payload, dict):
+        return {}
+
+    index: dict[str, dict[str, list[str]]] = {}
+    for slug, entry in payload.items():
+        if not isinstance(slug, str) or not isinstance(entry, dict):
+            continue
+        index[slug] = {
+            field: [value for value in entry.get(field, []) if isinstance(value, str)]
+            for field in ("names", "ingredients", "fields")
+            if isinstance(entry.get(field, []), list)
+        }
+    return index
 
 
 def bilingual_search_text(slug: str, fallback: str) -> str:
@@ -115,7 +203,9 @@ def matches_search(query: str, text: str) -> bool:
     def matches_term(term: str, is_last: bool) -> bool:
         if term in words:
             return True
-        if is_last and len(term) >= 3 and any(word.startswith(term) for word in words):
+        if is_last and len(term) >= 4 and any(word.startswith(term) for word in words):
+            return True
+        if (term == "sao" and "xao" in words) or (term == "xao" and "sao" in words):
             return True
         # Very short Vietnamese keywords stay exact to avoid “cá” matching “canh”.
         return len(term) >= 4 and any(_one_edit_apart(term, word) for word in words)

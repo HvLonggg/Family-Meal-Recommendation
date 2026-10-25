@@ -1,0 +1,88 @@
+{
+  "batch": 64,
+  "canvas": {
+    "width": 3840,
+    "height": 2160,
+    "format": "WebP",
+    "background": "transparent"
+  },
+  "native_format": "PNG",
+  "export_master_format": "PNG",
+  "assets": [
+    {
+      "id": "BV646",
+      "slug": "lau-ga-tiem-ot-hiem",
+      "native_file": "output/recipe-images/native/lau-ga-tiem-ot-hiem.png",
+      "native_pixels": [1312, 1199],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/lau-ga-tiem-ot-hiem.png",
+      "export_master_pixels": [3840, 2160],
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/lau-ga-tiem-ot-hiem-480.webp", "pixels": [480, 270], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/lau-ga-tiem-ot-hiem-960.webp", "pixels": [960, 540], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/lau-ga-tiem-ot-hiem-1536.webp", "pixels": [1536, 864], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/lau-ga-tiem-ot-hiem-3840.webp", "pixels": [3840, 2160], "has_alpha": true}
+      ]
+    },
+    {
+      "id": "BV647",
+      "slug": "ga-ac-tiem-thuoc-bac",
+      "native_file": "output/recipe-images/native/ga-ac-tiem-thuoc-bac.png",
+      "native_pixels": [1536, 1024],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/ga-ac-tiem-thuoc-bac.png",
+      "export_master_pixels": [3840, 2160],
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/ga-ac-tiem-thuoc-bac-480.webp", "pixels": [480, 270], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/ga-ac-tiem-thuoc-bac-960.webp", "pixels": [960, 540], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/ga-ac-tiem-thuoc-bac-1536.webp", "pixels": [1536, 864], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/ga-ac-tiem-thuoc-bac-3840.webp", "pixels": [3840, 2160], "has_alpha": true}
+      ]
+    },
+    {
+      "id": "BV648",
+      "slug": "chim-cut-nuong-sa-te",
+      "native_file": "output/recipe-images/native/chim-cut-nuong-sa-te.png",
+      "native_pixels": [1536, 1024],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/chim-cut-nuong-sa-te.png",
+      "export_master_pixels": [3840, 2160],
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/chim-cut-nuong-sa-te-480.webp", "pixels": [480, 270], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/chim-cut-nuong-sa-te-960.webp", "pixels": [960, 540], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/chim-cut-nuong-sa-te-1536.webp", "pixels": [1536, 864], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/chim-cut-nuong-sa-te-3840.webp", "pixels": [3840, 2160], "has_alpha": true}
+      ]
+    },
+    {
+      "id": "BV649",
+      "slug": "chim-cau-ham-hat-sen-com",
+      "native_file": "output/recipe-images/native/chim-cau-ham-hat-sen-com.png",
+      "native_pixels": [1536, 1024],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/chim-cau-ham-hat-sen-com.png",
+      "export_master_pixels": [3840, 2160],
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/chim-cau-ham-hat-sen-com-480.webp", "pixels": [480, 270], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/chim-cau-ham-hat-sen-com-960.webp", "pixels": [960, 540], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/chim-cau-ham-hat-sen-com-1536.webp", "pixels": [1536, 864], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/chim-cau-ham-hat-sen-com-3840.webp", "pixels": [3840, 2160], "has_alpha": true}
+      ]
+    },
+    {
+      "id": "BV650",
+      "slug": "ga-ta-bo-xoi",
+      "native_file": "output/recipe-images/native/ga-ta-bo-xoi.png",
+      "native_pixels": [1536, 1024],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/ga-ta-bo-xoi.png",
+      "export_master_pixels": [3840, 2160],
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/ga-ta-bo-xoi-480.webp", "pixels": [480, 270], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/ga-ta-bo-xoi-960.webp", "pixels": [960, 540], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/ga-ta-bo-xoi-1536.webp", "pixels": [1536, 864], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/ga-ta-bo-xoi-3840.webp", "pixels": [3840, 2160], "has_alpha": true}
+      ]
+    }
+  ]
+}

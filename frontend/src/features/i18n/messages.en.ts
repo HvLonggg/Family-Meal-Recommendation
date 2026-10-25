@@ -55,7 +55,7 @@ export const en: Record<string, string> = {
   'Tiếng Việt': 'Vietnamese',
   'Giao diện tiếng Việt': 'Vietnamese interface',
   'Thứ Hai – Thứ Sáu, 08:30 – 17:30 (GMT+7)': 'Monday – Friday, 08:30 – 17:30 (GMT+7)',
-  'Phản hồi trong 1–2 ngày làm việc': 'Replies within 1–2 business days',
+  'Phản hồi trong vòng 24 giờ làm việc': 'Replies within 24 business hours',
   'Hoàng Văn Long': 'Hoang Van Long',
   'Nhà sáng lập & phụ trách sản phẩm': 'Founder & product lead',
 
@@ -670,9 +670,9 @@ export const en: Record<string, string> = {
   'Nhẹ bụng': 'Light on the stomach',
   'Ưu tiên món canh, rau xanh, cách chế biến ít dầu và vị thanh.':
     'Soups, greens, low-oil cooking and gentle flavours first.',
-  'Nấu cho trẻ nhỏ': 'Cooking for kids',
-  'Món mềm, màu sắc vui mắt, hương vị dịu và dễ chia phần.':
-    'Soft, colourful dishes with mild flavours that are easy to portion.',
+  'Dễ ăn cho cả nhà': 'Easy for the whole family',
+  'Ưu tiên công thức dễ nấu, vị dịu và không thiên cay nồng.':
+    'Choose easy recipes with a mild flavour and little heat.',
   'Bữa ăn nhanh': 'Quick meals',
   'Công thức dưới 30 phút cho ngày bận nhưng vẫn đủ món nhà.':
     'Recipes under 30 minutes for busy days that still feel like home.',
@@ -857,12 +857,18 @@ export const en: Record<string, string> = {
   'Đã giải quyết': 'Resolved',
   'Liên hệ & hỗ trợ': 'Contact & support',
   'Bếp Việt luôn lắng nghe': 'Bep Viet is always listening',
-  'Mình trân trọng mọi góp ý. Bếp Việt sẽ phản hồi bạn qua email trong 1–2 ngày làm việc.':
-    'I value your feedback. Bep Viet will reply by email within 1–2 business days.',
+  'Mình trân trọng mọi góp ý. Bếp Việt sẽ phản hồi bạn qua email trong vòng 24 giờ làm việc.':
+    'I value your feedback. Bep Viet will reply by email within 24 business hours.',
   'Cảm ơn bạn đã đồng hành và giúp Bếp Việt hoàn thiện hơn.':
     'Thank you for being part of Bep Viet and helping us improve.',
   'Điền thông tin, mình sẽ phản hồi qua email bạn cung cấp.':
     'Share a few details and I will reply to your email.',
+  'Hòm thư Bếp Việt: {email}. Yêu cầu sẽ được tiếp nhận tại đây; phản hồi gửi về email người gửi trong vòng 24 giờ làm việc.':
+    'Bep Viet support inbox: {email}. Requests are received there, and replies go to the sender within 24 business hours.',
+  'Đang tải thông tin hòm thư hỗ trợ…': 'Loading the support inbox…',
+  'Chưa tải được địa chỉ hòm thư hỗ trợ. Hòm thư tiếp nhận sẽ được xác nhận sau khi gửi yêu cầu.':
+    'The support inbox could not be loaded. The receiving address will be confirmed after you submit your request.',
+  'Hòm thư hỗ trợ chưa tải được': 'Support inbox unavailable',
   'Bạn cần Bếp Việt hỗ trợ điều gì?': 'How can Bep Viet help you?',
   'để mỗi bữa cơm thêm trọn vị': 'so every meal feels more complete',
   'Tôi xây dựng Bếp Việt bằng tình yêu với bữa cơm gia đình và mong muốn giúp việc nấu ăn mỗi ngày nhẹ nhàng hơn. Mỗi lời góp ý, câu hỏi hay điều chưa hài lòng đều đáng được lắng nghe và hồi đáp tử tế.':
@@ -875,8 +881,11 @@ export const en: Record<string, string> = {
     'I value the time you take to share with us. Every response helps make Bep Viet more useful and more at home in your kitchen.',
   'Các trường có dấu * là bắt buộc. Nội dung sẽ được chuyển tới hộp thư hỗ trợ; email của bạn chỉ dùng để phản hồi yêu cầu này.':
     'Fields marked * are required. Your message will be sent to our support inbox, and your email will only be used to respond to this request.',
-  'Yêu cầu đã được xếp hàng gửi tới {email}. Bếp Việt sẽ phản hồi qua email trong 1–2 ngày làm việc.':
-    'Your request has been queued for {email}. Bep Viet will reply by email within 1–2 business days.',
+  'Yêu cầu đã được tiếp nhận và gửi tới {email}. Bếp Việt sẽ phản hồi qua email trong vòng 24 giờ làm việc.':
+    'Your request has been received by {email}. Bep Viet will reply by email within 24 business hours.',
+  'Yêu cầu đã được tiếp nhận. Bếp Việt sẽ phản hồi email người gửi trong vòng 24 giờ làm việc.':
+    'Your request has been received. Bep Viet will reply to the sender within 24 business hours.',
+  'Hòm thư hỗ trợ: {email}.': 'Support inbox: {email}.',
   'Mã yêu cầu: {code}.': 'Reference: {code}.',
   'Bếp Việt luôn sẵn sàng lắng nghe': 'Bep Viet is always here to listen',
   'Gặp sự cố khi dùng ứng dụng, có góp ý về công thức hay muốn hợp tác? Gửi cho chúng tôi, mọi yêu cầu đều được phản hồi.':
@@ -893,9 +902,10 @@ export const en: Record<string, string> = {
   'Gửi yêu cầu hỗ trợ': 'Send a support request',
   'Các trường có dấu * là bắt buộc. Chúng tôi chỉ dùng email để trả lời bạn.':
     'Fields marked * are required. We only use your email to reply to you.',
-  'Đã gửi thành công! Mã yêu cầu của bạn là {code}. Bếp Việt sẽ phản hồi qua email trong 1–2 ngày làm việc.':
-    'Sent! Your request ID is {code}. Bep Viet will reply by email within 1–2 business days.',
-  'Email nhận phản hồi': 'Reply-to email',
+  'Đã gửi thành công! Mã yêu cầu của bạn là {code}. Bếp Việt sẽ phản hồi qua email trong vòng 24 giờ làm việc.':
+    'Sent! Your request ID is {code}. Bep Viet will reply by email within 24 business hours.',
+  'Email người gửi': 'Your email address',
+  'Phản hồi từ Bếp Việt': 'Reply from Bep Viet',
   'Chủ đề': 'Topic',
   'Tóm tắt vấn đề trong một câu': 'Summarise the issue in one sentence',
   'Nội dung': 'Message',
@@ -1332,8 +1342,8 @@ export const en: Record<string, string> = {
   'Bạn đã đăng xuất an toàn.': 'You have been signed out safely.',
   'Bạn không thể tự thay đổi vai trò hoặc khóa chính tài khoản của mình.':
     'You cannot change the role of, or lock, your own account.',
-  'Bếp Việt đã nhận yêu cầu và sẽ phản hồi qua email trong 1–2 ngày làm việc.':
-    'Bep Viet has received your request and will reply by email within 1–2 business days.',
+  'Bếp Việt đã nhận yêu cầu và sẽ phản hồi qua email trong vòng 24 giờ làm việc.':
+    'Bep Viet has received your request and will reply by email within 24 business hours.',
   'Cơ sở dữ liệu tạm thời chưa sẵn sàng.': 'The database is temporarily unavailable.',
   'Dữ liệu chưa hợp lệ.': 'The submitted data is invalid.',
   'Email đã được xác minh. Hãy tạo mật khẩu mới.': 'Email verified. Please create a new password.',
@@ -1684,6 +1694,28 @@ export const en: Record<string, string> = {
   'Thất bại': 'Failed',
   'Email chưa gửi được. Hãy kiểm tra cấu hình email rồi thử lại.':
     'Email could not be sent. Check the email configuration and try again.',
+  'Đang kiểm tra kết nối gửi email…': 'Checking the email connection…',
+  'Không kiểm tra được trạng thái email. Hãy tải lại trang.':
+    'Could not check email delivery. Reload the page and try again.',
+  'Không kiểm tra được trạng thái email. Bạn vẫn có thể gửi và theo dõi lịch sử.':
+    'Could not check email status. You can still send and track delivery in history.',
+  'Email đang sẵn sàng gửi qua {provider}.': 'Email delivery is ready through {provider}.',
+  'Chưa cấu hình đầy đủ tài khoản gửi email.': 'The email sender account is not fully configured.',
+  'Gmail từ chối đăng nhập SMTP. Kiểm tra đúng địa chỉ gửi và mật khẩu ứng dụng Gmail còn hiệu lực.':
+    'Gmail rejected the SMTP sign-in. Check the sender address and that its app password is still valid.',
+  'Không thể kết nối Gmail SMTP từ môi trường đang chạy. Cổng SMTP bị từ chối; hãy cấu hình Gmail API qua HTTPS.':
+    'Gmail SMTP is blocked from this environment. Configure the Gmail API over HTTPS.',
+  'Gmail API chưa được cấp đủ thông tin OAuth để gửi email.':
+    'Gmail API OAuth credentials are missing.',
+  'Gmail API chưa cấp quyền gửi thư. Kiểm tra quyền gmail.send và refresh token.':
+    'Gmail API could not authorize sending. Check the gmail.send scope and refresh token.',
+  'Không thể kết nối Gmail API qua HTTPS lúc này.':
+    'Could not connect to the Gmail API over HTTPS.',
+  'Gmail đang giới hạn yêu cầu. Vui lòng đợi một chút rồi thử gửi lại.':
+    'Gmail is rate limiting requests. Wait briefly, then try again.',
+  'Gmail API đang gặp sự cố tạm thời. Vui lòng đợi ít phút rồi thử lại.':
+    'The Gmail API is temporarily unavailable. Wait a few minutes, then try again.',
+  'Email chưa sẵn sàng gửi.': 'Email delivery is not ready.',
   'Ảnh tách nền cần ở định dạng PNG hoặc WebP (nền trong suốt).':
     'Cut-out images must be PNG or WebP with a transparent background.',
   'Ảnh vượt quá 8 MB.': 'The image is larger than 8 MB.',
@@ -1962,7 +1994,8 @@ export const en: Record<string, string> = {
   'Đánh dấu đã nấu': 'Mark as cooked',
   'Đã nấu {count} lần · gần nhất {date}': 'Cooked {count} times · last on {date}',
   'Chưa chọn món để vào bếp': 'No dish selected for cooking',
-  "Mở một món ăn hoặc một bữa trong kế hoạch rồi bấm \"Vào bếp\" nhé.": "Open a recipe or a planned meal and tap \"Cook\".",
+  'Mở một món ăn hoặc một bữa trong kế hoạch rồi bấm "Vào bếp" nhé.':
+    'Open a recipe or a planned meal and tap "Cook".',
   'Chọn món': 'Choose a dish',
   'Hoàn thiện món': 'Finishing touches',
   '{group} · Bước {number}/{total}': '{group} · Step {number}/{total}',
@@ -1974,10 +2007,13 @@ export const en: Record<string, string> = {
   'Tiến độ nấu': 'Cooking progress',
   'Chế độ vào bếp': 'Cook mode',
   'Nấu {count} món cho bữa này': 'Cook {count} dishes for this meal',
-  "Chú Rồng sẽ đọc từng bước và chờ bạn làm xong. Nói \"xong rồi\" để sang bước tiếp, \"chưa xong\" để được nhắc lại, \"hẹn giờ 15 phút\" để đặt chuông, hoặc hỏi bất cứ khi nào bị vướng.": "Chef Dragon reads each step aloud and waits for you. Say \"done\" for the next step, \"not yet\" to hear it again, \"set a timer for 15 minutes\" for an alarm, or ask whenever you get stuck.",
+  'Chú Rồng sẽ đọc từng bước và chờ bạn làm xong. Nói "xong rồi" để sang bước tiếp, "chưa xong" để được nhắc lại, "hẹn giờ 15 phút" để đặt chuông, hoặc hỏi bất cứ khi nào bị vướng.':
+    'Chef Dragon reads each step aloud and waits for you. Say "done" for the next step, "not yet" to hear it again, "set a timer for 15 minutes" for an alarm, or ask whenever you get stuck.',
   'Điều khiển bằng giọng nói': 'Voice control',
-  'Cần cho phép dùng micro. Bạn vẫn có thể bấm nút bất cứ lúc nào.': 'Allow microphone access. You can still use the buttons at any time.',
-  "Trình duyệt này chưa hỗ trợ nhận giọng nói; hãy dùng Chrome, Edge hoặc Safari.": "This browser can't recognise speech yet; try Chrome, Edge or Safari.",
+  'Cần cho phép dùng micro. Bạn vẫn có thể bấm nút bất cứ lúc nào.':
+    'Allow microphone access. You can still use the buttons at any time.',
+  'Trình duyệt này chưa hỗ trợ nhận giọng nói; hãy dùng Chrome, Edge hoặc Safari.':
+    "This browser can't recognise speech yet; try Chrome, Edge or Safari.",
   'Nấu tiếp từ bước {number}/{total}': 'Continue from step {number}/{total}',
   'Bắt đầu nấu': 'Start cooking',
   'Nấu lại từ đầu': 'Start over',
@@ -1993,7 +2029,7 @@ export const en: Record<string, string> = {
   'Đang nghe…': 'Listening…',
   'Đang đọc…': 'Speaking…',
   'Chuông hẹn giờ': 'Timers',
-  "Hết giờ!": "Time's up!",
+  'Hết giờ!': "Time's up!",
   'Xong rồi': 'Done',
   '+5 phút': '+5 min',
   'Thêm 1 phút cho {label}': 'Add 1 minute to {label}',
@@ -2006,12 +2042,17 @@ export const en: Record<string, string> = {
   'Xong món, sang món tiếp': 'Dish done, next dish',
   'Hoàn thành': 'Finish',
   'Xong, bước tiếp': 'Done, next step',
-  "Trên iPhone: bấm Chia sẻ → \"Thêm vào MH chính\" rồi mở Bếp Việt từ đó để chuông kêu cả khi khóa máy.": "On iPhone: tap Share → \"Add to Home Screen\", then open Bếp Việt from there so alarms ring while locked.",
-  "Trình duyệt này không hỗ trợ thông báo; chuông chỉ kêu khi ứng dụng đang mở.": "This browser doesn't support notifications; alarms only ring while the app is open.",
+  'Trên iPhone: bấm Chia sẻ → "Thêm vào MH chính" rồi mở Bếp Việt từ đó để chuông kêu cả khi khóa máy.':
+    'On iPhone: tap Share → "Add to Home Screen", then open Bếp Việt from there so alarms ring while locked.',
+  'Trình duyệt này không hỗ trợ thông báo; chuông chỉ kêu khi ứng dụng đang mở.':
+    "This browser doesn't support notifications; alarms only ring while the app is open.",
   'Chuông sẽ báo cả khi bạn tắt màn hình.': 'Alarms will ring even with the screen off.',
-  "Chuông báo khi ứng dụng còn mở. Trình duyệt hoặc máy chủ chưa hỗ trợ thông báo đẩy nên khi khóa máy có thể không kêu.": "Alarms ring while the app is open. Push notifications aren't available in this browser or on the server, so they may not ring while locked.",
-  "Bạn đã chặn thông báo. Mở cài đặt trang web của trình duyệt để cho phép lại.": "Notifications are blocked. Allow them again in your browser's site settings.",
-  'Cho phép thông báo để chuông kêu cả khi bạn tắt màn hình.': 'Allow notifications so alarms ring even with the screen off.',
+  'Chuông báo khi ứng dụng còn mở. Trình duyệt hoặc máy chủ chưa hỗ trợ thông báo đẩy nên khi khóa máy có thể không kêu.':
+    "Alarms ring while the app is open. Push notifications aren't available in this browser or on the server, so they may not ring while locked.",
+  'Bạn đã chặn thông báo. Mở cài đặt trang web của trình duyệt để cho phép lại.':
+    "Notifications are blocked. Allow them again in your browser's site settings.",
+  'Cho phép thông báo để chuông kêu cả khi bạn tắt màn hình.':
+    'Allow notifications so alarms ring even with the screen off.',
   'Bật chuông': 'Enable alarms',
   'Vào bếp nấu cả {meal} {date}': 'Cook the whole {meal} on {date}',
   'Bỏ đánh dấu đã nấu {name}': 'Unmark {name} as cooked',
@@ -2019,7 +2060,8 @@ export const en: Record<string, string> = {
   'Vào bếp nấu {name}': 'Cook {name}',
   'Nhật ký bếp': 'Kitchen journal',
   'Món đã nấu': 'Cooked dishes',
-  'Mỗi lần bạn đánh dấu đã nấu, tick trong kế hoạch hoặc nấu xong cùng Chú Rồng đều được ghi lại ở đây.': 'Every dish you mark as cooked, tick in the planner or finish with Chef Dragon is recorded here.',
+  'Mỗi lần bạn đánh dấu đã nấu, tick trong kế hoạch hoặc nấu xong cùng Chú Rồng đều được ghi lại ở đây.':
+    'Every dish you mark as cooked, tick in the planner or finish with Chef Dragon is recorded here.',
   'Chọn món để nấu': 'Pick something to cook',
   'Lần nấu': 'Times cooked',
   'Món khác nhau': 'Different dishes',
@@ -2028,38 +2070,46 @@ export const en: Record<string, string> = {
   'Nấu lại {name}': 'Cook {name} again',
   'Nấu lại': 'Cook again',
   'Xóa lần nấu {name}': 'Delete cook of {name}',
-  'Sau': 'Next',
+  Sau: 'Next',
   '{from}–{to} trên {total} lần nấu': '{from}–{to} of {total} cooks',
   'Tìm món để nấu': 'Find a dish to cook',
-  "Vào bếp cùng Chú Rồng hoặc bấm \"Đánh dấu đã nấu\" ở trang món để bắt đầu nhật ký.": "Cook with Chef Dragon or tap \"Mark as cooked\" on a recipe to start your journal.",
+  'Vào bếp cùng Chú Rồng hoặc bấm "Đánh dấu đã nấu" ở trang món để bắt đầu nhật ký.':
+    'Cook with Chef Dragon or tap "Mark as cooked" on a recipe to start your journal.',
   'Chưa có món nào được ghi nhận': 'Nothing logged yet',
   'Nấu cùng Chú Rồng': 'Cooked with Chef Dragon',
   'Tự đánh dấu': 'Marked manually',
   'Đang ghi vào lịch sử món đã nấu…': 'Saving to your cooking history…',
   'Bấm "Bật chuông" để nhận chuông cả khi bạn khóa màn hình.':
     'Tap "Enable alarms" to get alarms even when your screen is locked.',
-  "Trời nóng thế này, trưa nay làm bát canh chua cho mát không?": "It's hot today — how about a cooling sour soup for lunch?",
-  "Chiều rồi, tối nay nấu gì để còn kịp đi chợ? 🛒": "It's afternoon — what's for dinner, so you can shop in time? 🛒",
-  "Xế chiều hơi đói? Một ly chè hay đĩa trái cây cho tỉnh táo nhé!": "Peckish this afternoon? A sweet soup or some fruit will perk you up!",
-  "Lên thực đơn bữa tối từ giờ cho đỡ vội nhé?": "Plan tonight's dinner now so you're not rushed?",
-  "Nếu chưa biết tối nay ăn gì, hãy nhờ Chú Rồng nhé!": "Not sure what to have tonight? Ask Chef Dragon!",
-  "Tủ lạnh còn gì? Kể mình nghe, mình nghĩ món tối giúp!": "What's in your fridge? Tell me and I'll plan dinner!",
-  "Chào buổi chiều! Tối nay nấu gì để còn kịp đi chợ?": "Good afternoon! What's for dinner, so you can shop in time?",
-  "Tối nay nên nấu gì?": "What should I cook tonight?",
-  "Khuya rồi! Đói bụng thì làm món gì nhẹ nhé?": "It's late! Hungry? Let's make something light.",
-  "Ăn khuya món gì nhẹ?": "A light late-night snack?",
-  "Sáng nay ăn gì?": "What's for breakfast?",
-  "Trưa nay ăn gì?": "What's for lunch?",
-  "Chú Rồng đang chờ bạn": "Chef Dragon is ready for you",
-  "Chú Rồng đang nói…": "Chef Dragon is talking…",
+  'Trời nóng thế này, trưa nay làm bát canh chua cho mát không?':
+    "It's hot today — how about a cooling sour soup for lunch?",
+  'Chiều rồi, tối nay nấu gì để còn kịp đi chợ? 🛒':
+    "It's afternoon — what's for dinner, so you can shop in time? 🛒",
+  'Xế chiều hơi đói? Một ly chè hay đĩa trái cây cho tỉnh táo nhé!':
+    'Peckish this afternoon? A sweet soup or some fruit will perk you up!',
+  'Lên thực đơn bữa tối từ giờ cho đỡ vội nhé?': "Plan tonight's dinner now so you're not rushed?",
+  'Nếu chưa biết tối nay ăn gì, hãy nhờ Chú Rồng nhé!':
+    'Not sure what to have tonight? Ask Chef Dragon!',
+  'Tủ lạnh còn gì? Kể mình nghe, mình nghĩ món tối giúp!':
+    "What's in your fridge? Tell me and I'll plan dinner!",
+  'Chào buổi chiều! Tối nay nấu gì để còn kịp đi chợ?':
+    "Good afternoon! What's for dinner, so you can shop in time?",
+  'Tối nay nên nấu gì?': 'What should I cook tonight?',
+  'Khuya rồi! Đói bụng thì làm món gì nhẹ nhé?': "It's late! Hungry? Let's make something light.",
+  'Ăn khuya món gì nhẹ?': 'A light late-night snack?',
+  'Sáng nay ăn gì?': "What's for breakfast?",
+  'Trưa nay ăn gì?': "What's for lunch?",
+  'Chú Rồng đang chờ bạn': 'Chef Dragon is ready for you',
+  'Chú Rồng đang nói…': 'Chef Dragon is talking…',
   'Dừng nói': 'Stop talking',
   'Dừng nói ngay': 'Stop talking now',
-  "Đang canh chuông cho bạn": "Keeping an eye on your timers",
-  "Hết giờ rồi!": "Time's up!",
-  "Chú Rồng chưa hiểu lắm": "Chef Dragon didn't quite get that",
-  "Chú Rồng ăn mừng": "Chef Dragon celebrating",
-  "Chú Rồng phụ bếp": "Chef Dragon, your cooking buddy",
-  "Nói với Chú Rồng": "Talk to Chef Dragon",
-  "Hỏi hoặc nói với Chú Rồng… (vd: cá bị dính chảo thì sao?)": "Ask or tell Chef Dragon… (e.g. the fish is sticking to the pan?)",
-  "Gửi cho Chú Rồng": "Send to Chef Dragon",
+  'Đang canh chuông cho bạn': 'Keeping an eye on your timers',
+  'Hết giờ rồi!': "Time's up!",
+  'Chú Rồng chưa hiểu lắm': "Chef Dragon didn't quite get that",
+  'Chú Rồng ăn mừng': 'Chef Dragon celebrating',
+  'Chú Rồng phụ bếp': 'Chef Dragon, your cooking buddy',
+  'Nói với Chú Rồng': 'Talk to Chef Dragon',
+  'Hỏi hoặc nói với Chú Rồng… (vd: cá bị dính chảo thì sao?)':
+    'Ask or tell Chef Dragon… (e.g. the fish is sticking to the pan?)',
+  'Gửi cho Chú Rồng': 'Send to Chef Dragon',
 };
