@@ -25,6 +25,7 @@ import { useAuth } from '@/features/auth/AuthContext';
 import { apiPost, apiRequest } from '@/lib/api/client';
 import { matchesSearch } from '@/lib/search';
 import { useI18n } from '@/features/i18n/I18nContext';
+import { dishImage } from '@/data/dishImages';
 
 const STORAGE_KEY_PREFIX = 'bep-viet-random-meal-history-v1';
 const SPIN_DURATION_MS = 1250;
@@ -604,7 +605,12 @@ export function RandomMealPage() {
                     >
                       <span className="tray-slot__plate">
                         {slot.dish ? (
-                          <img alt={slot.dish.imageAlt} src={slot.dish.image} />
+                          <img
+                            alt={slot.dish.imageAlt}
+                            decoding="async"
+                            loading="lazy"
+                            {...dishImage(slot.dish.sourceKey, slot.dish.image, '96px')}
+                          />
                         ) : (
                           <MealRoleIcon role={slot.role} />
                         )}
@@ -793,8 +799,9 @@ export function RandomMealPage() {
                             <figure key={slot.dish!.id}>
                               <img
                                 alt={slot.dish!.imageAlt}
+                                decoding="async"
                                 loading="lazy"
-                                src={slot.dish!.image}
+                                {...dishImage(slot.dish!.sourceKey, slot.dish!.image, '96px')}
                               />
                               <figcaption>
                                 {index + 1}. {t(roleDetails[slot.role].shortLabel)}

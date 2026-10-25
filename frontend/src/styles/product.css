@@ -5701,6 +5701,10 @@ html[data-reduce-motion='true'] .hero-dish__steam {
   object-fit: contain;
 }
 
+.tray-slot__plate img.dish-cutout {
+  border-radius: 50%;
+}
+
 .tray-slot__plate .meal-role-icon {
   width: 82%;
   height: 82%;

@@ -4,6 +4,7 @@ import { AppIcon } from '@/components/common/AppIcon';
 import { useDefaultServings } from '@/features/account/preferences';
 import { formatMinutes, getMealRecipes, mealSets, recipes } from '@/data/recipes';
 import { useI18n } from '@/features/i18n/I18nContext';
+import { dishImage } from '@/data/dishImages';
 
 export function MealSetsPage() {
   const { t } = useI18n();
@@ -52,12 +53,19 @@ export function MealSetsPage() {
         <div className="container meal-list">
           {mealSets.map((meal, index) => {
             const items = getMealRecipes(meal.recipeSlugs);
+            const leadRecipe = items[0] ?? recipes[0]!;
             return (
               <article className="meal-plan" id={meal.id} key={meal.id}>
                 <div className="meal-plan__visual">
                   <img
                     alt={t('Minh họa {title}', { title: t(meal.title) })}
-                    src={items[0]?.image ?? recipes[0]!.image}
+                    decoding="async"
+                    loading="lazy"
+                    {...dishImage(
+                      leadRecipe.slug,
+                      leadRecipe.image,
+                      '(min-width: 1200px) 460px, (min-width: 720px) 40vw, 90vw',
+                    )}
                   />
                   <span>{t('Gợi ý {index}', { index: String(index + 1).padStart(2, '0') })}</span>
                 </div>
