@@ -1,0 +1,258 @@
+{
+  "batch": 67,
+  "canvas": {
+    "width": 3840,
+    "height": 2160,
+    "format": "WebP",
+    "background": "transparent"
+  },
+  "native_format": "PNG",
+  "export_master_format": "PNG",
+  "assets": [
+    {
+      "id": "BV661",
+      "slug": "ga-hap-mam-nhi-nam-bo",
+      "native_file": "output/recipe-images/native/ga-hap-mam-nhi-nam-bo.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/ga-hap-mam-nhi-nam-bo.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/ga-hap-mam-nhi-nam-bo-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/ga-hap-mam-nhi-nam-bo-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/ga-hap-mam-nhi-nam-bo-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/ga-hap-mam-nhi-nam-bo-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "id": "BV662",
+      "slug": "vit-om-hoa-chuoi-dien-bien",
+      "native_file": "output/recipe-images/native/vit-om-hoa-chuoi-dien-bien.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/vit-om-hoa-chuoi-dien-bien.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/vit-om-hoa-chuoi-dien-bien-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/vit-om-hoa-chuoi-dien-bien-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/vit-om-hoa-chuoi-dien-bien-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/vit-om-hoa-chuoi-dien-bien-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "id": "BV663",
+      "slug": "ga-hap-bia",
+      "native_file": "output/recipe-images/native/ga-hap-bia.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/ga-hap-bia.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/ga-hap-bia-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/ga-hap-bia-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/ga-hap-bia-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/ga-hap-bia-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "id": "BV664",
+      "slug": "chim-cut-chien-bo",
+      "native_file": "output/recipe-images/native/chim-cut-chien-bo.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/chim-cut-chien-bo.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/chim-cut-chien-bo-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/chim-cut-chien-bo-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/chim-cut-chien-bo-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/chim-cut-chien-bo-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "id": "BV665",
+      "slug": "vit-om-rieng-me",
+      "native_file": "output/recipe-images/native/vit-om-rieng-me.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/vit-om-rieng-me.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/vit-om-rieng-me-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/vit-om-rieng-me-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/vit-om-rieng-me-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/vit-om-rieng-me-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    }
+  ]
+}

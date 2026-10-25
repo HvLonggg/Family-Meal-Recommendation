@@ -1,0 +1,1271 @@
+{
+  "batch": 33,
+  "description": "Năm món Việt vùng miền được Bếp Việt biên tập từ tư liệu báo chí địa phương.",
+  "recipes": [
+    {
+      "id": "BV491",
+      "slug": "che-lam-thach-xa",
+      "name": "Chè lam Thạch Xá",
+      "aliases": [
+        "Chè lam Thạch Xá Hà Nội",
+        "Chè lam xứ Đoài"
+      ],
+      "region": [
+        "Đồng bằng Bắc Bộ"
+      ],
+      "province": [
+        "Hà Nội"
+      ],
+      "category": "Món tráng miệng",
+      "meal_type": [
+        "bữa phụ",
+        "tráng miệng"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Khoảng 24 miếng chè lam dẻo, dùng cùng trà nóng.",
+      "prep_time": 25,
+      "cook_time": 35,
+      "passive_time": 0,
+      "description": "Chè lam Thạch Xá là thức quà xứ Đoài làm từ bột nếp rang, mật mía, gừng và lạc rang. Bếp Việt biên tập mẻ nhỏ tại nhà, cân bằng độ dẻo và vị cay ấm; tỷ lệ không đại diện cho công thức của một hộ làng nghề.",
+      "finished_dish": "Miếng chè lam dẻo chắc, áo lớp bột nếp mỏng; vị ngọt thơm của mật mía cân bằng với gừng cay nhẹ và lạc bùi.",
+      "serving": "Để chè nguội hẳn rồi cắt miếng vừa ăn, dùng với trà xanh hoặc trà nóng.",
+      "tips": [
+        "Cho bột nếp rang từng ít một để hỗn hợp dẻo nhưng không khô bở.",
+        "Nấu mật ở lửa nhỏ, khuấy liên tục để không bén đáy nồi.",
+        "Rắc lạc vào cuối để giữ độ giòn."
+      ],
+      "dish_type": [
+        "Bánh truyền thống",
+        "Đặc sản xứ Đoài"
+      ],
+      "main_ingredient": [
+        "bột nếp",
+        "mật mía",
+        "gừng",
+        "lạc"
+      ],
+      "cooking_method": [
+        "rang bột",
+        "nấu mật",
+        "nhào",
+        "để nguội"
+      ],
+      "search_terms": [
+        "chè lam Thạch Xá",
+        "chè lam Hà Nội",
+        "chè lam xứ Đoài",
+        "bánh mật gừng",
+        "món ngọt truyền thống"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Chè lam Thạch Xá cắt miếng vuông phủ bột nếp, điểm lạc rang, gừng và mật mía; chụp cận cảnh trên đĩa gốm, tách nền trong suốt.",
+      "time_note": "Khoảng 1 giờ, gồm thời gian để chè nguội trước khi cắt.",
+      "total_time": 60,
+      "suggested_pairings": [
+        "Trà xanh",
+        "Trà nóng",
+        "Mứt gừng"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "thach_xa_che_lam",
+      "time_unit": "phút",
+      "ingredients": [
+        {
+          "name": "Bột nếp rang chín",
+          "quantity": 250,
+          "unit": "g",
+          "role": "main",
+          "notes": "Rang khô trên lửa nhỏ đến khi thơm, để nguội và rây mịn.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Mật mía",
+          "quantity": 180,
+          "unit": "g",
+          "role": "main",
+          "notes": "Dùng mật mía sánh, không có vị khét.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Gừng tươi",
+          "quantity": 35,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Gọt vỏ, giã hoặc băm thật nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Lạc rang",
+          "quantity": 70,
+          "unit": "g",
+          "role": "main",
+          "notes": "Bỏ vỏ lụa, để nguyên hạt hoặc giã dập.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 8,
+          "unit": "ml",
+          "role": "other",
+          "notes": "Thoa mỏng lên khay và dao để chống dính.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Bột nếp rang",
+          "quantity": 25,
+          "unit": "g",
+          "role": "other",
+          "notes": "Dùng áo ngoài khi nhào và cắt.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rang lạc chín thơm, xoa bỏ vỏ lụa; chuẩn bị gừng và một khay phẳng lót giấy nến."
+        },
+        {
+          "step": 2,
+          "instruction": "Rang bột nếp trên chảo khô, lửa nhỏ, đảo đều đến khi bột thơm và khô tơi; để nguội."
+        },
+        {
+          "step": 3,
+          "instruction": "Rây sẵn phần bột áo và thoa một lớp dầu thật mỏng lên khay, dao."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Cho mật mía và gừng vào nồi đáy dày, đun lửa nhỏ đến khi sôi lăn tăn và dậy mùi gừng."
+        },
+        {
+          "step": 2,
+          "instruction": "Hạ lửa, rắc bột nếp rang từng phần vào nồi, dùng thìa gỗ khuấy nhanh đến khi khối bột dẻo, quyện và róc nhẹ khỏi thành nồi."
+        },
+        {
+          "step": 3,
+          "instruction": "Trộn lạc rang vào khối bột, chuyển ra khay đã áo bột; dùng tay hoặc cây cán đã thoa dầu dàn thành miếng dày khoảng 2 cm."
+        },
+        {
+          "step": 4,
+          "instruction": "Để nguội hoàn toàn ở nhiệt độ phòng, áo nhẹ bột nếp rồi cắt miếng vuông. Bảo quản trong hộp kín, nơi khô mát."
+        }
+      ],
+      "keywords": [
+        "chè lam",
+        "mật mía",
+        "gừng",
+        "lạc rang",
+        "xứ Đoài",
+        "Hà Nội"
+      ],
+      "tags": [
+        "món ngọt",
+        "bánh truyền thống",
+        "đặc sản Hà Nội",
+        "chè lam Thạch Xá",
+        "bột nếp",
+        "mật mía"
+      ],
+      "sources": [
+        {
+          "url": "https://hanoionline.vn/che-lam-thach-xa-vi-tet-tu-lang-que-246385629.htm",
+          "publisher": "Đài Phát thanh và Truyền hình Hà Nội",
+          "title": "Chè lam Thạch Xá - vị Tết từ làng quê",
+          "use": "Đối chiếu danh tính chè lam Thạch Xá gắn với xứ Đoài và nhóm nguyên liệu bột nếp, mật mía, gừng, lạc. Nguồn mô tả nghề địa phương, không công bố định lượng; tỷ lệ và thao tác là bản biên tập Bếp Việt.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Chè lam Thạch Xá cho 2 người",
+            "instruction": "Giảm mật và bột cùng tỷ lệ; dừng nấu khi khối vừa quyện để tránh chè khô."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Chè lam Thạch Xá cho 6 người",
+            "instruction": "Chia khối bột thành hai mẻ để dễ nhào và dàn đều."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Chè lam Thạch Xá cho 8 người",
+            "instruction": "Dàn hai khay riêng, giữ mật ấm và trộn lạc vào từng mẻ."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/che-lam-thach-xa-960.webp",
+          "page_url": "https://hanoionline.vn/che-lam-thach-xa-vi-tet-tu-lang-que-246385629.htm",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để đối chiếu món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Chè lam Thạch Xá cắt miếng vuông phủ bột nếp, điểm lạc rang, gừng và mật mía; chụp cận cảnh trên đĩa gốm, tách nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo mới, nền trong suốt; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Mẻ gia đình dựa trên nhóm nguyên liệu và đặc điểm nghề chè lam Thạch Xá được nguồn Hà Nội ghi nhận; tỷ lệ là công thức biên tập.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử độ dẻo theo các loại mật mía và rà soát thời gian bảo quản."
+        ]
+      }
+    },
+    {
+      "id": "BV492",
+      "slug": "khoai-xeo-ha-tinh",
+      "name": "Khoai xéo Hà Tĩnh",
+      "aliases": [
+        "Khoai xéo Nghi Xuân",
+        "Khoai xéo khoai khô Hà Tĩnh"
+      ],
+      "region": [
+        "Bắc Trung Bộ"
+      ],
+      "province": [
+        "Hà Tĩnh"
+      ],
+      "category": "Món ăn dân dã",
+      "meal_type": [
+        "bữa sáng",
+        "bữa phụ"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một nồi khoai xéo dẻo bùi cho 4 người.",
+      "prep_time": 25,
+      "cook_time": 45,
+      "passive_time": 360,
+      "description": "Khoai xéo là món ăn dân dã Hà Tĩnh từ khoai lang thái lát phơi khô, nấu cùng nếp, đậu và lạc. Bếp Việt biên tập cách nấu gia đình có ngâm đậu trước để hạt chín mềm, sau đó xéo nhẹ để món dẻo bùi mà vẫn còn thớ khoai.",
+      "finished_dish": "Khoai khô mềm dẻo quyện nếp, đậu và lạc; vị ngọt vừa, thơm bùi, không nhão thành hồ.",
+      "serving": "Dùng nóng như bữa phụ hoặc món sáng; có thể ăn cùng chút muối vừng.",
+      "tips": [
+        "Đậu khô cần ngâm đủ lâu và nấu mềm trước khi cho nếp vào; nếu dùng đậu đã nấu chín, giảm thời gian ninh.",
+        "Nước chỉ nên xâm xấp nguyên liệu sau khi cho nếp; thêm nước sôi từng ít nếu nồi cạn sớm.",
+        "Xéo khi món còn nóng, dừng khi khoai vừa tơi và một phần hạt vẫn nguyên."
+      ],
+      "dish_type": [
+        "Món ăn dân dã",
+        "Đặc sản Hà Tĩnh"
+      ],
+      "main_ingredient": [
+        "khoai lang khô",
+        "gạo nếp",
+        "đậu đỏ",
+        "đậu đen",
+        "lạc"
+      ],
+      "cooking_method": [
+        "ngâm",
+        "ninh",
+        "nấu nếp",
+        "xéo"
+      ],
+      "search_terms": [
+        "khoai xéo Hà Tĩnh",
+        "khoai xéo Nghi Xuân",
+        "khoai lang khô nấu nếp",
+        "món quê Hà Tĩnh",
+        "món ăn từ khoai"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Khoai xéo Hà Tĩnh vàng nâu, dẻo bùi với lát khoai khô, nếp, đậu đỏ đen và lạc; bày trong bát sành mộc mạc, tách nền trong suốt.",
+      "time_note": "Khoảng 7 giờ 10 phút, chủ yếu là thời gian ngâm đậu; có thể ngâm từ tối hôm trước.",
+      "total_time": 430,
+      "suggested_pairings": [
+        "Muối vừng",
+        "Trà xanh",
+        "Lạc rang"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "ha_tinh_khoai_xeo",
+      "time_unit": "phút",
+      "ingredients": [
+        {
+          "name": "Khoai lang khô",
+          "quantity": 250,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn lát khô sạch, không mốc; rửa nhanh và để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Gạo nếp",
+          "quantity": 120,
+          "unit": "g",
+          "role": "main",
+          "notes": "Vo sạch, để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Đậu đỏ khô",
+          "quantity": 60,
+          "unit": "g",
+          "role": "main",
+          "notes": "Nhặt hạt hỏng, rửa và ngâm 6–8 giờ.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Đậu đen khô",
+          "quantity": 60,
+          "unit": "g",
+          "role": "main",
+          "notes": "Nhặt hạt hỏng, rửa và ngâm 6–8 giờ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Lạc sống",
+          "quantity": 50,
+          "unit": "g",
+          "role": "main",
+          "notes": "Rửa nhanh; có thể thay bằng lạc rang trộn sau cùng.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Đường",
+          "quantity": 25,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Gia giảm theo độ ngọt tự nhiên của khoai.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Muối",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm nhẹ để cân bằng vị ngọt.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Nước",
+          "quantity": 1200,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng lượng vừa ngập nguyên liệu, bổ sung nước sôi khi cần.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Nhặt rửa đậu đỏ, đậu đen rồi ngâm trong nước sạch 6–8 giờ; xả lại và để ráo."
+        },
+        {
+          "step": 2,
+          "instruction": "Vo gạo nếp; rửa nhanh khoai khô để loại bụi, không ngâm lâu làm khoai nhũn."
+        },
+        {
+          "step": 3,
+          "instruction": "Chuẩn bị nồi đáy dày và đong sẵn lượng nước nóng để bổ sung nếu cần."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Cho khoai khô, hai loại đậu, lạc và nước vào nồi. Đun sôi, hớt bọt, hạ lửa vừa và nấu khoảng 25–30 phút đến khi đậu gần mềm."
+        },
+        {
+          "step": 2,
+          "instruction": "Cho gạo nếp vào, đảo nhẹ một lần; nấu lửa nhỏ thêm 15–20 phút đến khi nếp chín và nước gần cạn. Nếu nồi khô trước khi nếp chín, thêm từng ít nước sôi."
+        },
+        {
+          "step": 3,
+          "instruction": "Nêm muối và đường, đảo nhẹ rồi đậy nắp ủ 10 phút cho vị ngấm."
+        },
+        {
+          "step": 4,
+          "instruction": "Dùng đũa cả hoặc thìa gỗ xéo nhẹ khoai và nếp. Giữ một phần miếng khoai, hạt đậu nguyên để món có kết cấu; dùng nóng."
+        }
+      ],
+      "keywords": [
+        "khoai xéo",
+        "Hà Tĩnh",
+        "Nghi Xuân",
+        "khoai khô",
+        "đậu đỏ",
+        "đậu đen",
+        "món dân dã"
+      ],
+      "tags": [
+        "món quê",
+        "bữa phụ",
+        "khoai lang",
+        "gạo nếp",
+        "đậu",
+        "lạc",
+        "khoai xéo Hà Tĩnh"
+      ],
+      "sources": [
+        {
+          "url": "https://baohatinh.vn/khoai-xeo-mon-ngon-dan-da-nen-thu-khi-ve-nghi-xuan-post247313.html",
+          "publisher": "Báo Hà Tĩnh",
+          "title": "Khoai xéo - món ngon dân dã nên thử khi về Nghi Xuân",
+          "use": "Đối chiếu tên món, liên hệ với khoai khô Hà Tĩnh và nhóm khoai, đậu đỏ/đen, lạc, nếp, đường; nguồn mô tả cách nấu và động tác xéo. Bếp Việt thêm bước ngâm đậu khô để thời gian chín phù hợp bếp gia đình.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Khoai xéo Hà Tĩnh cho 2 người",
+            "instruction": "Bắt đầu với 500–600 ml nước, bổ sung khi nấu nếu cần."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Khoai xéo Hà Tĩnh cho 6 người",
+            "instruction": "Dùng nồi rộng để nguyên liệu chín đều; hạ lửa sau khi thêm nếp."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Khoai xéo Hà Tĩnh cho 8 người",
+            "instruction": "Nấu hai mẻ nếu nồi không đủ rộng; nêm đường sau khi nếp chín."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/khoai-xeo-ha-tinh-960.webp",
+          "page_url": "https://baohatinh.vn/khoai-xeo-mon-ngon-dan-da-nen-thu-khi-ve-nghi-xuan-post247313.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để đối chiếu món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Khoai xéo Hà Tĩnh vàng nâu, dẻo bùi với lát khoai khô, nếp, đậu đỏ đen và lạc; bày trong bát sành mộc mạc, tách nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo mới, nền trong suốt; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Cách nấu gia đình có ngâm đậu khô trước để đạt độ mềm ổn định; nguồn địa phương xác nhận tên, nguyên liệu chính và thao tác xéo nhưng không nêu bước ngâm.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử với các loại khoai khô và đậu khác nhau để thống nhất lượng nước, thời gian và độ dẻo."
+        ]
+      }
+    },
+    {
+      "id": "BV493",
+      "slug": "mang-truc-yen-tu-xao-thit-bo",
+      "name": "Măng trúc Yên Tử xào thịt bò",
+      "aliases": [
+        "Măng trúc xào thịt bò Yên Tử",
+        "Măng trúc Yên Tử xào bò"
+      ],
+      "region": [
+        "Đông Bắc Bộ"
+      ],
+      "province": [
+        "Quảng Ninh"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một đĩa măng trúc xào bò cho 4 người, ăn cùng cơm nóng.",
+      "prep_time": 25,
+      "cook_time": 15,
+      "passive_time": 10,
+      "description": "Măng trúc Yên Tử có thớ giòn chắc và vị ngăm đắng nhẹ, thường được xào nhanh với thịt thăn bò, tỏi và gia vị. Bếp Việt biên tập phiên bản bếp nhà, làm chín măng trước để giảm vị đắng và giữ bò mềm.",
+      "finished_dish": "Măng giòn, thơm, vị ngọt bùi xen đắng dịu; thịt bò vừa chín tới, quyện hương tỏi và nước xào sánh nhẹ.",
+      "serving": "Dọn ngay khi nóng với cơm trắng; có thể thêm rau sống rửa sạch theo cách ăn địa phương.",
+      "tips": [
+        "Măng tươi phải sơ chế và luộc kỹ trước khi xào; không nếm măng sống.",
+        "Xào thịt bò thật nhanh trên chảo nóng rồi gắp ra, chỉ cho lại vào cuối để tránh dai.",
+        "Không nêm quá mặn vì nước măng tiết ra khi xào sẽ cô lại."
+      ],
+      "dish_type": [
+        "Món xào",
+        "Đặc sản Yên Tử"
+      ],
+      "main_ingredient": [
+        "măng trúc",
+        "thịt bò",
+        "tỏi"
+      ],
+      "cooking_method": [
+        "luộc măng",
+        "ướp",
+        "xào nhanh"
+      ],
+      "search_terms": [
+        "măng trúc Yên Tử",
+        "măng trúc xào bò",
+        "thịt bò xào măng",
+        "món ngon Quảng Ninh",
+        "món xào ăn cơm"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Đĩa măng trúc Yên Tử xào thịt bò với lát măng xanh vàng và thịt bò mềm bóng, tỏi thơm; ảnh món ăn riêng trên nền trong suốt.",
+      "time_note": "Khoảng 50 phút, gồm 10 phút ướp thịt và sơ chế măng.",
+      "total_time": 50,
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Canh rau",
+        "Rau sống"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "yen_tu_bamboo_shoot_beef",
+      "time_unit": "phút",
+      "ingredients": [
+        {
+          "name": "Măng trúc tươi",
+          "quantity": 400,
+          "unit": "g",
+          "role": "main",
+          "notes": "Rửa sạch, bổ dọc hoặc thái lát; luộc kỹ, thay nước nếu còn đắng.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Thịt thăn bò",
+          "quantity": 300,
+          "unit": "g",
+          "role": "main",
+          "notes": "Thái lát mỏng ngang thớ.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 20,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, đập dập và băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "other",
+          "notes": "Chia phần để xào bò và măng.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm vừa khẩu vị.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Dầu hào",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Có thể bỏ nếu muốn vị thanh hơn.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Rắc cuối món.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Muối",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng khi luộc măng nếu cần.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa măng, bỏ bẹ già, bổ dọc thành miếng vừa ăn. Luộc sôi 15 phút, đổ nước, tráng lại; nếm thử, nếu còn đắng thì luộc thêm một lượt với nước mới."
+        },
+        {
+          "step": 2,
+          "instruction": "Thái bò ngang thớ; ướp với một nửa tỏi, nước mắm, dầu hào và chút tiêu trong 10 phút."
+        },
+        {
+          "step": 3,
+          "instruction": "Để măng đã luộc ráo nước; chuẩn bị chảo rộng và làm nóng trước khi xào."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng chảo với một ít dầu. Xào bò trên lửa lớn 1–2 phút đến khi vừa đổi màu, trút ra đĩa."
+        },
+        {
+          "step": 2,
+          "instruction": "Thêm dầu còn lại, phi thơm phần tỏi; cho măng vào xào 3–4 phút cho nóng và săn. Nêm phần nước mắm còn lại, đảo đều."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho bò trở lại chảo, đảo nhanh thêm khoảng 30–60 giây; nếm lại, rắc tiêu rồi tắt bếp."
+        }
+      ],
+      "keywords": [
+        "măng trúc",
+        "măng Yên Tử",
+        "thịt bò",
+        "Quảng Ninh",
+        "món xào",
+        "ăn với cơm"
+      ],
+      "tags": [
+        "món mặn",
+        "món xào",
+        "Yên Tử",
+        "măng trúc xào thịt bò",
+        "Quảng Ninh"
+      ],
+      "sources": [
+        {
+          "url": "https://vietnam.vnanet.vn/vietnamese/vietnamese/vietnamese/tin-tuc/mang-truc-yen-tu-xao-thit-bo-229232.html",
+          "publisher": "Báo Ảnh Việt Nam (Thông tấn xã Việt Nam)",
+          "title": "Măng trúc Yên Tử xào thịt bò",
+          "use": "Nguồn trực tiếp ghi món măng trúc Yên Tử xào thịt bò, vùng Quảng Ninh, cách thái măng, dùng thăn bò và tỏi; Bếp Việt biên tập định lượng và bổ sung bước luộc kỹ măng tươi.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://baoquangninh.vn/giu-cho-yen-tu-truong-ton-3303601.html",
+          "publisher": "Báo Quảng Ninh",
+          "title": "Giữ cho Yên Tử trường tồn",
+          "use": "Đối chiếu bối cảnh địa phương Yên Tử và món măng trúc xào trong ẩm thực vùng; không dùng làm nguồn định lượng công thức.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Măng trúc Yên Tử xào thịt bò cho 2 người",
+            "instruction": "Giảm măng và thịt theo khẩu phần; bắt đầu với một nửa gia vị."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Măng trúc Yên Tử xào thịt bò cho 6 người",
+            "instruction": "Xào thành hai lượt để chảo không nguội, giữ măng săn và bò mềm."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Măng trúc Yên Tử xào thịt bò cho 8 người",
+            "instruction": "Dùng chảo lớn hoặc chia hai mẻ; chỉ trộn bò vào sát lúc dọn."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/mang-truc-yen-tu-xao-thit-bo-960.webp",
+          "page_url": "https://vietnam.vnanet.vn/vietnamese/vietnamese/vietnamese/tin-tuc/mang-truc-yen-tu-xao-thit-bo-229232.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để đối chiếu món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa măng trúc Yên Tử xào thịt bò với lát măng xanh vàng và thịt bò mềm bóng, tỏi thơm; ảnh món ăn riêng trên nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo mới, nền trong suốt; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bản bếp nhà dựa trên món vùng Yên Tử được VNA ghi nhận; thời gian luộc măng và tỷ lệ gia vị được biên tập để kiểm soát vị đắng, an toàn khi dùng măng tươi.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Xác minh nguồn măng tươi và thử mức luộc phù hợp với độ già của măng."
+        ]
+      }
+    },
+    {
+      "id": "BV494",
+      "slug": "canh-ot-mien-tay-nghe-an",
+      "name": "Canh ột người Thái miền Tây Nghệ An",
+      "aliases": [
+        "Canh ột Nghệ An",
+        "Canh ột gà xứ Nghệ"
+      ],
+      "region": [
+        "Bắc Trung Bộ"
+      ],
+      "province": [
+        "Nghệ An"
+      ],
+      "category": "Món canh",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Một nồi canh ột gà sánh nhẹ cho 4 người.",
+      "prep_time": 35,
+      "cook_time": 35,
+      "passive_time": 120,
+      "description": "Canh ột là món canh gạo và rau thơm của cộng đồng người Thái miền Tây Nghệ An; có nhiều biến thể theo nguyên liệu chính. Bếp Việt biên tập phiên bản gà cho gia đình, dùng lõi chuối non, sả và gạo ngâm giã dập; đây không phải công thức đại diện cho mọi bản hoặc gia đình.",
+      "finished_dish": "Nước canh sánh nhẹ nhờ gạo giã dập, thịt gà mềm, lõi chuối non thanh và sả thơm; vị đậm vừa, dùng nóng.",
+      "serving": "Múc nóng cùng cơm hoặc ăn như món canh chính trong bữa; có thể dọn kèm muối ớt riêng.",
+      "tips": [
+        "Ngâm gạo trước, giã dập vừa phải để gạo nở và tạo độ sánh mà không vón.",
+        "Luộc gà chín hoàn toàn trước khi cho gạo vào; khuấy đáy nồi khi gạo bắt đầu nở.",
+        "Chọn lõi chuối non sạch, bỏ lớp già, ngâm nước muối loãng để hạn chế thâm."
+      ],
+      "dish_type": [
+        "Món canh truyền thống",
+        "Ẩm thực người Thái"
+      ],
+      "main_ingredient": [
+        "thịt gà",
+        "gạo tẻ",
+        "lõi chuối non",
+        "sả"
+      ],
+      "cooking_method": [
+        "ngâm gạo",
+        "luộc gà",
+        "nấu canh",
+        "giã dập gạo"
+      ],
+      "search_terms": [
+        "canh ột",
+        "canh ột Nghệ An",
+        "canh ột gà",
+        "ẩm thực người Thái Nghệ An",
+        "món ăn miền Tây Nghệ An"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Bát canh ột gà miền Tây Nghệ An sánh nhẹ với thịt gà, lõi chuối non, sả và rau thơm; bày trong bát gốm, tách nền trong suốt.",
+      "time_note": "Khoảng 3 giờ 10 phút, gồm thời gian ngâm gạo.",
+      "total_time": 190,
+      "suggested_pairings": [
+        "Rau luộc",
+        "Cơm trắng",
+        "Muối ớt"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "thai_ot_chicken_soup",
+      "time_unit": "phút",
+      "ingredients": [
+        {
+          "name": "Thịt gà có xương",
+          "quantity": 500,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chặt miếng vừa ăn, rửa sạch và để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Gạo tẻ",
+          "quantity": 80,
+          "unit": "g",
+          "role": "main",
+          "notes": "Vo sạch, ngâm ít nhất 2 giờ rồi giã dập hoặc xay vỡ thô.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Lõi chuối non",
+          "quantity": 180,
+          "unit": "g",
+          "role": "main",
+          "notes": "Bóc bỏ bẹ già, thái mỏng, ngâm nước muối loãng.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Sả",
+          "quantity": 2,
+          "unit": "cây",
+          "role": "aromatic",
+          "notes": "Đập dập; thái mỏng ít lá non nếu có.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Gừng",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Thái lát hoặc đập dập.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Lá mắc khén non hoặc rau thơm",
+          "quantity": 10,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Tùy điều kiện; rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Muối",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm từ từ.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Nước",
+          "quantity": 1500,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Có thể dùng nước luộc gà đã hớt bọt.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Vo gạo, ngâm trong nước sạch khoảng 2 giờ; để ráo rồi giã dập hoặc xay nhồi thành hạt vỡ thô, không xay thành bột mịn."
+        },
+        {
+          "step": 2,
+          "instruction": "Làm sạch gà, chặt miếng; bóc lõi chuối non, thái lát mỏng và ngâm nước muối loãng 10 phút rồi rửa lại."
+        },
+        {
+          "step": 3,
+          "instruction": "Đập dập sả, gừng; rửa và để ráo rau thơm."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Cho gà vào nồi với nước, sả và gừng; đun sôi, hớt bọt rồi hạ lửa nấu khoảng 20 phút đến khi gà chín hoàn toàn."
+        },
+        {
+          "step": 2,
+          "instruction": "Thêm lõi chuối non, nấu 5–7 phút đến khi vừa mềm. Nêm muối vừa ăn."
+        },
+        {
+          "step": 3,
+          "instruction": "Rắc gạo đã giã dập thành dòng nhỏ, vừa rắc vừa khuấy để không vón; nấu liu riu 15–20 phút đến khi gạo nở và canh sánh nhẹ."
+        },
+        {
+          "step": 4,
+          "instruction": "Tắt bếp, thêm rau thơm hoặc lá mắc khén non nếu có; nếm lại và dọn nóng."
+        }
+      ],
+      "keywords": [
+        "canh ột",
+        "Nghệ An",
+        "miền Tây xứ Nghệ",
+        "người Thái",
+        "canh gà",
+        "gạo giã dập"
+      ],
+      "tags": [
+        "món canh",
+        "món truyền thống",
+        "ẩm thực Thái",
+        "canh ột gà",
+        "Nghệ An"
+      ],
+      "sources": [
+        {
+          "url": "https://baonghean.vn/en/canh-ot-mon-ngon-bo-duong-ngot-mat-ngay-tet-o-mien-tay-xu-nghe-10268191.html",
+          "publisher": "Báo Nghệ An",
+          "title": "Canh ột - món ngon bổ dưỡng, ngọt mát ngày Tết ở miền Tây xứ Nghệ",
+          "use": "Đối chiếu canh ột là món truyền thống của người Thái miền Tây Nghệ An, có biến thể theo nguyên liệu; nguồn nêu lõi chuối non, măng, gạo ngâm giã dập, rau thơm và cách nấu. Bếp Việt ghi rõ đây là bản gà biên tập cho gia đình.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://baonghean.vn/canh-ot-pieng-van-10057198.html",
+          "publisher": "Báo Nghệ An",
+          "title": "Canh ột Piềng Văn",
+          "use": "Đối chiếu việc dùng gạo giã dập và rau rừng trong một cách nấu canh ột tại địa bàn cụ thể; không xem bài viết là công thức đại diện cho mọi biến thể.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Canh ột người Thái miền Tây Nghệ An cho 2 người",
+            "instruction": "Nấu nồi nhỏ, bắt đầu với một nửa lượng muối và gia giảm."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Canh ột người Thái miền Tây Nghệ An cho 6 người",
+            "instruction": "Dùng nồi rộng và khuấy nhẹ sau khi thêm gạo để hạt nở đều."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Canh ột người Thái miền Tây Nghệ An cho 8 người",
+            "instruction": "Chia gà và nước dùng thành hai nồi nếu cần; thêm gạo sau cùng để kiểm soát độ sánh."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/canh-ot-mien-tay-nghe-an-960.webp",
+          "page_url": "https://baonghean.vn/en/canh-ot-mon-ngon-bo-duong-ngot-mat-ngay-tet-o-mien-tay-xu-nghe-10268191.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để đối chiếu món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Bát canh ột gà miền Tây Nghệ An sánh nhẹ với thịt gà, lõi chuối non, sả và rau thơm; bày trong bát gốm, tách nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo mới, nền trong suốt; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức gia đình chọn biến thể gà đã được nguồn địa phương xác nhận tồn tại; lõi chuối non và rau thơm không được xem là thành phần bắt buộc trong mọi phiên bản.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử độ nở của gạo và độ sánh; xác minh tên rau thơm địa phương và cách thay thế."
+        ]
+      }
+    },
+    {
+      "id": "BV495",
+      "slug": "ca-mat-nuong-song-giang",
+      "name": "Cá mát nướng sông Giăng",
+      "aliases": [
+        "Cá mát nướng Nghệ An",
+        "Cá mát nướng Mường Quạ"
+      ],
+      "region": [
+        "Bắc Trung Bộ"
+      ],
+      "province": [
+        "Nghệ An"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Một đĩa cá mát nướng cho 4 người, ăn cùng cơm và rau.",
+      "prep_time": 20,
+      "cook_time": 20,
+      "passive_time": 10,
+      "description": "Cá mát sông Giăng là sản vật gắn với vùng Mường Quạ, miền Tây Nghệ An. Tư liệu địa phương ghi nhận cách làm sạch nhẹ rồi nướng, rán, luộc hoặc kho; Bếp Việt biên tập bản nướng đơn giản, không tự nhận là công thức nghi lễ hay công thức duy nhất của người Thái.",
+      "finished_dish": "Cá nướng chín tới, da xém nhẹ, thịt chắc ngọt và thơm; chấm muối ớt xanh hoặc nước chấm gia đình.",
+      "serving": "Ăn nóng với cơm trắng, rau luộc và chén muối ớt xanh.",
+      "tips": [
+        "Chọn cá tươi, bảo quản lạnh và làm sạch ngay trước khi nướng.",
+        "Nướng lửa vừa, trở nhẹ tay để cá chín đều mà không vỡ.",
+        "Cá phải chín hoàn toàn ở phần dày nhất; không ăn cá sống hoặc tái."
+      ],
+      "dish_type": [
+        "Món cá",
+        "Đặc sản sông Giăng"
+      ],
+      "main_ingredient": [
+        "cá mát",
+        "muối",
+        "ớt xanh"
+      ],
+      "cooking_method": [
+        "làm sạch",
+        "ướp nhẹ",
+        "nướng"
+      ],
+      "search_terms": [
+        "cá mát sông Giăng",
+        "cá mát Nghệ An",
+        "cá mát nướng",
+        "đặc sản Mường Quạ",
+        "món cá nướng"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Cá mát sông Giăng nướng nguyên con vàng xém nhẹ, đặt trên đĩa cùng ớt xanh và rau thơm; ảnh món ăn tách nền trong suốt.",
+      "time_note": "Khoảng 50 phút, gồm 10 phút ướp nhẹ trước khi nướng.",
+      "total_time": 50,
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Rau luộc",
+        "Muối ớt xanh"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "song_giang_grilled_fish",
+      "time_unit": "phút",
+      "ingredients": [
+        {
+          "name": "Cá mát tươi",
+          "quantity": 600,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn cá vừa, thân nguyên vẹn; giữ lạnh đến lúc sơ chế.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Muối",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng ướp cá và chấm.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Ớt xanh",
+          "quantity": 20,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nướng hoặc giã cùng muối làm nước chấm.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Chanh",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "seasoning",
+          "notes": "Vắt lấy nước tùy khẩu vị.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "other",
+          "notes": "Quét rất mỏng lên vỉ để hạn chế dính.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Rau thơm và rau sống",
+          "quantity": 100,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa kỹ, để ráo, dùng ăn kèm.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Giữ cá mát trong ngăn lạnh; rửa nhẹ dưới vòi nước, làm sạch mang và phần ruột nếu cá lớn, để ráo."
+        },
+        {
+          "step": 2,
+          "instruction": "Xoa muối mỏng quanh cá và để 10 phút; không ướp quá lâu để giữ vị tự nhiên."
+        },
+        {
+          "step": 3,
+          "instruction": "Rửa sạch rau ăn kèm, để ráo; chuẩn bị vỉ nướng sạch và làm nóng trước."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Nướng cá trên than hồng hoặc lò đã làm nóng ở 200°C. Trở nhẹ sau 6–8 phút, tiếp tục nướng đến khi phần dày nhất đục hoàn toàn và thịt dễ tách khỏi xương."
+        },
+        {
+          "step": 2,
+          "instruction": "Giã ớt xanh với chút muối; thêm vài giọt chanh nếu thích."
+        },
+        {
+          "step": 3,
+          "instruction": "Dọn cá ngay khi nóng cùng rau và cơm; kiểm tra kỹ xương trước khi ăn."
+        }
+      ],
+      "keywords": [
+        "cá mát",
+        "sông Giăng",
+        "Nghệ An",
+        "Mường Quạ",
+        "cá nướng",
+        "món cá"
+      ],
+      "tags": [
+        "món mặn",
+        "món cá nướng",
+        "đặc sản Nghệ An",
+        "cá mát sông Giăng"
+      ],
+      "sources": [
+        {
+          "url": "https://congan.nghean.gov.vn/van-hoa-giao-duc/201305/27979-com-muong-qua-ca-song-giang-391362/",
+          "publisher": "Công an Nghệ An",
+          "title": "“Cơm Mường Quạ, cá sông Giăng”",
+          "use": "Đối chiếu cá mát là sản vật của sông Giăng, vùng Mường Quạ; nguồn ghi cách sơ chế rửa sạch cát và các cách chế biến địa phương gồm nướng, rán, luộc, kho. Bếp Việt biên tập một công thức nướng gia đình.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://vnexpress.net/cac-mon-an-xu-nghe-nen-thu-4693066.html",
+          "publisher": "VnExpress",
+          "title": "Các món ăn xứ Nghệ nên thử",
+          "use": "Tham khảo bối cảnh ẩm thực và đặc sản Nghệ An; không dùng nguồn này để khẳng định định lượng hoặc quy trình nướng.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Cá mát nướng sông Giăng cho 2 người",
+            "instruction": "Nướng mẻ nhỏ, giữ muối ướp nhẹ và nêm chén chấm riêng."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Cá mát nướng sông Giăng cho 6 người",
+            "instruction": "Dùng vỉ rộng hoặc nướng hai lượt để dễ trở cá."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Cá mát nướng sông Giăng cho 8 người",
+            "instruction": "Nướng luân phiên trên hai vỉ để giữ nhiệt ổn định; không xếp chồng cá."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/ca-mat-nuong-song-giang-960.webp",
+          "page_url": "https://congan.nghean.gov.vn/van-hoa-giao-duc/201305/27979-com-muong-qua-ca-song-giang-391362/",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để đối chiếu món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Cá mát sông Giăng nướng nguyên con vàng xém nhẹ, đặt trên đĩa cùng ớt xanh và rau thơm; ảnh món ăn tách nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo mới, nền trong suốt; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bản nướng gia đình đơn giản dựa trên cách chế biến địa phương được nguồn Nghệ An ghi nhận; không khẳng định ảnh hay công thức đại diện cho món lễ truyền thống.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Xác nhận tên gọi và cỡ cá phổ biến theo mùa; thử thời gian nướng theo kích thước cá."
+        ]
+      }
+    }
+  ]
+}

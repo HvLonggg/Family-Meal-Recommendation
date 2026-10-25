@@ -1,0 +1,1348 @@
+{
+  "batch": 32,
+  "description": "Năm món Việt vùng miền được Bếp Việt biên tập từ tư liệu địa phương: xôi trám Cao Bằng, khâu nhục Lạng Sơn, cá thính nướng Lập Thạch, bánh phu thê Đình Bảng và canh rau sắng Xuân Sơn.",
+  "recipes": [
+    {
+      "id": "BV486",
+      "slug": "xoi-tram-den-cao-bang",
+      "name": "Xôi trám đen Cao Bằng",
+      "aliases": [
+        "Xôi trám Cao Bằng",
+        "Xôi trám nếp Cao Bằng"
+      ],
+      "region": [
+        "Đông Bắc Bộ"
+      ],
+      "province": [
+        "Cao Bằng"
+      ],
+      "category": "Món xôi",
+      "meal_type": [
+        "bữa sáng",
+        "bữa phụ"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "4 phần xôi nếp trám đen, ăn nóng; có thể dùng cùng muối vừng.",
+      "prep_time": 35,
+      "cook_time": 50,
+      "passive_time": 480,
+      "description": "Xôi trám đen là món nếp mùa thu của Cao Bằng: trám nếp được om mềm, bỏ hạt rồi quyện vào xôi nóng, nhuộm hạt nếp sắc tím hồng và thêm vị bùi dịu. Bếp Việt biên tập khẩu phần gia đình, giữ riêng bước om trám để tránh làm quả cứng hoặc chát.",
+      "finished_dish": "Hạt nếp dẻo tơi, tím hồng tự nhiên; thịt trám mềm bùi, có vị chua dịu và hương thơm đặc trưng.",
+      "serving": "Dùng nóng trong bát hoặc mẹt lót lá sạch. Có thể rắc muối vừng hoặc lạc rang; món truyền thống cũng có thể ăn cùng thịt băm tùy vùng và khẩu vị.",
+      "tips": [
+        "Ưu tiên trám nếp chín, quả tươi và vỏ căng; trám tẻ thường cứng hơn.",
+        "Chỉ om trám trong nước nóng già, không đun sôi sùng sục; tách hạt khi cùi vừa mềm.",
+        "Để xôi ráo nước trước khi đồ và giữ lửa ổn định để hạt chín đều."
+      ],
+      "dish_type": [
+        "Xôi đặc sản",
+        "Ẩm thực Cao Bằng"
+      ],
+      "main_ingredient": [
+        "gạo nếp",
+        "trám đen nếp"
+      ],
+      "cooking_method": [
+        "ngâm",
+        "om trám",
+        "đồ xôi"
+      ],
+      "search_terms": [
+        "xôi trám đen Cao Bằng",
+        "xôi trám nếp",
+        "đặc sản trám đen",
+        "xôi vùng Đông Bắc"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Xôi trám đen Cao Bằng màu tím hồng, hạt nếp bóng dẻo quyện cùi trám, bày đầy đặn trên đĩa sứ.",
+      "time_note": "Khoảng 9 giờ 25 phút, phần lớn là thời gian ngâm nếp; có thể chuẩn bị từ tối hôm trước.",
+      "total_time": 565,
+      "suggested_pairings": [
+        "Muối vừng",
+        "Lạc rang",
+        "Trà nóng"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "black_canarium_sticky_rice",
+      "time_unit": "phút",
+      "ingredients": [
+        {
+          "name": "Gạo nếp cái hoa vàng hoặc nếp nương",
+          "quantity": 400,
+          "unit": "g",
+          "role": "main",
+          "notes": "Vo nhẹ tay, ngâm khoảng 8 giờ hoặc qua đêm rồi để thật ráo.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Trám đen nếp tươi",
+          "quantity": 300,
+          "unit": "g",
+          "role": "main",
+          "notes": "Rửa sạch, om mềm trong nước nóng già rồi tách lấy cùi, bỏ hạt.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Muối",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Trộn vào nếp trước khi đồ.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "process_aid",
+          "notes": "Trộn một lớp mỏng với nếp để hạt bóng và ít dính.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Lạc rang",
+          "quantity": 25,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Giã dập, dùng tùy thích.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Vừng rang",
+          "quantity": 12,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Giã cùng chút muối làm muối vừng ăn kèm.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Vo nếp đến khi nước trong, ngâm khoảng 8 giờ hoặc qua đêm; đổ ra rổ cho ráo."
+        },
+        {
+          "step": 2,
+          "instruction": "Rửa trám, cho vào nồi nước nóng già khoảng 70°C, đậy nắp om 30–60 phút đến khi cùi mềm. Tách cùi khỏi hạt."
+        },
+        {
+          "step": 3,
+          "instruction": "Xóc nếp với muối và dầu ăn. Chuẩn bị xửng hấp có nước sôi ổn định."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đồ nếp trong xửng khoảng 30–35 phút, đảo nhẹ một lần giữa chừng cho chín đều."
+        },
+        {
+          "step": 2,
+          "instruction": "Trộn cùi trám với xôi nóng. Đồ thêm khoảng 10 phút để màu tím hồng và vị trám quyện vào nếp."
+        },
+        {
+          "step": 3,
+          "instruction": "Xới tơi, nếm lại độ mặn; dùng nóng với muối vừng hoặc lạc rang."
+        }
+      ],
+      "keywords": [
+        "Xôi trám đen Cao Bằng",
+        "trám nếp",
+        "xôi nếp",
+        "món ăn sáng",
+        "đặc sản Cao Bằng"
+      ],
+      "tags": [
+        "đặc sản vùng miền",
+        "món ăn sáng",
+        "món chay tùy cách dùng"
+      ],
+      "sources": [
+        {
+          "url": "https://baocaobang.vn/ngot-bui-xoi-tram-den-3165186.html",
+          "publisher": "Báo Cao Bằng",
+          "title": "Ngọt bùi xôi trám đen",
+          "use": "Đối chiếu mùa trám, cách chọn trám nếp, om quả khoảng 70°C, tách cùi và trộn hoặc đồ lại với xôi; công thức Bếp Việt chuẩn hóa khẩu phần gia đình.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://nongnghiep.caobang.gov.vn/Metafiles/Photobook_Caobangbonmua.pdf",
+          "publisher": "Sở Nông nghiệp và Phát triển nông thôn tỉnh Cao Bằng",
+          "title": "Cao Bằng bốn mùa sản vật",
+          "use": "Đối chiếu giá trị trám nếp và cách chế biến món xôi trám trong ẩm thực người Tày, Nùng Cao Bằng.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Xôi trám đen Cao Bằng cho 2 người",
+            "instruction": "Giảm nếp và trám theo khẩu phần; giữ nguyên nguyên tắc om trám bằng nước nóng già."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Xôi trám đen Cao Bằng cho 6 người",
+            "instruction": "Đồ thành hai lượt nếu xửng nhỏ để hơi nước lưu thông và nếp chín đều."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Xôi trám đen Cao Bằng cho 8 người",
+            "instruction": "Dùng xửng lớn, đảo xôi giữa quá trình; trộn trám vào từng lượt để màu phân bố đều."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/xoi-tram-den-cao-bang-960.webp",
+          "page_url": "https://baocaobang.vn/ngot-bui-xoi-tram-den-3165186.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để đối chiếu món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Xôi trám đen Cao Bằng màu tím hồng, hạt nếp bóng dẻo quyện cùi trám, bày đầy đặn trên đĩa sứ.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh do Bếp Việt tạo mới, tách nền trong suốt; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức xôi trám đen theo cách ăn Cao Bằng; không thêm thịt để giữ phiên bản nền, lạc và muối vừng là món ăn kèm tùy chọn.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử với trám nếp theo mùa và kiểm tra độ mềm khác nhau giữa trám tươi, trám đã sơ chế."
+        ]
+      }
+    },
+    {
+      "id": "BV487",
+      "slug": "khau-nhuc-lang-son",
+      "name": "Khâu nhục Lạng Sơn",
+      "aliases": [
+        "Nằm khâu Lạng Sơn",
+        "Khau nhục xứ Lạng"
+      ],
+      "region": [
+        "Đông Bắc Bộ"
+      ],
+      "province": [
+        "Lạng Sơn"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "mâm cỗ"
+      ],
+      "difficulty": "Khó",
+      "servings": 6,
+      "serving_basis": "6 phần khâu nhục gồm ba chỉ hấp mềm, khoai môn và tàu soi thấm gia vị.",
+      "prep_time": 55,
+      "cook_time": 300,
+      "passive_time": 20,
+      "description": "Khâu nhục, còn gọi là nằm khâu, là món hấp cầu kỳ gắn với ẩm thực Tày, Nùng ở Lạng Sơn, thường có trong dịp lễ Tết và cưới hỏi. Bếp Việt biên tập quy trình theo bếp gia đình: làm vàng bì, xếp thịt cùng khoai môn và tàu soi rồi hấp chậm đến mềm nhừ.",
+      "finished_dish": "Miếng ba chỉ mềm thấm, phần bì bóng nâu, khoai môn bùi và tàu soi mặn thơm tạo thành vị đậm nhưng tròn.",
+      "serving": "Úp bát hấp ra đĩa sâu lòng, rưới phần nước hấp lên mặt và dùng nóng với cơm trắng, bánh mì hoặc rau luộc.",
+      "tips": [
+        "Chọn ba chỉ có lớp nạc, mỡ và bì cân đối; châm bì đều tay để gia vị ngấm.",
+        "Thấm khô bì trước khi áp chảo; đặt mặt bì xuống dầu nóng và che chắn để tránh bắn.",
+        "Tàu soi khá mặn, nên nếm trước khi thêm muối hoặc nước tương; hấp nhỏ lửa và bổ sung nước nóng khi cần."
+      ],
+      "dish_type": [
+        "Món hấp truyền thống",
+        "Đặc sản Lạng Sơn"
+      ],
+      "main_ingredient": [
+        "thịt ba chỉ",
+        "khoai môn",
+        "tàu soi"
+      ],
+      "cooking_method": [
+        "luộc sơ",
+        "áp chảo bì",
+        "ướp",
+        "hấp cách thủy"
+      ],
+      "search_terms": [
+        "khâu nhục Lạng Sơn",
+        "nằm khâu",
+        "khau nhục hấp",
+        "món Tày Nùng"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Khâu nhục Lạng Sơn úp thành vòm trên đĩa, những lát ba chỉ nâu bóng ôm khoai môn và tàu soi mềm thơm.",
+      "time_note": "Khoảng 6 giờ 15 phút; phần lớn là thời gian hấp chậm để thịt mềm nhừ.",
+      "total_time": 375,
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Rau cải luộc",
+        "Bánh mì"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "lang_son_khau_nhuc",
+      "time_unit": "phút",
+      "ingredients": [
+        {
+          "name": "Thịt ba chỉ nguyên miếng",
+          "quantity": 1000,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn miếng có đủ bì, nạc và mỡ; rửa sạch.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Khoai môn",
+          "quantity": 350,
+          "unit": "g",
+          "role": "main",
+          "notes": "Gọt vỏ, cắt miếng lớn vừa bát hấp.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Tàu soi (cải muối mặn)",
+          "quantity": 150,
+          "unit": "g",
+          "role": "main",
+          "notes": "Rửa nhanh, vắt ráo; nếm độ mặn trước khi dùng.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Hành khô",
+          "quantity": 40,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 20,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Gừng",
+          "quantity": 20,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhuyễn.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Húng lìu",
+          "quantity": 4,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng lượng vừa để giữ hương gia vị truyền thống.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Ngũ vị hương",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng vừa đủ, tránh át mùi thịt.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Dầu hào",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Có thể chọn loại chay nếu cần thay đổi công thức.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Nước tương",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Điều chỉnh theo độ mặn của tàu soi.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Mật ong",
+          "quantity": 15,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Phết mỏng lên bì trước khi làm vàng.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Rượu trắng",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng trong hỗn hợp ướp.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        },
+        {
+          "name": "Đường",
+          "quantity": 12,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Cân bằng vị mặn.",
+          "scaling_rule": "linear",
+          "sequence": 13
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Thêm vào hỗn hợp ướp.",
+          "scaling_rule": "linear",
+          "sequence": 14
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "process_aid",
+          "notes": "Dùng áp chảo phần bì và chiên vàng khoai môn.",
+          "scaling_rule": "linear",
+          "sequence": 15
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Luộc sơ thịt ba chỉ 8–10 phút, vớt ra rửa sạch và để ráo. Dùng que nhọn châm đều phần bì."
+        },
+        {
+          "step": 2,
+          "instruction": "Áp chảo riêng mặt bì trong dầu nóng đến khi vàng nâu; để nguội bớt rồi thái miếng dày khoảng 2 cm."
+        },
+        {
+          "step": 3,
+          "instruction": "Chiên khoai môn đến vàng mặt. Trộn hành, tỏi, gừng, húng lìu, ngũ vị hương, dầu hào, nước tương, mật ong, rượu, đường và tiêu; ướp thịt 20 phút."
+        },
+        {
+          "step": 4,
+          "instruction": "Rửa nhanh tàu soi, vắt ráo. Xếp tàu soi dưới đáy bát, đặt khoai môn ở giữa và xếp thịt vòng quanh, mặt bì hướng xuống lòng bát."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Úp đĩa lên bát, lật lại để giữ dáng rồi đặt vào xửng hấp cách thủy."
+        },
+        {
+          "step": 2,
+          "instruction": "Hấp nhỏ lửa 4–5 giờ đến khi thịt mềm nhừ. Theo dõi mực nước, châm nước sôi nếu cạn."
+        },
+        {
+          "step": 3,
+          "instruction": "Để yên vài phút rồi úp bát ra đĩa sâu lòng. Rưới nước hấp lên mặt và dọn nóng."
+        }
+      ],
+      "keywords": [
+        "Khâu nhục Lạng Sơn",
+        "nằm khâu",
+        "thịt ba chỉ hấp",
+        "món Tày Nùng",
+        "món mâm cỗ"
+      ],
+      "tags": [
+        "đặc sản vùng miền",
+        "món mặn",
+        "món hấp",
+        "mâm cỗ"
+      ],
+      "sources": [
+        {
+          "url": "https://lspa.langson.gov.vn/am-thuc/khau-nhuc-339226",
+          "publisher": "Trung tâm Xúc tiến Đầu tư, Thương mại và Du lịch tỉnh Lạng Sơn",
+          "title": "Khau Nhục",
+          "use": "Đối chiếu tên gọi nằm khâu, bối cảnh Tày/Nùng, thịt ba chỉ làm vàng bì, khoai môn, tàu soi, gia vị và thời gian hấp cách thủy 4–5 giờ.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 6,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.3333333333333333,
+            "seasoning_start_factor": 0.3333333333333333,
+            "example": "Khâu nhục Lạng Sơn cho 2 người",
+            "instruction": "Dùng bát hấp nhỏ hơn, giảm gia vị theo khẩu phần; giữ thời gian hấp đến khi thịt mềm."
+          },
+          {
+            "servings": 4,
+            "main_factor": 0.6666666666666666,
+            "seasoning_start_factor": 0.6666666666666666,
+            "example": "Khâu nhục Lạng Sơn cho 4 người",
+            "instruction": "Dùng một miếng ba chỉ nhỏ hơn và xếp vừa khuôn; đừng rút ngắn thời gian hấp."
+          },
+          {
+            "servings": 8,
+            "main_factor": 1.3333333333333333,
+            "seasoning_start_factor": 1.3333333333333333,
+            "example": "Khâu nhục Lạng Sơn cho 8 người",
+            "instruction": "Chia thành hai bát hấp để hơi nóng lưu thông; hấp cùng lúc nếu xửng đủ rộng."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/khau-nhuc-lang-son-960.webp",
+          "page_url": "https://lspa.langson.gov.vn/am-thuc/khau-nhuc-339226",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để đối chiếu món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Khâu nhục Lạng Sơn úp thành vòm trên đĩa, những lát ba chỉ nâu bóng ôm khoai môn và tàu soi mềm thơm.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh do Bếp Việt tạo mới, tách nền trong suốt; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Khâu nhục Lạng Sơn theo tư liệu địa phương; công thức Bếp Việt chuẩn hóa lượng gia vị và dùng áp chảo mặt bì khi không có lò quay.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Thử nghiệm thời gian hấp với các cỡ miếng ba chỉ và khuôn gia đình; kiểm tra độ mặn khác nhau của tàu soi."
+        ]
+      }
+    },
+    {
+      "id": "BV488",
+      "slug": "ca-thinh-nuong-lap-thach",
+      "name": "Cá thính nướng Lập Thạch",
+      "aliases": [
+        "Cá thính Lập Thạch",
+        "Cá muối chua Lập Thạch"
+      ],
+      "region": [
+        "Đồng bằng Bắc Bộ"
+      ],
+      "province": [
+        "Vĩnh Phúc"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "4 phần cá thính đã lên men hoàn chỉnh, nướng chín và ăn với cơm nóng.",
+      "prep_time": 10,
+      "cook_time": 22,
+      "passive_time": 0,
+      "description": "Cá thính Lập Thạch là cách người dân ven sông Lô ướp cá với muối, thính ngô và lá ổi để bảo quản, tạo vị chua thơm đặc trưng. Bếp Việt biên tập phiên bản nướng nhanh cho bếp nhà, chỉ dùng cá thính đã được cơ sở uy tín ủ chín hoàn chỉnh; không hướng dẫn tự lên men cá sống.",
+      "finished_dish": "Cá nóng thơm mùi thính rang và lá ổi, thớ săn, vị chua mặn dịu; nướng vừa tới để cá không khô.",
+      "serving": "Nướng chín kỹ, gỡ phần thịt ăn cùng cơm trắng, rau thơm và dưa chuột. Không ăn cá còn sống hoặc chưa chín đều.",
+      "tips": [
+        "Chọn sản phẩm cá thính có nhãn, nguồn gốc và hướng dẫn bảo quản rõ ràng.",
+        "Không tự ủ cá sống tại nhà nếu không có quy trình kiểm soát muối, nhiệt độ và thời gian.",
+        "Nếu cá đã mặn, dùng kèm cơm và rau luộc; không cần thêm nước chấm mặn."
+      ],
+      "dish_type": [
+        "Cá lên men nướng",
+        "Đặc sản Lập Thạch"
+      ],
+      "main_ingredient": [
+        "cá thính đã lên men",
+        "thính ngô",
+        "lá ổi"
+      ],
+      "cooking_method": [
+        "nướng",
+        "áp chảo"
+      ],
+      "search_terms": [
+        "cá thính nướng Lập Thạch",
+        "cá muối chua Vĩnh Phúc",
+        "cá thính ăn với cơm",
+        "món cá nướng"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Cá thính nướng Lập Thạch chín vàng xém cạnh, phủ lớp thính ngô thơm, bày nguyên miếng trên đĩa.",
+      "time_note": "Khoảng 32 phút nếu dùng cá thính đã lên men hoàn chỉnh; thời gian ủ truyền thống không tính vào công thức này.",
+      "total_time": 32,
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Rau thơm",
+        "Dưa chuột"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "lap_thach_fermented_fish",
+      "time_unit": "phút",
+      "ingredients": [
+        {
+          "name": "Cá thính Lập Thạch đã lên men",
+          "quantity": 600,
+          "unit": "g",
+          "role": "main",
+          "notes": "Mua loại thành phẩm từ cơ sở tin cậy; giữ lạnh theo nhãn.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "process_aid",
+          "notes": "Phết lớp mỏng để cá không dính vỉ.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Lá ổi non",
+          "quantity": 6,
+          "unit": "lá",
+          "role": "garnish",
+          "notes": "Rửa sạch, dùng lót hoặc ăn kèm nếu sản phẩm có hướng dẫn.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Rau thơm",
+          "quantity": 100,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Rửa kỹ, để ráo; dùng ăn kèm.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Dưa chuột",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "garnish",
+          "notes": "Rửa sạch, thái lát.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Chanh",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "garnish",
+          "notes": "Dùng tùy thích, không thay thế bước nấu chín.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Kiểm tra bao bì, hạn dùng và cách bảo quản của cá thính thành phẩm; rã đông trong ngăn mát nếu cần."
+        },
+        {
+          "step": 2,
+          "instruction": "Gạt bớt phần thính quá dày nếu nhà sản xuất hướng dẫn. Chia miếng lớn thành phần vừa ăn, thấm nhẹ mặt cá."
+        },
+        {
+          "step": 3,
+          "instruction": "Rửa rau thơm, dưa chuột và lá ổi; để ráo. Làm nóng lò nướng hoặc vỉ nướng."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Phết một lớp dầu mỏng lên vỉ. Nướng cá ở 200°C khoảng 8–12 phút mỗi mặt tùy độ dày, đến khi nóng xuyên tâm và chín kỹ."
+        },
+        {
+          "step": 2,
+          "instruction": "Nếu áp chảo, dùng chảo chống dính lửa vừa, đậy hé nắp và trở nhẹ đến khi cá chín nóng cả hai mặt."
+        },
+        {
+          "step": 3,
+          "instruction": "Dọn cá ngay khi nóng cùng cơm, rau thơm và dưa chuột; bỏ phần để ở nhiệt độ phòng quá lâu."
+        }
+      ],
+      "keywords": [
+        "Cá thính Lập Thạch",
+        "cá muối chua",
+        "cá thính nướng",
+        "đặc sản Vĩnh Phúc",
+        "món ăn với cơm"
+      ],
+      "tags": [
+        "đặc sản vùng miền",
+        "món mặn",
+        "món cá",
+        "dễ nấu"
+      ],
+      "sources": [
+        {
+          "url": "https://nguoilambao.vinhphuc.gov.vn/ca-thinh-lap-thach--mon-ngon-que-nha-720.htm",
+          "publisher": "Hội Nhà báo tỉnh Vĩnh Phúc",
+          "title": "Cá Thính Lập Thạch – món ngon quê nhà",
+          "use": "Đối chiếu cách bảo quản cá bằng muối, thính ngô và lá ổi, thời gian ủ truyền thống và cách nướng cá đã ủ; Bếp Việt chỉ hướng dẫn chế biến sản phẩm thành phẩm đã kiểm soát.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Cá thính nướng Lập Thạch cho 2 người",
+            "instruction": "Dùng miếng cá nhỏ, theo đúng thời gian nướng phù hợp độ dày."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Cá thính nướng Lập Thạch cho 6 người",
+            "instruction": "Nướng thành nhiều lượt, không xếp chồng để cá nóng đều."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Cá thính nướng Lập Thạch cho 8 người",
+            "instruction": "Chia cá ra hai khay hoặc hai lượt nướng và kiểm tra nhiệt chín ở miếng dày nhất."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/ca-thinh-nuong-lap-thach-960.webp",
+          "page_url": "https://nguoilambao.vinhphuc.gov.vn/ca-thinh-lap-thach--mon-ngon-que-nha-720.htm",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để đối chiếu món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Cá thính nướng Lập Thạch chín vàng xém cạnh, phủ lớp thính ngô thơm, bày nguyên miếng trên đĩa.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh do Bếp Việt tạo mới, tách nền trong suốt; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Cá thính là cá lên men truyền thống; công thức này chỉ dùng thành phẩm đã ủ và yêu cầu nướng chín kỹ, không mô tả quy trình tự lên men.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Rà soát hướng dẫn nhiệt chín trên nhãn của các loại cá thính bán sẵn trước khi phát hành công thức."
+        ]
+      }
+    },
+    {
+      "id": "BV489",
+      "slug": "banh-phu-the-dinh-bang",
+      "name": "Bánh phu thê Đình Bảng",
+      "aliases": [
+        "Bánh xu xê Đình Bảng",
+        "Bánh su sê Bắc Ninh"
+      ],
+      "region": [
+        "Đồng bằng Bắc Bộ"
+      ],
+      "province": [
+        "Bắc Ninh"
+      ],
+      "category": "Món tráng miệng",
+      "meal_type": [
+        "tráng miệng",
+        "bữa phụ",
+        "lễ cưới hỏi"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 6,
+      "serving_basis": "6 chiếc bánh phu thê gói lá, dùng làm món ngọt hoặc quà lễ.",
+      "prep_time": 60,
+      "cook_time": 35,
+      "passive_time": 60,
+      "description": "Bánh phu thê Đình Bảng nổi bật với lớp vỏ nếp vàng trong, sợi đu đủ xanh giòn nhẹ và nhân đậu xanh, dừa bùi ngọt. Bếp Việt biên tập mẻ nhỏ cho gia đình, giữ cách gói lá hai lớp và tạo màu vàng tự nhiên từ dành dành.",
+      "finished_dish": "Vỏ bánh dẻo trong, ánh vàng; nhân đậu xanh mềm bùi, có dừa nạo và hạt sen thoảng thơm.",
+      "serving": "Để bánh nguội bớt rồi dùng nguyên gói hoặc cắt đôi để thấy lớp vỏ trong và nhân. Bảo quản mát trong hộp kín, dùng trong ngày.",
+      "tips": [
+        "Vắt bớt nước đu đủ sau khi nạo để vỏ không nhão.",
+        "Khuấy bột liên tục trên lửa nhỏ đến khi đặc trong, tránh để đáy nồi bén.",
+        "Gói lá kín vừa tay, không ép quá chặt để bột có chỗ nở khi hấp."
+      ],
+      "dish_type": [
+        "Bánh ngọt truyền thống",
+        "Đặc sản Đình Bảng"
+      ],
+      "main_ingredient": [
+        "bột nếp",
+        "đu đủ xanh",
+        "đậu xanh",
+        "dừa nạo"
+      ],
+      "cooking_method": [
+        "hấp nhân",
+        "sên nhân",
+        "nấu vỏ",
+        "gói lá",
+        "hấp bánh"
+      ],
+      "search_terms": [
+        "bánh phu thê Đình Bảng",
+        "bánh xu xê",
+        "bánh su sê Bắc Ninh",
+        "bánh lễ cưới hỏi"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Bánh phu thê Đình Bảng gói lá xanh, một chiếc mở hé để lộ vỏ nếp vàng trong và nhân đậu xanh dừa.",
+      "time_note": "Khoảng 2 giờ 35 phút, chưa gồm thời gian để bánh nguội hoàn toàn.",
+      "total_time": 155,
+      "suggested_pairings": [
+        "Trà sen",
+        "Trà xanh",
+        "Mâm lễ cưới hỏi"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "dinh_bang_phu_the_cake",
+      "time_unit": "phút",
+      "ingredients": [
+        {
+          "name": "Bột nếp",
+          "quantity": 220,
+          "unit": "g",
+          "role": "main",
+          "notes": "Rây mịn trước khi dùng.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Đu đủ xanh",
+          "quantity": 180,
+          "unit": "g",
+          "role": "main",
+          "notes": "Gọt vỏ, bỏ hạt, nạo sợi mảnh và vắt ráo.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Đậu xanh cà vỏ",
+          "quantity": 150,
+          "unit": "g",
+          "role": "main",
+          "notes": "Ngâm mềm, hấp chín rồi nghiền mịn.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Dừa nạo",
+          "quantity": 50,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn dừa bánh tẻ, nạo sợi nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Hạt sen tươi hoặc khô",
+          "quantity": 30,
+          "unit": "g",
+          "role": "main",
+          "notes": "Nếu dùng hạt khô, ngâm mềm và luộc chín.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Đường",
+          "quantity": 180,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Chia cho phần vỏ và nhân.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Nước cốt dành dành",
+          "quantity": 220,
+          "unit": "ml",
+          "role": "process_aid",
+          "notes": "Lọc sạch cặn; tạo màu vàng tự nhiên.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 150,
+          "unit": "ml",
+          "role": "process_aid",
+          "notes": "Điều chỉnh độ sệt của bột.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Lá chuối",
+          "quantity": 6,
+          "unit": "miếng",
+          "role": "process_aid",
+          "notes": "Lau sạch, chần mềm để dễ gói.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Lá dong",
+          "quantity": 6,
+          "unit": "miếng",
+          "role": "process_aid",
+          "notes": "Lau sạch, dùng làm lớp ngoài.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 5,
+          "unit": "ml",
+          "role": "process_aid",
+          "notes": "Phết mỏng lên khay hấp nếu cần.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Ngâm đậu xanh 2 giờ, hấp chín và nghiền mịn. Sên cùng một phần đường trên lửa nhỏ đến khi nhân quyện, trộn dừa nạo và hạt sen rồi để nguội."
+        },
+        {
+          "step": 2,
+          "instruction": "Nạo đu đủ xanh thành sợi nhỏ, rửa nhanh, vắt ráo. Hòa bột nếp với nước dành dành, nước lọc và phần đường còn lại cho mịn."
+        },
+        {
+          "step": 3,
+          "instruction": "Chần lá chuối và lá dong trong nước nóng, lau khô, cắt thành miếng đủ gói bánh vuông."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đổ hỗn hợp bột vào nồi đáy dày, khuấy lửa nhỏ đến khi bột đặc dẻo và bắt đầu trong; trộn đu đủ nạo vào."
+        },
+        {
+          "step": 2,
+          "instruction": "Trải lớp lá chuối bên trong và lá dong bên ngoài. Cho một lớp bột, đặt nhân giữa, phủ bột kín rồi gấp thành gói vuông."
+        },
+        {
+          "step": 3,
+          "instruction": "Hấp bánh 20–25 phút đến khi vỏ trong và bột chín. Để nguội trên khay trước khi dùng."
+        }
+      ],
+      "keywords": [
+        "Bánh phu thê Đình Bảng",
+        "bánh xu xê",
+        "đậu xanh",
+        "bánh truyền thống Bắc Ninh",
+        "bánh tráng miệng"
+      ],
+      "tags": [
+        "đặc sản vùng miền",
+        "món tráng miệng",
+        "bánh truyền thống"
+      ],
+      "sources": [
+        {
+          "url": "https://nongthon.vietnamtourism.gov.vn/banh-phu-the-dinh-bang-dac-san-cua-vung-que-quan-ho-bac-ninh/",
+          "publisher": "Chuyên trang quảng bá du lịch nông thôn, Cục Du lịch Quốc gia Việt Nam",
+          "title": "Bánh phu thê Đình Bảng – đặc sản của vùng quê quan họ Bắc Ninh",
+          "use": "Đối chiếu gạo nếp, đu đủ xanh, nhân đậu xanh và dừa, màu vàng trong, cách gói lá và vị trí của bánh trong lễ cưới hỏi; Bếp Việt quy đổi thành mẻ gia đình.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://thuongmaibiengioimiennui.gov.vn/san-pham-vung-mien/2022/5/banh-phu-the-dinh-bang-san-pham-truyen-thong-mang-lai-hieu-qua-kinh-te-cho-nguoi-dan-tu-son-bac-ninh",
+          "publisher": "Cổng thông tin thương mại biên giới miền núi, Bộ Công Thương",
+          "title": "Bánh phu thê Đình Bảng - sản phẩm truyền thống mang lại hiệu quả kinh tế cho người dân Từ Sơn, Bắc Ninh",
+          "use": "Đối chiếu quy trình dùng bột nếp, đu đủ xanh, đậu xanh, dành dành, lá chuối và lá dong.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 6,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.3333333333333333,
+            "seasoning_start_factor": 0.3333333333333333,
+            "example": "Bánh phu thê Đình Bảng cho 2 người",
+            "instruction": "Làm hai chiếc nhỏ; khuấy bột thật đều vì mẻ ít dễ đặc nhanh."
+          },
+          {
+            "servings": 4,
+            "main_factor": 0.6666666666666666,
+            "seasoning_start_factor": 0.6666666666666666,
+            "example": "Bánh phu thê Đình Bảng cho 4 người",
+            "instruction": "Chia nhân cân nhau và gói từng chiếc cùng cỡ để hấp đồng đều."
+          },
+          {
+            "servings": 8,
+            "main_factor": 1.3333333333333333,
+            "seasoning_start_factor": 1.3333333333333333,
+            "example": "Bánh phu thê Đình Bảng cho 8 người",
+            "instruction": "Sên nhân thành từng mẻ nhỏ, hấp theo khay và giữ các gói bánh cách nhau để hơi lưu thông."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/banh-phu-the-dinh-bang-960.webp",
+          "page_url": "https://nongthon.vietnamtourism.gov.vn/banh-phu-the-dinh-bang-dac-san-cua-vung-que-quan-ho-bac-ninh/",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để đối chiếu món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Bánh phu thê Đình Bảng gói lá xanh, một chiếc mở hé để lộ vỏ nếp vàng trong và nhân đậu xanh dừa.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh do Bếp Việt tạo mới, tách nền trong suốt; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bánh phu thê Đình Bảng được biên tập theo nguyên liệu và kỹ thuật gói truyền thống; tỷ lệ bột và lượng nước là bản thử nghiệm bếp nhà, chưa phải công thức của một hộ làng nghề cụ thể.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để chốt tỷ lệ bột-nước và độ trong của vỏ với từng loại bột nếp."
+        ]
+      }
+    },
+    {
+      "id": "BV490",
+      "slug": "canh-rau-sang-xuan-son",
+      "name": "Canh rau sắng Xuân Sơn",
+      "aliases": [
+        "Canh rau sắng Phú Thọ",
+        "Rau sắng nấu nấm chay"
+      ],
+      "region": [
+        "Trung du và miền núi Bắc Bộ"
+      ],
+      "province": [
+        "Phú Thọ"
+      ],
+      "category": "Món canh",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "4 bát canh rau sắng nấu nấm theo phiên bản chay do Bếp Việt biên tập.",
+      "prep_time": 15,
+      "cook_time": 18,
+      "passive_time": 0,
+      "description": "Rau sắng là rau rừng đặc trưng ở Xuân Sơn, Phú Thọ, có lá non mềm và vị ngọt hậu; người địa phương thường nấu canh với thịt, tôm hoặc cá. Bếp Việt biên tập thêm phiên bản chay với nấm và đậu phụ để giữ vị rau sắng làm chủ đạo, hợp bữa cơm thanh nhẹ.",
+      "finished_dish": "Nước canh trong, ngọt dịu từ nấm; lá rau sắng xanh mềm, đậu phụ và nấm tạo cảm giác nhẹ bụng.",
+      "serving": "Múc canh khi còn nóng, dùng cùng cơm trắng và món kho chay. Không đun rau lâu để giữ màu và độ non.",
+      "tips": [
+        "Chỉ hái hoặc mua rau sắng có nguồn gốc rõ ràng; chọn lá non, tránh lẫn cây rừng không xác định.",
+        "Rửa nhẹ nhiều lần và để ráo; phần thân già có thể cho vào nồi trước lá.",
+        "Nêm nước tương hoặc muối vừa phải để không lấn vị ngọt tự nhiên của rau và nấm."
+      ],
+      "dish_type": [
+        "Canh rau rừng",
+        "Phiên bản chay Bếp Việt"
+      ],
+      "main_ingredient": [
+        "rau sắng",
+        "nấm hương",
+        "nấm sò",
+        "đậu phụ"
+      ],
+      "cooking_method": [
+        "sơ chế",
+        "nấu canh"
+      ],
+      "search_terms": [
+        "canh rau sắng Xuân Sơn",
+        "rau sắng Phú Thọ",
+        "canh rau sắng nấu nấm",
+        "món chay thanh nhẹ"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Canh rau sắng Xuân Sơn phiên bản chay với lá rau rừng xanh non, nấm và đậu phụ trong bát sứ trắng.",
+      "time_note": "Khoảng 33 phút, nấu nhanh để rau giữ màu xanh và vị ngọt.",
+      "total_time": 33,
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Đậu hũ kho chay",
+        "Cà pháo muối"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "xuan_son_sang_leaf_soup_vegetarian",
+      "time_unit": "phút",
+      "ingredients": [
+        {
+          "name": "Rau sắng non",
+          "quantity": 220,
+          "unit": "g",
+          "role": "main",
+          "notes": "Nhặt lá và ngọn non, rửa kỹ; chỉ dùng rau có nguồn gốc nhận biết rõ.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Nấm sò",
+          "quantity": 150,
+          "unit": "g",
+          "role": "main",
+          "notes": "Xé miếng vừa ăn, rửa nhanh và để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Nấm hương tươi",
+          "quantity": 80,
+          "unit": "g",
+          "role": "main",
+          "notes": "Cắt bỏ chân cứng, thái lát.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Đậu phụ trắng",
+          "quantity": 180,
+          "unit": "g",
+          "role": "main",
+          "notes": "Cắt miếng vuông nhỏ, có thể áp chảo nhẹ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Nước dùng rau củ",
+          "quantity": 900,
+          "unit": "ml",
+          "role": "main",
+          "notes": "Dùng loại không chứa thành phần động vật.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 15,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "process_aid",
+          "notes": "Dùng phi hành.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Nước tương",
+          "quantity": 12,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm từ từ, tùy độ mặn.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Muối",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Điều chỉnh cuối cùng.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Rắc tùy thích.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Nhặt bỏ lá úa và phần thân già của rau sắng, rửa nhẹ nhiều lần rồi để ráo."
+        },
+        {
+          "step": 2,
+          "instruction": "Làm sạch nấm, xé hoặc thái vừa ăn; cắt đậu phụ thành miếng nhỏ. Băm hành tím."
+        },
+        {
+          "step": 3,
+          "instruction": "Đun nóng nước dùng rau củ; chuẩn bị nước tương, muối để nêm sau khi canh sôi."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Phi hành tím với dầu ăn đến thơm, cho nấm vào đảo 2–3 phút để dậy mùi."
+        },
+        {
+          "step": 2,
+          "instruction": "Đổ nước dùng rau củ vào, đun sôi nhẹ; thêm đậu phụ và nấu khoảng 4 phút."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho rau sắng vào, nấu thêm 2–4 phút đến khi lá vừa mềm. Nêm nước tương, muối, tắt bếp và rắc tiêu."
+        }
+      ],
+      "keywords": [
+        "Canh rau sắng Xuân Sơn",
+        "rau sắng Phú Thọ",
+        "canh chay",
+        "nấm",
+        "món thanh nhẹ"
+      ],
+      "tags": [
+        "đặc sản vùng miền",
+        "món chay",
+        "món canh",
+        "dễ nấu"
+      ],
+      "sources": [
+        {
+          "url": "https://tanson.phutho.gov.vn/Chuyen-muc-tin/Chi-tiet-tin/t/den-xuan-son-thuong-thuc-nhieu-mon-dac-san/title/549/ctitle/81?AspxAutoDetectCookieSupport=1",
+          "publisher": "Cổng thông tin điện tử huyện Tân Sơn, Phú Thọ",
+          "title": "Đến Xuân Sơn thưởng thức nhiều món đặc sản",
+          "use": "Đối chiếu rau sắng là đặc sản Xuân Sơn và cách dùng lá nấu canh; nguồn nêu các cách nấu với xương, tôm, giò sống, gà hoặc cá. Bếp Việt thay thế bằng nấm, rau củ và đậu phụ, ghi rõ đây là bản chay biên tập.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://nhandan.vn/rau-sang-o-xuan-son-post415152.html",
+          "publisher": "Báo Nhân Dân",
+          "title": "Rau sắng ở Xuân Sơn",
+          "use": "Đối chiếu tên rau sắng gắn với Xuân Sơn và cách người địa phương nấu canh rau sắng.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Canh rau sắng Xuân Sơn cho 2 người",
+            "instruction": "Dùng nồi nhỏ và giảm nước theo khẩu phần; thêm rau ở cuối để không quá mềm."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Canh rau sắng Xuân Sơn cho 6 người",
+            "instruction": "Tăng lượng nấm và rau theo tỷ lệ, nhưng nêm nước tương sau cùng."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Canh rau sắng Xuân Sơn cho 8 người",
+            "instruction": "Nấu thành hai lượt nếu nồi nhỏ để rau sắng không bị ép lâu trong nước nóng."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/canh-rau-sang-xuan-son-960.webp",
+          "page_url": "https://tanson.phutho.gov.vn/Chuyen-muc-tin/Chi-tiet-tin/t/den-xuan-son-thuong-thuc-nhieu-mon-dac-san/title/549/ctitle/81?AspxAutoDetectCookieSupport=1",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để đối chiếu món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Canh rau sắng Xuân Sơn phiên bản chay với lá rau rừng xanh non, nấm và đậu phụ trong bát sứ trắng.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh do Bếp Việt tạo mới, tách nền trong suốt; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Món canh rau sắng của Xuân Sơn được chuyển thành phiên bản chay với nấm và đậu phụ; đây là lựa chọn biên tập của Bếp Việt, không khẳng định là công thức nguyên bản của địa phương.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Thử nghiệm với rau sắng theo mùa và điều chỉnh thời gian nấu theo độ non của lá."
+        ]
+      }
+    }
+  ]
+}

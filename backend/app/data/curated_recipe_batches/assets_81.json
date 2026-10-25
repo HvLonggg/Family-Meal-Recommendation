@@ -1,0 +1,258 @@
+{
+  "batch": 81,
+  "canvas": {
+    "width": 3840,
+    "height": 2160,
+    "format": "WebP",
+    "background": "transparent"
+  },
+  "native_format": "PNG",
+  "export_master_format": "PNG",
+  "assets": [
+    {
+      "id": "BV732",
+      "slug": "canh-bap-cai-thit-vien",
+      "native_file": "output/recipe-images/native/canh-bap-cai-thit-vien.png",
+      "native_pixels": [
+        1374,
+        1145
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/canh-bap-cai-thit-vien.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/canh-bap-cai-thit-vien-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/canh-bap-cai-thit-vien-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/canh-bap-cai-thit-vien-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/canh-bap-cai-thit-vien-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "id": "BV733",
+      "slug": "canh-bi-xanh-tom-kho",
+      "native_file": "output/recipe-images/native/canh-bi-xanh-tom-kho.png",
+      "native_pixels": [
+        1374,
+        1145
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/canh-bi-xanh-tom-kho.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/canh-bi-xanh-tom-kho-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/canh-bi-xanh-tom-kho-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/canh-bi-xanh-tom-kho-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/canh-bi-xanh-tom-kho-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "id": "BV734",
+      "slug": "ca-doi-kho-me",
+      "native_file": "output/recipe-images/native/ca-doi-kho-me.png",
+      "native_pixels": [
+        1372,
+        1147
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/ca-doi-kho-me.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/ca-doi-kho-me-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/ca-doi-kho-me-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/ca-doi-kho-me-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/ca-doi-kho-me-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "id": "BV735",
+      "slug": "com-chien-ca-man",
+      "native_file": "output/recipe-images/native/com-chien-ca-man.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/com-chien-ca-man.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/com-chien-ca-man-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/com-chien-ca-man-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/com-chien-ca-man-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/com-chien-ca-man-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "id": "BV736",
+      "slug": "canh-tom-nam-mong-toi",
+      "native_file": "output/recipe-images/native/canh-tom-nam-mong-toi.png",
+      "native_pixels": [
+        1374,
+        1145
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/canh-tom-nam-mong-toi.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/canh-tom-nam-mong-toi-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/canh-tom-nam-mong-toi-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/canh-tom-nam-mong-toi-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/canh-tom-nam-mong-toi-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,258 @@
+{
+  "batch": 60,
+  "canvas": {
+    "width": 3840,
+    "height": 2160,
+    "format": "WebP",
+    "background": "transparent"
+  },
+  "native_format": "PNG",
+  "export_master_format": "PNG",
+  "assets": [
+    {
+      "id": "BV626",
+      "slug": "canh-ga-la-cach-mien-tay",
+      "native_file": "output/recipe-images/native/canh-ga-la-cach-mien-tay.png",
+      "native_pixels": [
+        1402,
+        1122
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/canh-ga-la-cach-mien-tay.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/canh-ga-la-cach-mien-tay-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/canh-ga-la-cach-mien-tay-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/canh-ga-la-cach-mien-tay-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/canh-ga-la-cach-mien-tay-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "id": "BV627",
+      "slug": "vit-rang-muoi",
+      "native_file": "output/recipe-images/native/vit-rang-muoi.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/vit-rang-muoi.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/vit-rang-muoi-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/vit-rang-muoi-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/vit-rang-muoi-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/vit-rang-muoi-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "id": "BV628",
+      "slug": "vit-xao-lan",
+      "native_file": "output/recipe-images/native/vit-xao-lan.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/vit-xao-lan.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/vit-xao-lan-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/vit-xao-lan-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/vit-xao-lan-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/vit-xao-lan-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "id": "BV629",
+      "slug": "goi-bong-thien-ly-chay",
+      "native_file": "output/recipe-images/native/goi-bong-thien-ly-chay.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/goi-bong-thien-ly-chay.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/goi-bong-thien-ly-chay-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/goi-bong-thien-ly-chay-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/goi-bong-thien-ly-chay-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/goi-bong-thien-ly-chay-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "id": "BV630",
+      "slug": "rau-cu-kho-chay",
+      "native_file": "output/recipe-images/native/rau-cu-kho-chay.png",
+      "native_pixels": [
+        1402,
+        1122
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/rau-cu-kho-chay.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/rau-cu-kho-chay-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/rau-cu-kho-chay-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/rau-cu-kho-chay-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/rau-cu-kho-chay-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    }
+  ]
+}

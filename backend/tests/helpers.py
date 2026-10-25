@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session, sessionmaker
 
 from app.modules.auth.models import User
 
-PASSWORD = "BepViet2026"
+PASSWORD = "Test-Only-No-Login-2026!"
 # PNG 1x1 hợp lệ, đủ để kiểm tra luồng tải ảnh mà không cần thư viện xử lý ảnh.
 PNG_DATA_URL = (
     "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8"

@@ -1,0 +1,1427 @@
+{
+  "batch": 49,
+  "description": "Năm món cơm nhà Việt được đối chiếu với nguồn ẩm thực đã ghi nhận; công thức Bếp Việt biên tập theo khẩu phần gia đình, chưa nấu thử, kèm ảnh tạo mới nền trong suốt.",
+  "recipes": [
+    {
+      "id": "BV571",
+      "slug": "canh-ca-nau-qua-doc-kieu-bac",
+      "name": "Canh cá nấu quả dọc kiểu Bắc",
+      "aliases": [
+        "Canh cá quả dọc miền Bắc",
+        "Canh cá chua quả dọc"
+      ],
+      "region": [
+        "Bắc"
+      ],
+      "province": [
+        "Hà Nội",
+        "Đồng bằng Bắc Bộ"
+      ],
+      "category": "Món canh",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một nồi canh khoảng bốn bát ăn, dùng cùng cơm trắng.",
+      "prep_time": 15,
+      "cook_time": 20,
+      "passive_time": 0,
+      "total_time": 35,
+      "description": "Canh cá nấu quả dọc có vị chua thanh đặc trưng của quả dọc nướng, cá chín mềm và nước dùng thơm thì là, hành hoa. Bếp Việt chuẩn hóa cách nấu cho bữa cơm gia đình, dùng cá chép và cho nước dọc từ từ để dễ điều chỉnh độ chua.",
+      "finished_dish": "Nước canh trong, chua dịu; miếng cá chép chín tới, cà chua còn dáng và rau thì là thơm rõ.",
+      "serving": "Múc cá nhẹ tay ra bát sâu lòng, chan nước canh nóng và ăn cùng cơm trắng. Có thể dọn thêm rau luộc.",
+      "tips": [
+        "Nướng quả dọc đến khi mềm rồi bóc lớp cháy, dầm và lọc lấy nước; thêm từng ít một để canh không quá chua.",
+        "Đợi nước sôi mới thả cá để thịt cá săn và nước canh thơm trong.",
+        "Thì là và hành lá cho vào sau cùng, tránh nấu lâu làm rau mất mùi."
+      ],
+      "dish_type": [
+        "Canh cá miền Bắc",
+        "Món ăn cùng cơm"
+      ],
+      "main_ingredient": [
+        "cá chép",
+        "quả dọc",
+        "cà chua"
+      ],
+      "cooking_method": [
+        "nướng quả dọc",
+        "nấu canh cá",
+        "nêm chua thanh"
+      ],
+      "search_terms": [
+        "canh cá quả dọc",
+        "canh cá nấu quả dọc kiểu Bắc",
+        "canh cá chua miền Bắc",
+        "canh cá chép quả dọc"
+      ],
+      "keywords": [
+        "quả dọc",
+        "cá chép",
+        "thì là",
+        "món canh miền Bắc"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Bát canh cá chép quả dọc kiểu Bắc với cà chua, thì là và hành hoa, ảnh món ăn riêng của Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 35 phút gồm sơ chế cá, nướng quả dọc và nấu canh.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Rau luộc",
+        "Cà muối"
+      ],
+      "recipe_family": "northern_fish_soup_with_grilled_doc_fruit",
+      "ingredients": [
+        {
+          "name": "Cá chép làm sạch",
+          "quantity": 600,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chặt khúc vừa ăn; có thể thay bằng cá trắm hoặc cá mè tươi.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Quả dọc",
+          "quantity": 2,
+          "unit": "quả",
+          "role": "vegetable",
+          "notes": "Châm nhẹ vỏ, nướng mềm rồi bóc phần vỏ sém.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Cà chua",
+          "quantity": 300,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Chia một nửa băm nhỏ để tạo màu, phần còn lại bổ múi cau.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Hành khô",
+          "quantity": 20,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Thì là",
+          "quantity": 20,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, cắt nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 15,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, cắt nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 1200,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Điều chỉnh theo kích thước nồi và lượng canh mong muốn.",
+          "scaling_rule": "vessel_dependent",
+          "sequence": 7
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm từ từ vì độ mặn giữa các loại nước mắm khác nhau.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        },
+        {
+          "name": "Muối",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Chia một phần để ướp cá, phần còn lại nêm nước dùng.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 9
+        },
+        {
+          "name": "Chanh",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "process_aid",
+          "notes": "Dùng chà nhẹ cá cùng muối để khử nhớt, sau đó rửa sạch.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng phi hành và xào cà chua.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa cá, chà nhẹ với muối và nước cốt chanh rồi rửa sạch, để ráo. Ướp cá với một nhúm muối trong lúc sơ chế các nguyên liệu còn lại."
+        },
+        {
+          "step": 2,
+          "instruction": "Châm nhẹ quả dọc, nướng đến khi mềm; bóc phần vỏ sém, dầm phần thịt quả với ít nước nóng rồi lọc lấy nước chua. Băm một nửa cà chua, phần còn lại bổ múi cau; thái nhỏ thì là và hành lá."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Phi thơm hành khô với dầu, cho cà chua băm vào xào mềm. Thêm nước lọc, đun sôi rồi hạ lửa vừa."
+        },
+        {
+          "step": 2,
+          "instruction": "Thả cá vào nồi nước đang sôi, nấu nhẹ khoảng 10–12 phút tùy độ dày khúc cá, đến khi cá chín tới. Hớt bọt nếu cần."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho cà chua múi cau và nước quả dọc vào từng ít một; nêm nước mắm, muối vừa vị. Rắc thì là, hành lá rồi tắt bếp."
+        }
+      ],
+      "tags": [
+        "món miền Bắc",
+        "canh cá",
+        "món ăn gia đình",
+        "bữa cơm hằng ngày"
+      ],
+      "sources": [
+        {
+          "url": "https://vnexpress.net/doi-song-cooking-canh-ca-nau-qua-doc-kieu-bac-4658530.html",
+          "publisher": "VnExpress Cooking",
+          "title": "Cách làm canh cá nấu quả dọc kiểu Bắc",
+          "use": "Đối chiếu nguyên liệu cá, cà chua, quả dọc nướng, thì là và cách nấu cá khi nước đã sôi; định lượng khẩu phần được Bếp Việt biên tập.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/canh-ca-nau-qua-doc-kieu-bac-960.webp",
+          "page_url": "https://vnexpress.net/doi-song-cooking-canh-ca-nau-qua-doc-kieu-bac-4658530.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu món ăn và cách nấu.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Bát canh cá chép quả dọc kiểu Bắc với cà chua, thì là và hành hoa, ảnh món ăn riêng của Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh tạo riêng bằng ImageGen, PNG gốc có nền trong suốt; xuất bản WebP nhiều kích thước và PNG 3840 × 2160. Công thức chưa nấu thử."
+        }
+      ],
+      "variant_note": "Dùng cá chép và chuẩn hóa lượng nước dùng cho bốn người; độ chua được nêm bằng nước quả dọc đã lọc để dễ điều chỉnh.",
+      "needs": [
+        "Nấu thử để kiểm tra thời gian chín theo kích thước khúc cá và độ chua từng quả dọc."
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "300 g cá, 1 quả dọc và khoảng 600 ml nước.",
+            "instruction": "Nêm nước dọc từng ít một; dùng nồi nhỏ để cá ngập vừa nước."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.25,
+            "example": "900 g cá, 3 quả dọc và khoảng 1.8 lít nước.",
+            "instruction": "Nấu cá thành một lớp rộng trong nồi; điều chỉnh nước dọc và gia vị sau khi cá chín."
+          }
+        ]
+      },
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Dùng cá chép và chuẩn hóa lượng nước dùng cho bốn người; độ chua được nêm bằng nước quả dọc đã lọc để dễ điều chỉnh.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để kiểm tra thời gian chín theo kích thước khúc cá và độ chua từng quả dọc."
+        ]
+      },
+      "time_unit": "minute"
+    },
+    {
+      "id": "BV572",
+      "slug": "cha-ca-ngan-song-da",
+      "name": "Chả cá ngần Sông Đà",
+      "aliases": [
+        "Chả cá ngần",
+        "Chả cá mờm Sông Đà"
+      ],
+      "region": [
+        "Bắc"
+      ],
+      "province": [
+        "Hòa Bình",
+        "Sông Đà"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Khoảng 12–16 miếng chả nhỏ cho bốn người ăn cùng cơm.",
+      "prep_time": 20,
+      "cook_time": 20,
+      "passive_time": 0,
+      "total_time": 40,
+      "description": "Chả cá ngần Sông Đà là món cá theo mùa, phối cá ngần nhỏ với thịt xay, trứng và rau thơm rồi rán thành miếng vàng mềm. Bếp Việt biên tập khẩu phần gia đình, giữ vị cá ngọt, lá lốt, rau răm và thì là làm hương chủ đạo.",
+      "finished_dish": "Miếng chả vàng đều, mềm dai vừa phải, nhìn thấy cá ngần và rau thơm trong phần nhân; không còn lõi sống.",
+      "serving": "Dọn khi còn nóng với cơm trắng, rau sống và bát nước mắm chua ngọt hoặc tương ớt.",
+      "tips": [
+        "Rửa cá thật nhẹ tay rồi để ráo kỹ để hỗn hợp không loãng.",
+        "Trộn bột bắp vừa đủ kết dính; nếu hỗn hợp còn lỏng, thêm từng thìa nhỏ thay vì đổ nhiều một lúc.",
+        "Rán lửa vừa để chả vàng ngoài mà phần thịt xay bên trong chín hoàn toàn."
+      ],
+      "dish_type": [
+        "Chả cá sông Đà",
+        "Món mặn gia đình"
+      ],
+      "main_ingredient": [
+        "cá ngần",
+        "thịt heo xay",
+        "trứng gà"
+      ],
+      "cooking_method": [
+        "trộn chả cá",
+        "rán áp chảo"
+      ],
+      "search_terms": [
+        "chả cá ngần",
+        "chả cá Sông Đà",
+        "cá ngần rán",
+        "chả cá ngần Hòa Bình"
+      ],
+      "keywords": [
+        "cá ngần",
+        "Sông Đà",
+        "lá lốt",
+        "món cá theo mùa"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Đĩa chả cá ngần Sông Đà rán vàng cùng lá lốt, thì là và rau răm; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 40 phút gồm sơ chế, trộn nhân và rán chả.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Rau sống",
+        "Nước mắm chua ngọt"
+      ],
+      "recipe_family": "song_da_silver_fish_patties",
+      "ingredients": [
+        {
+          "name": "Cá ngần tươi",
+          "quantity": 400,
+          "unit": "g",
+          "role": "main",
+          "notes": "Nhặt sạch tạp chất, rửa nhẹ và để thật ráo.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Thịt nạc vai xay",
+          "quantity": 200,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn phần có chút mỡ để chả không khô.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Trứng gà",
+          "quantity": 2,
+          "unit": "quả",
+          "role": "main",
+          "notes": "Đánh tan trước khi trộn.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Bột bắp",
+          "quantity": 25,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": "Giúp hỗn hợp kết dính; thêm dần theo độ ráo của cá.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 4
+        },
+        {
+          "name": "Lá lốt",
+          "quantity": 25,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, để ráo rồi thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Thì là",
+          "quantity": 15,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Rau răm",
+          "quantity": 15,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 15,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Hành khô",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm vừa, chừa phần nước chấm riêng.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 10
+        },
+        {
+          "name": "Muối",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Gia giảm theo độ mặn của nước mắm.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 11
+        },
+        {
+          "name": "Hạt tiêu",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Xay hoặc giã nhỏ.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 12
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 50,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng lượng vừa đủ để rán áp chảo.",
+          "scaling_rule": "linear",
+          "sequence": 13
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Nhặt tạp chất, rửa cá ngần nhẹ tay và để ráo. Rửa, để khô các loại rau thơm; thái nhỏ lá lốt, thì là, rau răm, hành lá và băm hành khô."
+        },
+        {
+          "step": 2,
+          "instruction": "Trộn cá ngần với thịt xay, trứng, rau thơm, hành khô, bột bắp, nước mắm, muối và tiêu. Để hỗn hợp nghỉ 12–15 phút."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng chảo với lớp dầu mỏng ở lửa vừa. Múc hỗn hợp thành từng miếng dẹt nhỏ, chừa khoảng cách giữa các miếng."
+        },
+        {
+          "step": 2,
+          "instruction": "Rán mỗi mặt vài phút đến khi vàng đều và phần nhân chín hoàn toàn; nếu miếng dày, hạ lửa và đậy hé nắp để chín giữa. Vớt ra giấy thấm dầu."
+        },
+        {
+          "step": 3,
+          "instruction": "Dọn chả nóng cùng cơm, rau sống và nước mắm chua ngọt. Với nhân có thịt xay, bảo đảm tâm miếng chả đạt ít nhất 71°C."
+        }
+      ],
+      "tags": [
+        "món miền Bắc",
+        "Hòa Bình",
+        "món cá",
+        "món ăn cùng cơm"
+      ],
+      "sources": [
+        {
+          "url": "https://vnexpress.net/cach-lam-cha-ca-ngan-dac-san-song-da-4298516.html",
+          "publisher": "VnExpress Cooking",
+          "title": "Cách làm chả cá ngần - đặc sản sông Đà",
+          "use": "Đối chiếu tên món, tỷ lệ cá ngần với thịt và trứng, rau thơm cùng cách rán; khẩu phần được Bếp Việt biên tập.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart",
+          "publisher": "USDA Food Safety and Inspection Service",
+          "title": "Safe Minimum Internal Temperature Chart",
+          "use": "Tham khảo nhiệt độ an toàn 71°C cho món có thịt heo xay.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/cha-ca-ngan-song-da-960.webp",
+          "page_url": "https://vnexpress.net/cach-lam-cha-ca-ngan-dac-san-song-da-4298516.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu món ăn và cách chế biến.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa chả cá ngần Sông Đà rán vàng cùng lá lốt, thì là và rau răm; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh tạo riêng bằng ImageGen; PNG gốc có nền trong suốt, các bản WebP tối ưu và PNG 3840 × 2160. Công thức chưa nấu thử."
+        }
+      ],
+      "variant_note": "Giữ tỷ lệ cá ngần, thịt, trứng và rau thơm; kích thước miếng nhỏ giúp chả chín đều trong chảo gia đình.",
+      "needs": [
+        "Nấu thử để điều chỉnh độ kết dính theo lượng nước còn lại sau khi rửa cá."
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "200 g cá ngần, 100 g thịt xay và 1 trứng.",
+            "instruction": "Rán miếng nhỏ và nêm thử một phần hỗn hợp trước khi rán cả mẻ."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "600 g cá ngần, 300 g thịt xay và 3 trứng.",
+            "instruction": "Rán theo nhiều mẻ, không phủ kín mặt chảo để dầu giữ nhiệt ổn định."
+          }
+        ]
+      },
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Giữ tỷ lệ cá ngần, thịt, trứng và rau thơm; kích thước miếng nhỏ giúp chả chín đều trong chảo gia đình.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để điều chỉnh độ kết dính theo lượng nước còn lại sau khi rửa cá."
+        ]
+      },
+      "time_unit": "minute"
+    },
+    {
+      "id": "BV573",
+      "slug": "ca-bong-nho-chien-gion-la-lot",
+      "name": "Cá bống nhỏ chiên giòn lá lốt",
+      "aliases": [
+        "Cá bống chiên giòn lá lốt",
+        "Cá bống nhỏ rán lá lốt"
+      ],
+      "region": [
+        "Bắc"
+      ],
+      "province": [
+        "Đồng bằng Bắc Bộ"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một đĩa cá nhỏ chiên giòn cho bốn người ăn với cơm.",
+      "prep_time": 15,
+      "cook_time": 20,
+      "passive_time": 0,
+      "total_time": 35,
+      "description": "Cá bống nhỏ chiên giòn lá lốt là món dân dã dùng cá sông nhỏ theo mùa, rán vàng hai lượt để lớp ngoài giòn mà cá chín đều. Bếp Việt chuẩn hóa cách làm cho chảo gia đình, dọn kèm lá lốt và nước mắm tỏi ớt.",
+      "finished_dish": "Cá nhỏ vàng giòn, ráo dầu; lá lốt thơm, xanh sẫm và nước chấm chua mặn ngọt cân vị.",
+      "serving": "Dọn ngay khi còn nóng với cơm trắng, rau sống và nước mắm tỏi ớt.",
+      "tips": [
+        "Thấm cá thật khô trước khi cho vào dầu nóng để giảm bắn dầu.",
+        "Chiên từng mẻ nhỏ, chừa khoảng trống để cá vàng đều và không dính nhau.",
+        "Rán lượt hai ngắn ở nhiệt cao hơn; không để lá lốt trong dầu quá lâu vì dễ sẫm và đắng."
+      ],
+      "dish_type": [
+        "Món cá chiên dân dã",
+        "Món ăn cùng cơm"
+      ],
+      "main_ingredient": [
+        "cá bống nhỏ",
+        "lá lốt"
+      ],
+      "cooking_method": [
+        "chiên cá hai lượt",
+        "chiên lá lốt"
+      ],
+      "search_terms": [
+        "cá bống nhỏ chiên giòn",
+        "cá bống chiên lá lốt",
+        "cá bống rán giòn",
+        "món cá sông ăn cơm"
+      ],
+      "keywords": [
+        "cá bống nhỏ",
+        "lá lốt",
+        "món chiên",
+        "món dân dã"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Đĩa cá bống nhỏ chiên giòn xen lá lốt chiên, món cơm nhà Việt; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 35 phút gồm sơ chế, chiên cá hai lượt và chuẩn bị nước chấm.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Rau sống",
+        "Nước mắm tỏi ớt"
+      ],
+      "recipe_family": "northern_small_goby_crisp_fry_betel_leaf",
+      "ingredients": [
+        {
+          "name": "Cá bống nhỏ làm sạch",
+          "quantity": 500,
+          "unit": "g",
+          "role": "main",
+          "notes": "Nhờ người bán sơ chế; rửa sạch và thấm khô trước khi chiên.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Lá lốt",
+          "quantity": 35,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, thấm thật khô; chia một phần để chiên và một phần ăn kèm.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng pha nước chấm; gia giảm theo độ mặn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 3
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng pha loãng nước mắm chấm.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Nước cốt chanh",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Điều chỉnh vị chua của nước chấm.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 5
+        },
+        {
+          "name": "Đường",
+          "quantity": 10,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng pha nước chấm.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 6
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 8,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ để pha nước chấm.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Ớt đỏ",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "seasoning",
+          "notes": "Băm nhỏ, bỏ hạt nếu muốn dịu cay.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        },
+        {
+          "name": "Muối",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng ướp cá thật nhẹ sau khi rửa.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 9
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 300,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Lượng tham khảo để chiên ngập tương đối; có thể dùng ít hơn với chảo sâu lòng.",
+          "scaling_rule": "vessel_dependent",
+          "sequence": 10
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Cá đã làm sạch rửa lại nhanh, để ráo rồi thấm khô; rắc một nhúm muối nhỏ. Rửa lá lốt, để ráo hoàn toàn và tách phần để ăn kèm."
+        },
+        {
+          "step": 2,
+          "instruction": "Pha nước chấm từ nước mắm, nước lọc, đường, chanh, tỏi và ớt; khuấy cho đường tan rồi nếm lại."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đun nóng dầu ở lửa vừa. Chiên cá thành từng mẻ, trở nhẹ đến khi cá vàng và chín; gắp ra để ráo dầu."
+        },
+        {
+          "step": 2,
+          "instruction": "Tăng nhiệt dầu vừa phải rồi cho cá vào chiên lượt hai trong thời gian ngắn đến khi giòn hơn. Chiên lá lốt thật nhanh ở mẻ riêng rồi vớt ra ngay."
+        },
+        {
+          "step": 3,
+          "instruction": "Xếp cá với lá lốt chiên và lá tươi lên đĩa, dùng nóng cùng nước mắm tỏi ớt. Dầu nóng có thể bắn; thả cá nhẹ tay và không để cá còn ướt."
+        }
+      ],
+      "tags": [
+        "món miền Bắc",
+        "cá chiên",
+        "món dân dã",
+        "món ăn gia đình"
+      ],
+      "sources": [
+        {
+          "url": "https://vnexpress.net/doi-song-cooking-mam-com-gia-dinh-nau-trong-30-phut-4601567.html",
+          "publisher": "VnExpress Cooking",
+          "title": "Mâm cơm gia đình nấu trong 30 phút",
+          "use": "Đối chiếu nguyên liệu cá bống nhỏ, lá lốt và kỹ thuật chiên cá hai lượt; định lượng và nước chấm được Bếp Việt biên tập.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/ca-bong-nho-chien-gion-la-lot-960.webp",
+          "page_url": "https://vnexpress.net/doi-song-cooking-mam-com-gia-dinh-nau-trong-30-phut-4601567.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu món và kỹ thuật chế biến.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa cá bống nhỏ chiên giòn xen lá lốt chiên, món cơm nhà Việt; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh tạo riêng bằng ImageGen; PNG gốc có nền trong suốt, ảnh WebP được xuất nhiều kích thước cùng bản 3840 × 2160. Công thức chưa nấu thử."
+        }
+      ],
+      "variant_note": "Dùng cá bống nhỏ làm món mặn ăn cơm, không thêm bột áo; hai lượt chiên giúp cá giòn mà giữ vị cá tự nhiên.",
+      "needs": [
+        "Nấu thử để xác nhận độ giòn theo kích thước cá và loại chảo sử dụng."
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.6,
+            "seasoning_start_factor": 0.5,
+            "example": "300 g cá, 20 g lá lốt và chảo nhỏ.",
+            "instruction": "Chiên theo từng mẻ nhỏ; dầu vẫn cần đủ sâu để cá vàng đều."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "750 g cá, 52 g lá lốt.",
+            "instruction": "Chia nhiều mẻ, giữ riêng cá đã chiên lượt một trước khi chiên lượt hai."
+          }
+        ]
+      },
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Dùng cá bống nhỏ làm món mặn ăn cơm, không thêm bột áo; hai lượt chiên giúp cá giòn mà giữ vị cá tự nhiên.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để xác nhận độ giòn theo kích thước cá và loại chảo sử dụng."
+        ]
+      },
+      "time_unit": "minute"
+    },
+    {
+      "id": "BV574",
+      "slug": "thit-heo-quay-kho-cai-chua",
+      "name": "Thịt heo quay kho cải chua",
+      "aliases": [
+        "Thịt heo quay kho dưa cải chua",
+        "Heo quay kho dưa cải"
+      ],
+      "region": [
+        "Toàn quốc"
+      ],
+      "province": [
+        "Miền Bắc",
+        "Miền Trung",
+        "Miền Nam"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Khoảng 500 g thịt quay kho rau cải, ăn cùng cơm trắng.",
+      "prep_time": 15,
+      "cook_time": 25,
+      "passive_time": 10,
+      "total_time": 50,
+      "description": "Thịt heo quay kho cải chua kết hợp phần thịt quay béo thơm với dưa cải có vị chua dịu, nấu cùng nước dừa thành món mặn đậm đà cho cơm nhà. Bếp Việt biên tập lượng nêm vừa phải để cân bằng độ mặn vốn có của thịt quay và dưa cải.",
+      "finished_dish": "Miếng heo quay mềm thấm nước kho nâu nhẹ, dưa cải chua giòn dịu; nước sốt sánh vừa, không quá mặn.",
+      "serving": "Dọn nóng trong nồi nhỏ cùng cơm trắng và một món rau luộc hoặc rau xanh.",
+      "tips": [
+        "Nếm dưa cải trước; nếu mặn hoặc chua gắt, rửa nhanh một lần và vắt nhẹ.",
+        "Cho nước mắm ít trước vì thịt quay và dưa cải đều đã có gia vị.",
+        "Kho vừa rút nước để thịt thấm, tránh đun lâu làm phần da quay mất độ dai ngon."
+      ],
+      "dish_type": [
+        "Món heo kho",
+        "Món ăn cùng cơm"
+      ],
+      "main_ingredient": [
+        "thịt heo quay",
+        "cải chua",
+        "nước dừa"
+      ],
+      "cooking_method": [
+        "xào cải chua",
+        "ướp thịt quay",
+        "kho nước dừa"
+      ],
+      "search_terms": [
+        "thịt heo quay kho cải chua",
+        "heo quay kho dưa cải",
+        "thịt quay kho dưa chua",
+        "món heo quay ăn cơm"
+      ],
+      "keywords": [
+        "thịt heo quay",
+        "cải chua",
+        "nước dừa",
+        "món kho"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Nồi đất thịt heo quay kho cải chua với hành lá và ớt, món cơm nhà Việt; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 50 phút gồm sơ chế, ướp ngắn và kho đến khi nước sốt rút.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Rau luộc",
+        "Dưa leo"
+      ],
+      "recipe_family": "vietnamese_roast_pork_braised_with_pickled_mustard_greens",
+      "ingredients": [
+        {
+          "name": "Thịt heo quay",
+          "quantity": 500,
+          "unit": "g",
+          "role": "main",
+          "notes": "Cắt miếng vừa ăn; chọn miếng có cả thịt, mỡ và da.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Cải chua",
+          "quantity": 250,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Nếm trước; rửa nhanh nếu quá mặn hoặc chua rồi cắt khúc.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 2
+        },
+        {
+          "name": "Nước dừa tươi",
+          "quantity": 150,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Tạo vị ngọt dịu cho nước kho.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 50,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Thêm cùng nước dừa để điều chỉnh lượng nước kho.",
+          "scaling_rule": "vessel_dependent",
+          "sequence": 4
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 12,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 12,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Cho ít trước, nếm lại sau khi nước kho rút.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 7
+        },
+        {
+          "name": "Nước màu",
+          "quantity": 7,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Tạo sắc nâu hổ phách cho món kho.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Đường",
+          "quantity": 8,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Cân bằng vị chua của cải; có thể giảm nếu nước dừa ngọt.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 9
+        },
+        {
+          "name": "Hạt tiêu",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Xay nhỏ, chia một phần để ướp và rắc sau cùng.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 10
+        },
+        {
+          "name": "Ớt sừng",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Thái lát, bỏ qua nếu không ăn cay.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 11
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 15,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, cắt khúc để cho vào cuối.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Cắt thịt quay thành miếng vừa ăn. Nếm cải chua, rửa nhanh nếu vị quá gắt rồi để ráo; cắt khúc vừa gắp."
+        },
+        {
+          "step": 2,
+          "instruction": "Ướp thịt với nước mắm, nước màu, đường và một phần tiêu khoảng 10 phút. Băm tỏi, hành tím; cắt hành lá và ớt."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Phi thơm tỏi và hành tím, cho cải chua vào xào khoảng 2–3 phút để dậy mùi."
+        },
+        {
+          "step": 2,
+          "instruction": "Cho thịt quay vào nồi, thêm nước dừa và nước lọc. Đun sôi nhẹ rồi hạ lửa, kho khoảng 15–20 phút cho thịt thấm và nước sốt rút vừa."
+        },
+        {
+          "step": 3,
+          "instruction": "Nếm lại trước khi thêm gia vị. Rắc hành lá, tiêu và ớt, tắt bếp; dọn nóng cùng cơm."
+        }
+      ],
+      "tags": [
+        "món ăn gia đình",
+        "món heo",
+        "món kho",
+        "cải chua"
+      ],
+      "sources": [
+        {
+          "url": "https://vnexpress.net/thit-heo-quay-kho-cai-chua-4343703.html",
+          "publisher": "VnExpress",
+          "title": "Thịt heo quay kho cải chua",
+          "use": "Đối chiếu nguyên liệu thịt heo quay, cải chua, nước dừa và trình tự xào cải rồi kho; gia vị được Bếp Việt chuẩn hóa có tính đến độ mặn của nguyên liệu.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/thit-heo-quay-kho-cai-chua-960.webp",
+          "page_url": "https://vnexpress.net/thit-heo-quay-kho-cai-chua-4343703.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu món ăn và cách nấu.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Nồi đất thịt heo quay kho cải chua với hành lá và ớt, món cơm nhà Việt; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh tạo riêng bằng ImageGen, PNG gốc có nền trong suốt; xuất WebP và PNG master 3840 × 2160. Công thức chưa nấu thử."
+        }
+      ],
+      "variant_note": "Dùng thịt heo quay đã chín sẵn; nước mắm và đường được nêm thận trọng vì dưa cải và thịt quay có độ mặn riêng.",
+      "needs": [
+        "Nấu thử để cân chỉnh nước mắm theo độ mặn của loại thịt quay và cải chua."
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "250 g thịt quay, 125 g cải chua và 75 ml nước dừa.",
+            "instruction": "Nếm dưa trước và dùng nồi đáy dày để nước kho không cạn nhanh."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "750 g thịt quay, khoảng 375 g cải chua và 225 ml nước dừa.",
+            "instruction": "Kho trong nồi rộng, đảo nhẹ để cải và thịt thấm đều mà không làm nát."
+          }
+        ]
+      },
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Dùng thịt heo quay đã chín sẵn; nước mắm và đường được nêm thận trọng vì dưa cải và thịt quay có độ mặn riêng.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để cân chỉnh nước mắm theo độ mặn của loại thịt quay và cải chua."
+        ]
+      },
+      "time_unit": "minute"
+    },
+    {
+      "id": "BV575",
+      "slug": "bun-gao-xao-chay",
+      "name": "Bún gạo xào chay",
+      "aliases": [
+        "Bún gạo xào rau củ chay",
+        "Bún gạo xào đậu phụ"
+      ],
+      "region": [
+        "Toàn quốc"
+      ],
+      "province": [
+        "Toàn quốc"
+      ],
+      "category": "Món chay",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một đĩa bún gạo xào lớn, chia bốn phần ăn.",
+      "prep_time": 20,
+      "cook_time": 20,
+      "passive_time": 0,
+      "total_time": 40,
+      "description": "Bún gạo xào chay kết hợp sợi bún gạo mềm tơi với đậu phụ vàng và rau củ xào vừa chín. Bếp Việt chuẩn hóa phần sốt nước tương để áo đều sợi bún mà không làm món bị nhão, đồng thời giữ rau củ còn độ giòn.",
+      "finished_dish": "Sợi bún mềm nhưng tơi, đậu phụ vàng bùi, rau củ nhiều màu chín tới và bám nhẹ lớp sốt chay.",
+      "serving": "Dọn nóng ngay sau khi xào; có thể thêm rau thơm hoặc chút tiêu nếu chế độ ăn chay cho phép.",
+      "tips": [
+        "Ngâm bún gạo khô vừa mềm theo hướng dẫn trên bao bì; không ngâm quá lâu trước khi xào.",
+        "Xào bún với một phần nước sốt riêng trước, sau đó mới trộn rau củ để sợi bún ngấm đều.",
+        "Nếu ăn chay trường theo thực hành kiêng ngũ vị tân, thay hành tím và hành lá bằng boa-rô."
+      ],
+      "dish_type": [
+        "Món chay",
+        "Món bún xào"
+      ],
+      "main_ingredient": [
+        "bún gạo",
+        "đậu phụ",
+        "rau củ"
+      ],
+      "cooking_method": [
+        "ngâm bún gạo",
+        "rán đậu phụ",
+        "xào bún và rau củ"
+      ],
+      "search_terms": [
+        "bún gạo xào chay",
+        "bún gạo xào rau củ",
+        "bún gạo xào đậu phụ",
+        "món chay dễ nấu"
+      ],
+      "keywords": [
+        "món chay",
+        "bún gạo",
+        "đậu phụ",
+        "rau củ"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Đĩa bún gạo xào chay với đậu phụ, cà rốt, bắp cải và ớt chuông, ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 40 phút gồm sơ chế rau củ, ngâm bún và xào hoàn thiện.",
+      "suggested_pairings": [
+        "Canh rau củ",
+        "Rau thơm",
+        "Ớt tươi tùy chọn"
+      ],
+      "recipe_family": "vietnamese_vegetarian_rice_vermicelli_stir_fry",
+      "ingredients": [
+        {
+          "name": "Bún gạo khô",
+          "quantity": 250,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn loại sợi vừa; ngâm nước nóng đến mềm dẻo rồi để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Đậu phụ",
+          "quantity": 300,
+          "unit": "g",
+          "role": "main",
+          "notes": "Thấm khô và cắt miếng dài vừa ăn.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Cà rốt",
+          "quantity": 100,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Gọt vỏ, thái sợi.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Hành tây",
+          "quantity": 120,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Bóc vỏ, thái lát.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Giá đỗ",
+          "quantity": 120,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Nhặt sạch, rửa và để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Bắp cải",
+          "quantity": 150,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Thái sợi mỏng.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Ớt chuông đỏ",
+          "quantity": 50,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Bỏ hạt, thái sợi.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Ớt chuông xanh",
+          "quantity": 50,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Bỏ hạt, thái sợi.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 20,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, cắt khúc; người ăn chay kiêng ngũ vị tân có thể thay bằng boa-rô.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Hành khô",
+          "quantity": 30,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ; thay bằng boa-rô cho chế độ chay kiêng hành.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Nước tương",
+          "quantity": 30,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Chọn nước tương thực vật, nêm lại theo độ mặn của nhãn hàng.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 11
+        },
+        {
+          "name": "Đường",
+          "quantity": 12,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Gia giảm theo khẩu vị.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 12
+        },
+        {
+          "name": "Nước màu",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng loại không có thành phần động vật.",
+          "scaling_rule": "linear",
+          "sequence": 13
+        },
+        {
+          "name": "Muối",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm lượng nhỏ; nếm lại sau khi thêm nước tương.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 14
+        },
+        {
+          "name": "Hạt nêm chay",
+          "quantity": 4,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Kiểm tra nhãn sản phẩm phù hợp chế độ ăn chay.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 15
+        },
+        {
+          "name": "Giấm gạo",
+          "quantity": 5,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Tạo vị thanh nhẹ cho sốt.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 16
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 120,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Pha cùng gia vị làm sốt xào.",
+          "scaling_rule": "linear",
+          "sequence": 17
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 35,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Chia phần rán đậu, áo bún và xào rau củ.",
+          "scaling_rule": "linear",
+          "sequence": 18
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Ngâm bún gạo trong nước nóng khoảng 6–7 phút hoặc theo hướng dẫn bao bì, đến khi vừa mềm; xả nhanh nước sạch, để ráo và trộn chút dầu để sợi không dính."
+        },
+        {
+          "step": 2,
+          "instruction": "Đậu phụ thấm khô, rán vàng rồi cắt miếng dài. Thái cà rốt, bắp cải, hành tây, ớt chuông thành sợi; rửa giá đỗ và cắt hành lá."
+        },
+        {
+          "step": 3,
+          "instruction": "Khuấy đều nước tương, đường, nước màu, muối, hạt nêm chay, giấm và nước lọc thành sốt; nếm thử độ mặn trước khi dùng."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Phi thơm một nửa hành khô với ít dầu. Hạ lửa, cho một nửa phần sốt và bún vào đảo nhẹ 2–3 phút đến khi sợi bún vừa thấm; gắp ra để riêng."
+        },
+        {
+          "step": 2,
+          "instruction": "Phi thơm phần hành còn lại, cho cà rốt, bắp cải, ớt chuông và hành tây vào xào nhanh trên lửa lớn cho vừa chín tới. Thêm giá đỗ và đậu phụ, rưới phần sốt còn lại."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho bún đã xào vào chảo, đảo nhẹ cho các thành phần hòa đều và nóng lên. Thêm hành lá, tắt bếp và dọn ngay."
+        }
+      ],
+      "tags": [
+        "món chay",
+        "món ăn gia đình",
+        "bún gạo",
+        "rau củ"
+      ],
+      "sources": [
+        {
+          "url": "https://vnexpress.net/doi-song-cooking-bun-gao-xao-chay-4497090.html",
+          "publisher": "VnExpress Cooking",
+          "title": "Cách làm bún gạo xào chay mềm tơi, thấm vị hài hòa",
+          "use": "Đối chiếu loại bún gạo, đậu phụ, rau củ, sốt nước tương và kỹ thuật xào riêng bún rồi trộn rau; định lượng được Bếp Việt chuẩn hóa cho bốn phần.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/bun-gao-xao-chay-960.webp",
+          "page_url": "https://vnexpress.net/doi-song-cooking-bun-gao-xao-chay-4497090.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu món ăn và cách chế biến.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa bún gạo xào chay với đậu phụ, cà rốt, bắp cải và ớt chuông, ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh tạo riêng bằng ImageGen; PNG gốc nền trong suốt, WebP xuất nhiều kích thước và PNG master 3840 × 2160. Công thức chưa nấu thử."
+        }
+      ],
+      "variant_note": "Dùng bún gạo khô thay vì miến dong; xào bún riêng với sốt trước để sợi thấm vị, sau đó mới trộn rau củ.",
+      "needs": [
+        "Nấu thử để kiểm tra thời gian ngâm theo độ dày từng loại bún gạo khô.",
+        "Xác nhận thành phần nước màu và hạt nêm của sản phẩm nếu cần bảo đảm chế độ chay thuần."
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "125 g bún gạo khô, 150 g đậu phụ và một nửa lượng rau củ.",
+            "instruction": "Ngâm bún theo độ mềm thực tế; giảm sốt trước rồi nếm lại để tránh mặn."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "375 g bún gạo khô, 450 g đậu phụ và tăng rau củ tương ứng.",
+            "instruction": "Xào thành hai mẻ nếu chảo nhỏ để rau không ra nhiều nước và bún không gãy."
+          }
+        ]
+      },
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Dùng bún gạo khô thay vì miến dong; xào bún riêng với sốt trước để sợi thấm vị, sau đó mới trộn rau củ.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để kiểm tra thời gian ngâm theo độ dày từng loại bún gạo khô.",
+          "Xác nhận thành phần nước màu và hạt nêm của sản phẩm nếu cần bảo đảm chế độ chay thuần."
+        ]
+      },
+      "time_unit": "minute"
+    }
+  ]
+}

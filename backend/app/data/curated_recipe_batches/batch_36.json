@@ -1,0 +1,1533 @@
+{
+  "batch": 36,
+  "description": "Batch 36: món Việt do Bếp Việt biên tập, có nguồn đối chiếu và công thức gia đình.",
+  "recipes": [
+    {
+      "id": "BV506",
+      "slug": "canh-cai-ca-ro-dong",
+      "name": "Canh cải nấu cá rô đồng",
+      "aliases": [
+        "Canh rau cải cá rô đồng",
+        "Canh cá rô nấu cải xanh"
+      ],
+      "region": [
+        "Bắc"
+      ],
+      "province": [],
+      "category": "Món canh",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "4 tô canh dùng chung trong mâm cơm gia đình.",
+      "prep_time": 25,
+      "cook_time": 30,
+      "passive_time": 0,
+      "description": "Cá rô đồng luộc gỡ xương, phần nước luộc được lọc kỹ làm nền cho rau cải xanh và gừng. Bếp Việt biên tập cách nấu nồi gia đình để thịt cá tơi ngọt, rau vừa chín và nước canh thơm dịu.",
+      "finished_dish": "Nước canh trong, ngọt tự nhiên từ cá; cải xanh mềm vừa, thịt cá trắng tơi và thoảng mùi gừng.",
+      "serving": "Dọn nóng cùng cơm trắng và món kho. Gỡ cá thật kỹ, rà xương trước khi nấu lại để bảo đảm an toàn khi ăn.",
+      "tips": [
+        "Luộc cá trong nước đã sôi với gừng để giảm mùi tanh; vớt cá ra ngay khi thịt vừa chín.",
+        "Lọc nước luộc qua rây mịn và rà thịt cá bằng tay để loại xương dăm.",
+        "Cho rau cải vào nồi sôi và nấu ngắn để rau còn màu xanh, không bị nhũn."
+      ],
+      "dish_type": [
+        "Canh rau",
+        "Món cơm nhà miền Bắc"
+      ],
+      "main_ingredient": [
+        "cá rô đồng",
+        "cải xanh",
+        "gừng"
+      ],
+      "cooking_method": [
+        "luộc cá",
+        "lọc nước dùng",
+        "nấu canh"
+      ],
+      "search_terms": [
+        "canh cải cá rô đồng",
+        "canh rau cải nấu cá",
+        "món canh miền Bắc"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Tô canh cải nấu cá rô đồng với thịt cá trắng, rau cải xanh và gừng thái sợi.",
+      "ingredients": [
+        {
+          "name": "Cá rô đồng",
+          "quantity": 500,
+          "unit": "g",
+          "role": "main",
+          "notes": "Làm sạch vảy, bỏ mang và ruột; giữ trứng cá nếu có.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Cải bẹ xanh",
+          "quantity": 400,
+          "unit": "g",
+          "role": "main",
+          "notes": "Nhặt lá non, rửa sạch, cắt khúc vừa ăn.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Gừng",
+          "quantity": 20,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Một nửa đập dập luộc cá, phần còn lại thái sợi.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Hành khô",
+          "quantity": 25,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 1400,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng luộc cá và nấu canh.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 18,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm sau khi cho rau.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Muối",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng một phần để làm sạch cá, phần còn lại nêm canh.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Rắc lên phần cá sau khi gỡ xương.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Đánh vảy, bỏ mang và ruột cá; xát nhẹ với muối, rửa sạch rồi để ráo."
+        },
+        {
+          "step": 2,
+          "instruction": "Rửa cải, cắt khúc 3–4 cm. Đập dập một nửa gừng, thái sợi phần còn lại và băm hành khô."
+        },
+        {
+          "step": 3,
+          "instruction": "Chuẩn bị rây mịn và một tô sạch để lọc nước luộc cá; kiểm tra kỹ xương khi gỡ cá."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đun sôi nước với gừng đập dập và một nhúm muối. Cho cá vào luộc đến khi vừa chín, vớt ra để nguội bớt."
+        },
+        {
+          "step": 2,
+          "instruction": "Gỡ thịt cá, rà kỹ xương dăm. Lọc nước luộc qua rây; phi thơm hành, đảo nhẹ thịt cá với chút tiêu rồi gắp ra."
+        },
+        {
+          "step": 3,
+          "instruction": "Đun sôi lại nước dùng đã lọc, cho gừng thái sợi và cải xanh vào nấu 1–2 phút."
+        },
+        {
+          "step": 4,
+          "instruction": "Cho cá trở lại nồi, nêm nước mắm và muối vừa ăn. Canh sôi lăn tăn thì tắt bếp, dùng nóng."
+        }
+      ],
+      "time_note": "Cá nhỏ chín nhanh; điều chỉnh thời gian theo kích cỡ cá và giữ rau cải vừa chín.",
+      "total_time": 55,
+      "time_unit": "phút",
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "canh-cai-ca-ro-dong",
+      "keywords": [
+        "Canh cải nấu cá rô đồng",
+        "Bắc",
+        "cá rô đồng",
+        "cải bẹ xanh",
+        "gừng",
+        "canh rau cá",
+        "55 phút"
+      ],
+      "tags": {
+        "region": [
+          "Bắc"
+        ],
+        "province": [],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Canh rau",
+          "Món cơm nhà miền Bắc"
+        ],
+        "main_ingredient": [
+          "cá rô đồng",
+          "cải xanh",
+          "gừng"
+        ],
+        "cooking_method": [
+          "luộc cá",
+          "lọc nước dùng",
+          "nấu canh"
+        ],
+        "difficulty": "Trung bình",
+        "prep_time": 25,
+        "cook_time": 30,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Cơm trắng",
+          "Cá kho tiêu"
+        ],
+        "keywords": [
+          "canh cải cá rô đồng",
+          "canh rau cải nấu cá",
+          "món canh miền Bắc"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://vnexpress.net/doi-song-cooking-canh-cai-nau-ca-ro-dong-4798634.html",
+          "publisher": "VnExpress Cooking",
+          "title": "Cách làm canh cải nấu cá rô đồng",
+          "use": "Đối chiếu nguyên liệu cá rô, rau cải, gừng và cách luộc cá, lọc xương, nấu canh; định lượng được Bếp Việt biên tập cho 4 người.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://vietnamnet.vn/cach-nau-canh-rau-cai-ca-ro-dong-tuyet-ngon-khong-bi-tanh-331367.html",
+          "publisher": "VietNamNet",
+          "title": "Cách nấu canh rau cải cá rô đồng tuyệt ngon, không bị tanh",
+          "use": "Đối chiếu cách dùng gừng, gỡ thịt cá và nấu rau cải nhanh trong nước luộc cá đã lọc.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Canh cải cá rô đồng cho 2 người",
+            "instruction": "Rà xương kỹ sau khi gỡ cá; nêm nước mắm dần."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Canh cải cá rô đồng cho 6 người",
+            "instruction": "Dùng nồi rộng để cá và rau chín đều."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2,
+            "seasoning_start_factor": 2,
+            "example": "Canh cải cá rô đồng cho 8 người",
+            "instruction": "Chia phần cá khi gỡ để kiểm soát xương dăm."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/canh-cai-ca-ro-dong-960.webp",
+          "page_url": "https://vnexpress.net/doi-song-cooking-canh-cai-nau-ca-ro-dong-4798634.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Tô canh cải nấu cá rô đồng với thịt cá trắng, rau cải xanh và gừng thái sợi.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức gia đình do Bếp Việt biên tập từ nguồn tham khảo; thời gian luộc cá và độ mặn cần nấu thử theo kích cỡ cá.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để xác nhận cách lọc nước dùng và độ chín của rau cải.",
+          "Rà soát kỹ xương dăm trước khi dùng."
+        ]
+      },
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Cá kho tiêu"
+      ]
+    },
+    {
+      "id": "BV507",
+      "slug": "goi-buoi-tom-thit",
+      "name": "Gỏi bưởi tôm thịt",
+      "aliases": [
+        "Gỏi bưởi tôm thịt ba chỉ",
+        "Gỏi bưởi miền Trung"
+      ],
+      "region": [
+        "Trung Bộ"
+      ],
+      "province": [],
+      "category": "Món ăn kèm",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "4 phần gỏi khai vị hoặc ăn kèm trong bữa cơm.",
+      "prep_time": 25,
+      "cook_time": 15,
+      "passive_time": 10,
+      "description": "Múi bưởi tách rời, tôm luộc và thịt ba chỉ thái mỏng được trộn cùng cà rốt, rau răm và nước mắm chua ngọt. Bếp Việt biên tập lượng nước trộn vừa áo nguyên liệu để gỏi giữ vị thanh, tôm thịt rõ vị và tép bưởi không bị nát.",
+      "finished_dish": "Tép bưởi mọng, tôm chắc ngọt, thịt ba chỉ mềm; nước trộn chua ngọt nhẹ, rau răm thơm và đậu phộng rang bùi.",
+      "serving": "Trộn sát giờ ăn, bày ra đĩa và rắc đậu phộng rang. Dùng làm món khai vị hoặc ăn kèm bánh phồng tôm; để riêng ớt nếu có trẻ nhỏ.",
+      "tips": [
+        "Chọn bưởi tép ráo, vị chua ngọt cân bằng; tách múi nhẹ tay và loại hạt, màng dày.",
+        "Luộc tôm và thịt vừa chín, để nguội trước khi trộn để gỏi không bị nóng và ra nước.",
+        "Cho nước trộn từng ít một và trộn ngay trước khi dọn để tép bưởi giữ nguyên hình."
+      ],
+      "dish_type": [
+        "Gỏi",
+        "Món khai vị"
+      ],
+      "main_ingredient": [
+        "bưởi",
+        "tôm",
+        "thịt ba chỉ"
+      ],
+      "cooking_method": [
+        "luộc",
+        "pha nước trộn",
+        "trộn gỏi"
+      ],
+      "search_terms": [
+        "gỏi bưởi tôm thịt",
+        "gỏi bưởi tôm thịt ba chỉ",
+        "gỏi bưởi miền Trung"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Đĩa gỏi bưởi tôm thịt với tép bưởi, tôm, ba chỉ, cà rốt, rau răm và đậu phộng.",
+      "ingredients": [
+        {
+          "name": "Bưởi",
+          "quantity": 600,
+          "unit": "g",
+          "role": "main",
+          "notes": "Tách múi, bỏ hạt và màng dày.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Tôm tươi",
+          "quantity": 220,
+          "unit": "g",
+          "role": "main",
+          "notes": "Rửa sạch, bỏ chỉ lưng.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Thịt ba chỉ",
+          "quantity": 180,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn miếng nạc mỡ cân đối.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Cà rốt",
+          "quantity": 80,
+          "unit": "g",
+          "role": "main",
+          "notes": "Gọt vỏ, bào sợi.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Rau răm",
+          "quantity": 20,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Rửa sạch, thái vừa.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Pha nước trộn.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Nước cốt chanh",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Có thể giảm nếu bưởi chua.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Đường",
+          "quantity": 22,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Hòa tan trong nước trộn.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 8,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Đậu phộng rang",
+          "quantity": 25,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Giã dập, rắc khi dọn.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa tôm và thịt. Tách bưởi thành tép, loại hạt và màng dày; bào cà rốt, thái rau răm."
+        },
+        {
+          "step": 2,
+          "instruction": "Pha nước mắm, nước cốt chanh, đường và tỏi băm; khuấy đến khi đường tan, nếm vị chua ngọt dịu."
+        },
+        {
+          "step": 3,
+          "instruction": "Chuẩn bị nồi nước sôi để luộc tôm và thịt riêng; để nguội hoàn toàn trước khi trộn."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Luộc thịt ba chỉ đến khi chín, vớt ra ngâm nước mát ngắn để thịt săn rồi thái lát mỏng."
+        },
+        {
+          "step": 2,
+          "instruction": "Luộc tôm vừa chín, để nguội, bóc vỏ và chẻ dọc nếu tôm lớn."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho bưởi, tôm, thịt, cà rốt và rau răm vào tô; rưới nước trộn từng ít một, đảo nhẹ tay."
+        },
+        {
+          "step": 4,
+          "instruction": "Nếm lại, bày ra đĩa và rắc đậu phộng rang. Dùng ngay sau khi trộn."
+        }
+      ],
+      "time_note": "Có thể luộc tôm và thịt trước, nhưng chỉ trộn bưởi với nước mắm ngay trước khi ăn.",
+      "total_time": 50,
+      "time_unit": "phút",
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "goi-buoi-tom-thit",
+      "keywords": [
+        "Gỏi bưởi tôm thịt",
+        "Trung Bộ",
+        "bưởi",
+        "tôm",
+        "thịt ba chỉ",
+        "gỏi khai vị",
+        "50 phút"
+      ],
+      "tags": {
+        "region": [
+          "Trung Bộ"
+        ],
+        "province": [],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Gỏi",
+          "Món khai vị"
+        ],
+        "main_ingredient": [
+          "bưởi",
+          "tôm",
+          "thịt ba chỉ"
+        ],
+        "cooking_method": [
+          "luộc",
+          "pha nước trộn",
+          "trộn gỏi"
+        ],
+        "difficulty": "Dễ",
+        "prep_time": 25,
+        "cook_time": 15,
+        "servings": 4,
+        "spicy_level": 1,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Bánh phồng tôm",
+          "Canh rau nhẹ"
+        ],
+        "keywords": [
+          "gỏi bưởi tôm thịt",
+          "gỏi bưởi tôm thịt ba chỉ",
+          "gỏi bưởi miền Trung"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://ngoisao.vnexpress.net/goi-buoi-tom-thit-3979608.html",
+          "publisher": "Ngôi Sao / VnExpress",
+          "title": "Gỏi bưởi tôm thịt",
+          "use": "Đối chiếu cách phối bưởi, tôm, ba chỉ, cà rốt, rau răm và nước mắm chanh ngọt; định lượng và lời hướng dẫn được Bếp Việt biên tập lại.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Gỏi bưởi tôm thịt cho 2 người",
+            "instruction": "Rưới nước trộn từ từ để tép bưởi không bị nát."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Gỏi bưởi tôm thịt cho 6 người",
+            "instruction": "Trộn thành hai tô để giữ nguyên tép bưởi."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2,
+            "seasoning_start_factor": 2,
+            "example": "Gỏi bưởi tôm thịt cho 8 người",
+            "instruction": "Pha nước trộn riêng và chia đều sau khi nếm."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/goi-buoi-tom-thit-960.webp",
+          "page_url": "https://ngoisao.vnexpress.net/goi-buoi-tom-thit-3979608.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa gỏi bưởi tôm thịt với tép bưởi, tôm, ba chỉ, cà rốt, rau răm và đậu phộng.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức gỏi gia đình do Bếp Việt biên tập; độ chua ngọt thay đổi theo giống bưởi và lượng nước cốt quả.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để chốt độ chua ngọt và lượng nước trộn.",
+          "Rà soát an toàn bảo quản tôm, thịt đã luộc trước khi trộn."
+        ]
+      },
+      "suggested_pairings": [
+        "Bánh phồng tôm",
+        "Canh rau nhẹ"
+      ]
+    },
+    {
+      "id": "BV508",
+      "slug": "mi-ga-tan-ha-noi",
+      "name": "Mì gà tần Hà Nội",
+      "aliases": [
+        "Mỳ gà tần",
+        "Mì gà hầm thuốc Bắc Hà Nội"
+      ],
+      "region": [
+        "Đồng bằng sông Hồng"
+      ],
+      "province": [
+        "Hà Nội"
+      ],
+      "category": "Món nước",
+      "meal_type": [
+        "bữa chính",
+        "bữa tối"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "4 tô mì trứng chan nước gà tần, có gà và ngải cứu.",
+      "prep_time": 25,
+      "cook_time": 70,
+      "passive_time": 15,
+      "description": "Mì gà tần Hà Nội kết hợp gà hầm với thuốc Bắc, ngải cứu và mì trứng. Bếp Việt biên tập cách nấu nồi gia đình, dùng gà chặt miếng để dễ làm tại nhà.",
+      "finished_dish": "Thịt gà mềm nhưng còn nguyên miếng, nước dùng thơm dịu thuốc Bắc, ngải cứu hơi đắng và mì trứng dai mềm.",
+      "serving": "Chần mì riêng, xếp vào tô cùng gà và ngải cứu rồi chan nước dùng nóng; rắc hành lá, tiêu.",
+      "tips": [
+        "Hầm thuốc Bắc trước để nước thơm nhưng không nồng đắng.",
+        "Nấu gà vừa mềm, tránh hầm quá lâu làm thịt bở.",
+        "Chần mì riêng rồi mới chan nước dùng."
+      ],
+      "dish_type": [
+        "Món mì nước",
+        "Món ăn phố cổ Hà Nội"
+      ],
+      "main_ingredient": [
+        "thịt gà",
+        "mì trứng",
+        "ngải cứu",
+        "thuốc Bắc"
+      ],
+      "cooking_method": [
+        "sơ chế",
+        "ninh nước dùng",
+        "hầm gà",
+        "chần mì"
+      ],
+      "search_terms": [
+        "mì gà tần Hà Nội",
+        "mỳ gà tần ngải cứu",
+        "gà tần thuốc Bắc",
+        "mì gà hầm Hà Nội"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Tô mì gà tần Hà Nội với thịt gà hầm, mì trứng vàng, ngải cứu và nước dùng sẫm màu; nền trong suốt.",
+      "ingredients": [
+        {
+          "name": "Gà ta hoặc gà ác",
+          "quantity": 1000,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chặt 4–8 miếng.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Mì trứng tươi",
+          "quantity": 400,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chần riêng.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Rau ngải cứu",
+          "quantity": 120,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Nhặt lá non, rửa sạch.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Gói thuốc Bắc hầm gà",
+          "quantity": 20,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn gói thực phẩm bán sẵn.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Gừng tươi",
+          "quantity": 25,
+          "unit": "g",
+          "role": "main",
+          "notes": "Đập dập, thái lát.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 30,
+          "unit": "g",
+          "role": "main",
+          "notes": "Bóc vỏ, đập dập.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Táo đỏ khô",
+          "quantity": 25,
+          "unit": "g",
+          "role": "main",
+          "notes": "Rửa nhanh.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Kỷ tử khô",
+          "quantity": 12,
+          "unit": "g",
+          "role": "main",
+          "notes": "Rửa nhanh.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm nước dùng.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Muối",
+          "quantity": 6,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm vừa.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Tiêu đen",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Xay vừa.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 1800,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Ninh nước dùng.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 20,
+          "unit": "g",
+          "role": "main",
+          "notes": "Thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 13
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa sạch gà, để ráo; xát nhẹ với muối rồi rửa lại. Ướp gà với chút nước mắm và tiêu 15 phút."
+        },
+        {
+          "step": 2,
+          "instruction": "Rửa nhanh thuốc Bắc, táo đỏ và kỷ tử. Đập gừng, bóc hành, nhặt rửa ngải cứu."
+        },
+        {
+          "step": 3,
+          "instruction": "Đun sôi một nồi nước riêng để chần mì."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Cho thuốc Bắc, gừng, hành tím, táo đỏ, kỷ tử và nước vào nồi. Đun sôi rồi hạ lửa, ninh khoảng 20 phút."
+        },
+        {
+          "step": 2,
+          "instruction": "Thêm gà, đun sôi nhẹ và hớt bọt. Hầm 35–45 phút đến khi vừa mềm; nêm nước mắm, muối và tiêu."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho ngải cứu vào 5–8 phút cuối, nấu vừa mềm."
+        },
+        {
+          "step": 4,
+          "instruction": "Chần mì theo hướng dẫn gói, chia tô. Xếp gà, ngải cứu, chan nước dùng và rắc hành lá, tiêu."
+        }
+      ],
+      "time_note": "Khoảng 1 giờ 50 phút, gồm 15 phút ướp gà.",
+      "total_time": 110,
+      "time_unit": "phút",
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "mi_ga_tan_ha_noi",
+      "keywords": [
+        "mì gà tần",
+        "Hà Nội",
+        "gà hầm",
+        "thuốc Bắc",
+        "ngải cứu",
+        "mì trứng"
+      ],
+      "tags": {
+        "region": [
+          "Đồng bằng sông Hồng"
+        ],
+        "province": [
+          "Hà Nội"
+        ],
+        "meal_type": [
+          "bữa chính",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Món mì nước",
+          "Món ăn phố cổ Hà Nội"
+        ],
+        "main_ingredient": [
+          "thịt gà",
+          "mì trứng",
+          "ngải cứu",
+          "thuốc Bắc"
+        ],
+        "cooking_method": [
+          "sơ chế",
+          "ninh nước dùng",
+          "hầm gà",
+          "chần mì"
+        ],
+        "difficulty": "Trung bình",
+        "prep_time": 25,
+        "cook_time": 70,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Quẩy nóng",
+          "Rau cải chần",
+          "Trà nóng"
+        ],
+        "keywords": [
+          "mì gà tần",
+          "Hà Nội",
+          "gà hầm",
+          "thuốc Bắc",
+          "ngải cứu",
+          "mì trứng"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://vietnam.travel/things-to-do/ha-noi-food-guide-best-street-food-dishes-sample",
+          "publisher": "Cục Du lịch Quốc gia Việt Nam",
+          "title": "Ha Noi Food Guide: The best street food dishes to sample",
+          "use": "Đối chiếu mì gà tần Hà Nội với gà hầm, mì trứng, thảo mộc và ngải cứu; công thức Bếp Việt là phiên bản nấu nồi gia đình.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://vietnamnet.vn/quan-ga-tan-nup-trong-ngach-nho-pho-co-ha-noi-kho-tim-van-dong-kin-2559474.html",
+          "publisher": "VietNamNet",
+          "title": "Quán gà tần núp trong ngách nhỏ phố cổ Hà Nội, khó tìm vẫn đông kín",
+          "use": "Đối chiếu nguyên liệu gồm gà, thuốc Bắc và ngải cứu; bài viết mô tả nước thuốc Bắc ninh riêng và cách dùng với mì.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Mì gà tần Hà Nội cho 2 người",
+            "instruction": "Giảm nguyên liệu theo tỷ lệ; nêm gia vị từ từ và kiểm tra độ chín, kết cấu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Mì gà tần Hà Nội cho 6 người",
+            "instruction": "Dùng nồi đủ rộng; chia mẻ nếu cần và nêm gia vị từ từ."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Mì gà tần Hà Nội cho 8 người",
+            "instruction": "Chia thành hai mẻ nếu cần để giữ nhiệt ổn định; nếm rồi điều chỉnh gia vị."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/mi-ga-tan-ha-noi-960.webp",
+          "page_url": "https://vietnam.travel/things-to-do/ha-noi-food-guide-best-street-food-dishes-sample",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để đối chiếu món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Tô mì gà tần Hà Nội với thịt gà hầm, mì trứng vàng, ngải cứu và nước dùng sẫm màu; nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo mới, nền trong suốt; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Phiên bản nồi gia đình dựa trên cách kết hợp gà, thuốc Bắc, ngải cứu và mì trứng của món Hà Nội.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để xác nhận định lượng, thời gian và kết cấu món theo thiết bị gia đình.",
+          "Rà soát cách chọn và sơ chế nguyên liệu theo mùa, vùng cung ứng."
+        ]
+      },
+      "suggested_pairings": [
+        "Quẩy nóng",
+        "Rau cải chần",
+        "Trà nóng"
+      ]
+    },
+    {
+      "id": "BV509",
+      "slug": "banh-la-mo-nuoc-cot-dua",
+      "name": "Bánh lá mơ nước cốt dừa miền Tây",
+      "aliases": [
+        "Bánh lá mơ miền Tây",
+        "Bánh lá mơ ăn nước cốt dừa"
+      ],
+      "region": [
+        "Đồng bằng sông Cửu Long"
+      ],
+      "province": [],
+      "category": "Món tráng miệng",
+      "meal_type": [
+        "bữa phụ",
+        "tráng miệng"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Khoảng 12 miếng bánh hấp nhỏ, dùng cùng nước cốt dừa.",
+      "prep_time": 25,
+      "cook_time": 25,
+      "passive_time": 5,
+      "description": "Bánh lá mơ miền Tây có màu xanh tự nhiên từ lá rau mơ, vị dẻo dai của bột gạo pha bột năng và chút béo từ nước cốt dừa. Bếp Việt biên tập cách hấp tại nhà trên lá chuối, dọn với nước cốt dừa nấu sánh và mè rang.",
+      "finished_dish": "Bánh xanh mềm dai, thơm nhẹ mùi lá mơ; nước cốt dừa sánh béo vừa phải, mè rang thơm bùi.",
+      "serving": "Cắt bánh thành miếng vừa ăn, chan nước cốt dừa ấm và rắc mè rang. Dùng như món ăn vặt hoặc tráng miệng.",
+      "tips": [
+        "Chỉ dùng lá rau mơ ăn được, rửa kỹ và lọc bỏ bã để bánh mịn.",
+        "Khuấy bột đến khi không còn vón; bột quá đặc có thể thêm nước lá mơ từng ít một.",
+        "Hấp đến khi bánh se và chín hẳn; để nguội bớt rồi mới cắt để miếng bánh không dính dao."
+      ],
+      "dish_type": [
+        "Bánh hấp",
+        "Món ăn vặt miền Tây"
+      ],
+      "main_ingredient": [
+        "lá rau mơ",
+        "bột gạo",
+        "nước cốt dừa"
+      ],
+      "cooking_method": [
+        "xay lá",
+        "pha bột",
+        "hấp bánh"
+      ],
+      "search_terms": [
+        "bánh lá mơ",
+        "bánh lá mơ nước cốt dừa",
+        "bánh miền Tây"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Bánh lá mơ miền Tây xanh tự nhiên, ăn cùng nước cốt dừa sánh và mè rang.",
+      "ingredients": [
+        {
+          "name": "Lá rau mơ",
+          "quantity": 100,
+          "unit": "g",
+          "role": "main",
+          "notes": "Rửa sạch, xay với nước rồi lọc lấy nước xanh.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Bột gạo",
+          "quantity": 180,
+          "unit": "g",
+          "role": "main",
+          "notes": "Rây mịn.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Bột năng",
+          "quantity": 70,
+          "unit": "g",
+          "role": "main",
+          "notes": "Tạo độ dai nhẹ cho bánh.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Nước cốt dừa",
+          "quantity": 300,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Chia phần cho bột và phần nước chan.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 250,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng xay lá, lọc lấy nước màu xanh.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Đường",
+          "quantity": 45,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Chia cho bột và nước cốt dừa.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Muối",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Cân vị béo của nước cốt dừa.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Mè trắng",
+          "quantity": 15,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Rang thơm, rắc khi ăn.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Lá chuối",
+          "quantity": 4,
+          "unit": "tấm",
+          "role": "wrapping",
+          "notes": "Rửa sạch, trụng mềm để lót khay hấp.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa lá rau mơ, xay với nước lọc rồi lọc qua rây mịn để lấy phần nước xanh."
+        },
+        {
+          "step": 2,
+          "instruction": "Khuấy bột gạo, bột năng, nước lá mơ, 150 ml nước cốt dừa, một phần đường và muối đến khi mịn; để bột nghỉ 5 phút."
+        },
+        {
+          "step": 3,
+          "instruction": "Rửa lá chuối, trụng nhanh cho mềm và lót xửng hoặc khay hấp. Rang mè trắng đến khi thơm."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đun hỗn hợp bột trên lửa nhỏ, khuấy liên tục đến khi hơi sánh và vừa đủ đặc để dàn mỏng; không nấu chín hẳn."
+        },
+        {
+          "step": 2,
+          "instruction": "Dàn bột thành lớp mỏng trên lá chuối hoặc khay đã lót lá, hấp khoảng 15–18 phút đến khi bánh chín và se mặt."
+        },
+        {
+          "step": 3,
+          "instruction": "Nấu phần nước cốt dừa còn lại với đường trên lửa nhỏ, khuấy nhẹ đến khi đường tan và nước cốt hơi sánh; nêm chút muối."
+        },
+        {
+          "step": 4,
+          "instruction": "Để bánh nguội bớt, cắt miếng vừa ăn, chan nước cốt dừa và rắc mè rang."
+        }
+      ],
+      "time_note": "Thời gian hấp thay đổi theo độ dày lớp bột; hấp đến khi phần giữa bánh không còn bột sống.",
+      "total_time": 55,
+      "time_unit": "phút",
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "banh-la-mo-nuoc-cot-dua",
+      "keywords": [
+        "Bánh lá mơ nước cốt dừa miền Tây",
+        "Đồng bằng sông Cửu Long",
+        "lá rau mơ",
+        "bột gạo",
+        "nước cốt dừa",
+        "bánh hấp",
+        "55 phút"
+      ],
+      "tags": {
+        "region": [
+          "Đồng bằng sông Cửu Long"
+        ],
+        "province": [],
+        "meal_type": [
+          "bữa phụ",
+          "tráng miệng"
+        ],
+        "dish_type": [
+          "Bánh hấp",
+          "Món ăn vặt miền Tây"
+        ],
+        "main_ingredient": [
+          "lá rau mơ",
+          "bột gạo",
+          "nước cốt dừa"
+        ],
+        "cooking_method": [
+          "xay lá",
+          "pha bột",
+          "hấp bánh"
+        ],
+        "difficulty": "Trung bình",
+        "prep_time": 25,
+        "cook_time": 25,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Trà nóng",
+          "Trái cây tươi"
+        ],
+        "keywords": [
+          "bánh lá mơ",
+          "bánh lá mơ nước cốt dừa",
+          "bánh miền Tây"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://checkinvietnam.vtc.vn/o-nha/dac-san-banh-la-mo-nuoc-cot-dua/061A6E0B-BA92-454F-8CA6-41127A12041A",
+          "publisher": "VTC Check in Vietnam",
+          "title": "Công thức chế biến đặc sản bánh lá mơ nước cốt dừa dân dã của miền Tây",
+          "use": "Đối chiếu tên món và cách dùng lá rau mơ, bột, nước cốt dừa; công thức được Bếp Việt biên tập lại cho hấp tại nhà.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://hoanghamobile.com/tin-tuc/banh-la-mo/",
+          "publisher": "Hoàng Hà Mobile",
+          "title": "Bánh lá mơ: cách làm bánh lá mơ nước cốt dừa miền Tây",
+          "use": "Đối chiếu hình thức bánh xanh từ lá mơ, kết cấu dai và cách dùng cùng nước cốt dừa.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Bánh lá mơ cho 2 người",
+            "instruction": "Hấp lớp bột mỏng để bánh chín đều."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Bánh lá mơ cho 6 người",
+            "instruction": "Hấp thành nhiều lượt nếu xửng nhỏ."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2,
+            "seasoning_start_factor": 2,
+            "example": "Bánh lá mơ cho 8 người",
+            "instruction": "Giữ nước hấp sôi đều và không dàn bột quá dày."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/banh-la-mo-nuoc-cot-dua-960.webp",
+          "page_url": "https://checkinvietnam.vtc.vn/o-nha/dac-san-banh-la-mo-nuoc-cot-dua/061A6E0B-BA92-454F-8CA6-41127A12041A",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Bánh lá mơ miền Tây xanh tự nhiên, ăn cùng nước cốt dừa sánh và mè rang.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức hấp tại nhà do Bếp Việt biên tập theo món bánh lá mơ miền Tây; tỷ lệ nước lá, độ dai và độ sánh nước cốt cần nấu thử.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử tỷ lệ bột để bánh đạt độ dai mềm.",
+          "Xác nhận thời gian hấp theo khay và độ dày bánh."
+        ]
+      },
+      "suggested_pairings": [
+        "Trà nóng",
+        "Trái cây tươi"
+      ]
+    },
+    {
+      "id": "BV510",
+      "slug": "mi-can-kho-tieu-xanh-chay",
+      "name": "Mì căn kho tiêu xanh chay",
+      "aliases": [
+        "Mì căn kho tiêu chay",
+        "Mì căn kho tiêu xanh"
+      ],
+      "region": [
+        "Ba miền"
+      ],
+      "province": [],
+      "category": "Món chay",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "4 phần mì căn kho dùng cùng cơm nóng trong bữa chay.",
+      "prep_time": 15,
+      "cook_time": 20,
+      "passive_time": 10,
+      "description": "Mì căn được áp chảo trước rồi kho với tiêu xanh, nước tương và nước dừa tươi cho thấm vị. Bếp Việt biên tập công thức chay dễ nấu, dùng boa-rô thay hành tím và giữ nước kho sánh nhẹ để ăn cùng cơm nóng.",
+      "finished_dish": "Miếng mì căn vàng nâu, dai mềm và thấm nước kho; tiêu xanh thơm cay dịu, nước dừa tạo hậu vị ngọt nhẹ.",
+      "serving": "Dọn nóng với cơm trắng, rắc thêm tiêu xanh và boa-rô thái mỏng. Ăn kèm rau luộc hoặc dưa leo để bữa chay cân vị.",
+      "tips": [
+        "Áp chảo mì căn trước khi kho để miếng săn, thơm và giữ hình tốt hơn.",
+        "Dùng nước tương, nước mắm chay và hạt nêm có nhãn phù hợp chế độ ăn chay.",
+        "Nêm nhạt ở đầu vì nước kho sẽ cô lại; thêm tiêu xanh cuối để giữ hương thơm."
+      ],
+      "dish_type": [
+        "Món kho",
+        "Món chay gia đình"
+      ],
+      "main_ingredient": [
+        "mì căn",
+        "tiêu xanh",
+        "nước dừa"
+      ],
+      "cooking_method": [
+        "áp chảo",
+        "kho"
+      ],
+      "search_terms": [
+        "mì căn kho tiêu xanh chay",
+        "mì căn kho chay",
+        "món chay ăn cùng cơm"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Mì căn kho tiêu xanh chay trong nồi đất, có tiêu xanh, boa-rô và nước kho óng nhẹ.",
+      "ingredients": [
+        {
+          "name": "Mì căn",
+          "quantity": 350,
+          "unit": "g",
+          "role": "main",
+          "notes": "Cắt lát xéo dày khoảng 1 cm.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Tiêu xanh",
+          "quantity": 25,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Rửa sạch, tách một phần nhánh và đập dập nhẹ.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Nước dừa tươi",
+          "quantity": 220,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng làm nước kho.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Nước tương",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Chọn loại phù hợp món chay.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Nước mắm chay",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Có thể thay bằng nước tương nếu không dùng sản phẩm mô phỏng nước mắm.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Boa-rô",
+          "quantity": 25,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhỏ phần gốc trắng.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Đường",
+          "quantity": 8,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Gia giảm theo độ ngọt của nước dừa.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng áp chảo mì căn và phi boa-rô.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Cắt mì căn thành lát xéo vừa ăn, thấm khô. Rửa tiêu xanh, tách một nửa nhánh và đập dập nhẹ."
+        },
+        {
+          "step": 2,
+          "instruction": "Băm boa-rô. Khuấy nước dừa với nước tương, nước mắm chay và đường; nếm thử trước khi kho."
+        },
+        {
+          "step": 3,
+          "instruction": "Kiểm tra nhãn các gia vị để bảo đảm phù hợp chế độ ăn chay đang áp dụng."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng chảo với một ít dầu, áp chảo mì căn đến khi hai mặt vàng nhẹ rồi gắp ra."
+        },
+        {
+          "step": 2,
+          "instruction": "Phi thơm boa-rô, cho tiêu xanh đập dập vào đảo nhanh. Thêm hỗn hợp nước dừa và đun sôi nhẹ."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho mì căn trở lại nồi, hạ lửa nhỏ và kho 12–15 phút; trở miếng nhẹ tay để thấm đều."
+        },
+        {
+          "step": 4,
+          "instruction": "Khi nước kho sánh nhẹ, nếm lại, rắc phần tiêu xanh còn lại rồi tắt bếp."
+        }
+      ],
+      "time_note": "Thời gian kho phụ thuộc độ dày mì căn; dừng khi nước áo quanh miếng, không để cạn khô.",
+      "total_time": 45,
+      "time_unit": "phút",
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "mi-can-kho-tieu-xanh-chay",
+      "keywords": [
+        "Mì căn kho tiêu xanh chay",
+        "Ba miền",
+        "mì căn",
+        "tiêu xanh",
+        "nước dừa",
+        "món chay",
+        "45 phút"
+      ],
+      "tags": {
+        "region": [
+          "Ba miền"
+        ],
+        "province": [],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Món kho",
+          "Món chay gia đình"
+        ],
+        "main_ingredient": [
+          "mì căn",
+          "tiêu xanh",
+          "nước dừa"
+        ],
+        "cooking_method": [
+          "áp chảo",
+          "kho"
+        ],
+        "difficulty": "Dễ",
+        "prep_time": 15,
+        "cook_time": 20,
+        "servings": 4,
+        "spicy_level": 1,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Cơm trắng",
+          "Rau luộc"
+        ],
+        "keywords": [
+          "mì căn kho tiêu xanh chay",
+          "mì căn kho chay",
+          "món chay ăn cùng cơm"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://monngonmoingay.com/mi-can-kho-tieu-xanh/",
+          "publisher": "Món Ngon Mỗi Ngày",
+          "title": "Mì căn kho tiêu xanh",
+          "use": "Đối chiếu cách áp chảo mì căn trước khi kho, dùng tiêu xanh và cách ăn cùng cơm trắng; phần gia vị và định lượng được Bếp Việt biên tập lại.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Mì căn kho tiêu xanh cho 2 người",
+            "instruction": "Nêm nước tương dè dặt vì nước kho sẽ giảm."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Mì căn kho tiêu xanh cho 6 người",
+            "instruction": "Dùng chảo rộng để áp chảo mì căn thành một lớp."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2,
+            "seasoning_start_factor": 2,
+            "example": "Mì căn kho tiêu xanh cho 8 người",
+            "instruction": "Kho nhiều mẻ nếu nồi chật để miếng mì căn thấm đều."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/mi-can-kho-tieu-xanh-chay-960.webp",
+          "page_url": "https://monngonmoingay.com/mi-can-kho-tieu-xanh/",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Mì căn kho tiêu xanh chay trong nồi đất, có tiêu xanh, boa-rô và nước kho óng nhẹ.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức chay gia đình do Bếp Việt biên tập theo nguồn tham khảo; gia vị chay cần được kiểm tra nhãn theo lựa chọn ăn chay của người dùng.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử tỷ lệ nước dừa và gia vị cho độ sánh vừa.",
+          "Kiểm tra thành phần của mì căn và gia vị chay trước khi phục vụ."
+        ]
+      },
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Rau luộc"
+      ]
+    }
+  ]
+}

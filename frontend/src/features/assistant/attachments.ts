@@ -1,4 +1,5 @@
 import type { AttachmentKind } from '@/features/assistant/assistantApi';
+import { UserFacingError } from '@/lib/errors';
 
 export interface PendingAttachment {
   id: string;
@@ -17,9 +18,9 @@ const IMAGE_LIMIT = 5 * 1024 * 1024;
 const PDF_LIMIT = 5 * 1024 * 1024;
 const TEXT_LIMIT = 200 * 1024;
 
-export class AttachmentError extends Error {}
+export class AttachmentError extends UserFacingError {}
 
-function readDataUrl(file: Blob) {
+export function readDataUrl(file: Blob) {
   return new Promise<string>((resolve, reject) => {
     const reader = new FileReader();
     reader.onload = () =>

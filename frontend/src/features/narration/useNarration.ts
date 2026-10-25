@@ -88,7 +88,7 @@ export function useNarration(segments: NarrationSegment[], language: Language) {
     controller.setVoices(voices);
   }, [controller, voiceKey]);
 
-// Dừng đọc khi rời trang, đổi món hoặc đổi ngôn ngữ.
+  // Dừng đọc khi rời trang, đổi món hoặc đổi ngôn ngữ.
   useEffect(() => () => controller?.stop(), [controller, language]);
 
   useEffect(() => {

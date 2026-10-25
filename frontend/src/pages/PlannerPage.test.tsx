@@ -215,7 +215,7 @@ describe('planner page', () => {
     expect(
       await screen.findAllByRole('link', { name: 'Xem chi tiết Sườn xào chua ngọt' }),
     ).toHaveLength(2);
-// Dữ liệu giả dùng ảnh món mặc định.
+    // Dữ liệu giả dùng ảnh món mặc định.
     expect(document.querySelector('.planner-dish__link img')).toHaveAttribute(
       'src',
       '/images/suon-xao.jpg',

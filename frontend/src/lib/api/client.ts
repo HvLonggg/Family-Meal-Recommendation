@@ -12,6 +12,22 @@ export function setAccessToken(token: string | null) {
   accessToken = token;
 }
 
+interface SessionHandlers {
+  /** Gia hạn phiên bằng refresh token (cookie); trả về true nếu có token mới. */
+  refresh: () => Promise<boolean>;
+  /** Phiên không gia hạn được: đăng xuất ở giao diện và quay về trang đăng nhập. */
+  expired: () => void;
+}
+
+let sessionHandlers: SessionHandlers | null = null;
+
+export function setSessionHandlers(handlers: SessionHandlers | null) {
+  sessionHandlers = handlers;
+}
+
+// Các endpoint xác thực tự xử lý 401 (sai mật khẩu, hết phiên) nên không tự gia hạn.
+const isAuthEndpoint = (path: string) => path.startsWith('/auth/');
+
 export class ApiError extends Error {
   readonly code: string;
   readonly fieldErrors: Record<string, string[]>;
@@ -28,8 +44,8 @@ export class ApiError extends Error {
   }
 }
 
-export async function apiRequest<T>(path: string, init?: RequestInit): Promise<T> {
-  const response = await fetch(`${API_BASE_URL}${path}`, {
+function send(path: string, init?: RequestInit) {
+  return fetch(`${API_BASE_URL}${path}`, {
     ...init,
     credentials: 'include',
     headers: {
@@ -39,6 +55,22 @@ export async function apiRequest<T>(path: string, init?: RequestInit): Promise<T
       ...init?.headers,
     },
   });
+}
+
+/** Gửi request có xác thực; trả về Response thành công hoặc ném ApiError. */
+async function authorized(path: string, init?: RequestInit): Promise<Response> {
+  let response = await send(path, init);
+
+  // Access token hết hạn (15 phút): gia hạn một lần bằng refresh token rồi gửi lại.
+  if (response.status === 401 && accessToken && sessionHandlers && !isAuthEndpoint(path)) {
+    const refreshed = await sessionHandlers.refresh();
+    if (refreshed) {
+      response = await send(path, init);
+    }
+    if (!refreshed || response.status === 401) {
+      sessionHandlers.expired();
+    }
+  }
 
   if (!response.ok) {
     const payload = (await response.json().catch(() => ({
@@ -49,11 +81,20 @@ export async function apiRequest<T>(path: string, init?: RequestInit): Promise<T
     }))) as ErrorResponse;
     throw new ApiError(response.status, payload);
   }
+  return response;
+}
 
+export async function apiRequest<T>(path: string, init?: RequestInit): Promise<T> {
+  const response = await authorized(path, init);
   if (response.status === 204) {
     return undefined as T;
   }
   return (await response.json()) as T;
+}
+
+/** Request trả về luồng (SSE): nơi gọi tự đọc `response.body`. */
+export function apiStream(path: string, init?: RequestInit): Promise<Response> {
+  return authorized(path, init);
 }
 
 export function apiPost<T>(path: string, payload?: unknown): Promise<T> {

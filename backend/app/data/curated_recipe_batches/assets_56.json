@@ -1,0 +1,87 @@
+{
+  "batch": 56,
+  "native_format": "PNG",
+  "canvas": {
+    "width": 3840,
+    "height": 2160,
+    "format": "WebP",
+    "background": "transparent"
+  },
+  "assets": [
+    {
+      "id": "BV606",
+      "slug": "ga-nau-dong-bac-bo",
+      "native_file": "output/recipe-images/native/ga-nau-dong-bac-bo.png",
+      "native_pixels": [1672, 941],
+      "has_alpha": true,
+      "canvas_export_file": "output/recipe-images/4k/ga-nau-dong-bac-bo.png",
+      "canvas_pixels": [3840, 2160],
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/ga-nau-dong-bac-bo-480.webp", "pixels": [480, 270]},
+        {"path": "frontend/public/images/recipes/edited/ga-nau-dong-bac-bo-960.webp", "pixels": [960, 540]},
+        {"path": "frontend/public/images/recipes/edited/ga-nau-dong-bac-bo-1536.webp", "pixels": [1536, 864]},
+        {"path": "frontend/public/images/recipes/edited/ga-nau-dong-bac-bo-3840.webp", "pixels": [3840, 2160]}
+      ]
+    },
+    {
+      "id": "BV607",
+      "slug": "ga-hap-la-sen",
+      "native_file": "output/recipe-images/native/ga-hap-la-sen.png",
+      "native_pixels": [1536, 1024],
+      "has_alpha": true,
+      "canvas_export_file": "output/recipe-images/4k/ga-hap-la-sen.png",
+      "canvas_pixels": [3840, 2160],
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/ga-hap-la-sen-480.webp", "pixels": [480, 270]},
+        {"path": "frontend/public/images/recipes/edited/ga-hap-la-sen-960.webp", "pixels": [960, 540]},
+        {"path": "frontend/public/images/recipes/edited/ga-hap-la-sen-1536.webp", "pixels": [1536, 864]},
+        {"path": "frontend/public/images/recipes/edited/ga-hap-la-sen-3840.webp", "pixels": [3840, 2160]}
+      ]
+    },
+    {
+      "id": "BV608",
+      "slug": "mien-ngan-mang-kho-ha-noi",
+      "native_file": "output/recipe-images/native/mien-ngan-mang-kho-ha-noi.png",
+      "native_pixels": [1536, 1024],
+      "has_alpha": true,
+      "canvas_export_file": "output/recipe-images/4k/mien-ngan-mang-kho-ha-noi.png",
+      "canvas_pixels": [3840, 2160],
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/mien-ngan-mang-kho-ha-noi-480.webp", "pixels": [480, 270]},
+        {"path": "frontend/public/images/recipes/edited/mien-ngan-mang-kho-ha-noi-960.webp", "pixels": [960, 540]},
+        {"path": "frontend/public/images/recipes/edited/mien-ngan-mang-kho-ha-noi-1536.webp", "pixels": [1536, 864]},
+        {"path": "frontend/public/images/recipes/edited/mien-ngan-mang-kho-ha-noi-3840.webp", "pixels": [3840, 2160]}
+      ]
+    },
+    {
+      "id": "BV609",
+      "slug": "vit-rang-rieng",
+      "native_file": "output/recipe-images/native/vit-rang-rieng.png",
+      "native_pixels": [1536, 1024],
+      "has_alpha": true,
+      "canvas_export_file": "output/recipe-images/4k/vit-rang-rieng.png",
+      "canvas_pixels": [3840, 2160],
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/vit-rang-rieng-480.webp", "pixels": [480, 270]},
+        {"path": "frontend/public/images/recipes/edited/vit-rang-rieng-960.webp", "pixels": [960, 540]},
+        {"path": "frontend/public/images/recipes/edited/vit-rang-rieng-1536.webp", "pixels": [1536, 864]},
+        {"path": "frontend/public/images/recipes/edited/vit-rang-rieng-3840.webp", "pixels": [3840, 2160]}
+      ]
+    },
+    {
+      "id": "BV610",
+      "slug": "ngong-gia-cay-ha-noi",
+      "native_file": "output/recipe-images/native/ngong-gia-cay-ha-noi.png",
+      "native_pixels": [1359, 1157],
+      "has_alpha": true,
+      "canvas_export_file": "output/recipe-images/4k/ngong-gia-cay-ha-noi.png",
+      "canvas_pixels": [3840, 2160],
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/ngong-gia-cay-ha-noi-480.webp", "pixels": [480, 270]},
+        {"path": "frontend/public/images/recipes/edited/ngong-gia-cay-ha-noi-960.webp", "pixels": [960, 540]},
+        {"path": "frontend/public/images/recipes/edited/ngong-gia-cay-ha-noi-1536.webp", "pixels": [1536, 864]},
+        {"path": "frontend/public/images/recipes/edited/ngong-gia-cay-ha-noi-3840.webp", "pixels": [3840, 2160]}
+      ]
+    }
+  ]
+}

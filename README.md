@@ -28,7 +28,7 @@ Việc chuẩn bị bữa cơm hằng ngày thường gặp những câu hỏi q
 - **Đề xuất món:** người dùng đã đăng nhập có thể gửi món ăn mới cho hệ thống.
 - **Giao diện responsive:** sử dụng được trên máy tính, máy tính bảng và điện thoại.
 
-OTP email cần cấu hình SMTP để gửi thư thật; khi chạy development chưa có SMTP, API trả mã thử để kiểm tra luồng. Cấu hình và nguyên tắc phiên/tài khoản được ghi tại [docs/AUTHENTICATION_SECURITY.md](docs/AUTHENTICATION_SECURITY.md). Đăng nhập Facebook chưa được kích hoạt.
+Email OTP và thông báo cần cấu hình SMTP hoặc Gmail API để gửi thư thật; cấu hình `auto` tự chọn kênh đã có đủ thông tin. Chỉ môi trường test mới trả mã OTP trong phản hồi API. Cấu hình và nguyên tắc phiên/tài khoản được ghi tại [docs/AUTHENTICATION_SECURITY.md](docs/AUTHENTICATION_SECURITY.md). Đăng nhập Facebook chưa được kích hoạt.
 
 ## Ứng dụng thực tế
 
@@ -218,7 +218,7 @@ Chạy lệnh tại thư mục Bếp Việt. Lệnh giữ volume database và kh
 - Kho món hiển thị **24 món mỗi trang**. Chọn số trang hoặc mũi tên để thay danh sách hiện tại; tìm kiếm, đổi loại món, vùng miền hoặc cách sắp xếp sẽ trở về trang đầu. Trang đang xem và bộ lọc được lưu trong URL.
 - Đề xuất trên trang chủ trình chiếu từng món, chuyển nhẹ sau **10–13 giây**. Có nút chọn ảnh và chạy/tạm dừng; tự dừng khi rê chuột, thao tác bằng bàn phím hoặc chuyển sang tab khác. Người dùng bật chế độ giảm chuyển động sẽ không bị tự chạy slide.
 - Ảnh mới dùng nền trong suốt, giữ trọn đĩa/bát. Bản WebP theo kích thước hiển thị nằm tại `frontend/public/images/recipes/edited/`; ảnh gốc của kho vẫn được giữ nguyên.
-- Bộ ảnh có **334/334 món**: 304 món ban đầu và 30 món tráng miệng trái cây mới. Tiến độ, kích thước render thật và các đường dẫn ảnh được ghi tại [progress.json](output/recipe-images/progress.json) và [manifest.json](output/recipe-images/manifest.json).
+- Kho hiện có **534/534 món với ảnh cục bộ**: 304 món ban đầu, 30 món tráng miệng trái cây và 200 món vùng miền bổ sung. Nguồn ảnh và trạng thái quyền sử dụng được lưu riêng theo món; danh sách đường dẫn ảnh nằm tại [recipeImageAssets.json](frontend/src/data/recipeImageAssets.json). Tiến độ tạo ảnh trong bộ ảnh gốc được ghi tại [progress.json](output/recipe-images/progress.json) và [manifest.json](output/recipe-images/manifest.json).
 - Các bản PNG xuất **3840 × 2160** nằm tại [output/recipe-images/4k](output/recipe-images/4k). Đây là bản xuất phóng từ ảnh AI gốc; kích thước render của từng ảnh khác nhau và không phải render 4K nguyên bản. [Ghi chú ảnh và prompt](output/recipe-images/README.md) mô tả nguồn và cách xuất ảnh.
 
 ## Kiểm tra chất lượng mã nguồn

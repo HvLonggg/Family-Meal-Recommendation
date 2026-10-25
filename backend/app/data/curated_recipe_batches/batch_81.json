@@ -1,0 +1,1299 @@
+{
+  "batch": 81,
+  "description": "Năm món canh, cá kho và cơm chiên đời thường cho bữa cơm Việt, biên tập từ nguồn đã ghi nhận.",
+  "recipes": [
+    {
+      "id": "BV732",
+      "slug": "canh-bap-cai-thit-vien",
+      "name": "Canh bắp cải thịt viên",
+      "aliases": [
+        "Canh bắp cải nấu viên thịt",
+        "Canh bắp cải nấu thịt bằm"
+      ],
+      "region": [
+        "Ba miền"
+      ],
+      "province": [],
+      "category": "Món canh",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "mâm cơm gia đình",
+        "món canh"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một nồi canh cho bốn người trong bữa cơm gia đình.",
+      "prep_time": 15,
+      "cook_time": 25,
+      "passive_time": 0,
+      "total_time": 40,
+      "description": "Bắp cải ngọt mềm nấu cùng viên thịt heo và cà rốt, cho nước canh trong, vị dịu và dễ ăn. Hợp với bữa cơm có cá kho hoặc thịt rim.",
+      "finished_dish": "Nước canh trong nhẹ, bắp cải vừa mềm, viên thịt chín mọng và cà rốt còn giữ hình.",
+      "serving": "Múc nóng ra tô, rắc hành lá và dùng cùng cơm trắng.",
+      "tips": [
+        "Quết thịt và giò sống cho dẻo để viên thịt giữ kết cấu.",
+        "Thả viên thịt vào nước sôi nhẹ, hớt bọt để nước canh trong.",
+        "Cho bắp cải vào sau khi thịt viên gần chín để rau không nhũn."
+      ],
+      "dish_type": [
+        "Canh rau nấu thịt",
+        "Món canh gia đình"
+      ],
+      "main_ingredient": [
+        "bắp cải",
+        "thịt heo"
+      ],
+      "cooking_method": [
+        "vo viên",
+        "nấu canh"
+      ],
+      "search_terms": [
+        "canh bắp cải thịt viên",
+        "bắp cải nấu thịt bằm",
+        "canh thịt viên rau củ"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Canh bắp cải thịt viên với bắp cải xanh nhạt, cà rốt và viên thịt trong nước dùng trong.",
+      "time_note": "Khoảng 40 phút; viên thịt được nấu chín trước khi cho rau vào.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Cá kho",
+        "Đậu hũ chiên"
+      ],
+      "recipe_family": "canh_bap_cai_thit_vien",
+      "keywords": [
+        "bắp cải",
+        "thịt viên",
+        "canh gia đình",
+        "món dễ nấu"
+      ],
+      "tags": [
+        "món canh",
+        "thịt heo",
+        "mâm cơm gia đình",
+        "dễ nấu",
+        "Ba miền"
+      ],
+      "ingredients": [
+        {
+          "name": "Bắp cải",
+          "quantity": 400,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Bỏ lá già, rửa sạch và cắt miếng vừa ăn.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Thịt heo xay",
+          "quantity": 200,
+          "unit": "g",
+          "role": "meat",
+          "notes": "Chọn nạc dăm có chút mỡ.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Giò sống",
+          "quantity": 130,
+          "unit": "g",
+          "role": "binder",
+          "notes": "Giúp viên thịt mềm và kết dính.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Bông cải xanh",
+          "quantity": 40,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Tách nhánh nhỏ; có thể bỏ nếu không có.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Cà rốt",
+          "quantity": 40,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Gọt vỏ, cắt lát.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 10,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "condiment",
+          "notes": "Chia để nêm thịt và nước canh.",
+          "scaling_rule": "seasoning",
+          "sequence": 7
+        },
+        {
+          "name": "Muối",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Gia giảm sau khi nếm.",
+          "scaling_rule": "seasoning",
+          "sequence": 8
+        },
+        {
+          "name": "Nước",
+          "quantity": 1100,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Có thể thay một phần bằng nước dùng.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 10,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa bắp cải và bông cải, để ráo rồi cắt miếng vừa ăn. Cà rốt gọt vỏ, thái lát; hành lá thái nhỏ."
+        },
+        {
+          "step": 2,
+          "instruction": "Trộn thịt xay với giò sống, hành tím và một ít nước mắm. Quết dẻo rồi vo viên."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đun sôi nước. Thả từng viên thịt vào, giữ lửa vừa và hớt bọt."
+        },
+        {
+          "step": 2,
+          "instruction": "Khi viên thịt gần chín, cho cà rốt, bông cải rồi bắp cải vào nấu."
+        },
+        {
+          "step": 3,
+          "instruction": "Nấu rau vừa mềm, nêm nước mắm và muối. Tắt bếp, thêm hành lá."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.dienmayxanh.com/vao-bep/3-cach-nau-canh-bap-cai-don-gian-thom-ngon-ai-cung-lam-duoc-04670",
+          "publisher": "Điện máy XANH",
+          "title": "3 cách nấu canh bắp cải đơn giản thơm ngon, ai cũng làm được",
+          "use": "Đối chiếu bắp cải, thịt xay, giò sống, cà rốt, cách vo viên và thứ tự nấu rau.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minutes",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Giảm nguyên liệu chính còn một nửa; nêm gia vị từ ít đến vừa.",
+            "instruction": "Điều chỉnh lượng nước theo cỡ nồi."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.3,
+            "example": "Tăng nguyên liệu chính khoảng một lần rưỡi; nêm lại sau khi sôi.",
+            "instruction": "Nếm và điều chỉnh trước khi tắt bếp."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/canh-bap-cai-thit-vien-960.webp",
+          "page_url": "https://www.dienmayxanh.com/vao-bep/3-cach-nau-canh-bap-cai-don-gian-thom-ngon-ai-cung-lam-duoc-04670",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo riêng cho Bếp Việt; nguồn chỉ dùng để biên tập công thức.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Canh bắp cải thịt viên với bắp cải xanh nhạt, cà rốt và viên thịt trong nước dùng trong.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "PNG gốc 1374×1145 có alpha; bản WebP responsive xuất từ ảnh gốc, master 3840×2160 đã tăng kích thước, không phải native 4K. Công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Biên tập riêng từ nguồn tham khảo; cần nấu thử để xác nhận định lượng và thời gian.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử để xác nhận vị, định lượng và thời gian thực tế."
+        ]
+      },
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "id": "BV733",
+      "slug": "canh-bi-xanh-tom-kho",
+      "name": "Canh bí xanh tôm khô",
+      "aliases": [
+        "Canh bí đao tôm khô",
+        "Canh bí xanh nấu tôm khô"
+      ],
+      "region": [
+        "Ba miền"
+      ],
+      "province": [],
+      "category": "Món canh",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "mâm cơm gia đình",
+        "món canh"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một nồi canh thanh vị cho bốn người.",
+      "prep_time": 15,
+      "cook_time": 30,
+      "passive_time": 15,
+      "total_time": 60,
+      "description": "Bí xanh nấu với tôm khô tạo vị ngọt tự nhiên và thơm dịu; hợp với mâm cơm có món kho hoặc món chiên.",
+      "finished_dish": "Miếng bí vừa trong nhưng còn nguyên hình, tôm mềm thơm và nước canh ngọt dịu.",
+      "serving": "Múc nóng ra tô, rắc hành lá và chút tiêu; dùng cùng cơm.",
+      "tips": [
+        "Ngâm tôm khô rồi rửa lại để mềm và loại bỏ cát sạn.",
+        "Nấu bí đến vừa trong, tránh đun lâu làm bí nhũn.",
+        "Cho hành sau khi tắt bếp để giữ màu."
+      ],
+      "dish_type": [
+        "Canh rau củ",
+        "Món canh thanh vị"
+      ],
+      "main_ingredient": [
+        "bí xanh",
+        "tôm khô"
+      ],
+      "cooking_method": [
+        "ngâm",
+        "nấu canh"
+      ],
+      "search_terms": [
+        "canh bí xanh tôm khô",
+        "canh bí đao tôm khô"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Canh bí xanh tôm khô trong tô sứ trắng với miếng bí nhạt và tôm trong nước dùng.",
+      "time_note": "Khoảng 60 phút, gồm khoảng 15 phút ngâm tôm khô.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Cá kho",
+        "Thịt rim"
+      ],
+      "recipe_family": "canh_bi_xanh_tom_kho",
+      "keywords": [
+        "bí xanh",
+        "bí đao",
+        "tôm khô",
+        "canh gia đình"
+      ],
+      "tags": [
+        "món canh",
+        "hải sản",
+        "mâm cơm gia đình",
+        "dễ nấu",
+        "Ba miền"
+      ],
+      "ingredients": [
+        {
+          "name": "Bí xanh",
+          "quantity": 500,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Gọt vỏ, bỏ ruột già và cắt miếng dày vừa.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Tôm khô",
+          "quantity": 30,
+          "unit": "g",
+          "role": "seafood",
+          "notes": "Rửa, ngâm mềm rồi giã dập.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 10,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "cooking_fat",
+          "notes": "Dùng để phi hành.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Nước",
+          "quantity": 1200,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Điều chỉnh theo độ đặc mong muốn.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "condiment",
+          "notes": "Nêm từ ít đến vừa.",
+          "scaling_rule": "seasoning",
+          "sequence": 6
+        },
+        {
+          "name": "Muối",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Tôm khô vốn đã mặn.",
+          "scaling_rule": "seasoning",
+          "sequence": 7
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 12,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Cắt nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Tùy chọn.",
+          "scaling_rule": "seasoning",
+          "sequence": 9
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa tôm khô, ngâm nước ấm khoảng 15 phút, rửa lại và giã dập."
+        },
+        {
+          "step": 2,
+          "instruction": "Gọt bí, bỏ ruột già và cắt lát vừa ăn; băm hành tím, cắt hành lá."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Phi hành tím với dầu, cho tôm khô vào đảo sơ."
+        },
+        {
+          "step": 2,
+          "instruction": "Thêm nước, đun nhẹ 10–15 phút để tôm tiết vị ngọt rồi nêm nhẹ."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho bí vào nấu đến khi vừa trong và mềm. Tắt bếp, thêm hành lá và tiêu."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://suckhoedoisong.vn/canh-bi-xanh-tom-kho-ngot-mat-169132698.htm",
+          "publisher": "Sức khỏe & Đời sống",
+          "title": "Canh bí xanh tôm khô ngọt mát",
+          "use": "Đối chiếu cách ngâm, giã tôm khô, nấu lấy vị ngọt rồi cho bí vào sau; lưu ý độ dày miếng bí và thời điểm thêm hành.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minutes",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Giảm nguyên liệu chính còn một nửa; nêm gia vị từ ít đến vừa.",
+            "instruction": "Điều chỉnh lượng nước theo cỡ nồi."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.3,
+            "example": "Tăng nguyên liệu chính khoảng một lần rưỡi; nêm lại sau khi sôi.",
+            "instruction": "Nếm và điều chỉnh trước khi tắt bếp."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/canh-bi-xanh-tom-kho-960.webp",
+          "page_url": "https://suckhoedoisong.vn/canh-bi-xanh-tom-kho-ngot-mat-169132698.htm",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo riêng cho Bếp Việt; nguồn chỉ dùng để biên tập công thức.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Canh bí xanh tôm khô trong tô sứ trắng với miếng bí nhạt và tôm trong nước dùng.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "PNG gốc 1374×1145 có alpha; bản WebP responsive xuất từ ảnh gốc, master 3840×2160 đã tăng kích thước, không phải native 4K. Công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Biên tập riêng từ nguồn tham khảo; cần nấu thử để xác nhận định lượng và thời gian.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử để xác nhận vị, định lượng và thời gian thực tế."
+        ]
+      },
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "id": "BV734",
+      "slug": "ca-doi-kho-me",
+      "name": "Cá đối kho me",
+      "aliases": [
+        "Cá đối kho nước me",
+        "Cá đối kho me chua"
+      ],
+      "region": [
+        "Ba miền"
+      ],
+      "province": [],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "mâm cơm gia đình",
+        "món cá",
+        "món kho"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Khoảng bốn phần cá dùng với cơm nóng.",
+      "prep_time": 25,
+      "cook_time": 35,
+      "passive_time": 20,
+      "total_time": 80,
+      "description": "Cá đối kho cùng nước cốt me, nước mắm và hành tỏi cho vị chua mặn ngọt cân bằng. Nước kho sánh vừa, hợp ăn với cơm và rau luộc.",
+      "finished_dish": "Miếng cá chín chắc, phủ nước kho nâu óng với vị me chua dịu, thơm hành tỏi và tiêu.",
+      "serving": "Dọn cùng cơm trắng, rau luộc hoặc dưa leo; gắp nhẹ để tránh làm nát cá.",
+      "tips": [
+        "Làm sạch màng bụng và để cá ráo trước khi ướp.",
+        "Lọc kỹ nước cốt me để bỏ hạt và xơ.",
+        "Kho lửa nhỏ, hạn chế đảo; cá cần chín hoàn toàn tới sát xương."
+      ],
+      "dish_type": [
+        "Cá kho",
+        "Món mặn ăn cơm"
+      ],
+      "main_ingredient": [
+        "cá đối",
+        "me"
+      ],
+      "cooking_method": [
+        "ướp",
+        "kho"
+      ],
+      "search_terms": [
+        "cá đối kho me",
+        "cá kho nước me",
+        "cá kho chua ngọt"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Cá đối kho me trong nồi đất, miếng cá phủ nước kho nâu óng cùng hành tím, hành lá và ớt.",
+      "time_note": "Khoảng 80 phút, gồm 20 phút ướp cá; giữ lửa nhỏ để cá thấm mà không vỡ.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Rau muống luộc",
+        "Canh bí xanh"
+      ],
+      "recipe_family": "ca_doi_kho_me",
+      "keywords": [
+        "cá đối",
+        "me chín",
+        "món kho",
+        "món mặn ăn cơm"
+      ],
+      "tags": [
+        "món mặn",
+        "món cá",
+        "món kho",
+        "mâm cơm gia đình",
+        "Ba miền"
+      ],
+      "ingredients": [
+        {
+          "name": "Cá đối",
+          "quantity": 500,
+          "unit": "g",
+          "role": "seafood",
+          "notes": "Làm sạch, bỏ mang và ruột; cắt khúc nếu cá lớn.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Me chín",
+          "quantity": 40,
+          "unit": "g",
+          "role": "acid",
+          "notes": "Dằm với nước nóng rồi lọc lấy nước cốt.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 10,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "condiment",
+          "notes": "Có thể giảm nếu nước mắm mặn.",
+          "scaling_rule": "seasoning",
+          "sequence": 5
+        },
+        {
+          "name": "Đường",
+          "quantity": 20,
+          "unit": "g",
+          "role": "sweetener",
+          "notes": "Cân bằng vị me.",
+          "scaling_rule": "seasoning",
+          "sequence": 6
+        },
+        {
+          "name": "Nước màu",
+          "quantity": 5,
+          "unit": "ml",
+          "role": "condiment",
+          "notes": "Tạo màu; có thể bỏ.",
+          "scaling_rule": "seasoning",
+          "sequence": 7
+        },
+        {
+          "name": "Nước",
+          "quantity": 150,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Vừa xâm xấp cá.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Ướp và rắc sau cùng.",
+          "scaling_rule": "seasoning",
+          "sequence": 9
+        },
+        {
+          "name": "Ớt",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Tùy chọn.",
+          "scaling_rule": "seasoning",
+          "sequence": 10
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 10,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Muối",
+          "quantity": 3,
+          "unit": "g",
+          "role": "cleaning",
+          "notes": "Xát cá rồi rửa sạch.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm sạch cá, bỏ mang và ruột; xát với muối, rửa lại và để ráo."
+        },
+        {
+          "step": 2,
+          "instruction": "Dằm me với nước nóng, lọc lấy cốt. Ướp cá với hành, tỏi, nước mắm, đường, nước màu và tiêu khoảng 20 phút."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Xếp cá vào nồi, đun vừa đến khi mặt cá săn lại; không đảo mạnh."
+        },
+        {
+          "step": 2,
+          "instruction": "Thêm nước cốt me và nước vừa xâm xấp. Khi sôi, hạ lửa nhỏ kho đến khi cá chín và sốt sánh."
+        },
+        {
+          "step": 3,
+          "instruction": "Nếm lại vị chua mặn ngọt, thêm ớt, tiêu, hành lá rồi dùng nóng."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://monngonmoingay.com/cach-nau-thit-ca-doi-ngon/",
+          "publisher": "Món Ngon Mỗi Ngày",
+          "title": "Cá đối làm gì ngon? 11+ công thức từ kho, chiên, nướng đến hấp chuẩn vị",
+          "use": "Đối chiếu tên món cá đối kho me, lượng cá và me, bước ướp, lọc nước cốt me và kho nhỏ lửa đến khi sốt sánh.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minutes",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Giảm nguyên liệu chính còn một nửa; nêm gia vị từ ít đến vừa.",
+            "instruction": "Điều chỉnh lượng nước theo cỡ nồi."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.3,
+            "example": "Tăng nguyên liệu chính khoảng một lần rưỡi; nêm lại sau khi sôi.",
+            "instruction": "Nếm và điều chỉnh trước khi tắt bếp."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/ca-doi-kho-me-960.webp",
+          "page_url": "https://monngonmoingay.com/cach-nau-thit-ca-doi-ngon/",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo riêng cho Bếp Việt; nguồn chỉ dùng để biên tập công thức.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Cá đối kho me trong nồi đất, miếng cá phủ nước kho nâu óng cùng hành tím, hành lá và ớt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "PNG gốc 1372×1147 có alpha; bản WebP responsive xuất từ ảnh gốc, master 3840×2160 đã tăng kích thước, không phải native 4K. Công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Biên tập riêng từ nguồn tham khảo; cần nấu thử để xác nhận định lượng và thời gian.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử để xác nhận vị, định lượng và thời gian thực tế."
+        ]
+      },
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "id": "BV735",
+      "slug": "com-chien-ca-man",
+      "name": "Cơm chiên cá mặn",
+      "aliases": [
+        "Cơm rang cá mặn",
+        "Cơm chiên khô cá mặn"
+      ],
+      "region": [
+        "Nam Bộ"
+      ],
+      "province": [],
+      "category": "Món cơm",
+      "meal_type": [
+        "bữa sáng",
+        "bữa trưa",
+        "bữa tối",
+        "món ăn no"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Bốn phần cơm chiên dùng làm món chính cho bữa sáng hoặc bữa nhanh.",
+      "prep_time": 15,
+      "cook_time": 20,
+      "passive_time": 0,
+      "total_time": 35,
+      "description": "Cơm nguội rang tơi với cá mặn xé nhỏ, trứng và bắp cải. Món cơm đậm vị kiểu Nam Bộ, tận dụng cơm nguội và làm nhanh cho bữa sáng hoặc bữa trưa.",
+      "finished_dish": "Hạt cơm săn tơi, thơm tỏi; cá mặn phân bố đều, trứng vàng mềm và bắp cải còn chút giòn.",
+      "serving": "Dọn nóng, có thể ăn kèm dưa leo hoặc dưa góp để cân bằng vị mặn.",
+      "tips": [
+        "Dùng cơm đã nguội và tơi để hạt cơm không bết.",
+        "Áp chảo cá mặn, gỡ xương và nếm trước khi nêm thêm.",
+        "Rang từng phần nếu chảo nhỏ để cơm nóng đều."
+      ],
+      "dish_type": [
+        "Cơm rang",
+        "Món ăn sáng"
+      ],
+      "main_ingredient": [
+        "cơm",
+        "cá mặn",
+        "trứng"
+      ],
+      "cooking_method": [
+        "áp chảo",
+        "rang"
+      ],
+      "search_terms": [
+        "cơm chiên cá mặn",
+        "cơm rang cá mặn",
+        "cơm chiên cá khô"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Đĩa cơm chiên cá mặn với hạt cơm vàng tơi, cá xé, trứng, bắp cải và hành lá.",
+      "time_note": "Khoảng 35 phút, dùng cơm nấu sẵn và áp chảo cá riêng trước khi rang.",
+      "suggested_pairings": [
+        "Dưa leo",
+        "Dưa góp",
+        "Rau sống"
+      ],
+      "recipe_family": "com_chien_ca_man",
+      "keywords": [
+        "cơm nguội",
+        "cá mặn",
+        "trứng",
+        "món ăn sáng"
+      ],
+      "tags": [
+        "món cơm",
+        "món ăn sáng",
+        "Nam Bộ",
+        "dễ nấu",
+        "tận dụng cơm nguội"
+      ],
+      "ingredients": [
+        {
+          "name": "Cơm trắng để nguội",
+          "quantity": 600,
+          "unit": "g",
+          "role": "grain",
+          "notes": "Để nguội và xới tơi trước khi rang.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Khô cá mặn",
+          "quantity": 100,
+          "unit": "g",
+          "role": "seafood",
+          "notes": "Chọn khúc ít xương; ngâm nhanh nếu quá mặn.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Trứng gà",
+          "quantity": 2,
+          "unit": "quả",
+          "role": "protein",
+          "notes": "Đánh tan.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Bắp cải",
+          "quantity": 50,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Thái sợi.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 10,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Gừng",
+          "quantity": 8,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 15,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Đầu hành băm, lá thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "cooking_fat",
+          "notes": "Áp chảo cá và rang cơm.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Nước tương",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "condiment",
+          "notes": "Nêm ít trước, điều chỉnh sau.",
+          "scaling_rule": "seasoning",
+          "sequence": 9
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Rắc sau cùng.",
+          "scaling_rule": "seasoning",
+          "sequence": 10
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Xới tơi cơm nguội. Rửa nhanh cá nếu quá mặn, thấm khô rồi áp chảo; gỡ xương và xé cá."
+        },
+        {
+          "step": 2,
+          "instruction": "Thái bắp cải, băm tỏi, gừng và đầu hành; đánh tan trứng."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Phi thơm tỏi, gừng và đầu hành. Thêm cá mặn, đảo nhanh rồi lấy ra."
+        },
+        {
+          "step": 2,
+          "instruction": "Tráng trứng trong chảo, cho cơm vào rang và đảo tách hạt đến khi nóng, săn."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho cá và bắp cải vào, nêm nước tương và tiêu, thêm hành lá rồi tắt bếp."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://daotaobeptruong.vn/com-chien-ca-man",
+          "publisher": "Đào Tạo Bếp Trưởng Á Âu",
+          "title": "[Bật Mí] cách làm cơm chiên cá mặn ngon như nhà hàng",
+          "use": "Đối chiếu cơm nguội, khô cá mặn áp chảo và gỡ xương, trứng, bắp cải và thứ tự rang. Bếp Việt lược phần ức gà để có phiên bản ít khâu hơn.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minutes",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Giảm nguyên liệu chính còn một nửa; nêm gia vị từ ít đến vừa.",
+            "instruction": "Điều chỉnh lượng nước theo cỡ nồi."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.3,
+            "example": "Tăng nguyên liệu chính khoảng một lần rưỡi; nêm lại sau khi sôi.",
+            "instruction": "Nếm và điều chỉnh trước khi tắt bếp."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/com-chien-ca-man-960.webp",
+          "page_url": "https://daotaobeptruong.vn/com-chien-ca-man",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo riêng cho Bếp Việt; nguồn chỉ dùng để biên tập công thức.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa cơm chiên cá mặn với hạt cơm vàng tơi, cá xé, trứng, bắp cải và hành lá.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "PNG gốc 1536×1024 có alpha; bản WebP responsive xuất từ ảnh gốc, master 3840×2160 đã tăng kích thước, không phải native 4K. Công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Biên tập riêng từ nguồn tham khảo; cần nấu thử để xác nhận định lượng và thời gian.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử để xác nhận vị, định lượng và thời gian thực tế."
+        ]
+      },
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "id": "BV736",
+      "slug": "canh-tom-nam-mong-toi",
+      "name": "Canh tôm nấm mồng tơi",
+      "aliases": [
+        "Canh tôm viên nấm mồng tơi",
+        "Canh mồng tơi nấu tôm viên và nấm bào ngư"
+      ],
+      "region": [
+        "Ba miền"
+      ],
+      "province": [],
+      "category": "Món canh",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "mâm cơm gia đình",
+        "món canh"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Một nồi canh tôm viên nấu rau và nấm cho bốn người.",
+      "prep_time": 20,
+      "cook_time": 15,
+      "passive_time": 0,
+      "total_time": 35,
+      "description": "Tôm tươi bọc giò sống thành viên, nấu cùng nấm bào ngư, cà chua và rau mồng tơi. Nước canh thanh, hơi chua nhẹ, hợp dùng nóng với cơm.",
+      "finished_dish": "Viên tôm mọng, nấm mềm, rau mồng tơi xanh và nước canh ngọt dịu, chua nhẹ từ cà chua.",
+      "serving": "Dọn nóng cùng cơm; nấu rau vừa chín để giữ màu.",
+      "tips": [
+        "Bọc giò sống quanh thân tôm, chừa đuôi tôm ra ngoài.",
+        "Xào đầu tôm với hành tỏi rồi thêm nước để lấy hương.",
+        "Cho rau mồng tơi vào sau cùng, vừa chín thì tắt bếp."
+      ],
+      "dish_type": [
+        "Canh tôm viên",
+        "Canh rau nấm"
+      ],
+      "main_ingredient": [
+        "tôm",
+        "rau mồng tơi",
+        "nấm bào ngư"
+      ],
+      "cooking_method": [
+        "bọc tôm viên",
+        "nấu canh"
+      ],
+      "search_terms": [
+        "canh tôm nấm mồng tơi",
+        "canh tôm viên mồng tơi",
+        "canh rau mồng tơi nấu nấm"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Canh tôm viên nấm mồng tơi với rau xanh, nấm bào ngư, cà chua và viên giò sống bọc tôm.",
+      "time_note": "Khoảng 35 phút; cho rau vào cuối để giữ màu xanh.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Cá kho",
+        "Đậu hũ chiên"
+      ],
+      "recipe_family": "canh_tom_nam_mong_toi",
+      "keywords": [
+        "rau mồng tơi",
+        "tôm tươi",
+        "nấm bào ngư",
+        "canh gia đình"
+      ],
+      "tags": [
+        "món canh",
+        "hải sản",
+        "mâm cơm gia đình",
+        "rau xanh",
+        "Ba miền"
+      ],
+      "ingredients": [
+        {
+          "name": "Tôm tươi",
+          "quantity": 12,
+          "unit": "con",
+          "role": "seafood",
+          "notes": "Bóc vỏ thân, giữ đuôi nếu muốn tạo hình viên.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Giò sống",
+          "quantity": 180,
+          "unit": "g",
+          "role": "binder",
+          "notes": "Bọc quanh từng phần tôm.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Nấm bào ngư",
+          "quantity": 150,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Tách nhỏ, rửa nhanh và để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Rau mồng tơi",
+          "quantity": 400,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Nhặt lá và ngọn non, rửa rồi cắt khúc.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Cà chua",
+          "quantity": 150,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Bổ múi cau.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 10,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Nước",
+          "quantity": 1400,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Có thể dùng nước hầm đầu tôm đã lọc.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "cooking_fat",
+          "notes": "Phi hành tỏi.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "condiment",
+          "notes": "Nêm từ từ.",
+          "scaling_rule": "seasoning",
+          "sequence": 10
+        },
+        {
+          "name": "Muối",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Điều chỉnh sau khi nếm.",
+          "scaling_rule": "seasoning",
+          "sequence": 11
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Trộn vào giò sống và nêm canh.",
+          "scaling_rule": "seasoning",
+          "sequence": 12
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Tôm bóc vỏ, bỏ chỉ lưng; giữ đầu riêng nếu dùng nấu nước. Cắt thân tôm thành phần vừa bọc."
+        },
+        {
+          "step": 2,
+          "instruction": "Trộn giò sống với tiêu và chút hành tím. Chia nhỏ, bọc quanh tôm, chừa đuôi ra ngoài."
+        },
+        {
+          "step": 3,
+          "instruction": "Tách nấm, nhặt rửa và cắt khúc mồng tơi; bổ múi cau cà chua."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Phi hành tím và tỏi. Nếu giữ đầu tôm, đảo đến khi chuyển màu, thêm nước, đun sôi rồi lọc bỏ đầu."
+        },
+        {
+          "step": 2,
+          "instruction": "Cho cà chua và nấm vào nước dùng, nấu vài phút. Thả viên tôm vào, nấu đến khi viên chín."
+        },
+        {
+          "step": 3,
+          "instruction": "Nêm nước mắm, muối và tiêu. Thêm mồng tơi, nấu vừa chín tới rồi tắt bếp."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://monngonmoingay.com/canh-tom-vien-nam-mong-toi/",
+          "publisher": "Món Ngon Mỗi Ngày",
+          "title": "Canh tôm nấm mồng tơi",
+          "use": "Đối chiếu tôm, giò sống, nấm bào ngư, mồng tơi, cà chua và trình tự bọc viên, nấu nước rồi thêm rau cuối cùng.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minutes",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Giảm nguyên liệu chính còn một nửa; nêm gia vị từ ít đến vừa.",
+            "instruction": "Điều chỉnh lượng nước theo cỡ nồi."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.3,
+            "example": "Tăng nguyên liệu chính khoảng một lần rưỡi; nêm lại sau khi sôi.",
+            "instruction": "Nếm và điều chỉnh trước khi tắt bếp."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/canh-tom-nam-mong-toi-960.webp",
+          "page_url": "https://monngonmoingay.com/canh-tom-vien-nam-mong-toi/",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo riêng cho Bếp Việt; nguồn chỉ dùng để biên tập công thức.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Canh tôm viên nấm mồng tơi với rau xanh, nấm bào ngư, cà chua và viên giò sống bọc tôm.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "PNG gốc 1374×1145 có alpha; bản WebP responsive xuất từ ảnh gốc, master 3840×2160 đã tăng kích thước, không phải native 4K. Công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Biên tập riêng từ nguồn tham khảo; cần nấu thử để xác nhận định lượng và thời gian.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử để xác nhận vị, định lượng và thời gian thực tế."
+        ]
+      },
+      "width": 3840,
+      "height": 2160
+    }
+  ]
+}

@@ -23,6 +23,7 @@ export type Recipe = {
   catalogId?: string;
   aliases?: string[];
   regions?: string[];
+  provinces?: string[];
   passiveMinutes?: number;
   finishedDish?: string;
   tips?: string[];
@@ -599,7 +600,7 @@ function localizeRecipe(recipe: Recipe): Recipe {
   return {
     ...recipe,
     name,
-// Giữ tên tiếng Việt để tìm món khi giao diện đang dùng tiếng Anh.
+    // Giữ tên tiếng Việt để tìm món khi giao diện đang dùng tiếng Anh.
     aliases: [...(recipe.aliases ?? []), recipe.name],
     excerpt: recipeText(recipe.excerpt),
     imageAlt: dictionary?.[recipe.imageAlt] ?? name,

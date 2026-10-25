@@ -4,15 +4,16 @@ import { canonicalPath, legacyRoutes } from '@/app/router/legacyRoutes';
 
 import { AuthLayout } from '@/app/layouts/AuthLayout';
 import { PublicLayout } from '@/app/layouts/PublicLayout';
-import { useAuth } from '@/features/auth/AuthContext';
 import { ProtectedRoute } from '@/features/auth/ProtectedRoute';
 import { AccountLayout } from '@/pages/account/AccountLayout';
 import { AccountOverviewPage } from '@/pages/account/AccountOverviewPage';
+import { CookHistoryPage } from '@/pages/account/CookHistoryPage';
 import { MyStoriesPage } from '@/pages/account/MyStoriesPage';
 import { MySubmissionsPage } from '@/pages/account/MySubmissionsPage';
 import { SecurityPage } from '@/pages/account/SecurityPage';
 import { SettingsPage } from '@/pages/account/SettingsPage';
 import { AdminArticlesPage } from '@/pages/admin/AdminArticlesPage';
+import { AdminAssistantPage } from '@/pages/admin/AdminAssistantPage';
 import { AdminLayout } from '@/pages/admin/AdminLayout';
 import { AdminOverviewPage } from '@/pages/admin/AdminOverviewPage';
 import { AdminPlansPage } from '@/pages/admin/AdminPlansPage';
@@ -24,6 +25,7 @@ import { AdminUsersPage } from '@/pages/admin/AdminUsersPage';
 import { ArticleDetailPage } from '@/pages/ArticleDetailPage';
 import { ArticlesPage } from '@/pages/ArticlesPage';
 import { ContactPage } from '@/pages/ContactPage';
+import { CookModePage } from '@/pages/CookModePage';
 import { FavoritesPage } from '@/pages/FavoritesPage';
 import { HomePage } from '@/pages/HomePage';
 import { MealSetsPage } from '@/pages/MealSetsPage';
@@ -52,30 +54,25 @@ function LegacyRedirect() {
   );
 }
 
-/** Khi mở ứng dụng mà chưa đăng nhập thì vào thẳng trang đăng nhập. */
-function HomeRoute() {
-  const { isLoading, user } = useAuth();
-  if (!isLoading && !user) return <Navigate replace to="/login" />;
-  return <HomePage />;
-}
-
 const router = createBrowserRouter([
   ...Object.keys(legacyRoutes).map((path) => ({ path: `${path}/*`, element: <LegacyRedirect /> })),
   {
-    element: <PublicLayout />,
+    // Mọi trang của ứng dụng đều cần đăng nhập: mở bằng đường dẫn trực tiếp hay sau khi
+    // đăng xuất đều về trang đăng nhập, đăng nhập xong quay lại đúng trang đã mở.
+    element: (
+      <ProtectedRoute>
+        <PublicLayout />
+      </ProtectedRoute>
+    ),
     children: [
-      { index: true, element: <HomeRoute /> },
+      { index: true, element: <HomePage /> },
       { path: 'recipes', element: <RecipesPage /> },
       { path: 'recipes/:slug', element: <RecipeDetailPage /> },
       { path: 'meals', element: <MealSetsPage /> },
       { path: 'random-meal', element: <RandomMealPage /> },
       {
         path: 'planner',
-        element: (
-          <ProtectedRoute>
-            <PlannerPage />
-          </ProtectedRoute>
-        ),
+        element: <PlannerPage />,
       },
       { path: 'suggestions', element: <SuggestionsPage /> },
       { path: 'nutrition', element: <NutritionPage /> },
@@ -85,45 +82,39 @@ const router = createBrowserRouter([
       { path: 'favorites', element: <FavoritesPage /> },
       {
         path: 'stories/new',
-        element: (
-          <ProtectedRoute>
-            <StoryEditorPage />
-          </ProtectedRoute>
-        ),
+        element: <StoryEditorPage />,
       },
       {
         path: 'stories/:id/edit',
-        element: (
-          <ProtectedRoute>
-            <StoryEditorPage />
-          </ProtectedRoute>
-        ),
+        element: <StoryEditorPage />,
       },
       {
         path: 'submit-recipe',
-        element: (
-          <ProtectedRoute>
-            <SubmitRecipePage />
-          </ProtectedRoute>
-        ),
+        element: <SubmitRecipePage />,
       },
       {
         path: 'account',
-        element: (
-          <ProtectedRoute>
-            <AccountLayout />
-          </ProtectedRoute>
-        ),
+        element: <AccountLayout />,
         children: [
           { index: true, element: <AccountOverviewPage /> },
           { path: 'settings', element: <SettingsPage /> },
           { path: 'security', element: <SecurityPage /> },
           { path: 'stories', element: <MyStoriesPage /> },
           { path: 'submissions', element: <MySubmissionsPage /> },
+          { path: 'cooked', element: <CookHistoryPage /> },
         ],
       },
       { path: '*', element: <NotFoundPage /> },
     ],
+  },
+  {
+    // Chế độ vào bếp toàn màn hình: chữ to, điều khiển bằng giọng nói, không header/footer.
+    path: 'cook',
+    element: (
+      <ProtectedRoute>
+        <CookModePage />
+      </ProtectedRoute>
+    ),
   },
   {
     // Khu quản trị có khung riêng, không dùng header/footer của trang công khai.
@@ -144,6 +135,7 @@ const router = createBrowserRouter([
       { path: 'articles/:id/edit', element: <StoryEditorPage /> },
       { path: 'submissions', element: <AdminSubmissionsPage /> },
       { path: 'support', element: <AdminSupportPage /> },
+      { path: 'assistant', element: <AdminAssistantPage /> },
       { path: 'settings', element: <SettingsPage /> },
       { path: 'security', element: <SecurityPage /> },
       { path: '*', element: <Navigate replace to="/admin" /> },

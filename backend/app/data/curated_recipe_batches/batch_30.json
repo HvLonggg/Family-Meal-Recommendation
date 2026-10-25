@@ -1,0 +1,1676 @@
+{
+  "batch": 30,
+  "description": "Batch 30: five regionally grounded Vietnamese dishes BV476–BV480, edited for home cooking with linked culinary references and original Bếp Việt images.",
+  "recipes": [
+    {
+      "id": "BV476",
+      "slug": "lau-tha-phan-thiet",
+      "name": "Lẩu thả Phan Thiết",
+      "aliases": [
+        "Lẩu thả cá mai",
+        "Lẩu thả Bình Thuận"
+      ],
+      "region": [
+        "Nam Trung Bộ"
+      ],
+      "province": [
+        "Lâm Đồng (Phan Thiết, Bình Thuận cũ)"
+      ],
+      "category": "Món nước",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "4 phần ăn, bày riêng cá mai, bún và rau; dùng kèm nồi nước dùng nóng.",
+      "prep_time": 35,
+      "cook_time": 35,
+      "passive_time": 0,
+      "description": "Lẩu thả Phan Thiết nổi bật với cá mai tươi và các nguyên liệu được bày riêng quanh nồi nước dùng. Bếp Việt biên tập phiên bản ăn nóng tại nhà, giữ cách bày nhiều thành phần và vị thanh từ tôm, cà chua, dứa.",
+      "finished_dish": "Nồi nước dùng thơm vị tôm, chua dịu từ cà chua và dứa; cá mai, thịt ba chỉ, trứng và rau được bày riêng để nhúng khi ăn.",
+      "serving": "Bày bún, rau, dưa leo, thịt, trứng và cá mai thành từng phần. Khi nước dùng sôi, nhúng cá mai đến khi thịt cá chuyển đục rồi ăn cùng bún và rau; rưới sốt chua ngọt, thêm đậu phộng rang.",
+      "tips": [
+        "Chọn cá mai thật tươi, làm sạch kỹ và giữ lạnh trong lúc sơ chế; dùng thớt, dao riêng cho cá sống.",
+        "Nấu nước dùng sôi đều trước khi dọn để cá được nấu chín khi nhúng.",
+        "Nêm sốt từng ít một để vị mặn ngọt không lấn át cá và rau."
+      ],
+      "dish_type": [
+        "Lẩu cá",
+        "Đặc sản Phan Thiết"
+      ],
+      "main_ingredient": [
+        "cá mai",
+        "tôm",
+        "bún tươi",
+        "rau sống"
+      ],
+      "cooking_method": [
+        "nấu nước dùng",
+        "nhúng lẩu"
+      ],
+      "search_terms": [
+        "lẩu thả cá mai Phan Thiết",
+        "cá mai ăn với bún rau",
+        "lẩu đặc sản Bình Thuận"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Mâm lẩu thả Phan Thiết với cá mai tươi, bún, thịt, trứng, rau ăn kèm và bát nước dùng tôm cà chua dứa.",
+      "ingredients": [
+        {
+          "name": "Cá mai làm sạch",
+          "quantity": 400,
+          "unit": "g",
+          "role": "main",
+          "notes": "Có thể nhờ người bán làm sạch, bỏ xương dăm nếu cần.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Tôm tươi",
+          "quantity": 200,
+          "unit": "g",
+          "role": "main",
+          "notes": "Giữ lại vỏ để nấu nước dùng.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Thịt ba chỉ",
+          "quantity": 180,
+          "unit": "g",
+          "role": "main",
+          "notes": "Luộc chín, để nguội rồi thái sợi.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Bún tươi",
+          "quantity": 400,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Bắp chuối bào",
+          "quantity": 150,
+          "unit": "g",
+          "role": "main",
+          "notes": "Ngâm nước có ít chanh để hạn chế thâm.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Giá đỗ",
+          "quantity": 120,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Dưa leo",
+          "quantity": 200,
+          "unit": "g",
+          "role": "main",
+          "notes": "Thái sợi.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Rau sống và rau thơm",
+          "quantity": 120,
+          "unit": "g",
+          "role": "main",
+          "notes": "Xà lách, húng và rau thơm tùy mùa.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Trứng gà",
+          "quantity": 2,
+          "unit": "quả",
+          "role": "main",
+          "notes": "Tráng mỏng, thái sợi.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Cà chua",
+          "quantity": 2,
+          "unit": "quả",
+          "role": "main",
+          "notes": "Bổ múi cau.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Dứa",
+          "quantity": 150,
+          "unit": "g",
+          "role": "main",
+          "notes": "Thái miếng.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 30,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 20,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Ớt đỏ",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "seasoning",
+          "notes": "Tùy chọn.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 45,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Đường",
+          "quantity": 20,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nước cốt chanh",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Đậu phộng rang",
+          "quantity": 30,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Giã dập.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Muối",
+          "quantity": 4,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nước",
+          "quantity": 1.5,
+          "unit": "lít",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear"
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa cá mai, để ráo và giữ lạnh. Ướp cá với một phần tỏi, ớt, nước mắm và nước cốt chanh trong thời gian ngắn; không để cá ở nhiệt độ phòng."
+        },
+        {
+          "step": 2,
+          "instruction": "Tôm rửa sạch, bóc vỏ; giữ vỏ để nấu nước dùng. Luộc thịt ba chỉ chín, để nguội rồi thái sợi."
+        },
+        {
+          "step": 3,
+          "instruction": "Tráng trứng thành lớp mỏng rồi thái sợi. Sơ chế bún, rau sống, giá, dưa leo và bắp chuối; để thật ráo."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng dầu, phi hành tím và tỏi. Cho vỏ tôm vào đảo thơm, thêm nước rồi ninh 15 phút; lọc bỏ vỏ."
+        },
+        {
+          "step": 2,
+          "instruction": "Đun nước dùng đã lọc, cho cà chua, dứa và phần tôm đã bóc vỏ vào nấu chín. Nêm nước mắm, đường và muối cho vị thanh."
+        },
+        {
+          "step": 3,
+          "instruction": "Rót nước dùng sôi vào nồi lẩu. Bày cá mai, thịt ba chỉ, trứng, bún, rau và dưa leo riêng trên mẹt hoặc đĩa lớn."
+        },
+        {
+          "step": 4,
+          "instruction": "Khi ăn, nhúng cá mai vào nước dùng sôi đến khi thịt cá chuyển đục và chín; dùng cùng bún, rau và nước chấm chua ngọt, rắc đậu phộng rang."
+        }
+      ],
+      "time_note": "Cá mai nên được giữ lạnh sau khi sơ chế và nhúng chín trong nước dùng đang sôi trước khi ăn.",
+      "total_time": 70,
+      "time_unit": "phút",
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "lau-tha-phan-thiet",
+      "keywords": [
+        "Lẩu thả Phan Thiết",
+        "lẩu thả cá mai Phan Thiết",
+        "cá mai ăn với bún rau",
+        "lẩu đặc sản Bình Thuận",
+        "cá mai",
+        "tôm",
+        "bún tươi",
+        "rau sống",
+        "Món nước",
+        "70 phút"
+      ],
+      "tags": {
+        "region": [
+          "Nam Trung Bộ"
+        ],
+        "province": [
+          "Lâm Đồng (Phan Thiết, Bình Thuận cũ)"
+        ],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Lẩu cá",
+          "Đặc sản Phan Thiết"
+        ],
+        "main_ingredient": [
+          "cá mai",
+          "tôm",
+          "bún tươi",
+          "rau sống"
+        ],
+        "cooking_method": [
+          "nấu nước dùng",
+          "nhúng lẩu"
+        ],
+        "difficulty": "Trung bình",
+        "prep_time": 35,
+        "cook_time": 35,
+        "servings": 4,
+        "spicy_level": 1,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Bún tươi",
+          "Rau sống",
+          "Nước mắm chua ngọt"
+        ],
+        "keywords": [
+          "Lẩu thả Phan Thiết",
+          "lẩu thả cá mai Phan Thiết",
+          "cá mai ăn với bún rau",
+          "lẩu đặc sản Bình Thuận",
+          "cá mai",
+          "tôm",
+          "bún tươi",
+          "rau sống",
+          "Món nước",
+          "70 phút"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://vnexpress.net/lau-tha-phan-thiet-4085148.html",
+          "publisher": "VnExpress Du lịch",
+          "title": "Lẩu thả Phan Thiết",
+          "use": "Đối chiếu cá mai, bún, rau sống, thịt ba chỉ, trứng thái sợi, cách bày nguyên liệu và hai cách dùng khô/nước; công thức này chọn phiên bản nước dùng nóng.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://vanban.chinhphu.vn/?classid=1&docid=213930&orggroupid=1&pageid=27160",
+          "publisher": "Cổng Thông tin điện tử Chính phủ",
+          "title": "Nghị quyết số 202/2025/QH15 của Quốc hội: Về việc sắp xếp đơn vị hành chính cấp tỉnh",
+          "use": "Xác nhận địa giới hiện hành: Bình Thuận hợp nhất vào tỉnh Lâm Đồng năm 2025; tên món vẫn ghi Phan Thiết/Bình Thuận theo xuất xứ ẩm thực.",
+          "accessed_at": "2026-10-23",
+          "type": "administrative_context_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Lẩu thả Phan Thiết cho 2 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Lẩu thả Phan Thiết cho 6 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Lẩu thả Phan Thiết cho 8 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/lau-tha-phan-thiet-960.webp",
+          "page_url": "https://vnexpress.net/lau-tha-phan-thiet-4085148.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu đặc trưng món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Mâm lẩu thả Phan Thiết với cá mai tươi, bún, thịt, trứng, rau ăn kèm và bát nước dùng tôm cà chua dứa.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo mới; công thức được biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức được Bếp Việt biên tập từ nguồn tham khảo; định lượng và thời gian cần được nấu thử trước khi xem là bản hoàn chỉnh.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để xác nhận định lượng, thời gian và khẩu vị với nguyên liệu phổ biến tại Việt Nam.",
+          "Đối chiếu cách trình bày và gia giảm theo biến thể địa phương."
+        ]
+      },
+      "suggested_pairings": [
+        "Bún tươi",
+        "Rau sống",
+        "Nước mắm chua ngọt"
+      ]
+    },
+    {
+      "id": "BV477",
+      "slug": "dot-choai-xao-tep-ca-mau",
+      "name": "Đọt choại xào tép Cà Mau",
+      "aliases": [
+        "Đọt choại xào tép U Minh",
+        "Rau choại xào tép"
+      ],
+      "region": [
+        "Đồng bằng sông Cửu Long"
+      ],
+      "province": [
+        "Cà Mau (U Minh)"
+      ],
+      "category": "Món rau",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "4 đĩa ăn kèm cơm trong bữa cơm gia đình.",
+      "prep_time": 15,
+      "cook_time": 10,
+      "passive_time": 0,
+      "description": "Đọt choại non xoắn nhẹ được xào nhanh với tép, tỏi và gia vị. Tuổi Trẻ ghi nhận đây là cách chế biến phổ biến ở vùng U Minh; Bếp Việt chuẩn hóa lượng nguyên liệu cho bữa cơm gia đình.",
+      "finished_dish": "Đọt choại xanh, giòn nhẹ, quyện với tép ngọt thơm, tỏi phi và chút tiêu.",
+      "serving": "Dọn nóng cùng cơm trắng. Có thể chuẩn bị chén nước mắm chua cay ngọt nhẹ để ăn kèm.",
+      "tips": [
+        "Chọn đọt non còn tươi, bỏ lá già và phần cọng xơ.",
+        "Không xào quá lâu; cho rau vào khi tép vừa chín vàng để giữ độ giòn.",
+        "Nếu đọt choại nhiều nhớt, chần nhanh rồi để thật ráo trước khi xào."
+      ],
+      "dish_type": [
+        "Món rau xào",
+        "Món dân dã miền Tây"
+      ],
+      "main_ingredient": [
+        "đọt choại",
+        "tép đất"
+      ],
+      "cooking_method": [
+        "xào"
+      ],
+      "search_terms": [
+        "đọt choại xào tép U Minh",
+        "rau choại miền Tây",
+        "món rau xào tép Cà Mau"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Đọt choại non xanh xoắn nhẹ xào cùng tép nhỏ trên đĩa sứ trắng.",
+      "ingredients": [
+        {
+          "name": "Đọt choại non",
+          "quantity": 400,
+          "unit": "g",
+          "role": "main",
+          "notes": "Nhặt bỏ lá già, giữ cọng non và phần ngọn.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Tép đất hoặc tép bạc",
+          "quantity": 180,
+          "unit": "g",
+          "role": "main",
+          "notes": "Làm sạch, để ráo.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 15,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 15,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Hạt nêm",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Tùy khẩu vị.",
+          "scaling_rule": "linear"
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Nhặt đọt choại, bỏ lá già và cọng xơ; cắt khúc vừa ăn, rửa sạch và để ráo."
+        },
+        {
+          "step": 2,
+          "instruction": "Rửa tép, bỏ đầu cứng nếu muốn. Ướp tép với một nửa hành, tỏi, nước mắm và tiêu trong 5 phút."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng chảo với dầu, phi phần hành tỏi còn lại cho thơm."
+        },
+        {
+          "step": 2,
+          "instruction": "Cho tép vào xào đến khi vừa chín vàng."
+        },
+        {
+          "step": 3,
+          "instruction": "Thêm đọt choại, nêm hạt nêm nếu dùng, đảo nhanh trên lửa lớn đến khi rau vừa mềm nhưng còn độ giòn. Tắt bếp và dọn nóng."
+        }
+      ],
+      "time_note": "Làm sạch rau và tép trước khi bật bếp; món xào nhanh sẽ giữ được độ giòn của đọt non.",
+      "total_time": 25,
+      "time_unit": "phút",
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "dot-choai-xao-tep-ca-mau",
+      "keywords": [
+        "Đọt choại xào tép Cà Mau",
+        "đọt choại xào tép U Minh",
+        "rau choại miền Tây",
+        "món rau xào tép Cà Mau",
+        "đọt choại",
+        "tép đất",
+        "Món rau",
+        "25 phút"
+      ],
+      "tags": {
+        "region": [
+          "Đồng bằng sông Cửu Long"
+        ],
+        "province": [
+          "Cà Mau (U Minh)"
+        ],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Món rau xào",
+          "Món dân dã miền Tây"
+        ],
+        "main_ingredient": [
+          "đọt choại",
+          "tép đất"
+        ],
+        "cooking_method": [
+          "xào"
+        ],
+        "difficulty": "Dễ",
+        "prep_time": 15,
+        "cook_time": 10,
+        "servings": 4,
+        "spicy_level": 1,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Cơm trắng",
+          "Canh chua cá",
+          "Nước mắm chua cay ngọt"
+        ],
+        "keywords": [
+          "Đọt choại xào tép Cà Mau",
+          "đọt choại xào tép U Minh",
+          "rau choại miền Tây",
+          "món rau xào tép Cà Mau",
+          "đọt choại",
+          "tép đất",
+          "Món rau",
+          "25 phút"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://tuoitre.vn/choai-chot-thi-cham-nuoc-tuong-563793.htm",
+          "publisher": "Tuổi Trẻ Online",
+          "title": "“Choại chột thì chấm nước tương”…",
+          "use": "Đối chiếu đặc điểm đọt choại, ghi nhận xào tép là cách làm phổ biến; bài viết nêu chọn cọng non, ướp tép với gia vị rồi phi tỏi, xào tép chín vàng trước khi cho rau vào.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://vanban.chinhphu.vn/?classid=1&docid=213930&orggroupid=1&pageid=27160",
+          "publisher": "Cổng Thông tin điện tử Chính phủ",
+          "title": "Nghị quyết số 202/2025/QH15 của Quốc hội: Về việc sắp xếp đơn vị hành chính cấp tỉnh",
+          "use": "Ghi nhận tỉnh Cà Mau hiện hành sau sắp xếp cấp tỉnh năm 2025; vùng U Minh gắn với địa danh món ăn.",
+          "accessed_at": "2026-10-23",
+          "type": "administrative_context_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Đọt choại xào tép Cà Mau cho 2 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Đọt choại xào tép Cà Mau cho 6 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Đọt choại xào tép Cà Mau cho 8 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/dot-choai-xao-tep-ca-mau-960.webp",
+          "page_url": "https://tuoitre.vn/choai-chot-thi-cham-nuoc-tuong-563793.htm",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu đặc trưng món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đọt choại non xanh xoắn nhẹ xào cùng tép nhỏ trên đĩa sứ trắng.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo mới; công thức được biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức được Bếp Việt biên tập từ nguồn tham khảo; định lượng và thời gian cần được nấu thử trước khi xem là bản hoàn chỉnh.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để xác nhận định lượng, thời gian và khẩu vị với nguyên liệu phổ biến tại Việt Nam.",
+          "Đối chiếu cách trình bày và gia giảm theo biến thể địa phương."
+        ]
+      },
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Canh chua cá",
+        "Nước mắm chua cay ngọt"
+      ]
+    },
+    {
+      "id": "BV478",
+      "slug": "banh-khao-cao-bang",
+      "name": "Bánh khảo Cao Bằng",
+      "aliases": [
+        "Bánh khảo Tày Nùng",
+        "Bánh khảo nhân lạc vừng"
+      ],
+      "region": [
+        "Đông Bắc Bộ"
+      ],
+      "province": [
+        "Cao Bằng"
+      ],
+      "category": "Món tráng miệng",
+      "meal_type": [
+        "bữa phụ",
+        "tráng miệng"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Khoảng 12 bánh nhỏ, mỗi người 2–3 miếng.",
+      "prep_time": 35,
+      "cook_time": 25,
+      "passive_time": 20,
+      "description": "Bánh khảo là bánh Tết quen thuộc của người Tày, Nùng ở Cao Bằng, làm từ nếp rang xay mịn và nhân lạc, vừng, mỡ lợn. Bếp Việt biên tập cách làm gia đình với khuôn sạch và thời gian nghỉ bột ngắn.",
+      "finished_dish": "Bánh vuông nhỏ, bột nếp rang thơm, xốp và bùi; nhân lạc vừng ngọt nhẹ, điểm chút béo của mỡ lợn.",
+      "serving": "Để bánh ổn định trong khuôn rồi lấy ra, cắt miếng vừa ăn. Dùng cùng trà nóng; bảo quản kín, nơi khô mát.",
+      "tips": [
+        "Rang nếp lửa nhỏ, đảo liên tục để hạt chín thơm mà không cháy sậm.",
+        "Xay bột thật mịn, rây bỏ hạt to để bánh ép chắc và không lợn cợn.",
+        "Để bánh nghỉ trong khuôn có lót giấy thực phẩm sạch; không đặt bột trực tiếp lên nền."
+      ],
+      "dish_type": [
+        "Bánh truyền thống",
+        "Ẩm thực Tày Nùng"
+      ],
+      "main_ingredient": [
+        "gạo nếp",
+        "lạc",
+        "vừng",
+        "mỡ lợn"
+      ],
+      "cooking_method": [
+        "rang",
+        "xay",
+        "ép khuôn"
+      ],
+      "search_terms": [
+        "bánh khảo Tày Nùng Cao Bằng",
+        "bánh khảo nhân lạc vừng",
+        "bánh Tết Cao Bằng"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Bánh khảo Cao Bằng màu trắng ngà ép thành khối vuông, một miếng cắt lộ nhân lạc vừng và mỡ lợn.",
+      "ingredients": [
+        {
+          "name": "Gạo nếp mới",
+          "quantity": 500,
+          "unit": "g",
+          "role": "main",
+          "notes": "Hạt tròn, khô, không lẫn tạp chất.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Đường bột",
+          "quantity": 220,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Có thể xay mịn đường phèn hoặc dùng đường bột.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Lạc rang",
+          "quantity": 80,
+          "unit": "g",
+          "role": "main",
+          "notes": "Bỏ vỏ lụa, giã dập.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Vừng trắng",
+          "quantity": 35,
+          "unit": "g",
+          "role": "main",
+          "notes": "Rang thơm.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Mỡ lợn",
+          "quantity": 100,
+          "unit": "g",
+          "role": "main",
+          "notes": "Luộc chín, thái hạt lựu nhỏ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Đường",
+          "quantity": 20,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng áo phần mỡ lợn.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Muối",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Thêm từng thìa nhỏ để bột có độ kết dính.",
+          "scaling_rule": "linear"
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Vo nhanh gạo nếp, để ráo hoàn toàn. Thái mỡ lợn hạt lựu, luộc chín rồi để ráo."
+        },
+        {
+          "step": 2,
+          "instruction": "Rang lạc và vừng riêng đến khi thơm; bỏ vỏ lạc, giã dập."
+        },
+        {
+          "step": 3,
+          "instruction": "Áo mỡ lợn với đường, để nguội. Chuẩn bị khuôn bánh sạch, lót giấy thực phẩm."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Rang nếp trên chảo dày với lửa nhỏ, đảo đều đến khi hạt vàng nhạt và thơm. Để nguội hoàn toàn, xay thật mịn rồi rây."
+        },
+        {
+          "step": 2,
+          "instruction": "Trộn bột nếp với đường bột và muối. Rưới nước từng ít một, bóp thử; dừng khi bột vừa kết lại trong tay nhưng dễ tơi khi thả."
+        },
+        {
+          "step": 3,
+          "instruction": "Trộn lạc, vừng và mỡ lợn làm nhân. Cho một lớp bột vào khuôn, thêm nhân ở giữa, phủ kín bằng bột rồi nén đều."
+        },
+        {
+          "step": 4,
+          "instruction": "Để bánh nghỉ trong khuôn 20 phút, gỡ khuôn nhẹ tay và cắt theo kích thước mong muốn."
+        }
+      ],
+      "time_note": "Bột cần nguội hẳn sau khi rang và xay; lượng nước trộn phụ thuộc độ khô của bột nên thêm từ từ.",
+      "total_time": 80,
+      "time_unit": "phút",
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "banh-khao-cao-bang",
+      "keywords": [
+        "Bánh khảo Cao Bằng",
+        "bánh khảo Tày Nùng Cao Bằng",
+        "bánh khảo nhân lạc vừng",
+        "bánh Tết Cao Bằng",
+        "gạo nếp",
+        "lạc",
+        "vừng",
+        "mỡ lợn",
+        "Món tráng miệng",
+        "80 phút"
+      ],
+      "tags": {
+        "region": [
+          "Đông Bắc Bộ"
+        ],
+        "province": [
+          "Cao Bằng"
+        ],
+        "meal_type": [
+          "bữa phụ",
+          "tráng miệng"
+        ],
+        "dish_type": [
+          "Bánh truyền thống",
+          "Ẩm thực Tày Nùng"
+        ],
+        "main_ingredient": [
+          "gạo nếp",
+          "lạc",
+          "vừng",
+          "mỡ lợn"
+        ],
+        "cooking_method": [
+          "rang",
+          "xay",
+          "ép khuôn"
+        ],
+        "difficulty": "Trung bình",
+        "prep_time": 35,
+        "cook_time": 25,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Trà xanh nóng",
+          "Trà shan tuyết"
+        ],
+        "keywords": [
+          "Bánh khảo Cao Bằng",
+          "bánh khảo Tày Nùng Cao Bằng",
+          "bánh khảo nhân lạc vừng",
+          "bánh Tết Cao Bằng",
+          "gạo nếp",
+          "lạc",
+          "vừng",
+          "mỡ lợn",
+          "Món tráng miệng",
+          "80 phút"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://baocaobang.vn/Banh-khao-huong-vi-Tet-cua-nguoi-Tay-Nung-3637.html",
+          "publisher": "Báo Cao Bằng điện tử",
+          "title": "Bánh khảo - hương vị Tết của người Tày, Nùng",
+          "use": "Đối chiếu nguồn gốc bánh Tết của người Tày, Nùng Cao Bằng và thành phần, công đoạn: rang nếp, xay bột, nhân lạc vừng và mỡ lợn, ép khuôn. Công thức Bếp Việt thay cách “hạ thổ” bằng thời gian nghỉ trong khuôn lót giấy sạch.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Bánh khảo Cao Bằng cho 2 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Bánh khảo Cao Bằng cho 6 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Bánh khảo Cao Bằng cho 8 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/banh-khao-cao-bang-960.webp",
+          "page_url": "https://baocaobang.vn/Banh-khao-huong-vi-Tet-cua-nguoi-Tay-Nung-3637.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu đặc trưng món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Bánh khảo Cao Bằng màu trắng ngà ép thành khối vuông, một miếng cắt lộ nhân lạc vừng và mỡ lợn.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo mới; công thức được biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức được Bếp Việt biên tập từ nguồn tham khảo; định lượng và thời gian cần được nấu thử trước khi xem là bản hoàn chỉnh.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để xác nhận định lượng, thời gian và khẩu vị với nguyên liệu phổ biến tại Việt Nam.",
+          "Đối chiếu cách trình bày và gia giảm theo biến thể địa phương."
+        ]
+      },
+      "suggested_pairings": [
+        "Trà xanh nóng",
+        "Trà shan tuyết"
+      ]
+    },
+    {
+      "id": "BV479",
+      "slug": "com-chay-sot-de-ninh-binh",
+      "name": "Cơm cháy sốt dê Ninh Bình",
+      "aliases": [
+        "Cơm cháy Ninh Bình",
+        "Cơm cháy ăn kèm sốt thịt dê"
+      ],
+      "region": [
+        "Đồng bằng sông Hồng"
+      ],
+      "province": [
+        "Ninh Bình (khu vực Ninh Bình cũ)"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "4 phần ăn, mỗi phần một miếng cơm cháy lớn cùng sốt dê nóng.",
+      "prep_time": 35,
+      "cook_time": 45,
+      "passive_time": 180,
+      "description": "Cơm cháy Ninh Bình có lớp cơm vàng giòn từ nồi đáy dày; khi dùng có thể ăn cùng ruốc hoặc sốt thịt dê. Phiên bản Bếp Việt nấu sốt dê cà chua, nấm theo khẩu vị gia đình và phục vụ ngay trên cơm cháy.",
+      "finished_dish": "Miếng cơm vàng nâu, giòn xốp, phủ sốt dê sánh nhẹ với cà chua và nấm; thịt mềm, thơm gừng sả.",
+      "serving": "Rưới sốt dê vừa đủ lên miếng cơm cháy ngay trước khi ăn để phần mặt giòn lâu hơn. Dọn nóng cùng rau thơm hoặc dưa góp.",
+      "tips": [
+        "Dùng nồi gang hoặc nồi đáy dày, để lớp cơm mỏng và canh lửa nhỏ để đáy vàng đều.",
+        "Phơi hoặc sấy khô lớp cơm trước khi chiên để cơm nở giòn, tránh bắn dầu.",
+        "Chỉ rưới sốt khi sắp ăn để cơm không bị mềm."
+      ],
+      "dish_type": [
+        "Đặc sản Ninh Bình",
+        "Món cơm"
+      ],
+      "main_ingredient": [
+        "gạo tẻ",
+        "thịt dê"
+      ],
+      "cooking_method": [
+        "nấu cơm",
+        "phơi khô",
+        "chiên",
+        "rim sốt"
+      ],
+      "search_terms": [
+        "cơm cháy sốt dê Ninh Bình",
+        "cơm cháy đặc sản Ninh Bình",
+        "cơm cháy ăn với thịt dê"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Miếng cơm cháy Ninh Bình vàng giòn phủ sốt thịt dê, cà chua và nấm, bày trên đĩa trắng.",
+      "ingredients": [
+        {
+          "name": "Gạo tẻ dẻo",
+          "quantity": 400,
+          "unit": "g",
+          "role": "main",
+          "notes": "Vo sạch, chọn gạo hạt nguyên.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Thịt dê",
+          "quantity": 350,
+          "unit": "g",
+          "role": "main",
+          "notes": "Thái miếng mỏng vừa ăn.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Cà chua",
+          "quantity": 2,
+          "unit": "quả",
+          "role": "main",
+          "notes": "Bổ múi cau.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nấm hương tươi",
+          "quantity": 100,
+          "unit": "g",
+          "role": "main",
+          "notes": "Thái lát.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Sả",
+          "quantity": 2,
+          "unit": "cây",
+          "role": "seasoning",
+          "notes": "Đập dập, băm nhỏ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Gừng",
+          "quantity": 20,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Thái sợi.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 15,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 20,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 30,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Dầu chiên",
+          "quantity": 700,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Lượng vừa đủ chiên; có thể dùng nồi sâu lòng.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nước",
+          "quantity": 600,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Điều chỉnh theo loại gạo.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Muối",
+          "quantity": 4,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 15,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Tùy chọn.",
+          "scaling_rule": "linear"
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Vo gạo, nấu với lượng nước vừa đủ thành cơm dẻo."
+        },
+        {
+          "step": 2,
+          "instruction": "Thịt dê rửa sạch, để ráo rồi thái mỏng. Sơ chế cà chua, nấm, sả, gừng, tỏi và hành tím."
+        },
+        {
+          "step": 3,
+          "instruction": "Khi cơm chín, xới phần cơm phía trên ra bát, giữ lại lớp mỏng dưới đáy nồi. Nén nhẹ thành lớp đều, để nguội rồi hong hoặc sấy khô đến khi bề mặt se lại."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Tiếp tục để nồi đáy dày trên lửa nhỏ, xoay nồi thường xuyên đến khi lớp cơm đáy vàng đều, tách được. Hong khô thêm nếu còn ẩm."
+        },
+        {
+          "step": 2,
+          "instruction": "Đun nóng dầu trong nồi sâu lòng. Chiên miếng cơm đã khô đến khi hạt cơm nở và vàng giòn; vớt ra để ráo dầu."
+        },
+        {
+          "step": 3,
+          "instruction": "Ướp thịt dê với nước mắm, tiêu và một phần gừng sả trong 10 phút. Phi thơm hành, tỏi, sả; cho thịt dê vào đảo săn."
+        },
+        {
+          "step": 4,
+          "instruction": "Thêm cà chua, nấm và nước vừa đủ; rim đến khi thịt mềm, sốt sánh nhẹ. Nêm lại, rắc hành lá nếu dùng."
+        },
+        {
+          "step": 5,
+          "instruction": "Đặt cơm cháy lên đĩa, rưới sốt dê nóng ngay trước khi dọn."
+        }
+      ],
+      "time_note": "Thời gian hong khô có thể thay đổi theo độ dày và độ ẩm của cơm; lớp cơm phải se khô trước khi chiên.",
+      "total_time": 260,
+      "time_unit": "phút",
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "com-chay-sot-de-ninh-binh",
+      "keywords": [
+        "Cơm cháy sốt dê Ninh Bình",
+        "cơm cháy sốt dê Ninh Bình",
+        "cơm cháy đặc sản Ninh Bình",
+        "cơm cháy ăn với thịt dê",
+        "gạo tẻ",
+        "thịt dê",
+        "Món mặn",
+        "260 phút"
+      ],
+      "tags": {
+        "region": [
+          "Đồng bằng sông Hồng"
+        ],
+        "province": [
+          "Ninh Bình (khu vực Ninh Bình cũ)"
+        ],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Đặc sản Ninh Bình",
+          "Món cơm"
+        ],
+        "main_ingredient": [
+          "gạo tẻ",
+          "thịt dê"
+        ],
+        "cooking_method": [
+          "nấu cơm",
+          "phơi khô",
+          "chiên",
+          "rim sốt"
+        ],
+        "difficulty": "Trung bình",
+        "prep_time": 35,
+        "cook_time": 45,
+        "servings": 4,
+        "spicy_level": 1,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Dưa góp",
+          "Rau thơm",
+          "Canh rau thanh nhẹ"
+        ],
+        "keywords": [
+          "Cơm cháy sốt dê Ninh Bình",
+          "cơm cháy sốt dê Ninh Bình",
+          "cơm cháy đặc sản Ninh Bình",
+          "cơm cháy ăn với thịt dê",
+          "gạo tẻ",
+          "thịt dê",
+          "Món mặn",
+          "260 phút"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://vnexpress.net/thoi-su/su-ti-mi-trong-cach-che-bien-com-chay-truyen-thong-3565464.html",
+          "publisher": "VnExpress",
+          "title": "Sự tỉ mỉ trong cách chế biến cơm cháy truyền thống",
+          "use": "Đối chiếu đặc trưng cơm cháy Ninh Bình, cách nấu bằng nồi gang đáy dày, giữ lớp cơm đáy, làm khô rồi chiên cho hạt cơm nở giòn.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://ttdn.ninhbinh.gov.vn/vi/am-thuc-ninh-binh/dac-san-ninh-binh-nhung-mon-ngon-354.html",
+          "publisher": "Trung tâm Thông tin Xúc tiến Du lịch Ninh Bình",
+          "title": "Đặc sản Ninh Bình những món ngon",
+          "use": "Đối chiếu cơm cháy là đặc sản địa phương, tiêu chí cơm giòn xốp và gợi ý ăn kèm ruốc hoặc sốt dê; sốt cà chua nấm là biến tấu gia đình của Bếp Việt.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://vanban.chinhphu.vn/?classid=1&docid=213930&orggroupid=1&pageid=27160",
+          "publisher": "Cổng Thông tin điện tử Chính phủ",
+          "title": "Nghị quyết số 202/2025/QH15 của Quốc hội: Về việc sắp xếp đơn vị hành chính cấp tỉnh",
+          "use": "Xác nhận tỉnh Ninh Bình hiện hành được hợp nhất từ Hà Nam, Nam Định và Ninh Bình năm 2025; công thức gắn với vùng Ninh Bình cũ.",
+          "accessed_at": "2026-10-23",
+          "type": "administrative_context_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Cơm cháy sốt dê Ninh Bình cho 2 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Cơm cháy sốt dê Ninh Bình cho 6 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Cơm cháy sốt dê Ninh Bình cho 8 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/com-chay-sot-de-ninh-binh-960.webp",
+          "page_url": "https://vnexpress.net/thoi-su/su-ti-mi-trong-cach-che-bien-com-chay-truyen-thong-3565464.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu đặc trưng món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Miếng cơm cháy Ninh Bình vàng giòn phủ sốt thịt dê, cà chua và nấm, bày trên đĩa trắng.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo mới; công thức được biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức được Bếp Việt biên tập từ nguồn tham khảo; định lượng và thời gian cần được nấu thử trước khi xem là bản hoàn chỉnh.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để xác nhận định lượng, thời gian và khẩu vị với nguyên liệu phổ biến tại Việt Nam.",
+          "Đối chiếu cách trình bày và gia giảm theo biến thể địa phương."
+        ]
+      },
+      "suggested_pairings": [
+        "Dưa góp",
+        "Rau thơm",
+        "Canh rau thanh nhẹ"
+      ]
+    },
+    {
+      "id": "BV480",
+      "slug": "pho-cuon-ngu-xa-ha-noi",
+      "name": "Phở cuốn Ngũ Xã Hà Nội",
+      "aliases": [
+        "Phở cuốn Hà Nội",
+        "Phở cuốn thịt bò Ngũ Xã"
+      ],
+      "region": [
+        "Đồng bằng sông Hồng"
+      ],
+      "province": [
+        "Hà Nội"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Khoảng 16 cuốn, phù hợp 4 phần ăn nhẹ hoặc 2–3 phần ăn chính.",
+      "prep_time": 25,
+      "cook_time": 15,
+      "passive_time": 0,
+      "description": "Bánh phở bản lớn cuốn thịt bò xào và rau thơm, ăn cùng nước mắm pha chua ngọt là món quen thuộc ở Ngũ Xã, Hà Nội. Bếp Việt biên tập định lượng dễ làm tại nhà, giữ phần nhân gọn để cuốn không bung.",
+      "finished_dish": "Cuốn phở mềm trắng, nhân bò thơm tỏi cùng xà lách và rau thơm; nước chấm cân bằng vị chua, mặn, ngọt.",
+      "serving": "Xếp cuốn thành hàng, dọn cùng bát nước mắm chua ngọt có tỏi và ớt. Ăn ngay khi thịt còn thơm và bánh phở mềm.",
+      "tips": [
+        "Chọn bánh phở bản lớn, mềm nhưng không quá ướt để cuốn chắc.",
+        "Xào bò nhanh trên lửa lớn, để nguội bớt rồi mới cuốn để bánh phở không rách.",
+        "Không cho quá nhiều nhân; đặt rau ở giữa và cuốn vừa tay."
+      ],
+      "dish_type": [
+        "Món cuốn",
+        "Đặc sản Hà Nội"
+      ],
+      "main_ingredient": [
+        "bánh phở",
+        "thịt bò",
+        "rau thơm"
+      ],
+      "cooking_method": [
+        "xào",
+        "cuốn"
+      ],
+      "search_terms": [
+        "phở cuốn Ngũ Xã",
+        "phở cuốn thịt bò Hà Nội",
+        "cách làm phở cuốn"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Các cuốn phở Ngũ Xã trắng mềm với nhân thịt bò xào, xà lách và rau thơm, ăn kèm bát nước mắm chua ngọt.",
+      "ingredients": [
+        {
+          "name": "Bánh phở bản lớn",
+          "quantity": 500,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn lá phở mềm, bản rộng.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Thịt bò",
+          "quantity": 350,
+          "unit": "g",
+          "role": "main",
+          "notes": "Thái lát mỏng ngang thớ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Xà lách",
+          "quantity": 100,
+          "unit": "g",
+          "role": "main",
+          "notes": "Rửa sạch, để ráo.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Rau thơm",
+          "quantity": 60,
+          "unit": "g",
+          "role": "main",
+          "notes": "Húng, mùi hoặc rau thơm tùy mùa.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Dưa leo",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "main",
+          "notes": "Thái thanh dài.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 15,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 45,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nước cốt chanh",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Đường",
+          "quantity": 25,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 45,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Ớt tươi",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "seasoning",
+          "notes": "Tùy chọn.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear"
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa rau và dưa leo, để ráo. Thái dưa leo thành thanh dài vừa cuốn."
+        },
+        {
+          "step": 2,
+          "instruction": "Thái thịt bò mỏng ngang thớ, ướp với một phần nước mắm, tiêu và tỏi trong 10 phút."
+        },
+        {
+          "step": 3,
+          "instruction": "Nếu lá phở dài, cắt thành các miếng chữ nhật vừa cuốn; giữ bánh phủ khăn sạch để không khô."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng chảo với dầu, phi một phần tỏi thơm. Xào thịt bò nhanh trên lửa lớn đến khi vừa chín, để nguội bớt."
+        },
+        {
+          "step": 2,
+          "instruction": "Trải lá phở lên mặt phẳng sạch. Xếp xà lách, rau thơm, dưa leo và thịt bò ở gần mép; gấp hai bên rồi cuốn chắc tay."
+        },
+        {
+          "step": 3,
+          "instruction": "Khuấy nước mắm với nước lọc, đường và nước cốt chanh đến tan; thêm tỏi và ớt."
+        },
+        {
+          "step": 4,
+          "instruction": "Xếp phở cuốn lên đĩa, dùng ngay cùng nước chấm."
+        }
+      ],
+      "time_note": "Để thịt nguội bớt trước khi cuốn; bánh phở mềm dễ rách nếu nhân còn quá nóng hoặc quá ướt.",
+      "total_time": 40,
+      "time_unit": "phút",
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "pho-cuon-ngu-xa-ha-noi",
+      "keywords": [
+        "Phở cuốn Ngũ Xã Hà Nội",
+        "phở cuốn Ngũ Xã",
+        "phở cuốn thịt bò Hà Nội",
+        "cách làm phở cuốn",
+        "bánh phở",
+        "thịt bò",
+        "rau thơm",
+        "Món mặn",
+        "40 phút"
+      ],
+      "tags": {
+        "region": [
+          "Đồng bằng sông Hồng"
+        ],
+        "province": [
+          "Hà Nội"
+        ],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Món cuốn",
+          "Đặc sản Hà Nội"
+        ],
+        "main_ingredient": [
+          "bánh phở",
+          "thịt bò",
+          "rau thơm"
+        ],
+        "cooking_method": [
+          "xào",
+          "cuốn"
+        ],
+        "difficulty": "Dễ",
+        "prep_time": 25,
+        "cook_time": 15,
+        "servings": 4,
+        "spicy_level": 1,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Nước mắm chua ngọt",
+          "Rau thơm",
+          "Dưa góp"
+        ],
+        "keywords": [
+          "Phở cuốn Ngũ Xã Hà Nội",
+          "phở cuốn Ngũ Xã",
+          "phở cuốn thịt bò Hà Nội",
+          "cách làm phở cuốn",
+          "bánh phở",
+          "thịt bò",
+          "rau thơm",
+          "Món mặn",
+          "40 phút"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://vnexpress.net/pho-cuon-lang-ngu-xa-2358186.html",
+          "publisher": "VnExpress Đời sống",
+          "title": "Phở cuốn làng Ngũ Xã",
+          "use": "Đối chiếu đặc trưng bánh phở cuốn thịt bò, rau thơm, dùng với nước mắm và mối liên hệ của món với làng Ngũ Xã, Hà Nội.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Phở cuốn Ngũ Xã Hà Nội cho 2 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Phở cuốn Ngũ Xã Hà Nội cho 6 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Phở cuốn Ngũ Xã Hà Nội cho 8 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/pho-cuon-ngu-xa-ha-noi-960.webp",
+          "page_url": "https://vnexpress.net/pho-cuon-lang-ngu-xa-2358186.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu đặc trưng món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Các cuốn phở Ngũ Xã trắng mềm với nhân thịt bò xào, xà lách và rau thơm, ăn kèm bát nước mắm chua ngọt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo mới; công thức được biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức được Bếp Việt biên tập từ nguồn tham khảo; định lượng và thời gian cần được nấu thử trước khi xem là bản hoàn chỉnh.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để xác nhận định lượng, thời gian và khẩu vị với nguyên liệu phổ biến tại Việt Nam.",
+          "Đối chiếu cách trình bày và gia giảm theo biến thể địa phương."
+        ]
+      },
+      "suggested_pairings": [
+        "Nước mắm chua ngọt",
+        "Rau thơm",
+        "Dưa góp"
+      ]
+    }
+  ]
+}

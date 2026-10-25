@@ -1,0 +1,1707 @@
+{
+  "batch": "03",
+  "description": "Lô món Việt đã đối chiếu nguồn vùng miền và cách chế biến; công thức biên tập chưa nấu thử, ảnh minh họa mới của Bếp Việt.",
+  "recipes": [
+    {
+      "id": "BV341",
+      "slug": "bun-ca-chau-doc",
+      "name": "Bún cá Châu Đốc",
+      "aliases": [
+        "Bún cá lóc Châu Đốc",
+        "Bún cá An Giang"
+      ],
+      "region": [
+        "Nam"
+      ],
+      "province": [
+        "An Giang"
+      ],
+      "category": "Bún, phở, mì và miến",
+      "meal_type": [
+        "bữa sáng",
+        "bữa trưa"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "4 tô bún nước nóng, mỗi tô có cá lóc, bún và rau ăn kèm.",
+      "prep_time": 30,
+      "cook_time": 50,
+      "passive_time": 0,
+      "description": "Nước lèo vàng thơm nghệ và ngải bún, vị mắm ruốc vừa phải, dùng với cá lóc mềm, bún tươi cùng bắp chuối và rau thơm.",
+      "ingredients": [
+        {
+          "name": "Cá lóc",
+          "quantity": 1000,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Xương heo",
+          "quantity": 500,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Bún tươi",
+          "quantity": 800,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Ngải bún",
+          "quantity": 30,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Nghệ tươi",
+          "quantity": 25,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Mắm ruốc",
+          "quantity": 25,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Sả",
+          "quantity": 3,
+          "unit": "cây",
+          "role": "process_aid",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 30,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Bắp chuối bào",
+          "quantity": 180,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Giá đỗ",
+          "quantity": 150,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Rau răm",
+          "quantity": 20,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Ngò gai",
+          "quantity": 15,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 12
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 13
+        },
+        {
+          "name": "Đường phèn",
+          "quantity": 15,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 14
+        },
+        {
+          "name": "Muối",
+          "quantity": 6,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 15
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 16
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Cá lóc làm sạch, để ráo; xương heo chần qua nước sôi rồi rửa lại. Đập dập sả và ngải bún, giã nghệ."
+        },
+        {
+          "step": 2,
+          "instruction": "Hòa mắm ruốc với một ít nước ấm, để lắng rồi lọc lấy phần nước trong."
+        },
+        {
+          "step": 3,
+          "instruction": "Rửa bắp chuối, giá và rau thơm; ngâm bắp chuối trong nước có chanh để hạn chế thâm."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Ninh xương với khoảng 1,8 lít nước và sả trên lửa nhỏ 35–40 phút; vớt bọt để nước dùng trong."
+        },
+        {
+          "step": 2,
+          "instruction": "Luộc cá trong nồi riêng đến vừa chín, gỡ lấy thịt thành miếng lớn; giữ lại một phần nước luộc cá đã lọc."
+        },
+        {
+          "step": 3,
+          "instruction": "Phi hành tím với dầu, thêm nghệ và ngải bún đảo thơm. Cho phần nước mắm ruốc đã lọc vào, đun sôi nhẹ rồi đổ vào nồi nước xương cùng nước luộc cá."
+        },
+        {
+          "step": 4,
+          "instruction": "Nêm nước mắm, đường phèn và muối từ từ. Xếp bún, cá và rau vào tô, chan nước lèo nóng; dùng ngay."
+        }
+      ],
+      "finished_dish": "Tô bún có nước lèo vàng trong thơm nghệ và ngải bún, cá lóc mềm chắc, ăn cùng bắp chuối, giá và rau thơm giòn tươi.",
+      "serving": "Dọn nóng với bắp chuối, giá, rau răm, ngò gai, chanh và ớt để riêng; nêm cay theo khẩu vị.",
+      "tips": [
+        "Lọc mắm ruốc và nêm từng chút để nước lèo đậm thơm mà không gắt.",
+        "Không luộc cá quá lâu; gỡ cá khi vừa chín để miếng cá giữ nguyên.",
+        "Chỉ chan nước dùng ngay trước khi ăn để bún không nở nhũn."
+      ],
+      "dish_type": [
+        "Món nước",
+        "Đặc sản An Giang"
+      ],
+      "main_ingredient": [
+        "cá lóc",
+        "bún tươi",
+        "ngải bún",
+        "mắm ruốc"
+      ],
+      "cooking_method": [
+        "ninh nước dùng",
+        "luộc cá"
+      ],
+      "recipe_family": "bun_ca_chau_doc",
+      "search_terms": [
+        "Châu Đốc",
+        "món miền Tây",
+        "món cá dễ nấu"
+      ],
+      "width": 1312,
+      "height": 1199,
+      "image_alt": "Bún cá Châu Đốc trong tô men xanh, ảnh minh họa mới của Bếp Việt.",
+      "sources": [
+        {
+          "url": "https://govietnam.travel/food/bun-ca-2/bun-ca-chau-doc/",
+          "publisher": "GoVietnam Travel",
+          "title": "Bún cá Châu Đốc",
+          "accessed_at": "2026-10-21",
+          "use": "Đối chiếu xuất xứ An Giang, cá lóc, mắm ruốc, nghệ, ngải bún, bún tươi và rau ăn kèm; lượng nguyên liệu và cách làm được Bếp Việt biên tập cho gia đình.",
+          "type": "editorial_reference"
+        }
+      ],
+      "total_time": 80,
+      "time_unit": "phút",
+      "time_note": "Thời lượng biên tập để tham khảo; thời gian thực tế tùy dụng cụ, nguyên liệu và kỹ năng.",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.65,
+            "example": "Cá lóc: điều chỉnh theo 2 phần",
+            "instruction": "Điều chỉnh nguyên liệu chính theo số phần; gia vị nêm từng lượt rồi nếm lại."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Cá lóc: điều chỉnh theo 6 phần",
+            "instruction": "Điều chỉnh nguyên liệu chính theo số phần; gia vị nêm từng lượt rồi nếm lại."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2,
+            "seasoning_start_factor": 1.7,
+            "example": "Cá lóc: điều chỉnh theo 8 phần",
+            "instruction": "Điều chỉnh nguyên liệu chính theo số phần; gia vị nêm từng lượt rồi nếm lại."
+          }
+        ],
+        "rules": [
+          "Định lượng là bản biên tập tham khảo cho gia đình, cần nếm và điều chỉnh theo nguyên liệu thực tế.",
+          "Gia vị mặn, chua, cay tăng từ từ; không nhân máy móc theo số phần.",
+          "Thời gian phụ thuộc kích thước nguyên liệu và thiết bị; kiểm tra độ chín trước khi dọn."
+        ]
+      },
+      "tags": {
+        "region": [
+          "Nam"
+        ],
+        "province": [
+          "An Giang"
+        ],
+        "meal_type": [
+          "bữa sáng",
+          "bữa trưa"
+        ],
+        "dish_type": [
+          "Món nước",
+          "Đặc sản An Giang"
+        ],
+        "main_ingredient": [
+          "cá lóc",
+          "bún tươi",
+          "ngải bún",
+          "mắm ruốc"
+        ],
+        "cooking_method": [
+          "ninh nước dùng",
+          "luộc cá"
+        ],
+        "difficulty": "Trung bình",
+        "prep_time": 30,
+        "cook_time": 50,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [],
+        "keywords": [
+          "Bún cá Châu Đốc",
+          "Bún cá lóc Châu Đốc",
+          "Bún cá An Giang",
+          "An Giang",
+          "cá lóc",
+          "bún tươi",
+          "ngải bún",
+          "mắm ruốc",
+          "Món nước",
+          "Đặc sản An Giang",
+          "80 phút",
+          "Châu Đốc",
+          "món miền Tây",
+          "món cá dễ nấu"
+        ],
+        "recipe_family": "bun_ca_chau_doc"
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/bun-ca-chau-doc-960.webp",
+          "page_url": "https://govietnam.travel/food/bun-ca-2/bun-ca-chau-doc/",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh minh họa mới do Bếp Việt tạo; nguồn tham khảo chỉ dùng để đối chiếu tên món, nguyên liệu và cách chế biến.",
+          "width": 1312,
+          "height": 1199,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Bún cá Châu Đốc trong tô men xanh, ảnh minh họa mới của Bếp Việt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-21",
+          "photo_variant_note": "Ảnh minh họa mới do Bếp Việt tạo riêng theo món; công thức chưa được nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt biên tập công thức tham khảo theo nguồn đã dẫn; định lượng và thời gian cần được nấu thử trước khi xem là bản chuẩn.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-21",
+        "needs": [
+          "Nấu thử và xác nhận định lượng, thời gian, kết cấu thành phẩm",
+          "Rà soát tên gọi địa phương và khả năng thay thế nguyên liệu",
+          "Kiểm tra dị ứng và thành phần gia vị đóng gói"
+        ]
+      },
+      "suggested_pairings": []
+    },
+    {
+      "id": "BV342",
+      "slug": "banh-it-la-gai-binh-dinh",
+      "name": "Bánh ít lá gai Bình Định",
+      "aliases": [
+        "Bánh ít gai Bình Định",
+        "Bánh ít nhân đậu xanh dừa"
+      ],
+      "region": [
+        "Trung"
+      ],
+      "province": [
+        "Bình Định"
+      ],
+      "category": "Bánh, chè và ăn nhẹ",
+      "meal_type": [
+        "bữa phụ",
+        "tráng miệng"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 6,
+      "serving_basis": "Khoảng 12 bánh nhỏ, mỗi người dùng 2 chiếc.",
+      "prep_time": 55,
+      "cook_time": 30,
+      "passive_time": 0,
+      "description": "Vỏ nếp dẻo thơm lá gai ôm nhân đậu xanh, dừa và chút gừng; chiếc bánh nhỏ mang vị bùi ngọt đặc trưng xứ Bình Định.",
+      "ingredients": [
+        {
+          "name": "Bột nếp",
+          "quantity": 500,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Lá gai tươi",
+          "quantity": 120,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Đậu xanh cà vỏ",
+          "quantity": 250,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Cơm dừa nạo",
+          "quantity": 150,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Đường",
+          "quantity": 220,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Gừng tươi",
+          "quantity": 10,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Lá chuối",
+          "quantity": 12,
+          "unit": "lá",
+          "role": "process_aid",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 8
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Lá gai rửa sạch, luộc mềm rồi xay nhuyễn với một ít nước; để ráo bớt. Ngâm đậu xanh đến mềm."
+        },
+        {
+          "step": 2,
+          "instruction": "Hấp đậu xanh chín, nghiền mịn; sên với một phần đường, dừa nạo và gừng đến khi nhân kết dính. Để nguội rồi chia viên."
+        },
+        {
+          "step": 3,
+          "instruction": "Trộn bột nếp với lá gai xay và phần đường còn lại; nhào đến khi khối bột dẻo mịn, không khô vụn. Chia thành 12 phần."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Ấn dẹt từng phần bột, đặt viên nhân vào giữa rồi bọc kín; thoa chút dầu lên tay để bột không dính."
+        },
+        {
+          "step": 2,
+          "instruction": "Lót mỗi viên bánh bằng miếng lá chuối đã hơ mềm, gói gọn thành hình chóp nhỏ."
+        },
+        {
+          "step": 3,
+          "instruction": "Xếp bánh vào xửng có khoảng cách, hấp trên nước sôi 25–30 phút đến khi vỏ bánh dẻo và chuyển màu sẫm bóng."
+        },
+        {
+          "step": 4,
+          "instruction": "Để bánh nguội bớt trước khi dùng; bảo quản kín và dùng sớm để bánh giữ độ mềm."
+        }
+      ],
+      "finished_dish": "Bánh có lớp vỏ nếp đen xanh dẻo thơm lá gai, nhân đậu xanh dừa bùi ngọt và thoảng hương gừng.",
+      "serving": "Dùng bánh ở nhiệt độ phòng hoặc hấp ấm lại nhẹ nhàng; ăn riêng như món quà quê hay bữa phụ.",
+      "tips": [
+        "Lá gai cần luộc mềm và xay thật nhuyễn để vỏ bánh mịn.",
+        "Sên nhân vừa ráo, không quá khô để nhân vẫn mềm sau khi hấp.",
+        "Gói kín mép bột để nhân không trào ra khi bánh nở."
+      ],
+      "dish_type": [
+        "Bánh truyền thống",
+        "Đặc sản Bình Định"
+      ],
+      "main_ingredient": [
+        "bột nếp",
+        "lá gai",
+        "đậu xanh",
+        "dừa"
+      ],
+      "cooking_method": [
+        "nhào bột",
+        "sên nhân",
+        "hấp"
+      ],
+      "recipe_family": "banh_it_la_gai",
+      "search_terms": [
+        "Bình Định",
+        "bánh quê",
+        "món tráng miệng miền Trung"
+      ],
+      "width": 1402,
+      "height": 1122,
+      "image_alt": "Bánh ít lá gai Bình Định nhân đậu xanh dừa, ảnh minh họa mới của Bếp Việt.",
+      "sources": [
+        {
+          "url": "https://thuongmaibiengioimiennui.gov.vn/dac-san-vung-mien/2020/12/banh-it-la-gai-dac-san-xu-binh-dinh?rel=0",
+          "publisher": "Cục Thương mại điện tử và Kinh tế số, Bộ Công Thương",
+          "title": "Bánh ít lá gai - đặc sản xứ Bình Định",
+          "accessed_at": "2026-10-21",
+          "use": "Đối chiếu đặc sản Bình Định và các thành phần bột nếp, lá gai, đậu xanh, cơm dừa, gừng; lượng nguyên liệu và cách làm tại nhà được Bếp Việt biên tập.",
+          "type": "editorial_reference"
+        }
+      ],
+      "total_time": 85,
+      "time_unit": "phút",
+      "time_note": "Thời lượng biên tập để tham khảo; thời gian thực tế tùy dụng cụ, nguyên liệu và kỹ năng.",
+      "scaling": {
+        "base_servings": 6,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.3333333333333333,
+            "seasoning_start_factor": 0.65,
+            "example": "Bột nếp: điều chỉnh theo 2 phần",
+            "instruction": "Điều chỉnh nguyên liệu chính theo số phần; gia vị nêm từng lượt rồi nếm lại."
+          },
+          {
+            "servings": 8,
+            "main_factor": 1.3333333333333333,
+            "seasoning_start_factor": 1.3333333333333333,
+            "example": "Bột nếp: điều chỉnh theo 8 phần",
+            "instruction": "Điều chỉnh nguyên liệu chính theo số phần; gia vị nêm từng lượt rồi nếm lại."
+          }
+        ],
+        "rules": [
+          "Định lượng là bản biên tập tham khảo cho gia đình, cần nếm và điều chỉnh theo nguyên liệu thực tế.",
+          "Gia vị mặn, chua, cay tăng từ từ; không nhân máy móc theo số phần.",
+          "Thời gian phụ thuộc kích thước nguyên liệu và thiết bị; kiểm tra độ chín trước khi dọn."
+        ]
+      },
+      "tags": {
+        "region": [
+          "Trung"
+        ],
+        "province": [
+          "Bình Định"
+        ],
+        "meal_type": [
+          "bữa phụ",
+          "tráng miệng"
+        ],
+        "dish_type": [
+          "Bánh truyền thống",
+          "Đặc sản Bình Định"
+        ],
+        "main_ingredient": [
+          "bột nếp",
+          "lá gai",
+          "đậu xanh",
+          "dừa"
+        ],
+        "cooking_method": [
+          "nhào bột",
+          "sên nhân",
+          "hấp"
+        ],
+        "difficulty": "Trung bình",
+        "prep_time": 55,
+        "cook_time": 30,
+        "servings": 6,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [],
+        "keywords": [
+          "Bánh ít lá gai Bình Định",
+          "Bánh ít gai Bình Định",
+          "Bánh ít nhân đậu xanh dừa",
+          "Bình Định",
+          "bột nếp",
+          "lá gai",
+          "đậu xanh",
+          "dừa",
+          "Bánh truyền thống",
+          "Đặc sản Bình Định",
+          "85 phút",
+          "Bình Định",
+          "bánh quê",
+          "món tráng miệng miền Trung"
+        ],
+        "recipe_family": "banh_it_la_gai"
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/banh-it-la-gai-binh-dinh-960.webp",
+          "page_url": "https://thuongmaibiengioimiennui.gov.vn/dac-san-vung-mien/2020/12/banh-it-la-gai-dac-san-xu-binh-dinh?rel=0",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh minh họa mới do Bếp Việt tạo; nguồn tham khảo chỉ dùng để đối chiếu tên món, nguyên liệu và cách chế biến.",
+          "width": 1402,
+          "height": 1122,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Bánh ít lá gai Bình Định nhân đậu xanh dừa, ảnh minh họa mới của Bếp Việt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-21",
+          "photo_variant_note": "Ảnh minh họa mới do Bếp Việt tạo riêng theo món; công thức chưa được nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt biên tập công thức tham khảo theo nguồn đã dẫn; định lượng và thời gian cần được nấu thử trước khi xem là bản chuẩn.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-21",
+        "needs": [
+          "Nấu thử và xác nhận định lượng, thời gian, kết cấu thành phẩm",
+          "Rà soát tên gọi địa phương và khả năng thay thế nguyên liệu",
+          "Kiểm tra dị ứng và thành phần gia vị đóng gói"
+        ]
+      },
+      "suggested_pairings": []
+    },
+    {
+      "id": "BV343",
+      "slug": "banh-cuon-thanh-tri",
+      "name": "Bánh cuốn Thanh Trì",
+      "aliases": [
+        "Bánh cuốn Thanh Trì Hà Nội",
+        "Bánh cuốn không nhân Thanh Trì"
+      ],
+      "region": [
+        "Bắc"
+      ],
+      "province": [
+        "Hà Nội"
+      ],
+      "category": "Bánh và ăn sáng",
+      "meal_type": [
+        "bữa sáng",
+        "bữa phụ"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "4 phần bánh cuốn mỏng ăn kèm rau thơm, chả và nước chấm.",
+      "prep_time": 25,
+      "cook_time": 25,
+      "passive_time": 0,
+      "description": "Lớp bánh gạo mỏng, mềm và thơm, điểm hành phi vàng; dùng cùng rau thơm, chả và bát nước chấm chua ngọt thanh.",
+      "ingredients": [
+        {
+          "name": "Bột gạo",
+          "quantity": 300,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Bột năng",
+          "quantity": 45,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Nước",
+          "quantity": 750,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Mộc nhĩ khô",
+          "quantity": 15,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 50,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 35,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Chả lụa",
+          "quantity": 200,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Rau thơm",
+          "quantity": 100,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 45,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Giấm gạo",
+          "quantity": 30,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Đường",
+          "quantity": 25,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Ớt",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 12
+        },
+        {
+          "name": "Muối",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 13
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Ngâm mộc nhĩ cho nở, rửa sạch và thái nhỏ. Trộn bột gạo, bột năng, muối với nước đến khi mịn; để bột nghỉ 15 phút."
+        },
+        {
+          "step": 2,
+          "instruction": "Thái hành tím mỏng, chuẩn bị rau thơm và chả lụa. Pha nước mắm với đường, giấm và nước ấm, nếm vị chua ngọt dịu."
+        },
+        {
+          "step": 3,
+          "instruction": "Phi hành tím với dầu ở lửa vừa đến vàng thơm, vớt ra giấy thấm; giữ lại phần dầu hành."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng chảo chống dính, thoa lớp dầu thật mỏng. Khuấy đều bột rồi múc một vá nhỏ, láng thành lớp mỏng và đậy nắp cho bánh chín."
+        },
+        {
+          "step": 2,
+          "instruction": "Khi mặt bánh trong và mép tự róc, nhẹ tay lấy bánh ra đĩa; lặp lại, khuấy bột trước mỗi lượt để bột không lắng."
+        },
+        {
+          "step": 3,
+          "instruction": "Xếp bánh thành lớp mỏng, rắc chút mộc nhĩ băm và hành phi; không cuốn nhân dày để giữ nét bánh cuốn Thanh Trì."
+        },
+        {
+          "step": 4,
+          "instruction": "Dọn cùng chả lụa, rau thơm và nước chấm. Ăn khi bánh còn ấm, thêm dầu hành vừa đủ."
+        }
+      ],
+      "finished_dish": "Miếng bánh trắng mỏng, mềm thơm mùi gạo, phủ hành phi giòn nhẹ và mộc nhĩ; nước chấm cân bằng làm vị bánh thêm tròn.",
+      "serving": "Dọn bánh còn ấm cùng chả lụa thái mỏng, rau thơm và nước mắm pha chua ngọt.",
+      "tips": [
+        "Khuấy bột trước mỗi lần múc để bánh có độ dày đồng đều.",
+        "Thoa dầu rất mỏng; nhiều dầu làm bánh trơn và nặng vị.",
+        "Đây là cách làm tại nhà bằng chảo chống dính, kết cấu khác bánh tráng trên nồi hơi truyền thống."
+      ],
+      "dish_type": [
+        "Món ăn sáng",
+        "Đặc sản Hà Nội"
+      ],
+      "main_ingredient": [
+        "bột gạo",
+        "bột năng",
+        "hành phi"
+      ],
+      "cooking_method": [
+        "pha bột",
+        "tráng bánh"
+      ],
+      "recipe_family": "banh_cuon_thanh_tri",
+      "search_terms": [
+        "Thanh Trì",
+        "Hà Nội",
+        "bánh gạo",
+        "món ăn sáng"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "image_alt": "Bánh cuốn Thanh Trì mỏng mềm với hành phi và rau thơm, ảnh minh họa mới của Bếp Việt.",
+      "sources": [
+        {
+          "url": "https://antoanthucpham.hanoi.gov.vn/banh-cuon-thanh-tri-bieu-tuong-am-thuc-ha-noi-xua-duoc-ghi-danh-di-san-van-hoa-phi-vat-the-quoc-gia-239260903231416302.htm",
+          "publisher": "Cổng thông tin An toàn thực phẩm thành phố Hà Nội",
+          "title": "Bánh cuốn Thanh Trì - biểu tượng ẩm thực Hà Nội xưa",
+          "accessed_at": "2026-10-21",
+          "use": "Đối chiếu đặc trưng bánh mỏng từ gạo, ít hoặc không cuốn nhân, hành phi, mộc nhĩ, nước chấm và rau ăn kèm; công thức chảo chống dính là bản Bếp Việt biên tập cho gia đình.",
+          "type": "editorial_reference"
+        }
+      ],
+      "total_time": 50,
+      "time_unit": "phút",
+      "time_note": "Thời lượng biên tập để tham khảo; thời gian thực tế tùy dụng cụ, nguyên liệu và kỹ năng.",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.65,
+            "example": "Bột gạo: điều chỉnh theo 2 phần",
+            "instruction": "Điều chỉnh nguyên liệu chính theo số phần; gia vị nêm từng lượt rồi nếm lại."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Bột gạo: điều chỉnh theo 6 phần",
+            "instruction": "Điều chỉnh nguyên liệu chính theo số phần; gia vị nêm từng lượt rồi nếm lại."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2,
+            "seasoning_start_factor": 1.7,
+            "example": "Bột gạo: điều chỉnh theo 8 phần",
+            "instruction": "Điều chỉnh nguyên liệu chính theo số phần; gia vị nêm từng lượt rồi nếm lại."
+          }
+        ],
+        "rules": [
+          "Định lượng là bản biên tập tham khảo cho gia đình, cần nếm và điều chỉnh theo nguyên liệu thực tế.",
+          "Gia vị mặn, chua, cay tăng từ từ; không nhân máy móc theo số phần.",
+          "Thời gian phụ thuộc kích thước nguyên liệu và thiết bị; kiểm tra độ chín trước khi dọn."
+        ]
+      },
+      "tags": {
+        "region": [
+          "Bắc"
+        ],
+        "province": [
+          "Hà Nội"
+        ],
+        "meal_type": [
+          "bữa sáng",
+          "bữa phụ"
+        ],
+        "dish_type": [
+          "Món ăn sáng",
+          "Đặc sản Hà Nội"
+        ],
+        "main_ingredient": [
+          "bột gạo",
+          "bột năng",
+          "hành phi"
+        ],
+        "cooking_method": [
+          "pha bột",
+          "tráng bánh"
+        ],
+        "difficulty": "Trung bình",
+        "prep_time": 25,
+        "cook_time": 25,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [],
+        "keywords": [
+          "Bánh cuốn Thanh Trì",
+          "Bánh cuốn Thanh Trì Hà Nội",
+          "Bánh cuốn không nhân Thanh Trì",
+          "Hà Nội",
+          "bột gạo",
+          "bột năng",
+          "hành phi",
+          "Món ăn sáng",
+          "Đặc sản Hà Nội",
+          "50 phút",
+          "Thanh Trì",
+          "Hà Nội",
+          "bánh gạo",
+          "món ăn sáng"
+        ],
+        "recipe_family": "banh_cuon_thanh_tri"
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/banh-cuon-thanh-tri-960.webp",
+          "page_url": "https://antoanthucpham.hanoi.gov.vn/banh-cuon-thanh-tri-bieu-tuong-am-thuc-ha-noi-xua-duoc-ghi-danh-di-san-van-hoa-phi-vat-the-quoc-gia-239260903231416302.htm",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh minh họa mới do Bếp Việt tạo; nguồn tham khảo chỉ dùng để đối chiếu tên món, nguyên liệu và cách chế biến.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Bánh cuốn Thanh Trì mỏng mềm với hành phi và rau thơm, ảnh minh họa mới của Bếp Việt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-21",
+          "photo_variant_note": "Ảnh minh họa mới do Bếp Việt tạo riêng theo món; công thức chưa được nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt biên tập công thức tham khảo theo nguồn đã dẫn; định lượng và thời gian cần được nấu thử trước khi xem là bản chuẩn.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-21",
+        "needs": [
+          "Nấu thử và xác nhận định lượng, thời gian, kết cấu thành phẩm",
+          "Rà soát tên gọi địa phương và khả năng thay thế nguyên liệu",
+          "Kiểm tra dị ứng và thành phần gia vị đóng gói"
+        ]
+      },
+      "suggested_pairings": []
+    },
+    {
+      "id": "BV344",
+      "slug": "goi-cuon-chay",
+      "name": "Gỏi cuốn chay",
+      "aliases": [
+        "Gỏi cuốn rau củ chay",
+        "Cuốn chay tươi"
+      ],
+      "region": [
+        "Ba miền"
+      ],
+      "province": [
+        "Toàn quốc"
+      ],
+      "category": "Món cuốn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa phụ",
+        "món khai vị"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "12 cuốn nhỏ, khoảng 3 cuốn mỗi người.",
+      "prep_time": 30,
+      "cook_time": 0,
+      "passive_time": 0,
+      "description": "Cuốn bánh tráng tươi với đậu phụ, bún, rau thơm và rau củ giòn; chấm sốt đậu phộng mặn ngọt, hợp bữa nhẹ hoặc mâm chay.",
+      "ingredients": [
+        {
+          "name": "Bánh tráng cuốn",
+          "quantity": 12,
+          "unit": "cái",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Đậu phụ",
+          "quantity": 250,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Bún tươi",
+          "quantity": 300,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Xà lách",
+          "quantity": 120,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Cà rốt",
+          "quantity": 100,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Dưa leo",
+          "quantity": 100,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Bạc hà",
+          "quantity": 20,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Hẹ",
+          "quantity": 12,
+          "unit": "nhánh",
+          "role": "process_aid",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Bơ đậu phộng",
+          "quantity": 60,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Nước tương",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 60,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Đường",
+          "quantity": 12,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 12
+        },
+        {
+          "name": "Đậu phộng rang",
+          "quantity": 20,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 13
+        },
+        {
+          "name": "Chanh",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 14
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Áp chảo đậu phụ với ít dầu đến vàng nhẹ, để nguội rồi thái que. Trụng bún nhanh và để ráo."
+        },
+        {
+          "step": 2,
+          "instruction": "Rửa sạch xà lách, bạc hà, hẹ; thái cà rốt và dưa leo thành que mảnh để cuốn gọn."
+        },
+        {
+          "step": 3,
+          "instruction": "Khuấy bơ đậu phộng với nước tương, đường, nước ấm và chút nước chanh đến khi thành sốt sánh mượt."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Nhúng nhanh từng bánh tráng qua nước sạch, đặt lên mặt phẳng sạch và chờ bánh mềm vừa đủ."
+        },
+        {
+          "step": 2,
+          "instruction": "Xếp xà lách, bún, đậu phụ và rau củ thành hàng ở một phần ba mép bánh; gập hai cạnh rồi cuốn chặt tay."
+        },
+        {
+          "step": 3,
+          "instruction": "Đặt một nhánh hẹ gần mép cuối để phần lá xanh lộ đẹp bên ngoài; cuốn kín và đặt mép gấp xuống dưới."
+        },
+        {
+          "step": 4,
+          "instruction": "Rắc đậu phộng lên sốt, cắt đôi cuốn nếu muốn và dùng ngay để bánh tráng không khô."
+        }
+      ],
+      "finished_dish": "Cuốn chay có lớp bánh tráng mềm trong, nhân rau tươi giòn, bún nhẹ và đậu phụ béo bùi; sốt đậu phộng tạo vị mặn ngọt hài hòa.",
+      "serving": "Dọn nguyên cuốn hoặc cắt chéo đôi cùng chén sốt đậu phộng; dùng ngay sau khi cuốn.",
+      "tips": [
+        "Thấm khô rau để bánh tráng không bị nhão.",
+        "Chỉ làm ẩm bánh tráng vừa đủ, bánh sẽ mềm thêm trong lúc xếp nhân.",
+        "Kiểm tra nước tương và bơ đậu phộng có thành phần phù hợp chế độ ăn chay."
+      ],
+      "dish_type": [
+        "Món chay",
+        "Món cuốn",
+        "Món ăn nhẹ"
+      ],
+      "main_ingredient": [
+        "đậu phụ",
+        "bún tươi",
+        "rau sống",
+        "bánh tráng"
+      ],
+      "cooking_method": [
+        "áp chảo",
+        "cuốn tươi"
+      ],
+      "recipe_family": "goi_cuon_chay",
+      "search_terms": [
+        "ăn chay",
+        "món chay dễ làm",
+        "không cần nấu lâu",
+        "rau củ"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "image_alt": "Gỏi cuốn chay với đậu phụ, rau tươi và sốt đậu phộng, ảnh minh họa mới của Bếp Việt.",
+      "sources": [
+        {
+          "url": "https://vietnam.travel/vi/things-to-do/vegetarian-guide-vietnam",
+          "publisher": "Vietnam Tourism",
+          "title": "Cẩm nang ăn chay tại Việt Nam",
+          "accessed_at": "2026-10-21",
+          "use": "Xác nhận gỏi cuốn chay là món cuốn chay phổ biến tại Việt Nam; phần nhân, nước chấm và định lượng là cách Bếp Việt biên tập.",
+          "type": "editorial_reference"
+        }
+      ],
+      "total_time": 30,
+      "time_unit": "phút",
+      "time_note": "Thời lượng biên tập để tham khảo; thời gian thực tế tùy dụng cụ, nguyên liệu và kỹ năng.",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.65,
+            "example": "Bánh tráng cuốn: điều chỉnh theo 2 phần",
+            "instruction": "Điều chỉnh nguyên liệu chính theo số phần; gia vị nêm từng lượt rồi nếm lại."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Bánh tráng cuốn: điều chỉnh theo 6 phần",
+            "instruction": "Điều chỉnh nguyên liệu chính theo số phần; gia vị nêm từng lượt rồi nếm lại."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2,
+            "seasoning_start_factor": 1.7,
+            "example": "Bánh tráng cuốn: điều chỉnh theo 8 phần",
+            "instruction": "Điều chỉnh nguyên liệu chính theo số phần; gia vị nêm từng lượt rồi nếm lại."
+          }
+        ],
+        "rules": [
+          "Định lượng là bản biên tập tham khảo cho gia đình, cần nếm và điều chỉnh theo nguyên liệu thực tế.",
+          "Gia vị mặn, chua, cay tăng từ từ; không nhân máy móc theo số phần.",
+          "Thời gian phụ thuộc kích thước nguyên liệu và thiết bị; kiểm tra độ chín trước khi dọn."
+        ]
+      },
+      "tags": {
+        "region": [
+          "Ba miền"
+        ],
+        "province": [
+          "Toàn quốc"
+        ],
+        "meal_type": [
+          "bữa trưa",
+          "bữa phụ",
+          "món khai vị"
+        ],
+        "dish_type": [
+          "Món chay",
+          "Món cuốn",
+          "Món ăn nhẹ"
+        ],
+        "main_ingredient": [
+          "đậu phụ",
+          "bún tươi",
+          "rau sống",
+          "bánh tráng"
+        ],
+        "cooking_method": [
+          "áp chảo",
+          "cuốn tươi"
+        ],
+        "difficulty": "Dễ",
+        "prep_time": 30,
+        "cook_time": 0,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [],
+        "keywords": [
+          "Gỏi cuốn chay",
+          "Gỏi cuốn rau củ chay",
+          "Cuốn chay tươi",
+          "Toàn quốc",
+          "đậu phụ",
+          "bún tươi",
+          "rau sống",
+          "bánh tráng",
+          "Món chay",
+          "Món cuốn",
+          "Món ăn nhẹ",
+          "30 phút",
+          "ăn chay",
+          "món chay dễ làm",
+          "không cần nấu lâu",
+          "rau củ"
+        ],
+        "recipe_family": "goi_cuon_chay"
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/goi-cuon-chay-960.webp",
+          "page_url": "https://vietnam.travel/vi/things-to-do/vegetarian-guide-vietnam",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh minh họa mới do Bếp Việt tạo; nguồn tham khảo chỉ dùng để đối chiếu tên món, nguyên liệu và cách chế biến.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Gỏi cuốn chay với đậu phụ, rau tươi và sốt đậu phộng, ảnh minh họa mới của Bếp Việt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-21",
+          "photo_variant_note": "Ảnh minh họa mới do Bếp Việt tạo riêng theo món; công thức chưa được nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt biên tập công thức tham khảo theo nguồn đã dẫn; định lượng và thời gian cần được nấu thử trước khi xem là bản chuẩn.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-21",
+        "needs": [
+          "Nấu thử và xác nhận định lượng, thời gian, kết cấu thành phẩm",
+          "Rà soát tên gọi địa phương và khả năng thay thế nguyên liệu",
+          "Kiểm tra dị ứng và thành phần gia vị đóng gói"
+        ]
+      },
+      "suggested_pairings": []
+    },
+    {
+      "id": "BV345",
+      "slug": "canh-chua-chay-mien-nam",
+      "name": "Canh chua chay miền Nam",
+      "aliases": [
+        "Canh chua rau củ chay",
+        "Canh chua đậu phụ chay"
+      ],
+      "region": [
+        "Nam"
+      ],
+      "province": [
+        "Miền Nam"
+      ],
+      "category": "Canh",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "4 tô canh ăn kèm cơm hoặc dùng trong mâm cơm chay.",
+      "prep_time": 20,
+      "cook_time": 25,
+      "passive_time": 0,
+      "description": "Nồi canh chua thanh với me, thơm, cà chua, đậu bắp và bạc hà; đậu phụ cùng nấm làm món chay thêm đầy đặn.",
+      "ingredients": [
+        {
+          "name": "Đậu phụ",
+          "quantity": 250,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Nấm rơm",
+          "quantity": 150,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Thơm",
+          "quantity": 180,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Cà chua",
+          "quantity": 200,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Đậu bắp",
+          "quantity": 150,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Bạc hà",
+          "quantity": 150,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Giá đỗ",
+          "quantity": 100,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Me vắt",
+          "quantity": 35,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Nước dùng rau củ",
+          "quantity": 1200,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Đường",
+          "quantity": 18,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Muối",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Hạt nêm chay",
+          "quantity": 8,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 12
+        },
+        {
+          "name": "Rau om",
+          "quantity": 15,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 13
+        },
+        {
+          "name": "Ngò gai",
+          "quantity": 10,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 14
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 15
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Pha me vắt với nước nóng, dằm và lọc lấy nước cốt. Sơ chế đậu phụ, nấm, thơm và cà chua."
+        },
+        {
+          "step": 2,
+          "instruction": "Tước bạc hà, bóp nhẹ với chút muối rồi rửa sạch để giảm ngứa; thái đậu bắp xéo."
+        },
+        {
+          "step": 3,
+          "instruction": "Rửa giá và rau om, ngò gai; để riêng phần rau thơm để cho vào sau cùng."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Phi thơm cà chua với dầu, thêm thơm đảo nhẹ cho dậy mùi rồi đổ nước dùng rau củ vào đun sôi."
+        },
+        {
+          "step": 2,
+          "instruction": "Cho nước me vào nồi, nêm đường, muối và hạt nêm chay; nếm vị chua ngọt cân bằng."
+        },
+        {
+          "step": 3,
+          "instruction": "Thêm nấm rơm và đậu phụ, nấu lửa vừa đến khi nấm chín; lần lượt cho đậu bắp và bạc hà vào để rau giữ độ giòn."
+        },
+        {
+          "step": 4,
+          "instruction": "Cho giá vào gần cuối, tắt bếp rồi thêm rau om, ngò gai. Dọn nóng cùng cơm trắng."
+        }
+      ],
+      "finished_dish": "Nước canh trong có vị chua dịu của me, thơm ngọt của dứa, rau củ vừa chín tới và miếng đậu phụ mềm.",
+      "serving": "Dùng nóng trong bữa cơm, ăn cùng cơm trắng và món kho hoặc món rau chay.",
+      "tips": [
+        "Thêm nước me từng ít một để canh chua thanh, không gắt.",
+        "Cho bạc hà và đậu bắp sau cùng để không bị nhũn.",
+        "Dùng hạt nêm, nước dùng và gia vị có nhãn thuần chay nếu cần ăn chay nghiêm ngặt."
+      ],
+      "dish_type": [
+        "Món chay",
+        "Món canh",
+        "Canh chua"
+      ],
+      "main_ingredient": [
+        "đậu phụ",
+        "nấm rơm",
+        "thơm",
+        "đậu bắp",
+        "bạc hà"
+      ],
+      "cooking_method": [
+        "nấu canh",
+        "nêm vị chua ngọt"
+      ],
+      "recipe_family": "canh_chua_chay",
+      "search_terms": [
+        "ăn chay",
+        "món thanh đạm",
+        "canh rau củ",
+        "nấu trong 30 phút"
+      ],
+      "width": 1312,
+      "height": 1199,
+      "image_alt": "Canh chua chay miền Nam với đậu phụ và rau củ, ảnh minh họa mới của Bếp Việt.",
+      "sources": [
+        {
+          "url": "https://www.dienmayxanh.com/vao-bep/cach-nau-canh-chua-chay-thom-ngon-thanh-dam-cho-gi-02821",
+          "publisher": "Điện máy XANH",
+          "title": "3 cách nấu canh chua chay thơm ngon thanh đạm cho gia đình",
+          "accessed_at": "2026-10-21",
+          "use": "Đối chiếu dạng canh chua chay gia đình dùng rau củ; công thức Bếp Việt sử dụng me, dứa, cà chua, đậu bắp, bạc hà, nấm và đậu phụ với định lượng biên tập.",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://vietnam.travel/vi/things-to-do/vegetarian-guide-vietnam",
+          "publisher": "Vietnam Tourism",
+          "title": "Cẩm nang ăn chay tại Việt Nam",
+          "accessed_at": "2026-10-21",
+          "use": "Đối chiếu ngữ cảnh món chay Việt trong bữa ăn gia đình; không quy công thức riêng cho một địa phương.",
+          "type": "editorial_reference"
+        }
+      ],
+      "total_time": 45,
+      "time_unit": "phút",
+      "time_note": "Thời lượng biên tập để tham khảo; thời gian thực tế tùy dụng cụ, nguyên liệu và kỹ năng.",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.65,
+            "example": "Đậu phụ: điều chỉnh theo 2 phần",
+            "instruction": "Điều chỉnh nguyên liệu chính theo số phần; gia vị nêm từng lượt rồi nếm lại."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Đậu phụ: điều chỉnh theo 6 phần",
+            "instruction": "Điều chỉnh nguyên liệu chính theo số phần; gia vị nêm từng lượt rồi nếm lại."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2,
+            "seasoning_start_factor": 1.7,
+            "example": "Đậu phụ: điều chỉnh theo 8 phần",
+            "instruction": "Điều chỉnh nguyên liệu chính theo số phần; gia vị nêm từng lượt rồi nếm lại."
+          }
+        ],
+        "rules": [
+          "Định lượng là bản biên tập tham khảo cho gia đình, cần nếm và điều chỉnh theo nguyên liệu thực tế.",
+          "Gia vị mặn, chua, cay tăng từ từ; không nhân máy móc theo số phần.",
+          "Thời gian phụ thuộc kích thước nguyên liệu và thiết bị; kiểm tra độ chín trước khi dọn."
+        ]
+      },
+      "tags": {
+        "region": [
+          "Nam"
+        ],
+        "province": [
+          "Miền Nam"
+        ],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Món chay",
+          "Món canh",
+          "Canh chua"
+        ],
+        "main_ingredient": [
+          "đậu phụ",
+          "nấm rơm",
+          "thơm",
+          "đậu bắp",
+          "bạc hà"
+        ],
+        "cooking_method": [
+          "nấu canh",
+          "nêm vị chua ngọt"
+        ],
+        "difficulty": "Dễ",
+        "prep_time": 20,
+        "cook_time": 25,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [],
+        "keywords": [
+          "Canh chua chay miền Nam",
+          "Canh chua rau củ chay",
+          "Canh chua đậu phụ chay",
+          "Miền Nam",
+          "đậu phụ",
+          "nấm rơm",
+          "thơm",
+          "đậu bắp",
+          "bạc hà",
+          "Món chay",
+          "Món canh",
+          "Canh chua",
+          "45 phút",
+          "ăn chay",
+          "món thanh đạm",
+          "canh rau củ",
+          "nấu trong 30 phút"
+        ],
+        "recipe_family": "canh_chua_chay"
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/canh-chua-chay-mien-nam-960.webp",
+          "page_url": "https://www.dienmayxanh.com/vao-bep/cach-nau-canh-chua-chay-thom-ngon-thanh-dam-cho-gi-02821",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh minh họa mới do Bếp Việt tạo; nguồn tham khảo chỉ dùng để đối chiếu tên món, nguyên liệu và cách chế biến.",
+          "width": 1312,
+          "height": 1199,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Canh chua chay miền Nam với đậu phụ và rau củ, ảnh minh họa mới của Bếp Việt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-21",
+          "photo_variant_note": "Ảnh minh họa mới do Bếp Việt tạo riêng theo món; công thức chưa được nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt biên tập công thức tham khảo theo nguồn đã dẫn; định lượng và thời gian cần được nấu thử trước khi xem là bản chuẩn.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-21",
+        "needs": [
+          "Nấu thử và xác nhận định lượng, thời gian, kết cấu thành phẩm",
+          "Rà soát tên gọi địa phương và khả năng thay thế nguyên liệu",
+          "Kiểm tra dị ứng và thành phần gia vị đóng gói"
+        ]
+      },
+      "suggested_pairings": []
+    }
+  ]
+}

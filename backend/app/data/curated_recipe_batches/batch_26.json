@@ -1,0 +1,1384 @@
+{
+  "batch": 26,
+  "description": "Năm món Việt vùng miền được Bếp Việt biên tập từ tư liệu du lịch, báo chí và hướng dẫn nấu ăn; gồm bánh truyền thống, món ngọt, món chay, bún đặc sản và canh nấm theo mùa.",
+  "recipes": [
+    {
+      "id": "BV456",
+      "slug": "banh-duc-lac-lang-dong",
+      "name": "Bánh đúc lạc Làng Dòng",
+      "aliases": [
+        "Bánh đúc làng Dòng",
+        "Bánh đúc lạc Phú Thọ"
+      ],
+      "region": [
+        "Đông Bắc Bộ"
+      ],
+      "province": [
+        "Phú Thọ"
+      ],
+      "category": "Bánh và ăn sáng",
+      "meal_type": [
+        "bữa sáng",
+        "bữa phụ"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "4 phần bánh đúc cắt miếng, dùng với tương đậu nành để chấm.",
+      "prep_time": 25,
+      "cook_time": 35,
+      "passive_time": 30,
+      "description": "Bánh đúc lạc Làng Dòng có miếng bánh gạo trắng ngà, mềm dai, điểm lạc bùi và vị kiềm nhẹ đặc trưng từ nước nẳng. Bếp Việt biên tập cách quấy bằng bột gạo tại nhà; dùng nước nẳng loại dành cho thực phẩm, không tự pha nước tro.",
+      "finished_dish": "Bánh quánh mịn, cắt miếng gọn, lạc phân bố đều; vị gạo dịu, bùi và thoảng mùi nước nẳng.",
+      "serving": "Để bánh nguội bớt rồi cắt miếng vừa ăn. Dọn cùng tương đậu nành; có thể dùng thêm rau thơm theo khẩu vị.",
+      "tips": [
+        "Khuấy tan bột trong nước nguội trước khi bật bếp để hạn chế vón cục.",
+        "Chỉ dùng nước nẳng có nguồn gốc thực phẩm; không dùng nước tro tự lọc hoặc hóa chất không rõ nhãn.",
+        "Quấy lửa nhỏ liên tục đến khi bột trong và kéo màng; bánh sẽ đặc hơn khi nguội."
+      ],
+      "dish_type": [
+        "Bánh đúc",
+        "Đặc sản Phú Thọ"
+      ],
+      "main_ingredient": [
+        "bột gạo tẻ",
+        "lạc",
+        "tương đậu nành"
+      ],
+      "cooking_method": [
+        "quấy bột",
+        "hấp chín lạc"
+      ],
+      "search_terms": [
+        "bánh đúc lạc Làng Dòng",
+        "bánh đúc Phú Thọ",
+        "bánh đúc nước nẳng"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Đĩa bánh đúc lạc Làng Dòng màu trắng ngà, miếng bánh có hạt lạc, ăn kèm chén tương nâu.",
+      "time_note": "Khoảng 1 giờ 30 phút, chưa tính thời gian để bánh nguội hẳn.",
+      "total_time": 90,
+      "suggested_pairings": [
+        "Tương đậu nành",
+        "Rau thơm",
+        "Trà nóng"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "steamed_rice_cake",
+      "time_unit": "phút",
+      "ingredients": [
+        {
+          "name": "Bột gạo tẻ",
+          "quantity": 250,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn bột mịn, mới; rây trước khi dùng.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 950,
+          "unit": "ml",
+          "role": "main",
+          "notes": "Dùng nước nguội để hòa bột.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Lạc nhân",
+          "quantity": 90,
+          "unit": "g",
+          "role": "main",
+          "notes": "Ngâm 30 phút, luộc chín mềm rồi để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Nước nẳng thực phẩm",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "process_aid",
+          "notes": "Dùng loại có nhãn dành cho thực phẩm; có thể bỏ qua nếu không tìm được, nhưng vị bánh sẽ khác.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Muối",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Gia giảm theo độ mặn của tương ăn kèm.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 5,
+          "unit": "ml",
+          "role": "process_aid",
+          "notes": "Thoa mỏng vào khuôn để dễ lấy bánh.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Tương đậu nành",
+          "quantity": 120,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng làm nước chấm; nếm trước khi thêm gia vị.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Ngâm lạc trong nước sạch 30 phút, rửa lại rồi luộc đến khi mềm nhưng còn nguyên hạt. Để ráo."
+        },
+        {
+          "step": 2,
+          "instruction": "Cho bột gạo, muối và nước vào nồi khi còn nguội; khuấy tan, để bột nghỉ 30 phút rồi khuấy lại."
+        },
+        {
+          "step": 3,
+          "instruction": "Chuẩn bị khuôn hoặc khay chịu nhiệt, thoa một lớp dầu thật mỏng. Cân sẵn nước nẳng thực phẩm và tương chấm."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đặt nồi bột lên lửa nhỏ, khuấy đều tay và vét sát đáy, thành nồi cho đến khi bột bắt đầu sánh."
+        },
+        {
+          "step": 2,
+          "instruction": "Thêm nước nẳng thực phẩm, tiếp tục quấy đến khi bột chuyển trắng trong, dẻo quánh và không còn vị bột sống; khoảng 20–25 phút."
+        },
+        {
+          "step": 3,
+          "instruction": "Trộn lạc đã luộc vào nồi, quấy thêm 2 phút rồi đổ bột vào khuôn. Dàn phẳng mặt, để nguội cho bánh định hình."
+        },
+        {
+          "step": 4,
+          "instruction": "Cắt bánh thành miếng vừa ăn, bày cùng tương đậu nành. Nếu tương mặn, pha loãng với ít nước ấm và nêm lại."
+        }
+      ],
+      "keywords": [
+        "Bánh đúc lạc Làng Dòng",
+        "Bánh đúc Phú Thọ",
+        "Làng Dòng",
+        "bột gạo",
+        "món chay",
+        "món ăn sáng"
+      ],
+      "tags": [
+        "món chay",
+        "đặc sản vùng miền",
+        "bánh truyền thống"
+      ],
+      "sources": [
+        {
+          "url": "https://dulichphutho.gov.vn/banh-duc-lang-dong-mon-qua-que-dam-vi-dat-to.html",
+          "publisher": "Trang thông tin chính thức Du lịch Phú Thọ",
+          "title": "Bánh đúc làng Dòng – Món quà quê đậm vị Đất Tổ",
+          "use": "Đối chiếu nguyên liệu gạo tẻ, lạc, nước nẳng và cách ăn bánh cắt miếng chấm tương; công thức tại nhà được Bếp Việt biên tập để dùng bột gạo và nước nẳng thực phẩm có nhãn rõ ràng.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Bánh đúc lạc Làng Dòng cho 2 người",
+            "instruction": "Nêm tương riêng sau khi nếm; khuấy bằng nồi nhỏ và giữ lửa thấp."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Bánh đúc lạc Làng Dòng cho 6 người",
+            "instruction": "Nêm tương riêng sau khi nếm; dùng nồi đáy dày để bột chín đều."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Bánh đúc lạc Làng Dòng cho 8 người",
+            "instruction": "Nêm tương riêng sau khi nếm; chia bột quấy thành hai mẻ nếu nồi nhỏ."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/banh-duc-lac-lang-dong-960.webp",
+          "page_url": "https://dulichphutho.gov.vn/banh-duc-lang-dong-mon-qua-que-dam-vi-dat-to.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu đặc trưng món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Bánh đúc lạc Làng Dòng mềm dai, hạt lạc bùi, bày cùng tương đậu nành.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo mới, nền trong suốt; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức Bếp Việt biên tập theo đặc trưng Làng Dòng; nước nẳng cần mua loại dành cho thực phẩm và định lượng cần nấu thử.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Xác nhận nguồn nước nẳng thực phẩm phù hợp tại địa phương.",
+          "Nấu thử để chuẩn hóa độ dẻo và thời gian quấy theo loại bột gạo."
+        ]
+      }
+    },
+    {
+      "id": "BV457",
+      "slug": "che-kho-nam-dinh",
+      "name": "Chè kho Nam Định",
+      "aliases": [
+        "Chè kho đỗ xanh Nam Định",
+        "Chè kho ngày lễ Nam Định"
+      ],
+      "region": [
+        "Đồng bằng Bắc Bộ"
+      ],
+      "province": [
+        "Ninh Bình"
+      ],
+      "category": "Món tráng miệng",
+      "meal_type": [
+        "tráng miệng",
+        "bữa phụ"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 6,
+      "serving_basis": "6 phần chè kho đỗ xanh sên đặc, tạo khuôn và rắc mè rang.",
+      "prep_time": 20,
+      "cook_time": 50,
+      "passive_time": 180,
+      "description": "Chè kho Nam Định là món ngọt đỗ xanh sên đặc, thường được tạo khuôn và dọn trong dịp lễ, Tết; tên gọi có chữ chè nhưng thành phẩm gần với bánh mềm hơn món chè nước. Bếp Việt giữ vị đỗ, gừng và mè rang, đồng thời tiết chế đường cho mẻ gia đình.",
+      "finished_dish": "Khối chè vàng mịn, dẻo chắc vừa phải, thơm đỗ xanh và gừng, điểm mè rang trên mặt.",
+      "serving": "Để chè nguội trong khuôn rồi cắt miếng nhỏ. Dùng cùng trà nóng như món ngọt sau bữa cơm hoặc bày trong mâm lễ.",
+      "tips": [
+        "Ngâm đỗ đủ mềm và hấp chín kỹ để phần chè sau khi nghiền không bị lợn cợn.",
+        "Sên lửa nhỏ, đảo liên tục và vét đáy chảo để đỗ không bén khét.",
+        "Lượng đường có thể giảm nhẹ; chè cần đủ độ sánh để giữ hình khi nguội."
+      ],
+      "dish_type": [
+        "Món ngọt truyền thống",
+        "Đặc sản Nam Định"
+      ],
+      "main_ingredient": [
+        "đỗ xanh",
+        "đường",
+        "gừng"
+      ],
+      "cooking_method": [
+        "ngâm",
+        "hấp",
+        "nghiền",
+        "sên"
+      ],
+      "search_terms": [
+        "chè kho Nam Định",
+        "chè kho đỗ xanh",
+        "món ngọt truyền thống miền Bắc"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Đĩa chè kho Nam Định vàng óng tạo khuôn tròn, rắc mè rang và vài sợi gừng.",
+      "time_note": "Khoảng 4 giờ 10 phút, gồm thời gian ngâm đỗ; có thể ngâm qua đêm.",
+      "total_time": 250,
+      "suggested_pairings": [
+        "Trà nóng",
+        "Mâm cỗ ngày lễ",
+        "Trái cây tươi"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "mung_bean_confection",
+      "time_unit": "phút",
+      "ingredients": [
+        {
+          "name": "Đỗ xanh cà vỏ",
+          "quantity": 300,
+          "unit": "g",
+          "role": "main",
+          "notes": "Nhặt sạch, ngâm nước 3–4 giờ rồi để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Đường cát",
+          "quantity": 140,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Có thể giảm còn 120 g nếu thích vị dịu.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Gừng tươi",
+          "quantity": 8,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Gọt vỏ, giã hoặc băm thật nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Mè trắng",
+          "quantity": 12,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Rang thơm, để nguội.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Muối",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng một nhúm nhỏ để cân vị ngọt.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 400,
+          "unit": "ml",
+          "role": "main",
+          "notes": "Dùng lượng vừa đủ để hấp đỗ, không trộn trực tiếp vào khối đỗ sau khi hấp.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Vo đỗ xanh đến khi nước trong, ngâm 3–4 giờ rồi xả lại và để ráo."
+        },
+        {
+          "step": 2,
+          "instruction": "Gọt vỏ gừng, băm thật nhỏ. Rang mè trên chảo khô đến khi thơm rồi để nguội."
+        },
+        {
+          "step": 3,
+          "instruction": "Chuẩn bị xửng hấp và khuôn nhỏ; lót khuôn bằng màng thực phẩm hoặc thoa lớp dầu thật mỏng."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Hấp đỗ xanh 25–30 phút đến khi hạt bở. Khi đỗ còn nóng, nghiền hoặc xay thành khối mịn."
+        },
+        {
+          "step": 2,
+          "instruction": "Cho đỗ nghiền, đường, muối và gừng vào chảo đáy dày. Sên lửa nhỏ, đảo đều để hỗn hợp nóng và quyện."
+        },
+        {
+          "step": 3,
+          "instruction": "Tiếp tục sên khoảng 15–20 phút, đến khi chè dẻo đặc, gom thành khối và để lộ đáy chảo trong vài giây sau mỗi lượt đảo."
+        },
+        {
+          "step": 4,
+          "instruction": "Cho chè còn nóng vào khuôn, nén nhẹ cho mặt phẳng. Đợi nguội hẳn rồi lấy ra, rắc mè rang và dùng."
+        }
+      ],
+      "keywords": [
+        "Chè kho Nam Định",
+        "Chè kho Ninh Bình",
+        "đỗ xanh",
+        "món ngọt ngày lễ",
+        "món chay"
+      ],
+      "tags": [
+        "món chay",
+        "món ngọt",
+        "đặc sản vùng miền"
+      ],
+      "sources": [
+        {
+          "url": "https://www.foodnk.com/vi-ngot-ngao-tu-quy-trinh-san-xuat-che-kho-nam-dinh.html",
+          "publisher": "Foodnk – Khoa học và Công nghệ Thực phẩm",
+          "title": "Vị ngọt ngào từ quy trình sản xuất Chè Kho Nam Định",
+          "use": "Đối chiếu đỗ xanh và đường là nguyên liệu chính, quy trình hấp/nghiền/sên rồi tạo khuôn, rắc mè; nội dung và định lượng được Bếp Việt biên tập cho bếp gia đình.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://baoninhbinh.org.vn/dac-sac-van-hoa-am-thuc-24032208250001.html",
+          "publisher": "Báo Ninh Bình",
+          "title": "Đặc sắc văn hóa ẩm thực",
+          "use": "Tham khảo vai trò chè kho trong mâm cúng địa phương và đặc trưng sắc vàng, hương gừng, đỗ xanh; tên món giữ nhận diện văn hóa Nam Định, địa giới hiện hành ghi Ninh Bình.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm",
+          "publisher": "Cổng Thông tin điện tử Chính phủ",
+          "title": "Chi tiết 34 đơn vị hành chính cấp tỉnh từ 12/6/2025",
+          "use": "Xác nhận địa giới hiện hành: tỉnh Nam Định cũ thuộc tỉnh Ninh Bình sau sắp xếp năm 2025.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 6,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.33,
+            "seasoning_start_factor": 0.33,
+            "example": "Chè kho Nam Định cho 2 người",
+            "instruction": "Giảm thời gian sên và kiểm tra độ đặc thường xuyên để tránh khô."
+          },
+          {
+            "servings": 4,
+            "main_factor": 0.67,
+            "seasoning_start_factor": 0.67,
+            "example": "Chè kho Nam Định cho 4 người",
+            "instruction": "Giữ lửa nhỏ, nêm đường từ từ rồi nếm trước khi sên đặc."
+          },
+          {
+            "servings": 8,
+            "main_factor": 1.33,
+            "seasoning_start_factor": 1.33,
+            "example": "Chè kho Nam Định cho 8 người",
+            "instruction": "Dùng chảo rộng, sên theo mẻ nếu cần để hơi nước thoát đều."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/che-kho-nam-dinh-960.webp",
+          "page_url": "https://www.foodnk.com/vi-ngot-ngao-tu-quy-trinh-san-xuat-che-kho-nam-dinh.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu đặc trưng món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Chè kho Nam Định sên từ đỗ xanh, vàng mịn, tạo khuôn và rắc mè rang.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo mới, nền trong suốt; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Giữ nét chè kho Nam Định dạng đỗ xanh sên đặc, tạo khuôn; tên món phản ánh vùng văn hóa Nam Định, còn tỉnh hiện hành là Ninh Bình.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để xác nhận tỷ lệ đường và độ sên phù hợp với đỗ xanh từng mùa.",
+          "Xác nhận cách tạo khuôn và độ mềm với người nấu tại địa phương."
+        ]
+      }
+    },
+    {
+      "id": "BV458",
+      "slug": "mam-kho-chay-mien-tay",
+      "name": "Mắm kho chay miền Tây",
+      "aliases": [
+        "Mắm kho rau củ chay",
+        "Mắm kho đậu hũ chay miền Tây"
+      ],
+      "region": [
+        "Đồng bằng sông Cửu Long"
+      ],
+      "province": [],
+      "category": "Món chay",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "4 phần món kho rau củ, nấm và đậu hũ ăn với cơm hoặc bún.",
+      "prep_time": 25,
+      "cook_time": 30,
+      "passive_time": 0,
+      "description": "Mắm kho chay kiểu miền Tây là nồi rau củ, nấm và đậu hũ kho liu riu trong nước nêm chay đậm thơm sả, có chút béo dịu của nước cốt dừa. Bếp Việt biên tập theo hướng thuần thực vật, nấu dạng món kho chan cơm; khác kho quẹt chay vốn là nước chấm sệt.",
+      "finished_dish": "Nước kho màu nâu hổ phách, vị mặn ngọt hài hòa; đậu hũ mềm thấm, rau củ còn nguyên miếng và nấm mọng.",
+      "serving": "Múc cả nước kho và rau củ ra thố nóng, dùng với cơm trắng hoặc bún tươi. Thêm rau sống, ớt và chanh riêng để tùy khẩu vị.",
+      "tips": [
+        "Chọn nước mắm chay hoặc gia vị lên men thuần thực vật, đọc kỹ thành phần để tránh sản phẩm có cá.",
+        "Chiên sơ đậu hũ cho se mặt rồi mới kho; đảo nhẹ để miếng không vỡ.",
+        "Cho rau củ lâu chín trước, đậu hũ và nước cốt dừa sau; nếm độ mặn trước khi thêm muối."
+      ],
+      "dish_type": [
+        "Món kho chay",
+        "Món miền Tây"
+      ],
+      "main_ingredient": [
+        "đậu hũ",
+        "nấm",
+        "rau củ",
+        "nước mắm chay"
+      ],
+      "cooking_method": [
+        "chiên sơ",
+        "kho",
+        "ninh nhẹ"
+      ],
+      "search_terms": [
+        "mắm kho chay miền Tây",
+        "mắm kho rau củ",
+        "món chay ăn cơm",
+        "món chay đậu hũ nấm"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Nồi đất mắm kho chay miền Tây với đậu hũ, cà tím, nấm và đậu bắp trong nước kho sánh màu nâu.",
+      "time_note": "Khoảng 55 phút, có thể chuẩn bị rau củ trước để nấu nhanh hơn.",
+      "total_time": 55,
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Bún tươi",
+        "Rau sống"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "vegetarian_simmered_stew",
+      "time_unit": "phút",
+      "ingredients": [
+        {
+          "name": "Đậu hũ trắng chắc",
+          "quantity": 300,
+          "unit": "g",
+          "role": "main",
+          "notes": "Ép ráo nước, cắt miếng vuông lớn.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Cà tím",
+          "quantity": 200,
+          "unit": "g",
+          "role": "main",
+          "notes": "Cắt khúc, ngâm nước muối loãng rồi để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Nấm rơm",
+          "quantity": 150,
+          "unit": "g",
+          "role": "main",
+          "notes": "Cắt bỏ gốc, rửa sạch; nấm lớn bổ đôi.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Đậu bắp",
+          "quantity": 120,
+          "unit": "g",
+          "role": "main",
+          "notes": "Rửa sạch, cắt khúc xéo.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Thơm",
+          "quantity": 100,
+          "unit": "g",
+          "role": "main",
+          "notes": "Gọt vỏ, bỏ mắt, cắt miếng nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Nước mắm chay",
+          "quantity": 45,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Chọn loại thuần thực vật, nêm từng phần vì độ mặn khác nhau.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Nước cốt dừa",
+          "quantity": 80,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Cho vào cuối để nước kho có vị béo nhẹ.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Sả cây",
+          "quantity": 2,
+          "unit": "cây",
+          "role": "seasoning",
+          "notes": "Đập dập, cắt khúc; có thể băm một ít để phi thơm.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 15,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhỏ; có thể bỏ nếu ăn chay không dùng hành.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Đường",
+          "quantity": 12,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Gia giảm theo vị mặn của nước mắm chay.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "process_aid",
+          "notes": "Dùng chiên sơ đậu hũ và phi thơm sả.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 450,
+          "unit": "ml",
+          "role": "main",
+          "notes": "Thêm từ từ để điều chỉnh độ sánh của nước kho.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        },
+        {
+          "name": "Ớt đỏ",
+          "quantity": 1,
+          "unit": "trái",
+          "role": "garnish",
+          "notes": "Bỏ hạt nếu muốn cay nhẹ; có thể bỏ hẳn.",
+          "scaling_rule": "linear",
+          "sequence": 13
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Ép đậu hũ cho ráo, cắt miếng vừa ăn. Sơ chế cà tím, nấm rơm, đậu bắp và thơm; rửa sạch, để ráo."
+        },
+        {
+          "step": 2,
+          "instruction": "Đập dập sả, cắt khúc; băm nhỏ hành tím nếu dùng. Pha nước mắm chay với nước lọc và đường, khuấy tan."
+        },
+        {
+          "step": 3,
+          "instruction": "Chiên sơ đậu hũ với ít dầu đến khi các mặt se vàng, vớt ra để ráo."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng nồi, phi thơm sả và hành tím với dầu. Cho thơm vào đảo 2–3 phút để dậy mùi."
+        },
+        {
+          "step": 2,
+          "instruction": "Thêm hỗn hợp nước mắm chay và nước lọc, đun sôi nhẹ. Cho cà tím cùng nấm vào, đậy hé nắp và kho khoảng 10 phút."
+        },
+        {
+          "step": 3,
+          "instruction": "Thêm đậu bắp và đậu hũ chiên, hạ lửa nhỏ. Kho thêm 8–10 phút, thỉnh thoảng lắc nồi thay vì đảo mạnh."
+        },
+        {
+          "step": 4,
+          "instruction": "Rót nước cốt dừa vào, nếm lại độ mặn ngọt rồi đun thêm 2 phút. Tắt bếp, rắc ớt nếu dùng và dọn nóng."
+        }
+      ],
+      "keywords": [
+        "Mắm kho chay miền Tây",
+        "mắm kho rau củ",
+        "món kho chay",
+        "đậu hũ nấm",
+        "món chay thuần thực vật"
+      ],
+      "tags": [
+        "món chay",
+        "món kho",
+        "miền Tây"
+      ],
+      "sources": [
+        {
+          "url": "https://www.bluestone.com.vn/blogs/vao-bep/mam-kho-chay",
+          "publisher": "BlueStone",
+          "title": "Cách làm mắm kho chay đậm đà, thơm ngon cho mâm cơm ngày rằm",
+          "use": "Tham khảo cách kết hợp đậu hũ, cà tím, nấm, đậu bắp, sả, nước mắm chay và nước cốt dừa; quy trình và định lượng được Bếp Việt biên tập thành món kho thuần thực vật.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://dienmaycholon.com/mon-ngon/cach-lam-mam-kho-chay",
+          "publisher": "Điện Máy Chợ Lớn",
+          "title": "Cách làm mắm kho chay kiểu miền Tây, thơm lừng đúng vị quê nhà",
+          "use": "Đối chiếu tên gọi và cách nấu kiểu miền Tây; Bếp Việt phân biệt món kho có rau củ và đậu hũ với kho quẹt chay dạng nước chấm.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Mắm kho chay miền Tây cho 2 người",
+            "instruction": "Nêm nước mắm chay từ từ; nồi nhỏ có thể cạn nhanh nên hạ lửa."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Mắm kho chay miền Tây cho 6 người",
+            "instruction": "Tăng gia vị theo tỷ lệ ban đầu nhưng nếm lại trước khi kho cạn."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Mắm kho chay miền Tây cho 8 người",
+            "instruction": "Dùng nồi rộng, chia rau củ thành lớp để chín đều và không bị dập."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/mam-kho-chay-mien-tay-960.webp",
+          "page_url": "https://www.bluestone.com.vn/blogs/vao-bep/mam-kho-chay",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu đặc trưng món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Nồi mắm kho chay miền Tây với đậu hũ, nấm, cà tím, đậu bắp và sả trong nước kho nâu sánh.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo mới, nền trong suốt; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Phiên bản Bếp Việt thuần thực vật, nấu thành món kho rau củ dùng với cơm/bún; không phải kho quẹt chay dạng nước chấm.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Kiểm tra nhãn nước mắm chay để xác nhận không chứa cá hoặc hải sản.",
+          "Nấu thử để điều chỉnh nước và độ mặn giữa các nhãn gia vị chay."
+        ]
+      }
+    },
+    {
+      "id": "BV459",
+      "slug": "bun-hen-mai-xa",
+      "name": "Bún hến Mai Xá",
+      "aliases": [
+        "Bún chắt chắt Mai Xá",
+        "Bún chắt chắt Quảng Trị"
+      ],
+      "region": [
+        "Bắc Trung Bộ"
+      ],
+      "province": [
+        "Quảng Trị"
+      ],
+      "category": "Bún, phở, mì và miến",
+      "meal_type": [
+        "bữa sáng",
+        "bữa trưa"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "4 tô bún trộn chắt chắt Mai Xá, kèm nước dùng nóng, rau, lạc và bánh tráng.",
+      "prep_time": 30,
+      "cook_time": 25,
+      "passive_time": 30,
+      "description": "Bún hến Mai Xá nổi bật với chắt chắt vùng nước lợ, loại nhuyễn thể nhỏ cùng họ với hến. Bếp Việt biên tập phiên bản bún trộn dùng xì dầu, tương ớt, rau thơm và lạc; có thể chan thêm chút nước luộc chắt chắt, không dùng mắm ruốc và môn như một số cách ăn bún hến Huế.",
+      "finished_dish": "Tô bún có chắt chắt thơm ngọt, lạc rang bùi, rau giòn, vị gừng ấm và xì dầu cay nhẹ.",
+      "serving": "Xếp bún, chắt chắt và rau vào tô, rắc lạc rang, bẻ bánh tráng lên mặt. Dọn cùng xì dầu pha tương ớt và chén nước luộc nóng để chan tùy thích.",
+      "tips": [
+        "Dùng chắt chắt đã làm sạch từ nơi bán uy tín; ngâm và thay nước để nhả cát nếu mua loại còn vỏ.",
+        "Không luộc quá lâu sau khi chắt chắt vừa mở miệng để phần thịt không dai.",
+        "Nêm xì dầu và tương ớt riêng để giữ vị ngọt tự nhiên của nhuyễn thể."
+      ],
+      "dish_type": [
+        "Món bún trộn",
+        "Đặc sản Quảng Trị"
+      ],
+      "main_ingredient": [
+        "chắt chắt",
+        "bún tươi",
+        "lạc rang"
+      ],
+      "cooking_method": [
+        "luộc",
+        "xào nhanh",
+        "trộn"
+      ],
+      "search_terms": [
+        "bún hến Mai Xá",
+        "bún chắt chắt Quảng Trị",
+        "bún trộn hải sản",
+        "món ngon Quảng Trị"
+      ],
+      "spicy_level": 2,
+      "image_alt": "Tô bún hến Mai Xá trộn chắt chắt, lạc rang, rau thơm và bánh tráng, xì dầu ớt để riêng.",
+      "time_note": "Khoảng 1 giờ 25 phút, bao gồm thời gian ngâm chắt chắt còn vỏ.",
+      "total_time": 85,
+      "suggested_pairings": [
+        "Bánh tráng nướng",
+        "Rau sống",
+        "Xì dầu ớt"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "clam_vermicelli",
+      "time_unit": "phút",
+      "ingredients": [
+        {
+          "name": "Chắt chắt còn vỏ",
+          "quantity": 1000,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn chắt chắt sống, nguồn rõ ràng; ngâm và rửa nhiều lần để nhả cát.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Bún tươi",
+          "quantity": 800,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chần nhanh qua nước sôi, để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Gừng tươi",
+          "quantity": 25,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Một phần thái lát nấu nước, phần còn lại băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 25,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Bóc vỏ, thái mỏng.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Nước tương",
+          "quantity": 60,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng làm gia vị trộn riêng, nêm vừa miệng.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Tương ớt",
+          "quantity": 25,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dọn riêng để mỗi người tự điều chỉnh độ cay.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Lạc rang",
+          "quantity": 60,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Giã dập vừa, không nghiền mịn.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Rau thơm",
+          "quantity": 80,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Có thể dùng rau mùi, húng và cải non; rửa sạch, để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Bánh tráng nướng",
+          "quantity": 2,
+          "unit": "cái",
+          "role": "garnish",
+          "notes": "Nướng giòn, bẻ miếng vừa ăn.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "process_aid",
+          "notes": "Dùng phi hành và xào chắt chắt.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Muối",
+          "quantity": 4,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm nước dùng sau khi lọc.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 1000,
+          "unit": "ml",
+          "role": "main",
+          "notes": "Bổ sung nước nóng khi luộc nếu cần.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Ngâm chắt chắt trong nước sạch 30 phút, thay nước một lần rồi rửa lại nhiều lần. Nếu dùng phần thịt đã làm sạch, rã đông trong ngăn mát."
+        },
+        {
+          "step": 2,
+          "instruction": "Rửa rau thơm, để thật ráo. Thái gừng thành lát, băm một phần; thái mỏng hành tím và giã dập lạc rang."
+        },
+        {
+          "step": 3,
+          "instruction": "Chần bún nhanh theo hướng dẫn của nơi bán, xả ráo. Nướng bánh tráng đến giòn và bẻ thành miếng."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đun sôi nước với gừng thái lát. Cho chắt chắt vào, khuấy nhẹ đến khi vỏ vừa mở; vớt ra, lọc riêng nước luộc qua rây mịn."
+        },
+        {
+          "step": 2,
+          "instruction": "Tách thịt chắt chắt khỏi vỏ nếu cần. Phi thơm hành tím với dầu, thêm gừng băm và thịt chắt chắt, đảo nhanh 2–3 phút rồi nêm một ít muối."
+        },
+        {
+          "step": 3,
+          "instruction": "Pha nước tương với tương ớt và một ít nước luộc chắt chắt. Nếm để vị mặn cay vừa, không lấn vị ngọt của chắt chắt."
+        },
+        {
+          "step": 4,
+          "instruction": "Cho bún vào tô, thêm chắt chắt, rau thơm và lạc rang. Bẻ bánh tráng lên trên, dọn cùng chén nước tương và nước dùng nóng riêng."
+        }
+      ],
+      "keywords": [
+        "Bún hến Mai Xá",
+        "Bún chắt chắt Mai Xá",
+        "Quảng Trị",
+        "nhuyễn thể nước lợ",
+        "bún trộn",
+        "lạc rang"
+      ],
+      "tags": [
+        "đặc sản vùng miền",
+        "món bún",
+        "hải sản"
+      ],
+      "sources": [
+        {
+          "url": "https://www.vtv8.vtv.vn/huong-vi-thanh-tao.html",
+          "publisher": "VTV8",
+          "title": "Bún hến Mai Xá: Món ngon dân dã mang đậm vị quê hương",
+          "use": "Đối chiếu chắt chắt vùng nước lợ, bún, lạc, rau sống, bánh tráng và gia vị cay thơm; công thức bếp gia đình được Bếp Việt biên tập.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://thanhnien.vn/bun-hen-mai-xa-mon-ngon-quang-tri-noi-tieng-vi-cach-tron-khac-la-185260505152316654.htm",
+          "publisher": "Báo Thanh Niên",
+          "title": "Bún hến Mai Xá: Món ngon Quảng Trị nổi tiếng vì cách trộn khác lạ",
+          "use": "Xác nhận tên gọi địa phương, nguyên liệu chắt chắt thay cho hến lớn và cách trộn riêng với xì dầu, tương ớt, rau sống, lạc; phân biệt với bún hến Huế.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Bún hến Mai Xá cho 2 người",
+            "instruction": "Pha xì dầu ớt riêng và nêm dần; giữ nước dùng nóng để chan tùy ý."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Bún hến Mai Xá cho 6 người",
+            "instruction": "Tăng lượng chắt chắt theo khẩu phần; nếm lại nước tương vì độ mặn thay đổi theo nhãn."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Bún hến Mai Xá cho 8 người",
+            "instruction": "Luộc chắt chắt theo nhiều mẻ nếu nồi nhỏ để chúng mở vỏ nhanh và đồng đều."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/bun-hen-mai-xa-960.webp",
+          "page_url": "https://www.vtv8.vtv.vn/huong-vi-thanh-tao.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu đặc trưng món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Bún hến Mai Xá trộn chắt chắt, rau thơm và lạc rang, bánh tráng giòn và nước tương ớt dọn riêng.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo mới, nền trong suốt; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Dùng chắt chắt (nhuyễn thể nhỏ vùng nước lợ), trộn với xì dầu, tương ớt, rau và lạc theo phong vị Mai Xá; không gộp với bún hến Huế.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử với chắt chắt địa phương hoặc loại đã làm sạch để kiểm tra tỷ lệ nước dùng.",
+          "Điều chỉnh tương ớt theo mức cay quen thuộc tại Mai Xá."
+        ]
+      }
+    },
+    {
+      "id": "BV460",
+      "slug": "canh-nam-tram-phu-quoc",
+      "name": "Canh nấm tràm Phú Quốc",
+      "aliases": [
+        "Canh nấm tràm tôm Phú Quốc",
+        "Canh nấm tràm đảo Ngọc"
+      ],
+      "region": [
+        "Đồng bằng sông Cửu Long"
+      ],
+      "province": [
+        "An Giang"
+      ],
+      "category": "Món canh",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "4 tô canh nấm tràm nấu tôm, dùng nóng với cơm.",
+      "prep_time": 25,
+      "cook_time": 20,
+      "passive_time": 0,
+      "description": "Canh nấm tràm Phú Quốc gợi nhớ mùa nấm rừng sau mưa, với vị hơi đắng ban đầu và hậu ngọt. Bếp Việt biên tập phiên bản nấu tôm thanh nhẹ, dùng nấm đã được sơ chế an toàn; Phú Quốc hiện thuộc tỉnh An Giang, nhưng tên món vẫn giữ địa danh quen thuộc.",
+      "finished_dish": "Nước canh trong, ngọt dịu từ tôm, nấm tràm giữ dáng và có vị đắng nhẹ đặc trưng, điểm hành ngò.",
+      "serving": "Múc canh khi còn nóng, rắc hành lá, rau mùi và chút tiêu. Ăn cùng cơm trắng, nếm vị đắng hậu ngọt tự nhiên của nấm.",
+      "tips": [
+        "Chỉ dùng nấm tràm được nhận diện và sơ chế từ nguồn tin cậy; không tự hái nấm rừng nếu chưa có chuyên môn.",
+        "Nấm tươi cần chần riêng theo hướng dẫn của người bán, rửa sạch rồi mới nấu; nấm đông lạnh đã sơ chế thì rã đông trong ngăn mát.",
+        "Cho nấm vào gần cuối và nấu vừa chín; đun quá lâu có thể làm nước canh đắng hơn."
+      ],
+      "dish_type": [
+        "Canh hải sản",
+        "Đặc sản Phú Quốc"
+      ],
+      "main_ingredient": [
+        "nấm tràm",
+        "tôm",
+        "hành lá"
+      ],
+      "cooking_method": [
+        "sơ chế nấm",
+        "nấu canh"
+      ],
+      "search_terms": [
+        "canh nấm tràm Phú Quốc",
+        "canh nấm tràm tôm",
+        "món ngon Phú Quốc",
+        "món canh hải sản"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Tô canh nấm tràm Phú Quốc nước trong với nấm tràm tím nâu, tôm tươi và hành ngò.",
+      "time_note": "Khoảng 45 phút nếu đã mua nấm làm sạch; thời gian sơ chế phụ thuộc loại nấm.",
+      "total_time": 45,
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Rau luộc",
+        "Cá kho"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "seasonal_mushroom_soup",
+      "time_unit": "phút",
+      "ingredients": [
+        {
+          "name": "Nấm tràm đã sơ chế",
+          "quantity": 250,
+          "unit": "g",
+          "role": "main",
+          "notes": "Dùng loại đã được làm sạch, chần an toàn bởi nguồn bán đáng tin; có thể dùng nấm đông lạnh đã sơ chế.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Tôm tươi",
+          "quantity": 220,
+          "unit": "g",
+          "role": "main",
+          "notes": "Bóc vỏ, bỏ chỉ lưng; để nguyên con nhỏ hoặc băm thô.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 1000,
+          "unit": "ml",
+          "role": "main",
+          "notes": "Có thể thay một phần bằng nước luộc tôm đã lọc.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 15,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm từ từ sau khi nước canh sôi.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Muối",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Gia giảm theo độ mặn của nước mắm.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 15,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Rau mùi",
+          "quantity": 10,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Rắc lên sau cùng.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "process_aid",
+          "notes": "Dùng phi thơm hành tím và xào tôm.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Kiểm tra nhãn và hướng dẫn sơ chế nấm tràm. Nếu nấm tươi chưa làm sạch, nhờ người bán hướng dẫn cách chần; không tự dùng nấm không rõ nguồn."
+        },
+        {
+          "step": 2,
+          "instruction": "Bóc vỏ tôm, bỏ chỉ lưng, rửa nhanh rồi để ráo. Băm hành tím; thái hành lá và rau mùi."
+        },
+        {
+          "step": 3,
+          "instruction": "Rửa lại nấm đã sơ chế bằng nước sạch rồi để ráo. Nếu dùng nấm đông lạnh, rã đông trong ngăn mát và chắt bỏ nước tan."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Phi thơm hành tím với dầu. Cho tôm vào đảo đến khi vừa chuyển hồng, nêm một ít nước mắm rồi múc tạm ra bát."
+        },
+        {
+          "step": 2,
+          "instruction": "Đổ nước vào nồi, đun sôi và hớt bọt. Nêm muối, phần nước mắm còn lại; nếm để nước canh thanh dịu."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho nấm tràm đã sơ chế vào nấu 4–5 phút. Thêm tôm đã xào, đun đến khi tôm chín hoàn toàn."
+        },
+        {
+          "step": 4,
+          "instruction": "Tắt bếp, rắc hành lá, rau mùi và tiêu. Dọn nóng cùng cơm trắng."
+        }
+      ],
+      "keywords": [
+        "Canh nấm tràm Phú Quốc",
+        "Nấm tràm đảo Ngọc",
+        "An Giang",
+        "món canh tôm",
+        "nấm theo mùa"
+      ],
+      "tags": [
+        "món canh",
+        "hải sản",
+        "đặc sản vùng miền"
+      ],
+      "sources": [
+        {
+          "url": "https://visitphuquoc.com.vn/vi/nam-tram-phu-quoc-dac-san-bo-duong-cua-dao-ngoc-8352",
+          "publisher": "Visit Phu Quoc",
+          "title": "Nấm tràm Phú Quốc: Đặc sản bổ dưỡng của đảo Ngọc",
+          "use": "Tham khảo đặc trưng mùa vụ, vị đắng nhẹ hậu ngọt và cách chế biến nấm tràm cùng hải sản; quy trình an toàn và công thức canh tôm tại nhà được Bếp Việt biên tập.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://www.sggp.org.vn/phu-quoc-nguoi-dan-do-xo-di-hai-nam-tram-post741183.html",
+          "publisher": "Báo Sài Gòn Giải Phóng",
+          "title": "Phú Quốc: Người dân đổ xô đi hái nấm tràm",
+          "use": "Đối chiếu nấm tràm là nguyên liệu mùa mưa, cách sơ chế và các món canh địa phương nấu cùng hải sản.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm",
+          "publisher": "Cổng Thông tin điện tử Chính phủ",
+          "title": "Chi tiết 34 đơn vị hành chính cấp tỉnh từ 12/6/2025",
+          "use": "Xác nhận địa giới hiện hành của đặc khu Phú Quốc thuộc tỉnh An Giang sau sắp xếp năm 2025.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Canh nấm tràm Phú Quốc cho 2 người",
+            "instruction": "Nêm nước mắm sau khi nếm nước dùng; không đun nấm lâu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Canh nấm tràm Phú Quốc cho 6 người",
+            "instruction": "Tăng nước và tôm theo khẩu phần; nấu nấm thành từng mẻ nếu nồi nhỏ."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Canh nấm tràm Phú Quốc cho 8 người",
+            "instruction": "Giữ sôi vừa và kiểm tra nấm đã sơ chế chín hoàn toàn trước khi dọn."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/canh-nam-tram-phu-quoc-960.webp",
+          "page_url": "https://visitphuquoc.com.vn/vi/nam-tram-phu-quoc-dac-san-bo-duong-cua-dao-ngoc-8352",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu đặc trưng món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Canh nấm tràm Phú Quốc nấu tôm trong tô sứ trắng, nước trong, điểm hành ngò.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo mới, nền trong suốt; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Phiên bản Bếp Việt dùng tôm và nấm tràm đã sơ chế; giữ vị hơi đắng, hậu ngọt đặc trưng, không khẳng định là công thức duy nhất của đảo.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Đối chiếu hướng dẫn sơ chế cụ thể với nhà cung cấp nấm tràm tại Phú Quốc.",
+          "Nấu thử để chuẩn hóa lượng nước mắm và thời gian nấu theo nấm tươi hoặc nấm đông lạnh."
+        ]
+      }
+    }
+  ]
+}

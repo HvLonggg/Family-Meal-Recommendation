@@ -1,0 +1,1269 @@
+{
+  "batch": 86,
+  "description": "Năm món chay và rau quen thuộc trong mâm cơm gia đình, gồm canh, món xào và đậu hũ kho.",
+  "recipes": [
+    {
+      "id": "BV757",
+      "slug": "canh-cai-be-xanh-nau-gung-chay",
+      "name": "Canh cải bẹ xanh nấu gừng chay",
+      "aliases": [
+        "Canh cải xanh nấu gừng chay",
+        "Canh cải bẹ xanh gừng"
+      ],
+      "region": [
+        "Toàn quốc"
+      ],
+      "province": [],
+      "category": "Món chay",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "bữa ăn gia đình",
+        "món chay"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một nồi canh khoảng bốn bát nhỏ cho bữa cơm gia đình.",
+      "prep_time": 8,
+      "cook_time": 12,
+      "passive_time": 0,
+      "total_time": 20,
+      "description": "Cải bẹ xanh có vị hăng dịu, nấu nhanh cùng gừng thái sợi trong nước dùng chay trong nhẹ. Tô canh ấm, gọn vị và hợp dùng cạnh món kho hoặc món xào.",
+      "finished_dish": "Lá cải vừa mềm, phần bẹ còn độ giòn nhẹ; nước canh trong, thơm gừng và có vị mặn thanh.",
+      "serving": "Múc cả rau và nước vào tô, dùng nóng với cơm trắng và các món chay đậm vị.",
+      "tips": [
+        "Chọn cải bẹ xanh còn tươi, bỏ phần lá úa và rửa kỹ các kẽ bẹ.",
+        "Cho cải vào khi nước đã sôi để rau giữ màu và không bị nấu quá lâu.",
+        "Nêm hạt nêm chay từ ít rồi nếm lại vì mỗi nhãn hiệu có độ mặn khác nhau."
+      ],
+      "dish_type": [
+        "Món canh",
+        "Món chay hằng ngày"
+      ],
+      "main_ingredient": [
+        "cải bẹ xanh",
+        "gừng"
+      ],
+      "cooking_method": [
+        "nấu canh"
+      ],
+      "search_terms": [
+        "canh cải bẹ xanh nấu gừng chay",
+        "canh cải xanh gừng",
+        "canh cải bẹ xanh chay",
+        "món chay thanh nhẹ"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Tô canh cải bẹ xanh nấu gừng chay với lá cải xanh và sợi gừng tươi trong nước dùng trong.",
+      "time_note": "Khoảng 20 phút; nấu rau vừa sôi trở lại để cải không mềm nhũn.",
+      "suggested_pairings": [
+        "Đậu hũ kho nước dừa chay",
+        "Củ cải trắng xào nấm chay",
+        "Cơm trắng"
+      ],
+      "recipe_family": "canh_cai_be_xanh_nau_gung_chay",
+      "keywords": [
+        "cải bẹ xanh",
+        "gừng",
+        "canh chay",
+        "bữa cơm gia đình"
+      ],
+      "tags": [
+        "món chay",
+        "món canh",
+        "món rau",
+        "bữa ăn gia đình"
+      ],
+      "ingredients": [
+        {
+          "name": "Cải bẹ xanh",
+          "quantity": 400,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Nhặt lá hư, rửa kỹ và cắt khúc vừa ăn.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Gừng tươi",
+          "quantity": 18,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Gọt vỏ, thái sợi mảnh.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 1000,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng nấu nước canh.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Muối",
+          "quantity": 2.5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Gia giảm sau khi nếm.",
+          "scaling_rule": "seasoning",
+          "sequence": 4
+        },
+        {
+          "name": "Hạt nêm chay",
+          "quantity": 8,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Chọn loại không có thành phần động vật.",
+          "scaling_rule": "seasoning",
+          "sequence": 5
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Nhặt bỏ lá úa, cắt bỏ gốc già; rửa cải nhiều lần cho sạch đất cát rồi cắt khúc khoảng 4–5 cm."
+        },
+        {
+          "step": 2,
+          "instruction": "Gọt vỏ gừng, thái sợi. Đong nước, muối và hạt nêm chay để nêm nhanh khi nấu."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đun sôi nước cùng gừng trong khoảng 2 phút để nước canh dậy mùi thơm."
+        },
+        {
+          "step": 2,
+          "instruction": "Cho cải bẹ xanh vào nồi, nêm muối và hạt nêm chay. Đun lửa lớn đến khi nước sôi trở lại và cải vừa mềm."
+        },
+        {
+          "step": 3,
+          "instruction": "Nếm lại, tắt bếp và múc canh ra tô. Không đun kéo dài để rau giữ màu xanh."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://kingfoodmart.com/bai-viet/cong-thuc-nau-an/canh-cai-be-xanh-nau-gung",
+          "publisher": "Kingfoodmart",
+          "title": "Canh cải bẹ xanh nấu gừng",
+          "use": "Đối chiếu tên món, cải bẹ xanh và gừng, cách đun gừng trong nước rồi cho cải cùng hạt nêm chay vào nấu nhanh.",
+          "accessed_at": "2026-10-25",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Dùng 200 g cải, 9 g gừng và bắt đầu với khoảng một nửa lượng gia vị.",
+            "instruction": "Giữ lượng nước theo số bát canh gia đình muốn dùng."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.3,
+            "example": "Tăng cải và gừng lên khoảng một lần rưỡi, nêm gia vị từng chút.",
+            "instruction": "Cho cải vào nồi rộng sau khi nước sôi để rau chín đều."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/canh-cai-be-xanh-nau-gung-chay-960.webp",
+          "page_url": "https://kingfoodmart.com/bai-viet/cong-thuc-nau-an/canh-cai-be-xanh-nau-gung",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo riêng cho Bếp Việt; trang nguồn chỉ được dùng để biên tập công thức.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Tô canh cải bẹ xanh nấu gừng chay với lá cải xanh và sợi gừng tươi trong nước dùng trong.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-25",
+          "photo_variant_note": "Ảnh PNG gốc 1536×1024 có alpha; canvas 3840×2160 là bản upscale, không phải độ phân giải native 4K. Công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Biên tập lại bằng lời riêng dựa trên nguồn tham khảo; cần nấu thử để xác nhận lượng nước, gia vị và thời gian.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-25",
+        "needs": [
+          "Nấu thử để xác nhận vị, định lượng và thời gian thực tế."
+        ]
+      },
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "id": "BV758",
+      "slug": "cu-cai-trang-xao-nam-chay",
+      "name": "Củ cải trắng xào nấm chay",
+      "aliases": [
+        "Củ cải trắng xào nấm bào ngư",
+        "Củ cải xào nấm chay"
+      ],
+      "region": [
+        "Toàn quốc"
+      ],
+      "province": [],
+      "category": "Món chay",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "bữa ăn gia đình",
+        "món chay"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một đĩa rau xào vừa cho bốn người ăn kèm cơm.",
+      "prep_time": 10,
+      "cook_time": 12,
+      "passive_time": 0,
+      "total_time": 22,
+      "description": "Củ cải trắng thái sợi xào nhanh với nấm bào ngư, điểm chút ngò gai và tiêu. Món có vị ngọt tự nhiên, dễ ghép với canh rau hoặc đậu hũ trong bữa chay.",
+      "finished_dish": "Sợi củ cải chín mềm nhưng còn dáng, nấm bào ngư thơm và săn; gia vị vừa phải, không đọng nhiều nước.",
+      "serving": "Dọn nóng ngay sau khi xào, dùng với cơm trắng và một món canh chay thanh nhẹ.",
+      "tips": [
+        "Thái củ cải thành sợi tương đối đều để các phần chín cùng lúc.",
+        "Xào nấm trước trên lửa vừa lớn, để nấm ráo nước và không làm món bị nhão.",
+        "Chỉ xào củ cải vài phút; đảo lâu sẽ làm sợi mềm rũ."
+      ],
+      "dish_type": [
+        "Món xào",
+        "Món chay hằng ngày"
+      ],
+      "main_ingredient": [
+        "củ cải trắng",
+        "nấm bào ngư"
+      ],
+      "cooking_method": [
+        "xào"
+      ],
+      "search_terms": [
+        "củ cải trắng xào nấm chay",
+        "củ cải xào nấm bào ngư",
+        "món chay từ củ cải trắng",
+        "món xào chay"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Đĩa củ cải trắng thái sợi xào nấm bào ngư chay, rắc ngò gai xanh.",
+      "time_note": "Khoảng 22 phút; củ cải thái sợi mỏng chỉ cần xào nhanh để không bị nát.",
+      "suggested_pairings": [
+        "Canh cải bẹ xanh nấu gừng chay",
+        "Đậu hũ kho nước dừa chay",
+        "Cơm trắng"
+      ],
+      "recipe_family": "cu_cai_trang_xao_nam_chay",
+      "keywords": [
+        "củ cải trắng",
+        "nấm bào ngư",
+        "ngò gai",
+        "món xào chay"
+      ],
+      "tags": [
+        "món chay",
+        "món rau",
+        "món xào",
+        "bữa ăn gia đình"
+      ],
+      "ingredients": [
+        {
+          "name": "Củ cải trắng",
+          "quantity": 300,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Gọt vỏ, thái sợi vừa.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Nấm bào ngư",
+          "quantity": 150,
+          "unit": "g",
+          "role": "mushroom",
+          "notes": "Xé nhỏ theo thớ, rửa nhanh và để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 12,
+          "unit": "ml",
+          "role": "oil",
+          "notes": "Dùng xào nấm và củ cải.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Hạt nêm chay",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm từ từ theo khẩu vị.",
+          "scaling_rule": "seasoning",
+          "sequence": 4
+        },
+        {
+          "name": "Muối",
+          "quantity": 1.5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Có thể giảm nếu hạt nêm đã mặn.",
+          "scaling_rule": "seasoning",
+          "sequence": 5
+        },
+        {
+          "name": "Ngò gai",
+          "quantity": 8,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Rắc sau khi tắt bếp.",
+          "scaling_rule": "seasoning",
+          "sequence": 7
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Gọt vỏ củ cải, rửa sạch rồi thái sợi. Xé nấm bào ngư thành miếng vừa ăn và để thật ráo."
+        },
+        {
+          "step": 2,
+          "instruction": "Rửa ngò gai, thái nhỏ; chuẩn bị hạt nêm chay, muối và tiêu."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng dầu trong chảo, cho nấm vào xào trên lửa vừa lớn đến khi nấm mềm và bớt nước."
+        },
+        {
+          "step": 2,
+          "instruction": "Cho củ cải vào chảo, nêm hạt nêm chay và muối. Đảo đều khoảng 3–5 phút, vừa đủ để củ cải chín tới."
+        },
+        {
+          "step": 3,
+          "instruction": "Thêm ngò gai, đảo nhanh rồi tắt bếp. Rắc tiêu và dọn nóng."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://cookpad.com/vn/cong-thuc/10846726",
+          "publisher": "Cookpad Việt Nam",
+          "title": "Củ Cải Trắng Xào Nấm",
+          "use": "Đối chiếu tên món, củ cải trắng và nấm bào ngư, cách xào nấm trước rồi thêm củ cải thái sợi và kết thúc nhanh với ngò gai.",
+          "accessed_at": "2026-10-25",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Giảm củ cải và nấm còn một nửa; nêm gia vị từ ít.",
+            "instruction": "Dùng chảo nhỏ vừa đủ để nguyên liệu tiếp xúc đều với mặt chảo."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.3,
+            "example": "Tăng lượng củ cải, nấm khoảng một lần rưỡi; nêm lại sau khi xào.",
+            "instruction": "Nếu chảo nhỏ, xào thành hai lượt để củ cải không tiết nước."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/cu-cai-trang-xao-nam-chay-960.webp",
+          "page_url": "https://cookpad.com/vn/cong-thuc/10846726",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo riêng cho Bếp Việt; trang nguồn chỉ được dùng để biên tập công thức.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa củ cải trắng thái sợi xào nấm bào ngư chay, rắc ngò gai xanh.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-25",
+          "photo_variant_note": "Ảnh PNG gốc 1536×1024 có alpha; canvas 3840×2160 là bản upscale, không phải độ phân giải native 4K. Công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Biên tập lại bằng lời riêng dựa trên nguồn tham khảo; cần nấu thử để xác nhận lượng gia vị và thời gian.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-25",
+        "needs": [
+          "Nấu thử để xác nhận vị, định lượng và thời gian thực tế."
+        ]
+      },
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "id": "BV759",
+      "slug": "cai-thao-xao-nam-dui-ga-chay",
+      "name": "Cải thảo xào nấm đùi gà chay",
+      "aliases": [
+        "Cải thảo xào nấm chay",
+        "Cải thảo xào nấm đùi gà"
+      ],
+      "region": [
+        "Toàn quốc"
+      ],
+      "province": [],
+      "category": "Món chay",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "bữa ăn gia đình",
+        "món chay"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một đĩa rau xào dùng chung cho bốn người.",
+      "prep_time": 10,
+      "cook_time": 10,
+      "passive_time": 0,
+      "total_time": 20,
+      "description": "Cải thảo mềm giòn kết hợp nấm đùi gà có thớ dai nhẹ, nêm hạt nêm chay và tiêu. Món xào thanh vị, hợp với cơm nóng và bát canh đơn giản.",
+      "finished_dish": "Cải thảo vừa chín, còn chút giòn ở phần cọng; nấm mềm dai, thấm nhẹ gia vị và không bị ra nước nhiều.",
+      "serving": "Dọn nóng, rắc hành lá và ngò rí; dùng cùng cơm trắng và món kho chay.",
+      "tips": [
+        "Rửa cải nhiều lần rồi để ráo để chảo không bị nhiều nước.",
+        "Cắt nấm đùi gà thành lát đều để chín cùng lúc với phần bẹ cải.",
+        "Cho cải vào sau nấm và xào vừa chín để rau giữ độ giòn."
+      ],
+      "dish_type": [
+        "Món xào",
+        "Món rau chay"
+      ],
+      "main_ingredient": [
+        "cải thảo",
+        "nấm đùi gà"
+      ],
+      "cooking_method": [
+        "xào"
+      ],
+      "search_terms": [
+        "cải thảo xào nấm đùi gà chay",
+        "cải thảo xào nấm chay",
+        "món chay từ cải thảo",
+        "nấm đùi gà xào cải thảo"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Đĩa cải thảo xào nấm đùi gà chay với hành lá và ngò rí.",
+      "time_note": "Khoảng 20 phút; chuẩn bị cải và nấm trước để xào nhanh trên chảo nóng.",
+      "suggested_pairings": [
+        "Canh cải bẹ xanh nấu gừng chay",
+        "Đậu hũ kho nước dừa chay",
+        "Cơm trắng"
+      ],
+      "recipe_family": "cai_thao_xao_nam_dui_ga_chay",
+      "keywords": [
+        "cải thảo",
+        "nấm đùi gà",
+        "món rau chay",
+        "món xào"
+      ],
+      "tags": [
+        "món chay",
+        "món rau",
+        "món xào",
+        "bữa ăn gia đình"
+      ],
+      "ingredients": [
+        {
+          "name": "Cải thảo",
+          "quantity": 300,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Tách lá, rửa sạch và cắt khúc vừa ăn.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Nấm đùi gà",
+          "quantity": 150,
+          "unit": "g",
+          "role": "mushroom",
+          "notes": "Cắt bỏ chân già, rửa nhanh và thái lát.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "oil",
+          "notes": "Dùng để xào.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Hạt nêm chay",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Chọn loại dùng cho món chay.",
+          "scaling_rule": "seasoning",
+          "sequence": 4
+        },
+        {
+          "name": "Muối",
+          "quantity": 1.5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm thêm sau khi nếm.",
+          "scaling_rule": "seasoning",
+          "sequence": 5
+        },
+        {
+          "name": "Đường",
+          "quantity": 2,
+          "unit": "g",
+          "role": "sweetener",
+          "notes": "Tùy chọn để cân vị.",
+          "scaling_rule": "seasoning",
+          "sequence": 6
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Rắc cuối cùng.",
+          "scaling_rule": "seasoning",
+          "sequence": 7
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 10,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Rửa sạch, cắt khúc.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Ngò rí",
+          "quantity": 5,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, dùng trang trí.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Tách lá cải thảo, bỏ phần dập, rửa sạch và cắt thành khúc vừa ăn; để ráo."
+        },
+        {
+          "step": 2,
+          "instruction": "Nấm đùi gà cắt bỏ gốc, rửa nhanh, thái lát. Hành lá cắt khúc và ngò rí để nguyên nhánh nhỏ."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng dầu trong chảo, cho nấm đùi gà vào đảo đến khi hơi vàng và mềm."
+        },
+        {
+          "step": 2,
+          "instruction": "Thêm cải thảo, hạt nêm chay, muối và chút đường. Xào lửa lớn khoảng 3–4 phút đến khi cọng cải vừa chín."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho hành lá vào đảo nhanh, nếm lại rồi tắt bếp. Rắc tiêu, thêm ngò rí và dọn khi còn nóng."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.dienmayxanh.com/vao-bep/cach-lam-cai-thao-xao-nam-dui-ga-thanh-vi-bat-com-ngay-tai-13517",
+          "publisher": "Điện máy XANH",
+          "title": "Cách làm cải thảo xào nấm đùi gà thanh vị, bắt cơm ngay tại nhà",
+          "use": "Đối chiếu nguyên liệu cải thảo, nấm đùi gà, hành lá, ngò rí, hạt nêm chay và trình tự xào nấm rồi thêm cải thảo.",
+          "accessed_at": "2026-10-25",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Dùng khoảng 150 g cải thảo và 75 g nấm, bắt đầu với nửa lượng gia vị.",
+            "instruction": "Chọn chảo rộng vừa đủ để rau chín nhanh."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.3,
+            "example": "Tăng rau và nấm khoảng một lần rưỡi; điều chỉnh gia vị sau khi nếm.",
+            "instruction": "Xào từng mẻ nếu chảo gia đình nhỏ để cải không ra nhiều nước."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/cai-thao-xao-nam-dui-ga-chay-960.webp",
+          "page_url": "https://www.dienmayxanh.com/vao-bep/cach-lam-cai-thao-xao-nam-dui-ga-thanh-vi-bat-com-ngay-tai-13517",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo riêng cho Bếp Việt; trang nguồn chỉ được dùng để biên tập công thức.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa cải thảo xào nấm đùi gà chay với hành lá và ngò rí.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-25",
+          "photo_variant_note": "Ảnh PNG gốc 1536×1024 có alpha; canvas 3840×2160 là bản upscale, không phải độ phân giải native 4K. Công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Biên tập lại bằng lời riêng dựa trên nguồn tham khảo; cần nấu thử để xác nhận gia vị và thời gian.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-25",
+        "needs": [
+          "Nấu thử để xác nhận vị, định lượng và thời gian thực tế."
+        ]
+      },
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "id": "BV760",
+      "slug": "dau-hu-kho-nuoc-dua-chay",
+      "name": "Đậu hũ kho nước dừa chay",
+      "aliases": [
+        "Đậu hũ kho nước dừa",
+        "Đậu phụ kho nước dừa chay"
+      ],
+      "region": [
+        "Toàn quốc"
+      ],
+      "province": [],
+      "category": "Món chay",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "bữa ăn gia đình",
+        "món chay"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một đĩa đậu hũ kho vừa cho bốn người ăn với cơm.",
+      "prep_time": 15,
+      "cook_time": 20,
+      "passive_time": 0,
+      "total_time": 35,
+      "description": "Miếng đậu hũ chiên vàng được kho liu riu với nước dừa tươi và gia vị chay đến khi thấm vị. Nước kho sóng sánh nhẹ, hợp chan cùng cơm nóng.",
+      "finished_dish": "Đậu hũ vàng mặt, ruột mềm; nước dừa rút còn lớp sốt nâu hổ phách bám quanh từng miếng, vị mặn ngọt cân bằng.",
+      "serving": "Dọn nóng với cơm trắng; rắc hành lá, ngò rí và thêm ớt nếu gia đình ăn cay.",
+      "tips": [
+        "Dùng đậu hũ chắc để miếng không vỡ trong lúc chiên và kho.",
+        "Chiên vàng nhẹ các mặt, không chiên quá khô để đậu vẫn hút nước kho.",
+        "Nếm nước mắm chay và hạt nêm trước khi bổ sung muối."
+      ],
+      "dish_type": [
+        "Món kho",
+        "Món chay hằng ngày"
+      ],
+      "main_ingredient": [
+        "đậu hũ",
+        "nước dừa tươi"
+      ],
+      "cooking_method": [
+        "chiên sơ",
+        "kho"
+      ],
+      "search_terms": [
+        "đậu hũ kho nước dừa chay",
+        "đậu phụ kho nước dừa",
+        "món chay từ đậu hũ",
+        "đậu hũ kho ăn với cơm"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Đĩa đậu hũ kho nước dừa chay với sốt nâu óng, hành lá và ớt đỏ.",
+      "time_note": "Khoảng 35 phút, gồm chiên sơ đậu hũ và kho nhỏ lửa đến khi nước dừa rút.",
+      "suggested_pairings": [
+        "Canh cải bẹ xanh nấu gừng chay",
+        "Củ cải trắng xào nấm chay",
+        "Cơm trắng"
+      ],
+      "recipe_family": "dau_hu_kho_nuoc_dua_chay",
+      "keywords": [
+        "đậu hũ",
+        "nước dừa",
+        "món kho chay",
+        "bữa cơm"
+      ],
+      "tags": [
+        "món chay",
+        "món kho",
+        "món đậu hũ",
+        "bữa ăn gia đình"
+      ],
+      "ingredients": [
+        {
+          "name": "Đậu hũ trắng",
+          "quantity": 600,
+          "unit": "g",
+          "role": "tofu",
+          "notes": "Chọn miếng chắc, để ráo và cắt khối vừa ăn.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Nước dừa tươi",
+          "quantity": 280,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng kho; có thể thêm chút nước nếu nồi cạn sớm.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 30,
+          "unit": "ml",
+          "role": "oil",
+          "notes": "Dùng chiên sơ đậu hũ.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 20,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 10,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Nước mắm chay",
+          "quantity": 22,
+          "unit": "ml",
+          "role": "condiment",
+          "notes": "Chọn sản phẩm có ghi dùng cho món chay.",
+          "scaling_rule": "seasoning",
+          "sequence": 6
+        },
+        {
+          "name": "Hạt nêm chay",
+          "quantity": 4,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm từ ít rồi điều chỉnh.",
+          "scaling_rule": "seasoning",
+          "sequence": 7
+        },
+        {
+          "name": "Muối",
+          "quantity": 1.5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Chỉ thêm sau khi nếm nước kho.",
+          "scaling_rule": "seasoning",
+          "sequence": 8
+        },
+        {
+          "name": "Đường",
+          "quantity": 6,
+          "unit": "g",
+          "role": "sweetener",
+          "notes": "Điều chỉnh theo độ ngọt của nước dừa.",
+          "scaling_rule": "seasoning",
+          "sequence": 9
+        },
+        {
+          "name": "Tương cà",
+          "quantity": 15,
+          "unit": "g",
+          "role": "condiment",
+          "notes": "Dùng loại không có thành phần động vật.",
+          "scaling_rule": "seasoning",
+          "sequence": 10
+        },
+        {
+          "name": "Ớt tươi",
+          "quantity": 8,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Thái lát, có thể bỏ nếu không ăn cay.",
+          "scaling_rule": "seasoning",
+          "sequence": 11
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 10,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Rửa sạch, cắt nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        },
+        {
+          "name": "Ngò rí",
+          "quantity": 5,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, dùng rắc sau khi kho.",
+          "scaling_rule": "linear",
+          "sequence": 13
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Rắc tùy khẩu vị.",
+          "scaling_rule": "seasoning",
+          "sequence": 14
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Đậu hũ để ráo, cắt khối vuông vừa ăn. Hành tím và tỏi băm nhỏ; hành lá, ngò rí rửa sạch, cắt nhỏ; ớt thái lát."
+        },
+        {
+          "step": 2,
+          "instruction": "Pha nước mắm chay, hạt nêm, đường và tương cà với nước dừa. Chừa muối để nêm sau khi nếm."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng dầu trong chảo, chiên sơ đậu hũ ở lửa vừa đến khi vàng nhẹ các mặt; vớt ra để ráo."
+        },
+        {
+          "step": 2,
+          "instruction": "Chắt bớt dầu, giữ lại một lượng nhỏ trong chảo. Phi thơm hành tím và tỏi, rồi cho đậu hũ trở lại."
+        },
+        {
+          "step": 3,
+          "instruction": "Rót phần nước dừa đã pha gia vị vào. Đun sôi, hạ lửa nhỏ và kho 8–10 phút; thỉnh thoảng rưới nước kho lên mặt đậu."
+        },
+        {
+          "step": 4,
+          "instruction": "Khi nước sốt rút còn sệt nhẹ, nếm lại và thêm muối nếu cần. Cho ớt, hành lá và tiêu vào, tắt bếp, rắc ngò rí."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://fptshop.com.vn/tin-tuc/dien-may/dau-hu-kho-nuoc-dua-169951",
+          "publisher": "FPT Shop",
+          "title": "Hướng dẫn cách làm đậu hũ kho nước dừa cực kỳ đơn giản nhưng lại vô cùng bắt cơm",
+          "use": "Đối chiếu tên món, đậu hũ, nước dừa, gia vị chay và các bước chiên sơ đậu rồi kho nhỏ lửa đến khi nước rút; biên tập lại khẩu phần và gia vị.",
+          "accessed_at": "2026-10-25",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Dùng khoảng 300 g đậu và 140 ml nước dừa; nêm gia vị từng ít một.",
+            "instruction": "Dùng chảo nhỏ để lượng nước kho phủ đều đáy chảo."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.3,
+            "example": "Tăng đậu và nước dừa lên khoảng một lần rưỡi, nếm lại sau khi kho.",
+            "instruction": "Chiên đậu theo mẻ và chọn nồi rộng để các miếng không bị chồng."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/dau-hu-kho-nuoc-dua-chay-960.webp",
+          "page_url": "https://fptshop.com.vn/tin-tuc/dien-may/dau-hu-kho-nuoc-dua-169951",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo riêng cho Bếp Việt; trang nguồn chỉ được dùng để biên tập công thức.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa đậu hũ kho nước dừa chay với sốt nâu óng, hành lá và ớt đỏ.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-25",
+          "photo_variant_note": "Ảnh PNG gốc 1536×1024 có alpha; canvas 3840×2160 là bản upscale, không phải độ phân giải native 4K. Công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Biên tập lại bằng lời riêng dựa trên nguồn tham khảo; cần nấu thử để xác nhận độ mặn, độ ngọt và thời gian kho.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-25",
+        "needs": [
+          "Nấu thử để xác nhận vị, định lượng và thời gian thực tế."
+        ]
+      },
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "id": "BV761",
+      "slug": "muop-xao-nam-chay",
+      "name": "Mướp xào nấm chay",
+      "aliases": [
+        "Mướp hương xào nấm chay",
+        "Mướp xào nấm rơm chay"
+      ],
+      "region": [
+        "Toàn quốc"
+      ],
+      "province": [],
+      "category": "Món chay",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "bữa ăn gia đình",
+        "món chay"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một đĩa rau xào dùng chung cho bốn người ăn với cơm.",
+      "prep_time": 25,
+      "cook_time": 12,
+      "passive_time": 0,
+      "total_time": 37,
+      "description": "Mướp hương non xào nhanh cùng nấm rơm, nấm bào ngư và nấm đùi gà, thêm cà rốt và đậu Hà Lan cho vị ngọt tự nhiên. Món chay nhiều rau củ, hợp ăn nóng trong bữa cơm gia đình.",
+      "finished_dish": "Mướp chín tới, còn giữ dáng và vị ngọt nhẹ; nấm mềm dai, rau củ có màu tươi, gia vị bám nhẹ và không thành nhiều nước.",
+      "serving": "Dọn nóng với cơm trắng; rắc ngò rí và tiêu trước khi ăn.",
+      "tips": [
+        "Chọn mướp non, gọt và cắt ngay trước khi xào để hạn chế thâm.",
+        "Xào cà rốt và đậu Hà Lan trước, rồi cho các loại nấm vào để nguyên liệu cứng có thời gian chín.",
+        "Cho mướp vào sau cùng, đảo nhanh trên lửa lớn để mướp không mềm nhũn và ra quá nhiều nước."
+      ],
+      "dish_type": [
+        "Món xào",
+        "Món chay hằng ngày"
+      ],
+      "main_ingredient": [
+        "mướp hương",
+        "nấm tươi"
+      ],
+      "cooking_method": [
+        "xào"
+      ],
+      "search_terms": [
+        "mướp xào nấm chay",
+        "mướp hương xào nấm",
+        "mướp xào nấm rơm",
+        "món chay từ mướp hương"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Đĩa mướp hương xào nấm chay với nấm tươi, cà rốt và hành boa rô.",
+      "time_note": "Khoảng 37 phút, gồm rửa và thái rau củ; thời gian thực tế thay đổi theo độ non của mướp.",
+      "suggested_pairings": [
+        "Canh cải bẹ xanh nấu gừng chay",
+        "Đậu hũ kho nước dừa chay",
+        "Cơm trắng"
+      ],
+      "recipe_family": "muop_xao_nam_chay",
+      "keywords": [
+        "mướp hương",
+        "nấm rơm",
+        "nấm bào ngư",
+        "nấm đùi gà",
+        "món chay"
+      ],
+      "tags": [
+        "món chay",
+        "món rau",
+        "món xào",
+        "bữa ăn gia đình"
+      ],
+      "ingredients": [
+        {
+          "name": "Mướp hương",
+          "quantity": 400,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Gọt vỏ, rửa sạch và thái lát xéo vừa ăn.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Nấm đùi gà",
+          "quantity": 80,
+          "unit": "g",
+          "role": "mushroom",
+          "notes": "Cắt bỏ gốc, rửa nhanh và thái lát.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Nấm bào ngư",
+          "quantity": 60,
+          "unit": "g",
+          "role": "mushroom",
+          "notes": "Xé miếng vừa ăn, rửa nhanh và để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Nấm rơm",
+          "quantity": 60,
+          "unit": "g",
+          "role": "mushroom",
+          "notes": "Cắt bỏ gốc; bổ đôi nếu nấm lớn.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Cà rốt",
+          "quantity": 50,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Gọt vỏ, thái lát mỏng.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Đậu Hà Lan",
+          "quantity": 40,
+          "unit": "g",
+          "role": "legume",
+          "notes": "Rửa sạch, tước xơ nếu còn.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Hành boa rô",
+          "quantity": 20,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Rửa sạch; thái mỏng phần trắng, cắt nhỏ phần lá.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "oil",
+          "notes": "Dùng để phi boa rô và xào rau củ.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Muối",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm theo khẩu vị.",
+          "scaling_rule": "seasoning",
+          "sequence": 9
+        },
+        {
+          "name": "Đường",
+          "quantity": 4,
+          "unit": "g",
+          "role": "sweetener",
+          "notes": "Gia giảm theo vị ngọt tự nhiên của mướp.",
+          "scaling_rule": "seasoning",
+          "sequence": 10
+        },
+        {
+          "name": "Hạt nêm chay",
+          "quantity": 4,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Chọn loại không có thành phần động vật.",
+          "scaling_rule": "seasoning",
+          "sequence": 11
+        },
+        {
+          "name": "Nước tương",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "condiment",
+          "notes": "Chọn loại phù hợp cho món chay.",
+          "scaling_rule": "seasoning",
+          "sequence": 12
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Rắc sau khi tắt bếp.",
+          "scaling_rule": "seasoning",
+          "sequence": 13
+        },
+        {
+          "name": "Ngò rí",
+          "quantity": 8,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 14
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Mướp gọt vỏ, rửa sạch, bổ dọc rồi thái lát xéo vừa ăn; để riêng và chỉ cắt ngay trước khi nấu."
+        },
+        {
+          "step": 2,
+          "instruction": "Cắt bỏ gốc các loại nấm, rửa nhanh và để ráo; thái nấm đùi gà, xé nấm bào ngư, bổ đôi nấm rơm lớn."
+        },
+        {
+          "step": 3,
+          "instruction": "Gọt và thái cà rốt, rửa đậu Hà Lan; thái hành boa rô và ngò rí. Pha nước tương với hạt nêm chay, muối và đường."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng dầu trong chảo rộng, cho phần trắng boa rô vào phi thơm."
+        },
+        {
+          "step": 2,
+          "instruction": "Cho cà rốt và đậu Hà Lan vào đảo khoảng 2 phút. Thêm nấm đùi gà, nấm bào ngư và nấm rơm; rưới hỗn hợp gia vị, xào đến khi nấm vừa mềm."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho mướp vào, tăng lửa và đảo nhanh khoảng 2–3 phút đến khi mướp vừa chín tới. Không đậy nắp để rau không bị hấp nhũn."
+        },
+        {
+          "step": 4,
+          "instruction": "Nếm lại, thêm lá boa rô, ngò rí và tiêu; đảo nhanh rồi tắt bếp, dọn ngay."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.bluestone.com.vn/blogs/vao-bep/muop-xao-nam-chay",
+          "publisher": "BlueStone Việt Nam",
+          "title": "Hướng dẫn làm mướp xào nấm chay dễ thực hiện",
+          "use": "Đối chiếu tên món, các loại mướp và nấm, cà rốt, đậu Hà Lan, boa rô, gia vị chay cùng trình tự xào rau củ/nấm trước rồi thêm mướp ở lửa lớn.",
+          "accessed_at": "2026-10-25",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://www.phattuvietnam.net/mon-chay-cuoi-tuan-muop-xao-nam/",
+          "publisher": "Phật giáo Việt Nam",
+          "title": "Món chay cuối tuần: Mướp xào nấm",
+          "use": "Đối chiếu món mướp xào nấm trong bữa chay và kỹ thuật xào nấm trước, cho mướp sau trên lửa lớn.",
+          "accessed_at": "2026-10-25",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Giảm mướp và nấm còn một nửa; nêm nước tương và hạt nêm từ ít.",
+            "instruction": "Xào trong chảo nhỏ nhưng đủ rộng để mướp tiếp xúc đều với mặt chảo."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.3,
+            "example": "Tăng rau củ và nấm khoảng một lần rưỡi, nếm lại trước khi tắt bếp.",
+            "instruction": "Xào theo mẻ nếu chảo nhỏ để mướp không tiết nhiều nước."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/muop-xao-nam-chay-960.webp",
+          "page_url": "https://www.bluestone.com.vn/blogs/vao-bep/muop-xao-nam-chay",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo riêng cho Bếp Việt; trang tham khảo chỉ dùng để biên tập công thức.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa mướp hương xào nấm chay với nấm tươi, cà rốt và hành boa rô.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-25",
+          "photo_variant_note": "Ảnh PNG gốc 1536×1024 có alpha; canvas 3840×2160 là bản upscale, không phải độ phân giải native 4K. Công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Biên tập lại bằng lời riêng theo các nguồn tham khảo; cần nấu thử để xác nhận lượng gia vị và thời gian.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-25",
+        "needs": [
+          "Nấu thử để xác nhận vị, định lượng và thời gian thực tế."
+        ]
+      },
+      "width": 3840,
+      "height": 2160
+    }
+  ]
+}

@@ -1,0 +1,375 @@
+{
+  "batch": 38,
+  "description": "Năm món Việt được biên tập từ tư liệu báo chí, cổng thông tin du lịch và tư liệu di sản; có một món tráng miệng chay.",
+  "recipes": [
+    {
+      "id": "BV516",
+      "slug": "banh-to-quang-nam",
+      "name": "Bánh tổ Quảng Nam",
+      "aliases": ["Bánh tổ xứ Quảng", "Bánh tổ ngày Tết"],
+      "region": ["Nam Trung Bộ"],
+      "province": ["Quảng Nam"],
+      "category": "Bánh và ăn vặt",
+      "meal_type": ["bữa phụ", "tráng miệng"],
+      "difficulty": "Trung bình",
+      "servings": 6,
+      "serving_basis": "Một bánh tròn khoảng 18 cm, cắt được 10–12 lát mỏng.",
+      "prep_time": 25,
+      "cook_time": 120,
+      "passive_time": 120,
+      "description": "Bánh tổ là bánh nếp ngọt gắn với dịp Tết xứ Quảng; các tư liệu mô tả bột nếp, đường bát, gừng và mè, rồi hấp trong khuôn lót lá chuối. Đây là mẻ nhỏ tại nhà dùng bột nếp xay sẵn và thời gian hấp được rút gọn theo khuôn; tỷ lệ không đại diện cho công thức của một lò bánh địa phương.",
+      "finished_dish": "Bánh dẻo chắc, màu hổ phách, thơm mùi nếp và gừng, mặt bánh phủ mè rang; để nguội bánh đủ cứng để thái lát.",
+      "serving": "Để bánh nguội và se mặt trước khi cắt lát. Có thể ăn mềm hoặc áp chảo lát bánh với ít dầu cho mặt ngoài vàng thơm.",
+      "tips": [
+        "Để nước đường nguội bớt trước khi trộn với bột để hỗn hợp không vón.",
+        "Lót lá chuối kín đáy khuôn và chừa một khoảng trống phía trên vì bánh nở nhẹ khi hấp.",
+        "Giữ nước trong xửng sôi đều và châm thêm nước nóng nếu cần trong mẻ hấp dài."
+      ],
+      "dish_type": ["Bánh truyền thống", "Đặc sản xứ Quảng"],
+      "main_ingredient": ["bột nếp", "đường bát", "gừng", "mè trắng"],
+      "cooking_method": ["nấu nước đường", "trộn bột", "hấp"],
+      "search_terms": ["bánh tổ Quảng Nam", "bánh tổ xứ Quảng", "bánh nếp hấp đường bát", "bánh tổ gừng mè"],
+      "spicy_level": 0,
+      "image_alt": "Bánh tổ Quảng Nam màu hổ phách rắc mè, cắt một miếng để lộ ruột nếp dẻo; chụp trên đĩa gốm, tách nền trong suốt.",
+      "time_note": "Khoảng 4 giờ 25 phút, gồm thời gian hấp và để bánh nguội, se mặt.",
+      "total_time": 265,
+      "suggested_pairings": ["Trà nóng", "Bánh tráng nướng", "Gừng ngâm"],
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "quang_nam_banh_to",
+      "time_unit": "phút",
+      "ingredients": [
+        {"name": "Bột nếp", "quantity": 300, "unit": "g", "role": "main", "notes": "Rây mịn; dùng bột nếp xay sẵn cho mẻ nhỏ tại nhà.", "scaling_rule": "linear", "sequence": 1},
+        {"name": "Đường bát", "quantity": 220, "unit": "g", "role": "main", "notes": "Bẻ nhỏ để dễ nấu tan; có thể dùng đường mía thô nếu không tìm được đường bát.", "scaling_rule": "linear", "sequence": 2},
+        {"name": "Nước lọc", "quantity": 300, "unit": "ml", "role": "liquid", "notes": "Dùng nấu nước đường.", "scaling_rule": "linear", "sequence": 3},
+        {"name": "Gừng tươi", "quantity": 20, "unit": "g", "role": "aromatic", "notes": "Giã hoặc bào mịn, vắt lấy nước cốt.", "scaling_rule": "linear", "sequence": 4},
+        {"name": "Mè trắng", "quantity": 18, "unit": "g", "role": "garnish", "notes": "Rang thơm, để nguội.", "scaling_rule": "linear", "sequence": 5},
+        {"name": "Lá chuối", "quantity": 60, "unit": "g", "role": "other", "notes": "Trụng nhanh cho mềm, lau khô để lót khuôn.", "scaling_rule": "linear", "sequence": 6},
+        {"name": "Dầu ăn", "quantity": 5, "unit": "ml", "role": "other", "notes": "Quét mỏng khuôn để chống dính.", "scaling_rule": "linear", "sequence": 7}
+      ],
+      "preparation_steps": [
+        {"step": 1, "instruction": "Rây bột nếp vào âu. Rang mè trên chảo khô đến khi thơm rồi để nguội; trụng lá chuối, lau khô và lót kín khuôn tròn sâu khoảng 5 cm."},
+        {"step": 2, "instruction": "Cho đường bát và nước vào nồi, đun lửa nhỏ đến khi đường tan hoàn toàn. Tắt bếp, để ấm rồi khuấy nước cốt gừng vào."},
+        {"step": 3, "instruction": "Rót nước đường ấm từng ít một vào bột, khuấy đến khi mịn và đồng nhất; lọc qua rây nếu còn lợn cợn."}
+      ],
+      "cooking_steps": [
+        {"step": 1, "instruction": "Quét dầu thật mỏng lên lớp lá trong khuôn, đổ hỗn hợp bột vào khuôn và gõ nhẹ cho mặt bánh phẳng."},
+        {"step": 2, "instruction": "Đặt khuôn vào xửng nước đang sôi, đậy nắp kín và hấp ở lửa vừa khoảng 2 giờ. Canh nước trong nồi luôn đủ để xửng không bị cạn."},
+        {"step": 3, "instruction": "Xiên que tre vào giữa bánh; khi rút ra que gần như sạch và mặt bánh se lại là bánh đã chín. Rắc mè lên mặt khi bánh còn nóng."},
+        {"step": 4, "instruction": "Lấy khuôn ra, để bánh nguội trong khuôn khoảng 2 giờ rồi gỡ lá. Cắt lát bằng dao đã thoa một lớp dầu mỏng; bảo quản kín trong ngăn mát."}
+      ],
+      "keywords": ["bánh tổ", "Quảng Nam", "đường bát", "bột nếp", "gừng", "mè"],
+      "tags": ["bánh truyền thống", "món ngọt", "đặc sản Quảng Nam", "bột nếp", "Tết"],
+      "sources": [
+        {"url": "https://vnexpress.net/banh-to-trong-ngay-tet-cua-nguoi-quang-2417053.html", "publisher": "VnExpress Đời sống", "title": "Bánh tổ trong ngày Tết của người Quảng", "use": "Đối chiếu mối liên hệ với Tết xứ Quảng, nguyên liệu nếp, đường bát, gừng, mè và cách hấp; tỷ lệ của mẻ nhỏ là biên tập của Bếp Việt.", "accessed_at": "2026-10-23", "type": "editorial_reference"},
+        {"url": "https://vnexpress.net/5-mon-an-xu-quang-goi-nho-vi-que-huong-3143131.html", "publisher": "VnExpress Du lịch", "title": "5 món ăn xứ Quảng gợi nhớ vị quê hương", "use": "Đối chiếu bánh tổ là bánh truyền thống xứ Quảng, làm từ nếp và đường, có gừng và hấp chín.", "accessed_at": "2026-10-23", "type": "editorial_reference"}
+      ],
+      "scaling": {"base_servings": 6, "targets": [
+        {"servings": 2, "main_factor": 0.33, "seasoning_start_factor": 0.33, "example": "Bánh tổ Quảng Nam cho 2 người", "instruction": "Dùng khuôn nhỏ; kiểm tra bánh từ phút 75 vì độ dày khuôn làm thay đổi thời gian hấp."},
+        {"servings": 4, "main_factor": 0.67, "seasoning_start_factor": 0.67, "example": "Bánh tổ Quảng Nam cho 4 người", "instruction": "Giữ khuôn ở độ sâu tương tự để bánh chín đều."},
+        {"servings": 8, "main_factor": 1.33, "seasoning_start_factor": 1.33, "example": "Bánh tổ Quảng Nam cho 8 người", "instruction": "Chia thành hai khuôn thay vì tăng độ sâu một khuôn; hấp từng khuôn đến khi que thử gần sạch."}
+      ]},
+      "media": [{"image_url": "/images/recipes/edited/banh-to-quang-nam-960.webp", "page_url": "https://vnexpress.net/banh-to-trong-ngay-tet-cua-nguoi-quang-2417053.html", "source": "Bếp Việt", "author": "Bếp Việt", "license": null, "rights_status": "project", "rights_note": "Ảnh món ăn được tạo mới riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập công thức.", "width": 1536, "height": 1024, "orientation": "landscape", "preferred_width_met": true, "alt_text": "Bánh tổ Quảng Nam màu hổ phách rắc mè, cắt một miếng để lộ ruột nếp dẻo; chụp trên đĩa gốm, tách nền trong suốt.", "verified_dish_match": true, "visual_review_date": "2026-10-23", "photo_variant_note": "Ảnh Bếp Việt tạo mới, nền trong suốt; mẻ nhỏ biên tập, chưa nấu thử."}],
+      "editorial": {"status": "editorial_draft", "production_ready": false, "test_cook_status": "not_tested", "variant_note": "Mẻ nhỏ dùng bột nếp xay sẵn và làm nguội trong khuôn; không tuyên bố thay thế cách làm bằng nếp ngâm xay và hong bánh lâu ngày của các lò bánh.", "seed_recipe": null, "reviewed_at": "2026-10-23", "needs": ["Thử độ dẻo và thời gian hấp với các loại bột nếp, đường bát và khuôn khác nhau."]}
+    },
+    {
+      "id": "BV517",
+      "slug": "cha-bo-da-nang",
+      "name": "Chả bò Đà Nẵng",
+      "aliases": ["Giò bò Đà Nẵng", "Chả bò Đà thành"],
+      "region": ["Nam Trung Bộ"],
+      "province": ["Đà Nẵng"],
+      "category": "Món mặn",
+      "meal_type": ["bữa sáng", "bữa trưa", "bữa tối"],
+      "difficulty": "Khó",
+      "servings": 4,
+      "serving_basis": "Hai đòn chả nhỏ, tổng khoảng 600 g, cắt thành lát ăn cùng dưa chua hoặc bánh mì.",
+      "prep_time": 25,
+      "cook_time": 55,
+      "passive_time": 15,
+      "description": "Cổng thông tin du lịch Đà Nẵng mô tả chả bò địa phương làm từ thịt bò đùi lọc gân, xay nhuyễn, nêm hành tỏi, tiêu, ớt, đường và nước mắm, gói lá chuối rồi luộc. Bếp Việt biên tập mẻ nhỏ cho gia đình, giữ thịt lạnh khi xay và dùng hai đòn ngắn để dễ chín đều.",
+      "finished_dish": "Đòn chả thơm tiêu và lá chuối, cắt ra có mặt thịt mịn, màu hồng nâu tự nhiên, vị bò đậm vừa và dai mềm.",
+      "serving": "Để chả nguội bớt rồi cắt lát. Dùng với dưa món, rau thơm, bánh mì hoặc cháo bò.",
+      "tips": [
+        "Làm lạnh thịt, cối xay và nước trước khi xay để thịt không bị nóng, bở.",
+        "Gói hai đòn ngắn và ép kín lá để nước không lọt vào trong.",
+        "Dùng nhiệt kế thực phẩm kiểm tra tâm đòn chả đạt 71°C trước khi lấy khỏi nồi."
+      ],
+      "dish_type": ["Món thịt", "Đặc sản Đà Nẵng"],
+      "main_ingredient": ["thịt bò đùi", "nước mắm", "tiêu", "lá chuối"],
+      "cooking_method": ["xay lạnh", "quết", "gói lá chuối", "luộc"],
+      "search_terms": ["chả bò Đà Nẵng", "giò bò Đà Nẵng", "chả bò lá chuối", "đặc sản Đà thành"],
+      "spicy_level": 0,
+      "image_alt": "Chả bò Đà Nẵng cắt lát xếp quạt trên đĩa sứ với lá chuối và vài lát ớt; chụp cận cảnh, tách nền trong suốt.",
+      "time_note": "Khoảng 1 giờ 35 phút, gồm thời gian làm lạnh ngắn sau khi luộc.",
+      "total_time": 95,
+      "suggested_pairings": ["Dưa món", "Rau thơm", "Bánh mì", "Cháo bò"],
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "da_nang_beef_sausage",
+      "time_unit": "phút",
+      "ingredients": [
+        {"name": "Thịt bò đùi nạc", "quantity": 600, "unit": "g", "role": "main", "notes": "Lọc sạch gân, cắt hạt lựu và giữ lạnh sâu trước khi xay.", "scaling_rule": "linear", "sequence": 1},
+        {"name": "Nước mắm", "quantity": 24, "unit": "ml", "role": "seasoning", "notes": "Chọn loại thơm, độ mặn vừa.", "scaling_rule": "linear", "sequence": 2},
+        {"name": "Nước đá lạnh", "quantity": 45, "unit": "ml", "role": "liquid", "notes": "Dùng nước thật lạnh để giữ thịt mát khi xay.", "scaling_rule": "linear", "sequence": 3},
+        {"name": "Tỏi", "quantity": 8, "unit": "g", "role": "aromatic", "notes": "Bóc vỏ, giã hoặc băm nhuyễn.", "scaling_rule": "linear", "sequence": 4},
+        {"name": "Hành tím", "quantity": 12, "unit": "g", "role": "aromatic", "notes": "Bóc vỏ, băm thật nhỏ.", "scaling_rule": "linear", "sequence": 5},
+        {"name": "Tiêu đen xay", "quantity": 2, "unit": "g", "role": "seasoning", "notes": "Dùng tiêu mới xay để giữ hương.", "scaling_rule": "linear", "sequence": 6},
+        {"name": "Đường", "quantity": 7, "unit": "g", "role": "seasoning", "notes": "Cân bằng vị mặn của nước mắm.", "scaling_rule": "linear", "sequence": 7},
+        {"name": "Muối", "quantity": 2, "unit": "g", "role": "seasoning", "notes": "Nêm nhẹ vì nước mắm đã mặn.", "scaling_rule": "linear", "sequence": 8},
+        {"name": "Thì là", "quantity": 4, "unit": "g", "role": "herb", "notes": "Băm nhỏ; dùng lượng vừa phải để không lấn át mùi bò.", "scaling_rule": "linear", "sequence": 9},
+        {"name": "Lá chuối", "quantity": 80, "unit": "g", "role": "other", "notes": "Lau sạch, trụng nhanh cho mềm và lau khô.", "scaling_rule": "linear", "sequence": 10},
+        {"name": "Dây buộc thực phẩm", "quantity": 2, "unit": "sợi", "role": "other", "notes": "Dùng buộc hai đòn chả.", "scaling_rule": "linear", "sequence": 11}
+      ],
+      "preparation_steps": [
+        {"step": 1, "instruction": "Làm lạnh thịt bò đã lọc gân khoảng 20 phút trong ngăn đông cho săn nhưng không đông cứng; làm lạnh cối xay và nước đá."},
+        {"step": 2, "instruction": "Xay thịt thành mẻ nhỏ, thêm nước mắm, nước đá và gia vị; xay ngắt quãng đến khi thịt kết dính thành khối mịn, không để cối nóng."},
+        {"step": 3, "instruction": "Trộn tỏi, hành tím và thì là vào thịt. Chia đôi, đặt mỗi phần lên lá chuối rồi cuộn chặt thành hai đòn đường kính khoảng 5 cm; gấp kín hai đầu và buộc dây."}
+      ],
+      "cooking_steps": [
+        {"step": 1, "instruction": "Đun sôi nồi nước đủ ngập chả, hạ xuống mức sôi lăn tăn rồi thả hai đòn chả vào luộc khoảng 40–50 phút, trở một lần giữa chừng."},
+        {"step": 2, "instruction": "Dùng nhiệt kế sạch đo vào tâm đòn dày nhất; tiếp tục nấu đến khi đạt ít nhất 71°C. Vớt chả ra để ráo và nghỉ 15 phút trước khi mở lá."},
+        {"step": 3, "instruction": "Để nguội hoàn toàn rồi thái lát. Bảo quản trong hộp kín ở ngăn mát và dùng trong vài ngày."}
+      ],
+      "keywords": ["chả bò", "Đà Nẵng", "thịt bò đùi", "lá chuối", "tiêu", "nước mắm"],
+      "tags": ["món mặn", "món thịt", "đặc sản Đà Nẵng", "chả bò", "lá chuối"],
+      "sources": [
+        {"url": "https://tourismdanang.vn/am-thuc/cha-bo-da-nang/", "publisher": "Cổng thông tin du lịch Đà Nẵng", "title": "Chả bò Đà Nẵng", "use": "Đối chiếu thịt bò đùi, gia vị hành tỏi tiêu ớt đường nước mắm, cách gói lá chuối và luộc; mẻ gia đình này được biên tập riêng.", "accessed_at": "2026-10-23", "type": "editorial_reference"},
+        {"url": "https://danangfantasticity.com/cn/viet-nam-luu-tru-noi-dung-cu/cha-bo", "publisher": "Danang Fantasticity", "title": "Chả bò", "use": "Đối chiếu diện mạo, kết cấu và cách dùng chả bò Đà Nẵng; đây là cổng thông tin du lịch thành phố.", "accessed_at": "2026-10-23", "type": "editorial_reference"},
+        {"url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart", "publisher": "USDA Food Safety and Inspection Service", "title": "Safe Minimum Internal Temperature Chart", "use": "Dùng ngưỡng 71°C cho thịt bò xay/giò xay và nhiệt kế sạch để xác nhận tâm đòn đã chín an toàn.", "accessed_at": "2026-10-23", "type": "safety_reference"}
+      ],
+      "scaling": {"base_servings": 4, "targets": [
+        {"servings": 2, "main_factor": 0.5, "seasoning_start_factor": 0.5, "example": "Chả bò Đà Nẵng cho 2 người", "instruction": "Làm một đòn nhỏ; đo nhiệt độ ở chính giữa đòn."},
+        {"servings": 6, "main_factor": 1.5, "seasoning_start_factor": 1.5, "example": "Chả bò Đà Nẵng cho 6 người", "instruction": "Chia thành ba đòn ngắn để giữ thời gian chín đồng đều."},
+        {"servings": 8, "main_factor": 2.0, "seasoning_start_factor": 2.0, "example": "Chả bò Đà Nẵng cho 8 người", "instruction": "Xay theo từng mẻ nhỏ và luộc theo lượt nếu nồi không đủ rộng."}
+      ]},
+      "media": [{"image_url": "/images/recipes/edited/cha-bo-da-nang-960.webp", "page_url": "https://tourismdanang.vn/am-thuc/cha-bo-da-nang/", "source": "Bếp Việt", "author": "Bếp Việt", "license": null, "rights_status": "project", "rights_note": "Ảnh món ăn được tạo mới riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập công thức.", "width": 1536, "height": 1024, "orientation": "landscape", "preferred_width_met": true, "alt_text": "Chả bò Đà Nẵng cắt lát xếp quạt trên đĩa sứ với lá chuối và vài lát ớt; chụp cận cảnh, tách nền trong suốt.", "verified_dish_match": true, "visual_review_date": "2026-10-23", "photo_variant_note": "Ảnh Bếp Việt tạo mới, nền trong suốt; công thức gia đình biên tập, chưa nấu thử."}],
+      "editorial": {"status": "editorial_draft", "production_ready": false, "test_cook_status": "not_tested", "variant_note": "Mẻ gia đình xay và luộc chả trong lá chuối, theo các đặc điểm địa phương được cổng du lịch Đà Nẵng ghi nhận; tỷ lệ không đại diện cho một lò chả cụ thể.", "seed_recipe": null, "reviewed_at": "2026-10-23", "needs": ["Thử độ kết dính của thịt ở các mức xay và kích thước đòn khác nhau."]}
+    },
+    {
+      "id": "BV518",
+      "slug": "oc-len-xao-dua-ca-mau",
+      "name": "Ốc len xào dừa Cà Mau",
+      "aliases": ["Ốc len nấu nước cốt dừa", "Ốc len xào sả dừa"],
+      "region": ["Đồng bằng sông Cửu Long"],
+      "province": ["Cà Mau"],
+      "category": "Món mặn",
+      "meal_type": ["bữa phụ", "bữa tối"],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Một đĩa ốc nóng cho 4 người ăn chơi hoặc dùng khai vị.",
+      "prep_time": 70,
+      "cook_time": 20,
+      "passive_time": 0,
+      "description": "Ốc len sống ở rừng ngập mặn và bãi bồi ven biển Cà Mau; các bài báo địa phương ghi nhận cách ngâm ốc cho nhả bùn, cắt chóp đuôi rồi xào cùng nước cốt dừa, tỏi, sả và rau răm. Bếp Việt biên tập mẻ gia đình với ốc mua từ nguồn thực phẩm đáng tin cậy và nấu đến khi chín kỹ.",
+      "finished_dish": "Ốc len chín giòn, thơm sả tỏi, áo nước dừa béo mặn ngọt vừa phải; rau răm làm vị cuối thanh và thơm.",
+      "serving": "Dọn nóng ngay trong đĩa sâu lòng, ăn cùng nước sốt dừa và dùng bánh mì để chấm nếu thích.",
+      "tips": [
+        "Chỉ chọn ốc còn sống, vỏ nguyên; bỏ con chết hoặc có mùi lạ trước khi ngâm.",
+        "Cắt chóp đuôi vừa đủ mở đường hút, không chặt quá sâu làm vỡ thân ốc.",
+        "Nấu sôi đều đến khi ốc chín hoàn toàn; bỏ những con không mở hoặc có mùi bất thường."
+      ],
+      "dish_type": ["Món ốc", "Đặc sản Cà Mau"],
+      "main_ingredient": ["ốc len", "nước cốt dừa", "sả", "rau răm"],
+      "cooking_method": ["ngâm nhả bùn", "xào", "nấu nước cốt dừa"],
+      "search_terms": ["ốc len xào dừa Cà Mau", "ốc len nước cốt dừa", "ốc len xào sả", "món ốc miền Tây"],
+      "spicy_level": 1,
+      "image_alt": "Ốc len xào dừa với vỏ ốc xoắn nâu, nước dừa sánh, sả và rau răm trên đĩa gốm; ảnh món ăn tách nền trong suốt.",
+      "time_note": "Khoảng 1 giờ 30 phút, phần lớn là thời gian ngâm ốc cho nhả bùn.",
+      "total_time": 90,
+      "suggested_pairings": ["Bánh mì", "Rau răm", "Ớt tươi"],
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "ca_mau_coconut_whelk",
+      "time_unit": "phút",
+      "ingredients": [
+        {"name": "Ốc len sống", "quantity": 1000, "unit": "g", "role": "main", "notes": "Chọn ốc còn sống, vỏ nguyên; ngâm và rửa kỹ trước khi nấu.", "scaling_rule": "linear", "sequence": 1},
+        {"name": "Nước cốt dừa dão", "quantity": 250, "unit": "ml", "role": "liquid", "notes": "Dùng phần cốt loãng để nấu ốc ban đầu.", "scaling_rule": "linear", "sequence": 2},
+        {"name": "Nước cốt dừa đặc", "quantity": 250, "unit": "ml", "role": "liquid", "notes": "Thêm gần cuối để sốt béo và sánh.", "scaling_rule": "linear", "sequence": 3},
+        {"name": "Sả", "quantity": 3, "unit": "cây", "role": "aromatic", "notes": "Rửa sạch, đập dập; giữ lại một ít phần lá non để trang trí.", "scaling_rule": "linear", "sequence": 4},
+        {"name": "Tỏi", "quantity": 12, "unit": "g", "role": "aromatic", "notes": "Bóc vỏ, băm nhỏ.", "scaling_rule": "linear", "sequence": 5},
+        {"name": "Ớt đỏ", "quantity": 8, "unit": "g", "role": "seasoning", "notes": "Thái lát; giảm lượng nếu ăn ít cay.", "scaling_rule": "linear", "sequence": 6},
+        {"name": "Rau răm", "quantity": 18, "unit": "g", "role": "herb", "notes": "Rửa sạch, để ráo; chia phần nấu và phần rắc mặt.", "scaling_rule": "linear", "sequence": 7},
+        {"name": "Dầu ăn", "quantity": 15, "unit": "ml", "role": "seasoning", "notes": "Dùng phi thơm tỏi và sả.", "scaling_rule": "linear", "sequence": 8},
+        {"name": "Đường", "quantity": 12, "unit": "g", "role": "seasoning", "notes": "Điều chỉnh theo độ ngọt của nước dừa.", "scaling_rule": "linear", "sequence": 9},
+        {"name": "Muối", "quantity": 5, "unit": "g", "role": "seasoning", "notes": "Nêm vừa miệng.", "scaling_rule": "linear", "sequence": 10}
+      ],
+      "preparation_steps": [
+        {"step": 1, "instruction": "Ngâm ốc trong thau nước sạch có vài lát ớt khoảng 1 giờ để ốc nhả bùn, thay nước một lần nếu nước đục; chà vỏ và rửa lại nhiều lần."},
+        {"step": 2, "instruction": "Dùng kềm hoặc dao chắc chặt bỏ một đoạn nhỏ ở chóp nhọn cuối vỏ, rửa lại để loại mảnh vụn rồi để ráo. Đập dập sả, băm tỏi, thái ớt và nhặt rau răm."},
+        {"step": 3, "instruction": "Lắc nhẹ phần nước cốt dừa dão và nước cốt đặc riêng; chuẩn bị nồi sâu lòng có nắp."}
+      ],
+      "cooking_steps": [
+        {"step": 1, "instruction": "Đun nóng dầu, phi tỏi và sả đến khi dậy mùi. Cho ốc vào đảo 3–4 phút để ốc nóng đều; nếu ốc tiết nhiều nước, đổ bỏ phần nước đục."},
+        {"step": 2, "instruction": "Cho nước cốt dừa dão, đường, muối và một nửa ớt vào. Đậy nắp, đun sôi rồi hạ lửa vừa, đảo vài lần và nấu đến khi ốc chín hoàn toàn, khoảng 8–10 phút sau khi sôi trở lại."},
+        {"step": 3, "instruction": "Thêm nước cốt dừa đặc và phần lớn rau răm, đun sôi thêm 2–3 phút cho sốt sánh và bám quanh vỏ. Nếm lại, rắc ớt và rau răm còn lại rồi dọn nóng."}
+      ],
+      "keywords": ["ốc len", "Cà Mau", "nước cốt dừa", "sả", "rau răm", "ốc xào"],
+      "tags": ["món mặn", "món ốc", "đặc sản Cà Mau", "nước cốt dừa", "món miền Tây"],
+      "sources": [
+        {"url": "https://dantri.com.vn/du-lich/cach-che-bien-mon-oc-len-xao-dua-tru-danh-vung-cuc-nam-to-quoc-20210912094823707.htm", "publisher": "Báo Dân trí", "title": "Cách chế biến món ốc len xào dừa trứ danh vùng cực Nam Tổ quốc", "use": "Đối chiếu môi trường sống ở Cà Mau, cách ngâm ốc với ớt, chặt bỏ chóp đuôi, xào với nước cốt dừa, tỏi, sả và rau răm.", "accessed_at": "2026-10-23", "type": "editorial_reference"},
+        {"url": "https://thanhnien.vn/oc-len-xao-dua-185265988.htm", "publisher": "Báo Thanh Niên", "title": "Ốc len xào dừa", "use": "Tham khảo kỹ thuật dùng nước cốt dừa dão trước, cốt đặc sau và các rau thơm thường dùng; công thức ở đây được biên tập riêng.", "accessed_at": "2026-10-23", "type": "editorial_reference"}
+      ],
+      "scaling": {"base_servings": 4, "targets": [
+        {"servings": 2, "main_factor": 0.5, "seasoning_start_factor": 0.5, "example": "Ốc len xào dừa Cà Mau cho 2 người", "instruction": "Dùng chảo sâu lòng để ốc nằm một lớp và chín đều."},
+        {"servings": 6, "main_factor": 1.5, "seasoning_start_factor": 1.5, "example": "Ốc len xào dừa Cà Mau cho 6 người", "instruction": "Nấu hai lượt nếu nồi nhỏ để sốt sôi nhanh trở lại."},
+        {"servings": 8, "main_factor": 2.0, "seasoning_start_factor": 2.0, "example": "Ốc len xào dừa Cà Mau cho 8 người", "instruction": "Chia làm hai mẻ; nêm muối và đường sau khi nước cốt dừa sôi lại."}
+      ]},
+      "media": [{"image_url": "/images/recipes/edited/oc-len-xao-dua-ca-mau-960.webp", "page_url": "https://dantri.com.vn/du-lich/cach-che-bien-mon-oc-len-xao-dua-tru-danh-vung-cuc-nam-to-quoc-20210912094823707.htm", "source": "Bếp Việt", "author": "Bếp Việt", "license": null, "rights_status": "project", "rights_note": "Ảnh món ăn được tạo mới riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập công thức.", "width": 1536, "height": 1024, "orientation": "landscape", "preferred_width_met": true, "alt_text": "Ốc len xào dừa với vỏ ốc xoắn nâu, nước dừa sánh, sả và rau răm trên đĩa gốm; ảnh món ăn tách nền trong suốt.", "verified_dish_match": true, "visual_review_date": "2026-10-23", "photo_variant_note": "Ảnh Bếp Việt tạo mới, nền trong suốt; công thức gia đình biên tập, chưa nấu thử."}],
+      "editorial": {"status": "editorial_draft", "production_ready": false, "test_cook_status": "not_tested", "variant_note": "Công thức nhà bếp giữ những điểm được báo chí ghi nhận; dùng ốc mua từ nguồn thực phẩm, không khẳng định đây là cách làm duy nhất của người Cà Mau.", "seed_recipe": null, "reviewed_at": "2026-10-23", "needs": ["Xác nhận độ chín và thời gian nấu với cỡ ốc, độ dày vỏ và loại nước cốt dừa khác nhau."]}
+    },
+    {
+      "id": "BV519",
+      "slug": "pha-lau-bo-sai-gon",
+      "name": "Phá lấu bò Sài Gòn",
+      "aliases": ["Phá lấu lòng bò", "Lòng bò nấu nước dừa ngũ vị"],
+      "region": ["Đông Nam Bộ"],
+      "province": ["TP. Hồ Chí Minh"],
+      "category": "Món mặn",
+      "meal_type": ["bữa phụ", "bữa tối"],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Bốn tô nhỏ phá lấu, ăn kèm bánh mì và rau răm.",
+      "prep_time": 40,
+      "cook_time": 90,
+      "passive_time": 30,
+      "description": "Phá lấu bò là món ăn đường phố quen thuộc ở TP. Hồ Chí Minh; tư liệu ghi nhận nội tạng bò được làm sạch kỹ, ướp ngũ vị và gia vị thơm rồi nấu với nước dừa. Bếp Việt biên tập mẻ gia đình dùng các phần dạ dày bò dễ tìm, nấu mềm và ăn với bánh mì, rau răm cùng nước chấm chua ngọt.",
+      "finished_dish": "Miếng lòng bò mềm nhưng còn độ giòn, thấm ngũ vị và nước dừa; nước dùng màu hổ phách đậm, thơm gừng, hồi và quế.",
+      "serving": "Cắt lòng thành miếng vừa ăn, chan nước dùng nóng; dọn với bánh mì giòn, rau răm và chén nước chấm tắc.",
+      "tips": [
+        "Chà lòng với gừng, giấm và rượu rồi rửa sạch nhiều lần trước khi chần.",
+        "Chần lòng ngắn rồi rửa lại giúp giảm mùi mà không làm lòng co cứng trước khi hầm.",
+        "Hầm lửa nhỏ đến khi phần dày nhất mềm; nếm nước dùng sau khi nước dừa đã cô lại vì vị mặn sẽ đậm hơn."
+      ],
+      "dish_type": ["Món lòng", "Món ăn đường phố"],
+      "main_ingredient": ["lòng bò", "nước dừa", "ngũ vị hương", "gừng"],
+      "cooking_method": ["làm sạch", "chần", "ướp", "hầm"],
+      "search_terms": ["phá lấu bò Sài Gòn", "phá lấu lòng bò", "lòng bò nấu nước dừa", "món ăn vặt Sài Gòn"],
+      "spicy_level": 1,
+      "image_alt": "Phá lấu bò Sài Gòn với lòng bò mềm trong nước dùng dừa ngũ vị màu hổ phách, bánh mì và rau răm; tách nền trong suốt.",
+      "time_note": "Khoảng 2 giờ 40 phút, gồm 30 phút ướp lòng trước khi hầm.",
+      "total_time": 160,
+      "suggested_pairings": ["Bánh mì", "Rau răm", "Nước chấm tắc", "Ớt tươi"],
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "saigon_beef_offal_stew",
+      "time_unit": "phút",
+      "ingredients": [
+        {"name": "Lòng bò các loại", "quantity": 900, "unit": "g", "role": "main", "notes": "Ưu tiên dạ cỏ, tổ ong hoặc lá sách; mua đã sơ chế tại nơi uy tín và giữ lạnh.", "scaling_rule": "linear", "sequence": 1},
+        {"name": "Gừng tươi", "quantity": 50, "unit": "g", "role": "aromatic", "notes": "Một nửa để làm sạch, một nửa thái lát nấu cùng.", "scaling_rule": "linear", "sequence": 2},
+        {"name": "Giấm gạo", "quantity": 60, "unit": "ml", "role": "seasoning", "notes": "Dùng chà lòng ở bước sơ chế.", "scaling_rule": "linear", "sequence": 3},
+        {"name": "Rượu trắng", "quantity": 50, "unit": "ml", "role": "seasoning", "notes": "Dùng chà và khử mùi lòng.", "scaling_rule": "linear", "sequence": 4},
+        {"name": "Nước dừa tươi", "quantity": 700, "unit": "ml", "role": "liquid", "notes": "Dùng nấu nước phá lấu.", "scaling_rule": "linear", "sequence": 5},
+        {"name": "Nước cốt dừa dão", "quantity": 250, "unit": "ml", "role": "liquid", "notes": "Có thể pha nước cốt dừa với nước ấm.", "scaling_rule": "linear", "sequence": 6},
+        {"name": "Nước cốt dừa", "quantity": 150, "unit": "ml", "role": "liquid", "notes": "Thêm gần cuối để tạo vị béo.", "scaling_rule": "linear", "sequence": 7},
+        {"name": "Hành tím", "quantity": 35, "unit": "g", "role": "aromatic", "notes": "Bóc vỏ, băm nhỏ.", "scaling_rule": "linear", "sequence": 8},
+        {"name": "Tỏi", "quantity": 20, "unit": "g", "role": "aromatic", "notes": "Bóc vỏ, băm nhỏ.", "scaling_rule": "linear", "sequence": 9},
+        {"name": "Hoa hồi", "quantity": 2, "unit": "cánh", "role": "aromatic", "notes": "Rang khô nhẹ cho dậy mùi.", "scaling_rule": "linear", "sequence": 10},
+        {"name": "Quế thanh", "quantity": 8, "unit": "g", "role": "aromatic", "notes": "Rang khô nhẹ rồi cho vào túi lọc hoặc nồi.", "scaling_rule": "linear", "sequence": 11},
+        {"name": "Ngũ vị hương", "quantity": 2, "unit": "g", "role": "seasoning", "notes": "Dùng lượng vừa phải để mùi không lấn át lòng bò.", "scaling_rule": "linear", "sequence": 12},
+        {"name": "Bột cà ri", "quantity": 2, "unit": "g", "role": "seasoning", "notes": "Tạo sắc vàng cam nhẹ, không làm món thành cà ri.", "scaling_rule": "linear", "sequence": 13},
+        {"name": "Nước mắm", "quantity": 25, "unit": "ml", "role": "seasoning", "notes": "Nêm phần ướp và nước dùng.", "scaling_rule": "linear", "sequence": 14},
+        {"name": "Đường thốt nốt", "quantity": 15, "unit": "g", "role": "seasoning", "notes": "Băm nhỏ để tan nhanh.", "scaling_rule": "linear", "sequence": 15},
+        {"name": "Dầu điều", "quantity": 15, "unit": "ml", "role": "seasoning", "notes": "Dùng phi gia vị, tạo màu nhẹ.", "scaling_rule": "linear", "sequence": 16},
+        {"name": "Muối", "quantity": 6, "unit": "g", "role": "seasoning", "notes": "Chia cho bước làm sạch và nêm nước dùng.", "scaling_rule": "linear", "sequence": 17},
+        {"name": "Rau răm", "quantity": 20, "unit": "g", "role": "herb", "notes": "Rửa sạch, để ráo, dùng ăn kèm.", "scaling_rule": "linear", "sequence": 18},
+        {"name": "Bánh mì", "quantity": 4, "unit": "ổ", "role": "side", "notes": "Nướng nóng trước khi ăn.", "scaling_rule": "linear", "sequence": 19},
+        {"name": "Tắc", "quantity": 3, "unit": "quả", "role": "seasoning", "notes": "Vắt lấy nước pha chén chấm.", "scaling_rule": "linear", "sequence": 20}
+      ],
+      "preparation_steps": [
+        {"step": 1, "instruction": "Chà lòng bò với giấm, rượu và một nửa gừng đập dập; lộn mặt trong, chà kỹ các nếp gấp rồi rửa nhiều lần dưới vòi nước lạnh."},
+        {"step": 2, "instruction": "Chần lòng trong nồi nước sôi có vài lát gừng và hành tím khoảng 3 phút; vớt ra, rửa sạch lại, cạo bỏ phần bẩn còn sót rồi cắt miếng lớn."},
+        {"step": 3, "instruction": "Rang hoa hồi và quế đến khi thơm. Ướp lòng với nước mắm, đường thốt nốt, ngũ vị hương, bột cà ri, dầu điều, tỏi và hành tím trong 30 phút."}
+      ],
+      "cooking_steps": [
+        {"step": 1, "instruction": "Phi thơm phần hành tỏi còn lại trong nồi, cho lòng đã ướp vào đảo đến khi săn mặt và dậy mùi gia vị."},
+        {"step": 2, "instruction": "Thêm nước dừa tươi, nước cốt dừa dão, gừng còn lại, hoa hồi và quế. Đun sôi, hớt bọt, hạ lửa nhỏ và đậy nắp hầm 60–75 phút đến khi lòng mềm."},
+        {"step": 3, "instruction": "Thêm nước cốt dừa đặc, nấu thêm 5 phút ở mức sôi nhẹ. Nếm và chỉnh muối, nước mắm; nếu nước quá đặc, thêm nước nóng từng ít một."},
+        {"step": 4, "instruction": "Pha nước chấm bằng nước cốt tắc, chút nước mắm và đường theo khẩu vị. Cắt lòng vừa ăn, chan nước dùng, thêm rau răm và dùng nóng với bánh mì."}
+      ],
+      "keywords": ["phá lấu bò", "Sài Gòn", "lòng bò", "nước dừa", "ngũ vị hương", "rau răm"],
+      "tags": ["món mặn", "món lòng", "món ăn đường phố", "Sài Gòn", "nước dừa"],
+      "sources": [
+        {"url": "https://giadinh.suckhoedoisong.vn/cach-nau-pha-lau-bo-sai-gon-mon-an-duong-pho-van-nguoi-me-hoa-ra-khong-kho-172240531002415364.htm", "publisher": "Gia đình và Xã hội", "title": "Cách nấu phá lấu bò Sài Gòn, món ăn đường phố vạn người mê hóa ra không khó", "use": "Đối chiếu phá lấu là món ăn đường phố TP. Hồ Chí Minh, các phần lòng bò, cách làm sạch, ướp gia vị thơm và nấu với nước dừa; Bếp Việt giảm quy mô và biên tập tỷ lệ.", "accessed_at": "2026-10-23", "type": "editorial_reference"},
+        {"url": "https://giadinh.suckhoedoisong.vn/7-mon-an-vat-tuyet-ngon-cho-bua-xe-sai-gon-1722015072914060369.htm", "publisher": "Gia đình và Xã hội", "title": "7 món ăn vặt tuyệt ngon cho bữa xế Sài Gòn", "use": "Đối chiếu cách dùng phá lấu với bánh mì, rau răm và nước chấm me; không dùng làm nguồn định lượng.", "accessed_at": "2026-10-23", "type": "editorial_reference"}
+      ],
+      "scaling": {"base_servings": 4, "targets": [
+        {"servings": 2, "main_factor": 0.5, "seasoning_start_factor": 0.5, "example": "Phá lấu bò Sài Gòn cho 2 người", "instruction": "Chọn nồi nhỏ đáy dày; kiểm tra độ mềm sau 50 phút hầm."},
+        {"servings": 6, "main_factor": 1.5, "seasoning_start_factor": 1.5, "example": "Phá lấu bò Sài Gòn cho 6 người", "instruction": "Chọn nồi rộng để lòng nằm ngập nước dừa và nấu chín đều."},
+        {"servings": 8, "main_factor": 2.0, "seasoning_start_factor": 2.0, "example": "Phá lấu bò Sài Gòn cho 8 người", "instruction": "Hầm hai nồi nếu cần, tránh chất lòng quá dày khiến phần giữa lâu mềm."}
+      ]},
+      "media": [{"image_url": "/images/recipes/edited/pha-lau-bo-sai-gon-960.webp", "page_url": "https://giadinh.suckhoedoisong.vn/cach-nau-pha-lau-bo-sai-gon-mon-an-duong-pho-van-nguoi-me-hoa-ra-khong-kho-172240531002415364.htm", "source": "Bếp Việt", "author": "Bếp Việt", "license": null, "rights_status": "project", "rights_note": "Ảnh món ăn được tạo mới riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập công thức.", "width": 1536, "height": 1024, "orientation": "landscape", "preferred_width_met": true, "alt_text": "Phá lấu bò Sài Gòn với lòng bò mềm trong nước dùng dừa ngũ vị màu hổ phách, bánh mì và rau răm; tách nền trong suốt.", "verified_dish_match": true, "visual_review_date": "2026-10-23", "photo_variant_note": "Ảnh Bếp Việt tạo mới, nền trong suốt; công thức gia đình biên tập, chưa nấu thử."}],
+      "editorial": {"status": "editorial_draft", "production_ready": false, "test_cook_status": "not_tested", "variant_note": "Bản lòng bò nấu nước dừa dựa trên báo chí mô tả phá lấu TP. Hồ Chí Minh; phần lòng và tỷ lệ gia vị có thể thay đổi theo quán.", "seed_recipe": null, "reviewed_at": "2026-10-23", "needs": ["Thử thời gian làm mềm riêng cho dạ cỏ, tổ ong và lá sách; xác nhận vị nước dừa sau khi cô."]}
+    },
+    {
+      "id": "BV520",
+      "slug": "che-ke-hoi-an",
+      "name": "Chè kê Hội An",
+      "aliases": ["Chè hạt kê", "Chè kê Quảng Nam"],
+      "region": ["Nam Trung Bộ"],
+      "province": ["Quảng Nam"],
+      "category": "Món tráng miệng",
+      "meal_type": ["bữa phụ", "tráng miệng"],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Bốn chén chè đặc, ăn kèm bánh tráng mè nướng.",
+      "prep_time": 20,
+      "cook_time": 45,
+      "passive_time": 60,
+      "description": "Tư liệu di sản Hội An ghi nhận chè kê trong mâm lễ Tết Đoan Ngọ; một công thức được nghệ nhân ẩm thực hướng dẫn phối kê với đậu xanh và dùng bánh đa nướng để xúc. Bếp Việt biên tập mẻ chay không dùng sữa hay mỡ động vật, nấu chè dẻo vừa để ăn bằng thìa hoặc với bánh tráng.",
+      "finished_dish": "Hạt kê nở mềm, quyện cùng đậu xanh nghiền thành chè vàng sánh, ngọt dịu; bánh tráng mè giòn tạo độ tương phản khi ăn.",
+      "serving": "Múc chè ấm hoặc để nguội vào chén nhỏ. Bẻ bánh tráng mè nướng thành miếng để xúc chè.",
+      "tips": [
+        "Ngâm kê và đậu xanh riêng để hai nguyên liệu chín mềm đều.",
+        "Khuấy nhẹ, đều tay khi kê bắt đầu đặc để đáy nồi không bén.",
+        "Thêm đường sau khi đậu xanh đã mềm để dễ điều chỉnh độ ngọt và độ sánh."
+      ],
+      "dish_type": ["Món chay", "Món tráng miệng", "Chè truyền thống"],
+      "main_ingredient": ["hạt kê", "đậu xanh", "đường", "bánh tráng mè"],
+      "cooking_method": ["ngâm", "ninh", "khuấy sánh"],
+      "search_terms": ["chè kê Hội An", "chè kê Quảng Nam", "chè hạt kê đậu xanh", "chè kê ăn với bánh tráng"],
+      "spicy_level": 0,
+      "image_alt": "Chè kê Hội An màu vàng sánh trong bát gốm, bên cạnh bánh tráng mè nướng; món tráng miệng chay tách nền trong suốt.",
+      "time_note": "Khoảng 2 giờ 5 phút, gồm 1 giờ ngâm kê và đậu xanh.",
+      "total_time": 125,
+      "suggested_pairings": ["Bánh tráng mè nướng", "Trà nóng", "Mè rang"],
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "hoi_an_millet_sweet_porridge",
+      "time_unit": "phút",
+      "ingredients": [
+        {"name": "Hạt kê", "quantity": 150, "unit": "g", "role": "main", "notes": "Vo nhiều lần đến khi nước trong rồi ngâm 30 phút.", "scaling_rule": "linear", "sequence": 1},
+        {"name": "Đậu xanh cà vỏ", "quantity": 70, "unit": "g", "role": "main", "notes": "Vo sạch và ngâm riêng 60 phút.", "scaling_rule": "linear", "sequence": 2},
+        {"name": "Nước lọc", "quantity": 1200, "unit": "ml", "role": "liquid", "notes": "Chia nước cho nồi đậu xanh và nồi kê; châm thêm nếu chè đặc quá.", "scaling_rule": "linear", "sequence": 3},
+        {"name": "Đường", "quantity": 150, "unit": "g", "role": "seasoning", "notes": "Có thể thay một phần bằng mật mía; nêm từ từ.", "scaling_rule": "linear", "sequence": 4},
+        {"name": "Muối", "quantity": 2, "unit": "g", "role": "seasoning", "notes": "Một nhúm nhỏ làm vị ngọt tròn hơn.", "scaling_rule": "linear", "sequence": 5},
+        {"name": "Vani", "quantity": 2, "unit": "ml", "role": "aromatic", "notes": "Tùy chọn; dùng loại không có thành phần sữa để giữ món thuần chay.", "scaling_rule": "linear", "sequence": 6},
+        {"name": "Bánh tráng mè nướng", "quantity": 4, "unit": "cái", "role": "side", "notes": "Chọn loại không có mỡ động vật; bẻ miếng để xúc chè.", "scaling_rule": "linear", "sequence": 7}
+      ],
+      "preparation_steps": [
+        {"step": 1, "instruction": "Vo hạt kê nhiều lần đến khi nước trong, ngâm trong nước sạch 30 phút rồi để ráo. Vo và ngâm đậu xanh riêng 60 phút."},
+        {"step": 2, "instruction": "Rửa lại đậu xanh sau khi ngâm, để ráo; đong riêng nước nấu đậu và nước nấu kê."},
+        {"step": 3, "instruction": "Chuẩn bị nồi đáy dày, đường, muối, vani và bánh tráng nướng để dùng sau khi chè chín."}
+      ],
+      "cooking_steps": [
+        {"step": 1, "instruction": "Cho đậu xanh vào nồi với 350 ml nước, nấu nhỏ lửa khoảng 15–20 phút đến khi mềm rồi nghiền nhẹ thành hỗn hợp sệt."},
+        {"step": 2, "instruction": "Cho kê đã ngâm vào nồi khác với 850 ml nước. Đun đến khi sôi, hạ nhỏ lửa và khuấy định kỳ khoảng 20–25 phút đến khi hạt nở mềm."},
+        {"step": 3, "instruction": "Cho đậu xanh đã nghiền vào nồi kê, thêm đường và muối, khuấy đều. Nấu liu riu thêm 5–8 phút cho chè quyện và sánh."},
+        {"step": 4, "instruction": "Tắt bếp, khuấy vani nếu dùng. Múc chè ra chén, dùng ấm hoặc nguội với bánh tráng mè nướng."}
+      ],
+      "keywords": ["chè kê", "Hội An", "Quảng Nam", "hạt kê", "đậu xanh", "Tết Đoan Ngọ", "món chay"],
+      "tags": ["món chay", "món tráng miệng", "chè truyền thống", "Hội An", "hạt kê"],
+      "sources": [
+        {"url": "https://hoianheritage.net/vi/di-san-van-hoa/Le-hoi-truyen-thong/Le-Tet-Doan-Ngo-168.html", "publisher": "Trung tâm Quản lý Bảo tồn Di sản Văn hóa Hội An", "title": "Đô thị cổ Hội An: Lễ Tết Đoan Ngọ", "use": "Đối chiếu chè kê có mặt trong nhóm lễ vật cúng Tết Đoan Ngọ ở Hội An.", "accessed_at": "2026-10-23", "type": "editorial_reference"},
+        {"url": "https://giaoducthoidai.vn/che-ke-an-tet-doan-ngo-theo-kieu-nguoi-mien-trung-post309739.html", "publisher": "Báo Giáo dục và Thời đại", "title": "Chè kê - ăn tết Đoan Ngọ theo kiểu người miền Trung", "use": "Tham khảo công thức được giới thiệu theo hướng dẫn nghệ nhân ẩm thực: kê, đậu xanh, đường và bánh đa nướng; đối chiếu cách nấu mềm rồi quyện hai nguyên liệu.", "accessed_at": "2026-10-23", "type": "editorial_reference"}
+      ],
+      "scaling": {"base_servings": 4, "targets": [
+        {"servings": 2, "main_factor": 0.5, "seasoning_start_factor": 0.5, "example": "Chè kê Hội An cho 2 người", "instruction": "Giữ lửa nhỏ sau khi kê sôi và khuấy thường xuyên vì mẻ nhỏ đặc nhanh."},
+        {"servings": 6, "main_factor": 1.5, "seasoning_start_factor": 1.5, "example": "Chè kê Hội An cho 6 người", "instruction": "Dùng nồi đáy dày và tăng thời gian khuấy, không chỉ tăng nhiệt."},
+        {"servings": 8, "main_factor": 2.0, "seasoning_start_factor": 2.0, "example": "Chè kê Hội An cho 8 người", "instruction": "Nấu kê trong nồi rộng; thêm đường sau khi hạt đã mềm để tránh làm chậm quá trình nở."}
+      ]},
+      "media": [{"image_url": "/images/recipes/edited/che-ke-hoi-an-960.webp", "page_url": "https://hoianheritage.net/vi/di-san-van-hoa/Le-hoi-truyen-thong/Le-Tet-Doan-Ngo-168.html", "source": "Bếp Việt", "author": "Bếp Việt", "license": null, "rights_status": "project", "rights_note": "Ảnh món ăn được tạo mới riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập công thức.", "width": 1536, "height": 1024, "orientation": "landscape", "preferred_width_met": true, "alt_text": "Chè kê Hội An màu vàng sánh trong bát gốm, bên cạnh bánh tráng mè nướng; món tráng miệng chay tách nền trong suốt.", "verified_dish_match": true, "visual_review_date": "2026-10-23", "photo_variant_note": "Ảnh Bếp Việt tạo mới, nền trong suốt; công thức chay biên tập, chưa nấu thử."}],
+      "editorial": {"status": "editorial_draft", "production_ready": false, "test_cook_status": "not_tested", "variant_note": "Bản chay dùng kê, đậu xanh, đường và bánh tráng mè; mô tả phong tục dựa trên tư liệu Hội An, còn tỷ lệ được biên tập cho bếp gia đình.", "seed_recipe": null, "reviewed_at": "2026-10-23", "needs": ["Thử độ sánh sau khi chè nguội và kiểm tra thành phần bánh tráng mè nếu cần bảo đảm thuần chay."]}
+    }
+  ]
+}

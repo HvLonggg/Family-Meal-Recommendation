@@ -65941,7 +65941,7 @@
       "total_time": 25,
       "time_unit": "minute",
       "time_note": "Chuẩn bị là thao tác chủ động; thời gian chờ gồm ướp/ngâm/làm lạnh ngoài thao tác. Tổng theo lịch tuần tự, có thể rút ngắn khi làm song song.",
-      "description": "Mướp đắng xào trứng tận dụng những nguyên liệu dễ mua cho bữa cơm gọn gàng. Trứng gà đi cùng mướp đắng; cách xử lý phần nhân và giữ nhiệt vừa phải quyết định độ mềm của thành phẩm. Khi đạt, món có trứng thành mảng mềm, rau chín giòn và ráo. Nêm từng phần giúp giữ vị nguyên liệu rõ hơn. Bày lượng vừa dùng, ăn cùng món có kết cấu khác sẽ khiến bữa cơm hài hòa và dễ ăn.",
+      "description": "Mướp đắng xào trứng có vị đắng dịu đặc trưng, cân bằng với trứng vàng mềm và hành thơm. Xào nhanh trên chảo nóng giúp lát mướp giữ màu xanh, còn độ giòn nhẹ; món giản dị này hợp dùng cùng cơm trắng.",
       "ingredients": [
         {
           "name": "Trứng gà",
@@ -66001,37 +66001,37 @@
       "preparation_steps": [
         {
           "step": 1,
-          "instruction": "Mướp đắng: rửa, bỏ ruột trắng; thái lát mỏng."
+          "instruction": "Rửa mướp đắng, bổ dọc, nạo bỏ hạt và phần cùi trắng dày rồi thái lát khoảng 3 mm. Nếu muốn vị dịu hơn, xóc nhẹ với một chút muối 10 phút, xả nhanh và để thật ráo."
         },
         {
           "step": 2,
-          "instruction": "Hành tím: bóc vỏ, băm hoặc thái mỏng để phi; hành lá: rửa, tách đầu trắng và lá, thái nhỏ."
+          "instruction": "Bóc vỏ, băm nhỏ hành tím; rửa hành lá, thái riêng phần đầu trắng và lá xanh."
         },
         {
           "step": 3,
-          "instruction": "Lau vỏ trứng sạch; đập từng quả vào bát riêng rồi đánh tan trước khi trộn nhân."
+          "instruction": "Đập trứng vào bát, thêm nước mắm và chút tiêu rồi đánh vừa tan, không đánh nổi bọt."
         }
       ],
       "cooking_steps": [
         {
           "step": 1,
-          "instruction": "Đánh trứng với một phần gia vị; rau củ thái lát mỏng đều."
+          "instruction": "Làm nóng chảo với một nửa dầu. Rót trứng vào, đảo nhẹ thành mảng mềm vừa se mặt rồi trút ra đĩa."
         },
         {
           "step": 2,
-          "instruction": "Phi hành, xào rau 3–5 phút đến gần chín, thêm gia vị còn lại."
+          "instruction": "Thêm phần dầu còn lại, phi thơm hành tím và đầu hành. Cho mướp đắng vào xào lửa lớn 3–4 phút đến khi xanh bóng, chín tới; nêm vừa ăn."
         },
         {
           "step": 3,
-          "instruction": "Rót trứng vào, chờ 20 giây rồi đảo nhẹ thành mảng, xào thêm 2–3 phút đến chín; rắc hành lá."
+          "instruction": "Cho trứng trở lại chảo, đảo nhẹ 30–60 giây để quyện với mướp. Rắc hành lá, tắt bếp khi trứng còn mềm."
         }
       ],
-      "finished_dish": "Trứng thành mảng mềm, rau chín giòn và ráo.",
-      "serving": "Dùng nóng với cơm. Món đã nêm ăn trực tiếp; món luộc, hấp hoặc chiên nhạt có thể dùng nước chấm trong bảng. Chọn thêm canh và rau để đủ một mâm cơm. Gợi ý ăn cùng: canh rau ngót thịt băm, rau muống luộc, cà pháo muối chua.",
+      "finished_dish": "Trứng vàng mềm ôm lát mướp đắng xanh giòn nhẹ, vị đắng dịu cân bằng cùng hành thơm.",
+      "serving": "Dùng nóng với cơm trắng; vị đắng dịu hợp cùng bát canh thanh và món luộc trong mâm cơm gia đình.",
       "tips": [
-        "Đánh trứng vừa hòa quyện, tránh tạo quá nhiều bọt làm mặt trứng rỗ.",
-        "Dùng lớp trứng mỏng hoặc chia mẻ, giữ lửa vừa nhỏ để tâm chín trước khi viền khô.",
-        "Cho nhân đã nấu ráo, hạ nóng vào trứng để hỗn hợp đều và không ra nước."
+        "Nạo sạch hạt và phần cùi trắng xốp để vị đắng bớt gắt; ngâm muối là bước tùy chọn, không nên ngâm quá lâu.",
+        "Để mướp thật ráo và dùng chảo rộng, lửa lớn để rau không tiết nhiều nước.",
+        "Xào trứng riêng đến khi vừa se rồi mới trộn lại, món sẽ ráo mà trứng vẫn mềm."
       ],
       "scaling": {
         "base_servings": 4,
@@ -66059,10 +66059,10 @@
           }
         ],
         "rules": [
-          "Nguyên liệu chính, bột và phần nhân tăng theo tỷ lệ; trứng lẻ đánh tan rồi cân chia, không tự làm tròn mọi quả.",
-          "Mắm, muối, đường, ớt nêm theo hệ số khởi điểm ở trên; đây là hướng dẫn nếm, không phải công thức chuyển đổi độ mặn cố định.",
-          "Nước nấu và sốt điều chỉnh theo mặt thoáng nồi và độ sánh; nước chấm giữ tỷ lệ trước, pha ít hơn nếu dùng ít. Dầu chiên và nước xửng theo dụng cụ.",
-          "Giữ cỡ miếng; chia mẻ khi tăng lượng. Không nhân thời gian nấu theo số người, kiểm tra chín ở phần dày nhất."
+          "Nguyên liệu chính tăng theo tỷ lệ; trứng lẻ có thể đánh tan rồi chia theo lượng, không cần làm tròn số quả.",
+          "Nêm nước mắm, muối và tiêu từ lượng nhỏ rồi điều chỉnh khi món gần chín; gia vị không nên tăng máy móc theo khẩu phần.",
+          "Dầu ăn chỉ cần tăng vừa đủ để xào thành từng mẻ; không nhân thời gian nấu theo số người.",
+          "Giữ lát rau củ cùng độ dày và xào trên chảo rộng để các phần chín đều, không đọng nước."
         ]
       },
       "tags": {
@@ -66082,8 +66082,8 @@
           "Món gia đình"
         ],
         "main_ingredient": [
-          "trứng",
-          "rau củ"
+          "mướp đắng",
+          "trứng"
         ],
         "cooking_method": [
           "xào"
@@ -66102,9 +66102,9 @@
         "keywords": [
           "Mướp đắng xào trứng",
           "Khổ qua xào trứng",
+          "mướp đắng",
           "trứng",
-          "rau củ",
-          "xào",
+          "xào nhanh",
           "công thức 4 người"
         ],
         "recipe_family": "trung_xao"
@@ -66191,32 +66191,32 @@
       "total_time": 25,
       "time_unit": "minute",
       "time_note": "Chuẩn bị là thao tác chủ động; thời gian chờ gồm ướp/ngâm/làm lạnh ngoài thao tác. Tổng theo lịch tuần tự, có thể rút ngắn khi làm song song.",
-      "description": "Bầu xào trứng tận dụng những nguyên liệu dễ mua cho bữa cơm gọn gàng. Trứng gà đi cùng bầu; cách xử lý phần nhân và giữ nhiệt vừa phải quyết định độ mềm của thành phẩm. Khi đạt, món có trứng thành mảng mềm, rau chín giòn và ráo. Nêm từng phần giúp giữ vị nguyên liệu rõ hơn. Bày lượng vừa dùng, ăn cùng món có kết cấu khác sẽ khiến bữa cơm hài hòa và dễ ăn.",
+      "description": "Bầu non xào trứng có vị ngọt mát tự nhiên, những lát bầu mềm trong quyện cùng trứng vàng béo. Xào trên lửa lớn và để chảo ráo giúp món giữ vị thanh, không bị nhũn hay đọng nước.",
       "ingredients": [
         {
           "name": "Trứng gà",
-          "quantity": 4,
+          "quantity": 3,
           "unit": "quả",
           "role": "main",
-          "notes": "Nguyên liệu chính; cân phần dùng được trừ khi ghi nguyên vỏ/có xương.",
+          "notes": "Đánh tan trước khi xào.",
           "scaling_rule": "linear",
           "sequence": 1
         },
         {
-          "name": "Bầu",
+          "name": "Bầu non",
           "quantity": 450,
           "unit": "g",
           "role": "main",
-          "notes": "Nguyên liệu chính; cân phần dùng được trừ khi ghi nguyên vỏ/có xương.",
+          "notes": "Khối lượng sau khi gọt; chọn quả non, chắc.",
           "scaling_rule": "linear",
           "sequence": 2
         },
         {
           "name": "Hành tím",
-          "quantity": 20,
+          "quantity": 15,
           "unit": "g",
           "role": "seasoning",
-          "notes": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+          "notes": "Băm nhỏ để phi thơm.",
           "scaling_rule": "taste_adjusted",
           "sequence": 3
         },
@@ -66224,8 +66224,8 @@
           "name": "Hành lá",
           "quantity": 15,
           "unit": "g",
-          "role": "seasoning",
-          "notes": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+          "role": "garnish",
+          "notes": "Thái nhỏ, cho vào cuối.",
           "scaling_rule": "taste_adjusted",
           "sequence": 4
         },
@@ -66234,54 +66234,63 @@
           "quantity": 10,
           "unit": "ml",
           "role": "seasoning",
-          "notes": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+          "notes": "Nêm vừa ăn.",
           "scaling_rule": "taste_adjusted",
           "sequence": 5
         },
         {
           "name": "Dầu ăn",
-          "quantity": 25,
+          "quantity": 20,
           "unit": "ml",
           "role": "seasoning",
-          "notes": "Chia cho các lượt phi/xào hoặc phết mặt.",
+          "notes": "Chia cho hai lượt xào.",
           "scaling_rule": "taste_adjusted",
           "sequence": 6
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Gia giảm theo khẩu vị.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 7
         }
       ],
       "preparation_steps": [
         {
           "step": 1,
-          "instruction": "Bầu: gọt mỏng, bỏ ruột già; thái lát mỏng."
+          "instruction": "Chọn quả bầu non, gọt vỏ mỏng, bổ dọc và chỉ bỏ phần ruột già xốp nếu có; thái lát dày khoảng 4–5 mm để bầu không nát khi xào."
         },
         {
           "step": 2,
-          "instruction": "Hành tím: bóc vỏ, băm hoặc thái mỏng để phi; hành lá: rửa, tách đầu trắng và lá, thái nhỏ."
+          "instruction": "Bóc vỏ, băm nhỏ hành tím; rửa hành lá, thái riêng phần đầu trắng và lá xanh."
         },
         {
           "step": 3,
-          "instruction": "Lau vỏ trứng sạch; đập từng quả vào bát riêng rồi đánh tan trước khi trộn nhân."
+          "instruction": "Đập trứng vào bát, thêm nước mắm và chút tiêu rồi đánh vừa tan."
         }
       ],
       "cooking_steps": [
         {
           "step": 1,
-          "instruction": "Đánh trứng với một phần gia vị; rau củ thái lát mỏng đều."
+          "instruction": "Làm nóng chảo với một nửa dầu. Rót trứng vào, đảo nhẹ thành mảng mềm vừa chín tới rồi trút ra đĩa."
         },
         {
           "step": 2,
-          "instruction": "Phi hành, xào rau 3–5 phút đến gần chín, thêm gia vị còn lại."
+          "instruction": "Thêm phần dầu còn lại, phi thơm hành tím và đầu hành. Cho bầu vào xào lửa lớn 3–4 phút; nêm vừa ăn và đảo đến khi bầu mềm trong nhưng chưa nhũn."
         },
         {
           "step": 3,
-          "instruction": "Rót trứng vào, chờ 20 giây rồi đảo nhẹ thành mảng, xào thêm 2–3 phút đến chín; rắc hành lá."
+          "instruction": "Cho trứng trở lại chảo, đảo nhẹ khoảng 30 giây cho quyện đều. Rắc hành lá, tắt bếp ngay khi chảo vừa ráo."
         }
       ],
-      "finished_dish": "Trứng thành mảng mềm, rau chín giòn và ráo.",
-      "serving": "Dùng nóng với cơm. Món đã nêm ăn trực tiếp; món luộc, hấp hoặc chiên nhạt có thể dùng nước chấm trong bảng. Chọn thêm canh và rau để đủ một mâm cơm. Gợi ý ăn cùng: canh rau ngót thịt băm, rau muống luộc, cà pháo muối chua.",
+      "finished_dish": "Bầu non mềm trong, ngọt mát, quyện cùng trứng vàng béo và hành thơm; món xào ráo, không nhũn.",
+      "serving": "Dùng nóng với cơm trắng; vị ngọt thanh của bầu hợp cùng món mặn đậm vị trong bữa cơm nhà.",
       "tips": [
-        "Đánh trứng vừa hòa quyện, tránh tạo quá nhiều bọt làm mặt trứng rỗ.",
-        "Dùng lớp trứng mỏng hoặc chia mẻ, giữ lửa vừa nhỏ để tâm chín trước khi viền khô.",
-        "Cho nhân đã nấu ráo, hạ nóng vào trứng để hỗn hợp đều và không ra nước."
+        "Ưu tiên bầu non, ruột còn đặc; thái lát đồng đều để các miếng chín cùng lúc.",
+        "Dùng chảo rộng, xào lửa lớn và không đậy nắp để hơi nước thoát nhanh, bầu không bị nhũn.",
+        "Đảo trứng riêng đến khi vừa se rồi mới trộn với bầu, giữ được mảng trứng mềm và vị ngọt của rau."
       ],
       "scaling": {
         "base_servings": 4,
@@ -66290,29 +66299,29 @@
             "servings": 2,
             "main_factor": 0.5,
             "seasoning_start_factor": 0.5,
-            "example": "Trứng gà: 2 quả",
-            "instruction": "Nguyên liệu chính ×0.5; Trứng gà: 2 quả. Gia vị nêm bắt đầu ×0.5, nếm khi chín rồi bổ sung."
+            "example": "Trứng gà: 1½ quả",
+            "instruction": "Nguyên liệu chính ×0.5; trứng gà khoảng 1½ quả. Gia vị nêm theo hệ số khởi điểm, nếm lại khi món chín."
           },
           {
             "servings": 6,
             "main_factor": 1.5,
             "seasoning_start_factor": 1.25,
-            "example": "Trứng gà: 6 quả",
-            "instruction": "Nguyên liệu chính ×1.5; Trứng gà: 6 quả. Gia vị nêm bắt đầu ×1.25, nếm khi chín rồi bổ sung."
+            "example": "Trứng gà: 4½ quả",
+            "instruction": "Nguyên liệu chính ×1.5; trứng gà khoảng 4½ quả. Gia vị nêm theo hệ số khởi điểm, nếm lại khi món chín."
           },
           {
             "servings": 8,
             "main_factor": 2,
             "seasoning_start_factor": 1.6,
-            "example": "Trứng gà: 8 quả",
-            "instruction": "Nguyên liệu chính ×2; Trứng gà: 8 quả. Gia vị nêm bắt đầu ×1.6, nếm khi chín rồi bổ sung."
+            "example": "Trứng gà: 6 quả",
+            "instruction": "Nguyên liệu chính ×2; trứng gà khoảng 6 quả. Gia vị nêm theo hệ số khởi điểm, nếm lại khi món chín."
           }
         ],
         "rules": [
-          "Nguyên liệu chính, bột và phần nhân tăng theo tỷ lệ; trứng lẻ đánh tan rồi cân chia, không tự làm tròn mọi quả.",
-          "Mắm, muối, đường, ớt nêm theo hệ số khởi điểm ở trên; đây là hướng dẫn nếm, không phải công thức chuyển đổi độ mặn cố định.",
-          "Nước nấu và sốt điều chỉnh theo mặt thoáng nồi và độ sánh; nước chấm giữ tỷ lệ trước, pha ít hơn nếu dùng ít. Dầu chiên và nước xửng theo dụng cụ.",
-          "Giữ cỡ miếng; chia mẻ khi tăng lượng. Không nhân thời gian nấu theo số người, kiểm tra chín ở phần dày nhất."
+          "Nguyên liệu chính tăng theo tỷ lệ; trứng lẻ có thể đánh tan rồi chia theo lượng, không cần làm tròn số quả.",
+          "Nêm nước mắm, muối và tiêu từ lượng nhỏ rồi điều chỉnh khi món gần chín; gia vị không nên tăng máy móc theo khẩu phần.",
+          "Dầu ăn chỉ cần tăng vừa đủ để xào thành từng mẻ; không nhân thời gian nấu theo số người.",
+          "Giữ lát rau củ cùng độ dày và xào trên chảo rộng để các phần chín đều, không đọng nước."
         ]
       },
       "tags": {
@@ -66332,8 +66341,8 @@
           "Món gia đình"
         ],
         "main_ingredient": [
-          "trứng",
-          "rau củ"
+          "bầu",
+          "trứng"
         ],
         "cooking_method": [
           "xào"
@@ -66351,9 +66360,10 @@
         ],
         "keywords": [
           "Bầu xào trứng",
+          "bầu",
           "trứng",
           "rau củ",
-          "xào",
+          "xào nhanh",
           "công thức 4 người"
         ],
         "recipe_family": "trung_xao"

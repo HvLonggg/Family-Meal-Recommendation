@@ -10,6 +10,7 @@ const sections: { to: string; label: string; icon: IconName; end?: boolean }[] =
   { to: '/account/settings', label: 'Cài đặt', icon: 'settings' },
   { to: '/account/security', label: 'Đổi mật khẩu & bảo mật', icon: 'lock' },
   { to: '/account/stories', label: 'Câu chuyện của tôi', icon: 'pen' },
+  { to: '/account/cooked', label: 'Món đã nấu', icon: 'history' },
   { to: '/account/submissions', label: 'Món tôi đề xuất', icon: 'chef' },
 ];
 

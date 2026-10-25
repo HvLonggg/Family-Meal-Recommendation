@@ -22,6 +22,7 @@ export const DEFAULT_PREFERENCES: UserPreferences = {
   notify_weekly_plan: true,
   notify_story_updates: true,
   show_name_on_stories: true,
+  assistant_sassy: false,
   admin_notify_pending: true,
   admin_landing: 'admin',
   computed_portions: 0,

@@ -32,6 +32,8 @@ export interface UserPreferences {
   notify_weekly_plan: boolean;
   notify_story_updates: boolean;
   show_name_on_stories: boolean;
+  /** Chú Rồng trả treo, cà khịa nhưng vẫn trả lời đúng. */
+  assistant_sassy: boolean;
   admin_notify_pending: boolean;
   admin_landing: 'home' | 'admin';
   computed_portions: number;

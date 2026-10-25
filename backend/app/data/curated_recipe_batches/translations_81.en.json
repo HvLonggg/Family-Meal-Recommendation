@@ -1,0 +1,655 @@
+{
+  "canh-bap-cai-thit-vien": {
+    "name": "Cabbage and Pork Meatball Soup",
+    "aliases": [
+      "Vietnamese Cabbage Soup with Pork Meatballs",
+      "Cabbage Soup with Minced Pork Balls"
+    ],
+    "region": [
+      "Across Vietnam"
+    ],
+    "category": "Soup",
+    "meal_type": [
+      "lunch",
+      "dinner",
+      "family meal",
+      "soup"
+    ],
+    "difficulty": "Easy",
+    "serving_basis": "One pot for four people at a family meal.",
+    "description": "Sweet cabbage simmers with pork meatballs and carrot in a light broth. It pairs well with braised fish or meat.",
+    "finished_dish": "A clear, mild broth with tender cabbage, juicy meatballs and carrot slices.",
+    "serving": "Serve hot with scallions and steamed rice.",
+    "tips": [
+      "Mix pork and pork paste until cohesive.",
+      "Add meatballs to a gentle boil and skim the broth.",
+      "Add cabbage near the end so it stays tender, not mushy."
+    ],
+    "dish_type": [
+      "Vegetable and pork soup",
+      "Family soup"
+    ],
+    "main_ingredient": [
+      "cabbage",
+      "pork"
+    ],
+    "cooking_method": [
+      "shaping meatballs",
+      "simmering"
+    ],
+    "search_terms": [
+      "cabbage pork meatball soup",
+      "Vietnamese cabbage soup",
+      "cabbage and meatball soup"
+    ],
+    "image_alt": "Vietnamese cabbage soup with pork meatballs and carrot.",
+    "time_note": "About 40 minutes.",
+    "suggested_pairings": [
+      "Steamed rice",
+      "Braised fish",
+      "Fried tofu"
+    ],
+    "recipe_family": "canh_bap_cai_thit_vien",
+    "keywords": [
+      "cabbage",
+      "pork meatballs",
+      "family soup",
+      "easy to cook"
+    ],
+    "tags": [
+      "soup",
+      "pork",
+      "family meal",
+      "easy to cook",
+      "Three regions"
+    ],
+    "ingredients": [
+      {
+        "name": "Cabbage",
+        "unit": "g",
+        "notes": "Rinse and cut into bite-size pieces."
+      },
+      {
+        "name": "Ground pork",
+        "unit": "g",
+        "notes": "A little fat helps keep meatballs moist."
+      },
+      {
+        "name": "Pork paste",
+        "unit": "g",
+        "notes": "Helps bind meatballs."
+      },
+      {
+        "name": "Broccoli",
+        "unit": "g",
+        "notes": "Small florets; optional."
+      },
+      {
+        "name": "Carrot",
+        "unit": "g",
+        "notes": "Thinly sliced."
+      },
+      {
+        "name": "Shallots",
+        "unit": "g",
+        "notes": "Chopped."
+      },
+      {
+        "name": "Fish sauce",
+        "unit": "ml",
+        "notes": "Season the meat and broth."
+      },
+      {
+        "name": "Salt",
+        "unit": "g",
+        "notes": "Adjust to taste."
+      },
+      {
+        "name": "Water",
+        "unit": "ml",
+        "notes": "Part may be replaced with stock."
+      },
+      {
+        "name": "Scallions",
+        "unit": "g",
+        "notes": "Sliced."
+      }
+    ],
+    "preparation_steps": [
+      "Rinse and cut cabbage and broccoli. Slice the carrot and scallions.",
+      "Mix pork with pork paste and shallot, knead until cohesive and shape into balls."
+    ],
+    "cooking_steps": [
+      "Bring water to a boil. Add meatballs and simmer gently, skimming the broth.",
+      "When nearly cooked, add carrot and broccoli, then cabbage.",
+      "Simmer until vegetables are tender, season, add scallions and serve."
+    ],
+    "media_alt_text": "A bowl of cabbage soup with tender meatballs, pale green cabbage and carrot in a clear broth."
+  },
+  "canh-bi-xanh-tom-kho": {
+    "name": "Winter Melon Soup with Dried Shrimp",
+    "aliases": [
+      "Winter Gourd Soup with Dried Shrimp",
+      "Vietnamese Winter Melon Soup"
+    ],
+    "region": [
+      "Across Vietnam"
+    ],
+    "category": "Soup",
+    "meal_type": [
+      "lunch",
+      "dinner",
+      "family meal",
+      "soup"
+    ],
+    "difficulty": "Easy",
+    "serving_basis": "One light pot for four people.",
+    "description": "Winter melon simmered with dried shrimp creates a naturally sweet, gentle broth that pairs well with braised or fried dishes.",
+    "finished_dish": "Tender but intact melon pieces and a gently sweet shrimp broth.",
+    "serving": "Serve hot with scallions, pepper and rice.",
+    "tips": [
+      "Soak and rinse dried shrimp to soften it and remove grit.",
+      "Cook melon just until tender.",
+      "Add scallions after turning off the heat."
+    ],
+    "dish_type": [
+      "Winter melon soup",
+      "Family soup"
+    ],
+    "main_ingredient": [
+      "winter melon",
+      "dried shrimp"
+    ],
+    "cooking_method": [
+      "soaking",
+      "simmering"
+    ],
+    "search_terms": [
+      "winter melon soup dried shrimp",
+      "Vietnamese winter gourd soup"
+    ],
+    "image_alt": "Winter melon soup with dried shrimp in clear broth.",
+    "time_note": "About 60 minutes, including about 15 minutes to soak the dried shrimp.",
+    "suggested_pairings": [
+      "Steamed rice",
+      "Braised fish",
+      "Braised pork"
+    ],
+    "recipe_family": "canh_bi_xanh_shrimp_kho",
+    "keywords": [
+      "winter melon",
+      "dried shrimp",
+      "family soup",
+      "everyday soup"
+    ],
+    "tags": [
+      "soup",
+      "seafood",
+      "family meal",
+      "easy to cook",
+      "Three regions"
+    ],
+    "ingredients": [
+      {
+        "name": "Winter melon",
+        "unit": "g",
+        "notes": "Peel, seed if mature and cut into thick pieces."
+      },
+      {
+        "name": "Dried shrimp",
+        "unit": "g",
+        "notes": "Rinse, soak and lightly pound."
+      },
+      {
+        "name": "Shallots",
+        "unit": "g",
+        "notes": "Chopped."
+      },
+      {
+        "name": "Cooking oil",
+        "unit": "ml",
+        "notes": "For sauteing."
+      },
+      {
+        "name": "Water",
+        "unit": "ml",
+        "notes": "Adjust to desired broth volume."
+      },
+      {
+        "name": "Fish sauce",
+        "unit": "ml",
+        "notes": "Season gradually."
+      },
+      {
+        "name": "Salt",
+        "unit": "g",
+        "notes": "Taste before adding."
+      },
+      {
+        "name": "Scallions",
+        "unit": "g",
+        "notes": "Cut short."
+      },
+      {
+        "name": "Ground black pepper",
+        "unit": "g",
+        "notes": "Optional."
+      }
+    ],
+    "preparation_steps": [
+      "Rinse and soak dried shrimp, then lightly pound.",
+      "Peel and cut the winter melon; chop shallot and scallions."
+    ],
+    "cooking_steps": [
+      "Saute shallot and dried shrimp briefly.",
+      "Add water and simmer 10–15 minutes; season lightly.",
+      "Add melon and cook until translucent but intact. Finish with scallions."
+    ],
+    "media_alt_text": "A bowl of winter melon soup with dried shrimp in a clear broth."
+  },
+  "ca-doi-kho-me": {
+    "name": "Mullet Braised with Tamarind",
+    "aliases": [
+      "Vietnamese Mullet in Tamarind Sauce",
+      "Mullet in Sour Tamarind Sauce"
+    ],
+    "region": [
+      "Across Vietnam"
+    ],
+    "category": "Savory dish",
+    "meal_type": [
+      "lunch",
+      "dinner",
+      "family meal",
+      "fish dish",
+      "braised dish"
+    ],
+    "difficulty": "Medium",
+    "serving_basis": "Four portions of fish to serve with rice.",
+    "description": "Mullet braised with tamarind, fish sauce and aromatics balances sour, sweet and savory flavors. Serve with rice and blanched greens.",
+    "finished_dish": "Firm cooked fish in glossy brown sauce with gentle tamarind acidity, shallot, garlic and pepper.",
+    "serving": "Serve with rice and greens; lift the fish gently to keep it intact.",
+    "tips": [
+      "Clean the belly lining and drain the fish well.",
+      "Strain tamarind liquid to remove seeds and fibers.",
+      "Braise gently until opaque near the bone."
+    ],
+    "dish_type": [
+      "Braised fish",
+      "Rice-friendly dish"
+    ],
+    "main_ingredient": [
+      "mullet",
+      "tamarind"
+    ],
+    "cooking_method": [
+      "marinating",
+      "braising"
+    ],
+    "search_terms": [
+      "mullet braised with tamarind",
+      "Vietnamese tamarind fish",
+      "sweet-and-sour braised mullet"
+    ],
+    "image_alt": "Mullet braised with tamarind in a clay pot.",
+    "time_note": "About 80 minutes, including a 20-minute marinade.",
+    "suggested_pairings": [
+      "Steamed rice",
+      "Blanched water spinach",
+      "Winter melon soup"
+    ],
+    "recipe_family": "fish_doi_kho_me",
+    "keywords": [
+      "mullet",
+      "tamarind",
+      "braised fish",
+      "savory rice dish"
+    ],
+    "tags": [
+      "savory",
+      "fish",
+      "family meal",
+      "family rice meal",
+      "Three regions"
+    ],
+    "ingredients": [
+      {
+        "name": "Mullet",
+        "unit": "g",
+        "notes": "Clean, remove gills and innards."
+      },
+      {
+        "name": "Ripe tamarind",
+        "unit": "g",
+        "notes": "Mash with hot water and strain."
+      },
+      {
+        "name": "Shallots",
+        "unit": "g",
+        "notes": "Chopped."
+      },
+      {
+        "name": "Garlic",
+        "unit": "g",
+        "notes": "Chopped."
+      },
+      {
+        "name": "Fish sauce",
+        "unit": "ml",
+        "notes": "Adjust to taste."
+      },
+      {
+        "name": "Sugar",
+        "unit": "g",
+        "notes": "Balance sourness."
+      },
+      {
+        "name": "Caramel sauce",
+        "unit": "ml",
+        "notes": "Optional, for color."
+      },
+      {
+        "name": "Water",
+        "unit": "ml",
+        "notes": "Partly cover the fish."
+      },
+      {
+        "name": "Ground black pepper",
+        "unit": "g",
+        "notes": "Use some for seasoning and finishing."
+      },
+      {
+        "name": "Chili",
+        "unit": "g",
+        "notes": "Optional."
+      },
+      {
+        "name": "Scallions",
+        "unit": "g",
+        "notes": "Sliced."
+      },
+      {
+        "name": "Salt",
+        "unit": "g",
+        "notes": "Rub onto the fish, then rinse."
+      }
+    ],
+    "preparation_steps": [
+      "Clean the fish, rub with salt, rinse, drain and cut into portions.",
+      "Mash and strain tamarind. Marinate fish with aromatics, fish sauce, sugar and pepper for about 20 minutes."
+    ],
+    "cooking_steps": [
+      "Arrange fish in a pot and heat until the surface firms.",
+      "Add tamarind liquid and enough water to partly cover. Simmer gently until cooked through and sauce reduces.",
+      "Balance the flavor, add chili, pepper and scallions, then serve with rice."
+    ],
+    "media_alt_text": "Mullet braised with tamarind in a clay pot, coated in a glossy brown sauce with shallots, scallions and chili."
+  },
+  "com-chien-ca-man": {
+    "name": "Southern Vietnamese Salted Fish Fried Rice",
+    "aliases": [
+      "Salted Fish Fried Rice",
+      "Vietnamese Fried Rice with Salted Fish"
+    ],
+    "region": [
+      "Southern Vietnam"
+    ],
+    "category": "Rice dish",
+    "meal_type": [
+      "breakfast",
+      "lunch",
+      "dinner",
+      "filling meal"
+    ],
+    "difficulty": "Easy",
+    "serving_basis": "Four servings for breakfast or a quick main meal.",
+    "description": "Day-old rice is stir-fried with shredded salted fish, egg and cabbage. This Southern-style dish makes practical use of leftover rice.",
+    "finished_dish": "Hot separate grains with garlic aroma, salted fish, soft egg and lightly crisp cabbage.",
+    "serving": "Serve hot with cucumber or pickled vegetables to balance the saltiness.",
+    "tips": [
+      "Use cooled, separated rice.",
+      "Pan-fry the fish, remove bones and taste before adding more seasoning.",
+      "Fry in batches if the pan is small."
+    ],
+    "dish_type": [
+      "Fried rice",
+      "Breakfast dish"
+    ],
+    "main_ingredient": [
+      "rice",
+      "salted fish",
+      "egg"
+    ],
+    "cooking_method": [
+      "pan-frying",
+      "stir-frying"
+    ],
+    "search_terms": [
+      "Southern salted fish fried rice",
+      "Vietnamese salted fish fried rice",
+      "salted-fish fried rice"
+    ],
+    "image_alt": "Salted fish fried rice with golden grains, fish, egg, cabbage and scallions.",
+    "time_note": "About 35 minutes using cooked rice.",
+    "suggested_pairings": [
+      "Cucumber",
+      "Pickled vegetables",
+      "Fresh greens"
+    ],
+    "recipe_family": "steamed rice_chien_fish_man",
+    "keywords": [
+      "leftover rice",
+      "salted fish",
+      "egg",
+      "breakfast dish"
+    ],
+    "tags": [
+      "rice dish",
+      "breakfast",
+      "Southern Vietnam",
+      "easy to cook",
+      "use up leftover rice"
+    ],
+    "ingredients": [
+      {
+        "name": "Cooked white rice, cooled",
+        "unit": "g",
+        "notes": "Cool and fluff before stir-frying."
+      },
+      {
+        "name": "Salted dried fish",
+        "unit": "g",
+        "notes": "Choose a less bony portion; soak if very salty."
+      },
+      {
+        "name": "Chicken eggs",
+        "unit": "pieces",
+        "notes": "Beat lightly."
+      },
+      {
+        "name": "Cabbage",
+        "unit": "g",
+        "notes": "Thinly shredded."
+      },
+      {
+        "name": "Garlic",
+        "unit": "g",
+        "notes": "Chopped."
+      },
+      {
+        "name": "Ginger",
+        "unit": "g",
+        "notes": "Chopped."
+      },
+      {
+        "name": "Scallions",
+        "unit": "g",
+        "notes": "Chop white parts separately."
+      },
+      {
+        "name": "Cooking oil",
+        "unit": "ml",
+        "notes": "For pan-frying and stir-frying."
+      },
+      {
+        "name": "Soy sauce",
+        "unit": "ml",
+        "notes": "Season lightly."
+      },
+      {
+        "name": "Ground black pepper",
+        "unit": "g",
+        "notes": "Add at the end."
+      }
+    ],
+    "preparation_steps": [
+      "Separate cooled rice. Rinse fish if very salty, pat dry and pan-fry; remove bones and flake.",
+      "Shred cabbage, chop aromatics and beat the eggs."
+    ],
+    "cooking_steps": [
+      "Saute aromatics in oil. Add the fish, stir briefly and set aside.",
+      "Scramble eggs, add rice and stir until hot and grains separate.",
+      "Return fish and cabbage to the pan. Season lightly, add scallions and turn off the heat."
+    ],
+    "media_alt_text": "A plate of golden fried rice with salted fish, shredded egg, cabbage and scallions."
+  },
+  "canh-tom-nam-mong-toi": {
+    "name": "Malabar Spinach Soup with Shrimp Balls and Oyster Mushrooms",
+    "aliases": [
+      "Vietnamese Shrimp Ball and Malabar Spinach Soup",
+      "Shrimp, Mushroom and Malabar Spinach Soup"
+    ],
+    "region": [
+      "Across Vietnam"
+    ],
+    "category": "Soup",
+    "meal_type": [
+      "lunch",
+      "dinner",
+      "family meal",
+      "soup"
+    ],
+    "difficulty": "Medium",
+    "serving_basis": "One pot of shrimp-ball soup with greens and mushrooms for four.",
+    "description": "Fresh shrimp wrapped in pork paste simmers with oyster mushrooms, tomato and Malabar spinach. The light broth has gentle tomato acidity and is served with rice.",
+    "finished_dish": "Juicy shrimp balls, tender mushrooms, green spinach and a gently sweet broth with mild tomato tang.",
+    "serving": "Serve hot with rice; cook the greens only until just tender.",
+    "tips": [
+      "Wrap pork paste around each shrimp portion and leave the tail visible.",
+      "Saute shrimp heads with aromatics before adding water for a fragrant broth.",
+      "Add Malabar spinach last and turn off the heat as it wilts."
+    ],
+    "dish_type": [
+      "Shrimp-ball soup",
+      "Greens and mushroom soup"
+    ],
+    "main_ingredient": [
+      "shrimp",
+      "Malabar spinach",
+      "oyster mushrooms"
+    ],
+    "cooking_method": [
+      "shaping shrimp balls",
+      "simmering"
+    ],
+    "search_terms": [
+      "Malabar spinach shrimp mushroom soup",
+      "Vietnamese shrimp ball soup",
+      "Malabar spinach and mushroom soup"
+    ],
+    "image_alt": "Malabar spinach soup with shrimp balls, oyster mushrooms and tomato.",
+    "time_note": "About 35 minutes; add greens near the end.",
+    "suggested_pairings": [
+      "Steamed rice",
+      "Braised fish",
+      "Fried tofu"
+    ],
+    "recipe_family": "canh_shrimp_nam_mong_toi",
+    "keywords": [
+      "Malabar spinach",
+      "fresh shrimp",
+      "oyster mushrooms",
+      "everyday soup"
+    ],
+    "tags": [
+      "soup",
+      "seafood",
+      "family meal",
+      "leafy greens",
+      "Three regions"
+    ],
+    "ingredients": [
+      {
+        "name": "Fresh shrimp",
+        "unit": "pieces",
+        "notes": "Peel and devein; reserve heads for broth if desired."
+      },
+      {
+        "name": "Pork paste",
+        "unit": "g",
+        "notes": "Wrap around each shrimp portion."
+      },
+      {
+        "name": "Oyster mushrooms",
+        "unit": "g",
+        "notes": "Separate, rinse and drain."
+      },
+      {
+        "name": "Malabar spinach",
+        "unit": "g",
+        "notes": "Pick and rinse tender leaves and shoots."
+      },
+      {
+        "name": "Tomato",
+        "unit": "g",
+        "notes": "Cut into wedges."
+      },
+      {
+        "name": "Shallots",
+        "unit": "g",
+        "notes": "Chopped."
+      },
+      {
+        "name": "Garlic",
+        "unit": "g",
+        "notes": "Chopped."
+      },
+      {
+        "name": "Water",
+        "unit": "ml",
+        "notes": "May be replaced with strained shrimp-head broth."
+      },
+      {
+        "name": "Cooking oil",
+        "unit": "ml",
+        "notes": "For sauteing aromatics."
+      },
+      {
+        "name": "Fish sauce",
+        "unit": "ml",
+        "notes": "Season gradually."
+      },
+      {
+        "name": "Salt",
+        "unit": "g",
+        "notes": "Adjust after tasting."
+      },
+      {
+        "name": "Ground black pepper",
+        "unit": "g",
+        "notes": "Use a little in the pork paste and broth."
+      }
+    ],
+    "preparation_steps": [
+      "Peel and devein shrimp. Reserve heads for broth if desired, and cut bodies into small portions.",
+      "Mix pork paste with pepper and a little shallot. Wrap portions around shrimp and leave tails exposed.",
+      "Rinse mushrooms and Malabar spinach. Cut greens and tomato."
+    ],
+    "cooking_steps": [
+      "Saute shallot and garlic. If using shrimp heads, cook until pink, add water, boil and strain.",
+      "Add tomato and mushrooms; simmer briefly. Add shrimp balls and cook until firm and done.",
+      "Season, add Malabar spinach and cook just until wilted."
+    ],
+    "media_alt_text": "A bowl of shrimp and Malabar spinach soup with oyster mushrooms, tomato and shrimp-paste balls."
+  }
+}

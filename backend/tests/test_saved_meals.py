@@ -14,13 +14,13 @@ def register_user(
         json={
             "full_name": "Nguyễn Quyên",
             "email": email,
-            "password": "BepViet2026",
+            "password": "Test-Only-No-Login-2026!",
         },
     )
     assert created.status_code == 201
     response = client.post(
         "/api/v1/auth/login",
-        json={"email": email, "password": "BepViet2026"},
+        json={"email": email, "password": "Test-Only-No-Login-2026!"},
     )
     assert response.status_code == 200
     return str(response.json()["access_token"])

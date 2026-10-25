@@ -2,11 +2,18 @@ import { Fragment, useState, type ReactNode } from 'react';
 import { Link } from 'react-router';
 
 import { DragonMascot } from '@/components/assistant/DragonMascot';
-import { AppIcon } from '@/components/common/AppIcon';
+import { AppIcon, type IconName } from '@/components/common/AppIcon';
 import { dishImage } from '@/data/dishImages';
 import { recipeText } from '@/data/recipes';
-import type { AssistantMessage } from '@/features/assistant/assistantApi';
+import type { AssistantMessage, AssistantSource } from '@/features/assistant/assistantApi';
 import { useI18n } from '@/features/i18n/I18nContext';
+
+const SOURCE_ICONS: Record<AssistantSource['kind'], IconName> = {
+  recipe: 'chef',
+  article: 'book',
+  guide: 'globe',
+  doc: 'file',
+};
 
 /** Hiển thị Markdown giới hạn, không chèn HTML thô. */
 function inline(text: string, keyPrefix: string): ReactNode[] {
@@ -163,6 +170,42 @@ export function AssistantMessageView({
                 {t(action.label)} <AppIcon name="arrow" size={14} />
               </Link>
             ))}
+          </div>
+        ) : null}
+
+        {message.sources?.length ? (
+          <div className="rc-sources" aria-label={t('Nguồn tham khảo')}>
+            <span className="rc-sources__label">{t('Nguồn')}</span>
+            {message.sources.map((source) => {
+              const label = (
+                <>
+                  <AppIcon name={SOURCE_ICONS[source.kind]} size={12} />
+                  <span>
+                    {source.kind === 'recipe' ? recipeText(source.title) : t(source.title)}
+                  </span>
+                </>
+              );
+              // Tài liệu nội bộ do quản trị viên dạy không có trang công khai để mở.
+              return source.url ? (
+                <Link
+                  className="rc-sources__link"
+                  key={source.url}
+                  onClick={onNavigate}
+                  title={source.title}
+                  to={source.url}
+                >
+                  {label}
+                </Link>
+              ) : (
+                <span
+                  className="rc-sources__link rc-sources__link--static"
+                  key={`${source.kind}:${source.title}`}
+                  title={source.title}
+                >
+                  {label}
+                </span>
+              );
+            })}
           </div>
         ) : null}
 

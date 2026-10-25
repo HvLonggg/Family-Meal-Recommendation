@@ -1,11 +1,16 @@
 import asyncio
 import base64
+import contextlib
+import hashlib
 import logging
 import re
 import smtplib
+import socket
 import ssl
 import threading
 import time
+from collections import OrderedDict
+from collections.abc import Callable
 from datetime import UTC, date, datetime, timedelta
 from email.message import EmailMessage
 from html import escape
@@ -29,13 +34,15 @@ class EmailDeliveryError(Exception):
 
 GOOGLE_TOKEN_URL = "https://oauth2.googleapis.com/token"
 GMAIL_SEND_URL = "https://gmail.googleapis.com/gmail/v1/users/me/messages/send"
+GMAIL_DISCOVERY_URL = "https://gmail.googleapis.com/$discovery/rest?version=v1"
+GMAIL_SEND_SCOPE = "https://www.googleapis.com/auth/gmail.send"
 EMAIL_LOGO_CID = "bep-viet-logo"
 EMAIL_LOGO_PATH = Path(__file__).resolve().parents[2] / "assets" / "bep-viet-email-logo.png"
 DEFAULT_PREHEADER = "Thông tin mới từ Bếp Việt."
 SAFE_SLUG = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 
 _gmail_token_lock = threading.Lock()
-_gmail_access_token: tuple[str, float] | None = None
+_gmail_access_token: tuple[str, float, frozenset[str]] | None = None
 
 
 def _send_message(
@@ -89,10 +96,55 @@ def _send_message(
             disposition="inline",
         )
 
-    if settings.email_provider == "gmail_api":
-        _send_via_gmail_api(message)
+    if settings.email_delivery_provider == "gmail_api":
+        _with_retries(_send_via_gmail_api, message)
     else:
-        _send_via_smtp(message)
+        _with_retries(_send_via_smtp, message)
+
+
+MEAL_LABELS = {"breakfast": "bữa sáng", "lunch": "bữa trưa", "dinner": "bữa tối"}
+
+
+def describe_delivery_error(exc: BaseException) -> str:
+    """Lý do gửi email thất bại, dễ hiểu cho quản trị viên (không chứa thông tin bí mật)."""
+    cause = exc.__cause__ or exc
+    detail = str(exc)
+    if isinstance(cause, smtplib.SMTPAuthenticationError):
+        reason = "Gmail từ chối đăng nhập SMTP: mật khẩu ứng dụng sai hoặc đã bị thu hồi"
+    elif isinstance(cause, smtplib.SMTPRecipientsRefused) or "refused the message" in detail:
+        reason = "Máy chủ email từ chối địa chỉ người nhận hoặc nội dung thư"
+    elif isinstance(cause, smtplib.SMTPDataError) and cause.smtp_code == 552:
+        reason = "Thư vượt dung lượng cho phép"
+    elif isinstance(cause, smtplib.SMTPDataError | smtplib.SMTPSenderRefused) and str(
+        cause.smtp_code
+    ).startswith("4"):
+        reason = "Gmail tạm giới hạn số thư gửi; hãy thử lại sau ít phút"
+    elif isinstance(cause, httpx.HTTPStatusError):
+        response_status = cause.response.status_code
+        if response_status == 429:
+            reason = "Gmail API đang giới hạn yêu cầu; hệ thống sẽ thử lại sau ít phút"
+        elif 500 <= response_status < 600:
+            reason = "Gmail API đang tạm thời gặp sự cố; hãy thử lại sau ít phút"
+        elif "OAuth token refresh failed" in detail or response_status in {400, 401, 403}:
+            reason = (
+                "Quyền Gmail API không hợp lệ hoặc đã hết hạn; hãy kiểm tra OAuth "
+                "và quyền gmail.send"
+            )
+        else:
+            reason = "Gmail API từ chối yêu cầu; hãy kiểm tra cấu hình và quyền gửi email"
+    elif "gmail.send" in detail.casefold():
+        reason = "Tài khoản Gmail chưa cấp quyền gmail.send; hãy cấp lại quyền gửi email"
+    elif isinstance(cause, TimeoutError | OSError | httpx.TransportError):
+        reason = "Không kết nối được máy chủ email (mạng hoặc hết thời gian chờ)"
+    elif "OAuth token refresh failed" in detail:
+        reason = "Token Gmail API hết hạn hoặc thiếu cấu hình; cần tạo lại refresh token"
+    elif "not configured" in detail:
+        reason = "Chưa cấu hình tài khoản gửi email"
+    elif "logo" in detail or "template" in detail:
+        reason = "Không dựng được nội dung email"
+    else:
+        reason = "Lỗi không xác định khi gửi email"
+    return f"Email chưa gửi được: {reason}. Hãy kiểm tra rồi thử gửi lại."
 
 
 def _branded_plain_text(content: str, support_email: str) -> str:
@@ -145,6 +197,146 @@ def _branded_html(content: str, support_email: str, preheader: str = DEFAULT_PRE
     )
 
 
+SEND_ATTEMPTS = 3
+# Mạng rất yếu vẫn đạt khoảng 16 KB/s; quá hạn này thì cắt kết nối thay vì treo mãi.
+MIN_SEND_DEADLINE_SECONDS = 60
+SLOW_UPLOAD_BYTES_PER_SECOND = 16_000
+
+
+def _is_transient(exc: BaseException) -> bool:
+    """Retry lỗi mạng, SMTP 4xx và Gmail API 429/5xx; lỗi xác thực không retry."""
+    cause = exc.__cause__ or exc
+    if isinstance(cause, smtplib.SMTPAuthenticationError | smtplib.SMTPRecipientsRefused):
+        return False
+    if isinstance(cause, smtplib.SMTPServerDisconnected):
+        return True
+    if isinstance(cause, smtplib.SMTPResponseException):
+        return 400 <= cause.smtp_code < 500
+    if isinstance(cause, httpx.HTTPStatusError):
+        response_status = cause.response.status_code
+        return response_status == 429 or 500 <= response_status < 600
+    return isinstance(cause, OSError | httpx.TransportError)
+
+
+def _probe_smtp() -> None:
+    settings = get_settings()
+    host = settings.email_smtp_host
+    username = settings.email_smtp_username
+    password = settings.email_smtp_password
+    assert host is not None and username is not None and password is not None
+
+    context = ssl.create_default_context()
+    smtp = (
+        smtplib.SMTP_SSL(
+            host,
+            settings.email_smtp_port,
+            timeout=min(settings.email_timeout_seconds, 5),
+            context=context,
+        )
+        if settings.email_use_ssl
+        else smtplib.SMTP(
+            host, settings.email_smtp_port, timeout=min(settings.email_timeout_seconds, 5)
+        )
+    )
+    try:
+        smtp.ehlo()
+        if settings.email_starttls and not settings.email_use_ssl:
+            smtp.starttls(context=context)
+            smtp.ehlo()
+        smtp.login(username, password.get_secret_value().replace(" ", ""))
+        smtp.noop()
+    finally:
+        with contextlib.suppress(OSError, smtplib.SMTPException):
+            smtp.quit()
+
+
+def email_delivery_status() -> tuple[bool, str, str]:
+    """Check the configured provider without sending mail or exposing credentials."""
+    settings = get_settings()
+    provider = settings.email_delivery_provider
+    if settings.app_env == "test":
+        return True, provider, "ready"
+
+    if provider == "smtp":
+        if not settings.email_enabled:
+            return False, provider, "smtp_unconfigured"
+        try:
+            _probe_smtp()
+        except smtplib.SMTPAuthenticationError:
+            logger.warning("SMTP delivery readiness probe was rejected by the provider.")
+            return False, provider, "smtp_authorization"
+        except (OSError, smtplib.SMTPException, ssl.SSLError):
+            logger.warning("SMTP delivery readiness probe failed.")
+            return False, provider, "smtp_unreachable"
+        return True, provider, "ready"
+
+    if not settings.email_enabled:
+        return False, provider, "gmail_api_unconfigured"
+    try:
+        timeout = min(settings.email_timeout_seconds, 5)
+        with httpx.Client(timeout=timeout, follow_redirects=True) as client:
+            _gmail_api_access_token(client)
+            response = client.get(GMAIL_DISCOVERY_URL)
+            if response.is_success:
+                return True, provider, "ready"
+            if response.status_code in {401, 403}:
+                return False, provider, "gmail_api_authorization"
+            if response.status_code == 429:
+                return False, provider, "gmail_api_rate_limited"
+            if 500 <= response.status_code < 600:
+                return False, provider, "gmail_api_temporarily_unavailable"
+            return False, provider, "gmail_api_unreachable"
+    except EmailDeliveryError as exc:
+        cause = exc.__cause__
+        if isinstance(cause, httpx.HTTPStatusError):
+            if cause.response.status_code in {400, 401, 403}:
+                return False, provider, "gmail_api_authorization"
+            if cause.response.status_code == 429:
+                return False, provider, "gmail_api_rate_limited"
+            if 500 <= cause.response.status_code < 600:
+                return False, provider, "gmail_api_temporarily_unavailable"
+        elif "OAuth token refresh failed" in str(exc) or "gmail.send" in str(exc).casefold():
+            return False, provider, "gmail_api_authorization"
+        logger.warning("Gmail API delivery readiness probe failed.")
+        return False, provider, "gmail_api_unreachable"
+    except httpx.HTTPError:
+        logger.warning("Gmail API delivery readiness probe failed.")
+        return False, provider, "gmail_api_unreachable"
+    except (ValueError, KeyError):
+        logger.warning("Gmail API returned an invalid authorization response.")
+        return False, provider, "gmail_api_authorization"
+
+
+def _with_retries(send: Callable[[EmailMessage], None], message: EmailMessage) -> None:
+    for attempt in range(1, SEND_ATTEMPTS + 1):
+        try:
+            send(message)
+            return
+        except EmailDeliveryError as exc:
+            if attempt == SEND_ATTEMPTS or not _is_transient(exc):
+                raise
+            cause = exc.__cause__ or exc
+            http_status = (
+                cause.response.status_code if isinstance(cause, httpx.HTTPStatusError) else ""
+            )
+            logger.warning(
+                "Email send attempt %s/%s failed (%s HTTP %s SMTP %s); retrying.",
+                attempt,
+                SEND_ATTEMPTS,
+                type(cause).__name__,
+                http_status,
+                getattr(cause, "smtp_code", ""),
+            )
+            time.sleep(2 * attempt)
+
+
+def _abort_smtp(smtp: smtplib.SMTP) -> None:
+    sock = smtp.sock
+    if sock is not None:
+        with contextlib.suppress(OSError):
+            sock.shutdown(socket.SHUT_RDWR)
+
+
 def _send_via_smtp(message: EmailMessage) -> None:
     settings = get_settings()
     host = settings.email_smtp_host
@@ -166,14 +358,25 @@ def _send_via_smtp(message: EmailMessage) -> None:
                 host, settings.email_smtp_port, timeout=settings.email_timeout_seconds
             )
         )
-        with smtp:
-            if settings.email_starttls and not settings.email_use_ssl:
-                smtp.starttls(context=context)
-                smtp.ehlo()
-            smtp.login(username, password.get_secret_value().replace(" ", ""))
-            refused = smtp.send_message(message)
-            if refused:
-                raise EmailDeliveryError("SMTP refused the message.")
+        # Với TLS, timeout của socket chỉ tính cho từng gói nhỏ: mạng yếu có thể kéo dài
+        # việc tải thư mãi mãi. Hẹn giờ cắt kết nối để luôn có kết quả trong thời hạn.
+        deadline = max(
+            MIN_SEND_DEADLINE_SECONDS, len(message.as_bytes()) / SLOW_UPLOAD_BYTES_PER_SECOND
+        )
+        watchdog = threading.Timer(deadline, _abort_smtp, args=(smtp,))
+        watchdog.daemon = True
+        watchdog.start()
+        try:
+            with smtp:
+                if settings.email_starttls and not settings.email_use_ssl:
+                    smtp.starttls(context=context)
+                    smtp.ehlo()
+                smtp.login(username, password.get_secret_value().replace(" ", ""))
+                refused = smtp.send_message(message)
+                if refused:
+                    raise EmailDeliveryError("SMTP refused the message.")
+        finally:
+            watchdog.cancel()
     except EmailDeliveryError:
         raise
     except (OSError, smtplib.SMTPException) as exc:
@@ -185,6 +388,8 @@ def _gmail_api_access_token(client: httpx.Client) -> str:
     global _gmail_access_token
     with _gmail_token_lock:
         if _gmail_access_token and _gmail_access_token[1] > time.monotonic():
+            if GMAIL_SEND_SCOPE not in _gmail_access_token[2]:
+                raise EmailDeliveryError("Gmail OAuth token is missing the gmail.send permission.")
             return _gmail_access_token[0]
 
         settings = get_settings()
@@ -202,12 +407,31 @@ def _gmail_api_access_token(client: httpx.Client) -> str:
         )
         if response.status_code != 200:
             # Google returns e.g. "invalid_grant" when the refresh token was revoked or expired.
-            error = response.json().get("error", "unknown") if response.content else "unknown"
-            raise EmailDeliveryError(f"Gmail OAuth token refresh failed: {error}.")
+            try:
+                error = response.json().get("error", "unknown") if response.content else "unknown"
+            except ValueError:
+                error = "unknown"
+            status_error = httpx.HTTPStatusError(
+                f"Gmail OAuth token endpoint returned HTTP {response.status_code}.",
+                request=response.request,
+                response=response,
+            )
+            raise EmailDeliveryError(
+                f"Gmail OAuth token refresh failed: {error}."
+            ) from status_error
         payload = response.json()
         token = str(payload["access_token"])
         expires_in = int(payload.get("expires_in", 3600))
-        _gmail_access_token = (token, time.monotonic() + max(expires_in - 60, 0))
+        # Google may omit `scope` on refresh when it matches the original grant.
+        # The refresh-token setup flow already verifies gmail.send at consent time.
+        scopes = frozenset(str(payload.get("scope", GMAIL_SEND_SCOPE)).split())
+        if GMAIL_SEND_SCOPE not in scopes:
+            raise EmailDeliveryError("Gmail OAuth token is missing the gmail.send permission.")
+        _gmail_access_token = (
+            token,
+            time.monotonic() + max(expires_in - 60, 0),
+            scopes,
+        )
         return token
 
 
@@ -215,20 +439,30 @@ def _send_via_gmail_api(message: EmailMessage) -> None:
     global _gmail_access_token
     raw = base64.urlsafe_b64encode(message.as_bytes()).decode("ascii")
     try:
-        with httpx.Client(timeout=get_settings().email_timeout_seconds) as client:
-            token = _gmail_api_access_token(client)
-            response = client.post(
-                GMAIL_SEND_URL,
-                headers={"Authorization": f"Bearer {token}"},
-                json={"raw": raw},
-            )
-            if response.status_code == 401:
+        timeout = get_settings().email_timeout_seconds
+        # Thư có ảnh vài MB cần thêm thời gian tải lên trên mạng chậm.
+        write_timeout = max(timeout, len(message.as_bytes()) / 64_000)
+        with httpx.Client(timeout=httpx.Timeout(timeout, write=write_timeout)) as client:
+            for auth_attempt in range(2):
+                token = _gmail_api_access_token(client)
+                response = client.post(
+                    GMAIL_SEND_URL,
+                    headers={"Authorization": f"Bearer {token}"},
+                    json={"raw": raw},
+                )
+                if response.status_code != 401 or auth_attempt == 1:
+                    break
                 with _gmail_token_lock:
                     _gmail_access_token = None
             if response.status_code != 200:
+                status_error = httpx.HTTPStatusError(
+                    f"Gmail API returned HTTP {response.status_code}.",
+                    request=response.request,
+                    response=response,
+                )
                 raise EmailDeliveryError(
                     f"Gmail API refused the message (HTTP {response.status_code})."
-                )
+                ) from status_error
     except EmailDeliveryError:
         raise
     except (httpx.HTTPError, ValueError, KeyError) as exc:
@@ -445,6 +679,27 @@ def _fetch_public_image(normalized_path: str, max_bytes: int) -> tuple[bytes, st
     return response.content, content_type
 
 
+# Dựng ảnh tách nền mất khoảng 1 giây/món: nhớ kết quả để gửi nhiều người hay gửi lại nhanh.
+_DISH_PNG_CACHE: OrderedDict[tuple[bytes, int], bytes] = OrderedDict()
+_DISH_PNG_CACHE_SIZE = 24
+_dish_png_lock = threading.Lock()
+
+
+def _cached_dish_png(source: bytes, max_bytes: int, compose: Callable[..., bytes]) -> bytes:
+    key = (hashlib.sha256(source).digest(), max_bytes)
+    with _dish_png_lock:
+        cached = _DISH_PNG_CACHE.get(key)
+        if cached is not None:
+            _DISH_PNG_CACHE.move_to_end(key)
+            return cached
+    png = compose(source, max_bytes=max_bytes)
+    with _dish_png_lock:
+        _DISH_PNG_CACHE[key] = png
+        while len(_DISH_PNG_CACHE) > _DISH_PNG_CACHE_SIZE:
+            _DISH_PNG_CACHE.popitem(last=False)
+    return png
+
+
 def _email_image_source(
     image_path: str,
     image_index: int,
@@ -470,12 +725,15 @@ def _email_image_source(
     content_id = f"bep-viet-meal-{image_index}"
 
     # Ưu tiên ảnh tách nền; đổi WebP alpha sang PNG để email hiển thị ổn định.
+    cutout_paths: list[str] = []
     if slug and SAFE_SLUG.fullmatch(slug):
-        cutout_paths = [f"/images/recipes/edited/{slug}-1600.webp"]
+        cutout_paths.extend(
+            f"/images/recipes/edited/{slug}-{width}.webp" for width in (1600, 1536, 960, 480)
+        )
         if normalized_path.startswith("/images/recipes/edited/") and normalized_path.endswith(
             ".webp"
         ):
-            cutout_paths.append(normalized_path)
+            cutout_paths.insert(0, normalized_path)
         for cutout_path in dict.fromkeys(cutout_paths):
             cutout = _fetch_public_image(cutout_path, 8_000_000)
             if cutout is None:
@@ -483,7 +741,10 @@ def _email_image_source(
             try:
                 from PIL import Image
 
-                from app.modules.auth.email_images import compose_dish_cutout
+                from app.modules.auth.email_images import (
+                    EMAIL_DISH_MAX_BYTES,
+                    compose_dish_cutout,
+                )
             except ImportError:
                 # Pillow chưa cài: gửi ảnh WebP tách nền gốc.
                 return f"cid:{content_id}", (
@@ -493,16 +754,24 @@ def _email_image_source(
                     f"{slug}.webp",
                 )
             try:
-                dish_png = compose_dish_cutout(cutout[0], max_bytes=remaining_bytes)
+                dish_png = _cached_dish_png(
+                    cutout[0], min(remaining_bytes, EMAIL_DISH_MAX_BYTES), compose_dish_cutout
+                )
             except (OSError, ValueError, Image.DecompressionBombError):
                 logger.warning("Không tối ưu được ảnh tách nền cho email món %s", slug)
                 # Giữ ảnh tách nền nếu không tối ưu được; không dùng ảnh có nền.
                 return f"{public_base}{cutout_path}", None
             return f"cid:{content_id}", (content_id, dish_png, "image/png", f"{slug}.png")
 
+    # Không gửi ảnh gốc có nền khi thiếu ảnh tách nền trong catalog.
+    if slug and SAFE_SLUG.fullmatch(slug):
+        return "", None
+
     if remote_image:
         return image_path, None
     if not normalized_path:
+        return "", None
+    if not normalized_path.startswith("/images/recipes/edited/"):
         return "", None
     original = _fetch_public_image(normalized_path, min(8_000_000, remaining_bytes))
     if original is None:
@@ -534,7 +803,7 @@ def send_meal_suggestion_email(
     recipes: list[dict[str, str]],
     plan_date: date | None = None,
 ) -> None:
-    meal_label = "bữa trưa" if meal_type == "lunch" else "bữa tối"
+    meal_label = MEAL_LABELS.get(meal_type, "bữa tối")
     greeting_name = recipient_name.strip() or "bạn"
     safe_name = escape(greeting_name)
     safe_intro = escape(intro_message).replace("\n", "<br>")
@@ -649,7 +918,7 @@ def send_meal_plan_reminder_email(
     plan_date: date,
     recipes: list[dict[str, str]],
 ) -> None:
-    meal_label = "bữa trưa" if meal_type == "lunch" else "bữa tối"
+    meal_label = MEAL_LABELS.get(meal_type, "bữa tối")
     formatted_plan_date = plan_date.strftime("%d/%m/%Y")
     send_meal_suggestion_email(
         recipient=recipient,

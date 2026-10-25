@@ -1,0 +1,237 @@
+{
+  "batch": 58,
+  "native_format": "PNG",
+  "canvas": {
+    "width": 3840,
+    "height": 2160,
+    "format": "WebP",
+    "background": "transparent"
+  },
+  "assets": [
+    {
+      "id": "BV616",
+      "slug": "ga-nuong-sau-rieng-lai-thieu",
+      "native_file": "output/recipe-images/native/ga-nuong-sau-rieng-lai-thieu.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "canvas_export_file": "output/recipe-images/4k/ga-nuong-sau-rieng-lai-thieu.png",
+      "canvas_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/ga-nuong-sau-rieng-lai-thieu-480.webp",
+          "pixels": [
+            480,
+            270
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/ga-nuong-sau-rieng-lai-thieu-960.webp",
+          "pixels": [
+            960,
+            540
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/ga-nuong-sau-rieng-lai-thieu-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/ga-nuong-sau-rieng-lai-thieu-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BV617",
+      "slug": "ga-hap-buoi-tan-trieu",
+      "native_file": "output/recipe-images/native/ga-hap-buoi-tan-trieu.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "canvas_export_file": "output/recipe-images/4k/ga-hap-buoi-tan-trieu.png",
+      "canvas_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/ga-hap-buoi-tan-trieu-480.webp",
+          "pixels": [
+            480,
+            270
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/ga-hap-buoi-tan-trieu-960.webp",
+          "pixels": [
+            960,
+            540
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/ga-hap-buoi-tan-trieu-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/ga-hap-buoi-tan-trieu-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BV618",
+      "slug": "com-ga-ca-man-long-khanh",
+      "native_file": "output/recipe-images/native/com-ga-ca-man-long-khanh.png",
+      "native_pixels": [
+        1423,
+        1105
+      ],
+      "has_alpha": true,
+      "canvas_export_file": "output/recipe-images/4k/com-ga-ca-man-long-khanh.png",
+      "canvas_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/com-ga-ca-man-long-khanh-480.webp",
+          "pixels": [
+            480,
+            270
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/com-ga-ca-man-long-khanh-960.webp",
+          "pixels": [
+            960,
+            540
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/com-ga-ca-man-long-khanh-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/com-ga-ca-man-long-khanh-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BV619",
+      "slug": "vit-nau-tieu-xanh-mien-tay",
+      "native_file": "output/recipe-images/native/vit-nau-tieu-xanh-mien-tay.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "canvas_export_file": "output/recipe-images/4k/vit-nau-tieu-xanh-mien-tay.png",
+      "canvas_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/vit-nau-tieu-xanh-mien-tay-480.webp",
+          "pixels": [
+            480,
+            270
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/vit-nau-tieu-xanh-mien-tay-960.webp",
+          "pixels": [
+            960,
+            540
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/vit-nau-tieu-xanh-mien-tay-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/vit-nau-tieu-xanh-mien-tay-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BV620",
+      "slug": "vit-khia-nuoc-dua-mien-tay",
+      "native_file": "output/recipe-images/native/vit-khia-nuoc-dua-mien-tay.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "canvas_export_file": "output/recipe-images/4k/vit-khia-nuoc-dua-mien-tay.png",
+      "canvas_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/vit-khia-nuoc-dua-mien-tay-480.webp",
+          "pixels": [
+            480,
+            270
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/vit-khia-nuoc-dua-mien-tay-960.webp",
+          "pixels": [
+            960,
+            540
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/vit-khia-nuoc-dua-mien-tay-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/vit-khia-nuoc-dua-mien-tay-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ]
+        }
+      ]
+    }
+  ]
+}

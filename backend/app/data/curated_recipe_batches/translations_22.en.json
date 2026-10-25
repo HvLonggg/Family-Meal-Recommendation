@@ -1,0 +1,1331 @@
+{
+  "tung-lo-mo-an-giang": {
+    "name": "Tung Lò Mò Chăm Beef Sausage, An Giang",
+    "aliases": [
+      "Chăm Beef Sausage",
+      "Châu Đốc Tung Lò Mò"
+    ],
+    "region": [
+      "Mekong Delta"
+    ],
+    "province": [
+      "An Giang"
+    ],
+    "category": "Main dish",
+    "meal_type": [
+      "Lunch",
+      "Dinner",
+      "Snack"
+    ],
+    "difficulty": "Easy",
+    "serving_basis": "Serves 4 with rice or vermicelli and fresh vegetables.",
+    "description": "Tung lò mò is a beef sausage associated with the Chăm community in An Giang, usually grilled until its casing turns fragrant and lightly browned. Bếp Việt’s home version uses a ready-made product, cooks it through, and serves it with fresh vegetables.",
+    "finished_dish": "Golden grilled tung lò mò with a juicy center, served with fresh herbs and cucumber.",
+    "excerpt": "Golden grilled tung lò mò with a juicy center, served with fresh herbs and cucumber.",
+    "serving": "Cut the sausage diagonally after grilling and serve with fresh herbs, cucumber, and rice vermicelli or hot rice. Offer lime-pepper salt on the side.",
+    "tips": [
+      "Choose tung lò mò from a trusted seller and follow the package storage instructions.",
+      "Grill over medium heat and turn often so the casing does not burn before the center is hot.",
+      "If the product is raw, cook it completely according to the maker’s directions and keep it separate from raw food."
+    ],
+    "tip": "Choose tung lò mò from a trusted seller and follow the package storage instructions.",
+    "dish_type": [
+      "Grilled dish",
+      "Chăm specialty"
+    ],
+    "main_ingredient": [
+      "tung lò mò",
+      "beef sausage",
+      "fresh vegetables"
+    ],
+    "cooking_method": [
+      "grilling",
+      "pan-searing"
+    ],
+    "search_terms": [
+      "Chăm beef sausage",
+      "Châu Đốc specialty",
+      "grilled tung lò mò"
+    ],
+    "image_alt": "A plate of golden grilled tung lò mò from An Giang, sliced and served with herbs and cucumber.",
+    "ingredients": [
+      {
+        "name": "Tung lò mò",
+        "quantity": 500,
+        "unit": "g",
+        "role": "main",
+        "notes": "Choose fresh or precooked sausage and follow the package directions.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fresh rice vermicelli",
+        "quantity": 400,
+        "unit": "g",
+        "role": "main",
+        "notes": "Steamed rice may be used instead.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Lettuce",
+        "quantity": 100,
+        "unit": "g",
+        "role": "main",
+        "notes": "Separate the leaves, wash, and drain.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fresh herbs",
+        "quantity": 80,
+        "unit": "g",
+        "role": "main",
+        "notes": "Use Vietnamese basil, cilantro, or local herbs.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Cucumber",
+        "quantity": 200,
+        "unit": "g",
+        "role": "main",
+        "notes": "Wash and slice.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Lime",
+        "quantity": 1,
+        "unit": "piece",
+        "role": "seasoning",
+        "notes": "Juice for the dipping salt.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Salt",
+        "quantity": 3,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "For lime-pepper salt.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Black pepper",
+        "quantity": 1,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Ground.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Neutral oil",
+        "quantity": 5,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "Use a thin coating only if pan-searing.",
+        "scaling_rule": "linear"
+      }
+    ],
+    "preparation_steps": [
+      {
+        "step": 1,
+        "instruction": "Check the label to see whether the sausage is raw or precooked; thaw in the refrigerator if needed."
+      },
+      {
+        "step": 2,
+        "instruction": "Wash and drain the vegetables and cucumber. Mix the salt, pepper, and lime juice."
+      },
+      {
+        "step": 3,
+        "instruction": "Preheat a grill or skillet over medium heat."
+      }
+    ],
+    "cooking_steps": [
+      {
+        "step": 1,
+        "instruction": "Grill or pan-sear the sausage, turning evenly, until browned and hot through to the center according to the package directions."
+      },
+      {
+        "step": 2,
+        "instruction": "Rest for a few minutes, then slice diagonally into bite-sized pieces."
+      },
+      {
+        "step": 3,
+        "instruction": "Serve with fresh vegetables, cucumber, and rice vermicelli or rice; keep the lime-pepper salt on the side."
+      }
+    ],
+    "time_note": "Heating time varies with the sausage diameter and whether it is raw or precooked; follow the package instructions.",
+    "time_unit": "minutes",
+    "keywords": [
+      "Tung Lò Mò Chăm Beef Sausage, An Giang",
+      "Mekong Delta",
+      "An Giang",
+      "tung lò mò",
+      "beef sausage",
+      "fresh vegetables",
+      "30 minutes"
+    ],
+    "tags": {
+      "region": [
+        "Mekong Delta"
+      ],
+      "province": [
+        "An Giang"
+      ],
+      "meal_type": [
+        "Lunch",
+        "Dinner",
+        "Snack"
+      ],
+      "dish_type": [
+        "Grilled dish",
+        "Chăm specialty"
+      ],
+      "main_ingredient": [
+        "tung lò mò",
+        "beef sausage",
+        "fresh vegetables"
+      ],
+      "cooking_method": [
+        "grilling",
+        "pan-searing"
+      ],
+      "difficulty": "Easy",
+      "suggested_pairings": [
+        "Fresh rice vermicelli",
+        "Fresh vegetables",
+        "Cucumber"
+      ],
+      "keywords": [
+        "Tung Lò Mò Chăm Beef Sausage, An Giang",
+        "Mekong Delta",
+        "An Giang",
+        "tung lò mò",
+        "beef sausage",
+        "fresh vegetables",
+        "30 minutes"
+      ]
+    },
+    "scaling": {
+      "base_servings": 4,
+      "targets": [
+        {
+          "servings": 2,
+          "main_factor": 0.5,
+          "seasoning_start_factor": 0.5,
+          "example": "Tung lò mò for 2",
+          "instruction": "Adjust seasoning to taste; cook according to the package directions."
+        },
+        {
+          "servings": 6,
+          "main_factor": 1.5,
+          "seasoning_start_factor": 1.5,
+          "example": "Tung lò mò for 6",
+          "instruction": "Adjust seasoning to taste; cook according to the package directions."
+        },
+        {
+          "servings": 8,
+          "main_factor": 2.0,
+          "seasoning_start_factor": 2.0,
+          "example": "Tung lò mò for 8",
+          "instruction": "Adjust seasoning to taste; cook according to the package directions."
+        }
+      ]
+    },
+    "editorial": {
+      "variant_note": "Bếp Việt home-edited recipe based on references; ingredient amounts and timing need a test cook before production approval.",
+      "needs": [
+        "Verify grilling time against the tung lò mò products sold locally."
+      ]
+    },
+    "suggested_pairings": [
+      "Fresh rice vermicelli",
+      "Fresh vegetables",
+      "Cucumber"
+    ]
+  },
+  "goi-sau-dau-kho-ca-loc-an-giang": {
+    "name": "An Giang Sầu Đâu Salad with Dried Snakehead",
+    "aliases": [
+      "Sầu Đâu Leaf and Dried Snakehead Salad",
+      "An Giang Sầu Đâu Salad"
+    ],
+    "region": [
+      "Mekong Delta"
+    ],
+    "province": [
+      "An Giang"
+    ],
+    "category": "Side dish",
+    "meal_type": [
+      "Lunch",
+      "Dinner"
+    ],
+    "difficulty": "Moderate",
+    "serving_basis": "Serves 4 as a shared salad or light starter.",
+    "description": "This An Giang salad pairs the gentle bitterness of sầu đâu leaves with savory dried snakehead, boiled pork, and a sweet-tart tamarind fish-sauce dressing. Bếp Việt mixes it in small batches so the leaves stay fresh and the fish does not break apart.",
+    "finished_dish": "Lightly bitter leaves and crisp papaya, savory dried snakehead, and a balanced sweet-sour tamarind dressing.",
+    "excerpt": "Lightly bitter leaves and crisp papaya, savory dried snakehead, and a balanced sweet-sour tamarind dressing.",
+    "serving": "Toss just before serving and finish with roasted peanuts and herbs. Serve with hot rice or as a starter.",
+    "tips": [
+      "Buy tender sầu đâu leaves from a trusted local source; blanch briefly and taste to manage bitterness.",
+      "Grill or pan-cook the dried fish until fragrant, then remove all bones before mixing.",
+      "Cool the dressing and add gradually; mix only the amount you plan to serve so the salad does not turn watery."
+    ],
+    "tip": "Buy tender sầu đâu leaves from a trusted local source; blanch briefly and taste to manage bitterness.",
+    "dish_type": [
+      "Salad",
+      "An Giang specialty"
+    ],
+    "main_ingredient": [
+      "sầu đâu leaves",
+      "dried snakehead",
+      "pork",
+      "green papaya"
+    ],
+    "cooking_method": [
+      "blanching",
+      "grilling",
+      "tossing"
+    ],
+    "search_terms": [
+      "sầu đâu leaf salad",
+      "An Giang dried snakehead salad",
+      "tamarind sầu đâu salad"
+    ],
+    "image_alt": "An Giang sầu đâu salad with dried snakehead, boiled pork, green papaya, and roasted peanuts.",
+    "ingredients": [
+      {
+        "name": "Young sầu đâu leaves",
+        "quantity": 120,
+        "unit": "g",
+        "role": "main",
+        "notes": "Pick and wash thoroughly.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Dried snakehead fish",
+        "quantity": 200,
+        "unit": "g",
+        "role": "main",
+        "notes": "Choose moderately salted fish, grill, and remove bones.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Pork belly",
+        "quantity": 150,
+        "unit": "g",
+        "role": "main",
+        "notes": "Boil through, cool, and slice thinly.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Green papaya",
+        "quantity": 250,
+        "unit": "g",
+        "role": "main",
+        "notes": "Peel and shred.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Ripe tamarind",
+        "quantity": 30,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Soak in warm water and strain.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fish sauce",
+        "quantity": 25,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "For the dressing.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Sugar",
+        "quantity": 20,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Adjust to the saltiness of the dried fish.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Water",
+        "quantity": 30,
+        "unit": "ml",
+        "role": "process_aid",
+        "notes": "For soaking the tamarind.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Garlic",
+        "quantity": 5,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Finely chopped.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Red chili",
+        "quantity": 5,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Remove seeds for less heat.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Roasted peanuts",
+        "quantity": 25,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Coarsely crushed.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Vietnamese coriander",
+        "quantity": 15,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Finely sliced.",
+        "scaling_rule": "linear"
+      }
+    ],
+    "preparation_steps": [
+      {
+        "step": 1,
+        "instruction": "Wash the sầu đâu leaves, blanch in boiling water for about 10 seconds, rinse in cool water, and drain; taste before using."
+      },
+      {
+        "step": 2,
+        "instruction": "Shred the papaya, soak in cold water for 5 minutes, then squeeze dry. Boil the pork through, cool, and slice thinly."
+      },
+      {
+        "step": 3,
+        "instruction": "Grill the dried snakehead over medium heat until fragrant. Cool, remove tough skin and bones, and flake into small pieces."
+      },
+      {
+        "step": 4,
+        "instruction": "Soak the tamarind in warm water and strain; combine the juice with fish sauce, sugar, garlic, and chili."
+      }
+    ],
+    "cooking_steps": [
+      {
+        "step": 1,
+        "instruction": "Taste the dressing and adjust the sweet-sour balance. Reduce fish sauce if the dried fish is salty."
+      },
+      {
+        "step": 2,
+        "instruction": "Place the leaves, papaya, pork, and fish in a wide bowl. Add dressing a little at a time and toss gently."
+      },
+      {
+        "step": 3,
+        "instruction": "Add Vietnamese coriander, transfer to a plate, and sprinkle with peanuts. Serve as soon as it is mixed."
+      }
+    ],
+    "time_note": "Preparation time depends on the saltiness and dryness of the fish; soak it according to the seller’s directions if needed.",
+    "time_unit": "minutes",
+    "keywords": [
+      "An Giang Sầu Đâu Salad with Dried Snakehead",
+      "Mekong Delta",
+      "An Giang",
+      "sầu đâu leaves",
+      "dried snakehead",
+      "pork",
+      "green papaya",
+      "50 minutes"
+    ],
+    "tags": {
+      "region": [
+        "Mekong Delta"
+      ],
+      "province": [
+        "An Giang"
+      ],
+      "meal_type": [
+        "Lunch",
+        "Dinner"
+      ],
+      "dish_type": [
+        "Salad",
+        "An Giang specialty"
+      ],
+      "main_ingredient": [
+        "sầu đâu leaves",
+        "dried snakehead",
+        "pork",
+        "green papaya"
+      ],
+      "cooking_method": [
+        "blanching",
+        "grilling",
+        "tossing"
+      ],
+      "difficulty": "Moderate",
+      "suggested_pairings": [
+        "Steamed rice",
+        "Sour fish soup",
+        "Boiled greens"
+      ],
+      "keywords": [
+        "An Giang Sầu Đâu Salad with Dried Snakehead",
+        "Mekong Delta",
+        "An Giang",
+        "sầu đâu leaves",
+        "dried snakehead",
+        "pork",
+        "green papaya",
+        "50 minutes"
+      ]
+    },
+    "scaling": {
+      "base_servings": 4,
+      "targets": [
+        {
+          "servings": 2,
+          "main_factor": 0.5,
+          "seasoning_start_factor": 0.5,
+          "example": "Sầu đâu salad for 2",
+          "instruction": "Adjust the dressing gradually and taste for bitterness and salt."
+        },
+        {
+          "servings": 6,
+          "main_factor": 1.5,
+          "seasoning_start_factor": 1.5,
+          "example": "Sầu đâu salad for 6",
+          "instruction": "Adjust the dressing gradually and taste for bitterness and salt."
+        },
+        {
+          "servings": 8,
+          "main_factor": 2.0,
+          "seasoning_start_factor": 2.0,
+          "example": "Sầu đâu salad for 8",
+          "instruction": "Adjust the dressing gradually and taste for bitterness and salt."
+        }
+      ]
+    },
+    "editorial": {
+      "variant_note": "Bếp Việt home-edited recipe based on references; ingredient amounts and timing need a test cook before production approval.",
+      "needs": [
+        "Test seasonal sầu đâu leaves to standardize blanching time and dressing acidity."
+      ]
+    },
+    "suggested_pairings": [
+      "Steamed rice",
+      "Sour fish soup",
+      "Boiled greens"
+    ]
+  },
+  "be-thui-cau-mong-quang-nam": {
+    "name": "Cầu Mống Roast Veal, Quảng Nam",
+    "aliases": [
+      "Quảng Nam Roast Veal",
+      "Roast Veal Rice-Paper Rolls"
+    ],
+    "region": [
+      "South Central Coast"
+    ],
+    "province": [
+      "Quảng Nam"
+    ],
+    "category": "Rolls",
+    "meal_type": [
+      "Lunch",
+      "Dinner"
+    ],
+    "difficulty": "Moderate",
+    "serving_basis": "Serves 4; roll the veal with fresh herbs, rice paper, and anchovy sauce.",
+    "description": "Cầu Mống roast veal is known for tender slices with a fragrant golden edge, eaten with fresh herbs, rice paper, and anchovy sauce. Bếp Việt adapts the presentation and rolling style for a smaller oven-roasted cut at home.",
+    "finished_dish": "Tender aromatic veal with a golden edge, rolled with herbs and rice paper and dipped in pineapple anchovy sauce.",
+    "excerpt": "Tender aromatic veal with a golden edge, rolled with herbs and rice paper and dipped in pineapple anchovy sauce.",
+    "serving": "Arrange the veal, herbs, green banana, starfruit, and rice paper in separate groups. Mix pineapple into the anchovy sauce and season with garlic and chili; roll each bite as you eat.",
+    "tips": [
+      "Buy fresh veal from a inspected supplier, keep it chilled, and prevent raw meat from touching ready-to-eat vegetables.",
+      "Roast an evenly thick piece; use a food thermometer and let the meat rest before slicing.",
+      "Season anchovy sauce gradually because saltiness varies between products."
+    ],
+    "tip": "Buy fresh veal from an inspected supplier, keep it chilled, and prevent raw meat from touching ready-to-eat vegetables.",
+    "dish_type": [
+      "Rice-paper rolls",
+      "Quảng Nam specialty"
+    ],
+    "main_ingredient": [
+      "veal",
+      "rice paper",
+      "fresh herbs",
+      "anchovy sauce"
+    ],
+    "cooking_method": [
+      "roasting",
+      "rolling"
+    ],
+    "search_terms": [
+      "Cầu Mống roast veal",
+      "veal rice-paper rolls",
+      "Điện Bàn specialty"
+    ],
+    "image_alt": "A platter of Cầu Mống roast veal slices with fresh herbs, rice paper, starfruit, and anchovy sauce.",
+    "ingredients": [
+      {
+        "name": "Veal",
+        "quantity": 700,
+        "unit": "g",
+        "role": "main",
+        "notes": "Use a uniformly thick loin or leg cut.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Rice paper",
+        "quantity": 16,
+        "unit": "piece",
+        "role": "main",
+        "notes": "Choose thin, pliable sheets for rolling.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Lettuce",
+        "quantity": 100,
+        "unit": "g",
+        "role": "main",
+        "notes": "Wash and drain.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fresh herbs",
+        "quantity": 100,
+        "unit": "g",
+        "role": "main",
+        "notes": "Use basil, Vietnamese coriander, and local herbs.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Starfruit",
+        "quantity": 1,
+        "unit": "piece",
+        "role": "main",
+        "notes": "Slice thinly.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Green banana",
+        "quantity": 1,
+        "unit": "piece",
+        "role": "main",
+        "notes": "Slice and soak briefly in lightly salted water.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Cucumber",
+        "quantity": 1,
+        "unit": "piece",
+        "role": "main",
+        "notes": "Cut into long sticks.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Anchovy sauce",
+        "quantity": 100,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "Use ready-to-serve sauce or follow the label directions.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Pineapple",
+        "quantity": 100,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Finely chop for the sauce.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Garlic",
+        "quantity": 8,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Finely chopped.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Red chili",
+        "quantity": 5,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Finely chopped; adjust to taste.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Sugar",
+        "quantity": 15,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "For balancing the anchovy sauce.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Salt",
+        "quantity": 4,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Lightly season the meat.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Neutral oil",
+        "quantity": 10,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "Brush a thin layer over the meat before roasting.",
+        "scaling_rule": "linear"
+      }
+    ],
+    "preparation_steps": [
+      {
+        "step": 1,
+        "instruction": "Pat the veal dry, season lightly with salt, and keep chilled while preparing the vegetables. Use a separate board for raw meat."
+      },
+      {
+        "step": 2,
+        "instruction": "Wash and drain the herbs; slice the starfruit, green banana, and cucumber. Finely chop the pineapple, garlic, and chili."
+      },
+      {
+        "step": 3,
+        "instruction": "Mix the anchovy sauce with pineapple, garlic, chili, and sugar; taste before serving."
+      }
+    ],
+    "cooking_steps": [
+      {
+        "step": 1,
+        "instruction": "Preheat the oven to 220°C. Quickly sear all sides of the veal in a hot skillet to develop a golden surface."
+      },
+      {
+        "step": 2,
+        "instruction": "Transfer to the oven, reduce to 180°C, and roast until the thickest part reaches at least 63°C; rest for at least 3 minutes."
+      },
+      {
+        "step": 3,
+        "instruction": "Slice thinly across the grain. Arrange with the vegetables, herbs, rice paper, and anchovy sauce, and serve immediately."
+      }
+    ],
+    "time_note": "Roasting time varies with the shape and thickness of the cut; a reliable food thermometer is more accurate than timing alone.",
+    "time_unit": "minutes",
+    "keywords": [
+      "Cầu Mống Roast Veal, Quảng Nam",
+      "South Central Coast",
+      "Quảng Nam",
+      "veal",
+      "rice paper",
+      "fresh herbs",
+      "anchovy sauce",
+      "70 minutes"
+    ],
+    "tags": {
+      "region": [
+        "South Central Coast"
+      ],
+      "province": [
+        "Quảng Nam"
+      ],
+      "meal_type": [
+        "Lunch",
+        "Dinner"
+      ],
+      "dish_type": [
+        "Rice-paper rolls",
+        "Quảng Nam specialty"
+      ],
+      "main_ingredient": [
+        "veal",
+        "rice paper",
+        "fresh herbs",
+        "anchovy sauce"
+      ],
+      "cooking_method": [
+        "roasting",
+        "rolling"
+      ],
+      "difficulty": "Moderate",
+      "suggested_pairings": [
+        "Fresh herbs",
+        "Rice paper",
+        "Anchovy sauce"
+      ],
+      "keywords": [
+        "Cầu Mống Roast Veal, Quảng Nam",
+        "South Central Coast",
+        "Quảng Nam",
+        "veal",
+        "rice paper",
+        "fresh herbs",
+        "anchovy sauce",
+        "70 minutes"
+      ]
+    },
+    "scaling": {
+      "base_servings": 4,
+      "targets": [
+        {
+          "servings": 2,
+          "main_factor": 0.5,
+          "seasoning_start_factor": 0.5,
+          "example": "Cầu Mống roast veal for 2",
+          "instruction": "Adjust the sauce to taste and check the center temperature."
+        },
+        {
+          "servings": 6,
+          "main_factor": 1.5,
+          "seasoning_start_factor": 1.5,
+          "example": "Cầu Mống roast veal for 6",
+          "instruction": "Adjust the sauce to taste and check the center temperature."
+        },
+        {
+          "servings": 8,
+          "main_factor": 2.0,
+          "seasoning_start_factor": 2.0,
+          "example": "Cầu Mống roast veal for 8",
+          "instruction": "Adjust the sauce to taste and check the center temperature."
+        }
+      ]
+    },
+    "editorial": {
+      "variant_note": "Bếp Việt home adaptation based on references; this small-cut oven method preserves the browned edge and traditional fresh-herb, rice-paper service but is not a whole-calf roast.",
+      "needs": [
+        "Test oven temperature and timing with locally available veal cuts."
+      ]
+    },
+    "suggested_pairings": [
+      "Fresh herbs",
+      "Rice paper",
+      "Anchovy sauce"
+    ]
+  },
+  "ca-loc-nuong-trui-mien-tay": {
+    "name": "Mekong Delta Cá Lóc Nướng Trui",
+    "aliases": [
+      "Straw-Roasted Snakehead Fish",
+      "Southern Vietnamese Whole Grilled Snakehead"
+    ],
+    "region": [
+      "Mekong Delta"
+    ],
+    "province": [],
+    "category": "Main dish",
+    "meal_type": [
+      "Lunch",
+      "Dinner"
+    ],
+    "difficulty": "Moderate",
+    "serving_basis": "Serves 4 as a shared grilled fish, rolled with rice paper and vegetables.",
+    "description": "Cá lóc nướng trui is a rustic southern Vietnamese dish, traditionally cooked whole over straw to preserve the fish’s natural sweetness. Bếp Việt adds a home oven method; the fish is cleaned for convenience but its skin is kept intact.",
+    "finished_dish": "Fragrant, fully cooked fish with flaky white flesh and lightly charred skin, served with herbs and tamarind fish sauce.",
+    "excerpt": "Fragrant, fully cooked fish with flaky white flesh and lightly charred skin, served with herbs and tamarind fish sauce.",
+    "serving": "Peel back the charred skin, lift the fish from the bones, and roll it with herbs, cucumber, starfruit, green banana, and rice paper. Serve tamarind fish sauce on the side.",
+    "tips": [
+      "For traditional outdoor roasting, leave the fish whole and scaled and use a safe, well-ventilated fire area.",
+      "For home cooking, ask the fish seller to clean the fish while leaving its skin on; roast until the flesh turns opaque and separates easily from the bones.",
+      "Keep raw fish and its juices away from ready-to-eat vegetables; use separate boards and tongs."
+    ],
+    "tip": "For home cooking, ask the fish seller to clean the fish while leaving its skin on; roast until the flesh turns opaque and separates easily from the bones.",
+    "dish_type": [
+      "Grilled dish",
+      "Mekong Delta specialty"
+    ],
+    "main_ingredient": [
+      "snakehead fish",
+      "rice paper",
+      "fresh vegetables",
+      "tamarind fish sauce"
+    ],
+    "cooking_method": [
+      "straw roasting",
+      "oven roasting"
+    ],
+    "search_terms": [
+      "cá lóc nướng rơm",
+      "grilled snakehead rice-paper rolls",
+      "Mekong Delta grilled fish"
+    ],
+    "image_alt": "A whole Mekong Delta cá lóc nướng trui with flaky white flesh, fresh greens, rice paper, and tamarind fish sauce.",
+    "ingredients": [
+      {
+        "name": "Snakehead fish",
+        "quantity": 800,
+        "unit": "g",
+        "role": "main",
+        "notes": "One medium fish; cleaned for the home-oven method.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Rice paper",
+        "quantity": 16,
+        "unit": "piece",
+        "role": "main",
+        "notes": "For wrapping fish and vegetables.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Lettuce",
+        "quantity": 100,
+        "unit": "g",
+        "role": "main",
+        "notes": "Wash and drain.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fresh herbs",
+        "quantity": 100,
+        "unit": "g",
+        "role": "main",
+        "notes": "Use Vietnamese basil, perilla, Vietnamese coriander, or available herbs.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Cucumber",
+        "quantity": 1,
+        "unit": "piece",
+        "role": "main",
+        "notes": "Cut into sticks.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Starfruit",
+        "quantity": 1,
+        "unit": "piece",
+        "role": "main",
+        "notes": "Slice thinly.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Green banana",
+        "quantity": 1,
+        "unit": "piece",
+        "role": "main",
+        "notes": "Slice and soak in lightly salted water.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Ripe tamarind",
+        "quantity": 30,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Soak in warm water and strain.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fish sauce",
+        "quantity": 30,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "For the dipping sauce.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Sugar",
+        "quantity": 20,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Balance the tartness.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Garlic",
+        "quantity": 5,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Finely chopped.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Red chili",
+        "quantity": 5,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Finely chopped; adjust to taste.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Water",
+        "quantity": 30,
+        "unit": "ml",
+        "role": "process_aid",
+        "notes": "For soaking tamarind.",
+        "scaling_rule": "linear"
+      }
+    ],
+    "preparation_steps": [
+      {
+        "step": 1,
+        "instruction": "For the home method, ask the fish seller to clean the fish while leaving the skin intact. Rinse briefly and pat very dry; do not marinate."
+      },
+      {
+        "step": 2,
+        "instruction": "Wash and drain the herbs; cut the cucumber, starfruit, and green banana. Soak the tamarind in warm water and strain."
+      },
+      {
+        "step": 3,
+        "instruction": "Mix the tamarind juice with fish sauce, sugar, garlic, and chili; adjust the sweet-sour balance."
+      }
+    ],
+    "cooking_steps": [
+      {
+        "step": 1,
+        "instruction": "Preheat the oven to 220°C. Place the fish on a foil-lined tray and roast for about 25–35 minutes, turning once, depending on size."
+      },
+      {
+        "step": 2,
+        "instruction": "Check the thickest part: it should be opaque and separate from the bones; with a food thermometer, the center should reach 63°C."
+      },
+      {
+        "step": 3,
+        "instruction": "Rest briefly, open the fish along the back, and lift away the larger bones. Serve hot with rice paper, vegetables, and tamarind fish sauce."
+      }
+    ],
+    "time_note": "Whole fish cooks at different rates depending on size and the oven; check the thickest flesh near the backbone before serving.",
+    "time_unit": "minutes",
+    "keywords": [
+      "Mekong Delta Cá Lóc Nướng Trui",
+      "Mekong Delta",
+      "snakehead fish",
+      "rice paper",
+      "fresh herbs",
+      "tamarind fish sauce",
+      "55 minutes"
+    ],
+    "tags": {
+      "region": [
+        "Mekong Delta"
+      ],
+      "province": [],
+      "meal_type": [
+        "Lunch",
+        "Dinner"
+      ],
+      "dish_type": [
+        "Grilled dish",
+        "Mekong Delta specialty"
+      ],
+      "main_ingredient": [
+        "snakehead fish",
+        "rice paper",
+        "fresh vegetables",
+        "tamarind fish sauce"
+      ],
+      "cooking_method": [
+        "straw roasting",
+        "oven roasting"
+      ],
+      "difficulty": "Moderate",
+      "suggested_pairings": [
+        "Rice paper",
+        "Fresh vegetables",
+        "Tamarind fish sauce"
+      ],
+      "keywords": [
+        "Mekong Delta Cá Lóc Nướng Trui",
+        "Mekong Delta",
+        "snakehead fish",
+        "rice paper",
+        "fresh herbs",
+        "tamarind fish sauce",
+        "55 minutes"
+      ]
+    },
+    "scaling": {
+      "base_servings": 4,
+      "targets": [
+        {
+          "servings": 2,
+          "main_factor": 0.5,
+          "seasoning_start_factor": 0.5,
+          "example": "Cá lóc nướng trui for 2",
+          "instruction": "Adjust the sauce gradually and check that the fish is cooked through."
+        },
+        {
+          "servings": 6,
+          "main_factor": 1.5,
+          "seasoning_start_factor": 1.5,
+          "example": "Cá lóc nướng trui for 6",
+          "instruction": "Adjust the sauce gradually and check that the fish is cooked through."
+        },
+        {
+          "servings": 8,
+          "main_factor": 2.0,
+          "seasoning_start_factor": 2.0,
+          "example": "Cá lóc nướng trui for 8",
+          "instruction": "Adjust the sauce gradually and check that the fish is cooked through."
+        }
+      ]
+    },
+    "editorial": {
+      "variant_note": "Bếp Việt home-oven adaptation based on references; the traditional straw-roasted fish is cooked whole and unseasoned.",
+      "needs": [
+        "Test oven roasting time across several fish sizes and check the skin texture."
+      ]
+    },
+    "suggested_pairings": [
+      "Rice paper",
+      "Fresh vegetables",
+      "Tamarind fish sauce"
+    ]
+  },
+  "cha-ruoi-tu-ky": {
+    "name": "Vietnamese Ragworm Patties (Chả Rươi)",
+    "aliases": [
+      "Hải Dương Fried Ragworm Cakes",
+      "Ragworm Cakes with Tangerine Zest"
+    ],
+    "region": [
+      "Northern Vietnam"
+    ],
+    "province": [
+      "Hải Dương"
+    ],
+    "category": "Main dish",
+    "meal_type": [
+      "Lunch",
+      "Dinner"
+    ],
+    "difficulty": "Moderate",
+    "serving_basis": "Serves 4 as a savory dish with rice or vermicelli and fresh herbs.",
+    "description": "Chả rươi is a seasonal autumn dish from Vietnam’s northern delta, especially associated with Tứ Kỳ in Hải Dương. Ragworms are combined with minced pork, egg, dill, and a little tangerine zest for cakes that are aromatic, tender inside, and golden at the edges. Bếp Việt has edited the quantities for a home skillet, keeping the seasoning light so the ragworm flavor remains distinct.",
+    "finished_dish": "Evenly golden, fully cooked cakes scented with dill and tangerine zest, moist but not crumbly.",
+    "excerpt": "Seasonal ragworm cakes with minced pork, dill, egg, and a bright touch of tangerine zest.",
+    "serving": "Serve hot with steamed rice or vermicelli, fresh herbs, and a gently tart fish-sauce dip. Cut into portions after the cakes have rested for a few minutes.",
+    "tips": [
+      "If using frozen ragworms, thaw them in the refrigerator, remove any debris, and discard any ingredient with an off smell.",
+      "Finely grate only a little of the colored tangerine peel to add aroma without bitterness.",
+      "Cook moderately thin cakes over medium heat so the center cooks through before the outside becomes too dark."
+    ],
+    "tip": "Keep thawed ragworms chilled until mixing, then cook each cake through before serving.",
+    "dish_type": [
+      "Pan-fried dish",
+      "Hải Dương specialty"
+    ],
+    "main_ingredient": [
+      "ragworms",
+      "pork",
+      "eggs",
+      "dill"
+    ],
+    "cooking_method": [
+      "pan-frying",
+      "shallow-frying"
+    ],
+    "search_terms": [
+      "Tứ Kỳ Hải Dương ragworm cakes",
+      "ragworm cakes with tangerine zest",
+      "Vietnamese autumn ragworm dish"
+    ],
+    "image_alt": "A plate of golden Tứ Kỳ ragworm cakes flecked with dill and thin tangerine zest.",
+    "ingredients": [
+      {
+        "name": "Fresh or frozen ragworms",
+        "quantity": 500,
+        "unit": "g",
+        "role": "main",
+        "notes": "Thaw frozen ragworms safely in the refrigerator.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Ground pork shoulder",
+        "quantity": 150,
+        "unit": "g",
+        "role": "main",
+        "notes": "A little fat helps keep the cakes tender.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Eggs",
+        "quantity": 2,
+        "unit": "eggs",
+        "role": "main",
+        "notes": "Lightly beaten.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Dill",
+        "quantity": 30,
+        "unit": "g",
+        "role": "main",
+        "notes": "Wash, drain, and finely chop.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Scallions",
+        "quantity": 25,
+        "unit": "g",
+        "role": "main",
+        "notes": "Finely sliced.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Tangerine peel",
+        "quantity": 5,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Use only the colored zest; slice very thinly.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fish sauce",
+        "quantity": 15,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "Season lightly so it does not overpower the ragworms.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Salt",
+        "quantity": 3,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Adjust for the saltiness of the fish sauce.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Black pepper",
+        "quantity": 2,
+        "unit": "g",
+        "role": "seasoning",
+        "notes": "Freshly ground.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Neutral oil",
+        "quantity": 45,
+        "unit": "ml",
+        "role": "seasoning",
+        "notes": "Use enough for shallow-frying.",
+        "scaling_rule": "linear"
+      },
+      {
+        "name": "Fresh herbs",
+        "quantity": 100,
+        "unit": "g",
+        "role": "main",
+        "notes": "Wash, drain, and serve alongside.",
+        "scaling_rule": "linear"
+      }
+    ],
+    "preparation_steps": [
+      {
+        "step": 1,
+        "instruction": "If using frozen ragworms, thaw them in the refrigerator. Pick out straw or debris, rinse gently with clean water, and drain; keep chilled while preparing the remaining ingredients."
+      },
+      {
+        "step": 2,
+        "instruction": "Wash and drain the dill and scallions, then chop finely. Remove only the colored tangerine zest and slice it very thinly."
+      },
+      {
+        "step": 3,
+        "instruction": "Beat the eggs. Gently combine the ragworms with the ground pork, eggs, dill, scallions, tangerine zest, fish sauce, salt, and pepper."
+      }
+    ],
+    "cooking_steps": [
+      {
+        "step": 1,
+        "instruction": "Warm a thin layer of oil in a nonstick skillet over medium heat. Spoon the mixture into small cakes and flatten them to about 1 cm thick."
+      },
+      {
+        "step": 2,
+        "instruction": "Cook each side for about 3–4 minutes, turning carefully until evenly golden and cooked through. Lower the heat if the outside colors too quickly."
+      },
+      {
+        "step": 3,
+        "instruction": "Transfer to paper towels, rest for a few minutes, and serve hot with fresh herbs, rice, or vermicelli."
+      }
+    ],
+    "time_note": "Cooking time depends on cake thickness and stove heat; cut into one cake to verify the center is fully cooked.",
+    "time_unit": "minutes",
+    "keywords": [
+      "Vietnamese Ragworm Patties",
+      "Tứ Kỳ",
+      "Northern Vietnam",
+      "Hải Dương",
+      "ragworms",
+      "pork",
+      "dill",
+      "tangerine zest",
+      "40 minutes"
+    ],
+    "tags": {
+      "region": [
+        "Northern Vietnam"
+      ],
+      "province": [
+        "Hải Dương"
+      ],
+      "meal_type": [
+        "Lunch",
+        "Dinner"
+      ],
+      "dish_type": [
+        "Pan-fried dish",
+        "Hải Dương specialty"
+      ],
+      "main_ingredient": [
+        "ragworms",
+        "pork",
+        "eggs",
+        "dill"
+      ],
+      "cooking_method": [
+        "pan-frying",
+        "shallow-frying"
+      ],
+      "difficulty": "Moderate",
+      "suggested_pairings": [
+        "Steamed rice",
+        "Fresh rice vermicelli",
+        "Fresh herbs",
+        "Sweet-and-sour fish sauce"
+      ],
+      "keywords": [
+        "Vietnamese Ragworm Patties",
+        "Tứ Kỳ",
+        "Northern Vietnam",
+        "Hải Dương",
+        "ragworms",
+        "pork",
+        "dill",
+        "tangerine zest",
+        "40 minutes"
+      ]
+    },
+    "scaling": {
+      "base_servings": 4,
+      "targets": [
+        {
+          "servings": 2,
+          "main_factor": 0.5,
+          "seasoning_start_factor": 0.5,
+          "example": "Tứ Kỳ ragworm cakes for 2",
+          "instruction": "Season lightly and cook through."
+        },
+        {
+          "servings": 6,
+          "main_factor": 1.5,
+          "seasoning_start_factor": 1.5,
+          "example": "Tứ Kỳ ragworm cakes for 6",
+          "instruction": "Season lightly and cook through."
+        },
+        {
+          "servings": 8,
+          "main_factor": 2.0,
+          "seasoning_start_factor": 2.0,
+          "example": "Tứ Kỳ ragworm cakes for 8",
+          "instruction": "Season lightly and cook through."
+        }
+      ]
+    },
+    "editorial": {
+      "variant_note": "Bếp Việt home adaptation based on references; the source material is editorial context, and this recipe has not been test-cooked.",
+      "needs": [
+        "Test with fresh and frozen ragworms to standardize texture, egg quantity, and pan-frying time."
+      ]
+    },
+    "suggested_pairings": [
+      "Steamed rice",
+      "Fresh rice vermicelli",
+      "Fresh herbs",
+      "Sweet-and-sour fish sauce"
+    ]
+  }
+}

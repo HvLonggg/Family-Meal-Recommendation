@@ -20,6 +20,7 @@ import {
   type MealSlot,
   type SavedRandomMeal,
 } from '@/data/randomMeals';
+import { formatDuration } from '@/data/nutritionEstimate';
 import { useAuth } from '@/features/auth/AuthContext';
 import { apiPost, apiRequest } from '@/lib/api/client';
 import { matchesSearch } from '@/lib/search';
@@ -90,7 +91,7 @@ function fromRemoteMeal(meal: RemoteSavedMeal): SavedRandomMeal {
 
 export function RandomMealPage() {
   const { user } = useAuth();
-  const { formatDate, locale, t } = useI18n();
+  const { formatDate, language, locale, t } = useI18n();
   const roleLabel = (key: MealRole) => t(roleDetails[key].label).toLocaleLowerCase(locale);
   const [dishCount, setDishCount] = useState(4);
   const [profile, setProfile] = useState<MealProfile>('balanced');
@@ -596,16 +597,7 @@ export function RandomMealPage() {
                       key={`${slot.role}-${index}`}
                       onClick={() => {
                         setFocusedSlot(index);
-                        if (!spinning)
-                          setNotice(
-                            slot.dish
-                              ? t('Đã chọn ô {role}. Bấm “Quay món” để đổi món.', {
-                                  role: roleLabel(slot.role),
-                                })
-                              : t('Đã chọn ô {role}. Bấm “Quay món” để thêm món.', {
-                                  role: roleLabel(slot.role),
-                                }),
-                          );
+                        spinOne(index);
                       }}
                       style={polarPosition(angle, 34)}
                       type="button"
@@ -631,8 +623,8 @@ export function RandomMealPage() {
                   <button
                     aria-label={
                       slot.dish
-                        ? t('Chọn {role} để đổi món', { role: roleLabel(slot.role) })
-                        : t('Chọn {role} để thêm món', { role: roleLabel(slot.role) })
+                        ? t('Quay đổi {role}', { role: roleLabel(slot.role) })
+                        : t('Quay thêm {role}', { role: roleLabel(slot.role) })
                     }
                     aria-pressed={focusedSlot === index}
                     className={`tray-menu__item${focusedSlot === index ? ' is-focused' : ''}`}
@@ -640,15 +632,7 @@ export function RandomMealPage() {
                     key={`${slot.role}-${index}`}
                     onClick={() => {
                       setFocusedSlot(index);
-                      setNotice(
-                        slot.dish
-                          ? t('Đã chọn {role}. Bấm “Quay món” để đổi món.', {
-                              role: roleLabel(slot.role),
-                            })
-                          : t('Đã chọn {role}. Bấm “Quay món” để thêm món.', {
-                              role: roleLabel(slot.role),
-                            }),
-                      );
+                      spinOne(index);
                     }}
                     type="button"
                   >
@@ -687,7 +671,7 @@ export function RandomMealPage() {
                 <div>
                   <span>{t('Thời gian')}</span>
                   <strong>
-                    {stats.maxMinutes ? t('{count} phút', { count: stats.maxMinutes }) : '—'}
+                    {stats.maxMinutes ? formatDuration(stats.maxMinutes, language) : '—'}
                   </strong>
                   <small>{t('món lâu nhất')}</small>
                 </div>

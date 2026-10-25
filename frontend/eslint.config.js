@@ -9,6 +9,13 @@ export default tseslint.config(
   eslint.configs.recommended,
   ...tseslint.configs.recommendedTypeChecked,
   {
+    files: ['**/*.{js,jsx,mjs,cjs}'],
+    extends: [tseslint.configs.disableTypeChecked],
+    languageOptions: {
+      globals: { ...globals.browser, ...globals.node },
+    },
+  },
+  {
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
       ecmaVersion: 2023,
@@ -28,5 +35,11 @@ export default tseslint.config(
       '@typescript-eslint/consistent-type-imports': 'error',
       '@typescript-eslint/no-floating-promises': 'error',
     },
+  },
+  {
+    // Service worker là JavaScript thuần chạy ngoài trang, không thuộc dự án TypeScript.
+    files: ['public/sw.js'],
+    extends: [tseslint.configs.disableTypeChecked],
+    languageOptions: { globals: globals.serviceworker },
   },
 );

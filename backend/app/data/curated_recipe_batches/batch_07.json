@@ -1,0 +1,1573 @@
+{
+  "batch": 7,
+  "description": "Năm món đặc sản Bắc–Trung–Nam được đối chiếu nguồn, biên tập định lượng gia đình và minh họa mới do Bếp Việt tạo.",
+  "recipes": [
+    {
+      "id": "BV361",
+      "slug": "cha-muc-ha-long",
+      "name": "Chả mực Hạ Long",
+      "aliases": [
+        "Chả mực giã tay Hạ Long",
+        "Chả mực Quảng Ninh"
+      ],
+      "region": [
+        "Bắc"
+      ],
+      "province": [
+        "Quảng Ninh"
+      ],
+      "category": "Hải sản",
+      "meal_type": [
+        "bữa sáng",
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Khoảng 16 miếng chả mực nhỏ, dùng nóng cùng xôi trắng hoặc cơm.",
+      "prep_time": 35,
+      "cook_time": 20,
+      "passive_time": 10,
+      "description": "Mực mai tươi được giã tay đến khi dẻo nhưng vẫn còn thớ, nêm vừa tay rồi chiên vàng. Chả thơm ngọt vị biển, giòn nhẹ bên ngoài và dai sần sật bên trong.",
+      "finished_dish": "Miếng chả mực vàng thơm, mặt ngoài giòn nhẹ, bên trong dai sần sật và còn rõ thớ mực mai; vị ngọt tự nhiên được giữ nổi bật nhờ nêm nếm tiết chế.",
+      "serving": "Dùng nóng với xôi trắng, cơm hoặc bánh cuốn; có thể chấm chút nước mắm chanh ớt hay tương ớt.",
+      "tips": [
+        "Mực phải thật tươi và thấm khô để chả kết dính, không bắn dầu.",
+        "Giã hoặc xay ngắt quãng, giữ lại ít miếng râu băm thô để có độ giòn dai đặc trưng.",
+        "Chiên lửa vừa và chia mẻ nhỏ; chả cần chín hẳn bên trong trước khi dùng."
+      ],
+      "dish_type": [
+        "Món mặn",
+        "Đặc sản Quảng Ninh"
+      ],
+      "main_ingredient": [
+        "mực mai",
+        "hành tím"
+      ],
+      "cooking_method": [
+        "giã tay",
+        "chiên"
+      ],
+      "search_terms": [
+        "Quảng Ninh",
+        "món hải sản",
+        "món ăn cùng cơm",
+        "món ăn sáng",
+        "chiên vàng",
+        "nấu trong 1 giờ"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Chả mực Hạ Long vàng giòn nhẹ, còn thớ mực mai bên trong, bày trên đĩa sứ sáng do Bếp Việt thực hiện.",
+      "ingredients": [
+        {
+          "name": "Mực mai đã làm sạch",
+          "quantity": 800,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 20,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Muối",
+          "quantity": 4,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 600,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 6
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa nhanh mực mai, bỏ mai và túi mực, thấm thật khô. Cắt thân mực thành miếng nhỏ; để riêng một phần râu mực băm thô để chả còn thớ."
+        },
+        {
+          "step": 2,
+          "instruction": "Băm hành tím. Ướp mực với hành tím, nước mắm, muối và tiêu trong khoảng 10 phút; giữ mực lạnh trong lúc chuẩn bị."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Giã mực trong cối theo từng mẻ đến khi hỗn hợp quyện dẻo nhưng vẫn còn miếng mực nhỏ. Có thể dùng máy xay ở chế độ nhồi ngắt quãng, tránh xay nhuyễn mịn."
+        },
+        {
+          "step": 2,
+          "instruction": "Thoa ít dầu lên tay, nặn mực thành miếng dẹt dày khoảng 1 cm. Đun dầu ở lửa vừa; chiên từng mẻ đến khi hai mặt vàng đều và phần giữa chín hoàn toàn."
+        },
+        {
+          "step": 3,
+          "instruction": "Vớt chả ra giá cho ráo dầu. Dùng nóng với xôi trắng, bánh cuốn hoặc cơm; nếu làm trước, để nguội nhanh và bảo quản lạnh kín."
+        }
+      ],
+      "total_time": 65,
+      "time_unit": "phút",
+      "time_note": "Thời lượng biên tập để tham khảo; thời gian thực tế tùy dụng cụ, nguyên liệu và kỹ năng.",
+      "width": 1254,
+      "height": 1254,
+      "sources": [
+        {
+          "url": "https://govietnam.travel/food/cha-muc-2/cha-muc-ha-long/",
+          "publisher": "GoVietnam Travel",
+          "title": "Chả mực Hạ Long Quảng Ninh",
+          "use": "Đối chiếu tên đặc sản, mực mai, kỹ thuật giã tay và cách chiên; công thức gia đình do Bếp Việt biên tập.",
+          "accessed_at": "2026-10-22",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Chả mực Hạ Long: điều chỉnh theo 2 phần",
+            "instruction": "Điều chỉnh nguyên liệu chính theo số phần; nêm gia vị từng lượt rồi nếm lại."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Chả mực Hạ Long: điều chỉnh theo 6 phần",
+            "instruction": "Điều chỉnh nguyên liệu chính theo số phần; nêm gia vị từng lượt rồi nếm lại."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 1.7,
+            "example": "Chả mực Hạ Long: điều chỉnh theo 8 phần",
+            "instruction": "Điều chỉnh nguyên liệu chính theo số phần; nêm gia vị từng lượt rồi nếm lại."
+          }
+        ],
+        "rules": [
+          "Định lượng là bản biên tập tham khảo cho gia đình; nếm và điều chỉnh theo nguyên liệu thực tế.",
+          "Gia vị mặn, chua, cay tăng từ từ; không nhân máy móc theo số phần.",
+          "Thời gian phụ thuộc kích thước nguyên liệu và thiết bị; kiểm tra độ chín trước khi dọn."
+        ]
+      },
+      "tags": {
+        "region": [
+          "Bắc"
+        ],
+        "province": [
+          "Quảng Ninh"
+        ],
+        "meal_type": [
+          "bữa sáng",
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Món mặn",
+          "Đặc sản Quảng Ninh"
+        ],
+        "main_ingredient": [
+          "mực mai",
+          "hành tím"
+        ],
+        "cooking_method": [
+          "giã tay",
+          "chiên"
+        ],
+        "difficulty": "Trung bình",
+        "prep_time": 35,
+        "cook_time": 20,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [],
+        "keywords": [
+          "Chả mực Hạ Long",
+          "Chả mực giã tay Hạ Long",
+          "Chả mực Quảng Ninh",
+          "Quảng Ninh",
+          "mực mai",
+          "hành tím",
+          "món hải sản",
+          "món ăn cùng cơm",
+          "món ăn sáng",
+          "chiên vàng",
+          "nấu trong 1 giờ",
+          "Món mặn",
+          "Đặc sản Quảng Ninh",
+          "65 phút"
+        ],
+        "recipe_family": "cha_muc_ha_long"
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/cha-muc-ha-long-960.webp",
+          "page_url": "https://govietnam.travel/food/cha-muc-2/cha-muc-ha-long/",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn do Bếp Việt tạo mới; nguồn tham khảo chỉ dùng để xác minh món và kỹ thuật.",
+          "width": 1254,
+          "height": 1254,
+          "orientation": "square",
+          "preferred_width_met": true,
+          "alt_text": "Chả mực Hạ Long vàng giòn nhẹ, còn thớ mực mai bên trong, bày trên đĩa sứ sáng do Bếp Việt thực hiện.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-22",
+          "photo_variant_note": "Ảnh minh họa mới do Bếp Việt tạo; công thức chưa được nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt biên tập công thức gia đình dựa trên đặc trưng món được dẫn nguồn; định lượng cần được nấu thử trước khi xem là bản chuẩn.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-22",
+        "needs": [
+          "Nấu thử và xác nhận định lượng, thời gian, kết cấu thành phẩm",
+          "Rà soát tên gọi địa phương và khả năng thay thế nguyên liệu",
+          "Kiểm tra dị ứng và thành phần gia vị đóng gói"
+        ]
+      },
+      "suggested_pairings": []
+    },
+    {
+      "id": "BV362",
+      "slug": "banh-canh-he-phu-yen",
+      "name": "Bánh canh hẹ Phú Yên",
+      "aliases": [
+        "Bánh canh hẹ Tuy Hòa",
+        "Bánh canh chả cá hẹ Phú Yên"
+      ],
+      "region": [
+        "Trung"
+      ],
+      "province": [
+        "Đắk Lắk"
+      ],
+      "category": "Bún, phở, mì và miến",
+      "meal_type": [
+        "bữa sáng",
+        "bữa trưa"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "4 tô bánh canh nóng, mỗi tô có sợi bánh canh gạo, cá, chả cá và hẹ tươi.",
+      "prep_time": 25,
+      "cook_time": 40,
+      "passive_time": 0,
+      "description": "Sợi bánh canh gạo mềm dai nằm trong nước dùng cá biển thanh ngọt, ăn cùng cá dầm, chả cá chiên và lớp hẹ cắt nhỏ phủ xanh mặt tô — món điểm tâm quen thuộc của Tuy Hòa.",
+      "finished_dish": "Tô bánh canh có nước dùng cá trong ngọt, sợi gạo mềm dai, cá thu và chả cá đậm vị, trên mặt phủ lớp hẹ xanh thơm đặc trưng.",
+      "serving": "Dùng nóng, thêm ớt tươi hoặc mắm nêm tùy khẩu vị; cho hẹ vào sát lúc dọn để giữ màu xanh và mùi thơm.",
+      "tips": [
+        "Ninh xương cá ở lửa nhỏ và hớt bọt để nước dùng trong, không có mùi tanh.",
+        "Không nấu cá thu quá lâu; cho hẹ vào cuối cùng để giữ vị hăng dịu và màu xanh.",
+        "Nếu dùng bánh canh khô, luộc riêng rồi xả nhanh trước khi chia vào tô."
+      ],
+      "dish_type": [
+        "Món nước",
+        "Đặc sản Phú Yên"
+      ],
+      "main_ingredient": [
+        "bánh canh gạo",
+        "cá biển",
+        "hẹ"
+      ],
+      "cooking_method": [
+        "ninh nước dùng cá",
+        "nấu bánh canh"
+      ],
+      "search_terms": [
+        "Tuy Hòa",
+        "Phú Yên",
+        "món nước",
+        "món hải sản",
+        "món ăn sáng",
+        "nấu trong 1 giờ"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Tô bánh canh hẹ Phú Yên với cá, chả cá, sợi gạo trắng và hẹ tươi phủ mặt, ảnh Bếp Việt thực hiện.",
+      "ingredients": [
+        {
+          "name": "Sợi bánh canh gạo tươi",
+          "quantity": 600,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Cá thu",
+          "quantity": 300,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Chả cá biển",
+          "quantity": 250,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Xương cá",
+          "quantity": 500,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Hẹ tươi",
+          "quantity": 150,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Cà chua",
+          "quantity": 180,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 30,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 30,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Muối",
+          "quantity": 8,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Đường",
+          "quantity": 8,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Nước",
+          "quantity": 2200,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 12
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa xương cá và cá thu, để ráo; cắt cá thu thành miếng vừa ăn. Thái chả cá thành lát, rửa hẹ rồi cắt nhỏ, bổ múi cà chua."
+        },
+        {
+          "step": 2,
+          "instruction": "Chần xương cá nhanh qua nước sôi rồi rửa sạch. Băm hành tím; để riêng một ít hẹ để rắc sau cùng."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Ninh xương cá với nước ở lửa nhỏ khoảng 25 phút, thường xuyên hớt bọt để nước dùng trong. Lọc bỏ xương."
+        },
+        {
+          "step": 2,
+          "instruction": "Phi thơm hành tím với dầu, cho cà chua vào đảo mềm rồi đổ vào nồi nước dùng. Nêm nước mắm, muối và đường cho vị thanh."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho cá thu vào nấu vừa chín, thêm chả cá và sợi bánh canh; nấu theo độ chín ghi trên bao bì, tránh để sợi quá mềm."
+        },
+        {
+          "step": 4,
+          "instruction": "Tắt bếp, cho phần lớn hẹ vào nồi nóng cho vừa tái. Múc ra tô và phủ thêm hẹ tươi để tô bánh canh xanh thơm, dùng ngay."
+        }
+      ],
+      "total_time": 65,
+      "time_unit": "phút",
+      "time_note": "Thời lượng biên tập để tham khảo; thời gian thực tế tùy dụng cụ, nguyên liệu và kỹ năng.",
+      "width": 1254,
+      "height": 1254,
+      "sources": [
+        {
+          "url": "https://govietnam.travel/food/banh-canh-2/banh-canh-he-phu-yen/",
+          "publisher": "GoVietnam Travel",
+          "title": "Bánh canh hẹ Phú Yên Đắk Lắk",
+          "use": "Đối chiếu đặc trưng sợi bánh canh gạo, nước dùng cá biển, chả cá và lượng hẹ; công thức gia đình do Bếp Việt biên tập.",
+          "accessed_at": "2026-10-22",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Bánh canh hẹ Phú Yên: điều chỉnh theo 2 phần",
+            "instruction": "Điều chỉnh nguyên liệu chính theo số phần; nêm gia vị từng lượt rồi nếm lại."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Bánh canh hẹ Phú Yên: điều chỉnh theo 6 phần",
+            "instruction": "Điều chỉnh nguyên liệu chính theo số phần; nêm gia vị từng lượt rồi nếm lại."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 1.7,
+            "example": "Bánh canh hẹ Phú Yên: điều chỉnh theo 8 phần",
+            "instruction": "Điều chỉnh nguyên liệu chính theo số phần; nêm gia vị từng lượt rồi nếm lại."
+          }
+        ],
+        "rules": [
+          "Định lượng là bản biên tập tham khảo cho gia đình; nếm và điều chỉnh theo nguyên liệu thực tế.",
+          "Gia vị mặn, chua, cay tăng từ từ; không nhân máy móc theo số phần.",
+          "Thời gian phụ thuộc kích thước nguyên liệu và thiết bị; kiểm tra độ chín trước khi dọn."
+        ]
+      },
+      "tags": {
+        "region": [
+          "Trung"
+        ],
+        "province": [
+          "Đắk Lắk"
+        ],
+        "meal_type": [
+          "bữa sáng",
+          "bữa trưa"
+        ],
+        "dish_type": [
+          "Món nước",
+          "Đặc sản Phú Yên"
+        ],
+        "main_ingredient": [
+          "bánh canh gạo",
+          "cá biển",
+          "hẹ"
+        ],
+        "cooking_method": [
+          "ninh nước dùng cá",
+          "nấu bánh canh"
+        ],
+        "difficulty": "Dễ",
+        "prep_time": 25,
+        "cook_time": 40,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [],
+        "keywords": [
+          "Bánh canh hẹ Phú Yên",
+          "Bánh canh hẹ Tuy Hòa",
+          "Bánh canh chả cá hẹ Phú Yên",
+          "Đắk Lắk",
+          "bánh canh gạo",
+          "cá biển",
+          "hẹ",
+          "Tuy Hòa",
+          "Phú Yên",
+          "món nước",
+          "món hải sản",
+          "món ăn sáng",
+          "nấu trong 1 giờ",
+          "Món nước",
+          "Đặc sản Phú Yên",
+          "65 phút"
+        ],
+        "recipe_family": "banh_canh_he_phu_yen"
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/banh-canh-he-phu-yen-960.webp",
+          "page_url": "https://govietnam.travel/food/banh-canh-2/banh-canh-he-phu-yen/",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn do Bếp Việt tạo mới; nguồn tham khảo chỉ dùng để xác minh món và kỹ thuật.",
+          "width": 1254,
+          "height": 1254,
+          "orientation": "square",
+          "preferred_width_met": true,
+          "alt_text": "Tô bánh canh hẹ Phú Yên với cá, chả cá, sợi gạo trắng và hẹ tươi phủ mặt, ảnh Bếp Việt thực hiện.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-22",
+          "photo_variant_note": "Ảnh minh họa mới do Bếp Việt tạo; công thức chưa được nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt biên tập công thức gia đình dựa trên đặc trưng món được dẫn nguồn; định lượng cần được nấu thử trước khi xem là bản chuẩn.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-22",
+        "needs": [
+          "Nấu thử và xác nhận định lượng, thời gian, kết cấu thành phẩm",
+          "Rà soát tên gọi địa phương và khả năng thay thế nguyên liệu",
+          "Kiểm tra dị ứng và thành phần gia vị đóng gói"
+        ]
+      },
+      "suggested_pairings": []
+    },
+    {
+      "id": "BV363",
+      "slug": "banh-tam-bi-ca-mau",
+      "name": "Bánh tằm bì Cà Mau",
+      "aliases": [
+        "Bánh tằm bì nước cốt dừa",
+        "Bánh tằm bì miền Tây"
+      ],
+      "region": [
+        "Nam"
+      ],
+      "province": [
+        "Cà Mau"
+      ],
+      "category": "Bún, phở, mì và miến",
+      "meal_type": [
+        "bữa sáng",
+        "bữa trưa"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "4 đĩa bánh tằm bì với sợi bánh to, bì trộn thính và nước cốt dừa ấm.",
+      "prep_time": 25,
+      "cook_time": 35,
+      "passive_time": 0,
+      "description": "Sợi bánh tằm gạo to dai ăn cùng bì heo trộn thính, thịt luộc, rau tươi và nước cốt dừa béo nhẹ; vị mặn ngọt của nước mắm pha giúp món sáng miền Tây cân bằng, không ngấy.",
+      "finished_dish": "Đĩa bánh tằm có sợi gạo to dai, bì heo áo thính thơm bùi, thịt luộc mềm, rau giòn và nước cốt dừa ấm béo dịu; nước mắm pha tạo điểm vị mặn ngọt.",
+      "serving": "Dọn bánh khi còn ấm, chan nước cốt dừa vừa đủ và để nước mắm pha riêng để mỗi người tự điều chỉnh.",
+      "tips": [
+        "Thái da heo thật mảnh để bì mềm, dễ quyện với thính gạo rang.",
+        "Chỉ làm nóng nước cốt dừa đến khi vừa bốc hơi; đun sôi lâu dễ tách béo.",
+        "Trụng bánh tằm sát giờ ăn để sợi bánh không dính và giữ độ dai."
+      ],
+      "dish_type": [
+        "Món mặn",
+        "Đặc sản miền Tây"
+      ],
+      "main_ingredient": [
+        "bánh tằm",
+        "da heo",
+        "nước cốt dừa"
+      ],
+      "cooking_method": [
+        "luộc thịt",
+        "trụng bánh",
+        "pha nước cốt dừa"
+      ],
+      "search_terms": [
+        "Cà Mau",
+        "Bạc Liêu",
+        "món ăn sáng",
+        "món miền Tây",
+        "món có nước cốt dừa",
+        "nấu trong 1 giờ"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Bánh tằm bì Cà Mau với sợi bánh gạo to, bì trộn thính, thịt luộc, rau tươi và nước cốt dừa trên đĩa sứ.",
+      "ingredients": [
+        {
+          "name": "Bánh tằm tươi",
+          "quantity": 700,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Thịt nạc vai",
+          "quantity": 300,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Da heo",
+          "quantity": 180,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Thính gạo rang",
+          "quantity": 25,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Nước cốt dừa",
+          "quantity": 300,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Dưa leo",
+          "quantity": 180,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Xà lách",
+          "quantity": 100,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Rau thơm",
+          "quantity": 30,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 45,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Đường",
+          "quantity": 35,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 12,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Ớt",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 12
+        },
+        {
+          "name": "Chanh",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 13
+        },
+        {
+          "name": "Muối",
+          "quantity": 8,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 14
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa thịt vai và da heo. Rửa sạch xà lách, rau thơm; thái dưa leo thành sợi. Băm tỏi, thái ớt và vắt lấy nước cốt chanh."
+        },
+        {
+          "step": 2,
+          "instruction": "Pha nước mắm với đường, nước cốt chanh, tỏi, ớt và ít nước ấm; nếm vị chua ngọt mặn hài hòa."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Luộc thịt vai đến khi vừa chín, vớt ra để nguội rồi thái lát mỏng. Luộc da heo đến mềm giòn, để nguội và thái sợi thật mảnh."
+        },
+        {
+          "step": 2,
+          "instruction": "Trộn da heo với thính gạo rang để hạt thính phủ đều. Đun nước cốt dừa cùng chút muối và đường ở lửa nhỏ đến khi nóng thơm, không để sôi mạnh."
+        },
+        {
+          "step": 3,
+          "instruction": "Trụng bánh tằm theo hướng dẫn trên bao bì, để ráo rồi chia ra đĩa. Xếp rau, dưa leo, thịt và bì lên trên; chan nước cốt dừa ấm và dùng kèm nước mắm pha."
+        }
+      ],
+      "total_time": 60,
+      "time_unit": "phút",
+      "time_note": "Thời lượng biên tập để tham khảo; thời gian thực tế tùy dụng cụ, nguyên liệu và kỹ năng.",
+      "width": 1254,
+      "height": 1254,
+      "sources": [
+        {
+          "url": "https://govietnam.travel/food/banh-tam-bi-ca-mau-2/",
+          "publisher": "GoVietnam Travel",
+          "title": "Bánh tằm bì Cà Mau",
+          "use": "Đối chiếu sợi bánh tằm to, bì trộn thính và nước cốt dừa của vùng Cà Mau–Bạc Liêu; công thức gia đình do Bếp Việt biên tập.",
+          "accessed_at": "2026-10-22",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Bánh tằm bì Cà Mau: điều chỉnh theo 2 phần",
+            "instruction": "Điều chỉnh nguyên liệu chính theo số phần; nêm gia vị từng lượt rồi nếm lại."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Bánh tằm bì Cà Mau: điều chỉnh theo 6 phần",
+            "instruction": "Điều chỉnh nguyên liệu chính theo số phần; nêm gia vị từng lượt rồi nếm lại."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 1.7,
+            "example": "Bánh tằm bì Cà Mau: điều chỉnh theo 8 phần",
+            "instruction": "Điều chỉnh nguyên liệu chính theo số phần; nêm gia vị từng lượt rồi nếm lại."
+          }
+        ],
+        "rules": [
+          "Định lượng là bản biên tập tham khảo cho gia đình; nếm và điều chỉnh theo nguyên liệu thực tế.",
+          "Gia vị mặn, chua, cay tăng từ từ; không nhân máy móc theo số phần.",
+          "Thời gian phụ thuộc kích thước nguyên liệu và thiết bị; kiểm tra độ chín trước khi dọn."
+        ]
+      },
+      "tags": {
+        "region": [
+          "Nam"
+        ],
+        "province": [
+          "Cà Mau"
+        ],
+        "meal_type": [
+          "bữa sáng",
+          "bữa trưa"
+        ],
+        "dish_type": [
+          "Món mặn",
+          "Đặc sản miền Tây"
+        ],
+        "main_ingredient": [
+          "bánh tằm",
+          "da heo",
+          "nước cốt dừa"
+        ],
+        "cooking_method": [
+          "luộc thịt",
+          "trụng bánh",
+          "pha nước cốt dừa"
+        ],
+        "difficulty": "Trung bình",
+        "prep_time": 25,
+        "cook_time": 35,
+        "servings": 4,
+        "spicy_level": 1,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [],
+        "keywords": [
+          "Bánh tằm bì Cà Mau",
+          "Bánh tằm bì nước cốt dừa",
+          "Bánh tằm bì miền Tây",
+          "Cà Mau",
+          "bánh tằm",
+          "da heo",
+          "nước cốt dừa",
+          "Bạc Liêu",
+          "món ăn sáng",
+          "món miền Tây",
+          "món có nước cốt dừa",
+          "nấu trong 1 giờ",
+          "Món mặn",
+          "Đặc sản miền Tây",
+          "60 phút"
+        ],
+        "recipe_family": "banh_tam_bi_ca_mau"
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/banh-tam-bi-ca-mau-960.webp",
+          "page_url": "https://govietnam.travel/food/banh-tam-bi-ca-mau-2/",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn do Bếp Việt tạo mới; nguồn tham khảo chỉ dùng để xác minh món và kỹ thuật.",
+          "width": 1254,
+          "height": 1254,
+          "orientation": "square",
+          "preferred_width_met": true,
+          "alt_text": "Bánh tằm bì Cà Mau với sợi bánh gạo to, bì trộn thính, thịt luộc, rau tươi và nước cốt dừa trên đĩa sứ.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-22",
+          "photo_variant_note": "Ảnh minh họa mới do Bếp Việt tạo; công thức chưa được nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt biên tập công thức gia đình dựa trên đặc trưng món được dẫn nguồn; định lượng cần được nấu thử trước khi xem là bản chuẩn.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-22",
+        "needs": [
+          "Nấu thử và xác nhận định lượng, thời gian, kết cấu thành phẩm",
+          "Rà soát tên gọi địa phương và khả năng thay thế nguyên liệu",
+          "Kiểm tra dị ứng và thành phần gia vị đóng gói"
+        ]
+      },
+      "suggested_pairings": []
+    },
+    {
+      "id": "BV364",
+      "slug": "banh-can-phan-rang",
+      "name": "Bánh căn Phan Rang",
+      "aliases": [
+        "Bánh căn Ninh Thuận",
+        "Bánh căn tôm trứng Phan Rang"
+      ],
+      "region": [
+        "Trung"
+      ],
+      "province": [
+        "Khánh Hòa"
+      ],
+      "category": "Bánh và ăn sáng",
+      "meal_type": [
+        "bữa sáng",
+        "bữa xế",
+        "bữa tối"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Khoảng 24 chiếc bánh căn nhỏ nhân tôm và trứng, ăn kèm nước cá kho nóng.",
+      "prep_time": 30,
+      "cook_time": 35,
+      "passive_time": 20,
+      "description": "Bánh bột gạo đổ trong khuôn đất thành từng chiếc nhỏ, viền se giòn và mặt bánh mềm; nhân tôm, trứng, mỡ hành ăn kèm xoài xanh cùng chén nước cá kho đậm ngọt kiểu Phan Rang.",
+      "finished_dish": "Những chiếc bánh căn nhỏ có viền vàng thơm, ruột mềm, nhân tôm hoặc trứng vừa chín; vị béo nhẹ của mỡ hành được cân bằng bởi xoài xanh và nước cá kho mặn ngọt.",
+      "serving": "Dọn bánh nóng theo từng mẻ cùng xoài xanh bào sợi và nước cá kho nóng; có thể chuẩn bị thêm mắm nêm hoặc nước mắm ớt theo khẩu vị.",
+      "tips": [
+        "Để bột nghỉ sau khi khuấy giúp bột hút nước đều và bánh chín ổn định hơn.",
+        "Khuôn cần nóng trước khi rót bột; chỉ quét dầu mỏng để bánh chín kiểu nướng, không ngập dầu.",
+        "Nướng bánh theo từng mẻ nhỏ và giữ nước cá kho nóng để giữ đúng cách ăn địa phương."
+      ],
+      "dish_type": [
+        "Món mặn",
+        "Đặc sản Phan Rang"
+      ],
+      "main_ingredient": [
+        "bột gạo",
+        "tôm",
+        "trứng cút",
+        "cá nục"
+      ],
+      "cooking_method": [
+        "nướng khuôn đất",
+        "kho cá"
+      ],
+      "search_terms": [
+        "Phan Rang",
+        "Ninh Thuận",
+        "món ăn sáng",
+        "món hải sản",
+        "món ăn vặt",
+        "nướng khuôn đất"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Bánh căn Phan Rang nhân tôm và trứng, viền vàng trên đĩa sứ, ăn kèm chén nước cá kho và xoài xanh.",
+      "ingredients": [
+        {
+          "name": "Bột gạo",
+          "quantity": 300,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Nước",
+          "quantity": 480,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Tôm tươi bóc vỏ",
+          "quantity": 180,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Trứng cút",
+          "quantity": 8,
+          "unit": "quả",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 30,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Xoài xanh",
+          "quantity": 150,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Cá nục",
+          "quantity": 220,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Cà chua",
+          "quantity": 120,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 25,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 45,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Đường",
+          "quantity": 15,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Muối",
+          "quantity": 6,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 12
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 30,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 13
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Hòa bột gạo với nước và một phần muối, khuấy mịn rồi để bột nghỉ khoảng 20 phút. Rửa tôm, cắt đôi nếu lớn; luộc trứng cút, bóc vỏ."
+        },
+        {
+          "step": 2,
+          "instruction": "Rửa cá nục, cắt khúc; băm hành tím, bổ cà chua. Thái xoài xanh thành sợi mảnh và cắt nhỏ hành lá."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Phi hành tím với ít dầu, cho cá nục và cà chua vào đảo nhẹ. Thêm nước mắm, đường và nước vừa đủ; kho liu riu đến khi cá chín, nước kho sánh nhẹ. Lọc lấy nước cá nóng để chấm."
+        },
+        {
+          "step": 2,
+          "instruction": "Làm nóng khuôn bánh căn bằng đất hoặc khuôn nhiều hốc chống dính. Quét lớp dầu rất mỏng, rót bột vào từng hốc, thêm tôm hoặc trứng cút rồi đậy nắp nướng đến khi mặt bánh se và viền vàng."
+        },
+        {
+          "step": 3,
+          "instruction": "Rắc hành lá lên bánh, gắp ra đĩa. Dọn nóng với xoài xanh và chén nước cá kho; bánh ngon nhất khi vừa rời khuôn."
+        }
+      ],
+      "total_time": 85,
+      "time_unit": "phút",
+      "time_note": "Thời lượng biên tập để tham khảo; thời gian thực tế tùy dụng cụ, nguyên liệu và kỹ năng.",
+      "width": 1254,
+      "height": 1254,
+      "sources": [
+        {
+          "url": "https://hellophanrang.com/banh-can-phan-rang/",
+          "publisher": "Hello Phan Rang Travel",
+          "title": "Bánh căn Phan Rang – đặc sản nức tiếng của Ninh Thuận",
+          "use": "Đối chiếu khuôn đất nung, nhân bánh và nước cá kho từ cá nục/cá cơm; công thức gia đình do Bếp Việt biên tập.",
+          "accessed_at": "2026-10-22",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Bánh căn Phan Rang: điều chỉnh theo 2 phần",
+            "instruction": "Điều chỉnh nguyên liệu chính theo số phần; nêm gia vị từng lượt rồi nếm lại."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Bánh căn Phan Rang: điều chỉnh theo 6 phần",
+            "instruction": "Điều chỉnh nguyên liệu chính theo số phần; nêm gia vị từng lượt rồi nếm lại."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 1.7,
+            "example": "Bánh căn Phan Rang: điều chỉnh theo 8 phần",
+            "instruction": "Điều chỉnh nguyên liệu chính theo số phần; nêm gia vị từng lượt rồi nếm lại."
+          }
+        ],
+        "rules": [
+          "Định lượng là bản biên tập tham khảo cho gia đình; nếm và điều chỉnh theo nguyên liệu thực tế.",
+          "Gia vị mặn, chua, cay tăng từ từ; không nhân máy móc theo số phần.",
+          "Thời gian phụ thuộc kích thước nguyên liệu và thiết bị; kiểm tra độ chín trước khi dọn."
+        ]
+      },
+      "tags": {
+        "region": [
+          "Trung"
+        ],
+        "province": [
+          "Khánh Hòa"
+        ],
+        "meal_type": [
+          "bữa sáng",
+          "bữa xế",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Món mặn",
+          "Đặc sản Phan Rang"
+        ],
+        "main_ingredient": [
+          "bột gạo",
+          "tôm",
+          "trứng cút",
+          "cá nục"
+        ],
+        "cooking_method": [
+          "nướng khuôn đất",
+          "kho cá"
+        ],
+        "difficulty": "Trung bình",
+        "prep_time": 30,
+        "cook_time": 35,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [],
+        "keywords": [
+          "Bánh căn Phan Rang",
+          "Bánh căn Ninh Thuận",
+          "Bánh căn tôm trứng Phan Rang",
+          "Khánh Hòa",
+          "bột gạo",
+          "tôm",
+          "trứng cút",
+          "cá nục",
+          "Phan Rang",
+          "Ninh Thuận",
+          "món ăn sáng",
+          "món hải sản",
+          "món ăn vặt",
+          "nướng khuôn đất",
+          "Món mặn",
+          "Đặc sản Phan Rang",
+          "85 phút"
+        ],
+        "recipe_family": "banh_can_phan_rang"
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/banh-can-phan-rang-960.webp",
+          "page_url": "https://hellophanrang.com/banh-can-phan-rang/",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn do Bếp Việt tạo mới; nguồn tham khảo chỉ dùng để xác minh món và kỹ thuật.",
+          "width": 1254,
+          "height": 1254,
+          "orientation": "square",
+          "preferred_width_met": true,
+          "alt_text": "Bánh căn Phan Rang nhân tôm và trứng, viền vàng trên đĩa sứ, ăn kèm chén nước cá kho và xoài xanh.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-22",
+          "photo_variant_note": "Ảnh minh họa mới do Bếp Việt tạo; công thức chưa được nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt biên tập công thức gia đình dựa trên đặc trưng món được dẫn nguồn; định lượng cần được nấu thử trước khi xem là bản chuẩn.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-22",
+        "needs": [
+          "Nấu thử và xác nhận định lượng, thời gian, kết cấu thành phẩm",
+          "Rà soát tên gọi địa phương và khả năng thay thế nguyên liệu",
+          "Kiểm tra dị ứng và thành phần gia vị đóng gói"
+        ]
+      },
+      "suggested_pairings": []
+    },
+    {
+      "id": "BV365",
+      "slug": "canh-chua-ca-linh-bong-dien-dien",
+      "name": "Canh chua cá linh bông điên điển",
+      "aliases": [
+        "Canh cá linh bông điên điển",
+        "Canh chua mùa nước nổi miền Tây"
+      ],
+      "region": [
+        "Nam"
+      ],
+      "province": [
+        "Đồng Tháp"
+      ],
+      "category": "Canh",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "4 tô canh dùng chung trong mâm cơm gia đình.",
+      "prep_time": 20,
+      "cook_time": 20,
+      "passive_time": 0,
+      "description": "Cá linh nhỏ của mùa nước nổi nấu chua thanh với me non, bông điên điển vàng và rau ngổ. Vị cá ngọt tự nhiên, hoa giòn nhẹ làm nên tô canh đồng quê đặc trưng miền Tây.",
+      "finished_dish": "Tô canh có nước me chua dịu, cá linh mềm ngọt, bông điên điển vàng giòn và rau ngổ thơm; vị thanh mát hợp với cơm trắng trong mùa nước nổi.",
+      "serving": "Dùng nóng cùng cơm trắng và món kho; nấu cá vừa chín, cho bông điên điển vào cuối để hoa không nhũn.",
+      "tips": [
+        "Cá linh và bông điên điển tươi thường có theo mùa nước nổi; nếu dùng cá đông lạnh, rã đông trong ngăn mát và nấu ngay.",
+        "Nêm nước me từng ít một vì độ chua của me non thay đổi theo mùa.",
+        "Không đảo nồi sau khi thả cá; thêm hoa sát cuối để giữ độ giòn và màu vàng."
+      ],
+      "dish_type": [
+        "Món canh",
+        "Đặc sản mùa nước nổi"
+      ],
+      "main_ingredient": [
+        "cá linh",
+        "bông điên điển",
+        "me non"
+      ],
+      "cooking_method": [
+        "nấu canh chua",
+        "nấu nhanh"
+      ],
+      "search_terms": [
+        "Đồng Tháp",
+        "mùa nước nổi",
+        "món miền Tây",
+        "món nấu nhanh",
+        "món canh",
+        "nấu trong 40 phút"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Canh chua cá linh bông điên điển trong tô sứ, có cá linh nhỏ, hoa vàng, me chua và rau đồng.",
+      "ingredients": [
+        {
+          "name": "Cá linh tươi",
+          "quantity": 500,
+          "unit": "g",
+          "role": "main",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Bông điên điển",
+          "quantity": 220,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Me non",
+          "quantity": 45,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Rau ngổ",
+          "quantity": 25,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 20,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Ớt tươi",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 30,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Đường",
+          "quantity": 15,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Muối",
+          "quantity": 7,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Nước",
+          "quantity": 1500,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": null,
+          "scaling_rule": "linear",
+          "sequence": 10
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Nhặt cá linh, bỏ phần không dùng, rửa nhẹ và để ráo. Nhặt bỏ cọng già của bông điên điển, rửa nhanh; rửa rau ngổ rồi cắt khúc."
+        },
+        {
+          "step": 2,
+          "instruction": "Dằm me non với ít nước nóng, lọc lấy nước cốt. Đập dập và băm hành tím; để nguyên ớt hoặc cắt lát tùy khẩu vị."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đun nước với hành tím đến sôi nhẹ, cho nước me vào và nêm nước mắm, đường, muối sao cho vị chua dịu, ngọt thanh."
+        },
+        {
+          "step": 2,
+          "instruction": "Thả cá linh vào nồi, hạ lửa vừa và nấu đến khi cá vừa chín; hớt bọt nhẹ, không khuấy mạnh để cá không nát."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho bông điên điển vào, nấu thêm khoảng 1–2 phút đến khi hoa vừa mềm nhưng vẫn còn độ giòn. Tắt bếp, thêm rau ngổ và ớt, dọn nóng cùng cơm."
+        }
+      ],
+      "total_time": 40,
+      "time_unit": "phút",
+      "time_note": "Thời lượng biên tập để tham khảo; thời gian thực tế tùy dụng cụ, nguyên liệu và kỹ năng.",
+      "width": 1254,
+      "height": 1254,
+      "sources": [
+        {
+          "url": "https://govietnam.travel/destination/gao-giong-cajuput-forest-bird-sanctuary/",
+          "publisher": "GoVietnam Travel",
+          "title": "Gáo Giồng Đồng Tháp — Rừng tràm và vườn chim Đồng Tháp Mười",
+          "use": "Đối chiếu đặc trưng mùa nước nổi gồm cá linh, me non, bông điên điển và rau ngổ; công thức gia đình do Bếp Việt biên tập.",
+          "accessed_at": "2026-10-22",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Canh chua cá linh bông điên điển: điều chỉnh theo 2 phần",
+            "instruction": "Điều chỉnh nguyên liệu chính theo số phần; nêm gia vị từng lượt rồi nếm lại."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Canh chua cá linh bông điên điển: điều chỉnh theo 6 phần",
+            "instruction": "Điều chỉnh nguyên liệu chính theo số phần; nêm gia vị từng lượt rồi nếm lại."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 1.7,
+            "example": "Canh chua cá linh bông điên điển: điều chỉnh theo 8 phần",
+            "instruction": "Điều chỉnh nguyên liệu chính theo số phần; nêm gia vị từng lượt rồi nếm lại."
+          }
+        ],
+        "rules": [
+          "Định lượng là bản biên tập tham khảo cho gia đình; nếm và điều chỉnh theo nguyên liệu thực tế.",
+          "Gia vị mặn, chua, cay tăng từ từ; không nhân máy móc theo số phần.",
+          "Thời gian phụ thuộc kích thước nguyên liệu và thiết bị; kiểm tra độ chín trước khi dọn."
+        ]
+      },
+      "tags": {
+        "region": [
+          "Nam"
+        ],
+        "province": [
+          "Đồng Tháp"
+        ],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Món canh",
+          "Đặc sản mùa nước nổi"
+        ],
+        "main_ingredient": [
+          "cá linh",
+          "bông điên điển",
+          "me non"
+        ],
+        "cooking_method": [
+          "nấu canh chua",
+          "nấu nhanh"
+        ],
+        "difficulty": "Dễ",
+        "prep_time": 20,
+        "cook_time": 20,
+        "servings": 4,
+        "spicy_level": 1,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [],
+        "keywords": [
+          "Canh chua cá linh bông điên điển",
+          "Canh cá linh bông điên điển",
+          "Canh chua mùa nước nổi miền Tây",
+          "Đồng Tháp",
+          "cá linh",
+          "bông điên điển",
+          "me non",
+          "mùa nước nổi",
+          "món miền Tây",
+          "món nấu nhanh",
+          "món canh",
+          "nấu trong 40 phút",
+          "Món canh",
+          "Đặc sản mùa nước nổi",
+          "40 phút"
+        ],
+        "recipe_family": "canh_chua_ca_linh_bong_dien_dien"
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/canh-chua-ca-linh-bong-dien-dien-960.webp",
+          "page_url": "https://govietnam.travel/destination/gao-giong-cajuput-forest-bird-sanctuary/",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn do Bếp Việt tạo mới; nguồn tham khảo chỉ dùng để xác minh món và kỹ thuật.",
+          "width": 1254,
+          "height": 1254,
+          "orientation": "square",
+          "preferred_width_met": true,
+          "alt_text": "Canh chua cá linh bông điên điển trong tô sứ, có cá linh nhỏ, hoa vàng, me chua và rau đồng.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-22",
+          "photo_variant_note": "Ảnh minh họa mới do Bếp Việt tạo; công thức chưa được nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt biên tập công thức gia đình dựa trên đặc trưng món được dẫn nguồn; định lượng cần được nấu thử trước khi xem là bản chuẩn.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-22",
+        "needs": [
+          "Nấu thử và xác nhận định lượng, thời gian, kết cấu thành phẩm",
+          "Rà soát tên gọi địa phương và khả năng thay thế nguyên liệu",
+          "Kiểm tra dị ứng và thành phần gia vị đóng gói"
+        ]
+      },
+      "suggested_pairings": []
+    }
+  ]
+}

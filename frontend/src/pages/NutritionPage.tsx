@@ -2,16 +2,15 @@ import { useMemo, useState } from 'react';
 
 import { AppIcon } from '@/components/common/AppIcon';
 import { RecipeCard } from '@/components/recipes/RecipeCard';
-import { recipeMinutes, type Recipe } from '@/data/recipes';
+import { getNutritionMatches, type NutritionNeedId } from '@/data/nutritionRecommendations';
 import { useI18n } from '@/features/i18n/I18nContext';
 import { useRecipeCatalog } from '@/features/i18n/recipeContent';
 
 interface Need {
-  id: string;
+  id: NutritionNeedId;
   name: string;
   icon: string;
   text: string;
-  matches: (recipe: Recipe) => boolean;
 }
 
 const needs: Need[] = [
@@ -20,28 +19,24 @@ const needs: Need[] = [
     name: 'Bữa ăn cân bằng',
     icon: '🥗',
     text: 'Kết hợp món đạm, rau, canh và tinh bột với khẩu phần vừa đủ.',
-    matches: (recipe) => ['Món mặn', 'Món canh', 'Món rau'].includes(recipe.category),
   },
   {
     id: 'light',
     name: 'Nhẹ bụng',
     icon: '🌿',
     text: 'Ưu tiên món canh, rau xanh, cách chế biến ít dầu và vị thanh.',
-    matches: (recipe) => ['Món canh', 'Món rau', 'Món chay'].includes(recipe.category),
   },
   {
-    id: 'kids',
-    name: 'Nấu cho trẻ nhỏ',
+    id: 'family',
+    name: 'Dễ ăn cho cả nhà',
     icon: '🍳',
-    text: 'Món mềm, màu sắc vui mắt, hương vị dịu và dễ chia phần.',
-    matches: (recipe) => recipe.difficulty === 'Dễ' && !['Món ăn kèm'].includes(recipe.category),
+    text: 'Ưu tiên công thức dễ nấu, vị dịu và không thiên cay nồng.',
   },
   {
     id: 'quick',
     name: 'Bữa ăn nhanh',
     icon: '⏱️',
     text: 'Công thức dưới 30 phút cho ngày bận nhưng vẫn đủ món nhà.',
-    matches: (recipe) => recipeMinutes(recipe) <= 30,
   },
 ];
 
@@ -50,7 +45,10 @@ export function NutritionPage() {
   const catalog = useRecipeCatalog();
   const [activeId, setActiveId] = useState(needs[0]!.id);
   const active = needs.find((need) => need.id === activeId) ?? needs[0]!;
-  const matches = useMemo(() => catalog.filter(active.matches).slice(0, 8), [active, catalog]);
+  const matches = useMemo(
+    () => getNutritionMatches(catalog, active.id).slice(0, 8),
+    [active.id, catalog],
+  );
 
   return (
     <div className="page-wrap">

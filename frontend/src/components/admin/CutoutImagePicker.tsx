@@ -2,6 +2,7 @@ import { useId, useState, type ChangeEvent } from 'react';
 
 import { AppIcon } from '@/components/common/AppIcon';
 import { useI18n } from '@/features/i18n/I18nContext';
+import { UserFacingError } from '@/lib/errors';
 
 const MAX_BYTES = 8 * 1024 * 1024;
 
@@ -11,8 +12,8 @@ function readAsDataUrl(file: File) {
     reader.onload = () =>
       typeof reader.result === 'string'
         ? resolve(reader.result)
-        : reject(new Error('Không đọc được ảnh.'));
-    reader.onerror = () => reject(reader.error ?? new Error('Không đọc được ảnh.'));
+        : reject(new UserFacingError('Không đọc được ảnh.'));
+    reader.onerror = () => reject(new UserFacingError('Không đọc được ảnh.'));
     reader.readAsDataURL(file);
   });
 }

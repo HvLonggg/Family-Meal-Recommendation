@@ -1,0 +1,62 @@
+{
+  "batch": 42,
+  "canvas": {
+    "width": 3840,
+    "height": 2160,
+    "format": "WebP",
+    "background": "transparent"
+  },
+  "native_format": "PNG",
+  "export_master_format": "PNG",
+  "assets": [
+    {
+      "id": "BV538",
+      "slug": "chao-canh-quang-binh",
+      "native_file": "output/recipe-images/native/chao-canh-quang-binh.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/chao-canh-quang-binh.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/chao-canh-quang-binh-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/chao-canh-quang-binh-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/chao-canh-quang-binh-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/chao-canh-quang-binh-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    }
+  ]
+}

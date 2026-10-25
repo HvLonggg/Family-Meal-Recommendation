@@ -1,0 +1,307 @@
+{
+  "batch": 77,
+  "canvas": {
+    "width": 3840,
+    "height": 2160,
+    "format": "WebP",
+    "background": "transparent"
+  },
+  "native_format": "PNG",
+  "export_master_format": "PNG",
+  "assets": [
+    {
+      "id": "BV711",
+      "slug": "canh-rau-ngot-nau-trung-v2",
+      "native_file": "output/recipe-images/native/canh-rau-ngot-nau-trung-v2.png",
+      "native_pixels": [
+        1312,
+        1199
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/canh-rau-ngot-nau-trung-v2.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/canh-rau-ngot-nau-trung-v2-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/canh-rau-ngot-nau-trung-v2-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/canh-rau-ngot-nau-trung-v2-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/canh-rau-ngot-nau-trung-v2-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "id": "BV712",
+      "slug": "ga-hap-la-chanh",
+      "native_file": "output/recipe-images/native/ga-hap-la-chanh.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/ga-hap-la-chanh.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/ga-hap-la-chanh-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/ga-hap-la-chanh-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/ga-hap-la-chanh-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/ga-hap-la-chanh-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "id": "BV713",
+      "slug": "canh-cua-rau-day-mong-toi-muop",
+      "native_file": "output/recipe-images/native/canh-cua-rau-day-mong-toi-muop.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/canh-cua-rau-day-mong-toi-muop.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/canh-cua-rau-day-mong-toi-muop-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/canh-cua-rau-day-mong-toi-muop-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/canh-cua-rau-day-mong-toi-muop-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/canh-cua-rau-day-mong-toi-muop-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "id": "BV714",
+      "slug": "ga-nau-dau",
+      "native_file": "output/recipe-images/native/ga-nau-dau.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/ga-nau-dau.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/ga-nau-dau-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/ga-nau-dau-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/ga-nau-dau-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/ga-nau-dau-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "id": "BV715",
+      "slug": "dau-hu-kho-nam-rom-chay",
+      "native_file": "output/recipe-images/native/dau-hu-kho-nam-rom-chay.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/dau-hu-kho-nam-rom-chay.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/dau-hu-kho-nam-rom-chay-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/dau-hu-kho-nam-rom-chay-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/dau-hu-kho-nam-rom-chay-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/dau-hu-kho-nam-rom-chay-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "id": "BV716",
+      "slug": "canh-rau-den-nau-tom-kho",
+      "native_file": "output/recipe-images/native/canh-rau-den-nau-tom-kho.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/canh-rau-den-nau-tom-kho.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/canh-rau-den-nau-tom-kho-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/canh-rau-den-nau-tom-kho-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/canh-rau-den-nau-tom-kho-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/canh-rau-den-nau-tom-kho-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    }
+  ]
+}

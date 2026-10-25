@@ -1,27 +1,33 @@
-/** Câu gợi ý ngắn theo thời điểm trong ngày. */
-const teasers = {
-  morning: [
+import { dayPart, type DayPart } from '@/features/assistant/dayPart';
+
+/** Câu gợi ý ngắn theo buổi trong ngày (giờ Việt Nam). */
+const teasers: Record<DayPart, readonly string[]> = {
+  sang: [
     'Bữa sáng nay ăn gì cho có sức nhỉ? 🍜',
     'Sáng nay bận rộn? Chú Rồng có món nhanh dưới 20 phút!',
     'Một bát phở nóng hay bánh mì trứng cho sáng nay?',
   ],
-  noon: [
+  trua: [
     'Trưa nay ăn gì đây bạn ơi? 🍱',
     'Chưa nghĩ ra món trưa? Để Chú Rồng giúp nhé!',
-    'Trời nóng thế này, làm bát canh chua cho mát không?',
+    'Trời nóng thế này, trưa nay làm bát canh chua cho mát không?',
   ],
-  evening: [
+  chieu: [
+    'Chiều rồi, tối nay nấu gì để còn kịp đi chợ? 🛒',
+    'Xế chiều hơi đói? Một ly chè hay đĩa trái cây cho tỉnh táo nhé!',
+    'Lên thực đơn bữa tối từ giờ cho đỡ vội nhé?',
+  ],
+  toi: [
     'Bữa tối nay bạn ăn gì? 🍲',
-    'Nếu chưa biết ăn gì, hãy nhờ Chú Rồng trợ giúp nhé!',
-    'Tủ lạnh còn gì? Kể mình nghe, mình nghĩ món giúp!',
+    'Nếu chưa biết tối nay ăn gì, hãy nhờ Chú Rồng nhé!',
+    'Tủ lạnh còn gì? Kể mình nghe, mình nghĩ món tối giúp!',
     'Mâm cơm tối nay: một món mặn, một canh, một rau nhé?',
-    'Muốn món ngon mà nhanh cho tối nay không?',
   ],
-  late: [
+  khuya: [
     'Đói bụng đêm khuya? Chú Rồng biết vài món nhẹ bụng đó!',
     'Lên thực đơn cho ngày mai luôn không bạn?',
   ],
-} as const;
+};
 
 /** Câu trò chuyện vui, xen kẽ với câu hỏi gợi ý món. */
 const chatter = [
@@ -34,17 +40,9 @@ const chatter = [
 ] as const;
 
 export function pickTeaser(now = new Date(), random = Math.random) {
-  const hour = now.getHours();
-  const pool =
-    hour < 10
-      ? teasers.morning
-      : hour < 14
-        ? teasers.noon
-        : hour < 22
-          ? teasers.evening
-          : teasers.late;
-  const source = random() < 0.5 ? chatter : pool;
-  return source[Math.floor(random() * source.length)] ?? teasers.evening[0];
+  const pool = teasers[dayPart(now)];
+  const source = random() < 0.25 ? chatter : pool;
+  return source[Math.floor(random() * source.length)] ?? pool[0] ?? chatter[0];
 }
 
 export function teaserReplies(): string[] {

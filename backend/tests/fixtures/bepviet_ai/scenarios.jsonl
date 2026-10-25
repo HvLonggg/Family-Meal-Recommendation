@@ -1,0 +1,8 @@
+{"id": "s1", "messages": ["nguyên liệu phở bò cho 2 người"], "expect": {"intent": "recipe_ingredients", "must_include": ["Phở bò Hà Nội", "2 người"], "must_not_include": ["Pizza"]}}
+{"id": "s2", "messages": ["canh chua cá nấu mất bao lâu"], "expect": {"intent": "recipe_time", "must_include": ["Canh chua cá", "phút"]}}
+{"id": "s3", "messages": [{"role": "user", "content": "cách nấu gà luộc"}, {"role": "assistant", "content": "Gà luộc: ..."}, {"role": "user", "content": "món đó nấu bao lâu"}], "expect": {"intent": "recipe_time", "must_include": ["Gà luộc", "phút"]}}
+{"id": "s4", "messages": ["xin chào"], "expect": {"intent": "greeting", "must_include": ["Chú Rồng"]}}
+{"id": "s5", "messages": ["quên mật khẩu thì làm sao"], "expect": {"intent": "account_password", "must_include": ["Quên mật khẩu"]}}
+{"id": "s6", "messages": ["cách nấu pizza hải sản"], "expect": {"intent": "recipe_steps", "must_not_include": ["pizza"]}}
+{"id": "s7", "messages": ["viết bài thơ về mùa thu"], "expect": {"intent": "open_question"}}
+{"id": "s8", "messages": ["bị tiểu đường nên ăn gì"], "expect": {"intent": "safety_medical", "must_include": ["bác sĩ"]}}

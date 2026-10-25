@@ -1,0 +1,1014 @@
+{
+  "rules": {
+    "min_confidence": 0.8,
+    "min_precision": 0.95,
+    "min_recall": 0.5,
+    "min_support": 5
+  },
+  "passed": [
+    "account_change_email",
+    "account_change_password",
+    "account_forgot_password",
+    "feature_community",
+    "feature_cook_mode",
+    "feature_random_meal",
+    "goodbye",
+    "greeting",
+    "identity_creator",
+    "identity_model",
+    "settings_household",
+    "support_ticket_status"
+  ],
+  "intents": {
+    "about_free": {
+      "answered": 4,
+      "correct": 4,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.5714,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5"
+      ]
+    },
+    "account_change_email": {
+      "answered": 7,
+      "correct": 7,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 1.0,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": true,
+      "reasons": []
+    },
+    "account_change_password": {
+      "answered": 5,
+      "correct": 5,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.7143,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": true,
+      "reasons": []
+    },
+    "account_delete": {
+      "answered": 8,
+      "correct": 6,
+      "gold": 7,
+      "precision": 0.75,
+      "recall": 0.8571,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "precision<0.95"
+      ]
+    },
+    "account_forgot_password": {
+      "answered": 7,
+      "correct": 7,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 1.0,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": true,
+      "reasons": []
+    },
+    "account_login_help": {
+      "answered": 5,
+      "correct": 4,
+      "gold": 7,
+      "precision": 0.8,
+      "recall": 0.5714,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "precision<0.95"
+      ]
+    },
+    "account_logout_all": {
+      "answered": 4,
+      "correct": 3,
+      "gold": 7,
+      "precision": 0.75,
+      "recall": 0.4286,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5",
+        "precision<0.95",
+        "recall<0.5"
+      ]
+    },
+    "account_no_email": {
+      "answered": 3,
+      "correct": 3,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.4286,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5",
+        "recall<0.5"
+      ]
+    },
+    "account_profile": {
+      "answered": 6,
+      "correct": 5,
+      "gold": 7,
+      "precision": 0.8333,
+      "recall": 0.7143,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "precision<0.95"
+      ]
+    },
+    "account_register": {
+      "answered": 5,
+      "correct": 4,
+      "gold": 7,
+      "precision": 0.8,
+      "recall": 0.5714,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "precision<0.95"
+      ]
+    },
+    "affirm": {
+      "answered": 4,
+      "correct": 4,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.5714,
+      "kind": "smalltalk",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5"
+      ]
+    },
+    "bot_capabilities": {
+      "answered": 4,
+      "correct": 4,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.5714,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5"
+      ]
+    },
+    "complaint": {
+      "answered": 0,
+      "correct": 0,
+      "gold": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5",
+        "precision<0.95",
+        "recall<0.5"
+      ]
+    },
+    "contact_support": {
+      "answered": 3,
+      "correct": 2,
+      "gold": 7,
+      "precision": 0.6667,
+      "recall": 0.2857,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5",
+        "precision<0.95",
+        "recall<0.5"
+      ]
+    },
+    "cooking_question": {
+      "answered": 0,
+      "correct": 0,
+      "gold": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "kind": "handoff_llm",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "handoff_intent",
+        "support<5",
+        "precision<0.95",
+        "recall<0.5"
+      ]
+    },
+    "culinary_creative": {
+      "answered": 2,
+      "correct": 2,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.2857,
+      "kind": "handoff_llm",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "handoff_intent",
+        "support<5",
+        "recall<0.5"
+      ]
+    },
+    "deny": {
+      "answered": 5,
+      "correct": 4,
+      "gold": 7,
+      "precision": 0.8,
+      "recall": 0.5714,
+      "kind": "smalltalk",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "precision<0.95"
+      ]
+    },
+    "feature_assistant_memory": {
+      "answered": 5,
+      "correct": 4,
+      "gold": 7,
+      "precision": 0.8,
+      "recall": 0.5714,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "precision<0.95"
+      ]
+    },
+    "feature_chat_history": {
+      "answered": 3,
+      "correct": 3,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.4286,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5",
+        "recall<0.5"
+      ]
+    },
+    "feature_community": {
+      "answered": 5,
+      "correct": 5,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.7143,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": true,
+      "reasons": []
+    },
+    "feature_cook_mode": {
+      "answered": 5,
+      "correct": 5,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.7143,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": true,
+      "reasons": []
+    },
+    "feature_cook_timer": {
+      "answered": 4,
+      "correct": 3,
+      "gold": 7,
+      "precision": 0.75,
+      "recall": 0.4286,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5",
+        "precision<0.95",
+        "recall<0.5"
+      ]
+    },
+    "feature_cooked_history": {
+      "answered": 4,
+      "correct": 4,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.5714,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5"
+      ]
+    },
+    "feature_favorites": {
+      "answered": 4,
+      "correct": 3,
+      "gold": 7,
+      "precision": 0.75,
+      "recall": 0.4286,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5",
+        "precision<0.95",
+        "recall<0.5"
+      ]
+    },
+    "feature_lunar_vegetarian": {
+      "answered": 3,
+      "correct": 3,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.4286,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5",
+        "recall<0.5"
+      ]
+    },
+    "feature_narration": {
+      "answered": 4,
+      "correct": 4,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.5714,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5"
+      ]
+    },
+    "feature_planner": {
+      "answered": 3,
+      "correct": 2,
+      "gold": 7,
+      "precision": 0.6667,
+      "recall": 0.2857,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5",
+        "precision<0.95",
+        "recall<0.5"
+      ]
+    },
+    "feature_random_meal": {
+      "answered": 5,
+      "correct": 5,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.7143,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": true,
+      "reasons": []
+    },
+    "feature_search": {
+      "answered": 2,
+      "correct": 2,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.2857,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5",
+        "recall<0.5"
+      ]
+    },
+    "feature_shopping_list": {
+      "answered": 4,
+      "correct": 4,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.5714,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5"
+      ]
+    },
+    "feature_submit_recipe": {
+      "answered": 7,
+      "correct": 6,
+      "gold": 7,
+      "precision": 0.8571,
+      "recall": 0.8571,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "precision<0.95"
+      ]
+    },
+    "feature_suggestions": {
+      "answered": 7,
+      "correct": 6,
+      "gold": 7,
+      "precision": 0.8571,
+      "recall": 0.8571,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "precision<0.95"
+      ]
+    },
+    "feature_voice_commands": {
+      "answered": 3,
+      "correct": 3,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.4286,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5",
+        "recall<0.5"
+      ]
+    },
+    "feedback_suggestion": {
+      "answered": 4,
+      "correct": 4,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.5714,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5"
+      ]
+    },
+    "food_culture": {
+      "answered": 4,
+      "correct": 4,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.5714,
+      "kind": "handoff_llm",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "handoff_intent",
+        "support<5"
+      ]
+    },
+    "goodbye": {
+      "answered": 5,
+      "correct": 5,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.7143,
+      "kind": "smalltalk",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": true,
+      "reasons": []
+    },
+    "greeting": {
+      "answered": 5,
+      "correct": 5,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.7143,
+      "kind": "smalltalk",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": true,
+      "reasons": []
+    },
+    "identity_creator": {
+      "answered": 5,
+      "correct": 5,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.7143,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": true,
+      "reasons": []
+    },
+    "identity_model": {
+      "answered": 5,
+      "correct": 5,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.7143,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": true,
+      "reasons": []
+    },
+    "identity_who": {
+      "answered": 4,
+      "correct": 3,
+      "gold": 7,
+      "precision": 0.75,
+      "recall": 0.4286,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5",
+        "precision<0.95",
+        "recall<0.5"
+      ]
+    },
+    "issue_alarm_screen_off": {
+      "answered": 3,
+      "correct": 3,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.4286,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5",
+        "recall<0.5"
+      ]
+    },
+    "issue_microphone": {
+      "answered": 3,
+      "correct": 3,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.4286,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5",
+        "recall<0.5"
+      ]
+    },
+    "issue_no_sound": {
+      "answered": 6,
+      "correct": 5,
+      "gold": 7,
+      "precision": 0.8333,
+      "recall": 0.7143,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "precision<0.95"
+      ]
+    },
+    "issue_site_error": {
+      "answered": 4,
+      "correct": 4,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.5714,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5"
+      ]
+    },
+    "out_of_scope": {
+      "answered": 0,
+      "correct": 0,
+      "gold": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5",
+        "precision<0.95",
+        "recall<0.5"
+      ]
+    },
+    "privacy_data": {
+      "answered": 4,
+      "correct": 4,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.5714,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5"
+      ]
+    },
+    "recipe_cook_time": {
+      "answered": 4,
+      "correct": 4,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.5714,
+      "kind": "action",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5"
+      ]
+    },
+    "recipe_how_to_cook": {
+      "answered": 3,
+      "correct": 2,
+      "gold": 7,
+      "precision": 0.6667,
+      "recall": 0.2857,
+      "kind": "action",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5",
+        "precision<0.95",
+        "recall<0.5"
+      ]
+    },
+    "recipe_ingredients": {
+      "answered": 7,
+      "correct": 5,
+      "gold": 7,
+      "precision": 0.7143,
+      "recall": 0.7143,
+      "kind": "action",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "precision<0.95"
+      ]
+    },
+    "recipe_nutrition": {
+      "answered": 3,
+      "correct": 3,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.4286,
+      "kind": "action",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5",
+        "recall<0.5"
+      ]
+    },
+    "recipe_scale_servings": {
+      "answered": 2,
+      "correct": 2,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.2857,
+      "kind": "action",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5",
+        "recall<0.5"
+      ]
+    },
+    "recommend_by_diet": {
+      "answered": 4,
+      "correct": 4,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.5714,
+      "kind": "action",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5"
+      ]
+    },
+    "recommend_by_ingredients": {
+      "answered": 2,
+      "correct": 2,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.2857,
+      "kind": "action",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5",
+        "recall<0.5"
+      ]
+    },
+    "recommend_by_meal": {
+      "answered": 5,
+      "correct": 4,
+      "gold": 7,
+      "precision": 0.8,
+      "recall": 0.5714,
+      "kind": "action",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "precision<0.95"
+      ]
+    },
+    "recommend_by_region": {
+      "answered": 3,
+      "correct": 3,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.4286,
+      "kind": "action",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5",
+        "recall<0.5"
+      ]
+    },
+    "recommend_general": {
+      "answered": 3,
+      "correct": 2,
+      "gold": 7,
+      "precision": 0.6667,
+      "recall": 0.2857,
+      "kind": "action",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5",
+        "precision<0.95",
+        "recall<0.5"
+      ]
+    },
+    "recommend_quick": {
+      "answered": 2,
+      "correct": 1,
+      "gold": 7,
+      "precision": 0.5,
+      "recall": 0.1429,
+      "kind": "action",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5",
+        "precision<0.95",
+        "recall<0.5"
+      ]
+    },
+    "safety_abuse": {
+      "answered": 3,
+      "correct": 3,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.4286,
+      "kind": "safety",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5",
+        "recall<0.5"
+      ]
+    },
+    "safety_dangerous": {
+      "answered": 1,
+      "correct": 1,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.1429,
+      "kind": "safety",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5",
+        "recall<0.5"
+      ]
+    },
+    "safety_emergency": {
+      "answered": 1,
+      "correct": 1,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.1429,
+      "kind": "safety",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5",
+        "recall<0.5"
+      ]
+    },
+    "safety_medical": {
+      "answered": 2,
+      "correct": 2,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.2857,
+      "kind": "safety",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5",
+        "recall<0.5"
+      ]
+    },
+    "safety_prompt_injection": {
+      "answered": 3,
+      "correct": 3,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.4286,
+      "kind": "safety",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5",
+        "recall<0.5"
+      ]
+    },
+    "settings_assistant_style": {
+      "answered": 3,
+      "correct": 3,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.4286,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5",
+        "recall<0.5"
+      ]
+    },
+    "settings_diet": {
+      "answered": 2,
+      "correct": 2,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.2857,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5",
+        "recall<0.5"
+      ]
+    },
+    "settings_display": {
+      "answered": 3,
+      "correct": 3,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.4286,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5",
+        "recall<0.5"
+      ]
+    },
+    "settings_household": {
+      "answered": 5,
+      "correct": 5,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.7143,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": true,
+      "reasons": []
+    },
+    "settings_notifications": {
+      "answered": 4,
+      "correct": 4,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.5714,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5"
+      ]
+    },
+    "support_ticket_status": {
+      "answered": 6,
+      "correct": 6,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.8571,
+      "kind": "faq",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": true,
+      "reasons": []
+    },
+    "thanks_praise": {
+      "answered": 2,
+      "correct": 2,
+      "gold": 7,
+      "precision": 1.0,
+      "recall": 0.2857,
+      "kind": "smalltalk",
+      "llm_pass_rate": null,
+      "inhouse_pass_rate": null,
+      "passed": false,
+      "reasons": [
+        "support<5",
+        "recall<0.5"
+      ]
+    }
+  }
+}

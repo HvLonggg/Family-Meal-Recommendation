@@ -45,22 +45,23 @@ class SupportTicketResponse(BaseModel):
     subject: str
     message: str
     status: SupportStatus
-    admin_note: str | None
+    reply_status: Literal["not_sent", "sending", "sent", "failed"]
+    reply_subject: str | None = None
+    reply_message: str | None = None
+    reply_sent_at: datetime | None = None
     created_at: datetime
     updated_at: datetime
 
 
 class AdminSupportTicketResponse(SupportTicketResponse):
+    admin_note: str | None
     notification_attempts: int
     notification_sent_at: datetime | None
     viewed_at: datetime | None
     reply_status: Literal["not_sent", "sending", "sent", "failed"]
     reply_attempts: int
     reply_last_attempt_at: datetime | None
-    reply_sent_at: datetime | None
     reply_last_error: str | None
-    reply_subject: str | None
-    reply_message: str | None
 
 
 class AdminSupportTicketListResponse(BaseModel):
@@ -104,6 +105,12 @@ class SupportTicketReceipt(BaseModel):
     id: UUID
     reference: str
     message: str
+    support_email: EmailStr
+
+
+class SupportContactSettings(BaseModel):
+    support_email: EmailStr
+    response_sla_business_hours: int = 24
 
 
 class SupportTicketUpdate(BaseModel):

@@ -71,7 +71,7 @@ class ArticleWriteBase(BaseModel):
     cover_image: str | None = Field(default=None, max_length=1_200_000)
     kind: ArticleKind = "story"
     submit: bool = True
-# Bỏ qua trường này khi tạo bài mới.
+    # Bỏ qua trường này khi tạo bài mới.
     remove_cover: bool = False
 
     @field_validator("title", "excerpt")

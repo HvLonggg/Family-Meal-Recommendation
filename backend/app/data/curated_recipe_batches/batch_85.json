@@ -1,0 +1,330 @@
+{
+  "batch": 85,
+  "description": "Năm món chay và rau củ quen thuộc cho bữa cơm gia đình, gồm món xào, món trộn, món canh và món kho.",
+  "recipes": [
+    {
+      "id": "BV752",
+      "slug": "bap-non-xao-nam-bao-ngu-chay",
+      "name": "Bắp non xào nấm bào ngư chay",
+      "aliases": ["Bắp non xào nấm chay", "Bắp non xào nấm bào ngư"],
+      "region": ["Toàn quốc"],
+      "province": [],
+      "category": "Món chay",
+      "meal_type": ["bữa trưa", "bữa tối", "bữa ăn gia đình", "món chay"],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một đĩa món xào ăn kèm cơm cho bốn người.",
+      "prep_time": 10,
+      "cook_time": 15,
+      "passive_time": 0,
+      "total_time": 25,
+      "description": "Bắp non giòn ngọt xào cùng nấm bào ngư mềm thơm, nêm dầu hào chay và tiêu. Món rau củ dễ nấu, hợp dùng nóng trong bữa cơm thường ngày.",
+      "finished_dish": "Bắp non chín tới vẫn giữ độ giòn, nấm mềm nhưng không nhũn; gia vị áo nhẹ, không đọng nhiều nước.",
+      "serving": "Dọn nóng với cơm trắng, rắc hành ngò và tiêu ngay trước khi ăn.",
+      "tips": [
+        "Chẻ dọc bắp non để phần lõi chín đều mà không cần xào quá lâu.",
+        "Để nấm ráo nước trước khi xào để món ăn không bị loãng.",
+        "Nếm dầu hào chay trước khi thêm muối vì độ mặn giữa các nhãn hiệu khác nhau."
+      ],
+      "dish_type": ["Món xào", "Món chay hằng ngày"],
+      "main_ingredient": ["bắp non", "nấm bào ngư"],
+      "cooking_method": ["luộc nhanh", "xào"],
+      "search_terms": ["bắp non xào nấm bào ngư chay", "bắp non xào nấm chay", "món chay từ bắp non", "món xào chay nhanh"],
+      "spicy_level": 0,
+      "image_alt": "Đĩa bắp non xào nấm bào ngư chay với hành lá và vài lát ớt đỏ.",
+      "time_note": "Khoảng 25 phút; thời gian luộc bắp thay đổi theo độ non và kích thước.",
+      "suggested_pairings": ["Cơm trắng", "Canh rau ngót nấu nấm", "Đậu hũ kho"],
+      "recipe_family": "bap_non_xao_nam_bao_ngu_chay",
+      "keywords": ["bắp non", "nấm bào ngư", "món xào chay", "bữa cơm gia đình"],
+      "tags": ["món chay", "món rau", "món xào", "bữa ăn gia đình"],
+      "ingredients": [
+        {"name": "Bắp non", "quantity": 200, "unit": "g", "role": "vegetable", "notes": "Rửa sạch, chẻ dọc đôi.", "scaling_rule": "linear", "sequence": 1},
+        {"name": "Nấm bào ngư", "quantity": 200, "unit": "g", "role": "mushroom", "notes": "Xé miếng vừa ăn, để ráo.", "scaling_rule": "linear", "sequence": 2},
+        {"name": "Dầu ăn", "quantity": 12, "unit": "ml", "role": "oil", "notes": "Dùng để xào nấm.", "scaling_rule": "linear", "sequence": 3},
+        {"name": "Dầu hào chay", "quantity": 15, "unit": "ml", "role": "seasoning", "notes": "Chọn sản phẩm ghi rõ dùng cho món chay.", "scaling_rule": "seasoning", "sequence": 4},
+        {"name": "Hạt nêm chay", "quantity": 4, "unit": "g", "role": "seasoning", "notes": "Nêm từ ít rồi điều chỉnh.", "scaling_rule": "seasoning", "sequence": 5},
+        {"name": "Muối", "quantity": 2, "unit": "g", "role": "seasoning", "notes": "Có thể giảm tùy độ mặn của dầu hào.", "scaling_rule": "seasoning", "sequence": 6},
+        {"name": "Tiêu xay", "quantity": 1, "unit": "g", "role": "seasoning", "notes": "Rắc sau khi tắt bếp.", "scaling_rule": "seasoning", "sequence": 7},
+        {"name": "Hành lá", "quantity": 10, "unit": "g", "role": "garnish", "notes": "Thái nhỏ, dùng tùy thích.", "scaling_rule": "linear", "sequence": 8},
+        {"name": "Ớt bột", "quantity": 1, "unit": "g", "role": "seasoning", "notes": "Tùy chọn.", "scaling_rule": "seasoning", "sequence": 9}
+      ],
+      "preparation_steps": [
+        {"step": 1, "instruction": "Rửa bắp non, chẻ dọc làm đôi. Xé nấm bào ngư thành miếng vừa ăn, rửa nhanh và để ráo."},
+        {"step": 2, "instruction": "Thái nhỏ hành lá; chuẩn bị dầu hào chay, hạt nêm, muối và tiêu để nêm lần lượt."}
+      ],
+      "cooking_steps": [
+        {"step": 1, "instruction": "Cho bắp non vào nồi với một ít nước, luộc vừa chín tới. Khi nước gần cạn, gắp bắp ra để riêng."},
+        {"step": 2, "instruction": "Làm nóng dầu trong chảo, xào nấm đến khi mềm và tiết ít nước. Thêm bắp non, dầu hào chay, hạt nêm và muối; đảo đều cho gia vị bám quanh nguyên liệu."},
+        {"step": 3, "instruction": "Xào thêm vài phút đến khi bắp chín giòn, nếm lại rồi tắt bếp. Rắc tiêu và hành lá trước khi dọn."}
+      ],
+      "sources": [
+        {"url": "https://cookpad.com/vn/cong-thuc/14030757", "publisher": "Cookpad Việt Nam", "title": "Bắp Non Xào Nấm Bào Ngư Chay", "use": "Đối chiếu tên món, hai nguyên liệu chính, cách chẻ và luộc bắp non rồi trộn với nấm xào và dầu hào chay.", "accessed_at": "2026-10-25", "type": "editorial_reference"}
+      ],
+      "scaling": {"base_servings": 4, "targets": [{"servings": 2, "main_factor": 0.5, "seasoning_start_factor": 0.45, "example": "Giảm nguyên liệu chính còn một nửa; nêm gia vị từ ít đến vừa.", "instruction": "Điều chỉnh lượng nước khi luộc theo kích thước nồi."}, {"servings": 6, "main_factor": 1.5, "seasoning_start_factor": 1.3, "example": "Tăng nguyên liệu chính khoảng một lần rưỡi; nếm lại sau khi xào.", "instruction": "Xào theo mẻ nếu chảo nhỏ để nấm không ra quá nhiều nước."}]},
+      "media": [{"image_url": "/images/recipes/edited/bap-non-xao-nam-bao-ngu-chay-960.webp", "page_url": "https://cookpad.com/vn/cong-thuc/14030757", "source": "Bếp Việt", "author": "Bếp Việt", "license": null, "rights_status": "project", "rights_note": "Ảnh được tạo riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập công thức.", "width": 3840, "height": 2160, "orientation": "landscape", "preferred_width_met": true, "alt_text": "Đĩa bắp non xào nấm bào ngư chay với hành lá và vài lát ớt đỏ.", "verified_dish_match": true, "visual_review_date": "2026-10-25", "photo_variant_note": "PNG gốc native 1536×1024 có alpha; canvas 3840×2160 và WebP được xuất từ PNG này, bản 3840 là upscale, không phải độ phân giải native 4K. Công thức chưa nấu thử."}],
+      "editorial": {"status": "editorial_draft", "production_ready": false, "test_cook_status": "not_tested", "variant_note": "Biên tập bằng lời riêng từ nguồn tham khảo; cần nấu thử để xác nhận định lượng và thời gian.", "seed_recipe": null, "reviewed_at": "2026-10-25", "needs": ["Nấu thử để xác nhận vị, định lượng và thời gian thực tế."]},
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "id": "BV753",
+      "slug": "rau-cang-cua-tron-dau-hu",
+      "name": "Rau càng cua trộn đậu hũ chay",
+      "aliases": ["Salad rau càng cua đậu hũ", "Rau càng cua trộn chay"],
+      "region": ["Toàn quốc"],
+      "province": [],
+      "category": "Món rau",
+      "meal_type": ["bữa trưa", "bữa tối", "bữa ăn gia đình", "món chay"],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một đĩa rau trộn dùng chung cho bốn người.",
+      "prep_time": 20,
+      "cook_time": 10,
+      "passive_time": 0,
+      "total_time": 30,
+      "description": "Rau càng cua giòn mát trộn cùng đậu hũ chiên vàng và nước sốt chanh chua ngọt. Món trộn nhẹ nhàng giúp cân vị cho mâm cơm chay.",
+      "finished_dish": "Lá rau còn xanh giòn, đậu hũ có mặt ngoài vàng nhẹ; sốt bám vừa đủ và không đọng thành vũng dưới đĩa.",
+      "serving": "Chỉ trộn rau ngay trước bữa ăn; dọn cùng cơm nóng hoặc dùng như món rau khai vị.",
+      "tips": [
+        "Rửa rau nhẹ tay và để thật ráo để lá không dập, sốt không bị loãng.",
+        "Để đậu hũ nguội bớt trước khi trộn để rau giữ độ giòn.",
+        "Rau sẽ ra nước sau khi trộn, vì vậy chỉ áo sốt ngay trước khi dùng."
+      ],
+      "dish_type": ["Món trộn", "Món chay hằng ngày"],
+      "main_ingredient": ["rau càng cua", "đậu hũ"],
+      "cooking_method": ["chiên", "pha sốt", "trộn"],
+      "search_terms": ["rau càng cua trộn đậu hũ chay", "salad rau càng cua chay", "rau càng cua trộn chanh", "món rau chay thanh nhẹ"],
+      "spicy_level": 0,
+      "image_alt": "Đĩa rau càng cua trộn đậu hũ chiên vàng với sốt chanh và ớt đỏ.",
+      "time_note": "Khoảng 30 phút, gồm thời gian chiên đậu hũ; trộn rau sát giờ ăn.",
+      "suggested_pairings": ["Cơm trắng", "Món kho chay", "Canh rau củ"],
+      "recipe_family": "rau_cang_cua_tron_dau_hu_chay",
+      "keywords": ["rau càng cua", "đậu hũ chiên", "nước mắm chay", "món trộn"],
+      "tags": ["món chay", "món rau", "món trộn", "bữa ăn gia đình"],
+      "ingredients": [
+        {"name": "Rau càng cua", "quantity": 250, "unit": "g", "role": "vegetable", "notes": "Nhặt lá hỏng, rửa sạch và để thật ráo.", "scaling_rule": "linear", "sequence": 1},
+        {"name": "Xà lách", "quantity": 80, "unit": "g", "role": "vegetable", "notes": "Tùy chọn; rửa sạch, xé miếng vừa ăn.", "scaling_rule": "linear", "sequence": 2},
+        {"name": "Đậu hũ trắng", "quantity": 200, "unit": "g", "role": "protein", "notes": "Cắt miếng vuông nhỏ, thấm ráo trước khi chiên.", "scaling_rule": "linear", "sequence": 3},
+        {"name": "Dầu ăn", "quantity": 250, "unit": "ml", "role": "oil", "notes": "Dùng để chiên đậu; lượng thực dùng tùy chảo.", "scaling_rule": "fixed", "sequence": 4},
+        {"name": "Nước mắm chay", "quantity": 15, "unit": "ml", "role": "seasoning", "notes": "Chọn loại thuần chay.", "scaling_rule": "seasoning", "sequence": 5},
+        {"name": "Nước cốt chanh", "quantity": 15, "unit": "ml", "role": "seasoning", "notes": "Vắt và lọc hạt.", "scaling_rule": "seasoning", "sequence": 6},
+        {"name": "Đường", "quantity": 16, "unit": "g", "role": "seasoning", "notes": "Khuấy tan trong sốt.", "scaling_rule": "seasoning", "sequence": 7},
+        {"name": "Ớt đỏ", "quantity": 3, "unit": "g", "role": "seasoning", "notes": "Băm nhỏ, gia giảm theo khẩu vị.", "scaling_rule": "seasoning", "sequence": 8}
+      ],
+      "preparation_steps": [
+        {"step": 1, "instruction": "Rửa rau càng cua và xà lách. Ngâm rau vài phút trong nước muối loãng, tráng lại rồi để thật ráo."},
+        {"step": 2, "instruction": "Cắt đậu hũ thành miếng vuông nhỏ, thấm khô. Pha nước mắm chay với nước cốt chanh, đường và ớt băm."}
+      ],
+      "cooking_steps": [
+        {"step": 1, "instruction": "Làm nóng dầu ở lửa vừa, chiên đậu hũ đến khi các mặt vàng nhẹ. Gắp ra giấy thấm dầu và để nguội bớt."},
+        {"step": 2, "instruction": "Xếp rau ra đĩa lớn. Rưới lượng sốt vừa đủ, thêm đậu hũ rồi trộn nhẹ tay ngay trước khi ăn."}
+      ],
+      "sources": [
+        {"url": "https://cookpad.com/vn/cong-thuc/15340442", "publisher": "Cookpad Việt Nam", "title": "Salad rau càng cua (Rau càng cua trộn)", "use": "Đối chiếu rau càng cua, đậu hũ, nước mắm chay, chanh, đường và trình tự để rau ráo, chiên đậu, pha sốt rồi trộn sát giờ ăn.", "accessed_at": "2026-10-25", "type": "editorial_reference"},
+        {"url": "https://portal.vinhlong.gov.vn/portal/wpskhcn/cms/asset/download.cpx?code=688a5096-6490-4755-a1ba-aa4bff026de6", "publisher": "Cổng thông tin Khoa học và Công nghệ Vĩnh Long", "title": "Rau càng cua", "use": "Đối chiếu cách dùng rau càng cua làm dầu giấm với đậu phụ chiên như một món chay.", "accessed_at": "2026-10-25", "type": "regional_identity_reference"}
+      ],
+      "scaling": {"base_servings": 4, "targets": [{"servings": 2, "main_factor": 0.5, "seasoning_start_factor": 0.45, "example": "Giảm rau và đậu hũ còn một nửa; nêm sốt từ ít đến vừa.", "instruction": "Giữ nguyên bước để rau ráo và chỉ trộn ngay trước khi ăn."}, {"servings": 6, "main_factor": 1.5, "seasoning_start_factor": 1.3, "example": "Tăng rau và đậu hũ khoảng một lần rưỡi; nếm lại sốt trước khi trộn.", "instruction": "Chiên đậu theo mẻ để các miếng vàng đều."}]},
+      "media": [{"image_url": "/images/recipes/edited/rau-cang-cua-tron-dau-hu-960.webp", "page_url": "https://cookpad.com/vn/cong-thuc/15340442", "source": "Bếp Việt", "author": "Bếp Việt", "license": null, "rights_status": "project", "rights_note": "Ảnh được tạo riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập công thức.", "width": 3840, "height": 2160, "orientation": "landscape", "preferred_width_met": true, "alt_text": "Đĩa rau càng cua trộn đậu hũ chiên vàng với sốt chanh và ớt đỏ.", "verified_dish_match": true, "visual_review_date": "2026-10-25", "photo_variant_note": "PNG gốc native 1536×1024 có alpha; canvas 3840×2160 và WebP được xuất từ PNG này, bản 3840 là upscale, không phải độ phân giải native 4K. Công thức chưa nấu thử."}],
+      "editorial": {"status": "editorial_draft", "production_ready": false, "test_cook_status": "not_tested", "variant_note": "Biên tập bằng lời riêng từ nguồn tham khảo; cần nấu thử để xác nhận định lượng và thời gian.", "seed_recipe": null, "reviewed_at": "2026-10-25", "needs": ["Nấu thử để xác nhận vị, định lượng và thời gian thực tế."]},
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "id": "BV754",
+      "slug": "cu-sen-xao-rau-cu-chay",
+      "name": "Củ sen xào rau củ chay",
+      "aliases": ["Củ sen xào thập cẩm chay", "Củ sen xào chả chay"],
+      "region": ["Toàn quốc"],
+      "province": [],
+      "category": "Món chay",
+      "meal_type": ["bữa trưa", "bữa tối", "bữa ăn gia đình", "món chay"],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một đĩa rau củ xào ăn kèm cơm cho bốn người.",
+      "prep_time": 15,
+      "cook_time": 20,
+      "passive_time": 0,
+      "total_time": 35,
+      "description": "Khoanh củ sen giòn ngọt xào với cà rốt, ớt chuông và chả chay. Nước tương cùng chút ngũ vị hương tạo vị đậm vừa, màu sắc tươi sáng cho bữa cơm.",
+      "finished_dish": "Củ sen chín giòn, rau củ giữ hình và màu tự nhiên; nước xốt bám mỏng quanh các miếng mà không làm món xào nhão.",
+      "serving": "Dọn nóng, rắc hành boa-rô và ăn với cơm trắng.",
+      "tips": [
+        "Ngâm củ sen đã cắt trong nước muối loãng để hạn chế thâm màu.",
+        "Cắt rau củ đồng đều để chúng chín gần như cùng lúc.",
+        "Pha loãng bột năng riêng rồi thêm từng ít để kiểm soát độ sánh của xốt."
+      ],
+      "dish_type": ["Món xào", "Món rau củ chay"],
+      "main_ingredient": ["củ sen", "rau củ", "chả chay"],
+      "cooking_method": ["luộc sơ", "xào"],
+      "search_terms": ["củ sen xào rau củ chay", "củ sen xào thập cẩm chay", "món chay từ củ sen", "rau củ xào nước tương"],
+      "spicy_level": 0,
+      "image_alt": "Đĩa củ sen xào rau củ chay với cà rốt, ớt chuông và chả chay.",
+      "time_note": "Khoảng 35 phút, bao gồm sơ chế, luộc sơ củ sen và xào rau củ.",
+      "suggested_pairings": ["Cơm trắng", "Canh rau xanh", "Rau trộn chay"],
+      "recipe_family": "cu_sen_xao_rau_cu_chay",
+      "keywords": ["củ sen", "cà rốt", "ớt chuông", "chả chay", "món xào chay"],
+      "tags": ["món chay", "món rau", "món xào", "bữa ăn gia đình"],
+      "ingredients": [
+        {"name": "Củ sen", "quantity": 300, "unit": "g", "role": "vegetable", "notes": "Gọt vỏ, cắt khoanh dày khoảng 0,5 cm.", "scaling_rule": "linear", "sequence": 1},
+        {"name": "Cà rốt", "quantity": 60, "unit": "g", "role": "vegetable", "notes": "Cắt lát mỏng hoặc tỉa hoa.", "scaling_rule": "linear", "sequence": 2},
+        {"name": "Ớt chuông đỏ", "quantity": 50, "unit": "g", "role": "vegetable", "notes": "Bỏ hạt, cắt miếng vừa ăn.", "scaling_rule": "linear", "sequence": 3},
+        {"name": "Ớt chuông vàng", "quantity": 50, "unit": "g", "role": "vegetable", "notes": "Bỏ hạt, cắt miếng vừa ăn.", "scaling_rule": "linear", "sequence": 4},
+        {"name": "Chả chay", "quantity": 100, "unit": "g", "role": "protein", "notes": "Chọn loại phù hợp chế độ ăn chay, cắt miếng vừa.", "scaling_rule": "linear", "sequence": 5},
+        {"name": "Hành boa-rô", "quantity": 25, "unit": "g", "role": "aromatic", "notes": "Rửa sạch; thái riêng phần đầu và lá.", "scaling_rule": "linear", "sequence": 6},
+        {"name": "Nước tương", "quantity": 30, "unit": "ml", "role": "seasoning", "notes": "Dùng loại chay.", "scaling_rule": "seasoning", "sequence": 7},
+        {"name": "Hạt nêm chay", "quantity": 5, "unit": "g", "role": "seasoning", "notes": "Nêm theo độ mặn của nước tương.", "scaling_rule": "seasoning", "sequence": 8},
+        {"name": "Đường", "quantity": 8, "unit": "g", "role": "seasoning", "notes": null, "scaling_rule": "seasoning", "sequence": 9},
+        {"name": "Bột ngũ vị hương", "quantity": 1, "unit": "g", "role": "seasoning", "notes": "Chỉ dùng một lượng nhỏ để tạo mùi nền.", "scaling_rule": "seasoning", "sequence": 10},
+        {"name": "Bột năng", "quantity": 8, "unit": "g", "role": "thickener", "notes": "Hòa tan với một ít nước trước khi cho vào chảo.", "scaling_rule": "linear", "sequence": 11},
+        {"name": "Dầu ăn", "quantity": 15, "unit": "ml", "role": "oil", "notes": "Dùng để xào.", "scaling_rule": "linear", "sequence": 12}
+      ],
+      "preparation_steps": [
+        {"step": 1, "instruction": "Gọt vỏ củ sen, cắt khoanh khoảng nửa phân rồi ngâm trong nước muối loãng. Cắt cà rốt, hai loại ớt chuông và chả chay thành miếng vừa ăn."},
+        {"step": 2, "instruction": "Pha nước tương, hạt nêm chay, đường và ngũ vị hương với khoảng 100 ml nước. Hòa bột năng với một ít nước trong chén riêng."}
+      ],
+      "cooking_steps": [
+        {"step": 1, "instruction": "Đun sôi nồi nước, luộc củ sen và cà rốt khoảng 4–5 phút cho vừa chín. Vớt ra để ráo; nếu muốn giữ độ giòn, ngâm nhanh trong nước đá rồi để ráo."},
+        {"step": 2, "instruction": "Làm nóng dầu, phi thơm phần đầu boa-rô. Cho ớt chuông vào đảo nhanh, tiếp đến thêm củ sen, cà rốt và chả chay."},
+        {"step": 3, "instruction": "Rưới phần nước tương đã pha, đảo trên lửa vừa 1–2 phút cho thấm. Thêm bột năng đã hòa nước từng ít một, đảo đến khi xốt sánh nhẹ rồi tắt bếp."}
+      ],
+      "sources": [
+        {"url": "https://hayan.vn/vao-bep/chia-se-cach-lam-cu-sen-xao-rau-cu-doi-vi-ngay-chay-p18259.html", "publisher": "HAY ĂN", "title": "Chia sẻ cách làm củ sen xào rau củ đổi vị ngày chay", "use": "Đối chiếu nguyên liệu củ sen, cà rốt, ớt chuông, chả chay và kỹ thuật luộc sơ rồi xào với nước tương, ngũ vị hương, bột năng.", "accessed_at": "2026-10-25", "type": "editorial_reference"}
+      ],
+      "scaling": {"base_servings": 4, "targets": [{"servings": 2, "main_factor": 0.5, "seasoning_start_factor": 0.45, "example": "Giảm nguyên liệu chính còn một nửa; nêm nước tương từ ít đến vừa.", "instruction": "Giữ nguyên bước ngâm củ sen và chỉ thêm bột năng từ từ."}, {"servings": 6, "main_factor": 1.5, "seasoning_start_factor": 1.3, "example": "Tăng rau củ khoảng một lần rưỡi; nếm lại xốt trước khi tắt bếp.", "instruction": "Chia thành hai mẻ nếu chảo không đủ rộng để rau củ không bị hấp mềm."}]},
+      "media": [{"image_url": "/images/recipes/edited/cu-sen-xao-rau-cu-chay-960.webp", "page_url": "https://hayan.vn/vao-bep/chia-se-cach-lam-cu-sen-xao-rau-cu-doi-vi-ngay-chay-p18259.html", "source": "Bếp Việt", "author": "Bếp Việt", "license": null, "rights_status": "project", "rights_note": "Ảnh được tạo riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập công thức.", "width": 3840, "height": 2160, "orientation": "landscape", "preferred_width_met": true, "alt_text": "Đĩa củ sen xào rau củ chay với cà rốt, ớt chuông và chả chay.", "verified_dish_match": true, "visual_review_date": "2026-10-25", "photo_variant_note": "PNG gốc native 1536×1024 có alpha; canvas 3840×2160 và WebP được xuất từ PNG này, bản 3840 là upscale, không phải độ phân giải native 4K. Công thức chưa nấu thử."}],
+      "editorial": {"status": "editorial_draft", "production_ready": false, "test_cook_status": "not_tested", "variant_note": "Biên tập bằng lời riêng từ nguồn tham khảo; cần nấu thử để xác nhận định lượng và thời gian.", "seed_recipe": null, "reviewed_at": "2026-10-25", "needs": ["Nấu thử để xác nhận vị, định lượng và thời gian thực tế."]},
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "id": "BV755",
+      "slug": "canh-rau-ngot-nau-nam-chay",
+      "name": "Canh rau ngót nấu nấm chay",
+      "aliases": ["Canh rau ngót nấm rơm chay", "Canh rau ngót nấu nấm"],
+      "region": ["Toàn quốc"],
+      "province": [],
+      "category": "Món canh",
+      "meal_type": ["bữa trưa", "bữa tối", "bữa ăn gia đình", "món chay"],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một tô canh rau cho bốn người trong bữa cơm.",
+      "prep_time": 10,
+      "cook_time": 15,
+      "passive_time": 0,
+      "total_time": 25,
+      "description": "Rau ngót vò nhẹ nấu cùng nấm rơm và mộc nhĩ trong nước canh thanh. Cách nấu giản dị tận dụng vị ngọt của rau và nấm, không cần nước dùng từ thịt.",
+      "finished_dish": "Nước canh trong, rau ngót mềm vừa, nấm chín mọng và mộc nhĩ còn độ giòn nhẹ.",
+      "serving": "Múc canh ra tô và dùng nóng cùng cơm trắng.",
+      "tips": [
+        "Vò rau nhẹ tay để lá mềm nhưng không nát.",
+        "Cho nấm vào sau khi rau đã mềm để giữ kết cấu và tránh nấu quá lâu.",
+        "Nêm nước mắm chay và hạt nêm từng ít một vì mỗi loại có độ mặn khác nhau."
+      ],
+      "dish_type": ["Canh rau", "Món chay hằng ngày"],
+      "main_ingredient": ["rau ngót", "nấm rơm", "mộc nhĩ"],
+      "cooking_method": ["xào nhẹ", "nấu canh"],
+      "search_terms": ["canh rau ngót nấu nấm chay", "canh rau ngót nấm rơm", "canh rau ngót chay", "món canh chay dễ nấu"],
+      "spicy_level": 0,
+      "image_alt": "Tô canh rau ngót nấu nấm chay, nước canh trong với rau xanh và các loại nấm.",
+      "time_note": "Khoảng 25 phút; mộc nhĩ khô cần ngâm nở trước khi bắt đầu nấu.",
+      "suggested_pairings": ["Cơm trắng", "Rau càng cua trộn đậu hũ", "Củ sen xào rau củ"],
+      "recipe_family": "canh_rau_ngot_nau_nam_chay",
+      "keywords": ["rau ngót", "nấm rơm", "mộc nhĩ", "canh chay"],
+      "tags": ["món chay", "món canh", "món rau", "bữa ăn gia đình"],
+      "ingredients": [
+        {"name": "Rau ngót", "quantity": 200, "unit": "g", "role": "vegetable", "notes": "Tuốt lá, rửa sạch và vò sơ.", "scaling_rule": "linear", "sequence": 1},
+        {"name": "Nấm rơm", "quantity": 120, "unit": "g", "role": "mushroom", "notes": "Cắt bỏ chân bẩn, rửa nhanh; bổ đôi nếu nấm lớn.", "scaling_rule": "linear", "sequence": 2},
+        {"name": "Mộc nhĩ khô", "quantity": 8, "unit": "g", "role": "mushroom", "notes": "Ngâm nở, rửa sạch và thái sợi; có thể bỏ qua.", "scaling_rule": "linear", "sequence": 3},
+        {"name": "Nước lọc", "quantity": 1000, "unit": "ml", "role": "liquid", "notes": "Gia giảm theo lượng nước canh mong muốn.", "scaling_rule": "linear", "sequence": 4},
+        {"name": "Dầu ăn", "quantity": 8, "unit": "ml", "role": "oil", "notes": "Dùng để xào sơ rau và mộc nhĩ.", "scaling_rule": "linear", "sequence": 5},
+        {"name": "Nước mắm chay", "quantity": 15, "unit": "ml", "role": "seasoning", "notes": "Chọn loại thuần chay.", "scaling_rule": "seasoning", "sequence": 6},
+        {"name": "Hạt nêm chay", "quantity": 5, "unit": "g", "role": "seasoning", "notes": "Nêm từ ít rồi điều chỉnh.", "scaling_rule": "seasoning", "sequence": 7},
+        {"name": "Muối", "quantity": 2, "unit": "g", "role": "seasoning", "notes": "Tùy chọn theo khẩu vị.", "scaling_rule": "seasoning", "sequence": 8}
+      ],
+      "preparation_steps": [
+        {"step": 1, "instruction": "Tuốt lá rau ngót, bỏ lá sâu hoặc già, rửa sạch và vò nhẹ. Ngâm mộc nhĩ khô cho nở rồi thái sợi; làm sạch nấm rơm."},
+        {"step": 2, "instruction": "Chuẩn bị nước mắm chay, hạt nêm và nước lọc. Bổ đôi nấm rơm lớn để các miếng chín đều."}
+      ],
+      "cooking_steps": [
+        {"step": 1, "instruction": "Làm nóng dầu trong nồi, cho rau ngót và mộc nhĩ vào đảo nhẹ. Nêm nước mắm chay cùng hạt nêm, xào khoảng 3–5 phút cho rau mềm."},
+        {"step": 2, "instruction": "Thêm nước lọc, đun đến khi canh sôi. Hớt bọt nếu có, cho nấm rơm vào nấu thêm khoảng 4–5 phút đến khi rau và nấm vừa chín."},
+        {"step": 3, "instruction": "Nếm lại độ mặn, tắt bếp và múc canh ra tô."}
+      ],
+      "sources": [
+        {"url": "https://cookpad.com/vn/cong-thuc/10477801", "publisher": "Cookpad Việt Nam", "title": "Canh rau ngót nấu nấm (món chay)", "use": "Đối chiếu rau ngót, mộc nhĩ, nấm kim châm hoặc nấm rơm, nước mắm chay và trình tự xào rau rồi thêm nước, nấu nấm.", "accessed_at": "2026-10-25", "type": "editorial_reference"}
+      ],
+      "scaling": {"base_servings": 4, "targets": [{"servings": 2, "main_factor": 0.5, "seasoning_start_factor": 0.45, "example": "Giảm rau, nấm và nước còn khoảng một nửa; nêm gia vị từ ít.", "instruction": "Giữ canh sôi nhẹ và thêm nấm sau khi rau đã mềm."}, {"servings": 6, "main_factor": 1.5, "seasoning_start_factor": 1.3, "example": "Tăng nguyên liệu chính khoảng một lần rưỡi; nếm lại sau khi sôi.", "instruction": "Chọn nồi đủ rộng để rau chín đều trong nước canh."}]},
+      "media": [{"image_url": "/images/recipes/edited/canh-rau-ngot-nau-nam-chay-960.webp", "page_url": "https://cookpad.com/vn/cong-thuc/10477801", "source": "Bếp Việt", "author": "Bếp Việt", "license": null, "rights_status": "project", "rights_note": "Ảnh được tạo riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập công thức.", "width": 3840, "height": 2160, "orientation": "landscape", "preferred_width_met": true, "alt_text": "Tô canh rau ngót nấu nấm chay, nước canh trong với rau xanh và các loại nấm.", "verified_dish_match": true, "visual_review_date": "2026-10-25", "photo_variant_note": "PNG gốc native 1402×1122 có alpha; canvas 3840×2160 và WebP được xuất từ PNG này, bản 3840 là upscale, không phải độ phân giải native 4K. Công thức chưa nấu thử."}],
+      "editorial": {"status": "editorial_draft", "production_ready": false, "test_cook_status": "not_tested", "variant_note": "Biên tập bằng lời riêng từ nguồn tham khảo; cần nấu thử để xác nhận định lượng và thời gian.", "seed_recipe": null, "reviewed_at": "2026-10-25", "needs": ["Nấu thử để xác nhận vị, định lượng và thời gian thực tế."]},
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "id": "BV756",
+      "slug": "nam-bao-ngu-kho-sa-ot-chay",
+      "name": "Nấm bào ngư kho sả ớt chay",
+      "aliases": ["Nấm bào ngư kho sả ớt", "Nấm bào ngư kho chay"],
+      "region": ["Toàn quốc"],
+      "province": [],
+      "category": "Món chay",
+      "meal_type": ["bữa trưa", "bữa tối", "bữa ăn gia đình", "món chay"],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một đĩa nấm kho ăn cùng cơm cho bốn người.",
+      "prep_time": 15,
+      "cook_time": 25,
+      "passive_time": 0,
+      "total_time": 40,
+      "description": "Nấm bào ngư xé miếng được kho cùng sả, gừng, tỏi và ớt trong nước tương. Khi nước kho rút còn lớp áo bóng nhẹ, nấm mềm thơm, hợp dùng với cơm trắng.",
+      "finished_dish": "Miếng nấm mềm nhưng còn nguyên thớ, thấm màu nâu của nước tương; nước kho cạn vừa, dậy mùi sả và gừng.",
+      "serving": "Dọn nóng với cơm trắng, rắc hành lá và tiêu ngay trước khi ăn.",
+      "tips": [
+        "Xé nấm theo thớ và để ráo để miếng nấm thấm gia vị mà không ra quá nhiều nước.",
+        "Kho lửa nhỏ, đảo nhẹ khi nước còn nhiều để nấm không bị dập.",
+        "Nếm nước tương trước khi thêm muối vì độ mặn giữa các nhãn hiệu khác nhau."
+      ],
+      "dish_type": ["Món kho", "Món chay hằng ngày"],
+      "main_ingredient": ["nấm bào ngư", "sả", "gừng"],
+      "cooking_method": ["xào thơm", "kho"],
+      "search_terms": ["nấm bào ngư kho sả ớt chay", "nấm bào ngư kho chay", "nấm kho sả ớt", "món nấm chay ăn với cơm"],
+      "spicy_level": 1,
+      "image_alt": "Đĩa nấm bào ngư kho sả ớt chay trong nước tương sánh nhẹ, rắc hành lá và tiêu.",
+      "time_note": "Khoảng 40 phút, gồm sơ chế nấm, xào gia vị thơm và kho đến khi nước sốt rút nhẹ.",
+      "suggested_pairings": ["Cơm trắng", "Rau luộc", "Canh rau ngót nấu nấm"],
+      "recipe_family": "nam_bao_ngu_kho_sa_ot_chay",
+      "keywords": ["nấm bào ngư", "sả", "gừng", "nước tương", "món kho chay"],
+      "tags": ["món chay", "món kho", "món nấm", "bữa ăn gia đình"],
+      "ingredients": [
+        {"name": "Nấm bào ngư", "quantity": 450, "unit": "g", "role": "mushroom", "notes": "Xé miếng theo thớ, rửa nhanh và để ráo.", "scaling_rule": "linear", "sequence": 1},
+        {"name": "Sả", "quantity": 30, "unit": "g", "role": "aromatic", "notes": "Băm nhỏ phần gốc; giữ lại một ít lát mỏng nếu thích.", "scaling_rule": "linear", "sequence": 2},
+        {"name": "Gừng", "quantity": 12, "unit": "g", "role": "aromatic", "notes": "Gọt vỏ, băm nhỏ.", "scaling_rule": "linear", "sequence": 3},
+        {"name": "Tỏi", "quantity": 10, "unit": "g", "role": "aromatic", "notes": "Băm nhỏ.", "scaling_rule": "linear", "sequence": 4},
+        {"name": "Nước tương", "quantity": 30, "unit": "ml", "role": "seasoning", "notes": "Chọn loại dùng được cho món chay.", "scaling_rule": "seasoning", "sequence": 5},
+        {"name": "Nước màu", "quantity": 5, "unit": "ml", "role": "seasoning", "notes": "Dùng để tạo màu nâu; giảm nếu nước màu mặn.", "scaling_rule": "seasoning", "sequence": 6},
+        {"name": "Nước lọc", "quantity": 200, "unit": "ml", "role": "liquid", "notes": "Dùng để kho nấm.", "scaling_rule": "linear", "sequence": 7},
+        {"name": "Dầu ăn", "quantity": 12, "unit": "ml", "role": "oil", "notes": "Dùng để phi gia vị.", "scaling_rule": "linear", "sequence": 8},
+        {"name": "Ớt đỏ", "quantity": 8, "unit": "g", "role": "seasoning", "notes": "Thái lát, gia giảm theo khẩu vị.", "scaling_rule": "seasoning", "sequence": 9},
+        {"name": "Tiêu xay", "quantity": 2, "unit": "g", "role": "seasoning", "notes": "Rắc sau khi kho.", "scaling_rule": "seasoning", "sequence": 10},
+        {"name": "Hành lá", "quantity": 12, "unit": "g", "role": "garnish", "notes": "Thái nhỏ.", "scaling_rule": "linear", "sequence": 11},
+        {"name": "Muối", "quantity": 2, "unit": "g", "role": "seasoning", "notes": "Chỉ thêm nếu cần sau khi nếm nước sốt.", "scaling_rule": "seasoning", "sequence": 12}
+      ],
+      "preparation_steps": [
+        {"step": 1, "instruction": "Xé nấm bào ngư thành miếng vừa ăn, rửa nhanh và để thật ráo. Băm sả, gừng, tỏi; thái lát ớt và hành lá."},
+        {"step": 2, "instruction": "Pha nước tương, nước màu và nước lọc trong một chén. Nếm thử để biết độ mặn trước khi thêm muối."}
+      ],
+      "cooking_steps": [
+        {"step": 1, "instruction": "Làm nóng dầu trong nồi, phi sả, gừng và tỏi đến khi dậy mùi. Cho nấm vào đảo nhẹ cho săn lại."},
+        {"step": 2, "instruction": "Thêm hỗn hợp nước tương, nước màu và nước lọc. Đun sôi rồi hạ lửa nhỏ, kho đến khi nấm mềm và nước sốt rút còn lớp áo bóng nhẹ."},
+        {"step": 3, "instruction": "Nếm lại, thêm ớt và tiêu theo khẩu vị. Rắc hành lá rồi tắt bếp."}
+      ],
+      "sources": [
+        {"url": "https://thucphamchaybinhloan.com/blogs/mon-chay-ngon/10-mon-kho-chay-don-gian-de-lam", "publisher": "Thực phẩm Chay Bình Loan", "title": "Nấm bào ngư kho sả ớt chay", "use": "Đối chiếu tên món, nấm bào ngư, xì dầu, nước màu, tiêu, gừng, tỏi, ớt, sả và hành lá; biên tập lại trình tự xào thơm gia vị rồi kho đến khi nước rút.", "accessed_at": "2026-10-25", "type": "editorial_reference"}
+      ],
+      "scaling": {"base_servings": 4, "targets": [{"servings": 2, "main_factor": 0.5, "seasoning_start_factor": 0.45, "example": "Giảm nấm và nước kho còn khoảng một nửa; nêm nước tương từ ít.", "instruction": "Nếm nước tương trước khi bổ sung muối."}, {"servings": 6, "main_factor": 1.5, "seasoning_start_factor": 1.3, "example": "Tăng nấm khoảng một lần rưỡi; nếm lại nước kho trước khi tắt bếp.", "instruction": "Dùng nồi đủ rộng để nấm chín đều và nước sốt rút vừa."}]},
+      "media": [{"image_url": "/images/recipes/edited/nam-bao-ngu-kho-sa-ot-chay-960.webp", "page_url": "https://thucphamchaybinhloan.com/blogs/mon-chay-ngon/10-mon-kho-chay-don-gian-de-lam", "source": "Bếp Việt", "author": "Bếp Việt", "license": null, "rights_status": "project", "rights_note": "Ảnh được tạo riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập công thức.", "width": 3840, "height": 2160, "orientation": "landscape", "preferred_width_met": true, "alt_text": "Đĩa nấm bào ngư kho sả ớt chay trong nước tương sánh nhẹ, rắc hành lá và tiêu.", "verified_dish_match": true, "visual_review_date": "2026-10-25", "photo_variant_note": "PNG gốc native 1536×1024 có alpha; canvas 3840×2160 và WebP được xuất từ PNG này, bản 3840 là upscale, không phải độ phân giải native 4K. Công thức chưa nấu thử."}],
+      "editorial": {"status": "editorial_draft", "production_ready": false, "test_cook_status": "not_tested", "variant_note": "Biên tập bằng lời riêng từ nguồn tham khảo; cần nấu thử để xác nhận định lượng và thời gian.", "seed_recipe": null, "reviewed_at": "2026-10-25", "needs": ["Nấu thử để xác nhận vị, định lượng và thời gian thực tế."]},
+      "width": 3840,
+      "height": 2160
+    }
+  ]
+}

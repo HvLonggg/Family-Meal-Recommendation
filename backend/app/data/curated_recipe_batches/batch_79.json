@@ -1,0 +1,1321 @@
+{
+  "batch": 79,
+  "description": "Món đạm gia đình Việt dễ áp dụng; tên và kỹ thuật được đối chiếu nguồn, nội dung được biên tập lại, ảnh tạo riêng cho Bếp Việt.",
+  "recipes": [
+    {
+      "id": "BV722",
+      "slug": "tom-rang-thit-ba-chi",
+      "name": "Tôm rang thịt ba chỉ",
+      "aliases": [
+        "Tôm rang ba chỉ",
+        "Tôm rim thịt ba chỉ"
+      ],
+      "region": [
+        "Ba miền"
+      ],
+      "province": [],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "mâm cơm gia đình"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Bốn phần ăn dùng làm món mặn trong mâm cơm có cơm trắng và rau.",
+      "prep_time": 20,
+      "cook_time": 25,
+      "passive_time": 10,
+      "total_time": 55,
+      "description": "Tôm ngọt săn rang cùng ba chỉ có lớp nạc mỡ xen kẽ, áo nước mắm caramel vừa mặn ngọt. Món hợp bữa cơm ngày thường và dễ cân bằng với rau luộc, canh thanh.",
+      "finished_dish": "Tôm chuyển màu đỏ cam, thịt ba chỉ chín mềm với cạnh vàng nhẹ; phần sốt sánh mỏng, bám đều mà không khô.",
+      "serving": "Dọn nóng cùng cơm trắng, dưa leo hoặc rau luộc và canh rau.",
+      "tips": [
+        "Thấm khô tôm để chảo không bắn và sốt không bị loãng.",
+        "Cho tôm sau khi thịt đã mềm; đảo vừa đủ đến khi tôm chín đục, không rang quá lâu.",
+        "Nếu dùng tôm lớn, rạch lưng rút chỉ trước khi nấu."
+      ],
+      "dish_type": [
+        "Món rang",
+        "Món mặn ăn cơm"
+      ],
+      "main_ingredient": [
+        "tôm",
+        "thịt ba chỉ"
+      ],
+      "cooking_method": [
+        "ướp",
+        "rang",
+        "rim"
+      ],
+      "search_terms": [
+        "tôm rang thịt ba chỉ",
+        "tôm rim thịt",
+        "món tôm thịt ăn cơm"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Tôm rang thịt ba chỉ với tôm đỏ cam và miếng ba chỉ nâu óng, dọn trên đĩa sứ trắng.",
+      "time_note": "Khoảng 55 phút gồm 10 phút ướp; thêm tôm ở cuối để giữ độ ngọt và không bị dai.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Rau muống luộc",
+        "Canh bí xanh"
+      ],
+      "recipe_family": "tom_rang_thit_ba_chi",
+      "keywords": [
+        "tôm",
+        "thịt ba chỉ",
+        "món rang",
+        "mâm cơm gia đình"
+      ],
+      "tags": [
+        "món mặn",
+        "món tôm",
+        "món thịt heo",
+        "món ăn gia đình",
+        "Ba miền"
+      ],
+      "ingredients": [
+        {
+          "name": "Tôm tươi",
+          "quantity": 500,
+          "unit": "g",
+          "role": "seafood",
+          "notes": "Cắt râu, bỏ chỉ lưng nếu cần, rửa nhanh và thấm khô.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Thịt ba chỉ",
+          "quantity": 350,
+          "unit": "g",
+          "role": "meat",
+          "notes": "Chọn phần nạc mỡ xen kẽ, thái miếng vừa ăn.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 12,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 20,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "condiment",
+          "notes": "Chia làm phần ướp và nêm cuối.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Đường",
+          "quantity": 12,
+          "unit": "g",
+          "role": "sweetener",
+          "notes": "Điều chỉnh theo độ mặn của nước mắm.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "cooking_fat",
+          "notes": "Có thể giảm nếu thịt tiết nhiều mỡ.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 100,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng làm mềm phần thịt trước khi cho tôm.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Rắc sau khi nấu.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Ớt bột",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Tùy chọn, bỏ nếu gia đình không ăn cay.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa tôm, để ráo; cắt ba chỉ thành miếng mỏng vừa ăn. Băm tỏi và hành tím."
+        },
+        {
+          "step": 2,
+          "instruction": "Trộn ba chỉ với một phần nước mắm, đường và tiêu; để thấm khoảng 10 phút. Pha phần nước mắm còn lại với nước lọc."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng dầu, phi thơm hành tím và tỏi. Cho ba chỉ vào rang đến khi săn và cạnh hơi vàng."
+        },
+        {
+          "step": 2,
+          "instruction": "Rót phần nước đã pha vào, đậy nắp và rim lửa nhỏ đến khi thịt mềm, khoảng 10–12 phút. Mở nắp cho tôm vào đảo cùng."
+        },
+        {
+          "step": 3,
+          "instruction": "Rang đến khi tôm chuyển đỏ cam, phần thịt tôm đục hoàn toàn và nước sốt sánh quanh nguyên liệu. Nếm lại, rắc tiêu rồi tắt bếp."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.dienmayxanh.com/vao-bep/3-cong-thuc-cho-mon-tom-rang-thit-la-ma-quen-dam-da-hao-com--01449",
+          "publisher": "Điện máy XANH",
+          "title": "Cách làm tôm rang thịt ba chỉ đơn giản đậm đà đưa cơm cho cả nhà",
+          "use": "Đối chiếu tỷ lệ tôm và ba chỉ, bước ướp thịt, làm thịt mềm trước rồi cho tôm vào rang; lượng nêm và cách diễn đạt được biên tập lại cho mâm cơm bốn người.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minutes",
+      "scaling": [
+        {
+          "servings": 2,
+          "main_factor": 0.5,
+          "seasoning_start_factor": 0.45,
+          "example": "Giảm một nửa lượng nguyên liệu chính; nêm gia vị từ từ rồi nếm lại.",
+          "instruction": "Dùng chảo hoặc nồi nhỏ để nguyên liệu chín đều."
+        },
+        {
+          "servings": 6,
+          "main_factor": 1.5,
+          "seasoning_start_factor": 1.2,
+          "example": "Tăng nguyên liệu chính theo khẩu phần, gia vị tăng ít hơn rồi điều chỉnh sau khi nếm.",
+          "instruction": "Chia mẻ nếu dụng cụ nấu nhỏ để giữ nhiệt và tránh món ra nhiều nước."
+        }
+      ],
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/tom-rang-thit-ba-chi-960.webp",
+          "page_url": "https://www.dienmayxanh.com/vao-bep/3-cong-thuc-cho-mon-tom-rang-thit-la-ma-quen-dam-da-hao-com--01449",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập công thức.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Tôm rang thịt ba chỉ với tôm đỏ cam và miếng ba chỉ nâu óng, dọn trên đĩa sứ trắng.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh PNG alpha gốc 1536×1024; bản 3840×2160 được xuất và dàn khung từ ảnh gốc, không phải ảnh native 4K; công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Cân chỉnh gia vị theo nguyên liệu và khẩu vị gia đình; chưa thay đổi tên món hoặc nhận là phiên bản đặc sản.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Cần nấu thử và rà lượng nêm theo nguyên liệu thực tế trước khi đánh dấu công thức đã nghiệm thu."
+        ]
+      },
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "id": "BV723",
+      "slug": "ca-chim-hap-xi-dau",
+      "name": "Cá chim hấp xì dầu",
+      "aliases": [
+        "Cá chim hấp nước tương",
+        "Cá chim hấp tương"
+      ],
+      "region": [
+        "Ba miền"
+      ],
+      "province": [],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "mâm cơm gia đình"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một con cá chim hấp chia bốn phần, dùng nóng cùng cơm và rau.",
+      "prep_time": 25,
+      "cook_time": 20,
+      "passive_time": 20,
+      "total_time": 65,
+      "description": "Cá chim hấp cách thủy với gừng và hành, sau đó rưới xì dầu pha nhẹ để thấm vào thớ cá. Cách hấp giữ vị ngọt tự nhiên và hợp khi muốn có món cá ít dầu trong mâm cơm.",
+      "finished_dish": "Thịt cá trắng đục, mềm và còn nguyên thớ; gừng, hành lá và nước tương thơm rõ nhưng không lấn vị cá.",
+      "serving": "Gỡ cá thành miếng, chan ít nước hấp lên cơm nóng; ăn kèm rau cải luộc hoặc rau xào.",
+      "tips": [
+        "Khứa cá ở phần dày để gia vị thấm và cá chín đều.",
+        "Chỉ hấp khi nước đã sôi; thời gian thay đổi theo độ dày và khối lượng cá.",
+        "Kiểm tra phần thịt sát xương đã đục và dễ tách trước khi dọn."
+      ],
+      "dish_type": [
+        "Món hấp",
+        "Món cá ăn cơm"
+      ],
+      "main_ingredient": [
+        "cá chim",
+        "gừng",
+        "hành lá"
+      ],
+      "cooking_method": [
+        "hấp",
+        "ướp",
+        "rưới sốt"
+      ],
+      "search_terms": [
+        "cá chim hấp xì dầu",
+        "cá chim hấp nước tương",
+        "món cá hấp gừng hành"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Cá chim nguyên con hấp xì dầu trên đĩa sứ với gừng sợi và hành lá.",
+      "time_note": "Khoảng 65 phút gồm 20 phút ướp; hấp khoảng 15–20 phút tùy cỡ cá.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Rau cải luộc",
+        "Canh bí xanh"
+      ],
+      "recipe_family": "ca_chim_hap_xi_dau",
+      "keywords": [
+        "cá chim",
+        "xì dầu",
+        "gừng",
+        "món hấp",
+        "bữa cơm gia đình"
+      ],
+      "tags": [
+        "món mặn",
+        "món cá",
+        "món hấp",
+        "dễ nấu",
+        "Ba miền"
+      ],
+      "ingredients": [
+        {
+          "name": "Cá chim",
+          "quantity": 1,
+          "unit": "con (700–900 g)",
+          "role": "seafood",
+          "notes": "Làm sạch, bỏ mang và ruột; khứa hai bên thân.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Hành tây",
+          "quantity": 100,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Thái lát mỏng, lót dưới cá.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Gừng",
+          "quantity": 50,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Một phần thái lát, phần còn lại thái sợi.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 25,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 9,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 50,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Rửa sạch, cắt khúc; giữ một ít thái sợi.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Ớt",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "seasoning",
+          "notes": "Thái lát, có thể bỏ.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Nước tương",
+          "quantity": 30,
+          "unit": "ml",
+          "role": "condiment",
+          "notes": "Chọn loại có độ mặn vừa.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Dầu hào",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "condiment",
+          "notes": "Tạo vị đậm nhẹ cho nước sốt.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Dầu mè",
+          "quantity": 5,
+          "unit": "ml",
+          "role": "cooking_fat",
+          "notes": "Cho vào nước sốt.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "cooking_fat",
+          "notes": "Dùng phi thơm hành tỏi.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Đường",
+          "quantity": 5,
+          "unit": "g",
+          "role": "sweetener",
+          "notes": "Cân vị nước tương.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 30,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Pha cùng nước tương.",
+          "scaling_rule": "linear",
+          "sequence": 13
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Chà cá với ít muối rồi rửa sạch, thấm khô. Khứa vài đường ở phần thân dày; thái gừng, hành tây, hành lá; băm hành tím và tỏi."
+        },
+        {
+          "step": 2,
+          "instruction": "Khuấy nước tương, dầu hào, dầu mè, đường và nước lọc cho tan. Xoa sốt lên cá và để khoảng 20 phút."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Xếp hành tây và vài lát gừng vào đĩa sâu lòng, đặt cá lên trên rồi hấp cách thủy khi nước sôi khoảng 15 phút."
+        },
+        {
+          "step": 2,
+          "instruction": "Mở nắp, rải hành lá, gừng sợi và ớt lên cá; rưới phần nước sốt trong đĩa lên mặt cá, hấp thêm đến khi thịt cá đục hoàn toàn và dễ tách khỏi xương."
+        },
+        {
+          "step": 3,
+          "instruction": "Phi nhanh hành tím, tỏi với dầu nóng rồi rưới lên cá. Dọn nóng, dùng phần nước hấp làm nước chan cơm."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.dienmayxanh.com/vao-bep/cach-lam-ca-chim-hap-xi-dau-thom-ngon-dam-da-chuan-vi-an-la-14225",
+          "publisher": "Điện máy XANH",
+          "title": "Cách làm cá chim hấp xì dầu thơm ngon đậm đà chuẩn vị ăn là ghiền",
+          "use": "Đối chiếu cá chim hấp cùng nước tương, hành, gừng, hành lá và thời gian hấp; định lượng và thứ tự thao tác được viết lại theo khẩu phần gia đình.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minutes",
+      "scaling": [
+        {
+          "servings": 2,
+          "main_factor": 0.5,
+          "seasoning_start_factor": 0.45,
+          "example": "Dùng nửa lượng nguyên liệu; hấp trong đĩa vừa với nồi.",
+          "instruction": "Kiểm tra độ chín ở vị trí dày nhất."
+        },
+        {
+          "servings": 6,
+          "main_factor": 1.5,
+          "seasoning_start_factor": 1.2,
+          "example": "Tăng phần nguyên liệu chính lên một lần rưỡi và nêm thêm sau khi nếm.",
+          "instruction": "Chọn khay hấp rộng, không xếp chồng thực phẩm."
+        }
+      ],
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/ca-chim-hap-xi-dau-960.webp",
+          "page_url": "https://www.dienmayxanh.com/vao-bep/cach-lam-ca-chim-hap-xi-dau-thom-ngon-dam-da-chuan-vi-an-la-14225",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập công thức.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Cá chim nguyên con hấp xì dầu trên đĩa sứ với gừng sợi và hành lá.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh PNG alpha gốc 1536×1024; bản 3840×2160 được xuất và dàn khung từ ảnh gốc, không phải ảnh native 4K; công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Cân chỉnh gia vị theo nguyên liệu và khẩu vị gia đình; chưa thay đổi tên món hoặc nhận là phiên bản đặc sản.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Cần nấu thử và rà lượng nêm theo nguyên liệu thực tế trước khi đánh dấu công thức đã nghiệm thu."
+        ]
+      },
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "id": "BV724",
+      "slug": "bo-xao-dau-que",
+      "name": "Bò xào đậu que",
+      "aliases": [
+        "Thịt bò xào đậu que",
+        "Bò xào đậu cove"
+      ],
+      "region": [
+        "Ba miền"
+      ],
+      "province": [],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "mâm cơm gia đình"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Bốn phần món bò xào dùng trong mâm cơm có cơm nóng và món canh.",
+      "prep_time": 20,
+      "cook_time": 12,
+      "passive_time": 15,
+      "total_time": 47,
+      "description": "Thịt bò thái mỏng được xào nhanh riêng, sau đó đảo cùng đậu que vừa chín tới. Món có vị ngọt của thịt và độ giòn nhẹ của đậu, phù hợp bữa cơm ngày thường.",
+      "finished_dish": "Thịt bò chín mềm, không dai; đậu que xanh, vừa chín và thấm nhẹ nước sốt tỏi.",
+      "serving": "Dọn nóng cùng cơm trắng và một bát canh thanh vị.",
+      "tips": [
+        "Thái thịt ngang thớ và xào nhanh trên lửa lớn để thịt không ra nhiều nước.",
+        "Trụng đậu que khoảng một phút rồi để ráo giúp đậu giữ màu và rút ngắn thời gian xào.",
+        "Xào thịt riêng trước, cho lại vào chảo ở lượt cuối để thịt mềm và rau không bị nát."
+      ],
+      "dish_type": [
+        "Món xào",
+        "Món bò ăn cơm"
+      ],
+      "main_ingredient": [
+        "thịt bò",
+        "đậu que"
+      ],
+      "cooking_method": [
+        "ướp",
+        "trụng",
+        "xào"
+      ],
+      "search_terms": [
+        "bò xào đậu que",
+        "thịt bò xào đậu cove",
+        "món bò xào rau củ"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Thịt bò xào đậu que xanh với tỏi trên đĩa sứ trắng.",
+      "time_note": "Khoảng 47 phút gồm 15 phút ướp; trụng đậu và xào bò riêng để giữ độ giòn mềm.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Canh bí xanh",
+        "Canh rau ngót"
+      ],
+      "recipe_family": "beef_stir_fried_green_beans",
+      "keywords": [
+        "thịt bò",
+        "đậu que",
+        "món xào",
+        "bữa cơm gia đình"
+      ],
+      "tags": [
+        "món mặn",
+        "món bò",
+        "món xào",
+        "dễ nấu",
+        "Ba miền"
+      ],
+      "ingredients": [
+        {
+          "name": "Thịt bò",
+          "quantity": 400,
+          "unit": "g",
+          "role": "meat",
+          "notes": "Thái mỏng ngang thớ để nhanh mềm.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Đậu que",
+          "quantity": 400,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Tước xơ hai bên, rửa sạch và cắt khúc vừa ăn.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Hành tây",
+          "quantity": 100,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Bóc vỏ, thái lát.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 12,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Nước tương",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "condiment",
+          "notes": "Dùng ướp thịt và nêm món.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Dầu hào",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "condiment",
+          "notes": "Nêm vừa phải để không lấn vị đậu.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "cooking_fat",
+          "notes": "Chia cho lượt xào thịt và xào đậu.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 60,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Thêm từng ít khi xào đậu.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Muối",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm nhẹ; điều chỉnh theo độ mặn nước tương.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Đường",
+          "quantity": 4,
+          "unit": "g",
+          "role": "sweetener",
+          "notes": "Tùy chọn, giúp cân vị.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Rắc trước khi dọn.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Tước xơ đậu que, rửa sạch và cắt khúc dài khoảng 4–5 cm. Trụng trong nước sôi có chút muối khoảng một phút, vớt ra để ráo."
+        },
+        {
+          "step": 2,
+          "instruction": "Thái thịt bò mỏng ngang thớ, thái hành tây và băm tỏi. Ướp bò với một phần nước tương, dầu hào và tiêu trong khoảng 15 phút."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng chảo với một ít dầu. Xào thịt bò trên lửa lớn đến khi vừa săn và đổi màu, sau đó trút ra đĩa."
+        },
+        {
+          "step": 2,
+          "instruction": "Thêm dầu còn lại, phi thơm tỏi và hành tây. Cho đậu que vào đảo, thêm ít nước và nêm nhẹ; đậy nắp ngắn để đậu vừa mềm nhưng vẫn còn giòn."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho thịt bò trở lại chảo, đảo nhanh đến khi thịt chín hoàn toàn và gia vị áo đều. Nếm lại, tắt bếp, rắc tiêu và dọn nóng."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://hayan.vn/vao-bep/2-cach-lam-thit-bo-xao-dau-que-dau-cove-gion-ngon-don-gian-cuc-de-lam-p8508.html",
+          "publisher": "HAYAN.VN",
+          "title": "2 Cách làm thịt bò xào đậu que (đậu cove) giòn ngon, đơn giản cực dễ làm",
+          "use": "Đối chiếu phần thịt bò, đậu que, tỏi, nước tương, dầu hào; thao tác trụng đậu, xào bò riêng rồi cho lại ở cuối. Công thức được biên tập lại theo khẩu phần gia đình.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://kingfoodmart.com/bai-viet/cong-thuc-nau-an/bo-xao-dau-que",
+          "publisher": "Kingfoodmart",
+          "title": "Bò xào đậu que",
+          "use": "Đối chiếu cách xào nhanh thịt bò, trụng đậu que và ghép hai phần ở lượt cuối để món không dai; nội dung diễn đạt lại.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minutes",
+      "scaling": [
+        {
+          "servings": 2,
+          "main_factor": 0.5,
+          "seasoning_start_factor": 0.45,
+          "example": "Giảm một nửa lượng nguyên liệu chính; nêm gia vị từ từ rồi nếm lại.",
+          "instruction": "Dùng chảo hoặc nồi nhỏ để nguyên liệu chín đều."
+        },
+        {
+          "servings": 6,
+          "main_factor": 1.5,
+          "seasoning_start_factor": 1.2,
+          "example": "Tăng nguyên liệu chính theo khẩu phần, gia vị tăng ít hơn rồi điều chỉnh sau khi nếm.",
+          "instruction": "Chia mẻ nếu dụng cụ nấu nhỏ để giữ nhiệt và tránh món ra nhiều nước."
+        }
+      ],
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/bo-xao-dau-que-960.webp",
+          "page_url": "https://hayan.vn/vao-bep/2-cach-lam-thit-bo-xao-dau-que-dau-cove-gion-ngon-don-gian-cuc-de-lam-p8508.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập công thức.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Thịt bò xào đậu que xanh với tỏi trên đĩa sứ trắng.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh PNG alpha gốc 1536×1024; bản 3840×2160 được xuất và dàn khung từ ảnh gốc, không phải ảnh native 4K; công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Cân chỉnh gia vị theo nguyên liệu và khẩu vị gia đình; chưa thay đổi tên món hoặc nhận là phiên bản đặc sản.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Cần nấu thử và rà lượng nêm theo nguyên liệu thực tế trước khi đánh dấu công thức đã nghiệm thu."
+        ]
+      },
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "id": "BV725",
+      "slug": "cha-trung-hap",
+      "name": "Chả trứng hấp",
+      "aliases": [
+        "Chả trứng cơm tấm",
+        "Chả trứng thịt hấp"
+      ],
+      "region": [
+        "Nam"
+      ],
+      "province": [
+        "TP. Hồ Chí Minh"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "mâm cơm gia đình"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một khuôn chả hấp cắt bốn phần, có thể dùng với cơm tấm hoặc cơm nhà.",
+      "prep_time": 25,
+      "cook_time": 30,
+      "passive_time": 10,
+      "total_time": 65,
+      "description": "Thịt xay trộn trứng, miến và mộc nhĩ rồi hấp thành khuôn mềm ẩm; lớp lòng đỏ trên mặt tạo màu vàng nhẹ. Chả thường đi cùng cơm tấm Sài Gòn, cũng có thể dùng trong bữa cơm gia đình.",
+      "finished_dish": "Chả đông vừa, bên trong còn ẩm và có sợi miến cùng mộc nhĩ; mặt vàng mỏng, không khô hoặc rỗ.",
+      "serving": "Cắt miếng khi còn ấm; ăn với cơm tấm, dưa góp và nước mắm pha, hoặc dùng cùng cơm trắng.",
+      "tips": [
+        "Ngâm miến vừa mềm rồi để ráo trước khi cắt để hỗn hợp không bị nhão.",
+        "Không nén thịt quá chặt trong khuôn; hơi nước cần lưu thông để chả chín đều.",
+        "Che mặt khuôn khi hấp để nước đọng không nhỏ xuống; hấp đến khi phần giữa đông chắc."
+      ],
+      "dish_type": [
+        "Chả hấp",
+        "Món ăn kèm cơm tấm"
+      ],
+      "main_ingredient": [
+        "thịt heo xay",
+        "trứng",
+        "miến",
+        "mộc nhĩ"
+      ],
+      "cooking_method": [
+        "trộn",
+        "hấp"
+      ],
+      "search_terms": [
+        "chả trứng hấp",
+        "chả trứng cơm tấm",
+        "chả trứng thịt",
+        "món hấp miền Nam"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Chả trứng hấp vàng nhẹ mặt trứng, cắt lát thấy miến và mộc nhĩ, bày trên đĩa trắng.",
+      "time_note": "Khoảng 65 phút gồm 10 phút ngâm miến và nấm; hấp đến khi phần giữa đông chắc.",
+      "suggested_pairings": [
+        "Cơm tấm",
+        "Dưa góp cà rốt củ cải",
+        "Dưa leo"
+      ],
+      "recipe_family": "cha_trung_hap",
+      "keywords": [
+        "chả trứng",
+        "cơm tấm",
+        "thịt heo",
+        "miến",
+        "mộc nhĩ"
+      ],
+      "tags": [
+        "món mặn",
+        "món hấp",
+        "món miền Nam",
+        "món ăn kèm",
+        "TP. Hồ Chí Minh"
+      ],
+      "ingredients": [
+        {
+          "name": "Thịt heo nạc xay",
+          "quantity": 350,
+          "unit": "g",
+          "role": "meat",
+          "notes": "Chọn thịt có chút mỡ để chả không khô.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Trứng gà",
+          "quantity": 4,
+          "unit": "quả",
+          "role": "main",
+          "notes": "Tách riêng một lòng đỏ để quét mặt chả.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Nấm rơm",
+          "quantity": 100,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Băm nhỏ; có thể bỏ nếu không có.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Mộc nhĩ khô",
+          "quantity": 10,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Ngâm nở, rửa sạch và thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Miến dong khô",
+          "quantity": 20,
+          "unit": "g",
+          "role": "main",
+          "notes": "Ngâm mềm, để ráo rồi cắt ngắn.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 20,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhuyễn.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 15,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "condiment",
+          "notes": "Nêm vừa phải.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Đường",
+          "quantity": 3,
+          "unit": "g",
+          "role": "sweetener",
+          "notes": "Cân vị mặn.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Tạo mùi thơm.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 5,
+          "unit": "ml",
+          "role": "cooking_fat",
+          "notes": "Quét mỏng khuôn.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Ngâm miến trong nước mát đến khi mềm, vớt để ráo rồi cắt ngắn. Ngâm mộc nhĩ cho nở, rửa kỹ và thái nhỏ; băm nấm rơm, hành tím và hành lá."
+        },
+        {
+          "step": 2,
+          "instruction": "Tách một lòng đỏ để riêng. Đập ba quả trứng còn lại và phần lòng trắng của quả đã tách vào tô."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Trộn thịt xay với trứng, miến, mộc nhĩ, nấm rơm, hành tím, hành lá, nước mắm, đường và tiêu cho vừa quyện."
+        },
+        {
+          "step": 2,
+          "instruction": "Quét dầu mỏng vào khuôn chịu nhiệt, dàn hỗn hợp đều tay. Đặt vào xửng khi nước đã sôi, đậy nắp và hấp khoảng 20 phút."
+        },
+        {
+          "step": 3,
+          "instruction": "Quét lòng đỏ lên mặt chả, hấp thêm khoảng 8–10 phút đến khi mặt se vàng và phần giữa chín hẳn. Để nghỉ vài phút rồi cắt miếng."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://vietnamnet.vn/mon-an-quen-cua-nguoi-ngheo-tphcm-nay-gay-bao-am-thuc-the-gioi-2390972.html",
+          "publisher": "VietNamNet",
+          "title": "Món ăn quen của người nghèo TPHCM nay 'gây bão' ẩm thực thế giới",
+          "use": "Xác nhận chả trứng là món ăn kèm quen thuộc của cơm tấm miền Nam, gồm thịt xay, trứng, bún gạo, nấm mèo và được hấp; bài viết cũng mô tả lớp lòng đỏ trên mặt.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://cookpad.com/vn/cong-thuc/823200",
+          "publisher": "Cookpad",
+          "title": "Trứng hấp thịt",
+          "use": "Đối chiếu thêm tỷ lệ thịt, trứng, nấm và miến cùng trình tự hấp thành phẩm; nội dung hướng dẫn của Bếp Việt được viết lại.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minutes",
+      "scaling": [
+        {
+          "servings": 2,
+          "main_factor": 0.5,
+          "seasoning_start_factor": 0.45,
+          "example": "Dùng nửa lượng nguyên liệu; hấp trong đĩa vừa với nồi.",
+          "instruction": "Kiểm tra độ chín ở vị trí dày nhất."
+        },
+        {
+          "servings": 6,
+          "main_factor": 1.5,
+          "seasoning_start_factor": 1.2,
+          "example": "Tăng phần nguyên liệu chính lên một lần rưỡi và nêm thêm sau khi nếm.",
+          "instruction": "Chọn khay hấp rộng, không xếp chồng thực phẩm."
+        }
+      ],
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/cha-trung-hap-960.webp",
+          "page_url": "https://vietnamnet.vn/mon-an-quen-cua-nguoi-ngheo-tphcm-nay-gay-bao-am-thuc-the-gioi-2390972.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập công thức.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Chả trứng hấp vàng nhẹ mặt trứng, cắt lát thấy miến và mộc nhĩ, bày trên đĩa trắng.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh PNG alpha gốc 1536×1024; bản 3840×2160 được xuất và dàn khung từ ảnh gốc, không phải ảnh native 4K; công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Cân chỉnh gia vị theo nguyên liệu và khẩu vị gia đình; chưa thay đổi tên món hoặc nhận là phiên bản đặc sản.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Cần nấu thử và rà lượng nêm theo nguyên liệu thực tế trước khi đánh dấu công thức đã nghiệm thu."
+        ]
+      },
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "id": "BV726",
+      "slug": "ga-hap-hanh",
+      "name": "Gà hấp hành",
+      "aliases": [
+        "Gà ta hấp hành",
+        "Gà hấp hành gừng"
+      ],
+      "region": [
+        "Ba miền"
+      ],
+      "province": [],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "mâm cơm gia đình"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một phần gà hấp khoảng một ki-lô-gam chia bốn người, dọn với cơm nóng và muối tiêu chanh.",
+      "prep_time": 25,
+      "cook_time": 35,
+      "passive_time": 15,
+      "total_time": 75,
+      "description": "Gà hấp trên lớp sả, thêm gừng và nấm hương ở giữa quá trình rồi phủ hành lá ở lượt cuối. Thịt chín mềm, giữ vị ngọt và hợp bữa cơm nhà khi muốn hạn chế món chiên.",
+      "finished_dish": "Miếng gà chín sát xương, da vàng nhạt, thịt còn ẩm; mùi sả, gừng và hành hòa nhẹ, nấm hương mềm thơm.",
+      "serving": "Chặt gà thành miếng vừa, dọn nóng cùng muối tiêu chanh hoặc nước mắm gừng; có thể ăn với cơm trắng.",
+      "tips": [
+        "Để gà ráo nước sau khi rửa và khứa phần dày để gia vị thấm đều.",
+        "Cho hành lá vào gần cuối để giữ màu xanh và mùi thơm.",
+        "Thời gian hấp tùy kích thước miếng; luôn kiểm tra phần thịt sát xương đã chín hẳn."
+      ],
+      "dish_type": [
+        "Món hấp",
+        "Món gà ăn cơm"
+      ],
+      "main_ingredient": [
+        "thịt gà",
+        "hành lá",
+        "gừng",
+        "sả"
+      ],
+      "cooking_method": [
+        "ướp",
+        "hấp"
+      ],
+      "search_terms": [
+        "gà hấp hành",
+        "gà hấp hành gừng",
+        "gà hấp hành lá"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Gà hấp hành chặt miếng vàng nhạt với hành lá xanh và gừng sợi trên đĩa sứ.",
+      "time_note": "Khoảng 75 phút gồm 15 phút ướp; hấp theo lượt đến khi thịt chín sát xương.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Muối tiêu chanh",
+        "Rau củ luộc"
+      ],
+      "recipe_family": "ga_hap_hanh",
+      "keywords": [
+        "gà ta",
+        "hành lá",
+        "gừng",
+        "sả",
+        "món hấp"
+      ],
+      "tags": [
+        "món mặn",
+        "món gà",
+        "món hấp",
+        "mâm cơm gia đình",
+        "Ba miền"
+      ],
+      "ingredients": [
+        {
+          "name": "Gà ta chặt miếng",
+          "quantity": 1000,
+          "unit": "g",
+          "role": "meat",
+          "notes": "Chọn phần đùi hoặc nửa con, chặt miếng lớn để hấp.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 100,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Rửa sạch; cắt khúc, giữ riêng phần lá non.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Nấm hương tươi",
+          "quantity": 100,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Rửa nhanh, bỏ chân cứng; có thể thay bằng nấm khô đã ngâm nở.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Sả",
+          "quantity": 40,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Đập dập, cắt khúc.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Gừng",
+          "quantity": 40,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Một phần thái lát, phần còn lại thái sợi.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Muối",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng xát rửa và nêm gà.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Đường",
+          "quantity": 5,
+          "unit": "g",
+          "role": "sweetener",
+          "notes": "Nêm nhẹ.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Hạt nêm",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Có thể điều chỉnh hoặc bỏ.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm cùng gà.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 600,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Đổ vào nồi hấp, không để chạm vào đĩa gà.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Chà gà với ít muối, rửa lại nhiều lần và để ráo; khứa vài đường ở phần thịt dày. Ướp với muối, đường, hạt nêm và tiêu khoảng 15 phút."
+        },
+        {
+          "step": 2,
+          "instruction": "Rửa sả, gừng, hành lá và nấm. Đập dập sả, thái gừng; cắt hành thành đoạn vừa ăn."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đun sôi nước trong nồi hấp. Trải sả lên xửng, xếp gà thành lớp và hấp lửa vừa khoảng 15 phút."
+        },
+        {
+          "step": 2,
+          "instruction": "Thêm gừng và nấm hương, đậy nắp hấp thêm 10–15 phút. Kiểm tra miếng dày nhất; nếu còn hồng hoặc nước thịt đục, tiếp tục hấp."
+        },
+        {
+          "step": 3,
+          "instruction": "Rải hành lá lên trên, hấp thêm khoảng 5 phút đến khi gà chín hoàn toàn. Dọn nóng cùng nước chấm tùy khẩu vị."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.dienmayxanh.com/vao-bep/cach-lam-ga-hap-hanh-don-gian-thom-ngon-kho-cuong-tai-nha-00125",
+          "publisher": "Điện máy XANH",
+          "title": "Cách làm gà hấp hành đơn giản thơm ngon khó cưỡng tại nhà",
+          "use": "Đối chiếu nguyên liệu gà, hành, sả, gừng, nấm và trình tự hấp theo từng lượt; khẩu phần và câu chữ được biên tập cho người nấu tại nhà.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minutes",
+      "scaling": [
+        {
+          "servings": 2,
+          "main_factor": 0.5,
+          "seasoning_start_factor": 0.45,
+          "example": "Dùng nửa lượng nguyên liệu; hấp trong đĩa vừa với nồi.",
+          "instruction": "Kiểm tra độ chín ở vị trí dày nhất."
+        },
+        {
+          "servings": 6,
+          "main_factor": 1.5,
+          "seasoning_start_factor": 1.2,
+          "example": "Tăng phần nguyên liệu chính lên một lần rưỡi và nêm thêm sau khi nếm.",
+          "instruction": "Chọn khay hấp rộng, không xếp chồng thực phẩm."
+        }
+      ],
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/ga-hap-hanh-960.webp",
+          "page_url": "https://www.dienmayxanh.com/vao-bep/cach-lam-ga-hap-hanh-don-gian-thom-ngon-kho-cuong-tai-nha-00125",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập công thức.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Gà hấp hành chặt miếng vàng nhạt với hành lá xanh và gừng sợi trên đĩa sứ.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh PNG alpha gốc 1536×1024; bản 3840×2160 được xuất và dàn khung từ ảnh gốc, không phải ảnh native 4K; công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Cân chỉnh gia vị theo nguyên liệu và khẩu vị gia đình; chưa thay đổi tên món hoặc nhận là phiên bản đặc sản.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Cần nấu thử và rà lượng nêm theo nguyên liệu thực tế trước khi đánh dấu công thức đã nghiệm thu."
+        ]
+      },
+      "width": 3840,
+      "height": 2160
+    }
+  ]
+}

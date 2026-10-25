@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 import { AppIcon } from '@/components/common/AppIcon';
 import { formatMinutes, getRecipe, recipeMinutes, recipes, type Recipe } from '@/data/recipes';
 import { useI18n } from '@/features/i18n/I18nContext';
+import { fitDishCutout } from '@/lib/fitDishCutout';
 
 const FIRST_SWITCH_MS = 2000;
 const SWITCH_MS = 4200;
@@ -109,6 +110,7 @@ export function HeroDishShowcase() {
               decoding="async"
               fetchPriority={index === 0 ? 'high' : undefined}
               key={recipe.slug}
+              onLoad={(event) => fitDishCutout(event.currentTarget)}
               sizes={IMAGE_SIZES}
               src={recipe.image}
               srcSet={recipe.imageSrcSet}
@@ -127,7 +129,7 @@ export function HeroDishShowcase() {
         className="hero-float hero-float--top"
         to={`/recipes/${dish.slug}`}
       >
-        <span>{t('Vừa nấu xong')}</span>
+        <span>{t('Thực đơn gợi ý')}</span>
         <strong aria-live="polite" className="hero-float__swap" key={dish.slug}>
           {dish.name}
         </strong>

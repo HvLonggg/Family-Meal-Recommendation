@@ -1,0 +1,1151 @@
+{
+  "batch": 63,
+  "description": "Năm món rau luộc và món chay gia đình được biên tập từ nguồn báo chí, thực đơn và công thức có đối chiếu; định lượng cho bốn người, chưa nấu thử.",
+  "recipes": [
+    {
+      "id": "BV641",
+      "slug": "cai-meo-luoc-cham-trung",
+      "name": "Cải mèo luộc chấm trứng",
+      "aliases": [
+        "Cải mèo luộc chấm trứng vịt",
+        "Rau cải mèo luộc kiểu Y Tý"
+      ],
+      "region": [
+        "Bắc"
+      ],
+      "province": [
+        "Lào Cai"
+      ],
+      "category": "Món rau",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "món chay",
+        "món ăn kèm"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một món rau dùng chung trong mâm cơm gia đình bốn người.",
+      "prep_time": 12,
+      "cook_time": 12,
+      "passive_time": 0,
+      "total_time": 24,
+      "description": "Cải mèo non được luộc nhanh rồi ăn cùng trứng vịt luộc dầm nước mắm. Vị rau hơi nhẫn, giòn mềm hòa với phần chấm béo mặn; đây là món rau dân dã được ghi nhận trong bữa ăn ở Y Tý, Lào Cai. Bếp Việt biên tập lại định lượng cho gia đình bốn người.",
+      "finished_dish": "Lá cải xanh mềm nhưng còn độ giòn, thân chín tới; trứng dầm tạo phần chấm sánh, thơm và vừa mặn.",
+      "serving": "Xếp rau ra đĩa, để ráo rồi chấm từng gắp với trứng vịt dầm nước mắm. Dùng cùng cơm nóng và món kho hoặc món rang.",
+      "tips": [
+        "Chọn cải non, loại bỏ lá úa và rửa kỹ các nếp lá.",
+        "Chỉ luộc vừa chín; cải già cần thêm thời gian, không nên luộc chung một mẻ với phần non.",
+        "Có thể thay trứng vịt bằng trứng gà; điều chỉnh nước mắm từ từ."
+      ],
+      "dish_type": [
+        "Rau luộc",
+        "Món rau vùng cao"
+      ],
+      "main_ingredient": [
+        "cải mèo",
+        "trứng vịt",
+        "nước mắm"
+      ],
+      "cooking_method": [
+        "luộc",
+        "dầm trứng làm nước chấm"
+      ],
+      "search_terms": [
+        "cải mèo luộc chấm trứng",
+        "cải mèo Y Tý",
+        "cải mèo luộc trứng vịt",
+        "rau luộc chấm trứng",
+        "Hmong mustard greens"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Đĩa cải mèo luộc xanh non ăn cùng chén trứng vịt dầm nước mắm.",
+      "time_note": "Khoảng 24 phút; thời gian luộc có thể thay đổi theo độ non và lượng rau.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Cá kho",
+        "Thịt rang"
+      ],
+      "recipe_family": "cai_meo_luoc_trung_dip",
+      "keywords": [
+        "cải mèo",
+        "Y Tý",
+        "Lào Cai",
+        "rau luộc",
+        "món chấm trứng"
+      ],
+      "tags": [
+        "Lào Cai",
+        "miền Bắc",
+        "rau xanh",
+        "bữa cơm gia đình"
+      ],
+      "ingredients": [
+        {
+          "name": "Cải mèo non",
+          "quantity": 500,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Nhặt bỏ lá úa, rửa kỹ và để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Trứng vịt",
+          "quantity": 2,
+          "unit": "quả",
+          "role": "other",
+          "notes": "Luộc chín kỹ, bóc vỏ.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Thêm dần vào trứng dầm.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 3
+        },
+        {
+          "name": "Ớt tươi",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhỏ, tùy chọn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 4
+        },
+        {
+          "name": "Muối",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Cho một ít vào nước luộc rau.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 5
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 1800,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng luộc rau và trứng.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Nhặt cải, bỏ gốc già và lá dập. Rửa nhiều lần, nhất là phần nếp lá, rồi để ráo."
+        },
+        {
+          "step": 2,
+          "instruction": "Luộc trứng đến khi lòng đỏ chín hoàn toàn; bóc vỏ và để riêng."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đun sôi nồi nước với muối. Cho cải vào luộc bằng lửa lớn khoảng 2–4 phút tùy độ non; gắp thử phần thân để kiểm tra."
+        },
+        {
+          "step": 2,
+          "instruction": "Vớt cải ra để ráo. Dầm trứng vịt với nước mắm và ớt băm đến độ sánh mong muốn, nếm lại rồi dọn cùng rau."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://nld.com.vn/dia-phuong/vi-dang-cai-meo-20121214104718287.htm",
+          "publisher": "Báo Người Lao Động (theo Cần Thơ Online)",
+          "title": "Vị đắng cải mèo",
+          "use": "Đối chiếu bối cảnh cải mèo trong bữa ăn ở Y Tý, Lào Cai, cách luộc sơ và cách ăn với trứng vịt luộc dầm nước mắm. Định lượng bốn người và thời gian nấu là phần biên tập của Bếp Việt.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Dùng khoảng một nửa lượng rau và bắt đầu với ít hơn một nửa lượng gia vị chấm.",
+            "instruction": "Giữ nồi nước đủ rộng để rau ngập đều; nêm nước chấm sau cùng."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "Tăng lượng rau khoảng một lần rưỡi, sau đó nêm nước chấm theo khẩu vị.",
+            "instruction": "Luộc rau thành nhiều mẻ nếu nồi nhỏ để rau chín đều và giữ màu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/cai-meo-luoc-cham-trung-960.webp",
+          "page_url": null,
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập tên món, nguyên liệu và kỹ thuật.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa cải mèo luộc xanh non ăn cùng chén trứng vịt dầm nước mắm.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh ImageGen riêng, nền trong suốt; master PNG alpha ở output/recipe-images/native; WebP xuất trên canvas 3840 × 2160. Công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt chuẩn hóa lượng rau, nước chấm và thời gian cho gia đình bốn người dựa trên cách ăn được ghi nhận tại Y Tý; công thức chưa được nấu thử.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử để xác nhận thời gian luộc phù hợp với độ non của cải mèo theo mùa.",
+          "Nhờ người am hiểu ẩm thực Lào Cai rà soát cách nêm phần trứng chấm."
+        ]
+      }
+    },
+    {
+      "id": "BV642",
+      "slug": "ngong-cai-luoc-cham-trung",
+      "name": "Ngồng cải luộc chấm trứng",
+      "aliases": [
+        "Ngồng cải luộc chấm trứng luộc",
+        "Ngồng cải luộc chấm trứng dầm"
+      ],
+      "region": [
+        "Bắc"
+      ],
+      "province": [
+        "Hà Nội"
+      ],
+      "category": "Món rau",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "món chay",
+        "món ăn kèm"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một món rau dùng chung trong mâm cơm gia đình bốn người.",
+      "prep_time": 12,
+      "cook_time": 12,
+      "passive_time": 0,
+      "total_time": 24,
+      "description": "Ngồng cải luộc chín tới, giữ thân giòn và vị ngọt nhẹ, dùng với chén trứng luộc dầm làm nước chấm. Tên món được đối chiếu với thực đơn nhà hàng ở Hà Nội; công thức gia đình bốn người dưới đây là bản biên tập của Bếp Việt, không đại diện công thức riêng của nhà hàng.",
+      "finished_dish": "Ngồng cải xanh mướt, thân vừa mềm vừa giòn; chén trứng dầm có vị béo, mặn nhẹ và điểm ớt thơm.",
+      "serving": "Gắp ngồng cải chấm với trứng dầm, dùng nóng hoặc để nguội nhẹ cùng cơm trắng và các món mặn trong bữa cơm.",
+      "tips": [
+        "Chọn ngồng cải non, phần thân không xơ và nụ hoa chưa nở quá già.",
+        "Tách thân to để luộc đồng đều; không đậy kín nồi lâu để rau giữ màu.",
+        "Nêm trứng chấm nhạt trước vì nước mắm có độ mặn khác nhau."
+      ],
+      "dish_type": [
+        "Rau luộc",
+        "Món rau gia đình"
+      ],
+      "main_ingredient": [
+        "ngồng cải",
+        "trứng gà",
+        "nước mắm"
+      ],
+      "cooking_method": [
+        "luộc",
+        "dầm trứng làm nước chấm"
+      ],
+      "search_terms": [
+        "ngồng cải luộc chấm trứng",
+        "ngồng cải chấm trứng",
+        "rau ngồng cải luộc",
+        "boiled mustard flower stems with egg dip"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Đĩa ngồng cải xanh luộc chín tới đặt cạnh chén trứng luộc dầm nước mắm.",
+      "time_note": "Khoảng 24 phút; thời gian luộc có thể thay đổi theo độ non và lượng rau.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Đậu phụ sốt",
+        "Cá kho"
+      ],
+      "recipe_family": "ngong_cai_luoc_trung_dip",
+      "keywords": [
+        "ngồng cải",
+        "rau luộc",
+        "trứng chấm",
+        "món nhanh",
+        "món chay"
+      ],
+      "tags": [
+        "Hà Nội",
+        "miền Bắc",
+        "rau xanh",
+        "bữa cơm gia đình"
+      ],
+      "ingredients": [
+        {
+          "name": "Ngồng cải",
+          "quantity": 500,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Tách ngồng lớn, nhặt bỏ phần già và rửa sạch.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Trứng gà",
+          "quantity": 2,
+          "unit": "quả",
+          "role": "other",
+          "notes": "Luộc chín hoàn toàn, bóc vỏ.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 12,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm vào trứng dầm, thêm từ từ.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 3
+        },
+        {
+          "name": "Chanh",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "acid",
+          "notes": "Vắt lấy nước, tùy chọn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 4
+        },
+        {
+          "name": "Ớt tươi",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Thái nhỏ, tùy chọn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 5
+        },
+        {
+          "name": "Muối",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng một phần cho nước luộc.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 6
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 1800,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng luộc trứng và rau.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa ngồng cải dưới vòi nước, bỏ phần gốc xơ; cắt thân dài vừa ăn và để ráo."
+        },
+        {
+          "step": 2,
+          "instruction": "Luộc trứng đến khi lòng đỏ chín hoàn toàn. Bóc vỏ, để nguội bớt rồi dầm nhỏ."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đun sôi nồi nước có chút muối. Cho phần thân ngồng vào trước khoảng 1 phút, tiếp tục cho lá và ngọn vào luộc thêm 2–3 phút đến khi vừa chín."
+        },
+        {
+          "step": 2,
+          "instruction": "Vớt rau ra để ráo. Trộn trứng dầm với nước mắm, nước chanh và ớt; nếm vừa vị rồi bày làm nước chấm."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://biaoi.vn/he-thong-nha-hang/bia-oi-lo-duc/",
+          "publisher": "BIA ƠI",
+          "title": "BIA ƠI LÒ ĐÚC – Thực đơn",
+          "use": "Đối chiếu tên món ngồng cải luộc chấm trứng trong thực đơn nhà hàng tại Hà Nội; nguồn không cung cấp tỷ lệ gia đình hoặc quy trình, các phần đó do Bếp Việt biên tập.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Dùng khoảng một nửa lượng rau và bắt đầu với ít hơn một nửa lượng gia vị chấm.",
+            "instruction": "Giữ nồi nước đủ rộng để rau ngập đều; nêm nước chấm sau cùng."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "Tăng lượng rau khoảng một lần rưỡi, sau đó nêm nước chấm theo khẩu vị.",
+            "instruction": "Luộc rau thành nhiều mẻ nếu nồi nhỏ để rau chín đều và giữ màu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/ngong-cai-luoc-cham-trung-960.webp",
+          "page_url": null,
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập tên món, nguyên liệu và kỹ thuật.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa ngồng cải xanh luộc chín tới đặt cạnh chén trứng luộc dầm nước mắm.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh ImageGen riêng, nền trong suốt; master PNG alpha ở output/recipe-images/native; WebP xuất trên canvas 3840 × 2160. Công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt xây dựng tỷ lệ cho bốn người và hướng dẫn luộc theo kích thước thân rau; nguồn thực đơn chỉ xác nhận tên món. Chưa nấu thử.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử để chốt thời gian luộc theo giống ngồng cải và kích thước thân.",
+          "Xác minh khẩu vị nước chấm với người quen dùng món này ở Hà Nội."
+        ]
+      }
+    },
+    {
+      "id": "BV643",
+      "slug": "rau-don-luoc-mam-toi-ot",
+      "name": "Rau dớn luộc chấm mắm tỏi ớt",
+      "aliases": [
+        "Rau dớn luộc chấm nước mắm",
+        "Dớn rừng luộc chấm mắm"
+      ],
+      "region": [
+        "Bắc"
+      ],
+      "province": [],
+      "category": "Món rau",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "món chay",
+        "món ăn kèm"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một món rau dùng chung trong mâm cơm gia đình bốn người.",
+      "prep_time": 15,
+      "cook_time": 8,
+      "passive_time": 0,
+      "total_time": 23,
+      "description": "Ngọn rau dớn non luộc lửa lớn cho chín giòn, ăn với nước mắm tỏi ớt pha chua dịu. Rau dớn là loại rau rừng có hình dáng gần dương xỉ và được ghi nhận trong bữa ăn ở nhiều vùng núi; chỉ dùng rau được nhận diện và cung cấp làm thực phẩm.",
+      "finished_dish": "Rau dớn xanh, thân giòn mềm và hơi chát tự nhiên; nước chấm mặn ngọt nhẹ, thơm tỏi ớt.",
+      "serving": "Vớt rau để ráo, dùng nguội nhẹ hoặc ấm với chén nước mắm tỏi ớt. Có thể ăn với cơm trắng và món đậu phụ hoặc món kho.",
+      "tips": [
+        "Chỉ mua rau dớn từ nguồn thực phẩm đáng tin cậy; không tự hái hoặc ăn cây rừng chưa nhận diện chắc chắn.",
+        "Nhặt bỏ phần già, dập; có thể ngắt bớt phần ngọn cuộn đã quá già.",
+        "Luộc lửa lớn đến vừa chín rồi để ráo hoặc tráng nhanh nước mát để giữ độ giòn."
+      ],
+      "dish_type": [
+        "Rau luộc",
+        "Món rau rừng"
+      ],
+      "main_ingredient": [
+        "rau dớn",
+        "tỏi",
+        "nước mắm"
+      ],
+      "cooking_method": [
+        "luộc",
+        "pha nước mắm tỏi ớt"
+      ],
+      "search_terms": [
+        "rau dớn luộc",
+        "rau dớn luộc chấm mắm",
+        "dớn rừng luộc tỏi ớt",
+        "rau dương xỉ ăn được",
+        "boiled fiddlehead fern"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Đĩa ngọn rau dớn luộc có lá kép nhỏ và đầu cuộn, kèm chén nước mắm tỏi ớt.",
+      "time_note": "Khoảng 23 phút; thời gian luộc có thể thay đổi theo độ non và lượng rau.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Đậu phụ rán",
+        "Món kho"
+      ],
+      "recipe_family": "rau_don_luoc_mam_toi_ot",
+      "keywords": [
+        "rau dớn",
+        "dớn rừng",
+        "rau luộc",
+        "món vùng núi",
+        "nước mắm tỏi ớt"
+      ],
+      "tags": [
+        "rau rừng",
+        "món luộc",
+        "món ăn kèm",
+        "bữa cơm gia đình"
+      ],
+      "ingredients": [
+        {
+          "name": "Rau dớn non đã sơ chế",
+          "quantity": 450,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Mua từ nơi bán thực phẩm có nguồn gốc rõ ràng; nhặt bỏ thân già.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Pha nước chấm.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 2
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 8,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Ớt tươi",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhỏ, tùy độ cay.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 4
+        },
+        {
+          "name": "Nước cốt chanh",
+          "quantity": 12,
+          "unit": "ml",
+          "role": "acid",
+          "notes": "Điều chỉnh độ chua theo khẩu vị.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 5
+        },
+        {
+          "name": "Đường",
+          "quantity": 6,
+          "unit": "g",
+          "role": "sweetener",
+          "notes": "Hòa tan trong nước chấm.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 6
+        },
+        {
+          "name": "Muối",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Cho một ít vào nước luộc.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 7
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 1600,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng luộc rau.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa rau nhiều lần dưới vòi nước sạch, nhặt bỏ phần già và để ráo. Chỉ sử dụng rau có nguồn gốc thực phẩm rõ ràng."
+        },
+        {
+          "step": 2,
+          "instruction": "Băm tỏi, ớt; khuấy tan đường với nước cốt chanh và một thìa nước ấm, sau đó thêm nước mắm."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đun sôi nồi nước với chút muối. Thả rau dớn vào, luộc bằng lửa lớn khoảng 3–5 phút đến khi thân vừa chín; thử một cọng trước khi vớt."
+        },
+        {
+          "step": 2,
+          "instruction": "Vớt rau để ráo; nếu muốn giữ màu và độ giòn, nhúng nhanh qua nước mát rồi để ráo. Trộn tỏi ớt vào chén nước mắm, nếm lại và dọn kèm."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://vnexpress.net/rau-don-mon-la-tu-nui-rung-3076101.html",
+          "publisher": "VnExpress Du lịch",
+          "title": "Rau dớn, món lạ từ núi rừng",
+          "use": "Đối chiếu nhận diện rau dớn, cách luộc lửa lớn, làm nguội để giữ độ giòn và cách dùng nước mắm làm nước chấm. Phần tỏi ớt và định lượng là biên tập của Bếp Việt.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://vnexpress.net/hap-dan-cac-mon-dan-da-trong-bua-com-nguoi-thai-3099420.html",
+          "publisher": "VnExpress Du lịch",
+          "title": "Hấp dẫn các món dân dã trong bữa cơm người Thái",
+          "use": "Đối chiếu rau dớn là nguyên liệu được dùng trong các món ăn của cộng đồng miền núi; không suy rộng thành công thức độc quyền của một dân tộc.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Dùng khoảng một nửa lượng rau và bắt đầu với ít hơn một nửa lượng gia vị chấm.",
+            "instruction": "Giữ nồi nước đủ rộng để rau ngập đều; nêm nước chấm sau cùng."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "Tăng lượng rau khoảng một lần rưỡi, sau đó nêm nước chấm theo khẩu vị.",
+            "instruction": "Luộc rau thành nhiều mẻ nếu nồi nhỏ để rau chín đều và giữ màu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/rau-don-luoc-mam-toi-ot-960.webp",
+          "page_url": null,
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập tên món, nguyên liệu và kỹ thuật.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa ngọn rau dớn luộc có lá kép nhỏ và đầu cuộn, kèm chén nước mắm tỏi ớt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh ImageGen riêng, nền trong suốt; master PNG alpha ở output/recipe-images/native; WebP xuất trên canvas 3840 × 2160. Công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt chuyển cách luộc rau dớn được ghi nhận thành món rau ăn kèm với nước mắm tỏi ớt pha theo khẩu vị gia đình; chỉ dùng rau nhận diện đúng và chưa nấu thử.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử để xác nhận thời gian luộc phù hợp với độ non của rau dớn.",
+          "Nhờ người am hiểu ẩm thực vùng núi rà soát tên rau và cách ăn kèm."
+        ]
+      }
+    },
+    {
+      "id": "BV644",
+      "slug": "rau-lui-luoc-mam-cua-gia-lai",
+      "name": "Rau lủi luộc chấm mắm cua Gia Lai",
+      "aliases": [
+        "Rau lủi Gia Lai luộc chấm mắm cua",
+        "Rau rừng Gia Lai luộc chấm mắm cua",
+        "Kim thất luộc chấm mắm cua"
+      ],
+      "region": [
+        "Tây Nguyên"
+      ],
+      "province": [
+        "Gia Lai"
+      ],
+      "category": "Món rau",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "món ăn kèm"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một món rau dùng chung trong mâm cơm gia đình bốn người.",
+      "prep_time": 15,
+      "cook_time": 8,
+      "passive_time": 0,
+      "total_time": 23,
+      "description": "Rau lủi Gia Lai được luộc vừa chín, giữ độ giòn và hương thơm riêng rồi chấm mắm cua. Cách ăn này được ghi nhận trong ẩm thực Tây Nguyên; rau lủi có lá mọc so le, mép răng cưa và thân có sắc tím, khác với rau dớn dạng lá kép như dương xỉ.",
+      "finished_dish": "Rau lủi xanh, thân giòn, thơm nhẹ; mắm cua mặn đậm dùng lượng vừa phải để làm nổi vị rau.",
+      "serving": "Dùng rau ấm hoặc nguội nhẹ, chấm từng gắp với mắm cua. Ăn cùng cơm trắng và món canh nhẹ; dùng mắm cua chế biến sẵn, có nhãn và hướng dẫn bảo quản rõ ràng.",
+      "tips": [
+        "Chỉ mua rau lủi đã được nhận diện và bán làm thực phẩm; không nhầm với cây rừng khác.",
+        "Mắm cua là thực phẩm lên men, cần dùng loại làm sẵn có nguồn gốc, nhãn và hướng dẫn bảo quản rõ ràng; không tự lên men cua sống theo công thức này.",
+        "Nếu mắm đặc, chỉ pha loãng theo hướng dẫn của nhà sản xuất; nếm trước khi thêm gia vị."
+      ],
+      "dish_type": [
+        "Rau luộc",
+        "Món rau Tây Nguyên"
+      ],
+      "main_ingredient": [
+        "rau lủi",
+        "mắm cua"
+      ],
+      "cooking_method": [
+        "luộc",
+        "chấm mắm cua"
+      ],
+      "search_terms": [
+        "rau lủi luộc chấm mắm cua",
+        "rau lủi Gia Lai",
+        "rau rừng Gia Lai luộc",
+        "kim thất luộc",
+        "boiled Gia Lai forest greens with crab sauce"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Đĩa rau lủi luộc với thân non và lá mép răng cưa, cạnh chén mắm cua.",
+      "time_note": "Khoảng 23 phút; thời gian luộc có thể thay đổi theo độ non và lượng rau.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Canh rau",
+        "Cá hấp"
+      ],
+      "recipe_family": "rau_lui_luoc_mam_cua_gia_lai",
+      "keywords": [
+        "rau lủi",
+        "Gia Lai",
+        "Tây Nguyên",
+        "rau luộc",
+        "mắm cua"
+      ],
+      "tags": [
+        "Gia Lai",
+        "Tây Nguyên",
+        "rau rừng",
+        "món luộc",
+        "món ăn kèm"
+      ],
+      "ingredients": [
+        {
+          "name": "Rau lủi non",
+          "quantity": 450,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Chọn rau bán làm thực phẩm, lá tươi và thân non; rửa sạch.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Mắm cua chế biến sẵn",
+          "quantity": 80,
+          "unit": "g",
+          "role": "condiment",
+          "notes": "Dùng loại có nguồn gốc, nhãn và hướng dẫn bảo quản rõ ràng.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 2
+        },
+        {
+          "name": "Ớt tươi",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Thái nhỏ, thêm theo khẩu vị.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 3
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 1600,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng luộc rau.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Nhặt bỏ lá dập và phần cuống già; rửa rau nhiều lần dưới vòi nước rồi để ráo."
+        },
+        {
+          "step": 2,
+          "instruction": "Kiểm tra nhãn mắm cua chế biến sẵn. Nếu cần, chuẩn bị chén sạch và ớt thái nhỏ để ăn kèm."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đun sôi nồi nước rộng. Cho rau lủi vào luộc khoảng 3–5 phút, đến khi thân vừa chín nhưng rau còn độ giòn."
+        },
+        {
+          "step": 2,
+          "instruction": "Vớt rau để ráo. Bày mắm cua chế biến sẵn ra chén; chỉ pha loãng theo hướng dẫn nhãn nếu mắm quá đặc, thêm ớt tùy thích rồi dùng chấm rau."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://eva.vn/tin-tuc/cay-dai-moc-bo-bui-xua-danh-cho-nguoi-ngheo-nay-thanh-dac-san-noi-tieng-co-huong-vi-la-75000-dong-kg-c73a604860.html",
+          "publisher": "Eva",
+          "title": "Rau lủi – đặc sản vùng Tây Nguyên",
+          "use": "Đối chiếu rau lủi gắn với Gia Lai, đặc điểm lá so le có mép răng cưa và cách người dân Tây Nguyên luộc rau lủi chấm mắm cua. Tỷ lệ và thời gian luộc là biên tập của Bếp Việt.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://www.nhavuontaigia.com/rau-lui-rau-lui-rung-sach-gia-rau-lui-rung-gia-lai-tai-tphcm-1698.html",
+          "publisher": "Nhà Vườn Tại Gia",
+          "title": "Rau lủi rừng Gia Lai",
+          "use": "Đối chiếu tên gọi rau lủi, thân có sắc tím và lá mép răng cưa; nguồn liệt kê cách luộc rau lủi. Không sử dụng thông tin về công dụng sức khỏe.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Dùng khoảng một nửa lượng rau và bắt đầu với ít hơn một nửa lượng gia vị chấm.",
+            "instruction": "Giữ nồi nước đủ rộng để rau ngập đều; nêm nước chấm sau cùng."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "Tăng lượng rau khoảng một lần rưỡi, sau đó nêm nước chấm theo khẩu vị.",
+            "instruction": "Luộc rau thành nhiều mẻ nếu nồi nhỏ để rau chín đều và giữ màu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/rau-lui-luoc-mam-cua-gia-lai-960.webp",
+          "page_url": null,
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập tên món, nguyên liệu và kỹ thuật.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa rau lủi luộc với thân non và lá mép răng cưa, cạnh chén mắm cua.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh ImageGen riêng, nền trong suốt; master PNG alpha ở output/recipe-images/native; WebP xuất trên canvas 3840 × 2160. Công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt chuẩn hóa cách sơ chế, thời gian luộc và lượng rau cho bữa cơm gia đình; phần mắm cua dùng sản phẩm chế biến sẵn theo nhãn, không phải hướng dẫn tự lên men. Chưa nấu thử.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử với rau lủi được nhận diện đúng và mắm cua chế biến sẵn để điều chỉnh độ mặn.",
+          "Nhờ người am hiểu món rau Gia Lai rà soát cách gọi và cách dùng mắm cua."
+        ]
+      }
+    },
+    {
+      "id": "BV645",
+      "slug": "dau-dua-luoc-sot-me",
+      "name": "Đậu đũa luộc rưới sốt mè",
+      "aliases": [
+        "Đậu đũa luộc sốt mè",
+        "Đậu đũa luộc rưới mè rang"
+      ],
+      "region": [
+        "Ba miền"
+      ],
+      "province": [],
+      "category": "Món rau",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "món chay",
+        "món ăn kèm"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một món rau dùng chung trong mâm cơm gia đình bốn người.",
+      "prep_time": 12,
+      "cook_time": 8,
+      "passive_time": 0,
+      "total_time": 20,
+      "description": "Đậu đũa cắt khúc, luộc xanh giòn rồi rưới sốt mè rang pha cùng nước tương, giấm và dầu mè. Món rau thanh nhẹ, có thể dùng trong bữa chay hoặc làm món ăn kèm; Bếp Việt điều chỉnh lượng nguyên liệu từ công thức tham khảo cho bốn người.",
+      "finished_dish": "Đậu đũa chín xanh, giòn nhẹ; sốt mè sánh mượt, thơm, có vị mặn ngọt và chua dịu cân bằng.",
+      "serving": "Xếp đậu đũa ra đĩa, rưới sốt ngay trước khi ăn và rắc phần mè rang còn lại. Dùng như món rau trong bữa cơm chay hoặc bữa cơm gia đình.",
+      "tips": [
+        "Cắt đậu thành khúc đều để chín cùng lúc.",
+        "Luộc vừa chín, không để đậu mềm nhũn; ngâm nhanh nước mát nếu muốn giữ màu xanh.",
+        "Khuấy sốt mè đến khi mịn; nếm và chỉnh chua mặn ngọt trước khi rưới."
+      ],
+      "dish_type": [
+        "Món rau",
+        "Món chay",
+        "Rau luộc sốt"
+      ],
+      "main_ingredient": [
+        "đậu đũa",
+        "mè rang",
+        "nước tương"
+      ],
+      "cooking_method": [
+        "luộc",
+        "pha sốt mè"
+      ],
+      "search_terms": [
+        "đậu đũa luộc sốt mè",
+        "đậu đũa luộc rưới sốt mè",
+        "đậu đũa sốt mè chay",
+        "yardlong beans with sesame sauce"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Đĩa đậu đũa luộc xanh cắt khúc, phủ nhẹ sốt mè rang và hạt mè.",
+      "time_note": "Khoảng 20 phút; thời gian luộc có thể thay đổi theo độ non và lượng rau.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Đậu phụ kho",
+        "Canh rau"
+      ],
+      "recipe_family": "dau_dua_luoc_sot_me",
+      "keywords": [
+        "đậu đũa",
+        "sốt mè",
+        "món chay",
+        "rau luộc",
+        "món nhanh"
+      ],
+      "tags": [
+        "món chay",
+        "rau xanh",
+        "món luộc",
+        "bữa cơm gia đình"
+      ],
+      "ingredients": [
+        {
+          "name": "Đậu đũa",
+          "quantity": 500,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Rửa sạch, cắt khúc dài khoảng 6–8 cm.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 6,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Nước tương",
+          "quantity": 30,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Chọn loại dùng được trong bữa chay.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 3
+        },
+        {
+          "name": "Muối",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Cho một ít vào nước luộc; có thể bỏ nếu nước tương mặn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 4
+        },
+        {
+          "name": "Giấm gạo",
+          "quantity": 14,
+          "unit": "ml",
+          "role": "acid",
+          "notes": "Điều chỉnh theo độ chua mong muốn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 5
+        },
+        {
+          "name": "Dầu mè",
+          "quantity": 14,
+          "unit": "ml",
+          "role": "cooking_fat",
+          "notes": "Dùng pha sốt.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 6
+        },
+        {
+          "name": "Đường",
+          "quantity": 2,
+          "unit": "g",
+          "role": "sweetener",
+          "notes": "Cân bằng vị chua mặn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 7
+        },
+        {
+          "name": "Mè trắng rang",
+          "quantity": 6,
+          "unit": "g",
+          "role": "seed",
+          "notes": "Chia đôi để pha sốt và rắc mặt.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Sốt mè rang",
+          "quantity": 30,
+          "unit": "ml",
+          "role": "condiment",
+          "notes": "Chọn loại thành phần phù hợp với bữa chay.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng điều chỉnh độ sánh của sốt.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Nước luộc",
+          "quantity": 1800,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng luộc đậu; có thể thêm muối trong phần trên.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa đậu đũa, cắt thành các khúc 6–8 cm; bóc và băm tỏi."
+        },
+        {
+          "step": 2,
+          "instruction": "Rang mè nếu dùng mè sống. Khuấy sốt mè với một nửa lượng mè và nước đến khi mịn; để riêng phần mè còn lại."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đun sôi nồi nước với một ít muối. Cho đậu đũa vào luộc khoảng 3–4 phút đến khi chín xanh; vớt ra để ráo hoặc ngâm nhanh nước mát."
+        },
+        {
+          "step": 2,
+          "instruction": "Khuấy nước tương, giấm, dầu mè, đường, tỏi và muối thành sốt. Xếp đậu ra đĩa, rưới sốt mè lên, rắc phần mè còn lại và dùng ngay."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://kingfoodmart.com/bai-viet/cong-thuc-nau-an/dau-dua-luoc-ruoi-sot-me",
+          "publisher": "Kingfoodmart",
+          "title": "Đậu đũa luộc rưới sốt mè",
+          "use": "Đối chiếu tên món, thành phần sốt mè, cách cắt đậu khúc 6–8 cm và kỹ thuật luộc nhanh để giữ màu. Lượng nguyên liệu được điều chỉnh cho bốn người và biên tập lại.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Dùng khoảng một nửa lượng rau và bắt đầu với ít hơn một nửa lượng gia vị chấm.",
+            "instruction": "Giữ nồi nước đủ rộng để rau ngập đều; nêm nước chấm sau cùng."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "Tăng lượng rau khoảng một lần rưỡi, sau đó nêm nước chấm theo khẩu vị.",
+            "instruction": "Luộc rau thành nhiều mẻ nếu nồi nhỏ để rau chín đều và giữ màu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/dau-dua-luoc-sot-me-960.webp",
+          "page_url": null,
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập tên món, nguyên liệu và kỹ thuật.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa đậu đũa luộc xanh cắt khúc, phủ nhẹ sốt mè rang và hạt mè.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh ImageGen riêng, nền trong suốt; master PNG alpha ở output/recipe-images/native; WebP xuất trên canvas 3840 × 2160. Công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt tăng khẩu phần từ công thức tham khảo và viết lại hướng dẫn theo lượng bốn người; kiểm tra thành phần nước tương và sốt mè nếu nấu bữa chay. Chưa nấu thử.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử để cân chỉnh độ mặn và độ sánh của sốt mè theo nhãn sản phẩm khác nhau.",
+          "Xác nhận phiên bản sốt mè/nước tương phù hợp với bữa chay mà người dùng lựa chọn."
+        ]
+      }
+    }
+  ]
+}

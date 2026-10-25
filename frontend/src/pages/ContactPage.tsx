@@ -10,6 +10,7 @@ import { useAuth } from '@/features/auth/AuthContext';
 import { useI18n } from '@/features/i18n/I18nContext';
 import {
   createSupportTicket,
+  getSupportContactInfo,
   listMySupportTickets,
   supportStatusLabels,
   supportTopics,
@@ -35,7 +36,22 @@ export function ContactPage() {
   const [form, setForm] = useState<SupportTicketCreate>(() =>
     emptyForm(user?.full_name ?? '', user?.email ?? ''),
   );
-  const [receipt, setReceipt] = useState<string | null>(null);
+  const [receipt, setReceipt] = useState<{ reference: string; email: string } | null>(null);
+  const contactSettings = useQuery({
+    queryKey: ['support-contact-info'],
+    queryFn: ({ signal }) => getSupportContactInfo(signal),
+  });
+  const supportEmail = contactSettings.data?.support_email;
+  const supportInboxMessage = supportEmail
+    ? t(
+        'Hòm thư Bếp Việt: {email}. Yêu cầu sẽ được tiếp nhận tại đây; phản hồi gửi về email người gửi trong vòng 24 giờ làm việc.',
+        { email: supportEmail },
+      )
+    : contactSettings.isLoading
+      ? t('Đang tải thông tin hòm thư hỗ trợ…')
+      : t(
+          'Chưa tải được địa chỉ hòm thư hỗ trợ. Hòm thư tiếp nhận sẽ được xác nhận sau khi gửi yêu cầu.',
+        );
   const tickets = useQuery({
     queryKey: ['support-tickets', user?.id],
     queryFn: ({ signal }) => listMySupportTickets(signal),
@@ -44,7 +60,7 @@ export function ContactPage() {
   const send = useMutation({
     mutationFn: createSupportTicket,
     onSuccess: async (result) => {
-      setReceipt(result.reference);
+      setReceipt({ reference: result.reference, email: result.support_email });
       setForm(emptyForm(user?.full_name ?? '', user?.email ?? ''));
       await queryClient.invalidateQueries({ queryKey: ['support-tickets', user?.id] });
     },
@@ -55,8 +71,10 @@ export function ContactPage() {
       {
         icon: 'mail',
         label: 'Email hỗ trợ',
-        value: contactInfo.email,
-        href: `mailto:${contactInfo.email}`,
+        value:
+          supportEmail ??
+          (contactSettings.isLoading ? t('Đang tải…') : t('Hòm thư hỗ trợ chưa tải được')),
+        ...(supportEmail ? { href: `mailto:${supportEmail}` } : {}),
         note: contactInfo.responseTime,
       },
       ...(contactInfo.phone
@@ -99,7 +117,7 @@ export function ContactPage() {
           <h1>{t('Bếp Việt luôn lắng nghe')}</h1>
           <p>
             {t(
-              'Mình trân trọng mọi góp ý. Bếp Việt sẽ phản hồi bạn qua email trong 1–2 ngày làm việc.',
+              'Mình trân trọng mọi góp ý. Bếp Việt sẽ phản hồi bạn qua email trong vòng 24 giờ làm việc.',
             )}
           </p>
         </div>
@@ -145,15 +163,15 @@ export function ContactPage() {
           <form className="submission-form contact-form" onSubmit={submit}>
             <div>
               <h2>{t('Gửi yêu cầu hỗ trợ')}</h2>
-              <p>{t('Điền thông tin, mình sẽ phản hồi qua email bạn cung cấp.')}</p>
+              <p>{supportInboxMessage}</p>
             </div>
             {receipt ? (
               <Notice tone="success">
                 {t(
-                  'Yêu cầu đã được xếp hàng gửi tới {email}. Bếp Việt sẽ phản hồi qua email trong 1–2 ngày làm việc.',
-                  { email: contactInfo.email },
+                  'Yêu cầu đã được tiếp nhận. Bếp Việt sẽ phản hồi email người gửi trong vòng 24 giờ làm việc.',
                 )}{' '}
-                {t('Mã yêu cầu: {code}.', { code: receipt })}
+                {t('Hòm thư hỗ trợ: {email}.', { email: receipt.email })}{' '}
+                {t('Mã yêu cầu: {code}.', { code: receipt.reference })}
               </Notice>
             ) : null}
             {send.isError ? (
@@ -176,7 +194,7 @@ export function ContactPage() {
                 />
               </label>
               <label>
-                <span>{t('Email nhận phản hồi')} *</span>
+                <span>{t('Email người gửi')} *</span>
                 <input
                   autoComplete="email"
                   maxLength={320}
@@ -264,10 +282,19 @@ export function ContactPage() {
                         {t(supportTopics.find((topic) => topic.id === ticket.topic)?.label ?? '')} ·{' '}
                         {formatDate(ticket.created_at, { dateStyle: 'medium', timeStyle: 'short' })}
                       </small>
-                      {ticket.admin_note ? (
-                        <p>
-                          <AppIcon name="message" size={14} /> {ticket.admin_note}
-                        </p>
+                      {ticket.reply_status === 'sent' && ticket.reply_message ? (
+                        <div className="ticket-list__reply">
+                          <strong>{t('Phản hồi từ Bếp Việt')}</strong>
+                          {ticket.reply_sent_at ? (
+                            <small>
+                              {formatDate(ticket.reply_sent_at, {
+                                dateStyle: 'medium',
+                                timeStyle: 'short',
+                              })}
+                            </small>
+                          ) : null}
+                          <p>{ticket.reply_message}</p>
+                        </div>
                       ) : null}
                     </div>
                     <StatusBadge

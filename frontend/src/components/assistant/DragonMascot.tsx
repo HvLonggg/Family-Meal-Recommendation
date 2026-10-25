@@ -1,16 +1,41 @@
-import { useId } from 'react';
+import { useId, type CSSProperties } from 'react';
 
-export type DragonMood = 'idle' | 'happy' | 'thinking' | 'listening' | 'speaking';
+import { VISEME_OPENNESS, type Viseme } from '@/components/assistant/lipSync';
+
+export type { Viseme };
+
+export type DragonMood =
+  | 'idle'
+  | 'happy'
+  | 'thinking'
+  | 'listening'
+  | 'speaking'
+  | 'waiting'
+  | 'alarm'
+  | 'celebrate'
+  | 'confused';
 
 interface DragonMascotProps {
   size?: number;
   mood?: DragonMood;
   /** "full": cả người cầm chảo; "face": chỉ phần mặt, dùng làm ảnh đại diện nhỏ. */
   variant?: 'full' | 'face';
-/** Tắt animation của linh vật. */
+  /** Tắt chuyển động. */
   still?: boolean;
   className?: string;
   title?: string;
+  /**
+   * Độ mở miệng 0–1 theo từng tiếng đang đọc (khẩu hình khớp lời nói). Bỏ trống thì miệng tự
+   * mấp máy khi `mood="speaking"`.
+   */
+  talk?: number;
+  /**
+   * Khẩu hình theo âm tiết (từ `useLipSync`): đổi dáng môi tròn/bè/mím, hàm dưới hạ theo
+   * `openness`. Ưu tiên hơn `talk`.
+   */
+  viseme?: Viseme;
+  /** Độ mở miệng 0–1 đi kèm `viseme`; bỏ trống thì lấy mức mặc định của khẩu hình. */
+  openness?: number;
 }
 
 const VIEWBOX = { full: '0 0 200 220', face: '20 -6 160 160' } as const;
@@ -41,19 +66,31 @@ export function DragonMascot({
   mood = 'idle',
   size = 64,
   still = false,
+  talk,
   title,
   variant = 'full',
+  viseme,
+  openness,
 }: DragonMascotProps) {
   const uid = useId().replace(/:/g, '');
   const id = (name: string) => `${name}-${uid}`;
   const url = (name: string) => `url(#${id(name)})`;
   const full = variant === 'full';
+  // Độ mở miệng: viseme (kèm openness) ưu tiên, rồi tới talk kiểu cũ.
+  const open = viseme === undefined ? talk : (openness ?? talk ?? VISEME_OPENNESS[viseme]);
+  const lipClass =
+    (open === undefined ? '' : ' is-lipsync') + (viseme === undefined ? '' : ` is-v-${viseme}`);
   return (
     <svg
       aria-hidden={title ? undefined : true}
-      className={`dragon-mascot is-${mood} is-${variant}${still ? ' is-still' : ''} ${className}`.trim()}
+      className={`dragon-mascot is-${mood} is-${variant}${still ? ' is-still' : ''}${lipClass} ${className}`.trim()}
       height={full ? Math.round(size * 1.1) : size}
       role={title ? 'img' : undefined}
+      style={
+        open === undefined
+          ? undefined
+          : ({ '--dragon-talk': Math.max(0, Math.min(1, open)).toFixed(2) } as CSSProperties)
+      }
       viewBox={VIEWBOX[variant]}
       width={size}
     >
@@ -106,9 +143,10 @@ export function DragonMascot({
           <stop offset="1" stopColor="#a8291c" />
         </linearGradient>
         <radialGradient cx="0.38" cy="0.32" id={id('iris')} r="0.75">
-          <stop offset="0" stopColor="#d9feff" />
-          <stop offset="0.45" stopColor="#3fd2e6" />
-          <stop offset="1" stopColor="#0d6f8c" />
+          <stop offset="0" stopColor="#f4ffd1" />
+          <stop offset="0.42" stopColor="#55d0a1" />
+          <stop offset="0.78" stopColor="#16876e" />
+          <stop offset="1" stopColor="#075746" />
         </radialGradient>
         <radialGradient cx="0.5" cy="0.4" id={id('sclera')} r="0.7">
           <stop offset="0.7" stopColor="#ffffff" />
@@ -116,21 +154,15 @@ export function DragonMascot({
         </radialGradient>
         <radialGradient cx="0.5" cy="0.5" id={id('gem')} r="0.5">
           <stop offset="0" stopColor="#ffffff" />
-          <stop offset="0.35" stopColor="#9af6ff" />
-          <stop offset="1" stopColor="#13a3c4" />
-        </radialGradient>
-        <linearGradient id={id('metal')} x1="0" x2="1" y1="0" y2="0">
-          <stop offset="0" stopColor="#2b2f35" />
-          <stop offset="0.45" stopColor="#5d636c" />
-          <stop offset="1" stopColor="#24272c" />
-        </linearGradient>
-        <radialGradient cx="0.45" cy="0.4" id={id('panIn')} r="0.7">
-          <stop offset="0" stopColor="#4a4f57" />
-          <stop offset="1" stopColor="#1f2226" />
+          <stop offset="0.34" stopColor="#c9ffe4" />
+          <stop offset="0.72" stopColor="#39c98d" />
+          <stop offset="1" stopColor="#08775c" />
         </radialGradient>
         <linearGradient id={id('wood')} x1="0" x2="1" y1="0" y2="1">
-          <stop offset="0" stopColor="#c98a4f" />
-          <stop offset="1" stopColor="#7a4520" />
+          <stop offset="0" stopColor="#efbd72" />
+          <stop offset="0.38" stopColor="#c88945" />
+          <stop offset="0.74" stopColor="#a4622e" />
+          <stop offset="1" stopColor="#70401f" />
         </linearGradient>
         <radialGradient cx="0.45" cy="0.4" id={id('yolk')} r="0.6">
           <stop offset="0" stopColor="#ffeaa0" />
@@ -159,6 +191,32 @@ export function DragonMascot({
         />
       ) : null}
 
+      {full && mood === 'confused' ? (
+        <text
+          className="dragon-mascot__emote"
+          fill="#b8402f"
+          fontSize="30"
+          fontWeight="800"
+          x="150"
+          y="44"
+        >
+          ?
+        </text>
+      ) : null}
+      {full && mood === 'alarm' ? (
+        <g className="dragon-mascot__emote dragon-mascot__emote--alarm" fill="#e0402c">
+          <path d="M152 18 l6 -2 -2 24 -6 1 z" />
+          <circle cx="152" cy="48" r="3.4" />
+          <path d="M40 30 l5 3 -9 16 -4 -3 z" />
+        </g>
+      ) : null}
+      {full && mood === 'celebrate' ? (
+        <g className="dragon-mascot__emote dragon-mascot__emote--sparkle" fill="#f6c45a">
+          <path d="M34 40 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3 z" />
+          <path d="M162 30 l2.4 6 6 2.4 -6 2.4 -2.4 6 -2.4 -6 -6 -2.4 6 -2.4 z" />
+          <path d="M170 96 l2 5 5 2 -5 2 -2 5 -2 -5 -5 -2 5 -2 z" />
+        </g>
+      ) : null}
       <g className="dragon-mascot__float" filter={full ? url('lift') : undefined}>
         {full ? (
           <>
@@ -233,16 +291,22 @@ export function DragonMascot({
               <path d="M174 176 L186 162 L189 179 Z" fill={url('gold')} />
             </g>
 
-            {/* Chân */}
-            <ellipse cx="82" cy="203" fill={url('skinDeep')} rx="14.5" ry="8" />
-            <ellipse cx="118" cy="203" fill={url('skinDeep')} rx="14.5" ry="8" />
-            <g fill="#fff3e2">
-              <ellipse cx="73" cy="207" rx="2.4" ry="1.9" />
-              <ellipse cx="81" cy="209" rx="2.4" ry="1.9" />
-              <ellipse cx="89" cy="208" rx="2.4" ry="1.9" />
-              <ellipse cx="111" cy="208" rx="2.4" ry="1.9" />
-              <ellipse cx="119" cy="209" rx="2.4" ry="1.9" />
-              <ellipse cx="127" cy="207" rx="2.4" ry="1.9" />
+            {/* Chân: tách trái/phải để nhịp chân khi chờ, nhún khi chuông kêu, nhảy khi xong */}
+            <g className="dragon-mascot__foot dragon-mascot__foot--left">
+              <ellipse cx="82" cy="203" fill={url('skinDeep')} rx="14.5" ry="8" />
+              <g fill="#fff3e2">
+                <ellipse cx="73" cy="207" rx="2.4" ry="1.9" />
+                <ellipse cx="81" cy="209" rx="2.4" ry="1.9" />
+                <ellipse cx="89" cy="208" rx="2.4" ry="1.9" />
+              </g>
+            </g>
+            <g className="dragon-mascot__foot dragon-mascot__foot--right">
+              <ellipse cx="118" cy="203" fill={url('skinDeep')} rx="14.5" ry="8" />
+              <g fill="#fff3e2">
+                <ellipse cx="111" cy="208" rx="2.4" ry="1.9" />
+                <ellipse cx="119" cy="209" rx="2.4" ry="1.9" />
+                <ellipse cx="127" cy="207" rx="2.4" ry="1.9" />
+              </g>
             </g>
 
             {/* Áo đầu bếp dáng thon */}
@@ -354,8 +418,8 @@ export function DragonMascot({
               <ellipse cx="33.5" cy="105.5" fill="#ffb9a3" opacity="0.55" rx="3" ry="2" />
             </g>
 
-            {/* Tay cầm chảo + món đang tung */}
-            <g className="dragon-mascot__pan">
+            {/* Tay cầm sạn gỗ */}
+            <g className="dragon-mascot__arm-tool">
               <path
                 d="M130 136 C141 142 146 146 149 146"
                 fill="none"
@@ -376,273 +440,371 @@ export function DragonMascot({
                 strokeLinecap="round"
                 strokeWidth="15"
               />
-              <path
-                d="M157.5 123 L154 132"
-                stroke="#3a3e44"
-                strokeLinecap="round"
-                strokeWidth="4.6"
-              />
-              <path
-                d="M154.5 131 L149.5 147"
-                stroke={url('wood')}
-                strokeLinecap="round"
-                strokeWidth="8"
-              />
-              <path
-                d="M153 133 L150 143"
-                opacity="0.5"
-                stroke="#f2c18e"
-                strokeLinecap="round"
-                strokeWidth="1.6"
-              />
-              <path d="M156.4 119 C158.6 132 193.4 132 195.6 119 Z" fill={url('metal')} />
-              <ellipse cx="176" cy="118" fill="#9aa1aa" rx="20" ry="8" />
-              <ellipse cx="176" cy="118.6" fill={url('panIn')} rx="17.4" ry="6.3" />
-              <path
-                d="M159 115.5 C164 111.5 172 110.6 180 110.8"
-                fill="none"
-                opacity="0.7"
-                stroke="#fff"
-                strokeLinecap="round"
-                strokeWidth="1.4"
-              />
-              {/* Món xào trong chảo: rau cải, tôm, ớt chuông, thịt */}
-              <path
-                d="M163 119 C165 114 171 113 173 116 C170 119 167 121 163 119 Z"
-                fill="#4caf50"
-              />
-              <path
-                d="M178 114 C182 111 188 113 189 117 C185 119 181 118 178 114 Z"
-                fill="#66bb6a"
-              />
-              <path
-                d="M170 117 C171 113 177 112 179 115"
-                fill="none"
-                stroke="#ff8a4c"
-                strokeLinecap="round"
-                strokeWidth="3.4"
-              />
-              <ellipse
-                cx="183"
-                cy="120.5"
-                fill="#e53b2e"
-                rx="3.4"
-                ry="1.8"
-                transform="rotate(-18 183 120.5)"
-              />
-              <ellipse cx="174" cy="121" fill="#a0522d" rx="3.6" ry="2" />
-              <ellipse cx="166.5" cy="122" fill="#f6c45a" rx="2.4" ry="1.4" />
-              <ellipse cx="176" cy="116.5" fill="#fff" opacity="0.5" rx="1.4" ry="0.6" />
+              <g className="dragon-mascot__spatula" filter={url('lift')}>
+                <path
+                  d="M149 146 C156 139 162 132 169 121"
+                  fill="none"
+                  stroke="#663615"
+                  strokeLinecap="round"
+                  strokeWidth="10"
+                />
+                <path
+                  d="M149 145 C156 138 162 131 169 120"
+                  fill="none"
+                  opacity="0.84"
+                  stroke={url('wood')}
+                  strokeLinecap="round"
+                  strokeWidth="7"
+                />
+                <path
+                  d="M150 143 C156 137 162 130 168 121"
+                  fill="none"
+                  opacity="0.88"
+                  stroke="#ffe0a1"
+                  strokeLinecap="round"
+                  strokeWidth="1.4"
+                />
+                {/* Đầu sạn bẹt, bo tròn và có khe thoát dầu như sạn gỗ chiên xào. */}
+                <path
+                  d="M160 124 C155 121 154 116 157 109 L172 78 C176 69 183 64 190 67 L193 69 C199 72 200 79 197 87 L184 119 C181 127 175 131 168 128 Z"
+                  fill={url('wood')}
+                  stroke="#663615"
+                  strokeLinejoin="round"
+                  strokeWidth="2.2"
+                />
+                <path
+                  d="M161 119 C168 105 174 91 180 76 M170 125 C177 110 184 94 190 78 M178 123 C184 108 190 94 195 82"
+                  fill="none"
+                  opacity="0.62"
+                  stroke="#f6d49e"
+                  strokeLinecap="round"
+                  strokeWidth="1.35"
+                />
+                {/* Ba khe xẻ dọc trên mặt sạn. */}
+                <path
+                  d="M163 113 C169 100 175 87 180 76 M169 116 C175 103 181 89 186 74 M175 117 C181 104 187 91 192 78"
+                  fill="none"
+                  stroke="#70401f"
+                  strokeLinecap="round"
+                  strokeWidth="2.4"
+                />
+                <path
+                  d="M164 112 C170 99 175 87 180 77 M170 115 C176 102 181 89 186 75 M176 116 C182 103 187 91 192 79"
+                  fill="none"
+                  opacity="0.68"
+                  stroke="#ffe0a1"
+                  strokeLinecap="round"
+                  strokeWidth="0.75"
+                />
+                <path
+                  d="M177 72 C181 68 186 67 190 69"
+                  fill="none"
+                  opacity="0.8"
+                  stroke="#fff0c8"
+                  strokeLinecap="round"
+                  strokeWidth="1.6"
+                />
+                <circle cx="154" cy="139" fill="#70421f" r="1.5" />
+                <circle cx="153.5" cy="138.5" fill="#f7d99e" r="0.65" />
+              </g>
+
               {/* Bàn tay nắm cán */}
               <circle cx="149" cy="146" fill={url('skin')} r="8.6" />
               <path
-                d="M143.5 141.5 C147 140 151 141 153 143 M142.5 146 C146 144.6 150 145.4 152.6 147.6"
+                d="M143.5 141.5 C147 140 151 141 153 143 M142.5 146 C146 144.6 150 145.4 152.6 147.6 M145 150 C147.5 148.8 150.5 149.4 152 151"
                 fill="none"
                 stroke="#9b2a1b"
                 strokeLinecap="round"
                 strokeWidth="1.3"
               />
-              {/* Tôm, lá rau, lát ớt đang bay khỏi chảo */}
-              <g className="dragon-mascot__toss">
-                <path
-                  d="M163 99 C163 92 171 89 175 94 C178 98 175 103 171 101"
-                  fill="none"
-                  stroke="#ff8a4c"
-                  strokeLinecap="round"
-                  strokeWidth="4.6"
-                />
-                <path d="M171 101 l-3 4 4 -1 z" fill="#ff8a4c" />
-                <path d="M184 92 C188 84 196 84 197 86 C196 92 190 96 184 92 Z" fill="#5cb85c" />
-                <path d="M184 92 L195 87" stroke="#3d8b3d" strokeWidth="0.9" />
-                <circle cx="191" cy="104" fill="none" r="3.2" stroke="#e53b2e" strokeWidth="2.2" />
-              </g>
-              <g
-                className="dragon-mascot__steam"
-                fill="none"
-                stroke="#fff"
-                strokeLinecap="round"
-                strokeWidth="2"
-              >
-                <path d="M170 108 C167 104 172 101 169 96" />
-                <path d="M182 107 C179 103 184 100 181 95" />
-              </g>
             </g>
           </>
         ) : null}
 
         {/* Đầu */}
         <g className="dragon-mascot__head">
-          <path d={FIN} fill={url('fin')} />
-          <path d={mirror(FIN)} fill={url('fin')} />
-          <path d={FIN_RIB} fill="none" opacity="0.5" stroke="#c96a2a" strokeWidth="1" />
-          <path d={mirror(FIN_RIB)} fill="none" opacity="0.5" stroke="#c96a2a" strokeWidth="1" />
-          <path d={HORN} fill={url('gold')} />
-          <path d={mirror(HORN)} fill={url('gold')} />
-          {[HORN_SHINE, mirror(HORN_SHINE)].map((d) => (
+          {/* Nhóm gật nhẹ theo từng tiếng nói (tách khỏi animation lắc đầu của mood). */}
+          <g className="dragon-mascot__head-talk">
+            <path d={FIN} fill={url('fin')} />
+            <path d={mirror(FIN)} fill={url('fin')} />
+            <path d={FIN_RIB} fill="none" opacity="0.5" stroke="#c96a2a" strokeWidth="1" />
+            <path d={mirror(FIN_RIB)} fill="none" opacity="0.5" stroke="#c96a2a" strokeWidth="1" />
             <path
-              d={d}
+              d="M38 78 Q47 79 55 88 M35 84 Q44 84 51 92"
               fill="none"
-              key={d}
-              opacity="0.7"
-              stroke="#fff6d6"
+              opacity="0.6"
+              stroke="#ffe0b3"
               strokeLinecap="round"
-              strokeWidth="1.3"
+              strokeWidth="1.1"
             />
-          ))}
-
-          <ellipse cx="100" cy="88" fill={url('skin')} rx="47" ry="41" />
-          {/* Bóng mũ đổ xuống trán, viền sáng phải, điểm sáng trái tạo khối */}
-          <ellipse cx="100" cy="60" fill="#6e1a10" opacity="0.28" rx="34" ry="6.5" />
-          <path
-            d="M137 70 C146 83 146 102 132 116"
-            fill="none"
-            opacity="0.45"
-            stroke="#ffd4c4"
-            strokeLinecap="round"
-            strokeWidth="2.2"
-          />
-          <ellipse
-            cx="72"
-            cy="73"
-            fill="#fff"
-            opacity="0.3"
-            rx="11"
-            ry="6"
-            transform="rotate(-28 72 73)"
-          />
-          <circle cx="63" cy="83" fill="#fff" opacity="0.4" r="1.8" />
-
-          {/* Má hồng phúng phính */}
-          <ellipse cx="64" cy="109" fill="#ff6f86" opacity="0.5" rx="8.6" ry="5.2" />
-          <ellipse cx="136" cy="109" fill="#ff6f86" opacity="0.5" rx="8.6" ry="5.2" />
-          <circle cx="61" cy="107" fill="#fff" opacity="0.7" r="1.3" />
-          <circle cx="133" cy="107" fill="#fff" opacity="0.7" r="1.3" />
-
-          {/* Lông mày nhỏ, mắt to tròn long lanh kiểu em bé */}
-          <path
-            className="dragon-mascot__brow"
-            d="M74 71 Q80 67.5 86 70.5 M114 70.5 Q120 67.5 126 71"
-            fill="none"
-            opacity="0.7"
-            stroke="#7d1e12"
-            strokeLinecap="round"
-            strokeWidth="2.2"
-          />
-          <g className="dragon-mascot__eyes">
-            <ellipse
-              cx="80"
-              cy="92"
-              fill={url('sclera')}
-              rx="13"
-              ry="14.5"
-              stroke="#7a1d12"
-              strokeOpacity="0.25"
-            />
-            <ellipse
-              cx="120"
-              cy="92"
-              fill={url('sclera')}
-              rx="13"
-              ry="14.5"
-              stroke="#7a1d12"
-              strokeOpacity="0.25"
-            />
-            <g className="dragon-mascot__pupils">
-              <circle cx="81" cy="94" fill={url('iris')} r="10.6" />
-              <circle cx="119" cy="94" fill={url('iris')} r="10.6" />
-              <circle cx="81" cy="95" fill="#0b2233" r="6.2" />
-              <circle cx="119" cy="95" fill="#0b2233" r="6.2" />
-              <circle cx="85.4" cy="88.6" fill="#fff" r="3.9" />
-              <circle cx="123.4" cy="88.6" fill="#fff" r="3.9" />
-              <circle cx="77" cy="99" fill="#fff" opacity="0.85" r="1.7" />
-              <circle cx="115" cy="99" fill="#fff" opacity="0.85" r="1.7" />
-              <circle cx="86.4" cy="98" fill="#fff" opacity="0.55" r="1" />
-              <circle cx="124.4" cy="98" fill="#fff" opacity="0.55" r="1" />
-            </g>
             <path
-              d="M67.3 89 Q80 67 92.7 89 M107.3 89 Q120 67 132.7 89 M68 85.6 L63.6 83 M132 85.6 L136.4 83"
+              d={mirror('M38 78 Q47 79 55 88 M35 84 Q44 84 51 92')}
               fill="none"
-              opacity="0.85"
-              stroke="#5c1a10"
+              opacity="0.6"
+              stroke="#ffe0b3"
+              strokeLinecap="round"
+              strokeWidth="1.1"
+            />
+            <path d={HORN} fill={url('gold')} />
+            <path d={mirror(HORN)} fill={url('gold')} />
+            {[HORN_SHINE, mirror(HORN_SHINE)].map((d) => (
+              <path
+                d={d}
+                fill="none"
+                key={d}
+                opacity="0.7"
+                stroke="#fff6d6"
+                strokeLinecap="round"
+                strokeWidth="1.3"
+              />
+            ))}
+
+            <ellipse cx="100" cy="89" fill="#702015" opacity="0.22" rx="45" ry="38" />
+            <ellipse cx="100" cy="87" fill={url('skin')} rx="47" ry="41" />
+            {/* Bóng mũ đổ xuống trán, viền sáng phải, điểm sáng trái tạo khối */}
+            <ellipse cx="100" cy="60" fill="#6e1a10" opacity="0.28" rx="34" ry="6.5" />
+            <path
+              d="M137 70 C146 83 146 102 132 116"
+              fill="none"
+              opacity="0.45"
+              stroke="#ffd4c4"
               strokeLinecap="round"
               strokeWidth="2.2"
             />
-          </g>
-
-          {/* Mõm nhỏ, miệng cười xinh */}
-          <ellipse cx="100" cy="114" fill={url('snout')} rx="17" ry="10" />
-          <ellipse cx="96" cy="108.6" fill="#fff" opacity="0.4" rx="6.5" ry="2.3" />
-          <ellipse cx="95" cy="111" fill="#8f2516" rx="1.4" ry="1.1" />
-          <ellipse cx="105" cy="111" fill="#8f2516" rx="1.4" ry="1.1" />
-          <g className="dragon-mascot__mouth">
-            <path d="M93 116.4 Q100 124.6 107 116.4 Q100 118.6 93 116.4 Z" fill="#6e1a12" />
-            <path d="M96.6 120 Q100 123.2 103.4 120 Q100 121 96.6 120 Z" fill="#ff8f8f" />
-          </g>
-          {/* Râu rồng cuộn ngắn */}
-          <g className="dragon-mascot__whisker dragon-mascot__whisker--left">
-            <path
-              d={WHISKER}
-              fill="none"
-              stroke={url('gold')}
-              strokeLinecap="round"
-              strokeWidth="2"
-            />
-          </g>
-          <g className="dragon-mascot__whisker dragon-mascot__whisker--right">
-            <path
-              d={mirror(WHISKER)}
-              fill="none"
-              stroke={url('gold')}
-              strokeLinecap="round"
-              strokeWidth="2"
-            />
-          </g>
-
-          {/* Mũ đầu bếp với lõi AI trên vành mũ */}
-          <g className="dragon-mascot__hat">
-            <path
-              d="M62 52 C49 50 45 31 58 25 C58 11 76 5 86 13 C92 1 112 1 118 13 C128 5 146 11 144 27 C157 33 152 52 138 52 Z"
-              fill={url('hat')}
-              stroke="#ddd4cb"
-              strokeWidth="1.2"
-            />
-            <path
-              d="M86 15 C83 28 85 40 90 50 M118 15 C121 29 117 41 112 50 M58 27 C64 33 66 42 66 50 M144 29 C138 35 136 43 135 50"
-              fill="none"
-              stroke="#e4ddd5"
-              strokeLinecap="round"
-              strokeWidth="1.6"
-            />
             <ellipse
-              cx="80"
-              cy="24"
+              cx="72"
+              cy="73"
               fill="#fff"
-              opacity="0.95"
+              opacity="0.3"
               rx="11"
-              ry="6.4"
-              transform="rotate(-12 80 24)"
+              ry="6"
+              transform="rotate(-28 72 73)"
             />
-            <ellipse cx="110" cy="16" fill="#fff" opacity="0.8" rx="7" ry="3.6" />
+            <circle cx="63" cy="83" fill="#fff" opacity="0.4" r="1.8" />
+            <g className="dragon-mascot__forehead-mark" filter={url('glow')}>
+              <path d="M100 69 C96 73 96 76 100 79 C104 76 104 73 100 69 Z" fill={url('gold')} />
+              <path d="M99 77 C94 72 91 74 93 78 C95 81 98 80 100 78 Z" fill={url('gold')} />
+              <path d="M101 77 C106 72 109 74 107 78 C105 81 102 80 100 78 Z" fill={url('gold')} />
+              <path
+                d="M95 80 Q100 83 105 80"
+                fill="none"
+                stroke="#fff0c2"
+                strokeLinecap="round"
+                strokeWidth="1.2"
+              />
+            </g>
+
+            {/* Má hồng phúng phính: nhích theo hàm khi nói, nhô lên khi cười bè miệng */}
+            <g className="dragon-mascot__cheeks">
+              <ellipse cx="64" cy="109" fill="#ff6f86" opacity="0.5" rx="8.6" ry="5.2" />
+              <ellipse cx="136" cy="109" fill="#ff6f86" opacity="0.5" rx="8.6" ry="5.2" />
+              <circle cx="61" cy="107" fill="#fff" opacity="0.7" r="1.3" />
+              <circle cx="133" cy="107" fill="#fff" opacity="0.7" r="1.3" />
+            </g>
+            <g fill="#ffd0b4" opacity="0.78">
+              <path d="M58 98 Q61 94 64 98 Q61 101 58 98 Z" />
+              <path d="M62 94 Q65 90 68 94 Q65 97 62 94 Z" />
+              <path d="M142 98 Q139 94 136 98 Q139 101 142 98 Z" />
+              <path d="M138 94 Q135 90 132 94 Q135 97 138 94 Z" />
+            </g>
+
+            {/* Lông mày nhỏ, mắt to tròn long lanh kiểu em bé */}
             <path
-              d="M63 46 C84 54 116 54 137 46 L137 60 C116 67 84 67 63 60 Z"
-              fill={url('coat')}
-              stroke="#d8cec4"
-              strokeWidth="1.2"
+              className="dragon-mascot__brow"
+              d="M74 71 Q80 67.5 86 70.5 M114 70.5 Q120 67.5 126 71"
+              fill="none"
+              opacity="0.7"
+              stroke="#7d1e12"
+              strokeLinecap="round"
+              strokeWidth="2.2"
             />
-            <path
-              d="M73 51 v11 M83 53 v12 M93 54 v12 M107 54 v12 M117 53 v12 M127 51 v11"
-              stroke="#e2d9d0"
-              strokeWidth="1.2"
-            />
-            <circle cx="100" cy="59" fill="none" r="5.8" stroke={url('gold')} strokeWidth="1.6" />
-            <circle
-              className="dragon-mascot__gem"
+            <g className="dragon-mascot__eyes">
+              <ellipse
+                cx="80"
+                cy="92"
+                fill={url('sclera')}
+                rx="13"
+                ry="14.5"
+                stroke="#7a1d12"
+                strokeOpacity="0.25"
+              />
+              <ellipse
+                cx="120"
+                cy="92"
+                fill={url('sclera')}
+                rx="13"
+                ry="14.5"
+                stroke="#7a1d12"
+                strokeOpacity="0.25"
+              />
+              <g className="dragon-mascot__pupils">
+                <circle cx="81" cy="94" fill={url('iris')} r="10.6" />
+                <circle cx="119" cy="94" fill={url('iris')} r="10.6" />
+                <circle cx="81" cy="95" fill="#0b2233" r="6.2" />
+                <circle cx="119" cy="95" fill="#0b2233" r="6.2" />
+                <circle cx="85.4" cy="88.6" fill="#fff" r="3.9" />
+                <circle cx="123.4" cy="88.6" fill="#fff" r="3.9" />
+                <circle cx="77" cy="99" fill="#fff" opacity="0.85" r="1.7" />
+                <circle cx="115" cy="99" fill="#fff" opacity="0.85" r="1.7" />
+                <circle cx="86.4" cy="98" fill="#fff" opacity="0.55" r="1" />
+                <circle cx="124.4" cy="98" fill="#fff" opacity="0.55" r="1" />
+              </g>
+              <path
+                d="M67.3 89 Q80 67 92.7 89 M107.3 89 Q120 67 132.7 89 M68 85.6 L63.6 83 M132 85.6 L136.4 83"
+                fill="none"
+                opacity="0.85"
+                stroke="#5c1a10"
+                strokeLinecap="round"
+                strokeWidth="2.2"
+              />
+            </g>
+
+            {/* Mõm nhỏ, miệng cười xinh; cằm (hàm dưới) hạ xuống khi há miệng */}
+            <ellipse
+              className="dragon-mascot__jaw"
               cx="100"
-              cy="59"
-              fill={url('gem')}
-              filter={url('glow')}
-              r="4.1"
+              cy="119.5"
+              fill={url('snout')}
+              rx="12.5"
+              ry="5"
             />
+            <ellipse cx="100" cy="114" fill={url('snout')} rx="17" ry="10" />
+            <ellipse cx="96" cy="108.6" fill="#fff" opacity="0.4" rx="6.5" ry="2.3" />
+            <path
+              d="M88 115 Q100 109 112 115"
+              fill="none"
+              opacity="0.28"
+              stroke="#fff"
+              strokeLinecap="round"
+              strokeWidth="1.2"
+            />
+            <ellipse cx="95" cy="111" fill="#8f2516" rx="1.4" ry="1.1" />
+            <ellipse cx="105" cy="111" fill="#8f2516" rx="1.4" ry="1.1" />
+            <g className="dragon-mascot__mouth">
+              {/* Miệng khép: nét cười; mờ dần khi há */}
+              <g className="dragon-mascot__mouth-closed">
+                <path d="M93 116.4 Q100 124.6 107 116.4 Q100 118.6 93 116.4 Z" fill="#6e1a12" />
+                <path d="M96.6 120 Q100 123.2 103.4 120 Q100 121 96.6 120 Z" fill="#ff8f8f" />
+              </g>
+              {/* Môi mím (m/b/p): hai môi ép lại, hơi phồng */}
+              <path
+                className="dragon-mascot__lips-press"
+                d="M93.4 116.8 Q100 119.4 106.6 116.8"
+                fill="none"
+                stroke="#8f2516"
+                strokeLinecap="round"
+                strokeWidth="2.2"
+              />
+              {/* Khoang miệng: giãn dọc theo độ mở, ngang theo khẩu hình (--dragon-talk) */}
+              <g className="dragon-mascot__mouth-open">
+                <path
+                  className="dragon-mascot__cavity"
+                  d="M92.6 116.4 Q100 115.4 107.4 116.4 C107.4 122.6 104.4 127 100 127 C95.6 127 92.6 122.6 92.6 116.4 Z"
+                  fill="#5a120c"
+                  stroke="#a3301f"
+                  strokeLinejoin="round"
+                  strokeWidth="1.1"
+                />
+                <ellipse cx="100" cy="117.6" fill="#3a0a06" opacity="0.6" rx="5.6" ry="1.6" />
+                <ellipse
+                  className="dragon-mascot__tongue"
+                  cx="100"
+                  cy="124.2"
+                  fill="#ff8f8f"
+                  rx="4.6"
+                  ry="2.6"
+                />
+                <ellipse cx="98.6" cy="123.4" fill="#ffc4c4" opacity="0.7" rx="1.4" ry="0.7" />
+              </g>
+              {/* Răng trên: hiện khi há đủ rộng, không bị bóp dẹt theo độ mở */}
+              <path
+                className="dragon-mascot__teeth"
+                d="M94.6 116.5 Q100 115.9 105.4 116.5 L104.8 118.3 L103.6 117.3 L102.4 118.4 L101.2 117.4 L100 118.5 L98.8 117.4 L97.6 118.4 L96.4 117.3 L95.2 118.3 Z"
+                fill="#fffdf6"
+              />
+            </g>
+            {/* Râu rồng cuộn ngắn */}
+            <g className="dragon-mascot__whisker dragon-mascot__whisker--left">
+              <path
+                d={WHISKER}
+                fill="none"
+                stroke={url('gold')}
+                strokeLinecap="round"
+                strokeWidth="2"
+              />
+            </g>
+            <g className="dragon-mascot__whisker dragon-mascot__whisker--right">
+              <path
+                d={mirror(WHISKER)}
+                fill="none"
+                stroke={url('gold')}
+                strokeLinecap="round"
+                strokeWidth="2"
+              />
+            </g>
+
+            {/* Mũ đầu bếp và huy hiệu ngọc lục bảo */}
+            <g className="dragon-mascot__hat">
+              <path
+                d="M62 52 C49 50 45 31 58 25 C58 11 76 5 86 13 C92 1 112 1 118 13 C128 5 146 11 144 27 C157 33 152 52 138 52 Z"
+                fill={url('hat')}
+                stroke="#ddd4cb"
+                strokeWidth="1.2"
+              />
+              <path
+                d="M86 15 C83 28 85 40 90 50 M118 15 C121 29 117 41 112 50 M58 27 C64 33 66 42 66 50 M144 29 C138 35 136 43 135 50"
+                fill="none"
+                stroke="#e4ddd5"
+                strokeLinecap="round"
+                strokeWidth="1.6"
+              />
+              <ellipse
+                cx="80"
+                cy="24"
+                fill="#fff"
+                opacity="0.95"
+                rx="11"
+                ry="6.4"
+                transform="rotate(-12 80 24)"
+              />
+              <ellipse cx="110" cy="16" fill="#fff" opacity="0.8" rx="7" ry="3.6" />
+              <path
+                d="M63 46 C84 54 116 54 137 46 L137 60 C116 67 84 67 63 60 Z"
+                fill={url('coat')}
+                stroke="#d8cec4"
+                strokeWidth="1.2"
+              />
+              <path
+                d="M66 48 C85 55 115 55 134 48"
+                fill="none"
+                opacity="0.88"
+                stroke={url('gold')}
+                strokeLinecap="round"
+                strokeWidth="1.5"
+              />
+              <path
+                d="M73 51 v11 M83 53 v12 M93 54 v12 M107 54 v12 M117 53 v12 M127 51 v11"
+                stroke="#e2d9d0"
+                strokeWidth="1.2"
+              />
+              <circle
+                cx="100"
+                cy="59"
+                fill="#fffaf0"
+                r="6.4"
+                stroke={url('gold')}
+                strokeWidth="1.8"
+              />
+              <circle
+                className="dragon-mascot__gem"
+                cx="100"
+                cy="59"
+                fill={url('gem')}
+                filter={url('glow')}
+                r="4.4"
+              />
+              <path d="M98 58 L100 55.7 L102 58 L100 61.6 Z" fill="#ecfff5" opacity="0.76" />
+            </g>
           </g>
         </g>
       </g>

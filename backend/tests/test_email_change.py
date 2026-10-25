@@ -6,7 +6,7 @@ from sqlalchemy.orm import Session, sessionmaker
 
 from app.modules.auth.models import AuthIdentity, SecurityEmailOutbox, User
 
-PASSWORD = "BepViet2026"
+PASSWORD = "Test-Only-No-Login-2026!"
 
 
 def register_and_login(client: TestClient, email: str) -> dict[str, str]:

@@ -1,13 +1,14 @@
 import base64
 from collections.abc import Generator
 from decimal import Decimal
+from types import SimpleNamespace
 from typing import Any
 
 import pytest
 from fastapi.testclient import TestClient
 from sqlalchemy.orm import Session, sessionmaker
 
-from app.modules.assistant import ai, engine, service
+from app.modules.assistant import ai, engine, profile, service
 from app.modules.recipes.models import Recipe, RecipeIngredient
 from tests.helpers import PNG_DATA_URL, register_and_login
 
@@ -136,6 +137,35 @@ def test_status_reports_local_mode_without_api_key(client: TestClient) -> None:
     assert body["mode"] == "local"
     assert body["name"] == "Chú Rồng"
     assert "image/png" in body["accepts"]
+
+
+def test_assistant_answers_public_team_and_contact_questions(
+    client: TestClient, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    monkeypatch.setattr(ai, "ai_enabled", lambda: False)
+    monkeypatch.setattr(
+        profile,
+        "get_settings",
+        lambda: SimpleNamespace(support_email="hvlongg@gmail.com"),
+    )
+
+    founder = chat(client, "Ai là tác giả và nhà sáng lập Bếp Việt?")
+    assert "Hoàng Văn Long" in founder["reply"]["content"]
+    assert "Nhà sáng lập & phụ trách sản phẩm" in founder["reply"]["content"]
+    assert "Hà Nội" in founder["reply"]["content"]
+
+    chef = chat(client, "Đầu bếp của Bếp Việt là ai?")
+    assert "Phạm Thu Quyên" in chef["reply"]["content"]
+
+    contact = chat(client, "Số điện thoại, email hỗ trợ và địa chỉ Bếp Việt là gì?")
+    content = contact["reply"]["content"]
+    assert "0364892903" in content
+    assert "hvlongg@gmail.com" in content
+    assert "Ngõ 80/57 Mễ Trì Hạ" in content
+    assert contact["reply"]["actions"][0]["to"] == "/contact"
+
+    english = chat(client, "What is Bếp Việt's support email?", language="en")
+    assert "hvlongg@gmail.com" in english["reply"]["content"]
 
 
 def test_guest_gets_recipe_suggestions_from_the_catalog(
@@ -328,3 +358,111 @@ def test_member_chats_are_included_in_data_export(
     [conversation] = exported["assistant_conversations"]
     assert conversation["title"] == "Tối nay ăn gì?"
     assert [message["role"] for message in conversation["messages"]] == ["user", "assistant"]
+
+
+def _ai_settings(**overrides: object) -> object:
+    from types import SimpleNamespace
+
+    from pydantic import SecretStr
+
+    values: dict[str, object] = {
+        "anthropic_api_key": None,
+        "gemini_api_key": SecretStr("<test-key>"),
+        "gemini_model": "gemini-flash-latest",
+        "gemini_fallback_models": ["gemini-flash-lite-latest"],
+        "assistant_provider": "auto",
+        "assistant_timeout_seconds": 5,
+    }
+    values.update(overrides)
+    return SimpleNamespace(**values)
+
+
+def test_gemini_is_used_when_only_its_key_is_set(monkeypatch: pytest.MonkeyPatch) -> None:
+    from pydantic import SecretStr
+
+    monkeypatch.setattr(ai, "get_settings", lambda: _ai_settings())
+    assert ai.active_provider() == "gemini"
+    monkeypatch.setattr(
+        ai, "get_settings", lambda: _ai_settings(anthropic_api_key=SecretStr("<claude>"))
+    )
+    assert ai.active_provider() == "claude"
+    monkeypatch.setattr(
+        ai,
+        "get_settings",
+        lambda: _ai_settings(anthropic_api_key=SecretStr("<claude>"), assistant_provider="gemini"),
+    )
+    assert ai.active_provider() == "gemini"
+    monkeypatch.setattr(ai, "get_settings", lambda: _ai_settings(gemini_api_key=SecretStr(" ")))
+    assert ai.active_provider() is None
+
+
+def test_gemini_reply_sends_catalog_and_falls_back_on_quota(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    import httpx
+
+    monkeypatch.setattr(ai, "get_settings", lambda: _ai_settings())
+    sent: dict[str, object] = {}
+
+    def fake_post(url: str, **kwargs: object) -> httpx.Response:
+        sent.update(url=url, **kwargs)
+        return httpx.Response(
+            200,
+            json={
+                "candidates": [
+                    {
+                        "finishReason": "STOP",
+                        "content": {"parts": [{"text": "Thử Canh chua cá nhé!"}]},
+                    }
+                ]
+            },
+        )
+
+    monkeypatch.setattr(ai.httpx, "post", fake_post)
+    reply = ai.generate_reply(
+        message="Tối nay ăn gì?",
+        history=[("assistant", "Chào bạn!"), ("user", "Mình thích món chua")],
+        candidates=[],
+        attachments=[],
+        language="vi",
+    )
+    assert reply == "Thử Canh chua cá nhé!"
+    assert "gemini-flash-latest:generateContent" in str(sent["url"])
+    body = sent["json"]
+    assert isinstance(body, dict)
+    # Tin đầu tiên phải là của người dùng; lời chào cũ của bot bị bỏ.
+    assert [item["role"] for item in body["contents"]] == ["user", "user"]
+    assert "<kho_mon>" in body["contents"][-1]["parts"][0]["text"]
+
+    monkeypatch.setattr(ai.httpx, "post", lambda *_, **__: httpx.Response(429, json={}))
+    assert (
+        ai.generate_reply(
+            message="Tối nay ăn gì?", history=[], candidates=[], attachments=[], language="vi"
+        )
+        is None
+    )
+
+
+def test_gemini_falls_back_to_a_lighter_model_when_busy(monkeypatch: pytest.MonkeyPatch) -> None:
+    import httpx
+
+    calls: list[str] = []
+
+    def fake_post(url: str, **_: Any) -> httpx.Response:
+        calls.append(url.split("/models/")[1].split(":")[0])
+        if len(calls) == 1:
+            return httpx.Response(503, json={"error": {"message": "high demand"}})
+        return httpx.Response(
+            200,
+            json={
+                "candidates": [{"finishReason": "STOP", "content": {"parts": [{"text": "Ok!"}]}}]
+            },
+        )
+
+    monkeypatch.setattr(ai, "get_settings", lambda: _ai_settings())
+    monkeypatch.setattr(ai.httpx, "post", fake_post)
+    reply = ai.generate_reply(
+        message="Chào", history=[], candidates=[], attachments=[], language="vi"
+    )
+    assert reply == "Ok!"
+    assert calls == ["gemini-flash-latest", "gemini-flash-lite-latest"]

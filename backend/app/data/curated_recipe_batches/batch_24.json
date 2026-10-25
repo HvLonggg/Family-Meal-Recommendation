@@ -1,0 +1,1513 @@
+{
+  "batch": 24,
+  "description": "Năm món Việt đa dạng vùng miền được Bếp Việt biên tập từ báo chí và tư liệu ẩm thực: bánh nếp Tày, cá mùa nước nổi, canh rau vườn, bánh canh vịt và bún nghệ Huế.",
+  "recipes": [
+    {
+      "id": "BV446",
+      "slug": "banh-cooc-mo-tuyen-quang",
+      "name": "Bánh coóc mò Tuyên Quang",
+      "aliases": [
+        "Coóc mò",
+        "Bánh sừng bò của người Tày"
+      ],
+      "region": [
+        "Đông Bắc Bộ"
+      ],
+      "province": [
+        "Tuyên Quang"
+      ],
+      "category": "Bánh và ăn sáng",
+      "meal_type": [
+        "bữa sáng",
+        "bữa phụ"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 6,
+      "serving_basis": "6 chiếc bánh nếp hình chóp, nhân đỗ đen, dùng với muối vừng.",
+      "prep_time": 20,
+      "cook_time": 150,
+      "passive_time": 120,
+      "description": "Bánh nếp hình chóp của người Tày, gói bằng lá xanh với gạo nếp và đỗ đen. Bếp Việt biên tập cách ngâm, gói và luộc theo mẻ nhỏ để bánh chín dẻo, thơm lá.",
+      "finished_dish": "Bánh có dáng chóp gọn, lớp nếp dẻo trong ôm đỗ đen bùi; ăn ấm cùng muối vừng.",
+      "serving": "Để bánh ráo vài phút rồi bóc lá khi còn ấm. Dọn cùng muối vừng hoặc muối lạc giã nhẹ.",
+      "tips": [
+        "Ngâm riêng gạo nếp và đỗ đen giúp nguyên liệu mềm đều trước khi gói.",
+        "Buộc lạt vừa tay để bánh giữ hình nhưng vẫn có khoảng nở khi nếp chín.",
+        "Luộc đủ ngập nước và giữ sôi liu riu; bánh lớn có thể cần thêm thời gian."
+      ],
+      "dish_type": [
+        "Bánh nếp",
+        "Đặc sản Tày"
+      ],
+      "main_ingredient": [
+        "gạo nếp",
+        "đỗ đen",
+        "lá gói"
+      ],
+      "cooking_method": [
+        "ngâm",
+        "gói lá",
+        "luộc"
+      ],
+      "search_terms": [
+        "bánh coóc mò Tuyên Quang",
+        "bánh nếp người Tày",
+        "bánh nếp đỗ đen"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Bánh coóc mò Tuyên Quang gói lá hình chóp, nếp dẻo nhân đỗ đen, món truyền thống của người Tày.",
+      "ingredients": [
+        {
+          "name": "Gạo nếp",
+          "quantity": 600,
+          "unit": "g",
+          "role": "main",
+          "notes": "Vo sạch, ngâm riêng 2–3 giờ rồi để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Đỗ đen",
+          "quantity": 120,
+          "unit": "g",
+          "role": "main",
+          "notes": "Nhặt sạch, ngâm 2–3 giờ và để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Lá dong hoặc lá chuối",
+          "quantity": 12,
+          "unit": "lá",
+          "role": "process_aid",
+          "notes": "Lau sạch, chần nhanh cho mềm; dùng hai lớp mỗi bánh.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Lạt tre",
+          "quantity": 12,
+          "unit": "sợi",
+          "role": "process_aid",
+          "notes": "Ngâm mềm để buộc không gãy.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Muối",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Chia một phần trộn nếp, phần còn lại nêm nước luộc nếu cần.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Vo nếp đến khi nước trong, ngâm 2 giờ; ngâm đỗ đen riêng cùng thời gian. Để cả hai ráo nước."
+        },
+        {
+          "step": 2,
+          "instruction": "Rửa và lau lá, chần nhanh cho mềm. Chuẩn bị lạt tre; trộn nếp với muối."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Trộn đều nếp với đỗ đen đã ngâm. Xếp lá thành phễu chóp, cho hỗn hợp vào và nén chắc tay để nước không lọt vào; gập lá tạo bánh hình chóp rồi buộc lạt."
+        },
+        {
+          "step": 2,
+          "instruction": "Xếp bánh vào nồi, đổ nước ngập, đun sôi rồi hạ lửa vừa. Luộc khoảng 2–2 giờ 30 phút; châm thêm nước sôi để bánh luôn ngập."
+        },
+        {
+          "step": 3,
+          "instruction": "Vớt bánh, để ráo và nghỉ 5 phút. Ăn ấm với muối vừng hoặc muối lạc."
+        }
+      ],
+      "time_note": "Thời gian luộc thay đổi theo kích thước bánh và loại nếp; thử một chiếc trước khi tắt bếp.",
+      "total_time": 290,
+      "time_unit": "phút",
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "banh-cooc-mo-tuyen-quang",
+      "keywords": [
+        "Bánh coóc mò Tuyên Quang",
+        "Coóc mò",
+        "Bánh sừng bò của người Tày",
+        "Tuyên Quang",
+        "gạo nếp",
+        "đỗ đen",
+        "lá gói",
+        "bánh coóc mò Tuyên Quang",
+        "bánh nếp người Tày",
+        "bánh nếp đỗ đen",
+        "Bánh nếp",
+        "Đặc sản Tày",
+        "290 phút"
+      ],
+      "tags": {
+        "region": [
+          "Đông Bắc Bộ"
+        ],
+        "province": [
+          "Tuyên Quang"
+        ],
+        "meal_type": [
+          "bữa sáng",
+          "bữa phụ"
+        ],
+        "dish_type": [
+          "Bánh nếp",
+          "Đặc sản Tày"
+        ],
+        "main_ingredient": [
+          "gạo nếp",
+          "đỗ đen",
+          "lá gói"
+        ],
+        "cooking_method": [
+          "ngâm",
+          "gói lá",
+          "luộc"
+        ],
+        "difficulty": "Trung bình",
+        "prep_time": 20,
+        "cook_time": 150,
+        "servings": 6,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Muối vừng",
+          "Muối lạc"
+        ],
+        "keywords": [
+          "Bánh coóc mò Tuyên Quang",
+          "Coóc mò",
+          "Bánh sừng bò của người Tày",
+          "Tuyên Quang",
+          "gạo nếp",
+          "đỗ đen",
+          "lá gói",
+          "bánh coóc mò Tuyên Quang",
+          "bánh nếp người Tày",
+          "bánh nếp đỗ đen",
+          "Bánh nếp",
+          "Đặc sản Tày",
+          "290 phút"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://vnexpress.net/banh-cooc-mo-cua-nguoi-tay-o-tuyen-quang-4417744.html",
+          "publisher": "VnExpress Du lịch",
+          "title": "Bánh coóc mò của người Tày ở Tuyên Quang",
+          "use": "Đối chiếu hình chóp, nguyên liệu nếp và đỗ, cách gói lá và luộc lâu; công thức tại nhà được Bếp Việt biên tập theo mẻ nhỏ.",
+          "accessed_at": "2026-10-22",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 6,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.33,
+            "seasoning_start_factor": 0.33,
+            "example": "Bánh coóc mò Tuyên Quang cho 2 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 8,
+            "main_factor": 1.33,
+            "seasoning_start_factor": 1.33,
+            "example": "Bánh coóc mò Tuyên Quang cho 8 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          }
+        ]
+      },
+      "suggested_pairings": [
+        "Muối vừng",
+        "Muối lạc"
+      ],
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/banh-cooc-mo-tuyen-quang-960.webp",
+          "page_url": "https://vnexpress.net/banh-cooc-mo-cua-nguoi-tay-o-tuyen-quang-4417744.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu đặc trưng món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Bánh coóc mò Tuyên Quang gói lá hình chóp, nếp dẻo nhân đỗ đen, món truyền thống của người Tày.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-22",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức biên tập tại Bếp Việt từ nguồn tham khảo; định lượng và thời gian cần được nấu thử trước khi xem là bản hoàn chỉnh.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-22",
+        "needs": [
+          "Nấu thử để chốt thời gian luộc theo cỡ bánh và độ nở của từng loại gạo nếp.",
+          "Kiểm tra độ chắc của lá gói và lực buộc lạt với kích thước bánh gia đình."
+        ]
+      }
+    },
+    {
+      "id": "BV447",
+      "slug": "ca-linh-tam-bot-chien-gion-mien-tay",
+      "name": "Cá linh tẩm bột chiên giòn miền Tây",
+      "aliases": [
+        "Cá linh chiên bột",
+        "Cá linh chiên giòn"
+      ],
+      "region": [
+        "Đồng bằng sông Cửu Long"
+      ],
+      "province": [
+        "An Giang",
+        "Đồng Tháp"
+      ],
+      "category": "Món ăn cùng cơm",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "4 phần cá linh chiên giòn ăn cuốn rau xanh, chấm nước mắm chua ngọt.",
+      "prep_time": 20,
+      "cook_time": 15,
+      "passive_time": 0,
+      "description": "Món cá mùa nước nổi miền Tây: cá linh nhỏ trộn lớp bột trứng mỏng rồi chiên vàng giòn. Bếp Việt biên tập cách làm tại nhà, giữ vị cá và gợi ý ăn cuốn cùng rau vườn.",
+      "finished_dish": "Cá linh vàng ruộm, lớp bột mỏng giòn, bên trong cá mềm thơm; dùng cùng rau sống và chén nước mắm chua ngọt.",
+      "serving": "Dọn cá ngay khi còn giòn. Cuốn với rau cải non, xà lách và rau thơm, chấm nước mắm pha chua ngọt.",
+      "tips": [
+        "Chọn cá nhỏ, tươi; rửa nhẹ và để thật ráo để lớp bột bám đều.",
+        "Trộn bột vừa áo quanh cá, không để hỗn hợp quá lỏng.",
+        "Chiên từng mẻ nhỏ trong dầu nóng vừa; để ráo trên rack để cá giữ độ giòn."
+      ],
+      "dish_type": [
+        "Món cá",
+        "Đặc sản miền Tây"
+      ],
+      "main_ingredient": [
+        "cá linh",
+        "bột mì",
+        "trứng"
+      ],
+      "cooking_method": [
+        "trộn bột",
+        "chiên ngập dầu"
+      ],
+      "search_terms": [
+        "cá linh chiên bột",
+        "cá linh mùa nước nổi",
+        "món cá miền Tây"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Cá linh miền Tây tẩm lớp bột trứng mỏng chiên vàng giòn, ăn cùng rau xanh và nước mắm chua ngọt.",
+      "ingredients": [
+        {
+          "name": "Cá linh",
+          "quantity": 500,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn cá tươi, bỏ mang nếu cần, rửa nhẹ và để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Bột mì",
+          "quantity": 90,
+          "unit": "g",
+          "role": "main",
+          "notes": "Rây mịn; có thể thay một phần bằng bột gạo để lớp áo giòn nhẹ.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Lòng đỏ trứng",
+          "quantity": 1,
+          "unit": "cái",
+          "role": "main",
+          "notes": "Giúp lớp bột kết dính.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 90,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Thêm từ từ đến khi bột sánh nhẹ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Muối",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm nhẹ vào bột.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Tùy chọn.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 500,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Lượng dầu tùy kích thước nồi chiên.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Rau cải non, xà lách và rau thơm",
+          "quantity": 250,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": "Rửa sạch, để ráo để cuốn cá.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Nhặt cá, bỏ mang nếu cần, rửa nhẹ với nước muối loãng rồi tráng nhanh và để thật ráo."
+        },
+        {
+          "step": 2,
+          "instruction": "Khuấy bột mì, lòng đỏ trứng, nước, muối và tiêu thành hỗn hợp sánh. Rửa rau, để ráo và chuẩn bị nước mắm chua ngọt."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Trộn cá vào bột vừa đủ áo mỏng. Làm nóng dầu ở lửa vừa; thử một giọt bột thấy nổi lên từ từ là đạt."
+        },
+        {
+          "step": 2,
+          "instruction": "Chiên từng mẻ nhỏ, dùng vá ép nhẹ hỗn hợp thành miếng dẹt cỡ lòng bàn tay. Trở khi cần và chiên đến màu vàng sẫm, giòn, khoảng 3–5 phút tùy cỡ cá. Vớt ra rack hoặc giấy thấm dầu."
+        },
+        {
+          "step": 3,
+          "instruction": "Dọn cá lúc nóng cùng rau sống và nước mắm chua ngọt; không đậy kín khi cá còn nóng để tránh hấp hơi."
+        }
+      ],
+      "time_note": "Cá nhỏ chín nhanh; thời gian chiên tùy kích cỡ và nhiệt độ dầu. Bảo đảm cá chín đều trước khi dùng.",
+      "total_time": 35,
+      "time_unit": "phút",
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "ca-linh-tam-bot-chien-gion-mien-tay",
+      "keywords": [
+        "Cá linh tẩm bột chiên giòn miền Tây",
+        "Cá linh chiên bột",
+        "Cá linh chiên giòn",
+        "An Giang",
+        "Đồng Tháp",
+        "cá linh",
+        "bột mì",
+        "trứng",
+        "cá linh chiên bột",
+        "cá linh mùa nước nổi",
+        "món cá miền Tây",
+        "Món cá",
+        "Đặc sản miền Tây",
+        "35 phút"
+      ],
+      "tags": {
+        "region": [
+          "Đồng bằng sông Cửu Long"
+        ],
+        "province": [
+          "An Giang",
+          "Đồng Tháp"
+        ],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Món cá",
+          "Đặc sản miền Tây"
+        ],
+        "main_ingredient": [
+          "cá linh",
+          "bột mì",
+          "trứng"
+        ],
+        "cooking_method": [
+          "trộn bột",
+          "chiên ngập dầu"
+        ],
+        "difficulty": "Dễ",
+        "prep_time": 20,
+        "cook_time": 15,
+        "servings": 4,
+        "spicy_level": 1,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Rau cải non",
+          "Xà lách",
+          "Nước mắm chua ngọt"
+        ],
+        "keywords": [
+          "Cá linh tẩm bột chiên giòn miền Tây",
+          "Cá linh chiên bột",
+          "Cá linh chiên giòn",
+          "An Giang",
+          "Đồng Tháp",
+          "cá linh",
+          "bột mì",
+          "trứng",
+          "cá linh chiên bột",
+          "cá linh mùa nước nổi",
+          "món cá miền Tây",
+          "Món cá",
+          "Đặc sản miền Tây",
+          "35 phút"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://vnexpress.net/ca-linh-tam-bot-chien-gion-dau-mua-nuoc-noi-2307102.html",
+          "publisher": "VnExpress Đời sống",
+          "title": "Cá linh tẩm bột chiên giòn đầu mùa nước nổi",
+          "use": "Đối chiếu cách trộn cá linh với bột và lòng đỏ trứng, chiên thành miếng vàng giòn, ăn cuốn rau; định lượng và thao tác được Bếp Việt biên tập cho bếp gia đình.",
+          "accessed_at": "2026-10-22",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Cá linh tẩm bột chiên giòn miền Tây cho 2 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Cá linh tẩm bột chiên giòn miền Tây cho 6 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Cá linh tẩm bột chiên giòn miền Tây cho 8 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          }
+        ]
+      },
+      "suggested_pairings": [
+        "Rau cải non",
+        "Xà lách",
+        "Nước mắm chua ngọt"
+      ],
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/ca-linh-tam-bot-chien-gion-mien-tay-960.webp",
+          "page_url": "https://vnexpress.net/ca-linh-tam-bot-chien-gion-dau-mua-nuoc-noi-2307102.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu đặc trưng món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Cá linh miền Tây tẩm lớp bột trứng mỏng chiên vàng giòn, ăn cùng rau xanh và nước mắm chua ngọt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-22",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức biên tập tại Bếp Việt từ nguồn tham khảo; định lượng và thời gian cần được nấu thử trước khi xem là bản hoàn chỉnh.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-22",
+        "needs": [
+          "Nấu thử với cá theo mùa và điều chỉnh độ sánh bột để lớp áo mỏng, giòn.",
+          "Kiểm tra thời gian chiên an toàn theo cỡ cá và thiết bị gia đình."
+        ]
+      }
+    },
+    {
+      "id": "BV448",
+      "slug": "canh-rau-tap-tang-nau-tom",
+      "name": "Canh rau tập tàng nấu tôm",
+      "aliases": [
+        "Canh rau vườn nấu tôm",
+        "Canh rau tập tàng"
+      ],
+      "region": [
+        "Bắc Bộ",
+        "Trung Bộ",
+        "Nam Bộ"
+      ],
+      "province": [
+        "Việt Nam"
+      ],
+      "category": "Canh",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "4 bát canh rau vườn thanh mát, nấu với tôm tươi.",
+      "prep_time": 15,
+      "cook_time": 12,
+      "passive_time": 0,
+      "description": "Canh rau tập tàng kết hợp các loại rau vườn theo mùa với tôm, tạo vị ngọt nhẹ và nước canh trong. Bếp Việt biên tập thứ tự cho rau vào nồi để rau chín vừa, giữ màu xanh.",
+      "finished_dish": "Nước canh ngọt dịu từ tôm, rau vườn xanh mềm vừa chín, điểm những con tôm hồng tươi.",
+      "serving": "Múc canh nóng vào tô, dùng cùng cơm trắng và món mặn nhẹ. Ăn ngay để rau giữ màu và độ tươi.",
+      "tips": [
+        "Tập hợp 3–5 loại rau lá non, nhặt bỏ phần già và rửa kỹ nhiều lần.",
+        "Giã hoặc băm tôm vừa phải để nước ngọt nhưng vẫn có miếng tôm.",
+        "Cho rau cứng trước, rau mềm sau và chỉ nấu đến khi vừa chín."
+      ],
+      "dish_type": [
+        "Canh",
+        "Món rau",
+        "Món cơm gia đình"
+      ],
+      "main_ingredient": [
+        "rau tập tàng",
+        "tôm tươi"
+      ],
+      "cooking_method": [
+        "nấu canh",
+        "xào thơm"
+      ],
+      "search_terms": [
+        "canh rau tập tàng",
+        "canh rau nấu tôm",
+        "canh rau vườn"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Canh rau tập tàng nhiều loại rau vườn nấu với tôm tươi, nước canh trong và vị ngọt thanh.",
+      "ingredients": [
+        {
+          "name": "Tôm tươi",
+          "quantity": 150,
+          "unit": "g",
+          "role": "main",
+          "notes": "Bóc vỏ, bỏ chỉ lưng; giã dập cùng một nửa lượng muối.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Rau tập tàng theo mùa",
+          "quantity": 300,
+          "unit": "g",
+          "role": "main",
+          "notes": "Phối hợp rau má, rau sam, rau ngót, rau dền, mồng tơi và hẹ theo mùa.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 10,
+          "unit": "g",
+          "role": "main",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Nước",
+          "quantity": 1000,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng nấu nước canh.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Muối",
+          "quantity": 4,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Chia một nửa để giã tôm, phần còn lại nêm sau khi tắt bếp.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Phi hành và xào tôm.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Rắc khi dọn.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Bóc vỏ tôm, bỏ chỉ lưng rồi băm hoặc giã dập cùng muối. Nhặt, rửa rau nhiều lần và để ráo."
+        },
+        {
+          "step": 2,
+          "instruction": "Thái nhỏ rau có thân cứng; để riêng rau mềm. Băm hành tím."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Giã dập tôm cùng một nửa lượng muối. Phi hành tím với dầu, cho tôm vào xào khoảng 1 phút đến khi chuyển hồng cam."
+        },
+        {
+          "step": 2,
+          "instruction": "Đổ 1 lít nước vào nồi, đun sôi rồi hạ lửa và hớt bọt để nước trong. Khi nước sôi già, cho rau má và rau sam vào trước; sau khoảng 1 phút thêm rau ngót, rau dền, cuối cùng là mồng tơi và hẹ."
+        },
+        {
+          "step": 3,
+          "instruction": "Tổng thời gian rau ở trong nồi không quá 3 phút. Tắt bếp, nêm phần muối còn lại và rắc tiêu; không đậy nắp khi canh còn nóng."
+        }
+      ],
+      "time_note": "Cho rau vào khi nước sôi già; tổng thời gian rau trong nồi không quá 3 phút để giữ màu xanh.",
+      "total_time": 27,
+      "time_unit": "phút",
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "canh-rau-tap-tang-nau-tom",
+      "keywords": [
+        "Canh rau tập tàng nấu tôm",
+        "Canh rau vườn nấu tôm",
+        "Canh rau tập tàng",
+        "Việt Nam",
+        "rau tập tàng",
+        "tôm tươi",
+        "canh rau tập tàng",
+        "canh rau nấu tôm",
+        "canh rau vườn",
+        "Canh",
+        "Món rau",
+        "Món cơm gia đình",
+        "27 phút"
+      ],
+      "tags": {
+        "region": [
+          "Bắc Bộ",
+          "Trung Bộ",
+          "Nam Bộ"
+        ],
+        "province": [
+          "Việt Nam"
+        ],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Canh",
+          "Món rau",
+          "Món cơm gia đình"
+        ],
+        "main_ingredient": [
+          "rau tập tàng",
+          "tôm tươi"
+        ],
+        "cooking_method": [
+          "nấu canh",
+          "xào thơm"
+        ],
+        "difficulty": "Dễ",
+        "prep_time": 15,
+        "cook_time": 12,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Cơm trắng",
+          "Cá kho",
+          "Trứng chiên"
+        ],
+        "keywords": [
+          "Canh rau tập tàng nấu tôm",
+          "Canh rau vườn nấu tôm",
+          "Canh rau tập tàng",
+          "Việt Nam",
+          "rau tập tàng",
+          "tôm tươi",
+          "canh rau tập tàng",
+          "canh rau nấu tôm",
+          "canh rau vườn",
+          "Canh",
+          "Món rau",
+          "Món cơm gia đình",
+          "27 phút"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://vnexpress.net/cach-nau-canh-rau-tap-tang-xanh-trong-ngot-nuoc-5135179.html",
+          "publisher": "VnExpress Cooking",
+          "title": "Cách nấu canh rau tập tàng xanh trong, ngọt nước",
+          "use": "Tham khảo cách kết hợp rau vườn với tôm, xào tôm trước và cho rau theo độ cứng để giữ màu; định lượng và hướng dẫn tại nhà được Bếp Việt biên tập.",
+          "accessed_at": "2026-10-22",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Canh rau tập tàng nấu tôm cho 2 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Canh rau tập tàng nấu tôm cho 6 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Canh rau tập tàng nấu tôm cho 8 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          }
+        ]
+      },
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Cá kho",
+        "Trứng chiên"
+      ],
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/canh-rau-tap-tang-nau-tom-960.webp",
+          "page_url": "https://vnexpress.net/cach-nau-canh-rau-tap-tang-xanh-trong-ngot-nuoc-5135179.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu đặc trưng món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Canh rau tập tàng nhiều loại rau vườn nấu với tôm tươi, nước canh trong và vị ngọt thanh.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-22",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức biên tập tại Bếp Việt từ nguồn tham khảo; định lượng và thời gian cần được nấu thử trước khi xem là bản hoàn chỉnh.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-22",
+        "needs": [
+          "Nấu thử với các loại rau tập tàng địa phương để chốt thứ tự cho rau vào nồi.",
+          "Điều chỉnh lượng nước mắm theo độ ngọt tự nhiên của tôm."
+        ]
+      }
+    },
+    {
+      "id": "BV449",
+      "slug": "banh-canh-bot-xat-vit-ben-tre",
+      "name": "Bánh canh bột xắt vịt Bến Tre",
+      "aliases": [
+        "Bánh canh vịt Bến Tre",
+        "Bánh canh bột xắt"
+      ],
+      "region": [
+        "Đồng bằng sông Cửu Long"
+      ],
+      "province": [
+        "Bến Tre"
+      ],
+      "category": "Bún, phở, mì và miến",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 5,
+      "serving_basis": "5 tô bánh canh bột gạo cắt tay, vịt hầm mềm trong nước dùng gừng.",
+      "prep_time": 35,
+      "cook_time": 55,
+      "passive_time": 0,
+      "description": "Món nước dân dã Bến Tre với sợi bánh canh làm từ bột gạo cán và xắt trực tiếp vào nồi nước dùng vịt. Bếp Việt biên tập thao tác để sợi chín mềm, nước dùng đục nhẹ tự nhiên và thơm gừng.",
+      "finished_dish": "Sợi bánh gạo trắng đục, mềm dai vừa phải trong nước dùng vịt thơm gừng; thịt vịt mềm, ăn kèm chén nước mắm gừng.",
+      "serving": "Múc cả sợi và nước dùng vào tô, thêm thịt vịt, hành lá, rau thơm và tiêu. Dọn nước mắm gừng riêng để chấm thịt.",
+      "tips": [
+        "Nhào bột đến khi khối bột mịn, dẻo và không dính tay; thêm nước từ từ.",
+        "Cán và cắt sợi trực tiếp trên nồi nước dùng đang sôi nhẹ để sợi không dính thành búi.",
+        "Không đun quá mạnh sau khi cho bột vào vì tinh bột dễ lắng đáy nồi."
+      ],
+      "dish_type": [
+        "Món nước",
+        "Đặc sản Bến Tre"
+      ],
+      "main_ingredient": [
+        "thịt vịt",
+        "bột gạo",
+        "gừng"
+      ],
+      "cooking_method": [
+        "hầm",
+        "nhào bột",
+        "cắt sợi",
+        "luộc"
+      ],
+      "search_terms": [
+        "bánh canh vịt Bến Tre",
+        "bánh canh bột xắt",
+        "đặc sản Bến Tre"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Bánh canh bột gạo cắt tay trong nước dùng vịt Bến Tre, thịt vịt mềm, thơm gừng và hành lá.",
+      "ingredients": [
+        {
+          "name": "Vịt làm sạch",
+          "quantity": 700,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chặt miếng vừa ăn; bỏ phần mỡ thừa nếu muốn nước dùng nhẹ.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Bột gạo",
+          "quantity": 350,
+          "unit": "g",
+          "role": "main",
+          "notes": "Dùng bột gạo tẻ mịn để cán và xắt sợi.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Bột năng",
+          "quantity": 50,
+          "unit": "g",
+          "role": "main",
+          "notes": "Tạo độ dai nhẹ cho sợi bánh.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Gừng",
+          "quantity": 70,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chia phần nướng/đập dập nấu vịt và phần pha nước chấm.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 25,
+          "unit": "g",
+          "role": "main",
+          "notes": "Đập dập để nấu cùng vịt.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Nước",
+          "quantity": 2200,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Đổ ngập vịt và làm nước dùng.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 30,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Chia phần nêm nước dùng và pha nước chấm gừng.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Muối",
+          "quantity": 7,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm bột và nước dùng.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 25,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": "Rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Rau thơm",
+          "quantity": 30,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": "Rửa sạch, để ráo và dùng khi ăn.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Rắc khi dọn.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa vịt với muối và gừng, tráng sạch rồi chặt miếng. Nướng hoặc áp chảo gừng đến thơm, đập dập."
+        },
+        {
+          "step": 2,
+          "instruction": "Trộn bột gạo, bột năng và muối. Thêm nước ấm từng ít một, nhào đến khi bột mịn dẻo; đậy kín cho nghỉ 20 phút."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Cho vịt, gừng, hành tím và nước vào nồi. Đun sôi, hớt bọt rồi hạ lửa, hầm đến khi vịt mềm khoảng 35–45 phút."
+        },
+        {
+          "step": 2,
+          "instruction": "Lấy vịt ra để nguội bớt. Cán bột thành tấm dày khoảng 3 mm, phủ ít bột áo và xắt sợi rộng 5–7 mm."
+        },
+        {
+          "step": 3,
+          "instruction": "Đun nồi nước dùng sôi nhẹ, thả sợi bột trực tiếp vào từng ít một, khuấy nhẹ đáy nồi. Nấu đến khi sợi nổi và chuyển trắng đục; nêm nước mắm, muối."
+        },
+        {
+          "step": 4,
+          "instruction": "Cho thịt vịt trở lại nồi làm nóng. Dọn bánh canh cùng hành lá, rau thơm, tiêu và chén nước mắm gừng."
+        }
+      ],
+      "time_note": "Độ hút nước của bột khác nhau; điều chỉnh nước khi nhào để bột dẻo, không nhão. Cắt sợi vào nước dùng đang sôi nhẹ.",
+      "total_time": 90,
+      "time_unit": "phút",
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "banh-canh-bot-xat-vit-ben-tre",
+      "keywords": [
+        "Bánh canh bột xắt vịt Bến Tre",
+        "Bánh canh vịt Bến Tre",
+        "Bánh canh bột xắt",
+        "Bến Tre",
+        "thịt vịt",
+        "bột gạo",
+        "gừng",
+        "bánh canh vịt Bến Tre",
+        "bánh canh bột xắt",
+        "đặc sản Bến Tre",
+        "Món nước",
+        "Đặc sản Bến Tre",
+        "90 phút"
+      ],
+      "tags": {
+        "region": [
+          "Đồng bằng sông Cửu Long"
+        ],
+        "province": [
+          "Bến Tre"
+        ],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Món nước",
+          "Đặc sản Bến Tre"
+        ],
+        "main_ingredient": [
+          "thịt vịt",
+          "bột gạo",
+          "gừng"
+        ],
+        "cooking_method": [
+          "hầm",
+          "nhào bột",
+          "cắt sợi",
+          "luộc"
+        ],
+        "difficulty": "Trung bình",
+        "prep_time": 35,
+        "cook_time": 55,
+        "servings": 5,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Nước mắm gừng",
+          "Rau thơm",
+          "Hành lá"
+        ],
+        "keywords": [
+          "Bánh canh bột xắt vịt Bến Tre",
+          "Bánh canh vịt Bến Tre",
+          "Bánh canh bột xắt",
+          "Bến Tre",
+          "thịt vịt",
+          "bột gạo",
+          "gừng",
+          "bánh canh vịt Bến Tre",
+          "bánh canh bột xắt",
+          "đặc sản Bến Tre",
+          "Món nước",
+          "Đặc sản Bến Tre",
+          "90 phút"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://vnexpress.net/5-mon-dac-san-dan-da-o-ben-tre-3074544.html",
+          "publisher": "VnExpress Du lịch",
+          "title": "5 món đặc sản dân dã ở Bến Tre",
+          "use": "Đối chiếu đặc trưng bánh canh vịt dùng sợi bột gạo cán và xắt trực tiếp vào nồi, nước dùng đục nhẹ và chấm gừng; công thức gia đình do Bếp Việt biên tập.",
+          "accessed_at": "2026-10-22",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 5,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.4,
+            "seasoning_start_factor": 0.4,
+            "example": "Bánh canh bột xắt vịt Bến Tre cho 2 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 7,
+            "main_factor": 1.4,
+            "seasoning_start_factor": 1.4,
+            "example": "Bánh canh bột xắt vịt Bến Tre cho 7 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 8,
+            "main_factor": 1.6,
+            "seasoning_start_factor": 1.6,
+            "example": "Bánh canh bột xắt vịt Bến Tre cho 8 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          }
+        ]
+      },
+      "suggested_pairings": [
+        "Nước mắm gừng",
+        "Rau thơm",
+        "Hành lá"
+      ],
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/banh-canh-bot-xat-vit-ben-tre-960.webp",
+          "page_url": "https://vnexpress.net/5-mon-dac-san-dan-da-o-ben-tre-3074544.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu đặc trưng món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Bánh canh bột gạo cắt tay trong nước dùng vịt Bến Tre, thịt vịt mềm, thơm gừng và hành lá.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-22",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức biên tập tại Bếp Việt từ nguồn tham khảo; định lượng và thời gian cần được nấu thử trước khi xem là bản hoàn chỉnh.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-22",
+        "needs": [
+          "Nấu thử để chốt tỷ lệ bột gạo, bột năng và độ dai của sợi bánh.",
+          "Kiểm tra thời gian hầm vịt theo độ tuổi và kích thước miếng."
+        ]
+      }
+    },
+    {
+      "id": "BV450",
+      "slug": "bun-xao-nghe-hue",
+      "name": "Bún xào nghệ Huế",
+      "aliases": [
+        "Bún nghệ Huế",
+        "Bún xào lòng nghệ"
+      ],
+      "region": [
+        "Bắc Trung Bộ"
+      ],
+      "province": [
+        "Thừa Thiên Huế"
+      ],
+      "category": "Bún, phở, mì và miến",
+      "meal_type": [
+        "bữa sáng",
+        "bữa trưa"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "4 phần bún xào nghệ với lòng heo, rau răm và hành phi.",
+      "prep_time": 25,
+      "cook_time": 20,
+      "passive_time": 0,
+      "description": "Món bún bình dị ở Huế phối bún tươi với nghệ vàng, lòng heo làm sạch, hành và rau răm. Bếp Việt biên tập cách sơ chế lòng chín kỹ và xào nhanh để bún tơi, thơm nghệ.",
+      "finished_dish": "Sợi bún vàng nghệ tơi mềm, lòng heo chín giòn vừa phải, điểm hành lá và rau răm thơm nồng.",
+      "serving": "Dọn nóng, rắc rau răm, hành lá và tiêu. Có thể thêm ớt tươi và vắt chút chanh theo khẩu vị.",
+      "tips": [
+        "Sơ chế và luộc lòng đến chín hoàn toàn, không để lòng sống hoặc tái.",
+        "Nếu dùng bún khô, ngâm và trụng theo hướng dẫn gói; để ráo trước khi xào.",
+        "Xào nghệ ở lửa vừa và đảo nhanh sau khi cho bún để sợi bún không nát."
+      ],
+      "dish_type": [
+        "Món bún",
+        "Đặc sản Huế"
+      ],
+      "main_ingredient": [
+        "bún tươi",
+        "nghệ",
+        "lòng heo"
+      ],
+      "cooking_method": [
+        "luộc",
+        "xào"
+      ],
+      "search_terms": [
+        "bún xào nghệ Huế",
+        "bún nghệ lòng heo",
+        "món Huế"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Bún nghệ Huế xào vàng với lòng heo chín, rau răm và hành lá, món dân dã đậm hương nghệ.",
+      "ingredients": [
+        {
+          "name": "Bún tươi",
+          "quantity": 600,
+          "unit": "g",
+          "role": "main",
+          "notes": "Tách sợi nhẹ; nếu bún lạnh, trụng nhanh và để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Lòng heo đã làm sạch",
+          "quantity": 350,
+          "unit": "g",
+          "role": "main",
+          "notes": "Rửa kỹ, luộc chín hoàn toàn rồi thái miếng vừa ăn.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Nghệ tươi",
+          "quantity": 35,
+          "unit": "g",
+          "role": "main",
+          "notes": "Gọt vỏ, giã nhỏ; có thể dùng găng để tránh vàng tay.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 25,
+          "unit": "g",
+          "role": "main",
+          "notes": "Bóc vỏ, thái mỏng.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 10,
+          "unit": "g",
+          "role": "main",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 25,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": "Thái nhỏ, chia phần trắng và xanh.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Rau răm",
+          "quantity": 20,
+          "unit": "g",
+          "role": "process_aid",
+          "notes": "Rửa sạch, thái vừa.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 18,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm vừa khẩu vị.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Muối",
+          "quantity": 4,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng khi luộc và nêm.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Rắc cuối.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Phi hành tỏi và xào bún.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa lòng nhiều lần với muối và gừng hoặc giấm, tráng sạch. Luộc trong nồi nước sôi đến khi chín hoàn toàn; vớt ra để nguội và thái miếng."
+        },
+        {
+          "step": 2,
+          "instruction": "Tách nhẹ bún thành sợi. Giã nghệ, băm tỏi, thái hành tím và rửa rau răm, hành lá."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng dầu, phi hành tím, tỏi và phần gốc hành. Cho nghệ vào xào 1 phút để dậy mùi."
+        },
+        {
+          "step": 2,
+          "instruction": "Thêm lòng đã luộc, đảo cùng nước mắm, muối và tiêu cho thấm. Cho bún vào từng phần, đảo nhẹ đến khi sợi bún vàng đều và nóng."
+        },
+        {
+          "step": 3,
+          "instruction": "Tắt bếp, trộn rau răm và hành lá. Dọn nóng, thêm tiêu và ớt tươi nếu thích."
+        }
+      ],
+      "time_note": "Thời gian luộc lòng phụ thuộc loại lòng và kích thước; luôn nấu chín hoàn toàn trước khi xào.",
+      "total_time": 45,
+      "time_unit": "phút",
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "bun-xao-nghe-hue",
+      "keywords": [
+        "Bún xào nghệ Huế",
+        "Bún nghệ Huế",
+        "Bún xào lòng nghệ",
+        "Thừa Thiên Huế",
+        "bún tươi",
+        "nghệ",
+        "lòng heo",
+        "bún xào nghệ Huế",
+        "bún nghệ lòng heo",
+        "món Huế",
+        "Món bún",
+        "Đặc sản Huế",
+        "45 phút"
+      ],
+      "tags": {
+        "region": [
+          "Bắc Trung Bộ"
+        ],
+        "province": [
+          "Thừa Thiên Huế"
+        ],
+        "meal_type": [
+          "bữa sáng",
+          "bữa trưa"
+        ],
+        "dish_type": [
+          "Món bún",
+          "Đặc sản Huế"
+        ],
+        "main_ingredient": [
+          "bún tươi",
+          "nghệ",
+          "lòng heo"
+        ],
+        "cooking_method": [
+          "luộc",
+          "xào"
+        ],
+        "difficulty": "Trung bình",
+        "prep_time": 25,
+        "cook_time": 20,
+        "servings": 4,
+        "spicy_level": 1,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Ớt tươi",
+          "Chanh",
+          "Rau răm"
+        ],
+        "keywords": [
+          "Bún xào nghệ Huế",
+          "Bún nghệ Huế",
+          "Bún xào lòng nghệ",
+          "Thừa Thiên Huế",
+          "bún tươi",
+          "nghệ",
+          "lòng heo",
+          "bún xào nghệ Huế",
+          "bún nghệ lòng heo",
+          "món Huế",
+          "Món bún",
+          "Đặc sản Huế",
+          "45 phút"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://vnexpress.net/10-mon-ngon-mien-trung-lam-say-long-du-khach-3115048.html",
+          "publisher": "VnExpress Du lịch",
+          "title": "10 món ngon miền Trung làm say lòng du khách",
+          "use": "Đối chiếu đặc trưng bún nghệ Huế gồm bún, nghệ, lòng heo, hành và rau răm; cách sơ chế an toàn và công thức gia đình được Bếp Việt biên tập.",
+          "accessed_at": "2026-10-22",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Bún xào nghệ Huế cho 2 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Bún xào nghệ Huế cho 6 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Bún xào nghệ Huế cho 8 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          }
+        ]
+      },
+      "suggested_pairings": [
+        "Ớt tươi",
+        "Chanh",
+        "Rau răm"
+      ],
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/bun-xao-nghe-hue-960.webp",
+          "page_url": "https://vnexpress.net/10-mon-ngon-mien-trung-lam-say-long-du-khach-3115048.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu đặc trưng món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Bún nghệ Huế xào vàng với lòng heo chín, rau răm và hành lá, món dân dã đậm hương nghệ.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-22",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức biên tập tại Bếp Việt từ nguồn tham khảo; định lượng và thời gian cần được nấu thử trước khi xem là bản hoàn chỉnh.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-22",
+        "needs": [
+          "Nấu thử để chốt cách làm sạch và thời gian luộc từng loại lòng.",
+          "Kiểm tra độ ráo của bún và lượng nghệ để bún tơi, không nát."
+        ]
+      }
+    }
+  ]
+}

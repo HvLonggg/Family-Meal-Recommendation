@@ -1,0 +1,317 @@
+{
+  "batch": 57,
+  "description": "Năm món rau luộc dân dã từ Phú Yên, Thái Nguyên và Điện Biên; nguồn địa phương xác nhận tên rau, cách luộc hoặc thức chấm. Định lượng cho bữa cơm gia đình là phần biên tập của Bếp Việt.",
+  "recipes": [
+    {
+      "id": "BV611",
+      "slug": "cai-troi-luoc-cham-mam-cai-phu-yen",
+      "name": "Cải trời luộc chấm mắm cái Phú Yên",
+      "aliases": ["Rau cải trời luộc mắm cái", "Cải trời luộc chấm mắm nêm Phú Yên"],
+      "region": ["Trung"],
+      "province": ["Phú Yên"],
+      "category": "Món rau",
+      "meal_type": ["món rau", "bữa trưa", "bữa tối", "mâm cơm gia đình"],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một đĩa rau ăn kèm cơm cho bốn người; rau dại theo mùa có thể co lại nhiều sau khi luộc.",
+      "prep_time": 15,
+      "cook_time": 5,
+      "passive_time": 0,
+      "total_time": 20,
+      "description": "Cải trời mọc hoang ở rẫy và bờ đồi Phú Yên, được người dân luộc nhanh để giữ vị thơm chua nhẹ rồi chấm mắm cái. Bếp Việt chuẩn hóa cách sơ chế và lượng rau cho bữa cơm nhà; không luộc quá lửa để rau còn hương vị tự nhiên.",
+      "finished_dish": "Rau vừa chín, cọng còn độ giòn mềm và lá xanh đậm; mắm cái mặn thơm, có thể thêm ớt tươi tùy khẩu vị.",
+      "serving": "Vớt rau để ráo, bày thành đĩa và dọn cùng chén mắm cái riêng. Ăn nóng hoặc nguội nhẹ với cơm trắng.",
+      "tips": [
+        "Chỉ dùng rau cải trời được người bán hoặc người có kinh nghiệm nhận diện chắc chắn; không tự hái rau dại chưa rõ loại.",
+        "Rửa kỹ nhiều lần, nhất là phần gốc và kẽ lá, để loại đất cát bám trên rau.",
+        "Thả rau vào nồi nước sôi mạnh và vớt ngay khi vừa chín; luộc lâu làm mất vị chua thơm đặc trưng.",
+        "Nếm mắm cái trước khi thêm gia vị vì độ mặn và độ sệt thay đổi theo loại mắm."
+      ],
+      "dish_type": ["Rau luộc", "Món rau dân dã miền Trung"],
+      "main_ingredient": ["rau cải trời", "mắm cái"],
+      "cooking_method": ["rửa rau", "luộc nhanh", "pha thức chấm"],
+      "search_terms": ["cải trời luộc", "rau cải trời Phú Yên", "cải trời chấm mắm cái", "món rau miền Trung"],
+      "spicy_level": 1,
+      "image_alt": "Đĩa cải trời Phú Yên luộc xanh tươi đặt cạnh chén mắm cái có vài lát ớt.",
+      "time_note": "Khoảng 20 phút; thời gian nhặt rau thay đổi theo độ non và lượng đất cát.",
+      "suggested_pairings": ["Cơm trắng", "Cá kho", "Canh chua"],
+      "recipe_family": "phu_yen_boiled_cai_troi_mam_cai",
+      "keywords": ["cải trời", "Phú Yên", "rau dại theo mùa", "mắm cái", "rau luộc"],
+      "tags": ["Phú Yên", "miền Trung", "món rau", "rau theo mùa", "mâm cơm"],
+      "ingredients": [
+        {"name":"Rau cải trời non","quantity":800,"unit":"g","role":"main","notes":"Chọn rau còn non, lá không dập; cân sau khi bỏ gốc già.","scaling_rule":"linear","sequence":1},
+        {"name":"Nước","quantity":2500,"unit":"ml","role":"liquid","notes":"Đủ ngập rau trong nồi rộng.","scaling_rule":"vessel_dependent","sequence":2},
+        {"name":"Muối hạt","quantity":4,"unit":"g","role":"seasoning","notes":"Cho vào nước luộc; có thể bỏ nếu muốn giữ vị rau nguyên bản.","scaling_rule":"taste_adjusted","sequence":3},
+        {"name":"Mắm cái","quantity":60,"unit":"ml","role":"accompaniment","notes":"Dọn riêng để chấm; chọn loại phù hợp khẩu vị gia đình.","scaling_rule":"taste_adjusted","sequence":4},
+        {"name":"Ớt tươi","quantity":5,"unit":"g","role":"seasoning","notes":"Thái lát, dùng tùy chọn cùng mắm cái.","scaling_rule":"optional","sequence":5}
+      ],
+      "preparation_steps": [
+        {"step":1,"instruction":"Nhặt bỏ gốc già và lá úa. Rửa rau nhiều lần dưới vòi nước, ngâm nước sạch vài phút rồi xả lại và để ráo."},
+        {"step":2,"instruction":"Chuẩn bị nồi nước đủ rộng để rau ngập nhanh; múc mắm cái ra chén và thái ớt nếu dùng."}
+      ],
+      "cooking_steps": [
+        {"step":1,"instruction":"Đun nước đến sôi mạnh, thêm muối hạt nếu dùng. Chia rau thành mẻ vừa nồi để nhiệt không giảm quá lâu."},
+        {"step":2,"instruction":"Thả rau vào, đảo nhẹ cho ngập nước; khi nước sôi trở lại và rau vừa mềm thì vớt ngay ra rổ."},
+        {"step":3,"instruction":"Để rau ráo tự nhiên, xếp lên đĩa và dùng cùng mắm cái; thêm ớt thái lát vào chén mắm theo khẩu vị."}
+      ],
+      "sources": [
+        {"url":"https://phuyen.baodaklak.vn/141/289112/dac-san-rau-dai-mien-que.html","publisher":"Báo Phú Yên Online","title":"Đặc sản rau dại miền quê","use":"Ghi nhận cải trời mọc ở vùng gò đồi Phú Yên, được luộc và chấm mắm cái; nguồn lưu ý không luộc quá lửa. Định lượng gia đình và hướng dẫn vệ sinh rau là phần biên tập của Bếp Việt.","accessed_at":"2026-10-24","type":"editorial_reference"},
+        {"url":"https://sgtt.thesaigontimes.vn/nho-quay-quat-huong-vi-rau-cai-troi-rau-chua-le-xu-phu-yen/","publisher":"Sài Gòn Tiếp Thị","title":"Nhớ quay quắt hương vị rau cải trời, rau chua lẻ xứ Phú Yên","use":"Đối chiếu tên rau, vùng Phú Yên và cách ăn cải trời luộc với mắm cái/mắm ớt; bài dẫn lời người dân địa phương.","accessed_at":"2026-10-24","type":"editorial_reference"}
+      ],
+      "time_unit": "minute",
+      "scaling": {"base_servings":4,"targets":[{"servings":2,"main_factor":0.5,"seasoning_start_factor":0.45,"example":"400 g rau cải trời và 30 ml mắm cái","instruction":"Luộc nhanh từng mẻ nhỏ; nếm mắm trước khi tăng lượng ớt."},{"servings":6,"main_factor":1.5,"seasoning_start_factor":1.2,"example":"1,2 kg rau cải trời và khoảng 90 ml mắm cái","instruction":"Dùng nồi lớn hoặc chia rau thành nhiều mẻ để nước sôi nhanh trở lại."}]},
+      "media": [{"image_url":"/images/recipes/edited/cai-troi-luoc-cham-mam-cai-phu-yen-960.webp","page_url":"https://phuyen.baodaklak.vn/141/289112/dac-san-rau-dai-mien-que.html","source":"Bếp Việt","author":"Bếp Việt","license":null,"rights_status":"project","rights_note":"Ảnh được tạo riêng cho kho Bếp Việt; nguồn tham khảo chỉ dùng để xác nhận tên món, nguyên liệu và cách ăn.","width":3840,"height":2160,"orientation":"landscape","preferred_width_met":true,"alt_text":"Đĩa cải trời Phú Yên luộc xanh tươi đặt cạnh chén mắm cái có vài lát ớt.","verified_dish_match":true,"visual_review_date":"2026-10-24","photo_variant_note":"Ảnh gốc PNG nền trong suốt được giữ ở output/recipe-images/native; WebP 480/960/1536/3840 dùng canvas 3840x2160, nội dung món không bị kéo méo."}],
+      "editorial": {"status":"editorial_draft","production_ready":false,"test_cook_status":"not_tested","variant_note":"Bếp Việt chuẩn hóa lượng rau cho bốn người và hướng dẫn làm sạch; giữ cách luộc nhanh, chấm mắm cái được nguồn địa phương ghi nhận.","seed_recipe":null,"reviewed_at":"2026-10-24","needs":["Nấu thử để chốt thời gian luộc theo độ non và độ dày của rau theo mùa."]}
+    },
+    {
+      "id": "BV612",
+      "slug": "rau-chua-le-luoc-phu-yen",
+      "name": "Rau chua lẻ luộc nửa chín xứ Phú Yên",
+      "aliases": ["Chua lẻ luộc Phú Yên", "Rau chua lẻ luộc một dội"],
+      "region": ["Trung"],
+      "province": ["Phú Yên"],
+      "category": "Món rau",
+      "meal_type": ["món rau", "bữa trưa", "bữa tối", "mâm cơm gia đình"],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một đĩa rau theo mùa ăn kèm bữa cơm bốn người; rau nhỏ và co nhiều khi luộc.",
+      "prep_time": 15,
+      "cook_time": 3,
+      "passive_time": 0,
+      "total_time": 18,
+      "description": "Rau chua lẻ là rau dại theo mùa mưa được người dân vùng gò đồi Phú Yên nhặt về ăn. Bí quyết địa phương là cho rau vào nồi nước đang sôi và vớt ngay khi nước sôi dội trở lại, để cọng còn dai giòn và vị chua nhẹ. Bếp Việt biên tập lượng rau cho bốn người, không gán thêm thức chấm địa phương khi nguồn không xác nhận.",
+      "finished_dish": "Rau vừa tái chín, cọng nhỏ còn độ dai giòn, lá mềm và có vị chua thanh tự nhiên.",
+      "serving": "Vớt rau để ráo và dọn như món rau ăn kèm cơm. Có thể đặt nước chấm thông dụng của gia đình bên cạnh; không trộn nước chấm vào rau trước khi dọn.",
+      "tips": [
+        "Chỉ dùng rau được người có kinh nghiệm nhận diện chắc chắn và thu hái ở nơi không bị phun hóa chất; không hái rau dại chưa rõ loại.",
+        "Rửa và ngâm nhẹ để cát rơi xuống đáy, sau đó xả lại nhiều lần vì rau mọc sát đất.",
+        "Luộc từng nắm nhỏ trong nồi nước sôi; vớt khi nước sôi dội lại, không đun đến khi lá nhừ.",
+        "Rau chua lẻ nhỏ cây và hao nhiều sau khi luộc; cần chuẩn bị lượng rau sống nhiều hơn một đĩa rau thông thường."
+      ],
+      "dish_type": ["Rau luộc nhanh", "Rau dại theo mùa"],
+      "main_ingredient": ["rau chua lẻ"],
+      "cooking_method": ["nhặt và rửa rau", "luộc một dội"],
+      "search_terms": ["rau chua lẻ luộc", "chua lẻ Phú Yên", "rau dại mùa mưa Phú Yên", "rau luộc nửa chín"],
+      "spicy_level": 0,
+      "image_alt": "Đĩa rau chua lẻ Phú Yên luộc nhanh, cọng nhỏ và lá xanh còn nguyên hình.",
+      "time_note": "Khoảng 18 phút; thời gian nhặt có thể lâu hơn vì rau nhỏ và thường lẫn đất cát.",
+      "suggested_pairings": ["Cơm trắng", "Món cá kho", "Canh rau"],
+      "recipe_family": "phu_yen_quick_boiled_chua_le_greens",
+      "keywords": ["rau chua lẻ", "Phú Yên", "rau dại", "mùa mưa", "rau luộc"],
+      "tags": ["Phú Yên", "miền Trung", "món rau", "rau theo mùa", "mâm cơm"],
+      "ingredients": [
+        {"name":"Rau chua lẻ non","quantity":700,"unit":"g","role":"main","notes":"Nhặt lấy cây non; lượng rau thành phẩm ít hơn đáng kể sau khi luộc.","scaling_rule":"linear","sequence":1},
+        {"name":"Nước","quantity":2500,"unit":"ml","role":"liquid","notes":"Dùng nồi rộng để rau ngập nhanh trong nước sôi.","scaling_rule":"vessel_dependent","sequence":2},
+        {"name":"Muối hạt","quantity":3,"unit":"g","role":"seasoning","notes":"Tùy chọn; nguồn địa phương tập trung vào thời điểm vớt rau, không nêm rau đậm.","scaling_rule":"optional","sequence":3}
+      ],
+      "preparation_steps": [
+        {"step":1,"instruction":"Nhặt bỏ phần già, dập hoặc lẫn cỏ khác. Ngâm rau trong chậu nước sạch để đất cát lắng xuống, sau đó xả nhẹ nhiều lần."},
+        {"step":2,"instruction":"Đun sẵn nồi nước lớn đến khi sôi mạnh; để rổ sạch bên cạnh để vớt rau ngay khi vừa chín tới."}
+      ],
+      "cooking_steps": [
+        {"step":1,"instruction":"Cho một nắm rau vào nồi nước sôi, dùng đũa nhấn nhẹ cho rau ngập nước."},
+        {"step":2,"instruction":"Canh đến khi nước sôi dội trở lại thì vớt rau ngay; lặp lại với phần rau còn lại để giữ nhiệt."},
+        {"step":3,"instruction":"Để ráo tự nhiên, không ngâm lâu trong nước lạnh để giữ cọng rau dai và vị chua nhẹ; dọn cùng bữa cơm."}
+      ],
+      "sources": [
+        {"url":"https://phuyen.baodaklak.vn/141/289112/dac-san-rau-dai-mien-que.html","publisher":"Báo Phú Yên Online","title":"Đặc sản rau dại miền quê","use":"Ghi nhận rau chua lẻ mọc theo mùa ở vùng gò đồi Phú Yên, cách rửa và vớt rau sau một lần nước sôi dội để giữ vị dai, chua. Định lượng gia đình và lưu ý thu hái an toàn là phần biên tập của Bếp Việt.","accessed_at":"2026-10-24","type":"editorial_reference"},
+        {"url":"https://sgtt.thesaigontimes.vn/nho-quay-quat-huong-vi-rau-cai-troi-rau-chua-le-xu-phu-yen/","publisher":"Sài Gòn Tiếp Thị","title":"Nhớ quay quắt hương vị rau cải trời, rau chua lẻ xứ Phú Yên","use":"Đối chiếu mùa rau, đặc điểm cây nhỏ, vị chua nhẹ và bối cảnh món ăn dân dã tại Phú Yên.","accessed_at":"2026-10-24","type":"editorial_reference"}
+      ],
+      "time_unit": "minute",
+      "scaling": {"base_servings":4,"targets":[{"servings":2,"main_factor":0.5,"seasoning_start_factor":0.5,"example":"350 g rau chua lẻ","instruction":"Luộc từng nắm nhỏ và vớt ngay khi nước vừa sôi trở lại."},{"servings":6,"main_factor":1.5,"seasoning_start_factor":1.25,"example":"Khoảng 1 kg rau chua lẻ","instruction":"Dùng nồi lớn; chia mẻ để rau không bị om trong nước nguội."}]},
+      "media": [{"image_url":"/images/recipes/edited/rau-chua-le-luoc-phu-yen-960.webp","page_url":"https://phuyen.baodaklak.vn/141/289112/dac-san-rau-dai-mien-que.html","source":"Bếp Việt","author":"Bếp Việt","license":null,"rights_status":"project","rights_note":"Ảnh được tạo riêng cho kho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập và xác nhận món.","width":3840,"height":2160,"orientation":"landscape","preferred_width_met":true,"alt_text":"Đĩa rau chua lẻ Phú Yên luộc nhanh, cọng nhỏ và lá xanh còn nguyên hình.","verified_dish_match":true,"visual_review_date":"2026-10-24","photo_variant_note":"Ảnh gốc PNG nền trong suốt được giữ ở output/recipe-images/native; các WebP dùng canvas 3840x2160 và giữ đúng tỷ lệ nội dung."}],
+      "editorial": {"status":"editorial_draft","production_ready":false,"test_cook_status":"not_tested","variant_note":"Giữ kỹ thuật luộc một dội được người Phú Yên kể lại; Bếp Việt chuẩn hóa định lượng và trình tự sơ chế cho bếp gia đình.","seed_recipe":null,"reviewed_at":"2026-10-24","needs":["Nấu thử để xác nhận thời điểm vớt phù hợp với kích thước rau thu mua theo mùa."]}
+    },
+    {
+      "id": "BV613",
+      "slug": "rau-bo-may-luoc-muoi-vung-thai-nguyen",
+      "name": "Rau bọ mẩy luộc chấm muối vừng Thái Nguyên",
+      "aliases": ["Đắng cảy luộc muối vừng", "Rau bọ mẩy luộc muối lạc"],
+      "region": ["Bắc"],
+      "province": ["Thái Nguyên"],
+      "category": "Món rau",
+      "meal_type": ["món rau", "món chay", "bữa trưa", "bữa tối"],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một đĩa rau luộc theo mùa dùng chung trong bữa cơm bốn người.",
+      "prep_time": 15,
+      "cook_time": 6,
+      "passive_time": 0,
+      "total_time": 21,
+      "description": "Bọ mẩy, còn gọi là đắng cảy, là rau rừng có vị đắng đầu lưỡi và hậu vị bùi ngọt. Người dân Thái Nguyên được ghi nhận ăn rau luộc chấm muối vừng; Bếp Việt biên tập lượng rau và cách luộc nhanh để làm món rau theo mùa trong bữa cơm nhà.",
+      "finished_dish": "Lá rau xanh đậm vừa mềm, cọng còn độ giòn; muối vừng thơm bùi cân với vị đắng nhẹ và hậu ngọt của rau.",
+      "serving": "Để rau ráo, bày trên đĩa và đặt muối vừng ở chén nhỏ. Chấm từng gắp, dùng cùng cơm nóng.",
+      "tips": [
+        "Bọ mẩy có vị đắng đặc trưng; chỉ mua rau được người bán xác nhận đúng loại, không dùng rau rừng lạ.",
+        "Nhặt phần ngọn và lá non, bỏ cọng già rồi rửa kỹ, để ráo trước khi luộc.",
+        "Nước phải sôi mạnh trước khi thả rau; luộc vừa mềm, không om lâu để rau không đổi màu và nhũn.",
+        "Muối vừng có độ mặn khác nhau; chấm ít trước rồi điều chỉnh theo khẩu vị."
+      ],
+      "dish_type": ["Rau rừng luộc", "Món rau vùng trung du Bắc Bộ"],
+      "main_ingredient": ["rau bọ mẩy", "vừng"],
+      "cooking_method": ["nhặt rau", "luộc", "rang vừng và giã muối"],
+      "search_terms": ["rau bọ mẩy luộc", "đắng cảy luộc", "bọ mẩy muối vừng", "đặc sản rau Thái Nguyên"],
+      "spicy_level": 0,
+      "image_alt": "Rau bọ mẩy Thái Nguyên luộc bày trên đĩa cạnh chén muối vừng rang giã thô.",
+      "time_note": "Khoảng 21 phút; thời gian nhặt rau phụ thuộc lượng cọng già cần bỏ.",
+      "suggested_pairings": ["Cơm trắng", "Đậu phụ hấp", "Cá kho"],
+      "recipe_family": "thai_nguyen_boiled_bo_may_sesame_salt",
+      "keywords": ["bọ mẩy", "đắng cảy", "Thái Nguyên", "rau luộc", "muối vừng"],
+      "tags": ["Thái Nguyên", "miền Bắc", "món rau", "món chay", "rau rừng"],
+      "ingredients": [
+        {"name":"Rau bọ mẩy non","quantity":700,"unit":"g","role":"main","notes":"Chọn rau đúng loại từ nguồn bán đáng tin cậy; chỉ lấy lá và ngọn non.","scaling_rule":"linear","sequence":1},
+        {"name":"Nước","quantity":2500,"unit":"ml","role":"liquid","notes":"Đủ ngập rau trong nồi rộng.","scaling_rule":"vessel_dependent","sequence":2},
+        {"name":"Muối hạt","quantity":3,"unit":"g","role":"seasoning","notes":"Cho vào nước luộc, có thể giảm hoặc bỏ.","scaling_rule":"taste_adjusted","sequence":3},
+        {"name":"Vừng trắng","quantity":35,"unit":"g","role":"accompaniment","notes":"Rang thơm trên lửa nhỏ, để nguội rồi giã dập.","scaling_rule":"linear","sequence":4},
+        {"name":"Muối","quantity":4,"unit":"g","role":"seasoning","notes":"Giã cùng vừng; nêm vừa phải để vị bùi của vừng vẫn rõ.","scaling_rule":"taste_adjusted","sequence":5}
+      ],
+      "preparation_steps": [
+        {"step":1,"instruction":"Nhặt phần ngọn và lá non, bỏ đoạn già hoặc dập. Rửa rau nhiều lần bằng nước sạch rồi để ráo."},
+        {"step":2,"instruction":"Rang vừng trên chảo khô đến khi thơm, hạt vừa chuyển vàng; để nguội rồi giã dập cùng muối."}
+      ],
+      "cooking_steps": [
+        {"step":1,"instruction":"Đun nồi nước đến sôi mạnh, thêm chút muối nếu dùng."},
+        {"step":2,"instruction":"Thả rau vào, đảo cho ngập nước và luộc khoảng 2–4 phút tùy cọng rau; vớt khi vừa mềm."},
+        {"step":3,"instruction":"Để rau ráo trên rổ, bày ra đĩa và dọn cùng muối vừng giã dập."}
+      ],
+      "sources": [
+        {"url":"https://doisonggiadinh.baophunuthudo.vn/doi-song/loai-rau-moc-dai-xua-hai-cho-lon-an-nay-thanh-dac-san-noi-tieng-thai-nguyen-nhieu-nguoi-chua-duoc-an-thu-c71a31578.html","publisher":"Đời sống & Gia đình (Báo Phụ nữ Thủ đô)","title":"Loại rau mọc dại xưa hái cho lợn ăn, nay thành đặc sản nổi tiếng Thái Nguyên","use":"Nguồn dẫn lời người dân Thái Nguyên và Phú Thọ về rau bọ mẩy/đắng cảy có vị đắng, hậu ngọt, cách ăn luộc chấm muối vừng hoặc muối lạc. Định lượng bốn người và thời gian luộc là phần biên tập của Bếp Việt.","accessed_at":"2026-10-24","type":"editorial_reference"},
+        {"url":"https://baodaklak.vn/channel/3541/202002/nhung-mon-ngon-tu-rau-rung-5667602/","publisher":"Báo Đắk Lắk","title":"Những món ngon từ rau rừng","use":"Đối chiếu tên gọi rau đắng cảy và cách luộc chấm muối vừng hoặc muối lạc; không dùng nội dung dược liệu trong bài.","accessed_at":"2026-10-24","type":"editorial_reference"}
+      ],
+      "time_unit": "minute",
+      "scaling": {"base_servings":4,"targets":[{"servings":2,"main_factor":0.5,"seasoning_start_factor":0.5,"example":"350 g rau bọ mẩy và 18 g vừng","instruction":"Giã muối vừng từng ít một để giữ độ bùi, không làm quá mặn."},{"servings":6,"main_factor":1.5,"seasoning_start_factor":1.2,"example":"Khoảng 1 kg rau bọ mẩy và 50 g vừng","instruction":"Luộc rau theo từng mẻ và vớt ngay khi vừa mềm."}]},
+      "media": [{"image_url":"/images/recipes/edited/rau-bo-may-luoc-muoi-vung-thai-nguyen-960.webp","page_url":"https://doisonggiadinh.baophunuthudo.vn/doi-song/loai-rau-moc-dai-xua-hai-cho-lon-an-nay-thanh-dac-san-noi-tieng-thai-nguyen-nhieu-nguoi-chua-duoc-an-thu-c71a31578.html","source":"Bếp Việt","author":"Bếp Việt","license":null,"rights_status":"project","rights_note":"Ảnh được tạo riêng cho kho Bếp Việt; trang nguồn chỉ dùng để xác nhận món và cách ăn.","width":3840,"height":2160,"orientation":"landscape","preferred_width_met":true,"alt_text":"Rau bọ mẩy Thái Nguyên luộc bày trên đĩa cạnh chén muối vừng rang giã thô.","verified_dish_match":true,"visual_review_date":"2026-10-24","photo_variant_note":"Ảnh gốc PNG nền trong suốt được giữ ở output/recipe-images/native; các WebP dùng canvas 3840x2160 và giữ đúng tỷ lệ món."}],
+      "editorial": {"status":"editorial_draft","production_ready":false,"test_cook_status":"not_tested","variant_note":"Giữ cách ăn bọ mẩy luộc với muối vừng được nguồn ghi nhận; tỷ lệ nguyên liệu và thời gian luộc là hướng dẫn gia đình của Bếp Việt.","seed_recipe":null,"reviewed_at":"2026-10-24","needs":["Nấu thử với rau thu mua tại Thái Nguyên để điều chỉnh thời gian luộc theo độ non."]}
+    },
+    {
+      "id": "BV614",
+      "slug": "mang-ngot-luoc-cham-cham-cheo-dien-bien",
+      "name": "Măng ngọt luộc chấm chẩm chéo Điện Biên",
+      "aliases": ["Măng ngọt luộc chẩm chéo người Thái", "Măng luộc chấm chẩm chéo Tây Bắc"],
+      "region": ["Bắc"],
+      "province": ["Điện Biên"],
+      "category": "Món rau",
+      "meal_type": ["món rau", "món chay", "bữa trưa", "bữa tối"],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một đĩa măng luộc chia ăn kèm trong bữa cơm bốn người; chẩm chéo dọn riêng.",
+      "prep_time": 20,
+      "cook_time": 35,
+      "passive_time": 0,
+      "total_time": 55,
+      "description": "Măng ngọt luộc chấm chẩm chéo được nhắc trong mâm cơm người Thái ở Tây Bắc. Chẩm chéo tươi giã từ muối, ớt, tỏi, mắc khén và rau thơm; Bếp Việt chuẩn hóa lượng nguyên liệu cho gia đình và giữ lựa chọn dùng mắc khén thay cho hạt dổi theo cách nguồn mô tả.",
+      "finished_dish": "Măng chín mềm nhưng còn độ giòn, vị ngọt dịu; chẩm chéo thơm mắc khén, cay vừa và có mùi rau thơm tươi.",
+      "serving": "Bày măng đã để ráo trên đĩa, dọn chẩm chéo trong chén nhỏ. Chấm từng miếng, dùng cùng cơm hoặc xôi nếp.",
+      "tips": [
+        "Chọn măng ngọt tươi từ nơi bán đáng tin cậy, bỏ bẹ già và rửa sạch đất bám ở gốc.",
+        "Thái măng thành miếng vừa ăn để chín đều; luộc kỹ đến khi mềm, thay nước nếu măng có vị hăng hoặc đắng.",
+        "Chẩm chéo có nhiều cách pha theo gia đình; dùng mắc khén hoặc hạt dổi, không cần cho cả hai cùng lúc.",
+        "Giã chẩm chéo gần giờ ăn để rau thơm giữ mùi; điều chỉnh ớt theo khẩu vị."
+      ],
+      "dish_type": ["Măng luộc", "Món rau Tây Bắc"],
+      "main_ingredient": ["măng ngọt", "mắc khén", "rau thơm"],
+      "cooking_method": ["sơ chế măng", "luộc măng", "giã chẩm chéo"],
+      "search_terms": ["măng ngọt luộc", "măng chấm chẩm chéo", "măng luộc Điện Biên", "món người Thái Tây Bắc"],
+      "spicy_level": 2,
+      "image_alt": "Măng ngọt luộc chín bày cạnh chén chẩm chéo tươi có ớt, tỏi, mắc khén và rau thơm.",
+      "time_note": "Khoảng 55 phút; măng già hoặc miếng lớn có thể cần luộc lâu hơn.",
+      "suggested_pairings": ["Cơm trắng", "Xôi nếp nương", "Cá nướng"],
+      "recipe_family": "dien_bien_sweet_bamboo_boiled_cham_cheo",
+      "keywords": ["măng ngọt", "Điện Biên", "chẩm chéo", "món Thái", "món rau"],
+      "tags": ["Điện Biên", "Tây Bắc", "người Thái", "món rau", "món chay"],
+      "ingredients": [
+        {"name":"Măng ngọt tươi","quantity":800,"unit":"g","role":"main","notes":"Bỏ bẹ già, rửa sạch và thái miếng vừa ăn.","scaling_rule":"linear","sequence":1},
+        {"name":"Nước","quantity":2500,"unit":"ml","role":"liquid","notes":"Đủ ngập măng trong nồi.","scaling_rule":"vessel_dependent","sequence":2},
+        {"name":"Muối","quantity":4,"unit":"g","role":"seasoning","notes":"Cho vào nồi luộc; có thể bỏ nếu chẩm chéo đã đủ vị.","scaling_rule":"taste_adjusted","sequence":3},
+        {"name":"Muối hạt","quantity":8,"unit":"g","role":"seasoning","notes":"Giã làm chẩm chéo.","scaling_rule":"taste_adjusted","sequence":4},
+        {"name":"Ớt tươi","quantity":8,"unit":"g","role":"seasoning","notes":"Nướng sơ hoặc dùng tươi, điều chỉnh theo độ cay mong muốn.","scaling_rule":"taste_adjusted","sequence":5},
+        {"name":"Tỏi","quantity":8,"unit":"g","role":"aromatic","notes":"Bóc vỏ, giã cùng muối và ớt.","scaling_rule":"linear","sequence":6},
+        {"name":"Mắc khén rang","quantity":2,"unit":"g","role":"seasoning","notes":"Rang thơm, giã nhỏ; chọn dùng mắc khén hoặc hạt dổi.","scaling_rule":"taste_adjusted","sequence":7},
+        {"name":"Rau mùi","quantity":10,"unit":"g","role":"aromatic","notes":"Rửa sạch, để ráo và thái nhỏ.","scaling_rule":"linear","sequence":8},
+        {"name":"Mùi tàu","quantity":8,"unit":"g","role":"aromatic","notes":"Rửa sạch, để ráo và thái nhỏ; có thể thay bằng húng thơm.","scaling_rule":"optional","sequence":9}
+      ],
+      "preparation_steps": [
+        {"step":1,"instruction":"Bỏ bẹ già của măng, cắt bỏ gốc xơ, rửa kỹ rồi thái thành lát hoặc khúc vừa ăn."},
+        {"step":2,"instruction":"Rửa rau mùi và mùi tàu, để ráo rồi thái nhỏ. Rang mắc khén trên chảo khô đến khi dậy mùi."},
+        {"step":3,"instruction":"Chuẩn bị cối sạch; cho muối, ớt, tỏi và mắc khén vào để giã, sau đó mới thêm rau thơm."}
+      ],
+      "cooking_steps": [
+        {"step":1,"instruction":"Cho măng vào nồi nước lạnh, đun sôi rồi hạ lửa vừa; luộc khoảng 25–35 phút hoặc đến khi miếng măng mềm. Nếu măng còn hăng, thay nước và luộc tiếp."},
+        {"step":2,"instruction":"Giã muối, ớt, tỏi và mắc khén thành hỗn hợp thô; thêm rau thơm, giã nhẹ thêm vài nhịp cho quyện."},
+        {"step":3,"instruction":"Vớt măng ra rổ cho ráo, bày đĩa và dọn chẩm chéo tươi bên cạnh."}
+      ],
+      "sources": [
+        {"url":"https://anninhthudo.vn/nhung-sac-mau-tu-nhien-tren-mam-com-cua-dong-bao-thai-post611370.antd","publisher":"An Ninh Thủ Đô","title":"Những sắc màu tự nhiên trên mâm cơm của đồng bào Thái","use":"Nguồn ghi nhận măng ngọt luộc trong mâm cơm người Thái và măng luộc chấm chẩm chéo; nêu thành phần chẩm chéo gồm muối, ớt, mắc khén hoặc hạt dổi, tỏi và rau thơm. Định lượng bốn người và thời gian luộc là phần biên tập của Bếp Việt.","accessed_at":"2026-10-24","type":"editorial_reference"},
+        {"url":"https://vov4.vov.vn/tri-thuc-ban-dia/thuc-cham-mon-an-lam-nen-thuong-hieu-nguoi-thai-518700.vov4","publisher":"VOV4","title":"Thức chấm - món ăn làm nên thương hiệu người Thái","use":"Đối chiếu cách dùng chẩm chéo với các món luộc và nguyên liệu giã thành thức chấm của người Thái.","accessed_at":"2026-10-24","type":"editorial_reference"}
+      ],
+      "time_unit": "minute",
+      "scaling": {"base_servings":4,"targets":[{"servings":2,"main_factor":0.5,"seasoning_start_factor":0.5,"example":"400 g măng và một nửa lượng gia vị chẩm chéo","instruction":"Nếm chẩm chéo sau khi giã; ớt và mắc khén nên tăng từng chút."},{"servings":6,"main_factor":1.5,"seasoning_start_factor":1.2,"example":"1,2 kg măng và chẩm chéo cho sáu người","instruction":"Luộc măng trong nồi lớn hoặc chia mẻ, bảo đảm măng chín mềm trước khi dọn."}]},
+      "media": [{"image_url":"/images/recipes/edited/mang-ngot-luoc-cham-cham-cheo-dien-bien-960.webp","page_url":"https://anninhthudo.vn/nhung-sac-mau-tu-nhien-tren-mam-com-cua-dong-bao-thai-post611370.antd","source":"Bếp Việt","author":"Bếp Việt","license":null,"rights_status":"project","rights_note":"Ảnh được tạo riêng cho kho Bếp Việt; nguồn tham khảo chỉ dùng để xác nhận món, vùng miền và thức chấm.","width":3840,"height":2160,"orientation":"landscape","preferred_width_met":true,"alt_text":"Măng ngọt luộc chín bày cạnh chén chẩm chéo tươi có ớt, tỏi, mắc khén và rau thơm.","verified_dish_match":true,"visual_review_date":"2026-10-24","photo_variant_note":"Ảnh gốc PNG nền trong suốt được giữ ở output/recipe-images/native; WebP 480/960/1536/3840 dùng canvas 3840x2160, không kéo méo món."}],
+      "editorial": {"status":"editorial_draft","production_ready":false,"test_cook_status":"not_tested","variant_note":"Bếp Việt giữ cặp măng ngọt luộc và chẩm chéo được báo chí ghi nhận; tỷ lệ gia vị và quy trình luộc tại nhà được biên tập, không khẳng định là công thức duy nhất của người Thái.","seed_recipe":null,"reviewed_at":"2026-10-24","needs":["Nấu thử với loại măng ngọt bán tại địa phương để chốt thời gian luộc và mức độ cần thay nước."]}
+    },
+    {
+      "id": "BV615",
+      "slug": "ngon-dau-den-luoc-cham-nuoc-mam-toi",
+      "name": "Ngọn đậu đen luộc chấm nước mắm tỏi",
+      "aliases": ["Đọt đậu đen luộc", "Ngọn đậu quê luộc chấm mắm tỏi ớt"],
+      "region": ["Bắc", "Trung", "Nam"],
+      "province": [],
+      "category": "Món rau",
+      "meal_type": ["món rau", "bữa trưa", "bữa tối", "mâm cơm gia đình"],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một đĩa ngọn đậu non ăn kèm cho bốn người; lượng rau có thể giảm sau khi nhặt và luộc.",
+      "prep_time": 12,
+      "cook_time": 6,
+      "passive_time": 0,
+      "total_time": 18,
+      "description": "Khi tỉa ngọn non cho cây đậu đen nuôi quả, người quê tận dụng phần lá và cọng non đem luộc, chấm nước mắm tỏi chua cay. Báo Đắk Lắk ghi nhận vị ngọn đậu bùi ngọt và cách ăn dân dã này; Bếp Việt biên tập định lượng, phần nước chấm có thể gia giảm theo khẩu vị.",
+      "finished_dish": "Ngọn đậu chín mềm, lá bùi và cọng non ngọt dịu; nước mắm thơm tỏi, có vị mặn chua cay cân bằng.",
+      "serving": "Vớt ngọn đậu để ráo, bày trên đĩa và dùng cùng chén nước mắm tỏi riêng. Ăn với cơm nóng như món rau trong bữa cơm nhà.",
+      "tips": [
+        "Chọn ngọn đậu đen non từ nguồn rau xác định rõ, không tự dùng lá cây họ đậu lạ làm thực phẩm.",
+        "Rửa nhẹ phần lá và cọng, bỏ đoạn già; không vò mạnh để lá không dập nát.",
+        "Luộc đến khi cọng vừa mềm, vớt ngay để rau không nhũn và không ngả màu.",
+        "Pha nước mắm tỏi riêng, nêm chua ngọt vừa phải để không lấn vị bùi ngọt tự nhiên của ngọn đậu."
+      ],
+      "dish_type": ["Rau luộc", "Món rau dân dã"],
+      "main_ingredient": ["ngọn đậu đen", "nước mắm", "tỏi"],
+      "cooking_method": ["nhặt rau", "luộc", "pha nước mắm tỏi"],
+      "search_terms": ["ngọn đậu đen luộc", "đọt đậu luộc", "ngọn đậu chấm nước mắm tỏi", "rau quê luộc"],
+      "spicy_level": 1,
+      "image_alt": "Ngọn đậu đen non luộc bày gọn trên đĩa, bên cạnh là chén nước mắm tỏi ớt.",
+      "time_note": "Khoảng 18 phút; nhặt rau lâu hơn nếu ngọn còn nhiều đoạn già.",
+      "suggested_pairings": ["Cơm trắng", "Cá kho", "Canh rau"],
+      "recipe_family": "black_bean_shoots_boiled_garlic_fish_sauce",
+      "keywords": ["ngọn đậu đen", "đọt đậu", "rau luộc", "nước mắm tỏi", "món quê"],
+      "tags": ["món rau", "món dân dã", "rau luộc", "bữa cơm nhà"],
+      "ingredients": [
+        {"name":"Ngọn đậu đen non","quantity":750,"unit":"g","role":"main","notes":"Nhặt phần lá và cọng non, loại bỏ đoạn già.","scaling_rule":"linear","sequence":1},
+        {"name":"Nước","quantity":2500,"unit":"ml","role":"liquid","notes":"Đủ ngập rau trong nồi rộng.","scaling_rule":"vessel_dependent","sequence":2},
+        {"name":"Muối hạt","quantity":4,"unit":"g","role":"seasoning","notes":"Cho vào nước luộc; có thể giảm tùy khẩu vị.","scaling_rule":"taste_adjusted","sequence":3},
+        {"name":"Nước mắm","quantity":45,"unit":"ml","role":"accompaniment","notes":"Dùng pha chén nước chấm.","scaling_rule":"taste_adjusted","sequence":4},
+        {"name":"Nước cốt chanh","quantity":15,"unit":"ml","role":"seasoning","notes":"Tạo vị chua nhẹ; gia giảm theo độ chua mong muốn.","scaling_rule":"taste_adjusted","sequence":5},
+        {"name":"Đường","quantity":10,"unit":"g","role":"seasoning","notes":"Giúp vị chấm dịu, không ngọt gắt.","scaling_rule":"taste_adjusted","sequence":6},
+        {"name":"Tỏi","quantity":8,"unit":"g","role":"aromatic","notes":"Bóc vỏ, băm nhuyễn.","scaling_rule":"linear","sequence":7},
+        {"name":"Ớt tươi","quantity":4,"unit":"g","role":"seasoning","notes":"Băm nhỏ, dùng tùy chọn.","scaling_rule":"optional","sequence":8},
+        {"name":"Nước ấm","quantity":30,"unit":"ml","role":"liquid","notes":"Pha loãng nước mắm và hòa tan đường.","scaling_rule":"taste_adjusted","sequence":9}
+      ],
+      "preparation_steps": [
+        {"step":1,"instruction":"Nhặt ngọn đậu, bỏ cọng già hoặc dập; rửa nhẹ nhiều lần rồi để ráo."},
+        {"step":2,"instruction":"Băm tỏi và ớt. Khuấy nước mắm, nước ấm, đường và nước cốt chanh cho tan, sau đó thêm tỏi ớt."}
+      ],
+      "cooking_steps": [
+        {"step":1,"instruction":"Đun nước sôi mạnh, thêm muối hạt nếu dùng; cho ngọn đậu vào và nhấn nhẹ cho ngập."},
+        {"step":2,"instruction":"Luộc khoảng 3–5 phút tùy độ non, kiểm tra cọng vừa mềm thì vớt ra rổ để ráo."},
+        {"step":3,"instruction":"Bày rau ra đĩa, dọn cùng nước mắm tỏi ớt pha chua ngọt và cơm nóng."}
+      ],
+      "sources": [
+        {"url":"https://baodaklak.vn/channel/3541/201906/nho-mon-ngon-dau-que-nha-5636590/","publisher":"Báo Đắk Lắk","title":"Nhớ món ngọn đậu quê nhà","use":"Nguồn mô tả rõ ngọn đậu đen được luộc, chấm nước mắm tỏi chua cay; nêu cây đậu đen được trồng lấy hạt và phần ngọn non được tỉa làm rau, vị bùi ngọt. Định lượng và tỷ lệ nước chấm là phần biên tập của Bếp Việt.","accessed_at":"2026-10-24","type":"editorial_reference"}
+      ],
+      "time_unit": "minute",
+      "scaling": {"base_servings":4,"targets":[{"servings":2,"main_factor":0.5,"seasoning_start_factor":0.45,"example":"375 g ngọn đậu non, 22 ml nước mắm và nửa lượng gia vị chấm","instruction":"Nếm nước chấm trước khi dọn; luộc rau theo mẻ nhỏ để rau vừa mềm."},{"servings":6,"main_factor":1.5,"seasoning_start_factor":1.2,"example":"Khoảng 1,1 kg ngọn đậu non, 70 ml nước mắm và nước chấm cho sáu người","instruction":"Dùng nồi lớn hoặc chia mẻ; để rau ráo trước khi bày."}]},
+      "media": [{"image_url":"/images/recipes/edited/ngon-dau-den-luoc-cham-nuoc-mam-toi-960.webp","page_url":"https://baodaklak.vn/channel/3541/201906/nho-mon-ngon-dau-que-nha-5636590/","source":"Bếp Việt","author":"Bếp Việt","license":null,"rights_status":"project","rights_note":"Ảnh được tạo riêng cho kho Bếp Việt; báo tham khảo chỉ dùng để biên tập món ăn và cách dùng.","width":3840,"height":2160,"orientation":"landscape","preferred_width_met":true,"alt_text":"Ngọn đậu đen non luộc bày gọn trên đĩa, bên cạnh là chén nước mắm tỏi ớt.","verified_dish_match":true,"visual_review_date":"2026-10-24","photo_variant_note":"Ảnh gốc PNG nền trong suốt được giữ ở output/recipe-images/native; WebP 480/960/1536/3840 dùng canvas 3840x2160, không kéo méo thực phẩm."}],
+      "editorial": {"status":"editorial_draft","production_ready":false,"test_cook_status":"not_tested","variant_note":"Giữ cách luộc ngọn đậu đen chấm nước mắm tỏi được Báo Đắk Lắk mô tả; Bếp Việt biên tập định lượng bốn người và tỷ lệ nước chấm tham khảo.","seed_recipe":null,"reviewed_at":"2026-10-24","needs":["Nấu thử với ngọn đậu đen bán theo mùa để xác nhận thời gian luộc và tỷ lệ nước chấm."]}
+    }
+  ]
+}

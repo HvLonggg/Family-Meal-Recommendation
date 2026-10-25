@@ -1,0 +1,237 @@
+{
+  "batch": 66,
+  "native_format": "PNG",
+  "canvas": {
+    "width": 3840,
+    "height": 2160,
+    "format": "WebP",
+    "background": "transparent"
+  },
+  "assets": [
+    {
+      "id": "BV656",
+      "slug": "rau-mam-da-sa-pa-luoc-xi-dau",
+      "native_file": "output/recipe-images/native/rau-mam-da-sa-pa-luoc-xi-dau.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "canvas_export_file": "output/recipe-images/4k/rau-mam-da-sa-pa-luoc-xi-dau.png",
+      "canvas_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/rau-mam-da-sa-pa-luoc-xi-dau-480.webp",
+          "pixels": [
+            480,
+            270
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/rau-mam-da-sa-pa-luoc-xi-dau-960.webp",
+          "pixels": [
+            960,
+            540
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/rau-mam-da-sa-pa-luoc-xi-dau-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/rau-mam-da-sa-pa-luoc-xi-dau-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BV657",
+      "slug": "rau-sam-luoc-cham-nuoc-mam-toi-hue",
+      "native_file": "output/recipe-images/native/rau-sam-luoc-cham-nuoc-mam-toi-hue.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "canvas_export_file": "output/recipe-images/4k/rau-sam-luoc-cham-nuoc-mam-toi-hue.png",
+      "canvas_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/rau-sam-luoc-cham-nuoc-mam-toi-hue-480.webp",
+          "pixels": [
+            480,
+            270
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/rau-sam-luoc-cham-nuoc-mam-toi-hue-960.webp",
+          "pixels": [
+            960,
+            540
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/rau-sam-luoc-cham-nuoc-mam-toi-hue-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/rau-sam-luoc-cham-nuoc-mam-toi-hue-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BV658",
+      "slug": "ngon-su-su-luoc-cham-mam-toi-ot-tam-dao",
+      "native_file": "output/recipe-images/native/ngon-su-su-luoc-cham-mam-toi-ot-tam-dao.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "canvas_export_file": "output/recipe-images/4k/ngon-su-su-luoc-cham-mam-toi-ot-tam-dao.png",
+      "canvas_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/ngon-su-su-luoc-cham-mam-toi-ot-tam-dao-480.webp",
+          "pixels": [
+            480,
+            270
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/ngon-su-su-luoc-cham-mam-toi-ot-tam-dao-960.webp",
+          "pixels": [
+            960,
+            540
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/ngon-su-su-luoc-cham-mam-toi-ot-tam-dao-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/ngon-su-su-luoc-cham-mam-toi-ot-tam-dao-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BV659",
+      "slug": "rau-bo-khai-luoc-ba-be",
+      "native_file": "output/recipe-images/native/rau-bo-khai-luoc-ba-be.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "canvas_export_file": "output/recipe-images/4k/rau-bo-khai-luoc-ba-be.png",
+      "canvas_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/rau-bo-khai-luoc-ba-be-480.webp",
+          "pixels": [
+            480,
+            270
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/rau-bo-khai-luoc-ba-be-960.webp",
+          "pixels": [
+            960,
+            540
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/rau-bo-khai-luoc-ba-be-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/rau-bo-khai-luoc-ba-be-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BV660",
+      "slug": "bong-bi-luoc-cham-kho-quet",
+      "native_file": "output/recipe-images/native/bong-bi-luoc-cham-kho-quet.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "canvas_export_file": "output/recipe-images/4k/bong-bi-luoc-cham-kho-quet.png",
+      "canvas_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/bong-bi-luoc-cham-kho-quet-480.webp",
+          "pixels": [
+            480,
+            270
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/bong-bi-luoc-cham-kho-quet-960.webp",
+          "pixels": [
+            960,
+            540
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/bong-bi-luoc-cham-kho-quet-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/bong-bi-luoc-cham-kho-quet-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ]
+        }
+      ]
+    }
+  ]
+}

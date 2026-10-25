@@ -30,8 +30,8 @@ class Settings(BaseSettings):
     email_otp_expire_minutes: int = Field(default=5, ge=2, le=15)
     session_expire_hours: int = Field(default=12, ge=1, le=72)
     oauth_state_expire_minutes: int = Field(default=10, ge=5, le=20)
-    # "gmail_api" sends through Gmail's HTTPS API for hosts that block outbound SMTP ports.
-    email_provider: Literal["smtp", "gmail_api"] = "smtp"
+    # Auto prefers a configured Gmail API account; otherwise it uses configured SMTP.
+    email_provider: Literal["auto", "smtp", "gmail_api"] = "auto"
     email_smtp_host: str | None = "smtp.gmail.com"
     email_smtp_port: int = Field(default=587, ge=1, le=65535)
     email_smtp_username: str | None = "hvlongg@gmail.com"
@@ -56,10 +56,35 @@ class Settings(BaseSettings):
     # Trợ lý Chú Rồng: không có key thì chạy bộ máy gợi ý món nội bộ (miễn phí).
     anthropic_api_key: SecretStr | None = None
     assistant_model: str = "claude-opus-5-5"
+    # Gemini (gói miễn phí của Google AI Studio) làm nguồn AI thay thế Claude.
+    gemini_api_key: SecretStr | None = None
+    # Chat cần phản hồi tức thì: bản lite bắt đầu trả lời sau ~1 giây; bản flash làm dự phòng.
+    gemini_model: str = "gemini-flash-lite-latest"
+    # Dùng lần lượt khi model chính quá tải (503) hoặc hết hạn mức (429).
+    gemini_fallback_models: list[str] = Field(default_factory=lambda: ["gemini-flash-latest"])
+    # auto: dùng Claude nếu có key, không thì Gemini, không có key nào thì bộ máy nội bộ.
+    assistant_provider: Literal["auto", "claude", "gemini"] = "auto"
     assistant_timeout_seconds: float = Field(default=30, ge=5, le=120)
+    # RAG: embedding Gemini cho tìm kiếm ngữ nghĩa; không có key thì chỉ dùng BM25.
+    gemini_embedding_model: str = "gemini-embedding-2"
+    rag_top_k: int = Field(default=6, ge=1, le=12)
+    # AI riêng của Bếp Việt (bepviet_ai): off | shadow (chỉ ghi log dự đoán, vẫn dùng LLM) |
+    # auto (in-house cho intent đã qua cổng chấm điểm) | inhouse_only (không dùng LLM).
+    ai_mode: Literal["off", "shadow", "auto", "inhouse_only"] = "shadow"
+    ai_min_confidence: float = Field(default=0.8, ge=0, le=1)
+    ai_min_precision: float = Field(default=0.95, ge=0, le=1)
+    # Thông báo đẩy (Web Push) cho chuông hẹn giờ khi vào bếp: khóa riêng VAPID P-256
+    # dạng base64url (32 byte). Không cấu hình thì chuông chỉ kêu trong ứng dụng.
+    web_push_vapid_private_key: SecretStr | None = None
+    web_push_subject: str | None = None
 
     @model_validator(mode="after")
     def validate_production_secrets(self) -> "Settings":
+        if (
+            self.app_env in {"staging", "production"}
+            and len(self.jwt_secret.get_secret_value()) < 32
+        ):
+            raise ValueError("BEP_VIET_JWT_SECRET phải dài ít nhất 32 ký tự ngẫu nhiên.")
         if self.app_env == "production" and self.jwt_secret.get_secret_value().startswith(
             "development-only"
         ):
@@ -75,7 +100,8 @@ class Settings(BaseSettings):
             raise ValueError("Production phải cấu hình SMTP hoặc Gmail API để gửi OTP email.")
         if (
             self.app_env == "production"
-            and self.email_provider == "smtp"
+            and self.email_delivery_provider == "smtp"
+            and self.email_enabled
             and not (self.email_use_ssl or self.email_starttls)
         ):
             raise ValueError("Production phải mã hóa kết nối SMTP bằng SSL hoặc STARTTLS.")
@@ -83,7 +109,8 @@ class Settings(BaseSettings):
 
     @property
     def docs_enabled(self) -> bool:
-        return self.app_env != "production"
+        # Tài liệu API chỉ mở khi phát triển trên máy; staging/production đều ẩn.
+        return self.app_env in {"development", "test"}
 
     @property
     def secure_cookies(self) -> bool:
@@ -91,24 +118,40 @@ class Settings(BaseSettings):
 
     @property
     def email_enabled(self) -> bool:
+        if self.email_provider == "auto":
+            return self.gmail_api_configured or self.smtp_configured
         if self.email_provider == "gmail_api":
-            return bool(
-                self.email_gmail_client_id
-                and self.email_gmail_client_secret
-                and self.email_gmail_client_secret.get_secret_value()
-                and self.email_gmail_refresh_token
-                and self.email_gmail_refresh_token.get_secret_value()
-                and self.email_from_address
-            )
-        password = (
-            self.email_smtp_password.get_secret_value() if self.email_smtp_password else ""
+            return self.gmail_api_configured
+        return self.smtp_configured
+
+    @property
+    def gmail_api_configured(self) -> bool:
+        return bool(
+            self.email_gmail_client_id
+            and self.email_gmail_client_secret
+            and self.email_gmail_client_secret.get_secret_value()
+            and self.email_gmail_refresh_token
+            and self.email_gmail_refresh_token.get_secret_value()
+            and self.email_from_address
         )
+
+    @property
+    def smtp_configured(self) -> bool:
+        password = self.email_smtp_password.get_secret_value() if self.email_smtp_password else ""
         return bool(
             self.email_smtp_host
             and self.email_smtp_username
             and password
             and self.email_from_address
         )
+
+    @property
+    def email_delivery_provider(self) -> Literal["smtp", "gmail_api"]:
+        if self.email_provider != "auto":
+            return self.email_provider
+        if self.gmail_api_configured:
+            return "gmail_api"
+        return "smtp"
 
 
 @lru_cache

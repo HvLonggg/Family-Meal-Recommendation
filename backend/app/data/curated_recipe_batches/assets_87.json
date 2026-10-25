@@ -1,0 +1,83 @@
+{
+  "batch": 87,
+  "canvas": {"width": 3840, "height": 2160, "format": "WebP", "background": "transparent"},
+  "native_format": "PNG",
+  "export_master_format": "PNG",
+  "assets": [
+    {
+      "id": "BV762",
+      "slug": "canh-ga-nau-khoai-tay",
+      "native_file": "output/recipe-images/native/canh-ga-nau-khoai-tay.png",
+      "native_pixels": [1374, 1145],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/canh-ga-nau-khoai-tay.png",
+      "export_master_pixels": [3840, 2160],
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/canh-ga-nau-khoai-tay-480.webp", "pixels": [480, 270], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/canh-ga-nau-khoai-tay-960.webp", "pixels": [960, 540], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/canh-ga-nau-khoai-tay-1536.webp", "pixels": [1536, 864], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/canh-ga-nau-khoai-tay-3840.webp", "pixels": [3840, 2160], "has_alpha": true}
+      ]
+    },
+    {
+      "id": "BV763",
+      "slug": "ga-kho-tieu",
+      "native_file": "output/recipe-images/native/ga-kho-tieu.png",
+      "native_pixels": [1536, 1024],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/ga-kho-tieu.png",
+      "export_master_pixels": [3840, 2160],
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/ga-kho-tieu-480.webp", "pixels": [480, 270], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/ga-kho-tieu-960.webp", "pixels": [960, 540], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/ga-kho-tieu-1536.webp", "pixels": [1536, 864], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/ga-kho-tieu-3840.webp", "pixels": [3840, 2160], "has_alpha": true}
+      ]
+    },
+    {
+      "id": "BV764",
+      "slug": "ga-xao-thom-bong-cai",
+      "native_file": "output/recipe-images/native/ga-xao-thom-bong-cai.png",
+      "native_pixels": [1536, 1024],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/ga-xao-thom-bong-cai.png",
+      "export_master_pixels": [3840, 2160],
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/ga-xao-thom-bong-cai-480.webp", "pixels": [480, 270], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/ga-xao-thom-bong-cai-960.webp", "pixels": [960, 540], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/ga-xao-thom-bong-cai-1536.webp", "pixels": [1536, 864], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/ga-xao-thom-bong-cai-3840.webp", "pixels": [3840, 2160], "has_alpha": true}
+      ]
+    },
+    {
+      "id": "BV765",
+      "slug": "thit-ngan-om-sau",
+      "native_file": "output/recipe-images/native/thit-ngan-om-sau.png",
+      "native_pixels": [1312, 1199],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/thit-ngan-om-sau.png",
+      "export_master_pixels": [3840, 2160],
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/thit-ngan-om-sau-480.webp", "pixels": [480, 270], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/thit-ngan-om-sau-960.webp", "pixels": [960, 540], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/thit-ngan-om-sau-1536.webp", "pixels": [1536, 864], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/thit-ngan-om-sau-3840.webp", "pixels": [3840, 2160], "has_alpha": true}
+      ]
+    },
+    {
+      "id": "BV766",
+      "slug": "bun-ngan-mang",
+      "native_file": "output/recipe-images/native/bun-ngan-mang.png",
+      "native_pixels": [1374, 1145],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/bun-ngan-mang.png",
+      "export_master_pixels": [3840, 2160],
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/bun-ngan-mang-480.webp", "pixels": [480, 270], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/bun-ngan-mang-960.webp", "pixels": [960, 540], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/bun-ngan-mang-1536.webp", "pixels": [1536, 864], "has_alpha": true},
+        {"path": "frontend/public/images/recipes/edited/bun-ngan-mang-3840.webp", "pixels": [3840, 2160], "has_alpha": true}
+      ]
+    }
+  ]
+}

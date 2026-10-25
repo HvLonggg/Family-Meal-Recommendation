@@ -9,7 +9,7 @@ from unittest.mock import MagicMock, patch
 import httpx
 import pytest
 
-from app.core.config import get_settings
+from app.core.config import Settings, get_settings
 from app.modules.auth.email import (
     EMAIL_LOGO_CID,
     EmailDeliveryError,
@@ -19,6 +19,60 @@ from app.modules.auth.email import (
     send_support_ticket_notification,
     send_verification_email,
 )
+
+
+def test_auto_email_provider_uses_the_configured_transport() -> None:
+    smtp = Settings(
+        _env_file=None,
+        email_provider="auto",
+        email_smtp_host="smtp.gmail.com",
+        email_smtp_username="sender@example.com",
+        email_smtp_password="smtp-app-password",
+        email_from_address="sender@example.com",
+    )
+    assert smtp.email_enabled is True
+    assert smtp.email_delivery_provider == "smtp"
+
+    gmail_api = Settings(
+        _env_file=None,
+        email_provider="auto",
+        email_smtp_password=None,
+        email_gmail_client_id="client-id",
+        email_gmail_client_secret="client-secret",
+        email_gmail_refresh_token="refresh-token",
+        email_from_address="sender@example.com",
+    )
+    assert gmail_api.email_enabled is True
+    assert gmail_api.email_delivery_provider == "gmail_api"
+
+
+def test_smtp_delivery_status_reports_rejected_credentials(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    import smtplib
+
+    from app.modules.auth import email as auth_email
+
+    monkeypatch.setenv("BEP_VIET_APP_ENV", "development")
+    monkeypatch.setenv("BEP_VIET_EMAIL_PROVIDER", "smtp")
+    monkeypatch.setenv("BEP_VIET_EMAIL_SMTP_HOST", "smtp.gmail.com")
+    monkeypatch.setenv("BEP_VIET_EMAIL_SMTP_USERNAME", "sender@example.com")
+    monkeypatch.setenv("BEP_VIET_EMAIL_SMTP_PASSWORD", "app-password")
+    monkeypatch.setenv("BEP_VIET_EMAIL_FROM_ADDRESS", "sender@example.com")
+
+    def reject_credentials() -> None:
+        raise smtplib.SMTPAuthenticationError(535, b"rejected")
+
+    monkeypatch.setattr(auth_email, "_probe_smtp", reject_credentials)
+    get_settings.cache_clear()
+    try:
+        assert auth_email.email_delivery_status() == (
+            False,
+            "smtp",
+            "smtp_authorization",
+        )
+    finally:
+        get_settings.cache_clear()
 
 
 def test_account_created_email_welcomes_user_and_mentions_support(
@@ -232,6 +286,33 @@ def test_email_image_source_does_not_fetch_arbitrary_or_traversal_paths(
     assert traversal_inline is None
 
 
+def test_meal_email_uses_a_transparent_fallback_size_instead_of_original_photo(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    from app.modules.auth import email as auth_email
+
+    requested: list[str] = []
+
+    def fetch(path: str, max_bytes: int) -> tuple[bytes, str] | None:
+        requested.append(path)
+        return (b"cutout", "image/webp") if path.endswith("-1536.webp") else None
+
+    monkeypatch.setattr(auth_email, "_fetch_public_image", fetch)
+    monkeypatch.setattr(auth_email, "_cached_dish_png", lambda source, max_bytes, compose: b"png")
+
+    source, inline = auth_email._email_image_source(
+        "/images/recipes/BV001.jpg", 0, slug="dish-test"
+    )
+
+    assert source == "cid:bep-viet-meal-0"
+    assert inline == ("bep-viet-meal-0", b"png", "image/png", "dish-test.png")
+    assert requested[:2] == [
+        "/images/recipes/edited/dish-test-1600.webp",
+        "/images/recipes/edited/dish-test-1536.webp",
+    ]
+    assert "/images/recipes/BV001.jpg" not in requested
+
+
 def test_smtp_refusal_is_not_reported_as_success(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setenv("BEP_VIET_EMAIL_SMTP_HOST", "smtp.gmail.com")
     monkeypatch.setenv("BEP_VIET_EMAIL_SMTP_USERNAME", "hvlongg@gmail.com")
@@ -288,7 +369,14 @@ def test_gmail_api_sends_an_otp_over_https(monkeypatch: pytest.MonkeyPatch) -> N
     def handler(request: httpx.Request) -> httpx.Response:
         requests.append(request)
         if request.url.host == "oauth2.googleapis.com":
-            return httpx.Response(200, json={"access_token": "access-1", "expires_in": 3599})
+            return httpx.Response(
+                200,
+                json={
+                    "access_token": "access-1",
+                    "expires_in": 3599,
+                    "scope": "https://www.googleapis.com/auth/gmail.send",
+                },
+            )
         return httpx.Response(200, json={"id": "msg-1"})
 
     _mock_google(monkeypatch, handler)
@@ -315,10 +403,29 @@ def test_gmail_api_sends_an_otp_over_https(monkeypatch: pytest.MonkeyPatch) -> N
         get_settings.cache_clear()
 
 
+def test_gmail_api_accepts_scope_omitted_from_refresh_response(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    _configure_gmail_api(monkeypatch)
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        if request.url.host == "oauth2.googleapis.com":
+            return httpx.Response(200, json={"access_token": "access-1", "expires_in": 3599})
+        return httpx.Response(200, json={"id": "msg-1"})
+
+    _mock_google(monkeypatch, handler)
+    try:
+        send_verification_email(recipient="lan@example.com", code="04281", purpose="registration")
+    finally:
+        get_settings.cache_clear()
+
+
 def test_gmail_api_revoked_refresh_token_is_not_reported_as_success(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     _configure_gmail_api(monkeypatch)
+    monkeypatch.setenv("BEP_VIET_APP_ENV", "development")
+    get_settings.cache_clear()
     _mock_google(
         monkeypatch,
         lambda request: httpx.Response(400, json={"error": "invalid_grant"}),
@@ -337,7 +444,14 @@ def test_gmail_api_rejection_is_not_reported_as_success(monkeypatch: pytest.Monk
 
     def handler(request: httpx.Request) -> httpx.Response:
         if request.url.host == "oauth2.googleapis.com":
-            return httpx.Response(200, json={"access_token": "access-1", "expires_in": 3599})
+            return httpx.Response(
+                200,
+                json={
+                    "access_token": "access-1",
+                    "expires_in": 3599,
+                    "scope": "https://www.googleapis.com/auth/gmail.send",
+                },
+            )
         return httpx.Response(403, json={"error": {"message": "Insufficient Permission"}})
 
     _mock_google(monkeypatch, handler)
@@ -348,3 +462,112 @@ def test_gmail_api_rejection_is_not_reported_as_success(monkeypatch: pytest.Monk
             )
     finally:
         get_settings.cache_clear()
+
+
+def test_gmail_api_refreshes_once_after_an_expired_access_token(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    _configure_gmail_api(monkeypatch)
+    token_requests = 0
+    send_requests = 0
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        nonlocal token_requests, send_requests
+        if request.url.host == "oauth2.googleapis.com":
+            token_requests += 1
+            return httpx.Response(
+                200,
+                json={
+                    "access_token": f"access-{token_requests}",
+                    "expires_in": 3599,
+                    "scope": "https://www.googleapis.com/auth/gmail.send",
+                },
+            )
+        send_requests += 1
+        if send_requests == 1:
+            return httpx.Response(401, json={"error": "invalidCredentials"})
+        return httpx.Response(200, json={"id": "msg-1"})
+
+    _mock_google(monkeypatch, handler)
+    try:
+        send_verification_email(recipient="lan@example.com", code="04281", purpose="registration")
+        assert token_requests == 2
+        assert send_requests == 2
+    finally:
+        get_settings.cache_clear()
+
+
+def test_gmail_api_delivery_status_requires_gmail_send_scope(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    from app.modules.auth import email as auth_email
+
+    _configure_gmail_api(monkeypatch)
+    monkeypatch.setenv("BEP_VIET_APP_ENV", "development")
+    get_settings.cache_clear()
+    _mock_google(
+        monkeypatch,
+        lambda request: httpx.Response(
+            200, json={"access_token": "access-1", "expires_in": 3599, "scope": "openid email"}
+        ),
+    )
+    try:
+        assert auth_email.email_delivery_status() == (
+            False,
+            "gmail_api",
+            "gmail_api_authorization",
+        )
+    finally:
+        get_settings.cache_clear()
+
+
+def test_delivery_errors_are_explained_without_secrets() -> None:
+    import smtplib
+
+    from app.modules.auth.email import EmailDeliveryError, describe_delivery_error
+
+    def wrapped(cause: BaseException) -> EmailDeliveryError:
+        error = EmailDeliveryError("SMTP delivery failed.")
+        error.__cause__ = cause
+        return error
+
+    auth = describe_delivery_error(wrapped(smtplib.SMTPAuthenticationError(535, b"bad")))
+    assert "mật khẩu ứng dụng" in auth
+    assert "Không kết nối" in describe_delivery_error(wrapped(TimeoutError()))
+    assert "refresh token" in describe_delivery_error(
+        EmailDeliveryError("Gmail OAuth token refresh failed: invalid_grant.")
+    )
+    assert describe_delivery_error(RuntimeError("boom")).startswith("Email chưa gửi được:")
+
+
+def test_smtp_send_retries_transient_errors_but_not_bad_credentials(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    import smtplib
+    from email.message import EmailMessage
+
+    from app.modules.auth import email as auth_email
+
+    monkeypatch.setattr(auth_email.time, "sleep", lambda _seconds: None)
+    calls: list[int] = []
+
+    def flaky(_message: EmailMessage) -> None:
+        calls.append(1)
+        if len(calls) < 3:
+            error = auth_email.EmailDeliveryError("SMTP delivery failed.")
+            error.__cause__ = TimeoutError()
+            raise error
+
+    auth_email._with_retries(flaky, EmailMessage())
+    assert len(calls) == 3
+
+    def bad_login(_message: EmailMessage) -> None:
+        calls.append(1)
+        error = auth_email.EmailDeliveryError("SMTP delivery failed.")
+        error.__cause__ = smtplib.SMTPAuthenticationError(535, b"bad credentials")
+        raise error
+
+    calls.clear()
+    with pytest.raises(auth_email.EmailDeliveryError):
+        auth_email._with_retries(bad_login, EmailMessage())
+    assert len(calls) == 1

@@ -1,6 +1,8 @@
+import { UserFacingError } from '@/lib/errors';
+
 const ACCEPTED_TYPES = ['image/jpeg', 'image/png', 'image/webp'];
 
-export class ImageProcessingError extends Error {}
+export class ImageProcessingError extends UserFacingError {}
 
 interface ResizeOptions {
   /** Cạnh dài tối đa (hoặc cạnh của ảnh vuông khi `square`). */

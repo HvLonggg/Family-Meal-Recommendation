@@ -1,0 +1,790 @@
+{
+  "banh-mi-trung": {
+    "name": "Vietnamese egg b\u00e1nh m\u00ec",
+    "aliases": [
+      "Egg sandwiches"
+    ],
+    "category": "Breakfast dishes",
+    "description": "A hot, crispy loaf of bread sandwiched with a soft fried egg, cucumber and carrot pickles; familiar breakfast dish, easy to make at home.",
+    "serving_basis": "Two b\u00e1nh m\u00ec rolls, one per person, with egg and pickled vegetables.",
+    "finished_dish": "A crisp baguette with fragrant soft egg, cool cucumber and sweet-sour carrot for balance.",
+    "serving": "Serve while the bread is crisp. For a vegan version, replace the egg with pan-seared tofu.",
+    "time_note": "Total time includes operation and waiting time; Actual time depends on the kitchen and the size of the ingredients.",
+    "difficulty": "Easy",
+    "region": [
+      "All regions"
+    ],
+    "province": [],
+    "meal_type": [
+      "breakfast",
+      "snack"
+    ],
+    "suggested_pairings": [],
+    "tips": [
+      "Gently squeeze the carrots after pickling so the bread does not become wet.",
+      "Use just enough soy sauce and serve chili on the side so everyone can adjust the heat."
+    ],
+    "recipe_family": "banhmi_trung",
+    "ingredients": [
+      {
+        "name": "Bread",
+        "unit": "loaf",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Eggs",
+        "unit": "piece",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Carrot",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Cucumber",
+        "unit": "piece",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Cilantro",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Cooking oil",
+        "unit": "ml",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Rice vinegar",
+        "unit": "ml",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Sugar",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Soy sauce",
+        "unit": "ml",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Garlic",
+        "unit": "cloves",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Salt",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Ground black pepper",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Fresh chili or chili sauce",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      }
+    ],
+    "preparation_steps": [
+      "Shred the carrot, toss it with vinegar, sugar and chili, and leave for 15 minutes to mellow; squeeze lightly to drain.",
+      "Rinse and slice the cucumber; pick the cilantro leaves. Beat the eggs with salt and pepper.",
+      "Slit the baguettes lengthwise and warm them briefly. Mince the garlic and mix it into the soy sauce."
+    ],
+    "cooking_steps": [
+      "Heat half the oil in a pan, pour in the eggs and cook into a thin omelet; turn, cook until just set and fold.",
+      "Open the baguettes and layer in the egg, cucumber, pickled carrot and cilantro. Drizzle with a little soy sauce, add chili to taste and serve immediately."
+    ],
+    "tags": {
+      "region": [
+        "All regions"
+      ],
+      "province": [],
+      "meal_type": [
+        "breakfast",
+        "snack"
+      ],
+      "dish_type": [
+        "Breakfast",
+        "Bread",
+        "Vietnamese dishes"
+      ],
+      "main_ingredient": [
+        "chicken eggs",
+        "bread"
+      ],
+      "cooking_method": [
+        "bake cakes",
+        "pan-fry"
+      ],
+      "difficulty": "Easy",
+      "suggested_pairings": [],
+      "keywords": [
+        "Vietnamese egg b\u00e1nh m\u00ec",
+        "Egg sandwiches",
+        "have a quick breakfast",
+        "carrot pickles",
+        "chicken eggs",
+        "bread"
+      ],
+      "recipe_family": "banh_mi_trung"
+    },
+    "media_alt_text": "Vietnamese egg b\u00e1nh m\u00ec, a complete B\u1ebfp Vi\u1ec7t dish illustration on a transparent background."
+  },
+  "lau-ga-la-e-phu-yen": {
+    "name": "Phu Yen chicken hotpot with Vietnamese basil",
+    "aliases": [
+      "Chicken hotpot with \u00e9 leaves",
+      "Chicken cooked in green leaves"
+    ],
+    "category": "Chickens, ducks and poultry",
+    "description": "Hot pot of chicken fragrant with eu leaves, cooked with bamboo shoots and mushrooms; dish associated with Phu Yen, often eaten with fresh vermicelli and herbs.",
+    "serving_basis": "One hotpot for four, including the bones and broth.",
+    "finished_dish": "A naturally sweet chicken broth scented with peppery Vietnamese basil, crisp bamboo shoots and tender mushrooms, served hot with rice vermicelli.",
+    "serving": "Keep the hotpot at a gentle simmer, add the basil a little at a time, and serve with fresh rice vermicelli.",
+    "time_note": "Total time includes operation and waiting time; Actual time depends on the kitchen and the size of the ingredients.",
+    "difficulty": "Easy",
+    "region": [
+      "Central Vietnam"
+    ],
+    "province": [
+      "Phu Yen"
+    ],
+    "meal_type": [
+      "dinner",
+      "Shared Meal"
+    ],
+    "suggested_pairings": [],
+    "tips": [
+      "Fresh bamboo shoots need to be boiled and rinsed first; pre-cooked shoots may need less time.",
+      "Add the basil at the end or dip it into the simmering pot to preserve its aroma."
+    ],
+    "recipe_family": "lau_ga_la_e",
+    "ingredients": [
+      {
+        "name": "Free-range chicken",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Vietnamese basil (l\u00e1 \u00e9)",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Fresh bamboo shoots",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Oyster mushrooms",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Fresh rice vermicelli",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Water",
+        "unit": "ml",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Lemongrass",
+        "unit": "piece",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Green bird\u2019s eye chili",
+        "unit": "piece",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Shallots",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Garlic",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Fish sauce",
+        "unit": "ml",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Salt",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Rock sugar",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Cooking oil",
+        "unit": "ml",
+        "notes": "Clean, drain and season to taste."
+      }
+    ],
+    "preparation_steps": [
+      "Clean the chicken and cut it into serving pieces. Rub gently with salt and ginger, rinse and drain.",
+      "Slice the bamboo shoots, boil and rinse them several times; trim the tough ends from the mushrooms.",
+      "Remove wilted basil leaves, rinse gently and drain; reserve the tender leaves for dipping. Bruise the lemongrass and chili."
+    ],
+    "cooking_steps": [
+      "Marinate the chicken with fish sauce, salt, lemongrass and some of the chili for 20 minutes.",
+      "Saut\u00e9 the onion and garlic in oil until fragrant. Stir-fry the chicken until sealed, then add water, lemongrass and the remaining chili. Bring to a boil and lower the heat.",
+      "Simmer for about 30 minutes until the chicken is tender. Add the bamboo shoots and cook for 10 minutes, then add the mushrooms and adjust the seasoning.",
+      "Set the hotpot over a table burner and dip in the basil a little at a time. Serve hot with vermicelli; avoid simmering the basil for long."
+    ],
+    "tags": {
+      "region": [
+        "Central Vietnam"
+      ],
+      "province": [
+        "Phu Yen"
+      ],
+      "meal_type": [
+        "dinner",
+        "Shared Meal"
+      ],
+      "dish_type": [
+        "Hotpot",
+        "Savory dishes",
+        "Vietnamese family dish"
+      ],
+      "main_ingredient": [
+        "free-range chicken",
+        "\u00e9 leaves",
+        "bamboo shoots"
+      ],
+      "cooking_method": [
+        "simmering",
+        "hot pot cooking"
+      ],
+      "difficulty": "Easy",
+      "suggested_pairings": [],
+      "keywords": [
+        "Phu Yen chicken hotpot with Vietnamese basil",
+        "Chicken hotpot with \u00e9 leaves",
+        "Chicken cooked in green leaves",
+        "Phu Yen specialties",
+        "family dinner",
+        "free-range chicken",
+        "\u00e9 leaves",
+        "bamboo shoots",
+        "Phu Yen"
+      ],
+      "recipe_family": "lau_ga_la_e"
+    },
+    "media_alt_text": "Phu Yen chicken hotpot with Vietnamese basil, a complete B\u1ebfp Vi\u1ec7t dish illustration on a transparent background."
+  },
+  "banh-xeo-chay-hoi-an": {
+    "name": "Hoi An vegetarian b\u00e1nh x\u00e8o",
+    "aliases": [
+      "Vegetarian mushroom pancakes",
+      "Central region vegetarian pancakes"
+    ],
+    "category": "Vegetarian dishes",
+    "description": "Small pancakes with crispy golden edges, filled with mushrooms, tofu and bean sprouts; Serve hot with raw vegetables, rice paper and sweet and sour soy sauce.",
+    "serving_basis": "Four small portions, one or two pancakes each depending on pan size.",
+    "finished_dish": "Thin golden pancakes with crisp edges, tender fragrant mushroom and tofu filling, and crunchy bean sprouts.",
+    "serving": "Wrap pieces of pancake with fresh herbs in rice paper and dip in soy sauce. For a vegan meal, check that all seasonings are animal-free.",
+    "time_note": "Total time includes operation and waiting time; Actual time depends on the kitchen and the size of the ingredients.",
+    "difficulty": "Easy",
+    "region": [
+      "Central Vietnam"
+    ],
+    "province": [
+      "Quang Nam"
+    ],
+    "meal_type": [
+      "lunch",
+      "dinner",
+      "snack"
+    ],
+    "suggested_pairings": [],
+    "tips": [
+      "Rest the batter and stir it again before each pancake.",
+      "Use a hot pan with a thin film of oil and avoid overfilling.",
+      "Use soy sauce instead of fish sauce; check the label of any premixed batter."
+    ],
+    "recipe_family": "vegetarian_banh xeo",
+    "ingredients": [
+      {
+        "name": "Rice flour",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Coconut milk",
+        "unit": "ml",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Water",
+        "unit": "ml",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Oyster mushrooms",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Firm tofu",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Mung bean sprouts",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Shallots",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Scallions",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Turmeric powder",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Salt",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Cooking oil",
+        "unit": "ml",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Lettuce and fresh herbs",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Rice paper",
+        "unit": "pieces",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Soy sauce",
+        "unit": "ml",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Lime juice",
+        "unit": "ml",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Sugar",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Fresh chili",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      }
+    ],
+    "preparation_steps": [
+      "Whisk the batter with coconut milk, water, turmeric and salt until smooth; rest for 20 minutes.",
+      "Shred the mushrooms and gently press the tofu before cutting it into strips; rinse the bean sprouts. Finely slice the scallions, rinse the herbs and drain.",
+      "Mix the soy sauce with lime, sugar and minced chili; balance it to a gentle sweet-sour taste."
+    ],
+    "cooking_steps": [
+      "Saut\u00e9 the shallots in a little oil until fragrant, then stir-fry the mushrooms and tofu until just firm. Set aside.",
+      "Heat a small pan and brush with a thin layer of oil. Stir the batter, pour in enough to coat the pan thinly, then add the mushroom, tofu and sprouts to one half.",
+      "Cover for 1\u20132 minutes, then uncover and cook over medium heat until the edges crisp. Fold in half and transfer to a plate; repeat with the remaining batter.",
+      "Serve hot with fresh herbs, rice paper and soy dipping sauce. Wrap bite-sized portions."
+    ],
+    "tags": {
+      "region": [
+        "Central Vietnam"
+      ],
+      "province": [
+        "Quang Nam"
+      ],
+      "meal_type": [
+        "lunch",
+        "dinner",
+        "snack"
+      ],
+      "dish_type": [
+        "Vegetarian dishes",
+        "Central region cake",
+        "Vietnamese family dish"
+      ],
+      "main_ingredient": [
+        "rice flour",
+        "mushrooms",
+        "tofu"
+      ],
+      "cooking_method": [
+        "rinse the pan",
+        "pan-fry"
+      ],
+      "difficulty": "Easy",
+      "suggested_pairings": [],
+      "keywords": [
+        "Hoi An vegetarian b\u00e1nh x\u00e8o",
+        "Vegetarian mushroom pancakes",
+        "Central region vegetarian pancakes",
+        "vegetarian pancakes",
+        "Hoi An vegetarian dishes",
+        "Easy to cook vegetarian dish",
+        "rice flour",
+        "mushrooms",
+        "tofu",
+        "Quang Nam"
+      ],
+      "recipe_family": "banh_xeo_chay"
+    },
+    "media_alt_text": "Hoi An vegetarian b\u00e1nh x\u00e8o, a complete B\u1ebfp Vi\u1ec7t dish illustration on a transparent background."
+  },
+  "cao-lau-chay-hoi-an": {
+    "name": "Cao Lau Vegetarian Hoi An",
+    "aliases": [
+      "Cao Lau Hoi An vegetarian",
+      "Vegetarian Cao Lau noodles"
+    ],
+    "category": "Vegetarian dishes",
+    "description": "Tough Cao Lau fibers served with green vegetables, mushrooms and vegetable protein simmered in soy sauce; Add a little sauce to keep the dry mixed dish of Hoi An.",
+    "serving_basis": "4 medium bowls; Reduce fiber if used as a dish in a multi-course meal.",
+    "finished_dish": "Chewy noodles, fresh green vegetables, mushrooms and vegetarian ribs rich in soy sauce; The sauce is just enough, the ram cake stays crispy.",
+    "serving": "Serve in a bowl with green vegetables, bean sprouts, ram cake and a little simmering sauce; Use immediately after mixing.",
+    "time_note": "Total time includes operation and waiting time; Actual time depends on the kitchen and the size of the ingredients.",
+    "difficulty": "Easy",
+    "region": [
+      "Central Vietnam"
+    ],
+    "province": [
+      "Quang Nam"
+    ],
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
+    "suggested_pairings": [],
+    "tips": [
+      "Choose Cao Lau fibers with ingredients suitable for vegetarians; Vegetarian mushroom sauce instead of regular oyster sauce.",
+      "Don't add too much broth: Cao Lau is a mixed dish with little sauce.",
+      "Just break the ram cake before eating to keep it crispy."
+    ],
+    "recipe_family": "Cao_lau_chay",
+    "ingredients": [
+      {
+        "name": "Cao Lau yarn",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Vegetarian spare ribs",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "King oyster mushrooms",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Mung bean sprouts",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Young mustard greens and herbs",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Fresh coconut water",
+        "unit": "ml",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Soy sauce",
+        "unit": "ml",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Vegetarian mushroom sauce",
+        "unit": "ml",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Sugar",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Garlic",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Scallions",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Cooking oil",
+        "unit": "ml",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Cao Lau ram cake or grilled rice paper",
+        "unit": "pieces",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Fresh chili",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      }
+    ],
+    "preparation_steps": [
+      "Soak vegetarian short ribs according to package instructions, squeeze dry; Thickly sliced \u200b\u200bmushrooms.",
+      "Wash vegetables and bean sprouts and drain. Separating Cao Lau fibers; Steam or blanch quickly according to the fiber's instructions.",
+      "Mince garlic, chop green onions; Mix soy sauce, vegetarian mushroom sauce and sugar with coconut water."
+    ],
+    "cooking_steps": [
+      "Pan-fry the vegetarian short ribs until lightly golden, then take them out; fry garlic until fragrant.",
+      "Put the mushrooms on the island, add vegetarian ribs and a mixture of coconut water and soy sauce; Simmer over low heat until the sauce coats the ingredients.",
+      "Divide vegetables and bean sprouts into the bottom of the bowl, place Cao Lau on top; Add mushrooms, vegetarian ribs and a little simmering sauce.",
+      "Sprinkle with green onions, add chili as desired and break the ram cake onto the surface. Mix lightly when eating."
+    ],
+    "tags": {
+      "region": [
+        "Central Vietnam"
+      ],
+      "province": [
+        "Quang Nam"
+      ],
+      "meal_type": [
+        "lunch",
+        "dinner"
+      ],
+      "dish_type": [
+        "Vegetarian dishes",
+        "Mixed noodles",
+        "Hoi An specialty"
+      ],
+      "main_ingredient": [
+        "Cao Lau yarn",
+        "mushrooms",
+        "Vegetarian spare ribs"
+      ],
+      "cooking_method": [
+        "simmer until glazed",
+        "toss"
+      ],
+      "difficulty": "Easy",
+      "suggested_pairings": [],
+      "keywords": [
+        "Cao Lau Vegetarian Hoi An",
+        "Cao Lau Hoi An vegetarian",
+        "Vegetarian Cao Lau noodles",
+        "vegetarian high floor",
+        "Hoi An vegetarian dishes",
+        "Easy to cook vegetarian dish",
+        "Cao Lau yarn",
+        "mushrooms",
+        "Vegetarian spare ribs",
+        "Quang Nam"
+      ],
+      "recipe_family": "cao_lau_chay"
+    },
+    "media_alt_text": "Complete Hoi An Vegetarian Cao Lau, new illustration by Bep Viet, transparent background."
+  },
+  "va-tron-hoa-mau-chay-hue": {
+    "name": "Fig mixed with Hue vegetarian flowers",
+    "aliases": [
+      "Hue vegetarian fig salad",
+      "Vegetarian mixed fig"
+    ],
+    "category": "Vegetarian dishes",
+    "description": "Lightly boiled figs mixed with tofu, mushrooms, vegetables and herbs; Mild sour and salty taste, served with crispy rice paper according to Hue vegetarian dishes.",
+    "serving_basis": "4 side dishes; Set the rice paper aside to crisp up.",
+    "finished_dish": "The soft and fleshy fig pieces are still intact, mixed with a mild sour and salty taste; Tofu and mushrooms make the dish more flavorful, and herbs keep the smell fresh.",
+    "serving": "Serve as a side dish or vegetarian mix; scoop with rice paper. Set aside rice paper, peanuts and sesame until serving time.",
+    "time_note": "Total time includes operation and waiting time; Actual time depends on the kitchen and the size of the ingredients.",
+    "difficulty": "Easy",
+    "region": [
+      "Central Vietnam"
+    ],
+    "province": [
+      "Hue"
+    ],
+    "meal_type": [
+      "lunch",
+      "dinner",
+      "side dish"
+    ],
+    "suggested_pairings": [],
+    "tips": [
+      "Let the figs cool and the ingredients dry before mixing so the dish doesn't become mushy.",
+      "Add water and mix a little at a time; The astringency and moistness of figs varies with age.",
+      "Mix close to mealtime; Keep the rice paper, peanuts and sesame seeds separate for crunchiness."
+    ],
+    "recipe_family": "va_tron_chay",
+    "ingredients": [
+      {
+        "name": "Fresh figs",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Tofu",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Cat mushrooms",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Carrot",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Cucumber",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Vietnamese coriander",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Fresh herbs",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Roasted peanuts",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Toasted sesame",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Toasted rice crackers",
+        "unit": "pieces",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Soy sauce",
+        "unit": "ml",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Lime juice",
+        "unit": "ml",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Sugar",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Ginger",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Fresh chili",
+        "unit": "g",
+        "notes": "Clean, drain and season to taste."
+      },
+      {
+        "name": "Cooking oil",
+        "unit": "ml",
+        "notes": "Clean, drain and season to taste."
+      }
+    ],
+    "preparation_steps": [
+      "Wash the figs, boil them until soft, then let them cool. Peel, slice and press gently to remove water, do not crush.",
+      "Soak the mushrooms until they bloom, wash them and then slice them. Sliced \u200b\u200bcarrots and cucumbers; Wash and chop herbs.",
+      "Cut tofu into small pieces, saute until golden. Mix soy sauce, lemon, sugar, minced ginger and chili into a mixture."
+    ],
+    "cooking_steps": [
+      "Stir-fry a little ginger, add mushrooms and stir-fry quickly until cooked; let it cool down.",
+      "Mix figs with tofu, mushrooms, carrots and cucumbers. Sprinkle with water and mix a little at a time, stir gently and taste again.",
+      "Add herbs and coriander last. Sprinkle with peanuts and sesame seeds; Serve with grilled rice paper immediately upon completion."
+    ],
+    "tags": {
+      "region": [
+        "Central Vietnam"
+      ],
+      "province": [
+        "Hue"
+      ],
+      "meal_type": [
+        "lunch",
+        "dinner",
+        "side dish"
+      ],
+      "dish_type": [
+        "Vegetarian dishes",
+        "Mixed noodle dish",
+        "Hue cuisine"
+      ],
+      "main_ingredient": [
+        "fig fruit",
+        "tofu",
+        "mushrooms"
+      ],
+      "cooking_method": [
+        "boil",
+        "toss"
+      ],
+      "difficulty": "Easy",
+      "suggested_pairings": [],
+      "keywords": [
+        "Fig mixed with Hue vegetarian flowers",
+        "Hue vegetarian fig salad",
+        "Vegetarian mixed fig",
+        "Hue mixed fig",
+        "Vegetarian fig salad",
+        "Central vegetarian dishes",
+        "fig fruit",
+        "tofu",
+        "mushrooms",
+        "Hue"
+      ],
+      "recipe_family": "va_tron_chay"
+    },
+    "media_alt_text": "Complete Hue vegetarian flower mixed fig, new illustration by Bep Viet, transparent background separation."
+  }
+}

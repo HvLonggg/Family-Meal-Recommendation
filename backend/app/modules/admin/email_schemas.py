@@ -4,9 +4,27 @@ from uuid import UUID
 
 from pydantic import BaseModel, ConfigDict, EmailStr, Field, field_validator, model_validator
 
-MealType = Literal["lunch", "dinner"]
+MealType = Literal["breakfast", "lunch", "dinner"]
 MealEmailStatus = Literal["sending", "sent", "failed"]
 RecipientSource = Literal["user", "support", "new"]
+EmailProvider = Literal["smtp", "gmail_api"]
+EmailDeliveryReason = Literal[
+    "ready",
+    "smtp_unconfigured",
+    "smtp_authorization",
+    "smtp_unreachable",
+    "gmail_api_unconfigured",
+    "gmail_api_authorization",
+    "gmail_api_unreachable",
+    "gmail_api_rate_limited",
+    "gmail_api_temporarily_unavailable",
+]
+
+
+class MealSuggestionDeliveryStatus(BaseModel):
+    ready: bool
+    provider: EmailProvider
+    reason_code: EmailDeliveryReason
 
 
 class MealSuggestionSendRequest(BaseModel):
@@ -94,6 +112,20 @@ class MealSuggestionSendResponse(BaseModel):
     data: list[MealSuggestionEmailResponse]
     sent: int
     failed: int
+    # Số email đã xếp hàng gửi ở nền; trạng thái cuối xem trong lịch sử.
+    queued: int = 0
+
+
+class MealSuggestionRecipient(BaseModel):
+    email: EmailStr
+    name: str
+    last_sent_at: datetime | None
+    sent_count: int
+
+
+class MealSuggestionRecipientListResponse(BaseModel):
+    data: list[MealSuggestionRecipient]
+    total: int
 
 
 class MealSuggestionRecipientLookup(BaseModel):

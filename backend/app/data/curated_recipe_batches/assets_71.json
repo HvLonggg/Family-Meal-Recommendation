@@ -1,0 +1,258 @@
+{
+  "batch": 71,
+  "canvas": {
+    "width": 3840,
+    "height": 2160,
+    "format": "WebP",
+    "background": "transparent"
+  },
+  "native_format": "PNG",
+  "export_master_format": "PNG",
+  "assets": [
+    {
+      "id": "BV681",
+      "slug": "com-ga-xoi-mo",
+      "native_file": "output/recipe-images/native/com-ga-xoi-mo.png",
+      "native_pixels": [
+        1402,
+        1122
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/com-ga-xoi-mo.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/com-ga-xoi-mo-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/com-ga-xoi-mo-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/com-ga-xoi-mo-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/com-ga-xoi-mo-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "id": "BV682",
+      "slug": "canh-ga-nhoi-com",
+      "native_file": "output/recipe-images/native/canh-ga-nhoi-com.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/canh-ga-nhoi-com.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/canh-ga-nhoi-com-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/canh-ga-nhoi-com-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/canh-ga-nhoi-com-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/canh-ga-nhoi-com-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "id": "BV683",
+      "slug": "chim-cau-bam-xuc-phong-tom",
+      "native_file": "output/recipe-images/native/chim-cau-bam-xuc-phong-tom.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/chim-cau-bam-xuc-phong-tom.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/chim-cau-bam-xuc-phong-tom-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/chim-cau-bam-xuc-phong-tom-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/chim-cau-bam-xuc-phong-tom-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/chim-cau-bam-xuc-phong-tom-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "id": "BV684",
+      "slug": "vit-om-chuoi-dau",
+      "native_file": "output/recipe-images/native/vit-om-chuoi-dau.png",
+      "native_pixels": [
+        1312,
+        1199
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/vit-om-chuoi-dau.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/vit-om-chuoi-dau-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/vit-om-chuoi-dau-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/vit-om-chuoi-dau-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/vit-om-chuoi-dau-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "id": "BV685",
+      "slug": "canh-ga-dau-trang-khoai-mon",
+      "native_file": "output/recipe-images/native/canh-ga-dau-trang-khoai-mon.png",
+      "native_pixels": [
+        1424,
+        1104
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/canh-ga-dau-trang-khoai-mon.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/canh-ga-dau-trang-khoai-mon-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/canh-ga-dau-trang-khoai-mon-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/canh-ga-dau-trang-khoai-mon-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/canh-ga-dau-trang-khoai-mon-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    }
+  ]
+}

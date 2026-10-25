@@ -5,6 +5,7 @@ from app.modules.admin.router import router as admin_router
 from app.modules.articles.router import router as articles_router
 from app.modules.assistant.router import router as assistant_router
 from app.modules.auth.router import router as auth_router
+from app.modules.cooking.router import router as cooking_router
 from app.modules.favorites.router import router as favorites_router
 from app.modules.health.router import router as health_router
 from app.modules.planner.router import router as planner_router
@@ -19,6 +20,7 @@ api_router.include_router(auth_router, tags=["auth"])
 api_router.include_router(recipes_router, tags=["recipes"])
 api_router.include_router(favorites_router, tags=["favorites"])
 api_router.include_router(planner_router, tags=["planner"])
+api_router.include_router(cooking_router, tags=["cooking"])
 api_router.include_router(saved_meals_router, tags=["saved-meals"])
 api_router.include_router(account_router, tags=["account"])
 api_router.include_router(articles_router, tags=["articles"])

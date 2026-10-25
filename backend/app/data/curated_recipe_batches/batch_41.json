@@ -1,0 +1,1465 @@
+{
+  "batch": 41,
+  "description": "Năm món vùng miền được kiểm chứng qua nguồn du lịch và báo chí Việt Nam, biên tập thành công thức gia đình và có ảnh Bếp Việt nền trong suốt.",
+  "recipes": [
+    {
+      "id": "BV531",
+      "slug": "bun-bo-cay-bac-lieu",
+      "name": "Bún bò cay Bạc Liêu",
+      "aliases": [
+        "Bún bò cay xứ Bạc Liêu",
+        "Bún bò sa tế Bạc Liêu"
+      ],
+      "region": [
+        "Nam"
+      ],
+      "province": [
+        "Bạc Liêu",
+        "Đồng bằng sông Cửu Long"
+      ],
+      "category": "Món nước",
+      "meal_type": [
+        "bữa sáng",
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Bốn tô bún vừa, mỗi tô có nước dùng cay, thịt bò và rau quế; gia giảm sa tế theo sức ăn cay.",
+      "prep_time": 30,
+      "cook_time": 105,
+      "passive_time": 0,
+      "description": "Bún bò cay Bạc Liêu nổi bật với nước dùng vàng sẫm, vị cay thơm từ sa tế và những miếng thịt bò mềm ăn cùng bún trắng. Bếp Việt biên tập mẻ gia đình theo hướng nước dùng gọn béo, giữ rau quế, chanh và muối ớt làm phần ăn kèm đặc trưng.",
+      "finished_dish": "Tô bún nóng có nước dùng màu vàng cam tự nhiên, thịt bò mềm nhưng còn thớ, bún trắng và mùi rau quế; vị cay có thể điều chỉnh riêng bằng sa tế và ớt.",
+      "serving": "Chần bún, xếp thịt bò rồi chan nước dùng đang sôi. Dọn với rau quế, chanh và chén muối ớt; thêm sa tế tại bàn để mỗi người tự chọn độ cay.",
+      "tips": [
+        "Chần xương và thịt nhanh rồi rửa sạch trước khi nấu để nước dùng ít bọt và mùi hơn.",
+        "Phi sa tế ở lửa nhỏ, chỉ dùng lượng vừa đủ để tạo mùi và màu; không để ớt cháy đắng.",
+        "Vớt bắp bò khi vừa mềm, để nguội bớt rồi thái ngang thớ; giữ nồi nước dùng sôi lăn tăn để thịt không khô."
+      ],
+      "dish_type": [
+        "Món nước",
+        "Đặc sản Bạc Liêu"
+      ],
+      "main_ingredient": [
+        "bún",
+        "thịt bò",
+        "sa tế"
+      ],
+      "cooking_method": [
+        "ninh nước dùng",
+        "hầm thịt bò",
+        "phi sa tế"
+      ],
+      "search_terms": [
+        "bún bò cay Bạc Liêu",
+        "bún bò sa tế miền Tây",
+        "bún bò cay Nam Bộ",
+        "món Bạc Liêu"
+      ],
+      "spicy_level": 3,
+      "image_alt": "Tô bún bò cay Bạc Liêu trong bát sứ trắng, có bún, thịt bò, nước dùng vàng đỏ, rau quế và chanh; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 2 giờ 15 phút, phần lớn là thời gian ninh xương và làm mềm thịt bò.",
+      "total_time": 135,
+      "suggested_pairings": [
+        "Rau quế",
+        "Chanh tươi",
+        "Muối ớt"
+      ],
+      "width": 3840,
+      "height": 2160,
+      "recipe_family": "bac_lieu_spicy_beef_noodles",
+      "time_unit": "minute",
+      "ingredients": [
+        {
+          "name": "Bắp bò",
+          "quantity": 500,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn miếng có gân mảnh; buộc gọn nếu miếng lớn.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Xương bò",
+          "quantity": 500,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chặt miếng vừa để ninh nước dùng.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Bún tươi",
+          "quantity": 800,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chần nhanh trước khi chia tô.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Sả",
+          "quantity": 60,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Đập dập; giữ lại một ít để thái mỏng nếu thích.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 35,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Sa tế",
+          "quantity": 30,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Lượng khởi điểm; giảm nếu ăn cay nhẹ.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 7
+        },
+        {
+          "name": "Dầu màu điều",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Tùy chọn để tạo sắc vàng cam dịu.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm sau khi nước dùng đã trong.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 9
+        },
+        {
+          "name": "Muối",
+          "quantity": 9,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Chia để chần và nêm nước dùng.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 10
+        },
+        {
+          "name": "Đường",
+          "quantity": 8,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Điều chỉnh vừa đủ cân vị.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 11
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "other",
+          "notes": "Dùng phi sả, hành, tỏi và sa tế.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 2500,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Có thể châm thêm nước sôi khi ninh.",
+          "scaling_rule": "vessel_dependent",
+          "sequence": 13
+        },
+        {
+          "name": "Rau quế",
+          "quantity": 80,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Rửa sạch, để ráo.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 14
+        },
+        {
+          "name": "Chanh",
+          "quantity": 2,
+          "unit": "quả",
+          "role": "garnish",
+          "notes": "Cắt múi để vắt tại bàn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 15
+        },
+        {
+          "name": "Ớt tươi",
+          "quantity": 10,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng làm muối ớt hoặc thêm riêng.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 16
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa xương và bắp bò. Chần riêng trong nước sôi 3 phút, đổ bỏ nước chần rồi rửa sạch bọt bám."
+        },
+        {
+          "step": 2,
+          "instruction": "Đập dập sả, băm hành tím và tỏi. Rửa rau quế, chanh và ớt; để ráo."
+        },
+        {
+          "step": 3,
+          "instruction": "Chuẩn bị nồi nước dùng, bún và dụng cụ gắp thịt chín riêng với thịt sống để tránh nhiễm chéo."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Cho xương bò, bắp bò, sả và nước vào nồi. Đun sôi rồi hạ nhỏ lửa, hớt bọt; ninh lăn tăn khoảng 75–90 phút đến khi thịt mềm."
+        },
+        {
+          "step": 2,
+          "instruction": "Vớt bắp bò ra đĩa sạch, để nguội bớt rồi thái ngang thớ. Tiếp tục ninh xương thêm 15 phút, sau đó lọc hoặc vớt xương và sả."
+        },
+        {
+          "step": 3,
+          "instruction": "Phi hành, tỏi và phần sả băm với dầu. Cho sa tế vào đảo nhanh ở lửa nhỏ; thêm dầu màu điều nếu dùng, rồi múc một vá nước dùng vào chảo."
+        },
+        {
+          "step": 4,
+          "instruction": "Đổ hỗn hợp sa tế vào nồi, nêm nước mắm, muối và đường. Giữ sôi nhẹ 5 phút, nếm lại và điều chỉnh độ cay."
+        },
+        {
+          "step": 5,
+          "instruction": "Chần bún qua nước sôi, chia vào tô, xếp thịt bò và chan nước dùng thật nóng. Dọn ngay cùng rau quế, chanh và muối ớt."
+        }
+      ],
+      "keywords": [
+        "Bạc Liêu",
+        "bún bò cay",
+        "sa tế",
+        "thịt bò",
+        "rau quế"
+      ],
+      "tags": [
+        "món miền Nam",
+        "đặc sản Bạc Liêu",
+        "món nước",
+        "cay"
+      ],
+      "sources": [
+        {
+          "url": "https://vnexpress.net/bun-bo-cay-bac-lieu-2348508.html",
+          "publisher": "VnExpress",
+          "title": "Bún bò cay Bạc Liêu",
+          "use": "Đối chiếu sắc vàng sẫm, bún trắng, thịt bò, rau quế, chanh và cách nấu thịt bò với sa tế; lượng gia đình do Bếp Việt biên tập.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://www.sggp.org.vn/ve-bac-lieu-an-bun-bo-cay-post98265.html",
+          "publisher": "Báo Sài Gòn Giải Phóng",
+          "title": "Về Bạc Liêu ăn bún bò cay",
+          "use": "Đối chiếu nhận diện món gắn với Bạc Liêu và phong cách phục vụ Nam Bộ.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "250 g bắp bò, 400 g bún",
+            "instruction": "Giảm sa tế trước, nếm nước dùng cuối cùng rồi mới tăng cay."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.25,
+            "example": "750 g bắp bò, 1,2 kg xương bò",
+            "instruction": "Ninh trong nồi đủ rộng; châm nước sôi nếu mực nước giảm nhiều."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/bun-bo-cay-bac-lieu-960.webp",
+          "page_url": "https://vnexpress.net/bun-bo-cay-bac-lieu-2348508.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới cho Bếp Việt; nguồn chỉ dùng để biên tập và xác minh đặc trưng món.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Tô bún bò cay Bạc Liêu trong bát sứ trắng, có bún, thịt bò, nước dùng vàng đỏ, rau quế và chanh; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh minh họa Bếp Việt tạo mới; công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bản gia đình dùng sa tế nêm chủ động; độ cay và màu nước dùng thay đổi theo loại sa tế.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để chốt độ cay, tỷ lệ xương-thịt và thời gian mềm của bắp bò."
+        ]
+      }
+    },
+    {
+      "id": "BV532",
+      "slug": "banh-chung-den-lang-son",
+      "name": "Bánh chưng đen Lạng Sơn",
+      "aliases": [
+        "Bánh chưng đen người Tày",
+        "Bánh chưng đen xứ Lạng"
+      ],
+      "region": [
+        "Bắc"
+      ],
+      "province": [
+        "Lạng Sơn",
+        "Bắc Sơn"
+      ],
+      "category": "Món ăn vặt",
+      "meal_type": [
+        "dịp Tết",
+        "bữa sáng",
+        "bữa nhẹ"
+      ],
+      "difficulty": "Khó",
+      "servings": 8,
+      "serving_basis": "Một bánh vuông cỡ gia đình, cắt thành 8 miếng; dùng nóng hoặc áp chảo lại sau khi bảo quản lạnh.",
+      "prep_time": 60,
+      "cook_time": 660,
+      "passive_time": 480,
+      "description": "Bánh chưng đen là biến thể Tày của Lạng Sơn: nếp được ngâm với nước tro thực vật đã lọc kỹ, sau đó gói cùng đỗ xanh và thịt lợn trong lá dong. Bếp Việt mô tả cách làm mẻ gia đình; chỉ dùng nước tro có nguồn gốc dùng cho thực phẩm, không tự đốt cây lạ để lấy tro.",
+      "finished_dish": "Bánh vuông có lớp nếp đen bóng, dẻo thơm, nhân đỗ vàng bùi và thịt lợn mềm; mùi lá dong và tiêu thoảng nhẹ, màu nếp không phải do cháy.",
+      "serving": "Để bánh nghỉ sau khi vớt, ép nhẹ cho ráo rồi cắt bằng dao sạch. Dùng cùng dưa hành hoặc dưa góp; phần còn lại làm lạnh sớm và hâm nóng kỹ trước khi ăn.",
+      "tips": [
+        "Chỉ sử dụng nước tro thực phẩm có nhãn hoặc nguồn xác nhận; không dùng tro không rõ loại cây, lẫn tạp chất hay tro có hóa chất.",
+        "Ngâm đỗ và nếp riêng; gói nhân cân giữa để bánh có tiết diện đều và chín đồng nhất.",
+        "Giữ bánh ngập nước trong suốt thời gian luộc, châm thêm nước sôi và duy trì sôi nhẹ; không để nồi cạn."
+      ],
+      "dish_type": [
+        "Bánh nếp truyền thống",
+        "Đặc sản người Tày"
+      ],
+      "main_ingredient": [
+        "gạo nếp",
+        "đỗ xanh",
+        "thịt lợn"
+      ],
+      "cooking_method": [
+        "ngâm nếp nước tro thực phẩm",
+        "gói lá dong",
+        "luộc bánh lâu"
+      ],
+      "search_terms": [
+        "bánh chưng đen Lạng Sơn",
+        "bánh chưng đen người Tày",
+        "bánh chưng Bắc Sơn",
+        "bánh nếp đen nhân đỗ thịt"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Bánh chưng đen Lạng Sơn gói lá dong xanh, một phần cắt lộ nếp đen cùng nhân đỗ xanh và thịt lợn; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 20 giờ, gồm 8 giờ ngâm nếp và 10–12 giờ luộc bánh; có thể ngâm nếp qua đêm.",
+      "total_time": 1200,
+      "suggested_pairings": [
+        "Dưa hành",
+        "Dưa góp",
+        "Trà nóng"
+      ],
+      "width": 3840,
+      "height": 2160,
+      "recipe_family": "lang_son_black_chung_cake",
+      "time_unit": "minute",
+      "ingredients": [
+        {
+          "name": "Gạo nếp",
+          "quantity": 1000,
+          "unit": "g",
+          "role": "main",
+          "notes": "Vo sạch; ngâm riêng trong nước tro thực phẩm đã lọc.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Nước tro thực phẩm đã lọc",
+          "quantity": 1200,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Chỉ dùng sản phẩm có nguồn gốc thực phẩm xác nhận; pha theo hướng dẫn của nhà cung cấp.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 2
+        },
+        {
+          "name": "Đỗ xanh cà vỏ",
+          "quantity": 300,
+          "unit": "g",
+          "role": "main",
+          "notes": "Ngâm mềm, hấp chín và tán dập vừa phải.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Thịt ba chỉ",
+          "quantity": 450,
+          "unit": "g",
+          "role": "main",
+          "notes": "Cắt dải dài vừa nhân, không quá nạc.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Hành khô",
+          "quantity": 25,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhỏ để ướp nhân.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Muối",
+          "quantity": 14,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Chia cho nếp, đỗ và nhân.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 6
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm nhân thịt.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 7
+        },
+        {
+          "name": "Lá dong",
+          "quantity": 8,
+          "unit": "lá",
+          "role": "wrapping",
+          "notes": "Chọn lá bản rộng, rửa sạch và hơ mềm.",
+          "scaling_rule": "vessel_dependent",
+          "sequence": 8
+        },
+        {
+          "name": "Lạt buộc",
+          "quantity": 8,
+          "unit": "sợi",
+          "role": "wrapping",
+          "notes": "Ngâm mềm trước khi gói.",
+          "scaling_rule": "vessel_dependent",
+          "sequence": 9
+        },
+        {
+          "name": "Nước luộc",
+          "quantity": 8000,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Đổ ngập bánh và châm thêm nước sôi trong quá trình nấu.",
+          "scaling_rule": "vessel_dependent",
+          "sequence": 10
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Vo nếp, ngâm 8 giờ trong nước tro thực phẩm đã lọc theo đúng hướng dẫn của nguồn cung cấp. Để ráo; không dùng nước tro tự làm từ cây không xác định."
+        },
+        {
+          "step": 2,
+          "instruction": "Ngâm đỗ xanh cho mềm, hấp chín rồi tán dập. Ướp thịt với hành khô, tiêu và một phần muối."
+        },
+        {
+          "step": 3,
+          "instruction": "Rửa lá dong, hơ nhẹ cho mềm rồi lau khô. Ngâm lạt buộc; chuẩn bị nồi cao đủ đặt bánh nằm ngang."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Trộn nếp đã ráo với phần muối còn lại. Chia nếp, đỗ và thịt thành phần đều nhau cho một bánh vuông."
+        },
+        {
+          "step": 2,
+          "instruction": "Xếp lá dong thành khuôn, trải một lớp nếp, đặt đỗ và thịt ở giữa, phủ đỗ rồi nếp. Gấp kín thành bánh vuông và buộc chắc tay, không siết quá chặt."
+        },
+        {
+          "step": 3,
+          "instruction": "Xếp bánh vào nồi, đổ nước ngập ít nhất 3–4 cm. Đun sôi rồi giữ lửa vừa nhỏ 10–12 giờ; châm nước sôi để bánh luôn ngập."
+        },
+        {
+          "step": 4,
+          "instruction": "Vớt bánh, rửa nhanh lớp lá bên ngoài, để ráo và đặt vật nặng ép nhẹ 2–3 giờ. Để nguội trước khi cắt; bảo quản lạnh phần chưa dùng."
+        }
+      ],
+      "keywords": [
+        "bánh chưng đen",
+        "Lạng Sơn",
+        "người Tày",
+        "nếp nhuộm nước tro",
+        "bánh Tết"
+      ],
+      "tags": [
+        "món miền Bắc",
+        "ẩm thực người Tày",
+        "bánh truyền thống",
+        "dịp Tết"
+      ],
+      "sources": [
+        {
+          "url": "https://dantoc.vietnamtourism.gov.vn/banh-chung-den-huong-vi-tet-doc-dao-cua-nguoi-tay-o-lang-son/",
+          "publisher": "Trung tâm Thông tin du lịch, Cục Du lịch Quốc gia Việt Nam",
+          "title": "Bánh chưng đen – Hương vị Tết độc đáo của người Tày ở Lạng Sơn",
+          "use": "Đối chiếu biến thể Tày, nước tro cây núc nác/vỏ cây muối, nhân thịt-đỗ, lá dong và thời gian luộc; bổ sung lưu ý chỉ dùng nước tro đạt chuẩn thực phẩm.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://baolangson.vn/am-thuc-xu-lang/606940-dua-banh-chung-den-thanh-san-pham-du-lich.html",
+          "publisher": "Báo Lạng Sơn",
+          "title": "Đưa bánh chưng đen thành sản phẩm du lịch",
+          "use": "Đối chiếu quy trình ngâm, gói, luộc bánh trong thực hành địa phương.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 8,
+        "targets": [
+          {
+            "servings": 4,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Nửa bánh, gói thấp và rộng",
+            "instruction": "Dùng nồi nhỏ nhưng vẫn giữ bánh ngập nước; không giảm thời gian luộc theo tỷ lệ người ăn."
+          },
+          {
+            "servings": 12,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.25,
+            "example": "Một bánh lớn hoặc hai bánh vừa",
+            "instruction": "Gói hai bánh vừa thay vì một bánh quá dày; kiểm tra nước nồi và độ chín ở tâm."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/banh-chung-den-lang-son-960.webp",
+          "page_url": "https://dantoc.vietnamtourism.gov.vn/banh-chung-den-huong-vi-tet-doc-dao-cua-nguoi-tay-o-lang-son/",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới cho Bếp Việt; nguồn chỉ dùng để biên tập và xác minh đặc trưng món.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Bánh chưng đen Lạng Sơn gói lá dong xanh, một phần cắt lộ nếp đen cùng nhân đỗ xanh và thịt lợn; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh minh họa Bếp Việt tạo mới; công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Nước tro thực phẩm cần đúng nguồn và cách pha; công thức không khuyến khích tự đốt cây để lấy tro.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Xác nhận loại nước tro thực phẩm phù hợp và nấu thử để chốt độ dẻo, độ đậm màu, tỷ lệ nhân và thời gian luộc."
+        ]
+      }
+    },
+    {
+      "id": "BV533",
+      "slug": "ca-dieu-hong-hap-hanh-gung",
+      "name": "Cá diêu hồng hấp hành gừng",
+      "aliases": [
+        "Cá điêu hồng hấp hành gừng",
+        "Cá diêu hồng hấp gừng hành"
+      ],
+      "region": [
+        "Ba miền"
+      ],
+      "province": [],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa nhẹ",
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một con cá diêu hồng khoảng 800–900 g hấp cùng gừng, hành cho bốn người.",
+      "prep_time": 20,
+      "cook_time": 45,
+      "passive_time": 10,
+      "description": "Cá diêu hồng hấp giữ thớ thịt mềm ngọt, quyện mùi gừng và hành trong phần sốt nóng vừa vị. Bếp Việt biên tập lượng sốt gọn cho bữa cơm gia đình; nước hấp có thể chan cơm hoặc ăn cùng bún.",
+      "finished_dish": "Cá chín đục, thịt tách nhẹ nhưng còn ẩm; gừng hành thơm rõ, phần nước hấp bóng nhẹ và không quá mặn.",
+      "serving": "Đặt cá trên đĩa sâu lòng, rưới sốt và nước hấp, rắc hành phi cùng rau thơm. Dùng nóng với cơm trắng hoặc bún.",
+      "tips": [
+        "Để xửng nóng, nước sôi trước khi đặt cá vào hấp.",
+        "Kiểm tra phần thịt dày nhất đạt 63°C hoặc đục và tách dễ bằng nĩa; tránh hấp lâu làm cá khô."
+      ],
+      "dish_type": [
+        "Cá hấp"
+      ],
+      "main_ingredient": [
+        "cá diêu hồng"
+      ],
+      "cooking_method": [
+        "pha sốt",
+        "hấp cách thủy"
+      ],
+      "search_terms": [
+        "cá diêu hồng hấp hành gừng",
+        "cá điêu hồng hấp gừng hành",
+        "cá rô phi đỏ hấp",
+        "món cá hấp cho bữa cơm"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Cá diêu hồng hấp nguyên con với gừng sợi, hành lá và sốt nhẹ trên đĩa sứ xanh trắng.",
+      "time_note": "Khoảng 75 phút, gồm 10 phút ướp; thời gian hấp thay đổi theo cỡ cá và độ dày thân.",
+      "total_time": 75,
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Bún tươi",
+        "Rau luộc"
+      ],
+      "width": 3840,
+      "height": 2160,
+      "recipe_family": "ginger_scallion_steamed_red_tilapia",
+      "time_unit": "minute",
+      "ingredients": [
+        {
+          "name": "Cá diêu hồng",
+          "quantity": 850,
+          "unit": "g",
+          "role": "seafood",
+          "notes": "Làm sạch, bỏ mang và ruột, khứa vài đường ở phần dày.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Gừng",
+          "quantity": 35,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Gọt vỏ, thái sợi; chia một phần lót dưới cá.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 40,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, cắt khúc; để riêng phần lá.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 30,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Thái lát; phi vàng một nửa để rắc.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Ngò rí",
+          "quantity": 10,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, cắt khúc.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Nước tương",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng làm nền cho sốt hấp.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 7
+        },
+        {
+          "name": "Xì dầu đậm",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng vừa phải để tạo màu.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        },
+        {
+          "name": "Dầu hào",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Tùy chọn; kiểm tra nhãn nếu cần tránh dị ứng.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 9
+        },
+        {
+          "name": "Dầu mè",
+          "quantity": 5,
+          "unit": "ml",
+          "role": "oil",
+          "notes": "Thêm vào sốt.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 10
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "oil",
+          "notes": "Dùng phi tỏi và hành.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Đường",
+          "quantity": 8,
+          "unit": "g",
+          "role": "sweetener",
+          "notes": "Cân vị sốt.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 12
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm sốt và rắc khi dọn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 13
+        },
+        {
+          "name": "Ớt tươi",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Thái sợi, giảm hoặc bỏ nếu ăn ít cay.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 14
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 30,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Thêm nếu cần làm loãng sốt.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 15
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa cá, thấm khô và khứa chéo hai bên thân. Ướp nhẹ với một ít nước tương và tiêu trong khoảng 10 phút."
+        },
+        {
+          "step": 2,
+          "instruction": "Thái gừng, hành tím và ớt; băm tỏi. Rửa hành lá, ngò rí và chuẩn bị đĩa chịu nhiệt cùng xửng hấp."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng dầu, phi tỏi thơm rồi cho nước tương, xì dầu đậm, dầu hào, đường, dầu mè và nước vào khuấy tan. Thêm gừng cùng hành tím, đun sôi lăn tăn rồi tắt bếp."
+        },
+        {
+          "step": 2,
+          "instruction": "Lót gừng và đầu hành dưới cá, rưới sốt lên thân cá. Đặt đĩa vào xửng khi nước đã sôi, đậy nắp và hấp khoảng 35–40 phút tùy cỡ cá."
+        },
+        {
+          "step": 3,
+          "instruction": "Kiểm tra phần thịt dày nhất đã chín; rắc hành lá, ngò rí và ớt, hấp thêm 1–2 phút. Rắc hành tím phi rồi dọn nóng."
+        }
+      ],
+      "keywords": [
+        "cá diêu hồng",
+        "cá hấp",
+        "gừng",
+        "hành lá",
+        "mâm cơm gia đình"
+      ],
+      "tags": [
+        "món mặn",
+        "cá nước ngọt",
+        "món hấp",
+        "Ba miền"
+      ],
+      "sources": [
+        {
+          "url": "https://www.dienmayxanh.com/vao-bep/cach-lam-ca-dieu-hong-hap-hanh-gung-thom-ngon-dam-da-cuc-don-24230",
+          "publisher": "Điện máy XANH",
+          "title": "Cách làm cá diêu hồng hấp hành gừng thơm ngon đậm đà cực đơn giản tại nhà",
+          "use": "Đối chiếu cá diêu hồng, nhóm gia vị gừng-hành, cách làm sốt và hấp cá; định lượng biên tập cho bốn người.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-fresh-and-frozen-seafood-safely",
+          "publisher": "U.S. Food and Drug Administration",
+          "title": "Selecting and Serving Fresh and Frozen Seafood Safely",
+          "use": "Đối chiếu nhiệt độ chín an toàn 63°C và dấu hiệu thịt cá chín đục, dễ tách.",
+          "accessed_at": "2026-10-24",
+          "type": "food_safety_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Dùng một nửa nguyên liệu chính, nêm gia vị từ ít.",
+            "instruction": "Dùng nồi hoặc chảo vừa cỡ."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.25,
+            "example": "Tăng nguyên liệu chính khoảng một lần rưỡi, điều chỉnh nước theo nồi.",
+            "instruction": "Nêm theo từng lượt, không tăng tuyến tính toàn bộ gia vị."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/ca-dieu-hong-hap-hanh-gung-960.webp",
+          "page_url": "https://www.dienmayxanh.com/vao-bep/cach-lam-ca-dieu-hong-hap-hanh-gung-thom-ngon-dam-da-cuc-don-24230",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập công thức.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Cá diêu hồng hấp nguyên con với gừng sợi, hành lá và sốt nhẹ trên đĩa sứ xanh trắng.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh PNG alpha gốc 1536×1024, master xuất 3840×2160 cùng WebP responsive; công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức gia đình bốn phần, giữ cá nguyên con, sốt gừng hành và thao tác hấp theo nguồn tham khảo.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử với cá 800–900 g để xác nhận thời gian hấp theo loại xửng và độ dày cá."
+        ]
+      }
+    },
+    {
+      "id": "BV534",
+      "slug": "bi-do-xao-toi",
+      "name": "Bí đỏ xào tỏi",
+      "aliases": [
+        "Bí đỏ xào tỏi gia đình",
+        "Bí đỏ xào tỏi ngò rí"
+      ],
+      "region": [
+        "Ba miền"
+      ],
+      "province": [],
+      "category": "Món rau",
+      "meal_type": [
+        "bữa sáng",
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một đĩa bí đỏ xào tỏi làm món rau cho bốn người.",
+      "prep_time": 5,
+      "cook_time": 10,
+      "passive_time": 0,
+      "description": "Bí đỏ được xào nhanh với tỏi rồi om rất ít nước đến khi vừa mềm, giữ miếng bí nguyên và vị bùi ngọt tự nhiên. Món rau ít bước, hợp bữa cơm ngày thường.",
+      "finished_dish": "Miếng bí mềm vừa, không nát; tỏi thơm dịu bám đều mặt bí, có ngò rí tươi.",
+      "serving": "Múc ra đĩa, rắc ngò rí và dùng nóng cùng cơm trắng.",
+      "tips": [
+        "Cắt bí đều nhau để chín cùng lúc; châm nước từng ít một, không đổ ngập chảo.",
+        "Đậy nắp ngắn ở lửa nhỏ và tắt bếp khi bí vừa mềm."
+      ],
+      "dish_type": [
+        "Món rau xào"
+      ],
+      "main_ingredient": [
+        "bí đỏ"
+      ],
+      "cooking_method": [
+        "xào",
+        "om ngắn"
+      ],
+      "search_terms": [
+        "bí đỏ xào tỏi",
+        "món rau bí đỏ",
+        "bí đỏ xào nhanh",
+        "món rau dễ nấu"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Đĩa bí đỏ xào tỏi với miếng bí cam mềm vừa, tỏi phi và ngò rí.",
+      "time_note": "Khoảng 15 phút từ sơ chế đến khi dọn.",
+      "total_time": 15,
+      "suggested_pairings": [
+        "Cá kho",
+        "Thịt rang",
+        "Canh rau"
+      ],
+      "width": 3840,
+      "height": 2160,
+      "recipe_family": "garlic_stir_fried_pumpkin",
+      "time_unit": "minute",
+      "ingredients": [
+        {
+          "name": "Bí đỏ",
+          "quantity": 700,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Gọt vỏ, bỏ ruột, cắt miếng đều dày khoảng 1 cm.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, đập dập và băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Ngò rí",
+          "quantity": 8,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, cắt ngắn để rắc khi dọn.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "oil",
+          "notes": "Dùng phi tỏi và áo bí.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 60,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Châm từng ít để bí mềm mà không nhũn.",
+          "scaling_rule": "vessel_dependent",
+          "sequence": 5
+        },
+        {
+          "name": "Hạt nêm",
+          "quantity": 4,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Gia giảm theo độ mặn của sản phẩm.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 6
+        },
+        {
+          "name": "Đường",
+          "quantity": 3,
+          "unit": "g",
+          "role": "sweetener",
+          "notes": "Tùy độ ngọt tự nhiên của bí.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 7
+        },
+        {
+          "name": "Muối",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm thêm nếu cần.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 8
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Gọt bí đỏ, bỏ hạt và phần xơ, cắt miếng vừa ăn rồi rửa sạch, để ráo."
+        },
+        {
+          "step": 2,
+          "instruction": "Đập dập, băm tỏi; rửa ngò rí và để ráo."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng dầu ở lửa vừa, phi tỏi thơm. Thêm bí đỏ và đảo để dầu áo đều các mặt."
+        },
+        {
+          "step": 2,
+          "instruction": "Nêm hạt nêm, chút đường và muối; đảo thêm khoảng 2 phút cho bí thấm."
+        },
+        {
+          "step": 3,
+          "instruction": "Châm nước từng ít một, đậy nắp và om lửa nhỏ khoảng 2–4 phút đến khi bí vừa mềm. Rắc ngò rí, tắt bếp và dọn."
+        }
+      ],
+      "keywords": [
+        "bí đỏ",
+        "tỏi",
+        "món rau xào",
+        "món ăn gia đình"
+      ],
+      "tags": [
+        "món rau",
+        "món xào",
+        "rau củ",
+        "Ba miền"
+      ],
+      "sources": [
+        {
+          "url": "https://www.dienmayxanh.com/vao-bep/3-cach-lam-bi-do-xao-toi-trung-tom-don-gian-thom-ngon-04425",
+          "publisher": "Điện máy XANH",
+          "title": "3 cách làm bí đỏ xào tỏi, trứng, tôm đơn giản thơm ngon",
+          "use": "Đối chiếu bí đỏ, tỏi, ngò rí, thao tác xào, châm ít nước và thời gian ngắn; định lượng biên tập cho gia đình.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Dùng một nửa nguyên liệu chính, nêm gia vị từ ít.",
+            "instruction": "Dùng nồi hoặc chảo vừa cỡ."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.25,
+            "example": "Tăng nguyên liệu chính khoảng một lần rưỡi, điều chỉnh nước theo nồi.",
+            "instruction": "Nêm theo từng lượt, không tăng tuyến tính toàn bộ gia vị."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/bi-do-xao-toi-960.webp",
+          "page_url": "https://www.dienmayxanh.com/vao-bep/3-cach-lam-bi-do-xao-toi-trung-tom-don-gian-thom-ngon-04425",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập công thức.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa bí đỏ xào tỏi với miếng bí cam mềm vừa, tỏi phi và ngò rí.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh PNG alpha gốc 1536×1024, master xuất 3840×2160 cùng WebP responsive; công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Phiên bản món rau gia đình với bí đỏ, tỏi và ngò rí; lượng nước chia nhỏ để bí mềm nhưng giữ miếng.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử với bí đỏ phổ biến để chốt thời gian om theo độ già của bí."
+        ]
+      }
+    },
+    {
+      "id": "BV535",
+      "slug": "mien-luon-nghe-an",
+      "name": "Miến lươn Nghệ An",
+      "aliases": [
+        "Miến lươn xứ Nghệ",
+        "Miến lươn Vinh"
+      ],
+      "region": [
+        "Trung"
+      ],
+      "province": [
+        "Nghệ An",
+        "Vinh"
+      ],
+      "category": "Bún, phở, mì và miến",
+      "meal_type": [
+        "bữa sáng",
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Bốn tô miến lươn nước dùng xương, có lươn chiên giòn và lươn xào mềm.",
+      "prep_time": 30,
+      "cook_time": 60,
+      "passive_time": 15,
+      "description": "Miến lươn Nghệ An kết hợp miến dong với lươn đồng, nước dùng xương thơm nghệ và hành tăm. Phiên bản Bếp Việt chia lươn thành hai phần: một phần áo bột chiên vàng, phần còn lại xào mềm để tô miến có cả độ giòn lẫn vị ngọt đậm.",
+      "finished_dish": "Tô miến trong nước dùng vàng nhạt, có sợi miến dai, miếng lươn vàng thơm, rau răm và hành lá.",
+      "serving": "Trụng miến vừa mềm rồi chia vào bát, xếp lươn chiên và lươn xào lên trên. Chan nước dùng nóng, rắc hành lá, rau răm và tiêu.",
+      "tips": [
+        "Sơ chế lươn sạch nhớt, làm chín kỹ và lọc xương cẩn thận.",
+        "Chỉ áo bột chiên một lớp mỏng để phần lươn giòn mà không bột dày.",
+        "Ngâm miến theo hướng dẫn bao bì và trụng riêng trước khi chan để nước dùng không bị đục."
+      ],
+      "dish_type": [
+        "Món nước",
+        "Đặc sản Nghệ An"
+      ],
+      "main_ingredient": [
+        "miến dong",
+        "lươn đồng",
+        "xương heo"
+      ],
+      "cooking_method": [
+        "ninh nước dùng",
+        "xào lươn",
+        "chiên lươn"
+      ],
+      "search_terms": [
+        "miến lươn Nghệ An",
+        "miến lươn Vinh",
+        "miến lươn xứ Nghệ",
+        "miến lươn nước"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Tô miến lươn Nghệ An với miến dong, lươn vàng nghệ gồm phần chiên giòn và xào mềm, rau răm và hành lá; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 1 giờ 45 phút, gồm thời gian ninh nước dùng và ngâm miến.",
+      "total_time": 105,
+      "suggested_pairings": [
+        "Rau răm",
+        "Hành lá",
+        "Ớt tươi"
+      ],
+      "width": 3840,
+      "height": 2160,
+      "recipe_family": "mien-luon-nghe-an",
+      "time_unit": "phút",
+      "ingredients": [
+        {
+          "name": "Lươn đồng đã làm sạch",
+          "quantity": 600,
+          "unit": "g",
+          "role": "main",
+          "notes": "Lọc thịt, giữ xương nếu muốn nấu nước dùng.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Xương heo",
+          "quantity": 700,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chần qua nước sôi, rửa sạch.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Miến dong",
+          "quantity": 250,
+          "unit": "g",
+          "role": "main",
+          "notes": "Ngâm mềm theo hướng dẫn trên bao bì.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Bột chiên giòn",
+          "quantity": 50,
+          "unit": "g",
+          "role": "coating",
+          "notes": "Dùng áo mỏng một phần thịt lươn.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Củ nén (hành tăm)",
+          "quantity": 25,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, giã dập hoặc băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 25,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Gừng",
+          "quantity": 25,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Đập dập, dùng nấu nước dùng.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Nghệ tươi",
+          "quantity": 25,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Giã lấy nước hoặc băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 250,
+          "unit": "ml",
+          "role": "frying_oil",
+          "notes": "Dùng chiên phần lươn áo bột và xào phần còn lại.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 35,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm nước dùng và lươn.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 10
+        },
+        {
+          "name": "Muối",
+          "quantity": 8,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm nước dùng.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 11
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm và hoàn thiện.",
+          "scaling_rule": "taste_adjusted",
+          "sequence": 12
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 25,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 13
+        },
+        {
+          "name": "Rau răm",
+          "quantity": 25,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Rửa sạch, thái vừa.",
+          "scaling_rule": "linear",
+          "sequence": 14
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 2200,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng ninh xương và pha nước dùng.",
+          "scaling_rule": "vessel_dependent",
+          "sequence": 15
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa xương, chần nhanh và rửa sạch. Làm sạch lươn, lọc lấy thịt, giữ xương riêng nếu dùng nấu nước dùng; kiểm tra kỹ xương vụn."
+        },
+        {
+          "step": 2,
+          "instruction": "Ngâm miến dong vừa mềm rồi để ráo. Giã nghệ lấy nước, băm củ nén và hành tím; đập dập gừng."
+        },
+        {
+          "step": 3,
+          "instruction": "Chia thịt lươn làm hai phần. Ướp nhẹ cả hai phần với nước nghệ, nước mắm, muối và tiêu; áo một phần với lớp bột chiên giòn mỏng."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Ninh xương heo cùng gừng và phần nước nghệ trong khoảng 45 phút, hớt bọt để nước dùng trong; nêm nước mắm, muối và tiêu."
+        },
+        {
+          "step": 2,
+          "instruction": "Đun dầu nóng, chiên phần lươn áo bột đến vàng giòn rồi để ráo. Phi củ nén và hành tím, xào nhanh phần lươn còn lại đến khi vừa chín và thơm."
+        },
+        {
+          "step": 3,
+          "instruction": "Trụng miến trong nước nóng đến mềm vừa, chia vào bát. Xếp lươn giòn và lươn xào lên miến, chan nước dùng đang sôi nhẹ."
+        },
+        {
+          "step": 4,
+          "instruction": "Rắc hành lá, rau răm và tiêu; dùng ngay khi nóng."
+        }
+      ],
+      "keywords": [
+        "Miến lươn Nghệ An",
+        "Miến lươn xứ Nghệ",
+        "Nghệ An",
+        "Vinh",
+        "miến dong",
+        "lươn đồng",
+        "hành tăm"
+      ],
+      "tags": [
+        "Món nước",
+        "Đặc sản Nghệ An",
+        "miến dong",
+        "lươn đồng",
+        "xương heo",
+        "ninh nước dùng",
+        "xào lươn",
+        "chiên lươn"
+      ],
+      "sources": [
+        {
+          "url": "https://www.dienmayxanh.com/vao-bep/cach-nau-mien-luon-nghe-an-chuan-vi-thom-ngon-dam-da-nhu-24368",
+          "publisher": "Điện máy XANH",
+          "title": "Cách nấu miến lươn Nghệ An chuẩn vị thơm ngon đậm đà như ngoài cửa hàng",
+          "use": "Đối chiếu cách nấu nước dùng nghệ, dùng miến dong và chia lươn thành phần áo bột chiên; Bếp Việt viết lại và điều chỉnh khẩu phần bốn tô.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "300 g lươn, 350 g xương heo, 125 g miến",
+            "instruction": "Chiên lươn theo từng mẻ nhỏ để dầu không nguội."
+          },
+          {
+            "servings": 4,
+            "main_factor": 1.0,
+            "seasoning_start_factor": 1.0,
+            "example": "600 g lươn, 700 g xương heo, 250 g miến",
+            "instruction": "Theo lượng cơ sở của công thức."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "900 g lươn, khoảng 1 kg xương, 375 g miến",
+            "instruction": "Ninh nước dùng trong nồi rộng, trụng miến từng phần."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/mien-luon-nghe-an-960.webp",
+          "page_url": "https://www.dienmayxanh.com/vao-bep/cach-nau-mien-luon-nghe-an-chuan-vi-thom-ngon-dam-da-nhu-24368",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh minh họa được tạo riêng hoặc biên tập cho Bếp Việt; nguồn chỉ dùng để kiểm chứng và biên tập công thức.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Tô miến lươn Nghệ An với miến dong, lươn vàng nghệ gồm phần chiên giòn và xào mềm, rau răm và hành lá; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh gốc PNG 1374 × 1145 có nền trong suốt; các bản giao diện được đặt trên canvas 3840 × 2160."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức biên tập theo tô miến lươn nước. Lươn phải được làm chín kỹ, lọc xương cẩn thận; lượng nghệ và độ giòn tùy khẩu vị.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử cách sơ chế lươn, độ giòn sau khi chan nước dùng và tỷ lệ nước ninh xương."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,1466 @@
+{
+  "batch": 75,
+  "description": "Năm món gia cầm Việt Nam có đối chiếu nguồn ẩm thực; công thức Bếp Việt biên tập cho bữa gia đình, chưa nấu thử.",
+  "recipes": [
+    {
+      "id": "BV701",
+      "slug": "vit-dam-ghem-ha-noi",
+      "aliases": [
+        "Canh vịt dấm ghém",
+        "Vịt dấm ghém kiểu Hà Nội"
+      ],
+      "region": [
+        "Bắc"
+      ],
+      "province": [
+        "Hà Nội"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "mâm cơm gia đình",
+        "món đãi khách"
+      ],
+      "difficulty": "Khó",
+      "servings": 4,
+      "serving_basis": "Một mâm vịt dấm ghém có vịt, bún và rau ghém cho bốn người.",
+      "prep_time": 35,
+      "cook_time": 80,
+      "passive_time": 15,
+      "total_time": 130,
+      "description": "Mâm vịt dấm ghém Hà Nội kết hợp thịt vịt luộc, ba chỉ, trứng tráng và giò lụa thái sợi với nước dùng riềng, dấm bỗng, hoa chuối, giá và rau thơm. Bếp Việt biên tập thành mẻ gia đình gọn hơn, giữ đủ vị chua thanh, thơm riềng và cách ăn ghém.",
+      "finished_dish": "Thịt vịt mềm nhưng không bở; nước dùng thơm riềng, chua dịu dấm bỗng; các phần ăn kèm giữ độ tươi, không bị ngâm mềm.",
+      "serving": "Xếp vịt, ba chỉ, trứng và giò lụa lên mâm cùng bún, hoa chuối, giá, rau thơm và dưa hành. Chan nước dùng nóng vào bát, thêm một ít mắm tôm chanh nếu thích.",
+      "tips": [
+        "Chần nhanh thịt và xương rồi rửa nồi trước khi ninh để nước dùng trong, không hôi.",
+        "Nêm dấm bỗng sau khi vịt gần mềm; độ chua của từng mẻ khác nhau nên thêm từ từ.",
+        "Giữ rau ghém và thịt sống tách riêng; làm lạnh phần ăn thừa trong vòng hai giờ."
+      ],
+      "dish_type": [
+        "Mâm vịt nước và rau ghém"
+      ],
+      "main_ingredient": [
+        "vịt",
+        "dấm bỗng",
+        "hoa chuối"
+      ],
+      "cooking_method": [
+        "luộc",
+        "ninh nước dùng",
+        "thái ghém"
+      ],
+      "search_terms": [
+        "vịt dấm ghém Hà Nội",
+        "canh vịt dấm bỗng",
+        "vịt dấm ghém",
+        "món Hà Nội xưa"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Mâm vịt dấm ghém Hà Nội với vịt thái lát, bún, hoa chuối, rau thơm và bát nước dùng riềng.",
+      "time_note": "Khoảng 130 phút gồm 15 phút ướp; thời gian ninh tùy phần vịt và độ già của thịt.",
+      "suggested_pairings": [
+        "Bún tươi",
+        "Hoa chuối và rau thơm",
+        "Dưa hành",
+        "Mắm tôm chanh"
+      ],
+      "recipe_family": "vit_dam_ghem",
+      "keywords": [
+        "món Hà Nội xưa",
+        "vịt dấm ghém",
+        "dấm bỗng",
+        "mâm cỗ"
+      ],
+      "tags": [
+        "món mặn",
+        "món vịt",
+        "ẩm thực Hà Nội",
+        "món đãi khách"
+      ],
+      "name": "Vịt dấm ghém Hà Nội",
+      "ingredients": [
+        {
+          "name": "Vịt ta chặt miếng",
+          "quantity": 1300,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chặt miếng vừa ăn; giữ xương để nấu nước dùng.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Thịt ba chỉ",
+          "quantity": 200,
+          "unit": "g",
+          "role": "protein",
+          "notes": "Luộc chín rồi thái sợi.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Xương heo",
+          "quantity": 250,
+          "unit": "g",
+          "role": "stock",
+          "notes": "Chần sơ và rửa sạch.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Giò lụa",
+          "quantity": 120,
+          "unit": "g",
+          "role": "protein",
+          "notes": "Thái sợi vừa ăn.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Trứng gà",
+          "quantity": 2,
+          "unit": "quả",
+          "role": "protein",
+          "notes": "Tráng mỏng, để nguội rồi thái sợi.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Bún tươi",
+          "quantity": 500,
+          "unit": "g",
+          "role": "grain",
+          "notes": "Trụng nhanh nếu cần, để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Hoa chuối bào",
+          "quantity": 200,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Ngâm nước chanh loãng, rửa và để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Giá đỗ",
+          "quantity": 150,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Rửa sạch, để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Rau thơm và xà lách",
+          "quantity": 150,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Rửa kỹ, để thật ráo.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Dưa hành",
+          "quantity": 80,
+          "unit": "g",
+          "role": "pickle",
+          "notes": "Để ráo nước muối.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Riềng",
+          "quantity": 60,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Đập dập, chia phần ninh nước dùng và nêm.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Dấm bỗng",
+          "quantity": 120,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Cho từ từ, điều chỉnh theo độ chua.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 30,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Chia để ướp vịt và nêm nước dùng.",
+          "scaling_rule": "linear",
+          "sequence": 13
+        },
+        {
+          "name": "Muối",
+          "quantity": 8,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Chia để ướp và nêm.",
+          "scaling_rule": "linear",
+          "sequence": 14
+        },
+        {
+          "name": "Đường",
+          "quantity": 8,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Chỉ thêm nếu nước dùng cần cân vị.",
+          "scaling_rule": "linear",
+          "sequence": 15
+        },
+        {
+          "name": "Tôm khô",
+          "quantity": 20,
+          "unit": "g",
+          "role": "stock",
+          "notes": "Rửa nhanh, ngâm mềm 10 phút.",
+          "scaling_rule": "linear",
+          "sequence": 16
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 20,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 17
+        },
+        {
+          "name": "Mắm tôm",
+          "quantity": 12,
+          "unit": "g",
+          "role": "dipping",
+          "notes": "Pha riêng với chanh và chút đường để chấm, tùy chọn.",
+          "scaling_rule": "linear",
+          "sequence": 18
+        },
+        {
+          "name": "Chanh",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "seasoning",
+          "notes": "Vắt lấy nước cốt cho mắm tôm, tùy chọn.",
+          "scaling_rule": "linear",
+          "sequence": 19
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Thấm khô vịt bằng khăn giấy, kiểm tra không còn lông sót rồi ướp với một nửa nước mắm, muối và riềng đập dập trong 15 phút. Chần xương heo và vịt 2 phút, đổ bỏ nước, rửa sạch nồi và thịt."
+        },
+        {
+          "step": 2,
+          "instruction": "Luộc ba chỉ riêng đến khi vừa chín, để nguội rồi thái sợi. Tráng trứng mỏng; thái sợi giò lụa và trứng. Ngâm tôm khô mềm."
+        },
+        {
+          "step": 3,
+          "instruction": "Sơ chế hoa chuối, giá và rau; để ráo và bảo quản riêng. Trụng bún theo hướng dẫn trên gói, để ráo."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Cho xương heo, tôm khô và 2,2 lít nước vào nồi, đun sôi rồi hạ lửa ninh 35 phút; hớt bọt. Thêm vịt và phần riềng còn lại, đun liu riu đến khi vịt mềm và phần dày đạt ít nhất 74°C, khoảng 35–45 phút tùy miếng."
+        },
+        {
+          "step": 2,
+          "instruction": "Gắp vịt ra đĩa sạch, lọc nước dùng. Cho dấm bỗng, phần nước mắm còn lại và đường vào nồi; nếm để nước dùng chua thanh, mặn vừa. Đun sôi lại rồi giữ nóng."
+        },
+        {
+          "step": 3,
+          "instruction": "Chặt hoặc thái vịt thành miếng vừa ăn. Xếp vịt cùng ba chỉ, trứng và giò lụa; bày cạnh bún, rau ghém và dưa hành. Chan nước dùng nóng khi ăn; mắm tôm chanh để riêng."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://hanoionline.vn/vit-dam-ghem-246333785.htm",
+          "publisher": "Báo và Phát thanh, Truyền hình Hà Nội",
+          "title": "Vịt dấm ghém",
+          "use": "Confirms this as an old Hanoi ceremonial dish and describes the 1930 Ẩm thực tu tri account: duck, pork belly, omelet, giò lụa, galangal, dấm bỗng, herbs and banana blossom. Bếp Việt streamlines those components for a home batch.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://vnexpress.net/doi-song-cooking-mon-vit-trong-tet-doan-ngo-cua-nguoi-ha-noi-4756201.html",
+          "publisher": "VnExpress Cooking",
+          "title": "Món vịt trong Tết Đoan Ngọ của người Hà Nội",
+          "use": "Additional context for Hanoi duck dishes served around Tết Đoan Ngọ; ingredient ratios and timings here are Bếp Việt editorial adaptations.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Với hai người, dùng khoảng 650 g vịt và nửa lượng món ăn kèm; ninh trong nồi nhỏ.",
+            "instruction": "Nêm từ lượng giảm và điều chỉnh theo khẩu vị; kiểm tra độ chín an toàn."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "Với sáu người, tăng thịt và rau 1,5 lần; ninh nước dùng mẻ lớn hơn, nêm dấm bỗng từ từ.",
+            "instruction": "Tăng gia vị từ từ; điều chỉnh thời gian và kích thước nồi theo mẻ thực tế."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/vit-dam-ghem-ha-noi-960.webp",
+          "page_url": null,
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh cutout món ăn được tạo riêng cho Bếp Việt; nguồn chỉ dùng xác minh tên món, địa danh và cách chế biến.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Mâm vịt dấm ghém Hà Nội với vịt thái lát, bún, hoa chuối, rau thơm và bát nước dùng riềng.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh PNG nền trong suốt được tạo riêng, xuất thành các kích thước WebP; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức gia đình rút gọn từ ghi chép về mâm vịt dấm ghém Hà Nội; định lượng và thời gian là bản biên tập, chưa nấu thử.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử riêng nước dùng và các phần ăn kèm để cân bằng độ chua của từng loại dấm bỗng.",
+          "Xác nhận thời gian luộc cho vịt ta ở các kích cỡ khác nhau."
+        ]
+      }
+    },
+    {
+      "id": "BV702",
+      "slug": "vit-hap-hoa-sen-non-lien-ap",
+      "aliases": [
+        "Liên áp",
+        "Vịt hấp sen non"
+      ],
+      "region": [
+        "Bắc"
+      ],
+      "province": [
+        "Hà Nội"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "mâm cơm gia đình",
+        "món đãi khách"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Vịt chặt miếng hấp cùng hoa sen non, dùng như món chính cho bốn người.",
+      "prep_time": 25,
+      "cook_time": 70,
+      "passive_time": 10,
+      "total_time": 105,
+      "description": "Liên áp là món vịt hấp hoa sen non được ghi lại trong Tản Đà thực phẩm (1943). Bản gốc dùng vịt chặt miếng, ướp mắm muối rồi đồ trên búp sen non hơn một giờ; công thức này giữ cách hấp tối giản để hoa sen chín mềm và ăn ghém cùng thịt vịt.",
+      "finished_dish": "Thịt vịt chín mềm, thơm nhẹ mùi sen; búp sen hấp mềm, bùi ngọt và còn nguyên hình.",
+      "serving": "Xếp búp sen chín làm lớp lót, bày vịt nóng phía trên. Ăn cùng cơm trắng hoặc cuốn thịt vịt trong lá sen non, chấm nước mắm gừng nhạt.",
+      "tips": [
+        "Chọn búp sen non còn khép, không dập; rửa kỹ và để ráo trước khi hấp.",
+        "Không nêm nhiều gia vị để giữ mùi sen; đun nước sôi trước khi đặt xửng lên hấp.",
+        "Dùng nhiệt kế kiểm tra phần thịt dày đạt ít nhất 74°C; tránh để nước trong nồi cạn."
+      ],
+      "dish_type": [
+        "Vịt hấp cách thủy"
+      ],
+      "main_ingredient": [
+        "vịt",
+        "hoa sen non"
+      ],
+      "cooking_method": [
+        "ướp nhẹ",
+        "hấp cách thủy"
+      ],
+      "search_terms": [
+        "vịt hấp hoa sen non",
+        "liên áp",
+        "vịt hấp sen",
+        "Tản Đà thực phẩm"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Vịt chặt miếng hấp trên búp hoa sen non, bày trên đĩa sứ giản dị.",
+      "time_note": "Khoảng 105 phút gồm 10 phút ướp; hấp hơn một giờ tùy độ lớn của miếng vịt.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Lá sen non",
+        "Nước mắm gừng nhạt"
+      ],
+      "recipe_family": "lien_ap",
+      "keywords": [
+        "liên áp",
+        "vịt hấp sen",
+        "món trong Tản Đà thực phẩm",
+        "ẩm thực Hà Nội"
+      ],
+      "tags": [
+        "món mặn",
+        "món vịt",
+        "ẩm thực Bắc Bộ",
+        "món theo mùa"
+      ],
+      "name": "Vịt hấp hoa sen non (Liên áp)",
+      "ingredients": [
+        {
+          "name": "Vịt ta chặt miếng",
+          "quantity": 1400,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chặt thành miếng vừa; giữ cả phần đùi và ức.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Búp hoa sen non",
+          "quantity": 450,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Chọn búp còn khép, rửa kỹ và để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Ướp nhẹ cùng vịt.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Muối",
+          "quantity": 8,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Ướp vịt; điều chỉnh theo độ mặn của mắm.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Lá sen non",
+          "quantity": 2,
+          "unit": "lá",
+          "role": "aromatic",
+          "notes": "Tùy chọn, lót xửng hoặc phủ lên vịt.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 1000,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Đổ vào đáy nồi hấp; châm thêm nước sôi nếu cần.",
+          "scaling_rule": "nonlinear",
+          "sequence": 6
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Thấm khô vịt bằng khăn giấy, kiểm tra không còn lông sót rồi chặt thành miếng. Ướp với nước mắm và muối trong 10 phút; giữ riêng khỏi các nguyên liệu ăn liền."
+        },
+        {
+          "step": 2,
+          "instruction": "Rửa nhẹ từng búp sen, bỏ cánh ngoài đã dập nếu có và để ráo. Lót xửng bằng lá sen non nếu dùng; chuẩn bị nồi hấp có nắp kín."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đun sôi nước trong nồi hấp. Xếp búp sen xuống đáy xửng, đặt vịt lên trên và đậy nắp kín."
+        },
+        {
+          "step": 2,
+          "instruction": "Hấp lửa vừa trong 65–75 phút, châm thêm nước sôi nếu cần. Trở các miếng lớn một lần sau khoảng 40 phút; kiểm tra phần dày nhất đạt ít nhất 74°C và thịt mềm."
+        },
+        {
+          "step": 3,
+          "instruction": "Gắp vịt ra đĩa sạch, xếp búp sen chín bên dưới hoặc xung quanh. Để nghỉ 5 phút rồi dùng nóng."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://vnexpress.net/doi-song-cooking-nguon-goc-mon-vit-hap-hoa-sen-4631901.html",
+          "publisher": "VnExpress Cooking",
+          "title": "Nguồn gốc món vịt hấp hoa sen",
+          "use": "Identifies Liên áp as duck steamed with young lotus buds, recorded in Tản Đà thực phẩm (1943); it quotes the method of lightly seasoning chopped duck and steaming it over the buds for more than an hour. The quantities here are Bếp Việt's home adaptation.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Dùng 700 g vịt, 225 g búp sen; hấp trong xửng nhỏ, vẫn kiểm tra nhiệt độ tâm.",
+            "instruction": "Nêm từ lượng giảm và điều chỉnh theo khẩu vị; kiểm tra độ chín an toàn."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "Dùng khoảng 2,1 kg vịt và 675 g sen; hấp thành hai tầng hoặc chia mẻ để hơi lưu thông.",
+            "instruction": "Tăng gia vị từ từ; điều chỉnh thời gian và kích thước nồi theo mẻ thực tế."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/vit-hap-hoa-sen-non-lien-ap-960.webp",
+          "page_url": null,
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh cutout món ăn được tạo riêng cho Bếp Việt; nguồn chỉ dùng xác minh tên món, địa danh và cách chế biến.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Vịt chặt miếng hấp trên búp hoa sen non, bày trên đĩa sứ giản dị.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh PNG nền trong suốt được tạo riêng, xuất thành các kích thước WebP; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Món được ghi lại trong sách Tản Đà thực phẩm năm 1943; công thức Bếp Việt chuyển thành mẻ nhỏ và không khẳng định đây là tục món ăn dân gian phổ biến.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử thời gian hấp với vịt ta và kích cỡ búp sen bán theo mùa.",
+          "Kiểm tra độ mặn phù hợp khi dùng các loại nước mắm khác nhau."
+        ]
+      }
+    },
+    {
+      "id": "BV703",
+      "slug": "bun-ngan-tron-chua-ngot-ha-noi",
+      "name": "Bún ngan trộn chua ngọt Hà Nội",
+      "aliases": [
+        "Bún trộn ngan Hà Nội",
+        "Bún ngan trộn kiểu Hà Nội"
+      ],
+      "region": [
+        "Bắc"
+      ],
+      "province": [
+        "Hà Nội"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "mâm cơm gia đình"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Bún ngan trộn với thịt ngan, măng chua, lạc và rau thơm cho bốn người.",
+      "prep_time": 25,
+      "cook_time": 70,
+      "passive_time": 20,
+      "total_time": 115,
+      "description": "Bún ngan trộn chua ngọt là một cách ăn bún ngan được ghi nhận tại Hà Nội: bún và ngan thái lát trộn cùng măng chua, rau húng, lạc rang và sốt chua ngọt, dùng kèm bát nước dùng. Bếp Việt nấu ngan và lòng chín kỹ, để nước dùng riêng và trộn bún ngay trước khi ăn.",
+      "finished_dish": "Sợi bún tơi, phủ sốt chua ngọt vừa; ngan chắc mọng, măng giòn dịu, rau thơm tươi và lạc rang bùi.",
+      "serving": "Trộn bún với lượng sốt vừa đủ, xếp ngan thái lát, mề, gan, măng chua và rau thơm lên trên. Rắc lạc rang, hành phi; dùng ngay cùng một bát nước dùng nóng.",
+      "tips": [
+        "Chần măng chua và nếm trước; nếu măng mặn hoặc chua gắt, luộc rồi xả nước sạch.",
+        "Luộc ngan ở lửa nhỏ, hớt bọt để nước dùng trong; kiểm tra cả thịt và lòng đạt ít nhất 74°C.",
+        "Giữ nước trộn không tiếp xúc với ngan sống; trộn bún sát giờ ăn để sợi không bở."
+      ],
+      "dish_type": [
+        "Bún trộn có nước dùng ăn kèm"
+      ],
+      "main_ingredient": [
+        "ngan",
+        "bún tươi",
+        "măng chua"
+      ],
+      "cooking_method": [
+        "luộc",
+        "pha sốt",
+        "trộn bún"
+      ],
+      "search_terms": [
+        "bún ngan trộn Hà Nội",
+        "bún ngan trộn chua ngọt",
+        "bún trộn ngan",
+        "món ngan Hà Nội"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Bát bún ngan trộn chua ngọt Hà Nội với thịt ngan, măng chua, rau húng, lạc rang và sốt tỏi ớt.",
+      "time_note": "Khoảng 115 phút gồm 20 phút để ngan nghỉ; có thể nấu ngan trước rồi trộn khi dùng.",
+      "suggested_pairings": [
+        "Nước dùng ngan nóng",
+        "Măng chua",
+        "Rau húng và rau răm",
+        "Lạc rang"
+      ],
+      "recipe_family": "bun_ngan_tron",
+      "keywords": [
+        "bún ngan trộn",
+        "Hà Nội",
+        "măng chua",
+        "món bún gia đình"
+      ],
+      "tags": [
+        "món mặn",
+        "món ngan",
+        "ẩm thực Hà Nội",
+        "món bún"
+      ],
+      "ingredients": [
+        {
+          "name": "Ngan nguyên con chặt miếng",
+          "quantity": 1300,
+          "unit": "g",
+          "role": "main",
+          "notes": "Làm sạch, giữ xương để nấu nước dùng.",
+          "sequence": 1
+        },
+        {
+          "name": "Mề ngan",
+          "quantity": 150,
+          "unit": "g",
+          "role": "protein",
+          "notes": "Làm sạch kỹ; luộc chín cùng nước dùng.",
+          "sequence": 2
+        },
+        {
+          "name": "Gan ngan",
+          "quantity": 100,
+          "unit": "g",
+          "role": "protein",
+          "notes": "Làm sạch; luộc đến chín cùng nước dùng.",
+          "sequence": 3
+        },
+        {
+          "name": "Bún tươi",
+          "quantity": 700,
+          "unit": "g",
+          "role": "grain",
+          "notes": "Trụng nhanh nếu cần, để ráo.",
+          "sequence": 4
+        },
+        {
+          "name": "Măng chua",
+          "quantity": 250,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Nếm thử; chần và xả nếu quá chua hoặc mặn.",
+          "sequence": 5
+        },
+        {
+          "name": "Lạc rang",
+          "quantity": 50,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Giã dập vừa.",
+          "sequence": 6
+        },
+        {
+          "name": "Rau húng và rau răm",
+          "quantity": 100,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Rửa kỹ, để ráo, thái vừa.",
+          "sequence": 7
+        },
+        {
+          "name": "Hành phi",
+          "quantity": 25,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Dùng rắc lên bún.",
+          "sequence": 8
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 55,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng 15 ml ướp ngan, 15 ml nêm nước dùng và 25 ml pha sốt trộn.",
+          "sequence": 9
+        },
+        {
+          "name": "Nước cốt chanh",
+          "quantity": 40,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Pha sốt chua ngọt.",
+          "sequence": 10
+        },
+        {
+          "name": "Đường",
+          "quantity": 35,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Pha sốt; điều chỉnh theo độ chua của măng.",
+          "sequence": 11
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 2620,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng 120 ml pha sốt trộn và 2,5 lít nấu nước dùng.",
+          "sequence": 12
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhỏ để pha sốt.",
+          "sequence": 13
+        },
+        {
+          "name": "Ớt tươi",
+          "quantity": 8,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhỏ, tùy khẩu vị.",
+          "sequence": 14
+        },
+        {
+          "name": "Gừng",
+          "quantity": 30,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Đập dập, cho vào nồi luộc ngan.",
+          "sequence": 15
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 25,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Nướng hoặc áp chảo cho thơm, dùng nấu nước dùng.",
+          "sequence": 16
+        },
+        {
+          "name": "Muối",
+          "quantity": 10,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Chia để nêm nước dùng.",
+          "sequence": 17
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 25,
+          "unit": "g",
+          "role": "garnish",
+          "notes": "Thái nhỏ để rắc lên bún và nước dùng.",
+          "sequence": 18
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Thấm khô ngan bằng khăn giấy, kiểm tra không còn lông sót. Ướp nhẹ với 15 ml nước mắm và một nửa lượng muối; giữ lạnh trong lúc sơ chế các phần khác."
+        },
+        {
+          "step": 2,
+          "instruction": "Nếm măng chua; chần 2–3 phút và xả nước nếu măng quá mặn hoặc chua gắt. Rửa rau thơm, để ráo; rang lạc nếu chưa rang."
+        },
+        {
+          "step": 3,
+          "instruction": "Pha sốt với 25 ml nước mắm dành riêng, nước cốt chanh, đường, 120 ml nước lọc, tỏi và ớt. Nếm để có vị chua ngọt dịu; giữ riêng khỏi ngan sống."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Cho ngan, gừng, hành tím, 15 ml nước mắm dành riêng cho nước dùng và 2,5 lít nước vào nồi. Đun sôi, hớt bọt rồi hạ nhỏ lửa; ninh đến khi thịt mềm và phần đùi dày nhất đạt ít nhất 74°C, khoảng 50–60 phút."
+        },
+        {
+          "step": 2,
+          "instruction": "Gắp ngan ra đĩa sạch, để nghỉ 20 phút rồi lọc xương và thái thịt. Luộc mề, gan đến khi chín hoàn toàn và đạt ít nhất 74°C; vớt ra đĩa sạch, thái lát. Nêm nước dùng với phần muối còn lại; nấu măng chua trong nước dùng 5 phút rồi vớt ra làm topping."
+        },
+        {
+          "step": 3,
+          "instruction": "Trụng bún theo hướng dẫn trên gói, để ráo. Chia bún vào bát, rưới sốt vừa đủ rồi xếp ngan, mề, gan, măng và rau thơm lên trên; rắc lạc rang, hành phi và hành lá. Múc nước dùng nóng ra bát nhỏ ăn kèm."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://vinwonders.com/vi/wonderpedia/news/bun-ngan-ha-noi/",
+          "publisher": "VinWonders",
+          "title": "Bún ngan Hà Nội ăn ở đâu ngon? Lưu ngay 13 địa chỉ nổi đình đám",
+          "use": "Describes Hanoi bún ngan and a documented mixed version served with sliced duck, gizzard, liver, kidney, blood, peanuts, sour bamboo shoots, Vietnamese mint and sweet-sour sauce. Bếp Việt adapts the mixed-noodle form for home cooking, omits blood, and standardizes safe cooking.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Dùng khoảng 650 g ngan, 350 g bún và nửa lượng topping; nấu trong nồi nhỏ.",
+            "instruction": "Nêm nước mắm và sốt từ từ, vẫn kiểm tra nhiệt độ thịt và lòng."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "Dùng khoảng 1,95 kg ngan và tăng bún, măng, rau theo tỷ lệ.",
+            "instruction": "Ninh ngan trong nồi rộng hoặc chia mẻ; pha sốt theo khẩu vị."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/bun-ngan-tron-chua-ngot-ha-noi-960.webp",
+          "page_url": null,
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh cutout món ăn được tạo riêng cho Bếp Việt; nguồn chỉ dùng xác minh tên món, địa danh và cách phục vụ.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Bát bún ngan trộn chua ngọt Hà Nội với thịt ngan, măng chua, rau húng, lạc rang và sốt tỏi ớt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh PNG nền trong suốt được tạo riêng, xuất thành các kích thước WebP; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức nhà làm dựa trên dạng bún ngan trộn Hà Nội được mô tả với măng chua, rau thơm, lạc và sốt chua ngọt; Bếp Việt bỏ tiết ngan và chuẩn hóa bước nấu chín an toàn.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử để cân độ chua ngọt theo từng loại măng chua và nước mắm.",
+          "Kiểm tra thời gian chín an toàn cho từng phần lòng ngan theo kích thước."
+        ]
+      }
+    },
+    {
+      "id": "BV704",
+      "slug": "ga-nuong-song-cau-phu-yen",
+      "aliases": [
+        "Gà nướng Sông Cầu",
+        "Gà nướng kiểu Sông Cầu"
+      ],
+      "region": [
+        "Trung"
+      ],
+      "province": [
+        "Phú Yên"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "mâm cơm gia đình",
+        "món đãi khách"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Một con gà ta nướng chẻ bướm, dùng với muối chấm cho bốn người.",
+      "prep_time": 25,
+      "cook_time": 60,
+      "passive_time": 10,
+      "total_time": 95,
+      "description": "Gà nướng Sông Cầu là món gà đặc sản được nhắc đến cùng vùng Sông Cầu, Phú Yên. Bếp Việt dùng gà ta chẻ bướm, ướp nước mắm, hành tỏi và tiêu rồi nướng chậm để da vàng, thịt chín mọng; gia vị và thời gian là bản hướng dẫn gia đình, không đại diện một quán cụ thể.",
+      "finished_dish": "Da gà vàng nâu, có chỗ xém thơm; thịt chín tới, còn mọng, gia vị mặn thơm vừa phải.",
+      "serving": "Chặt gà thành miếng, dùng nóng với muối tiêu chanh, rau sống và cơm trắng hoặc xôi.",
+      "tips": [
+        "Chẻ bướm và ép phẳng gà để nhiệt vào đều; thấm khô da trước khi ướp.",
+        "Nướng trên khay có giá hoặc vỉ, đặt khay hứng bên dưới để mỡ không nhỏ xuống lửa.",
+        "Đo ở phần đùi dày nhất đạt ít nhất 74°C; để gà nghỉ 10 phút trước khi chặt."
+      ],
+      "dish_type": [
+        "Gà nướng nguyên con"
+      ],
+      "main_ingredient": [
+        "gà ta",
+        "nước mắm",
+        "hành tỏi"
+      ],
+      "cooking_method": [
+        "ướp",
+        "nướng"
+      ],
+      "search_terms": [
+        "gà nướng Sông Cầu",
+        "gà nướng Phú Yên",
+        "đặc sản Sông Cầu",
+        "gà nướng nước mắm"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Gà ta nướng vàng chẻ bướm kiểu Sông Cầu Phú Yên, bày nguyên con trên đĩa.",
+      "time_note": "Khoảng 95 phút gồm 30 phút ướp; thời gian nướng tùy lò, vỉ và trọng lượng gà.",
+      "suggested_pairings": [
+        "Muối tiêu chanh",
+        "Rau sống",
+        "Cơm trắng",
+        "Xôi"
+      ],
+      "recipe_family": "ga_nuong_song_cau",
+      "keywords": [
+        "gà nướng Sông Cầu",
+        "Phú Yên",
+        "gà ta",
+        "món nướng"
+      ],
+      "tags": [
+        "món mặn",
+        "món gà",
+        "ẩm thực Phú Yên",
+        "món nướng"
+      ],
+      "name": "Gà nướng Sông Cầu Phú Yên",
+      "ingredients": [
+        {
+          "name": "Gà ta nguyên con",
+          "quantity": 1200,
+          "unit": "g",
+          "role": "main",
+          "notes": "Làm sạch, chẻ bướm và ép phẳng.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 35,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Ướp gà, điều chỉnh theo độ mặn.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 35,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhuyễn.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 18,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhuyễn.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Hành tây",
+          "quantity": 80,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bào hoặc băm nhuyễn để ướp.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Đường",
+          "quantity": 12,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Giúp cân vị và lên màu.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Tiêu đen xay",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng ướp gà.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "fat",
+          "notes": "Trộn vào hỗn hợp ướp.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Ớt tươi",
+          "quantity": 8,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhỏ, tùy chọn.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Chanh",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "dipping",
+          "notes": "Dùng pha muối chấm.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Muối hạt",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Pha cùng tiêu và nước cốt chanh.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Rau sống",
+          "quantity": 200,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Rửa kỹ và để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        },
+        {
+          "name": "Cơm trắng",
+          "quantity": 600,
+          "unit": "g",
+          "role": "grain",
+          "notes": "Nấu chín để ăn kèm; có thể thay bằng xôi.",
+          "scaling_rule": "linear",
+          "sequence": 13
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Thấm khô gà bằng khăn giấy, kiểm tra không còn lông sót rồi chẻ bướm dọc xương ức. Ép phẳng phần thân; khía nhẹ các phần đùi dày để gia vị thấm."
+        },
+        {
+          "step": 2,
+          "instruction": "Trộn nước mắm, hành tím, tỏi, hành tây, đường, tiêu, dầu và ớt (nếu dùng). Xoa đều lên cả hai mặt gà, ướp 30 phút trong ngăn mát."
+        },
+        {
+          "step": 3,
+          "instruction": "Rửa rau, pha muối tiêu chanh. Làm nóng lò 200°C hoặc chuẩn bị bếp nướng có vùng nhiệt vừa."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đặt gà trên vỉ có khay hứng bên dưới. Nướng ở 200°C hoặc lửa vừa khoảng 45–60 phút, trở mặt một lần; nếu da sậm nhanh, hạ nhiệt hoặc che lỏng bằng giấy bạc."
+        },
+        {
+          "step": 2,
+          "instruction": "Kiểm tra phần đùi dày nhất đạt ít nhất 74°C; gà lớn có thể cần thêm thời gian. Không phết lại phần nước ướp đã tiếp xúc thịt sống."
+        },
+        {
+          "step": 3,
+          "instruction": "Chuyển gà sang đĩa sạch, để nghỉ 10 phút rồi chặt miếng. Dùng nóng với rau, cơm và muối tiêu chanh."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://topplus.vn/tin-tuc/hanh-trinh-top/top-100-mon-an-dac-san-viet-nam-2020-2021-topplus-vn-p-100-ga-nuong-song-cau-phu-yen",
+          "publisher": "Topplus",
+          "title": "Top 100 Món Ăn Đặc Sản Việt Nam 2020–2021: Gà nướng Sông Cầu (Phú Yên)",
+          "use": "Supports the recognized dish name and its association with Sông Cầu, Phú Yên; the home marinade, temperature and timing are editorial Bếp Việt details.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://vnexpress.net/ga-vuon-cu-chi-chien-nuoc-mam-2393077.html",
+          "publisher": "VnExpress Đời sống",
+          "title": "Gà vườn Củ Chi chiên nước mắm",
+          "use": "A separate report notes Sông Cầu grilled chicken was reproduced by a Củ Chi restaurant with guidance from a Sông Cầu chicken-grill owner, cross-checking the dish's regional association.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Dùng nửa con gà khoảng 600 g; nướng tới nhiệt độ an toàn, không chỉ dựa vào thời gian.",
+            "instruction": "Nêm từ lượng giảm và điều chỉnh theo khẩu vị; kiểm tra độ chín an toàn."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "Dùng hai con nhỏ hoặc một con lớn; nướng riêng, tránh xếp chồng và kiểm tra mỗi con.",
+            "instruction": "Tăng gia vị từ từ; điều chỉnh thời gian và kích thước nồi theo mẻ thực tế."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/ga-nuong-song-cau-phu-yen-960.webp",
+          "page_url": null,
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh cutout món ăn được tạo riêng cho Bếp Việt; nguồn chỉ dùng xác minh tên món, địa danh và cách chế biến.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Gà ta nướng vàng chẻ bướm kiểu Sông Cầu Phú Yên, bày nguyên con trên đĩa.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh PNG nền trong suốt được tạo riêng, xuất thành các kích thước WebP; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Cách nướng tại nhà dựa trên tên món và địa danh được nguồn xác nhận; tỷ lệ ướp, kiểu bếp và thời gian là hướng dẫn biên tập, chưa thử bếp.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử trên than và trong lò để điều chỉnh nhiệt, thời gian cho gà 1,2 kg.",
+          "Đối chiếu gia vị và cách phục vụ với một cơ sở tại Sông Cầu."
+        ]
+      }
+    },
+    {
+      "id": "BV705",
+      "slug": "cha-ngong-nuong",
+      "name": "Chả ngỗng nướng",
+      "aliases": [
+        "Chả thịt ngỗng nướng",
+        "Ngỗng băm nướng xiên"
+      ],
+      "region": [],
+      "province": [],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa tối",
+        "mâm cơm gia đình",
+        "món đãi khách"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Khoảng mười hai viên chả ngỗng nướng, dùng cho bốn người.",
+      "prep_time": 25,
+      "cook_time": 20,
+      "passive_time": 30,
+      "total_time": 75,
+      "description": "Chả ngỗng nướng dùng thịt ức hoặc đùi ngỗng băm cùng chút mỡ để viên chả mềm, thơm. Sả, tỏi, hành, tiêu và mật ong tạo lớp mặt vàng thơm khi nướng; công thức Bếp Việt dùng nhiệt kế để bảo đảm phần nhân xay chín an toàn.",
+      "finished_dish": "Viên chả vàng nâu, cạnh hơi xém thơm; bên trong ẩm, kết dính và chín đều, dậy mùi sả tỏi.",
+      "serving": "Xiên chả ra đĩa, ăn nóng với rau thơm, dưa leo, cơm hoặc bún. Dùng muối tiêu chanh hoặc nước mắm chua ngọt để chấm.",
+      "tips": [
+        "Chọn thịt đùi hoặc ức ngỗng có chút mỡ; xay vừa nhuyễn để viên chả còn độ mọng.",
+        "Để hỗn hợp nghỉ trong ngăn mát 30 phút cho kết dính và thấm gia vị.",
+        "Nướng đến khi tâm viên chả đạt ít nhất 74°C; không dựa riêng vào màu mặt ngoài."
+      ],
+      "dish_type": [
+        "Chả gia cầm nướng"
+      ],
+      "main_ingredient": [
+        "thịt ngỗng",
+        "sả",
+        "tỏi"
+      ],
+      "cooking_method": [
+        "băm hoặc xay",
+        "ướp",
+        "nướng"
+      ],
+      "search_terms": [
+        "chả ngỗng nướng",
+        "chả thịt ngỗng",
+        "ngỗng băm nướng",
+        "món ngỗng gia đình"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Những xiên chả ngỗng nướng vàng nâu ăn cùng rau thơm, dưa leo và muối tiêu chanh.",
+      "time_note": "Khoảng 75 phút gồm 30 phút ướp lạnh; thời gian nướng thay đổi theo cỡ viên và thiết bị.",
+      "suggested_pairings": [
+        "Rau thơm",
+        "Dưa leo",
+        "Cơm trắng",
+        "Bún tươi",
+        "Muối tiêu chanh"
+      ],
+      "recipe_family": "cha_ngong_nuong",
+      "keywords": [
+        "chả ngỗng",
+        "ngỗng nướng",
+        "sả tỏi",
+        "món đãi khách"
+      ],
+      "tags": [
+        "món mặn",
+        "món ngỗng",
+        "món nướng",
+        "mâm cơm gia đình"
+      ],
+      "ingredients": [
+        {
+          "name": "Thịt đùi hoặc ức ngỗng bỏ da",
+          "quantity": 700,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn phần nạc có ít mỡ; băm hoặc xay thô.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Mỡ lợn",
+          "quantity": 60,
+          "unit": "g",
+          "role": "fat",
+          "notes": "Băm nhỏ để chả không bị khô; có thể thay bằng mỡ ngỗng.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Sả",
+          "quantity": 30,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc phần già, băm thật nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 30,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhuyễn.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhuyễn.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Mật ong",
+          "quantity": 20,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Tạo vị dịu và giúp mặt chả lên màu.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Muối",
+          "quantity": 8,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm thịt, điều chỉnh theo khẩu vị.",
+          "scaling_rule": "linear",
+          "sequence": 7
+        },
+        {
+          "name": "Tiêu đen xay",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng ướp chả.",
+          "scaling_rule": "linear",
+          "sequence": 8
+        },
+        {
+          "name": "Dầu màu điều",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Tùy chọn, giúp chả có màu vàng cam.",
+          "scaling_rule": "linear",
+          "sequence": 9
+        },
+        {
+          "name": "Rau thơm tổng hợp",
+          "quantity": 150,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Rửa sạch, để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 10
+        },
+        {
+          "name": "Dưa leo",
+          "quantity": 200,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Rửa sạch, thái lát.",
+          "scaling_rule": "linear",
+          "sequence": 11
+        },
+        {
+          "name": "Que tre",
+          "quantity": 12,
+          "unit": "que",
+          "role": "equipment",
+          "notes": "Ngâm nước 20 phút nếu nướng trên than hoặc bếp lửa.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        },
+        {
+          "name": "Chanh",
+          "quantity": 1,
+          "unit": "quả",
+          "role": "dipping",
+          "notes": "Dùng pha muối tiêu chanh.",
+          "scaling_rule": "linear",
+          "sequence": 13
+        },
+        {
+          "name": "Muối hạt",
+          "quantity": 4,
+          "unit": "g",
+          "role": "dipping",
+          "notes": "Trộn cùng tiêu và nước cốt chanh.",
+          "scaling_rule": "linear",
+          "sequence": 14
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Băm hoặc xay thô thịt ngỗng và mỡ. Băm thật nhỏ sả, hành tím và tỏi; giữ thớt, dao và tô thịt sống riêng khỏi rau ăn liền."
+        },
+        {
+          "step": 2,
+          "instruction": "Trộn thịt với sả, hành, tỏi, mật ong, muối, tiêu và dầu màu điều. Đậy kín, ướp trong ngăn mát 30 phút."
+        },
+        {
+          "step": 3,
+          "instruction": "Làm ẩm tay, nặn thành khoảng 12 viên dẹt dày 2 cm. Xiên que nếu muốn; làm nóng lò hoặc bếp nướng ở mức nhiệt vừa-cao."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đặt chả lên vỉ có khay hứng. Nướng ở 200°C hoặc trên bếp than lửa vừa, trở mặt thường xuyên để chả chín đều và không cháy mật ong."
+        },
+        {
+          "step": 2,
+          "instruction": "Nướng khoảng 12–18 phút tùy kích cỡ. Dùng nhiệt kế kiểm tra tâm những viên dày nhất đạt ít nhất 74°C; nướng thêm nếu chưa đạt."
+        },
+        {
+          "step": 3,
+          "instruction": "Gắp chả ra đĩa sạch, để nghỉ 3 phút. Dùng nóng với rau thơm, dưa leo và muối tiêu chanh."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://vit29.com/cha-ngong-nuong-mon-ngon-dac-sac-cho-moi-bua-an.html",
+          "publisher": "Vịt 29",
+          "title": "Chả ngỗng nướng - Món ngon đặc sắc cho mọi bữa ăn",
+          "use": "Documents chả ngỗng nướng for family or feast meals and describes minced lean breast or thigh with a little fat, lemongrass, garlic, onion, pepper, honey, salt and annatto oil, shaped into small patties and grilled. Bếp Việt standardizes home quantities and safe internal temperature.",
+          "accessed_at": "2026-10-24",
+          "type": "editorial_reference"
+        }
+      ],
+      "time_unit": "minute",
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Dùng 350 g thịt ngỗng và 30 g mỡ, nặn khoảng sáu viên.",
+            "instruction": "Giữ độ dày viên chả đồng đều và kiểm tra nhiệt độ tâm."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.2,
+            "example": "Dùng 1,05 kg thịt ngỗng, chia viên thành hai mẻ để nướng.",
+            "instruction": "Nướng theo mẻ, không xếp chồng và nêm gia vị từ từ."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/cha-ngong-nuong-960.webp",
+          "page_url": null,
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh cutout món ăn được tạo riêng cho Bếp Việt; nguồn chỉ dùng xác minh tên món và cách chế biến.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Những xiên chả ngỗng nướng vàng nâu ăn cùng rau thơm, dưa leo và muối tiêu chanh.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-24",
+          "photo_variant_note": "Ảnh PNG nền trong suốt được tạo riêng, xuất thành các kích thước WebP; công thức biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Chả ngỗng nướng được mô tả trong nguồn; định lượng, độ dày viên và thời gian/nhiệt độ nướng là bản Bếp Việt chuẩn hóa cho căn bếp gia đình.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-24",
+        "needs": [
+          "Nấu thử với độ nạc/mỡ khác nhau để điều chỉnh độ kết dính và thời gian nướng.",
+          "Kiểm tra độ ngọt và màu mặt chả với từng loại mật ong, lò hoặc bếp than."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,700 @@
+{
+  "tam-huu-tra-que": {
+    "name": "Tam Huu Tra Que Shrimp, Pork and Herb Rolls",
+    "aliases": [
+      "Tra Que tom huu",
+      "Hoi An tam huu rolls"
+    ],
+    "region": [
+      "Central Vietnam"
+    ],
+    "province": [
+      "Quang Nam Province"
+    ],
+    "category": "Savory dish",
+    "meal_type": [
+      "lunch",
+      "dinner",
+      "side dish",
+      "family meal"
+    ],
+    "difficulty": "Medium",
+    "serving_basis": "A small shared plate for four; serve as a starter or alongside a family meal.",
+    "description": "Each tam huu roll pairs a stir-fried river shrimp with a slice of boiled pork and fresh basil, tied with blanched scallion and served with sweet-sour fish sauce. The dish is associated with Tra Que vegetable village. Bếp Việt has adapted the quantities for four people; the recipe has not been test-cooked.",
+    "finished_dish": "Tender shrimp, soft pork and fragrant basil are bundled into bite-size rolls, with a balanced sweet-sour dip on the side.",
+    "serving": "Arrange the rolls on a plate and place the sweet-sour fish sauce in the middle. Serve while the shrimp and pork are still warm.",
+    "tips": [
+      "Boil the pork until just cooked and let it cool slightly before slicing thinly.",
+      "Stir-fry the shrimp until opaque and fully cooked, but do not overcook it.",
+      "Briefly blanch the scallion strands until pliable and drain before tying the rolls."
+    ],
+    "dish_type": [
+      "Tra Que rolls",
+      "Starter"
+    ],
+    "main_ingredient": [
+      "river shrimp",
+      "pork",
+      "basil",
+      "scallion"
+    ],
+    "cooking_method": [
+      "boiling",
+      "stir-frying",
+      "rolling"
+    ],
+    "search_terms": [
+      "tam huu Tra Que",
+      "tom huu Hoi An",
+      "Tra Que shrimp pork herb rolls",
+      "Vietnamese shrimp herb rolls"
+    ],
+    "image_alt": "A plate of Tra Que tam huu rolls made with cooked shrimp, boiled pork, basil and scallion, with dipping sauce.",
+    "time_note": "About 45 minutes; boiling time depends on the thickness of the pork.",
+    "suggested_pairings": [
+      "Steamed rice",
+      "Fresh greens",
+      "Light vegetable soup"
+    ],
+    "recipe_family": "tam_huu_tra_que",
+    "spicy_level": 1,
+    "ingredients": [
+      {
+        "name": "Medium river shrimp",
+        "unit": "g",
+        "notes": "Trim the antennae, devein and rinse."
+      },
+      {
+        "name": "Pork belly",
+        "unit": "g",
+        "notes": "Choose a balanced lean-to-fat cut for boiling."
+      },
+      {
+        "name": "Vietnamese basil",
+        "unit": "g",
+        "notes": "Pick tender leaves, wash and drain."
+      },
+      {
+        "name": "Scallions",
+        "unit": "stalks",
+        "notes": "Choose long strands to blanch and tie the rolls."
+      },
+      {
+        "name": "Peanut oil",
+        "unit": "ml",
+        "notes": "For stir-frying the shrimp; neutral oil can be substituted."
+      },
+      {
+        "name": "Fish sauce",
+        "unit": "ml",
+        "notes": "Season the dipping sauce to taste."
+      },
+      {
+        "name": "Lime juice",
+        "unit": "ml",
+        "notes": "For the sweet-sour dip."
+      },
+      {
+        "name": "Sugar",
+        "unit": "g",
+        "notes": "Dissolve in the dipping sauce."
+      },
+      {
+        "name": "Water",
+        "unit": "ml",
+        "notes": "For boiling the pork and blanching scallions."
+      },
+      {
+        "name": "Garlic",
+        "unit": "g",
+        "notes": "Finely chop."
+      },
+      {
+        "name": "Fresh chili",
+        "unit": "g",
+        "notes": "Finely chop; optional."
+      },
+      {
+        "name": "Salt",
+        "unit": "g",
+        "notes": "Season the pork-boiling water."
+      }
+    ],
+    "preparation_steps": [
+      "Rinse the pork, shrimp and herbs separately. Trim and devein the shrimp; wash the basil and scallions and drain.",
+      "Bring salted water to a boil and cook the pork until fully done. Let it cool slightly, then slice thinly.",
+      "Mix fish sauce, lime juice, sugar and water until the sugar dissolves; add chopped garlic and chili.",
+      "Briefly blanch the scallion strands until pliable, then drain."
+    ],
+    "cooking_steps": [
+      "Heat the peanut oil and stir-fry the shrimp until pink-orange and fully cooked; let cool slightly.",
+      "Arrange a slice of pork, a basil leaf and one shrimp together, then tie into a small bundle with a blanched scallion strand.",
+      "Arrange on a plate and serve with the sweet-sour fish sauce."
+    ],
+    "tags": [
+      "Central Vietnam",
+      "Quang Nam Province",
+      "Tra Que cuisine",
+      "Vietnamese rolls",
+      "Family meal"
+    ],
+    "keywords": [
+      "Tra Que",
+      "Hoi An",
+      "tom huu rolls",
+      "small shrimp",
+      "Central Vietnamese rolls"
+    ]
+  },
+  "canh-ca-duoi-xuong-rong-quang-binh": {
+    "name": "Quang Binh Stingray and Edible Cactus Soup",
+    "aliases": [
+      "Sour Stingray Soup with Cactus",
+      "Quang Binh Cactus Stingray Soup"
+    ],
+    "region": [
+      "Central Vietnam"
+    ],
+    "province": [
+      "Quang Binh Province"
+    ],
+    "category": "Soup",
+    "meal_type": [
+      "lunch",
+      "dinner",
+      "soup",
+      "family meal"
+    ],
+    "difficulty": "Medium",
+    "serving_basis": "One shared pot of soup for a four-person family meal.",
+    "description": "Stingray is simmered with young edible cactus pads, tamarind and herbs. The broth is gently sour with a mild natural bitterness from the cactus. Bếp Việt has adapted the vegetable quantities for a family serving; only use edible cactus from a verified food source, never ornamental or unidentified plants.",
+    "finished_dish": "Tender stingray in a bright, gently sour broth; properly prepared cactus retains a tender-crisp texture with little slime.",
+    "serving": "Ladle the fish, cactus and herbs into deep bowls, finish with rice paddy herb and cilantro, and serve hot with steamed rice.",
+    "tips": [
+      "Use only young pads of a cactus sold for food; never use ornamental or unidentified cactus.",
+      "Remove spines and tough outer skin, slice thinly and blanch separately to reduce mucilage before cooking.",
+      "Cook the stingray completely through and add the herbs at the end."
+    ],
+    "dish_type": [
+      "Central Vietnamese sour fish soup",
+      "Family fish dish"
+    ],
+    "main_ingredient": [
+      "stingray",
+      "edible cactus",
+      "tamarind",
+      "fresh herbs"
+    ],
+    "cooking_method": [
+      "searing",
+      "simmering",
+      "blanching"
+    ],
+    "search_terms": [
+      "Quang Binh stingray cactus soup",
+      "sour stingray soup with cactus",
+      "canh ca duoi xuong rong",
+      "cactus stingray sour soup"
+    ],
+    "image_alt": "A bowl of Quang Binh stingray cactus soup with cooked fish, young cactus slices, okra, taro stem and herbs.",
+    "time_note": "About 70 minutes, including 15 minutes to season the fish; cactus preparation time may vary.",
+    "suggested_pairings": [
+      "Steamed rice",
+      "Boiled greens",
+      "Chili fish sauce"
+    ],
+    "recipe_family": "quang_binh_canh_ca_duoi_xuong_rong",
+    "spicy_level": 1,
+    "ingredients": [
+      {
+        "name": "Stingray",
+        "unit": "g",
+        "notes": "Clean thoroughly and cut into serving pieces."
+      },
+      {
+        "name": "Young edible cactus pads",
+        "unit": "g",
+        "notes": "Remove spines and tough skin, then slice thinly."
+      },
+      {
+        "name": "Tamarind",
+        "unit": "piece",
+        "notes": "Soak in warm water and strain the pulp."
+      },
+      {
+        "name": "Okra",
+        "unit": "g",
+        "notes": "Rinse and cut into short pieces."
+      },
+      {
+        "name": "Taro stem",
+        "unit": "g",
+        "notes": "Peel, rinse and slice diagonally."
+      },
+      {
+        "name": "Shallots",
+        "unit": "g",
+        "notes": "Peel and mince."
+      },
+      {
+        "name": "Rice paddy herb",
+        "unit": "g",
+        "notes": "Wash and chop."
+      },
+      {
+        "name": "Cilantro",
+        "unit": "g",
+        "notes": "Wash and chop."
+      },
+      {
+        "name": "Fresh chili",
+        "unit": "g",
+        "notes": "Slice; adjust to taste."
+      },
+      {
+        "name": "Fish sauce",
+        "unit": "ml",
+        "notes": "Season the broth gradually."
+      },
+      {
+        "name": "Salt",
+        "unit": "g",
+        "notes": "Use for seasoning and the fish marinade."
+      },
+      {
+        "name": "Sugar",
+        "unit": "g",
+        "notes": "Balance the sourness."
+      },
+      {
+        "name": "Ground black pepper",
+        "unit": "g",
+        "notes": "Season the fish."
+      },
+      {
+        "name": "Water",
+        "unit": "ml",
+        "notes": "For the soup."
+      }
+    ],
+    "preparation_steps": [
+      "Rinse the stingray, cut into pieces and season with salt and pepper for about 15 minutes.",
+      "Use young edible cactus with clear food provenance. Remove spines and tough outer skin, slice thinly, blanch until less slimy, and drain.",
+      "Soak the tamarind in warm water and strain. Rinse and cut the okra and taro stem; chop the herbs and chili."
+    ],
+    "cooking_steps": [
+      "Sauté the shallots until fragrant, add the stingray and gently sear the surface.",
+      "Add the water, bring to a boil, then simmer until the fish is fully cooked.",
+      "Add the blanched cactus, tamarind liquid, okra and taro stem. Cook until the vegetables are just tender; season with fish sauce, sugar and salt.",
+      "Turn off the heat, add rice paddy herb, cilantro and chili, and serve hot."
+    ],
+    "tags": [
+      "Central Vietnam",
+      "Quang Binh Province",
+      "Soup dish",
+      "Seafood",
+      "Family-style dish"
+    ],
+    "keywords": [
+      "Quang Binh Province",
+      "stingray",
+      "edible cactus",
+      "sour soup",
+      "seafood dish"
+    ]
+  },
+  "xoi-ram-ba-don": {
+    "name": "Ba Don Sticky Rice with Crispy Pork Rolls",
+    "aliases": [
+      "Xoi with Ba Don ram",
+      "Quang Binh xoi ram"
+    ],
+    "region": [
+      "Central Vietnam"
+    ],
+    "province": [
+      "Quang Binh Province"
+    ],
+    "category": "Savory dish",
+    "meal_type": [
+      "breakfast",
+      "lunch",
+      "dinner",
+      "filling dish"
+    ],
+    "difficulty": "Medium",
+    "serving_basis": "Four servings of sticky rice with pork ram, suitable for breakfast or as a filling family dish.",
+    "description": "Fluffy white sticky rice is served with small pork rolls wrapped in rice paper and fried until crisp. A local newspaper describes this as a familiar Ba Don pairing, often eaten with peanut salt or lime-garlic-chili fish sauce. Bếp Việt has adapted the quantities for four; the recipe has not been test-cooked.",
+    "finished_dish": "Separate, tender sticky-rice grains accompany small golden ram rolls with a crisp shell and moist pork filling.",
+    "serving": "Divide the hot sticky rice into small portions and eat with the ram rolls. Offer peanut salt or lime-garlic-chili fish sauce on the side.",
+    "tips": [
+      "Soak the rice long enough and drain well before steaming for fluffy results.",
+      "Hand-chop the pork rather than grinding it finely, so the filling keeps some texture.",
+      "Fry the rolls over medium heat and turn often so the filling cooks before the wrappers darken."
+    ],
+    "dish_type": [
+      "Central Vietnamese sticky-rice meal",
+      "Ba Don local dish"
+    ],
+    "main_ingredient": [
+      "glutinous rice",
+      "pork",
+      "rice-paper wrappers"
+    ],
+    "cooking_method": [
+      "soaking",
+      "steaming",
+      "rolling",
+      "deep-frying"
+    ],
+    "search_terms": [
+      "xoi ram Ba Don",
+      "Ba Don sticky rice with crispy pork rolls",
+      "Quang Binh xoi ram",
+      "sticky rice and ram rolls"
+    ],
+    "image_alt": "A plate of Ba Don xoi ram with fluffy white sticky rice, golden pork rolls and a small bowl of peanut salt.",
+    "time_note": "About 9 hours 15 minutes including overnight soaking; active kitchen time is about 75 minutes.",
+    "suggested_pairings": [
+      "Peanut salt",
+      "Lime garlic chili fish sauce",
+      "Central Vietnamese thick-noodle soup"
+    ],
+    "recipe_family": "ba_don_xoi_ram",
+    "spicy_level": 0,
+    "ingredients": [
+      {
+        "name": "Glutinous rice",
+        "unit": "g",
+        "notes": "Choose fragrant grains and soak overnight."
+      },
+      {
+        "name": "Pork shoulder",
+        "unit": "g",
+        "notes": "Hand-chop or coarsely mince."
+      },
+      {
+        "name": "Rice-paper wrappers for ram",
+        "unit": "sheets",
+        "notes": "Soften according to the package directions."
+      },
+      {
+        "name": "Shallots",
+        "unit": "g",
+        "notes": "Peel and mince."
+      },
+      {
+        "name": "Seasoning powder",
+        "unit": "g",
+        "notes": "Mix into the pork filling."
+      },
+      {
+        "name": "Ground black pepper",
+        "unit": "g",
+        "notes": "Season the filling."
+      },
+      {
+        "name": "Cooking oil",
+        "unit": "ml",
+        "notes": "For frying the ram; the rolls absorb less than this amount."
+      },
+      {
+        "name": "Roasted peanuts",
+        "unit": "g",
+        "notes": "Lightly crush for peanut salt."
+      },
+      {
+        "name": "Salt",
+        "unit": "g",
+        "notes": "Divide between the filling and peanut salt."
+      },
+      {
+        "name": "Water",
+        "unit": "ml",
+        "notes": "For soaking rice and steaming."
+      }
+    ],
+    "preparation_steps": [
+      "Gently rinse the glutinous rice, soak in clean water for 6–8 hours or overnight, then drain well.",
+      "Hand-chop the pork and mix with shallot, seasoning powder, pepper and some of the salt; rest for about 15 minutes.",
+      "Lightly crush the roasted peanuts with the remaining salt."
+    ],
+    "cooking_steps": [
+      "Spread the rice in a steamer and steam until tender and fully cooked. Gently fluff once partway through and keep covered.",
+      "Place a small amount of pork filling on each rice-paper wrapper, roll into a short ram and fold in the ends.",
+      "Fry the ram over medium heat, turning until golden and crisp and the pork filling is fully cooked. Drain on a rack.",
+      "Serve the hot sticky rice with ram and peanut salt; lime-garlic-chili fish sauce is optional."
+    ],
+    "tags": [
+      "Central Vietnam",
+      "Quang Binh Province",
+      "Ba Don Town",
+      "Sticky-rice dish",
+      "Filling dish"
+    ],
+    "keywords": [
+      "Ba Don Town",
+      "Quang Binh Province",
+      "sticky rice",
+      "pork spring rolls",
+      "Central Vietnamese breakfast"
+    ]
+  },
+  "nam-tram-xao-ngon-rau-khoai": {
+    "name": "Tram Mushrooms Stir-Fried with Sweet Potato Shoots",
+    "aliases": [
+      "Nam tram xao rau khoai lang",
+      "Tram mushroom and rau lang stir-fry"
+    ],
+    "region": [
+      "Central Vietnam"
+    ],
+    "province": [
+      "Quang Binh Province",
+      "Quang Tri Province",
+      "Hue City"
+    ],
+    "category": "Savory dish",
+    "meal_type": [
+      "lunch",
+      "dinner",
+      "stir-fry",
+      "family meal"
+    ],
+    "difficulty": "Easy",
+    "serving_basis": "One shared stir-fry for four people at a family meal.",
+    "description": "Tram mushrooms are stir-fried with sweet potato shoots and pork belly. A regional newspaper records this pairing and notes that tram mushrooms are enjoyed in some North-Central provinces; Bếp Việt does not generalize it to the entire region and has adapted the quantities for four people.",
+    "finished_dish": "Tram mushrooms retain a gentle bitterness and lingering sweetness, while the greens stay tender and the pork is just cooked.",
+    "serving": "Transfer to a wide plate and serve hot with steamed rice.",
+    "tips": [
+      "Buy correctly identified tram mushrooms from a trusted seller; never forage unfamiliar wild mushrooms.",
+      "Wash soil from the stems carefully and blanch briefly if you prefer a milder bitterness; drain well.",
+      "Add the sweet potato shoots after the mushrooms and stir-fry only until tender to keep their color and avoid excess liquid."
+    ],
+    "dish_type": [
+      "Seasonal mushroom stir-fry",
+      "Vegetable and pork dish"
+    ],
+    "main_ingredient": [
+      "tram mushrooms",
+      "sweet potato shoots",
+      "pork belly"
+    ],
+    "cooking_method": [
+      "cleaning",
+      "stir-frying"
+    ],
+    "search_terms": [
+      "tram mushroom sweet potato shoot stir-fry",
+      "nam tram xao ngon rau khoai",
+      "nam tram xao rau khoai lang",
+      "North Central Vietnam mushroom stir fry"
+    ],
+    "image_alt": "A plate of tram mushrooms stir-fried with sweet potato shoots and pork belly.",
+    "time_note": "About 35 minutes; briefly blanch the mushrooms first if you want a milder bitterness.",
+    "suggested_pairings": [
+      "Steamed rice",
+      "Vegetable soup",
+      "Braised fish"
+    ],
+    "recipe_family": "nam_tram_xao_rau_khoai_bac_trung_bo",
+    "spicy_level": 0,
+    "ingredients": [
+      {
+        "name": "Fresh tram mushrooms",
+        "unit": "g",
+        "notes": "Use correctly identified mushrooms and clean soil from them."
+      },
+      {
+        "name": "Sweet potato shoots",
+        "unit": "g",
+        "notes": "Trim tough stems, rinse and cut into lengths."
+      },
+      {
+        "name": "Pork belly",
+        "unit": "g",
+        "notes": "Slice thinly."
+      },
+      {
+        "name": "Shallots",
+        "unit": "g",
+        "notes": "Peel and mince."
+      },
+      {
+        "name": "Cooking oil",
+        "unit": "ml",
+        "notes": "For stir-frying."
+      },
+      {
+        "name": "Fish sauce",
+        "unit": "ml",
+        "notes": "Season gradually."
+      },
+      {
+        "name": "Salt",
+        "unit": "g",
+        "notes": "Adjust to taste."
+      },
+      {
+        "name": "Ground black pepper",
+        "unit": "g",
+        "notes": "Add at the end."
+      },
+      {
+        "name": "Water",
+        "unit": "ml",
+        "notes": "For rinsing and blanching the mushrooms."
+      }
+    ],
+    "preparation_steps": [
+      "Sort the mushrooms, trim soil-covered ends and rinse quickly several times. Briefly blanch if desired to soften the bitterness, then drain.",
+      "Pick and rinse the sweet potato shoots, discard tough parts and cut into lengths.",
+      "Thinly slice the pork belly and mince the shallots."
+    ],
+    "cooking_steps": [
+      "Heat the oil and stir-fry the pork until just firm and lightly rendered; add the shallots and cook until fragrant.",
+      "Add the mushrooms and stir-fry over medium heat until hot and most released liquid has evaporated.",
+      "Add the sweet potato shoots and toss until just tender. Season with fish sauce, salt and pepper; turn off the heat while the greens are still bright."
+    ],
+    "tags": [
+      "Central Vietnam",
+      "Stir-fry",
+      "Seasonal mushrooms",
+      "Quang Binh Province",
+      "Quang Tri Province",
+      "Hue City"
+    ],
+    "keywords": [
+      "tram mushrooms",
+      "sweet-potato shoots",
+      "sweet-potato leaves",
+      "Quang Binh Province",
+      "Quang Tri Province",
+      "Hue City"
+    ]
+  },
+  "banh-duc-rau-cau-cua-tung": {
+    "name": "Cua Tung Seaweed Jelly Cake",
+    "aliases": [
+      "Banh rau cau Cua Tung",
+      "Quang Tri seaweed jelly cake"
+    ],
+    "region": [
+      "Central Vietnam"
+    ],
+    "province": [
+      "Quang Tri Province"
+    ],
+    "category": "Side dish",
+    "meal_type": [
+      "snack",
+      "light dish",
+      "side dish"
+    ],
+    "difficulty": "Medium",
+    "serving_basis": "A light dish divided among four, served as a snack or side.",
+    "description": "Coastal seaweed is simmered slowly until concentrated, then set into a soft, deep green jelly cake. The dish is documented at Cua Tung fish market in Quang Tri. Bếp Việt has adapted the quantities for four; use only food-grade seaweed from a safe supplier, never gather it from rocky shores yourself.",
+    "finished_dish": "Deep green, tender seaweed jelly that can be cut into pieces; serve plain or with a little seasoned fermented shrimp paste.",
+    "serving": "Let the jelly cool and set fully, cut into bite-size squares and serve chilled or at room temperature with the dip on the side.",
+    "tips": [
+      "Choose seaweed sold for food and traceable to a safe supplier.",
+      "Rinse carefully with clean water and remove sand and debris; do not cook with untreated seawater.",
+      "Simmer gently and skim the foam often for a smoother set with fewer bubbles."
+    ],
+    "dish_type": [
+      "Coastal light dish",
+      "Cua Tung seaweed jelly"
+    ],
+    "main_ingredient": [
+      "edible seaweed",
+      "ginger",
+      "salt"
+    ],
+    "cooking_method": [
+      "soaking",
+      "simmering",
+      "setting"
+    ],
+    "search_terms": [
+      "Cua Tung seaweed jelly cake",
+      "banh duc rau cau Cua Tung",
+      "Quang Tri seaweed jelly",
+      "coastal seaweed snack Vietnam"
+    ],
+    "image_alt": "A plate of deep green Cua Tung seaweed jelly cake cut into pieces with a small bowl of chili fermented shrimp paste.",
+    "time_note": "About 3 hours 25 minutes including simmering and setting; the actual time depends on the seaweed.",
+    "suggested_pairings": [
+      "Seasoned fermented shrimp paste",
+      "Hot tea",
+      "Light seafood dishes"
+    ],
+    "recipe_family": "cua_tung_banh_duc_rau_cau",
+    "spicy_level": 1,
+    "ingredients": [
+      {
+        "name": "Fresh edible seaweed",
+        "unit": "g",
+        "notes": "Use a safe food-grade source and remove sand and debris."
+      },
+      {
+        "name": "Water",
+        "unit": "ml",
+        "notes": "For soaking and simmering the seaweed."
+      },
+      {
+        "name": "Salt",
+        "unit": "g",
+        "notes": "Dissolve in the soaking water."
+      },
+      {
+        "name": "Fresh ginger",
+        "unit": "g",
+        "notes": "Crush and add to the soaking water."
+      },
+      {
+        "name": "Fermented shrimp paste",
+        "unit": "g",
+        "notes": "For a small dipping sauce; choose a safely processed product."
+      },
+      {
+        "name": "Sugar",
+        "unit": "g",
+        "notes": "Balance the dipping sauce."
+      },
+      {
+        "name": "Fresh chili",
+        "unit": "g",
+        "notes": "Finely chop; optional."
+      },
+      {
+        "name": "Lime juice",
+        "unit": "ml",
+        "notes": "Optional, to soften the salty flavor."
+      }
+    ],
+    "preparation_steps": [
+      "Rinse the seaweed several times in clean water; pick out sand, shell fragments and debris, then drain.",
+      "Dissolve salt in water with crushed ginger, soak the seaweed briefly, rinse again and cut into shorter lengths.",
+      "Mix the fermented shrimp paste with a little warm water, sugar and lime juice; add chopped chili and set aside."
+    ],
+    "cooking_steps": [
+      "Put the seaweed and water in a pot. Simmer gently until the strands soften and release their natural gel, stirring occasionally so they do not stick.",
+      "Skim the foam often. Strain out any tough strands if needed, then pour the concentrated seaweed mixture into a clean mold.",
+      "Let cool, chill until fully set, then cut into squares and serve with the fermented shrimp-paste dip."
+    ],
+    "tags": [
+      "Central Vietnam",
+      "Quang Tri Province",
+      "Light dish",
+      "Side dish",
+      "Coastal cuisine"
+    ],
+    "keywords": [
+      "Cua Tung",
+      "Quang Tri Province",
+      "edible seaweed",
+      "seaweed banh duc",
+      "light snack"
+    ]
+  }
+}

@@ -1,0 +1,237 @@
+{
+  "batch": 70,
+  "native_format": "PNG",
+  "canvas": {
+    "width": 3840,
+    "height": 2160,
+    "format": "WebP",
+    "background": "transparent"
+  },
+  "assets": [
+    {
+      "id": "BV676",
+      "slug": "dau-bap-luoc-cham-chao",
+      "native_file": "output/recipe-images/native/dau-bap-luoc-cham-chao.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "canvas_export_file": "output/recipe-images/4k/dau-bap-luoc-cham-chao.png",
+      "canvas_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/dau-bap-luoc-cham-chao-480.webp",
+          "pixels": [
+            480,
+            270
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/dau-bap-luoc-cham-chao-960.webp",
+          "pixels": [
+            960,
+            540
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/dau-bap-luoc-cham-chao-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/dau-bap-luoc-cham-chao-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BV677",
+      "slug": "rau-muong-luoc-cham-tuong-bac-bo",
+      "native_file": "output/recipe-images/native/rau-muong-luoc-cham-tuong-bac-bo.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "canvas_export_file": "output/recipe-images/4k/rau-muong-luoc-cham-tuong-bac-bo.png",
+      "canvas_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/rau-muong-luoc-cham-tuong-bac-bo-480.webp",
+          "pixels": [
+            480,
+            270
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/rau-muong-luoc-cham-tuong-bac-bo-960.webp",
+          "pixels": [
+            960,
+            540
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/rau-muong-luoc-cham-tuong-bac-bo-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/rau-muong-luoc-cham-tuong-bac-bo-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BV678",
+      "slug": "rau-lang-luoc-cham-mam-gung-toi",
+      "native_file": "output/recipe-images/native/rau-lang-luoc-cham-mam-gung-toi.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "canvas_export_file": "output/recipe-images/4k/rau-lang-luoc-cham-mam-gung-toi.png",
+      "canvas_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/rau-lang-luoc-cham-mam-gung-toi-480.webp",
+          "pixels": [
+            480,
+            270
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/rau-lang-luoc-cham-mam-gung-toi-960.webp",
+          "pixels": [
+            960,
+            540
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/rau-lang-luoc-cham-mam-gung-toi-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/rau-lang-luoc-cham-mam-gung-toi-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BV679",
+      "slug": "dau-hu-kho-tuong-hot-chay",
+      "native_file": "output/recipe-images/native/dau-hu-kho-tuong-hot-chay.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "canvas_export_file": "output/recipe-images/4k/dau-hu-kho-tuong-hot-chay.png",
+      "canvas_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/dau-hu-kho-tuong-hot-chay-480.webp",
+          "pixels": [
+            480,
+            270
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/dau-hu-kho-tuong-hot-chay-960.webp",
+          "pixels": [
+            960,
+            540
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/dau-hu-kho-tuong-hot-chay-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/dau-hu-kho-tuong-hot-chay-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BV680",
+      "slug": "bau-luoc-cham-me-den",
+      "native_file": "output/recipe-images/native/bau-luoc-cham-me-den.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "canvas_export_file": "output/recipe-images/4k/bau-luoc-cham-me-den.png",
+      "canvas_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/bau-luoc-cham-me-den-480.webp",
+          "pixels": [
+            480,
+            270
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/bau-luoc-cham-me-den-960.webp",
+          "pixels": [
+            960,
+            540
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/bau-luoc-cham-me-den-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ]
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/bau-luoc-cham-me-den-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ]
+        }
+      ]
+    }
+  ]
+}

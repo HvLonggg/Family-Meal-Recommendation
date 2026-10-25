@@ -88,6 +88,7 @@ describe('AdminLayout', () => {
       '/admin/articles',
       '/admin/submissions',
       '/admin/support',
+      '/admin/assistant',
       '/admin/settings',
       '/admin/security',
     ]);

@@ -1,0 +1,1416 @@
+{
+ "total": 8,
+ "data": [
+  {
+   "id": "3d07bd05-871b-4f2d-88e3-05a7162b384a",
+   "slug": "thit-rang-chay-canh",
+   "name": "Thịt rang cháy cạnh",
+   "excerpt": "Ba chỉ nâu vàng ở cạnh, mỡ trong, thơm hành; vị mặn ngọt nhẹ, nạc còn ẩm và cạnh hơi giòn.",
+   "region": "Bắc",
+   "category": "Món mặn",
+   "difficulty": "Dễ",
+   "prep_minutes": 15,
+   "cook_minutes": 20,
+   "base_servings": 4,
+   "image_path": "/images/recipes/BV001.jpg",
+   "image_alt": "Thịt rang cháy cạnh đã chế biến, phần món ăn được bày trên đĩa hoặc trong bát.",
+   "catalog_id": "BV001",
+   "content": {
+    "aliases": [
+     "Thịt ba chỉ rang cháy cạnh"
+    ],
+    "meal_type": [
+     "trưa",
+     "tối"
+    ],
+    "passive_time": 0,
+    "tags": {
+     "region": [
+      "Bắc"
+     ],
+     "province": [],
+     "meal_type": [
+      "trưa",
+      "tối"
+     ],
+     "dish_type": [
+      "Thịt heo",
+      "rang",
+      "Món gia đình"
+     ],
+     "main_ingredient": [
+      "thịt heo"
+     ],
+     "cooking_method": [
+      "rang"
+     ],
+     "difficulty": "Dễ",
+     "prep_time": 15,
+     "cook_time": 20,
+     "servings": 4,
+     "spicy_level": 0,
+     "suitable_for_family_meal": true,
+     "suggested_pairings": [
+      "BV141",
+      "BV116",
+      "BV177"
+     ],
+     "keywords": [
+      "Thịt rang cháy cạnh",
+      "Thịt ba chỉ rang cháy cạnh",
+      "thịt heo",
+      "rang",
+      "công thức 4 người"
+     ],
+     "recipe_family": "rang"
+    }
+   },
+   "serving": "Dùng nóng hoặc ấm với cơm trắng; rưới một ít nước món ăn lên cơm nếu có. Món đã đậm vị nên thường không cần thêm nước chấm. Gợi ý ăn cùng: canh rau ngót thịt băm, rau muống luộc, cà pháo muối chua.",
+   "tip": "Dùng chảo rộng hoặc nồi đáy dày, đảo sát đáy để phần gia vị không đóng cháy.\nChắt bớt mỡ khi cần, chỉ giữ một lớp mỏng giúp hành và gia vị dậy mùi.\nNêm phần mặn ở gần cuối và dừng khi còn độ ẩm, tránh rang đến khô hoặc quá mặn.",
+   "source_name": "Bếp Việt",
+   "source_url": "https://cookbeo.com/recipes/cach-lam-thit-rang-chay-canh",
+   "ingredients": [
+    {
+     "group_name": "Nguyên liệu chính",
+     "name": "Thịt ba chỉ",
+     "amount": "500",
+     "unit": "g",
+     "note": "Nguyên liệu chính; cân phần dùng được trừ khi ghi nguyên vỏ/có xương.",
+     "scalable": true,
+     "position": 1
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Hành tím",
+     "amount": "30",
+     "unit": "g",
+     "note": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+     "scalable": true,
+     "position": 2
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Hành lá",
+     "amount": "20",
+     "unit": "g",
+     "note": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+     "scalable": true,
+     "position": 3
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Nước mắm",
+     "amount": "20",
+     "unit": "ml",
+     "note": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+     "scalable": true,
+     "position": 4
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Đường",
+     "amount": "6",
+     "unit": "g",
+     "note": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+     "scalable": true,
+     "position": 5
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Dầu ăn",
+     "amount": "20",
+     "unit": "ml",
+     "note": "Chia cho các lượt phi/xào hoặc phết mặt.",
+     "scalable": true,
+     "position": 6
+    }
+   ],
+   "steps": [
+    {
+     "step_type": "so_che",
+     "content": "Thịt ba chỉ: thấm ráo, thái ngang thớ dày 2–3 mm.",
+     "position": 1
+    },
+    {
+     "step_type": "so_che",
+     "content": "Hành tím: bóc vỏ, băm hoặc thái mỏng để phi; hành lá: rửa, tách đầu trắng và lá, thái nhỏ.",
+     "position": 2
+    },
+    {
+     "step_type": "thuc_hien",
+     "content": "Cho ba chỉ thái lát vào chảo rộng, rang lửa vừa 10–12 phút, đảo cho mỡ trong và cạnh vàng.",
+     "position": 1
+    },
+    {
+     "step_type": "thuc_hien",
+     "content": "Chắt bớt mỡ, giữ khoảng 15 ml trong chảo; thêm hành tím thái mỏng, đảo 1 phút.",
+     "position": 2
+    },
+    {
+     "step_type": "thuc_hien",
+     "content": "Thêm mắm và đường, đảo 3–5 phút đến bám thịt; cho hành lá 30 giây cuối rồi tắt.",
+     "position": 3
+    }
+   ]
+  },
+  {
+   "id": "f6e17493-f7e6-4b6a-8400-22866bd507fa",
+   "slug": "ga-luoc",
+   "name": "Gà luộc",
+   "excerpt": "Da gà vàng nhạt, thịt chín đều và không bở.",
+   "region": "Bắc",
+   "category": "Món mặn",
+   "difficulty": "Trung bình",
+   "prep_minutes": 20,
+   "cook_minutes": 45,
+   "base_servings": 4,
+   "image_path": "/images/recipes/BV044.jpg",
+   "image_alt": "Gà luộc đã chế biến, phần món ăn được bày trên đĩa hoặc trong bát.",
+   "catalog_id": "BV044",
+   "content": {
+    "aliases": [],
+    "meal_type": [
+     "trưa",
+     "tối"
+    ],
+    "passive_time": 15,
+    "tags": {
+     "region": [
+      "Bắc"
+     ],
+     "province": [],
+     "meal_type": [
+      "trưa",
+      "tối"
+     ],
+     "dish_type": [
+      "Gà, vịt và gia cầm",
+      "luộc",
+      "Món gia đình"
+     ],
+     "main_ingredient": [
+      "gà"
+     ],
+     "cooking_method": [
+      "luộc"
+     ],
+     "difficulty": "Trung bình",
+     "prep_time": 20,
+     "cook_time": 45,
+     "servings": 4,
+     "spicy_level": 1,
+     "suitable_for_family_meal": true,
+     "suggested_pairings": [
+      "BV141",
+      "BV116",
+      "BV177"
+     ],
+     "keywords": [
+      "Gà luộc",
+      "gà",
+      "luộc",
+      "công thức 4 người"
+     ],
+     "recipe_family": "luoc_ga"
+    }
+   },
+   "serving": "Dùng nóng với cơm. Món đã nêm ăn trực tiếp; món luộc, hấp hoặc chiên nhạt có thể dùng nước chấm trong bảng. Chọn thêm canh và rau để đủ một mâm cơm. Gợi ý ăn cùng: canh rau ngót thịt băm, rau muống luộc, cà pháo muối chua.",
+   "tip": "Dùng nồi vừa cỡ; thêm nước nóng khi cần giữ mức nước phủ nguyên liệu.\nHớt bọt và giữ sôi nhỏ với thịt để nước trong, bề mặt không bị co quá mạnh.\nThái ngang thớ sau khi thịt nghỉ vài phút để lát gọn và còn ẩm.",
+   "source_name": "Bếp Việt",
+   "source_url": "https://cookbeo.com/recipes/ga-luoc",
+   "ingredients": [
+    {
+     "group_name": "Nguyên liệu chính",
+     "name": "Gà làm sạch",
+     "amount": "1500",
+     "unit": "g",
+     "note": "Cân sau làm sạch; phần xương đi kèm không tính vào thịt ăn được.",
+     "scalable": true,
+     "position": 1
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Gừng",
+     "amount": "30",
+     "unit": "g",
+     "note": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+     "scalable": true,
+     "position": 2
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Hành tím",
+     "amount": "30",
+     "unit": "g",
+     "note": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+     "scalable": true,
+     "position": 3
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Lá chanh",
+     "amount": "3",
+     "unit": "g",
+     "note": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+     "scalable": true,
+     "position": 4
+    },
+    {
+     "group_name": "Hỗ trợ chế biến",
+     "name": "Nước chế biến",
+     "amount": "2800",
+     "unit": "ml",
+     "note": "Mức khởi điểm; nước luộc/hấp điều chỉnh theo nồi, không nhất thiết dùng hết.",
+     "scalable": false,
+     "position": 5
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Muối",
+     "amount": "4",
+     "unit": "g",
+     "note": "Cho vào nước luộc hoặc ướp; nêm nhạt khi dùng thêm nước chấm.",
+     "scalable": true,
+     "position": 6
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Nước mắm chấm",
+     "amount": "30",
+     "unit": "ml",
+     "note": "Phần nước chấm riêng; pha, nếm và dùng lượng nhỏ.",
+     "scalable": true,
+     "position": 7
+    },
+    {
+     "group_name": "Nước và chất lỏng",
+     "name": "Nước pha chấm",
+     "amount": "90",
+     "unit": "ml",
+     "note": "Phần nước chấm riêng; pha, nếm và dùng lượng nhỏ.",
+     "scalable": true,
+     "position": 8
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Đường chấm",
+     "amount": "20",
+     "unit": "g",
+     "note": "Phần nước chấm riêng; pha, nếm và dùng lượng nhỏ.",
+     "scalable": true,
+     "position": 9
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Nước cốt chanh chấm",
+     "amount": "20",
+     "unit": "ml",
+     "note": "Phần nước chấm riêng; pha, nếm và dùng lượng nhỏ.",
+     "scalable": true,
+     "position": 10
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Tỏi chấm",
+     "amount": "5",
+     "unit": "g",
+     "note": "Bóc vỏ, băm nhỏ; có thể giảm.",
+     "scalable": true,
+     "position": 11
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Ớt chấm",
+     "amount": "2",
+     "unit": "g",
+     "note": "Tùy chọn; để riêng cho người không ăn cay.",
+     "scalable": true,
+     "position": 12
+    }
+   ],
+   "steps": [
+    {
+     "step_type": "so_che",
+     "content": "Gà làm sạch: kiểm tra lông sót và nội tạng; thấm khô, giữ nguyên con để luộc/nướng.",
+     "position": 1
+    },
+    {
+     "step_type": "so_che",
+     "content": "Gừng: cạo vỏ bẩn, rửa, thái lát mỏng; hành tím: bóc vỏ, băm hoặc thái mỏng để phi; tỏi chấm: bóc vỏ, đập dập rồi băm.",
+     "position": 2
+    },
+    {
+     "step_type": "so_che",
+     "content": "Nhặt, rửa và để ráo lá chanh, ớt chấm. Thái nhỏ phần rau nêm; gia vị khô đong riêng.",
+     "position": 3
+    },
+    {
+     "step_type": "thuc_hien",
+     "content": "Đặt gà vào nồi, thêm gừng, hành, muối và nước ngập gà; tăng lửa cho nước sôi nhẹ.",
+     "position": 1
+    },
+    {
+     "step_type": "thuc_hien",
+     "content": "Hạ nhỏ lửa, luộc khoảng 30–40 phút, trở nhẹ nếu phần lưng nổi khỏi nước.",
+     "position": 2
+    },
+    {
+     "step_type": "thuc_hien",
+     "content": "Kiểm tra thịt phần dày đã chín, tắt bếp ủ thêm 10–15 phút. Vớt gà, để ráo và nguội bớt rồi chặt; rắc lá chanh.",
+     "position": 3
+    },
+    {
+     "step_type": "thuc_hien",
+     "content": "Hòa đường chấm với nước pha chấm ấm, để hạ nóng rồi thêm mắm, nước chanh, tỏi và ớt chấm theo bảng. Nếm, để riêng và dùng từng ít. Gia cầm cần đạt 74°C ở phần thịt dày, tránh chạm xương khi đo.",
+     "position": 4
+    }
+   ]
+  },
+  {
+   "id": "7d5ba1ad-a471-4024-9af3-f97dbf08be32",
+   "slug": "canh-chua-tom",
+   "name": "Canh chua tôm",
+   "excerpt": "Tôm đỏ chín ngọt, nước me dịu và thơm rau nêm.",
+   "region": "Nam",
+   "category": "Món canh",
+   "difficulty": "Dễ",
+   "prep_minutes": 25,
+   "cook_minutes": 18,
+   "base_servings": 4,
+   "image_path": "/images/recipes/BV166.jpg",
+   "image_alt": "Bát canh chua tôm với phần cái và nước nấu nhìn rõ.",
+   "catalog_id": "BV166",
+   "content": {
+    "aliases": [],
+    "meal_type": [
+     "trưa",
+     "tối"
+    ],
+    "passive_time": 0,
+    "tags": {
+     "region": [
+      "Nam"
+     ],
+     "province": [],
+     "meal_type": [
+      "trưa",
+      "tối"
+     ],
+     "dish_type": [
+      "Canh",
+      "nấu canh",
+      "Món gia đình"
+     ],
+     "main_ingredient": [
+      "tôm",
+      "rau củ"
+     ],
+     "cooking_method": [
+      "nấu canh"
+     ],
+     "difficulty": "Dễ",
+     "prep_time": 25,
+     "cook_time": 18,
+     "servings": 4,
+     "spicy_level": 0,
+     "suitable_for_family_meal": true,
+     "suggested_pairings": [
+      "BV001",
+      "BV117",
+      "BV177"
+     ],
+     "keywords": [
+      "Canh chua tôm",
+      "tôm",
+      "rau củ",
+      "nấu canh",
+      "công thức 4 người"
+     ],
+     "recipe_family": "canh_chua_tom"
+    }
+   },
+   "serving": "Múc dùng nóng cùng cơm và một món mặn hoặc đậu phụ. Không cần nước chấm riêng; chỉ chấm phần cái nếu khẩu vị yêu cầu. Gợi ý ăn cùng: thịt rang cháy cạnh, rau muống xào tỏi, cà pháo muối chua.",
+   "tip": "Hớt bọt khi vừa sôi; tránh đun cuộn mạnh làm nước đục và nguyên liệu dễ vỡ.\nCho củ cứng trước, lá mềm sau; nêm rau thơm sát lúc tắt bếp.\nNếm lại sau khi nguyên liệu đã tiết vị; châm nước nóng từng ít nếu canh quá đậm.",
+   "source_name": "Bếp Việt",
+   "source_url": "https://cookbeo.com/recipes/canh-chua-tom",
+   "ingredients": [
+    {
+     "group_name": "Nguyên liệu chính",
+     "name": "Tôm làm sạch",
+     "amount": "350",
+     "unit": "g",
+     "note": "Cân sau làm sạch; phần xương đi kèm không tính vào thịt ăn được.",
+     "scalable": true,
+     "position": 1
+    },
+    {
+     "group_name": "Nguyên liệu chính",
+     "name": "Dứa",
+     "amount": "150",
+     "unit": "g",
+     "note": "Nguyên liệu chính; cân phần dùng được trừ khi ghi nguyên vỏ/có xương.",
+     "scalable": true,
+     "position": 2
+    },
+    {
+     "group_name": "Nguyên liệu chính",
+     "name": "Cà chua",
+     "amount": "250",
+     "unit": "g",
+     "note": "Nguyên liệu chính; cân phần dùng được trừ khi ghi nguyên vỏ/có xương.",
+     "scalable": true,
+     "position": 3
+    },
+    {
+     "group_name": "Nguyên liệu chính",
+     "name": "Đậu bắp",
+     "amount": "120",
+     "unit": "g",
+     "note": "Nguyên liệu chính; cân phần dùng được trừ khi ghi nguyên vỏ/có xương.",
+     "scalable": true,
+     "position": 4
+    },
+    {
+     "group_name": "Nguyên liệu chính",
+     "name": "Me vắt",
+     "amount": "30",
+     "unit": "g",
+     "note": "Nguyên liệu chính; cân phần dùng được trừ khi ghi nguyên vỏ/có xương.",
+     "scalable": true,
+     "position": 5
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Ngò gai",
+     "amount": "15",
+     "unit": "g",
+     "note": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+     "scalable": true,
+     "position": 6
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Rau ngổ",
+     "amount": "15",
+     "unit": "g",
+     "note": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+     "scalable": true,
+     "position": 7
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Tỏi",
+     "amount": "15",
+     "unit": "g",
+     "note": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+     "scalable": true,
+     "position": 8
+    },
+    {
+     "group_name": "Nước và chất lỏng",
+     "name": "Nước nấu",
+     "amount": "1300",
+     "unit": "ml",
+     "note": "Lượng khởi điểm; giữ lại 10% để điều chỉnh độ đặc cuối.",
+     "scalable": true,
+     "position": 9
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Nước mắm",
+     "amount": "25",
+     "unit": "ml",
+     "note": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+     "scalable": true,
+     "position": 10
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Muối",
+     "amount": "3",
+     "unit": "g",
+     "note": "Cho một nửa trước; nêm phần còn lại sau khi nước dùng cô.",
+     "scalable": true,
+     "position": 11
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Dầu ăn",
+     "amount": "20",
+     "unit": "ml",
+     "note": "Chia cho các lượt phi/xào hoặc phết mặt.",
+     "scalable": true,
+     "position": 12
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Đường",
+     "amount": "15",
+     "unit": "g",
+     "note": "Cho một phần trước, chỉnh với độ chua của me.",
+     "scalable": true,
+     "position": 13
+    }
+   ],
+   "steps": [
+    {
+     "step_type": "so_che",
+     "content": "Tôm làm sạch: cắt râu, bỏ phần nhọn và chỉ lưng; bóc vỏ khi bảng ghi bóc vỏ, rửa nhanh rồi để ráo; dứa: gọt vỏ, bỏ mắt và lõi già, thái lát 5 mm; cà chua: rửa, bỏ cuống; bổ múi cau.",
+     "position": 1
+    },
+    {
+     "step_type": "so_che",
+     "content": "Đậu bắp: rửa nguyên quả, cắt sát đầu cuống; thái xéo nếu nấu canh; me vắt: dầm với một phần nước nóng trong bảng, lọc bỏ hạt và xơ.",
+     "position": 2
+    },
+    {
+     "step_type": "so_che",
+     "content": "Tỏi: bóc vỏ, đập dập rồi băm.",
+     "position": 3
+    },
+    {
+     "step_type": "so_che",
+     "content": "Nhặt, rửa và để ráo ngò gai, rau ngổ. Thái nhỏ phần rau nêm; gia vị khô đong riêng.",
+     "position": 4
+    },
+    {
+     "step_type": "thuc_hien",
+     "content": "Phi tỏi, xào cà chua và dứa 2–3 phút, thêm nước và me đã lọc.",
+     "position": 1
+    },
+    {
+     "step_type": "thuc_hien",
+     "content": "Đun sôi, cho tôm vào nấu 4–6 phút đến chín đục; cho đậu bắp vào 3 phút cuối.",
+     "position": 2
+    },
+    {
+     "step_type": "thuc_hien",
+     "content": "Nêm cân bằng chua ngọt, thêm ngò gai và rau ngổ rồi tắt.",
+     "position": 3
+    }
+   ]
+  },
+  {
+   "id": "9eedd4a7-f806-4467-bdb1-b0ad83f1f129",
+   "slug": "dau-hu-sot-ca-chua",
+   "name": "Đậu phụ sốt cà chua",
+   "excerpt": "Đậu vàng nhẹ, ruột trắng mềm, sốt đỏ cam bám mặt và thơm cà chua chín; vị chua dịu, mặn vừa.",
+   "region": "Ba miền",
+   "category": "Món chay",
+   "difficulty": "Dễ",
+   "prep_minutes": 15,
+   "cook_minutes": 25,
+   "base_servings": 4,
+   "image_path": "/images/recipes/dau-hu-sot-ca-chua.jpg",
+   "image_alt": "Đậu phụ sốt cà chua đã chế biến, phần món ăn được bày trên đĩa hoặc trong bát.",
+   "catalog_id": "BV248",
+   "content": {
+    "aliases": [
+     "Đậu hũ sốt cà chua"
+    ],
+    "meal_type": [
+     "trưa",
+     "tối"
+    ],
+    "passive_time": 0,
+    "tags": {
+     "region": [
+      "Bắc",
+      "Trung",
+      "Nam"
+     ],
+     "province": [],
+     "meal_type": [
+      "trưa",
+      "tối"
+     ],
+     "dish_type": [
+      "Đậu phụ",
+      "chiên và sốt",
+      "Món chay",
+      "Món gia đình"
+     ],
+     "main_ingredient": [
+      "đậu phụ",
+      "rau củ"
+     ],
+     "cooking_method": [
+      "chiên và sốt"
+     ],
+     "difficulty": "Dễ",
+     "prep_time": 15,
+     "cook_time": 25,
+     "servings": 4,
+     "spicy_level": 0,
+     "suitable_for_family_meal": true,
+     "suggested_pairings": [
+      "BV155",
+      "BV117",
+      "BV179"
+     ],
+     "keywords": [
+      "Đậu phụ sốt cà chua",
+      "Đậu hũ sốt cà chua",
+      "đậu phụ",
+      "rau củ",
+      "chiên và sốt",
+      "công thức 4 người"
+     ],
+     "recipe_family": "dau_sot"
+    }
+   },
+   "serving": "Xếp đậu ra đĩa sâu lòng, rưới đều xốt cà chua và rắc hành lá ngay trước khi dọn. Dùng nóng với cơm trắng, thêm rau luộc hoặc canh rau để có mâm cơm thanh vị. Món đã có xốt nên chỉ cần nêm vừa ăn, không cần thêm nước chấm.",
+   "tip": "Xào cà chua đến mềm rồi mới thêm nước để sốt ít vị sống.\nNấu sôi nhỏ, lắc nồi hoặc trở nhẹ để nguyên liệu giữ được hình dạng.\nCô sốt tới độ bám nhẹ; nêm phần mặn sau khi sốt giảm để tránh quá đậm.",
+   "source_name": "Bếp Việt",
+   "source_url": "https://cookbeo.com/recipes/dau-sot-ca-chua",
+   "ingredients": [
+    {
+     "group_name": "Nguyên liệu chính",
+     "name": "Đậu phụ",
+     "amount": "600",
+     "unit": "g",
+     "note": "Nguyên liệu chính; cân phần dùng được trừ khi ghi nguyên vỏ/có xương.",
+     "scalable": true,
+     "position": 1
+    },
+    {
+     "group_name": "Nguyên liệu chính",
+     "name": "Cà chua",
+     "amount": "400",
+     "unit": "g",
+     "note": "Nguyên liệu chính; cân phần dùng được trừ khi ghi nguyên vỏ/có xương.",
+     "scalable": true,
+     "position": 2
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Hành boa rô",
+     "amount": "25",
+     "unit": "g",
+     "note": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+     "scalable": true,
+     "position": 3
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Hành lá",
+     "amount": "20",
+     "unit": "g",
+     "note": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+     "scalable": true,
+     "position": 4
+    },
+    {
+     "group_name": "Nước và chất lỏng",
+     "name": "Nước nấu",
+     "amount": "180",
+     "unit": "ml",
+     "note": "Lượng khởi điểm; giữ lại 10% để điều chỉnh độ đặc cuối.",
+     "scalable": true,
+     "position": 5
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Muối",
+     "amount": "3",
+     "unit": "g",
+     "note": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+     "scalable": true,
+     "position": 6
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Dầu ăn",
+     "amount": "20",
+     "unit": "ml",
+     "note": "Chia cho các lượt phi/xào hoặc phết mặt.",
+     "scalable": true,
+     "position": 7
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Nước tương",
+     "amount": "15",
+     "unit": "ml",
+     "note": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+     "scalable": true,
+     "position": 8
+    }
+   ],
+   "steps": [
+    {
+     "step_type": "so_che",
+     "content": "Đậu phụ: để ráo, thấm khô, cắt khối 3 cm; cà chua: rửa, bỏ cuống; băm nhỏ.",
+     "position": 1
+    },
+    {
+     "step_type": "so_che",
+     "content": "Hành boa rô: rửa kỹ giữa các bẹ, thái nhỏ; hành lá: rửa, tách đầu trắng và lá, thái nhỏ.",
+     "position": 2
+    },
+    {
+     "step_type": "thuc_hien",
+     "content": "Cắt đậu miếng 3 cm, thấm ráo rồi chiên vàng nhẹ các mặt.",
+     "position": 1
+    },
+    {
+     "step_type": "thuc_hien",
+     "content": "Phi boa rô, xào cà chua băm 5–7 phút; thêm nước và gia vị chay.",
+     "position": 2
+    },
+    {
+     "step_type": "thuc_hien",
+     "content": "Cho đậu vào sốt nấu lửa nhỏ 8–10 phút, đảo nhẹ, thêm hành lá rồi tắt.",
+     "position": 3
+    }
+   ]
+  },
+  {
+   "id": "5db73793-8594-46ef-a7f9-51c1d3701889",
+   "slug": "pho-bo-ha-noi",
+   "name": "Phở bò Hà Nội",
+   "excerpt": "Nước dùng trong nâu nhạt, thơm quế hồi vừa phải, vị bò ngọt dịu và mặn vừa; bánh phở mềm, thịt bò chín mềm.",
+   "region": "Bắc",
+   "category": "Món nước",
+   "difficulty": "Khó",
+   "prep_minutes": 35,
+   "cook_minutes": 240,
+   "base_servings": 4,
+   "image_path": "/images/recipes/BV253.jpg",
+   "image_alt": "Phở bò Hà Nội đã chế biến, phần món ăn được bày trên đĩa hoặc trong bát.",
+   "catalog_id": "BV253",
+   "content": {
+    "aliases": [],
+    "meal_type": [
+     "sáng",
+     "trưa",
+     "tối"
+    ],
+    "passive_time": 0,
+    "tags": {
+     "region": [
+      "Bắc"
+     ],
+     "province": [
+      "Hà Nội"
+     ],
+     "meal_type": [
+      "sáng",
+      "trưa",
+      "tối"
+     ],
+     "dish_type": [
+      "Bún, phở, mì và miến",
+      "ninh nước dùng",
+      "Món gia đình"
+     ],
+     "main_ingredient": [
+      "thịt bò",
+      "bún/mì"
+     ],
+     "cooking_method": [
+      "ninh nước dùng"
+     ],
+     "difficulty": "Khó",
+     "prep_time": 35,
+     "cook_time": 240,
+     "servings": 4,
+     "spicy_level": 0,
+     "suitable_for_family_meal": true,
+     "suggested_pairings": [
+      "BV179",
+      "BV236",
+      "BV225"
+     ],
+     "keywords": [
+      "Phở bò Hà Nội",
+      "thịt bò",
+      "bún/mì",
+      "ninh nước dùng",
+      "công thức 4 người"
+     ],
+     "recipe_family": "pho"
+    }
+   },
+   "serving": "Dùng nóng ngay sau khi chan nước hoặc trộn, xem như phần chính của bữa sáng/trưa/tối. Rau và gia vị cay để riêng; món đã nêm không cần thêm nước chấm. Gợi ý ăn cùng: dưa góp dưa chuột, chè hạt sen tươi, gỏi cuốn tôm thịt.",
+   "tip": "Hớt bọt khi vừa sôi; tránh đun cuộn mạnh làm nước đục và nguyên liệu dễ vỡ.\nCho củ cứng trước, lá mềm sau; nêm rau thơm sát lúc tắt bếp.\nNếm lại sau khi nguyên liệu đã tiết vị; châm nước nóng từng ít nếu canh quá đậm.",
+   "source_name": "Bếp Việt",
+   "source_url": "https://monngonmoingay.com/pho-bo/",
+   "ingredients": [
+    {
+     "group_name": "Nguyên liệu chính",
+     "name": "Xương bò",
+     "amount": "1200",
+     "unit": "g",
+     "note": "Nguyên liệu chính; cân phần dùng được trừ khi ghi nguyên vỏ/có xương.",
+     "scalable": true,
+     "position": 1
+    },
+    {
+     "group_name": "Nguyên liệu chính",
+     "name": "Nạm bò",
+     "amount": "350",
+     "unit": "g",
+     "note": "Nguyên liệu chính; cân phần dùng được trừ khi ghi nguyên vỏ/có xương.",
+     "scalable": true,
+     "position": 2
+    },
+    {
+     "group_name": "Nguyên liệu chính",
+     "name": "Thăn bò",
+     "amount": "250",
+     "unit": "g",
+     "note": "Nguyên liệu chính; cân phần dùng được trừ khi ghi nguyên vỏ/có xương.",
+     "scalable": true,
+     "position": 3
+    },
+    {
+     "group_name": "Nguyên liệu chính",
+     "name": "Bánh phở tươi",
+     "amount": "700",
+     "unit": "g",
+     "note": "Nguyên liệu chính; cân phần dùng được trừ khi ghi nguyên vỏ/có xương.",
+     "scalable": true,
+     "position": 4
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Hành tây",
+     "amount": "150",
+     "unit": "g",
+     "note": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+     "scalable": true,
+     "position": 5
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Gừng",
+     "amount": "70",
+     "unit": "g",
+     "note": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+     "scalable": true,
+     "position": 6
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Quế",
+     "amount": "4",
+     "unit": "g",
+     "note": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+     "scalable": true,
+     "position": 7
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Hoa hồi",
+     "amount": "3",
+     "unit": "g",
+     "note": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+     "scalable": true,
+     "position": 8
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Thảo quả",
+     "amount": "1",
+     "unit": "g",
+     "note": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+     "scalable": true,
+     "position": 9
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Đinh hương",
+     "amount": "0.5",
+     "unit": "g",
+     "note": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+     "scalable": true,
+     "position": 10
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Hạt mùi",
+     "amount": "3",
+     "unit": "g",
+     "note": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+     "scalable": true,
+     "position": 11
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Hành lá",
+     "amount": "30",
+     "unit": "g",
+     "note": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+     "scalable": true,
+     "position": 12
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Rau mùi",
+     "amount": "20",
+     "unit": "g",
+     "note": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+     "scalable": true,
+     "position": 13
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Đường phèn",
+     "amount": "20",
+     "unit": "g",
+     "note": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+     "scalable": true,
+     "position": 14
+    },
+    {
+     "group_name": "Nước và chất lỏng",
+     "name": "Nước nấu",
+     "amount": "4500",
+     "unit": "ml",
+     "note": "Lượng khởi điểm; giữ lại 10% để điều chỉnh độ đặc cuối.",
+     "scalable": true,
+     "position": 15
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Nước mắm",
+     "amount": "30",
+     "unit": "ml",
+     "note": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+     "scalable": true,
+     "position": 16
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Muối",
+     "amount": "10",
+     "unit": "g",
+     "note": "Cho một nửa trước; nêm phần còn lại sau khi nước dùng cô.",
+     "scalable": true,
+     "position": 17
+    }
+   ],
+   "steps": [
+    {
+     "step_type": "so_che",
+     "content": "Xương bò: rửa vụn xương, chần 3–5 phút rồi rửa sạch, bỏ nước chần; nạm bò: giữ miếng nguyên, thấm ráo và cắt theo phần nấu; thăn bò: giữ miếng nguyên, thấm ráo và cắt theo phần nấu.",
+     "position": 1
+    },
+    {
+     "step_type": "so_che",
+     "content": "Hành tây: bóc vỏ, thái múi hoặc lát mỏng; gừng: cạo vỏ bẩn, rửa, thái lát mỏng; hành lá: rửa, tách đầu trắng và lá, thái nhỏ.",
+     "position": 2
+    },
+    {
+     "step_type": "so_che",
+     "content": "Nhặt, rửa và để ráo quế, hoa hồi, thảo quả, đinh hương, hạt mùi, rau mùi. Thái nhỏ phần rau nêm; gia vị khô đong riêng.",
+     "position": 3
+    },
+    {
+     "step_type": "thuc_hien",
+     "content": "Chần xương 5 phút, rửa sạch rồi ninh với nước mới ở lửa nhỏ; nướng hành gừng, rang gia vị khô và cho vào túi.",
+     "position": 1
+    },
+    {
+     "step_type": "thuc_hien",
+     "content": "Ninh xương 3–4 giờ, hớt bọt; luộc nạm trong nồi đến mềm rồi vớt, bỏ túi gia vị khi đủ thơm. Nêm mắm, muối và đường phèn cuối.",
+     "position": 2
+    },
+    {
+     "step_type": "thuc_hien",
+     "content": "Trụng phở, thái nạm; chần thăn bò mỏng trong nước dùng đang sôi đến chín rồi xếp tô, chan nước và thêm hành mùi.",
+     "position": 3
+    }
+   ]
+  },
+  {
+   "id": "062f372e-977d-45f7-825f-384e6f46970a",
+   "slug": "trung-chien-hanh",
+   "name": "Trứng chiên hành",
+   "excerpt": "Trứng vàng mềm, phần nhân chín và không khô viền.",
+   "region": "Ba miền",
+   "category": "Món mặn",
+   "difficulty": "Dễ",
+   "prep_minutes": 10,
+   "cook_minutes": 10,
+   "base_servings": 4,
+   "image_path": "/images/recipes/BV299.jpg",
+   "image_alt": "Trứng chiên hành cắt miếng tam giác, xếp trên đĩa với cà chua.",
+   "catalog_id": "BV299",
+   "content": {
+    "aliases": [],
+    "meal_type": [
+     "trưa",
+     "tối"
+    ],
+    "passive_time": 0,
+    "tags": {
+     "region": [
+      "Bắc",
+      "Trung",
+      "Nam"
+     ],
+     "province": [],
+     "meal_type": [
+      "trưa",
+      "tối"
+     ],
+     "dish_type": [
+      "Trứng",
+      "chiên",
+      "Món gia đình"
+     ],
+     "main_ingredient": [
+      "trứng"
+     ],
+     "cooking_method": [
+      "chiên"
+     ],
+     "difficulty": "Dễ",
+     "prep_time": 10,
+     "cook_time": 10,
+     "servings": 4,
+     "spicy_level": 0,
+     "suitable_for_family_meal": true,
+     "suggested_pairings": [
+      "BV141",
+      "BV116",
+      "BV177"
+     ],
+     "keywords": [
+      "Trứng chiên hành",
+      "trứng",
+      "chiên",
+      "công thức 4 người"
+     ],
+     "recipe_family": "trung_chien"
+    }
+   },
+   "serving": "Dùng nóng với cơm. Món đã nêm ăn trực tiếp; món luộc, hấp hoặc chiên nhạt có thể dùng nước chấm trong bảng. Chọn thêm canh và rau để đủ một mâm cơm. Gợi ý ăn cùng: canh rau ngót thịt băm, rau muống luộc, cà pháo muối chua.",
+   "tip": "Đánh trứng vừa hòa quyện, tránh tạo quá nhiều bọt làm mặt trứng rỗ.\nDùng lớp trứng mỏng hoặc chia mẻ, giữ lửa vừa nhỏ để tâm chín trước khi viền khô.\nCho nhân đã nấu ráo, hạ nóng vào trứng để hỗn hợp đều và không ra nước.",
+   "source_name": "Bếp Việt",
+   "source_url": "https://daubepgiadinh.vn/trung-chien",
+   "ingredients": [
+    {
+     "group_name": "Nguyên liệu chính",
+     "name": "Trứng gà",
+     "amount": "5",
+     "unit": "quả",
+     "note": "Nguyên liệu chính; cân phần dùng được trừ khi ghi nguyên vỏ/có xương.",
+     "scalable": true,
+     "position": 1
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Hành lá",
+     "amount": "35",
+     "unit": "g",
+     "note": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+     "scalable": true,
+     "position": 2
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Hành tím",
+     "amount": "15",
+     "unit": "g",
+     "note": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+     "scalable": true,
+     "position": 3
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Nước mắm",
+     "amount": "10",
+     "unit": "ml",
+     "note": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+     "scalable": true,
+     "position": 4
+    },
+    {
+     "group_name": "Gia vị",
+     "name": "Dầu ăn",
+     "amount": "25",
+     "unit": "ml",
+     "note": "Chia cho các lượt phi/xào hoặc phết mặt.",
+     "scalable": true,
+     "position": 5
+    }
+   ],
+   "steps": [
+    {
+     "step_type": "so_che",
+     "content": "Hành lá: rửa, tách đầu trắng và lá, thái nhỏ; hành tím: bóc vỏ, băm hoặc thái mỏng để phi.",
+     "position": 1
+    },
+    {
+     "step_type": "so_che",
+     "content": "Lau vỏ trứng sạch; đập từng quả vào bát riêng rồi đánh tan trước khi trộn nhân.",
+     "position": 2
+    },
+    {
+     "step_type": "thuc_hien",
+     "content": "Đập trứng từng quả vào bát sạch, thêm nước mắm, đánh tan nhẹ rồi trộn hành lá.",
+     "position": 1
+    },
+    {
+     "step_type": "thuc_hien",
+     "content": "Phi hành tím trong dầu, rót trứng thành lớp mỏng; chiên lửa vừa nhỏ 3–4 phút đến mặt dưới định hình.",
+     "position": 2
+    },
+    {
+     "step_type": "thuc_hien",
+     "content": "Gập hoặc trở nhẹ, chiên thêm 2–3 phút đến trứng chín hết nhưng còn mềm, cắt miếng và dọn nóng.",
+     "position": 3
+    }
+   ]
+  },
+  {
+   "id": "476e3952-d630-4ff4-b6dd-d1011d5d7b22",
+   "slug": "canh-chua-ca",
+   "name": "Canh chua cá",
+   "excerpt": "Vị chua dịu từ me và dứa, cá mềm ngọt, nhiều rau, hợp ngày nóng.",
+   "region": "Nam",
+   "category": "Món canh",
+   "difficulty": "Dễ",
+   "prep_minutes": 15,
+   "cook_minutes": 15,
+   "base_servings": 4,
+   "image_path": "/images/recipes/canh-chua-ca.jpg",
+   "image_alt": "Bát canh chua cá với cà chua, dứa và đậu bắp",
+   "catalog_id": null,
+   "content": {},
+   "serving": "Múc canh lúc còn nóng, chia đều cá và rau để mỗi phần có cả nước lẫn cái. Dùng với cơm trắng hoặc bún tươi; để riêng chén nước mắm ớt cho người thích chấm cá. Thêm rau thơm ngay trước khi dọn để giữ mùi và độ tươi.",
+   "tip": "Cho cá khi nước sôi nhẹ và không khuấy mạnh để cá không nát.",
+   "source_name": "Món Ngon Mỗi Ngày",
+   "source_url": "https://monngonmoingay.com/canh-chua-ca-mien-nam/",
+   "ingredients": [
+    {
+     "group_name": "Cá và rau",
+     "name": "Cá liệt, cá diêu hồng hoặc cá lóc",
+     "amount": "250.00",
+     "unit": "g",
+     "note": null,
+     "scalable": true,
+     "position": 1
+    },
+    {
+     "group_name": "Cá và rau",
+     "name": "Thơm",
+     "amount": "100.00",
+     "unit": "g",
+     "note": null,
+     "scalable": true,
+     "position": 2
+    },
+    {
+     "group_name": "Cá và rau",
+     "name": "Cà chua",
+     "amount": "100.00",
+     "unit": "g",
+     "note": null,
+     "scalable": true,
+     "position": 3
+    },
+    {
+     "group_name": "Cá và rau",
+     "name": "Bạc hà",
+     "amount": "100.00",
+     "unit": "g",
+     "note": null,
+     "scalable": true,
+     "position": 4
+    },
+    {
+     "group_name": "Tạo vị",
+     "name": "Nước",
+     "amount": "1.70",
+     "unit": "lít",
+     "note": null,
+     "scalable": true,
+     "position": 5
+    },
+    {
+     "group_name": "Tạo vị",
+     "name": "Nước mắm",
+     "amount": "2.00",
+     "unit": "muỗng canh",
+     "note": null,
+     "scalable": true,
+     "position": 6
+    }
+   ],
+   "steps": [
+    {
+     "step_type": "so_che",
+     "content": "Làm sạch cá và để ráo; cắt cà chua, thơm và bạc hà thành miếng vừa ăn.",
+     "position": 1
+    },
+    {
+     "step_type": "thuc_hien",
+     "content": "Phi hành tím, xào cà chua rồi thêm 1,7 lít nước; cho cá và thơm vào, hớt bọt.",
+     "position": 1
+    },
+    {
+     "step_type": "so_che",
+     "content": "Rửa rau om, hành lá và cắt nhỏ; chuẩn bị sẵn gia vị chua cay.",
+     "position": 2
+    },
+    {
+     "step_type": "thuc_hien",
+     "content": "Nấu cá khoảng 5 phút, thêm bạc hà, nêm vị rồi cho rau thơm và tắt bếp.",
+     "position": 2
+    }
+   ]
+  },
+  {
+   "id": "00da970c-fbf5-4d78-a722-8cb40f29dc84",
+   "slug": "pho-ga-gia-dinh",
+   "name": "Phở gà gia đình",
+   "excerpt": "Nước dùng trong, thơm gừng hành; một lựa chọn ấm bụng cho sáng cuối tuần.",
+   "region": "Bắc",
+   "category": "Món nước",
+   "difficulty": "Vừa",
+   "prep_minutes": 25,
+   "cook_minutes": 55,
+   "base_servings": 4,
+   "image_path": "/images/recipes/pho-ga-gia-dinh.webp",
+   "image_alt": "Bát phở gà nóng với hành và rau thơm",
+   "catalog_id": null,
+   "content": {
+    "tags": {
+     "keywords": [
+      "cuối tuần",
+      "món nước",
+      "miền Bắc"
+     ]
+    }
+   },
+   "serving": "Chần bánh phở, để ráo rồi chia vào bát. Xếp thịt gà cùng hành và rau thơm lên trên, chan nước dùng thật nóng ngay trước khi ăn. Dọn chanh, ớt và nước mắm riêng để mỗi người nêm theo khẩu vị; nên thưởng thức ngay khi phở còn nóng.",
+   "tip": "Chỉ để nước sôi lăn tăn trong lúc luộc để gà mềm và nước dùng trong.",
+   "source_name": "Bếp Việt",
+   "source_url": "https://monngonmoingay.com/pho-ga/",
+   "ingredients": [
+    {
+     "group_name": "Nước dùng và thịt",
+     "name": "Gà ta",
+     "amount": "1.20",
+     "unit": "kg",
+     "note": null,
+     "scalable": true,
+     "position": 1
+    },
+    {
+     "group_name": "Nước dùng và thịt",
+     "name": "Gừng",
+     "amount": "40.00",
+     "unit": "g",
+     "note": null,
+     "scalable": true,
+     "position": 2
+    },
+    {
+     "group_name": "Nước dùng và thịt",
+     "name": "Hành tây",
+     "amount": "1.00",
+     "unit": "củ",
+     "note": null,
+     "scalable": true,
+     "position": 3
+    },
+    {
+     "group_name": "Nước dùng và thịt",
+     "name": "Hành tím",
+     "amount": "4.00",
+     "unit": "củ",
+     "note": null,
+     "scalable": true,
+     "position": 4
+    },
+    {
+     "group_name": "Nước dùng và thịt",
+     "name": "Hoa hồi và hạt mùi",
+     "amount": null,
+     "unit": "một ít",
+     "note": null,
+     "scalable": false,
+     "position": 5
+    },
+    {
+     "group_name": "Phần ăn kèm",
+     "name": "Bánh phở",
+     "amount": "700.00",
+     "unit": "g",
+     "note": null,
+     "scalable": true,
+     "position": 6
+    },
+    {
+     "group_name": "Phần ăn kèm",
+     "name": "Hành lá và rau mùi",
+     "amount": "100.00",
+     "unit": "g",
+     "note": null,
+     "scalable": true,
+     "position": 7
+    },
+    {
+     "group_name": "Phần ăn kèm",
+     "name": "Chanh và ớt",
+     "amount": null,
+     "unit": "vừa đủ",
+     "note": null,
+     "scalable": false,
+     "position": 8
+    },
+    {
+     "group_name": "Phần ăn kèm",
+     "name": "Nước mắm, muối, đường phèn",
+     "amount": null,
+     "unit": "vừa đủ",
+     "note": null,
+     "scalable": false,
+     "position": 9
+    }
+   ],
+   "steps": [
+    {
+     "step_type": "thuc_hien",
+     "content": "Cho gà vào nồi, thêm nước lạnh ngập gà và một ít muối. Đun đến khi vừa sôi thì hạ lửa, hớt bọt thật kỹ.",
+     "position": 1
+    },
+    {
+     "step_type": "so_che",
+     "content": "Xát gà với muối và gừng đập dập, rửa sạch cả trong lẫn ngoài. Buộc gọn chân cánh để gà chín đều và không rách da.",
+     "position": 1
+    },
+    {
+     "step_type": "thuc_hien",
+     "content": "Thêm hành gừng nướng và túi gia vị. Luộc lăn tăn 25–30 phút, tắt bếp và ngâm gà thêm 10 phút trước khi vớt ra.",
+     "position": 2
+    },
+    {
+     "step_type": "so_che",
+     "content": "Nướng hành tây, hành tím và gừng đến khi thơm, cạo bỏ phần cháy đen. Rang nhanh hoa hồi và hạt mùi trên chảo khô rồi cho vào túi lọc.",
+     "position": 2
+    },
+    {
+     "step_type": "so_che",
+     "content": "Hành lá, rau mùi rửa sạch; chẻ phần đầu hành, thái nhỏ phần lá. Bánh phở tách nhẹ để khi chần không vón.",
+     "position": 3
+    },
+    {
+     "step_type": "thuc_hien",
+     "content": "Ngâm gà chín vào nước nguội 2 phút cho da săn, để ráo rồi lọc thịt, thái hoặc xé vừa ăn. Cho xương trở lại nồi ninh thêm 20 phút.",
+     "position": 3
+    },
+    {
+     "step_type": "thuc_hien",
+     "content": "Lọc nước dùng, nêm nước mắm, muối và một ít đường phèn cho vị thanh. Chần bánh phở 10–15 giây, xếp thịt gà, hành rồi chan nước dùng đang sôi.",
+     "position": 4
+    }
+   ]
+  }
+ ]
+}

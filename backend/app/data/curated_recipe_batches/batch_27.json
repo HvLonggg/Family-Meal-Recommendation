@@ -1,0 +1,1598 @@
+{
+  "batch": 27,
+  "description": "Năm món Việt vùng miền được biên tập từ nguồn đối chiếu: món cốm Hà Nội, chả tôm Thanh Hóa, bún rạm Bình Định, rau bò khai của người Tày ở Bắc Kạn và thịt trâu lá lồm Hòa Bình. Công thức chưa nấu thử.",
+  "recipes": [
+    {
+      "id": "BV461",
+      "slug": "xoi-com-ha-noi",
+      "name": "Xôi cốm Hà Nội",
+      "aliases": [
+        "Xôi cốm non"
+      ],
+      "region": [
+        "Đồng bằng Bắc Bộ"
+      ],
+      "province": [
+        "Hà Nội"
+      ],
+      "category": "Món tráng miệng",
+      "meal_type": [
+        "bữa nhẹ",
+        "tráng miệng"
+      ],
+      "difficulty": "Vừa",
+      "servings": 4,
+      "serving_basis": "4 phần ăn nhẹ, khoảng 180–200 g mỗi phần.",
+      "prep_time": 25,
+      "cook_time": 20,
+      "passive_time": 180,
+      "description": "Cốm non xanh thơm được đồ vừa chín, trộn cùng đậu xanh tơi, hạt sen bùi và dừa sợi ngọt dịu. Bếp Việt biên tập cách làm tại nhà để giữ hạt cốm mềm, dẻo và không bị hấp quá lâu.",
+      "finished_dish": "Hạt cốm xanh mềm dẻo, tơi nhẹ, thoảng hương lá sen; đậu xanh, hạt sen và dừa hòa vị bùi ngọt vừa phải.",
+      "serving": "Dùng ấm hoặc để nguội bớt, gói trong lá sen sạch hay bày trên đĩa nhỏ. Có thể giảm đường để giữ vị thơm tự nhiên của cốm.",
+      "tips": [
+        "Cốm tươi thường đã đủ ẩm; chỉ rưới thêm chút nước nếu hạt khô.",
+        "Đồ cốm trong khoảng 4–5 phút, vừa đủ nóng mềm; hấp lâu làm cốm nhão và mất hương.",
+        "Đậu xanh cần để ráo trước khi nghiền để phần nhân tơi, không ướt."
+      ],
+      "dish_type": [
+        "Xôi",
+        "Món ăn từ cốm"
+      ],
+      "main_ingredient": [
+        "cốm non",
+        "đậu xanh",
+        "hạt sen"
+      ],
+      "cooking_method": [
+        "hấp",
+        "đồ xôi",
+        "trộn"
+      ],
+      "search_terms": [
+        "cách nấu xôi cốm Hà Nội",
+        "xôi cốm hạt sen đậu xanh",
+        "món cốm mùa thu Hà Nội"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Xôi cốm Hà Nội xanh non, điểm hạt sen và dừa sợi, bày gọn trên lá sen.",
+      "ingredients": [
+        {
+          "name": "Cốm tươi",
+          "quantity": 300,
+          "unit": "g",
+          "role": "main",
+          "notes": "Nếu dùng cốm khô, làm ẩm theo hướng dẫn trên bao bì.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Đậu xanh cà vỏ",
+          "quantity": 100,
+          "unit": "g",
+          "role": "main",
+          "notes": "Ngâm mềm rồi để ráo.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Hạt sen tươi",
+          "quantity": 100,
+          "unit": "g",
+          "role": "main",
+          "notes": "Bỏ tâm sen; nếu dùng hạt sen khô, ngâm mềm.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Dừa nạo sợi",
+          "quantity": 40,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn dừa bánh tẻ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nước cốt dừa",
+          "quantity": 30,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Có thể giảm hoặc bỏ để vị cốm thanh hơn.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Đường",
+          "quantity": 30,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Điều chỉnh theo độ ngọt của cốm.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng lượng nhỏ để hạt cốm bóng tơi.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Muối",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Lá sen",
+          "quantity": 4,
+          "unit": "lá",
+          "role": "process_aid",
+          "notes": "Rửa sạch, lau khô; dùng để gói hoặc lót đĩa.",
+          "scaling_rule": "linear"
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Ngâm đậu xanh trong nước sạch 3–4 giờ, vo lại và để ráo. Với hạt sen khô, ngâm riêng đến khi mềm."
+        },
+        {
+          "step": 2,
+          "instruction": "Rửa nhanh hạt sen tươi, bỏ tâm nếu còn; rửa lá sen và lau khô. Tách nhẹ cốm, loại bỏ hạt vón lớn."
+        },
+        {
+          "step": 3,
+          "instruction": "Nếu dùng cốm khô, vẩy từng ít nước ấm và để nghỉ cho mềm; tránh ngâm ngập nước."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Hấp đậu xanh đến khi bở mềm, giã hoặc nghiền thô khi còn ấm để đậu tơi. Luộc hạt sen trong nước vừa đủ đến khi mềm nhưng còn nguyên hạt; để ráo."
+        },
+        {
+          "step": 2,
+          "instruction": "Đun dừa nạo với một phần đường và một thìa cà phê nước đến khi dừa trong nhẹ; để riêng. Trộn cốm với dầu ăn, nước cốt dừa và phần đường còn lại."
+        },
+        {
+          "step": 3,
+          "instruction": "Dàn cốm vào xửng có lót lá sen, đồ trên nước sôi khoảng 4–5 phút đến khi nóng mềm. Không nén chặt hoặc hấp kéo dài."
+        },
+        {
+          "step": 4,
+          "instruction": "Nhấc cốm ra, trộn nhẹ với đậu xanh, hạt sen và dừa. Nếm lại độ ngọt, gói lá sen và dùng ấm hoặc để nguội bớt."
+        }
+      ],
+      "time_note": "Thời gian ngâm đậu xanh là thời gian chờ; đồ cốm nhanh để giữ hương và độ dẻo.",
+      "suggested_pairings": [
+        "Trà sen",
+        "Trà xanh nóng"
+      ],
+      "sources": [
+        {
+          "url": "https://vnexpress.net/xoi-com-mon-an-duom-vi-thu-ha-noi-4370727.html",
+          "publisher": "VnExpress Cooking",
+          "title": "Xôi cốm - món ăn đượm vị thu Hà Nội",
+          "use": "Đối chiếu thành phần cốm, đậu xanh, hạt sen, dừa; cách hấp riêng đậu, nấu hạt sen và đồ cốm ngắn để giữ độ dẻo.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "total_time": 225,
+      "time_unit": "phút",
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "xoi-com-ha-noi",
+      "keywords": [
+        "Xôi cốm Hà Nội",
+        "Ẩm thực Việt Nam",
+        "Hà Nội",
+        "cốm non",
+        "đậu xanh",
+        "hạt sen",
+        "cách nấu xôi cốm Hà Nội",
+        "xôi cốm hạt sen đậu xanh",
+        "món cốm mùa thu Hà Nội",
+        "Món tráng miệng",
+        "45 phút",
+        "225 phút"
+      ],
+      "tags": {
+        "region": [
+          "Ẩm thực Việt Nam",
+          "Đồng bằng Bắc Bộ"
+        ],
+        "province": [
+          "Hà Nội"
+        ],
+        "meal_type": [
+          "bữa nhẹ",
+          "tráng miệng"
+        ],
+        "dish_type": [
+          "Xôi",
+          "Món ăn từ cốm"
+        ],
+        "main_ingredient": [
+          "cốm non",
+          "đậu xanh",
+          "hạt sen"
+        ],
+        "cooking_method": [
+          "hấp",
+          "đồ xôi",
+          "trộn"
+        ],
+        "difficulty": "Vừa",
+        "prep_time": 25,
+        "cook_time": 20,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Trà sen",
+          "Trà xanh nóng"
+        ],
+        "keywords": [
+          "Xôi cốm Hà Nội",
+          "cách nấu xôi cốm Hà Nội",
+          "xôi cốm hạt sen đậu xanh",
+          "món cốm mùa thu Hà Nội",
+          "cốm non",
+          "đậu xanh",
+          "hạt sen",
+          "Món tráng miệng",
+          "225 phút"
+        ],
+        "total_time": 225
+      },
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Xôi cốm Hà Nội cho 2 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Xôi cốm Hà Nội cho 6 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Xôi cốm Hà Nội cho 8 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/xoi-com-ha-noi-960.webp",
+          "page_url": "https://vnexpress.net/xoi-com-mon-an-duom-vi-thu-ha-noi-4370727.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu đặc trưng món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Xôi cốm Hà Nội xanh non, điểm hạt sen và dừa sợi, bày gọn trên lá sen.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo mới; công thức được biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức được Bếp Việt biên tập từ nguồn tham khảo; định lượng và thời gian cần được nấu thử trước khi xem là bản hoàn chỉnh.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để xác nhận định lượng, thời gian và khẩu vị với nguyên liệu phổ biến tại Việt Nam.",
+          "Đối chiếu cách trình bày và gia giảm theo biến thể địa phương."
+        ]
+      }
+    },
+    {
+      "id": "BV462",
+      "slug": "cha-tom-thanh-hoa",
+      "name": "Chả tôm Thanh Hóa",
+      "aliases": [
+        "Chả tôm xứ Thanh"
+      ],
+      "region": [
+        "Bắc Trung Bộ"
+      ],
+      "province": [
+        "Thanh Hóa"
+      ],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa nhẹ",
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Vừa",
+      "servings": 4,
+      "serving_basis": "4 phần ăn, khoảng 3–4 cuốn nhỏ mỗi người.",
+      "prep_time": 35,
+      "cook_time": 25,
+      "passive_time": 0,
+      "description": "Tôm tươi giã dập được trộn với thịt ba chỉ, hành và bánh phở cắt nhỏ, cuốn trong lá bánh phở rồi nướng đến khi thơm vàng. Đây là món ăn chơi quen thuộc của xứ Thanh; Bếp Việt biên tập cách làm tại nhà với chảo nướng hoặc bếp than.",
+      "finished_dish": "Cuốn chả nhỏ vàng xém nhẹ, vỏ bánh phở mềm dai, nhân tôm thịt thơm và ẩm; ăn kèm rau, dưa góp và nước chấm.",
+      "serving": "Dùng ngay khi còn nóng cùng rau thơm, dưa góp đu đủ xanh và nước mắm chua ngọt. Có thể nướng trên vỉ than hoặc áp chảo gang.",
+      "tips": [
+        "Giã tôm bằng cối để nhân có độ thô, không xay thành bột nhuyễn.",
+        "Cuốn vừa tay để bánh phở ôm nhân nhưng không rách; làm ẩm nhẹ mép bánh nếu bị khô.",
+        "Nướng lửa vừa và trở đều; nhân tôm, thịt phải chín hoàn toàn trước khi dùng."
+      ],
+      "dish_type": [
+        "Chả cuốn",
+        "Món ăn vặt"
+      ],
+      "main_ingredient": [
+        "tôm",
+        "thịt ba chỉ",
+        "bánh phở"
+      ],
+      "cooking_method": [
+        "giã",
+        "cuốn",
+        "nướng"
+      ],
+      "search_terms": [
+        "cách làm chả tôm Thanh Hóa",
+        "chả tôm xứ Thanh nướng",
+        "món ngon Thanh Hóa"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Chả tôm Thanh Hóa cuốn nhỏ nướng vàng, dùng cùng rau thơm và dưa góp.",
+      "ingredients": [
+        {
+          "name": "Tôm tươi cỡ nhỏ",
+          "quantity": 400,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn tôm chắc, bóc vỏ và bỏ chỉ lưng.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Thịt ba chỉ",
+          "quantity": 180,
+          "unit": "g",
+          "role": "main",
+          "notes": "Thái nhỏ để dễ xào và băm.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Bánh phở tươi bản vừa",
+          "quantity": 300,
+          "unit": "g",
+          "role": "main",
+          "notes": "Để riêng một phần cắt sợi trộn nhân, phần còn lại dùng làm vỏ cuốn.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 25,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Thịt gấc",
+          "quantity": 40,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Tạo màu đỏ cam tự nhiên; có thể bỏ nếu không có.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Hạt tiêu",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Muối",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Quét mỏng lên vỉ hoặc chảo.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Rau thơm các loại",
+          "quantity": 120,
+          "unit": "g",
+          "role": "accompaniment",
+          "notes": "Rửa sạch, để ráo.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Đu đủ xanh",
+          "quantity": 150,
+          "unit": "g",
+          "role": "accompaniment",
+          "notes": "Thái sợi làm dưa góp; có thể dùng sung hoặc dưa góp có sẵn.",
+          "scaling_rule": "linear"
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Bóc vỏ tôm, bỏ chỉ lưng, rửa nhanh và để ráo. Thái nhỏ thịt ba chỉ; cắt một phần bánh phở thành sợi ngắn."
+        },
+        {
+          "step": 2,
+          "instruction": "Chần tôm trong nước sôi khoảng 1 phút cho săn, vớt ra để ráo rồi giã dập bằng cối, không giã nhuyễn."
+        },
+        {
+          "step": 3,
+          "instruction": "Rửa rau thơm và thái đu đủ thành sợi. Nếu dùng bánh phở khô mặt, phủ khăn ẩm vài phút cho mềm dẻo."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Phi thơm một nửa hành tím, cho thịt ba chỉ vào đảo đến khi chín và hơi vàng. Băm nhỏ thịt đã xào."
+        },
+        {
+          "step": 2,
+          "instruction": "Trộn tôm giã, thịt, bánh phở cắt sợi, phần hành còn lại, gấc, nước mắm, muối và tiêu. Nếm vừa đậm vì món sẽ ăn cùng rau và nước chấm."
+        },
+        {
+          "step": 3,
+          "instruction": "Cắt bánh phở thành miếng khoảng 4 × 7 cm. Đặt một lượng nhân vừa phải lên từng miếng, cuốn chắc tay thành cuốn ngắn; không nhồi quá nhiều."
+        },
+        {
+          "step": 4,
+          "instruction": "Quét dầu mỏng lên vỉ hoặc chảo nướng, nướng cuốn ở lửa vừa và trở đều đến khi vỏ có vệt vàng, nhân tôm thịt chín kỹ. Dùng nóng với rau thơm và đu đủ góp."
+        }
+      ],
+      "time_note": "Nếu làm nhiều cuốn, nướng thành từng mẻ và giữ lửa vừa để vỏ không cháy trước khi nhân chín.",
+      "suggested_pairings": [
+        "Rau thơm",
+        "Dưa góp đu đủ",
+        "Nước mắm chua ngọt"
+      ],
+      "sources": [
+        {
+          "url": "https://vnexpress.net/cha-tom-thanh-hoa-mon-ngon-kho-quen-2948816.html",
+          "publisher": "VnExpress Du lịch",
+          "title": "Chả tôm Thanh Hóa - món ngon khó quên",
+          "use": "Đối chiếu cách dùng tôm nhỏ giã dập, thịt ba chỉ, bánh phở cắt sợi và bánh phở làm vỏ cuốn; tham khảo cách nướng và ăn kèm rau, dưa góp.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        }
+      ],
+      "total_time": 60,
+      "time_unit": "phút",
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "cha-tom-thanh-hoa",
+      "keywords": [
+        "Chả tôm Thanh Hóa",
+        "Ẩm thực Việt Nam",
+        "Thanh Hóa",
+        "tôm",
+        "thịt ba chỉ",
+        "bánh phở",
+        "cách làm chả tôm Thanh Hóa",
+        "chả tôm xứ Thanh nướng",
+        "món ngon Thanh Hóa",
+        "Món mặn",
+        "60 phút"
+      ],
+      "tags": {
+        "region": [
+          "Ẩm thực Việt Nam",
+          "Bắc Trung Bộ"
+        ],
+        "province": [
+          "Thanh Hóa"
+        ],
+        "meal_type": [
+          "bữa nhẹ",
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Chả cuốn",
+          "Món ăn vặt"
+        ],
+        "main_ingredient": [
+          "tôm",
+          "thịt ba chỉ",
+          "bánh phở"
+        ],
+        "cooking_method": [
+          "giã",
+          "cuốn",
+          "nướng"
+        ],
+        "difficulty": "Vừa",
+        "prep_time": 35,
+        "cook_time": 25,
+        "servings": 4,
+        "spicy_level": 1,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Rau thơm",
+          "Dưa góp đu đủ",
+          "Nước mắm chua ngọt"
+        ],
+        "keywords": [
+          "Chả tôm Thanh Hóa",
+          "cách làm chả tôm Thanh Hóa",
+          "chả tôm xứ Thanh nướng",
+          "món ngon Thanh Hóa",
+          "tôm",
+          "thịt ba chỉ",
+          "bánh phở",
+          "Món mặn"
+        ]
+      },
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Chả tôm Thanh Hóa cho 2 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Chả tôm Thanh Hóa cho 6 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Chả tôm Thanh Hóa cho 8 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/cha-tom-thanh-hoa-960.webp",
+          "page_url": "https://vnexpress.net/cha-tom-thanh-hoa-mon-ngon-kho-quen-2948816.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu đặc trưng món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Chả tôm Thanh Hóa cuốn nhỏ nướng vàng, dùng cùng rau thơm và dưa góp.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo mới; công thức được biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức được Bếp Việt biên tập từ nguồn tham khảo; định lượng và thời gian cần được nấu thử trước khi xem là bản hoàn chỉnh.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để xác nhận định lượng, thời gian và khẩu vị với nguyên liệu phổ biến tại Việt Nam.",
+          "Đối chiếu cách trình bày và gia giảm theo biến thể địa phương."
+        ]
+      }
+    },
+    {
+      "id": "BV463",
+      "slug": "bun-ram-phu-my",
+      "name": "Bún rạm Phù Mỹ",
+      "aliases": [
+        "Bún rạm Bình Định"
+      ],
+      "region": [
+        "Nam Trung Bộ"
+      ],
+      "province": [
+        "Gia Lai (khu vực Bình Định cũ)"
+      ],
+      "category": "Món nước",
+      "meal_type": [
+        "bữa sáng",
+        "bữa trưa"
+      ],
+      "difficulty": "Vừa",
+      "servings": 4,
+      "current_province": [
+        "Gia Lai"
+      ],
+      "traditional_province": [
+        "Bình Định"
+      ],
+      "serving_basis": "4 tô bún, mỗi tô khoảng 200 g bún và nước rạm nóng.",
+      "prep_time": 35,
+      "cook_time": 30,
+      "passive_time": 0,
+      "description": "Rạm đồng được làm sạch, giã lọc lấy nước rồi nấu liu riu để thịt và gạch kết lại, tạo vị ngọt đậm đà cho tô bún mộc mạc của Phù Mỹ. Bếp Việt biên tập cách nấu tại nhà, giữ nước dùng trong vị rạm và để rau ăn kèm tùy khẩu vị.",
+      "finished_dish": "Nước rạm nóng thơm, có thịt và gạch rạm kết tự nhiên; bún tươi mềm, vị ngọt đậm cân bằng với chanh, ớt và rau ăn kèm.",
+      "serving": "Chia bún vào tô, chan nước rạm đang sôi nhẹ. Dọn riêng rau thơm, chanh, ớt và bánh tráng nướng; đậu phộng rang là phần ăn kèm tùy chọn theo khẩu vị.",
+      "tips": [
+        "Rửa rạm kỹ và lọc qua rây mịn để bỏ cát, mảnh vỏ.",
+        "Đun nước rạm lửa nhỏ sau khi sôi, tránh khuấy mạnh để phần thịt rạm kết lại.",
+        "Nấu rạm chín hoàn toàn; nếu không có rạm tươi, không thay bằng cua biển vì hương vị sẽ khác."
+      ],
+      "dish_type": [
+        "Bún nước",
+        "Đặc sản vùng miền"
+      ],
+      "main_ingredient": [
+        "rạm đồng",
+        "bún tươi"
+      ],
+      "cooking_method": [
+        "giã lọc",
+        "nấu nước dùng"
+      ],
+      "search_terms": [
+        "bún rạm Phù Mỹ cách nấu",
+        "đặc sản Bình Định bún rạm",
+        "bún rạm Trà Ổ"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Tô bún rạm Phù Mỹ với nước rạm, bún tươi, rau thơm và bánh tráng nướng ăn kèm.",
+      "ingredients": [
+        {
+          "name": "Rạm đồng tươi",
+          "quantity": 600,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn rạm còn tươi; rửa nhiều lần để sạch bùn cát.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nước sạch",
+          "quantity": 1500,
+          "unit": "ml",
+          "role": "main",
+          "notes": "Dùng để giã lọc rạm và nấu nước dùng.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Bún tươi",
+          "quantity": 800,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chần nhanh nếu bún lạnh.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 25,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Có thể bỏ nếu muốn giữ vị rạm mộc.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Muối",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm từ từ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Tùy chọn.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Chanh",
+          "quantity": 2,
+          "unit": "quả",
+          "role": "accompaniment",
+          "notes": "Dùng khi ăn.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Ớt tươi",
+          "quantity": 2,
+          "unit": "quả",
+          "role": "accompaniment",
+          "notes": "Tùy khả năng ăn cay.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Rau thơm",
+          "quantity": 100,
+          "unit": "g",
+          "role": "accompaniment",
+          "notes": "Rửa sạch; có thể dùng hoặc để riêng tùy biến thể.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Bánh tráng nướng",
+          "quantity": 2,
+          "unit": "cái",
+          "role": "accompaniment",
+          "notes": "Bẻ miếng ăn kèm.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Đậu phộng rang",
+          "quantity": 30,
+          "unit": "g",
+          "role": "accompaniment",
+          "notes": "Tùy chọn; một số cách ăn địa phương dùng tô bún mộc không kèm.",
+          "scaling_rule": "linear"
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Nhặt bỏ rạm chết, rửa nhiều lần dưới vòi nước và ngâm nước sạch 10 phút cho nhả cát. Bóc mai, bỏ phần không dùng nếu cần."
+        },
+        {
+          "step": 2,
+          "instruction": "Giã hoặc xay thô rạm với một phần nước; hòa thêm nước rồi bóp lọc qua rây mịn. Lặp lại một lần để lấy hết thịt và gạch, bỏ bã vỏ."
+        },
+        {
+          "step": 3,
+          "instruction": "Băm hành tím, rửa rau thơm và chuẩn bị chanh, ớt. Nếu bún để lạnh, tách sợi và chần nhanh trước khi chia tô."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Để nước rạm đã lọc lắng vài phút, gạn vào nồi và đun lửa vừa. Khi nước bắt đầu nóng, khuấy nhẹ đáy nồi một lần; sau đó hạn chế khuấy để thịt rạm kết thành mảng."
+        },
+        {
+          "step": 2,
+          "instruction": "Khi nước sôi lăn tăn và rạm chín hoàn toàn, hạ lửa nhỏ. Phi thơm hành tím với dầu ở chảo riêng, rưới vào nồi; nêm muối và một ít nước mắm nếu dùng."
+        },
+        {
+          "step": 3,
+          "instruction": "Nếm lại nước dùng, giữ sôi nhẹ thêm 3–5 phút rồi tắt bếp. Cho bún vào tô, chan nước rạm nóng và phần thịt rạm đã kết."
+        },
+        {
+          "step": 4,
+          "instruction": "Dọn cùng chanh, ớt và bánh tráng nướng. Rau thơm và đậu phộng để riêng cho người ăn tự chọn theo khẩu vị địa phương."
+        }
+      ],
+      "time_note": "Làm sạch và giã lọc rạm mất phần lớn thời gian sơ chế; giữ nồi sôi nhẹ để nước dùng không đục.",
+      "suggested_pairings": [
+        "Bánh tráng nướng",
+        "Chanh tươi",
+        "Rau thơm tùy chọn"
+      ],
+      "sources": [
+        {
+          "url": "https://vnexpress.net/bun-ram-nuc-tieng-o-binh-dinh-3246635.html",
+          "publisher": "VnExpress Du lịch",
+          "title": "Bún rạm nức tiếng ở Bình Định",
+          "use": "Đối chiếu cách làm sạch-giã-lọc rạm, nấu nước rạm liu riu và cách dọn món.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://dulichquynhon.binhdinh.gov.vn/vi/bunrammyhanh",
+          "publisher": "Cổng thông tin du lịch Quy Nhơn – Bình Định",
+          "title": "Bún rạm Mỹ Hạnh",
+          "use": "Đối chiếu liên hệ đặc sản bún rạm Phù Mỹ với nguyên liệu rạm đầm Trà Ổ; phần rau thơm, đậu phộng được ghi rõ là tùy chọn vì cách ăn địa phương có biến thể.",
+          "accessed_at": "2026-10-23",
+          "type": "regional_identity_reference"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/du-kien-ten-goi-cac-don-vi-hanh-chinh-cap-tinh-moi-sau-sap-nhap-hop-nhat-119250414065709871.htm",
+          "publisher": "Cổng Thông tin điện tử Chính phủ",
+          "title": "Dự kiến tên gọi các đơn vị hành chính cấp tỉnh mới sau sáp nhập, hợp nhất",
+          "use": "Ghi nhận địa danh hiện hành: Bình Định hợp nhất vào tỉnh Gia Lai từ đợt sắp xếp đơn vị hành chính năm 2025; tên món vẫn giữ địa danh truyền thống Phù Mỹ/Bình Định.",
+          "accessed_at": "2026-10-23",
+          "type": "administrative_context_reference"
+        }
+      ],
+      "total_time": 65,
+      "time_unit": "phút",
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "bun-ram-phu-my",
+      "keywords": [
+        "Bún rạm Phù Mỹ",
+        "Ẩm thực Việt Nam",
+        "Gia Lai (khu vực Bình Định cũ)",
+        "rạm đồng",
+        "bún tươi",
+        "bún rạm Phù Mỹ cách nấu",
+        "đặc sản Bình Định bún rạm",
+        "bún rạm Trà Ổ",
+        "Món nước",
+        "65 phút"
+      ],
+      "tags": {
+        "region": [
+          "Ẩm thực Việt Nam",
+          "Nam Trung Bộ"
+        ],
+        "province": [
+          "Gia Lai (khu vực Bình Định cũ)"
+        ],
+        "meal_type": [
+          "bữa sáng",
+          "bữa trưa"
+        ],
+        "dish_type": [
+          "Bún nước",
+          "Đặc sản vùng miền"
+        ],
+        "main_ingredient": [
+          "rạm đồng",
+          "bún tươi"
+        ],
+        "cooking_method": [
+          "giã lọc",
+          "nấu nước dùng"
+        ],
+        "difficulty": "Vừa",
+        "prep_time": 35,
+        "cook_time": 30,
+        "servings": 4,
+        "spicy_level": 1,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Bánh tráng nướng",
+          "Chanh tươi",
+          "Rau thơm tùy chọn"
+        ],
+        "keywords": [
+          "Bún rạm Phù Mỹ",
+          "bún rạm Phù Mỹ cách nấu",
+          "đặc sản Bình Định bún rạm",
+          "bún rạm Trà Ổ",
+          "rạm đồng",
+          "bún tươi",
+          "Món nước"
+        ]
+      },
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Bún rạm Phù Mỹ cho 2 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Bún rạm Phù Mỹ cho 6 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Bún rạm Phù Mỹ cho 8 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/bun-ram-phu-my-960.webp",
+          "page_url": "https://vnexpress.net/bun-ram-nuc-tieng-o-binh-dinh-3246635.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu đặc trưng món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Tô bún rạm Phù Mỹ với nước rạm, bún tươi, rau thơm và bánh tráng nướng ăn kèm.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo mới; công thức được biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức được Bếp Việt biên tập từ nguồn tham khảo; định lượng và thời gian cần được nấu thử trước khi xem là bản hoàn chỉnh.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để xác nhận định lượng, thời gian và khẩu vị với nguyên liệu phổ biến tại Việt Nam.",
+          "Đối chiếu cách trình bày và gia giảm theo biến thể địa phương."
+        ]
+      }
+    },
+    {
+      "id": "BV464",
+      "slug": "rau-bo-khai-xao-trung-bac-kan",
+      "name": "Rau bò khai xào trứng Bắc Kạn",
+      "aliases": [
+        "Bò khai xào trứng",
+        "Rau khai xào trứng người Tày"
+      ],
+      "region": [
+        "Đông Bắc Bộ"
+      ],
+      "province": [
+        "Thái Nguyên (khu vực Bắc Kạn cũ)"
+      ],
+      "category": "Món rau",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "current_province": [
+        "Thái Nguyên"
+      ],
+      "traditional_province": [
+        "Bắc Kạn"
+      ],
+      "serving_basis": "4 phần ăn kèm cơm, khoảng 100 g rau bò khai sống mỗi phần.",
+      "prep_time": 15,
+      "cook_time": 10,
+      "passive_time": 0,
+      "description": "Đọt bò khai non được bẻ ngắn, xào nhanh với tỏi rồi đảo cùng trứng đến khi vừa chín. Món rau dân dã gắn với bữa cơm người Tày ở Bắc Kạn; Bếp Việt biên tập định lượng gia đình, ưu tiên giữ rau xanh và vị thơm đặc trưng.",
+      "finished_dish": "Rau bò khai xanh, cọng vừa mềm vẫn còn độ giòn, trứng bám đều và tỏi dậy thơm; ăn nóng cùng cơm trắng.",
+      "serving": "Múc ra đĩa khi trứng vừa chín, dùng nóng cùng cơm. Có thể thêm ít ớt nếu thích vị cay.",
+      "tips": [
+        "Chọn ngọn non, bỏ đoạn già và lá dập; rửa sạch, để thật ráo trước khi xào.",
+        "Xào nhanh trên lửa lớn để rau giữ màu xanh và không ra nhiều nước.",
+        "Trứng cần chín hoàn toàn; đảo vừa đủ để trứng bám rau nhưng không khô vụn."
+      ],
+      "dish_type": [
+        "Món rau xào",
+        "Ẩm thực người Tày"
+      ],
+      "main_ingredient": [
+        "rau bò khai",
+        "trứng gà"
+      ],
+      "cooking_method": [
+        "xào"
+      ],
+      "search_terms": [
+        "rau bò khai xào trứng",
+        "món ngon người Tày Bắc Kạn",
+        "cách xào rau bò khai"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Rau bò khai xào trứng vàng xanh, giữ nguyên cọng lá non và bày nóng trên đĩa.",
+      "ingredients": [
+        {
+          "name": "Rau bò khai non",
+          "quantity": 400,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn phần ngọn và lá non; loại bỏ cọng già.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Trứng gà",
+          "quantity": 3,
+          "unit": "quả",
+          "role": "main",
+          "notes": "Đập ra bát, đánh tan nhẹ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 15,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Có thể thay bằng muối.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Muối",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Gia giảm nếu đã dùng nước mắm.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Tùy chọn.",
+          "scaling_rule": "linear"
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Nhặt ngọn non, bỏ phần cọng già và lá dập. Rửa rau nhiều lần, để ráo rồi bẻ thành đoạn vừa ăn."
+        },
+        {
+          "step": 2,
+          "instruction": "Băm tỏi. Đập trứng vào bát, thêm một nhúm muối và đánh nhẹ cho lòng đỏ vừa hòa với lòng trắng."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng chảo, cho dầu và phi tỏi đến khi thơm nhưng chưa chuyển nâu."
+        },
+        {
+          "step": 2,
+          "instruction": "Cho rau bò khai vào xào nhanh trên lửa lớn khoảng 2–3 phút. Nêm nước mắm hoặc muối, đảo đến khi cọng vừa mềm."
+        },
+        {
+          "step": 3,
+          "instruction": "Dàn rau đều trong chảo, rót trứng lên rồi đảo nhẹ đến khi trứng chín hoàn toàn và bám quanh rau. Không xào quá lâu để rau giữ màu xanh."
+        },
+        {
+          "step": 4,
+          "instruction": "Rắc tiêu nếu dùng, tắt bếp và dọn nóng cùng cơm trắng."
+        }
+      ],
+      "time_note": "Rau sau khi rửa cần ráo nước để khi xào không bị hấp mềm trong chảo.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Canh rau nhẹ"
+      ],
+      "sources": [
+        {
+          "url": "https://vov.vn/suc-khoe/rau-bo-khai-co-gi-dac-biet-ma-duoc-nhieu-nguoi-san-tim-den-vay-post1307078.vov",
+          "publisher": "Đài Tiếng nói Việt Nam (VOV)",
+          "title": "Rau bò khai có gì đặc biệt mà được nhiều người săn tìm đến vậy?",
+          "use": "Nguồn nêu rau bò khai xào trứng như một cách chế biến gia đình để đổi vị. Bếp Việt dùng làm tham khảo cho bước xào rau rồi đảo cùng trứng, nêm nước mắm và tiêu; đây là biến tấu tại nhà, không khẳng định riêng món xào trứng là di sản hay món cổ truyền của người Tày.",
+          "accessed_at": "2026-10-23",
+          "type": "preparation_reference"
+        },
+        {
+          "url": "https://www.qdnd.vn/xa-hoi/dan-toc-ton-giao/cac-van-de/dac-san-rau-bo-khai-cua-dong-bao-dan-toc-tay-663043",
+          "publisher": "Báo Quân đội nhân dân",
+          "title": "Đặc sản rau bò khai của đồng bào dân tộc Tày",
+          "use": "Đối chiếu địa bàn Chợ Đồn và cách người Tày chế biến ngọn bò khai; tham khảo cách xào rau với tỏi, nêm gia vị và đảo trứng đến chín. Nội dung công dụng sức khỏe trong nguồn không được đưa vào công thức.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/du-kien-ten-goi-cac-don-vi-hanh-chinh-cap-tinh-moi-sau-sap-nhap-hop-nhat-119250414065709871.htm",
+          "publisher": "Cổng Thông tin điện tử Chính phủ",
+          "title": "Dự kiến tên gọi các đơn vị hành chính cấp tỉnh mới sau sáp nhập, hợp nhất",
+          "use": "Ghi nhận địa danh hiện hành: Bắc Kạn hợp nhất vào tỉnh Thái Nguyên từ đợt sắp xếp đơn vị hành chính năm 2025; tên món và nguồn văn hóa vẫn gắn với Bắc Kạn/Chợ Đồn truyền thống.",
+          "accessed_at": "2026-10-23",
+          "type": "administrative_context_reference"
+        }
+      ],
+      "total_time": 25,
+      "time_unit": "phút",
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "rau-bo-khai-xao-trung-bac-kan",
+      "keywords": [
+        "Rau bò khai xào trứng Bắc Kạn",
+        "Ẩm thực Việt Nam",
+        "Thái Nguyên (khu vực Bắc Kạn cũ)",
+        "rau bò khai",
+        "trứng gà",
+        "rau bò khai xào trứng",
+        "món ngon người Tày Bắc Kạn",
+        "cách xào rau bò khai",
+        "Món rau",
+        "25 phút"
+      ],
+      "tags": {
+        "region": [
+          "Ẩm thực Việt Nam",
+          "Đông Bắc Bộ"
+        ],
+        "province": [
+          "Thái Nguyên (khu vực Bắc Kạn cũ)"
+        ],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Món rau xào",
+          "Ẩm thực người Tày"
+        ],
+        "main_ingredient": [
+          "rau bò khai",
+          "trứng gà"
+        ],
+        "cooking_method": [
+          "xào"
+        ],
+        "difficulty": "Dễ",
+        "prep_time": 15,
+        "cook_time": 10,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Cơm trắng",
+          "Canh rau nhẹ"
+        ],
+        "keywords": [
+          "Rau bò khai xào trứng Bắc Kạn",
+          "rau bò khai xào trứng",
+          "món ngon người Tày Bắc Kạn",
+          "cách xào rau bò khai",
+          "rau bò khai",
+          "trứng gà",
+          "Món rau"
+        ]
+      },
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Rau bò khai xào trứng Bắc Kạn cho 2 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Rau bò khai xào trứng Bắc Kạn cho 6 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Rau bò khai xào trứng Bắc Kạn cho 8 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/rau-bo-khai-xao-trung-bac-kan-960.webp",
+          "page_url": "https://www.qdnd.vn/xa-hoi/dan-toc-ton-giao/cac-van-de/dac-san-rau-bo-khai-cua-dong-bao-dan-toc-tay-663043",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu đặc trưng món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Rau bò khai xào trứng vàng xanh, giữ nguyên cọng lá non và bày nóng trên đĩa.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo mới; công thức được biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức được Bếp Việt biên tập từ nguồn tham khảo; định lượng và thời gian cần được nấu thử trước khi xem là bản hoàn chỉnh.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để xác nhận định lượng, thời gian và khẩu vị với nguyên liệu phổ biến tại Việt Nam.",
+          "Đối chiếu cách trình bày và gia giảm theo biến thể địa phương."
+        ]
+      }
+    },
+    {
+      "id": "BV465",
+      "slug": "thit-trau-nau-la-lom-hoa-binh",
+      "name": "Thịt trâu nấu lá lồm Hòa Bình",
+      "aliases": [
+        "Trâu nấu lá lồm",
+        "Thịt trâu lá lồm"
+      ],
+      "region": [
+        "Tây Bắc Bộ"
+      ],
+      "province": [
+        "Phú Thọ (khu vực Hòa Bình cũ)"
+      ],
+      "category": "Món canh",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối"
+      ],
+      "difficulty": "Vừa",
+      "servings": 4,
+      "current_province": [
+        "Phú Thọ"
+      ],
+      "traditional_province": [
+        "Hòa Bình"
+      ],
+      "serving_basis": "4 bát canh đặc dùng cùng cơm, mỗi phần khoảng 150 g thịt trước khi nấu.",
+      "prep_time": 30,
+      "cook_time": 150,
+      "passive_time": 0,
+      "description": "Thịt trâu được làm sạch, áp chảo hoặc nướng xém rồi ninh mềm với lá lồm giã dập và gạo tấm đến khi nước canh sánh nhẹ. Món ăn truyền thống của người Mường ở Hòa Bình có vị chua dịu của lá; Bếp Việt biên tập cách nấu tại nhà bằng nồi thường.",
+      "finished_dish": "Thịt trâu mềm, thấm vị; lá lồm tạo vị chua thanh và gạo tấm làm nước canh sánh vừa, thơm mùi gừng tỏi.",
+      "serving": "Múc nóng vào bát sâu lòng, dùng như món canh đậm đà trong bữa cơm. Nêm lại vị chua và mặn sau khi lá lồm đã nấu mềm.",
+      "tips": [
+        "Nếu thịt trâu có mùi mạnh, chà gừng và rửa sạch trước khi nấu; áp chảo hoặc nướng xém giúp món thơm hơn.",
+        "Lá lồm có vị chua tự nhiên; thêm từng ít để canh không quá chua.",
+        "Ninh lửa nhỏ đến khi thịt mềm; nếu dùng nồi áp suất, giảm thời gian theo hướng dẫn thiết bị và chỉ mở nồi khi đã xả áp an toàn."
+      ],
+      "dish_type": [
+        "Canh đặc",
+        "Ẩm thực người Mường"
+      ],
+      "main_ingredient": [
+        "thịt trâu",
+        "lá lồm",
+        "gạo tấm"
+      ],
+      "cooking_method": [
+        "áp chảo",
+        "ninh"
+      ],
+      "search_terms": [
+        "thịt trâu nấu lá lồm Hòa Bình",
+        "món Mường lá lồm",
+        "cách nấu trâu lá lồm"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Bát thịt trâu nấu lá lồm Hòa Bình, nước canh sánh nhẹ với lá xanh và gạo tấm.",
+      "ingredients": [
+        {
+          "name": "Thịt trâu",
+          "quantity": 650,
+          "unit": "g",
+          "role": "main",
+          "notes": "Chọn bắp hoặc phần có gân; cắt miếng vừa.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Lá lồm",
+          "quantity": 180,
+          "unit": "g",
+          "role": "main",
+          "notes": "Rửa sạch, giã dập; lượng chua tùy lá và khẩu vị.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Gạo tấm",
+          "quantity": 50,
+          "unit": "g",
+          "role": "main",
+          "notes": "Vo sạch; có thể rang nhẹ để thơm.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nước",
+          "quantity": 2000,
+          "unit": "ml",
+          "role": "main",
+          "notes": "Thêm nếu cần trong lúc ninh.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Gừng",
+          "quantity": 30,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Một phần thái lát, phần còn lại đập dập.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 15,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 20,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": null,
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Muối",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm sau khi lá lồm đã tiết vị chua.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Tùy chọn.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng để áp chảo thịt.",
+          "scaling_rule": "linear"
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa thịt trâu, chà với gừng đập dập nếu cần để khử mùi, tráng sạch và thấm khô. Cắt miếng vừa ăn."
+        },
+        {
+          "step": 2,
+          "instruction": "Rửa lá lồm, bỏ phần già rồi giã dập để lá tiết vị; vo sạch gạo tấm. Băm tỏi và hành tím."
+        },
+        {
+          "step": 3,
+          "instruction": "Ướp thịt với một nửa hành tỏi, nước mắm và tiêu trong khoảng 15 phút."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng nồi với dầu, áp chảo thịt theo từng mẻ đến khi các mặt xém nhẹ. Cho phần hành tỏi còn lại vào đảo thơm."
+        },
+        {
+          "step": 2,
+          "instruction": "Thêm nước và gừng, đun sôi rồi hạ nhỏ lửa. Hớt bọt và ninh đến khi thịt gần mềm; thời gian có thể thay đổi theo phần thịt."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho gạo tấm vào nồi, nấu tiếp đến khi hạt gạo bung và nước bắt đầu sánh. Thêm lá lồm giã dập, ninh thêm 15–20 phút để vị chua hòa vào canh."
+        },
+        {
+          "step": 4,
+          "instruction": "Nếm và điều chỉnh muối, nước mắm; kiểm tra thịt mềm và chín kỹ. Rắc tiêu nếu dùng, múc nóng ra bát."
+        }
+      ],
+      "time_note": "Thời gian ninh tùy độ dai của thịt trâu; nếu nước cạn trước khi thịt mềm, thêm nước sôi từng ít.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Rau luộc",
+        "Măng chua"
+      ],
+      "sources": [
+        {
+          "url": "https://vietnamnet.vn/dac-san-hoa-binh-ca-nuong-song-da-thom-nuc-thit-trau-la-lom-doc-dao-2136155.html",
+          "publisher": "VietNamNet",
+          "title": "Đặc sản Hòa Bình: Cá nướng sông Đà thơm nức, thịt trâu lá lồm độc đáo",
+          "use": "Đối chiếu thịt trâu nấu với lá lồm và gạo tấm; tham khảo sơ chế, nấu mềm thịt rồi om cùng lá giã dập đến khi nước sánh.",
+          "accessed_at": "2026-10-23",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://dantocphattrien.vietnamnet.vn/thit-trau-nau-la-lom-mon-ngon-duoc-long-du-khach-75564.html",
+          "publisher": "Báo Dân tộc và Phát triển – chuyên trang của VietNamNet",
+          "title": "Thịt trâu nấu lá lồm – món ngon được lòng du khách",
+          "use": "Đối chiếu biến thể dùng bắp/gân trâu, gừng tỏi và áp chảo thịt trước khi om; nguồn cũng ghi nhận món ăn trong văn hóa ẩm thực người Mường.",
+          "accessed_at": "2026-10-23",
+          "type": "regional_identity_reference"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/du-kien-ten-goi-cac-don-vi-hanh-chinh-cap-tinh-moi-sau-sap-nhap-hop-nhat-119250414065709871.htm",
+          "publisher": "Cổng Thông tin điện tử Chính phủ",
+          "title": "Dự kiến tên gọi các đơn vị hành chính cấp tỉnh mới sau sáp nhập, hợp nhất",
+          "use": "Ghi nhận địa danh hiện hành: Hòa Bình hợp nhất vào tỉnh Phú Thọ từ đợt sắp xếp đơn vị hành chính năm 2025; tên món giữ địa danh truyền thống Hòa Bình.",
+          "accessed_at": "2026-10-23",
+          "type": "administrative_context_reference"
+        }
+      ],
+      "total_time": 180,
+      "time_unit": "phút",
+      "width": 1536,
+      "height": 1024,
+      "recipe_family": "thit-trau-nau-la-lom-hoa-binh",
+      "keywords": [
+        "Thịt trâu nấu lá lồm Hòa Bình",
+        "Ẩm thực Việt Nam",
+        "Phú Thọ (khu vực Hòa Bình cũ)",
+        "thịt trâu",
+        "lá lồm",
+        "gạo tấm",
+        "thịt trâu nấu lá lồm Hòa Bình",
+        "món Mường lá lồm",
+        "cách nấu trâu lá lồm",
+        "Món canh",
+        "180 phút"
+      ],
+      "tags": {
+        "region": [
+          "Ẩm thực Việt Nam",
+          "Tây Bắc Bộ"
+        ],
+        "province": [
+          "Phú Thọ (khu vực Hòa Bình cũ)"
+        ],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Canh đặc",
+          "Ẩm thực người Mường"
+        ],
+        "main_ingredient": [
+          "thịt trâu",
+          "lá lồm",
+          "gạo tấm"
+        ],
+        "cooking_method": [
+          "áp chảo",
+          "ninh"
+        ],
+        "difficulty": "Vừa",
+        "prep_time": 30,
+        "cook_time": 150,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Cơm trắng",
+          "Rau luộc",
+          "Măng chua"
+        ],
+        "keywords": [
+          "Thịt trâu nấu lá lồm Hòa Bình",
+          "thịt trâu nấu lá lồm Hòa Bình",
+          "món Mường lá lồm",
+          "cách nấu trâu lá lồm",
+          "thịt trâu",
+          "lá lồm",
+          "gạo tấm",
+          "Món canh"
+        ]
+      },
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.5,
+            "example": "Thịt trâu nấu lá lồm Hòa Bình cho 2 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.5,
+            "example": "Thịt trâu nấu lá lồm Hòa Bình cho 6 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 2.0,
+            "example": "Thịt trâu nấu lá lồm Hòa Bình cho 8 người",
+            "instruction": "Gia giảm gia vị sau khi nếm; kiểm tra độ chín và kết cấu."
+          }
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/thit-trau-nau-la-lom-hoa-binh-960.webp",
+          "page_url": "https://vietnamnet.vn/dac-san-hoa-binh-ca-nuong-song-da-thom-nuc-thit-trau-la-lom-doc-dao-2136155.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo mới riêng cho Bếp Việt; nguồn chỉ dùng để đối chiếu đặc trưng món ăn.",
+          "width": 1536,
+          "height": 1024,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Bát thịt trâu nấu lá lồm Hòa Bình, nước canh sánh nhẹ với lá xanh và gạo tấm.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-23",
+          "photo_variant_note": "Ảnh món ăn do Bếp Việt tạo mới; công thức được biên tập, chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Công thức được Bếp Việt biên tập từ nguồn tham khảo; định lượng và thời gian cần được nấu thử trước khi xem là bản hoàn chỉnh.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-23",
+        "needs": [
+          "Nấu thử để xác nhận định lượng, thời gian và khẩu vị với nguyên liệu phổ biến tại Việt Nam.",
+          "Đối chiếu cách trình bày và gia giảm theo biến thể địa phương."
+        ]
+      }
+    }
+  ]
+}

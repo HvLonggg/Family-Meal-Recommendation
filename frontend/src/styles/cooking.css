@@ -1,0 +1,957 @@
+/* Chế độ vào bếp: toàn màn hình, chữ to, nút lớn để thao tác bằng tay ướt. */
+.cook {
+  display: flex;
+  min-height: 100vh;
+  min-height: 100dvh;
+  flex-direction: column;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+.cook__bar {
+  position: sticky;
+  z-index: 5;
+  top: 0;
+  display: grid;
+  align-items: center;
+  gap: 12px;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  padding: 12px 16px 0;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.cook__exit,
+.cook__mic {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  color: var(--color-text-secondary);
+  background: var(--color-surface);
+  cursor: pointer;
+}
+
+.cook__mic.is-on {
+  border-color: var(--color-primary);
+  color: white;
+  background: var(--color-primary);
+}
+
+.cook__mic.is-listening {
+  animation: cook-pulse 1.4s ease-out infinite;
+}
+
+.cook__mic:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+@keyframes cook-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgb(37 99 235 / 45%);
+  }
+  100% {
+    box-shadow: 0 0 0 14px rgb(37 99 235 / 0%);
+  }
+}
+
+.cook__title {
+  display: grid;
+  min-width: 0;
+}
+
+.cook__title small {
+  color: var(--color-text-muted);
+  font-size: 12px;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.cook__title strong {
+  overflow: hidden;
+  font-size: 17px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cook__progress {
+  overflow: hidden;
+  height: 4px;
+  margin: 0 -16px;
+  grid-column: 1 / -1;
+  background: var(--color-primary-soft);
+}
+
+.cook__progress span {
+  display: block;
+  height: 100%;
+  background: var(--color-primary);
+  transition: width 0.3s ease;
+}
+
+.cook__intro,
+.cook__done,
+.cook__stage {
+  width: min(760px, 100%);
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.cook__intro h1,
+.cook__done h1 {
+  margin: 6px 0 16px;
+  font-size: clamp(26px, 5vw, 36px);
+  line-height: 1.2;
+}
+
+.cook__lead {
+  color: var(--color-text-secondary);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.cook-dishes {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+}
+
+.cook-dishes li {
+  display: grid;
+  align-items: center;
+  gap: 12px;
+  grid-template-columns: 64px minmax(0, 1fr);
+  padding: 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  background: var(--color-surface);
+}
+
+.cook-dishes img {
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.cook-dishes span {
+  display: grid;
+  gap: 2px;
+}
+
+.cook-dishes small,
+.cook__muted {
+  color: var(--color-text-muted);
+}
+
+.cook-toggle {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 16px 0;
+  padding: 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  background: var(--color-surface);
+  cursor: pointer;
+}
+
+.cook-toggle input {
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+  accent-color: var(--color-primary);
+}
+
+.cook-toggle span {
+  display: grid;
+  gap: 4px;
+}
+
+.cook-toggle small {
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.cook-alarm {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 16px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  color: #92400e;
+  background: #fef3c7;
+  line-height: 1.5;
+}
+
+.cook-alarm span {
+  flex: 1 1 200px;
+}
+
+.cook-alarm--muted {
+  color: var(--color-text-secondary);
+  background: var(--color-surface-soft);
+}
+
+.cook-alarm--compact {
+  margin: 12px 0 0;
+  font-size: 14px;
+}
+
+.cook__start {
+  width: 100%;
+  min-height: 56px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.cook__intro > .button--outline {
+  width: 100%;
+}
+
+.cook__stage {
+  flex: 1;
+}
+
+.cook__phase {
+  margin: 0 0 8px;
+  color: var(--color-primary);
+  font-size: 15px;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.cook__step {
+  margin: 0;
+  font-size: clamp(22px, 4.6vw, 32px);
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.cook-checklist {
+  display: grid;
+  gap: 8px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cook-checklist label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 8px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-surface);
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.cook-checklist input {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 auto;
+  accent-color: var(--color-success);
+}
+
+.cook-checklist input:checked + span {
+  color: var(--color-text-muted);
+  text-decoration: line-through;
+}
+
+.cook__suggest {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  margin-top: 18px;
+  padding: 0 16px;
+  border: 1px dashed var(--color-primary);
+  border-radius: 999px;
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cook__voice {
+  display: grid;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.cook__status {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  color: var(--color-text-secondary);
+  background: var(--color-surface-soft);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.cook__status.is-listening {
+  color: var(--color-success);
+  background: var(--color-success-soft);
+}
+
+.cook__heard {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.cook__answer,
+.cook__caption {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+.cook__error {
+  margin: 0;
+  color: var(--color-danger);
+}
+
+.cook__timers {
+  display: grid;
+  width: min(760px, 100%);
+  gap: 10px;
+  margin: 0 auto;
+  padding: 0 16px 16px;
+}
+
+.cook-timer {
+  display: grid;
+  align-items: center;
+  gap: 12px;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  padding: 12px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  color: var(--color-primary);
+  background: var(--color-surface);
+}
+
+.cook-timer > div:first-of-type {
+  display: grid;
+  min-width: 0;
+  color: var(--color-text);
+}
+
+.cook-timer strong {
+  overflow: hidden;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cook-timer__clock {
+  font-size: 26px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 750;
+}
+
+.cook-timer__actions {
+  display: flex;
+  gap: 6px;
+}
+
+.cook-timer__actions .button {
+  min-width: 44px;
+  padding: 0 12px;
+}
+
+.cook-timer.is-ringing {
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+  background: var(--color-danger-soft);
+  /* Chỉ nháy viền: nút "Xong rồi" đứng yên để dễ bấm khi tay ướt. */
+  animation: cook-glow 1.2s ease-in-out infinite;
+}
+
+.cook-timer.is-ringing > svg {
+  animation: cook-shake 0.9s ease-in-out infinite;
+}
+
+@keyframes cook-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgb(220 38 38 / 0%);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgb(220 38 38 / 22%);
+  }
+}
+
+.cook-timer.is-ringing .cook-timer__clock {
+  color: var(--color-danger);
+}
+
+@keyframes cook-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-3px);
+  }
+  40% {
+    transform: translateX(3px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cook-timer.is-ringing,
+  .cook-timer.is-ringing > svg,
+  .cook__mic.is-listening {
+    animation: none;
+  }
+}
+
+.cook-timer-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.cook-timer-form label {
+  display: grid;
+  gap: 4px;
+  color: var(--color-text-secondary);
+  font-size: 13px;
+}
+
+.cook-timer-form input {
+  width: 110px;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  font: inherit;
+  font-size: 16px;
+}
+
+.cook__controls {
+  position: sticky;
+  bottom: 0;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(0, 1.6fr);
+  padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+  background: var(--color-surface);
+  box-shadow: 0 -6px 18px rgb(30 64 175 / 8%);
+}
+
+.cook__controls .button {
+  min-height: 56px;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px;
+  font-size: 13px;
+}
+
+.cook__controls .cook__next {
+  flex-direction: row;
+  font-size: 16px;
+}
+
+@media (max-width: 520px) {
+  .cook__controls {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .cook__controls .cook__next {
+    grid-column: 1 / -1;
+    order: -1;
+  }
+
+  .cook-timer {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .cook-timer__actions {
+    grid-column: 1 / -1;
+  }
+
+  .cook-timer__actions .button {
+    flex: 1;
+  }
+}
+
+.cook__done {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
+.cook__done-icon {
+  display: grid;
+  width: 84px;
+  height: 84px;
+  place-items: center;
+  margin-top: 24px;
+  border-radius: 50%;
+  color: white;
+  background: var(--color-success);
+}
+
+.cook__done-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.cook--empty {
+  justify-content: center;
+}
+
+.cook-empty {
+  display: grid;
+  max-width: 420px;
+  justify-items: center;
+  gap: 10px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.cook-empty h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+/* Trang món: đánh dấu đã nấu. */
+.cooked-mark {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.cooked-mark__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 0 14px;
+  border: 1px solid var(--color-success);
+  border-radius: 999px;
+  color: var(--color-success);
+  background: var(--color-surface);
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.cooked-mark__button:hover:not(:disabled) {
+  color: white;
+  background: var(--color-success);
+}
+
+.cooked-mark__done {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-success);
+  font-weight: 650;
+}
+
+.cooked-mark__link {
+  padding: 0;
+  border: 0;
+  color: var(--color-text-secondary);
+  background: none;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.cooked-mark__error {
+  color: var(--color-danger);
+}
+
+/* Kế hoạch: tick đã nấu và vào bếp từng món / cả bữa. */
+.planner-dish__cook {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 5px;
+}
+
+.planner-dish__cooked,
+.planner-dish__cook-link,
+.planner-cook-meal {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  min-height: 22px;
+  padding: 0 7px;
+  border: 1px solid #ead9c9;
+  border-radius: 999px;
+  color: var(--color-text-secondary);
+  background: var(--color-surface);
+  font-size: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.planner-dish__cooked[aria-pressed='true'] {
+  border-color: var(--color-success);
+  color: white;
+  background: var(--color-success);
+}
+
+.planner-dish__cook-link,
+.planner-cook-meal {
+  color: var(--color-primary);
+}
+
+.planner-cook-meal {
+  margin-left: auto;
+}
+
+.planner-dish.is-cooked .planner-dish__link span {
+  color: var(--color-text-muted);
+  text-decoration: line-through;
+}
+
+/* Lịch sử món đã nấu. */
+.cook-stats {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  margin: 0 0 20px;
+}
+
+.cook-stats div {
+  padding: 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  background: var(--color-surface);
+}
+
+.cook-stats dt {
+  color: var(--color-text-muted);
+  font-size: 13px;
+}
+
+.cook-stats dd {
+  margin: 4px 0 0;
+  font-size: 26px;
+  font-weight: 750;
+}
+
+.cook-history {
+  margin-bottom: 18px;
+}
+
+.cook-history h2 {
+  margin: 0 0 8px;
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.cook-history ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cook-history__item {
+  display: grid;
+  align-items: center;
+  gap: 12px;
+  grid-template-columns: 56px minmax(0, 1fr) auto;
+  padding: 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  background: var(--color-surface);
+}
+
+.cook-history__item img {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.cook-history__body {
+  display: grid;
+  min-width: 0;
+  gap: 3px;
+}
+
+.cook-history__body a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.cook-history__body small {
+  color: var(--color-text-muted);
+}
+
+.cook-history__body p {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: 14px;
+}
+
+.cook-source {
+  width: fit-content;
+  padding: 2px 8px;
+  border-radius: 999px;
+  color: var(--color-text-secondary);
+  background: var(--color-surface-soft);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.cook-source--cook_mode {
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+.cook-source--planner {
+  color: var(--color-success);
+  background: var(--color-success-soft);
+}
+
+.cook-history__actions {
+  display: flex;
+  gap: 6px;
+}
+
+.cook-history__actions .button {
+  min-height: 40px;
+  padding: 0 12px;
+}
+
+@media (max-width: 560px) {
+  .cook-history__item {
+    grid-template-columns: 48px minmax(0, 1fr);
+  }
+
+  .cook-history__actions {
+    grid-column: 1 / -1;
+    justify-content: flex-end;
+  }
+
+  .cook-history__actions span {
+    display: none;
+  }
+}
+
+/* Chú Rồng phụ bếp: rồng sống động bên trái, hội thoại bên phải. */
+.cook-buddy {
+  display: grid;
+  align-items: start;
+  gap: 10px 14px;
+  grid-template-columns: 200px minmax(0, 1fr);
+  margin: 0 0 22px;
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  background:
+    radial-gradient(120% 90% at 0% 0%, rgb(255 214 190 / 45%), transparent 60%),
+    var(--color-surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.cook-buddy__dragon {
+  display: grid;
+  min-width: 0;
+  justify-items: center;
+  gap: 6px;
+  grid-row: span 2;
+}
+
+/* Rồng to (size 190) nhưng không bao giờ tràn khỏi cột. */
+.cook-buddy__dragon svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.cook-buddy__status {
+  padding: 3px 9px;
+  border-radius: 999px;
+  color: var(--color-text-secondary);
+  background: var(--color-surface-soft);
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.cook-buddy__status.is-listening {
+  color: var(--color-success);
+  background: var(--color-success-soft);
+}
+
+.cook-buddy__status.is-alarm {
+  color: var(--color-danger);
+  background: var(--color-danger-soft);
+}
+
+.cook-buddy__log {
+  display: flex;
+  min-height: 120px;
+  max-height: 260px;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+  margin: 0;
+  padding: 2px 2px 0;
+  list-style: none;
+  overscroll-behavior: contain;
+}
+
+.cook-bubble {
+  max-width: 92%;
+  padding: 9px 13px;
+  border-radius: 16px;
+  font-size: 15px;
+  line-height: 1.5;
+  animation: cook-bubble-in 220ms ease-out both;
+}
+
+.cook-bubble.is-dragon {
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+  background: var(--color-surface-soft);
+}
+
+.cook-bubble.is-user {
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+  color: white;
+  background: var(--color-primary);
+}
+
+.cook-bubble.is-interim {
+  opacity: 0.65;
+  font-style: italic;
+}
+
+@keyframes cook-bubble-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+.cook-buddy__ask {
+  display: flex;
+  gap: 8px;
+}
+
+.cook-buddy__ask input {
+  min-width: 0;
+  min-height: 46px;
+  flex: 1;
+  padding: 0 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  font: inherit;
+  font-size: 15px;
+}
+
+.cook-buddy__ask .button {
+  width: 46px;
+  min-height: 46px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.cook__done-dragon {
+  margin-top: 8px;
+}
+
+@media (max-width: 560px) {
+  .cook-buddy {
+    gap: 10px;
+    grid-template-columns: 144px minmax(0, 1fr);
+  }
+
+  .cook-buddy__dragon svg {
+    width: 144px;
+    height: auto;
+  }
+
+  .cook-buddy__ask {
+    grid-column: 1 / -1;
+  }
+
+  .cook-buddy__log {
+    max-height: 200px;
+  }
+}
+
+/* Điện thoại rất hẹp (≤ 374px): thu rồng để khung chat vẫn đủ rộng. */
+@media (max-width: 374px) {
+  .cook-buddy {
+    grid-template-columns: 118px minmax(0, 1fr);
+  }
+
+  .cook-buddy__dragon svg {
+    width: 118px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cook-bubble {
+    animation: none;
+  }
+}
+
+/* Nút "Dừng nói": hiện khi Chú Rồng đang nói, bấm là im ngay. */
+.cook-buddy__hush {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 32px;
+  padding: 4px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-text);
+  background: var(--color-surface);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cook-buddy__hush:hover {
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+}
+
+.cook-buddy__hush:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}

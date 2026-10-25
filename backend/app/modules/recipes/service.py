@@ -2,7 +2,13 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session, selectinload
 
 from app.modules.recipes.models import Recipe
-from app.modules.recipes.search import matches_search
+from app.modules.recipes.search import (
+    bilingual_search_text,
+    english_search_index,
+    matches_region,
+    matches_search,
+    normalize_search,
+)
 
 
 def list_recipes(
@@ -15,6 +21,16 @@ def list_recipes(
     offset: int = 0,
     with_details: bool = False,
 ) -> tuple[list[Recipe], int]:
+    category_aliases = {
+        "vegetarian dishes": "Món chay",
+        "vegetarian": "Món chay",
+        "soup": "Món canh",
+        "vegetable dishes": "Món rau",
+        "desserts": "Món tráng miệng",
+        "breakfast dishes": "Món ăn sáng",
+        "snacks": "Món ăn vặt",
+    }
+    category = category_aliases.get(normalize_search(category or ""), category)
     conditions = [Recipe.status == "published"]
     if category and category != "Món chay":
         conditions.append(Recipe.category == category)
@@ -30,13 +46,20 @@ def list_recipes(
             item
             for item in items
             if item.category == category
-            or category in item.content.get("tags", {}).get("dish_type", [])
+            or category in (item.content or {}).get("tags", {}).get("dish_type", [])
         ]
     if region:
         items = [
             item
             for item in items
-            if item.region == region or region in item.content.get("region", [])
+            if matches_region(
+                region,
+                [
+                    item.region,
+                    *(item.content or {}).get("region", []),
+                    *(item.content or {}).get("province", []),
+                ],
+            )
         ]
     if query:
         items = [
@@ -44,18 +67,55 @@ def list_recipes(
             for item in items
             if matches_search(
                 query,
-                item.search_text
-                or " ".join(
-                    [
-                        item.name,
-                        item.excerpt,
-                        item.region,
-                        item.category,
-                        *[ingredient.name for ingredient in item.ingredients],
-                    ]
+                bilingual_search_text(
+                    item.slug,
+                    item.search_text
+                    or " ".join(
+                        [
+                            item.name,
+                            item.excerpt,
+                            item.region,
+                            item.category,
+                            *[ingredient.name for ingredient in item.ingredients],
+                        ]
+                    ),
                 ),
             )
         ]
+        normalized_query = normalize_search(query)
+
+        def relevance(item: Recipe) -> int:
+            content = item.content or {}
+            aliases = content.get("aliases", [])
+            english_names = english_search_index().get(item.slug, {}).get("names", [])
+            names = [item.name, *aliases, *english_names]
+            normalized_names = [normalize_search(name) for name in names if isinstance(name, str)]
+            if normalized_query in normalized_names:
+                return 120
+            if any(name.startswith(normalized_query) for name in normalized_names):
+                return 100
+            if any(normalized_query in name for name in normalized_names):
+                return 80
+            if matches_search(query, " ".join(names)):
+                return 70
+            english_entry = english_search_index().get(item.slug, {})
+            fields = [
+                item.excerpt,
+                item.region,
+                item.category,
+                *english_entry.get("ingredients", []),
+                *english_entry.get("fields", []),
+                *[ingredient.name for ingredient in item.ingredients],
+            ]
+            if any(normalize_search(field) == normalized_query for field in fields):
+                return 60
+            if any(normalized_query in normalize_search(field) for field in fields):
+                return 50
+            if any(matches_search(query, field) for field in fields):
+                return 40
+            return 0
+
+        items.sort(key=relevance, reverse=True)
     return items[offset : offset + limit], len(items)
 
 

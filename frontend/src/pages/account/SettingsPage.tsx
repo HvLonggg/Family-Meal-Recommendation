@@ -2,7 +2,7 @@ import { useMutation } from '@tanstack/react-query';
 import { useEffect, useMemo, useState } from 'react';
 import { useLocation } from 'react-router';
 
-import { AppIcon } from '@/components/common/AppIcon';
+import { AppIcon, type IconName } from '@/components/common/AppIcon';
 import { Button } from '@/components/ui/Button';
 import { Notice, Panel, Toggle } from '@/components/ui/Workspace';
 import { exportAccountData, savePreferences } from '@/features/account/accountApi';
@@ -28,6 +28,7 @@ import { useI18n } from '@/features/i18n/I18nContext';
 import { formatLunarLong } from '@/features/planner/plannerCalendar';
 import { errorMessage } from '@/lib/errors';
 import { lunarFromIsoDate, vietnamToday } from '@/lib/lunarCalendar';
+import { MemoryPanel } from '@/pages/account/MemoryPanel';
 
 const appetiteLabels: Record<Appetite, string> = {
   light: 'Ăn ít',
@@ -40,6 +41,27 @@ const cookingTimes = [0, 20, 30, 45, 60, 90];
 function comparable(preferences: UserPreferences) {
   return JSON.stringify({ ...preferences, computed_portions: 0, computed_servings: 0 });
 }
+
+type SettingsTab = 'general' | 'meals' | 'notify' | 'assistant' | 'admin';
+
+const SETTINGS_TABS: { id: SettingsTab; label: string; icon: IconName; admin?: boolean }[] = [
+  { id: 'general', label: 'Chung', icon: 'globe' },
+  { id: 'meals', label: 'Bữa ăn', icon: 'plate', admin: false },
+  { id: 'notify', label: 'Thông báo & riêng tư', icon: 'calendar', admin: false },
+  { id: 'assistant', label: 'Chú Rồng', icon: 'sparkles' },
+  { id: 'admin', label: 'Quản trị', icon: 'shield', admin: true },
+];
+
+const SECTION_TAB: Record<string, SettingsTab> = {
+  language: 'general',
+  household: 'meals',
+  diet: 'meals',
+  planner: 'notify',
+  privacy: 'notify',
+  'assistant-tone': 'assistant',
+  memories: 'assistant',
+  admin: 'admin',
+};
 
 export function SettingsPage() {
   const { updateUser, user } = useAuth();
@@ -55,10 +77,21 @@ export function SettingsPage() {
   const isAdmin = user?.role === 'admin';
   const dirty = comparable(draft) !== comparable({ ...saved, language: draft.language });
 
+  const [tab, setTab] = useState<SettingsTab>(
+    () => SECTION_TAB[location.hash.slice(1)] ?? 'general',
+  );
+
+  // Liên kết tới một mục (ví dụ #memories từ khung chat) mở đúng tab rồi cuộn tới mục đó.
+  const [seenHash, setSeenHash] = useState(location.hash);
+  if (location.hash !== seenHash) {
+    setSeenHash(location.hash);
+    const target = SECTION_TAB[location.hash.slice(1)];
+    if (target) setTab(target);
+  }
   useEffect(() => {
     if (!location.hash) return;
     document.querySelector(location.hash)?.scrollIntoView?.({ behavior: 'smooth', block: 'start' });
-  }, [location.hash]);
+  }, [location.hash, tab]);
 
   const saveMutation = useMutation({
     mutationFn: (preferences: UserPreferences) => savePreferences(preferences),
@@ -137,61 +170,80 @@ export function SettingsPage() {
         </p>
       </header>
 
+      <div className="tab-pills settings-tabs" role="tablist" aria-label={t('Nhóm cài đặt')}>
+        {SETTINGS_TABS.filter((item) =>
+          item.admin === undefined ? true : item.admin === isAdmin,
+        ).map((item) => (
+          <button
+            aria-selected={tab === item.id}
+            className={tab === item.id ? 'is-active' : ''}
+            key={item.id}
+            onClick={() => setTab(item.id)}
+            role="tab"
+            type="button"
+          >
+            <AppIcon name={item.icon} size={15} /> {t(item.label)}
+          </button>
+        ))}
+      </div>
+
       {notice ? <Notice tone={notice.tone}>{notice.text}</Notice> : null}
 
-      <Panel
-        description={t('Áp dụng cho toàn bộ giao diện ngay khi bạn chọn.')}
-        icon="globe"
-        id="language"
-        title={t('Ngôn ngữ & hiển thị')}
-      >
-        <div className="choice-cards" role="radiogroup" aria-label={t('Ngôn ngữ')}>
-          {(
-            [
-              { id: 'vi', title: 'Tiếng Việt', hint: 'Giao diện tiếng Việt' },
-              { id: 'en', title: 'English', hint: 'English interface' },
-            ] as const
-          ).map((option) => (
-            <button
-              aria-checked={language === option.id}
-              className={`choice-card${language === option.id ? ' is-active' : ''}`}
-              key={option.id}
-              lang={option.id}
-              onClick={() => chooseLanguage(option.id)}
-              role="radio"
-              type="button"
-            >
-              <strong>{option.title}</strong>
-              <small>{option.hint}</small>
-            </button>
-          ))}
-        </div>
-        <div className="ws-fieldset">
-          <span className="ws-fieldset__label">{t('Cỡ chữ')}</span>
-          <div className="segmented-control segmented-control--soft">
-            {(['normal', 'large'] as const).map((size) => (
+      {tab === 'general' ? (
+        <Panel
+          description={t('Áp dụng cho toàn bộ giao diện ngay khi bạn chọn.')}
+          icon="globe"
+          id="language"
+          title={t('Ngôn ngữ & hiển thị')}
+        >
+          <div className="choice-cards" role="radiogroup" aria-label={t('Ngôn ngữ')}>
+            {(
+              [
+                { id: 'vi', title: 'Tiếng Việt', hint: 'Giao diện tiếng Việt' },
+                { id: 'en', title: 'English', hint: 'English interface' },
+              ] as const
+            ).map((option) => (
               <button
-                aria-pressed={draft.text_size === size}
-                className={draft.text_size === size ? 'is-active' : ''}
-                key={size}
-                onClick={() => update('text_size', size)}
+                aria-checked={language === option.id}
+                className={`choice-card${language === option.id ? ' is-active' : ''}`}
+                key={option.id}
+                lang={option.id}
+                onClick={() => chooseLanguage(option.id)}
+                role="radio"
                 type="button"
               >
-                {size === 'normal' ? t('Mặc định') : t('Lớn hơn')}
+                <strong>{option.title}</strong>
+                <small>{option.hint}</small>
               </button>
             ))}
           </div>
-        </div>
-        <Toggle
-          checked={draft.reduce_motion}
-          description={t('Tắt hiệu ứng chuyển động và vòng quay để giao diện tĩnh hơn.')}
-          label={t('Giảm chuyển động')}
-          onChange={(value) => update('reduce_motion', value)}
-        />
-      </Panel>
+          <div className="ws-fieldset">
+            <span className="ws-fieldset__label">{t('Cỡ chữ')}</span>
+            <div className="segmented-control segmented-control--soft">
+              {(['normal', 'large'] as const).map((size) => (
+                <button
+                  aria-pressed={draft.text_size === size}
+                  className={draft.text_size === size ? 'is-active' : ''}
+                  key={size}
+                  onClick={() => update('text_size', size)}
+                  type="button"
+                >
+                  {size === 'normal' ? t('Mặc định') : t('Lớn hơn')}
+                </button>
+              ))}
+            </div>
+          </div>
+          <Toggle
+            checked={draft.reduce_motion}
+            description={t('Tắt hiệu ứng chuyển động và vòng quay để giao diện tĩnh hơn.')}
+            label={t('Giảm chuyển động')}
+            onChange={(value) => update('reduce_motion', value)}
+          />
+        </Panel>
+      ) : null}
 
       {/* Quản trị viên chỉ cần thiết lập hiển thị và quản trị; phần cá nhân hóa bữa ăn dành cho người dùng. */}
-      {!isAdmin ? (
+      {!isAdmin && tab === 'meals' ? (
         <>
           <Panel
             description={t(
@@ -474,7 +526,11 @@ export function SettingsPage() {
               </div>
             </div>
           </Panel>
+        </>
+      ) : null}
 
+      {!isAdmin && tab === 'notify' ? (
+        <>
           <div className="ws-split">
             <Panel icon="calendar" id="planner" title={t('Kế hoạch & thông báo')}>
               <div className="ws-fieldset">
@@ -574,7 +630,7 @@ export function SettingsPage() {
         </>
       ) : null}
 
-      {isAdmin ? (
+      {isAdmin && tab === 'admin' ? (
         <Panel
           className="ws-panel--admin"
           description={t('Chỉ hiển thị và chỉ lưu được với tài khoản quản trị.')}
@@ -589,6 +645,34 @@ export function SettingsPage() {
             onChange={(value) => update('admin_notify_pending', value)}
           />
         </Panel>
+      ) : null}
+
+      {tab === 'assistant' ? (
+        <>
+          <Panel
+            description={t(
+              'Chọn giọng trò chuyện của Chú Rồng. Nội dung món ăn luôn chính xác như nhau.',
+            )}
+            icon="sparkles"
+            id="assistant-tone"
+            title={t('Tính cách Chú Rồng')}
+          >
+            <Toggle
+              checked={draft.assistant_sassy}
+              description={
+                draft.assistant_sassy
+                  ? t(
+                      'Đang bật: Chú Rồng trả treo, cà khịa, trêu lại bạn — láo nhưng vẫn trả lời đúng.',
+                    )
+                  : t('Đang tắt: Chú Rồng trả lời thông minh, dí dỏm, có nhấn nhá như người thật.')
+              }
+              label={t('Chế độ trả treo')}
+              onChange={(value) => update('assistant_sassy', value)}
+            />
+          </Panel>
+
+          <MemoryPanel />
+        </>
       ) : null}
 
       <div className={`save-bar${dirty ? ' is-visible' : ''}`} aria-hidden={!dirty}>

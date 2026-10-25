@@ -63,7 +63,7 @@ export function I18nProvider({ children }: PropsWithChildren) {
   const { updateUser, user } = useAuth();
   const [guestLanguage, setGuestLanguage] = useState<Language>(readStoredLanguage);
   const requestedLanguage = user?.preferences?.language ?? guestLanguage;
-// Đồng bộ ngôn ngữ giao diện với từ điển món ăn.
+  // Đồng bộ ngôn ngữ giao diện với từ điển món ăn.
   const language = useSyncExternalStore(subscribeRecipeContent, getRecipeLanguage);
 
   const setLanguage = useCallback(

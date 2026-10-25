@@ -1,0 +1,258 @@
+{
+  "batch": 76,
+  "canvas": {
+    "width": 3840,
+    "height": 2160,
+    "format": "WebP",
+    "background": "transparent"
+  },
+  "native_format": "PNG",
+  "export_master_format": "PNG",
+  "assets": [
+    {
+      "id": "BV706",
+      "slug": "banh-canh-cha-ca-quy-nhon",
+      "native_file": "output/recipe-images/native/banh-canh-cha-ca-quy-nhon.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/banh-canh-cha-ca-quy-nhon.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/banh-canh-cha-ca-quy-nhon-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/banh-canh-cha-ca-quy-nhon-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/banh-canh-cha-ca-quy-nhon-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/banh-canh-cha-ca-quy-nhon-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "id": "BV707",
+      "slug": "muc-mot-nang-nuong-muoi-ot-phan-thiet",
+      "native_file": "output/recipe-images/native/muc-mot-nang-nuong-muoi-ot-phan-thiet.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/muc-mot-nang-nuong-muoi-ot-phan-thiet.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/muc-mot-nang-nuong-muoi-ot-phan-thiet-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/muc-mot-nang-nuong-muoi-ot-phan-thiet-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/muc-mot-nang-nuong-muoi-ot-phan-thiet-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/muc-mot-nang-nuong-muoi-ot-phan-thiet-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "id": "BV708",
+      "slug": "ghe-luoc-ham-ninh-phu-quoc",
+      "native_file": "output/recipe-images/native/ghe-luoc-ham-ninh-phu-quoc.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/ghe-luoc-ham-ninh-phu-quoc.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/ghe-luoc-ham-ninh-phu-quoc-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/ghe-luoc-ham-ninh-phu-quoc-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/ghe-luoc-ham-ninh-phu-quoc-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/ghe-luoc-ham-ninh-phu-quoc-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "id": "BV709",
+      "slug": "mat-ca-ngu-tiem-thuoc-bac-phu-yen",
+      "native_file": "output/recipe-images/native/mat-ca-ngu-tiem-thuoc-bac-phu-yen.png",
+      "native_pixels": [
+        1374,
+        1145
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/mat-ca-ngu-tiem-thuoc-bac-phu-yen.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/mat-ca-ngu-tiem-thuoc-bac-phu-yen-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/mat-ca-ngu-tiem-thuoc-bac-phu-yen-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/mat-ca-ngu-tiem-thuoc-bac-phu-yen-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/mat-ca-ngu-tiem-thuoc-bac-phu-yen-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "id": "BV710",
+      "slug": "cha-nhum-phu-quoc",
+      "native_file": "output/recipe-images/native/cha-nhum-phu-quoc.png",
+      "native_pixels": [
+        1374,
+        1145
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/cha-nhum-phu-quoc.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "web_variants": [
+        {
+          "path": "frontend/public/images/recipes/edited/cha-nhum-phu-quoc-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/cha-nhum-phu-quoc-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/cha-nhum-phu-quoc-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "frontend/public/images/recipes/edited/cha-nhum-phu-quoc-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    }
+  ]
+}

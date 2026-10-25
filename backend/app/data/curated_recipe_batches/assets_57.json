@@ -1,0 +1,72 @@
+{
+  "batch": 57,
+  "canvas": {"width": 3840, "height": 2160, "format": "WebP", "background": "transparent"},
+  "native_format": "PNG",
+  "assets": [
+    {
+      "id": "BV611",
+      "slug": "cai-troi-luoc-cham-mam-cai-phu-yen",
+      "native_file": "output/recipe-images/native/cai-troi-luoc-cham-mam-cai-phu-yen.png",
+      "native_pixels": [1536, 1024],
+      "has_alpha": true,
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/cai-troi-luoc-cham-mam-cai-phu-yen-480.webp", "pixels": [480, 270]},
+        {"path": "frontend/public/images/recipes/edited/cai-troi-luoc-cham-mam-cai-phu-yen-960.webp", "pixels": [960, 540]},
+        {"path": "frontend/public/images/recipes/edited/cai-troi-luoc-cham-mam-cai-phu-yen-1536.webp", "pixels": [1536, 864]},
+        {"path": "frontend/public/images/recipes/edited/cai-troi-luoc-cham-mam-cai-phu-yen-3840.webp", "pixels": [3840, 2160]}
+      ]
+    },
+    {
+      "id": "BV612",
+      "slug": "rau-chua-le-luoc-phu-yen",
+      "native_file": "output/recipe-images/native/rau-chua-le-luoc-phu-yen.png",
+      "native_pixels": [1536, 1024],
+      "has_alpha": true,
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/rau-chua-le-luoc-phu-yen-480.webp", "pixels": [480, 270]},
+        {"path": "frontend/public/images/recipes/edited/rau-chua-le-luoc-phu-yen-960.webp", "pixels": [960, 540]},
+        {"path": "frontend/public/images/recipes/edited/rau-chua-le-luoc-phu-yen-1536.webp", "pixels": [1536, 864]},
+        {"path": "frontend/public/images/recipes/edited/rau-chua-le-luoc-phu-yen-3840.webp", "pixels": [3840, 2160]}
+      ]
+    },
+    {
+      "id": "BV613",
+      "slug": "rau-bo-may-luoc-muoi-vung-thai-nguyen",
+      "native_file": "output/recipe-images/native/rau-bo-may-luoc-muoi-vung-thai-nguyen.png",
+      "native_pixels": [1536, 1024],
+      "has_alpha": true,
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/rau-bo-may-luoc-muoi-vung-thai-nguyen-480.webp", "pixels": [480, 270]},
+        {"path": "frontend/public/images/recipes/edited/rau-bo-may-luoc-muoi-vung-thai-nguyen-960.webp", "pixels": [960, 540]},
+        {"path": "frontend/public/images/recipes/edited/rau-bo-may-luoc-muoi-vung-thai-nguyen-1536.webp", "pixels": [1536, 864]},
+        {"path": "frontend/public/images/recipes/edited/rau-bo-may-luoc-muoi-vung-thai-nguyen-3840.webp", "pixels": [3840, 2160]}
+      ]
+    },
+    {
+      "id": "BV614",
+      "slug": "mang-ngot-luoc-cham-cham-cheo-dien-bien",
+      "native_file": "output/recipe-images/native/mang-ngot-luoc-cham-cham-cheo-dien-bien.png",
+      "native_pixels": [1536, 1024],
+      "has_alpha": true,
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/mang-ngot-luoc-cham-cham-cheo-dien-bien-480.webp", "pixels": [480, 270]},
+        {"path": "frontend/public/images/recipes/edited/mang-ngot-luoc-cham-cham-cheo-dien-bien-960.webp", "pixels": [960, 540]},
+        {"path": "frontend/public/images/recipes/edited/mang-ngot-luoc-cham-cham-cheo-dien-bien-1536.webp", "pixels": [1536, 864]},
+        {"path": "frontend/public/images/recipes/edited/mang-ngot-luoc-cham-cham-cheo-dien-bien-3840.webp", "pixels": [3840, 2160]}
+      ]
+    },
+    {
+      "id": "BV615",
+      "slug": "ngon-dau-den-luoc-cham-nuoc-mam-toi",
+      "native_file": "output/recipe-images/native/ngon-dau-den-luoc-cham-nuoc-mam-toi.png",
+      "native_pixels": [1536, 1024],
+      "has_alpha": true,
+      "web_variants": [
+        {"path": "frontend/public/images/recipes/edited/ngon-dau-den-luoc-cham-nuoc-mam-toi-480.webp", "pixels": [480, 270]},
+        {"path": "frontend/public/images/recipes/edited/ngon-dau-den-luoc-cham-nuoc-mam-toi-960.webp", "pixels": [960, 540]},
+        {"path": "frontend/public/images/recipes/edited/ngon-dau-den-luoc-cham-nuoc-mam-toi-1536.webp", "pixels": [1536, 864]},
+        {"path": "frontend/public/images/recipes/edited/ngon-dau-den-luoc-cham-nuoc-mam-toi-3840.webp", "pixels": [3840, 2160]}
+      ]
+    }
+  ]
+}

@@ -5,7 +5,10 @@
   "type": "module",
   "packageManager": "pnpm@11.28.0",
   "scripts": {
+    "prepare:catalog": "node scripts/prepare-catalog.mjs",
+    "predev": "node scripts/prepare-catalog.mjs",
     "dev": "vite",
+    "prebuild": "node scripts/prepare-catalog.mjs",
     "build": "tsc -b && vite build",
     "lint": "eslint . --max-warnings=0",
     "format": "prettier --write .",
@@ -20,7 +23,7 @@
     "react-dom": "19.3.0",
     "react-hook-form": "7.89.0",
     "react-router": "7.18.4",
-    "zod": "4.6.5"
+    "zod": "4.6.6"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",

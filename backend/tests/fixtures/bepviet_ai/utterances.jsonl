@@ -1,0 +1,144 @@
+{"text": "xin chào", "intent": "greeting", "lang": "vi"}
+{"text": "chào bạn", "intent": "greeting", "lang": "vi"}
+{"text": "chao ban", "intent": "greeting", "lang": "vi"}
+{"text": "hello", "intent": "greeting", "lang": "en"}
+{"text": "hi rồng ơi", "intent": "greeting", "lang": "en"}
+{"text": "alo chú rồng", "intent": "greeting", "lang": "vi"}
+{"text": "chào buổi sáng", "intent": "greeting", "lang": "vi"}
+{"text": "hey", "intent": "greeting", "lang": "vi"}
+{"text": "chào chú rồng nhé", "intent": "greeting", "lang": "vi"}
+{"text": "xin chao rong con", "intent": "greeting", "lang": "vi"}
+{"text": "hello there", "intent": "greeting", "lang": "en"}
+{"text": "chào bạn nha", "intent": "greeting", "lang": "vi"}
+{"text": "cảm ơn nhé", "intent": "thanks", "lang": "vi"}
+{"text": "cam on ban", "intent": "thanks", "lang": "vi"}
+{"text": "tks", "intent": "thanks", "lang": "vi"}
+{"text": "thanks a lot", "intent": "thanks", "lang": "en"}
+{"text": "cảm ơn chú rồng", "intent": "thanks", "lang": "vi"}
+{"text": "cám ơn nhiều", "intent": "thanks", "lang": "vi"}
+{"text": "thank you", "intent": "thanks", "lang": "en"}
+{"text": "cảm ơn bạn đã giúp", "intent": "thanks", "lang": "vi"}
+{"text": "ok cảm ơn", "intent": "thanks", "lang": "vi"}
+{"text": "cam on nhieu nha", "intent": "thanks", "lang": "vi"}
+{"text": "thanks", "intent": "thanks", "lang": "en"}
+{"text": "cảm ơn nha rồng", "intent": "thanks", "lang": "vi"}
+{"text": "bạn là ai", "intent": "bot_identity", "lang": "vi"}
+{"text": "ban la ai vay", "intent": "bot_identity", "lang": "vi"}
+{"text": "bạn làm được gì", "intent": "bot_identity", "lang": "vi"}
+{"text": "chú rồng giúp được gì", "intent": "bot_identity", "lang": "vi"}
+{"text": "what can you do", "intent": "bot_identity", "lang": "en"}
+{"text": "who are you", "intent": "bot_identity", "lang": "en"}
+{"text": "bạn có thể giúp mình những gì", "intent": "bot_identity", "lang": "vi"}
+{"text": "ban lam dc j", "intent": "bot_identity", "lang": "vi"}
+{"text": "giới thiệu về bạn đi", "intent": "bot_identity", "lang": "vi"}
+{"text": "bạn là robot à", "intent": "bot_identity", "lang": "vi"}
+{"text": "trợ lý này làm gì được", "intent": "bot_identity", "lang": "vi"}
+{"text": "bn là ai z", "intent": "bot_identity", "lang": "vi"}
+{"text": "liên hệ hỗ trợ ở đâu", "intent": "contact_support", "lang": "vi"}
+{"text": "lien he bep viet the nao", "intent": "contact_support", "lang": "en"}
+{"text": "mình muốn góp ý", "intent": "contact_support", "lang": "vi"}
+{"text": "số điện thoại hỗ trợ", "intent": "contact_support", "lang": "vi"}
+{"text": "email hỗ trợ là gì", "intent": "contact_support", "lang": "vi"}
+{"text": "how do i contact support", "intent": "contact_support", "lang": "en"}
+{"text": "gửi phản hồi cho bếp việt", "intent": "contact_support", "lang": "vi"}
+{"text": "muốn báo lỗi trang web", "intent": "contact_support", "lang": "vi"}
+{"text": "lien he ho tro", "intent": "contact_support", "lang": "vi"}
+{"text": "contact bếp việt", "intent": "contact_support", "lang": "en"}
+{"text": "hotline bếp việt", "intent": "contact_support", "lang": "vi"}
+{"text": "mik mún góp ý cho web", "intent": "contact_support", "lang": "vi"}
+{"text": "quên mật khẩu", "intent": "account_password", "lang": "vi"}
+{"text": "quen mat khau thi lam sao", "intent": "account_password", "lang": "vi"}
+{"text": "đổi mật khẩu ở đâu", "intent": "account_password", "lang": "vi"}
+{"text": "không đăng nhập được", "intent": "account_password", "lang": "vi"}
+{"text": "forgot my password", "intent": "account_password", "lang": "en"}
+{"text": "reset password", "intent": "account_password", "lang": "en"}
+{"text": "mình mất mật khẩu rồi", "intent": "account_password", "lang": "vi"}
+{"text": "làm sao lấy lại mật khẩu", "intent": "account_password", "lang": "vi"}
+{"text": "ko vao dc tai khoan", "intent": "account_password", "lang": "vi"}
+{"text": "doi mat khau", "intent": "account_password", "lang": "vi"}
+{"text": "mật khẩu sai hoài", "intent": "account_password", "lang": "vi"}
+{"text": "cách đặt lại mật khẩu", "intent": "account_password", "lang": "vi"}
+{"text": "nguyên liệu phở bò gồm những gì", "intent": "recipe_ingredients", "lang": "vi"}
+{"text": "nguyen lieu canh chua ca", "intent": "recipe_ingredients", "lang": "vi"}
+{"text": "nấu thịt rang cháy cạnh cần gì", "intent": "recipe_ingredients", "lang": "vi"}
+{"text": "phở gà cần những nguyên liệu nào", "intent": "recipe_ingredients", "lang": "vi"}
+{"text": "nguyên liệu gà luộc cho 6 người", "intent": "recipe_ingredients", "lang": "vi"}
+{"text": "trứng chiên hành cần gì", "intent": "recipe_ingredients", "lang": "vi"}
+{"text": "ingredients for pho bo", "intent": "recipe_ingredients", "lang": "en"}
+{"text": "nau dau phu sot ca chua can nhung gi", "intent": "recipe_ingredients", "lang": "vi"}
+{"text": "canh chua tôm cần mua gì", "intent": "recipe_ingredients", "lang": "vi"}
+{"text": "cho mình xin nguyên liệu phở bò cho 2 người", "intent": "recipe_ingredients", "lang": "vi"}
+{"text": "nguyen lieu cho 8 nguoi an pho ga", "intent": "recipe_ingredients", "lang": "vi"}
+{"text": "mua gì để nấu canh chua cá", "intent": "recipe_ingredients", "lang": "vi"}
+{"text": "phở bò nấu bao lâu", "intent": "recipe_time", "lang": "vi"}
+{"text": "nau canh chua ca mat bao lau", "intent": "recipe_time", "lang": "vi"}
+{"text": "thịt rang cháy cạnh mất mấy phút", "intent": "recipe_time", "lang": "vi"}
+{"text": "gà luộc bao lâu thì chín", "intent": "recipe_time", "lang": "vi"}
+{"text": "how long to cook pho bo", "intent": "recipe_time", "lang": "en"}
+{"text": "trứng chiên hành làm mất bao lâu", "intent": "recipe_time", "lang": "vi"}
+{"text": "phở gà nấu hết bao nhiêu thời gian", "intent": "recipe_time", "lang": "vi"}
+{"text": "dau phu sot ca chua bnh phut", "intent": "recipe_time", "lang": "vi"}
+{"text": "canh chua tôm nấu lâu không", "intent": "recipe_time", "lang": "vi"}
+{"text": "món này nấu mất bao lâu", "intent": "recipe_time", "lang": "vi"}
+{"text": "thoi gian nau pho bo", "intent": "recipe_time", "lang": "vi"}
+{"text": "gà luộc mất bao nhiêu phút", "intent": "recipe_time", "lang": "vi"}
+{"text": "cách nấu phở bò", "intent": "recipe_steps", "lang": "vi"}
+{"text": "cach nau canh chua ca", "intent": "recipe_steps", "lang": "vi"}
+{"text": "hướng dẫn làm thịt rang cháy cạnh", "intent": "recipe_steps", "lang": "vi"}
+{"text": "làm gà luộc thế nào", "intent": "recipe_steps", "lang": "vi"}
+{"text": "how to cook pho ga", "intent": "recipe_steps", "lang": "en"}
+{"text": "trứng chiên hành làm ntn", "intent": "recipe_steps", "lang": "vi"}
+{"text": "chỉ mình cách nấu đậu phụ sốt cà chua", "intent": "recipe_steps", "lang": "vi"}
+{"text": "cong thuc canh chua tom", "intent": "recipe_steps", "lang": "vi"}
+{"text": "các bước nấu phở gà", "intent": "recipe_steps", "lang": "vi"}
+{"text": "nấu phở bò như thế nào", "intent": "recipe_steps", "lang": "vi"}
+{"text": "huong dan nau ga luoc", "intent": "recipe_steps", "lang": "vi"}
+{"text": "recipe for canh chua ca", "intent": "recipe_steps", "lang": "en"}
+{"text": "hôm nay ăn gì", "intent": "dish_suggest", "lang": "vi"}
+{"text": "toi nay an gi", "intent": "dish_suggest", "lang": "vi"}
+{"text": "gợi ý món cho bữa tối", "intent": "dish_suggest", "lang": "vi"}
+{"text": "nhà còn trứng với cà chua nấu gì", "intent": "dish_suggest", "lang": "vi"}
+{"text": "có thịt heo nấu món gì ngon", "intent": "dish_suggest", "lang": "vi"}
+{"text": "what should i cook for dinner", "intent": "dish_suggest", "lang": "en"}
+{"text": "gợi ý món nhanh dưới 30 phút", "intent": "dish_suggest", "lang": "vi"}
+{"text": "trưa nay nấu gì cho 4 người", "intent": "dish_suggest", "lang": "vi"}
+{"text": "sáng nay ăn gì", "intent": "dish_suggest", "lang": "vi"}
+{"text": "goi y mon an cho bua trua", "intent": "dish_suggest", "lang": "vi"}
+{"text": "có gà nấu gì được", "intent": "dish_suggest", "lang": "vi"}
+{"text": "suggest a quick dinner", "intent": "dish_suggest", "lang": "en"}
+{"text": "phở bò bao nhiêu calo", "intent": "recipe_calories", "lang": "vi"}
+{"text": "canh chua ca bao nhieu kcal", "intent": "recipe_calories", "lang": "vi"}
+{"text": "thịt rang cháy cạnh nhiều calo không", "intent": "recipe_calories", "lang": "vi"}
+{"text": "gà luộc có béo không", "intent": "recipe_calories", "lang": "vi"}
+{"text": "how many calories in pho bo", "intent": "recipe_calories", "lang": "en"}
+{"text": "trứng chiên hành bao nhiêu calo", "intent": "recipe_calories", "lang": "vi"}
+{"text": "dinh dưỡng của phở gà", "intent": "recipe_calories", "lang": "vi"}
+{"text": "dau phu sot ca chua nhieu calo ko", "intent": "recipe_calories", "lang": "vi"}
+{"text": "một bát phở bò bao nhiêu năng lượng", "intent": "recipe_calories", "lang": "vi"}
+{"text": "calo của canh chua tôm", "intent": "recipe_calories", "lang": "vi"}
+{"text": "ăn gà luộc có mập không", "intent": "recipe_calories", "lang": "vi"}
+{"text": "lượng calo món này", "intent": "recipe_calories", "lang": "vi"}
+{"text": "bị tiểu đường nên ăn gì", "intent": "safety_medical", "lang": "vi"}
+{"text": "bi gout an gi", "intent": "safety_medical", "lang": "vi"}
+{"text": "mình đang uống thuốc kháng sinh ăn được gì", "intent": "safety_medical", "lang": "vi"}
+{"text": "bà bầu ăn gì tốt", "intent": "safety_medical", "lang": "vi"}
+{"text": "chế độ ăn chữa cao huyết áp", "intent": "safety_medical", "lang": "vi"}
+{"text": "what should diabetics eat", "intent": "safety_medical", "lang": "en"}
+{"text": "đau dạ dày nên ăn món gì", "intent": "safety_medical", "lang": "vi"}
+{"text": "bị sỏi thận có ăn cua được không", "intent": "safety_medical", "lang": "vi"}
+{"text": "người suy thận ăn gì", "intent": "safety_medical", "lang": "vi"}
+{"text": "an gi de ha mo mau", "intent": "safety_medical", "lang": "vi"}
+{"text": "bệnh tim nên kiêng gì", "intent": "safety_medical", "lang": "vi"}
+{"text": "thuốc giảm cân nào tốt", "intent": "safety_medical", "lang": "vi"}
+{"text": "viết giúp mình bài thơ về mùa thu", "intent": "open_question", "lang": "vi"}
+{"text": "lịch sử món phở bắt nguồn từ đâu", "intent": "open_question", "lang": "vi"}
+{"text": "so sánh ẩm thực việt và thái", "intent": "open_question", "lang": "vi"}
+{"text": "giải bài toán này giúp mình", "intent": "open_question", "lang": "vi"}
+{"text": "kể chuyện cười đi", "intent": "open_question", "lang": "vi"}
+{"text": "tại sao người việt ăn nước mắm", "intent": "open_question", "lang": "vi"}
+{"text": "thời tiết hôm nay thế nào", "intent": "open_question", "lang": "vi"}
+{"text": "viet code python giup minh", "intent": "open_question", "lang": "vi"}
+{"text": "ý nghĩa mâm cỗ tết", "intent": "open_question", "lang": "vi"}
+{"text": "tell me about vietnamese food culture", "intent": "open_question", "lang": "en"}
+{"text": "bóng đá tối nay ai thắng", "intent": "open_question", "lang": "vi"}
+{"text": "dịch câu này sang tiếng anh", "intent": "open_question", "lang": "vi"}

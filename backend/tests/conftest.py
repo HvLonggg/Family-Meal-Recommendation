@@ -11,6 +11,9 @@ from app.db import models as database_models  # noqa: F401
 from app.db.base import Base
 from app.db.session import get_db_session
 from app.main import create_app
+from app.modules.assistant import ai, knowledge, rag, service
+from app.modules.auth import router as auth_router
+from app.modules.cooking import router as cooking_router
 
 
 @pytest.fixture(autouse=True)
@@ -25,9 +28,17 @@ def isolated_auth_test_settings(monkeypatch: pytest.MonkeyPatch) -> Generator[No
         "BEP_VIET_EMAIL_GMAIL_CLIENT_ID",
         "BEP_VIET_EMAIL_GMAIL_CLIENT_SECRET",
         "BEP_VIET_EMAIL_GMAIL_REFRESH_TOKEN",
+        "BEP_VIET_WEB_PUSH_VAPID_PRIVATE_KEY",
     ):
         monkeypatch.setenv(key, "")
     get_settings.cache_clear()
+    knowledge.reset_sync_state()
+    auth_router.LOGIN_FAILURES_PER_EMAIL.reset()
+    auth_router.LOGIN_FAILURES_PER_IP.reset()
+    service.reset_rate_limits()
+    ai.reset_model_pauses()
+    cooking_router.COOKING_WRITES.reset()
+    rag.reset_index_cache()
     yield
     get_settings.cache_clear()
 
