@@ -5,6 +5,7 @@ import { AppIcon } from '@/components/common/AppIcon';
 import { describeMealComposition } from '@/data/mealComposition';
 import { formatMinutes, getMealRecipes, type mealSets } from '@/data/recipes';
 import { useI18n } from '@/features/i18n/I18nContext';
+import { fitDishCutout } from '@/lib/fitDishCutout';
 
 type Meal = (typeof mealSets)[number] & { anchorName?: string };
 
@@ -39,6 +40,7 @@ export function MealCard({ meal, eager = false }: { meal: Meal; eager?: boolean 
               <img
                 alt={recipe.imageAlt}
                 decoding="async"
+                onLoad={(event) => fitDishCutout(event.currentTarget)}
                 loading={eager ? 'eager' : 'lazy'}
                 sizes="(min-width: 1320px) 180px, (min-width: 680px) 17vw, 38vw"
                 src={recipe.image}

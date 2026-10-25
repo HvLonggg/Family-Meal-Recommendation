@@ -1,4 +1,7 @@
+import type { SyntheticEvent } from 'react';
+
 import editedImages from '@/data/recipeImageAssets.json';
+import { fitDishCutout } from '@/lib/fitDishCutout';
 
 interface EditedImage {
   src: string;
@@ -14,6 +17,7 @@ export interface DishImageProps {
   srcSet?: string;
   sizes?: string;
   className: string;
+  onLoad: (event: SyntheticEvent<HTMLImageElement>) => void;
 }
 
 /**
@@ -27,8 +31,10 @@ export function dishImage(
   sizes = '160px',
 ): DishImageProps {
   const edited = slug ? assets[slug] : undefined;
-  if (edited) return { src: edited.src, srcSet: edited.srcSet, sizes, className: 'dish-cutout' };
-  return { src: fallback ?? undefined, className: 'dish-cutout' };
+  const onLoad = (event: SyntheticEvent<HTMLImageElement>) => fitDishCutout(event.currentTarget);
+  if (edited)
+    return { src: edited.src, srcSet: edited.srcSet, sizes, className: 'dish-cutout', onLoad };
+  return { src: fallback ?? undefined, className: 'dish-cutout', onLoad };
 }
 
 export function hasEditedDishImage(slug: string | null | undefined) {

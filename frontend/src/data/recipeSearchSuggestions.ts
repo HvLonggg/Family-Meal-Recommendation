@@ -9,6 +9,9 @@ export const RECIPE_SEARCH_SUGGESTIONS = [
   'Món canh',
   'Món rau',
   'Món gà',
+  'Món thịt heo',
+  'Món thịt bò',
+  'Món vịt',
   'Món miền Bắc',
   'Món miền Trung',
   'Món miền Nam',
@@ -16,6 +19,9 @@ export const RECIPE_SEARCH_SUGGESTIONS = [
   'Món tráng miệng',
   'Món ăn vặt',
   'Món dễ nấu',
+  'Món rau củ',
+  'Món chay dưới 30 phút',
+  'Nấu nhanh trong 30 phút',
 ] as const;
 
 /** Chọn chủ đề gợi ý có món phù hợp trong danh mục. */

@@ -22,21 +22,48 @@ const LIGHT_TAGS = [
   'vegetable forward',
 ];
 const TIME_QUERY_PATTERN =
-  /(?:(?:nau|cook|ready|under|within|up to|no more than|duoi|trong|toi da|khong qua)\s+)*(\d+)\s*(?:p|min|mins|minute|minutes|phut)\b/;
+  /(?:(?:nau|cook|ready|in|under|within|up to|no more than|less than|at most|duoi|trong|toi da|khong qua)\s+)*(\d+)\s*(?:p|min|mins|minute|minutes|phut)\b/;
 const FACET_PATTERNS = {
   vegetarian: /\b(?:mon\s+chay|do\s+chay|chay|vegetarian|vegan|plant\s+based)\b/,
   light:
     /\b(?:mon\s+thanh\s+dam|thanh\s+dam|thanh\s+mat|nhe\s+bung|nhieu\s+rau|it\s+dau|light|low\s+fat)\b/,
   seafood: /\b(?:mon\s+hai\s+san|hai\s+san|seafood)\b/,
   soup: /\b(?:mon\s+canh|canh|soup)\b/,
-  vegetable: /\b(?:mon\s+rau|rau|vegetable|veggie)\b/,
+  vegetable: /\b(?:mon\s+rau(?:\s+cu)?|rau\s+cu|rau|vegetables?|veggies?)\b/,
   chicken: /\b(?:mon\s+ga|ga|chicken|poultry)\b/,
+  pork: /\b(?:mon\s+thit\s+(?:heo|lon)|thit\s+(?:heo|lon)|pork)\b/,
+  beef: /\b(?:mon\s+thit\s+bo|thit\s+bo|beef)\b/,
+  duck: /\b(?:mon\s+vit|vit|ngan|duck|muscovy)\b/,
   breakfast: /\b(?:mon\s+an\s+sang|an\s+sang|breakfast)\b/,
   dessert: /\b(?:mon\s+trang\s+mieng|trang\s+mieng|dessert)\b/,
   snack: /\b(?:mon\s+an\s+vat|an\s+vat|snack|street\s+food)\b/,
   easy: /\b(?:mon\s+de\s+nau|de\s+nau|easy\s+to\s+cook|easy)\b/,
-  quick: /\b(?:quick|quickly|nhanh\s+gon)\b/,
+  quick: /\b(?:quick|quickly|fast|nau\s+nhanh|mon\s+nhanh|nhanh\s+gon|nhanh)\b/,
 };
+
+const SEARCH_META_WORDS = new Set([
+  'a',
+  'an',
+  'and',
+  'dish',
+  'dishes',
+  'food',
+  'foods',
+  'meal',
+  'meals',
+  'mon',
+  'recipe',
+  'recipes',
+  'thuc',
+  'pham',
+]);
+
+function stripSearchMetaWords(query: string) {
+  return query
+    .split(' ')
+    .filter((term) => term && !SEARCH_META_WORDS.has(term))
+    .join(' ');
+}
 
 function recipeFields(recipe: Recipe) {
   const english = englishRecipes[recipe.slug];
@@ -81,6 +108,15 @@ function isVegetarianRecipe(recipe: Recipe) {
   );
 }
 
+function isVegetableRecipe(recipe: Recipe) {
+  return (
+    isCategory(recipe, 'Món rau', 'Vegetable dishes') ||
+    recipe.tags.some(
+      (tag) => matchesSearch('món rau', [tag]) || matchesSearch('vegetable dish', [tag]),
+    )
+  );
+}
+
 function isLightRecipe(recipe: Recipe) {
   const taggedLight = recipe.tags.some((tag) =>
     LIGHT_TAGS.some((keyword) => matchesSearch(keyword, [tag])),
@@ -88,17 +124,19 @@ function isLightRecipe(recipe: Recipe) {
   if (taggedLight) return true;
 
   const categoryIsLightBase =
-    isCategory(recipe, 'Món canh', 'Soup') || isCategory(recipe, 'Món rau', 'Vegetable dishes');
+    isCategory(recipe, 'Món canh', 'Soup') ||
+    isCategory(recipe, 'Món rau', 'Vegetable dishes') ||
+    isCategory(recipe, 'Món chay', 'Vegetarian dishes');
   if (!categoryIsLightBase) return false;
 
   const heavyDishText = normalizeSearchText(
     [
       recipe.name,
-      recipe.excerpt,
       ...recipe.ingredients.flatMap((group) => group.items.map((item) => item.name)),
+      ...recipe.tags,
     ].join(' '),
   );
-  return !/(chien|ran|cream|kem beo|thit ba chi|thit mo|chan gio|heo quay|thit quay|vit quay|thit bo|thit heo|thit ga|pha lau|fried|crispy|fatty)/.test(
+  return !/\b(?:chien|ran|quay|cream|kem beo|nuoc cot dua|thit ba chi|thit mo|chan gio|heo quay|thit quay|vit quay|pha lau|fried|crispy|fatty|butter|deep fry|deep fried)\b/.test(
     heavyDishText,
   );
 }
@@ -141,6 +179,38 @@ function isChickenRecipe(recipe: Recipe) {
       !/^(?:trung ga|egg|eggs|chicken egg)$/.test(normalized) && CHICKEN_PATTERN.test(normalized)
     );
   });
+}
+
+function hasIngredientOrName(recipe: Recipe, pattern: RegExp, englishNames: string[] = []) {
+  const names = [recipe.name, ...(recipe.aliases ?? []), ...englishNames];
+  const ingredients = recipe.ingredients.flatMap((group) => group.items.map((item) => item.name));
+  return [...names, ...ingredients, ...(englishRecipes[recipe.slug]?.ingredients ?? [])].some(
+    (value) => pattern.test(normalizeSearchText(value)),
+  );
+}
+
+function isPorkRecipe(recipe: Recipe) {
+  return hasIngredientOrName(
+    recipe,
+    /\b(?:thit\s+(?:heo|lon)|ba\s+chi|pork|pig)\b/,
+    englishRecipes[recipe.slug]?.names,
+  );
+}
+
+function isBeefRecipe(recipe: Recipe) {
+  return hasIngredientOrName(
+    recipe,
+    /\b(?:thit\s+bo|beef|brisket|steak)\b/,
+    englishRecipes[recipe.slug]?.names,
+  );
+}
+
+function isDuckRecipe(recipe: Recipe) {
+  return hasIngredientOrName(
+    recipe,
+    /\b(?:vit|ngan|duck|muscovy)\b/,
+    englishRecipes[recipe.slug]?.names,
+  );
 }
 
 function isSnackRecipe(recipe: Recipe) {
@@ -284,9 +354,11 @@ export function matchesRecipeSearch(recipe: Recipe, query: string) {
     if (facet === 'light') filters.push(isLightRecipe);
     if (facet === 'seafood') filters.push(isSeafoodRecipe);
     if (facet === 'soup') filters.push((item) => isCategory(item, 'Món canh', 'Soup'));
-    if (facet === 'vegetable')
-      filters.push((item) => isCategory(item, 'Món rau', 'Vegetable dishes'));
+    if (facet === 'vegetable') filters.push(isVegetableRecipe);
     if (facet === 'chicken') filters.push(isChickenRecipe);
+    if (facet === 'pork') filters.push(isPorkRecipe);
+    if (facet === 'beef') filters.push(isBeefRecipe);
+    if (facet === 'duck') filters.push(isDuckRecipe);
     if (facet === 'breakfast')
       filters.push((item) => isCategory(item, 'Món ăn sáng', 'Breakfast dishes'));
     if (facet === 'dessert') filters.push(isDessertRecipe);
@@ -345,6 +417,8 @@ export function matchesRecipeSearch(recipe: Recipe, query: string) {
       .join(' ');
   }
 
+  const queryWithoutMetaWords = stripSearchMetaWords(remainingQuery);
+  if (queryWithoutMetaWords || filters.length > 0) remainingQuery = queryWithoutMetaWords;
   const matchesText = !remainingQuery || matchesSearch(remainingQuery, recipeFields(recipe));
   return matchesText && filters.every((matchesFacet) => matchesFacet(recipe));
 }

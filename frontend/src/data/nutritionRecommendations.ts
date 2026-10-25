@@ -12,9 +12,11 @@ const balancedCategories = [
 ];
 
 const spicyPattern =
-  /\bot\b|\bsa te\b|\btuong ot\b|\bvi cay\b|\bchua cay\b|\bcay nong\b|\bchilli?\b|\bhot sauce\b/;
+  /\bot\b|\bsa te\b|\btuong ot\b|\bvi cay\b|\bchua cay\b|\bcay nong\b|\b(?:chili|chilli|chile|hot pepper)\b|\bhot sauce\b/;
 
 function hasMildFlavor(recipe: Recipe) {
+  if (recipe.spicyLevel !== undefined) return recipe.spicyLevel <= 1;
+
   const text = normalizeSearchText(
     [
       recipe.name,
@@ -23,6 +25,13 @@ function hasMildFlavor(recipe: Recipe) {
     ].join(' '),
   );
   return !spicyPattern.test(text.replace(/\bot chuong\b/g, ' '));
+}
+
+function isFamilyFriendly(recipe: Recipe) {
+  if (recipe.familyFriendly === false || (recipe.spicyLevel !== undefined && recipe.spicyLevel > 1))
+    return false;
+  if (recipe.familyFriendly === true) return true;
+  return ['de', 'easy'].includes(normalizeSearchText(recipe.difficulty)) && hasMildFlavor(recipe);
 }
 
 function interleaveBalancedCategories(catalog: Recipe[]) {
@@ -45,10 +54,7 @@ export function getNutritionMatches(catalog: Recipe[], need: NutritionNeedId) {
   if (need === 'light')
     return catalog.filter((recipe) => matchesRecipeSearch(recipe, 'món thanh đạm'));
   if (need === 'family') {
-    return catalog.filter(
-      (recipe) =>
-        ['de', 'easy'].includes(normalizeSearchText(recipe.difficulty)) && hasMildFlavor(recipe),
-    );
+    return catalog.filter(isFamilyFriendly);
   }
   return catalog.filter((recipe) => recipeMinutes(recipe) <= 30);
 }

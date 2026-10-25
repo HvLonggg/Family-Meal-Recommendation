@@ -38,6 +38,7 @@ import { cookPath } from '@/features/cooking/cookSession';
 import type { CalendarMode } from '@/features/auth/types';
 import type { Translate } from '@/features/i18n/translate';
 import { errorMessage as translateError } from '@/lib/errors';
+import { fitDishCutout } from '@/lib/fitDishCutout';
 import { useI18n } from '@/features/i18n/I18nContext';
 import { useRecipeCatalog } from '@/features/i18n/recipeContent';
 import {
@@ -1296,7 +1297,13 @@ export function PlannerPage() {
                   );
                   return (
                     <article key={recipe.slug}>
-                      <img alt={recipe.imageAlt} src={recipe.image} />
+                      <img
+                        alt={recipe.imageAlt}
+                        className="dish-cutout"
+                        onLoad={(event) => fitDishCutout(event.currentTarget)}
+                        src={recipe.image}
+                        srcSet={recipe.imageSrcSet}
+                      />
                       <div>
                         <strong>{recipe.name}</strong>
                         <span>

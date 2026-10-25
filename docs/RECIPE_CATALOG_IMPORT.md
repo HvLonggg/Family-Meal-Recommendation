@@ -1,6 +1,6 @@
 # Kho món ăn Bếp Việt
 
-Kho hiện có **770 món ăn tại ba miền Việt Nam**, tiếp tục hướng tới mục tiêu 1.000 món: 300 hồ sơ `BV001`–`BV300` từ `BEP_VIET_300_recipes.json`, 30 món tráng miệng trái cây `BV301`–`BV330`, 436 món gia đình và vùng miền trong 87 batch (`BV331`–`BV766`) và bốn món cũ được giữ lại. Mỗi hồ sơ có nguyên liệu, định lượng, sơ chế, cách nấu, thành phẩm, cách dùng, mẹo, thời gian chờ và món ăn kèm.
+Kho hiện có **775 món ăn tại ba miền Việt Nam**, tiếp tục hướng tới mục tiêu 1.000 món: 300 hồ sơ `BV001`–`BV300` từ `BEP_VIET_300_recipes.json`, 30 món tráng miệng trái cây `BV301`–`BV330`, 441 món gia đình và vùng miền trong 88 batch (`BV331`–`BV771`) và bốn món cũ được giữ lại. Mỗi hồ sơ có nguyên liệu, định lượng, sơ chế, cách nấu, thành phẩm, cách dùng, mẹo, thời gian chờ và món ăn kèm.
 
 Chạy tại thư mục `backend` sau khi PostgreSQL đã sẵn sàng:
 

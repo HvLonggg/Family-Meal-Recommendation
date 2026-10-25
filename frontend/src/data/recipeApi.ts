@@ -131,6 +131,12 @@ export function adaptRecipe(item: ApiRecipe, idToSlug: Map<string, string>): Rec
     category: item.category,
     ingredientCategory: content.category,
     difficulty: item.difficulty,
+    familyFriendly:
+      typeof content.tags?.suitable_for_family_meal === 'boolean'
+        ? content.tags.suitable_for_family_meal
+        : undefined,
+    spicyLevel:
+      typeof content.tags?.spicy_level === 'number' ? content.tags.spicy_level : undefined,
     prepMinutes: item.prep_minutes,
     cookMinutes: item.cook_minutes,
     passiveMinutes: content.passive_time ?? 0,

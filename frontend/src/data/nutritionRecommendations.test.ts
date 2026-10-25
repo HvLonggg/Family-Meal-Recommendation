@@ -60,4 +60,34 @@ describe('nutrition meal recommendations', () => {
     expect(quick.length).toBeGreaterThan(0);
     expect(quick.every((recipe) => recipeMinutes(recipe) <= 30)).toBe(true);
   });
+
+  it('uses editorial family and spice fields when the catalog provides them', () => {
+    const base = recipes.find((recipe) => recipe.difficulty === 'Dễ')!;
+    const reviewedRecipe = {
+      ...base,
+      difficulty: 'Khó' as const,
+      familyFriendly: true,
+      spicyLevel: 1,
+    };
+    const spicyRecipe = { ...reviewedRecipe, spicyLevel: 2 };
+    const notFamilyFriendly = { ...reviewedRecipe, familyFriendly: false };
+
+    expect(getNutritionMatches([reviewedRecipe], 'family')).toEqual([reviewedRecipe]);
+    expect(getNutritionMatches([spicyRecipe], 'family')).toEqual([]);
+    expect(getNutritionMatches([notFamilyFriendly], 'family')).toEqual([]);
+  });
+
+  it('includes gentle vegetarian soups and vegetables while excluding fried dishes', () => {
+    const base = recipes[0]!;
+    const lightVegetarian = {
+      ...base,
+      category: 'Món chay' as const,
+      tags: ['Món chay'],
+      ingredients: [{ group: 'Nguyên liệu', items: [{ name: 'Đậu phụ', amount: 200, unit: 'g' }] }],
+    };
+    const friedVegetarian = { ...lightVegetarian, name: 'Đậu phụ chiên giòn' };
+
+    expect(getNutritionMatches([lightVegetarian], 'light')).toEqual([lightVegetarian]);
+    expect(getNutritionMatches([friedVegetarian], 'light')).toEqual([]);
+  });
 });

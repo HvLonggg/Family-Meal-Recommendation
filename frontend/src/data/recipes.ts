@@ -53,6 +53,8 @@ export type Recipe = {
     | 'Món ăn sáng'
     | 'Món ăn kèm';
   difficulty: 'Dễ' | 'Vừa' | 'Trung bình' | 'Khó';
+  familyFriendly?: boolean;
+  spicyLevel?: number;
   prepMinutes: number;
   cookMinutes: number;
   servings: number;

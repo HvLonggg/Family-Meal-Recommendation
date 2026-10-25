@@ -33,6 +33,26 @@ beforeEach(() => {
 });
 
 describe('database recipe catalog', () => {
+  it('preserves structured family and spice guidance for nutrition recommendations', () => {
+    const recipe = adaptRecipe(
+      {
+        ...apiRecipe,
+        content: {
+          ...apiRecipe.content,
+          tags: {
+            ...apiRecipe.content.tags,
+            suitable_for_family_meal: true,
+            spicy_level: 1,
+          },
+        },
+      },
+      new Map(),
+    );
+
+    expect(recipe.familyFriendly).toBe(true);
+    expect(recipe.spicyLevel).toBe(1);
+  });
+
   it('keeps recipe details, source photo credit and ingredient scaling rules', () => {
     const recipe = adaptRecipe(
       { ...apiRecipe, slug: 'reference-only-fixture' },

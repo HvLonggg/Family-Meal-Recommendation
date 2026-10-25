@@ -104,6 +104,39 @@ describe('Vietnamese recipe search', () => {
         (recipe) => recipe.category === 'Món chay' && recipeMinutes(recipe) <= 30,
       ),
     ).toBe(true);
+    expect(recipes.filter((recipe) => matchesRecipeSearch(recipe, 'less than 30 minutes'))).toEqual(
+      recipes.filter((recipe) => recipeMinutes(recipe) <= 30),
+    );
+  });
+
+  it('ignores generic recipe words after Vietnamese and English topic filters', () => {
+    const vegetarian = {
+      ...getRecipe('rau-muong-xao-toi')!,
+      category: 'Món chay' as const,
+      tags: ['Món chay'],
+    };
+    const duck = {
+      ...getRecipe('ca-chep-kho-rieng')!,
+      name: 'Vịt om sấu',
+      ingredients: [
+        { group: 'Nguyên liệu', items: [{ name: 'Thịt vịt', amount: 500, unit: 'g' }] },
+      ],
+    };
+
+    expect(matchesRecipeSearch(vegetarian, 'vegetarian dishes')).toBe(true);
+    expect(matchesRecipeSearch(duck, 'duck recipes')).toBe(true);
+    expect(matchesRecipeSearch(getRecipe('suon-xao-chua-ngot')!, 'pork recipes')).toBe(true);
+  });
+
+  it('finds vegetarian recipes tagged as vegetable dishes', () => {
+    const stirFry = {
+      ...getRecipe('rau-muong-xao-toi')!,
+      category: 'Món chay' as const,
+      tags: ['Món chay', 'Món rau'],
+    };
+
+    expect(matchesRecipeSearch(stirFry, 'món rau')).toBe(true);
+    expect(matchesRecipeSearch(stirFry, 'vegetable dishes')).toBe(true);
   });
 
   it('filters suggestion topics by dish type, ingredient, skill and region', () => {

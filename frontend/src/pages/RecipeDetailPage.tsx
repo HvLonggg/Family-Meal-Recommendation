@@ -25,6 +25,7 @@ import { buildRecipeScript } from '@/features/narration/recipeScript';
 import { useNarration } from '@/features/narration/useNarration';
 import { useRecipeCatalog } from '@/features/i18n/recipeContent';
 import { apiDelete, apiPost, apiRequest } from '@/lib/api/client';
+import { fitDishCutout } from '@/lib/fitDishCutout';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 import { useI18n } from '@/features/i18n/I18nContext';
 
@@ -106,6 +107,7 @@ function RecipeDetails({ recipe }: { recipe: Recipe }) {
           <img
             alt={recipe.imageAlt}
             decoding="async"
+            onLoad={(event) => fitDishCutout(event.currentTarget)}
             sizes="(min-width: 1320px) 640px, (min-width: 960px) 55vw, 90vw"
             src={recipe.image}
             srcSet={recipe.imageSrcSet}

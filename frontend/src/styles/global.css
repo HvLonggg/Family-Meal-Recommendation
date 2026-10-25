@@ -454,10 +454,11 @@ h3 {
   }
 }
 
-/* Ảnh tách nền giữ nguyên tỷ lệ, không cắt món. */
 img.dish-cutout.dish-cutout {
   padding: 3px;
   object-fit: contain;
+  translate: var(--dish-content-offset-x, 0%) var(--dish-content-offset-y, 0%);
+  scale: var(--dish-content-scale, 1);
   background: radial-gradient(ellipse at 50% 46%, #fffdf8 0, #fbf1e4 58%, #f1e2cf 100%);
   filter: drop-shadow(0 1px 1px rgb(92 58 38 / 6%));
 }

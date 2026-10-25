@@ -1,0 +1,356 @@
+{
+  "canh-khoai-mon-chay-dau-hu": {
+    "name": "Vegetarian Taro and Tofu Soup",
+    "aliases": ["Taro Soup with Tofu", "Vietnamese Vegetarian Taro Soup"],
+    "region": ["Nationwide"],
+    "category": "Vegetarian dishes",
+    "meal_type": ["lunch", "dinner", "family meal"],
+    "difficulty": "Easy",
+    "serving_basis": "A pot of soup for four to share with rice.",
+    "description": "Taro simmers with tofu and leek in a gently seasoned vegetarian broth. Serve this hot soup as part of a Vietnamese family vegetarian meal.",
+    "finished_dish": "The taro is tender and lightly fluffy while holding its shape; the tofu is seasoned through, and the broth is mild with fragrant leek and herbs.",
+    "serving": "Serve hot with rice, black pepper, rice paddy herb, and culantro.",
+    "tips": [
+      "Wear gloves when peeling taro to reduce skin irritation.",
+      "Add vegetarian fish sauce gradually because salt levels vary by brand.",
+      "Add the herbs at the end to preserve their aroma."
+    ],
+    "dish_type": ["Vegetarian dish", "Soup"],
+    "main_ingredient": ["taro", "tofu"],
+    "cooking_method": ["sautéing", "simmering"],
+    "search_terms": [
+      "vegetarian taro and tofu soup",
+      "taro tofu soup",
+      "easy Vietnamese vegetarian soup"
+    ],
+    "suggested_pairings": [
+      "Steamed rice",
+      "Boiled vegetables",
+      "Stir-fried green beans"
+    ],
+    "keywords": ["vegetarian soup", "taro", "tofu"],
+    "image_alt": "A bowl of vegetarian taro and tofu soup with clear broth, rice paddy herb, and culantro.",
+    "media_alt_text": "A bowl of vegetarian taro and tofu soup with clear broth, rice paddy herb, and culantro.",
+    "time_note": "About 55 minutes; timing varies with the size of the taro pieces and heat level.",
+    "recipe_family": "vegetarian_taro_tofu_soup",
+    "tags": {
+      "meal_type": ["family meal", "vegetarian meal"],
+      "dish_type": ["Vegetarian dish", "Soup"],
+      "keywords": ["vegetarian soup", "taro", "tofu"]
+    },
+    "ingredients": [
+      [
+        "Taro",
+        "g",
+        "Rinse off soil, parboil for 5–7 minutes, cool, then peel and cut into chunks."
+      ],
+      [
+        "Plain tofu",
+        "g",
+        "Drain and cube; lightly fry if firmer pieces are preferred."
+      ],
+      ["Leek", "g", "Finely chop the white part."],
+      ["Cooking oil", "ít", "A small amount for sautéing the leek."],
+      ["Water", "ml", "Use the 2 liters listed in the source."],
+      ["Vegetarian seasoning powder", "muỗng canh", "Add gradually to taste."],
+      ["Vegetarian fish sauce", "muỗng canh", "Add gradually."],
+      ["Sugar", "muỗng canh", "Reduce if the taro is naturally sweet."],
+      ["Ground black pepper", "ít", "To taste."],
+      ["Rice paddy herb", "nhánh", "Rinse and chop."],
+      ["Culantro", "nhánh", "Rinse and chop."]
+    ],
+    "preparation_steps": [
+      "Rinse the soil from the taro, boil it with a little salt for 5–7 minutes, cool, then peel and cut into bite-size pieces.",
+      "Drain and cube the tofu. Mince the leek; rinse and chop the rice paddy herb and culantro."
+    ],
+    "cooking_steps": [
+      "Heat the oil and sauté the leek until fragrant. Add the tofu and gently stir until lightly firm and aromatic.",
+      "Bring the water to a boil, add the tofu, then add the taro. Season with some of the vegetarian seasoning, vegetarian fish sauce, and sugar.",
+      "Simmer over medium heat until the taro is tender, about 15–20 minutes if parboiled. Adjust the seasoning, add pepper and herbs, and turn off the heat."
+    ]
+  },
+  "mang-xao-nam-bao-ngu": {
+    "name": "Stir-Fried Bamboo Shoots with Oyster Mushrooms",
+    "aliases": [
+      "Vegetarian Bamboo Shoot and Oyster Mushroom Stir-Fry",
+      "Stir-Fried Bamboo Shoots with Mushrooms"
+    ],
+    "region": ["Nationwide"],
+    "category": "Vegetarian dishes",
+    "meal_type": ["lunch", "dinner", "family meal"],
+    "difficulty": "Easy",
+    "serving_basis": "A shared vegetable side for four people.",
+    "description": "Fresh bamboo shoots are stir-fried with oyster mushrooms, leek, and celery. Use plant-based vegetarian oyster sauce to keep the dish meat-free, and serve with rice.",
+    "finished_dish": "The bamboo shoots are tender without a raw edge; the oyster mushrooms are soft and savory, with seasoning evenly coating the vegetables.",
+    "serving": "Serve hot with rice and a small dish of soy sauce with chili if desired.",
+    "tips": [
+      "Boil fresh bamboo shoots thoroughly and change the water before stir-frying.",
+      "Drain the mushrooms well to avoid excess liquid in the pan.",
+      "Choose plant-based vegetarian oyster sauce."
+    ],
+    "dish_type": ["Vegetarian dish", "Vegetable dish", "Stir-fry"],
+    "main_ingredient": ["fresh bamboo shoots", "oyster mushrooms"],
+    "cooking_method": ["boiling", "stir-frying"],
+    "search_terms": [
+      "stir-fried bamboo shoots with oyster mushrooms",
+      "vegetarian bamboo shoot stir-fry",
+      "bamboo shoots and mushrooms"
+    ],
+    "suggested_pairings": ["Steamed rice", "Steamed tofu", "Vegetable soup"],
+    "keywords": ["vegetarian", "bamboo shoots", "oyster mushrooms", "stir-fry"],
+    "image_alt": "A plate of stir-fried bamboo shoots and oyster mushrooms with leek and celery.",
+    "media_alt_text": "A plate of stir-fried bamboo shoots and oyster mushrooms with leek and celery.",
+    "time_note": "About 45 minutes, including preparation and boiling the fresh bamboo shoots.",
+    "recipe_family": "vegetarian_bamboo_shoot_oyster_mushroom_stir_fry",
+    "tags": {
+      "meal_type": ["family meal", "vegetarian meal"],
+      "dish_type": ["Vegetarian dish", "Vegetable dish", "Stir-fry"],
+      "keywords": ["bamboo shoots", "oyster mushrooms"]
+    },
+    "ingredients": [
+      [
+        "Fresh bamboo shoots",
+        "g",
+        "Slice, boil thoroughly, discard the water, and drain."
+      ],
+      [
+        "Oyster mushrooms",
+        "g",
+        "Trim, tear or slice, rinse briefly, and drain."
+      ],
+      ["Celery", "g", "Rinse and cut into short lengths."],
+      ["Leek", "g", "Finely chop."],
+      ["Soy sauce", "muỗng canh", "Choose one suitable for the diet."],
+      [
+        "Vegetarian oyster sauce",
+        "muỗng cà phê",
+        "Use a plant-based product labeled vegetarian."
+      ],
+      ["Cooking oil", "ml", ""],
+      ["Vegetarian seasoning powder", "muỗng cà phê", "Add gradually."],
+      ["Sugar", "muỗng cà phê", "Adjust to the bamboo shoots."],
+      ["Water", "ml", "Add so the ingredients cook evenly."]
+    ],
+    "preparation_steps": [
+      "Rinse and slice the bamboo shoots. Boil uncovered, changing the cooking water a few times to remove bitterness, then drain.",
+      "Trim the oyster mushrooms and tear them into bite-size pieces. Rinse and cut the celery; finely chop the leek."
+    ],
+    "cooking_steps": [
+      "Heat the oil in a pan and sauté the leek for 1–2 minutes until fragrant.",
+      "Add the bamboo shoots and mushrooms, then season with soy sauce, vegetarian oyster sauce, sugar, and vegetarian seasoning powder. Stir-fry for 5–7 minutes.",
+      "Add about 100 ml water and bring to a boil until the ingredients are tender. Stir in the celery and turn off the heat."
+    ]
+  },
+  "dau-bap-xao-nam-chay": {
+    "name": "Vegetarian Okra and Oyster Mushroom Stir-Fry",
+    "aliases": [
+      "Okra Stir-Fried with Oyster Mushrooms",
+      "Mushroom and Okra Stir-Fry"
+    ],
+    "region": ["Nationwide"],
+    "category": "Vegetarian dishes",
+    "meal_type": ["lunch", "dinner", "family meal"],
+    "difficulty": "Easy",
+    "serving_basis": "A quick vegetable side dish for two.",
+    "description": "Green okra is quickly stir-fried with oyster mushrooms, garlic, and scallions. It is a simple vegetable dish for a light everyday vegetarian meal.",
+    "finished_dish": "The okra is just tender with some crunch; the mushrooms are soft and savory, with fragrant garlic and lightly balanced seasoning.",
+    "serving": "Serve immediately with rice; add soy sauce at the table if a deeper flavor is wanted.",
+    "tips": [
+      "Choose young, medium-sized okra for a tender texture.",
+      "Drain the mushrooms before adding them to the pan.",
+      "Stir-fry the okra briefly over high heat to preserve its green color and crispness."
+    ],
+    "dish_type": ["Vegetarian dish", "Vegetable dish", "Stir-fry"],
+    "main_ingredient": ["okra", "oyster mushrooms"],
+    "cooking_method": ["stir-frying"],
+    "search_terms": [
+      "vegetarian okra and oyster mushroom stir-fry",
+      "okra mushroom stir-fry",
+      "vegetarian vegetable side dish"
+    ],
+    "suggested_pairings": ["Steamed rice", "Braised tofu", "Winter melon soup"],
+    "keywords": ["vegetarian", "okra", "oyster mushrooms", "vegetables"],
+    "image_alt": "A plate of green okra stir-fried with oyster mushrooms, garlic, and scallions.",
+    "media_alt_text": "A plate of green okra stir-fried with oyster mushrooms, garlic, and scallions.",
+    "time_note": "About 20 minutes from preparation to serving.",
+    "recipe_family": "vegetarian_okra_oyster_mushroom_stir_fry",
+    "tags": {
+      "meal_type": ["family meal", "vegetarian meal"],
+      "dish_type": ["Vegetarian dish", "Vegetable dish", "Stir-fry"],
+      "keywords": ["okra", "oyster mushrooms"]
+    },
+    "ingredients": [
+      ["Okra", "g", "Trim, rinse, drain, and slice diagonally."],
+      [
+        "Oyster mushrooms",
+        "g",
+        "Trim, rinse briefly, drain, and tear into bite-size pieces."
+      ],
+      ["Scallions", "ít", "Mince the white part and cut the greens."],
+      ["Garlic", "tép", "Peel and mince."],
+      ["Cooking oil", "muỗng canh", ""],
+      ["Sugar", "muỗng cà phê", "Season to taste."],
+      ["Salt", "muỗng cà phê", "Season to taste."],
+      ["Monosodium glutamate", "muỗng cà phê", "Optional."],
+      ["Ground black pepper", "ít", "Optional."]
+    ],
+    "preparation_steps": [
+      "Trim the okra, rinse and drain it, then cut diagonally into pieces about 1–2 cm thick.",
+      "Trim the oyster mushrooms, briefly rinse in lightly salted water, rinse again and drain well. Mince the garlic and slice the scallions."
+    ],
+    "cooking_steps": [
+      "Heat the oil over medium-low heat and sauté the garlic with the white part of the scallions until fragrant.",
+      "Add the mushrooms and stir-fry for about 1 minute. Increase the heat, add the okra, sugar, salt, and optional MSG.",
+      "Stir-fry for 3–4 minutes until the okra is just tender. Adjust the seasoning, add scallion greens and pepper, then turn off the heat."
+    ]
+  },
+  "canh-bi-dao-nhoi-chay": {
+    "name": "Vegetarian Stuffed Winter Melon Soup",
+    "aliases": [
+      "Winter Melon Stuffed with Tofu and Mushrooms",
+      "Vegetarian Stuffed Gourd Soup"
+    ],
+    "region": ["Nationwide"],
+    "category": "Vegetarian dishes",
+    "meal_type": ["lunch", "dinner", "family meal"],
+    "difficulty": "Easy",
+    "serving_basis": "A pot of soup for four to share with rice.",
+    "description": "Winter melon rings are filled with tofu, mushrooms, and vegetarian protein, then simmered with straw mushrooms. The clear soup has a mild, savory broth for a home-style vegetarian meal.",
+    "finished_dish": "The melon rings hold their shape and the tofu-mushroom filling is cooked through; the broth is light and fragrant with straw mushrooms and cilantro.",
+    "serving": "Serve each bowl with a few stuffed melon rings, broth, and straw mushrooms while hot.",
+    "tips": [
+      "Cut the melon thick enough to hold the filling.",
+      "Drain the mushrooms well so the filling does not become watery.",
+      "Dust the top of the filling lightly with cornstarch to help it stay in place."
+    ],
+    "dish_type": ["Vegetarian dish", "Soup"],
+    "main_ingredient": ["winter melon", "tofu", "mushrooms"],
+    "cooking_method": ["stuffing", "simmering"],
+    "search_terms": [
+      "vegetarian stuffed winter melon soup",
+      "winter melon stuffed with tofu and mushrooms",
+      "vegetarian soup"
+    ],
+    "suggested_pairings": [
+      "Steamed rice",
+      "Braised tofu",
+      "Stir-fried vegetables"
+    ],
+    "keywords": ["vegetarian", "winter melon", "tofu", "mushrooms", "soup"],
+    "image_alt": "A bowl of vegetarian stuffed winter melon soup with tofu, mushrooms, and cilantro.",
+    "media_alt_text": "A bowl of vegetarian stuffed winter melon soup with tofu, mushrooms, and cilantro.",
+    "time_note": "About 55 minutes; allow enough time for the stuffed melon and filling to cook through.",
+    "recipe_family": "vegetarian_stuffed_winter_melon_soup",
+    "tags": {
+      "meal_type": ["family meal", "vegetarian meal"],
+      "dish_type": ["Vegetarian dish", "Soup"],
+      "keywords": ["winter melon", "tofu", "mushrooms"]
+    },
+    "ingredients": [
+      [
+        "Winter melon",
+        "g",
+        "Peel, cut into 3–4 cm rings, and scoop out the center."
+      ],
+      ["Plain tofu", "g", "Drain and mash for the filling."],
+      ["Oyster mushrooms", "g", "Trim, rinse briefly, drain, and mince."],
+      ["Soaked wood ear mushrooms", "g", "Drain, slice finely, then mince."],
+      ["Straw mushrooms", "g", "Trim and rinse gently; halve if large."],
+      ["Vegetarian mock pork ribs", "g", "Soak until soft, drain, and mince."],
+      ["Cornstarch", "muỗng canh", "Reserve a little to dust the filling."],
+      ["Cooking oil", "muỗng canh", ""],
+      ["Water", "ml", "Add more if needed for the soup."],
+      [
+        "Vegetarian seasoning powder",
+        "muỗng cà phê",
+        "Divide between filling and broth; add gradually."
+      ],
+      ["Salt", "ít", "For soaking the melon and seasoning the broth."],
+      [
+        "Ground black pepper",
+        "muỗng cà phê",
+        "Divide between the filling and final seasoning."
+      ],
+      ["Chili powder", "ít", "Optional garnish."],
+      ["Cilantro", "ít", "Rinse and chop."]
+    ],
+    "preparation_steps": [
+      "Peel the melon, cut it into 3–4 cm rings, and scoop out the centers. Soak in lightly salted water for 5–10 minutes, rinse, and drain.",
+      "Soak the vegetarian mock ribs until soft, drain, and mince. Prepare the oyster and straw mushrooms; mince the mushrooms used in the filling.",
+      "Mix the tofu, oyster mushrooms, and mock ribs with some vegetarian seasoning and pepper. Add the wood ear mushrooms and combine."
+    ],
+    "cooking_steps": [
+      "Fill the melon rings with the mixture and press gently. Dust the top of the filling with a thin layer of cornstarch.",
+      "Heat the oil and stir-fry the straw mushrooms for about 2 minutes. Add the water, salt, and some vegetarian seasoning; bring to a boil.",
+      "Add the stuffed melon rings, lower the heat, and simmer until the melon and filling are cooked, about 20–25 minutes. Adjust the broth, garnish with cilantro and optional chili powder."
+    ]
+  },
+  "dau-hu-hap-nam-chay": {
+    "name": "Steamed Tofu with Mushrooms",
+    "aliases": [
+      "Vegetarian Steamed Tofu with Straw Mushrooms",
+      "Steamed Soft Tofu with Mushrooms"
+    ],
+    "region": ["Nationwide"],
+    "category": "Vegetarian dishes",
+    "meal_type": ["lunch", "dinner", "family meal"],
+    "difficulty": "Easy",
+    "serving_basis": "A light tofu dish for two people.",
+    "description": "Soft tofu is steamed and topped with straw mushrooms sautéed with leek, vegetarian oyster sauce, and soy sauce. It is an easy, mild dish to add to a Vietnamese vegetarian meal.",
+    "finished_dish": "The tofu stays soft and warm; the straw mushrooms are seasoned through with a light savory-sweet sauce.",
+    "serving": "Finish with scallions and optional chili; serve hot with rice.",
+    "tips": [
+      "Place the tofu on a heatproof plate before steaming to avoid breaking it during transfer.",
+      "Cook the mushroom topping before pouring it over the tofu.",
+      "Omit chili sauce and fresh chili for a mild version."
+    ],
+    "dish_type": ["Vegetarian dish", "Steamed dish"],
+    "main_ingredient": ["soft tofu", "straw mushrooms"],
+    "cooking_method": ["stir-frying", "steaming"],
+    "search_terms": [
+      "steamed tofu with mushrooms",
+      "vegetarian steamed tofu and straw mushrooms",
+      "steamed soft tofu with mushrooms"
+    ],
+    "suggested_pairings": [
+      "Steamed rice",
+      "Vegetable soup",
+      "Boiled vegetables"
+    ],
+    "keywords": ["vegetarian", "soft tofu", "straw mushrooms", "steamed"],
+    "image_alt": "A plate of steamed soft tofu topped with straw mushrooms, scallions, and light brown sauce.",
+    "media_alt_text": "A plate of steamed soft tofu topped with straw mushrooms, scallions, and light brown sauce.",
+    "time_note": "About 30 minutes from preparation to serving.",
+    "recipe_family": "vegetarian_steamed_tofu_straw_mushrooms",
+    "tags": {
+      "meal_type": ["family meal", "vegetarian meal"],
+      "dish_type": ["Vegetarian dish", "Steamed dish"],
+      "keywords": ["soft tofu", "straw mushrooms"]
+    },
+    "ingredients": [
+      ["Soft tofu", "hộp", "Cut into bite-size cubes."],
+      ["Straw mushrooms", "g", "Trim, rinse briefly, and drain."],
+      ["Scallions", "nhánh", "Mince the white parts and chop the greens."],
+      ["Fresh chili", "trái", "Optional; slice."],
+      ["Cooking oil", "muỗng canh", ""],
+      [
+        "Vegetarian oyster sauce",
+        "muỗng canh",
+        "Use a plant-based product labeled vegetarian."
+      ],
+      ["Soy sauce", "muỗng canh", "Adjust for the saltiness of the brand."],
+      ["Chili sauce", "muỗng canh", "Optional; omit for a non-spicy version."],
+      ["Sugar", "muỗng cà phê", "Adjust to taste."],
+      ["Monosodium glutamate", "muỗng cà phê", "Optional."]
+    ],
+    "preparation_steps": [
+      "Trim the straw mushrooms, rinse briefly with lightly salted water, rinse again and drain. Cut the soft tofu into bite-size cubes.",
+      "Mince the white part of the scallions, chop the greens, and slice the chili if using."
+    ],
+    "cooking_steps": [
+      "Heat the oil and sauté the scallion whites. Add the straw mushrooms, vegetarian oyster sauce, soy sauce, optional chili sauce, sugar, and optional MSG. Stir-fry for about 5 minutes until seasoned.",
+      "Arrange the tofu on a heatproof plate and steam for about 5 minutes. Spoon the mushrooms and sauce over it, then steam for another 2 minutes.",
+      "Carefully remove the plate, garnish with scallion greens and optional chili, and serve hot."
+    ]
+  }
+}

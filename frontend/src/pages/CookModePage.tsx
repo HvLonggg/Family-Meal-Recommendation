@@ -62,6 +62,7 @@ import {
 import { useI18n } from '@/features/i18n/I18nContext';
 import { useRecipeCatalog } from '@/features/i18n/recipeContent';
 import { errorMessage } from '@/lib/errors';
+import { fitDishCutout } from '@/lib/fitDishCutout';
 
 type Phase = 'intro' | 'cooking' | 'done';
 type Dish = { recipe: Recipe; servings: number; planItemId?: string };
@@ -990,7 +991,13 @@ function CookSession({ dishes, sessionKey }: { dishes: Dish[]; sessionKey: strin
           <ul className="cook-dishes">
             {dishes.map((item) => (
               <li key={item.recipe.slug}>
-                <img alt="" src={item.recipe.image} />
+                <img
+                  alt=""
+                  className="dish-cutout"
+                  onLoad={(event) => fitDishCutout(event.currentTarget)}
+                  src={item.recipe.image}
+                  srcSet={item.recipe.imageSrcSet}
+                />
                 <span>
                   <strong>{item.recipe.name}</strong>
                   <small>
