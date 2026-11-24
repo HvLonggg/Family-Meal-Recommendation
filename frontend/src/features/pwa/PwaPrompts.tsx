@@ -22,6 +22,8 @@ const TEXT = {
     updateCooking: 'Bạn có thể cập nhật sau khi nấu xong để không bị gián đoạn.',
     updateCta: 'Cập nhật ngay',
     updating: 'Đang cập nhật…',
+    updatingHint: 'Vui lòng không tắt ứng dụng. Bếp Việt sẽ tự mở lại khi xong.',
+    stages: ['Đang kiểm tra bản mới', 'Đang tải bản mới', 'Đang cài đặt', 'Hoàn tất, đang mở lại'],
     installTitle: 'Cài Bếp Việt lên điện thoại',
     installBody: 'Mở nhanh từ màn hình chính, dùng như ứng dụng.',
     installCta: 'Cài ứng dụng',
@@ -36,6 +38,13 @@ const TEXT = {
     updateCooking: 'You can update after you finish cooking so nothing is interrupted.',
     updateCta: 'Update now',
     updating: 'Updating…',
+    updatingHint: 'Please keep the app open. Bep Viet reopens automatically when done.',
+    stages: [
+      'Checking the new version',
+      'Downloading the new version',
+      'Installing',
+      'Done, reopening',
+    ],
     installTitle: 'Install Bep Viet on your phone',
     installBody: 'Open it from your home screen like an app.',
     installCta: 'Install app',
@@ -150,9 +159,10 @@ export function PwaPrompts() {
       const worker = registrationRef.current?.waiting ?? pending?.worker;
       if (worker && worker.state !== 'activated') await activateUpdate(worker);
       setProgress(65);
-      await new Promise<void>((resolve) =>
-        requestAnimationFrame(() => requestAnimationFrame(() => resolve())),
-      );
+      await new Promise<void>((resolve) => window.setTimeout(resolve, 400));
+      setProgress(100);
+      // Cho thanh tiến trình kịp chạy tới 100% rồi mới tải lại bản mới.
+      await new Promise<void>((resolve) => window.setTimeout(resolve, 600));
       window.location.reload();
     } catch {
       cancelUpdate();
@@ -197,22 +207,37 @@ export function PwaPrompts() {
     setInstallMode('none');
   };
 
-  if (updating)
+  if (updating) {
+    const stage = progress >= 100 ? 3 : progress >= 65 ? 2 : progress >= 35 ? 1 : 0;
     return (
-      <div className="pwa-update-screen" role="status" aria-label={text.updating}>
-        <img src="/images/brand/bep-viet-logo.png" alt="Bếp Việt" />
+      <div className="pwa-dialog-backdrop">
         <div
-          className="catalog-loading__track"
-          role="progressbar"
-          aria-label={text.updating}
-          aria-valuemin={0}
-          aria-valuemax={100}
-          aria-valuenow={progress}
+          aria-labelledby="pwa-update-title"
+          aria-modal="true"
+          className="pwa-dialog"
+          role="dialog"
         >
-          <span className="catalog-loading__fill" style={{ width: `${progress}%` }} />
+          <img alt="" className="pwa-dialog__logo" src="/images/brand/bep-viet-logo.png" />
+          <h2 id="pwa-update-title">{text.updating}</h2>
+          <div
+            aria-label={text.updating}
+            aria-valuemax={100}
+            aria-valuemin={0}
+            aria-valuenow={progress}
+            className="pwa-progress"
+            role="progressbar"
+          >
+            <span className="pwa-progress__fill" style={{ width: `${progress}%` }} />
+          </div>
+          <p className="pwa-progress__label" aria-live="polite">
+            <span>{text.stages[stage]}</span>
+            <strong>{progress}%</strong>
+          </p>
+          <p className="pwa-dialog__hint">{text.updatingHint}</p>
         </div>
       </div>
     );
+  }
 
   if (result)
     return (
@@ -237,37 +262,29 @@ export function PwaPrompts() {
   if (pending && !hidden) {
     const cooking = window.location.pathname.startsWith('/cook');
     return (
-      <aside aria-label={text.updateTitle} className="pwa-toast pwa-toast--install" role="status">
-        <img
-          alt=""
-          className="pwa-toast__icon"
-          height={44}
-          src="/icons/apple-touch-icon.png"
-          width={44}
-        />
-        <div className="pwa-toast__body">
-          <p className="pwa-toast__title">{text.updateTitle}</p>
-          <p className="pwa-toast__text">{cooking ? text.updateCooking : text.update}</p>
-          <div className="pwa-toast__actions">
-            <button
-              className="pwa-btn pwa-btn--ghost"
-              disabled={updating}
-              onClick={snoozeUpdate}
-              type="button"
-            >
+      <div className="pwa-dialog-backdrop">
+        <div
+          aria-describedby="pwa-update-text"
+          aria-labelledby="pwa-update-title"
+          aria-modal="true"
+          className="pwa-dialog"
+          role="dialog"
+        >
+          <img alt="" className="pwa-dialog__logo" src="/images/brand/bep-viet-logo.png" />
+          <h2 id="pwa-update-title">{text.updateTitle}</h2>
+          <p className="pwa-dialog__text" id="pwa-update-text">
+            {cooking ? text.updateCooking : text.update}
+          </p>
+          <div className="pwa-dialog__actions">
+            <button className="pwa-btn pwa-btn--ghost" onClick={snoozeUpdate} type="button">
               {text.later}
             </button>
-            <button
-              className="pwa-btn"
-              disabled={updating}
-              onClick={() => void applyUpdate()}
-              type="button"
-            >
-              {updating ? text.updating : text.updateCta}
+            <button autoFocus className="pwa-btn" onClick={() => void applyUpdate()} type="button">
+              {text.updateCta}
             </button>
           </div>
         </div>
-      </aside>
+      </div>
     );
   }
 

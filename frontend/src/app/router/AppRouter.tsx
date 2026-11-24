@@ -58,13 +58,9 @@ function LegacyRedirect() {
 const router = createBrowserRouter([
   ...Object.keys(legacyRoutes).map((path) => ({ path: `${path}/*`, element: <LegacyRedirect /> })),
   {
-    // Mọi trang của ứng dụng đều cần đăng nhập: mở bằng đường dẫn trực tiếp hay sau khi
-    // đăng xuất đều về trang đăng nhập, đăng nhập xong quay lại đúng trang đã mở.
-    element: (
-      <ProtectedRoute>
-        <PublicLayout />
-      </ProtectedRoute>
-    ),
+    // Khách xem tự do trang chủ, kho món, bữa cơm, bài viết...; chỉ các trang thao tác với
+    // dữ liệu cá nhân mới yêu cầu đăng nhập và quay lại đúng trang sau khi đăng nhập.
+    element: <PublicLayout />,
     children: [
       { index: true, element: <HomePage /> },
       { path: 'recipes', element: <RecipesPage /> },
@@ -73,7 +69,11 @@ const router = createBrowserRouter([
       { path: 'random-meal', element: <RandomMealPage /> },
       {
         path: 'planner',
-        element: <PlannerPage />,
+        element: (
+          <ProtectedRoute>
+            <PlannerPage />
+          </ProtectedRoute>
+        ),
       },
       { path: 'suggestions', element: <SuggestionsPage /> },
       { path: 'nutrition', element: <NutritionPage /> },
@@ -83,19 +83,35 @@ const router = createBrowserRouter([
       { path: 'favorites', element: <FavoritesPage /> },
       {
         path: 'stories/new',
-        element: <StoryEditorPage />,
+        element: (
+          <ProtectedRoute>
+            <StoryEditorPage />
+          </ProtectedRoute>
+        ),
       },
       {
         path: 'stories/:id/edit',
-        element: <StoryEditorPage />,
+        element: (
+          <ProtectedRoute>
+            <StoryEditorPage />
+          </ProtectedRoute>
+        ),
       },
       {
         path: 'submit-recipe',
-        element: <SubmitRecipePage />,
+        element: (
+          <ProtectedRoute>
+            <SubmitRecipePage />
+          </ProtectedRoute>
+        ),
       },
       {
         path: 'account',
-        element: <AccountLayout />,
+        element: (
+          <ProtectedRoute>
+            <AccountLayout />
+          </ProtectedRoute>
+        ),
         children: [
           { index: true, element: <AccountOverviewPage /> },
           { path: 'settings', element: <SettingsPage /> },

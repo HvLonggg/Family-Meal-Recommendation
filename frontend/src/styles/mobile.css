@@ -138,26 +138,126 @@ html .catalog-unavailable button {
     font-size: 12px;
   }
 }
-.pwa-update-screen {
-  position: fixed;
-  inset: 0;
-  z-index: 10000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-  background: #fdf9f3;
-}
-.pwa-update-screen > img {
-  width: 150px;
-  height: 150px;
-  object-fit: contain;
-}
-.pwa-update-screen .catalog-loading__track {
-  width: 180px;
-}
 /* Link pháp lý xếp chung nhịp với các link khác trong cột. */
 .footer-links .footer-legal {
   display: contents;
+}
+
+/* ---------- Hộp thoại cập nhật phiên bản (giữa màn hình) ---------- */
+.pwa-dialog-backdrop {
+  position: fixed;
+  z-index: 10000;
+  inset: 0;
+  display: grid;
+  padding: 20px;
+  place-items: center;
+  background: rgb(47 36 31 / 45%);
+  backdrop-filter: blur(3px);
+  animation: pwa-fade-in 180ms ease-out;
+}
+.pwa-dialog {
+  display: grid;
+  width: min(400px, 100%);
+  justify-items: center;
+  gap: 12px;
+  border-radius: 24px;
+  padding: 28px 24px 22px;
+  background: #fffaf4;
+  color: #2f241f;
+  box-shadow: 0 24px 60px -18px rgb(47 36 31 / 45%);
+  text-align: center;
+  animation: pwa-pop-in 220ms ease-out;
+}
+.pwa-dialog__logo {
+  width: 84px;
+  height: 84px;
+  object-fit: contain;
+}
+.pwa-dialog h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 750;
+}
+.pwa-dialog__text,
+.pwa-dialog__hint {
+  margin: 0;
+  color: #5c4d43;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.pwa-dialog__hint {
+  font-size: 0.8rem;
+}
+.pwa-dialog__actions {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+.pwa-dialog__actions .pwa-btn {
+  flex: 1;
+}
+.pwa-progress {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 10px;
+  margin-top: 6px;
+  border-radius: 999px;
+  background: #f1e4d6;
+}
+.pwa-progress__fill {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #d9822b, #b8402f);
+  transition: width 700ms ease;
+}
+/* Vệt sáng chạy liên tục để người dùng thấy tiến trình đang diễn ra. */
+.pwa-progress__fill::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 45%), transparent);
+  animation: pwa-shimmer 1.1s linear infinite;
+  content: '';
+}
+.pwa-progress__label {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 0;
+  color: #5c4d43;
+  font-size: 0.85rem;
+}
+@keyframes pwa-shimmer {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+@keyframes pwa-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes pwa-pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.97);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pwa-dialog-backdrop,
+  .pwa-dialog,
+  .pwa-progress__fill::after {
+    animation: none;
+  }
+  .pwa-progress__fill {
+    transition: none;
+  }
 }
