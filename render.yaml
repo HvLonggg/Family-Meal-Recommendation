@@ -3,7 +3,7 @@
 # <FRONTEND> là domain Vercel thật, ví dụ https://bep-viet.vercel.app
 services:
   - type: web
-    name: bep-viet-api # Khớp destination trong frontend/vercel.json
+    name: bep-viet-api # URL thật: bep-viet-api-jiu7.onrender.com (khớp frontend/vercel.json)
     runtime: docker
     plan: free
     region: singapore # Gần Việt Nam nhất
