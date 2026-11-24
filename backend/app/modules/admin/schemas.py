@@ -51,6 +51,8 @@ class AdminUserRow(BaseModel):
     favorites: int
     plan_items: int
     stories: int
+    # Đang bị khóa đăng nhập tạm thời do nhập sai mật khẩu quá nhiều lần.
+    login_locked: bool = False
 
 
 class AdminUserListResponse(BaseModel):

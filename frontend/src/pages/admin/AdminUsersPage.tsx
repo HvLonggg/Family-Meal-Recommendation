@@ -15,7 +15,12 @@ import {
   Pagination,
   StatusBadge,
 } from '@/components/ui/Workspace';
-import { adminKeys, createAdminUser, listAdminUsers } from '@/features/admin/adminApi';
+import {
+  adminKeys,
+  createAdminUser,
+  listAdminUsers,
+  unlockAdminUserLogin,
+} from '@/features/admin/adminApi';
 import { useAdminFilters } from '@/features/admin/useAdminFilters';
 import { useUserAccessActions } from '@/features/admin/useUserAccessActions';
 import { useAuth } from '@/features/auth/AuthContext';
@@ -45,6 +50,15 @@ export function AdminUsersPage() {
     onSuccess: async (row) => {
       setCreating(false);
       setCreated(row.full_name);
+      await queryClient.invalidateQueries({ queryKey: ['admin'] });
+    },
+  });
+
+  const [unlocked, setUnlocked] = useState<string | null>(null);
+  const unlockLogin = useMutation({
+    mutationFn: unlockAdminUserLogin,
+    onSuccess: async (row) => {
+      setUnlocked(row.full_name);
       await queryClient.invalidateQueries({ queryKey: ['admin'] });
     },
   });
@@ -97,6 +111,13 @@ export function AdminUsersPage() {
 
       {created ? (
         <Notice tone="success">{t('Đã tạo tài khoản cho {name}.', { name: created })}</Notice>
+      ) : null}
+
+      {unlocked ? (
+        <Notice tone="success">{t('Đã mở khóa đăng nhập cho {name}.', { name: unlocked })}</Notice>
+      ) : null}
+      {unlockLogin.isError ? (
+        <Notice tone="danger">{errorMessage(unlockLogin.error, t)}</Notice>
       ) : null}
 
       {mutation.isError ? <Notice tone="danger">{errorMessage(mutation.error, t)}</Notice> : null}
@@ -155,6 +176,9 @@ export function AdminUsersPage() {
                       <StatusBadge tone={row.status === 'active' ? 'success' : 'danger'}>
                         {row.status === 'active' ? t('Đang hoạt động') : t('Đã khóa')}
                       </StatusBadge>
+                      {row.login_locked ? (
+                        <StatusBadge tone="warning">{t('Tạm khóa đăng nhập')}</StatusBadge>
+                      ) : null}
                     </td>
                     <td>
                       <small className="cell-stats">
@@ -181,6 +205,17 @@ export function AdminUsersPage() {
                         <Link className="text-button" to={`/admin/users/${row.id}`}>
                           {t('Chi tiết')}
                         </Link>
+                        {row.login_locked ? (
+                          <button
+                            className="text-button"
+                            disabled={unlockLogin.isPending}
+                            onClick={() => unlockLogin.mutate(row.id)}
+                            title={t('Cho phép đăng nhập lại ngay, không cần chờ 15 phút')}
+                            type="button"
+                          >
+                            {t('Mở khóa đăng nhập')}
+                          </button>
+                        ) : null}
                         <button
                           className="text-button"
                           disabled={isSelf || mutation.isPending}

@@ -337,6 +337,11 @@ export const en: Record<string, string> = {
   'Chủ động từng bữa': 'Plan every meal ahead',
   'Món nhà thân thuộc': 'Familiar home dishes',
   'Hôm nay nấu gì?': 'What to cook today?',
+  'Tạm khóa đăng nhập': 'Sign-in locked',
+  'Mở khóa đăng nhập': 'Unlock sign-in',
+  'Đã mở khóa đăng nhập cho {name}.': 'Sign-in unlocked for {name}.',
+  'Cho phép đăng nhập lại ngay, không cần chờ 15 phút':
+    'Allow signing in again now instead of waiting 15 minutes',
   'Trời se lạnh': 'Chilly days',
   'Ngày nắng nóng': 'Hot days',
   'Trời lạnh ăn gì?': 'What to eat when it is cold?',

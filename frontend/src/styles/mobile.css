@@ -157,8 +157,7 @@ html .catalog-unavailable button {
 .pwa-update-screen .catalog-loading__track {
   width: 180px;
 }
+/* Link pháp lý xếp chung nhịp với các link khác trong cột. */
 .footer-links .footer-legal {
-  display: grid;
-  gap: 12px;
-  font-size: inherit;
+  display: contents;
 }

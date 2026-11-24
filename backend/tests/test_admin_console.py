@@ -583,3 +583,36 @@ def test_breakfast_suggestions_and_stale_sending_rows_expire(
         session.commit()
     history = client.get("/api/v1/admin/meal-suggestions/history", headers=admin).json()
     assert history["data"][0]["status"] == "failed"
+
+
+def test_admin_unlocks_sign_in_after_too_many_wrong_passwords(
+    client: TestClient, database_session_factory: sessionmaker[Session]
+) -> None:
+    admin = create_admin(client, database_session_factory, "admin@example.com")
+    register_and_login(client, "khoa@example.com")
+    for _ in range(5):
+        wrong = client.post(
+            "/api/v1/auth/login", json={"email": "khoa@example.com", "password": "sai-mat-khau-1"}
+        )
+        assert wrong.status_code == 401
+    assert (
+        client.post(
+            "/api/v1/auth/login", json={"email": "khoa@example.com", "password": "sai-mat-khau-1"}
+        ).status_code
+        == 429
+    )
+
+    row = client.get("/api/v1/admin/users?q=khoa", headers=admin).json()["data"][0]
+    assert row["login_locked"] is True
+
+    unlocked = client.post(f"/api/v1/admin/users/{row['id']}/unlock-login", headers=admin)
+    assert unlocked.status_code == 200
+    assert unlocked.json()["login_locked"] is False
+    login(client, "khoa@example.com")
+
+
+def test_unlock_login_requires_admin(client: TestClient) -> None:
+    member = register_and_login(client, "thuong@example.com")
+    me = client.get("/api/v1/auth/me", headers=member).json()
+    response = client.post(f"/api/v1/admin/users/{me['id']}/unlock-login", headers=member)
+    assert response.status_code == 403

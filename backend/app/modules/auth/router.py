@@ -17,6 +17,11 @@ from app.modules.auth.email import (
     EmailDeliveryError,
     send_verification_email,
 )
+from app.modules.auth.lockout import (
+    LOGIN_FAILURES_PER_EMAIL,
+    LOGIN_FAILURES_PER_IP,
+    login_email_key,
+)
 from app.modules.auth.models import EmailOtpChallenge, User
 from app.modules.auth.oauth import (
     OAuthExchangeError,
@@ -64,8 +69,6 @@ from app.modules.auth.service import (
 router = APIRouter(prefix="/auth")
 
 # Chống dò mật khẩu: đếm lần đăng nhập sai theo email và theo địa chỉ IP trong 15 phút.
-LOGIN_FAILURES_PER_EMAIL = SlidingWindowLimiter(limit=5, window_seconds=15 * 60)
-LOGIN_FAILURES_PER_IP = SlidingWindowLimiter(limit=20, window_seconds=15 * 60)
 # Đăng ký không xác minh email nhưng có gửi email chào mừng: giới hạn theo IP để chặn tạo tài
 # khoản hàng loạt và dùng hệ thống gửi thư rác tới địa chỉ của người khác.
 REGISTRATIONS_PER_IP = SlidingWindowLimiter(limit=30, window_seconds=60 * 60)
@@ -220,7 +223,7 @@ def login(
     response: Response,
     session: Annotated[Session, Depends(get_db_session)],
 ) -> AuthSessionResponse:
-    email_key = str(payload.email).strip().casefold()
+    email_key = login_email_key(str(payload.email))
     ip_key = client_ip(request)
     if LOGIN_FAILURES_PER_EMAIL.blocked(email_key) or LOGIN_FAILURES_PER_IP.blocked(ip_key):
         raise LoginRateLimitError(

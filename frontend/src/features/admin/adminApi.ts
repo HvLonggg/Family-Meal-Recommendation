@@ -39,6 +39,8 @@ export interface AdminUserRow {
   favorites: number;
   plan_items: number;
   stories: number;
+  /** Tạm bị khóa đăng nhập do nhập sai mật khẩu quá 5 lần (15 phút). */
+  login_locked?: boolean;
 }
 
 export interface AdminPlanItem {
@@ -122,6 +124,10 @@ export interface AdminUserCreate {
 
 export function createAdminUser(payload: AdminUserCreate) {
   return apiPost<AdminUserRow>('/admin/users', payload);
+}
+
+export function unlockAdminUserLogin(id: string) {
+  return apiPost<AdminUserRow>(`/admin/users/${encodeURIComponent(id)}/unlock-login`, {});
 }
 
 export function getAdminUserPlans(id: string, signal?: AbortSignal) {

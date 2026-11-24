@@ -31,7 +31,7 @@
   max-width: 650px;
   margin: 13px 0 16px;
   color: var(--meal-ink);
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: 'Times New Roman', Times, 'Noto Serif', 'Liberation Serif', serif;
   font-size: clamp(2.65rem, 5vw, 4.6rem);
   font-weight: 500;
   letter-spacing: -0.045em;
@@ -170,7 +170,7 @@
 .meal-sets-page__quick-copy h2 {
   margin: 7px 0 8px;
   color: #fff;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: 'Times New Roman', Times, 'Noto Serif', 'Liberation Serif', serif;
   font-size: clamp(1.45rem, 2.5vw, 2.05rem);
   font-weight: 500;
   letter-spacing: -0.025em;
@@ -213,7 +213,7 @@
 .meal-sets-page__list-heading h2 {
   margin: 8px 0 0;
   color: var(--meal-ink);
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: 'Times New Roman', Times, 'Noto Serif', 'Liberation Serif', serif;
   font-size: clamp(1.8rem, 3vw, 2.55rem);
   font-weight: 500;
   letter-spacing: -0.03em;

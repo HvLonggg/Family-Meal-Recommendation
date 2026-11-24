@@ -83,6 +83,7 @@ from app.modules.auth.email import (
     email_delivery_status,
     send_support_reply_email,
 )
+from app.modules.auth.lockout import is_login_locked, unlock_login
 from app.modules.auth.models import AuthIdentity, User
 from app.modules.auth.security import hash_password
 from app.modules.auth.service import EmailAlreadyExistsError, revoke_all_sessions
@@ -175,6 +176,7 @@ def _user_rows(session: Session, users: list[User]) -> list[AdminUserRow]:
             favorites=favorites.get(user.id, 0),
             plan_items=plans.get(user.id, 0),
             stories=stories.get(user.id, 0),
+            login_locked=is_login_locked(user.email),
         )
         for user in users
     ]
@@ -317,6 +319,22 @@ def update_user(
         revoke_all_sessions(session, user)
     session.commit()
     session.refresh(user)
+    return _user_rows(session, [user])[0]
+
+
+@router.post(
+    "/users/{user_id}/unlock-login",
+    response_model=AdminUserRow,
+    summary="Unlock sign-in after too many wrong passwords",
+)
+def unlock_user_login(user_id: UUID, session: DatabaseSession, admin: AdminUser) -> AdminUserRow:
+    user = _get_user(session, user_id)
+    if user.email:
+        unlock_login(user.email)
+    logger.info(
+        "Admin mở khóa đăng nhập",
+        extra={"admin_id": str(admin.id), "user_id": str(user.id)},
+    )
     return _user_rows(session, [user])[0]
 
 

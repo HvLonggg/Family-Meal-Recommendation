@@ -359,9 +359,18 @@ export function PublicLayout() {
               <Link onClick={handleFooterNavigation} to="/articles">
                 {t('Bài viết & câu chuyện')}
               </Link>
+              <Link onClick={handleFooterNavigation} to="/favorites">
+                {t('Món yêu thích')}
+              </Link>
             </div>
             <div>
               <strong>{t('Hỗ trợ')}</strong>
+              <Link onClick={handleFooterNavigation} to="/contact">
+                {t('Liên hệ hỗ trợ')}
+              </Link>
+              <Link onClick={handleFooterNavigation} to="/submit-recipe">
+                {t('Đề xuất món mới')}
+              </Link>
               <nav aria-label={t('Văn bản pháp lý')} className="footer-legal">
                 <Link onClick={handleFooterNavigation} to="/terms">
                   {t('Điều khoản sử dụng')}
@@ -370,15 +379,6 @@ export function PublicLayout() {
                   {t('Chính sách quyền riêng tư')}
                 </Link>
               </nav>
-              <Link onClick={handleFooterNavigation} to="/contact">
-                {t('Liên hệ hỗ trợ')}
-              </Link>
-              <Link onClick={handleFooterNavigation} to="/submit-recipe">
-                {t('Đề xuất món mới')}
-              </Link>
-              <Link onClick={handleFooterNavigation} to="/favorites">
-                {t('Món yêu thích')}
-              </Link>
             </div>
           </nav>
           <div className="footer-map">
