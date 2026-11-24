@@ -219,10 +219,10 @@ export function HomePage() {
                 alt=""
                 className="story-band__avatar"
                 decoding="async"
-                height={56}
+                height={44}
                 loading="lazy"
                 src="/images/brand/quyen-avatar.webp"
-                width={56}
+                width={44}
               />
               <span className="section-label section-label--light">{t('Góc của Quyên')}</span>
             </span>

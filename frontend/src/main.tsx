@@ -2,6 +2,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 
 import { App } from '@/app/App';
+import { updateInProgress } from '@/features/pwa/updateState';
 import { loadRecipeCatalog } from '@/data/recipeApi';
 import { applyRecipeLanguage } from '@/features/i18n/recipeContent';
 import { LANGUAGE_STORAGE_KEY, readStoredLanguage, translate } from '@/features/i18n/translate';
@@ -49,8 +50,10 @@ const language = readStoredLanguage();
 const t = (text: string) => translate(language, text);
 document.documentElement.lang = language;
 
-let loadingProgress = 0;
+const resumingUpdate = updateInProgress();
+let loadingProgress = resumingUpdate ? 65 : 0;
 function renderCatalogLoader(progress: number) {
+  if (resumingUpdate) progress = 65 + progress * 0.35;
   loadingProgress = Math.max(loadingProgress, Math.min(100, progress));
   root.render(
     <main className="catalog-loading" role="status" aria-label={t('Bếp Việt đang tải')}>
@@ -77,7 +80,7 @@ function renderCatalogLoader(progress: number) {
 const LEGAL_PATH =
   /^\/(privacy|terms|login|register|forgot-password|reset-password|oauth-callback)\/?$/;
 
-if (LEGAL_PATH.test(window.location.pathname)) {
+if (LEGAL_PATH.test(window.location.pathname) && !resumingUpdate) {
   root.render(
     <StrictMode>
       <App />

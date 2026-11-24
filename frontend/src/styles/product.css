@@ -1482,12 +1482,13 @@ html[data-reduce-motion='true'] .hero-dish__steam {
 }
 
 .story-band__avatar {
-  width: 56px;
-  height: 56px;
+  width: 44px;
+  height: 44px;
   flex: none;
   border: 2px solid rgb(255 248 241 / 70%);
   border-radius: 50%;
-  object-fit: cover;
+  object-fit: contain;
+  background: #fff8f1;
 }
 
 .story-band h2 {

@@ -5,6 +5,17 @@ export function beginUpdate(build: string) {
   sessionStorage.setItem(KEY, JSON.stringify({ build, at: Date.now() }));
 }
 
+export function updateInProgress() {
+  try {
+    const raw = sessionStorage.getItem(KEY);
+    if (!raw) return false;
+    const value = JSON.parse(raw) as { at?: number };
+    return typeof value.at === 'number' && Date.now() - value.at < MAX_AGE;
+  } catch {
+    return false;
+  }
+}
+
 export function finishUpdate(currentBuild: string): 'success' | 'failed' | null {
   try {
     const raw = sessionStorage.getItem(KEY);
