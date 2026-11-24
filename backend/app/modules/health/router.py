@@ -18,7 +18,13 @@ class DatabaseUnavailableError(DomainError):
     status_code = status.HTTP_503_SERVICE_UNAVAILABLE
 
 
-@router.get("/livez", response_model=HealthResponse, summary="Check API liveness")
+# HEAD cho dịch vụ giám sát (UptimeRobot gói free chỉ gửi HEAD).
+@router.api_route(
+    "/livez",
+    methods=["GET", "HEAD"],
+    response_model=HealthResponse,
+    summary="Check API liveness",
+)
 def liveness() -> HealthResponse:
     return HealthResponse(data=HealthData(status="ok", service="api"))
 

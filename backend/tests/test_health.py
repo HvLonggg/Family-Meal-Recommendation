@@ -72,3 +72,7 @@ def test_blank_maintenance_values_do_not_break_startup(monkeypatch: pytest.Monke
         assert settings.maintenance_ends_at is None
     finally:
         get_settings.cache_clear()
+
+
+def test_liveness_answers_head_requests_for_uptime_monitors(client: TestClient) -> None:
+    assert client.head("/api/v1/livez").status_code == 200
