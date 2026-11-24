@@ -33,7 +33,9 @@ export function LoginPage() {
   const navigate = useNavigate();
   const location = useLocation();
   const loginState = location.state as { email?: string; from?: string; notice?: string } | null;
-  const [message, setMessage] = useState(() => (loginState?.notice ? t(loginState.notice) : ''));
+  // Thông báo chuyển tiếp (vd. vừa đăng ký xong) là thông tin; lỗi đăng nhập hiển thị kiểu lỗi.
+  const [notice, setNotice] = useState(() => (loginState?.notice ? t(loginState.notice) : ''));
+  const [error, setError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const {
     formState: { errors },
@@ -48,7 +50,8 @@ export function LoginPage() {
   });
 
   const submit = handleSubmit(async (values) => {
-    setMessage('');
+    setNotice('');
+    setError('');
     setIsSubmitting(true);
     try {
       const user = await login({
@@ -67,8 +70,8 @@ export function LoginPage() {
       }
       // Quay lại đúng trang đã mở trước khi bị yêu cầu đăng nhập.
       await navigate(landingPath(user.role, loginState?.from), { replace: true });
-    } catch (error) {
-      setMessage(errorMessage(error, t));
+    } catch (loginError) {
+      setError(errorMessage(loginError, t));
     } finally {
       setIsSubmitting(false);
     }
@@ -83,11 +86,12 @@ export function LoginPage() {
     <>
       <div className="auth-card__heading">
         <span className="auth-kicker">{t('Chào mừng trở lại')}</span>
-        <h2>{t('Đăng nhập Bếp Việt')}</h2>
+        <h1>{t('Đăng nhập Bếp Việt')}</h1>
         <p>{t('Tiếp tục hành trình chuẩn bị những bữa cơm thật nhẹ nhàng.')}</p>
       </div>
 
-      {message ? <AuthAlert tone="info">{message}</AuthAlert> : null}
+      {error ? <AuthAlert tone="danger">{error}</AuthAlert> : null}
+      {notice ? <AuthAlert tone="info">{notice}</AuthAlert> : null}
 
       <form className="auth-form" onSubmit={(event) => void submit(event)} noValidate>
         <AuthField
@@ -118,17 +122,13 @@ export function LoginPage() {
           </label>
           <Link to="/forgot-password">{t('Quên mật khẩu?')}</Link>
         </div>
-        <p className="auth-field__hint">
-          {t(
-            'Giữ phiên đăng nhập và gợi ý email trên thiết bị này. Mật khẩu chỉ được trình duyệt lưu nếu bạn đồng ý với trình quản lý mật khẩu của trình duyệt.',
-          )}
-        </p>
+        <p className="auth-field__hint">{t('Giữ đăng nhập và nhớ email trên thiết bị này.')}</p>
         <Button className="auth-submit" isLoading={isSubmitting} type="submit">
           {t('Đăng nhập')}
         </Button>
       </form>
 
-      <SocialLoginButtons onNotice={setMessage} />
+      <SocialLoginButtons />
 
       <p className="auth-switch">
         {t('Chưa có tài khoản?')} <Link to="/register">{t('Tạo tài khoản miễn phí')}</Link>

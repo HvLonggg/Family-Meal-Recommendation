@@ -1,0 +1,1492 @@
+{
+  "batch": 93,
+  "description": "Năm món cơm nhà gồm rau nhút xào tỏi, vịt xào rau răm, canh cá khoai lá giang, mồng tơi xào thịt băm và gỏi ức gà rau lang.",
+  "recipes": [
+    {
+      "id": "BV792",
+      "slug": "rau-nhut-xao-toi",
+      "name": "Rau nhút xào tỏi",
+      "aliases": [
+        "Rau rút xào tỏi",
+        "Rau nhút xào tỏi ớt"
+      ],
+      "region": [
+        "Nam"
+      ],
+      "province": [],
+      "category": "Món rau",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "bữa ăn gia đình"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Khẩu phần Bếp Việt chuẩn hóa cho bốn người trong bữa cơm gia đình.",
+      "prep_time": 12,
+      "cook_time": 6,
+      "passive_time": 0,
+      "total_time": 18,
+      "description": "Cọng rau nhút non giòn được xào nhanh với tỏi thơm, nêm vừa nhẹ để giữ vị rau thanh mát. Món rau dân dã miền Nam, hợp ăn cùng cơm nóng.",
+      "finished_dish": "Rau nhút xanh, cọng vừa chín vẫn còn độ giòn; tỏi vàng thơm, không cháy và không đọng nhiều nước.",
+      "serving": "Dọn ra đĩa ngay khi còn nóng, dùng cùng cơm trắng và món kho hoặc món rim.",
+      "tips": [
+        "Tuốt bỏ phần phao xốp trắng và cọng già, giữ lại phần non để rau không dai.",
+        "Để rau thật ráo trước khi xào; dùng chảo rộng và lửa lớn để cọng nhanh chín mà ít ra nước.",
+        "Nêm ít trước, nếm lại sau khi rau vừa chín vì rau nhút nhanh mềm."
+      ],
+      "dish_type": [
+        "M?n rau",
+        "M?n chay",
+        "M?n x?o"
+      ],
+      "main_ingredient": [
+        "rau nh?t",
+        "t?i"
+      ],
+      "cooking_method": [
+        "xào"
+      ],
+      "search_terms": [
+        "rau nh?t x?o t?i",
+        "rau nh?t x?o t?i ?t",
+        "m?n rau x?o mi?n Nam"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Đĩa rau nhút xào tỏi xanh giòn, điểm chút ớt đỏ; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 18 phút gồm sơ chế và xào; rau chín nhanh nên điều chỉnh theo độ non và độ rộng của chảo.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Cá kho",
+        "Canh chua"
+      ],
+      "recipe_family": "water_mimosa_garlic_stir_fry",
+      "keywords": [
+        "Rau nhút xào tỏi",
+        "Rau rút xào tỏi",
+        "Rau nhút xào tỏi ớt",
+        "rau nh?t",
+        "t?i",
+        "x?o",
+        "M?n rau",
+        "M?n chay",
+        "M?n x?o",
+        "rau nh?t x?o t?i",
+        "rau nh?t x?o t?i ?t",
+        "m?n rau x?o mi?n Nam"
+      ],
+      "tags": {
+        "region": [
+          "Nam"
+        ],
+        "province": [],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối",
+          "bữa ăn gia đình"
+        ],
+        "dish_type": [
+          "M?n rau",
+          "M?n chay",
+          "M?n x?o"
+        ],
+        "main_ingredient": [
+          "rau nh?t",
+          "t?i"
+        ],
+        "cooking_method": [
+          "xào"
+        ],
+        "difficulty": "Dễ",
+        "prep_time": 12,
+        "cook_time": 6,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Cơm trắng",
+          "Cá kho",
+          "Canh chua"
+        ],
+        "keywords": [
+          "rau nh?t x?o t?i",
+          "rau nh?t x?o t?i ?t",
+          "m?n rau x?o mi?n Nam"
+        ]
+      },
+      "ingredients": [
+        {
+          "name": "Rau nhút",
+          "quantity": 500,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Tuốt bỏ phao trắng và cọng già, cắt đoạn vừa ăn.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 20,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 12,
+          "unit": "ml",
+          "role": "oil",
+          "notes": "Dùng phi tỏi và xào rau.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "H?t n?m chay",
+          "quantity": 8,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "N?m t? t? theo kh?u v?; ch?n s?n ph?m ghi r? th?nh ph?n chay.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Muối",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng lượng nhỏ để nêm.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Ớt đỏ",
+          "quantity": 5,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Tùy chọn, thái lát.",
+          "scaling_rule": "linear"
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Tuốt bỏ phần phao xốp trắng trên cọng, bỏ lá già và rửa rau nhút nhiều lần; cắt đoạn khoảng 5 cm rồi để thật ráo."
+        },
+        {
+          "step": 2,
+          "instruction": "Bóc và băm tỏi; thái ớt nếu dùng."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng dầu, phi tỏi đến khi thơm và hơi vàng."
+        },
+        {
+          "step": 2,
+          "instruction": "Cho rau nhút vào chảo, đảo nhanh trên lửa lớn khoảng 3–5 phút đến khi cọng vừa mềm nhưng còn giòn."
+        },
+        {
+          "step": 3,
+          "instruction": "N?m h?t n?m chay v? mu?i t?ng ?t m?t, th?m ?t n?u d?ng; ??o th?m kho?ng 30 gi?y r?i t?t b?p."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.dienmayxanh.com/vao-bep/cach-lam-rau-nhut-xao-toi-thom-ngon-don-gian-tai-nha-09437",
+          "publisher": "?i?n m?y XANH",
+          "title": "C?ch l?m rau nh?t x?o t?i th?m ngon, ??n gi?n t?i nh?",
+          "use": "??i chi?u ??ng t?n m?n, nguy?n li?u rau nh?t, t?i, d?u, gia v? v? c?ch lo?i ph?n x?p tr?ng r?i x?o nhanh. B?p Vi?t bi?n t?p l?i ri?ng, t?ng kh?u ph?n cho b?n ng??i, gi?m d?u v? ch?n h?t n?m chay ?? gi? phi?n b?n kh?ng d?ng th?t ho?c h?i s?n.",
+          "accessed_at": "2026-11-11",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Giảm một nửa nguyên liệu chính.",
+            "instruction": "Nêm từ ít hơn một nửa lượng gia vị rồi điều chỉnh."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.25,
+            "example": "Tăng nguyên liệu chính lên 1,5 lần.",
+            "instruction": "Thêm gia vị từ từ và nếm lại."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2,
+            "seasoning_start_factor": 1.6,
+            "example": "Nhân đôi nguyên liệu chính.",
+            "instruction": "Điều chỉnh thời gian theo dụng cụ và nêm dần."
+          }
+        ],
+        "rules": [
+          "Nguyên liệu chính tăng theo khẩu phần; gia vị mặn, ngọt, cay chỉ dùng hệ số khởi điểm rồi nếm lại.",
+          "Không nhân đôi thời gian nấu khi tăng khẩu phần; chia mẻ nếu dụng cụ không đủ rộng.",
+          "Điều chỉnh nước và dầu theo nồi, chảo và lượng thực phẩm."
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/rau-nhut-xao-toi-960.webp",
+          "page_url": "https://www.dienmayxanh.com/vao-bep/cach-lam-rau-nhut-xao-toi-thom-ngon-don-gian-tai-nha-09437",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "?nh ???c t?o ri?ng cho B?p Vi?t; ngu?n ?i?n m?y XANH ch? d?ng ?? ??i chi?u v? bi?n t?p c?ng th?c.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa rau nhút xào tỏi xanh giòn, điểm chút ớt đỏ; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-11-11",
+          "photo_variant_note": "?nh B?p Vi?t t?o m?i, n?n trong su?t; ?nh g?c 1536?1024 ???c ??t v?a canvas 3840?2160 kh?ng c?t m?n. B?n 3840 px l? k?ch th??c xu?t t? ?nh g?c, kh?ng ph?i render native 4K. C?ng th?c ch?a n?u th?."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt biên tập theo nguồn tham khảo và chuẩn hóa khẩu phần cho bốn người; chưa nấu thử.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-11-11",
+        "needs": [
+          "Nấu thử để xác nhận định lượng, thời gian và độ chín theo nguyên liệu, bếp và dụng cụ thực tế."
+        ]
+      },
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "id": "BV793",
+      "slug": "vit-xao-rau-ram",
+      "name": "Vịt xào rau răm",
+      "aliases": [
+        "Thịt vịt xào rau răm",
+        "Vịt xào lá rau răm"
+      ],
+      "region": [
+        "Toàn quốc"
+      ],
+      "province": [],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "bữa ăn gia đình"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Khẩu phần đã được Bếp Việt chuẩn hóa cho bốn người trong một bữa cơm gia đình.",
+      "prep_time": 20,
+      "cook_time": 25,
+      "passive_time": 20,
+      "total_time": 65,
+      "description": "Thịt vịt cắt miếng nhỏ được xào chín cùng rau răm thơm nồng, hành tỏi và chút ớt. Món đậm vị, hợp ăn với cơm nóng và dưa leo.",
+      "finished_dish": "Miếng vịt chín tới, bề mặt vàng nâu và thấm gia vị; rau răm vẫn xanh thơm, nước xào rút vừa.",
+      "serving": "Dọn nóng, rắc thêm rau răm và hành lá; ăn kèm cơm trắng hoặc bánh mì.",
+      "tips": [
+        "Thấm vịt thật khô sau khi rửa để khi xào thịt dễ săn và không bắn dầu.",
+        "Chia vịt thành miếng nhỏ đều nhau, xào theo mẻ nếu chảo chật để thịt không bị hấp hơi.",
+        "Nấu đến khi phần thịt dày nhất chín hoàn toàn; có thể dùng nhiệt kế thực phẩm để kiểm tra khoảng 74°C."
+      ],
+      "dish_type": [
+        "Món mặn",
+        "Món gia cầm",
+        "Món xào"
+      ],
+      "main_ingredient": [
+        "thịt vịt",
+        "rau răm"
+      ],
+      "cooking_method": [
+        "xào"
+      ],
+      "search_terms": [
+        "vịt xào rau răm",
+        "thịt vịt xào rau răm",
+        "món vịt dân dã",
+        "món gia cầm xào"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Đĩa vịt xào rau răm với hành lá và ớt; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 65 phút tính cả 20 phút ướp; thời gian nấu phụ thuộc kích thước miếng và nhiệt chảo.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Dưa leo",
+        "Canh rau thanh vị"
+      ],
+      "recipe_family": "duck_stir_fried_vietnamese_coriander",
+      "keywords": [
+        "Vịt xào rau răm",
+        "Thịt vịt xào rau răm",
+        "Vịt xào lá rau răm",
+        "thịt vịt",
+        "rau răm",
+        "xào",
+        "Món mặn",
+        "Món gia cầm",
+        "Món xào",
+        "vịt xào rau răm",
+        "thịt vịt xào rau răm",
+        "món vịt dân dã",
+        "món gia cầm xào"
+      ],
+      "tags": {
+        "region": [
+          "Toàn quốc"
+        ],
+        "province": [],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối",
+          "bữa ăn gia đình"
+        ],
+        "dish_type": [
+          "Món mặn",
+          "Món gia cầm",
+          "Món xào"
+        ],
+        "main_ingredient": [
+          "thịt vịt",
+          "rau răm"
+        ],
+        "cooking_method": [
+          "xào"
+        ],
+        "difficulty": "Dễ",
+        "prep_time": 20,
+        "cook_time": 25,
+        "servings": 4,
+        "spicy_level": 1,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Cơm trắng",
+          "Dưa leo",
+          "Canh rau thanh vị"
+        ],
+        "keywords": [
+          "vịt xào rau răm",
+          "thịt vịt xào rau răm",
+          "món vịt dân dã",
+          "món gia cầm xào"
+        ]
+      },
+      "ingredients": [
+        {
+          "name": "Thịt vịt",
+          "quantity": 800,
+          "unit": "g",
+          "role": "meat",
+          "notes": "Dùng phần đùi hoặc ức có da, lọc xương và cắt miếng nhỏ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Rau răm",
+          "quantity": 50,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Nhặt lá, rửa sạch; để riêng một phần để rắc cuối.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 20,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Thái khúc ngắn.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 25,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Ớt sừng",
+          "quantity": 10,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Thái lát, điều chỉnh theo khẩu vị.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng ướp và nêm.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "oil",
+          "notes": "Dùng xào.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Muối",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng làm sạch và nêm nhẹ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Đường",
+          "quantity": 4,
+          "unit": "g",
+          "role": "sweetener",
+          "notes": "Cân vị mặn.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Rắc cuối.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nước",
+          "quantity": 50,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Thêm khi om nhanh để thịt chín đều.",
+          "scaling_rule": "linear"
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Xát vịt với muối, rửa sạch và thấm thật khô; lọc xương nếu cần rồi cắt miếng đều nhau."
+        },
+        {
+          "step": 2,
+          "instruction": "Ướp vịt với hành tím, tỏi, nước mắm và tiêu trong 20 phút. Nhặt rau răm, thái hành lá và ớt."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đun nóng dầu, cho vịt vào áp chảo theo mẻ đến khi săn và xém nhẹ các cạnh."
+        },
+        {
+          "step": 2,
+          "instruction": "Cho phần vịt đã săn vào chảo, thêm nước, đậy nắp và nấu lửa vừa khoảng 12–15 phút đến khi thịt chín; mở nắp đảo đều cho nước rút và kiểm tra độ chín."
+        },
+        {
+          "step": 3,
+          "instruction": "Thêm đường, nếm lại rồi cho rau răm, hành lá và ớt vào đảo nhanh 30–45 giây. Tắt bếp khi rau vừa dậy mùi."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://hayan.vn/vao-bep/la-mieng-voi-vit-xao-rau-ram-mon-an-don-gian-dam-chat-que-p15590.html",
+          "publisher": "HAY ĂN",
+          "title": "Lạ miệng với vịt xào rau răm món ăn đơn giản đậm chất quê",
+          "use": "Đối chiếu tổ hợp thịt vịt, rau răm, hành tỏi, thời gian ướp và phương pháp xào; Bếp Việt chuẩn hóa khẩu phần bốn người, điều chỉnh gia vị và diễn đạt lại.",
+          "accessed_at": "2026-11-11",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Giảm một nửa nguyên liệu chính.",
+            "instruction": "Nêm từ ít hơn một nửa lượng gia vị rồi điều chỉnh."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.25,
+            "example": "Tăng nguyên liệu chính lên 1,5 lần.",
+            "instruction": "Thêm gia vị từ từ và nếm lại."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2,
+            "seasoning_start_factor": 1.6,
+            "example": "Nhân đôi nguyên liệu chính.",
+            "instruction": "Điều chỉnh thời gian theo dụng cụ và nêm dần."
+          }
+        ],
+        "rules": [
+          "Nguyên liệu chính tăng theo khẩu phần; gia vị mặn, ngọt, cay chỉ dùng hệ số khởi điểm rồi nếm lại.",
+          "Không nhân đôi thời gian nấu khi tăng khẩu phần; chia mẻ nếu dụng cụ không đủ rộng.",
+          "Điều chỉnh nước và dầu theo nồi, chảo và lượng thực phẩm."
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/vit-xao-rau-ram-960.webp",
+          "page_url": "https://hayan.vn/vao-bep/la-mieng-voi-vit-xao-rau-ram-mon-an-don-gian-dam-chat-que-p15590.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo riêng cho Bếp Việt; nguồn liên kết chỉ dùng để đối chiếu và biên tập công thức.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa vịt xào rau răm với hành lá và ớt; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-11-11",
+          "photo_variant_note": "Ảnh Bếp Việt tạo mới, nền trong suốt; ảnh gốc 1536×1024 được đặt vừa canvas 3840×2160 không cắt món. Bản 3840 px là kích thước xuất từ ảnh gốc, không phải render native 4K. Công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt biên tập theo nguồn tham khảo và chuẩn hóa khẩu phần cho bốn người; chưa nấu thử.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-11-11",
+        "needs": [
+          "Nấu thử để xác nhận định lượng, thời gian và độ chín theo nguyên liệu, bếp và dụng cụ thực tế."
+        ]
+      },
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "id": "BV794",
+      "slug": "canh-ca-khoai-la-giang",
+      "name": "Canh cá khoai lá giang",
+      "aliases": [
+        "Canh chua cá khoai lá giang",
+        "Cá khoai nấu lá giang"
+      ],
+      "region": [
+        "Nam"
+      ],
+      "province": [],
+      "category": "Món canh",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "bữa ăn gia đình"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Khẩu phần đã được Bếp Việt chuẩn hóa cho bốn người trong một bữa cơm gia đình.",
+      "prep_time": 15,
+      "cook_time": 15,
+      "passive_time": 0,
+      "total_time": 30,
+      "description": "Cá khoai mềm ngọt nấu cùng lá giang chua thanh, cà chua và dứa. Bát canh nhẹ vị, dùng nóng trong bữa cơm ngày oi nóng.",
+      "finished_dish": "Nước canh trong vàng nhạt có vị chua dịu; cá vừa chín, giữ miếng và thơm mùi lá giang cùng rau om.",
+      "serving": "Múc cá nhẹ tay vào tô, chan nước canh nóng và thêm rau om, ngò gai; dùng với cơm trắng.",
+      "tips": [
+        "Cá khoai mềm và dễ nát; cho vào khi nước đã sôi, không khuấy trong lúc cá chín.",
+        "Vò nhẹ lá giang trước khi cho vào nồi để vị chua ra nhanh, sau đó nếm rồi mới thêm.",
+        "Chọn cá tươi, làm sạch và giữ lạnh đến lúc nấu."
+      ],
+      "dish_type": [
+        "Món canh",
+        "Món cá",
+        "Món chua"
+      ],
+      "main_ingredient": [
+        "cá khoai",
+        "lá giang"
+      ],
+      "cooking_method": [
+        "nấu canh",
+        "nấu chua"
+      ],
+      "search_terms": [
+        "canh cá khoai lá giang",
+        "canh chua cá khoai",
+        "cá khoai nấu lá giang",
+        "món cá miền Nam"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Tô canh cá khoai lá giang với cà chua, dứa và rau om; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 30 phút tính cả sơ chế và nấu; cá mềm nên chín nhanh.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Cà pháo",
+        "Rau luộc"
+      ],
+      "recipe_family": "whiting_fish_sour_leaf_soup",
+      "keywords": [
+        "Canh cá khoai lá giang",
+        "Canh chua cá khoai lá giang",
+        "Cá khoai nấu lá giang",
+        "cá khoai",
+        "lá giang",
+        "nấu canh",
+        "nấu chua",
+        "Món canh",
+        "Món cá",
+        "Món chua",
+        "canh cá khoai lá giang",
+        "canh chua cá khoai",
+        "cá khoai nấu lá giang",
+        "món cá miền Nam"
+      ],
+      "tags": {
+        "region": [
+          "Nam"
+        ],
+        "province": [],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối",
+          "bữa ăn gia đình"
+        ],
+        "dish_type": [
+          "Món canh",
+          "Món cá",
+          "Món chua"
+        ],
+        "main_ingredient": [
+          "cá khoai",
+          "lá giang"
+        ],
+        "cooking_method": [
+          "nấu canh",
+          "nấu chua"
+        ],
+        "difficulty": "Dễ",
+        "prep_time": 15,
+        "cook_time": 15,
+        "servings": 4,
+        "spicy_level": 1,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Cơm trắng",
+          "Cà pháo",
+          "Rau luộc"
+        ],
+        "keywords": [
+          "canh cá khoai lá giang",
+          "canh chua cá khoai",
+          "cá khoai nấu lá giang",
+          "món cá miền Nam"
+        ]
+      },
+      "ingredients": [
+        {
+          "name": "Cá khoai",
+          "quantity": 500,
+          "unit": "g",
+          "role": "seafood",
+          "notes": "Làm sạch, cắt khúc ngắn và để ráo.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Lá giang",
+          "quantity": 60,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Nhặt lá, rửa sạch và vò nhẹ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Dứa",
+          "quantity": 150,
+          "unit": "g",
+          "role": "fruit",
+          "notes": "Gọt vỏ, bỏ mắt và cắt miếng.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Cà chua",
+          "quantity": 150,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Bổ múi cau.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 10,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Rau om",
+          "quantity": 10,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Ngò gai",
+          "quantity": 5,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nước",
+          "quantity": 1000,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng nấu canh.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "oil",
+          "notes": "Dùng phi hành tỏi.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm canh.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Muối",
+          "quantity": 4,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm ban đầu.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Đường",
+          "quantity": 6,
+          "unit": "g",
+          "role": "sweetener",
+          "notes": "Cân vị chua của lá giang.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Ớt hiểm",
+          "quantity": 5,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Tùy chọn, đập dập.",
+          "scaling_rule": "linear"
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm sạch cá khoai, cắt khúc vừa và để ráo; rửa lá giang, vò nhẹ."
+        },
+        {
+          "step": 2,
+          "instruction": "Cắt dứa, cà chua; băm hành tỏi và thái rau om, ngò gai."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Phi thơm hành tỏi với dầu, cho cà chua vào đảo đến khi vừa mềm rồi thêm nước và dứa."
+        },
+        {
+          "step": 2,
+          "instruction": "Khi nước sôi, cho lá giang và gia vị vào, nấu vài phút rồi nếm lại độ chua mặn ngọt."
+        },
+        {
+          "step": 3,
+          "instruction": "Thả cá khoai vào nồi, nấu lửa vừa đến khi thịt cá vừa chín và nước sôi lại; không đảo mạnh. Tắt bếp, thêm rau om, ngò gai và ớt nếu dùng."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://monngonmoingay.com/canh-ca-khoai-la-giang/",
+          "publisher": "Món Ngon Mỗi Ngày",
+          "title": "Canh cá khoai lá giang",
+          "use": "Đối chiếu cá khoai, lá giang, dứa, cà chua, rau thơm và thứ tự nấu; Bếp Việt chuẩn hóa lượng cá cho bốn người, giản lược gia vị thương hiệu và biên tập lại các bước.",
+          "accessed_at": "2026-11-11",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Giảm một nửa nguyên liệu chính.",
+            "instruction": "Nêm từ ít hơn một nửa lượng gia vị rồi điều chỉnh."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.25,
+            "example": "Tăng nguyên liệu chính lên 1,5 lần.",
+            "instruction": "Thêm gia vị từ từ và nếm lại."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2,
+            "seasoning_start_factor": 1.6,
+            "example": "Nhân đôi nguyên liệu chính.",
+            "instruction": "Điều chỉnh thời gian theo dụng cụ và nêm dần."
+          }
+        ],
+        "rules": [
+          "Nguyên liệu chính tăng theo khẩu phần; gia vị mặn, ngọt, cay chỉ dùng hệ số khởi điểm rồi nếm lại.",
+          "Không nhân đôi thời gian nấu khi tăng khẩu phần; chia mẻ nếu dụng cụ không đủ rộng.",
+          "Điều chỉnh nước và dầu theo nồi, chảo và lượng thực phẩm."
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/canh-ca-khoai-la-giang-960.webp",
+          "page_url": "https://monngonmoingay.com/canh-ca-khoai-la-giang/",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo riêng cho Bếp Việt; nguồn liên kết chỉ dùng để đối chiếu và biên tập công thức.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Tô canh cá khoai lá giang với cà chua, dứa và rau om; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-11-11",
+          "photo_variant_note": "Ảnh Bếp Việt tạo mới, nền trong suốt; ảnh gốc 1536×1024 được đặt vừa canvas 3840×2160 không cắt món. Bản 3840 px là kích thước xuất từ ảnh gốc, không phải render native 4K. Công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt biên tập theo nguồn tham khảo và chuẩn hóa khẩu phần cho bốn người; chưa nấu thử.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-11-11",
+        "needs": [
+          "Nấu thử để xác nhận định lượng, thời gian và độ chín theo nguyên liệu, bếp và dụng cụ thực tế."
+        ]
+      },
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "id": "BV795",
+      "slug": "mong-toi-xao-thit-bam",
+      "name": "Mồng tơi xào thịt băm",
+      "aliases": [
+        "Rau mồng tơi xào thịt băm",
+        "Mồng tơi xào thịt heo băm"
+      ],
+      "region": [
+        "Toàn quốc"
+      ],
+      "province": [],
+      "category": "Món rau",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "bữa ăn gia đình"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Khẩu phần Bếp Việt chuẩn hóa cho bốn người trong bữa cơm gia đình.",
+      "prep_time": 12,
+      "cook_time": 12,
+      "passive_time": 10,
+      "total_time": 34,
+      "description": "Rau mồng tơi xanh mềm quyện với thịt heo băm và tỏi phi. Món xào nhanh, đủ vị mặn ngọt nhẹ, hợp dùng kèm cơm trong bữa ăn gia đình.",
+      "finished_dish": "Thịt băm chín tơi, thấm vị; rau mồng tơi xanh mềm, vừa chín và còn chút nước xào sánh nhẹ.",
+      "serving": "Dọn nóng ra đĩa sâu lòng, chan phần nước xào vừa đủ và ăn với cơm trắng.",
+      "tips": [
+        "Nhặt bỏ lá úa, rửa rau kỹ rồi để ráo để chảo không bị nhiều nước.",
+        "Xào thịt đến khi chín hoàn toàn trước khi cho rau vào; rau mồng tơi chín nhanh nên không xào quá lâu.",
+        "Nêm lượng muối vừa phải rồi nếm lại vì nước rau tự tiết ra khi xào."
+      ],
+      "dish_type": [
+        "Món rau",
+        "Món mặn",
+        "Món xào"
+      ],
+      "main_ingredient": [
+        "rau mồng tơi",
+        "thịt heo băm"
+      ],
+      "cooking_method": [
+        "xào"
+      ],
+      "search_terms": [
+        "mồng tơi xào thịt băm",
+        "rau mồng tơi xào thịt heo",
+        "mồng tơi xào thịt heo băm",
+        "món rau xào thịt"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Đĩa mồng tơi xào thịt heo băm và tỏi; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 34 phút gồm sơ chế, ướp ngắn và xào; rau chín nhanh, tránh nấu lâu.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Canh bí xanh",
+        "Cà pháo"
+      ],
+      "recipe_family": "malabar_spinach_minced_pork_stir_fry",
+      "keywords": [
+        "Mồng tơi xào thịt băm",
+        "Rau mồng tơi xào thịt băm",
+        "Mồng tơi xào thịt heo băm",
+        "rau mồng tơi",
+        "thịt heo băm",
+        "xào",
+        "Món rau",
+        "Món mặn",
+        "Món xào",
+        "mồng tơi xào thịt băm",
+        "rau mồng tơi xào thịt heo",
+        "mồng tơi xào thịt heo băm",
+        "món rau xào thịt"
+      ],
+      "tags": {
+        "region": [
+          "Toàn quốc"
+        ],
+        "province": [],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối",
+          "bữa ăn gia đình"
+        ],
+        "dish_type": [
+          "Món rau",
+          "Món mặn",
+          "Món xào"
+        ],
+        "main_ingredient": [
+          "rau mồng tơi",
+          "thịt heo băm"
+        ],
+        "cooking_method": [
+          "xào"
+        ],
+        "difficulty": "Dễ",
+        "prep_time": 12,
+        "cook_time": 12,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Cơm trắng",
+          "Canh bí xanh",
+          "Cà pháo"
+        ],
+        "keywords": [
+          "mồng tơi xào thịt băm",
+          "rau mồng tơi xào thịt heo",
+          "mồng tơi xào thịt heo băm",
+          "món rau xào thịt"
+        ]
+      },
+      "ingredients": [
+        {
+          "name": "Rau mồng tơi",
+          "quantity": 400,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Nhặt lá non và cọng mềm, rửa sạch, cắt khúc.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Thịt heo băm",
+          "quantity": 250,
+          "unit": "g",
+          "role": "meat",
+          "notes": "Chọn phần nạc vai có chút mỡ để món không khô.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, đập dập hoặc băm.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 12,
+          "unit": "ml",
+          "role": "oil",
+          "notes": "Dùng phi tỏi và xào thịt.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 12,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Ướp và nêm thịt.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Muối",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm rau nếu cần.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Ướp thịt.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Đường",
+          "quantity": 2,
+          "unit": "g",
+          "role": "sweetener",
+          "notes": "Tùy chọn, cân vị mặn.",
+          "scaling_rule": "linear"
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Nhặt bỏ lá úa và cọng già của rau mồng tơi, rửa sạch, để ráo rồi cắt khúc vừa ăn."
+        },
+        {
+          "step": 2,
+          "instruction": "Ướp thịt băm với một nửa nước mắm, tiêu và đường khoảng 10 phút; bóc vỏ, đập dập tỏi."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng dầu, phi thơm tỏi rồi cho thịt băm vào đảo tơi đến khi chín hoàn toàn."
+        },
+        {
+          "step": 2,
+          "instruction": "Cho rau mồng tơi vào, đảo nhanh đến khi lá mềm và tiết ít nước."
+        },
+        {
+          "step": 3,
+          "instruction": "Nêm phần nước mắm còn lại và muối nếu cần. Đảo đều thêm 1–2 phút rồi tắt bếp khi rau vừa chín."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://hayan.vn/vao-bep/2-cach-lam-mong-toi-xao-thit-bam-va-xao-trung-non-thanh-mat-don-gian-p7800.html",
+          "publisher": "HAY ĂN",
+          "title": "2 cách làm mồng tơi xào thịt băm và xào trứng non thanh mát, đơn giản",
+          "use": "Đối chiếu nguyên liệu rau mồng tơi, thịt heo băm, tỏi và cách xào; Bếp Việt chuẩn hóa khẩu phần bốn người, giảm dầu và biên tập lại định lượng, thời gian.",
+          "accessed_at": "2026-11-11",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Giảm một nửa nguyên liệu chính.",
+            "instruction": "Nêm từ ít hơn một nửa lượng gia vị rồi điều chỉnh."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.25,
+            "example": "Tăng nguyên liệu chính lên 1,5 lần.",
+            "instruction": "Thêm gia vị từ từ và nếm lại."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2,
+            "seasoning_start_factor": 1.6,
+            "example": "Nhân đôi nguyên liệu chính.",
+            "instruction": "Điều chỉnh thời gian theo dụng cụ và nêm dần."
+          }
+        ],
+        "rules": [
+          "Nguyên liệu chính tăng theo khẩu phần; gia vị mặn, ngọt, cay chỉ dùng hệ số khởi điểm rồi nếm lại.",
+          "Không nhân đôi thời gian nấu khi tăng khẩu phần; chia mẻ nếu dụng cụ không đủ rộng.",
+          "Điều chỉnh nước và dầu theo nồi, chảo và lượng thực phẩm."
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/mong-toi-xao-thit-bam-960.webp",
+          "page_url": "https://hayan.vn/vao-bep/2-cach-lam-mong-toi-xao-thit-bam-va-xao-trung-non-thanh-mat-don-gian-p7800.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo riêng cho Bếp Việt; nguồn liên kết chỉ dùng để đối chiếu và biên tập công thức.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa mồng tơi xào thịt heo băm và tỏi; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-11-11",
+          "photo_variant_note": "Ảnh Bếp Việt tạo mới, nền trong suốt; ảnh gốc 1536×1024 được đặt vừa canvas 3840×2160 không cắt món. Bản 3840 px là kích thước xuất từ ảnh gốc, không phải render native 4K. Công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt biên tập theo nguồn tham khảo và chuẩn hóa khẩu phần cho bốn người; chưa nấu thử.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-11-11",
+        "needs": [
+          "Nấu thử để xác nhận định lượng, thời gian và độ chín theo nguyên liệu, bếp và dụng cụ thực tế."
+        ]
+      },
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "id": "BV796",
+      "slug": "goi-uc-ga-rau-lang",
+      "name": "Gỏi ức gà rau lang",
+      "aliases": [
+        "Gỏi gà rau lang",
+        "Nộm ức gà rau lang"
+      ],
+      "region": [
+        "Toàn quốc"
+      ],
+      "province": [],
+      "category": "Món ăn kèm",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "bữa ăn gia đình"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Khẩu phần đã được Bếp Việt chuẩn hóa cho bốn người trong một bữa cơm gia đình.",
+      "prep_time": 20,
+      "cook_time": 25,
+      "passive_time": 5,
+      "total_time": 50,
+      "description": "Ức gà xé trộn với rau lang luộc, hành tây mỏng, rau răm và nước mắm chanh. Món gỏi thanh, có vị chua mặn ngọt dịu và thêm rau xanh cho mâm cơm.",
+      "finished_dish": "Thịt gà xé tơi, rau lang xanh mềm, hành tây còn độ giòn; nước trộn áo nhẹ, không đọng thành vũng.",
+      "serving": "Trộn gần sát giờ ăn, bày ra đĩa rộng và dùng cùng cháo trắng hoặc như món gỏi trong bữa cơm.",
+      "tips": [
+        "Luộc ức gà ở lửa nhỏ đến khi chín hoàn toàn rồi để nguội bớt trước khi xé để thịt đỡ khô.",
+        "Luộc rau lang vừa mềm, để ráo thật kỹ; nếu rau còn nhiều nước, gỏi sẽ nhạt và nhanh ra nước.",
+        "Pha nước trộn ít trước, nếm rồi thêm dần để cân bằng vị chua, mặn và ngọt."
+      ],
+      "dish_type": [
+        "Món ăn kèm",
+        "Món gỏi",
+        "Món gia cầm"
+      ],
+      "main_ingredient": [
+        "ức gà",
+        "rau lang"
+      ],
+      "cooking_method": [
+        "luộc",
+        "trộn gỏi"
+      ],
+      "search_terms": [
+        "gỏi ức gà rau lang",
+        "gỏi gà rau lang",
+        "nộm ức gà rau lang",
+        "món gà trộn rau"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Đĩa gỏi ức gà trộn rau lang, hành tây, rau răm và ớt; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 50 phút gồm sơ chế, luộc và thời gian nghỉ ngắn; thời gian gà chín tùy độ dày.",
+      "suggested_pairings": [
+        "Cháo trắng",
+        "Cơm nóng",
+        "Canh thanh vị"
+      ],
+      "recipe_family": "chicken_breast_sweet_potato_leaf_salad",
+      "keywords": [
+        "Gỏi ức gà rau lang",
+        "Gỏi gà rau lang",
+        "Nộm ức gà rau lang",
+        "ức gà",
+        "rau lang",
+        "luộc",
+        "trộn gỏi",
+        "Món ăn kèm",
+        "Món gỏi",
+        "Món gia cầm",
+        "gỏi ức gà rau lang",
+        "gỏi gà rau lang",
+        "nộm ức gà rau lang",
+        "món gà trộn rau"
+      ],
+      "tags": {
+        "region": [
+          "Toàn quốc"
+        ],
+        "province": [],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối",
+          "bữa ăn gia đình"
+        ],
+        "dish_type": [
+          "Món ăn kèm",
+          "Món gỏi",
+          "Món gia cầm"
+        ],
+        "main_ingredient": [
+          "ức gà",
+          "rau lang"
+        ],
+        "cooking_method": [
+          "luộc",
+          "trộn gỏi"
+        ],
+        "difficulty": "Dễ",
+        "prep_time": 20,
+        "cook_time": 25,
+        "servings": 4,
+        "spicy_level": 1,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Cháo trắng",
+          "Cơm nóng",
+          "Canh thanh vị"
+        ],
+        "keywords": [
+          "gỏi ức gà rau lang",
+          "gỏi gà rau lang",
+          "nộm ức gà rau lang",
+          "món gà trộn rau"
+        ]
+      },
+      "ingredients": [
+        {
+          "name": "Ức gà",
+          "quantity": 450,
+          "unit": "g",
+          "role": "meat",
+          "notes": "Rửa sạch, để nguyên miếng để luộc.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Rau lang non",
+          "quantity": 300,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Nhặt bỏ cọng già, rửa sạch.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Hành tây",
+          "quantity": 80,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Bóc vỏ, thái lát mỏng.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Rau răm",
+          "quantity": 20,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Nhặt lá, rửa sạch và thái vừa.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 10,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Ớt",
+          "quantity": 5,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Tùy chọn, thái lát hoặc băm.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng pha nước trộn.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nước cốt chanh",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "acid",
+          "notes": "Vắt và bỏ hạt.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Đường",
+          "quantity": 18,
+          "unit": "g",
+          "role": "sweetener",
+          "notes": "Khuấy tan trong nước trộn.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Muối",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Chia phần để luộc và nêm.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nước",
+          "quantity": 1200,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng luộc gà và rau, chia hai lượt.",
+          "scaling_rule": "linear"
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Xát ức gà với chút muối, rửa sạch. Nhặt rau lang, thái hành tây và rau răm; ngâm hành tây vào nước lạnh khoảng 5 phút rồi để ráo."
+        },
+        {
+          "step": 2,
+          "instruction": "Pha nước trộn từ nước mắm, nước cốt chanh, đường, 30 ml nước lọc, tỏi và ớt; khuấy đến khi đường tan."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Luộc ức gà trong nước sôi nhẹ đến khi chín hoàn toàn; vớt ra để nguội bớt rồi xé sợi."
+        },
+        {
+          "step": 2,
+          "instruction": "Đun nồi nước mới với một ít muối, luộc rau lang khoảng 3–4 phút đến khi vừa mềm. Vớt ra để thật ráo, cắt đoạn ngắn."
+        },
+        {
+          "step": 3,
+          "instruction": "Trộn gà, rau lang, hành tây và rau răm với phần nước trộn vừa đủ. Để thấm khoảng 5 phút, nếm lại rồi bày ra đĩa."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://hayan.vn/vao-bep/cach-lam-goi-ga-rau-lang-ngon-mieng-dam-da-de-lam-doi-vi-bua-an-p6489.html",
+          "publisher": "HAY ĂN",
+          "title": "2 Cách làm gỏi gà rau lang ngon miệng đậm đà dễ làm đổi vị bữa ăn",
+          "use": "Đối chiếu nhóm nguyên liệu ức gà, rau lang, hành tây, rau răm và nước trộn chanh; Bếp Việt cân lượng cho bốn người, chỉnh quy trình và biên tập lại.",
+          "accessed_at": "2026-11-11",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Giảm một nửa nguyên liệu chính.",
+            "instruction": "Nêm từ ít hơn một nửa lượng gia vị rồi điều chỉnh."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.25,
+            "example": "Tăng nguyên liệu chính lên 1,5 lần.",
+            "instruction": "Thêm gia vị từ từ và nếm lại."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2,
+            "seasoning_start_factor": 1.6,
+            "example": "Nhân đôi nguyên liệu chính.",
+            "instruction": "Điều chỉnh thời gian theo dụng cụ và nêm dần."
+          }
+        ],
+        "rules": [
+          "Nguyên liệu chính tăng theo khẩu phần; gia vị mặn, ngọt, cay chỉ dùng hệ số khởi điểm rồi nếm lại.",
+          "Không nhân đôi thời gian nấu khi tăng khẩu phần; chia mẻ nếu dụng cụ không đủ rộng.",
+          "Điều chỉnh nước và dầu theo nồi, chảo và lượng thực phẩm."
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/goi-uc-ga-rau-lang-960.webp",
+          "page_url": "https://hayan.vn/vao-bep/cach-lam-goi-ga-rau-lang-ngon-mieng-dam-da-de-lam-doi-vi-bua-an-p6489.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh được tạo riêng cho Bếp Việt; nguồn liên kết chỉ dùng để đối chiếu và biên tập công thức.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa gỏi ức gà trộn rau lang, hành tây, rau răm và ớt; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-11-11",
+          "photo_variant_note": "Ảnh Bếp Việt tạo mới, nền trong suốt; ảnh gốc 1536×1024 được đặt vừa canvas 3840×2160 không cắt món. Bản 3840 px là kích thước xuất từ ảnh gốc, không phải render native 4K. Công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt biên tập theo nguồn tham khảo và chuẩn hóa khẩu phần cho bốn người; chưa nấu thử.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-11-11",
+        "needs": [
+          "Nấu thử để xác nhận định lượng, thời gian và độ chín theo nguyên liệu, bếp và dụng cụ thực tế."
+        ]
+      },
+      "width": 3840,
+      "height": 2160
+    }
+  ]
+}

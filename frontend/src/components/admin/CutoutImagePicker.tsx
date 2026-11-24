@@ -102,7 +102,10 @@ export function CutoutImagePicker({
   };
 
   return (
-    <div className={`cutout-picker${preview ? ' has-image' : ''}${error ? ' has-error' : ''}`}>
+    <div
+      data-allow-image-save
+      className={`cutout-picker${preview ? ' has-image' : ''}${error ? ' has-error' : ''}`}
+    >
       <div className="cutout-picker__stage">
         {preview ? (
           <img alt={t('Xem trước ảnh món')} src={preview} />

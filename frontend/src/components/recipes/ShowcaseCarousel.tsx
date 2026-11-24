@@ -46,6 +46,11 @@ export function ShowcaseCarousel<Item>({
   const [isInView, setIsInView] = useState(
     () => typeof window === 'undefined' || typeof IntersectionObserver === 'undefined',
   );
+  const [pausedForFocus, setPausedForFocus] = useState(false);
+  // Dừng khi người dùng rê chuột hoặc đang chạm để thẻ đang đọc không trôi mất.
+  const [pausedForPointer, setPausedForPointer] = useState(false);
+  // Chỉ thông báo vị trí cho trình đọc màn hình khi người dùng tự chuyển thẻ.
+  const [announce, setAnnounce] = useState(false);
   const [manualDirection, setManualDirection] = useState<Direction | null>(null);
   const [reducedMotion, setReducedMotion] = useState(false);
   const [trackOffset, setTrackOffset] = useState(0);
@@ -66,10 +71,7 @@ export function ShowcaseCarousel<Item>({
 
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries.some((entry) => entry.isIntersecting)) {
-          setIsInView(true);
-          observer.disconnect();
-        }
+        setIsInView(entries.some((entry) => entry.isIntersecting));
       },
       { rootMargin: '48px 0px', threshold: 0.01 },
     );
@@ -117,7 +119,12 @@ export function ShowcaseCarousel<Item>({
   useEffect(() => {
     if (
       items.length < 2 ||
-      (manualDirection === null && (items.length <= visibleCount || !isInView || reducedMotion))
+      (manualDirection === null &&
+        (items.length <= visibleCount ||
+          !isInView ||
+          reducedMotion ||
+          pausedForFocus ||
+          pausedForPointer))
     ) {
       return;
     }
@@ -156,6 +163,7 @@ export function ShowcaseCarousel<Item>({
           const passedCards = Math.floor(offsetRef.current / stepRef.current);
           offsetRef.current -= passedCards * stepRef.current;
           flushSync(() => {
+            setAnnounce(false);
             setTrackOffset(offsetRef.current);
             setCurrentIndex((index) => modulo(index + passedCards, items.length));
           });
@@ -171,7 +179,15 @@ export function ShowcaseCarousel<Item>({
 
     animationFrame = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(animationFrame);
-  }, [isInView, items.length, manualDirection, reducedMotion, visibleCount]);
+  }, [
+    isInView,
+    items.length,
+    manualDirection,
+    pausedForFocus,
+    pausedForPointer,
+    reducedMotion,
+    visibleCount,
+  ]);
 
   const canMove = items.length > visibleCount;
   // Giữ hai thẻ đệm để tải ảnh trước khi chúng vào khung nhìn.
@@ -186,6 +202,7 @@ export function ShowcaseCarousel<Item>({
 
   const move = (direction: Direction) => {
     if (!canMove || manualDirection) return;
+    setAnnounce(true);
     if (reducedMotion) {
       setCurrentIndex((index) => modulo(index + (direction === 'next' ? 1 : -1), items.length));
       offsetRef.current = 0;
@@ -206,20 +223,41 @@ export function ShowcaseCarousel<Item>({
       aria-roledescription={t('băng chuyền món ăn')}
       className={`showcase-carousel${bleed ? ' showcase-carousel--bleed' : ''}`}
       ref={carouselRef}
+      onPointerEnter={(event) => {
+        if (event.pointerType === 'mouse') setPausedForPointer(true);
+      }}
+      onPointerLeave={(event) => {
+        if (event.pointerType === 'mouse') setPausedForPointer(false);
+      }}
       onPointerDown={(event) => {
-        swipeStartXRef.current = event.pointerType === 'touch' ? event.clientX : null;
+        setPausedForFocus(false);
+        const isTouch = event.pointerType === 'touch';
+        if (isTouch) setPausedForPointer(true);
+        swipeStartXRef.current = isTouch ? event.clientX : null;
       }}
       onPointerUp={(event) => {
+        if (event.pointerType === 'touch') setPausedForPointer(false);
         const startX = swipeStartXRef.current;
         swipeStartXRef.current = null;
         if (startX === null || Math.abs(event.clientX - startX) < 55) return;
         move(event.clientX < startX ? 'next' : 'previous');
       }}
-      onPointerCancel={() => {
+      onPointerCancel={(event) => {
+        if (event.pointerType === 'touch') setPausedForPointer(false);
         swipeStartXRef.current = null;
       }}
+      onFocusCapture={(event) => {
+        if (event.target instanceof HTMLElement && event.target.matches(':focus-visible')) {
+          setPausedForFocus(true);
+        }
+      }}
+      onBlurCapture={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) {
+          setPausedForFocus(false);
+        }
+      }}
     >
-      <div aria-live="polite" className="showcase-carousel__status">
+      <div aria-live={announce ? 'polite' : 'off'} className="showcase-carousel__status">
         {label} {shownStart}–{shownEnd} / {items.length}
       </div>
       <div className="showcase-carousel__stage">

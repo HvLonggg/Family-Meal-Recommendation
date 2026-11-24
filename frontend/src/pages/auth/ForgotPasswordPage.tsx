@@ -108,7 +108,7 @@ export function ForgotPasswordPage() {
     <>
       <div className="auth-card__heading">
         <span className="auth-kicker">{t('Khôi phục tài khoản')}</span>
-        <h2>{t('Quên mật khẩu?')}</h2>
+        <h1>{t('Quên mật khẩu?')}</h1>
         <p>
           {t(
             step === 'email'
@@ -140,11 +140,8 @@ export function ForgotPasswordPage() {
           <AuthField
             autoComplete="email"
             error={errors.email?.message}
-            hint={t(
-              'Nhập đúng email đã đăng ký và dùng để đăng nhập. Mã khôi phục chỉ được gửi đến email khớp với tài khoản.',
-            )}
             id="forgot-email"
-            label={t('Email đăng ký / đăng nhập')}
+            label={t('Email')}
             placeholder="ban@example.com"
             type="email"
             {...register('email', {

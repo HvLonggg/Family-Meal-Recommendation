@@ -649,7 +649,8 @@
           "unit": "g",
           "role": "main",
           "notes": "Làm sạch, giữ xương để nấu nước dùng.",
-          "sequence": 1
+          "sequence": 1,
+          "scaling_rule": "linear"
         },
         {
           "name": "Mề ngan",
@@ -657,7 +658,8 @@
           "unit": "g",
           "role": "protein",
           "notes": "Làm sạch kỹ; luộc chín cùng nước dùng.",
-          "sequence": 2
+          "sequence": 2,
+          "scaling_rule": "linear"
         },
         {
           "name": "Gan ngan",
@@ -665,7 +667,8 @@
           "unit": "g",
           "role": "protein",
           "notes": "Làm sạch; luộc đến chín cùng nước dùng.",
-          "sequence": 3
+          "sequence": 3,
+          "scaling_rule": "linear"
         },
         {
           "name": "Bún tươi",
@@ -673,7 +676,8 @@
           "unit": "g",
           "role": "grain",
           "notes": "Trụng nhanh nếu cần, để ráo.",
-          "sequence": 4
+          "sequence": 4,
+          "scaling_rule": "linear"
         },
         {
           "name": "Măng chua",
@@ -681,7 +685,8 @@
           "unit": "g",
           "role": "vegetable",
           "notes": "Nếm thử; chần và xả nếu quá chua hoặc mặn.",
-          "sequence": 5
+          "sequence": 5,
+          "scaling_rule": "linear"
         },
         {
           "name": "Lạc rang",
@@ -689,7 +694,8 @@
           "unit": "g",
           "role": "garnish",
           "notes": "Giã dập vừa.",
-          "sequence": 6
+          "sequence": 6,
+          "scaling_rule": "linear"
         },
         {
           "name": "Rau húng và rau răm",
@@ -697,7 +703,8 @@
           "unit": "g",
           "role": "vegetable",
           "notes": "Rửa kỹ, để ráo, thái vừa.",
-          "sequence": 7
+          "sequence": 7,
+          "scaling_rule": "linear"
         },
         {
           "name": "Hành phi",
@@ -705,7 +712,8 @@
           "unit": "g",
           "role": "garnish",
           "notes": "Dùng rắc lên bún.",
-          "sequence": 8
+          "sequence": 8,
+          "scaling_rule": "linear"
         },
         {
           "name": "Nước mắm",
@@ -713,7 +721,8 @@
           "unit": "ml",
           "role": "seasoning",
           "notes": "Dùng 15 ml ướp ngan, 15 ml nêm nước dùng và 25 ml pha sốt trộn.",
-          "sequence": 9
+          "sequence": 9,
+          "scaling_rule": "seasoning"
         },
         {
           "name": "Nước cốt chanh",
@@ -721,7 +730,8 @@
           "unit": "ml",
           "role": "seasoning",
           "notes": "Pha sốt chua ngọt.",
-          "sequence": 10
+          "sequence": 10,
+          "scaling_rule": "seasoning"
         },
         {
           "name": "Đường",
@@ -729,7 +739,8 @@
           "unit": "g",
           "role": "seasoning",
           "notes": "Pha sốt; điều chỉnh theo độ chua của măng.",
-          "sequence": 11
+          "sequence": 11,
+          "scaling_rule": "seasoning"
         },
         {
           "name": "Nước lọc",
@@ -737,7 +748,8 @@
           "unit": "ml",
           "role": "liquid",
           "notes": "Dùng 120 ml pha sốt trộn và 2,5 lít nấu nước dùng.",
-          "sequence": 12
+          "sequence": 12,
+          "scaling_rule": "linear"
         },
         {
           "name": "Tỏi",
@@ -745,7 +757,8 @@
           "unit": "g",
           "role": "aromatic",
           "notes": "Băm nhỏ để pha sốt.",
-          "sequence": 13
+          "sequence": 13,
+          "scaling_rule": "linear"
         },
         {
           "name": "Ớt tươi",
@@ -753,7 +766,8 @@
           "unit": "g",
           "role": "seasoning",
           "notes": "Băm nhỏ, tùy khẩu vị.",
-          "sequence": 14
+          "sequence": 14,
+          "scaling_rule": "seasoning"
         },
         {
           "name": "Gừng",
@@ -761,7 +775,8 @@
           "unit": "g",
           "role": "aromatic",
           "notes": "Đập dập, cho vào nồi luộc ngan.",
-          "sequence": 15
+          "sequence": 15,
+          "scaling_rule": "linear"
         },
         {
           "name": "Hành tím",
@@ -769,7 +784,8 @@
           "unit": "g",
           "role": "aromatic",
           "notes": "Nướng hoặc áp chảo cho thơm, dùng nấu nước dùng.",
-          "sequence": 16
+          "sequence": 16,
+          "scaling_rule": "linear"
         },
         {
           "name": "Muối",
@@ -777,7 +793,8 @@
           "unit": "g",
           "role": "seasoning",
           "notes": "Chia để nêm nước dùng.",
-          "sequence": 17
+          "sequence": 17,
+          "scaling_rule": "seasoning"
         },
         {
           "name": "Hành lá",
@@ -785,7 +802,8 @@
           "unit": "g",
           "role": "garnish",
           "notes": "Thái nhỏ để rắc lên bún và nước dùng.",
-          "sequence": 18
+          "sequence": 18,
+          "scaling_rule": "linear"
         }
       ],
       "preparation_steps": [

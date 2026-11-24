@@ -111,7 +111,7 @@ describe('showcase carousel', () => {
     expect(screen.getByText('Món ăn 3–5 / 7')).toBeInTheDocument();
   });
 
-  it('starts when it enters view and does not stop when it leaves or is hovered', () => {
+  it('runs only while visible, pauses offscreen and resumes on re-entry', () => {
     const intersections: Array<(entries: Array<{ isIntersecting: boolean }>) => void> = [];
     class MockIntersectionObserver {
       constructor(callback: (entries: Array<{ isIntersecting: boolean }>) => void) {
@@ -127,15 +127,84 @@ describe('showcase carousel', () => {
     });
 
     renderCarousel();
+    const track = document.querySelector<HTMLElement>('.showcase-carousel__track');
+    const initialTransform = track?.style.transform;
     advanceFrames(12_000);
     expect(screen.getByText('Món ăn 1–3 / 7')).toBeInTheDocument();
+    expect(track?.style.transform).toBe(initialTransform);
 
     act(() => intersections[0]?.([{ isIntersecting: true }]));
-    act(() => intersections[0]?.([{ isIntersecting: false }]));
     const carousel = screen.getByRole('region', { name: 'Món ăn' });
     fireEvent.mouseEnter(carousel);
     advanceFrames(11_000);
     expect(screen.getByText('Món ăn 2–4 / 7')).toBeInTheDocument();
+    const visibleTransform = track?.style.transform;
+
+    act(() => intersections[0]?.([{ isIntersecting: false }]));
+    advanceFrames(20_000);
+    expect(screen.getByText('Món ăn 2–4 / 7')).toBeInTheDocument();
+    expect(track?.style.transform).toBe(visibleTransform);
+
+    act(() => intersections[0]?.([{ isIntersecting: true }]));
+    advanceFrames(11_000);
+    expect(screen.getByText('Món ăn 3–5 / 7')).toBeInTheDocument();
+    expect(track?.style.transform).not.toBe(visibleTransform);
+  });
+
+  it('pauses automatic motion during keyboard focus and resumes after focus leaves', () => {
+    renderCarousel();
+    const track = document.querySelector<HTMLElement>('.showcase-carousel__track');
+    const next = screen.getByRole('button', { name: 'Món ăn tiếp' });
+    vi.spyOn(next, 'matches').mockReturnValue(true);
+    advanceFrames(2_000);
+    const transformBeforeFocus = track?.style.transform;
+    fireEvent.focus(next);
+    advanceFrames(15_000);
+    expect(track?.style.transform).toBe(transformBeforeFocus);
+    expect(screen.getByText('Món ăn 1–3 / 7')).toBeInTheDocument();
+    fireEvent.blur(next, { relatedTarget: document.body });
+    advanceFrames(11_000);
+    expect(screen.getByText('Món ăn 2–4 / 7')).toBeInTheDocument();
+    expect(track?.style.transform).not.toBe(transformBeforeFocus);
+  });
+
+  it('pauses while the mouse rests on the rail and resumes when it leaves', () => {
+    const carousel = renderCarousel().getByRole('region', { name: 'Món ăn' });
+    const track = document.querySelector<HTMLElement>('.showcase-carousel__track');
+    advanceFrames(1_000);
+    fireEvent.pointerEnter(carousel, { pointerType: 'mouse' });
+    const transformOnHover = track?.style.transform;
+    advanceFrames(15_000);
+    expect(track?.style.transform).toBe(transformOnHover);
+    expect(screen.getByText('Món ăn 1–3 / 7')).toBeInTheDocument();
+
+    fireEvent.pointerLeave(carousel, { pointerType: 'mouse' });
+    advanceFrames(11_000);
+    expect(screen.getByText('Món ăn 2–4 / 7')).toBeInTheDocument();
+  });
+
+  it('holds still while a finger touches the rail', () => {
+    const carousel = renderCarousel().getByRole('region', { name: 'Món ăn' });
+    const track = document.querySelector<HTMLElement>('.showcase-carousel__track');
+    fireEvent.pointerDown(carousel, { pointerType: 'touch', clientX: 120 });
+    const transformOnTouch = track?.style.transform;
+    advanceFrames(15_000);
+    expect(track?.style.transform).toBe(transformOnTouch);
+    fireEvent.pointerUp(carousel, { pointerType: 'touch', clientX: 120 });
+    advanceFrames(11_000);
+    expect(screen.getByText('Món ăn 2–4 / 7')).toBeInTheDocument();
+  });
+
+  it('announces the position only after the user presses an arrow', () => {
+    renderCarousel();
+    const status = screen.getByText('Món ăn 1–3 / 7');
+    expect(status).toHaveAttribute('aria-live', 'off');
+    advanceFrames(11_000);
+    expect(screen.getByText('Món ăn 2–4 / 7')).toHaveAttribute('aria-live', 'off');
+
+    fireEvent.click(screen.getByRole('button', { name: 'Món ăn tiếp' }));
+    advanceFrames(950);
+    expect(screen.getByText('Món ăn 3–5 / 7')).toHaveAttribute('aria-live', 'polite');
   });
 
   it('supports a touch swipe while allowing automatic motion to continue', () => {

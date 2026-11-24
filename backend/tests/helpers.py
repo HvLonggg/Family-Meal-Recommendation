@@ -2,6 +2,7 @@ from fastapi.testclient import TestClient
 from sqlalchemy import select
 from sqlalchemy.orm import Session, sessionmaker
 
+from app.core.legal import CURRENT_TERMS_VERSION
 from app.modules.auth.models import User
 
 PASSWORD = "Test-Only-No-Login-2026!"
@@ -15,7 +16,12 @@ PNG_DATA_URL = (
 def register_and_login(client: TestClient, email: str, full_name: str = "Nguyễn Ngọc Lan") -> dict:
     created = client.post(
         "/api/v1/auth/register",
-        json={"full_name": full_name, "email": email, "password": PASSWORD},
+        json={
+            "full_name": full_name,
+            "email": email,
+            "password": PASSWORD,
+            "accepted_terms_version": CURRENT_TERMS_VERSION,
+        },
     )
     assert created.status_code == 201, created.text
     return login(client, email)

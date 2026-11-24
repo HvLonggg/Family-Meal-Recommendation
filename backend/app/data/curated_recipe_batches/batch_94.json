@@ -1,0 +1,1288 @@
+{
+  "batch": 94,
+  "description": "Bốn món bữa cơm gia đình gồm canh và món chay, cá kho nghệ miền Trung cùng món gà nấu pate giao thoa dành cho dịp đổi vị cuối tuần; công thức biên tập từ nguồn tiếng Việt, khẩu phần bốn người.",
+  "recipes": [
+    {
+      "id": "BV797",
+      "slug": "canh-rau-ma-nau-nam",
+      "name": "Canh rau má nấu nấm",
+      "aliases": [
+        "Canh rau má nấm",
+        "Canh rau má nấu nấm rơm",
+        "Canh nấm rau má"
+      ],
+      "region": [
+        "Ba miền"
+      ],
+      "province": [],
+      "category": "Món chay",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "bữa cơm gia đình"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Khẩu phần cho bốn người trong một bữa cơm gia đình.",
+      "prep_time": 15,
+      "cook_time": 20,
+      "passive_time": 0,
+      "total_time": 35,
+      "description": "Rau má xanh dịu và nấm rơm mềm ngọt tạo nên bát canh chay thanh nhẹ, dễ ghép cùng món kho hoặc món xào trong bữa cơm nhà.",
+      "finished_dish": "Nước canh trong, nấm vừa chín và rau má còn xanh mềm; vị ngọt tự nhiên được giữ nhẹ, không lấn át mùi rau.",
+      "serving": "Múc canh ra tô ngay sau khi rau vừa mềm. Dùng nóng cùng cơm và món chay kho hoặc xào.",
+      "tips": [
+        "Rửa rau má nhiều lần, để ráo rồi chỉ cho vào khi nước đã sôi.",
+        "Nấu rau trong thời gian ngắn để lá giữ màu và không bị nhũn.",
+        "Dùng hạt nêm ghi rõ dùng cho món chay nếu muốn giữ món thuần chay."
+      ],
+      "dish_type": [
+        "Món chay",
+        "Món canh",
+        "Món rau"
+      ],
+      "main_ingredient": [
+        "rau má",
+        "nấm rơm"
+      ],
+      "cooking_method": [
+        "xào",
+        "nấu canh"
+      ],
+      "search_terms": [
+        "canh rau má nấu nấm",
+        "canh rau má nấm rơm",
+        "canh chay rau má",
+        "món chay dễ nấu"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Tô canh rau má nấu nấm rơm trong bát sứ xanh trắng; ảnh minh họa Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 35 phút, gồm sơ chế và nấu; thời gian thực tế tùy lượng rau và dụng cụ.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Đậu hũ cuốn lá lốt chay"
+      ],
+      "recipe_family": "pennywort_straw_mushroom_soup",
+      "keywords": [
+        "Canh rau má nấu nấm",
+        "Canh rau má nấm rơm",
+        "canh rau má chay",
+        "rau má",
+        "nấm rơm",
+        "món chay",
+        "canh chay",
+        "món ăn gia đình"
+      ],
+      "tags": {
+        "region": [
+          "Toàn quốc"
+        ],
+        "province": [],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối",
+          "bữa cơm gia đình"
+        ],
+        "dish_type": [
+          "Món chay",
+          "Món canh",
+          "Món rau"
+        ],
+        "main_ingredient": [
+          "rau má",
+          "nấm rơm"
+        ],
+        "cooking_method": [
+          "xào",
+          "nấu canh"
+        ],
+        "difficulty": "Dễ",
+        "prep_time": 15,
+        "cook_time": 20,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Cơm trắng",
+          "Đậu hũ cuốn lá lốt chay"
+        ],
+        "keywords": [
+          "canh rau má nấu nấm",
+          "canh rau má nấm rơm",
+          "canh chay rau má"
+        ]
+      },
+      "ingredients": [
+        {
+          "name": "Rau má",
+          "quantity": 300,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Nhặt bỏ lá úa, rửa kỹ và để ráo.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nấm rơm",
+          "quantity": 150,
+          "unit": "g",
+          "role": "mushroom",
+          "notes": "Cắt bỏ chân dơ, rửa nhanh và bổ đôi nếu nấm lớn.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "oil",
+          "notes": "Dùng phi hành tím.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Muối",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm ban đầu; điều chỉnh sau khi nấm chín.",
+          "scaling_rule": "taste_adjusted"
+        },
+        {
+          "name": "Đường",
+          "quantity": 3,
+          "unit": "g",
+          "role": "sweetener",
+          "notes": "Chỉ dùng một lượng nhỏ để cân vị.",
+          "scaling_rule": "taste_adjusted"
+        },
+        {
+          "name": "Hạt nêm chay",
+          "quantity": 4,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Chọn loại phù hợp với chế độ ăn chay.",
+          "scaling_rule": "taste_adjusted"
+        },
+        {
+          "name": "Nước",
+          "quantity": 1200,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Có thể thay bằng nước dùng rau củ không nêm mặn.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 10,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, thái nhỏ để rắc cuối.",
+          "scaling_rule": "linear"
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Nhặt rau má, bỏ lá úa và rễ già. Rửa nhiều lần dưới vòi nước rồi để ráo; cắt ngắn nếu cọng dài."
+        },
+        {
+          "step": 2,
+          "instruction": "Làm sạch nấm rơm, bổ đôi nấm lớn. Bóc vỏ và băm hành tím; rửa sạch hành lá rồi thái nhỏ."
+        },
+        {
+          "step": 3,
+          "instruction": "Đong nước, muối, đường và hạt nêm chay; nêm từng phần để dễ điều chỉnh."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đun nóng dầu trong nồi, phi hành tím đến khi thơm nhưng chưa sém. Cho nấm rơm vào đảo khoảng 2 phút."
+        },
+        {
+          "step": 2,
+          "instruction": "Thêm nước, đun sôi rồi hạ lửa vừa. Nấu nấm khoảng 5 phút, sau đó nêm muối, đường và hạt nêm chay."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho rau má vào nồi, khuấy nhẹ và nấu thêm 1–2 phút đến khi lá vừa mềm. Nếm lại, rắc hành lá rồi tắt bếp."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://hayan.vn/vao-bep/4-cach-nau-canh-rau-ma-ngon-mieng-thanh-mat-giai-nhiet-ngay-he-p3844.html",
+          "publisher": "HAY ĂN",
+          "title": "4 cách nấu canh rau má ngon miệng thanh mát giải nhiệt ngày hè",
+          "use": "Đối chiếu cách nấu canh rau má nấm, nguyên liệu nấm rơm và thời gian chế biến; Bếp Việt biên tập lại cho bốn người.",
+          "accessed_at": "2026-11-11",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://trangiafoods.vn/blogs/news/rau-ma-nau-gi-ngon/",
+          "publisher": "Trangia Foods",
+          "title": "Rau Má Nấu Gì Ngon? Tổng Hợp 15+ Món Ngon Từ Rau Má Dễ Làm, Hấp Dẫn, Mát Gan Giải Khát",
+          "use": "Đối chiếu tổ hợp rau má nấu nấm như một món canh chay; không sao chép nội dung nguồn.",
+          "accessed_at": "2026-11-11",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://voh.com.vn/dinh-duong/rau-ma-nau-gi-ngon-406697.html",
+          "publisher": "VOH",
+          "title": "Rau má nấu gì ngon? Học ngay 12 món ăn đơn giản dễ làm",
+          "use": "Đối chiếu đúng tên món, lượng rau má và nấm rơm, cùng định hướng dùng hạt nêm chay; Bếp Việt biên tập lại cách nấu và khẩu phần.",
+          "accessed_at": "2026-11-11",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Giảm một nửa nguyên liệu chính.",
+            "instruction": "Nêm từ ít hơn một nửa lượng gia vị rồi nếm lại."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.25,
+            "example": "Tăng nguyên liệu chính lên 1,5 lần.",
+            "instruction": "Tăng gia vị từ từ, nhất là muối và hạt nêm."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2,
+            "seasoning_start_factor": 1.6,
+            "example": "Nhân đôi nguyên liệu chính.",
+            "instruction": "Điều chỉnh lượng nước theo độ rộng của nồi và nêm dần."
+          }
+        ],
+        "rules": [
+          "Nguyên liệu chính tăng theo khẩu phần; gia vị mặn và ngọt chỉ dùng hệ số khởi điểm rồi nếm lại.",
+          "Không nấu rau má quá lâu để tránh lá nhũn và sẫm màu.",
+          "Điều chỉnh lượng nước theo nồi và độ đậm mong muốn."
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/canh-rau-ma-nau-nam-960.webp",
+          "page_url": "https://hayan.vn/vao-bep/4-cach-nau-canh-rau-ma-ngon-mieng-thanh-mat-giai-nhiet-ngay-he-p3844.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo riêng cho Bếp Việt; nguồn chỉ dùng để biên tập công thức, không sử dụng ảnh nguồn.",
+          "width": 1536,
+          "height": 864,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Tô canh rau má nấu nấm rơm trong bát sứ xanh trắng; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-11-11",
+          "photo_variant_note": "Ảnh ImageGen gốc 1536×1024 nền trong suốt; đã đặt trọn tô lên canvas WebP 1536×864 và tạo các cỡ giao diện, không cắt món. Ảnh gốc không phải 4K native."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt biên tập công thức theo nguồn tham khảo và chuẩn hóa cho bốn người; chưa có kết quả nấu thử.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-11-11",
+        "needs": [
+          "Nấu thử để xác nhận độ chín của nấm, thời gian cho rau má và lượng nước theo nồi thực tế."
+        ]
+      },
+      "width": 1536,
+      "height": 864
+    },
+    {
+      "id": "BV798",
+      "slug": "dau-hu-cuon-la-lot-chay",
+      "name": "Đậu hũ cuốn lá lốt chay",
+      "aliases": [
+        "Đậu phụ cuốn lá lốt chay",
+        "Chả lá lốt đậu hũ chay",
+        "Đậu hũ lá lốt chay"
+      ],
+      "region": [
+        "Ba miền"
+      ],
+      "province": [],
+      "category": "Món chay",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "bữa cơm gia đình"
+      ],
+      "difficulty": "Vừa",
+      "servings": 4,
+      "serving_basis": "Khẩu phần cho bốn người, khoảng 24–28 cuốn nhỏ.",
+      "prep_time": 25,
+      "cook_time": 20,
+      "passive_time": 5,
+      "total_time": 50,
+      "description": "Nhân đậu hũ, tàu hũ ky và nấm mèo được cuốn trong lá lốt rồi áp chảo thơm. Món chay có lớp lá đậm mùi, phần nhân mềm dai và dễ ăn cùng cơm.",
+      "finished_dish": "Cuốn lá lốt xanh sẫm, mặt ngoài xém nhẹ; nhân bên trong kết dính, mềm dai với sả thơm và nấm mèo giòn nhẹ.",
+      "serving": "Dùng nóng với cơm hoặc bún, kèm nước chấm chay chua ngọt hay tương ớt tùy khẩu vị.",
+      "tips": [
+        "Vắt ráo đậu hũ và tàu hũ ky sau khi trụng để nhân không nhão.",
+        "Cuốn mặt lá bóng vào trong để cuốn giữ dáng khi nướng hoặc áp chảo.",
+        "Chỉ áp chảo đến khi lá chín thơm; làm quá lâu sẽ khiến lá khô và dễ rách."
+      ],
+      "dish_type": [
+        "Món chay",
+        "Món cuốn",
+        "Món áp chảo"
+      ],
+      "main_ingredient": [
+        "đậu hũ",
+        "tàu hũ ky",
+        "lá lốt"
+      ],
+      "cooking_method": [
+        "cuốn",
+        "áp chảo"
+      ],
+      "search_terms": [
+        "đậu hũ cuốn lá lốt chay",
+        "đậu phụ cuốn lá lốt",
+        "chả lá lốt chay",
+        "món chay từ đậu hũ"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Đĩa đậu hũ cuốn lá lốt chay áp chảo, vài cuốn cắt lộ nhân đậu và nấm mèo; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 50 phút, gồm làm mềm nấm mèo, trộn nhân, cuốn và áp chảo; thời gian thực tế tùy số lượng cuốn.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Canh rau má nấu nấm"
+      ],
+      "recipe_family": "vegetarian_tofu_betel_leaf_rolls",
+      "keywords": [
+        "Đậu hũ cuốn lá lốt chay",
+        "Đậu phụ cuốn lá lốt chay",
+        "chả lá lốt chay",
+        "đậu hũ",
+        "tàu hũ ky",
+        "lá lốt",
+        "món chay"
+      ],
+      "tags": {
+        "region": [
+          "Toàn quốc"
+        ],
+        "province": [],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối",
+          "bữa cơm gia đình"
+        ],
+        "dish_type": [
+          "Món chay",
+          "Món cuốn",
+          "Món áp chảo"
+        ],
+        "main_ingredient": [
+          "đậu hũ",
+          "tàu hũ ky",
+          "lá lốt"
+        ],
+        "cooking_method": [
+          "cuốn",
+          "áp chảo"
+        ],
+        "difficulty": "Vừa",
+        "prep_time": 25,
+        "cook_time": 20,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Cơm trắng",
+          "Canh rau má nấu nấm"
+        ],
+        "keywords": [
+          "đậu hũ cuốn lá lốt chay",
+          "đậu phụ cuốn lá lốt",
+          "chả lá lốt chay"
+        ]
+      },
+      "ingredients": [
+        {
+          "name": "Đậu hũ trắng",
+          "quantity": 200,
+          "unit": "g",
+          "role": "tofu",
+          "notes": "Trụng sơ rồi để ráo, nghiền thô.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Tàu hũ ky tươi",
+          "quantity": 100,
+          "unit": "g",
+          "role": "plant_protein",
+          "notes": "Trụng sơ và vắt ráo trước khi băm nhỏ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nấm mèo khô",
+          "quantity": 10,
+          "unit": "g",
+          "role": "mushroom",
+          "notes": "Ngâm mềm, rửa sạch và băm nhỏ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Lá lốt",
+          "quantity": 40,
+          "unit": "lá",
+          "role": "wrapping",
+          "notes": "Chọn lá nguyên, rửa sạch và để thật ráo.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Sả",
+          "quantity": 40,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm thật nhỏ để trộn nhân.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Dầu hào chay",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "condiment",
+          "notes": "Kiểm tra nhãn ghi dùng cho món chay.",
+          "scaling_rule": "taste_adjusted"
+        },
+        {
+          "name": "Hạt nêm chay",
+          "quantity": 4,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm nhẹ vì dầu hào chay đã có vị mặn.",
+          "scaling_rule": "taste_adjusted"
+        },
+        {
+          "name": "Đường",
+          "quantity": 4,
+          "unit": "g",
+          "role": "sweetener",
+          "notes": "Dùng để cân vị nhân.",
+          "scaling_rule": "taste_adjusted"
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "oil",
+          "notes": "Dùng thoa mặt chảo hoặc vỉ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nước chấm chay",
+          "quantity": 80,
+          "unit": "ml",
+          "role": "dipping",
+          "notes": "Dọn riêng, điều chỉnh theo khẩu vị.",
+          "scaling_rule": "taste_adjusted"
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Ngâm nấm mèo trong nước ấm khoảng 10 phút, rửa sạch, bỏ phần chân cứng và băm nhỏ."
+        },
+        {
+          "step": 2,
+          "instruction": "Trụng nhanh đậu hũ và tàu hũ ky qua nước sôi, để nguội rồi vắt nhẹ cho ráo. Nghiền đậu thô, băm tàu hũ ky và sả."
+        },
+        {
+          "step": 3,
+          "instruction": "Rửa lá lốt, để khô hoàn toàn. Trộn đậu hũ, tàu hũ ky, nấm mèo, sả, dầu hào chay, đường và hạt nêm chay."
+        },
+        {
+          "step": 4,
+          "instruction": "Đặt mặt lá bóng úp xuống, cho một lượng nhân vừa phải gần cuống rồi gấp mép và cuốn gọn. Có thể dùng tăm giữ cuốn nếu lá nhỏ."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng chảo chống dính ở lửa vừa thấp, thoa một lớp dầu thật mỏng."
+        },
+        {
+          "step": 2,
+          "instruction": "Xếp cuốn lá lốt xuống chảo, đặt mép cuốn áp xuống trước. Trở nhẹ các mặt đến khi lá chín thơm và xém nhẹ, khoảng 5–7 phút tùy kích cỡ."
+        },
+        {
+          "step": 3,
+          "instruction": "Gắp cuốn ra đĩa, rút tăm nếu đã dùng. Dọn nóng với nước chấm chay và cơm hoặc bún."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://hayan.vn/vao-bep/cach-lam-dau-hu-cuon-la-lot-mon-chay-doi-vi-cho-ca-nha-p16999.html",
+          "publisher": "HAY ĂN",
+          "title": "Cách làm đậu hũ cuốn lá lốt món chay đổi vị cho cả nhà",
+          "use": "Đối chiếu cách trộn nhân đậu hũ, tàu hũ ky, nấm mèo, sả và cuốn lá lốt; Bếp Việt biên tập lượng dùng cho bốn người.",
+          "accessed_at": "2026-11-11",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Giảm một nửa nguyên liệu nhân và lá.",
+            "instruction": "Nêm nhân trước ít hơn một nửa lượng gia vị rồi thử lại."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.25,
+            "example": "Tăng nguyên liệu chính lên 1,5 lần.",
+            "instruction": "Nêm nhân từ từ và cuốn nhiều mẻ nếu mặt chảo nhỏ."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2,
+            "seasoning_start_factor": 1.6,
+            "example": "Nhân đôi phần nhân và lá.",
+            "instruction": "Nướng hoặc áp chảo theo mẻ để cuốn chín đều."
+          }
+        ],
+        "rules": [
+          "Nguyên liệu nhân tăng theo khẩu phần; gia vị chay cần nêm thử trước khi tăng thêm.",
+          "Không cuốn quá nhiều nhân để lá không bung.",
+          "Áp chảo theo mẻ, không tăng nhiệt quá cao vì lá dễ cháy trước khi nhân nóng đều."
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/dau-hu-cuon-la-lot-chay-960.webp",
+          "page_url": "https://hayan.vn/vao-bep/cach-lam-dau-hu-cuon-la-lot-mon-chay-doi-vi-cho-ca-nha-p16999.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo riêng cho Bếp Việt; nguồn chỉ dùng để biên tập công thức, không lấy ảnh nguồn.",
+          "width": 1536,
+          "height": 864,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa đậu hũ cuốn lá lốt chay áp chảo, vài cuốn cắt lộ nhân; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-11-11",
+          "photo_variant_note": "Ảnh ImageGen gốc 1536×1024 nền trong suốt; đã đặt trọn đĩa lên canvas WebP 1536×864 và tạo các cỡ giao diện, không cắt món. Ảnh gốc không phải 4K native."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt biên tập món chay cuốn lá lốt từ nguồn tham khảo, chuẩn hóa bốn người và chưa nấu thử.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-11-11",
+        "needs": [
+          "Nấu thử để xác nhận độ kết dính của nhân, lượng lá và thời gian áp chảo theo loại chảo."
+        ]
+      },
+      "width": 1536,
+      "height": 864
+    },
+    {
+      "id": "BV799",
+      "slug": "ga-nau-pate",
+      "name": "Gà nấu pate",
+      "aliases": [
+        "Gà nấu pa tê",
+        "Gà hầm pate",
+        "Gà nấu pate ăn bánh mì"
+      ],
+      "region": [
+        "Toàn quốc"
+      ],
+      "province": [],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa tối",
+        "bữa cuối tuần",
+        "bữa cơm gia đình"
+      ],
+      "difficulty": "Vừa",
+      "servings": 4,
+      "serving_basis": "Khẩu phần cho bốn người; dùng như món chính trong bữa cơm hoặc ăn cùng bánh mì.",
+      "prep_time": 25,
+      "cook_time": 45,
+      "passive_time": 15,
+      "total_time": 85,
+      "description": "Gà được nấu mềm trong sốt pate béo thơm cùng khoai tây và cà rốt. Đây là món đổi vị cuối tuần theo lối nấu giao thoa Việt–Âu, không phải món truyền thống hay đặc sản vùng miền.",
+      "finished_dish": "Thịt gà chín mềm, khoai tây và cà rốt vừa bở; nước sốt cam nâu sánh nhẹ, thơm pate nhưng không quá mặn.",
+      "serving": "Múc nóng ra tô, thêm ngò rí. Dùng với bánh mì, cơm trắng hoặc bún; nếm lại độ mặn sau khi pate tan vào nước sốt.",
+      "tips": [
+        "Chiên sơ khoai và áp chảo gà giúp miếng giữ dáng khi nấu sốt.",
+        "Pate thường đã mặn, nên nêm nhẹ trước rồi điều chỉnh sau khi món gần hoàn tất.",
+        "Nấu đến khi gà chín hoàn toàn và rau củ mềm vừa; tránh để khoai nát vào sốt."
+      ],
+      "dish_type": [
+        "Món mặn",
+        "Món gà",
+        "Món hầm"
+      ],
+      "main_ingredient": [
+        "thịt gà",
+        "pate",
+        "khoai tây",
+        "cà rốt"
+      ],
+      "cooking_method": [
+        "áp chảo",
+        "nấu sốt",
+        "hầm"
+      ],
+      "search_terms": [
+        "gà nấu pate",
+        "gà nấu pa tê",
+        "gà hầm pate",
+        "món gà đổi vị cuối tuần"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Tô gà nấu pate với khoai tây và cà rốt trong sốt cam nâu; ảnh minh họa Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 85 phút, gồm sơ chế, ướp 15 phút và nấu; thời gian thực tế tùy phần gà và kích cỡ rau củ.",
+      "suggested_pairings": [
+        "Bánh mì",
+        "Cơm trắng",
+        "Rau luộc"
+      ],
+      "recipe_family": "chicken_pate_stew",
+      "keywords": [
+        "Gà nấu pate",
+        "Gà nấu pa tê",
+        "gà hầm pate",
+        "thịt gà",
+        "pate",
+        "món đổi vị cuối tuần"
+      ],
+      "tags": {
+        "region": [
+          "Toàn quốc"
+        ],
+        "province": [],
+        "meal_type": [
+          "bữa tối",
+          "bữa cuối tuần",
+          "bữa cơm gia đình"
+        ],
+        "dish_type": [
+          "Món mặn",
+          "Món gà",
+          "Món hầm"
+        ],
+        "main_ingredient": [
+          "thịt gà",
+          "pate",
+          "khoai tây",
+          "cà rốt"
+        ],
+        "cooking_method": [
+          "áp chảo",
+          "nấu sốt",
+          "hầm"
+        ],
+        "difficulty": "Vừa",
+        "prep_time": 25,
+        "cook_time": 45,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Bánh mì",
+          "Cơm trắng",
+          "Rau luộc"
+        ],
+        "keywords": [
+          "gà nấu pate",
+          "gà nấu pa tê",
+          "món gà đổi vị cuối tuần"
+        ]
+      },
+      "ingredients": [
+        {
+          "name": "Thịt gà",
+          "quantity": 800,
+          "unit": "g",
+          "role": "meat",
+          "notes": "Chặt miếng vừa ăn, ưu tiên phần đùi hoặc gà chặt cả xương.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Pate",
+          "quantity": 180,
+          "unit": "g",
+          "role": "meat",
+          "notes": "Nghiền với một ít nước dừa cho mềm trước khi xào.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Khoai tây",
+          "quantity": 400,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Gọt vỏ, cắt miếng vừa ăn.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Cà rốt",
+          "quantity": 200,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Gọt vỏ, cắt khoanh dày hoặc khúc vừa.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Hành tây",
+          "quantity": 120,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Bóc vỏ, cắt múi cau.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nước dừa tươi",
+          "quantity": 700,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng làm phần nước hầm; có thể bổ sung nước lọc nếu cần.",
+          "scaling_rule": "vessel_dependent"
+        },
+        {
+          "name": "Tương cà",
+          "quantity": 45,
+          "unit": "g",
+          "role": "condiment",
+          "notes": "Tạo vị chua ngọt dịu và màu sốt.",
+          "scaling_rule": "taste_adjusted"
+        },
+        {
+          "name": "Bơ lạt",
+          "quantity": 20,
+          "unit": "g",
+          "role": "fat",
+          "notes": "Có thể giảm lượng nếu pate đã béo.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 20,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "oil",
+          "notes": "Dùng áp chảo gà và khoai.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Muối",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Ướp gà; pate và nước sốt đã có độ mặn.",
+          "scaling_rule": "taste_adjusted"
+        },
+        {
+          "name": "Đường",
+          "quantity": 3,
+          "unit": "g",
+          "role": "sweetener",
+          "notes": "Nêm nhẹ, có thể bỏ qua.",
+          "scaling_rule": "taste_adjusted"
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Ướp gà và nêm cuối.",
+          "scaling_rule": "taste_adjusted"
+        },
+        {
+          "name": "Ngò rí",
+          "quantity": 8,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, dùng trang trí.",
+          "scaling_rule": "linear"
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa gà, thấm ráo rồi chặt miếng vừa ăn. Ướp với muối, đường và tiêu khoảng 15 phút."
+        },
+        {
+          "step": 2,
+          "instruction": "Gọt khoai tây và cà rốt, rửa sạch rồi cắt khúc vừa. Cắt hành tây múi cau; băm hành tím và tỏi."
+        },
+        {
+          "step": 3,
+          "instruction": "Nghiền pate cùng một ít nước dừa cho mịn và dễ hòa vào sốt. Rửa ngò rí, để ráo."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng một phần dầu, áp chảo nhanh khoai tây đến khi mặt ngoài se lại rồi gắp ra. Dùng chảo đó áp chảo gà đến khi mặt ngoài săn."
+        },
+        {
+          "step": 2,
+          "instruction": "Phi thơm hành tím và tỏi trong nồi. Thêm pate nghiền, bơ và tương cà, đảo ở lửa nhỏ đến khi hòa quyện."
+        },
+        {
+          "step": 3,
+          "instruction": "Rót nước dừa vào nồi, khuấy đều rồi cho gà vào. Đun sôi nhẹ, đậy nắp và hầm khoảng 20 phút."
+        },
+        {
+          "step": 4,
+          "instruction": "Cho khoai tây và cà rốt vào, nấu đến khi gà chín hoàn toàn và rau củ mềm vừa. Thêm hành tây ở giai đoạn cuối, nêm lại sau khi pate tan rồi rắc ngò rí."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://daynauan.info.vn/ga-nau-pate",
+          "publisher": "Dạy Nấu Ăn Gia Đình, Mở Quán",
+          "title": "Cách Làm Gà Nấu Pate Thơm Mềm Ngất Ngây",
+          "use": "Đối chiếu cách ướp gà, áp chảo khoai và gà, nấu pate với nước dừa, khoai tây và cà rốt; Bếp Việt biên tập lượng dùng cho bốn người.",
+          "accessed_at": "2026-11-11",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://ngoisao.vnexpress.net/ga-nau-pate-3587192.html",
+          "publisher": "Ngôi Sao",
+          "title": "Gà nấu patê",
+          "use": "Đối chiếu cách hầm gà với pate, khoai tây, cà rốt và gợi ý dùng cùng bánh mì.",
+          "accessed_at": "2026-11-11",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Giảm một nửa lượng gà và rau củ.",
+            "instruction": "Nêm pate và gia vị ở mức thấp trước rồi nếm lại."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.25,
+            "example": "Tăng nguyên liệu chính lên 1,5 lần.",
+            "instruction": "Tăng nước dừa theo nồi, không tăng gia vị mặn cùng tỷ lệ."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2,
+            "seasoning_start_factor": 1.6,
+            "example": "Nhân đôi lượng gà và rau củ.",
+            "instruction": "Nấu nồi đủ rộng và kiểm tra gà chín hoàn toàn trước khi dọn."
+          }
+        ],
+        "rules": [
+          "Nguyên liệu chính tăng theo khẩu phần; muối và gia vị mặn cần nêm sau khi pate đã tan.",
+          "Không tăng thời gian hầm theo đúng hệ số; kiểm tra độ chín ở phần thịt dày.",
+          "Thêm nước dừa hoặc nước lọc nếu sốt cạn trước khi khoai mềm."
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/ga-nau-pate-960.webp",
+          "page_url": "https://daynauan.info.vn/ga-nau-pate",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo riêng cho Bếp Việt; nguồn chỉ dùng để biên tập công thức, không lấy ảnh nguồn.",
+          "width": 1536,
+          "height": 864,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Tô gà nấu pate cùng khoai tây và cà rốt; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-11-11",
+          "photo_variant_note": "Ảnh ImageGen gốc 1536×1024 nền trong suốt; đã đặt trọn tô lên canvas WebP 1536×864 và tạo các cỡ giao diện, không cắt món. Ảnh gốc không phải 4K native."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt biên tập theo nguồn tham khảo và chuẩn hóa cho bốn người; đây là món đổi vị gia đình có ảnh hưởng ẩm thực giao thoa, không gán là món truyền thống; chưa nấu thử.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-11-11",
+        "needs": [
+          "Nấu thử để xác nhận thời gian chín, độ sánh và vị sốt theo loại pate và dụng cụ thực tế."
+        ]
+      },
+      "width": 1536,
+      "height": 864
+    },
+    {
+      "id": "BV800",
+      "slug": "ca-ho-kho-nghe",
+      "name": "Cá hố kho nghệ",
+      "aliases": [
+        "Cá hố kho nghệ tươi",
+        "Cá hố kho nghệ kiểu miền Trung"
+      ],
+      "region": [
+        "Trung"
+      ],
+      "province": [],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "bữa cơm gia đình"
+      ],
+      "difficulty": "Vừa",
+      "servings": 4,
+      "serving_basis": "Khẩu phần cho bốn người ăn cùng cơm.",
+      "prep_time": 20,
+      "cook_time": 20,
+      "passive_time": 20,
+      "total_time": 60,
+      "description": "Cá hố được ướp nghệ tươi, hành và gia vị rồi kho trong nồi đất đến khi thấm. Màu vàng nghệ cùng chút cay của ớt hợp với bữa cơm gia đình miền Trung.",
+      "finished_dish": "Khúc cá chín đục, săn và còn nguyên miếng; nước kho vàng nâu sánh nhẹ, có mùi nghệ, hành và tiêu.",
+      "serving": "Dọn nóng trong niêu hoặc đĩa sâu lòng, rưới một ít nước kho lên cá. Dùng cùng cơm trắng và rau luộc.",
+      "tips": [
+        "Làm sạch nhớt cá rồi thấm khô trước khi ướp để gia vị bám đều.",
+        "Ướp cá tối thiểu 20 phút, sau đó kho lửa nhỏ để khúc cá chín đều và ít vỡ.",
+        "Nêm nước mắm và muối vừa tay; có thể bỏ ớt nếu cần giảm cay."
+      ],
+      "dish_type": [
+        "Món mặn",
+        "Món cá",
+        "Món kho"
+      ],
+      "main_ingredient": [
+        "cá hố",
+        "nghệ tươi"
+      ],
+      "cooking_method": [
+        "ướp",
+        "kho"
+      ],
+      "search_terms": [
+        "cá hố kho nghệ",
+        "cá hố kho nghệ tươi",
+        "cá kho nghệ",
+        "món cá kho miền Trung"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Niêu cá hố kho nghệ vàng nâu với hành lá, ớt và tiêu; ảnh minh họa Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 60 phút gồm sơ chế, ướp 20 phút và kho; thời gian tùy độ dày khúc cá.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Rau luộc",
+        "Canh rau má nấu nấm"
+      ],
+      "recipe_family": "turmeric_braised_hairtail",
+      "keywords": [
+        "Cá hố kho nghệ",
+        "cá hố kho nghệ tươi",
+        "cá kho nghệ",
+        "cá hố",
+        "nghệ tươi",
+        "món cá kho"
+      ],
+      "tags": {
+        "region": [
+          "Trung"
+        ],
+        "province": [],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối",
+          "bữa cơm gia đình"
+        ],
+        "dish_type": [
+          "Món mặn",
+          "Món cá",
+          "Món kho"
+        ],
+        "main_ingredient": [
+          "cá hố",
+          "nghệ tươi"
+        ],
+        "cooking_method": [
+          "ướp",
+          "kho"
+        ],
+        "difficulty": "Vừa",
+        "prep_time": 20,
+        "cook_time": 20,
+        "servings": 4,
+        "spicy_level": 1,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Cơm trắng",
+          "Rau luộc",
+          "Canh rau má nấu nấm"
+        ],
+        "keywords": [
+          "cá hố kho nghệ",
+          "cá hố kho nghệ tươi",
+          "món cá kho miền Trung"
+        ]
+      },
+      "ingredients": [
+        {
+          "name": "Cá hố",
+          "quantity": 700,
+          "unit": "g",
+          "role": "seafood",
+          "notes": "Làm sạch, cắt khúc dày 4–5 cm.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nghệ tươi",
+          "quantity": 25,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Rửa sạch, giã hoặc băm nhuyễn.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 20,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, đập dập hoặc thái lát.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Củ nén",
+          "quantity": 10,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, đập dập; có thể bỏ qua nếu khó tìm.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 25,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Điều chỉnh theo độ mặn của nước mắm.",
+          "scaling_rule": "taste_adjusted"
+        },
+        {
+          "name": "Dầu hào",
+          "quantity": 20,
+          "unit": "ml",
+          "role": "condiment",
+          "notes": "Tạo vị đậm; có thể giảm nếu cá nhỏ.",
+          "scaling_rule": "taste_adjusted"
+        },
+        {
+          "name": "Đường",
+          "quantity": 8,
+          "unit": "g",
+          "role": "sweetener",
+          "notes": "Cân vị mặn và màu kho.",
+          "scaling_rule": "taste_adjusted"
+        },
+        {
+          "name": "Nước màu",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng lượng nhỏ tạo màu nâu vàng.",
+          "scaling_rule": "taste_adjusted"
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "oil",
+          "notes": "Dùng phi tỏi và hành.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nước",
+          "quantity": 100,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Thêm vừa đủ để cá kho không sát đáy.",
+          "scaling_rule": "vessel_dependent"
+        },
+        {
+          "name": "Ớt",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Bỏ hạt hoặc giảm lượng nếu không ăn cay.",
+          "scaling_rule": "taste_adjusted"
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 15,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, cắt khúc.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Rắc sau khi cá chín.",
+          "scaling_rule": "taste_adjusted"
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Cắt bỏ vây, mang và ruột cá hố, rửa sạch nhớt rồi cắt khúc. Xát nhẹ với muối và ít chanh, rửa lại và thấm thật khô."
+        },
+        {
+          "step": 2,
+          "instruction": "Rửa nghệ, gọt phần vỏ dơ rồi giã nhỏ. Bóc vỏ hành tím, tỏi và củ nén; đập dập hoặc băm."
+        },
+        {
+          "step": 3,
+          "instruction": "Ướp cá với nghệ, hành tím, củ nén, nước mắm, dầu hào, đường, nước màu, ớt và tiêu trong khoảng 20 phút."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đun nóng dầu trong nồi đất hoặc nồi đáy dày. Phi tỏi đến thơm, không để cháy; tắt lửa nếu nồi quá nóng."
+        },
+        {
+          "step": 2,
+          "instruction": "Xếp cá cùng toàn bộ phần ướp vào nồi, thêm nước. Đun sôi nhẹ rồi hạ xuống lửa nhỏ; đậy hé nắp và kho khoảng 12–15 phút."
+        },
+        {
+          "step": 3,
+          "instruction": "Nghiêng nồi nhẹ để nước kho phủ đều, không dùng đũa đảo. Kiểm tra khúc cá dày nhất đã chín đục và dễ tách thớ, nêm lại rồi thêm hành lá."
+        },
+        {
+          "step": 4,
+          "instruction": "Kho thêm vài phút đến khi nước sốt sánh vừa. Tắt bếp, rắc tiêu và dọn nóng."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://hayan.vn/vao-bep/cach-lam-ca-ho-kho-nghe-vang-uom-dam-da-hap-dan-p10694.html",
+          "publisher": "HAY ĂN",
+          "title": "Cách làm cá hố kho nghệ vàng ươm đậm đà hấp dẫn",
+          "use": "Đối chiếu nguyên liệu cá hố, nghệ, hành, củ nén và cách ướp rồi kho; Bếp Việt biên tập thời gian kho theo khúc cá gia đình.",
+          "accessed_at": "2026-11-11",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Dùng khoảng 350 g cá và giảm một nửa nguyên liệu thơm.",
+            "instruction": "Nêm ít nước mắm và dầu hào trước, rồi nếm lại."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.25,
+            "example": "Tăng cá và nghệ lên 1,5 lần.",
+            "instruction": "Chọn nồi đủ rộng, chỉ tăng gia vị mặn từng chút."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2,
+            "seasoning_start_factor": 1.6,
+            "example": "Nhân đôi cá và nguyên liệu ướp.",
+            "instruction": "Kho theo mẻ nếu cá không nằm vừa một lớp, tránh đảo làm vỡ."
+          }
+        ],
+        "rules": [
+          "Nguyên liệu chính tăng theo khẩu phần; gia vị mặn cần nêm lại sau khi nước kho sánh.",
+          "Thời gian kho phụ thuộc độ dày cá và loại nồi; kiểm tra cá chín hoàn toàn trước khi dọn.",
+          "Điều chỉnh lượng nước theo độ rộng đáy nồi để cá không sát đáy."
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/ca-ho-kho-nghe-960.webp",
+          "page_url": "https://hayan.vn/vao-bep/cach-lam-ca-ho-kho-nghe-vang-uom-dam-da-hap-dan-p10694.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo riêng cho Bếp Việt; nguồn chỉ dùng để biên tập công thức, không lấy ảnh nguồn.",
+          "width": 1536,
+          "height": 864,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Niêu cá hố kho nghệ vàng nâu với hành lá và ớt; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-11-11",
+          "photo_variant_note": "Ảnh ImageGen gốc 1536×1024 nền trong suốt; đã đặt trọn niêu lên canvas WebP 1536×864 và tạo các cỡ giao diện, không cắt món. Ảnh gốc không phải 4K native."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt biên tập cá hố kho nghệ theo nguồn tham khảo, chuẩn hóa cho bốn người và chưa nấu thử.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-11-11",
+        "needs": [
+          "Nấu thử để xác nhận lượng nước kho, độ mặn và thời gian chín theo kích cỡ cá hố thực tế."
+        ]
+      },
+      "width": 1536,
+      "height": 864
+    }
+  ]
+}

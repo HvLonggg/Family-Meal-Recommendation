@@ -1,6 +1,7 @@
 import { UserAvatar } from '@/components/common/UserAvatar';
 import type { ArticleSummary } from '@/features/articles/articlesApi';
 import { useI18n } from '@/features/i18n/I18nContext';
+import { formatDisplayDate } from '@/lib/formatDate';
 
 interface ArticleBylineProps {
   article: Pick<ArticleSummary, 'author' | 'published_at' | 'updated_at' | 'reading_minutes'>;
@@ -8,7 +9,7 @@ interface ArticleBylineProps {
 }
 
 export function ArticleByline({ article, compact = false }: ArticleBylineProps) {
-  const { formatDate, t } = useI18n();
+  const { t } = useI18n();
   const name =
     article.author.display === 'editorial'
       ? t('Ban biên tập Bếp Việt')
@@ -21,7 +22,7 @@ export function ArticleByline({ article, compact = false }: ArticleBylineProps) 
       <span>
         <strong>{name}</strong>
         <small>
-          {formatDate(article.published_at ?? article.updated_at, { dateStyle: 'medium' })} ·{' '}
+          {formatDisplayDate(article.published_at ?? article.updated_at)} ·{' '}
           {t('{minutes} phút đọc', { minutes: article.reading_minutes })}
         </small>
       </span>

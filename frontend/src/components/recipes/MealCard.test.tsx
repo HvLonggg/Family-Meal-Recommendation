@@ -3,6 +3,7 @@ import { MemoryRouter } from 'react-router';
 import { afterEach, describe, expect, it } from 'vitest';
 
 import { MealCard } from '@/components/recipes/MealCard';
+import { getMealRole } from '@/data/mealComposition';
 import { getMealRecipes, mealSets } from '@/data/recipes';
 
 const meal = mealSets[0]!;
@@ -31,8 +32,28 @@ describe('suggested meal platter', () => {
     }
     expect(within(platter).getByText(`${dishes.length} món`)).toBeInTheDocument();
     const summary = document.querySelector('.meal-card__summary > p')?.textContent ?? '';
-    expect(summary).toContain('nâng đỡ hương vị');
+    expect(summary.length).toBeLessThan(dishes.map((dish) => dish.name).join(', ').length + 50);
     for (const dish of dishes) expect(summary).toContain(dish.name);
+  });
+
+  it('names a suggested meal after its main dish even when another dish anchored it', () => {
+    const soup = dishes.find((dish) => getMealRole(dish) === 'soup')!;
+    const main = dishes.find((dish) => getMealRole(dish) === 'main')!;
+    render(
+      <MemoryRouter>
+        <MealCard
+          meal={{
+            ...meal,
+            id: `goi-y-${soup.slug}`,
+            anchorName: soup.name,
+            recipeSlugs: [soup.slug, main.slug],
+          }}
+        />
+      </MemoryRouter>,
+    );
+    expect(
+      screen.getByRole('heading', { level: 3, name: `Mâm cơm cùng ${main.name}` }),
+    ).toBeInTheDocument();
   });
 
   it('lets the visitor highlight a dish without hiding the rest of the meal', () => {

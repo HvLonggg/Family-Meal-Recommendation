@@ -4,3 +4,10 @@ coverage
 .env
 .env.*
 !.env.example
+.pnpm-store
+.git
+tmp
+*.log
+*.tsbuildinfo
+test-results
+playwright-report

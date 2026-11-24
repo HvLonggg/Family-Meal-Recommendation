@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 
 import { ArticleCover } from '@/components/articles/ArticleCover';
 import { AppIcon } from '@/components/common/AppIcon';
+import { useConfirmDialog } from '@/components/common/useConfirmDialog';
 import { SearchField } from '@/components/common/SearchField';
 import {
   EmptyState,
@@ -29,6 +30,7 @@ const LIMIT = 10;
 export function AdminArticlesPage() {
   const { formatDate, t } = useI18n();
   const queryClient = useQueryClient();
+  const { confirm, dialog } = useConfirmDialog();
   const { offset, setFilter, values } = useAdminFilters(['q', 'status', 'kind'] as const);
   const [search, setSearch] = useState(values.q);
   const params = { ...values, limit: LIMIT, offset };
@@ -53,11 +55,16 @@ export function AdminArticlesPage() {
     },
   });
 
-  const reject = (article: ArticleSummary) => {
-    const note = window.prompt(
-      t('Ghi chú gửi tác giả (lý do cần chỉnh sửa):'),
-      article.moderation_note ?? '',
-    );
+  const reject = async (article: ArticleSummary) => {
+    const note = await confirm({
+      title: t('Yêu cầu chỉnh sửa “{title}”?', { title: article.title }),
+      confirmLabel: t('Gửi yêu cầu'),
+      tone: 'danger',
+      note: {
+        label: t('Ghi chú gửi tác giả (lý do cần chỉnh sửa):'),
+        defaultValue: article.moderation_note ?? '',
+      },
+    });
     if (note === null) return;
     moderation.mutate({ id: article.id, status: 'rejected', note });
   };
@@ -179,7 +186,7 @@ export function AdminArticlesPage() {
                     <button
                       className="text-button text-button--danger"
                       disabled={moderation.isPending}
-                      onClick={() => reject(article)}
+                      onClick={() => void reject(article)}
                       type="button"
                     >
                       {t('Yêu cầu chỉnh sửa')}
@@ -206,6 +213,7 @@ export function AdminArticlesPage() {
         onChange={(next) => setFilter('offset', next)}
         total={articles.data?.total ?? 0}
       />
+      {dialog}
     </section>
   );
 }

@@ -1,0 +1,164 @@
+/* Lớp mobile/PWA: safe-area (notch, thanh home), lời mời cài & cập nhật.
+ * Tách riêng để không đụng các tệp style đang được chỉnh song song. */
+
+/* ---------- Lời mời cài / thông báo bản mới ---------- */
+.pwa-toast {
+  position: fixed;
+  z-index: 95;
+  left: calc(12px + env(safe-area-inset-left));
+  right: calc(12px + env(safe-area-inset-right));
+  bottom: calc(12px + env(safe-area-inset-bottom));
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 12px;
+  max-width: 440px;
+  margin-inline: auto;
+  border: 1px solid #efe2d6;
+  border-radius: 18px;
+  padding: 14px 16px;
+  background: #fffaf4;
+  color: #2f241f;
+  box-shadow: 0 12px 36px rgb(73 53 44 / 22%);
+}
+
+.pwa-toast--install {
+  flex-wrap: nowrap;
+  align-items: flex-start;
+}
+
+.pwa-toast__icon {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.pwa-toast__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.pwa-toast__title {
+  margin: 0 0 2px;
+  font-weight: 700;
+}
+
+.pwa-toast__text {
+  flex: 1 1 200px;
+  margin: 0;
+  color: #5c4d43;
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+.pwa-toast__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 8px;
+  margin-left: auto;
+}
+
+.pwa-btn {
+  min-width: 44px;
+  min-height: 44px;
+  border: 0;
+  border-radius: 999px;
+  padding: 0 18px;
+  background: #b8402f;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.pwa-btn--ghost {
+  background: transparent;
+  color: #7d2318;
+}
+
+.pwa-btn:focus-visible {
+  outline: 3px solid #e2a356;
+  outline-offset: 2px;
+}
+
+/* ---------- Safe-area (có hiệu lực nhờ viewport-fit=cover) ---------- */
+@supports (padding: env(safe-area-inset-top)) {
+  /* Header dính đỉnh: chừa tai thỏ khi chạy standalone / xoay ngang. */
+  html .site-header {
+    padding-top: env(safe-area-inset-top);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  /* Nút nổi Chú Rồng: cách thanh home chứ không dính sát. */
+  @media (max-width: 560px) {
+    html .rc-root {
+      right: calc(14px + env(safe-area-inset-right));
+      --rc-bottom: calc(14px + env(safe-area-inset-bottom));
+    }
+  }
+
+  /* Chế độ nấu: thanh điều khiển dưới không bị thanh home che. */
+  html .cook {
+    padding-top: env(safe-area-inset-top);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+/* Khi có lời mời cài đang hiện, đẩy nút Chú Rồng lên để không chồng. */
+html body:has(.pwa-toast) .rc-root:not(.is-open) {
+  bottom: calc(var(--rc-bottom) + 132px);
+}
+
+/* Nút "Thử lại" trên dải báo mất kết nối: đủ 44px để chạm. */
+html .catalog-unavailable button {
+  min-height: 44px;
+  padding-inline: 12px;
+}
+
+/* Màn hình cảm ứng: nâng các vùng chạm sát ngưỡng lên 44px, chữ phụ tối thiểu 12px. */
+@media (pointer: coarse) {
+  html .mobile-menu-button,
+  html .planner-round-button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  html .view-all {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  html .rc-launcher__label {
+    font-size: 12px;
+  }
+}
+.pwa-update-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  background: #fdf9f3;
+}
+.pwa-update-screen > img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+.pwa-update-screen .catalog-loading__track {
+  width: 180px;
+}
+.footer-links .footer-legal {
+  display: grid;
+  gap: 12px;
+  font-size: inherit;
+}

@@ -3,6 +3,7 @@ from fastapi.testclient import TestClient
 from pydantic import SecretStr, ValidationError
 
 from app.core.config import Settings
+from app.core.legal import CURRENT_TERMS_VERSION
 from app.main import create_app
 from tests.helpers import PASSWORD
 
@@ -67,7 +68,12 @@ def test_unknown_routes_and_methods_do_not_reveal_details(client: TestClient) ->
 def test_login_is_throttled_after_repeated_wrong_passwords(client: TestClient) -> None:
     created = client.post(
         "/api/v1/auth/register",
-        json={"full_name": "Thử Khóa", "email": "brute@example.com", "password": PASSWORD},
+        json={
+            "full_name": "Thử Khóa",
+            "email": "brute@example.com",
+            "password": PASSWORD,
+            "accepted_terms_version": CURRENT_TERMS_VERSION,
+        },
     )
     assert created.status_code == 201
     for _ in range(5):

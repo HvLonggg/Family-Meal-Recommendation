@@ -4,9 +4,11 @@ from typing import Any
 from fastapi import FastAPI, Request, status
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
+from sqlalchemy.exc import OperationalError
+from sqlalchemy.exc import TimeoutError as PoolTimeoutError
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
-from app.core.middleware import GENERIC_ERROR, get_request_id
+from app.core.middleware import GENERIC_ERROR, get_request_id, overloaded_response
 
 logger = logging.getLogger("bep_viet.errors")
 
@@ -85,6 +87,21 @@ def register_exception_handlers(app: FastAPI) -> None:
             status_code=exc.status_code,
             content=error_payload(code=code, message=message),
         )
+
+    @app.exception_handler(PoolTimeoutError)
+    @app.exception_handler(OperationalError)
+    async def handle_database_unavailable(request: Request, exc: Exception) -> JSONResponse:
+        # Hết kết nối trong pool hoặc DB không kết nối được (Neon đang thức dậy, quá tải):
+        # báo "đông khách, thử lại sau" thay vì lỗi 500 khó hiểu.
+        from app.core.config import get_settings
+
+        logger.warning(
+            "Cơ sở dữ liệu quá tải/không sẵn sàng khi xử lý %s %s: %s",
+            request.method,
+            request.url.path,
+            type(exc).__name__,
+        )
+        return overloaded_response(get_settings().overload_retry_after_seconds)
 
     @app.exception_handler(Exception)
     async def handle_unexpected_error(request: Request, exc: Exception) -> JSONResponse:

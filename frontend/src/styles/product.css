@@ -8,7 +8,7 @@
   --color-primary-soft: #f9e4dd;
   --color-text: #2f2923;
   --color-text-secondary: #665d54;
-  --color-text-muted: #8a8177;
+  --color-text-muted: #6f665d;
   --color-border: #e9dfd3;
   --color-focus: #b43b2c;
   --focus-ring: 0 0 0 3px rgb(180 59 44 / 18%);
@@ -54,14 +54,14 @@ strong {
 }
 
 .brand .kitchen-logo__image {
-  width: 72px;
-  height: 72px;
+  width: 60px;
+  height: 60px;
 }
 
 @media (max-width: 760px) {
   .brand .kitchen-logo__image {
-    width: 58px;
-    height: 58px;
+    width: 50px;
+    height: 50px;
   }
 }
 
@@ -307,7 +307,7 @@ strong {
 }
 
 .search-field input::placeholder {
-  color: #928678;
+  color: #80766b;
   opacity: 1;
 }
 
@@ -1475,6 +1475,21 @@ html[data-reduce-motion='true'] .hero-dish__steam {
   padding-block: 55px;
 }
 
+.story-band__author {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.story-band__avatar {
+  width: 56px;
+  height: 56px;
+  flex: none;
+  border: 2px solid rgb(255 248 241 / 70%);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 .story-band h2 {
   max-width: 680px;
   margin: 8px 0 12px;
@@ -1491,24 +1506,35 @@ html[data-reduce-motion='true'] .hero-dish__steam {
 }
 
 .page-hero {
-  padding-block: 74px;
+  padding-block: var(--hero-padding-block);
   text-align: center;
   background: radial-gradient(circle at 20% 10%, rgb(230 177 102 / 16%), transparent 30%), #f9f1e7;
 }
 
+/* Một kiểu H1 chung cho mọi hero trang công cụ (UX-16/19). */
+.page-hero h1,
+.submit-hero h1,
+.articles-hero__copy h1,
+.contact-page__intro h1,
+.random-hero h1 {
+  font-family: var(--hero-title-font);
+  font-size: var(--hero-title-size);
+  font-weight: var(--hero-title-weight);
+  line-height: var(--hero-title-leading);
+  letter-spacing: var(--hero-title-tracking);
+}
+
 .page-hero h1 {
   max-width: 1000px;
-  margin: 10px auto 0;
-  font-size: clamp(2.4rem, 5vw, 4.3rem);
-  line-height: 1.08;
+  margin: 8px auto 0;
 }
 
 .page-hero p {
   max-width: 680px;
-  margin: 16px auto 0;
+  margin: 10px auto 0;
   color: var(--color-text-secondary);
-  font-size: 17px;
-  line-height: 1.65;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .catalog-search {
@@ -2680,7 +2706,7 @@ html[data-reduce-motion='true'] .hero-dish__steam {
   min-height: 75px;
   margin: 0;
   place-items: center;
-  color: #a69a8d;
+  color: var(--color-text-muted);
   font-size: 10px;
 }
 
@@ -2824,6 +2850,36 @@ html[data-reduce-motion='true'] .hero-dish__steam {
   color: var(--color-text-secondary);
   background: white;
   text-align: center;
+}
+
+.planner-undo {
+  position: sticky;
+  z-index: 3;
+  left: 0;
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 8px 10px 8px 16px;
+  color: var(--color-text);
+  background: white;
+  font-size: 14px;
+  box-shadow: 0 8px 22px rgb(74 47 27 / 12%);
+}
+
+.planner-undo button {
+  min-height: 32px;
+  border: 0;
+  border-radius: 999px;
+  padding: 0 14px;
+  color: white;
+  background: var(--color-primary);
+  font-weight: 700;
+  cursor: pointer;
 }
 
 .planner-message--error {
@@ -4248,7 +4304,7 @@ html[data-reduce-motion='true'] .hero-dish__steam {
   }
 
   .page-hero {
-    padding-block: 54px;
+    padding-block: 24px;
   }
 
   .catalog-results {
@@ -4365,11 +4421,6 @@ html[data-reduce-motion='true'] .hero-dish__steam {
   max-width: 730px;
   margin: 0;
   color: #fff;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(3rem, 5.4vw, 5rem);
-  font-weight: 500;
-  line-height: 1.02;
-  letter-spacing: -0.045em;
 }
 
 .random-hero h1 em {
@@ -4603,12 +4654,21 @@ html[data-reduce-motion='true'] .hero-dish__steam {
   line-height: 1.5;
 }
 
+.profile-options strong,
+.profile-options small {
+  display: block;
+}
+
+.profile-options strong {
+  overflow-wrap: normal;
+  white-space: nowrap;
+}
+
 .profile-options small {
   overflow: hidden;
-  max-width: 90px;
   margin-top: 2px;
   color: var(--color-text-muted);
-  font-size: 9px;
+  font-size: 12px;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -5006,13 +5066,13 @@ html[data-reduce-motion='true'] .hero-dish__steam {
 
 .nutrition-summary small {
   margin-top: 2px;
-  color: #a29488;
+  color: var(--color-text-muted);
   font-size: 8px;
 }
 
 .nutrition-disclaimer {
   margin: 8px 4px 15px;
-  color: #9a8e83;
+  color: var(--color-text-muted);
   font-size: 9px;
   line-height: 1.45;
   text-align: center;
@@ -5494,10 +5554,6 @@ html[data-reduce-motion='true'] .hero-dish__steam {
 }
 
 @media (max-width: 560px) {
-  .random-hero h1 {
-    font-size: 2.75rem;
-  }
-
   .random-hero__proof {
     gap: 7px;
   }

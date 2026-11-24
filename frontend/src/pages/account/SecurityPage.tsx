@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router';
 
 import { AuthField } from '@/components/auth/AuthField';
 import { AppIcon } from '@/components/common/AppIcon';
+import { useConfirmDialog } from '@/components/common/useConfirmDialog';
 import { Button } from '@/components/ui/Button';
 import { Notice, Panel, StatusBadge } from '@/components/ui/Workspace';
 import {
@@ -15,7 +16,9 @@ import {
 import { useAuth } from '@/features/auth/AuthContext';
 import { useI18n } from '@/features/i18n/I18nContext';
 import { errorMessage } from '@/lib/errors';
+import { formatDisplayDateTime } from '@/lib/formatDate';
 import { ChangeEmailPanel } from '@/pages/account/ChangeEmailPanel';
+import { DeleteAccountPanel } from '@/pages/account/DeleteAccountPanel';
 
 function passwordStrength(value: string) {
   let score = 0;
@@ -30,7 +33,8 @@ const strengthLabels = ['Rất yếu', 'Yếu', 'Trung bình', 'Mạnh', 'Rất 
 
 export function SecurityPage() {
   const { logout, user } = useAuth();
-  const { formatDate, t } = useI18n();
+  const { t } = useI18n();
+  const { confirm, dialog } = useConfirmDialog();
   const navigate = useNavigate();
   const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
@@ -164,8 +168,11 @@ export function SecurityPage() {
             <dl className="security-facts">
               <div>
                 <dt>{t('Email')}</dt>
-                <dd>
-                  {user.email ?? '—'} <a href="#email">{t('Đổi email')}</a>
+                <dd className="security-facts__email">
+                  <span>{user.email ?? '—'}</span>
+                  <a className="text-link security-facts__action" href="#email">
+                    {t('Đổi email')}
+                  </a>
                 </dd>
               </div>
               <div>
@@ -190,10 +197,7 @@ export function SecurityPage() {
                 <dt>{t('Đăng nhập gần nhất')}</dt>
                 <dd>
                   {overview.data?.last_login_at
-                    ? formatDate(overview.data.last_login_at, {
-                        dateStyle: 'medium',
-                        timeStyle: 'short',
-                      })
+                    ? formatDisplayDateTime(overview.data.last_login_at)
                     : '—'}
                 </dd>
               </div>
@@ -210,11 +214,16 @@ export function SecurityPage() {
             <Button
               className="button--danger-soft"
               isLoading={revokeMutation.isPending}
-              onClick={() => {
-                if (window.confirm(t('Đăng xuất khỏi tất cả thiết bị, kể cả thiết bị này?'))) {
-                  revokeMutation.mutate();
-                }
-              }}
+              onClick={() =>
+                void confirm({
+                  title: t('Đăng xuất khỏi tất cả thiết bị, kể cả thiết bị này?'),
+                  description: t('Bạn sẽ cần đăng nhập lại trên mọi thiết bị.'),
+                  confirmLabel: t('Đăng xuất tất cả'),
+                  tone: 'danger',
+                }).then((ok) => {
+                  if (ok !== null) revokeMutation.mutate();
+                })
+              }
               variant="secondary"
             >
               <AppIcon name="logout" size={16} /> {t('Đăng xuất tất cả')}
@@ -227,8 +236,10 @@ export function SecurityPage() {
               <li>{t('Đăng xuất sau khi dùng máy tính công cộng.')}</li>
             </ul>
           </Panel>
+          <DeleteAccountPanel hasPassword={hasPassword} />
         </div>
       </div>
+      {dialog}
     </>
   );
 }

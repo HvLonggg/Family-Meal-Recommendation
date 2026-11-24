@@ -17,7 +17,8 @@ export function AuthLayout() {
             <Outlet />
           </div>
           <p className="auth-workspace__legal">
-            © {new Date().getFullYear()} Bếp Việt · {t('Bảo mật và riêng tư')}
+            © {new Date().getFullYear()} Bếp Việt · <Link to="/terms">{t('Điều khoản')}</Link> ·{' '}
+            <Link to="/privacy">{t('Quyền riêng tư')}</Link>
           </p>
         </div>
       </section>

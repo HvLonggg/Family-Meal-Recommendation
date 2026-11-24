@@ -5,6 +5,7 @@ import {
   fastingDayName,
   formatDayMonth,
   formatLunarLong,
+  formatWeekdayDate,
   lunarMonthLabel,
   nextLunarFastingDay,
   type VegetarianState,
@@ -153,9 +154,6 @@ export function PlannerCalendarHeader({
                 })}
           </p>
         ) : null}
-        <small className="planner-calendar-hero__zone">
-          {t('Theo giờ Việt Nam (GMT+7) · {date}', { date: formatLunarLong(lunar, t) })}
-        </small>
       </div>
     </section>
   );
@@ -184,7 +182,8 @@ export function PlannerDayHeader({
   const fasting = fastingDayName(lunar, t);
   const solarShort = formatDayMonth(solar, locale);
   const lunarShort = numericLunarLabel(lunar);
-  const fullLabel = new Intl.DateTimeFormat(locale, { dateStyle: 'full' }).format(solar);
+  const fullLabel = formatWeekdayDate(solar, locale, true);
+  const readableDate = formatWeekdayDate(solar, locale);
 
   return (
     <header className="planner-day__header">
@@ -206,8 +205,8 @@ export function PlannerDayHeader({
       <button
         aria-label={
           vegetarian.vegetarian
-            ? t('Bỏ đánh dấu ăn chay ngày {date}', { date: value })
-            : t('Đánh dấu ăn chay ngày {date}', { date: value })
+            ? t('Bỏ đánh dấu ăn chay ngày {date}', { date: readableDate })
+            : t('Đánh dấu ăn chay ngày {date}', { date: readableDate })
         }
         aria-pressed={vegetarian.vegetarian}
         className={`planner-veg-toggle${vegetarian.vegetarian ? ' is-active' : ''}`}

@@ -8,6 +8,7 @@ from sqlalchemy.orm import Session, sessionmaker
 
 import app.modules.auth.router as auth_router
 from app.core.config import get_settings
+from app.core.legal import CURRENT_TERMS_VERSION
 from app.modules.auth.email import EmailDeliveryError, deliver_security_email
 from app.modules.auth.models import AuthIdentity, EmailOtpChallenge, SecurityEmailOutbox, User
 from app.modules.auth.oauth import OAuthProfile
@@ -20,6 +21,7 @@ def register_user(client: TestClient, email: str = "lan.nguyen@example.com") -> 
             "full_name": "Nguyễn Ngọc Lan",
             "email": email,
             "password": "Test-Only-No-Login-2026!",
+            "accepted_terms_version": CURRENT_TERMS_VERSION,
         },
     )
     assert created.status_code == 201
@@ -40,6 +42,7 @@ def test_registration_creates_account_without_otp_and_queues_welcome_email(
             "full_name": "Nguyễn Ngọc Lan",
             "email": "lan.nguyen@example.com",
             "password": "Test-Only-No-Login-2026!",
+            "accepted_terms_version": CURRENT_TERMS_VERSION,
         },
     )
     assert response.status_code == 201
@@ -131,6 +134,7 @@ def test_duplicate_registration_rejected(client: TestClient) -> None:
             "full_name": "Người dùng khác",
             "email": "lan.nguyen@example.com",
             "password": "MatKhau2026",
+            "accepted_terms_version": CURRENT_TERMS_VERSION,
         },
     )
     assert duplicate.status_code == 409
@@ -317,6 +321,8 @@ def test_configured_smtp_sends_recovery_code_without_exposing_it(
     monkeypatch.setenv("BEP_VIET_EMAIL_SMTP_PASSWORD", "smtp-password")
     monkeypatch.setenv("BEP_VIET_EMAIL_FROM_ADDRESS", "no-reply@example.test")
     monkeypatch.setenv("BEP_VIET_APP_ENV", "production")
+    monkeypatch.setenv("BEP_VIET_FRONTEND_URL", "https://bepviet.example.test")
+    monkeypatch.setenv("BEP_VIET_CORS_ORIGINS", '["https://bepviet.example.test"]')
     monkeypatch.setenv("BEP_VIET_JWT_SECRET", "production-test-secret-not-for-real-use")
     get_settings.cache_clear()
     deliveries: list[tuple[str, str, str]] = []
@@ -382,9 +388,9 @@ def test_test_environment_never_sends_real_email_even_with_smtp_credentials(
 ) -> None:
     register_user(client)
     monkeypatch.setenv("BEP_VIET_EMAIL_SMTP_HOST", "smtp.gmail.com")
-    monkeypatch.setenv("BEP_VIET_EMAIL_SMTP_USERNAME", "hvlongg@gmail.com")
+    monkeypatch.setenv("BEP_VIET_EMAIL_SMTP_USERNAME", "support@bepviet.vn")
     monkeypatch.setenv("BEP_VIET_EMAIL_SMTP_PASSWORD", "dummy-test-app-password")
-    monkeypatch.setenv("BEP_VIET_EMAIL_FROM_ADDRESS", "hvlongg@gmail.com")
+    monkeypatch.setenv("BEP_VIET_EMAIL_FROM_ADDRESS", "support@bepviet.vn")
     get_settings.cache_clear()
     deliveries: list[tuple[str, str, str]] = []
     monkeypatch.setattr(
@@ -414,6 +420,8 @@ def test_smtp_rejection_invalidates_challenge_and_never_returns_the_code(
     monkeypatch.setenv("BEP_VIET_EMAIL_SMTP_PASSWORD", "smtp-password")
     monkeypatch.setenv("BEP_VIET_EMAIL_FROM_ADDRESS", "no-reply@example.test")
     monkeypatch.setenv("BEP_VIET_APP_ENV", "production")
+    monkeypatch.setenv("BEP_VIET_FRONTEND_URL", "https://bepviet.example.test")
+    monkeypatch.setenv("BEP_VIET_CORS_ORIGINS", '["https://bepviet.example.test"]')
     monkeypatch.setenv("BEP_VIET_JWT_SECRET", "production-test-secret-not-for-real-use")
     get_settings.cache_clear()
 

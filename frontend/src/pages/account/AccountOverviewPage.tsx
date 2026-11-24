@@ -17,11 +17,12 @@ import { DEFAULT_PREFERENCES } from '@/features/account/preferences';
 import { useAuth } from '@/features/auth/AuthContext';
 import { useI18n } from '@/features/i18n/I18nContext';
 import { errorMessage } from '@/lib/errors';
+import { formatDisplayDate, formatDisplayDateTime } from '@/lib/formatDate';
 import { resizeImageFile } from '@/lib/image';
 
 export function AccountOverviewPage() {
   const { updateUser, user } = useAuth();
-  const { formatDate, t } = useI18n();
+  const { t } = useI18n();
   const queryClient = useQueryClient();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [fullName, setFullName] = useState(user?.full_name ?? '');
@@ -165,16 +166,13 @@ export function AccountOverviewPage() {
             <dl className="profile-facts">
               <div>
                 <dt>{t('Thành viên từ')}</dt>
-                <dd>{formatDate(user.created_at, { dateStyle: 'long' })}</dd>
+                <dd>{formatDisplayDate(user.created_at)}</dd>
               </div>
               <div>
                 <dt>{t('Đăng nhập gần nhất')}</dt>
                 <dd>
                   {overview.data?.last_login_at
-                    ? formatDate(overview.data.last_login_at, {
-                        dateStyle: 'medium',
-                        timeStyle: 'short',
-                      })
+                    ? formatDisplayDateTime(overview.data.last_login_at)
                     : '—'}
                 </dd>
               </div>

@@ -10,3 +10,9 @@ __pycache__
 .ruff_cache
 tests
 *.log
+.git
+tmp
+.build-wheel
+.docker-wheels
+htmlcov
+.coverage

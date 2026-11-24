@@ -2,12 +2,19 @@ from datetime import UTC, datetime
 from typing import Annotated, Any
 from uuid import UUID
 
-from fastapi import APIRouter, Depends, HTTPException, Response, status
+from fastapi import APIRouter, Depends, HTTPException, Request, Response, status
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session, undefer
 
-from app.core.images import decode_image_data_url
+from app.core.config import get_settings
+from app.core.images import decode_image_data_url, reencode_without_metadata
+from app.core.net import client_ip
 from app.db.session import get_db_session
+from app.modules.account.deletion import (
+    ACCOUNT_DELETE_PURPOSE,
+    delete_user_account,
+    verify_deletion_identity,
+)
 from app.modules.account.preferences import (
     PreferencesResponse,
     UserPreferences,
@@ -16,21 +23,29 @@ from app.modules.account.preferences import (
     to_response,
 )
 from app.modules.account.schemas import (
+    AccountDeleteRequest,
     AccountOverviewResponse,
     AccountStats,
     AvatarUploadRequest,
     ProfileUpdateRequest,
 )
 from app.modules.articles.models import Article
-from app.modules.assistant.models import AssistantConversation
+from app.modules.assistant.models import AssistantConversation, AssistantMemory
 from app.modules.auth.dependencies import get_current_user
 from app.modules.auth.models import AuthIdentity, User
-from app.modules.auth.router import clear_refresh_cookie
-from app.modules.auth.schemas import MessageResponse, UserResponse
-from app.modules.auth.service import revoke_all_sessions
+from app.modules.auth.router import clear_refresh_cookie, request_email_otp_code
+from app.modules.auth.schemas import (
+    AcceptTermsRequest,
+    ForgotPasswordResponse,
+    MessageResponse,
+    UserResponse,
+)
+from app.modules.auth.service import InvalidCredentialsError, revoke_all_sessions
+from app.modules.cooking.models import UserCookLog
 from app.modules.favorites.models import UserFavoriteRecipe
 from app.modules.planner.models import UserMealPlanItem, UserVegetarianDay
 from app.modules.recipes.models import Recipe
+from app.modules.saved_meals.models import SavedMeal
 from app.modules.submissions.models import RecipeSubmission
 
 router = APIRouter(prefix="/account")
@@ -114,7 +129,9 @@ def update_profile(
 def upload_avatar(
     payload: AvatarUploadRequest, current_user: CurrentUser, session: DatabaseSession
 ) -> UserResponse:
-    image = decode_image_data_url(payload.data_url, max_bytes=AVATAR_MAX_BYTES)
+    image = reencode_without_metadata(
+        decode_image_data_url(payload.data_url, max_bytes=AVATAR_MAX_BYTES)
+    )
     current_user.avatar_data = image.data
     current_user.avatar_content_type = image.content_type
     current_user.avatar_updated_at = datetime.now(UTC)
@@ -146,6 +163,18 @@ def avatar_image(user_id: UUID, session: DatabaseSession) -> Response:
             "X-Content-Type-Options": "nosniff",
         },
     )
+
+
+@router.post("/accept-terms", response_model=UserResponse, summary="Accept current Terms/Privacy")
+def accept_terms(
+    payload: AcceptTermsRequest, current_user: CurrentUser, session: DatabaseSession
+) -> UserResponse:
+    # Lưu bằng chứng đồng ý cho tài khoản tạo qua Google/Facebook hoặc khi phiên bản thay đổi.
+    current_user.terms_version = payload.version
+    current_user.terms_accepted_at = datetime.now(UTC)
+    session.commit()
+    session.refresh(current_user)
+    return UserResponse.model_validate(current_user)
 
 
 @router.get("/preferences", response_model=PreferencesResponse, summary="Get preferences")
@@ -217,6 +246,21 @@ def export_account_data(current_user: CurrentUser, session: DatabaseSession) -> 
         .where(AssistantConversation.user_id == current_user.id)
         .order_by(AssistantConversation.created_at)
     ).all()
+    memories = session.scalars(
+        select(AssistantMemory)
+        .where(AssistantMemory.user_id == current_user.id)
+        .order_by(AssistantMemory.created_at)
+    ).all()
+    cook_logs = session.scalars(
+        select(UserCookLog)
+        .where(UserCookLog.user_id == current_user.id)
+        .order_by(UserCookLog.cooked_at.desc())
+    ).all()
+    saved_meals = session.scalars(
+        select(SavedMeal)
+        .where(SavedMeal.user_id == current_user.id)
+        .order_by(SavedMeal.created_at.desc())
+    ).all()
     return {
         "exported_at": datetime.now(UTC).isoformat(),
         "profile": {
@@ -224,6 +268,16 @@ def export_account_data(current_user: CurrentUser, session: DatabaseSession) -> 
             "email": current_user.email,
             "role": current_user.role,
             "created_at": current_user.created_at.isoformat(),
+            "last_login_at": (
+                current_user.last_login_at.isoformat() if current_user.last_login_at else None
+            ),
+            "linked_providers": sorted(
+                set(
+                    session.scalars(
+                        select(AuthIdentity.provider).where(AuthIdentity.user_id == current_user.id)
+                    )
+                )
+            ),
         },
         "preferences": read_preferences(current_user.preferences).model_dump(mode="json"),
         "favorites": [
@@ -281,4 +335,76 @@ def export_account_data(current_user: CurrentUser, session: DatabaseSession) -> 
             }
             for conversation in conversations
         ],
+        "assistant_memories": [
+            {"kind": item.kind, "content": item.content, "created_at": item.created_at.isoformat()}
+            for item in memories
+        ],
+        "cook_logs": [
+            {
+                "recipe_slug": item.recipe_slug,
+                "recipe_name": item.recipe_name,
+                "servings": item.servings,
+                "source": item.source,
+                "cooked_at": item.cooked_at.isoformat(),
+                "duration_seconds": item.duration_seconds,
+                "note": item.note,
+            }
+            for item in cook_logs
+        ],
+        "saved_meals": [
+            {
+                "profile": item.profile,
+                "dish_ids": item.dish_ids,
+                "created_at": item.created_at.isoformat(),
+            }
+            for item in saved_meals
+        ],
     }
+
+
+@router.post(
+    "/delete/request-code",
+    response_model=ForgotPasswordResponse,
+    summary="Email a code to confirm account deletion (accounts without a password)",
+)
+def request_account_deletion_code(
+    request: Request, current_user: CurrentUser, session: DatabaseSession
+) -> ForgotPasswordResponse:
+    if current_user.password_hash:
+        raise InvalidCredentialsError("Tài khoản có mật khẩu: hãy xác nhận bằng mật khẩu.")
+    if not current_user.email:
+        raise InvalidCredentialsError("Tài khoản chưa có email để nhận mã xác nhận.")
+    challenge, development_code = request_email_otp_code(
+        session=session,
+        email=current_user.email,
+        purpose=ACCOUNT_DELETE_PURPOSE,
+        requester_ip=client_ip(request),
+        account_exists=True,
+        user_id=current_user.id,
+    )
+    settings = get_settings()
+    return ForgotPasswordResponse(
+        challenge_id=challenge.id,
+        expires_in=settings.email_otp_expire_minutes * 60,
+        message="Mã xác nhận xóa tài khoản đã được gửi đến email của bạn.",
+        development_code=development_code,
+    )
+
+
+@router.post("/delete", response_model=MessageResponse, summary="Permanently delete my account")
+def delete_my_account(
+    payload: AccountDeleteRequest,
+    response: Response,
+    current_user: CurrentUser,
+    session: DatabaseSession,
+) -> MessageResponse:
+    verify_deletion_identity(
+        session,
+        user=current_user,
+        password=payload.password,
+        challenge_id=payload.challenge_id,
+        code=payload.code,
+    )
+    delete_user_account(session, user_id=current_user.id)
+    clear_refresh_cookie(response)
+    return MessageResponse(message="Tài khoản và dữ liệu cá nhân của bạn đã được xóa.")

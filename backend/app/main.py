@@ -4,12 +4,13 @@ from contextlib import asynccontextmanager, suppress
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.middleware.gzip import GZipMiddleware
 
 from app.api.router import api_router
 from app.core.config import get_settings
 from app.core.exceptions import register_exception_handlers
 from app.core.logging import configure_logging
-from app.core.middleware import RequestContextMiddleware
+from app.core.middleware import ConcurrencyLimitMiddleware, RequestContextMiddleware
 from app.modules.assistant.service import warm_up as warm_up_assistant
 from app.modules.auth.email import run_security_email_worker
 from app.modules.cooking.service import run_cook_timer_worker
@@ -68,6 +69,13 @@ def create_app() -> FastAPI:
         lifespan=lifespan,
     )
 
+    # Thêm trước (nằm trong cùng) để 503 OVERLOADED vẫn có header CORS và mã request.
+    application.add_middleware(
+        ConcurrencyLimitMiddleware,
+        limit=settings.max_concurrent_requests,
+        wait_seconds=settings.overload_wait_seconds,
+        retry_after_seconds=settings.overload_retry_after_seconds,
+    )
     application.add_middleware(
         CORSMiddleware,
         allow_origins=[str(origin).rstrip("/") for origin in settings.cors_origins],
@@ -76,6 +84,8 @@ def create_app() -> FastAPI:
         allow_headers=["*"],
         expose_headers=["X-Request-ID"],
     )
+    # Nén phản hồi lớn (kho món ~1,2 MB mỗi trang) để tải nhanh hơn.
+    application.add_middleware(GZipMiddleware, minimum_size=1024, compresslevel=5)
     application.add_middleware(RequestContextMiddleware, hsts=settings.secure_cookies)
     register_exception_handlers(application)
     application.include_router(api_router, prefix=settings.api_v1_prefix)

@@ -42,7 +42,7 @@ describe('ForgotPasswordPage', () => {
       </MemoryRouter>,
     );
 
-    fireEvent.change(screen.getByLabelText('Email đăng ký / đăng nhập'), {
+    fireEvent.change(screen.getByLabelText('Email'), {
       target: { value: 'LAN.NGUYEN@example.com' },
     });
     fireEvent.click(screen.getByRole('button', { name: 'Gửi mã OTP qua email' }));

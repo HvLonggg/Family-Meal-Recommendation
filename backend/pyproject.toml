@@ -12,9 +12,13 @@ dependencies = [
   "anthropic==1.15.0",
   "certifi==2026.10.19",
   "cryptography==50.0.0",
+  # Phụ thuộc gián tiếp (email-validator), ghim bản đã vá CVE-2026-114605 / CVE-2026-128089.
+  "dnspython==2.9.2",
   "email-validator==2.3.0",
   "fastapi==0.141.1",
   "httpx==0.28.1",
+  # Phụ thuộc gián tiếp (anthropic), ghim bản đã vá CVE-2026-126360.
+  "opentelemetry-api==1.45.2",
   "pillow==13.0.0",
   "psycopg[binary]==3.3.6",
   "pydantic-settings==2.15.0",

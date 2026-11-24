@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#fffcf7" />
+    <title>Bếp Việt – Đang ngoại tuyến</title>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100svh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        padding-bottom: max(24px, env(safe-area-inset-bottom));
+        box-sizing: border-box;
+        background: #fffcf7;
+        color: #2f241f;
+        font:
+          16px/1.55 system-ui,
+          -apple-system,
+          'Segoe UI',
+          sans-serif;
+        text-align: center;
+      }
+      main {
+        max-width: 360px;
+      }
+      img {
+        width: 112px;
+        height: 112px;
+        border-radius: 28px;
+      }
+      h1 {
+        font-size: 1.35rem;
+        margin: 16px 0 8px;
+      }
+      p {
+        margin: 0 0 20px;
+        color: #7b6a5f;
+      }
+      button {
+        min-height: 48px;
+        padding: 0 24px;
+        border: 0;
+        border-radius: 999px;
+        background: #b8402f;
+        color: #fff;
+        font: inherit;
+        font-weight: 700;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <img src="/icons/apple-touch-icon.png" alt="Bếp Việt" width="112" height="112" />
+      <h1>Bạn đang ngoại tuyến</h1>
+      <p>
+        Không kết nối được mạng. Các món bạn đã xem gần đây vẫn có thể mở lại; hãy thử lại khi có
+        mạng.
+      </p>
+      <button type="button" onclick="location.reload()">Thử lại</button>
+    </main>
+  </body>
+</html>

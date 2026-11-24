@@ -44,6 +44,7 @@ from app.modules.auth.service import (
     InvalidCredentialsError,
     LoginRateLimitError,
     OAuthProviderNotConfiguredError,
+    RegistrationRateLimitError,
     authenticate_oauth_user,
     authenticate_password,
     change_password,
@@ -65,6 +66,9 @@ router = APIRouter(prefix="/auth")
 # Chống dò mật khẩu: đếm lần đăng nhập sai theo email và theo địa chỉ IP trong 15 phút.
 LOGIN_FAILURES_PER_EMAIL = SlidingWindowLimiter(limit=5, window_seconds=15 * 60)
 LOGIN_FAILURES_PER_IP = SlidingWindowLimiter(limit=20, window_seconds=15 * 60)
+# Đăng ký không xác minh email nhưng có gửi email chào mừng: giới hạn theo IP để chặn tạo tài
+# khoản hàng loạt và dùng hệ thống gửi thư rác tới địa chỉ của người khác.
+REGISTRATIONS_PER_IP = SlidingWindowLimiter(limit=30, window_seconds=60 * 60)
 REFRESH_COOKIE_NAME = "bep_viet_refresh"
 OAUTH_STATE_COOKIE_NAME = "bep_viet_oauth_state"
 
@@ -185,13 +189,21 @@ def request_email_otp_code(
 )
 def register(
     payload: RegisterRequest,
+    request: Request,
     session: Annotated[Session, Depends(get_db_session)],
 ) -> MessageResponse:
+    ip_key = client_ip(request)
+    if REGISTRATIONS_PER_IP.blocked(ip_key):
+        raise RegistrationRateLimitError(
+            "Bạn đã tạo quá nhiều tài khoản trong thời gian ngắn. Vui lòng thử lại sau."
+        )
+    REGISTRATIONS_PER_IP.hit(ip_key)
     register_email_account(
         session,
         email=str(payload.email),
         full_name=payload.full_name,
         password=payload.password,
+        terms_version=payload.accepted_terms_version,
     )
     return MessageResponse(
         message=(

@@ -1,6 +1,7 @@
 const SAMPLE_SIZE = 48;
 const ALPHA_THRESHOLD = 28;
-const TARGET_OCCUPANCY = 0.86;
+const TARGET_CONTENT_AREA = 0.53;
+const MAX_CONTENT_OCCUPANCY = 0.9;
 const MAX_SCALE = 2.4;
 
 let sampleCanvas: HTMLCanvasElement | undefined;
@@ -48,8 +49,8 @@ export function fitDishCutout(image: HTMLImageElement) {
 
     const frameRatio = frameWidth / frameHeight;
     const imageRatio = image.naturalWidth / image.naturalHeight;
-    const renderedWidth = Math.min(1, frameRatio / imageRatio);
-    const renderedHeight = Math.min(1, imageRatio / frameRatio);
+    const renderedWidth = Math.min(1, imageRatio / frameRatio);
+    const renderedHeight = Math.min(1, frameRatio / imageRatio);
     const contentLeft = (1 - renderedWidth) / 2 + (minX / SAMPLE_SIZE) * renderedWidth;
     const contentRight = (1 - renderedWidth) / 2 + ((maxX + 1) / SAMPLE_SIZE) * renderedWidth;
     const contentTop = (1 - renderedHeight) / 2 + (minY / SAMPLE_SIZE) * renderedHeight;
@@ -57,9 +58,14 @@ export function fitDishCutout(image: HTMLImageElement) {
     const contentWidth = contentRight - contentLeft;
     const contentHeight = contentBottom - contentTop;
     const occupancy = Math.max(contentWidth, contentHeight);
-    if (!occupancy) return;
+    const contentArea = contentWidth * contentHeight;
+    if (!occupancy || !contentArea) return;
 
-    const scale = Math.min(TARGET_OCCUPANCY / occupancy, MAX_SCALE);
+    const scale = Math.min(
+      Math.sqrt(TARGET_CONTENT_AREA / contentArea),
+      MAX_CONTENT_OCCUPANCY / occupancy,
+      MAX_SCALE,
+    );
     const centerX = (contentLeft + contentRight) / 2;
     const centerY = (contentTop + contentBottom) / 2;
     const offsetX = (0.5 - (0.5 + (centerX - 0.5) * scale)) * 100;

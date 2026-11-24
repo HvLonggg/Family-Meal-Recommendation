@@ -72,6 +72,26 @@ describe('recipe content localization', () => {
     expect(missing).toEqual([]);
   });
 
+  it('keeps repaired legacy image descriptions readable and synchronized with the API snapshot', () => {
+    for (const slug of [
+      'banh-it-la-gai-binh-dinh',
+      'bun-bo-hue-chay',
+      'bun-ca-chau-doc',
+      'cao-lau-chay-hoi-an',
+      'goi-cuon-chay',
+      'mi-quang-chay-hoi-an',
+      'nem-nuong-chay-hoi-an',
+      'va-tron-hoa-mau-chay-hue',
+    ]) {
+      const alt = projectImageAssets[slug]?.alt;
+      expect(alt, slug).toBeTruthy();
+      expect(alt, slug).not.toContain('?');
+      expect(catalogSnapshot.data.find((recipe) => recipe.slug === slug)?.image_alt, slug).toBe(
+        alt,
+      );
+    }
+  });
+
   it('swaps the catalog to English and back without losing Vietnamese search aliases', async () => {
     const slug = recipes[0]!.slug;
     const sourceRecipe = getRecipe(slug)!;

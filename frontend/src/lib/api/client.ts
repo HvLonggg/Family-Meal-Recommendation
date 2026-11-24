@@ -1,3 +1,11 @@
+import {
+  reportBusy,
+  reportMaintenance,
+  reportReachable,
+  reportUnreachable,
+} from '@/features/system/systemStatus';
+import { REQUEST_TIMEOUT_CODE } from '@/lib/api/retryPolicy';
+
 interface ErrorResponse {
   code: string;
   message: string;
@@ -44,17 +52,108 @@ export class ApiError extends Error {
   }
 }
 
-function send(path: string, init?: RequestInit) {
-  return fetch(`${API_BASE_URL}${path}`, {
-    ...init,
-    credentials: 'include',
-    headers: {
-      Accept: 'application/json',
-      ...(init?.body ? { 'Content-Type': 'application/json' } : {}),
-      ...(accessToken ? { Authorization: `Bearer ${accessToken}` } : {}),
-      ...init?.headers,
-    },
-  });
+// Cổng/proxy trả các mã này khi máy chủ API không phản hồi (sập, đang khởi động lại).
+const GATEWAY_FAILURES = new Set([502, 503, 504]);
+// Không để giao diện chờ mãi khi máy chủ quá tải: quá hạn thì báo "đang đông khách".
+// Ghi dữ liệu (tải tệp, hỏi Chú Rồng) được chờ lâu hơn đọc dữ liệu.
+export const READ_TIMEOUT_MS = 25_000;
+export const WRITE_TIMEOUT_MS = 60_000;
+const TIMEOUT_MESSAGE = 'Máy chủ phản hồi quá lâu. Vui lòng thử lại sau ít giây.';
+
+/** Giây phải chờ theo header Retry-After (số giây hoặc ngày giờ HTTP). */
+export function parseRetryAfter(value: string | null): number | undefined {
+  if (!value) return undefined;
+  const seconds = Number(value);
+  if (Number.isFinite(seconds)) return seconds >= 0 ? seconds : undefined;
+  const at = Date.parse(value);
+  return Number.isNaN(at) ? undefined : Math.max(0, Math.round((at - Date.now()) / 1000));
+}
+
+async function errorCode(response: Response) {
+  if (!response.headers.get('Content-Type')?.includes('json')) return undefined;
+  const payload = (await response
+    .clone()
+    .json()
+    .catch(() => null)) as Partial<ErrorResponse> | null;
+  return payload ?? undefined;
+}
+
+async function send(path: string, init?: RequestInit) {
+  let response: Response;
+  try {
+    response = await rawSend(path, init);
+  } catch (error) {
+    if (error instanceof ApiError && error.code === REQUEST_TIMEOUT_CODE) {
+      reportBusy();
+      throw error;
+    }
+    // Bị hủy chủ động (rời trang, hết thời gian chờ do nơi gọi đặt) không phải sự cố máy chủ.
+    if (!(error instanceof DOMException && error.name === 'AbortError')) reportUnreachable();
+    throw error;
+  }
+  const retryAfter = parseRetryAfter(response.headers.get('Retry-After'));
+  if (response.status === 503) {
+    const payload = await errorCode(response);
+    if (payload?.code === 'MAINTENANCE') {
+      reportMaintenance(payload.message);
+      return response;
+    }
+    if (payload?.code === 'OVERLOADED') {
+      reportBusy(retryAfter);
+      return response;
+    }
+  }
+  if (response.status === 429 && !isAuthEndpoint(path)) {
+    // Giới hạn riêng từng tính năng (*_RATE_LIMITED) đã có thông báo tại chỗ; 429 chung
+    // (từ proxy hay giới hạn tần suất toàn hệ thống) nghĩa là máy chủ đang đông.
+    const payload = await errorCode(response);
+    if (!payload?.code?.endsWith('_RATE_LIMITED')) {
+      reportBusy(retryAfter);
+      return response;
+    }
+  }
+  if (GATEWAY_FAILURES.has(response.status)) reportUnreachable();
+  else reportReachable();
+  return response;
+}
+
+async function rawSend(path: string, init?: RequestInit) {
+  // Nơi gọi tự đặt signal (kho món, luồng SSE) thì tự quản thời gian chờ.
+  const controller = init?.signal ? null : new AbortController();
+  const timeoutMs = init?.method && init.method !== 'GET' ? WRITE_TIMEOUT_MS : READ_TIMEOUT_MS;
+  let timedOut = false;
+  const timer = controller
+    ? setTimeout(() => {
+        timedOut = true;
+        controller.abort();
+      }, timeoutMs)
+    : undefined;
+  try {
+    return await fetch(`${API_BASE_URL}${path}`, {
+      ...init,
+      ...(controller ? { signal: controller.signal } : {}),
+      credentials: 'include',
+      headers: {
+        Accept: 'application/json',
+        ...(init?.body ? { 'Content-Type': 'application/json' } : {}),
+        ...(accessToken ? { Authorization: `Bearer ${accessToken}` } : {}),
+        ...init?.headers,
+      },
+    });
+  } catch (error) {
+    if (timedOut) {
+      throw new ApiError(504, {
+        code: REQUEST_TIMEOUT_CODE,
+        message: TIMEOUT_MESSAGE,
+        field_errors: {},
+        trace_id: '',
+      });
+    }
+    throw error;
+  } finally {
+    // Chỉ giới hạn thời gian chờ phản hồi đầu tiên; đọc thân phản hồi lớn không bị cắt.
+    clearTimeout(timer);
+  }
 }
 
 /** Gửi request có xác thực; trả về Response thành công hoặc ném ApiError. */

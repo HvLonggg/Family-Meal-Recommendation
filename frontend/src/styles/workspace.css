@@ -114,28 +114,6 @@ html[data-reduce-motion='true'] *::after {
 .nav-link--login::after {
   display: none;
 }
-.nav-link--support {
-  border: 1px solid rgb(180 59 44 / 18%);
-  border-radius: 999px;
-  padding: 10px 13px;
-  color: var(--color-primary);
-  background: linear-gradient(135deg, #fff7f1, #fbe9df);
-  transition:
-    transform 180ms ease,
-    color 180ms ease,
-    background 180ms ease,
-    box-shadow 180ms ease;
-}
-.nav-link--support::after {
-  display: none;
-}
-.nav-link--support:hover,
-.nav-link--support.is-active {
-  color: white;
-  background: linear-gradient(135deg, #b43b2c, #8f3025);
-  box-shadow: 0 7px 18px rgb(143 48 37 / 18%);
-  transform: translateY(-1px);
-}
 .nav-link--featured {
   color: #49352c;
 }
@@ -1185,6 +1163,19 @@ html[data-reduce-motion='true'] *::after {
   font-weight: 650;
   overflow-wrap: anywhere;
 }
+.security-facts__email {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 12px;
+}
+.security-facts__action {
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 .security-facts__badges {
   display: flex;
   flex-wrap: wrap;
@@ -1636,10 +1627,7 @@ html[data-reduce-motion='true'] *::after {
   margin-top: 26px;
 }
 .page-hero--compact {
-  padding-block: 54px;
-}
-.page-hero--compact h1 {
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  padding-block: var(--hero-padding-block);
 }
 .article-toolbar {
   display: flex;
@@ -1920,7 +1908,8 @@ html[data-reduce-motion='true'] *::after {
 }
 .contact-person {
   display: flex;
-  gap: 16px;
+  align-items: center;
+  gap: 18px;
   border-radius: 22px;
   padding: 22px;
   color: #fff7ed;
@@ -1944,7 +1933,9 @@ html[data-reduce-motion='true'] *::after {
   line-height: 1.6;
 }
 .contact-person .user-avatar {
-  border: 3px solid rgb(255 255 255 / 25%);
+  border: 3px solid rgb(255 255 255 / 35%);
+  background: #fff7ed;
+  box-shadow: 0 10px 24px rgb(0 0 0 / 22%);
 }
 .contact-channels {
   display: grid;
@@ -2050,11 +2041,6 @@ html[data-reduce-motion='true'] *::after {
 .contact-page__intro h1 {
   margin: 8px 0 7px;
   color: var(--ws-ink);
-  font-family: 'Be Vietnam Pro', Inter, 'Segoe UI', sans-serif;
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 650;
-  letter-spacing: -0.045em;
-  line-height: 1.15;
 }
 .contact-page__intro p {
   max-width: 680px;

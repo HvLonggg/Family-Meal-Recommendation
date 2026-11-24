@@ -17,6 +17,7 @@ import {
 import { cookPath } from '@/features/cooking/cookSession';
 import { useI18n } from '@/features/i18n/I18nContext';
 import { errorMessage } from '@/lib/errors';
+import { formatDayMonth } from '@/lib/formatDate';
 
 const PAGE_SIZE = 20;
 
@@ -58,7 +59,7 @@ export function CookHistoryPage() {
     else {
       groups.push({
         key,
-        label: formatDate(log.cooked_at, { weekday: 'long', day: 'numeric', month: 'long' }),
+        label: `${formatDate(log.cooked_at, { weekday: 'long' })}, ${formatDayMonth(log.cooked_at)}`,
         items: [log],
       });
     }

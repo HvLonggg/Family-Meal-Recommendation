@@ -1,0 +1,177 @@
+{
+  "batch": 94,
+  "canvas": {
+    "width": 1536,
+    "height": 864,
+    "format": "WebP",
+    "background": "transparent"
+  },
+  "native_format": "WebP",
+  "export_master_format": "WebP",
+  "assets": [
+    {
+      "slug": "canh-rau-ma-nau-nam",
+      "native_file": "output/recipe-images/native/canh-rau-ma-nau-nam.webp",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "frontend/public/images/recipes/edited/canh-rau-ma-nau-nam-1536.webp",
+      "export_master_pixels": [
+        1536,
+        864
+      ],
+      "upscale_note": "Native image is 1536×1024 with transparency; the full dish fits a transparent 1536×864 canvas without cropping. The image is not native 4K.",
+      "web_variants": [
+        {
+          "path": "/images/recipes/edited/canh-rau-ma-nau-nam-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/canh-rau-ma-nau-nam-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/canh-rau-ma-nau-nam-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "slug": "dau-hu-cuon-la-lot-chay",
+      "native_file": "output/recipe-images/native/dau-hu-cuon-la-lot-chay.webp",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "frontend/public/images/recipes/edited/dau-hu-cuon-la-lot-chay-1536.webp",
+      "export_master_pixels": [
+        1536,
+        864
+      ],
+      "upscale_note": "Native ImageGen source is 1536×1024 with transparency, fit without cropping to a 1536×864 canvas; not native 4K.",
+      "web_variants": [
+        {
+          "path": "/images/recipes/edited/dau-hu-cuon-la-lot-chay-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/dau-hu-cuon-la-lot-chay-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/dau-hu-cuon-la-lot-chay-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "slug": "ga-nau-pate",
+      "native_file": "output/recipe-images/native/ga-nau-pate.webp",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "frontend/public/images/recipes/edited/ga-nau-pate-1536.webp",
+      "export_master_pixels": [
+        1536,
+        864
+      ],
+      "upscale_note": "Native ImageGen source is 1536×1024 with transparency, fit without cropping to a 1536×864 canvas; not native 4K.",
+      "web_variants": [
+        {
+          "path": "/images/recipes/edited/ga-nau-pate-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/ga-nau-pate-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/ga-nau-pate-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "slug": "ca-ho-kho-nghe",
+      "native_file": "output/recipe-images/native/ca-ho-kho-nghe.webp",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "frontend/public/images/recipes/edited/ca-ho-kho-nghe-1536.webp",
+      "export_master_pixels": [
+        1536,
+        864
+      ],
+      "upscale_note": "Native ImageGen source is 1536×1024 with transparency, fit without cropping to a 1536×864 canvas; not native 4K.",
+      "web_variants": [
+        {
+          "path": "/images/recipes/edited/ca-ho-kho-nghe-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/ca-ho-kho-nghe-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/ca-ho-kho-nghe-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        }
+      ]
+    }
+  ]
+}

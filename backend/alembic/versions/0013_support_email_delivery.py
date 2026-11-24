@@ -29,9 +29,7 @@ def upgrade() -> None:
         sa.Column("notification_sent_at", sa.DateTime(timezone=True), nullable=True),
     )
     # Only future requests are mailed; historical tickets are already in the admin inbox.
-    op.execute(
-        sa.text("UPDATE support_tickets SET notification_sent_at = created_at")
-    )
+    op.execute(sa.text("UPDATE support_tickets SET notification_sent_at = created_at"))
     op.create_index(
         "ix_support_tickets_email_delivery",
         "support_tickets",

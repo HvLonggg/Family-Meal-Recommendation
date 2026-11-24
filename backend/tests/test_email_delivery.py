@@ -101,9 +101,9 @@ def test_account_created_email_welcomes_user_and_mentions_support(
 def test_gmail_smtp_sends_an_otp_over_starttls(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setenv("BEP_VIET_EMAIL_SMTP_HOST", "smtp.gmail.com")
     monkeypatch.setenv("BEP_VIET_EMAIL_SMTP_PORT", "587")
-    monkeypatch.setenv("BEP_VIET_EMAIL_SMTP_USERNAME", "hvlongg@gmail.com")
+    monkeypatch.setenv("BEP_VIET_EMAIL_SMTP_USERNAME", "support@bepviet.vn")
     monkeypatch.setenv("BEP_VIET_EMAIL_SMTP_PASSWORD", "abcdefghijklmnop")
-    monkeypatch.setenv("BEP_VIET_EMAIL_FROM_ADDRESS", "hvlongg@gmail.com")
+    monkeypatch.setenv("BEP_VIET_EMAIL_FROM_ADDRESS", "support@bepviet.vn")
     monkeypatch.setenv("BEP_VIET_EMAIL_USE_SSL", "false")
     monkeypatch.setenv("BEP_VIET_EMAIL_STARTTLS", "true")
     get_settings.cache_clear()
@@ -121,16 +121,16 @@ def test_gmail_smtp_sends_an_otp_over_starttls(monkeypatch: pytest.MonkeyPatch) 
 
         assert smtp_factory.call_args.args == ("smtp.gmail.com", 587)
         assert smtp.starttls.call_count == 1
-        smtp.login.assert_called_once_with("hvlongg@gmail.com", "abcdefghijklmnop")
+        smtp.login.assert_called_once_with("support@bepviet.vn", "abcdefghijklmnop")
         message = smtp.send_message.call_args.args[0]
-        assert message["From"] == "Bếp Việt <hvlongg@gmail.com>"
+        assert message["From"] == "Bếp Việt <support@bepviet.vn>"
         assert message["To"] == "lan@example.com"
         assert "Bếp Việt" in message["Subject"]
         plain_body = message.get_body(preferencelist=("plain",)).get_content()
         assert "04281" in plain_body
         assert "5 phút" in plain_body
         assert "BẾP VIỆT" in plain_body
-        assert "Hỗ trợ: hvlongg@gmail.com" in plain_body
+        assert "Hỗ trợ: support@bepviet.vn" in plain_body
 
         html_part = next(part for part in message.walk() if part.get_content_type() == "text/html")
         assert f"cid:{EMAIL_LOGO_CID}" in html_part.get_content()
@@ -139,7 +139,8 @@ def test_gmail_smtp_sends_an_otp_over_starttls(monkeypatch: pytest.MonkeyPatch) 
         )
         assert inline_logo["Content-ID"] == f"<{EMAIL_LOGO_CID}>"
         assert inline_logo.get_content_disposition() == "inline"
-        assert len(inline_logo.get_payload(decode=True) or b"") > 10_000
+        logo_bytes = inline_logo.get_payload(decode=True) or b""
+        assert logo_bytes.startswith(b"\x89PNG") and len(logo_bytes) > 2_000
     finally:
         get_settings.cache_clear()
 
@@ -315,9 +316,9 @@ def test_meal_email_uses_a_transparent_fallback_size_instead_of_original_photo(
 
 def test_smtp_refusal_is_not_reported_as_success(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setenv("BEP_VIET_EMAIL_SMTP_HOST", "smtp.gmail.com")
-    monkeypatch.setenv("BEP_VIET_EMAIL_SMTP_USERNAME", "hvlongg@gmail.com")
+    monkeypatch.setenv("BEP_VIET_EMAIL_SMTP_USERNAME", "support@bepviet.vn")
     monkeypatch.setenv("BEP_VIET_EMAIL_SMTP_PASSWORD", "abcdefghijklmnop")
-    monkeypatch.setenv("BEP_VIET_EMAIL_FROM_ADDRESS", "hvlongg@gmail.com")
+    monkeypatch.setenv("BEP_VIET_EMAIL_FROM_ADDRESS", "support@bepviet.vn")
     get_settings.cache_clear()
 
     smtp = MagicMock()
@@ -344,7 +345,7 @@ def _configure_gmail_api(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setenv("BEP_VIET_EMAIL_GMAIL_CLIENT_ID", "client-id.apps.googleusercontent.com")
     monkeypatch.setenv("BEP_VIET_EMAIL_GMAIL_CLIENT_SECRET", "client-secret")
     monkeypatch.setenv("BEP_VIET_EMAIL_GMAIL_REFRESH_TOKEN", "refresh-token")
-    monkeypatch.setenv("BEP_VIET_EMAIL_FROM_ADDRESS", "hvlongg@gmail.com")
+    monkeypatch.setenv("BEP_VIET_EMAIL_FROM_ADDRESS", "support@bepviet.vn")
     monkeypatch.setattr(auth_email, "_gmail_access_token", None)
     get_settings.cache_clear()
 
@@ -394,7 +395,7 @@ def test_gmail_api_sends_an_otp_over_https(monkeypatch: pytest.MonkeyPatch) -> N
         raw = json.loads(send_requests[0].content)["raw"]
         message = message_from_bytes(base64.urlsafe_b64decode(raw), policy=default)
         assert isinstance(message, EmailMessage)
-        assert message["From"] == "Bếp Việt <hvlongg@gmail.com>"
+        assert message["From"] == "Bếp Việt <support@bepviet.vn>"
         assert message["To"] == "lan@example.com"
         plain_body = message.get_body(preferencelist=("plain",))
         assert plain_body is not None

@@ -1,0 +1,206 @@
+.catalog-page-view .page-hero--recipes {
+  padding-block: 32px;
+}
+.catalog-page-view .page-hero--recipes .catalog-search {
+  margin-top: 20px;
+}
+.catalog-page-view .catalog-content {
+  min-width: 0;
+  scroll-margin-top: 100px;
+}
+.catalog-page-view .catalog-results {
+  align-items: center;
+  gap: 20px;
+}
+.catalog-page-view .catalog-results h2 {
+  margin-top: 6px;
+  font-size: clamp(1.45rem, 2.4vw, 2rem);
+}
+.catalog-page-view .catalog-results select {
+  min-width: 190px;
+  min-height: 44px;
+  border-radius: 16px;
+  background: #fffcf8;
+}
+.catalog-page-view .filter-panel button {
+  min-height: 44px;
+  font-size: 14px;
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    translate 180ms ease;
+}
+.catalog-page-view .filter-panel button:hover {
+  translate: 2px 0;
+}
+.catalog-page-view .filter-panel .catalog-favorites-tab {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.catalog-collection-state {
+  display: flex;
+  min-height: 320px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 14px;
+  border: 1px dashed #decdbb;
+  border-radius: 24px;
+  padding: 40px 24px;
+  text-align: center;
+  background: #fffcf8;
+}
+.catalog-collection-state__icon {
+  display: grid;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  place-items: center;
+  color: #a44332;
+  background: #f4e5dc;
+}
+.catalog-collection-state h3 {
+  font-size: 1.3rem;
+}
+.catalog-collection-state p {
+  max-width: 430px;
+  color: #806d60;
+}
+@media (max-width: 959px) {
+  .catalog-page-view .catalog-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+  .catalog-page-view .filter-panel {
+    display: block;
+    min-width: 0;
+    overflow: visible;
+  }
+  .catalog-page-view .filter-panel > div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin: 0;
+    padding: 4px;
+    gap: 8px;
+  }
+  .catalog-page-view .filter-panel > div > strong {
+    display: none;
+  }
+  .catalog-page-view .filter-panel button {
+    width: auto;
+    border-radius: 999px;
+    padding: 9px 13px;
+    white-space: nowrap;
+  }
+  .catalog-page-view .filter-panel .catalog-favorites-tab {
+    margin-top: 0;
+    border: 0;
+    border-radius: 999px;
+    padding: 9px 13px;
+  }
+}
+.catalog-page-view .catalog-content:focus-visible,
+.catalog-page-view .filter-panel button:focus-visible,
+.catalog-page-view .catalog-pagination button:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+.catalog-page-view .catalog-pagination nav {
+  flex-wrap: wrap;
+}
+.catalog-page-view .catalog-pagination button {
+  width: 44px;
+  height: 44px;
+}
+.catalog-page-view .catalog-pagination__previous svg {
+  transform: rotate(180deg);
+}
+@media (min-width: 960px) {
+  /* Bù tỷ lệ zoom 90% của giao diện desktop để vùng bấm thực tế >= 44px. */
+  .catalog-page-view .catalog-pagination button {
+    width: 50px;
+    height: 50px;
+  }
+  .catalog-page-view .filter-panel button,
+  .catalog-page-view .catalog-results select {
+    min-height: 50px;
+  }
+}
+@media (max-width: 600px) {
+  /* Trợ lý ở cuối danh sách để không che thao tác lưu món khi duyệt trên điện thoại. */
+  #main-content:has(.catalog-page-view) + .rc-root:not(.is-open) {
+    position: static;
+    width: calc(100% - 32px);
+    margin: 0 auto 24px;
+  }
+  #main-content:has(.catalog-page-view) + .rc-root:not(.is-open) .rc-teaser {
+    display: none;
+  }
+  #main-content:has(.catalog-page-view) + .rc-root:not(.is-open) .rc-launcher {
+    display: inline-flex;
+    width: auto;
+    min-height: 44px;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: 8px 12px;
+    background: var(--color-surface);
+    filter: none;
+    animation: none;
+  }
+  #main-content:has(.catalog-page-view) + .rc-root:not(.is-open) .dragon-mascot {
+    width: 40px;
+  }
+  #main-content:has(.catalog-page-view) + .rc-root:not(.is-open) .rc-launcher__label {
+    position: static;
+    padding: 0;
+    color: var(--color-text-secondary);
+    background: none;
+    box-shadow: none;
+    font-size: 14px;
+    opacity: 1;
+    transform: none;
+  }
+  .catalog-page-view .page-hero--recipes {
+    padding-block: 24px;
+  }
+  .catalog-page-view .page-hero--recipes h1 {
+    font-size: 32px;
+  }
+  .catalog-page-view .page-hero--recipes p {
+    margin-top: 12px;
+    font-size: 16px;
+  }
+  .catalog-page-view > .content-section {
+    padding-top: 24px;
+  }
+  .catalog-page-view .catalog-results {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .catalog-page-view .catalog-results select {
+    width: 100%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .catalog-page-view .filter-panel button {
+    transition: none;
+  }
+}
+/* Trạng thái rỗng: icon, chữ và nút cùng căn giữa. */
+.catalog-page-view .catalog-empty-state {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+  padding: 56px 20px;
+}
+.catalog-page-view .catalog-empty-state h3,
+.catalog-page-view .catalog-empty-state p {
+  margin: 0;
+}

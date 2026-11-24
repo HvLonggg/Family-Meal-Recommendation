@@ -85,7 +85,7 @@ export function SuggestionsPage() {
         <div className="container">
           <span className="section-label">{t('Gợi ý cho nhà mình')}</span>
           <h1>{t('Hôm nay bạn muốn ăn thế nào?')}</h1>
-          <p>{t('Chọn một ưu tiên, Bếp Việt sẽ rút gọn những món phù hợp nhất.')}</p>
+          <p>{t('Chọn một ưu tiên để xem món phù hợp.')}</p>
           <div className="choice-chips">
             {available.map((option) => (
               <button
@@ -108,7 +108,6 @@ export function SuggestionsPage() {
         <div className="container">
           <div className="section-heading">
             <div>
-              <span className="section-label">{t('Đề xuất theo lựa chọn')}</span>
               <h2>{t(selected.label)}</h2>
               <p>{t(selected.description)}</p>
             </div>

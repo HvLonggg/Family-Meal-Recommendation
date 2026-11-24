@@ -1,0 +1,19 @@
+# Danh sách nguồn ứng viên tiếp theo
+
+Trạng thái: **nghiên cứu sơ bộ, chưa công khai**. Các món dưới đây được rà tên với catalog và các ghi chú ứng viên batch 96–102; chưa có ID chính thức, công thức Bếp Việt hoàn chỉnh, ảnh riêng hoặc thử bếp. Cần kiểm tra lại điểm gần họ món trước khi chốt để tránh biến thể trùng lặp.
+
+| Món ứng viên | Điểm nhận diện và nguồn trực tiếp | Điểm cần biên tập / rà thêm |
+| --- | --- | --- |
+| Chả giò rong biển chay | [Món Ngon Mỗi Ngày](https://monngonmoingay.com/cha-gio-rong-bien-chay/) — cuộn rong biển nori với nhân đậu hũ, miến, nấm, củ năng, cà rốt và tàu hũ ky; áo mè rồi chiên. | Nguồn ghi 5 phút dù có nhiều bước; không dùng mốc đó nếu chưa thử. Phân biệt với chả giò chay đã có bằng rong biển nori và cấu trúc cuộn hở hai đầu. |
+| Canh chua bông so đũa chay | [Món Ngon Mỗi Ngày](https://monngonmoingay.com/tro-tai-voi-combo-mon-chay-sieu-hap-dan/) — bông so đũa, nấm bào ngư, tàu hũ ky, me, cà chua và thơm. | Catalog có canh chua chay miền Nam; chỉ thêm nếu bông so đũa là điểm chính trong tên, mô tả và cách nấu, không chỉ là thay rau. |
+| Đậu hũ non xốt cay | [Món Ngon Mỗi Ngày](https://monngonmoingay.com/dau-hu-non-xot-cay/) — đậu hũ non, nấm, rau củ và sườn non chay với xốt sa tế, nước dừa. | Làm rõ độ cay và cách làm xốt để khác các món đậu hũ sốt đã có; rà gia vị thương hiệu và định lượng. |
+| Củ năng om nấm chay | [Món Ngon Mỗi Ngày](https://monngonmoingay.com/cu-nang-om-nam-chay/) — củ năng, củ cải, đậu hũ, nấm, cà rốt, sả, nước cốt dừa và đậu phộng. | Nguồn công bố thời gian có thể ngắn hơn các công đoạn; thử độ mềm của củ và mức cô nước trước khi ghi thời gian. |
+| Gà hấp tứ quý chay | [Món Ngon Mỗi Ngày](https://monngonmoingay.com/thuc-don-chay-ngon-toan-mon-moi-cho-ngay-sum-hop-dau-nam/) — nấm đùi gà bọc tàu hũ ky, hấp với táo đỏ, hạt sen, nấm và cà rốt. | Ghi rõ là món chay mô phỏng tạo hình gà; không phân loại hay viết như món thịt gà. Rà lại độ phù hợp của tên trong tìm kiếm. |
+| Mực xào sả ớt | [Món Ngon Mỗi Ngày](https://monngonmoingay.com/muc-xao-sa-ot/) — mực xào nhanh với sả và ớt; sả được xử lý riêng rồi rắc hoàn thiện. | Catalog có các món mực xào khác; chỉ giữ nếu quy trình và vị sả ớt tạo khác biệt rõ, không đổi tên một món hiện có. |
+| Bắp non xào mực cay | [Món Ngon Mỗi Ngày](https://monngonmoingay.com/bap-non-xao-muc-cay/) — bắp non, mực, cà rốt, gừng và sa tế; sơ chế rau củ và xào mực riêng trước khi đảo với xốt. | Giữ bắp non làm thành phần chính trong tiêu đề, tỷ lệ và hình ảnh; phân biệt với các món mực xào chung. |
+| Tôm mực xào rau nhút | [Món Ngon Mỗi Ngày](https://monngonmoingay.com/tom-muc-xao-rau-nhut/) — rau nhút, tôm, mực, tỏi và ớt; chần rau, xào hải sản riêng, đảo chung và nêm chua nhẹ. | Nguồn dùng mỡ heo nên không gắn nhãn chay. Catalog có rau nhút xào tỏi nhưng chưa thấy tổ hợp tôm mực này. |
+| Vịt kho riềng ớt khô | [Món Ngon Mỗi Ngày](https://monngonmoingay.com/vit-kho-rieng-ot-kho/) — riềng, ớt khô, nước me và nước dừa cùng thịt vịt kho mềm. | Xác minh định lượng và thời gian trên nguồn; phân biệt rõ với vịt kho gừng, vịt om sấu và các món vịt kho hiện có. |
+| Cá lòng tong rim nước mắm | [Món Ngon Mỗi Ngày](https://monngonmoingay.com/ca-long-tong-rim-nuoc-mam/) — cá làm sạch, chiên áo bột cho săn rồi rim nước mắm đường tới khi xốt bám cá. | Xác nhận tên loài/cách gọi địa phương; nguồn có gia vị thương mại, cần biên tập bằng gia vị phổ thông và thử vị. |
+| Vịt nướng me cay | [Món Ngon Mỗi Ngày](https://monngonmoingay.com/vit-nuong-me-cay/) — vịt ướp me, sa tế rồi nướng; ăn cùng xốt đậu phộng. | Thời gian nguồn chưa khớp bước ướp và nướng; chưa xếp món vào nhóm nhanh trước khi kiểm chứng lại. |
+
+**Rà soát bước tiếp:** mở lại từng nguồn trước khi viết công thức, so khớp toàn bộ alias/family trong catalog, chốt phần thay gia vị, xác nhận khẩu phần và thử nấu. Chỉ sau đó mới cấp ID batch, tạo ảnh Bếp Việt nền trong suốt và chuyển sang sidecar import.

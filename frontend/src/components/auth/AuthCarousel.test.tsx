@@ -8,7 +8,7 @@ describe('AuthCarousel', () => {
     render(<AuthCarousel />);
 
     expect(
-      screen.getByRole('heading', { name: 'Cùng Quyên, trọn vị cơm nhà' }),
+      screen.getByRole('heading', { name: 'Cùng Bếp Việt, trọn vị cơm nhà' }),
     ).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole('button', { name: 'Nội dung tiếp theo' }));

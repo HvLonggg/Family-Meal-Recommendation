@@ -70,3 +70,23 @@ export function requestEmailChange(newEmail: string, currentPassword?: string) {
 export function confirmEmailChange(challengeId: string, code: string) {
   return apiPost<AuthUser>('/auth/change-email/confirm', { challenge_id: challengeId, code });
 }
+
+export interface DeleteAccountPayload {
+  confirmation: string;
+  password?: string;
+  challenge_id?: string;
+  code?: string;
+}
+
+/** Tài khoản chỉ đăng nhập mạng xã hội (không có mật khẩu) xác nhận xóa bằng mã email. */
+export function requestAccountDeletionCode() {
+  return apiPost<EmailChangeChallenge>('/account/delete/request-code');
+}
+
+export function deleteAccount(payload: DeleteAccountPayload) {
+  return apiPost<{ message: string }>('/account/delete', payload);
+}
+
+export function acceptTerms(version: string) {
+  return apiPost<AuthUser>('/account/accept-terms', { version });
+}

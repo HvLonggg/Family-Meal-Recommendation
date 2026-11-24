@@ -1,6 +1,7 @@
 import { keepPreviousData, useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
 import { AppIcon } from '@/components/common/AppIcon';
+import { useConfirmDialog } from '@/components/common/useConfirmDialog';
 import {
   EmptyState,
   LoadingBlock,
@@ -25,6 +26,7 @@ const filters: SubmissionStatus[] = ['pending', 'approved', 'rejected'];
 export function AdminSubmissionsPage() {
   const { formatDate, t } = useI18n();
   const queryClient = useQueryClient();
+  const { confirm, dialog } = useConfirmDialog();
   const { offset, setFilter, values } = useAdminFilters(['status'] as const);
   const params = { ...values, limit: LIMIT, offset };
   const submissions = useQuery({
@@ -45,13 +47,21 @@ export function AdminSubmissionsPage() {
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ['admin'] }),
   });
 
-  const decide = (item: AdminSubmission, status: 'approved' | 'rejected') => {
-    const note = window.prompt(
-      status === 'approved'
-        ? t('Lời nhắn gửi người đề xuất (không bắt buộc):')
-        : t('Lý do chưa phù hợp, gợi ý chỉnh sửa:'),
-      item.admin_note ?? '',
-    );
+  const decide = async (item: AdminSubmission, status: 'approved' | 'rejected') => {
+    const approved = status === 'approved';
+    const note = await confirm({
+      title: approved
+        ? t('Duyệt đề xuất “{name}”?', { name: item.name })
+        : t('Từ chối đề xuất “{name}”?', { name: item.name }),
+      confirmLabel: approved ? t('Duyệt') : t('Từ chối'),
+      tone: approved ? 'primary' : 'danger',
+      note: {
+        label: approved
+          ? t('Lời nhắn gửi người đề xuất (không bắt buộc):')
+          : t('Lý do chưa phù hợp, gợi ý chỉnh sửa:'),
+        defaultValue: item.admin_note ?? '',
+      },
+    });
     if (note === null) return;
     review.mutate({ id: item.id, status, note });
   };
@@ -143,7 +153,7 @@ export function AdminSubmissionsPage() {
                     <button
                       className="button button--primary"
                       disabled={review.isPending}
-                      onClick={() => decide(item, 'approved')}
+                      onClick={() => void decide(item, 'approved')}
                       type="button"
                     >
                       <AppIcon name="check" size={15} /> {t('Duyệt')}
@@ -153,7 +163,7 @@ export function AdminSubmissionsPage() {
                     <button
                       className="text-button text-button--danger"
                       disabled={review.isPending}
-                      onClick={() => decide(item, 'rejected')}
+                      onClick={() => void decide(item, 'rejected')}
                       type="button"
                     >
                       {t('Chưa phù hợp')}
@@ -192,6 +202,7 @@ export function AdminSubmissionsPage() {
         onChange={(next) => setFilter('offset', next)}
         total={submissions.data?.total ?? 0}
       />
+      {dialog}
     </section>
   );
 }

@@ -1,4 +1,17 @@
+// Nhớ kết quả chuẩn hóa: tìm kiếm gọi hàm này hàng chục nghìn lần cho cùng một chuỗi.
+const normalizedCache = new Map<string, string>();
+const NORMALIZED_CACHE_LIMIT = 50_000;
+
 export function normalizeSearchText(value: string) {
+  const cached = normalizedCache.get(value);
+  if (cached !== undefined) return cached;
+  const normalized = computeNormalizedSearchText(value);
+  if (normalizedCache.size >= NORMALIZED_CACHE_LIMIT) normalizedCache.clear();
+  normalizedCache.set(value, normalized);
+  return normalized;
+}
+
+function computeNormalizedSearchText(value: string) {
   return value
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')

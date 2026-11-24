@@ -14,7 +14,12 @@ export type CookStep = {
   /** Thứ tự trong nhóm (sơ chế/thực hiện), bắt đầu từ 1. */
   number: number;
   groupSize: number;
+  /** Thứ tự trong toàn bộ bước làm của món (sơ chế + thực hiện), khớp "N bước" ở thẻ món. */
+  dishStep?: number;
+  dishSteps?: number;
   text: string;
+  /** Khẩu phần gốc của lời bước khi còn định lượng không tự quy đổi được. */
+  writtenFor?: number;
   /** Danh sách nguyên liệu (chỉ bước chuẩn bị). */
   items?: string[];
   timerSeconds: number | null;
@@ -51,6 +56,57 @@ export function cookPath(dishes: CookDish[]) {
   return `/cook?${params.toString()}`;
 }
 
+// Định lượng khối lượng/thể tích trong lời bước ("1,7 lít", "250 g", "2 muỗng canh").
+const QUANTITY =
+  /(\d+(?:[.,]\d+)?)(\s*)(muỗng canh|muỗng cà phê|thìa canh|thìa cà phê|kg|gram|gam|g|ml|lít|lit|l|chén|bát)(?![\p{L}\p{N}])/giu;
+const UNIT: Record<string, string> = {
+  gram: 'g',
+  gam: 'g',
+  lit: 'lít',
+  l: 'lít',
+  'thìa canh': 'muỗng canh',
+  'thìa cà phê': 'muỗng cà phê',
+  bát: 'chén',
+};
+const unitKey = (unit: string) => {
+  const key = unit.trim().toLowerCase();
+  return UNIT[key] ?? key;
+};
+
+/**
+ * Quy đổi định lượng trong lời bước theo khẩu phần. Chỉ đổi khi số + đơn vị trùng đúng một định
+ * lượng gốc trong danh sách nguyên liệu (an toàn, không đoán); còn lại thì báo `unscaled` để
+ * màn hình ghi chú lời bước tính cho khẩu phần gốc.
+ */
+export function scaleStepText(
+  text: string,
+  recipe: Recipe,
+  servings: number,
+  format: (value: number) => string,
+) {
+  if (!servings || servings === recipe.servings) return { text, unscaled: false };
+  const items = recipe.ingredients.flatMap((group) => group.items);
+  let unscaled = false;
+  const scaled = text.replace(QUANTITY, (match, raw: string, space: string, unit: string) => {
+    const value = Number(raw.replace(',', '.'));
+    const matches = items.filter(
+      (item) =>
+        item.amount != null &&
+        Math.abs(item.amount - value) < 1e-9 &&
+        unitKey(item.unit) === unitKey(unit),
+    );
+    const results = new Set(
+      matches.map((item) => format(ingredientAmount(item, recipe, servings) ?? value)),
+    );
+    if (results.size !== 1) {
+      unscaled = true;
+      return match;
+    }
+    return `${[...results][0]}${space}${unit}`;
+  });
+  return { text: scaled, unscaled };
+}
+
 export function buildCookSteps(
   dishes: { recipe: Recipe; servings: number }[],
   language: Language,
@@ -77,20 +133,27 @@ export function buildCookSteps(
       items,
       timerSeconds: null,
     });
-    const add = (kind: 'preparation' | 'cooking', list: string[]) =>
-      list.forEach((text, index) =>
+    const dishSteps = recipe.preparation.length + recipe.cooking.length;
+    const add = (kind: 'preparation' | 'cooking', list: string[], offset: number) =>
+      list.forEach((original, index) => {
+        const { text, unscaled } = scaleStepText(original, recipe, servings, (value) =>
+          number.format(value),
+        );
         steps.push({
           key: `${recipe.slug}:${kind}:${index}`,
           dishIndex,
           kind,
           number: index + 1,
           groupSize: list.length,
+          dishStep: offset + index + 1,
+          dishSteps,
           text,
-          timerSeconds: detectStepTimer(text),
-        }),
-      );
-    add('preparation', recipe.preparation);
-    add('cooking', recipe.cooking);
+          ...(unscaled ? { writtenFor: recipe.servings } : {}),
+          timerSeconds: detectStepTimer(original),
+        });
+      });
+    add('preparation', recipe.preparation, 0);
+    add('cooking', recipe.cooking, recipe.preparation.length);
     steps.push({
       key: `${recipe.slug}:finish`,
       dishIndex,

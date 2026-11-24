@@ -7,6 +7,7 @@ import { AuthField } from '@/components/auth/AuthField';
 import { Button } from '@/components/ui/Button';
 import { errorMessage } from '@/lib/errors';
 import { apiPost } from '@/lib/api/client';
+import { LEGAL_VERSION } from '@/pages/legal/legalTypes';
 import { useI18n } from '@/features/i18n/I18nContext';
 
 interface RegisterForm {
@@ -32,6 +33,7 @@ export function RegisterPage() {
         full_name: values.fullName,
         email: values.email,
         password: values.password,
+        accepted_terms_version: LEGAL_VERSION,
       });
       await navigate('/login', {
         replace: true,
@@ -48,7 +50,7 @@ export function RegisterPage() {
     <div className="auth-page auth-page--register">
       <div className="auth-card__heading">
         <span className="auth-kicker">{t('Bắt đầu miễn phí')}</span>
-        <h2>{t('Tạo tài khoản của bạn')}</h2>
+        <h1>{t('Tạo tài khoản của bạn')}</h1>
         <p>
           {t(
             'Điền thông tin để tạo tài khoản. Sau đó bạn có thể đăng nhập và nhận email chào mừng từ Bếp Việt.',
@@ -119,8 +121,15 @@ export function RegisterPage() {
             })}
           />
           <span>
-            {t('Tôi đồng ý với')} <a href="#dieu-khoan">{t('Điều khoản')}</a> {t('và')}{' '}
-            <a href="#bao-mat">{t('Chính sách bảo mật')}</a>.
+            {t('Tôi đồng ý với')}{' '}
+            <Link rel="noopener" target="_blank" to="/terms">
+              {t('Điều khoản')}
+            </Link>{' '}
+            {t('và')}{' '}
+            <Link rel="noopener" target="_blank" to="/privacy">
+              {t('Chính sách quyền riêng tư')}
+            </Link>
+            .
           </span>
         </label>
         {registrationForm.formState.errors.terms ? (

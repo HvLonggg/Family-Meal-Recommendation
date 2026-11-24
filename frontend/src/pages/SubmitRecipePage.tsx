@@ -545,6 +545,7 @@ function NumberStepper({
           <AppIcon name="minus" size={16} />
         </button>
         <input
+          aria-label={label}
           inputMode="numeric"
           max={max}
           min={min}

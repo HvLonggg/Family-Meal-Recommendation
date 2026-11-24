@@ -6,7 +6,7 @@ import { useAuth } from '@/features/auth/AuthContext';
 import { useI18n } from '@/features/i18n/I18nContext';
 
 const sections: { to: string; label: string; icon: IconName; end?: boolean }[] = [
-  { to: '/account', label: 'Tổng quan hồ sơ', icon: 'user', end: true },
+  { to: '/account', label: 'Tài khoản của tôi', icon: 'user', end: true },
   { to: '/account/settings', label: 'Cài đặt', icon: 'settings' },
   { to: '/account/security', label: 'Đổi mật khẩu & bảo mật', icon: 'lock' },
   { to: '/account/stories', label: 'Câu chuyện của tôi', icon: 'pen' },

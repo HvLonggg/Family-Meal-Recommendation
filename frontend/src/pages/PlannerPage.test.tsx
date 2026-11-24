@@ -173,6 +173,22 @@ beforeEach(() => {
               notes: [],
               recipe_names: ['Sườn xào chua ngọt'],
             },
+            {
+              name: 'Mía',
+              category: 'ingredient',
+              amount: '0.50',
+              unit: 'khúc 40 cm',
+              notes: [],
+              recipe_names: ['Sườn xào chua ngọt'],
+            },
+            {
+              name: 'Chanh',
+              category: 'seasoning',
+              amount: '0.30',
+              unit: 'quả',
+              notes: [],
+              recipe_names: ['Sườn xào chua ngọt'],
+            },
           ],
         }),
       );
@@ -195,19 +211,23 @@ afterEach(() => {
 });
 
 describe('planner page', () => {
-  it('paginates all recipes, saves selected dishes, and prints a categorized shopping list', async () => {
+  it('lists recipes in one scrolling list, saves selected dishes, and prints a categorized shopping list', async () => {
     renderPlanner();
 
     await screen.findByText('Tuần này');
+    // Tuần chưa có món thì chưa có gì để mua.
+    for (const button of screen.getAllByRole('button', { name: 'Danh sách mua sắm' })) {
+      expect(button).toBeDisabled();
+    }
     fireEvent.click(screen.getByRole('button', { name: 'Thêm bữa ăn' }));
     const dialog = screen.getByRole('dialog');
-    expect(screen.getByText(/Trang 1\//)).toBeInTheDocument();
+    // Một danh sách cuộn duy nhất, không còn phân trang.
+    expect(screen.queryByRole('navigation', { name: 'Phân trang danh sách món' })).toBeNull();
+    expect(within(dialog).getAllByRole('button', { name: /^Chọn / })).toHaveLength(24);
     fireEvent.click(screen.getAllByRole('button', { name: /^Chọn / })[0]!);
-    expect(screen.getByText(/1 món đã chọn/)).toBeInTheDocument();
-    fireEvent.click(screen.getByRole('button', { name: 'Trang món tiếp theo' }));
-    expect(await screen.findByText(/Trang 2\//)).toBeInTheDocument();
-    fireEvent.click(screen.getAllByRole('button', { name: /^Chọn / })[0]!);
-    expect(screen.getByText(/2 món đã chọn/)).toBeInTheDocument();
+    expect(screen.getByText(/Đã chọn 1 món/)).toBeInTheDocument();
+    fireEvent.click(screen.getAllByRole('button', { name: /^Chọn / })[10]!);
+    expect(screen.getByText(/Đã chọn 2 món/)).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Lưu bữa ăn' }));
     expect(await screen.findByText('Đã lưu bữa ăn!')).toBeInTheDocument();
     expect(savedMealPayloads).toHaveLength(1);
@@ -221,8 +241,20 @@ describe('planner page', () => {
       '/images/suon-xao.jpg',
     );
     expect(document.querySelector('.planner-dish__link img')).toHaveClass('dish-cutout');
+    // Ô vừa lưu được làm nổi để người dùng thấy ngay món vừa thêm.
+    const savedSlot = `${String(savedMealPayloads[0]?.plan_date)}:${String(savedMealPayloads[0]?.meal_type)}`;
+    await waitFor(() =>
+      expect(document.querySelector(`[data-slot="${savedSlot}"]`)).toHaveClass('is-highlighted'),
+    );
+    // Nhãn là hành động rõ nghĩa, không phải "✓ Chưa nấu".
+    expect(screen.getAllByRole('button', { name: /^Đánh dấu đã nấu / })[0]).toHaveTextContent(
+      'Đánh dấu đã nấu',
+    );
 
-    fireEvent.click(screen.getByRole('button', { name: 'Danh sách mua sắm' }));
+    const shoppingButtons = screen.getAllByRole('button', { name: 'Danh sách mua sắm' });
+    expect(shoppingButtons).toHaveLength(2);
+    expect(shoppingButtons[0]).toBeEnabled();
+    fireEvent.click(shoppingButtons[0]!);
     expect(await screen.findByText('Sườn non')).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: 'Nguyên liệu' })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: 'Gia vị' })).toBeInTheDocument();
@@ -237,6 +269,9 @@ describe('planner page', () => {
       expect(shoppingRequests.some((request) => request.includes('period=month'))).toBe(true),
     );
     expect(await screen.findByText('400 g')).toBeInTheDocument();
+    // Đơn vị đếm nguyên chiếc được làm tròn lên thành số mua được.
+    expect(screen.getByText('1 khúc 40 cm')).toBeInTheDocument();
+    expect(screen.getByText('0,5 quả')).toBeInTheDocument();
     expect(dialog).not.toBeInTheDocument();
   });
 
@@ -259,21 +294,24 @@ describe('planner page', () => {
     );
 
     await screen.findByText('Tuần này');
-    expect(screen.getByText('ÂL 11/8 – 17/8 · Bính Ngọ')).toBeInTheDocument();
+    // Ngày âm lịch không lặp lại ở nhãn tuần khi đang xem dương lịch.
+    expect(screen.getByText('21/09 – 27/09 · 2026')).toBeInTheDocument();
+    expect(screen.queryByText('ÂL 11/8 – 17/8 · Bính Ngọ')).toBeNull();
+    expect(screen.queryByText(/Theo giờ Việt Nam/)).toBeNull();
     const fullMoonToggle = screen.getByRole('button', {
-      name: 'Bỏ đánh dấu ăn chay ngày 2026-09-25',
+      name: 'Bỏ đánh dấu ăn chay ngày Thứ Sáu, 25/09',
     });
     expect(fullMoonToggle.closest('article')).toHaveClass('is-vegetarian', 'is-today');
     expect(screen.getByText('Ăn chay · tự động')).toBeInTheDocument();
 
-    fireEvent.click(screen.getByRole('button', { name: 'Đánh dấu ăn chay ngày 2026-09-23' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Đánh dấu ăn chay ngày Thứ Tư, 23/09' }));
     const marked = await screen.findByRole('button', {
-      name: 'Bỏ đánh dấu ăn chay ngày 2026-09-23',
+      name: 'Bỏ đánh dấu ăn chay ngày Thứ Tư, 23/09',
     });
     expect(marked.closest('article')).toHaveClass('is-vegetarian');
     fireEvent.click(fullMoonToggle);
     expect(
-      await screen.findByRole('button', { name: 'Đánh dấu ăn chay ngày 2026-09-25' }),
+      await screen.findByRole('button', { name: 'Đánh dấu ăn chay ngày Thứ Sáu, 25/09' }),
     ).toHaveAttribute('aria-pressed', 'false');
     await waitFor(() =>
       expect(vegetarianPayloads).toEqual([
@@ -291,9 +329,11 @@ describe('planner page', () => {
       'true',
     );
     expect(screen.getByText('DL 25/09')).toBeInTheDocument();
-    expect(screen.getByText(/^DL 21\/09 – 27\/09 · 2026$/)).toBeInTheDocument();
+    expect(screen.getByText('ÂL 11/8 – 17/8 · Bính Ngọ')).toBeInTheDocument();
 
-    fireEvent.click(screen.getByRole('button', { name: 'Thêm món vào bữa trưa 2026-09-23' }));
+    // Ô trống bấm được để thêm món, không lặp chữ "Chưa có món".
+    expect(screen.queryByText('Chưa có món')).toBeNull();
+    fireEvent.click(screen.getByRole('button', { name: 'Thêm món vào bữa trưa Thứ Tư, 23/09' }));
     const dialog = screen.getByRole('dialog');
     expect(within(dialog).getByText('ÂL 13/8 · Bính Ngọ')).toBeInTheDocument();
     expect(within(dialog).getByRole('button', { name: 'Chỉ món chay' })).toHaveAttribute(
@@ -303,6 +343,6 @@ describe('planner page', () => {
     expect(within(dialog).getAllByRole('button', { name: /^Chọn / })).toHaveLength(1);
     expect(within(dialog).getByText('Món kiểm thử 4')).toBeInTheDocument();
     fireEvent.click(within(dialog).getByRole('button', { name: 'Chỉ món chay' }));
-    expect(within(dialog).getAllByRole('button', { name: /^Chọn / })).toHaveLength(8);
+    expect(within(dialog).getAllByRole('button', { name: /^Chọn / })).toHaveLength(24);
   });
 });

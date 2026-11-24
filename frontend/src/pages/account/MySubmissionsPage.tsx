@@ -2,6 +2,7 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { Link } from 'react-router';
 
 import { AppIcon } from '@/components/common/AppIcon';
+import { useConfirmDialog } from '@/components/common/useConfirmDialog';
 import { EmptyState, LoadingBlock, Notice, StatusBadge } from '@/components/ui/Workspace';
 import { useAuth } from '@/features/auth/AuthContext';
 import { useI18n } from '@/features/i18n/I18nContext';
@@ -13,10 +14,12 @@ import {
   submissionStatusTone,
 } from '@/features/submissions/submissionsApi';
 import { errorMessage } from '@/lib/errors';
+import { formatDisplayDate } from '@/lib/formatDate';
 
 export function MySubmissionsPage() {
   const { user } = useAuth();
-  const { formatDate, t } = useI18n();
+  const { t } = useI18n();
+  const { confirm, dialog } = useConfirmDialog();
   const queryClient = useQueryClient();
   const submissions = useQuery({
     queryKey: mySubmissionsQueryKey(user?.id),
@@ -36,9 +39,11 @@ export function MySubmissionsPage() {
           <h1>{t('Món tôi đề xuất')}</h1>
           <p>{t('Theo dõi trạng thái duyệt và cập nhật công thức bạn đã gửi cho ban nội dung.')}</p>
         </div>
-        <Link className="button button--primary" to="/submit-recipe">
-          <AppIcon name="plus" size={17} /> {t('Đề xuất món mới')}
-        </Link>
+        {submissions.data?.data.length ? (
+          <Link className="button button--primary" to="/submit-recipe">
+            <AppIcon name="plus" size={17} /> {t('Đề xuất món mới')}
+          </Link>
+        ) : null}
       </header>
 
       {removal.isError ? <Notice tone="danger">{errorMessage(removal.error, t)}</Notice> : null}
@@ -63,7 +68,7 @@ export function MySubmissionsPage() {
                     {t(item.region)} · {t(item.category)} ·{' '}
                     {t('{count} người', { count: item.servings })}
                   </span>
-                  <span>{formatDate(item.updated_at, { dateStyle: 'medium' })}</span>
+                  <span>{formatDisplayDate(item.updated_at)}</span>
                 </div>
                 <h2>{item.name}</h2>
                 <p>{item.story}</p>
@@ -86,10 +91,16 @@ export function MySubmissionsPage() {
                   <button
                     className="text-button text-button--danger"
                     disabled={removal.isPending}
-                    onClick={() => {
-                      if (window.confirm(t('Xóa đề xuất “{name}”?', { name: item.name })))
-                        removal.mutate(item.id);
-                    }}
+                    onClick={() =>
+                      void confirm({
+                        title: t('Xóa đề xuất “{name}”?', { name: item.name }),
+                        description: t('Không thể hoàn tác thao tác này.'),
+                        confirmLabel: t('Xóa'),
+                        tone: 'danger',
+                      }).then((ok) => {
+                        if (ok !== null) removal.mutate(item.id);
+                      })
+                    }
                     type="button"
                   >
                     <AppIcon name="trash" size={15} /> {t('Xóa')}
@@ -113,6 +124,7 @@ export function MySubmissionsPage() {
           title={t('Bạn chưa đề xuất món nào')}
         />
       )}
+      {dialog}
     </>
   );
 }

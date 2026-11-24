@@ -1,8 +1,13 @@
 import { describe, expect, it } from 'vitest';
 
 import { getRecipe } from '@/data/recipes';
-import { CLOSING, stepSpeech } from '@/features/cooking/cookScript';
-import { buildCookSteps, cookPath, parseCookDishes } from '@/features/cooking/cookSession';
+import { CLOSING, stepCue, stepSpeech } from '@/features/cooking/cookScript';
+import {
+  buildCookSteps,
+  cookPath,
+  parseCookDishes,
+  scaleStepText,
+} from '@/features/cooking/cookSession';
 import {
   detectStepTimer,
   formatClock,
@@ -130,8 +135,20 @@ describe('cook session', () => {
       { dishName: recipe.name, servings: 2, dishNumber: 1, dishCount: 1 },
       'vi',
     );
-    expect(speech).toContain(`Sơ chế, bước 1 trên ${recipe.preparation.length}.`);
-    expect(speech.endsWith(CLOSING.vi)).toBe(true);
+    // Đếm bước giống thẻ món: sơ chế + thực hiện.
+    const total = recipe.preparation.length + recipe.cooking.length;
+    expect(speech).toContain(`Sơ chế, bước 1 trên ${total}.`);
+    expect(stepCue(steps[1]!, 'vi')).not.toContain(steps[1]!.text);
+    // Lời nhắc chung chỉ nói ở bước nguyên liệu, không lặp ở từng bước.
+    expect(speech.endsWith(CLOSING.vi)).toBe(false);
+    const intro = stepSpeech(
+      steps[0]!,
+      { dishName: recipe.name, servings: 2, dishNumber: 1, dishCount: 1 },
+      'vi',
+    );
+    expect(intro.endsWith(CLOSING.vi)).toBe(true);
+    // Màn hình giữ số gốc; dạng đọc chỉ tạo khi phát giọng nói.
+    expect(intro).not.toContain('phẩy');
   });
 });
 
@@ -299,5 +316,32 @@ describe('flexible spoken timers', () => {
     expect(pickTimer([], undefined, now)).toEqual({ kind: 'none' });
     expect(roughDuration(725, 'vi')).toBe('12 phút');
     expect(roughDuration(65, 'vi')).toBe('1 phút 5 giây');
+  });
+});
+
+describe('scaleStepText', () => {
+  const recipe = getRecipe('canh-chua-ca')!;
+  const format = (value: number) =>
+    new Intl.NumberFormat('vi-VN', { maximumFractionDigits: 2 }).format(value);
+
+  it('scales quantities that match an ingredient amount', () => {
+    const steps = buildCookSteps([{ recipe, servings: 2 }], 'vi');
+    const pour = steps.find((step) => step.text.includes('lít nước'))!;
+    expect(pour.text).toContain('Rót 0,85 lít nước');
+    expect(pour.writtenFor).toBeUndefined();
+  });
+
+  it('keeps the text unchanged for the base servings', () => {
+    expect(scaleStepText('Rót 1,7 lít nước.', recipe, recipe.servings, format)).toEqual({
+      text: 'Rót 1,7 lít nước.',
+      unscaled: false,
+    });
+  });
+
+  it('flags quantities it cannot map to an ingredient', () => {
+    expect(scaleStepText('Thêm 3 muỗng canh dầu, đun 5 phút.', recipe, 2, format)).toEqual({
+      text: 'Thêm 3 muỗng canh dầu, đun 5 phút.',
+      unscaled: true,
+    });
   });
 });

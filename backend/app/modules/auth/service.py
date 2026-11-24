@@ -6,7 +6,7 @@ from datetime import UTC, datetime, timedelta
 from uuid import UUID
 
 from fastapi import status
-from sqlalchemy import func, select, update
+from sqlalchemy import delete, func, select, update
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
@@ -74,6 +74,11 @@ class OtpRateLimitError(DomainError):
 
 class LoginRateLimitError(DomainError):
     code = "LOGIN_RATE_LIMITED"
+    status_code = status.HTTP_429_TOO_MANY_REQUESTS
+
+
+class RegistrationRateLimitError(DomainError):
+    code = "REGISTRATION_RATE_LIMITED"
     status_code = status.HTTP_429_TOO_MANY_REQUESTS
 
 
@@ -151,7 +156,9 @@ def create_session_tokens(
     return SessionTokens(access_token, access_expires_in, refresh_token, remember_me)
 
 
-def register_email_account(session: Session, *, email: str, full_name: str, password: str) -> User:
+def register_email_account(
+    session: Session, *, email: str, full_name: str, password: str, terms_version: str
+) -> User:
     normalized_email = email.strip().casefold()
     if session.scalar(select(User.id).where(User.email == normalized_email)) is not None:
         raise EmailAlreadyExistsError(
@@ -164,6 +171,8 @@ def register_email_account(session: Session, *, email: str, full_name: str, pass
         password_hash=hash_password(password),
         role="user",
         status="active",
+        terms_accepted_at=utc_now(),
+        terms_version=terms_version,
     )
     try:
         session.add(user)
@@ -188,22 +197,55 @@ def register_email_account(session: Session, *, email: str, full_name: str, pass
     return user
 
 
+# Hai tab cùng làm mới gần như đồng thời sẽ gửi cùng một cookie cũ: trong khoảng ân hạn này
+# chỉ từ chối, không coi là token bị đánh cắp.
+REFRESH_REUSE_GRACE_SECONDS = 30
+
+
+def _as_utc(value: datetime) -> datetime:
+    return value.replace(tzinfo=UTC) if value.tzinfo is None else value
+
+
+def _was_rotated(refresh_session: RefreshSession) -> bool:
+    """Phiên bị thay bằng token mới khi xoay vòng được đánh dấu `expires_at == revoked_at`.
+
+    Phiên thu hồi do đăng xuất/đổi mật khẩu giữ nguyên `expires_at`, nên không bị nhầm là
+    token bị dùng lại (tránh đăng xuất oan thiết bị vừa đăng nhập lại sau khi đổi mật khẩu).
+    """
+    if refresh_session.revoked_at is None:
+        return False
+    return _as_utc(refresh_session.expires_at) == _as_utc(refresh_session.revoked_at)
+
+
 def rotate_refresh_token(session: Session, raw_token: str) -> tuple[User, SessionTokens]:
+    # Khóa dòng để hai request song song không cùng đổi một token lấy hai phiên mới.
     refresh_session = session.scalar(
-        select(RefreshSession).where(RefreshSession.token_hash == token_digest(raw_token))
+        select(RefreshSession)
+        .where(RefreshSession.token_hash == token_digest(raw_token))
+        .with_for_update()
     )
-    if (
-        refresh_session is None
-        or refresh_session.revoked_at is not None
-        or is_expired(refresh_session.expires_at)
-    ):
+    if refresh_session is None:
+        raise InvalidTokenError("Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại.")
+    if _was_rotated(refresh_session):
+        revoked_at = _as_utc(refresh_session.revoked_at)  # type: ignore[arg-type]
+        if utc_now() - revoked_at > timedelta(seconds=REFRESH_REUSE_GRACE_SECONDS):
+            # Token đã được thay thế mà vẫn bị dùng lại: dấu hiệu bị đánh cắp. Thu hồi mọi phiên
+            # (kể cả access token đang hiệu lực) để kẻ giữ token mới cũng bị đăng xuất.
+            owner = session.get(User, refresh_session.user_id)
+            if owner is not None:
+                revoke_all_sessions(session, owner)
+                session.commit()
+        raise InvalidTokenError("Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại.")
+    if refresh_session.revoked_at is not None or is_expired(refresh_session.expires_at):
         raise InvalidTokenError("Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại.")
 
     user = session.get(User, refresh_session.user_id)
     if user is None:
         raise InvalidTokenError("Không tìm thấy tài khoản của phiên đăng nhập.")
     ensure_active_user(user)
-    refresh_session.revoked_at = utc_now()
+    rotated_at = utc_now()
+    refresh_session.revoked_at = rotated_at
+    refresh_session.expires_at = rotated_at
     session.flush()
     return user, create_session_tokens(session, user, remember_me=refresh_session.remembered)
 
@@ -220,8 +262,11 @@ def revoke_refresh_token(session: Session, raw_token: str | None) -> None:
 
 
 def reset_password(session: Session, *, raw_token: str, new_password: str) -> None:
+    # Khóa dòng để một reset token không thể được dùng hai lần bởi request song song.
     reset_token = session.scalar(
-        select(PasswordResetToken).where(PasswordResetToken.token_hash == token_digest(raw_token))
+        select(PasswordResetToken)
+        .where(PasswordResetToken.token_hash == token_digest(raw_token))
+        .with_for_update()
     )
     if reset_token is None or reset_token.used_at is not None or is_expired(reset_token.expires_at):
         raise InvalidResetTokenError("Liên kết đặt lại mật khẩu không hợp lệ hoặc đã hết hạn.")
@@ -571,6 +616,18 @@ def authenticate_oauth_user(
         )
     ensure_active_user(user)
     if user.email_verified_at is None:
+        # Đăng ký bằng mật khẩu không xác minh email, nên ai cũng có thể tạo trước tài khoản
+        # mang email của người khác. Google vừa chứng minh chủ hộp thư: bỏ mật khẩu và mọi
+        # phiên chưa được xác minh để người tạo trước không giữ quyền truy cập
+        # (pre-account takeover). Chủ thật có thể đặt lại mật khẩu qua "Quên mật khẩu".
+        if user.password_hash:
+            user.password_hash = None
+            session.execute(
+                delete(AuthIdentity).where(
+                    AuthIdentity.user_id == user.id, AuthIdentity.provider == "password"
+                )
+            )
+        revoke_all_sessions(session, user)
         user.email_verified_at = utc_now()
 
     session.add(

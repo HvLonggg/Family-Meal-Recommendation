@@ -9,7 +9,7 @@ from sqlalchemy import ColumnElement, func, or_, select
 from sqlalchemy.orm import Session, selectinload
 
 from app.core.exceptions import DomainError
-from app.core.images import decode_image_data_url
+from app.core.images import decode_image_data_url, reencode_without_metadata
 from app.modules.account.preferences import read_preferences
 from app.modules.articles.models import Article
 from app.modules.articles.schemas import (
@@ -140,7 +140,9 @@ def can_manage(article: Article, user: User | None) -> bool:
 
 def _apply_cover(article: Article, data_url: str | None, *, remove: bool = False) -> None:
     if data_url:
-        image = decode_image_data_url(data_url, max_bytes=COVER_MAX_BYTES)
+        image = reencode_without_metadata(
+            decode_image_data_url(data_url, max_bytes=COVER_MAX_BYTES)
+        )
         article.cover_data = image.data
         article.cover_content_type = image.content_type
         article.cover_updated_at = datetime.now(UTC)

@@ -8,6 +8,7 @@ import waterSpinachImage from '@/assets/recipes/rau-muong-xao-toi-cc0.jpg';
 import sweetSourRibsImage from '@/assets/recipes/suon-xao-chua-ngot.jpg';
 import vegetableOmeletteImage from '@/assets/recipes/trung-chien-rau-cu.jpg';
 import editedImages from '@/data/recipeImageAssets.json';
+import { getCatalogCategory } from '@/data/recipeTaxonomy';
 
 export type Ingredient = {
   name: string;
@@ -30,6 +31,7 @@ export type Recipe = {
   pairingSlugs?: string[];
   family?: string;
   ingredientCategory?: string;
+  cookingMethods?: string[];
   servingBasis?: string;
   scalingTargets?: { servings: number; seasoning_start_factor: number }[];
   name: string;
@@ -51,6 +53,7 @@ export type Recipe = {
     | 'Món nước'
     | 'Món tráng miệng'
     | 'Món ăn sáng'
+    | 'Món ăn vặt'
     | 'Món ăn kèm';
   difficulty: 'Dễ' | 'Vừa' | 'Trung bình' | 'Khó';
   familyFriendly?: boolean;
@@ -583,6 +586,7 @@ export type RecipeDictionary = Record<string, string>;
 
 let sourceRecipes = recipeCatalog
   .filter((recipe) => recipe.status !== 'draft')
+  .map((recipe) => ({ ...recipe, category: getCatalogCategory(recipe) }))
   .map(applyEditedImage);
 let dictionary: RecipeDictionary | null = null;
 
@@ -632,6 +636,7 @@ function publishCatalog() {
 export function replaceRecipeCatalog(catalog: Recipe[]) {
   const order = new Map(sourceRecipes.map((recipe, index) => [recipe.slug, index]));
   sourceRecipes = catalog
+    .map((recipe) => ({ ...recipe, category: getCatalogCategory(recipe) }))
     .map(applyEditedImage)
     .sort((a, b) => (order.get(a.slug) ?? 1000) - (order.get(b.slug) ?? 1000));
   publishCatalog();

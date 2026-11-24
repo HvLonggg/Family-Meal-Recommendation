@@ -79,4 +79,6 @@ def otp_digest(*, challenge_id: UUID, code: str) -> str:
 
 
 def secure_compare(left: str, right: str) -> bool:
-    return hmac.compare_digest(left, right)
+    # So sánh dạng bytes: compare_digest với str chứa ký tự ngoài ASCII (vd. tham số `state`
+    # do client gửi) sẽ ném TypeError và biến thành lỗi 500.
+    return hmac.compare_digest(left.encode("utf-8"), right.encode("utf-8"))

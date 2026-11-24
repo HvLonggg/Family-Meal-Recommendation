@@ -1,0 +1,97 @@
+/* Chi tiết món: nhóm nút gọn, nhãn phụ đủ đọc, tên món + "Vào bếp" ở màn hình đầu trên di động. */
+.recipe-detail .recipe-detail__tags span,
+.recipe-detail .recipe-facts small,
+.recipe-detail .recipe-detail__source,
+.recipe-detail .recipe-detail__source strong {
+  font-size: 12px;
+}
+
+.recipe-detail .recipe-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.recipe-detail .recipe-actions > .button,
+.recipe-detail .recipe-actions .cooked-mark__button {
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 14px;
+  font-size: 14px;
+}
+
+.recipe-detail .recipe-actions .recipe-actions__cook {
+  grid-column: 1 / -1;
+}
+
+/* CookedMark nằm trong lưới nút, dùng cùng kiểu viền như các nút phụ. */
+.recipe-detail .recipe-actions .cooked-mark {
+  display: contents;
+}
+
+.recipe-detail .recipe-actions .cooked-mark__button {
+  justify-content: center;
+  gap: 8px;
+  border-color: var(--color-border);
+  border-radius: 999px;
+  color: var(--color-primary);
+  background: white;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.recipe-detail .recipe-actions .cooked-mark__button:hover:not(:disabled) {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: white;
+}
+
+.recipe-detail .recipe-actions .cooked-mark__done {
+  justify-content: center;
+  min-height: 46px;
+  font-size: 14px;
+}
+
+.recipe-detail .recipe-actions .cooked-mark__link {
+  grid-column: 1 / -1;
+  justify-self: start;
+  font-size: 14px;
+}
+
+@media (max-width: 959px) {
+  .recipe-detail .recipe-detail__hero {
+    gap: 24px;
+    padding-top: 4px;
+  }
+
+  /* Đưa phần giới thiệu (tên món, nút chính) lên trước ảnh. */
+  .recipe-detail .recipe-detail__intro {
+    order: -1;
+  }
+
+  .recipe-detail .recipe-detail__image img {
+    max-height: 56vh;
+  }
+}
+
+@media (max-width: 560px) {
+  .recipe-detail .recipe-detail__intro h1 {
+    margin-top: 12px;
+    font-size: clamp(1.9rem, 8vw, 2.3rem);
+  }
+
+  .recipe-detail .recipe-detail__intro > p {
+    margin: 12px 0 16px;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .recipe-detail .recipe-facts {
+    padding-block: 12px;
+  }
+
+  .recipe-detail .recipe-actions {
+    margin-top: 16px;
+  }
+}

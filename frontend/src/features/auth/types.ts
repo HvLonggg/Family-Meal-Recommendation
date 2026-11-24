@@ -49,6 +49,9 @@ export interface AuthUser {
   created_at: string;
   avatar_url?: string | null;
   preferences?: UserPreferences;
+  /** Phiên bản Điều khoản/Chính sách đã đồng ý; null khi chưa đồng ý. */
+  terms_version?: string | null;
+  terms_accepted_at?: string | null;
 }
 
 export interface AuthSession {

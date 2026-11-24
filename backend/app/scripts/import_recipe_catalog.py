@@ -26,6 +26,7 @@ GENERATED_IMAGE_DIRECTORY = ROOT / "frontend/public/images/recipes-owned"
 GENERATED_IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".webp"}
 SUPPLEMENTAL_DESSERT_SOURCE = ROOT / "backend/app/data/fruit_dessert_recipes.json"
 CURATED_RECIPE_BATCH_DIRECTORY = ROOT / "backend/app/data/curated_recipe_batches"
+FALLBACK_CATALOG = ROOT / "frontend/public/data/recipe-catalog.json"
 SERVING_OVERRIDES: dict[str, str] = json.loads(
     (ROOT / "backend/app/data/serving_overrides.json").read_text(encoding="utf-8")
 )
@@ -237,14 +238,29 @@ def read_supplemental_desserts(source: Path = SUPPLEMENTAL_DESSERT_SOURCE) -> li
 def read_curated_recipe_batches(
     directory: Path = CURATED_RECIPE_BATCH_DIRECTORY,
 ) -> list[dict[str, Any]]:
-    """Read fact-checked additions in numbered batches without changing the original IDs."""
+    """Read numbered batches and resolve stale records from the canonical catalog."""
     items: list[dict[str, Any]] = []
+    catalog = json.loads(FALLBACK_CATALOG.read_text(encoding="utf-8"))
+    catalog_by_id = {
+        recipe.get("catalog_id"): recipe
+        for recipe in catalog.get("data", [])
+        if recipe.get("catalog_id")
+    }
     for source in sorted(directory.glob("batch_*.json")):
         payload = json.loads(source.read_text(encoding="utf-8"))
         batch = payload.get("recipes", [])
         if not batch:
             raise ValueError(f"{source.name}: batch must contain at least one recipe.")
-        items.extend(batch)
+        for recipe in batch:
+            if recipe.get("catalog_sync_status") != "identity_conflict":
+                items.append(recipe)
+                continue
+            current = catalog_by_id.get(recipe.get("id"), {}).get("content")
+            if not current or current.get("id") != recipe.get("id"):
+                raise ValueError(
+                    f"{recipe.get('id')}: identity conflict needs its current catalog record."
+                )
+            items.append(current)
 
     if not items:
         return []
@@ -272,6 +288,18 @@ def read_curated_recipe_batches(
         ):
             if not item.get(key):
                 raise ValueError(f"{item['id']}: missing {key}.")
+        for ingredient in item["ingredients"]:
+            missing_fields = {
+                "name",
+                "quantity",
+                "unit",
+                "role",
+                "notes",
+                "scaling_rule",
+            } - ingredient.keys()
+            if missing_fields:
+                missing = ", ".join(sorted(missing_fields))
+                raise ValueError(f"{item['id']}: ingredient is missing {missing}.")
         if not primary_media(item).get("image_url", "").startswith("/images/recipes/edited/"):
             raise ValueError(f"{item['id']}: expected a Bếp Việt-owned image path.")
         if any(ingredient["quantity"] <= 0 for ingredient in item["ingredients"]):
@@ -616,7 +644,8 @@ def main() -> None:
         help="Add missing catalog dishes without replacing existing recipe edits.",
     )
     args = parser.parse_args()
-    items = read_catalog(args.source)
+    catalog_items = read_catalog(args.source)
+    items = list(catalog_items)
     desserts = read_supplemental_desserts()
     curated = read_curated_recipe_batches()
     all_ids = [item["id"] for item in (*items, *desserts, *curated)]
@@ -625,8 +654,35 @@ def main() -> None:
         raise ValueError("Catalog batches contain duplicate recipe IDs.")
     if len(all_slugs) != len(set(all_slugs)):
         raise ValueError("Catalog batches contain duplicate recipe slugs.")
-    generated_images = read_generated_image_paths(items)
-    images = generated_images or extract_document_images(args.document, items)
+    if args.only_missing:
+        with SessionLocal() as session:
+            existing = list(session.execute(select(Recipe.catalog_id, Recipe.slug)))
+        existing_ids = {catalog_id for catalog_id, _ in existing if catalog_id}
+        existing_slugs = {slug for _, slug in existing}
+
+        def is_missing(item: dict[str, Any]) -> bool:
+            return item["id"] not in existing_ids and recipe_slug(item) not in existing_slugs
+
+        items = [item for item in items if is_missing(item)]
+        desserts = [item for item in desserts if is_missing(item)]
+        curated = [item for item in curated if is_missing(item)]
+
+    if items:
+        generated_images = read_generated_image_paths(items)
+        if generated_images is None:
+            source_items = catalog_items if args.only_missing else items
+            source_images = extract_document_images(args.document, source_items)
+            required_ids = {item["id"] for item in items}
+            images = {
+                recipe_id: path
+                for recipe_id, path in source_images.items()
+                if recipe_id in required_ids
+            }
+        else:
+            images = generated_images
+    else:
+        generated_images = {}
+        images = {}
     for item in desserts:
         image_path = primary_media(item)["image_url"]
         local_path = ROOT / "frontend/public" / image_path.lstrip("/")

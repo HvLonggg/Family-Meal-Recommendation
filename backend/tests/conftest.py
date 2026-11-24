@@ -29,12 +29,17 @@ def isolated_auth_test_settings(monkeypatch: pytest.MonkeyPatch) -> Generator[No
         "BEP_VIET_EMAIL_GMAIL_CLIENT_SECRET",
         "BEP_VIET_EMAIL_GMAIL_REFRESH_TOKEN",
         "BEP_VIET_WEB_PUSH_VAPID_PRIVATE_KEY",
+        "BEP_VIET_ANTHROPIC_API_KEY",
+        "BEP_VIET_GEMINI_API_KEY",
     ):
         monkeypatch.setenv(key, "")
+    monkeypatch.setenv("BEP_VIET_SUPPORT_EMAIL", "support@bepviet.vn")
+    monkeypatch.setenv("BEP_VIET_ASSISTANT_PROVIDER", "auto")
     get_settings.cache_clear()
     knowledge.reset_sync_state()
     auth_router.LOGIN_FAILURES_PER_EMAIL.reset()
     auth_router.LOGIN_FAILURES_PER_IP.reset()
+    auth_router.REGISTRATIONS_PER_IP.reset()
     service.reset_rate_limits()
     ai.reset_model_pauses()
     cooking_router.COOKING_WRITES.reset()

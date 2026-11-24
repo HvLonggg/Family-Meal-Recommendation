@@ -78,6 +78,8 @@ describe('landing after sign-in', () => {
     expect(safeReturnPath('//evil.example.com')).toBeNull();
     expect(safeReturnPath('/\\evil.example.com')).toBeNull();
     expect(safeReturnPath('https://evil.example.com')).toBeNull();
+    expect(safeReturnPath('/\t/evil.example.com')).toBeNull();
+    expect(safeReturnPath('/\n/evil.example.com')).toBeNull();
     expect(safeReturnPath('/login')).toBeNull();
     expect(safeReturnPath(undefined)).toBeNull();
   });

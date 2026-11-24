@@ -118,17 +118,17 @@ describe('database recipe catalog', () => {
       </AppProviders>,
     );
     expect(screen.getByText('205 món ăn tại 3 miền Việt Nam')).toBeInTheDocument();
-    expect(container.querySelectorAll('.recipe-card')).toHaveLength(9);
+    expect(container.querySelectorAll('.recipe-card')).toHaveLength(12);
     const firstPageTitle = container.querySelector('.recipe-card h3')!.textContent;
     fireEvent.click(screen.getByRole('button', { name: 'Trang tiếp' }));
-    expect(container.querySelectorAll('.recipe-card')).toHaveLength(9);
+    expect(container.querySelectorAll('.recipe-card')).toHaveLength(12);
     expect(container.querySelector('.recipe-card h3')!.textContent).not.toBe(firstPageTitle);
     expect(screen.getByRole('button', { name: 'Trang 2' })).toHaveAttribute('aria-current', 'page');
-    fireEvent.click(screen.getByRole('button', { name: 'Trang 23' }));
-    expect(container.querySelectorAll('.recipe-card')).toHaveLength(7);
+    fireEvent.click(screen.getByRole('button', { name: 'Trang 18' }));
+    expect(container.querySelectorAll('.recipe-card')).toHaveLength(1);
     expect(screen.getByRole('button', { name: 'Trang tiếp' })).toBeDisabled();
     fireEvent.click(screen.getByRole('button', { name: 'Món canh' }));
-    expect(screen.queryByRole('button', { name: 'Trang 23' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Trang 18' })).not.toBeInTheDocument();
   });
 
   it('shows the complete serving guide on the recipe page with Bếp Việt branding', () => {

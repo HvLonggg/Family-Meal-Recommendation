@@ -17,8 +17,7 @@ import {
   type SupportTicketCreate,
   type SupportTopic,
 } from '@/features/support/supportApi';
-import { ApiError } from '@/lib/api/client';
-import { errorMessage } from '@/lib/errors';
+import { formatDisplayDateTime } from '@/lib/formatDate';
 
 const emptyForm = (name = '', email = ''): SupportTicketCreate => ({
   name,
@@ -31,22 +30,20 @@ const emptyForm = (name = '', email = ''): SupportTicketCreate => ({
 
 export function ContactPage() {
   const { user } = useAuth();
-  const { formatDate, t } = useI18n();
+  const { t } = useI18n();
   const queryClient = useQueryClient();
   const [form, setForm] = useState<SupportTicketCreate>(() =>
     emptyForm(user?.full_name ?? '', user?.email ?? ''),
   );
-  const [receipt, setReceipt] = useState<{ reference: string; email: string } | null>(null);
+  const [receipt, setReceipt] = useState(false);
   const contactSettings = useQuery({
     queryKey: ['support-contact-info'],
     queryFn: ({ signal }) => getSupportContactInfo(signal),
   });
   const supportEmail = contactSettings.data?.support_email;
+  // Email hỗ trợ và thời gian phản hồi chỉ nêu một lần (cột kênh liên hệ và phần giới thiệu).
   const supportInboxMessage = supportEmail
-    ? t(
-        'Hòm thư Bếp Việt: {email}. Yêu cầu sẽ được tiếp nhận tại đây; phản hồi gửi về email người gửi trong vòng 24 giờ làm việc.',
-        { email: supportEmail },
-      )
+    ? t('Phản hồi sẽ được gửi về email bạn nhập bên dưới.')
     : contactSettings.isLoading
       ? t('Đang tải thông tin hòm thư hỗ trợ…')
       : t(
@@ -59,8 +56,8 @@ export function ContactPage() {
   });
   const send = useMutation({
     mutationFn: createSupportTicket,
-    onSuccess: async (result) => {
-      setReceipt({ reference: result.reference, email: result.support_email });
+    onSuccess: async () => {
+      setReceipt(true);
       setForm(emptyForm(user?.full_name ?? '', user?.email ?? ''));
       await queryClient.invalidateQueries({ queryKey: ['support-tickets', user?.id] });
     },
@@ -75,7 +72,6 @@ export function ContactPage() {
           supportEmail ??
           (contactSettings.isLoading ? t('Đang tải…') : t('Hòm thư hỗ trợ chưa tải được')),
         ...(supportEmail ? { href: `mailto:${supportEmail}` } : {}),
-        note: contactInfo.responseTime,
       },
       ...(contactInfo.phone
         ? [
@@ -100,7 +96,7 @@ export function ContactPage() {
     ];
 
   const update = <K extends keyof SupportTicketCreate>(key: K, value: SupportTicketCreate[K]) => {
-    setReceipt(null);
+    setReceipt(false);
     send.reset();
     setForm((current) => ({ ...current, [key]: value }));
   };
@@ -127,7 +123,11 @@ export function ContactPage() {
         <div className="container contact-layout">
           <div className="contact-aside">
             <article className="contact-person">
-              <UserAvatar name={contactInfo.ownerName} size={52} />
+              <UserAvatar
+                name={contactInfo.ownerName}
+                size={88}
+                src="/images/brand/long-avatar.webp"
+              />
               <div>
                 <strong>{contactInfo.ownerName}</strong>
                 <small>{t(contactInfo.ownerRole)}</small>
@@ -167,19 +167,11 @@ export function ContactPage() {
             </div>
             {receipt ? (
               <Notice tone="success">
-                {t(
-                  'Yêu cầu đã được tiếp nhận. Bếp Việt sẽ phản hồi email người gửi trong vòng 24 giờ làm việc.',
-                )}{' '}
-                {t('Hòm thư hỗ trợ: {email}.', { email: receipt.email })}{' '}
-                {t('Mã yêu cầu: {code}.', { code: receipt.reference })}
+                {t('Gửi thư thành công. Bếp Việt sẽ phản hồi qua email của bạn.')}
               </Notice>
             ) : null}
             {send.isError ? (
-              <Notice tone="danger">
-                {send.error instanceof ApiError && send.error.fieldErrors.email
-                  ? t('Email chưa đúng định dạng.')
-                  : errorMessage(send.error, t)}
-              </Notice>
+              <Notice tone="danger">{t('Chưa gửi được thư. Vui lòng thử lại sau.')}</Notice>
             ) : null}
             <div className="form-row">
               <label>
@@ -235,7 +227,6 @@ export function ContactPage() {
               <label>
                 <span>{t('Nội dung')} *</span>
                 <textarea
-                  aria-describedby="contact-message-count"
                   maxLength={4000}
                   minLength={20}
                   onChange={(event) => update('message', event.target.value)}
@@ -245,9 +236,6 @@ export function ContactPage() {
                   value={form.message}
                 />
               </label>
-              <small id="contact-message-count">
-                {t('{count}/4000 ký tự', { count: form.message.length })}
-              </small>
             </div>
             <label aria-hidden="true" className="honeypot">
               <span>Website</span>
@@ -280,18 +268,13 @@ export function ContactPage() {
                       <strong>{ticket.subject}</strong>
                       <small>
                         {t(supportTopics.find((topic) => topic.id === ticket.topic)?.label ?? '')} ·{' '}
-                        {formatDate(ticket.created_at, { dateStyle: 'medium', timeStyle: 'short' })}
+                        {formatDisplayDateTime(ticket.created_at)}
                       </small>
                       {ticket.reply_status === 'sent' && ticket.reply_message ? (
                         <div className="ticket-list__reply">
                           <strong>{t('Phản hồi từ Bếp Việt')}</strong>
                           {ticket.reply_sent_at ? (
-                            <small>
-                              {formatDate(ticket.reply_sent_at, {
-                                dateStyle: 'medium',
-                                timeStyle: 'short',
-                              })}
-                            </small>
+                            <small>{formatDisplayDateTime(ticket.reply_sent_at)}</small>
                           ) : null}
                           <p>{ticket.reply_message}</p>
                         </div>

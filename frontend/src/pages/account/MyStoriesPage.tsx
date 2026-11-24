@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 
 import { AppIcon } from '@/components/common/AppIcon';
 import { ArticleCover } from '@/components/articles/ArticleCover';
+import { useConfirmDialog } from '@/components/common/useConfirmDialog';
 import { EmptyState, LoadingBlock, Notice, StatusBadge } from '@/components/ui/Workspace';
 import {
   articleCategories,
@@ -14,10 +15,12 @@ import {
 import { useAuth } from '@/features/auth/AuthContext';
 import { useI18n } from '@/features/i18n/I18nContext';
 import { errorMessage } from '@/lib/errors';
+import { formatDisplayDate } from '@/lib/formatDate';
 
 export function MyStoriesPage() {
   const { user } = useAuth();
-  const { formatDate, t } = useI18n();
+  const { t } = useI18n();
+  const { confirm, dialog } = useConfirmDialog();
   const queryClient = useQueryClient();
   const queryKey = ['my-articles', user?.id];
   const stories = useQuery({
@@ -42,9 +45,11 @@ export function MyStoriesPage() {
             )}
           </p>
         </div>
-        <Link className="button button--primary" to="/stories/new">
-          <AppIcon name="pen" size={17} /> {t('Viết câu chuyện mới')}
-        </Link>
+        {stories.data?.data.length ? (
+          <Link className="button button--primary" to="/stories/new">
+            <AppIcon name="pen" size={17} /> {t('Viết câu chuyện mới')}
+          </Link>
+        ) : null}
       </header>
 
       {removal.isError ? <Notice tone="danger">{errorMessage(removal.error, t)}</Notice> : null}
@@ -68,7 +73,7 @@ export function MyStoriesPage() {
                   </span>
                   <span>
                     {t('Cập nhật {date}', {
-                      date: formatDate(story.updated_at, { dateStyle: 'medium' }),
+                      date: formatDisplayDate(story.updated_at),
                     })}
                   </span>
                 </div>
@@ -96,14 +101,16 @@ export function MyStoriesPage() {
                   <button
                     className="text-button text-button--danger"
                     disabled={removal.isPending}
-                    onClick={() => {
-                      if (
-                        window.confirm(
-                          t('Xóa vĩnh viễn câu chuyện “{title}”?', { title: story.title }),
-                        )
-                      )
-                        removal.mutate(story.id);
-                    }}
+                    onClick={() =>
+                      void confirm({
+                        title: t('Xóa vĩnh viễn câu chuyện “{title}”?', { title: story.title }),
+                        description: t('Không thể hoàn tác thao tác này.'),
+                        confirmLabel: t('Xóa'),
+                        tone: 'danger',
+                      }).then((ok) => {
+                        if (ok !== null) removal.mutate(story.id);
+                      })
+                    }
                     type="button"
                   >
                     <AppIcon name="trash" size={15} /> {t('Xóa')}
@@ -127,6 +134,7 @@ export function MyStoriesPage() {
           title={t('Bạn chưa có câu chuyện nào')}
         />
       )}
+      {dialog}
     </>
   );
 }

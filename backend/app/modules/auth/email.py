@@ -474,6 +474,7 @@ def send_verification_email(*, recipient: str, code: str, purpose: str) -> None:
     purpose_text = {
         "registration": "hoàn tất đăng ký",
         "email_change": "xác nhận email mới cho tài khoản",
+        "account_delete": "xác nhận xóa vĩnh viễn tài khoản",
     }.get(purpose, "đặt lại mật khẩu")
     safe_code = escape(code)
     safe_purpose = escape(purpose_text)

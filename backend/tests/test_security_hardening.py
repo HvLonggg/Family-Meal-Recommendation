@@ -29,6 +29,21 @@ def test_client_ip_trusts_only_the_hop_added_by_our_proxy() -> None:
     assert client_ip(fake_request(" , ")) == "10.0.0.1"
 
 
+def test_client_ip_behind_vercel_and_render_uses_the_second_trusted_hop(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    from app.core.config import get_settings
+
+    monkeypatch.setenv("BEP_VIET_TRUSTED_PROXY_HOPS", "2")
+    get_settings.cache_clear()
+    # "giả mạo, IP người dùng do Vercel ghi, IP Vercel do Render ghi".
+    assert client_ip(fake_request("6.6.6.6, 203.0.113.9, 76.76.21.1")) == "203.0.113.9"
+    assert client_ip(fake_request("203.0.113.9, 76.76.21.1")) == "203.0.113.9"
+    # Thiếu hop (gọi thẳng Render) thì lấy hop trái nhất còn lại, không lỗi.
+    assert client_ip(fake_request("76.76.21.1")) == "76.76.21.1"
+    get_settings.cache_clear()
+
+
 def test_spoofed_forwarded_for_cannot_bypass_the_guest_limit(
     client: TestClient, monkeypatch: pytest.MonkeyPatch
 ) -> None:

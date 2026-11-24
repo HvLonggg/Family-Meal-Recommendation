@@ -46,3 +46,17 @@ tmp/
 backend/.build-wheel/
 backend/app/data/curated_recipe_batches_paused/
 output/
+
+# Package-manager caches and scratch files (never commit)
+.pnpm-store/
+*_tmp.py
+.tmp_*
+*.bak
+*.orig
+test-results/
+playwright-report/
+
+# Khóa riêng không bao giờ được đưa lên git
+*.pem
+*.key
+*.p12

@@ -14,6 +14,30 @@ import '@/styles/community.css';
 import '@/styles/assistant.css';
 import '@/styles/cooking.css';
 
+// Tab cũ mở lâu có thể đòi tệp JS của bản đã bị thay: tải lại một lần để nhận bản mới.
+window.addEventListener('vite:preloadError', (event) => {
+  const key = 'bep-viet.preload-reloaded';
+  try {
+    if (sessionStorage.getItem(key) === __APP_BUILD__) return;
+    sessionStorage.setItem(key, __APP_BUILD__);
+  } catch {
+    return;
+  }
+  event.preventDefault();
+  window.location.reload();
+});
+
+// Hạn chế lưu ảnh thuộc Bếp Việt (món ăn, ảnh đại diện, logo): chặn menu chuột phải và kéo thả ảnh.
+// Ô xem trước của trang quản trị được giữ nguyên để người biên tập kiểm tra ảnh tải lên.
+const protectImage = (event: Event) => {
+  const target = event.target;
+  if (target instanceof HTMLImageElement && !target.closest('[data-allow-image-save]')) {
+    event.preventDefault();
+  }
+};
+document.addEventListener('contextmenu', protectImage);
+document.addEventListener('dragstart', protectImage);
+
 const rootElement = document.getElementById('root');
 
 if (!rootElement) {
@@ -48,7 +72,24 @@ function renderCatalogLoader(progress: number) {
   );
 }
 
-renderCatalogLoader(6);
+// Trang pháp lý không cần kho món: hiện ngay, không bắt người dùng chờ tải danh mục.
+// Trang đăng nhập/đăng ký cũng vậy: khách thấy form ngay, kho món tải ở nền.
+const LEGAL_PATH =
+  /^\/(privacy|terms|login|register|forgot-password|reset-password|oauth-callback)\/?$/;
+
+if (LEGAL_PATH.test(window.location.pathname)) {
+  root.render(
+    <StrictMode>
+      <App />
+    </StrictMode>,
+  );
+  // Vẫn nạp kho món ở nền để các trang khác dùng được khi người dùng chuyển trang.
+  void loadRecipeCatalog(() => undefined).catch(() => undefined);
+  void applyRecipeLanguage(language);
+} else {
+  renderCatalogLoader(6);
+  void startApp();
+}
 
 async function startApp() {
   let catalogUnavailable = false;
@@ -78,7 +119,7 @@ async function startApp() {
       {(catalogUnavailable || offlineCatalog) && (
         <div className="catalog-unavailable" role="status">
           {offlineCatalog
-            ? t('Đang dùng bản kho món có sẵn. Máy chủ hiện chưa kết nối.')
+            ? t('Kho món tải chậm, đang tạm dùng bản lưu sẵn.')
             : t('Chưa kết nối được kho món. Đang hiển thị các công thức có sẵn.')}{' '}
           <button onClick={() => window.location.reload()} type="button">
             {t('Thử lại')}
@@ -89,5 +130,3 @@ async function startApp() {
     </StrictMode>,
   );
 }
-
-void startApp();

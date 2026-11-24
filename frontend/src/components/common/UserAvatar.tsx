@@ -20,7 +20,8 @@ function initialsOf(name: string) {
 
 export function UserAvatar({ className = '', name, size = 40, src }: UserAvatarProps) {
   const [failedSrc, setFailedSrc] = useState<string | null>(null);
-  const resolved = apiUrl(src);
+  // Ảnh tĩnh của web (/images/...) không đi qua máy chủ API.
+  const resolved = src?.startsWith('/images/') ? src : apiUrl(src);
   const showImage = resolved && failedSrc !== resolved;
   return (
     <span

@@ -4,13 +4,19 @@ from decimal import Decimal
 from fastapi.testclient import TestClient
 from sqlalchemy.orm import Session, sessionmaker
 
+from app.core.legal import CURRENT_TERMS_VERSION
 from app.modules.recipes.models import Recipe, RecipeIngredient
 
 
 def register_and_login(client: TestClient, email: str) -> dict[str, str]:
     registered = client.post(
         "/api/v1/auth/register",
-        json={"full_name": "Nguyễn An", "email": email, "password": "Test-Only-No-Login-2026!"},
+        json={
+            "full_name": "Nguyễn An",
+            "email": email,
+            "password": "Test-Only-No-Login-2026!",
+            "accepted_terms_version": CURRENT_TERMS_VERSION,
+        },
     )
     assert registered.status_code == 201
     response = client.post(

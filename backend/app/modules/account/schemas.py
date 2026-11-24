@@ -1,4 +1,5 @@
 from datetime import datetime
+from uuid import UUID
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
@@ -41,3 +42,21 @@ class AccountOverviewResponse(BaseModel):
     has_password: bool
     last_login_at: datetime | None
     linked_providers: list[str]
+
+
+class AccountDeleteRequest(BaseModel):
+    """Xác nhận xóa tài khoản: mật khẩu (nếu có) hoặc mã OTP email, kèm cụm xác nhận gõ tay."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    confirmation: str = Field(min_length=1, max_length=16)
+    password: str | None = Field(default=None, max_length=128)
+    challenge_id: UUID | None = None
+    code: str | None = Field(default=None, pattern=r"^\d{5}$")
+
+    @field_validator("confirmation")
+    @classmethod
+    def require_phrase(cls, value: str) -> str:
+        if value.strip().upper() not in {"XÓA", "XOA", "DELETE"}:
+            raise ValueError("Hãy gõ XÓA để xác nhận.")
+        return value

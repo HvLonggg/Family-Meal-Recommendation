@@ -1,5 +1,8 @@
 /* Chế độ vào bếp: toàn màn hình, chữ to, nút lớn để thao tác bằng tay ướt. */
+/* Chiều cao thanh nút cố định (1 hàng trên màn rộng, 2 hàng trên điện thoại). */
 .cook {
+  --cook-controls-h: 80px;
+
   display: flex;
   min-height: 100vh;
   min-height: 100dvh;
@@ -221,6 +224,36 @@
   flex: 1;
 }
 
+/* Cuộn tới ô nhập/nút vẫn chừa chỗ cho thanh nút cố định. */
+html:has(.cook__controls) {
+  scroll-padding-bottom: calc(var(--cook-controls-h, 80px) + 16px);
+}
+
+.cook__note {
+  margin: 8px 0 0;
+  color: var(--color-text-secondary);
+  font-size: 14px;
+}
+
+.cook-alarm__dismiss {
+  display: inline-grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  margin-left: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+}
+
+.cook-alarm__dismiss:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
 .cook__phase {
   margin: 0 0 8px;
   color: var(--color-primary);
@@ -337,6 +370,11 @@
   gap: 10px;
   margin: 0 auto;
   padding: 0 16px 16px;
+}
+
+/* Nội dung bước chữ to nằm trên cùng; khối Chú Rồng nằm sau, gọn lại. */
+.cook__stage {
+  padding-top: 16px;
 }
 
 .cook-timer {
@@ -476,8 +514,16 @@
 }
 
 @media (max-width: 520px) {
+  .cook {
+    --cook-controls-h: 136px;
+  }
+
   .cook__controls {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .cook__controls .button:not(.cook__next) {
+    min-height: 44px;
   }
 
   .cook__controls .cook__next {
@@ -773,8 +819,8 @@
   display: grid;
   align-items: start;
   gap: 10px 14px;
-  grid-template-columns: 200px minmax(0, 1fr);
-  margin: 0 0 22px;
+  grid-template-columns: 150px minmax(0, 1fr);
+  margin: 18px 0 0;
   padding: 12px;
   border: 1px solid var(--color-border);
   border-radius: 20px;
@@ -892,15 +938,32 @@
   margin-top: 8px;
 }
 
-@media (max-width: 560px) {
+/* Điện thoại hoặc màn thấp: Chú Rồng thu thành một hàng (rồng nhỏ + bóng thoại). */
+@media (max-width: 560px), (max-height: 720px) {
   .cook-buddy {
-    gap: 10px;
-    grid-template-columns: 144px minmax(0, 1fr);
+    gap: 8px 10px;
+    grid-template-columns: 64px minmax(0, 1fr);
+    padding: 10px;
+    border-radius: 16px;
+  }
+
+  .cook-buddy__dragon {
+    grid-row: auto;
   }
 
   .cook-buddy__dragon svg {
-    width: 144px;
+    width: 64px;
     height: auto;
+  }
+
+  /* Trạng thái vẫn được đọc cho trình đọc màn hình nhưng không chiếm chỗ. */
+  .cook-buddy__status {
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
   }
 
   .cook-buddy__ask {
@@ -908,18 +971,16 @@
   }
 
   .cook-buddy__log {
-    max-height: 200px;
-  }
-}
-
-/* Điện thoại rất hẹp (≤ 374px): thu rồng để khung chat vẫn đủ rộng. */
-@media (max-width: 374px) {
-  .cook-buddy {
-    grid-template-columns: 118px minmax(0, 1fr);
+    min-height: 0;
+    max-height: 120px;
   }
 
-  .cook-buddy__dragon svg {
-    width: 118px;
+  .cook-buddy__hush {
+    padding: 4px 8px;
+  }
+
+  .cook-buddy__hush span {
+    display: none;
   }
 }
 

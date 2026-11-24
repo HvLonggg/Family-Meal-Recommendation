@@ -28,6 +28,7 @@ import { ContactPage } from '@/pages/ContactPage';
 import { CookModePage } from '@/pages/CookModePage';
 import { FavoritesPage } from '@/pages/FavoritesPage';
 import { HomePage } from '@/pages/HomePage';
+import { PrivacyPage, TermsPage } from '@/pages/legal/LegalDocumentPage';
 import { MealSetsPage } from '@/pages/MealSetsPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 import { NutritionPage } from '@/pages/NutritionPage';
@@ -141,6 +142,9 @@ const router = createBrowserRouter([
       { path: '*', element: <Navigate replace to="/admin" /> },
     ],
   },
+  // Văn bản pháp lý công khai: người chưa đăng nhập phải đọc được trước khi đăng ký.
+  { path: 'privacy', element: <PrivacyPage /> },
+  { path: 'terms', element: <TermsPage /> },
   {
     element: <AuthLayout />,
     children: [

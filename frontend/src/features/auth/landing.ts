@@ -1,8 +1,11 @@
 /** Chỉ quay lại đường dẫn nội bộ của ứng dụng; chặn chuyển hướng sang trang ngoài. */
 export function safeReturnPath(path: string | undefined) {
-  // "//host" và "/\host" bị trình duyệt hiểu là trang ngoài.
+  // "//host" và "/\host" bị trình duyệt hiểu là trang ngoài. Trình duyệt còn bỏ ký tự điều
+  // khiển (tab, xuống dòng) khỏi URL, nên "/\t/host" cũng thành "//host": chặn luôn.
   if (!path || !path.startsWith('/') || path.startsWith('//') || path.startsWith('/\\'))
     return null;
+  // eslint-disable-next-line no-control-regex
+  if (/[\u0000-\u001f\u007f]/.test(path)) return null;
   return /^\/(login|register|forgot-password|reset-password|oauth-callback)(\/|\?|#|$)/.test(path)
     ? null
     : path;

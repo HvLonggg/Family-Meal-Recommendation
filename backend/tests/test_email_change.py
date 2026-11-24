@@ -4,6 +4,7 @@ from fastapi.testclient import TestClient
 from sqlalchemy import select
 from sqlalchemy.orm import Session, sessionmaker
 
+from app.core.legal import CURRENT_TERMS_VERSION
 from app.modules.auth.models import AuthIdentity, SecurityEmailOutbox, User
 
 PASSWORD = "Test-Only-No-Login-2026!"
@@ -12,7 +13,12 @@ PASSWORD = "Test-Only-No-Login-2026!"
 def register_and_login(client: TestClient, email: str) -> dict[str, str]:
     created = client.post(
         "/api/v1/auth/register",
-        json={"full_name": "Nguyễn Ngọc Lan", "email": email, "password": PASSWORD},
+        json={
+            "full_name": "Nguyễn Ngọc Lan",
+            "email": email,
+            "password": PASSWORD,
+            "accepted_terms_version": CURRENT_TERMS_VERSION,
+        },
     )
     assert created.status_code == 201
     login = client.post("/api/v1/auth/login", json={"email": email, "password": PASSWORD})

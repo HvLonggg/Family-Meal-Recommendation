@@ -4,6 +4,7 @@ from uuid import UUID
 
 from pydantic import BaseModel, ConfigDict, EmailStr, Field, field_validator
 
+from app.core.legal import CURRENT_TERMS_VERSION
 from app.modules.account.preferences import PreferencesResponse, read_preferences, to_response
 
 
@@ -15,6 +16,23 @@ def validate_password_strength(value: str) -> str:
     if not any(character.isdigit() for character in value):
         raise ValueError("Mật khẩu phải có ít nhất một chữ số.")
     return value
+
+
+def require_current_terms_version(value: str) -> str:
+    if value != CURRENT_TERMS_VERSION:
+        raise ValueError("Bạn cần đồng ý phiên bản Điều khoản hiện hành để tiếp tục.")
+    return value
+
+
+class AcceptTermsRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    version: str = Field(min_length=1, max_length=16)
+
+    @field_validator("version")
+    @classmethod
+    def check_version(cls, value: str) -> str:
+        return require_current_terms_version(value)
 
 
 class LoginRequest(BaseModel):
@@ -32,6 +50,13 @@ class RegisterRequest(BaseModel):
     full_name: str = Field(min_length=2, max_length=120)
     email: EmailStr
     password: str = Field(min_length=8, max_length=128)
+    # Phiên bản Điều khoản/Chính sách người dùng đã tick đồng ý trên form đăng ký.
+    accepted_terms_version: str = Field(min_length=1, max_length=16)
+
+    @field_validator("accepted_terms_version")
+    @classmethod
+    def check_terms_version(cls, value: str) -> str:
+        return require_current_terms_version(value)
 
     @field_validator("full_name")
     @classmethod
@@ -104,6 +129,8 @@ class UserResponse(BaseModel):
     role: str
     created_at: datetime
     avatar_url: str | None = None
+    terms_version: str | None = None
+    terms_accepted_at: datetime | None = None
     preferences: PreferencesResponse = Field(default_factory=PreferencesResponse)
 
     @field_validator("preferences", mode="before")

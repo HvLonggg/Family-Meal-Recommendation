@@ -28,7 +28,7 @@ import {
   savePushSubscription,
   type CompanionReply,
 } from '@/features/cooking/cookingApi';
-import { stepSpeech, voiceLines } from '@/features/cooking/cookScript';
+import { spokenLine, stepCue, stepSpeech, voiceLines } from '@/features/cooking/cookScript';
 import {
   buildCookSteps,
   loadProgress,
@@ -92,6 +92,8 @@ const COMPANION_TIMEOUT_MS = 10_000;
 const BARGE_IN_DELAY_MS = 700;
 const BARGE_IN_SUPPORTED =
   typeof navigator !== 'undefined' && !/android|iphone|ipad|ipod|mobile/i.test(navigator.userAgent);
+
+const ALARM_HINT_KEY = 'bep-viet-cook-alarm-hint-hidden';
 
 type Talk = { id: number; role: 'user' | 'dragon'; text: string };
 
@@ -182,6 +184,22 @@ function CookSession({ dishes, sessionKey }: { dishes: Dish[]; sessionKey: strin
     const permission = notificationPermission();
     return permission;
   });
+  // Gợi ý "Bật chuông" trong lúc nấu: chỉ hiện khi còn bật được và người dùng chưa đóng.
+  const [alarmHintHidden, setAlarmHintHidden] = useState(() => {
+    try {
+      return localStorage.getItem(ALARM_HINT_KEY) === '1';
+    } catch {
+      return false;
+    }
+  });
+  const hideAlarmHint = () => {
+    setAlarmHintHidden(true);
+    try {
+      localStorage.setItem(ALARM_HINT_KEY, '1');
+    } catch {
+      // Không lưu được thì chỉ ẩn trong phiên này.
+    }
+  };
   const [customMinutes, setCustomMinutes] = useState('10');
   const [checked, setChecked] = useState<Set<string>>(() => new Set());
   const returnPath = `/cook?${new URLSearchParams(sessionKey.split('|').map((value) => ['dish', value])).toString()}`;
@@ -215,9 +233,11 @@ function CookSession({ dishes, sessionKey }: { dishes: Dish[]; sessionKey: strin
     flashTimer.current = window.setTimeout(() => setFlash(null), ms);
   }, []);
 
+  // `shown`: lời hiện trong bóng thoại khi khác lời đọc (bỏ phần trùng với chữ to của bước).
   const say = useCallback(
-    (text: string) => {
-      pushTalk('dragon', text);
+    (text: string, shown: string = text) => {
+      if (shown.trim()) pushTalk('dragon', shown.trim());
+      const spokenText = spokenLine(text, language);
       const token = ++sayToken.current;
       if (!voiceOnRef.current) return;
       window.clearTimeout(restartTimer.current);
@@ -226,7 +246,7 @@ function CookSession({ dishes, sessionKey }: { dishes: Dish[]; sessionKey: strin
       setSpeaking(true);
       lipEnd();
       cancelSpeech.current = speakSequence(
-        text,
+        spokenText,
         speechLang,
         () => {
           if (token !== sayToken.current) return;
@@ -245,11 +265,11 @@ function CookSession({ dishes, sessionKey }: { dishes: Dish[]; sessionKey: strin
       // Nghe từ khóa "dừng" trong lúc đang nói (ngắt lời).
       window.clearTimeout(bargeTimer.current);
       bargeTimer.current = window.setTimeout(
-        () => bargeInRef.current(token, text),
+        () => bargeInRef.current(token, spokenText),
         BARGE_IN_DELAY_MS,
       );
     },
-    [abortRecognition, pushTalk, speechLang, lipBegin, lipSync, lipEnd],
+    [abortRecognition, language, pushTalk, speechLang, lipBegin, lipSync, lipEnd],
   );
 
   const listen = useCallback(() => {
@@ -517,7 +537,10 @@ function CookSession({ dishes, sessionKey }: { dishes: Dish[]; sessionKey: strin
         ? current.dishStartedAt
         : { ...current.dishStartedAt, [slug]: Date.now() },
     }));
-    say(`${prefix}${stepSpeech(target, context(target), language)}`);
+    say(
+      `${prefix}${stepSpeech(target, context(target), language)}`,
+      `${prefix}${stepCue(target, language)}`,
+    );
   };
 
   const completeStep = (lead = '') => {
@@ -584,9 +607,10 @@ function CookSession({ dishes, sessionKey }: { dishes: Dish[]; sessionKey: strin
           lines.waiting(
             step.kind === 'ingredients' ? lines.ingredients(step.items ?? []) : step.text,
           ),
+          lines.waitingCue,
         );
       case 'repeat':
-        return say(stepSpeech(step, context(step), language));
+        return say(stepSpeech(step, context(step), language), stepCue(step, language));
       case 'back':
         return stepIndex > 0 ? goTo(stepIndex - 1, `${lines.back} `) : say(lines.first);
       case 'ingredients': {
@@ -729,7 +753,10 @@ function CookSession({ dishes, sessionKey }: { dishes: Dish[]; sessionKey: strin
           ? goTo(dishStart + action.step, `${lead} `)
           : say(lead);
       case 'repeat':
-        return say(`${lead} ${stepSpeech(step, context(step), language)}`.trim());
+        return say(
+          `${lead} ${stepSpeech(step, context(step), language)}`.trim(),
+          `${lead} ${stepCue(step, language)}`,
+        );
       case 'ingredients':
         return say(`${lead} ${lines.ingredients(steps[dishStart]?.items ?? [])}`.trim());
       case 'set_timer':
@@ -896,7 +923,7 @@ function CookSession({ dishes, sessionKey }: { dishes: Dish[]; sessionKey: strin
     voiceOnRef.current = true;
     setVoiceOn(true);
     setNotice('');
-    say(stepSpeech(step, context(step), language));
+    say(stepSpeech(step, context(step), language), stepCue(step, language));
   };
 
   const elapsed = Math.max(0, Math.round((now - progress.startedAt) / 1000));
@@ -933,8 +960,18 @@ function CookSession({ dishes, sessionKey }: { dishes: Dish[]; sessionKey: strin
         ? t('Hoàn thiện món')
         : t('{group} · Bước {number}/{total}', {
             group: step.kind === 'preparation' ? t('Sơ chế') : t('Thực hiện'),
-            number: step.number,
-            total: step.groupSize,
+            number: step.dishStep ?? step.number,
+            total: step.dishSteps ?? step.groupSize,
+          });
+  // "Nấu tiếp" dùng cùng cách đếm với thẻ món ("N bước" = sơ chế + thực hiện).
+  const resumeLabel =
+    step.kind === 'ingredients'
+      ? t('Nấu tiếp: chuẩn bị nguyên liệu')
+      : step.kind === 'finish'
+        ? t('Nấu tiếp: hoàn thiện món')
+        : t('Nấu tiếp từ bước {number}/{total}', {
+            number: step.dishStep ?? step.number,
+            total: step.dishSteps ?? step.groupSize,
           });
 
   return (
@@ -954,7 +991,8 @@ function CookSession({ dishes, sessionKey }: { dishes: Dish[]; sessionKey: strin
               ? t('Món {number}/{total}', { number: step.dishIndex + 1, total: dishes.length })
               : t('Vào bếp')}
           </small>
-          <strong>{dish.recipe.name}</strong>
+          {/* Màn mở đầu đã có tên món ở tiêu đề lớn, không lặp lại trên thanh. */}
+          {phase === 'intro' ? null : <strong>{dish.recipe.name}</strong>}
         </div>
         {phase === 'cooking' ? (
           <button
@@ -982,7 +1020,6 @@ function CookSession({ dishes, sessionKey }: { dishes: Dish[]; sessionKey: strin
 
       {phase === 'intro' ? (
         <main className="cook__intro">
-          <span className="section-label">{t('Chế độ vào bếp')}</span>
           <h1>
             {dishes.length > 1
               ? t('Nấu {count} món cho bữa này', { count: dishes.length })
@@ -999,7 +1036,7 @@ function CookSession({ dishes, sessionKey }: { dishes: Dish[]; sessionKey: strin
                   srcSet={item.recipe.imageSrcSet}
                 />
                 <span>
-                  <strong>{item.recipe.name}</strong>
+                  {dishes.length > 1 ? <strong>{item.recipe.name}</strong> : null}
                   <small>
                     {t('{count} người', { count: item.servings })} ·{' '}
                     {t('{count} bước', {
@@ -1037,10 +1074,9 @@ function CookSession({ dishes, sessionKey }: { dishes: Dish[]; sessionKey: strin
           <button className="button button--primary cook__start" onClick={begin} type="button">
             <AppIcon name="chef" size={20} />
             {progress.stepIndex > 0
-              ? t('Nấu tiếp từ bước {number}/{total}', {
-                  number: stepIndex + 1,
-                  total: steps.length,
-                })
+              ? dishes.length > 1
+                ? `${resumeLabel} · ${dish.recipe.name}`
+                : resumeLabel
               : t('Bắt đầu nấu')}
           </button>
           {progress.stepIndex > 0 ? (
@@ -1099,6 +1135,59 @@ function CookSession({ dishes, sessionKey }: { dishes: Dish[]; sessionKey: strin
       ) : (
         <>
           <main className="cook__stage">
+            {step.kind === 'ingredients' ? null : <p className="cook__phase">{stepTitle}</p>}
+            {step.kind === 'ingredients' ? (
+              <>
+                <h1 className="cook__step">
+                  {t('Chuẩn bị nguyên liệu cho {count} người', { count: dish.servings })}
+                </h1>
+                <ul className="cook-checklist">
+                  {(step.items ?? []).map((item) => (
+                    <li key={item}>
+                      <label>
+                        <input
+                          checked={checked.has(item)}
+                          onChange={() =>
+                            setChecked((current) => {
+                              const next = new Set(current);
+                              if (next.has(item)) next.delete(item);
+                              else next.add(item);
+                              return next;
+                            })
+                          }
+                          type="checkbox"
+                        />
+                        <span>{item}</span>
+                      </label>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            ) : (
+              <h1 className="cook__step">
+                {step.kind === 'finish'
+                  ? step.text || t('Nếm lại, trình bày và dọn món ra mâm.')
+                  : step.text}
+              </h1>
+            )}
+            {step.writtenFor ? (
+              <p className="cook__note">
+                {t('Lời bước tính cho {count} người', { count: step.writtenFor })}
+              </p>
+            ) : null}
+            {step.timerSeconds ? (
+              <button
+                className="cook__suggest"
+                onClick={() => {
+                  unlockAudio();
+                  startTimer(step.timerSeconds!);
+                }}
+                type="button"
+              >
+                <AppIcon name="bell" size={18} />
+                {t('Hẹn giờ {time}', { time: formatClock(step.timerSeconds) })}
+              </button>
+            ) : null}
             <section aria-label={t('Chú Rồng phụ bếp')} className="cook-buddy">
               <div className="cook-buddy__dragon">
                 <DragonMascot
@@ -1162,54 +1251,6 @@ function CookSession({ dishes, sessionKey }: { dishes: Dish[]; sessionKey: strin
                 </p>
               ) : null}
             </section>
-            <p className="cook__phase">{stepTitle}</p>
-            {step.kind === 'ingredients' ? (
-              <>
-                <h1 className="cook__step">
-                  {t('Chuẩn bị nguyên liệu cho {count} người', { count: dish.servings })}
-                </h1>
-                <ul className="cook-checklist">
-                  {(step.items ?? []).map((item) => (
-                    <li key={item}>
-                      <label>
-                        <input
-                          checked={checked.has(item)}
-                          onChange={() =>
-                            setChecked((current) => {
-                              const next = new Set(current);
-                              if (next.has(item)) next.delete(item);
-                              else next.add(item);
-                              return next;
-                            })
-                          }
-                          type="checkbox"
-                        />
-                        <span>{item}</span>
-                      </label>
-                    </li>
-                  ))}
-                </ul>
-              </>
-            ) : (
-              <h1 className="cook__step">
-                {step.kind === 'finish'
-                  ? step.text || t('Nếm lại, trình bày và dọn món ra mâm.')
-                  : step.text}
-              </h1>
-            )}
-            {step.timerSeconds ? (
-              <button
-                className="cook__suggest"
-                onClick={() => {
-                  unlockAudio();
-                  startTimer(step.timerSeconds!);
-                }}
-                type="button"
-              >
-                <AppIcon name="bell" size={18} />
-                {t('Hẹn giờ {time}', { time: formatClock(step.timerSeconds) })}
-              </button>
-            ) : null}
           </main>
 
           <section aria-label={t('Chuông hẹn giờ')} className="cook__timers">
@@ -1294,10 +1335,11 @@ function CookSession({ dishes, sessionKey }: { dishes: Dish[]; sessionKey: strin
                 <AppIcon name="bell" size={16} /> {t('Đặt chuông')}
               </button>
             </form>
-            {pushState !== 'push' ? (
+            {(pushState === 'default' || pushState === 'granted') && !alarmHintHidden ? (
               <AlarmSetup
                 compact
                 isIos={isIos}
+                onDismiss={hideAlarmHint}
                 onEnable={() => void enableAlarms()}
                 state={pushState}
               />
@@ -1354,11 +1396,13 @@ function CookSession({ dishes, sessionKey }: { dishes: Dish[]; sessionKey: strin
 function AlarmSetup({
   compact = false,
   isIos,
+  onDismiss,
   onEnable,
   state,
 }: {
   compact?: boolean;
   isIos: boolean;
+  onDismiss?: () => void;
   onEnable: () => void;
   state: PushState;
 }) {
@@ -1394,6 +1438,16 @@ function AlarmSetup({
       {state === 'default' || state === 'granted' ? (
         <button className="button button--outline" onClick={onEnable} type="button">
           {t('Bật chuông')}
+        </button>
+      ) : null}
+      {onDismiss ? (
+        <button
+          aria-label={t('Ẩn gợi ý bật chuông')}
+          className="cook-alarm__dismiss"
+          onClick={onDismiss}
+          type="button"
+        >
+          <AppIcon name="close" size={16} />
         </button>
       ) : null}
     </div>

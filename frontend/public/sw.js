@@ -1,8 +1,153 @@
-/* Service worker của Bếp Việt: chỉ nhận thông báo đẩy cho chuông hẹn giờ khi vào bếp.
- * Không chặn request (không có fetch handler) nên không ảnh hưởng cách tải trang. */
+/* Service worker của Bếp Việt.
+ * - Web Push cho chuông hẹn giờ khi vào bếp (giữ nguyên hành vi cũ).
+ * - Cache app-shell + ảnh món để mở nhanh và dùng tạm khi mất mạng.
+ * Không bao giờ cache /api (dữ liệu cá nhân, đăng nhập) hay request khác origin. */
 
-self.addEventListener('install', () => self.skipWaiting());
-self.addEventListener('activate', (event) => event.waitUntil(self.clients.claim()));
+// __BUILD_ID__ được thay bằng mã build mỗi lần deploy (vite.config.ts) để trình duyệt nhận bản mới.
+const VERSION = 'bv-__BUILD_ID__';
+const SHELL_CACHE = `bep-viet-shell-${VERSION}`;
+const ASSET_CACHE = `bep-viet-assets-${VERSION}`;
+const IMAGE_CACHE = 'bep-viet-images-v1';
+const DATA_CACHE = 'bep-viet-data-v1';
+const KEEP = [SHELL_CACHE, ASSET_CACHE, IMAGE_CACHE, DATA_CACHE];
+const MAX_IMAGES = 150;
+const MAX_ASSETS = 80;
+const OFFLINE_URL = '/offline.html';
+const SHELL_URLS = [
+  '/',
+  OFFLINE_URL,
+  '/manifest.webmanifest',
+  '/images/brand/icon-192.png',
+  '/icons/apple-touch-icon.png',
+];
+
+self.addEventListener('install', (event) => {
+  event.waitUntil(
+    caches
+      .open(SHELL_CACHE)
+      .then((cache) => cache.addAll(SHELL_URLS))
+      .catch(() => undefined),
+  );
+  // Lần cài đầu chưa có bản cũ: kích hoạt ngay. Bản cập nhật thì chờ người dùng bấm "Cập nhật".
+});
+
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') self.skipWaiting();
+});
+
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    (async () => {
+      const names = await caches.keys();
+      await Promise.all(
+        names
+          .filter((name) => name.startsWith('bep-viet-') && !KEEP.includes(name))
+          .map((name) => caches.delete(name)),
+      );
+      await self.clients.claim();
+    })(),
+  );
+});
+
+async function trimCache(name, max) {
+  const cache = await caches.open(name);
+  const keys = await cache.keys();
+  for (let i = 0; i < keys.length - max; i += 1) await cache.delete(keys[i]);
+}
+
+function cacheable(response) {
+  return response && response.ok && response.type === 'basic';
+}
+
+async function staleWhileRevalidate(event, cacheName, max) {
+  const cache = await caches.open(cacheName);
+  const cached = await cache.match(event.request);
+  const network = fetch(event.request)
+    .then(async (response) => {
+      if (cacheable(response)) {
+        await cache.put(event.request, response.clone());
+        await trimCache(cacheName, max);
+      }
+      return response;
+    })
+    .catch(() => undefined);
+  if (cached) {
+    event.waitUntil(network);
+    return cached;
+  }
+  return (await network) || Response.error();
+}
+
+async function networkFirst(request, cacheName) {
+  const cache = await caches.open(cacheName);
+  try {
+    const response = await fetch(request);
+    if (cacheable(response)) await cache.put(request, response.clone());
+    return response;
+  } catch {
+    const cached = await cache.match(request);
+    if (cached) return cached;
+    throw new Error('offline');
+  }
+}
+
+async function handleNavigation(request) {
+  try {
+    const response = await fetch(request);
+    if (cacheable(response)) {
+      // Lưu app-shell mới nhất (SPA: mọi route dùng chung index.html).
+      const cache = await caches.open(SHELL_CACHE);
+      await cache.put('/', response.clone());
+    }
+    return response;
+  } catch {
+    const cache = await caches.open(SHELL_CACHE);
+    return (await cache.match('/')) || (await cache.match(OFFLINE_URL)) || Response.error();
+  }
+}
+
+self.addEventListener('fetch', (event) => {
+  const { request } = event;
+  if (request.method !== 'GET') return;
+  const url = new URL(request.url);
+  if (url.origin !== self.location.origin) return;
+  // Dữ liệu cá nhân / đăng nhập / admin: luôn đi thẳng mạng, không cache.
+  if (url.pathname.startsWith('/api/') || url.pathname === '/sw.js') return;
+  if (request.headers.has('authorization')) return;
+
+  if (request.mode === 'navigate') {
+    if (url.pathname.startsWith('/admin')) return;
+    event.respondWith(handleNavigation(request));
+    return;
+  }
+  if (url.pathname.startsWith('/assets/')) {
+    // Tệp build có hash trong tên: bất biến, dùng cache trước.
+    event.respondWith(
+      caches.match(request).then(
+        (cached) =>
+          cached ||
+          fetch(request).then(async (response) => {
+            if (cacheable(response)) {
+              const cache = await caches.open(ASSET_CACHE);
+              await cache.put(request, response.clone());
+              await trimCache(ASSET_CACHE, MAX_ASSETS);
+            }
+            return response;
+          }),
+      ),
+    );
+    return;
+  }
+  if (url.pathname.startsWith('/images/')) {
+    event.respondWith(staleWhileRevalidate(event, IMAGE_CACHE, MAX_IMAGES));
+    return;
+  }
+  if (url.pathname.startsWith('/data/')) {
+    event.respondWith(networkFirst(request, DATA_CACHE));
+  }
+});
+
+// --- Web Push: chuông hẹn giờ khi vào bếp ------------------------------------------------
 
 const ACTIONS = [
   { action: 'done', title: 'Xong rồi' },

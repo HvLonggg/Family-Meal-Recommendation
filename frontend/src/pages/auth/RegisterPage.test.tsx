@@ -3,6 +3,7 @@ import { Route, Routes, useLocation } from 'react-router';
 import { MemoryRouter } from 'react-router';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
+import { LEGAL_VERSION } from '@/pages/legal/legalTypes';
 import { RegisterPage } from '@/pages/auth/RegisterPage';
 import { apiPost } from '@/lib/api/client';
 
@@ -53,10 +54,26 @@ describe('RegisterPage', () => {
         full_name: 'Nguyễn Ngọc Lan',
         email: 'lan@example.com',
         password: 'Test-Only-No-Login-2026!',
+        accepted_terms_version: LEGAL_VERSION,
       }),
     );
     expect(await screen.findByText('Tài khoản đã được tạo thành công.')).toBeInTheDocument();
     expect(screen.getByText('lan@example.com')).toBeInTheDocument();
     expect(screen.queryByLabelText(/mã xác thực|otp/i)).not.toBeInTheDocument();
+  });
+
+  it('links the consent line to the public terms and privacy pages', () => {
+    render(
+      <MemoryRouter initialEntries={['/register']}>
+        <Routes>
+          <Route element={<RegisterPage />} path="/register" />
+        </Routes>
+      </MemoryRouter>,
+    );
+    expect(screen.getByRole('link', { name: 'Điều khoản' })).toHaveAttribute('href', '/terms');
+    expect(screen.getByRole('link', { name: 'Chính sách quyền riêng tư' })).toHaveAttribute(
+      'href',
+      '/privacy',
+    );
   });
 });

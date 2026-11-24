@@ -6,11 +6,20 @@
       "id": "BV767",
       "slug": "canh-khoai-mon-chay-dau-hu",
       "name": "Canh khoai môn chay đậu hũ",
-      "aliases": ["Canh khoai môn nấu đậu hũ", "Canh khoai môn chay"],
-      "region": ["Toàn quốc"],
+      "aliases": [
+        "Canh khoai môn nấu đậu hũ",
+        "Canh khoai môn chay"
+      ],
+      "region": [
+        "Toàn quốc"
+      ],
       "province": [],
       "category": "Món chay",
-      "meal_type": ["bữa trưa", "bữa tối", "bữa ăn gia đình"],
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "bữa ăn gia đình"
+      ],
       "difficulty": "Dễ",
       "servings": 4,
       "serving_basis": "Một nồi canh cho bốn người dùng cùng cơm.",
@@ -26,9 +35,18 @@
         "Nêm nước mắm chay từ từ vì độ mặn giữa các nhãn hiệu khác nhau.",
         "Cho rau ngò vào sau cùng để giữ hương thơm."
       ],
-      "dish_type": ["Món chay", "Món canh"],
-      "main_ingredient": ["khoai môn", "đậu hũ"],
-      "cooking_method": ["phi thơm", "nấu canh"],
+      "dish_type": [
+        "Món chay",
+        "Món canh"
+      ],
+      "main_ingredient": [
+        "khoai môn",
+        "đậu hũ"
+      ],
+      "cooking_method": [
+        "phi thơm",
+        "nấu canh"
+      ],
       "search_terms": [
         "canh khoai môn chay đậu hũ",
         "canh khoai môn đậu hũ",
@@ -37,13 +55,31 @@
       "spicy_level": 0,
       "image_alt": "Tô canh khoai môn chay với đậu hũ, nước dùng trong, ngò om và ngò gai.",
       "time_note": "Khoảng 55 phút; thời gian thay đổi theo kích thước khoai và mức nhiệt.",
-      "suggested_pairings": ["Cơm trắng", "Rau luộc", "Đậu que xào"],
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Rau luộc",
+        "Đậu que xào"
+      ],
       "recipe_family": "vegetarian_taro_tofu_soup",
-      "keywords": ["canh chay", "khoai môn", "đậu hũ"],
+      "keywords": [
+        "canh chay",
+        "khoai môn",
+        "đậu hũ"
+      ],
       "tags": {
-        "meal_type": ["bữa ăn gia đình", "bữa chay"],
-        "dish_type": ["Món chay", "Món canh"],
-        "keywords": ["canh chay", "khoai môn", "đậu hũ"],
+        "meal_type": [
+          "bữa ăn gia đình",
+          "bữa chay"
+        ],
+        "dish_type": [
+          "Món chay",
+          "Món canh"
+        ],
+        "keywords": [
+          "canh chay",
+          "khoai môn",
+          "đậu hũ"
+        ],
         "suitable_for_family_meal": true,
         "spicy_level": 0
       },
@@ -227,7 +263,9 @@
         "variant_note": "Biên tập theo biến thể đậu hũ trong nguồn; lượng nước và cách sơ chế được chuẩn hóa để dễ nấu tại nhà.",
         "seed_recipe": null,
         "reviewed_at": "2026-10-25",
-        "needs": ["Nấu thử để xác nhận định lượng và thời gian thực tế."]
+        "needs": [
+          "Nấu thử để xác nhận định lượng và thời gian thực tế."
+        ]
       },
       "width": 3840,
       "height": 2160
@@ -236,11 +274,20 @@
       "id": "BV768",
       "slug": "mang-xao-nam-bao-ngu",
       "name": "Măng xào nấm bào ngư",
-      "aliases": ["Măng tươi xào nấm bào ngư chay", "Măng xào nấm chay"],
-      "region": ["Toàn quốc"],
+      "aliases": [
+        "Măng tươi xào nấm bào ngư chay",
+        "Măng xào nấm chay"
+      ],
+      "region": [
+        "Toàn quốc"
+      ],
       "province": [],
       "category": "Món chay",
-      "meal_type": ["bữa trưa", "bữa tối", "bữa ăn gia đình"],
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "bữa ăn gia đình"
+      ],
       "difficulty": "Dễ",
       "servings": 4,
       "serving_basis": "Một đĩa rau xào dùng chung cho bốn người.",
@@ -256,9 +303,19 @@
         "Vắt nấm thật ráo để món không bị ra nhiều nước.",
         "Dùng dầu hào chay có thành phần thực vật."
       ],
-      "dish_type": ["Món chay", "Món rau", "Món xào"],
-      "main_ingredient": ["măng tươi", "nấm bào ngư"],
-      "cooking_method": ["luộc", "xào"],
+      "dish_type": [
+        "Món chay",
+        "Món rau",
+        "Món xào"
+      ],
+      "main_ingredient": [
+        "măng tươi",
+        "nấm bào ngư"
+      ],
+      "cooking_method": [
+        "luộc",
+        "xào"
+      ],
       "search_terms": [
         "măng xào nấm bào ngư",
         "măng tươi xào chay",
@@ -267,13 +324,32 @@
       "spicy_level": 0,
       "image_alt": "Đĩa măng tươi xào nấm bào ngư, boa-rô và cần tây xanh.",
       "time_note": "Khoảng 45 phút, gồm sơ chế và luộc măng tươi.",
-      "suggested_pairings": ["Cơm trắng", "Đậu hũ hấp", "Canh rau"],
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Đậu hũ hấp",
+        "Canh rau"
+      ],
       "recipe_family": "vegetarian_bamboo_shoot_oyster_mushroom_stir_fry",
-      "keywords": ["món chay", "măng", "nấm bào ngư", "món xào"],
+      "keywords": [
+        "món chay",
+        "măng",
+        "nấm bào ngư",
+        "món xào"
+      ],
       "tags": {
-        "meal_type": ["bữa ăn gia đình", "bữa chay"],
-        "dish_type": ["Món chay", "Món rau", "Món xào"],
-        "keywords": ["măng", "nấm bào ngư"],
+        "meal_type": [
+          "bữa ăn gia đình",
+          "bữa chay"
+        ],
+        "dish_type": [
+          "Món chay",
+          "Món rau",
+          "Món xào"
+        ],
+        "keywords": [
+          "măng",
+          "nấm bào ngư"
+        ],
         "suitable_for_family_meal": true,
         "spicy_level": 0
       },
@@ -338,7 +414,8 @@
           "unit": "ml",
           "role": "oil",
           "scaling_rule": "linear",
-          "sequence": 7
+          "sequence": 7,
+          "notes": "Dùng để phi thơm boa-rô."
         },
         {
           "name": "Hạt nêm chay",
@@ -364,7 +441,8 @@
           "unit": "ml",
           "role": "liquid",
           "scaling_rule": "linear",
-          "sequence": 10
+          "sequence": 10,
+          "notes": "Thêm để làm mềm nguyên liệu và tạo chút nước xào."
         }
       ],
       "preparation_steps": [
@@ -446,7 +524,9 @@
         "variant_note": "Nguồn ghi dầu hào; Bếp Việt thay bằng dầu hào chay có thành phần thực vật.",
         "seed_recipe": null,
         "reviewed_at": "2026-10-25",
-        "needs": ["Nấu thử để xác nhận lượng gia vị và thời gian thực tế."]
+        "needs": [
+          "Nấu thử để xác nhận lượng gia vị và thời gian thực tế."
+        ]
       },
       "width": 3840,
       "height": 2160
@@ -455,11 +535,20 @@
       "id": "BV769",
       "slug": "dau-bap-xao-nam-chay",
       "name": "Đậu bắp xào nấm chay",
-      "aliases": ["Đậu bắp xào nấm bào ngư", "Đậu bắp xào nấm"],
-      "region": ["Toàn quốc"],
+      "aliases": [
+        "Đậu bắp xào nấm bào ngư",
+        "Đậu bắp xào nấm"
+      ],
+      "region": [
+        "Toàn quốc"
+      ],
       "province": [],
       "category": "Món chay",
-      "meal_type": ["bữa trưa", "bữa tối", "bữa ăn gia đình"],
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "bữa ăn gia đình"
+      ],
       "difficulty": "Dễ",
       "servings": 2,
       "serving_basis": "Một đĩa rau xào nhanh cho hai người.",
@@ -475,9 +564,18 @@
         "Để nấm ráo trước khi cho vào chảo.",
         "Xào đậu bắp trên lửa lớn trong thời gian ngắn để giữ màu xanh và độ giòn."
       ],
-      "dish_type": ["Món chay", "Món rau", "Món xào"],
-      "main_ingredient": ["đậu bắp", "nấm bào ngư"],
-      "cooking_method": ["xào"],
+      "dish_type": [
+        "Món chay",
+        "Món rau",
+        "Món xào"
+      ],
+      "main_ingredient": [
+        "đậu bắp",
+        "nấm bào ngư"
+      ],
+      "cooking_method": [
+        "xào"
+      ],
       "search_terms": [
         "đậu bắp xào nấm chay",
         "đậu bắp xào nấm bào ngư",
@@ -486,13 +584,32 @@
       "spicy_level": 0,
       "image_alt": "Đĩa đậu bắp xanh xào nấm bào ngư, tỏi và hành lá.",
       "time_note": "Khoảng 20 phút từ sơ chế đến khi dọn món.",
-      "suggested_pairings": ["Cơm trắng", "Đậu hũ kho", "Canh bí"],
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Đậu hũ kho",
+        "Canh bí"
+      ],
       "recipe_family": "vegetarian_okra_oyster_mushroom_stir_fry",
-      "keywords": ["món chay", "đậu bắp", "nấm bào ngư", "món rau"],
+      "keywords": [
+        "món chay",
+        "đậu bắp",
+        "nấm bào ngư",
+        "món rau"
+      ],
       "tags": {
-        "meal_type": ["bữa ăn gia đình", "bữa chay"],
-        "dish_type": ["Món chay", "Món rau", "Món xào"],
-        "keywords": ["đậu bắp", "nấm bào ngư"],
+        "meal_type": [
+          "bữa ăn gia đình",
+          "bữa chay"
+        ],
+        "dish_type": [
+          "Món chay",
+          "Món rau",
+          "Món xào"
+        ],
+        "keywords": [
+          "đậu bắp",
+          "nấm bào ngư"
+        ],
         "suitable_for_family_meal": true,
         "spicy_level": 0
       },
@@ -658,7 +775,9 @@
         "variant_note": "Định lượng và thời gian theo nguồn; lượng gia vị được chuẩn hóa theo khối lượng tham khảo, cần nêm lại theo khẩu vị.",
         "seed_recipe": null,
         "reviewed_at": "2026-10-25",
-        "needs": ["Nấu thử để xác nhận định lượng gia vị và độ giòn thực tế."]
+        "needs": [
+          "Nấu thử để xác nhận định lượng gia vị và độ giòn thực tế."
+        ]
       },
       "width": 3840,
       "height": 2160
@@ -667,11 +786,20 @@
       "id": "BV770",
       "slug": "canh-bi-dao-nhoi-chay",
       "name": "Canh bí đao nhồi chay",
-      "aliases": ["Bí đao nhồi đậu hũ nấm chay", "Canh bí nhồi chay"],
-      "region": ["Toàn quốc"],
+      "aliases": [
+        "Bí đao nhồi đậu hũ nấm chay",
+        "Canh bí nhồi chay"
+      ],
+      "region": [
+        "Toàn quốc"
+      ],
       "province": [],
       "category": "Món chay",
-      "meal_type": ["bữa trưa", "bữa tối", "bữa ăn gia đình"],
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "bữa ăn gia đình"
+      ],
       "difficulty": "Dễ",
       "servings": 4,
       "serving_basis": "Một nồi canh cho bốn người dùng với cơm.",
@@ -687,9 +815,19 @@
         "Vắt ráo nấm sau khi rửa để nhân không nhão.",
         "Thoa lớp bột bắp mỏng lên mặt nhân giúp giữ nhân trong khoanh bí."
       ],
-      "dish_type": ["Món chay", "Món canh"],
-      "main_ingredient": ["bí đao", "đậu hũ", "nấm"],
-      "cooking_method": ["nhồi", "nấu canh"],
+      "dish_type": [
+        "Món chay",
+        "Món canh"
+      ],
+      "main_ingredient": [
+        "bí đao",
+        "đậu hũ",
+        "nấm"
+      ],
+      "cooking_method": [
+        "nhồi",
+        "nấu canh"
+      ],
       "search_terms": [
         "canh bí đao nhồi chay",
         "canh bí nhồi đậu hũ nấm",
@@ -698,13 +836,32 @@
       "spicy_level": 0,
       "image_alt": "Tô canh bí đao nhồi chay với nhân đậu hũ nấm, nấm rơm và ngò rí.",
       "time_note": "Khoảng 55 phút; cần nấu đến khi bí và phần nhân chín đều.",
-      "suggested_pairings": ["Cơm trắng", "Đậu hũ kho", "Rau xào"],
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Đậu hũ kho",
+        "Rau xào"
+      ],
       "recipe_family": "vegetarian_stuffed_winter_melon_soup",
-      "keywords": ["món chay", "bí đao", "đậu hũ", "nấm"],
+      "keywords": [
+        "món chay",
+        "bí đao",
+        "đậu hũ",
+        "nấm"
+      ],
       "tags": {
-        "meal_type": ["bữa ăn gia đình", "bữa chay"],
-        "dish_type": ["Món chay", "Món canh"],
-        "keywords": ["bí đao", "đậu hũ", "nấm"],
+        "meal_type": [
+          "bữa ăn gia đình",
+          "bữa chay"
+        ],
+        "dish_type": [
+          "Món chay",
+          "Món canh"
+        ],
+        "keywords": [
+          "bí đao",
+          "đậu hũ",
+          "nấm"
+        ],
         "suitable_for_family_meal": true,
         "spicy_level": 0
       },
@@ -919,7 +1076,9 @@
         "variant_note": "Lượng gia vị được chia giữa phần nhân và nước canh để dễ thao tác; giữ các thành phần chính theo nguồn.",
         "seed_recipe": null,
         "reviewed_at": "2026-10-25",
-        "needs": ["Nấu thử để xác nhận định lượng nhân và thời gian bí chín."]
+        "needs": [
+          "Nấu thử để xác nhận định lượng nhân và thời gian bí chín."
+        ]
       },
       "width": 3840,
       "height": 2160
@@ -928,11 +1087,20 @@
       "id": "BV771",
       "slug": "dau-hu-hap-nam-chay",
       "name": "Đậu hũ hấp nấm chay",
-      "aliases": ["Đậu hũ non hấp nấm", "Đậu hũ hấp nấm"],
-      "region": ["Toàn quốc"],
+      "aliases": [
+        "Đậu hũ non hấp nấm",
+        "Đậu hũ hấp nấm"
+      ],
+      "region": [
+        "Toàn quốc"
+      ],
       "province": [],
       "category": "Món chay",
-      "meal_type": ["bữa trưa", "bữa tối", "bữa ăn gia đình"],
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "bữa ăn gia đình"
+      ],
       "difficulty": "Dễ",
       "servings": 2,
       "serving_basis": "Một đĩa đậu hũ nhẹ cho hai người.",
@@ -948,9 +1116,18 @@
         "Xào nấm chín và thấm sốt trước khi rưới lên đậu.",
         "Nếu không dùng cay, bỏ tương ớt và ớt tươi."
       ],
-      "dish_type": ["Món chay", "Món hấp"],
-      "main_ingredient": ["đậu hũ non", "nấm rơm"],
-      "cooking_method": ["xào", "hấp"],
+      "dish_type": [
+        "Món chay",
+        "Món hấp"
+      ],
+      "main_ingredient": [
+        "đậu hũ non",
+        "nấm rơm"
+      ],
+      "cooking_method": [
+        "xào",
+        "hấp"
+      ],
       "search_terms": [
         "đậu hũ hấp nấm chay",
         "đậu hũ non hấp nấm",
@@ -959,13 +1136,31 @@
       "spicy_level": 0,
       "image_alt": "Đĩa đậu hũ non hấp nấm rơm, hành lá và sốt nâu nhẹ.",
       "time_note": "Khoảng 30 phút từ sơ chế đến khi dọn món.",
-      "suggested_pairings": ["Cơm trắng", "Canh rau", "Rau luộc"],
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Canh rau",
+        "Rau luộc"
+      ],
       "recipe_family": "vegetarian_steamed_tofu_straw_mushrooms",
-      "keywords": ["món chay", "đậu hũ non", "nấm rơm", "món hấp"],
+      "keywords": [
+        "món chay",
+        "đậu hũ non",
+        "nấm rơm",
+        "món hấp"
+      ],
       "tags": {
-        "meal_type": ["bữa ăn gia đình", "bữa chay"],
-        "dish_type": ["Món chay", "Món hấp"],
-        "keywords": ["đậu hũ non", "nấm rơm"],
+        "meal_type": [
+          "bữa ăn gia đình",
+          "bữa chay"
+        ],
+        "dish_type": [
+          "Món chay",
+          "Món hấp"
+        ],
+        "keywords": [
+          "đậu hũ non",
+          "nấm rơm"
+        ],
         "suitable_for_family_meal": true,
         "spicy_level": 0
       },
@@ -1140,7 +1335,9 @@
         "variant_note": "Biên tập theo công thức đậu hũ hấp nấm; dùng dầu hào chay và để tương ớt ở dạng tùy chọn.",
         "seed_recipe": null,
         "reviewed_at": "2026-10-25",
-        "needs": ["Nấu thử để xác nhận lượng sốt và thời gian hấp thực tế."]
+        "needs": [
+          "Nấu thử để xác nhận lượng sốt và thời gian hấp thực tế."
+        ]
       },
       "width": 3840,
       "height": 2160

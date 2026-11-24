@@ -1,0 +1,218 @@
+{
+  "batch": 92,
+  "canvas": {
+    "width": 1536,
+    "height": 864,
+    "format": "WebP",
+    "background": "transparent"
+  },
+  "native_format": "WebP",
+  "export_master_format": "WebP",
+  "assets": [
+    {
+      "slug": "dau-hu-non-sot-nam-dong-co",
+      "native_file": "output/recipe-images/native/dau-hu-non-sot-nam-dong-co.webp",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "frontend/public/images/recipes/edited/dau-hu-non-sot-nam-dong-co-1536.webp",
+      "export_master_pixels": [
+        1536,
+        864
+      ],
+      "upscale_note": "Native ImageGen source is 1536×1024 with transparency, fit without cropping to a 1536×864 canvas; not native 4K.",
+      "web_variants": [
+        {
+          "path": "/images/recipes/edited/dau-hu-non-sot-nam-dong-co-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/dau-hu-non-sot-nam-dong-co-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/dau-hu-non-sot-nam-dong-co-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "slug": "muc-ong-xao-dua-hanh-tay",
+      "native_file": "output/recipe-images/native/muc-ong-xao-dua-hanh-tay.webp",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "frontend/public/images/recipes/edited/muc-ong-xao-dua-hanh-tay-1536.webp",
+      "export_master_pixels": [
+        1536,
+        864
+      ],
+      "upscale_note": "Native ImageGen source is 1536×1024 with transparency, fit without cropping to a 1536×864 canvas; not native 4K.",
+      "web_variants": [
+        {
+          "path": "/images/recipes/edited/muc-ong-xao-dua-hanh-tay-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/muc-ong-xao-dua-hanh-tay-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/muc-ong-xao-dua-hanh-tay-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "slug": "canh-hen-nau-khe-chua",
+      "native_file": "output/recipe-images/native/canh-hen-nau-khe-chua.webp",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "frontend/public/images/recipes/edited/canh-hen-nau-khe-chua-1536.webp",
+      "export_master_pixels": [
+        1536,
+        864
+      ],
+      "upscale_note": "Native ImageGen source is 1536×1024 with transparency, fit without cropping to a 1536×864 canvas; not native 4K.",
+      "web_variants": [
+        {
+          "path": "/images/recipes/edited/canh-hen-nau-khe-chua-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/canh-hen-nau-khe-chua-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/canh-hen-nau-khe-chua-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "slug": "rau-den-xao-toi",
+      "native_file": "output/recipe-images/native/rau-den-xao-toi.webp",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "frontend/public/images/recipes/edited/rau-den-xao-toi-1536.webp",
+      "export_master_pixels": [
+        1536,
+        864
+      ],
+      "upscale_note": "Native ImageGen source is 1536×1024 with transparency, fit without cropping to a 1536×864 canvas; not native 4K.",
+      "web_variants": [
+        {
+          "path": "/images/recipes/edited/rau-den-xao-toi-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/rau-den-xao-toi-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/rau-den-xao-toi-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "slug": "ga-hap-ngai-cuu",
+      "native_file": "output/recipe-images/native/ga-hap-ngai-cuu.webp",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "frontend/public/images/recipes/edited/ga-hap-ngai-cuu-1536.webp",
+      "export_master_pixels": [
+        1536,
+        864
+      ],
+      "upscale_note": "Native ImageGen source is 1536×1024 with transparency, fit without cropping to a 1536×864 canvas; not native 4K.",
+      "web_variants": [
+        {
+          "path": "/images/recipes/edited/ga-hap-ngai-cuu-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/ga-hap-ngai-cuu-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/ga-hap-ngai-cuu-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        }
+      ]
+    }
+  ]
+}

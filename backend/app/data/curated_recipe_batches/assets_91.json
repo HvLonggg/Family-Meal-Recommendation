@@ -1,0 +1,218 @@
+{
+  "batch": 91,
+  "canvas": {
+    "width": 1536,
+    "height": 864,
+    "format": "WebP",
+    "background": "transparent"
+  },
+  "native_format": "WebP",
+  "export_master_format": "WebP",
+  "assets": [
+    {
+      "slug": "su-su-xao-ca-rot",
+      "native_file": "output/recipe-images/native/su-su-xao-ca-rot.webp",
+      "native_pixels": [
+        1381,
+        863
+      ],
+      "has_alpha": true,
+      "export_master_file": "frontend/public/images/recipes/edited/su-su-xao-ca-rot-1536.webp",
+      "export_master_pixels": [
+        1536,
+        864
+      ],
+      "upscale_note": "Original ImageGen source is transparent and retained as a lossless WebP. Delivery master fits the complete dish on a 1536?864 transparent canvas without stretching; this is not native 4K.",
+      "web_variants": [
+        {
+          "path": "/images/recipes/edited/su-su-xao-ca-rot-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/su-su-xao-ca-rot-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/su-su-xao-ca-rot-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "slug": "canh-bi-do-dau-phong-chay",
+      "native_file": "output/recipe-images/native/canh-bi-do-dau-phong-chay.webp",
+      "native_pixels": [
+        1234,
+        1005
+      ],
+      "has_alpha": true,
+      "export_master_file": "frontend/public/images/recipes/edited/canh-bi-do-dau-phong-chay-1536.webp",
+      "export_master_pixels": [
+        1536,
+        864
+      ],
+      "upscale_note": "Original ImageGen source is transparent and retained as a lossless WebP. Delivery master fits the complete dish on a 1536?864 transparent canvas without stretching; this is not native 4K.",
+      "web_variants": [
+        {
+          "path": "/images/recipes/edited/canh-bi-do-dau-phong-chay-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/canh-bi-do-dau-phong-chay-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/canh-bi-do-dau-phong-chay-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "slug": "canh-khoai-mo-chay-nam-dui-ga",
+      "native_file": "output/recipe-images/native/canh-khoai-mo-chay-nam-dui-ga.webp",
+      "native_pixels": [
+        1167,
+        931
+      ],
+      "has_alpha": true,
+      "export_master_file": "frontend/public/images/recipes/edited/canh-khoai-mo-chay-nam-dui-ga-1536.webp",
+      "export_master_pixels": [
+        1536,
+        864
+      ],
+      "upscale_note": "Original ImageGen source is transparent and retained as a lossless WebP. Delivery master fits the complete dish on a 1536?864 transparent canvas without stretching; this is not native 4K.",
+      "web_variants": [
+        {
+          "path": "/images/recipes/edited/canh-khoai-mo-chay-nam-dui-ga-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/canh-khoai-mo-chay-nam-dui-ga-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/canh-khoai-mo-chay-nam-dui-ga-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "slug": "canh-ga-kho-gung",
+      "native_file": "output/recipe-images/native/canh-ga-kho-gung.webp",
+      "native_pixels": [
+        1284,
+        873
+      ],
+      "has_alpha": true,
+      "export_master_file": "frontend/public/images/recipes/edited/canh-ga-kho-gung-1536.webp",
+      "export_master_pixels": [
+        1536,
+        864
+      ],
+      "upscale_note": "Original ImageGen source is transparent and retained as a lossless WebP. Delivery master fits the complete dish on a 1536?864 transparent canvas without stretching; this is not native 4K.",
+      "web_variants": [
+        {
+          "path": "/images/recipes/edited/canh-ga-kho-gung-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/canh-ga-kho-gung-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/canh-ga-kho-gung-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "slug": "canh-ga-nam",
+      "native_file": "output/recipe-images/native/canh-ga-nam.webp",
+      "native_pixels": [
+        1278,
+        1034
+      ],
+      "has_alpha": true,
+      "export_master_file": "frontend/public/images/recipes/edited/canh-ga-nam-1536.webp",
+      "export_master_pixels": [
+        1536,
+        864
+      ],
+      "upscale_note": "Original ImageGen source is transparent and retained as a lossless WebP. Delivery master fits the complete dish on a 1536?864 transparent canvas without stretching; this is not native 4K.",
+      "web_variants": [
+        {
+          "path": "/images/recipes/edited/canh-ga-nam-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/canh-ga-nam-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/canh-ga-nam-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        }
+      ]
+    }
+  ]
+}

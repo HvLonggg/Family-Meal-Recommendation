@@ -29,7 +29,10 @@ def upgrade() -> None:
         sa.Column("event", sa.String(length=32), nullable=False),
         sa.Column("attempts", sa.Integer(), server_default="0", nullable=False),
         sa.Column(
-            "next_attempt_at", sa.DateTime(timezone=True), server_default=sa.func.now(), nullable=False
+            "next_attempt_at",
+            sa.DateTime(timezone=True),
+            server_default=sa.func.now(),
+            nullable=False,
         ),
         sa.Column("sent_at", sa.DateTime(timezone=True), nullable=True),
         sa.Column(
@@ -38,9 +41,7 @@ def upgrade() -> None:
         sa.ForeignKeyConstraint(["user_id"], ["users.id"], ondelete="CASCADE"),
         sa.PrimaryKeyConstraint("id"),
     )
-    op.create_index(
-        "ix_security_email_outbox_user_id", "security_email_outbox", ["user_id"]
-    )
+    op.create_index("ix_security_email_outbox_user_id", "security_email_outbox", ["user_id"])
     op.create_index(
         "ix_security_email_outbox_next_attempt_at", "security_email_outbox", ["next_attempt_at"]
     )
@@ -55,9 +56,7 @@ def upgrade() -> None:
 def downgrade() -> None:
     op.drop_index("ix_security_email_outbox_pending", table_name="security_email_outbox")
     op.drop_index("ix_security_email_outbox_sent_at", table_name="security_email_outbox")
-    op.drop_index(
-        "ix_security_email_outbox_next_attempt_at", table_name="security_email_outbox"
-    )
+    op.drop_index("ix_security_email_outbox_next_attempt_at", table_name="security_email_outbox")
     op.drop_index("ix_security_email_outbox_user_id", table_name="security_email_outbox")
     op.drop_table("security_email_outbox")
     op.drop_column("users", "auth_version")

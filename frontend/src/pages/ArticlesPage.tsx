@@ -24,7 +24,7 @@ const PAGE_SIZE = 9;
 const kindTabs: { id: ArticleKind | 'all'; label: string; icon: IconName }[] = [
   { id: 'all', label: 'Tất cả', icon: 'book' },
   { id: 'editorial', label: 'Bài viết từ Bếp Việt', icon: 'chef' },
-  { id: 'story', label: 'Câu chuyện căn bếp', icon: 'heart' },
+  { id: 'story', label: 'Câu chuyện cộng đồng', icon: 'heart' },
 ];
 const categoryIcons: Record<ArticleCategory, IconName> = {
   kitchen_story: 'home',
@@ -98,20 +98,6 @@ export function ArticlesPage() {
                 <AppIcon name="book" size={17} /> {t('Đọc bài mới nhất')}
               </a>
             </div>
-            <dl className="articles-hero__stats">
-              <div>
-                <dt>{t('Bài viết')}</dt>
-                <dd>{articles.data ? formatNumber(total) : '—'}</dd>
-              </div>
-              <div>
-                <dt>{t('Chuyên mục')}</dt>
-                <dd>{formatNumber(articleCategories.length)}</dd>
-              </div>
-              <div>
-                <dt>{t('Tác giả')}</dt>
-                <dd>{t('Bếp Việt & cộng đồng')}</dd>
-              </div>
-            </dl>
           </div>
           <div aria-hidden="true" className="articles-hero__collage">
             {fallbackCollage.map((image, index) => {
@@ -288,10 +274,6 @@ export function ArticlesPage() {
                       <ArticleCover article={article} />
                       <span className={`article-card__kind article-card__kind--${article.kind}`}>
                         {article.kind === 'story' ? t('Câu chuyện') : t('Bếp Việt')}
-                      </span>
-                      <span className="article-card__time">
-                        <AppIcon name="clock" size={13} />
-                        {t('{minutes} phút đọc', { minutes: article.reading_minutes })}
                       </span>
                     </Link>
                     <div className="article-card__body">

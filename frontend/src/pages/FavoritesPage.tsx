@@ -26,11 +26,7 @@ export function FavoritesPage() {
         <div className="container">
           <span className="section-label">{t('Bộ sưu tập cá nhân')}</span>
           <h1>{t('Món yêu thích của bạn')}</h1>
-          <p>
-            {t(
-              'Lưu lại món ngon để lần sau tìm nhanh, ghép mâm và thêm vào kế hoạch chỉ trong một chạm.',
-            )}
-          </p>
+          <p>{t('Món đã lưu để tìm nhanh, ghép mâm và lên kế hoạch.')}</p>
         </div>
       </section>
       <section className="content-section">
@@ -59,7 +55,6 @@ export function FavoritesPage() {
                   <div className="section-heading">
                     <div>
                       <h2>{t('{count} món đã lưu', { count: favoriteRecipes.length })}</h2>
-                      <p>{t('Bộ sưu tập này được lưu riêng cho tài khoản của bạn.')}</p>
                     </div>
                   </div>
                   <div className="recipe-grid">

@@ -1,0 +1,93 @@
+/* Quay mâm: chỉnh riêng cho trang, ghi đè style dùng chung bằng tiền tố .random-meal-page. */
+
+/* Các ý nổi bật ở hero chỉ là thông tin, không phải nút bấm. */
+.random-meal-page .random-hero__proof {
+  gap: 6px 18px;
+}
+
+.random-meal-page .random-hero__proof span {
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background: none;
+  backdrop-filter: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Cỡ chữ tối thiểu 12px, chữ phụ đủ tương phản trên nền sáng. */
+.random-meal-page .random-settings > div > div:nth-child(2) small,
+.random-meal-page .history-count,
+.random-meal-page .meal-tray__center strong,
+.random-meal-page .meal-tray__center small,
+.random-meal-page .nutrition-summary span,
+.random-meal-page .nutrition-summary small,
+.random-meal-page .nutrition-disclaimer,
+.random-meal-page .tray-slot__number,
+.random-meal-page .tray-menu__index,
+.random-meal-page .saved-meal-card__images figcaption {
+  font-size: 12px;
+}
+
+.random-meal-page .tray-hint,
+.random-meal-page .tray-menu__text small,
+.random-meal-page .saved-meal-card__body small {
+  color: #6f665d;
+  font-size: 12px;
+}
+
+.random-meal-page .nutrition-summary span,
+.random-meal-page .nutrition-summary small,
+.random-meal-page .nutrition-disclaimer {
+  color: #6f665d;
+}
+
+.random-meal-page .meal-wheel__label strong {
+  font-size: clamp(12px, 3cqw, 14px);
+}
+
+/* Số lượng lựa chọn trên vòng quay quá nhỏ để đọc và không giúp chọn món. */
+.random-meal-page .meal-wheel__label small {
+  display: none;
+}
+
+.random-meal-page .saved-meal-card__time {
+  display: block;
+  margin-top: 2px;
+  color: #6f665d;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 900px) {
+  .random-meal-page .random-hero__inner {
+    gap: 0;
+    padding-block: 32px 28px;
+  }
+}
+
+@media (max-width: 560px) {
+  .random-meal-page .random-hero h1 {
+    font-size: clamp(2rem, 9vw, 2.5rem);
+    line-height: 1.12;
+  }
+
+  .random-meal-page .random-hero p {
+    margin: 12px 0 14px;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .random-meal-page .random-hero__proof span {
+    font-size: 13px;
+  }
+
+  /* Tâm mâm hẹp trên di động: giữ số món, bỏ dòng chú thích trùng với tiêu đề mâm. */
+  .random-meal-page .meal-tray__center small {
+    display: none;
+  }
+
+  .random-meal-page .tray-slot__number {
+    width: 22px;
+  }
+}

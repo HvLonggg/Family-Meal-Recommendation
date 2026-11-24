@@ -43,7 +43,7 @@ export const en: Record<string, string> = {
   'Đổi mật khẩu & bảo mật': 'Password & security',
   'Câu chuyện của tôi': 'My stories',
   'Món tôi đề xuất': 'My recipe suggestions',
-  'Cùng Quyên, trọn vị cơm nhà. Chọn món và lên kế hoạch bữa ăn dễ dàng hơn mỗi ngày.':
+  'Cùng Bếp Việt, trọn vị cơm nhà. Chọn món và lên kế hoạch bữa ăn dễ dàng hơn mỗi ngày.':
     'Home cooking, full of flavour. Pick dishes and plan meals more easily every day.',
   'Kho món Việt': 'Vietnamese recipes',
   'Bữa cơm gia đình': 'Family meals',
@@ -204,7 +204,7 @@ export const en: Record<string, string> = {
   'Bữa cơm Việt': 'Vietnamese home meals',
   'Gợi ý món ngon mỗi ngày, để căn bếp luôn ấm và bữa cơm luôn có điều để nhớ.':
     'Tasty ideas every day, so your kitchen stays warm and every meal is memorable.',
-  'Cùng Quyên, trọn vị cơm nhà': 'Home cooking, full of flavour',
+  'Cùng Bếp Việt, trọn vị cơm nhà': 'Home cooking, full of flavour',
   'Khám phá ba miền': 'Explore three regions',
   'Từ hương vị thân quen đến những món mới, Bếp Việt giúp bạn chọn đúng món hợp gu.':
     'From familiar flavours to new dishes, Bep Viet helps you pick what suits your taste.',
@@ -302,7 +302,7 @@ export const en: Record<string, string> = {
 
   // ---------- Trang chủ ----------
   'Bữa nhà ngon hơn mỗi ngày': 'Better home meals every day',
-  'Cùng Quyên,': 'Home cooking,',
+  'Cùng Bếp Việt,': 'Home cooking,',
   'trọn vị cơm nhà': 'full of flavour',
   'Chọn món quen, ghép mâm cơm đủ vị và chuẩn bị đúng lượng cho cả gia đình — tất cả trong một căn bếp số.':
     'Pick familiar dishes, build balanced meals and prepare the right amount for the whole family — all in one digital kitchen.',
@@ -337,6 +337,13 @@ export const en: Record<string, string> = {
   'Chủ động từng bữa': 'Plan every meal ahead',
   'Món nhà thân thuộc': 'Familiar home dishes',
   'Hôm nay nấu gì?': 'What to cook today?',
+  'Trời se lạnh': 'Chilly days',
+  'Ngày nắng nóng': 'Hot days',
+  'Trời lạnh ăn gì?': 'What to eat when it is cold?',
+  'Trời nóng ăn gì?': 'What to eat when it is hot?',
+  'Món nóng hổi, nhiều nước, ấm bụng cho ngày gió mùa.':
+    'Steaming, brothy dishes to keep you warm on windy days.',
+  'Món thanh mát, dễ ăn cho ngày oi bức.': 'Light, refreshing dishes for sweltering days.',
   'Công thức được chuẩn hóa theo khẩu phần, dễ theo dõi từ sơ chế đến lúc lên mâm.':
     'Recipes scaled by servings, easy to follow from prep to table.',
   'Không cần nghĩ nhiều': 'No overthinking',
@@ -416,8 +423,32 @@ export const en: Record<string, string> = {
 
   // ---------- Bữa cơm ----------
   'Mâm cơm đủ vị, đỡ phải nghĩ': 'Balanced meals without the guesswork',
-  'Gợi ý linh hoạt gồm món mặn, canh và rau; thay món theo khẩu vị của nhà mình.':
-    "Flexible ideas with a main, a soup and vegetables; swap dishes to suit your family's taste.",
+  'Gợi ý linh hoạt gồm món chính, canh và rau; thay món theo khẩu vị của nhà mình.':
+    "Flexible ideas with a main dish, soup and vegetables; swap dishes to suit your family's taste.",
+  'Điểm nổi bật': 'Highlights',
+  'Đủ vị cho bữa cơm nhà': 'A well-rounded family meal',
+  'Thời gian rõ ràng': 'Clear cooking times',
+  'Gợi ý hôm nay': "Today's suggestions",
+  'Chọn một mâm hợp với nhà mình': 'Choose a meal that suits your household',
+  'Mâm chay': 'Vegetarian meal',
+  'Mâm gợi ý được làm mới mỗi lần mở trang': 'Meal ideas refresh every time you open this page',
+  'Lọc mâm cơm': 'Filter meal sets',
+  'Tất cả mâm': 'All meals',
+  'Gợi ý mâm cơm mới': 'Refresh meal suggestions',
+  'Gợi ý mâm cơm mới đã sẵn sàng (lần {count}).':
+    'New meal suggestions are ready (refresh {count}).',
+  'Khẩu phần tham khảo: {count} người': 'Suggested servings: {count} people',
+  'Có thể điều chỉnh khẩu phần khi lập kế hoạch.': 'You can adjust servings when planning.',
+  'Chưa có đủ món chay để ghép thành mâm hoàn chỉnh.':
+    'There are not enough vegetarian dishes to build a complete meal yet.',
+  'Chưa đủ món đã được phân loại để ghép thành mâm.':
+    'There are not enough categorized dishes to build a meal yet.',
+  'Kho món đang được cập nhật. Bạn có thể mở danh sách để chọn món trước.':
+    'The meal catalog is being updated. You can browse the dish list in the meantime.',
+  'Mở kho món': 'Browse dishes',
+  'Các món trong mâm': 'Dishes in this meal',
+  'Món lâu nhất: {time}': 'Longest dish: {time}',
+  'Thêm cả mâm vào kế hoạch': 'Add the full meal to your plan',
   'Không biết hôm nay ăn gì?': 'Not sure what to eat today?',
   'Để vòng quay ghép mâm cơm giúp bạn': 'Let the spinner build a meal for you',
   'Chọn từ 3–6 món theo nhu cầu cân bằng, thanh nhẹ, nhanh gọn hoặc phù hợp cả nhà.':
@@ -543,8 +574,61 @@ export const en: Record<string, string> = {
   'Theo tuần': 'Weekly',
   'Theo tháng': 'Monthly',
   'vừa đủ {unit}': '{unit} to taste',
+  'vừa đủ': 'to taste',
+  '{main} {main_taste} hòa cùng {soup} thanh dịu và {vegetable} {vegetable_note}.':
+    '{main} {main_taste} pairs with the gentle flavours of {soup} and {vegetable} {vegetable_note}.',
+  '{highlight} làm điểm nhấn, {supporting} góp thêm sắc vị riêng.':
+    '{highlight} takes centre stage, while {supporting} adds its own character.',
+  'Phản hồi sẽ được gửi về email bạn nhập bên dưới.':
+    "We'll reply to the email address you enter below.",
+  'Gửi thư thành công. Bếp Việt sẽ phản hồi qua email của bạn.':
+    'Message sent. Bếp Việt will reply by email.',
+  'Nấu tiếp: chuẩn bị nguyên liệu': 'Continue: gather ingredients',
+  'Nấu tiếp: hoàn thiện món': 'Continue: finishing touches',
+  'Lời bước tính cho {count} người': 'Step amounts are for {count} servings',
+  'Ẩn gợi ý bật chuông': 'Hide alarm tip',
+  'Món đã lưu để tìm nhanh, ghép mâm và lên kế hoạch.':
+    'Saved dishes for quick access, meal sets and planning.',
+  'Không tìm thấy món ăn': 'Recipe not found',
+  'Xem kho món': 'Browse recipes',
+  'Chọn mục tiêu bữa ăn để xem món phù hợp.': 'Pick a meal goal to see matching dishes.',
+  'Gợi ý tham khảo, không thay thế tư vấn dinh dưỡng hoặc y khoa.':
+    'For reference only; not a substitute for nutritional or medical advice.',
+  'Cần món nhanh hoặc dễ nấu? Xem Gợi ý món': 'Need something quick or easy? See Suggestions',
+  'Xem thêm món': 'Show more dishes',
+  'Đã chọn {count} món': '{count} selected',
+  'Miền {region}': '{region} Vietnam',
+  'Lọc theo loại món, nguyên liệu, cách nấu và vùng miền.':
+    'Filter by dish type, ingredient, cooking method and region.',
+  'Chọn một ưu tiên để xem món phù hợp.': 'Pick a priority to see matching dishes.',
+  'Không thể hoàn tác thao tác này.': "This can't be undone.",
+  'Bạn sẽ cần đăng nhập lại trên mọi thiết bị.': "You'll need to sign in again on every device.",
+  'Yêu cầu chỉnh sửa “{title}”?': 'Request changes to “{title}”?',
+  'Duyệt đề xuất “{name}”?': 'Approve “{name}”?',
+  'Từ chối đề xuất “{name}”?': 'Reject “{name}”?',
+  'Từ chối': 'Reject',
+  'Món hợp khẩu vị của bạn': 'Dishes that suit your taste',
+  'Câu chuyện cộng đồng': 'Community stories',
+  'Đủ đạm, rau, canh và tinh bột.': 'Protein, greens, soup and starch in balance.',
+  'Canh, rau xanh, ít dầu, vị thanh.': 'Soups, greens, little oil, light flavours.',
+  'Vị dịu, không cay nồng.': 'Mild flavours, not spicy.',
+  'Đã xóa {name} khỏi kế hoạch.': 'Removed {name} from the plan.',
+  'Mâm khác': 'Another meal',
+  'Giữ đăng nhập và nhớ email trên thiết bị này.':
+    'Stay signed in and remember the email on this device.',
   'Đã lưu {count} món vào bữa ăn.': 'Saved {count} dishes to the meal.',
+  'Đã thêm {added} món; {existing} món đã có trong bữa ăn.':
+    'Added {added} dishes; {existing} were already in the meal.',
   'Các món bạn chọn đã có trong bữa ăn này.': 'The selected dishes are already in this meal.',
+  'Không có món mới được thêm vào bữa ăn.': 'No new dishes were added to the meal.',
+  'Đã bỏ {missing} món không còn trong kho và giữ tối đa {limit} món.':
+    'Removed {missing} unavailable dishes and kept up to {limit} dishes.',
+  'Đã bỏ {count} món không còn trong kho; các món khác vẫn được chọn.':
+    'Removed {count} unavailable dishes; the remaining dishes are still selected.',
+  'Một bữa tối đa {limit} món; đã giữ lại số món đầu tiên trong mâm.':
+    'A meal can have up to {limit} dishes; the first dishes in the set were kept.',
+  'Bạn có thể chọn tối đa {count} món cho một bữa.':
+    'You can select up to {count} dishes for one meal.',
   'Kế hoạch của {name}': "{name}'s plan",
   'Một tuần chủ động, mỗi bữa thảnh thơi': 'A planned week, relaxed meals',
   'Lưu món theo từng bữa, xem lại lịch sử và chuẩn bị nguyên liệu vừa đủ.':
@@ -885,6 +969,10 @@ export const en: Record<string, string> = {
     'Your request has been received by {email}. Bep Viet will reply by email within 24 business hours.',
   'Yêu cầu đã được tiếp nhận. Bếp Việt sẽ phản hồi email người gửi trong vòng 24 giờ làm việc.':
     'Your request has been received. Bep Viet will reply to the sender within 24 business hours.',
+  'Gửi thư thành công. Bếp Việt sẽ phản hồi bạn sớm trong vòng 24 giờ làm việc.':
+    'Message sent successfully. Bep Viet will get back to you within 24 business hours.',
+  'Chưa gửi được thư. Vui lòng thử lại sau.':
+    "We couldn't send your message. Please try again later.",
   'Hòm thư hỗ trợ: {email}.': 'Support inbox: {email}.',
   'Mã yêu cầu: {code}.': 'Reference: {code}.',
   'Bếp Việt luôn sẵn sàng lắng nghe': 'Bep Viet is always here to listen',
@@ -1225,7 +1313,7 @@ export const en: Record<string, string> = {
   '{count} mục chờ xử lý': '{count} items pending',
   'Tổng quan': 'Overview',
   'Người dùng': 'Users',
-  'Đề xuất món': 'Recipe suggestions',
+  'Đề xuất món': 'Suggest a recipe',
   'Đang tổng hợp số liệu…': 'Compiling statistics…',
   '{count} mới trong 7 ngày': '{count} new in 7 days',
   '{count} món đang ẩn': '{count} hidden',
@@ -1313,8 +1401,8 @@ export const en: Record<string, string> = {
 
   // ---------- Khởi động ứng dụng ----------
   'Bếp Việt đang chuẩn bị kho món…': 'Bep Viet is preparing the recipe library…',
-  'Đang dùng bản kho món có sẵn. Máy chủ hiện chưa kết nối.':
-    'Using the built-in recipe library. The server is not connected.',
+  'Kho món tải chậm, đang tạm dùng bản lưu sẵn.':
+    'The recipe library is loading slowly, so a saved copy is shown for now.',
   'Chưa kết nối được kho món. Đang hiển thị các công thức có sẵn.':
     'Could not reach the recipe library. Showing built-in recipes.',
   'Lỗi 404': 'Error 404',
@@ -2112,4 +2200,86 @@ export const en: Record<string, string> = {
   'Hỏi hoặc nói với Chú Rồng… (vd: cá bị dính chảo thì sao?)':
     'Ask or tell Chef Dragon… (e.g. the fish is sticking to the pan?)',
   'Gửi cho Chú Rồng': 'Send to Chef Dragon',
+  // ---------- Văn bản pháp lý & xóa tài khoản ----------
+  'Văn bản pháp lý': 'Legal documents',
+  'Điều khoản sử dụng': 'Terms of Use',
+  'Chính sách quyền riêng tư': 'Privacy Policy',
+  'Hãy gõ XÓA để xác nhận.': 'Type XÓA to confirm.',
+  'Xóa vĩnh viễn tài khoản, cài đặt, kế hoạch, yêu thích, nhật ký nấu, hội thoại và ghi nhớ của trợ lý. Bài viết đã xuất bản được giữ lại ở dạng ẩn danh. Không thể hoàn tác.':
+    'Permanently deletes your account, settings, plans, favourites, cooking log, assistant conversations and memories. Published stories are kept anonymously. This cannot be undone.',
+  'Xóa tài khoản': 'Delete account',
+  'Tôi muốn xóa tài khoản': 'I want to delete my account',
+  'Nên tải dữ liệu của bạn trước khi xóa:': 'Consider downloading your data first:',
+  'Gửi mã xác nhận tới email': 'Email me a confirmation code',
+  'Gõ chữ XÓA (viết hoa) để xác nhận.': 'Type the word XÓA (capitals) to confirm.',
+  'Xác nhận': 'Confirmation',
+  'Xóa vĩnh viễn tài khoản': 'Delete account permanently',
+  'Tài khoản và dữ liệu cá nhân của bạn đã được xóa.':
+    'Your account and personal data have been deleted.',
+  'Điều khoản và Chính sách quyền riêng tư': 'Terms and Privacy Policy',
+  'Để tiếp tục dùng Bếp Việt, vui lòng đọc và đồng ý với':
+    'To keep using Bep Viet, please read and accept the',
+  'phiên bản {version}': 'version {version}',
+  'Tôi đồng ý': 'I agree',
+  'Kết hợp {dishes} cho bữa cơm nhà.': 'Bring {dishes} together for a home-cooked meal.',
+  'Lên mâm cùng {dishes}.': 'Serve {dishes} together.',
+  '{dishes} — trọn vị cơm nhà.': '{dishes} — a taste of home.',
+  'Dễ nấu trước': 'Easiest first',
+  'Ít nguyên liệu trước': 'Fewest ingredients first',
+  'Khớp từ khóa nhất': 'Best keyword match',
+  'Bộ lọc món ăn': 'Dish filters',
+  'Chọn theo khẩu vị': 'Find your favourites',
+  'Có thể chọn nhiều trong mỗi nhóm': 'Choose one or more options in each group',
+  'Xóa bộ lọc ({count})': 'Clear filters ({count})',
+  'Cách chế biến': 'Cooking method',
+  'Đăng nhập để xem món yêu thích': 'Sign in to see your favourites',
+  'Những món bạn đã lưu sẽ xuất hiện ở đây, riêng cho tài khoản của bạn.':
+    'Your saved dishes appear here, just for your account.',
+  'Bỏ bộ lọc': 'Clear filters',
+  'Thịt lợn': 'Pork',
+  Gà: 'Chicken',
+  Vịt: 'Duck',
+  Ngan: 'Muscovy duck',
+  Ngỗng: 'Goose',
+  'Thịt bò': 'Beef',
+  Cá: 'Fish',
+  Tôm: 'Shrimp',
+  'Hải sản': 'Seafood',
+  Trứng: 'Eggs',
+  'Đậu phụ': 'Tofu',
+  Nấm: 'Mushrooms',
+  'Rau xanh': 'Leafy greens',
+  'Bầu, bí, mướp': 'Gourds & squash',
+  'Củ, quả': 'Root vegetables & produce',
+  'Các loại đậu': 'Beans & legumes',
+  'Gạo, nếp': 'Rice',
+  'Bún, mì, miến': 'Noodles',
+  Chuối: 'Banana',
+  Xoài: 'Mango',
+  'Dưa hấu': 'Watermelon',
+  Dứa: 'Pineapple',
+  Dừa: 'Coconut',
+  'Cam, quýt, bưởi': 'Citrus fruit',
+  'Đu đủ': 'Papaya',
+  'Thanh long': 'Dragon fruit',
+  Ổi: 'Guava',
+  'Kho, rim': 'Braise & simmer',
+  'Chiên, rán': 'Fry',
+  Xào: 'Stir-fry',
+  Luộc: 'Boil',
+  Hấp: 'Steam',
+  Nướng: 'Grill & roast',
+  'Nấu, hầm': 'Soups & stews',
+  'Trộn, gỏi': 'Salads & mixed dishes',
+  'Bộ lọc': 'Filters',
+  'Ẩn bộ lọc': 'Hide filters',
+  'Bộ lọc đang chọn': 'Active filters',
+  'Bỏ lọc {label}': 'Remove {label} filter',
+  'Xem thêm ({count})': 'Show more ({count})',
+  'Xem thêm {group}': 'Show more {group}',
+  'Thu gọn {group}': 'Collapse {group}',
+  'Xem thêm bộ lọc đã chọn': 'Show more active filters',
+  'Thu gọn bộ lọc đã chọn': 'Collapse active filters',
+  'Xóa tìm kiếm': 'Clear search',
+  'Xóa tìm kiếm và bộ lọc': 'Clear search and filters',
 };

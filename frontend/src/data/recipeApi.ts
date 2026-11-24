@@ -130,6 +130,7 @@ export function adaptRecipe(item: ApiRecipe, idToSlug: Map<string, string>): Rec
     regions: content.region ?? [item.region],
     category: item.category,
     ingredientCategory: content.category,
+    cookingMethods: Array.isArray(content.tags?.cooking_method) ? content.tags.cooking_method : [],
     difficulty: item.difficulty,
     familyFriendly:
       typeof content.tags?.suitable_for_family_meal === 'boolean'
@@ -153,16 +154,18 @@ export function adaptRecipe(item: ApiRecipe, idToSlug: Map<string, string>): Rec
     finishedDish: content.finished_dish,
     tip: item.tip,
     tips: content.tips ?? [item.tip],
-    tags: [
-      'dish_type',
-      'cooking_method',
-      'meal_type',
-      'province',
-      ...(!content.tags?.main_ingredient ? ['keywords'] : []),
-    ].flatMap((key) => {
-      const values = content.tags?.[key];
-      return Array.isArray(values) ? values : [];
-    }),
+    tags: Array.isArray(content.tags)
+      ? content.tags.filter((tag): tag is string => typeof tag === 'string')
+      : [
+          'dish_type',
+          'cooking_method',
+          'meal_type',
+          'province',
+          ...(!content.tags?.main_ingredient ? ['keywords'] : []),
+        ].flatMap((key) => {
+          const values = content.tags?.[key];
+          return Array.isArray(values) ? values : [];
+        }),
     sourceName: 'Bếp Việt',
     sourceUrl: item.source_url,
     pairingSlugs: (content.suggested_pairings ?? []).flatMap((pair) => idToSlug.get(pair.id) ?? []),
@@ -226,7 +229,8 @@ function installCatalog(catalog: ApiRecipe[], total: number) {
 }
 
 async function loadApiCatalog(onProgress: CatalogLoadProgress) {
-  const signal = AbortSignal.timeout(12000);
+  // Kho món lớn: máy chủ chậm vẫn kịp trả lời trước khi rơi về bản lưu sẵn.
+  const signal = AbortSignal.timeout(30000);
   const first = await apiRequest<{ data: ApiRecipe[]; total: number }>(
     '/recipes/catalog?limit=100',
     { signal },

@@ -28,12 +28,13 @@ import { apiDelete, apiPost, apiRequest } from '@/lib/api/client';
 import { fitDishCutout } from '@/lib/fitDishCutout';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 import { useI18n } from '@/features/i18n/I18nContext';
+import './recipe-detail-page.css';
 
 export function RecipeDetailPage() {
   const { slug = '' } = useParams();
   // Theo dõi danh mục để món hiển thị đổi theo ngôn ngữ đang chọn.
   const recipe = useRecipeCatalog().find((item) => item.slug === slug);
-  if (!recipe) return <NotFoundPage />;
+  if (!recipe) return <NotFoundPage kind="recipe" />;
   return <RecipeDetails key={slug} recipe={recipe} />;
 }
 
@@ -107,10 +108,13 @@ function RecipeDetails({ recipe }: { recipe: Recipe }) {
           <img
             alt={recipe.imageAlt}
             decoding="async"
+            fetchPriority="high"
+            height={557}
             onLoad={(event) => fitDishCutout(event.currentTarget)}
             sizes="(min-width: 1320px) 640px, (min-width: 960px) 55vw, 90vw"
             src={recipe.image}
             srcSet={recipe.imageSrcSet}
+            width={640}
           />
           <figcaption className="recipe-detail__source">
             <strong>
@@ -186,8 +190,9 @@ function RecipeDetails({ recipe }: { recipe: Recipe }) {
               <AppIcon name="calendar" size={18} /> {t('Thêm vào kế hoạch')}
             </Link>
             <RecipeNarrator narration={narration} segments={narrationScript} />
+            {/* Cùng nhóm nút để "Đánh dấu đã nấu" không lẻ một hàng riêng. */}
+            <CookedMark servings={servings} slug={recipe.slug} />
           </div>
-          <CookedMark servings={servings} slug={recipe.slug} />
           {conflicts.length ? (
             <p className="diet-warning" role="note">
               <AppIcon name="leaf" size={18} />

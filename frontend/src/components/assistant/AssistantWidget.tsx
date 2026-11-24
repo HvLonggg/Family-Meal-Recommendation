@@ -48,11 +48,13 @@ type VoiceState = 'off' | 'listening' | 'thinking' | 'speaking' | 'paused';
 
 const TEASER_SNOOZE_KEY = 'bep-viet.assistant.teaser-snooze';
 const TEASER_COUNT_KEY = 'bep-viet.assistant.teaser-count';
-const TEASER_SNOOZE_MS = 15 * 60_000;
-const FIRST_TEASER_MS = 10_000;
-const NEXT_TEASER_MS = 55_000;
+const TEASER_SNOOZE_MS = 24 * 60 * 60_000;
+const FIRST_TEASER_MS = 60_000;
+const NEXT_TEASER_MS = 10 * 60_000;
 const TEASER_VISIBLE_MS = 6_000;
-const MAX_TEASERS_PER_SESSION = 30;
+const MAX_TEASERS_PER_SESSION = 2;
+// Không chen ngang khi người dùng vừa bấm, gõ hay cuộn.
+const TEASER_IDLE_MS = 4_000;
 
 function safeGet(storage: 'local' | 'session', key: string) {
   try {
@@ -172,8 +174,22 @@ export function AssistantWidget() {
     let shown = Number(safeGet('session', TEASER_COUNT_KEY) ?? 0);
     if (snoozedUntil > Date.now() || shown >= MAX_TEASERS_PER_SESSION) return undefined;
     let hideTimer = 0;
+    let retryTimer = 0;
+    let lastInteraction = 0;
+    const markInteraction = () => {
+      lastInteraction = Date.now();
+    };
+    const interactionEvents = ['pointerdown', 'keydown', 'scroll', 'pointermove'] as const;
+    for (const name of interactionEvents) {
+      window.addEventListener(name, markInteraction, { passive: true, capture: true });
+    }
     const show = () => {
       if (shown >= MAX_TEASERS_PER_SESSION || document.hidden) return;
+      if (Date.now() - lastInteraction < TEASER_IDLE_MS) {
+        window.clearTimeout(retryTimer);
+        retryTimer = window.setTimeout(show, TEASER_IDLE_MS);
+        return;
+      }
       shown += 1;
       safeSet('session', TEASER_COUNT_KEY, String(shown));
       setTeaser(pickTeaser());
@@ -187,6 +203,10 @@ export function AssistantWidget() {
       window.clearTimeout(first);
       window.clearInterval(repeat);
       window.clearTimeout(hideTimer);
+      window.clearTimeout(retryTimer);
+      for (const name of interactionEvents) {
+        window.removeEventListener(name, markInteraction, { capture: true });
+      }
     };
   }, [open]);
 

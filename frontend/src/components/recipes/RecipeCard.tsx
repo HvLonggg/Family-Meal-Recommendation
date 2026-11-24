@@ -45,11 +45,14 @@ export function RecipeCard({ recipe, eager = false }: { recipe: Recipe; eager?: 
           <img
             alt={recipe.imageAlt}
             decoding="async"
+            fetchPriority={eager ? 'high' : undefined}
+            height={400}
             onLoad={(event) => fitDishCutout(event.currentTarget)}
             loading={eager ? 'eager' : 'lazy'}
             sizes="(min-width: 1320px) 390px, (min-width: 960px) 30vw, (min-width: 680px) 45vw, 90vw"
             src={recipe.image}
             srcSet={recipe.imageSrcSet}
+            width={568}
           />
           <span className="recipe-card__region">{t(recipe.region)}</span>
         </Link>

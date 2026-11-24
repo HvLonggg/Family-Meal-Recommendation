@@ -27,6 +27,7 @@ import type {
 import { useI18n } from '@/features/i18n/I18nContext';
 import { formatLunarLong } from '@/features/planner/plannerCalendar';
 import { errorMessage } from '@/lib/errors';
+import { formatDisplayDate } from '@/lib/formatDate';
 import { lunarFromIsoDate, vietnamToday } from '@/lib/lunarCalendar';
 import { MemoryPanel } from '@/pages/account/MemoryPanel';
 
@@ -65,7 +66,7 @@ const SECTION_TAB: Record<string, SettingsTab> = {
 
 export function SettingsPage() {
   const { updateUser, user } = useAuth();
-  const { formatDate, formatNumber, language, setLanguage, t } = useI18n();
+  const { formatNumber, language, setLanguage, t } = useI18n();
   const todayInVietnam = vietnamToday();
   const location = useLocation();
   const saved = user?.preferences ?? DEFAULT_PREFERENCES;
@@ -567,7 +568,7 @@ export function SettingsPage() {
                 <small className="settings-calendar-preview">
                   <AppIcon name="moon" size={13} />
                   {t('Hôm nay {solar} · {lunar}', {
-                    solar: formatDate(`${todayInVietnam}T12:00:00`, { dateStyle: 'medium' }),
+                    solar: formatDisplayDate(todayInVietnam),
                     lunar: formatLunarLong(lunarFromIsoDate(todayInVietnam), t),
                   })}
                 </small>

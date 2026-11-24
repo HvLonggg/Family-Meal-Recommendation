@@ -1,0 +1,340 @@
+/*
+ * Trang Kế hoạch: gọn chữ, vùng chạm đủ lớn, di động thoáng.
+ * Mọi selector bắt đầu bằng .planner-page để ghi đè styles/product.css mà không sửa tệp chung.
+ */
+.planner-page {
+  /* Chữ phụ đạt ≥ 4.5:1 trên nền trắng/kem. */
+  --color-text-muted: #6f665d;
+  --planner-touch: 32px;
+  --planner-header-offset: 96px;
+}
+
+@media (max-width: 680px), (pointer: coarse) {
+  .planner-page {
+    --planner-touch: 44px;
+  }
+}
+
+/* Cỡ chữ tối thiểu 12px. */
+.planner-page .planner-meal__heading h3,
+.planner-page .planner-dish__link,
+.planner-page .planner-dish__footer,
+.planner-page .planner-dish__veg-warning,
+.planner-page .planner-day__moon,
+.planner-page .planner-day__dates small,
+.planner-page .planner-day__veg-banner,
+.planner-page .planner-date-card__kicker,
+.planner-page .planner-dialog__lunar,
+.planner-page .planner-dialog__controls label,
+.planner-page .planner-recipe-results article span,
+.planner-page .planner-recipe-results .button,
+.planner-page .planner-dialog__footer > span,
+.planner-page .planner-history__list small,
+.planner-page .planner-status-pill,
+.planner-page .planner-shopping__list small,
+.planner-page .planner-shopping__dishes small,
+.planner-page .planner-shopping__group-empty,
+.planner-page .planner-week-label span,
+.planner-page .planner-current-week,
+.planner-page .planner-dish__cooked,
+.planner-page .planner-dish__cook-link,
+.planner-page .planner-cook-meal {
+  font-size: 12px;
+}
+
+.planner-page .planner-meal__heading h3 {
+  color: #5b4e42;
+}
+
+/* Tiêu đề không bị header dính che khi tự cuộn tới. */
+.planner-page .planner-shopping,
+.planner-page .planner-meal {
+  scroll-margin-top: var(--planner-header-offset);
+}
+
+/* ---------- Ô bữa ăn ---------- */
+.planner-page .planner-add-icon,
+.planner-page .planner-veg-toggle {
+  width: var(--planner-touch);
+  height: var(--planner-touch);
+}
+
+.planner-page .planner-veg-toggle {
+  color: #7d6a55;
+}
+
+.planner-page .planner-meal__empty {
+  display: grid;
+  width: 100%;
+  min-height: 75px;
+  place-items: center;
+  border: 1px dashed #e6d8c8;
+  border-radius: 10px;
+  padding: 0;
+  color: #8a7d70;
+  background: transparent;
+  cursor: pointer;
+  opacity: 0.75;
+  transition:
+    opacity 160ms ease,
+    color 160ms ease,
+    border-color 160ms ease,
+    background-color 160ms ease;
+}
+
+.planner-page .planner-meal__empty:hover,
+.planner-page .planner-meal__empty:focus-visible {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: #fff6ef;
+  opacity: 1;
+}
+
+.planner-page .planner-meal__empty:focus-visible,
+.planner-page .planner-dish__remove:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Ô vừa lưu: viền nổi vài giây. */
+.planner-page .planner-meal.is-highlighted {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgb(180 59 44 / 22%);
+  animation: planner-slot-flash 1.2s ease 2;
+}
+
+@keyframes planner-slot-flash {
+  0%,
+  100% {
+    background-color: #fffdfa;
+  }
+
+  50% {
+    background-color: #ffeadf;
+  }
+}
+
+/* Món trong ô: nút × tách lên góc trên, xa nút tăng/giảm khẩu phần. */
+.planner-page .planner-dish {
+  position: relative;
+}
+
+.planner-page .planner-dish__link {
+  padding-right: calc(var(--planner-touch) + 4px);
+}
+
+.planner-page .planner-dish__remove {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: grid;
+  width: var(--planner-touch);
+  height: var(--planner-touch);
+  place-items: center;
+  border: 1px solid #e9dfd3;
+  border-radius: 8px;
+  color: #a14a3d;
+  background: white;
+  cursor: pointer;
+}
+
+.planner-page .planner-dish + .planner-dish .planner-dish__remove {
+  top: 7px;
+}
+
+.planner-page .planner-dish__remove:hover:not(:disabled) {
+  border-color: #a14a3d;
+  background: #fff3f0;
+}
+
+.planner-page .planner-dish__remove:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.planner-page .planner-dish__cook {
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.planner-page .planner-dish__cooked,
+.planner-page .planner-dish__cook-link,
+.planner-page .planner-cook-meal {
+  min-height: var(--planner-touch);
+  padding-inline: 10px;
+}
+
+.planner-page .planner-dish__footer {
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.planner-page .planner-dish__footer > div {
+  gap: 6px;
+}
+
+.planner-page .planner-dish__footer button {
+  width: var(--planner-touch);
+  height: var(--planner-touch);
+  border-radius: 8px;
+}
+
+/* Màn cảm ứng rộng: nới cột để nút 44px không tràn. */
+@media (pointer: coarse) and (min-width: 681px) {
+  .planner-page .planner-grid--personal {
+    min-width: 1400px;
+  }
+}
+
+/* ---------- Hộp thoại chọn món: một danh sách cuộn, không phân trang ---------- */
+.planner-page .planner-dialog {
+  overflow-y: auto;
+}
+
+.planner-page .planner-recipe-results {
+  max-height: none;
+  min-height: min(280px, 42vh);
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.planner-page .planner-recipe-results article {
+  padding-block: 8px;
+}
+
+.planner-page .planner-recipe-results .button {
+  min-height: var(--planner-touch);
+}
+
+.planner-page .planner-recipe-more {
+  min-height: 44px;
+  border: 0;
+  padding: 8px;
+  color: var(--color-primary);
+  background: transparent;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.planner-page .planner-dialog__footer {
+  flex-shrink: 0;
+}
+
+/* ---------- Di động ---------- */
+@media (max-width: 680px) {
+  .planner-page .page-hero--planner {
+    padding-block: 18px 6px;
+  }
+
+  .planner-page .page-hero--planner h1 {
+    margin-block: 4px 0;
+    font-size: 24px;
+    line-height: 1.25;
+  }
+
+  .planner-page .page-hero--planner p {
+    display: none;
+  }
+
+  .planner-page > .content-section {
+    padding-top: 12px;
+  }
+
+  .planner-page .planner-calendar-hero {
+    gap: 10px;
+    margin-bottom: 12px;
+    border-radius: 16px;
+    padding: 10px;
+  }
+
+  .planner-page .planner-calendar-hero__dates {
+    gap: 8px;
+  }
+
+  .planner-page .planner-date-card {
+    gap: 4px;
+    border-radius: 12px;
+    padding: 8px 10px;
+  }
+
+  .planner-page .planner-date-card__body {
+    align-items: center;
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .planner-page .planner-date-card__day {
+    font-size: 28px;
+  }
+
+  .planner-page .planner-date-card__title {
+    font-size: 13px;
+  }
+
+  /* Chi tiết can chi chỉ hiện trên màn lớn. */
+  .planner-page .planner-date-card__body small {
+    display: none;
+  }
+
+  .planner-page .planner-calendar-hero__side {
+    gap: 8px;
+  }
+
+  .planner-page .planner-legend__hint {
+    display: none;
+  }
+
+  .planner-page .planner-toolbar__actions {
+    flex-direction: row;
+  }
+
+  .planner-page .planner-toolbar__actions .button {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  /* Lưới tuần: mỗi cột gần bằng màn hình, cuộn ngang có điểm dừng theo ngày. */
+  .planner-page .planner-week-scroll {
+    position: relative;
+    scroll-snap-type: x proximity;
+  }
+
+  .planner-page .planner-grid--personal {
+    width: max-content;
+    min-width: 0;
+    grid-template-columns: repeat(7, min(80vw, 300px));
+  }
+
+  .planner-page .planner-day {
+    scroll-snap-align: start;
+  }
+
+  .planner-page .planner-meal__heading h3 {
+    font-size: 13px;
+  }
+
+  .planner-page .planner-dish__link {
+    font-size: 13px;
+  }
+
+  .planner-page .planner-meal {
+    min-height: 0;
+  }
+
+  .planner-page .planner-meal__empty {
+    min-height: 56px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .planner-page .planner-meal.is-highlighted {
+    animation: none;
+  }
+
+  .planner-page .planner-meal__empty {
+    transition: none;
+  }
+}

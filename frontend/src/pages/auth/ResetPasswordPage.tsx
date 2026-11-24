@@ -49,7 +49,7 @@ export function ResetPasswordPage() {
     <>
       <div className="auth-card__heading">
         <span className="auth-kicker">{t('Bảo vệ tài khoản')}</span>
-        <h2>{t('Tạo mật khẩu mới')}</h2>
+        <h1>{t('Tạo mật khẩu mới')}</h1>
         <p>{t('Chọn mật khẩu riêng biệt và dễ nhớ với bạn.')}</p>
       </div>
       {!token ? (

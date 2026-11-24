@@ -1,5 +1,14 @@
-import { useState } from 'react';
-import { Link, Navigate, NavLink, Outlet, useLocation, useNavigate } from 'react-router';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import {
+  Link,
+  Navigate,
+  NavLink,
+  NavigationType,
+  Outlet,
+  useLocation,
+  useNavigate,
+  useNavigationType,
+} from 'react-router';
 
 import { KitchenHomeLogo } from '@/components/brand/KitchenHomeLogo';
 import { AppIcon, type IconName } from '@/components/common/AppIcon';
@@ -27,14 +36,14 @@ const primaryLinks = [
   { to: '/random-meal', label: 'Quay mâm', className: 'nav-link--random' },
   { to: '/planner', label: 'Kế hoạch' },
   { to: '/articles', label: 'Bài viết', className: 'nav-link--featured' },
-  { to: '/submit-recipe', label: 'Đăng món', className: 'nav-link--featured' },
+  { to: '/submit-recipe', label: 'Đề xuất món', className: 'nav-link--featured' },
 ];
 
 const exploreLinks: MenuLink[] = [
   {
     to: '/suggestions',
     label: 'Gợi ý món',
-    description: 'Món hợp thời tiết và khẩu vị',
+    description: 'Món hợp khẩu vị của bạn',
     icon: 'sparkles',
   },
   {
@@ -57,6 +66,7 @@ const accountLinks: MenuLink[] = [
   { to: '/account/settings', label: 'Cài đặt', icon: 'settings' },
   { to: '/account/security', label: 'Đổi mật khẩu & bảo mật', icon: 'lock' },
   { to: '/account/stories', label: 'Câu chuyện của tôi', icon: 'pen' },
+  { to: '/favorites', label: 'Món yêu thích', icon: 'heart' },
   { to: '/account/cooked', label: 'Món đã nấu', icon: 'history' },
   { to: '/account/submissions', label: 'Món tôi đề xuất', icon: 'chef' },
 ];
@@ -69,8 +79,59 @@ export function PublicLayout() {
   const { t } = useI18n();
   const navigate = useNavigate();
   const location = useLocation();
+  const navigationType = useNavigationType();
+  const previousPathname = useRef(location.pathname);
   const [menuOpen, setMenuOpen] = useState(false);
+  // Tiêu đề tab theo trang: lấy từ tiêu đề chính đang hiển thị (tên món, tên bài, tên trang).
+  useEffect(() => {
+    const brand = 'Bếp Việt';
+    const applyTitle = () => {
+      const heading =
+        location.pathname === '/'
+          ? ''
+          : (document.querySelector('main h1')?.textContent ?? '').replace(/\s+/g, ' ').trim();
+      document.title = heading ? `${heading} · ${brand}` : brand;
+    };
+    applyTitle();
+    // Trang tải dữ liệu chậm (bài viết) có tiêu đề muộn hơn.
+    const timers = [window.setTimeout(applyTitle, 400), window.setTimeout(applyTitle, 1500)];
+    return () => timers.forEach((timer) => window.clearTimeout(timer));
+  }, [location.pathname]);
+
+  // Menu di động mở: khóa cuộn trang nền, Esc để đóng.
+  useEffect(() => {
+    if (!menuOpen) return;
+    const { overflow } = document.body.style;
+    document.body.style.overflow = 'hidden';
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setMenuOpen(false);
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => {
+      document.body.style.overflow = overflow;
+      document.removeEventListener('keydown', onKeyDown);
+    };
+  }, [menuOpen]);
+
+  // Đổi trang (kể cả bấm Quay lại) thì đóng menu di động.
+  const [menuPathname, setMenuPathname] = useState(location.pathname);
+  if (menuPathname !== location.pathname) {
+    setMenuPathname(location.pathname);
+    setMenuOpen(false);
+  }
+
   const exploreActive = exploreLinks.some((link) => location.pathname.startsWith(link.to));
+
+  useLayoutEffect(() => {
+    const changedPage = previousPathname.current !== location.pathname;
+    previousPathname.current = location.pathname;
+    if (!changedPage || navigationType === NavigationType.Pop || location.hash) return;
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  }, [location.hash, location.pathname, navigationType]);
+
+  const handleFooterNavigation = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  };
 
   const handleLogout = async () => {
     setMenuOpen(false);
@@ -170,7 +231,7 @@ export function PublicLayout() {
                   </ul>
                 )}
               </Dropdown>
-              <NavLink className={(state) => navClass(state, 'nav-link--support')} to="/contact">
+              <NavLink className={(state) => navClass(state)} to="/contact">
                 {t('Liên hệ hỗ trợ')}
               </NavLink>
             </div>
@@ -257,7 +318,12 @@ export function PublicLayout() {
       <footer className="site-footer">
         <div className="container footer-main">
           <div className="footer-brand">
-            <Link aria-label={t('Bếp Việt - Trang chủ')} className="footer-brand__logo" to="/">
+            <Link
+              aria-label={t('Bếp Việt - Trang chủ')}
+              className="footer-brand__logo"
+              onClick={handleFooterNavigation}
+              to="/"
+            >
               <KitchenHomeLogo compact />
             </Link>
             <p>{t('Trọn vị cơm nhà Việt: chọn món, lên thực đơn và nấu ngon mỗi ngày.')}</p>
@@ -281,16 +347,38 @@ export function PublicLayout() {
           <nav aria-label={t('Liên kết chân trang')} className="footer-links">
             <div>
               <strong>{t('Khám phá')}</strong>
-              <Link to="/recipes">{t('Kho món Việt')}</Link>
-              <Link to="/meals">{t('Bữa cơm gia đình')}</Link>
-              <Link to="/planner">{t('Kế hoạch nấu ăn')}</Link>
-              <Link to="/articles">{t('Bài viết & câu chuyện')}</Link>
+              <Link onClick={handleFooterNavigation} to="/recipes">
+                {t('Kho món Việt')}
+              </Link>
+              <Link onClick={handleFooterNavigation} to="/meals">
+                {t('Bữa cơm gia đình')}
+              </Link>
+              <Link onClick={handleFooterNavigation} to="/planner">
+                {t('Kế hoạch nấu ăn')}
+              </Link>
+              <Link onClick={handleFooterNavigation} to="/articles">
+                {t('Bài viết & câu chuyện')}
+              </Link>
             </div>
             <div>
               <strong>{t('Hỗ trợ')}</strong>
-              <Link to="/contact">{t('Liên hệ hỗ trợ')}</Link>
-              <Link to="/submit-recipe">{t('Đề xuất món mới')}</Link>
-              <Link to="/favorites">{t('Món yêu thích')}</Link>
+              <nav aria-label={t('Văn bản pháp lý')} className="footer-legal">
+                <Link onClick={handleFooterNavigation} to="/terms">
+                  {t('Điều khoản sử dụng')}
+                </Link>
+                <Link onClick={handleFooterNavigation} to="/privacy">
+                  {t('Chính sách quyền riêng tư')}
+                </Link>
+              </nav>
+              <Link onClick={handleFooterNavigation} to="/contact">
+                {t('Liên hệ hỗ trợ')}
+              </Link>
+              <Link onClick={handleFooterNavigation} to="/submit-recipe">
+                {t('Đề xuất món mới')}
+              </Link>
+              <Link onClick={handleFooterNavigation} to="/favorites">
+                {t('Món yêu thích')}
+              </Link>
             </div>
           </nav>
           <div className="footer-map">

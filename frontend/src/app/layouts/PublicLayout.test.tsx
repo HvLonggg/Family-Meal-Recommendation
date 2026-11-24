@@ -1,6 +1,6 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { cleanup, fireEvent, render, screen, within } from '@testing-library/react';
-import { MemoryRouter, Route, Routes } from 'react-router';
+import { MemoryRouter, Route, Routes, useSearchParams } from 'react-router';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { PublicLayout } from '@/app/layouts/PublicLayout';
@@ -15,6 +15,7 @@ const { authState } = vi.hoisted(() => ({
       full_name: 'Nguyễn Ngọc Lan',
       role: 'user',
       created_at: '2026-10-01T00:00:00Z',
+      terms_version: '1.0',
     },
   },
 }));
@@ -28,6 +29,11 @@ vi.mock('@/features/auth/AuthContext', () => ({
   }),
 }));
 
+function FilterNavigationProbe() {
+  const [, setParams] = useSearchParams();
+  return <button onClick={() => setParams({ sort: 'quick' })}>Đổi cách sắp xếp</button>;
+}
+
 function renderLayout(path = '/') {
   return render(
     <QueryClientProvider client={new QueryClient()}>
@@ -36,6 +42,7 @@ function renderLayout(path = '/') {
           <Routes>
             <Route element={<PublicLayout />}>
               <Route index element={<p>Trang chủ thử nghiệm</p>} />
+              <Route element={<FilterNavigationProbe />} path="recipes" />
               <Route element={<p>Chi tiết món thử nghiệm</p>} path="recipes/:slug" />
               <Route element={<p>Trang kế hoạch thử nghiệm</p>} path="planner" />
             </Route>
@@ -50,11 +57,24 @@ function renderLayout(path = '/') {
 
 afterEach(() => {
   cleanup();
+  vi.restoreAllMocks();
   localStorage.clear();
   authState.user.role = 'user';
 });
 
 describe('PublicLayout header', () => {
+  it('keeps the viewport when changing filters and scrolls to the new page from the footer', () => {
+    const scroll = vi.spyOn(window, 'scrollTo').mockImplementation(() => undefined);
+    renderLayout('/recipes');
+    fireEvent.click(screen.getByRole('button', { name: 'Đổi cách sắp xếp' }));
+    expect(scroll).not.toHaveBeenCalled();
+    fireEvent.click(
+      within(screen.getByRole('contentinfo')).getByRole('link', { name: 'Kế hoạch nấu ăn' }),
+    );
+    expect(screen.getByText('Trang kế hoạch thử nghiệm')).toBeInTheDocument();
+    expect(scroll).toHaveBeenCalledWith({ top: 0, left: 0, behavior: 'auto' });
+  });
+
   it('uses the official Bếp Việt logo image in shared brand placements', () => {
     renderLayout();
     const logos = screen.getAllByRole('img', { name: 'Bếp Việt' });
@@ -110,7 +130,7 @@ describe('PublicLayout header', () => {
     const header = screen.getByRole('banner');
     const navigation = within(header).getByRole('navigation', { name: 'Điều hướng chính' });
     const articleLink = within(navigation).getByRole('link', { name: 'Bài viết' });
-    const submitLink = within(navigation).getByRole('link', { name: 'Đăng món' });
+    const submitLink = within(navigation).getByRole('link', { name: 'Đề xuất món' });
     const supportLink = within(navigation).getByRole('link', { name: 'Liên hệ hỗ trợ' });
 
     expect(articleLink).toHaveAttribute('href', '/articles');
@@ -124,7 +144,7 @@ describe('PublicLayout header', () => {
     const menu = within(exploreMenu as HTMLElement);
     expect(menu.getByRole('link', { name: /Nhu cầu dinh dưỡng/ })).toBeInTheDocument();
     expect(menu.getByRole('link', { name: /Món yêu thích/ })).toBeInTheDocument();
-    for (const name of [/Bài viết/, /Đăng món/, /Liên hệ hỗ trợ/]) {
+    for (const name of [/Bài viết/, /Đề xuất món/, /Liên hệ hỗ trợ/]) {
       expect(menu.queryByRole('link', { name })).not.toBeInTheDocument();
     }
   });

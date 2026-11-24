@@ -4,12 +4,12 @@ import { Link } from 'react-router';
 import { AppIcon } from '@/components/common/AppIcon';
 import { MealCelebration } from '@/components/recipes/MealCelebration';
 import { MealRoleIcon } from '@/components/recipes/MealRoleIcon';
-import { SearchField } from '@/components/common/SearchField';
 import {
   calculateMealStats,
   createMealSlots,
   getCandidates,
   dishName,
+  formatSavedMealTime,
   getNextWheelRotation,
   pickRandomDish,
   profileDetails,
@@ -23,9 +23,10 @@ import {
 import { formatDuration } from '@/data/nutritionEstimate';
 import { useAuth } from '@/features/auth/AuthContext';
 import { apiPost, apiRequest } from '@/lib/api/client';
-import { matchesSearch } from '@/lib/search';
 import { useI18n } from '@/features/i18n/I18nContext';
 import { dishImage } from '@/data/dishImages';
+
+import './random-meal-page.css';
 
 const STORAGE_KEY_PREFIX = 'bep-viet-random-meal-history-v1';
 const SPIN_DURATION_MS = 1250;
@@ -92,7 +93,7 @@ function fromRemoteMeal(meal: RemoteSavedMeal): SavedRandomMeal {
 
 export function RandomMealPage() {
   const { user } = useAuth();
-  const { formatDate, language, locale, t } = useI18n();
+  const { language, locale, t } = useI18n();
   const roleLabel = (key: MealRole) => t(roleDetails[key].label).toLocaleLowerCase(locale);
   const [dishCount, setDishCount] = useState(4);
   const [profile, setProfile] = useState<MealProfile>('balanced');
@@ -103,9 +104,6 @@ export function RandomMealPage() {
   );
   const historyOwnerKey = user?.id ?? 'guest';
   const history = historyByAccount[historyOwnerKey] ?? readHistory(user?.id);
-  const [historyQuery, setHistoryQuery] = useState('');
-  const [historyProfile, setHistoryProfile] = useState<'all' | MealProfile>('all');
-  const [historyDishCount, setHistoryDishCount] = useState<'all' | number>('all');
   const [rotation, setRotation] = useState(0);
   const rotationRef = useRef(0);
   const [spinning, setSpinning] = useState(false);
@@ -155,17 +153,6 @@ export function RandomMealPage() {
   const remainingIndexes = slots.flatMap((slot, index) => (slot.dish ? [] : [index]));
   const wheelIndexes = slots.map((_, index) => index);
   const selectedSourceKeys = selectedDishes.map((dish) => dish.sourceKey);
-  const filteredHistory = useMemo(() => {
-    return history.filter((meal) => {
-      const savedSlots = restoreMealSlots(meal.dishIds);
-      if (historyProfile !== 'all' && meal.profile !== historyProfile) return false;
-      if (historyDishCount !== 'all' && savedSlots.length !== historyDishCount) return false;
-      return matchesSearch(historyQuery, [
-        t(profileDetails[meal.profile].label),
-        ...savedSlots.map((slot) => (slot.dish ? t(dishName(slot.dish)) : '')),
-      ]);
-    });
-  }, [history, historyDishCount, historyProfile, historyQuery, t]);
 
   const changeDishCount = (count: number) => {
     dismissCelebration();
@@ -727,131 +714,63 @@ export function RandomMealPage() {
               <p>{t('Quay đủ món và chọn “Lưu mâm cơm này” để xem lại tại đây.')}</p>
             </div>
           ) : (
-            <>
-              <div className="saved-meal-filters" aria-label={t('Lọc mâm cơm đã lưu')}>
-                <div className="saved-meal-search">
-                  <SearchField
-                    label={t('Tìm theo tên món hoặc tiêu chuẩn')}
-                    onChange={setHistoryQuery}
-                    placeholder={t('Tìm tên món hoặc tiêu chuẩn đã lưu…')}
-                    value={historyQuery}
-                  />
-                </div>
-                <label>
-                  <span>{t('Tiêu chuẩn')}</span>
-                  <select
-                    aria-label={t('Lọc theo tiêu chuẩn')}
-                    onChange={(event) =>
-                      setHistoryProfile(event.target.value as 'all' | MealProfile)
-                    }
-                    value={historyProfile}
-                  >
-                    <option value="all">{t('Tất cả tiêu chuẩn')}</option>
-                    {(Object.keys(profileDetails) as MealProfile[]).map((key) => (
-                      <option key={key} value={key}>
-                        {t(profileDetails[key].label)}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-                <label>
-                  <span>{t('Số món')}</span>
-                  <select
-                    aria-label={t('Lọc theo số món')}
-                    onChange={(event) =>
-                      setHistoryDishCount(
-                        event.target.value === 'all' ? 'all' : Number(event.target.value),
-                      )
-                    }
-                    value={historyDishCount}
-                  >
-                    <option value="all">{t('Tất cả số món')}</option>
-                    {[3, 4, 5, 6].map((count) => (
-                      <option key={count} value={count}>
-                        {t('{count} món', { count })}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-              </div>
-              <p className="saved-meal-results" aria-live="polite">
-                {t('Hiển thị {shown} / {total} mâm cơm', {
-                  shown: filteredHistory.length,
-                  total: history.length,
-                })}
-              </p>
-              {filteredHistory.length === 0 ? (
-                <div className="saved-meals-empty saved-meals-empty--filtered">
-                  <span>
-                    <AppIcon name="search" size={32} />
-                  </span>
-                  <strong>{t('Không tìm thấy mâm cơm phù hợp')}</strong>
-                  <p>{t('Thử đổi từ khóa hoặc điều kiện lọc để xem thêm mâm đã lưu.')}</p>
-                </div>
-              ) : (
-                <div className="saved-meal-grid">
-                  {filteredHistory.map((meal) => {
-                    const savedSlots = restoreMealSlots(meal.dishIds);
-                    return (
-                      <article className="saved-meal-card" key={meal.id}>
-                        <div className="saved-meal-card__images">
-                          {savedSlots.map((slot, index) => (
-                            <figure key={slot.dish!.id}>
-                              <img
-                                alt={slot.dish!.imageAlt}
-                                decoding="async"
-                                loading="lazy"
-                                {...dishImage(slot.dish!.sourceKey, slot.dish!.image, '96px')}
-                              />
-                              <figcaption>
-                                {index + 1}. {t(roleDetails[slot.role].shortLabel)}
-                              </figcaption>
-                            </figure>
-                          ))}
-                        </div>
-                        <div className="saved-meal-card__body">
-                          <div>
-                            <span>
-                              <AppIcon name={profileIcons[meal.profile]} size={20} />
-                            </span>
-                            <span>
-                              <strong>
-                                {t('Mâm {profile}', {
-                                  profile: t(profileDetails[meal.profile].label).toLocaleLowerCase(
-                                    locale,
-                                  ),
-                                })}
-                              </strong>
-                              <small>
-                                {formatDate(meal.createdAt, {
-                                  dateStyle: 'short',
-                                  timeStyle: 'short',
-                                })}
-                                {' · '}
-                                {t('{count} món', { count: savedSlots.length })}
-                              </small>
-                            </span>
-                          </div>
-                          <ul>
-                            {savedSlots.map((slot) => (
-                              <li key={slot.dish!.id}>{t(dishName(slot.dish!))}</li>
-                            ))}
-                          </ul>
-                          <button
-                            className="text-link"
-                            disabled={spinning}
-                            onClick={() => reuseMeal(meal)}
-                            type="button"
-                          >
-                            {t('Dùng lại mâm này')} <AppIcon name="arrow" size={15} />
-                          </button>
-                        </div>
-                      </article>
-                    );
-                  })}
-                </div>
-              )}
-            </>
+            <div className="saved-meal-grid">
+              {history.map((meal) => {
+                const savedSlots = restoreMealSlots(meal.dishIds);
+                return (
+                  <article className="saved-meal-card" key={meal.id}>
+                    <div className="saved-meal-card__images">
+                      {savedSlots.map((slot, index) => (
+                        <figure key={slot.dish!.id}>
+                          <img
+                            alt={slot.dish!.imageAlt}
+                            decoding="async"
+                            loading="lazy"
+                            {...dishImage(slot.dish!.sourceKey, slot.dish!.image, '96px')}
+                          />
+                          <figcaption>
+                            {index + 1}. {t(roleDetails[slot.role].shortLabel)}
+                          </figcaption>
+                        </figure>
+                      ))}
+                    </div>
+                    <div className="saved-meal-card__body">
+                      <div>
+                        <span>
+                          <AppIcon name={profileIcons[meal.profile]} size={20} />
+                        </span>
+                        <span>
+                          <strong>
+                            {t('Mâm {profile}', {
+                              profile: t(profileDetails[meal.profile].label).toLocaleLowerCase(
+                                locale,
+                              ),
+                            })}
+                          </strong>
+                          <small>{t('{count} món', { count: savedSlots.length })}</small>
+                          <time className="saved-meal-card__time" dateTime={meal.createdAt}>
+                            {formatSavedMealTime(meal.createdAt)}
+                          </time>
+                        </span>
+                      </div>
+                      <ul>
+                        {savedSlots.map((slot) => (
+                          <li key={slot.dish!.id}>{t(dishName(slot.dish!))}</li>
+                        ))}
+                      </ul>
+                      <button
+                        className="text-link"
+                        disabled={spinning}
+                        onClick={() => reuseMeal(meal)}
+                        type="button"
+                      >
+                        {t('Dùng lại mâm này')} <AppIcon name="arrow" size={15} />
+                      </button>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
           )}
         </div>
       </section>

@@ -1,7 +1,8 @@
+from datetime import datetime
 from functools import lru_cache
 from typing import Literal
 
-from pydantic import AnyHttpUrl, Field, SecretStr, model_validator
+from pydantic import AnyHttpUrl, Field, SecretStr, field_validator, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -17,7 +18,28 @@ class Settings(BaseSettings):
     app_name: str = "Bếp Việt API"
     app_env: Literal["development", "test", "staging", "production"] = "development"
     api_v1_prefix: str = "/api/v1"
+    # Bảo trì có kế hoạch: bật cờ này rồi khởi động lại API. Mọi API (trừ kiểm tra trạng thái)
+    # trả 503 MAINTENANCE và giao diện hiện màn hình bảo trì cho đến khi tắt.
+    maintenance_mode: bool = False
+    maintenance_message: str | None = Field(default=None, max_length=300)
+    maintenance_ends_at: datetime | None = None
     database_url: str = "postgresql+psycopg://bep_viet:bep_viet_local@localhost:5432/bep_viet"
+    # Pool kết nối DB cho một tiến trình uvicorn. Hết kết nối quá pool_timeout → 503 OVERLOADED
+    # (không treo request). Neon Free trực tiếp có giới hạn kết nối: giữ tổng pool nhỏ.
+    db_pool_size: int = Field(default=5, ge=1, le=50)
+    db_max_overflow: int = Field(default=5, ge=0, le=50)
+    db_pool_timeout_seconds: float = Field(default=10, ge=1, le=60)
+    # Neon/proxy đóng kết nối nhàn rỗi: làm mới trước khi bị cắt.
+    db_pool_recycle_seconds: int = Field(default=300, ge=30, le=3600)
+    db_connect_timeout_seconds: int = Field(default=15, ge=2, le=60)
+    # Chống quá tải: số request API xử lý cùng lúc (0 = tắt). Vượt ngưỡng thì chờ tối đa
+    # overload_wait_seconds rồi trả 503 OVERLOADED kèm Retry-After.
+    max_concurrent_requests: int = Field(default=64, ge=0, le=2000)
+    # Số proxy tin cậy đứng trước API và tự nối IP vào X-Forwarded-For.
+    # Docker Compose (nginx) hoặc Render gọi thẳng: 1. Vercel rewrite -> Render: 2.
+    trusted_proxy_hops: int = Field(default=1, ge=1, le=5)
+    overload_wait_seconds: float = Field(default=2, ge=0, le=10)
+    overload_retry_after_seconds: int = Field(default=15, ge=1, le=300)
     cors_origins: list[AnyHttpUrl] = Field(
         default_factory=lambda: [AnyHttpUrl("http://localhost:5173")]
     )
@@ -34,11 +56,13 @@ class Settings(BaseSettings):
     email_provider: Literal["auto", "smtp", "gmail_api"] = "auto"
     email_smtp_host: str | None = "smtp.gmail.com"
     email_smtp_port: int = Field(default=587, ge=1, le=65535)
-    email_smtp_username: str | None = "hvlongg@gmail.com"
+    # Địa chỉ email cá nhân không đặt sẵn trong mã: cấu hình qua biến môi trường.
+    email_smtp_username: str | None = None
     email_smtp_password: SecretStr | None = None
-    email_from_address: str | None = "hvlongg@gmail.com"
+    email_from_address: str | None = None
     email_from_name: str = "Bếp Việt"
-    support_email: str = "hvlongg@gmail.com"
+    # Để trống thì dùng email_from_address.
+    support_email: str = ""
     email_asset_base_url: str | None = None
     email_use_ssl: bool = False
     email_starttls: bool = True
@@ -78,6 +102,12 @@ class Settings(BaseSettings):
     web_push_vapid_private_key: SecretStr | None = None
     web_push_subject: str | None = None
 
+    @field_validator("maintenance_message", "maintenance_ends_at", mode="before")
+    @classmethod
+    def blank_maintenance_value_is_unset(cls, value: object) -> object:
+        # Biến môi trường để trống (như trong .env.example) nghĩa là không đặt, không phải lỗi.
+        return None if isinstance(value, str) and not value.strip() else value
+
     @model_validator(mode="after")
     def validate_production_secrets(self) -> "Settings":
         if (
@@ -85,10 +115,12 @@ class Settings(BaseSettings):
             and len(self.jwt_secret.get_secret_value()) < 32
         ):
             raise ValueError("BEP_VIET_JWT_SECRET phải dài ít nhất 32 ký tự ngẫu nhiên.")
-        if self.app_env == "production" and self.jwt_secret.get_secret_value().startswith(
-            "development-only"
-        ):
-            raise ValueError("Production phải cấu hình BEP_VIET_JWT_SECRET riêng.")
+        # Secret mặc định nằm công khai trong repo: staging cũng phải dùng secret riêng.
+        if self.app_env in {
+            "staging",
+            "production",
+        } and self.jwt_secret.get_secret_value().startswith("development-only"):
+            raise ValueError("Staging/production phải cấu hình BEP_VIET_JWT_SECRET riêng.")
         smtp_password = (
             self.email_smtp_password.get_secret_value() if self.email_smtp_password else ""
         )
@@ -96,6 +128,19 @@ class Settings(BaseSettings):
             raise ValueError("Cần cấu hình tài khoản SMTP khi đã có mật khẩu SMTP.")
         if self.email_use_ssl and self.email_starttls:
             raise ValueError("Chỉ chọn một trong SMTP SSL hoặc STARTTLS.")
+        if self.app_env == "production":
+            # Cookie phiên (Secure, SameSite) và CORS kèm credentials chỉ an toàn trên HTTPS.
+            # Quên đặt biến môi trường thì từ chối khởi động thay vì chạy với giá trị localhost.
+            for url in [self.frontend_url, *self.cors_origins]:
+                if url.scheme != "https" or url.host in {"localhost", "127.0.0.1", "0.0.0.0"}:
+                    raise ValueError(
+                        "Production phải đặt BEP_VIET_FRONTEND_URL và BEP_VIET_CORS_ORIGINS "
+                        "là địa chỉ https thật (không dùng localhost)."
+                    )
+        if not self.support_email.strip() and self.email_from_address:
+            self.support_email = self.email_from_address.strip()
+        if self.app_env == "production" and not self.support_email.strip():
+            raise ValueError("Production phải đặt BEP_VIET_SUPPORT_EMAIL hoặc EMAIL_FROM_ADDRESS.")
         if self.app_env == "production" and not self.email_enabled:
             raise ValueError("Production phải cấu hình SMTP hoặc Gmail API để gửi OTP email.")
         if (

@@ -82,8 +82,9 @@ describe('ContactPage', () => {
     renderPage();
 
     expect(await screen.findByLabelText(/Email người gửi/)).toHaveValue('lan@example.com');
-    expect(await screen.findByText(/Hòm thư Bếp Việt: hvlongg@gmail.com/)).toBeInTheDocument();
-    expect(screen.getAllByText(/trong vòng 24 giờ làm việc/).length).toBeGreaterThan(0);
+    // Email hỗ trợ và cam kết 24 giờ chỉ hiện một lần mỗi thứ.
+    expect(await screen.findAllByText('hvlongg@gmail.com')).toHaveLength(1);
+    expect(screen.getAllByText(/trong vòng 24 giờ làm việc/)).toHaveLength(1);
     expect(await screen.findByText('Phản hồi từ Bếp Việt')).toBeInTheDocument();
     expect(
       screen.getByText('Bạn có thể kết hợp đậu hũ kho nấm với canh rau củ.'),

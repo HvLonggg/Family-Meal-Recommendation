@@ -205,7 +205,9 @@ describe('CookModePage', () => {
 
     await userSays('xong rồi');
     await waitFor(() => expect(lastSpeech()).toContain('Sơ chế, bước 1'));
-    expect(screen.getByText(recipe.preparation[0]!)).toBeInTheDocument();
+    // Giọng đọc đủ bước; màn hình chỉ hiện bước một lần (chữ to), bóng thoại không chép lại.
+    expect(lastSpeech()).toContain(recipe.preparation[0]!.slice(0, 20));
+    expect(screen.getAllByText(recipe.preparation[0]!, { exact: false })).toHaveLength(1);
 
     // Chưa xong: đọc lại đúng bước đó và xác nhận đang chờ, không chuyển bước.
     await userSays('chưa xong');
@@ -573,8 +575,30 @@ describe('CookModePage', () => {
       }),
     );
     renderCook('/cook?dish=canh-chua-ca:2');
-    fireEvent.click(screen.getByRole('button', { name: /Nấu tiếp từ bước 4/ }));
+    // Cùng cách đếm với thẻ món "N bước" (sơ chế + thực hiện).
+    const total = recipe.preparation.length + recipe.cooking.length;
+    fireEvent.click(screen.getByRole('button', { name: `Nấu tiếp từ bước 3/${total}` }));
     expect(screen.getByText(recipe.preparation[2] ?? recipe.cooking[0]!)).toBeInTheDocument();
+  });
+
+  it('shows the alarm hint once and keeps it hidden after dismissing', () => {
+    vi.stubGlobal('Notification', { permission: 'default' });
+    try {
+      renderCook('/cook?dish=canh-chua-ca:2');
+      // Màn mở đầu: tên món chỉ hiện ở tiêu đề lớn.
+      expect(screen.getAllByText(recipe.name)).toHaveLength(1);
+      fireEvent.click(screen.getByRole('button', { name: 'Bắt đầu nấu' }));
+      fireEvent.click(screen.getByRole('button', { name: 'Ẩn gợi ý bật chuông' }));
+      expect(screen.queryByRole('button', { name: 'Bật chuông' })).not.toBeInTheDocument();
+      fireEvent.click(screen.getByRole('button', { name: /Xong, bước tiếp/ }));
+      expect(screen.queryByRole('button', { name: 'Bật chuông' })).not.toBeInTheDocument();
+      cleanup();
+      renderCook('/cook?dish=canh-chua-ca:2');
+      fireEvent.click(screen.getByRole('button', { name: /Nấu tiếp/ }));
+      expect(screen.queryByRole('button', { name: 'Ẩn gợi ý bật chuông' })).not.toBeInTheDocument();
+    } finally {
+      vi.unstubAllGlobals();
+    }
   });
 
   it('explains how to start when no dish is selected', () => {

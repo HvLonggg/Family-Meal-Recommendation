@@ -1,0 +1,661 @@
+{
+  "vit-xao-rau-ram": {
+    "name": "Duck Stir-Fried with Vietnamese Coriander",
+    "aliases": [
+      "Vietnamese Duck Stir-Fry with Rau Ram",
+      "Duck and Vietnamese Coriander Stir-Fry"
+    ],
+    "category": "Savory dishes",
+    "description": "Small pieces of duck are cooked through with aromatic Vietnamese coriander, scallion, garlic, and a little chili. This savory dish pairs well with hot rice and cucumber.",
+    "finished_dish": "The duck is browned and fully cooked, coated in seasoning; the Vietnamese coriander remains fragrant and green.",
+    "serving": "Serve hot with steamed rice or bread, finishing with fresh Vietnamese coriander and scallion.",
+    "tips": [
+      "Pat the duck dry after rinsing so it sears instead of steaming.",
+      "Cut the duck into even pieces and cook in batches if the pan is crowded.",
+      "Cook until the thickest pieces are fully done; a food thermometer can be used to check for about 74°C."
+    ],
+    "dish_type": [
+      "Savory dish",
+      "Poultry dish",
+      "Stir-fry"
+    ],
+    "main_ingredient": [
+      "duck",
+      "Vietnamese coriander"
+    ],
+    "cooking_method": [
+      "stir-frying"
+    ],
+    "search_terms": [
+      "duck stir-fried with Vietnamese coriander",
+      "duck and rau ram stir-fry",
+      "Vietnamese duck stir-fry",
+      "easy poultry stir-fry"
+    ],
+    "suggested_pairings": [
+      "Steamed rice",
+      "Cucumber",
+      "Light vegetable soup"
+    ],
+    "image_alt": "Vietnamese duck stir-fried with rau ram, scallion, and chili, served on a ceramic plate. Bếp Việt transparent-background illustration.",
+    "recipe_family": "duck_stir_fried_vietnamese_coriander",
+    "ingredients": [
+      {
+        "name": "Duck meat",
+        "unit": "g",
+        "notes": "Use boneless thigh or breast with skin; cut into small even pieces."
+      },
+      {
+        "name": "Vietnamese coriander (rau ram)",
+        "unit": "g",
+        "notes": "Pick the leaves, rinse, and reserve a little for garnish."
+      },
+      {
+        "name": "Scallions",
+        "unit": "g",
+        "notes": "Cut into short lengths."
+      },
+      {
+        "name": "Shallots",
+        "unit": "g",
+        "notes": "Peel and finely chop."
+      },
+      {
+        "name": "Garlic",
+        "unit": "g",
+        "notes": "Peel and chop."
+      },
+      {
+        "name": "Red chili",
+        "unit": "g",
+        "notes": "Slice and adjust to taste."
+      },
+      {
+        "name": "Fish sauce",
+        "unit": "ml",
+        "notes": "Use for the marinade and final seasoning."
+      },
+      {
+        "name": "Cooking oil",
+        "unit": "ml",
+        "notes": "For stir-frying."
+      },
+      {
+        "name": "Salt",
+        "unit": "g",
+        "notes": "For cleaning and light seasoning."
+      },
+      {
+        "name": "Sugar",
+        "unit": "g",
+        "notes": "Balances the savory seasoning."
+      },
+      {
+        "name": "Ground black pepper",
+        "unit": "g",
+        "notes": "Finish the dish."
+      },
+      {
+        "name": "Water",
+        "unit": "ml",
+        "notes": "Add for a brief covered cook so the duck cooks evenly."
+      }
+    ],
+    "preparation_steps": [
+      "Rub the duck lightly with salt, rinse, and pat very dry. Remove bones if needed and cut into even pieces.",
+      "Marinate with shallot, garlic, fish sauce, and pepper for 20 minutes. Pick and rinse the herbs; cut the scallion and chili."
+    ],
+    "cooking_steps": [
+      "Heat the oil and sear the duck in batches until browned on the edges.",
+      "Return all the duck to the pan, add water, cover, and cook over medium heat for about 12–15 minutes until fully cooked. Uncover, stir, and reduce the liquid.",
+      "Add sugar and taste. Toss in the Vietnamese coriander, scallion, and chili for 30–45 seconds, just until fragrant."
+    ],
+    "serving_basis": "A four-person portion prepared by Bếp Việt for a Vietnamese family meal.",
+    "time_note": "About 65 minutes including a 20-minute marinating period; cooking time depends on piece size and pan heat.",
+    "region": [
+      "Nationwide"
+    ],
+    "province": [],
+    "meal_type": [
+      "lunch",
+      "dinner",
+      "family meal"
+    ],
+    "difficulty": "Easy",
+    "media_alt_text": "Vietnamese duck stir-fried with rau ram, scallion, and chili, served on a ceramic plate. Bếp Việt transparent-background illustration.",
+    "keywords": [
+      "Duck Stir-Fried with Vietnamese Coriander",
+      "Vietnamese Duck Stir-Fry with Rau Ram",
+      "Duck and Vietnamese Coriander Stir-Fry",
+      "duck",
+      "Vietnamese coriander",
+      "stir-frying",
+      "Savory dish",
+      "Poultry dish",
+      "Stir-fry",
+      "duck stir-fried with Vietnamese coriander",
+      "duck and rau ram stir-fry",
+      "Vietnamese duck stir-fry",
+      "easy poultry stir-fry"
+    ]
+  },
+  "canh-ca-khoai-la-giang": {
+    "name": "Whiting Soup with Lá Giang Sour Leaves",
+    "aliases": [
+      "Vietnamese Whiting and Sour Leaf Soup",
+      "Canh Chua with Whiting and Lá Giang"
+    ],
+    "category": "Soup dishes",
+    "description": "Tender whiting is simmered with sour lá giang leaves, tomato, and pineapple. The light, tangy broth is served hot with a family meal.",
+    "finished_dish": "The pale broth is gently sour; the whiting is just cooked and the soup is fragrant with lá giang and fresh herbs.",
+    "serving": "Ladle the fish gently into a bowl, add hot broth and herbs, and serve with steamed rice.",
+    "tips": [
+      "Whiting is delicate; add it after the broth boils and avoid stirring while it cooks.",
+      "Bruise the sour leaves lightly, then taste before adding more seasoning.",
+      "Choose fresh fish, clean it carefully, and keep it chilled until cooking."
+    ],
+    "dish_type": [
+      "Soup dish",
+      "Fish dish",
+      "Sour soup"
+    ],
+    "main_ingredient": [
+      "whiting",
+      "lá giang leaves"
+    ],
+    "cooking_method": [
+      "simmering",
+      "sour soup"
+    ],
+    "search_terms": [
+      "whiting soup with lá giang",
+      "Vietnamese sour whiting soup",
+      "Vietnamese fish and sour leaf soup",
+      "southern Vietnamese soup"
+    ],
+    "suggested_pairings": [
+      "Steamed rice",
+      "Pickled eggplant",
+      "Boiled greens"
+    ],
+    "image_alt": "Vietnamese whiting soup with lá giang, tomato, pineapple, and rice paddy herbs. Bếp Việt transparent-background illustration.",
+    "recipe_family": "whiting_fish_sour_leaf_soup",
+    "ingredients": [
+      {
+        "name": "Whiting",
+        "unit": "g",
+        "notes": "Clean, cut into short sections, and drain."
+      },
+      {
+        "name": "Lá giang leaves",
+        "unit": "g",
+        "notes": "Pick, rinse, and bruise lightly."
+      },
+      {
+        "name": "Pineapple",
+        "unit": "g",
+        "notes": "Peel, remove the eyes, and cut into pieces."
+      },
+      {
+        "name": "Tomatoes",
+        "unit": "g",
+        "notes": "Cut into wedges."
+      },
+      {
+        "name": "Shallot",
+        "unit": "g",
+        "notes": "Peel and finely chop."
+      },
+      {
+        "name": "Garlic",
+        "unit": "g",
+        "notes": "Finely chop."
+      },
+      {
+        "name": "Rice paddy herbs (rau om)",
+        "unit": "g",
+        "notes": "Rinse and chop."
+      },
+      {
+        "name": "Sawtooth coriander",
+        "unit": "g",
+        "notes": "Rinse and chop."
+      },
+      {
+        "name": "Water",
+        "unit": "ml",
+        "notes": "For the soup."
+      },
+      {
+        "name": "Cooking oil",
+        "unit": "ml",
+        "notes": "For sautéing the aromatics."
+      },
+      {
+        "name": "Fish sauce",
+        "unit": "ml",
+        "notes": "Season to taste."
+      },
+      {
+        "name": "Salt",
+        "unit": "g",
+        "notes": "Add a small amount first."
+      },
+      {
+        "name": "Sugar",
+        "unit": "g",
+        "notes": "Balance the sourness of the leaves."
+      },
+      {
+        "name": "Bird's eye chili",
+        "unit": "g",
+        "notes": "Optional; bruise lightly."
+      }
+    ],
+    "preparation_steps": [
+      "Clean the whiting, cut it into short sections, and drain. Rinse and lightly bruise the lá giang leaves.",
+      "Cut the pineapple and tomatoes; chop the shallot, garlic, rau om, and sawtooth coriander."
+    ],
+    "cooking_steps": [
+      "Sauté the shallot and garlic in oil. Add tomatoes and cook until just softened, then add water and pineapple.",
+      "When the broth boils, add the lá giang and seasonings. Simmer briefly, then taste for a balanced sour-salty-sweet flavor.",
+      "Add the whiting and simmer gently until it is just cooked and the broth returns to a boil. Do not stir vigorously. Turn off the heat and finish with herbs and optional chili."
+    ],
+    "serving_basis": "A four-person portion prepared by Bếp Việt for a Vietnamese family meal.",
+    "time_note": "About 30 minutes including preparation and cooking; the delicate fish cooks quickly.",
+    "region": [
+      "Southern Vietnam"
+    ],
+    "province": [],
+    "meal_type": [
+      "lunch",
+      "dinner",
+      "family meal"
+    ],
+    "difficulty": "Easy",
+    "media_alt_text": "Vietnamese whiting soup with lá giang, tomato, pineapple, and rice paddy herbs. Bếp Việt transparent-background illustration.",
+    "keywords": [
+      "Whiting Soup with Lá Giang Sour Leaves",
+      "Vietnamese Whiting and Sour Leaf Soup",
+      "Canh Chua with Whiting and Lá Giang",
+      "whiting",
+      "lá giang leaves",
+      "simmering",
+      "sour soup",
+      "Soup dish",
+      "Fish dish",
+      "Sour soup",
+      "whiting soup with lá giang",
+      "Vietnamese sour whiting soup",
+      "Vietnamese fish and sour leaf soup",
+      "southern Vietnamese soup"
+    ]
+  },
+  "goi-uc-ga-rau-lang": {
+    "name": "Chicken Breast and Sweet Potato Leaf Salad",
+    "aliases": [
+      "Vietnamese Chicken and Sweet Potato Leaf Salad",
+      "Gỏi Gà with Rau Lang"
+    ],
+    "category": "Side dishes",
+    "description": "Shredded chicken is mixed with briefly boiled sweet potato leaves, thin onion, Vietnamese coriander, and a lime fish-sauce dressing. Tangy and fresh, it adds greens to a family meal.",
+    "finished_dish": "The chicken is tender and shredded, the leaves are green and soft, and the light dressing coats the salad without pooling.",
+    "serving": "Toss shortly before serving, arrange on a wide plate, and enjoy with plain rice porridge or as a salad course.",
+    "tips": [
+      "Poach the chicken gently until fully cooked, then rest it briefly before shredding to help keep it moist.",
+      "Drain the sweet potato leaves thoroughly so the salad does not turn watery.",
+      "Start with a little dressing, taste, and add more gradually to balance sour, salty, and sweet notes."
+    ],
+    "dish_type": [
+      "Side dish",
+      "Salad",
+      "Poultry dish"
+    ],
+    "main_ingredient": [
+      "chicken breast",
+      "sweet potato leaves"
+    ],
+    "cooking_method": [
+      "poaching",
+      "salad tossing"
+    ],
+    "search_terms": [
+      "chicken breast and sweet potato leaf salad",
+      "Vietnamese chicken and rau lang salad",
+      "Vietnamese chicken salad with herbs",
+      "chicken salad with greens"
+    ],
+    "suggested_pairings": [
+      "Plain rice porridge",
+      "Steamed rice",
+      "Light soup"
+    ],
+    "image_alt": "Vietnamese chicken and sweet potato leaf salad with onion, Vietnamese coriander, and chili. Bếp Việt transparent-background illustration.",
+    "recipe_family": "chicken_breast_sweet_potato_leaf_salad",
+    "ingredients": [
+      {
+        "name": "Chicken breast",
+        "unit": "g",
+        "notes": "Rinse and leave whole for poaching."
+      },
+      {
+        "name": "Tender sweet potato leaves and shoots",
+        "unit": "g",
+        "notes": "Remove fibrous stems and rinse well."
+      },
+      {
+        "name": "Onion",
+        "unit": "g",
+        "notes": "Peel and slice thinly."
+      },
+      {
+        "name": "Vietnamese coriander (rau ram)",
+        "unit": "g",
+        "notes": "Pick, rinse, and roughly chop."
+      },
+      {
+        "name": "Garlic",
+        "unit": "g",
+        "notes": "Finely chop."
+      },
+      {
+        "name": "Chili",
+        "unit": "g",
+        "notes": "Optional; slice or mince."
+      },
+      {
+        "name": "Fish sauce",
+        "unit": "ml",
+        "notes": "For the dressing."
+      },
+      {
+        "name": "Lime juice",
+        "unit": "ml",
+        "notes": "Strain out the seeds."
+      },
+      {
+        "name": "Sugar",
+        "unit": "g",
+        "notes": "Dissolve in the dressing."
+      },
+      {
+        "name": "Salt",
+        "unit": "g",
+        "notes": "Divide between poaching and blanching."
+      },
+      {
+        "name": "Water",
+        "unit": "ml",
+        "notes": "For poaching the chicken and boiling the greens separately."
+      }
+    ],
+    "preparation_steps": [
+      "Rub the chicken with a little salt, rinse, and drain. Pick the sweet potato leaves; slice the onion and chop the rau ram. Soak the onion briefly in cold water, then drain.",
+      "Stir together the fish sauce, lime juice, sugar, 30 ml water, garlic, and chili until the sugar dissolves."
+    ],
+    "cooking_steps": [
+      "Poach the chicken gently until fully cooked. Remove it, let it cool slightly, and shred into strips.",
+      "Bring fresh water with a little salt to a boil. Cook the sweet potato leaves for 3–4 minutes until tender, then drain thoroughly and cut into short lengths.",
+      "Toss the chicken, leaves, onion, and rau ram with just enough dressing. Rest for about 5 minutes, taste, and arrange on a serving plate."
+    ],
+    "serving_basis": "A four-person portion prepared by Bếp Việt for a Vietnamese family meal.",
+    "time_note": "About 50 minutes including preparation, cooking, and a short rest; chicken time depends on thickness.",
+    "region": [
+      "Nationwide"
+    ],
+    "province": [],
+    "meal_type": [
+      "lunch",
+      "dinner",
+      "family meal"
+    ],
+    "difficulty": "Easy",
+    "media_alt_text": "Vietnamese chicken and sweet potato leaf salad with onion, Vietnamese coriander, and chili. Bếp Việt transparent-background illustration.",
+    "keywords": [
+      "Chicken Breast and Sweet Potato Leaf Salad",
+      "Vietnamese Chicken and Sweet Potato Leaf Salad",
+      "Gỏi Gà with Rau Lang",
+      "chicken breast",
+      "sweet potato leaves",
+      "poaching",
+      "salad tossing",
+      "Side dish",
+      "Salad",
+      "Poultry dish",
+      "chicken breast and sweet potato leaf salad",
+      "Vietnamese chicken and rau lang salad",
+      "Vietnamese chicken salad with herbs",
+      "chicken salad with greens"
+    ]
+  },
+  "rau-nhut-xao-toi": {
+    "name": "Garlic Stir-Fried Water Mimosa",
+    "aliases": [
+      "Vietnamese Water Mimosa with Garlic",
+      "Rau Rut Stir-Fried with Garlic"
+    ],
+    "category": "Vegetable dishes",
+    "description": "Young water mimosa stems are quickly stir-fried with fragrant garlic and lightly seasoned to keep their crisp, fresh flavor. This plant-based Southern Vietnamese side pairs well with steamed rice.",
+    "finished_dish": "The greens stay bright and crisp-tender, with golden fragrant garlic and little excess liquid.",
+    "serving": "Serve hot with steamed rice and a braised or simmered main dish.",
+    "tips": [
+      "Remove the white spongy floats and fibrous stems, keeping the tender parts so the greens are not tough.",
+      "Drain the greens well and use a wide pan over high heat to cook them quickly with less water.",
+      "Use a plant-based seasoning and taste lightly once the greens are just cooked."
+    ],
+    "dish_type": [
+      "Vegetable dish",
+      "Vegetarian dish",
+      "Stir-fry"
+    ],
+    "main_ingredient": [
+      "water mimosa",
+      "garlic"
+    ],
+    "cooking_method": [
+      "stir-frying"
+    ],
+    "search_terms": [
+      "garlic stir-fried water mimosa",
+      "Vietnamese water mimosa with garlic",
+      "rau rut stir-fried with garlic",
+      "Southern Vietnamese vegetable stir-fry"
+    ],
+    "suggested_pairings": [
+      "Steamed rice",
+      "Braised fish",
+      "Sour soup"
+    ],
+    "image_alt": "Garlic stir-fried water mimosa with crisp green stems and a little red chili. Bếp Việt transparent-background illustration.",
+    "recipe_family": "water_mimosa_garlic_stir_fry",
+    "ingredients": [
+      {
+        "name": "Water mimosa",
+        "unit": "g",
+        "notes": "Remove the white floats and tough stems; cut into serving lengths."
+      },
+      {
+        "name": "Garlic",
+        "unit": "g",
+        "notes": "Peel and finely chop."
+      },
+      {
+        "name": "Cooking oil",
+        "unit": "ml",
+        "notes": "For sautéing the garlic and greens."
+      },
+      {
+        "name": "Vegetarian seasoning powder",
+        "unit": "g",
+        "notes": "Choose a product labeled plant-based; season gradually."
+      },
+      {
+        "name": "Salt",
+        "unit": "g",
+        "notes": "Use a small amount."
+      },
+      {
+        "name": "Red chili",
+        "unit": "g",
+        "notes": "Optional; slice thinly."
+      }
+    ],
+    "preparation_steps": [
+      "Remove the white spongy floats and old leaves, rinse the water mimosa several times, cut into about 5 cm lengths, and drain well.",
+      "Peel and chop the garlic; slice the chili if using."
+    ],
+    "cooking_steps": [
+      "Heat the oil and sauté the garlic until fragrant and lightly golden.",
+      "Add the water mimosa and toss quickly over high heat for about 3–5 minutes, until just tender but still crisp.",
+      "Season gradually with vegetarian seasoning powder and salt; add optional chili, toss for another 30 seconds, and turn off the heat."
+    ],
+    "serving_basis": "A four-person portion prepared by Bếp Việt for a Vietnamese family meal.",
+    "time_note": "About 18 minutes including preparation and cooking; adjust for the tenderness of the greens and pan size.",
+    "region": [
+      "Southern Vietnam"
+    ],
+    "province": [],
+    "meal_type": [
+      "lunch",
+      "dinner",
+      "family meal"
+    ],
+    "difficulty": "Easy",
+    "media_alt_text": "Garlic stir-fried water mimosa with crisp green stems and a little red chili. Bếp Việt transparent-background illustration.",
+    "keywords": [
+      "Garlic Stir-Fried Water Mimosa",
+      "Vietnamese Water Mimosa with Garlic",
+      "water mimosa",
+      "garlic",
+      "stir-frying",
+      "Vegetable dish",
+      "Vegetarian dish",
+      "Stir-fry",
+      "garlic stir-fried water mimosa",
+      "Vietnamese water mimosa with garlic",
+      "Southern Vietnamese vegetable stir-fry",
+      "vegetarian water mimosa stir-fry",
+      "plant-based Vietnamese greens"
+    ]
+  },
+  "mong-toi-xao-thit-bam": {
+    "name": "Malabar Spinach Stir-Fried with Minced Pork",
+    "aliases": [
+      "Vietnamese Malabar Spinach with Minced Pork",
+      "Rau Mong Toi with Minced Pork"
+    ],
+    "category": "Vegetable dishes",
+    "description": "Tender Malabar spinach is stir-fried with minced pork and fragrant garlic. Lightly savory and quick to prepare, it pairs well with rice in a family meal.",
+    "finished_dish": "The minced pork is fully cooked and seasoned; the Malabar spinach is tender, green, and lightly coated with pan juices.",
+    "serving": "Serve hot in a shallow dish with a little pan juice and steamed rice.",
+    "tips": [
+      "Discard yellow leaves and wash the greens well; drain them so the pan does not become watery.",
+      "Cook the minced pork through before adding the greens; Malabar spinach softens quickly, so avoid overcooking.",
+      "Season with a light hand and taste again after the greens release their juices."
+    ],
+    "dish_type": [
+      "Vegetable dish",
+      "Savory dish",
+      "Stir-fry"
+    ],
+    "main_ingredient": [
+      "Malabar spinach",
+      "ground pork"
+    ],
+    "cooking_method": [
+      "stir-frying"
+    ],
+    "search_terms": [
+      "Malabar spinach stir-fried with minced pork",
+      "Vietnamese Malabar spinach with pork",
+      "rau mong toi with ground pork",
+      "quick pork and greens stir-fry"
+    ],
+    "suggested_pairings": [
+      "Steamed rice",
+      "Winter melon soup",
+      "Pickled eggplant"
+    ],
+    "image_alt": "Malabar spinach stir-fried with minced pork and garlic, served on a ceramic plate. Bếp Việt transparent-background illustration.",
+    "recipe_family": "malabar_spinach_minced_pork_stir_fry",
+    "ingredients": [
+      {
+        "name": "Malabar spinach",
+        "unit": "g",
+        "notes": "Pick the tender leaves and stems, rinse, drain, and cut into lengths."
+      },
+      {
+        "name": "Ground pork",
+        "unit": "g",
+        "notes": "Choose shoulder with a little fat so the dish stays moist."
+      },
+      {
+        "name": "Garlic",
+        "unit": "g",
+        "notes": "Peel and crush or mince."
+      },
+      {
+        "name": "Cooking oil",
+        "unit": "ml",
+        "notes": "For sautéing the garlic and pork."
+      },
+      {
+        "name": "Fish sauce",
+        "unit": "ml",
+        "notes": "Use for the marinade and final seasoning."
+      },
+      {
+        "name": "Salt",
+        "unit": "g",
+        "notes": "Season the greens only if needed."
+      },
+      {
+        "name": "Ground black pepper",
+        "unit": "g",
+        "notes": "Season the pork."
+      },
+      {
+        "name": "Sugar",
+        "unit": "g",
+        "notes": "Optional; balances the savory seasoning."
+      }
+    ],
+    "preparation_steps": [
+      "Discard wilted leaves and tough stems. Rinse the Malabar spinach, drain, and cut into serving lengths.",
+      "Marinate the pork with half the fish sauce, pepper, and sugar for about 10 minutes; peel and crush the garlic."
+    ],
+    "cooking_steps": [
+      "Heat the oil, sauté the garlic until fragrant, then add the minced pork and break it up. Cook fully.",
+      "Add the Malabar spinach and toss briefly until the leaves wilt and release a little liquid.",
+      "Add the remaining fish sauce and salt if needed. Toss for another 1–2 minutes and turn off the heat as soon as the greens are tender."
+    ],
+    "serving_basis": "A four-person portion prepared by Bếp Việt for a Vietnamese family meal.",
+    "time_note": "About 34 minutes including preparation, a short marinade, and cooking; do not overcook the greens.",
+    "region": [
+      "Nationwide"
+    ],
+    "province": [],
+    "meal_type": [
+      "lunch",
+      "dinner",
+      "family meal"
+    ],
+    "difficulty": "Easy",
+    "media_alt_text": "Malabar spinach stir-fried with minced pork and garlic, served on a ceramic plate. Bếp Việt transparent-background illustration.",
+    "keywords": [
+      "Malabar Spinach Stir-Fried with Minced Pork",
+      "Vietnamese Malabar Spinach with Minced Pork",
+      "Rau Mong Toi with Minced Pork",
+      "Malabar spinach",
+      "ground pork",
+      "stir-frying",
+      "Vegetable dish",
+      "Savory dish",
+      "Stir-fry",
+      "Malabar spinach stir-fried with minced pork",
+      "Vietnamese Malabar spinach with pork",
+      "rau mong toi with ground pork",
+      "quick pork and greens stir-fry"
+    ]
+  }
+}

@@ -146,7 +146,7 @@ def test_assistant_answers_public_team_and_contact_questions(
     monkeypatch.setattr(
         profile,
         "get_settings",
-        lambda: SimpleNamespace(support_email="hvlongg@gmail.com"),
+        lambda: SimpleNamespace(support_email="support@bepviet.vn"),
     )
 
     founder = chat(client, "Ai là tác giả và nhà sáng lập Bếp Việt?")
@@ -160,12 +160,12 @@ def test_assistant_answers_public_team_and_contact_questions(
     contact = chat(client, "Số điện thoại, email hỗ trợ và địa chỉ Bếp Việt là gì?")
     content = contact["reply"]["content"]
     assert "0364892903" in content
-    assert "hvlongg@gmail.com" in content
+    assert "support@bepviet.vn" in content
     assert "Ngõ 80/57 Mễ Trì Hạ" in content
     assert contact["reply"]["actions"][0]["to"] == "/contact"
 
     english = chat(client, "What is Bếp Việt's support email?", language="en")
-    assert "hvlongg@gmail.com" in english["reply"]["content"]
+    assert "support@bepviet.vn" in english["reply"]["content"]
 
 
 def test_guest_gets_recipe_suggestions_from_the_catalog(

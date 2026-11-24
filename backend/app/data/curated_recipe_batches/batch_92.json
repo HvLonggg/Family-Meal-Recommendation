@@ -1,0 +1,1478 @@
+{
+  "batch": 92,
+  "description": "Năm món gia đình gồm đậu hũ sốt nấm chay, mực xào dứa, canh hến khế, rau dền xào và gà hấp ngải cứu.",
+  "recipes": [
+    {
+      "id": "BV787",
+      "slug": "dau-hu-non-sot-nam-dong-co",
+      "name": "Đậu hũ non sốt nấm đông cô",
+      "aliases": [
+        "Đậu phụ non sốt nấm đông cô",
+        "Đậu hũ non sốt nấm hương"
+      ],
+      "region": [
+        "Toàn quốc"
+      ],
+      "province": [],
+      "category": "Món chay",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "bữa ăn gia đình"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Khẩu phần cho bốn người trong một bữa cơm gia đình.",
+      "prep_time": 15,
+      "cook_time": 15,
+      "passive_time": 0,
+      "total_time": 30,
+      "description": "Đậu hũ non hấp mềm, phủ sốt nấm đông cô thơm nhẹ và sánh vừa. Món chay thanh vị, dùng với cơm nóng trong bữa ăn gia đình.",
+      "finished_dish": "Miếng đậu giữ nguyên dáng, mềm mượt; nấm chín tới, sốt nâu nhẹ bám đều mà không át vị đậu.",
+      "serving": "Dọn nóng, chan sốt nấm lên đậu và dùng cùng cơm trắng.",
+      "tips": [
+        "Hấp đậu vừa chín để miếng không vỡ.",
+        "Hòa tan bột năng với nước nguội trước khi cho vào chảo.",
+        "Chọn dầu hào chay và gia vị phù hợp nếu cần giữ món thuần chay."
+      ],
+      "dish_type": [
+        "Món chay",
+        "Món đậu phụ",
+        "Món hấp"
+      ],
+      "main_ingredient": [
+        "đậu hũ non",
+        "nấm đông cô"
+      ],
+      "cooking_method": [
+        "hấp",
+        "sốt"
+      ],
+      "search_terms": [
+        "đậu hũ non sốt nấm đông cô",
+        "đậu phụ non nấm hương",
+        "món chay với nấm",
+        "món chay dễ nấu"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Đĩa đậu hũ non hấp phủ sốt nấm đông cô, hành lá và rau mùi; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 30 phút, gồm sơ chế, chờ và nấu; thời gian thực tế tùy nguyên liệu và dụng cụ.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Rau luộc",
+        "Canh rau củ chay"
+      ],
+      "recipe_family": "silken_tofu_shiitake_sauce",
+      "keywords": [
+        "Đậu phụ non sốt nấm đông cô",
+        "Đậu hũ non sốt nấm hương",
+        "Đậu hũ non sốt nấm đông cô",
+        "đậu hũ non",
+        "nấm đông cô",
+        "hấp",
+        "sốt",
+        "Món chay",
+        "Món đậu phụ",
+        "Món hấp",
+        "đậu hũ non sốt nấm đông cô",
+        "đậu phụ non nấm hương",
+        "món chay với nấm",
+        "món chay dễ nấu"
+      ],
+      "tags": {
+        "region": [
+          "Toàn quốc"
+        ],
+        "province": [],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối",
+          "bữa ăn gia đình"
+        ],
+        "dish_type": [
+          "Món chay",
+          "Món đậu phụ",
+          "Món hấp"
+        ],
+        "main_ingredient": [
+          "đậu hũ non",
+          "nấm đông cô"
+        ],
+        "cooking_method": [
+          "hấp",
+          "sốt"
+        ],
+        "difficulty": "Dễ",
+        "prep_time": 15,
+        "cook_time": 15,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Cơm trắng",
+          "Rau luộc",
+          "Canh rau củ chay"
+        ],
+        "keywords": [
+          "đậu hũ non sốt nấm đông cô",
+          "đậu phụ non nấm hương",
+          "món chay với nấm",
+          "món chay dễ nấu"
+        ]
+      },
+      "ingredients": [
+        {
+          "name": "Đậu hũ non",
+          "quantity": 300,
+          "unit": "g",
+          "role": "tofu",
+          "notes": "Để ráo, cắt khối lớn vừa ăn.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nấm đông cô tươi",
+          "quantity": 120,
+          "unit": "g",
+          "role": "mushroom",
+          "notes": "Bỏ chân già, rửa sạch, thái lát.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 15,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Thái nhỏ; để riêng phần đầu hành.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Rau mùi",
+          "quantity": 5,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, thái nhỏ để rắc cuối.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Dầu mè",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "oil",
+          "notes": "Dùng để phi đầu hành và xào nấm.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Dầu hào chay",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "condiment",
+          "notes": "Chọn loại ghi rõ dùng cho món chay.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nước tương",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Điều chỉnh theo độ mặn của nhãn hàng.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Bột năng",
+          "quantity": 5,
+          "unit": "g",
+          "role": "thickener",
+          "notes": "Hòa với nước nguội trước khi dùng.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nước",
+          "quantity": 100,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Dùng nấu sốt và pha bột năng.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Muối",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm thêm nếu sốt còn nhạt.",
+          "scaling_rule": "linear"
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Lau khô đậu hũ, cắt khối vừa ăn. Sơ chế nấm và thái lát; hòa bột năng với hai thìa nước lạnh."
+        },
+        {
+          "step": 2,
+          "instruction": "Rửa hành lá, tách đầu hành trắng và phần lá xanh; thái nhỏ rau mùi."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Hấp đậu hũ khoảng 5–6 phút đến khi nóng mềm; giữ ấm trong đĩa."
+        },
+        {
+          "step": 2,
+          "instruction": "Làm nóng dầu mè, phi thơm đầu hành rồi cho nấm vào đảo đến khi vừa mềm."
+        },
+        {
+          "step": 3,
+          "instruction": "Thêm dầu hào chay, nước tương và nước; nấu liu riu 2–3 phút rồi nếm."
+        },
+        {
+          "step": 4,
+          "instruction": "Khuấy lại chén bột năng, rót từ từ vào sốt và đảo đến khi sánh nhẹ. Rưới sốt lên đậu, rắc hành lá và rau mùi."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://hayan.vn/vao-bep/cach-lam-5-mon-an-don-gian-tu-nam-thom-ngon-hap-dan-cho-mua-an-chay-p313.html",
+          "publisher": "HAY ĂN",
+          "title": "Cách làm 5 món ăn đơn giản từ nấm, thơm ngon hấp dẫn cho mùa ăn chay",
+          "use": "Đối chiếu thành phần đậu hũ non, nấm đông cô và cách làm sốt nấm; Bếp Việt biên tập lại.",
+          "accessed_at": "2026-10-27",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Giảm một nửa nguyên liệu chính.",
+            "instruction": "Nêm từ ít hơn một nửa lượng gia vị rồi điều chỉnh."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.25,
+            "example": "Tăng nguyên liệu chính lên 1,5 lần.",
+            "instruction": "Thêm gia vị từ từ và nếm lại."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2,
+            "seasoning_start_factor": 1.6,
+            "example": "Nhân đôi nguyên liệu chính.",
+            "instruction": "Điều chỉnh thời gian theo dụng cụ và nêm dần."
+          }
+        ],
+        "rules": [
+          "Nguyên liệu chính tăng theo khẩu phần; gia vị mặn, ngọt, cay chỉ dùng hệ số khởi điểm rồi nếm lại.",
+          "Không nhân đôi thời gian nấu khi tăng khẩu phần; chia mẻ nếu dụng cụ không đủ rộng.",
+          "Điều chỉnh nước và dầu theo nồi, chảo và lượng thực phẩm."
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/dau-hu-non-sot-nam-dong-co-960.webp",
+          "page_url": "https://hayan.vn/vao-bep/cach-lam-5-mon-an-don-gian-tu-nam-thom-ngon-hap-dan-cho-mua-an-chay-p313.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập công thức.",
+          "width": 1536,
+          "height": 864,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa đậu hũ non hấp phủ sốt nấm đông cô, hành lá và rau mùi; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-27",
+          "photo_variant_note": "Ảnh ImageGen nền trong suốt, giữ trọn đĩa hoặc bát trên canvas 1536×864; bản giao diện dùng WebP 480, 960 và 1536 px, không phải ảnh render gốc 4K. Công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt biên tập công thức theo khẩu phần gia đình từ nguồn tham khảo; định lượng chuẩn hóa cho bốn người và chưa được nấu thử.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-27",
+        "needs": [
+          "Nấu thử để xác nhận định lượng, thời gian và độ chín theo nguyên liệu, bếp và dụng cụ thực tế."
+        ]
+      },
+      "width": 1536,
+      "height": 864
+    },
+    {
+      "id": "BV788",
+      "slug": "muc-ong-xao-dua-hanh-tay",
+      "name": "Mực ống xào dứa hành tây",
+      "aliases": [
+        "Mực xào dứa hành tây",
+        "Mực ống xào thơm và hành tây"
+      ],
+      "region": [
+        "Toàn quốc"
+      ],
+      "province": [],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "bữa ăn gia đình"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Khẩu phần cho bốn người trong một bữa cơm gia đình.",
+      "prep_time": 20,
+      "cook_time": 10,
+      "passive_time": 15,
+      "total_time": 45,
+      "description": "Mực ống được xào nhanh với dứa chua ngọt và hành tây, nêm nước mắm vừa vị. Món có độ giòn mềm của mực, hợp bữa cơm thường ngày.",
+      "finished_dish": "Mực vừa săn, không dai; dứa còn miếng, hành tây chín trong và phần sốt bám mỏng.",
+      "serving": "Dọn ngay khi còn nóng cùng cơm trắng.",
+      "tips": [
+        "Để mực thật ráo trước khi xào để chảo không ra nhiều nước.",
+        "Xào mực trên lửa lớn và vừa chín thì lấy ra; cho trở lại cuối để tránh dai.",
+        "Nêm nước mắm từ từ vì mỗi loại có độ mặn khác nhau."
+      ],
+      "dish_type": [
+        "Món hải sản",
+        "Món xào",
+        "Món mặn"
+      ],
+      "main_ingredient": [
+        "mực ống",
+        "dứa",
+        "hành tây"
+      ],
+      "cooking_method": [
+        "xào"
+      ],
+      "search_terms": [
+        "mực ống xào dứa hành tây",
+        "mực xào thơm",
+        "mực xào hành tây",
+        "món hải sản xào nhanh"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Đĩa mực ống xào dứa và hành tây với hành lá; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 45 phút, gồm sơ chế, chờ và nấu; thời gian thực tế tùy nguyên liệu và dụng cụ.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Canh rau",
+        "Dưa leo"
+      ],
+      "recipe_family": "squid_pineapple_onion_stir_fry",
+      "keywords": [
+        "Mực xào dứa hành tây",
+        "Mực ống xào thơm và hành tây",
+        "Mực ống xào dứa hành tây",
+        "mực ống",
+        "dứa",
+        "hành tây",
+        "xào",
+        "Món hải sản",
+        "Món xào",
+        "Món mặn",
+        "mực ống xào dứa hành tây",
+        "mực xào thơm",
+        "mực xào hành tây",
+        "món hải sản xào nhanh"
+      ],
+      "tags": {
+        "region": [
+          "Toàn quốc"
+        ],
+        "province": [],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối",
+          "bữa ăn gia đình"
+        ],
+        "dish_type": [
+          "Món hải sản",
+          "Món xào",
+          "Món mặn"
+        ],
+        "main_ingredient": [
+          "mực ống",
+          "dứa",
+          "hành tây"
+        ],
+        "cooking_method": [
+          "xào"
+        ],
+        "difficulty": "Dễ",
+        "prep_time": 20,
+        "cook_time": 10,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Cơm trắng",
+          "Canh rau",
+          "Dưa leo"
+        ],
+        "keywords": [
+          "mực ống xào dứa hành tây",
+          "mực xào thơm",
+          "mực xào hành tây",
+          "món hải sản xào nhanh"
+        ]
+      },
+      "ingredients": [
+        {
+          "name": "Mực ống đã làm sạch",
+          "quantity": 400,
+          "unit": "g",
+          "role": "seafood",
+          "notes": "Để ráo, khứa nhẹ mặt trong và cắt miếng vừa ăn.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Dứa",
+          "quantity": 250,
+          "unit": "g",
+          "role": "fruit",
+          "notes": "Bỏ mắt và lõi cứng, cắt miếng mỏng vừa.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Hành tây",
+          "quantity": 120,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Bóc vỏ, cắt múi cau.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, thái lát.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 15,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, cắt khúc.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng ướp và nêm; điều chỉnh theo độ mặn.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "cooking_fat",
+          "notes": "Dùng xào.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Hạt nêm",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Có thể bỏ qua nếu nước mắm đã đậm.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm nhẹ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Ớt tươi",
+          "quantity": 5,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Tùy chọn, bỏ hạt nếu muốn giảm cay.",
+          "scaling_rule": "linear"
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa nhanh mực, để ráo rồi khứa nhẹ mặt trong và cắt miếng vừa ăn."
+        },
+        {
+          "step": 2,
+          "instruction": "Gọt bỏ mắt và lõi cứng của dứa, cắt lát; cắt hành tây múi cau, hành tím lát và hành lá khúc."
+        },
+        {
+          "step": 3,
+          "instruction": "Ướp mực với một nửa nước mắm, hạt nêm, tiêu và hành tím trong 15 phút."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng chảo với dầu, phi phần hành tím còn lại đến thơm. Cho mực vào xào trên lửa lớn khoảng 2–3 phút đến khi vừa săn; gắp ra đĩa."
+        },
+        {
+          "step": 2,
+          "instruction": "Xào dứa và hành tây trong chảo khoảng 2 phút, đến khi dứa nóng và hành tây vừa trong."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho mực trở lại, nêm phần nước mắm còn lại, đảo nhanh 1–2 phút cho chín tới."
+        },
+        {
+          "step": 4,
+          "instruction": "Tắt bếp, thêm hành lá và ớt nếu dùng; dọn ngay để mực giữ độ mềm."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://hayan.vn/vao-bep/cach-lam-muc-xao-dua-thom-thom-ngon-hap-dan-dua-com-cho-ca-nha-p8757.html",
+          "publisher": "HAY ĂN",
+          "title": "2 cách làm mực xào với dứa và hành tây thơm ngon hấp dẫn đưa cơm cho cả nhà",
+          "use": "Đối chiếu nguyên liệu và trình tự xào mực với dứa, hành tây; Bếp Việt biên tập lại.",
+          "accessed_at": "2026-10-27",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Giảm một nửa nguyên liệu chính.",
+            "instruction": "Nêm từ ít hơn một nửa lượng gia vị rồi điều chỉnh."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.25,
+            "example": "Tăng nguyên liệu chính lên 1,5 lần.",
+            "instruction": "Thêm gia vị từ từ và nếm lại."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2,
+            "seasoning_start_factor": 1.6,
+            "example": "Nhân đôi nguyên liệu chính.",
+            "instruction": "Điều chỉnh thời gian theo dụng cụ và nêm dần."
+          }
+        ],
+        "rules": [
+          "Nguyên liệu chính tăng theo khẩu phần; gia vị mặn, ngọt, cay chỉ dùng hệ số khởi điểm rồi nếm lại.",
+          "Không nhân đôi thời gian nấu khi tăng khẩu phần; chia mẻ nếu dụng cụ không đủ rộng.",
+          "Điều chỉnh nước và dầu theo nồi, chảo và lượng thực phẩm."
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/muc-ong-xao-dua-hanh-tay-960.webp",
+          "page_url": "https://hayan.vn/vao-bep/cach-lam-muc-xao-dua-thom-thom-ngon-hap-dan-dua-com-cho-ca-nha-p8757.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập công thức.",
+          "width": 1536,
+          "height": 864,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa mực ống xào dứa và hành tây với hành lá; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-27",
+          "photo_variant_note": "Ảnh ImageGen nền trong suốt, giữ trọn đĩa hoặc bát trên canvas 1536×864; bản giao diện dùng WebP 480, 960 và 1536 px, không phải ảnh render gốc 4K. Công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt biên tập công thức theo khẩu phần gia đình từ nguồn tham khảo; định lượng chuẩn hóa cho bốn người và chưa được nấu thử.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-27",
+        "needs": [
+          "Nấu thử để xác nhận định lượng, thời gian và độ chín theo nguyên liệu, bếp và dụng cụ thực tế."
+        ]
+      },
+      "width": 1536,
+      "height": 864
+    },
+    {
+      "id": "BV789",
+      "slug": "canh-hen-nau-khe-chua",
+      "name": "Canh hến nấu khế chua",
+      "aliases": [
+        "Canh hến nấu chua khế",
+        "Canh hến chua nấu khế"
+      ],
+      "region": [
+        "Toàn quốc"
+      ],
+      "province": [],
+      "category": "Canh",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "bữa ăn gia đình"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Khẩu phần cho bốn người trong một bữa cơm gia đình.",
+      "prep_time": 20,
+      "cook_time": 30,
+      "passive_time": 0,
+      "total_time": 50,
+      "description": "Hến ngọt nấu cùng khế chua và cà chua tạo bát canh thanh, thơm mùi rau răm. Món dùng nguyên liệu quen thuộc trong bữa cơm gia đình.",
+      "finished_dish": "Nước canh trong, chua dịu; hến vừa chín, khế còn lát rõ và rau răm giữ màu xanh.",
+      "serving": "Múc nóng ra tô, dùng cùng cơm trắng và món mặn.",
+      "tips": [
+        "Luộc hến vừa mở miệng, chắt lấy nước trong và bỏ cát lắng.",
+        "Thả khế vào sau cùng để giữ vị chua thanh, không nấu quá lâu.",
+        "Nêm từng chút vì nước luộc hến đã có vị mặn tự nhiên."
+      ],
+      "dish_type": [
+        "Món canh",
+        "Món hải sản"
+      ],
+      "main_ingredient": [
+        "hến",
+        "khế chua",
+        "cà chua"
+      ],
+      "cooking_method": [
+        "nấu canh"
+      ],
+      "search_terms": [
+        "canh hến nấu khế chua",
+        "canh hến nấu chua",
+        "canh hến khế",
+        "món canh hải sản"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Tô canh hến nấu khế chua với cà chua, hành lá và rau răm; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 50 phút, gồm sơ chế, chờ và nấu; thời gian thực tế tùy nguyên liệu và dụng cụ.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Thịt luộc",
+        "Rau luộc"
+      ],
+      "recipe_family": "clam_sour_starfruit_soup",
+      "keywords": [
+        "Canh hến nấu chua khế",
+        "Canh hến chua nấu khế",
+        "Canh hến nấu khế chua",
+        "hến",
+        "khế chua",
+        "cà chua",
+        "nấu canh",
+        "Món canh",
+        "Món hải sản",
+        "canh hến nấu khế chua",
+        "canh hến nấu chua",
+        "canh hến khế",
+        "món canh hải sản"
+      ],
+      "tags": {
+        "region": [
+          "Toàn quốc"
+        ],
+        "province": [],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối",
+          "bữa ăn gia đình"
+        ],
+        "dish_type": [
+          "Món canh",
+          "Món hải sản"
+        ],
+        "main_ingredient": [
+          "hến",
+          "khế chua",
+          "cà chua"
+        ],
+        "cooking_method": [
+          "nấu canh"
+        ],
+        "difficulty": "Dễ",
+        "prep_time": 20,
+        "cook_time": 30,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Cơm trắng",
+          "Thịt luộc",
+          "Rau luộc"
+        ],
+        "keywords": [
+          "canh hến nấu khế chua",
+          "canh hến nấu chua",
+          "canh hến khế",
+          "món canh hải sản"
+        ]
+      },
+      "ingredients": [
+        {
+          "name": "Hến tươi nguyên vỏ",
+          "quantity": 1000,
+          "unit": "g",
+          "role": "seafood",
+          "notes": "Ngâm rửa kỹ; luộc lấy thịt và nước dùng.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Khế chua",
+          "quantity": 180,
+          "unit": "g",
+          "role": "fruit",
+          "notes": "Rửa sạch, bỏ cạnh già, cắt lát ngang.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Cà chua",
+          "quantity": 180,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Rửa sạch, cắt múi cau.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Hành khô",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, thái mỏng.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 12,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Rau răm",
+          "quantity": 12,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Nhặt lá, rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "cooking_fat",
+          "notes": "Dùng phi hành và xào hến.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nước",
+          "quantity": 1200,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Bổ sung vào phần nước luộc hến để đủ lượng canh.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Hạt nêm",
+          "quantity": 4,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm từ từ sau khi nước sôi.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Muối",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Điều chỉnh theo độ mặn của hến.",
+          "scaling_rule": "linear"
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Ngâm hến trong nước sạch, rửa nhiều lần. Rửa và chuẩn bị khế, cà chua, hành khô, hành lá và rau răm."
+        },
+        {
+          "step": 2,
+          "instruction": "Luộc hến đến khi vỏ mở; vớt hến, tách thịt và để nước luộc lắng rồi chắt phần trong."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Phi hành khô với dầu, cho cà chua vào đảo mềm; thêm thịt hến, xào nhanh cho dậy mùi."
+        },
+        {
+          "step": 2,
+          "instruction": "Đổ phần nước luộc hến trong và nước vào nồi, đun sôi rồi hớt bọt nếu có."
+        },
+        {
+          "step": 3,
+          "instruction": "Thêm khế, nấu 3–5 phút đến khi vị chua dịu lan vào nước; nêm hạt nêm và muối vừa ăn."
+        },
+        {
+          "step": 4,
+          "instruction": "Tắt bếp, cho hành lá và rau răm vào rồi múc ra tô."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://hayan.vn/vao-bep/3-cach-nau-canh-hen-nau-chua-bau-va-kim-chi-thom-ngon-thanh-mat-p5061.html",
+          "publisher": "HAY ĂN",
+          "title": "3 cách nấu canh hến nấu chua, bầu và kim chi thơm ngon thanh mát",
+          "use": "Đối chiếu thành phần khế chua, cà chua, hến và trình tự nấu; Bếp Việt chuẩn hóa định lượng.",
+          "accessed_at": "2026-10-27",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Giảm một nửa nguyên liệu chính.",
+            "instruction": "Nêm từ ít hơn một nửa lượng gia vị rồi điều chỉnh."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.25,
+            "example": "Tăng nguyên liệu chính lên 1,5 lần.",
+            "instruction": "Thêm gia vị từ từ và nếm lại."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2,
+            "seasoning_start_factor": 1.6,
+            "example": "Nhân đôi nguyên liệu chính.",
+            "instruction": "Điều chỉnh thời gian theo dụng cụ và nêm dần."
+          }
+        ],
+        "rules": [
+          "Nguyên liệu chính tăng theo khẩu phần; gia vị mặn, ngọt, cay chỉ dùng hệ số khởi điểm rồi nếm lại.",
+          "Không nhân đôi thời gian nấu khi tăng khẩu phần; chia mẻ nếu dụng cụ không đủ rộng.",
+          "Điều chỉnh nước và dầu theo nồi, chảo và lượng thực phẩm."
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/canh-hen-nau-khe-chua-960.webp",
+          "page_url": "https://hayan.vn/vao-bep/3-cach-nau-canh-hen-nau-chua-bau-va-kim-chi-thom-ngon-thanh-mat-p5061.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập công thức.",
+          "width": 1536,
+          "height": 864,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Tô canh hến nấu khế chua với cà chua, hành lá và rau răm; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-27",
+          "photo_variant_note": "Ảnh ImageGen nền trong suốt, giữ trọn đĩa hoặc bát trên canvas 1536×864; bản giao diện dùng WebP 480, 960 và 1536 px, không phải ảnh render gốc 4K. Công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt biên tập công thức theo khẩu phần gia đình từ nguồn tham khảo; định lượng chuẩn hóa cho bốn người và chưa được nấu thử.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-27",
+        "needs": [
+          "Nấu thử để xác nhận định lượng, thời gian và độ chín theo nguyên liệu, bếp và dụng cụ thực tế."
+        ]
+      },
+      "width": 1536,
+      "height": 864
+    },
+    {
+      "id": "BV790",
+      "slug": "rau-den-xao-toi",
+      "name": "Rau dền xào tỏi",
+      "aliases": [
+        "Rau dền xào tỏi chay",
+        "Rau dền xào tỏi đơn giản"
+      ],
+      "region": [
+        "Toàn quốc"
+      ],
+      "province": [],
+      "category": "Rau và nấm",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "bữa ăn gia đình"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Khẩu phần cho bốn người trong một bữa cơm gia đình.",
+      "prep_time": 15,
+      "cook_time": 10,
+      "passive_time": 0,
+      "total_time": 25,
+      "description": "Rau dền xanh đỏ được xào nhanh với tỏi, nêm nhẹ để giữ vị ngọt tự nhiên và độ mềm vừa. Món rau chay quen thuộc cho mâm cơm hằng ngày.",
+      "finished_dish": "Rau vừa mềm, màu tươi; tỏi thơm vàng nhạt, chảo không đọng quá nhiều nước.",
+      "serving": "Dọn nóng làm món rau ăn cùng cơm và đậu phụ hoặc món kho chay.",
+      "tips": [
+        "Nhặt bỏ cọng già, rửa rau nhiều lần và để thật ráo.",
+        "Nếu rau ra nước, giảm lượng nước thêm và đảo nhanh để giữ màu.",
+        "Có thể dùng hạt nêm chay; kiểm tra nhãn nếu cần món thuần chay."
+      ],
+      "dish_type": [
+        "Món rau",
+        "Món xào",
+        "Món chay"
+      ],
+      "main_ingredient": [
+        "rau dền",
+        "tỏi"
+      ],
+      "cooking_method": [
+        "xào"
+      ],
+      "search_terms": [
+        "rau dền xào tỏi",
+        "rau dền xào",
+        "món rau chay",
+        "rau dền nấu nhanh"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Đĩa rau dền xanh đỏ xào tỏi, vừa chín tới; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 25 phút, gồm sơ chế, chờ và nấu; thời gian thực tế tùy nguyên liệu và dụng cụ.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Đậu hũ kho tương",
+        "Canh bí đỏ chay"
+      ],
+      "recipe_family": "amaranth_garlic_stir_fry",
+      "keywords": [
+        "Rau dền xào tỏi chay",
+        "Rau dền xào tỏi đơn giản",
+        "Rau dền xào tỏi",
+        "rau dền",
+        "tỏi",
+        "xào",
+        "Món rau",
+        "Món xào",
+        "Món chay",
+        "rau dền xào tỏi",
+        "rau dền xào",
+        "món rau chay",
+        "rau dền nấu nhanh"
+      ],
+      "tags": {
+        "region": [
+          "Toàn quốc"
+        ],
+        "province": [],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối",
+          "bữa ăn gia đình"
+        ],
+        "dish_type": [
+          "Món rau",
+          "Món xào",
+          "Món chay"
+        ],
+        "main_ingredient": [
+          "rau dền",
+          "tỏi"
+        ],
+        "cooking_method": [
+          "xào"
+        ],
+        "difficulty": "Dễ",
+        "prep_time": 15,
+        "cook_time": 10,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Cơm trắng",
+          "Đậu hũ kho tương",
+          "Canh bí đỏ chay"
+        ],
+        "keywords": [
+          "rau dền xào tỏi",
+          "rau dền xào",
+          "món rau chay",
+          "rau dền nấu nhanh"
+        ]
+      },
+      "ingredients": [
+        {
+          "name": "Rau dền",
+          "quantity": 400,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Nhặt bỏ phần già, rửa sạch, để ráo và cắt khúc.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "cooking_fat",
+          "notes": "Dùng phi tỏi; có thể dùng dầu thực vật.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nước",
+          "quantity": 100,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Thêm một ít để rau chín đều.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Muối",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm nhẹ rồi điều chỉnh.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Tùy chọn.",
+          "scaling_rule": "linear"
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Nhặt bỏ lá úa, cọng già; rửa rau nhiều lần, để ráo rồi cắt khúc vừa ăn."
+        },
+        {
+          "step": 2,
+          "instruction": "Bóc vỏ và băm nhỏ tỏi."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng dầu trên chảo, phi tỏi đến thơm và vừa vàng."
+        },
+        {
+          "step": 2,
+          "instruction": "Cho rau dền vào đảo nhanh, thêm nước, đậy nắp khoảng 3–5 phút đến khi rau mềm vừa."
+        },
+        {
+          "step": 3,
+          "instruction": "Nêm muối, đảo đều thêm khoảng 1 phút; nếm lại và tắt bếp. Rắc tiêu nếu thích."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://hayan.vn/vao-bep/cach-lam-rau-den-xao-toi-thom-ngon-de-lam-tai-nha-p5660.html",
+          "publisher": "HAY ĂN",
+          "title": "Cách làm rau dền xào tỏi thơm ngon, dễ làm tại nhà",
+          "use": "Đối chiếu nguyên liệu và cách xào rau dền với tỏi; Bếp Việt biên tập lượng dùng cho gia đình.",
+          "accessed_at": "2026-10-27",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Giảm một nửa nguyên liệu chính.",
+            "instruction": "Nêm từ ít hơn một nửa lượng gia vị rồi điều chỉnh."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.25,
+            "example": "Tăng nguyên liệu chính lên 1,5 lần.",
+            "instruction": "Thêm gia vị từ từ và nếm lại."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2,
+            "seasoning_start_factor": 1.6,
+            "example": "Nhân đôi nguyên liệu chính.",
+            "instruction": "Điều chỉnh thời gian theo dụng cụ và nêm dần."
+          }
+        ],
+        "rules": [
+          "Nguyên liệu chính tăng theo khẩu phần; gia vị mặn, ngọt, cay chỉ dùng hệ số khởi điểm rồi nếm lại.",
+          "Không nhân đôi thời gian nấu khi tăng khẩu phần; chia mẻ nếu dụng cụ không đủ rộng.",
+          "Điều chỉnh nước và dầu theo nồi, chảo và lượng thực phẩm."
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/rau-den-xao-toi-960.webp",
+          "page_url": "https://hayan.vn/vao-bep/cach-lam-rau-den-xao-toi-thom-ngon-de-lam-tai-nha-p5660.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập công thức.",
+          "width": 1536,
+          "height": 864,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa rau dền xanh đỏ xào tỏi, vừa chín tới; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-27",
+          "photo_variant_note": "Ảnh ImageGen nền trong suốt, giữ trọn đĩa hoặc bát trên canvas 1536×864; bản giao diện dùng WebP 480, 960 và 1536 px, không phải ảnh render gốc 4K. Công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt biên tập công thức theo khẩu phần gia đình từ nguồn tham khảo; định lượng chuẩn hóa cho bốn người và chưa được nấu thử.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-27",
+        "needs": [
+          "Nấu thử để xác nhận định lượng, thời gian và độ chín theo nguyên liệu, bếp và dụng cụ thực tế."
+        ]
+      },
+      "width": 1536,
+      "height": 864
+    },
+    {
+      "id": "BV791",
+      "slug": "ga-hap-ngai-cuu",
+      "name": "Gà hấp ngải cứu",
+      "aliases": [
+        "Gà hấp lá ngải cứu",
+        "Gà hấp ngải cứu gừng"
+      ],
+      "region": [
+        "Toàn quốc"
+      ],
+      "province": [],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "bữa ăn gia đình"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Khẩu phần cho bốn người trong một bữa cơm gia đình.",
+      "prep_time": 20,
+      "cook_time": 45,
+      "passive_time": 10,
+      "total_time": 75,
+      "description": "Gà được ướp nhẹ rồi hấp cùng ngải cứu, gừng và hành tím. Thịt chín mềm, giữ độ mọng và thấm hương thảo mộc, phù hợp bữa cơm gia đình.",
+      "finished_dish": "Thịt gà chín mềm, da còn nguyên, ngải cứu thơm dịu và nước hấp có vị ngọt tự nhiên.",
+      "serving": "Chặt miếng vừa ăn, dùng nóng cùng cơm; có thể dọn thêm muối tiêu chanh.",
+      "tips": [
+        "Chọn ngải cứu non để vị đắng không quá gắt.",
+        "Để gà ráo trước khi ướp và xoa gia vị đều cả mặt trong lẫn ngoài.",
+        "Hấp đến khi phần dày nhất của thịt chín hoàn toàn; điều chỉnh thời gian theo kích thước gà."
+      ],
+      "dish_type": [
+        "Món gà",
+        "Món hấp",
+        "Món mặn"
+      ],
+      "main_ingredient": [
+        "thịt gà",
+        "ngải cứu",
+        "gừng"
+      ],
+      "cooking_method": [
+        "hấp"
+      ],
+      "search_terms": [
+        "gà hấp ngải cứu",
+        "gà hấp lá ngải",
+        "gà hấp gừng ngải cứu",
+        "món gà hấp"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Đĩa gà hấp ngải cứu với gừng và hành tím; ảnh Bếp Việt nền trong suốt.",
+      "time_note": "Khoảng 75 phút, gồm sơ chế, chờ và nấu; thời gian thực tế tùy nguyên liệu và dụng cụ.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Rau luộc",
+        "Muối tiêu chanh"
+      ],
+      "recipe_family": "steamed_chicken_mugwort_ginger",
+      "keywords": [
+        "Gà hấp lá ngải cứu",
+        "Gà hấp ngải cứu gừng",
+        "Gà hấp ngải cứu",
+        "thịt gà",
+        "ngải cứu",
+        "gừng",
+        "hấp",
+        "Món gà",
+        "Món hấp",
+        "Món mặn",
+        "gà hấp ngải cứu",
+        "gà hấp lá ngải",
+        "gà hấp gừng ngải cứu",
+        "món gà hấp"
+      ],
+      "tags": {
+        "region": [
+          "Toàn quốc"
+        ],
+        "province": [],
+        "meal_type": [
+          "bữa trưa",
+          "bữa tối",
+          "bữa ăn gia đình"
+        ],
+        "dish_type": [
+          "Món gà",
+          "Món hấp",
+          "Món mặn"
+        ],
+        "main_ingredient": [
+          "thịt gà",
+          "ngải cứu",
+          "gừng"
+        ],
+        "cooking_method": [
+          "hấp"
+        ],
+        "difficulty": "Dễ",
+        "prep_time": 20,
+        "cook_time": 45,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Cơm trắng",
+          "Rau luộc",
+          "Muối tiêu chanh"
+        ],
+        "keywords": [
+          "gà hấp ngải cứu",
+          "gà hấp lá ngải",
+          "gà hấp gừng ngải cứu",
+          "món gà hấp"
+        ]
+      },
+      "ingredients": [
+        {
+          "name": "Thịt gà",
+          "quantity": 1000,
+          "unit": "g",
+          "role": "meat",
+          "notes": "Gà làm sạch, để ráo; có thể chặt đôi để vừa nồi hấp.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Lá ngải cứu",
+          "quantity": 150,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Nhặt lá non, rửa sạch, để ráo.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Gừng",
+          "quantity": 20,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Rửa sạch, thái lát.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 20,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, thái lát.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Rượu trắng",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Dùng xát khử mùi nhẹ; rửa lại nếu cần.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Giấm",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "acid",
+          "notes": "Pha với nước hoặc dùng ít để làm sạch gà.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Muối",
+          "quantity": 4,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng ướp gà; điều chỉnh theo khẩu vị.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Hạt nêm",
+          "quantity": 4,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm nhẹ.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm vào gà.",
+          "scaling_rule": "linear"
+        },
+        {
+          "name": "Nước",
+          "quantity": 1000,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Cho vào nồi hấp, không đổ trực tiếp lên thịt.",
+          "scaling_rule": "linear"
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa gà, xát nhẹ với giấm và một ít muối rồi rửa sạch lại, để thật ráo."
+        },
+        {
+          "step": 2,
+          "instruction": "Nhặt phần lá và ngọn ngải cứu non, rửa sạch; thái gừng và hành tím."
+        },
+        {
+          "step": 3,
+          "instruction": "Trộn muối, hạt nêm, tiêu; xoa đều lên gà và để nghỉ 10 phút."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đun sôi nước trong nồi hấp. Lót một phần ngải cứu, gừng và hành tím dưới xửng; đặt gà lên trên, nhồi thêm ít ngải cứu vào khoang gà nếu hấp nguyên con."
+        },
+        {
+          "step": 2,
+          "instruction": "Rải phần ngải cứu, gừng và hành còn lại quanh gà; đậy nắp hấp khoảng 40–45 phút, tùy kích cỡ và cách chặt."
+        },
+        {
+          "step": 3,
+          "instruction": "Kiểm tra phần thịt dày nhất đã chín hoàn toàn; để gà nghỉ 5 phút rồi chặt miếng. Dọn cùng nước hấp và muối tiêu chanh nếu thích."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://hayan.vn/vao-bep/2-cach-lam-ga-hap-ngai-cuu-va-tieu-xanh-thom-lung-don-gian-tai-nha-p5621.html",
+          "publisher": "HAY ĂN",
+          "title": "2 cách làm gà hấp ngải cứu và tiêu xanh thơm lừng đơn giản tại nhà",
+          "use": "Đối chiếu nguyên liệu gà, ngải cứu, gừng và cách hấp; Bếp Việt biên tập định lượng khẩu phần.",
+          "accessed_at": "2026-10-27",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Giảm một nửa nguyên liệu chính.",
+            "instruction": "Nêm từ ít hơn một nửa lượng gia vị rồi điều chỉnh."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.25,
+            "example": "Tăng nguyên liệu chính lên 1,5 lần.",
+            "instruction": "Thêm gia vị từ từ và nếm lại."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2,
+            "seasoning_start_factor": 1.6,
+            "example": "Nhân đôi nguyên liệu chính.",
+            "instruction": "Điều chỉnh thời gian theo dụng cụ và nêm dần."
+          }
+        ],
+        "rules": [
+          "Nguyên liệu chính tăng theo khẩu phần; gia vị mặn, ngọt, cay chỉ dùng hệ số khởi điểm rồi nếm lại.",
+          "Không nhân đôi thời gian nấu khi tăng khẩu phần; chia mẻ nếu dụng cụ không đủ rộng.",
+          "Điều chỉnh nước và dầu theo nồi, chảo và lượng thực phẩm."
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/ga-hap-ngai-cuu-960.webp",
+          "page_url": "https://hayan.vn/vao-bep/2-cach-lam-ga-hap-ngai-cuu-va-tieu-xanh-thom-lung-don-gian-tai-nha-p5621.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập công thức.",
+          "width": 1536,
+          "height": 864,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa gà hấp ngải cứu với gừng và hành tím; ảnh Bếp Việt nền trong suốt.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-27",
+          "photo_variant_note": "Ảnh ImageGen nền trong suốt, giữ trọn đĩa hoặc bát trên canvas 1536×864; bản giao diện dùng WebP 480, 960 và 1536 px, không phải ảnh render gốc 4K. Công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Bếp Việt biên tập công thức theo khẩu phần gia đình từ nguồn tham khảo; định lượng chuẩn hóa cho bốn người và chưa được nấu thử.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-27",
+        "needs": [
+          "Nấu thử để xác nhận định lượng, thời gian và độ chín theo nguyên liệu, bếp và dụng cụ thực tế."
+        ]
+      },
+      "width": 1536,
+      "height": 864
+    }
+  ]
+}

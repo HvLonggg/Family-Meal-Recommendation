@@ -1,6 +1,7 @@
 from fastapi.testclient import TestClient
 from sqlalchemy.orm import Session, sessionmaker
 
+from app.core.legal import CURRENT_TERMS_VERSION
 from app.modules.recipes.models import Recipe
 
 
@@ -11,6 +12,7 @@ def create_user(client: TestClient, email: str) -> str:
             "full_name": "Nguyễn Ngọc Lan",
             "email": email,
             "password": "Test-Only-No-Login-2026!",
+            "accepted_terms_version": CURRENT_TERMS_VERSION,
         },
     )
     assert created.status_code == 201

@@ -1,0 +1,218 @@
+{
+  "batch": 93,
+  "canvas": {
+    "width": 1536,
+    "height": 864,
+    "format": "WebP",
+    "background": "transparent"
+  },
+  "native_format": "PNG",
+  "export_master_format": "WebP",
+  "assets": [
+    {
+      "slug": "rau-nhut-xao-toi",
+      "native_file": "output/recipe-images/native/rau-nhut-xao-toi.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "frontend/public/images/recipes/edited/rau-nhut-xao-toi-1536.webp",
+      "export_master_pixels": [
+        1536,
+        864
+      ],
+      "upscale_note": "Native ImageGen source is 1536?1024 with transparency, fitted without cropping to a 1536?864 WebP canvas; the 3840?2160 PNG is an upscaled export, not native 4K.",
+      "web_variants": [
+        {
+          "path": "/images/recipes/edited/rau-nhut-xao-toi-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/rau-nhut-xao-toi-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/rau-nhut-xao-toi-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "slug": "vit-xao-rau-ram",
+      "native_file": "output/recipe-images/native/vit-xao-rau-ram.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "frontend/public/images/recipes/edited/vit-xao-rau-ram-1536.webp",
+      "export_master_pixels": [
+        1536,
+        864
+      ],
+      "upscale_note": "Native ImageGen source is 1536?1024 with transparency, fitted without cropping to a 1536?864 WebP canvas; the 3840?2160 PNG is an upscaled export, not native 4K.",
+      "web_variants": [
+        {
+          "path": "/images/recipes/edited/vit-xao-rau-ram-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/vit-xao-rau-ram-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/vit-xao-rau-ram-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "slug": "canh-ca-khoai-la-giang",
+      "native_file": "output/recipe-images/native/canh-ca-khoai-la-giang.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "frontend/public/images/recipes/edited/canh-ca-khoai-la-giang-1536.webp",
+      "export_master_pixels": [
+        1536,
+        864
+      ],
+      "upscale_note": "Native ImageGen source is 1536?1024 with transparency, fitted without cropping to a 1536?864 WebP canvas; the 3840?2160 PNG is an upscaled export, not native 4K.",
+      "web_variants": [
+        {
+          "path": "/images/recipes/edited/canh-ca-khoai-la-giang-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/canh-ca-khoai-la-giang-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/canh-ca-khoai-la-giang-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "slug": "mong-toi-xao-thit-bam",
+      "native_file": "output/recipe-images/native/mong-toi-xao-thit-bam.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "frontend/public/images/recipes/edited/mong-toi-xao-thit-bam-1536.webp",
+      "export_master_pixels": [
+        1536,
+        864
+      ],
+      "upscale_note": "Native ImageGen source is 1536?1024 with transparency, fitted without cropping to a 1536?864 WebP canvas; the 3840?2160 PNG is an upscaled export, not native 4K.",
+      "web_variants": [
+        {
+          "path": "/images/recipes/edited/mong-toi-xao-thit-bam-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/mong-toi-xao-thit-bam-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/mong-toi-xao-thit-bam-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "slug": "goi-uc-ga-rau-lang",
+      "native_file": "output/recipe-images/native/goi-uc-ga-rau-lang.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "frontend/public/images/recipes/edited/goi-uc-ga-rau-lang-1536.webp",
+      "export_master_pixels": [
+        1536,
+        864
+      ],
+      "upscale_note": "Native ImageGen source is 1536?1024 with transparency, fitted without cropping to a 1536?864 WebP canvas; the 3840?2160 PNG is an upscaled export, not native 4K.",
+      "web_variants": [
+        {
+          "path": "/images/recipes/edited/goi-uc-ga-rau-lang-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/goi-uc-ga-rau-lang-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/goi-uc-ga-rau-lang-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        }
+      ]
+    }
+  ]
+}

@@ -5,7 +5,7 @@ import { toSpokenText } from '@/features/narration/recipeScript';
 
 /** Lời của "người phụ bếp" đứng cạnh: đọc bước, chờ, nhắc giờ. */
 export const CLOSING: Record<Language, string> = {
-  vi: 'Bạn thực hiện đi, nếu xong hoặc gặp vướng mắc gì thì nói tôi nhé.',
+  vi: 'Bạn thực hiện đi, nếu xong hoặc gặp vướng mắc gì thì nói mình nhé.',
   en: "Go ahead. When you're done or get stuck, just tell me.",
 };
 
@@ -15,7 +15,8 @@ const PASSIVE =
 
 type StepContext = { dishName: string; servings: number; dishNumber: number; dishCount: number };
 
-function spoken(text: string, language: Language) {
+/** Dạng đọc cho giọng nói ("0,85 lít" → "0 phẩy 85 lít"); màn hình luôn hiện bản gốc. */
+export function spokenLine(text: string, language: Language) {
   return toSpokenText(text, language === 'vi' ? 'vi-VN' : 'en-US');
 }
 
@@ -54,13 +55,13 @@ export function stepSpeech(step: CookStep, context: StepContext, language: Langu
         ? 'Nếu món đã đạt như vậy, bạn nói "xong rồi" để mình ghi nhận là đã nấu nhé.'
         : 'If it looks like that, say "done" and I will log it as cooked.',
     );
-    return spoken(parts.join(' '), language);
+    return parts.join(' ');
   } else {
     const group = step.kind === 'preparation' ? (vi ? 'Sơ chế' : 'Prep') : vi ? 'Nấu' : 'Cooking';
     parts.push(
       vi
-        ? `${group}, bước ${step.number} trên ${step.groupSize}.`
-        : `${group}, step ${step.number} of ${step.groupSize}.`,
+        ? `${group}, bước ${step.dishStep ?? step.number} trên ${step.dishSteps ?? step.groupSize}.`
+        : `${group}, step ${step.dishStep ?? step.number} of ${step.dishSteps ?? step.groupSize}.`,
     );
     parts.push(end(step.text));
     if (step.timerSeconds) {
@@ -81,14 +82,35 @@ export function stepSpeech(step: CookStep, context: StepContext, language: Langu
       }
     }
   }
-  parts.push(CLOSING[language]);
-  return spoken(parts.join(' '), language);
+  // Lời nhắc chung chỉ nói một lần ở bước đầu, không lặp ở mọi bước.
+  if (step.kind === 'ingredients') parts.push(CLOSING[language]);
+  return parts.join(' ');
+}
+
+/**
+ * Lời dẫn ngắn hiện trong bóng thoại: nội dung bước đã hiện bằng chữ to bên dưới nên không chép
+ * lại; giọng đọc vẫn dùng `stepSpeech` để đọc đủ.
+ */
+export function stepCue(step: CookStep, language: Language) {
+  const vi = language === 'vi';
+  if (step.kind === 'ingredients') return CLOSING[language];
+  if (step.kind === 'finish') {
+    return vi
+      ? 'Nếu món đã đạt như vậy, bạn nói "xong rồi" để mình ghi nhận là đã nấu nhé.'
+      : 'If it looks like that, say "done" and I will log it as cooked.';
+  }
+  if (!step.timerSeconds) return '';
+  const duration = spokenDuration(step.timerSeconds, language);
+  return vi
+    ? `Bước này cần khoảng ${duration}. Muốn mình canh giờ thì nói "hẹn giờ" nhé.`
+    : `This takes about ${duration}. Say "set a timer" and I'll keep track.`;
 }
 
 export const voiceLines = {
   vi: {
     waiting: (step: string) =>
       `Không sao, bạn cứ từ từ. Mình nhắc lại bước này: ${end(step)} Mình đang chờ, xong thì nói "xong rồi" nhé.`,
+    waitingCue: 'Không sao, bạn cứ từ từ. Mình đang chờ, xong thì nói "xong rồi" nhé.',
     unknown:
       'Mình chưa nghe rõ. Bạn nói "xong rồi" để sang bước tiếp, "chưa xong" để mình chờ, "đọc lại", hoặc "hẹn giờ 10 phút" nhé.',
     askDuration: 'Bạn muốn hẹn bao lâu? Ví dụ: hẹn giờ 10 phút.',
@@ -140,6 +162,7 @@ export const voiceLines = {
   en: {
     waiting: (step: string) =>
       `No rush. Here's this step again: ${end(step)} I'm waiting — say "done" when you're ready.`,
+    waitingCue: 'No rush. I\'m waiting — say "done" when you\'re ready.',
     unknown:
       'Sorry, I didn\'t catch that. Say "done" for the next step, "not yet" to wait, "repeat", or "set a timer for 10 minutes".',
     askDuration: 'How long should I set it for? For example: set a timer for 10 minutes.',

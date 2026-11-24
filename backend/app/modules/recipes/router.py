@@ -1,9 +1,10 @@
 from typing import Annotated
 
-from fastapi import APIRouter, Depends, HTTPException, Query, Response, status
-from sqlalchemy import select
+from fastapi import APIRouter, Depends, HTTPException, Query, Request, Response, status
+from sqlalchemy import func, select
 from sqlalchemy.orm import Session, undefer
 
+from app.core.response_cache import JsonResponseCache, cached_json_response
 from app.db.session import get_db_session
 from app.modules.recipes.models import Recipe
 from app.modules.recipes.schemas import (
@@ -15,6 +16,18 @@ from app.modules.recipes.schemas import (
 from app.modules.recipes.service import get_recipe_by_slug, list_recipes
 
 router = APIRouter(prefix="/recipes")
+# Kho món đầy đủ (~1 MB/trang) được đọc ở mọi lần mở app: dựng một lần cho mỗi phiên bản dữ
+# liệu (số món + lần cập nhật cuối), TTL ngắn để cả thay đổi chỉ ở nguyên liệu/bước cũng cập nhật.
+CATALOG_CACHE = JsonResponseCache(ttl_seconds=300, max_entries=32)
+
+
+def _catalog_version(session: Session) -> tuple[int, str]:
+    count, updated = session.execute(
+        select(func.count(Recipe.id), func.max(Recipe.updated_at)).where(
+            Recipe.status == "published"
+        )
+    ).one()
+    return int(count or 0), str(updated or "")
 
 
 @router.get("", response_model=RecipeListResponse, summary="List published recipes")
@@ -45,14 +58,20 @@ def recipes(
     summary="Get complete published recipe catalog",
 )
 def recipe_catalog(
+    request: Request,
     session: Annotated[Session, Depends(get_db_session)],
     limit: Annotated[int, Query(ge=1, le=100)] = 100,
     offset: Annotated[int, Query(ge=0)] = 0,
-) -> RecipeCatalogResponse:
-    items, total = list_recipes(session, limit=limit, offset=offset, with_details=True)
-    return RecipeCatalogResponse(
-        data=[RecipeDetailResponse.model_validate(item) for item in items], total=total
-    )
+) -> Response:
+    def build() -> bytes:
+        items, total = list_recipes(session, limit=limit, offset=offset, with_details=True)
+        payload = RecipeCatalogResponse(
+            data=[RecipeDetailResponse.model_validate(item) for item in items], total=total
+        )
+        return payload.model_dump_json(by_alias=True).encode()
+
+    key = (limit, offset, *_catalog_version(session))
+    return cached_json_response(request, CATALOG_CACHE.get_or_build(key, build))
 
 
 @router.get("/{slug}/image", summary="Get an uploaded recipe cut-out image")

@@ -978,6 +978,15 @@ button.text-link {
 .modal--confirm .modal__foot {
   border-top: 0;
 }
+.confirm-dialog__content {
+  display: grid;
+  min-width: 0;
+  flex: 1;
+  gap: 4px;
+}
+.confirm-dialog__note {
+  margin-top: 12px;
+}
 @keyframes modal-in {
   from {
     opacity: 0;

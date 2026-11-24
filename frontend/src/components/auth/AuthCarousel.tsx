@@ -11,7 +11,7 @@ const slides = [
     badge: 'Bữa cơm Việt',
     description: 'Gợi ý món ngon mỗi ngày, để căn bếp luôn ấm và bữa cơm luôn có điều để nhớ.',
     image: familyMealImage,
-    title: 'Cùng Quyên, trọn vị cơm nhà',
+    title: 'Cùng Bếp Việt, trọn vị cơm nhà',
   },
   {
     badge: 'Khám phá ba miền',

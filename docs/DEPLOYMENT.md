@@ -52,6 +52,10 @@ Thu hồi quyền tại <https://myaccount.google.com/permissions> sẽ vô hi�
 
 ## 3. Render – backend
 
+**Cách nhanh (khuyên dùng):** Dashboard → **New → Blueprint** → chọn repo. Render đọc `render.yaml` ở thư mục gốc, tự sinh `BEP_VIET_JWT_SECRET`, đặt sẵn các biến không bí mật (production, Gmail API, `BEP_VIET_TRUSTED_PROXY_HOPS=2` cho chuỗi Vercel → Render, giới hạn tải, pool DB) và chỉ hỏi các giá trị bí mật/domain. Sau đó bỏ qua bước 1–4 dưới đây.
+
+> `BEP_VIET_TRUSTED_PROXY_HOPS=2` giả định Vercel ghi IP người dùng vào `X-Forwarded-For` rồi Render nối IP Vercel. Sau deploy, nếu thấy giới hạn đăng nhập chặn nhầm nhiều người cùng lúc, kiểm tra log và chỉnh giá trị này.
+
 1. <https://dashboard.render.com> → **New → Web Service** → kết nối repo GitHub.
 2. Cấu hình:
    - **Language**: Docker; **Root Directory**: `backend`; **Instance type**: Free
@@ -104,3 +108,78 @@ Thu hồi quyền tại <https://myaccount.google.com/permissions> sẽ vô hi�
 - **Gmail cá nhân** giới hạn khoảng 500 thư/ngày.
 - **Neon Free** giới hạn dung lượng lưu trữ; ảnh đại diện người dùng được lưu trong cơ sở dữ liệu nên cần theo dõi dung lượng.
 - Các giới hạn trên do nhà cung cấp quy định và có thể thay đổi; kiểm tra trang giá hiện hành trước khi phụ thuộc vào chúng.
+
+## 6. Giám sát uptime và chống ngủ (miễn phí)
+
+- Backend có `GET /api/v1/livez` (dùng cho Render Health Check và healthcheck Docker Compose).
+- UptimeRobot (gói Free): tạo monitor **HTTP(s)**, URL `https://<BACKEND>.onrender.com/api/v1/livez`, chu kỳ 5–10 phút, cảnh báo qua email hỗ trợ. Thêm monitor thứ hai cho trang chủ Vercel `https://<FRONTEND_DOMAIN>/`.
+- Thay thế: cron-job.org gọi cùng URL mỗi 10 phút. Không ping quá dày (giữ dưới hạn mức 750 giờ/tháng của Render Free).
+- Ping chỉ giảm cold start, không đảm bảo SLA; khi có người dùng trả phí hoặc cần ổn định, nâng Render lên gói trả phí.
+
+## 7. Sao lưu cơ sở dữ liệu Neon
+
+1. **Khôi phục theo thời điểm (PITR)**: Neon giữ lịch sử thay đổi trong một khoảng ngắn tùy gói (kiểm tra trang giá hiện hành). Trong console: *Branches → Restore* hoặc tạo branch từ thời điểm trước sự cố.
+2. **Branch trước mỗi lần migration/phát hành**: tạo branch `pre-release-<YYYYMMDD>` từ `main` trong console Neon trước khi chạy `alembic upgrade head` trên production.
+3. **Bản dump định kỳ ra ngoài Neon** (ít nhất hằng tuần và trước mỗi phát hành), chạy từ máy quản trị có `pg_dump` cùng hoặc mới hơn phiên bản server:
+
+   ```powershell
+   $env:PGURL = "<NEON_URL_DANG_postgresql://...?sslmode=require>"
+   pg_dump --format=custom --no-owner --file "bep_viet_$(Get-Date -Format yyyyMMdd).dump" $env:PGURL
+   Remove-Item Env:PGURL
+   ```
+
+   Lưu tệp dump ở nơi riêng tư có mã hóa (không đưa vào Git). Dump chứa dữ liệu cá nhân người dùng.
+4. **Diễn tập khôi phục** mỗi tháng vào một branch Neon hoặc Postgres local:
+
+   ```powershell
+   pg_restore --no-owner --clean --if-exists --dbname "<URL_DB_THU_NGHIEM>" bep_viet_YYYYMMDD.dump
+   ```
+
+## 8. Quy trình rollback
+
+| Thành phần | Cách rollback | Ghi chú |
+|---|---|---|
+| Frontend (Vercel) | *Deployments* → chọn bản ổn định trước → **Promote to Production** (Instant Rollback) | Không cần build lại. |
+| Backend (Render) | *Events/Deploys* → chọn deploy trước → **Rollback**; hoặc revert commit trên `main` | Kiểm tra `/api/v1/livez` sau rollback. |
+| Schema DB | Ưu tiên migration tương thích ngược (thêm cột/bảng trước, xóa sau). Nếu bắt buộc: `alembic downgrade -1` với `BEP_VIET_DATABASE_URL` trỏ production | Chỉ khi migration có `downgrade` đã kiểm thử. |
+| Dữ liệu hỏng | Khôi phục từ branch `pre-release-*` hoặc PITR của Neon, hoặc `pg_restore` bản dump | Ghi lại thời điểm sự cố để chọn mốc khôi phục. |
+
+Thứ tự khi phát hành có migration: tạo branch Neon → deploy backend (migration chạy khi khởi động) → kiểm tra → deploy frontend. Rollback theo thứ tự ngược lại.
+
+## 9. Header bảo mật
+
+`frontend/vercel.json` (production) và `frontend/nginx.conf` (Docker) đặt CSP, HSTS (chỉ Vercel/HTTPS), `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy` (cho phép `microphone=(self)` cho chế độ nấu bằng giọng nói). Backend bổ sung header qua `app/core/middleware.py`. `sw.js`, `index.html`, `manifest.webmanifest` dùng `Cache-Control: no-cache` để người dùng nhận bản vá ngay. Khi thêm dịch vụ ngoài (font, analytics, error tracking), phải cập nhật CSP ở cả hai tệp.
+
+## 10. Tải đông và chống quá tải
+
+Gói free (Render 0,1 CPU/512 MB, một tiến trình uvicorn) phục vụ thoải mái khoảng vài chục đến ~150 người dùng **đang thao tác cùng lúc** (ước lượng, chưa đo tải thật). Nút thắt là CPU của Render, không phải Neon. Frontend tĩnh do CDN Vercel phục vụ, không tốn tài nguyên backend.
+
+Cơ chế bảo vệ có sẵn:
+
+- `BEP_VIET_MAX_CONCURRENT_REQUESTS` (mặc định 64): vượt ngưỡng thì request chờ tối đa `BEP_VIET_OVERLOAD_WAIT_SECONDS` (2 giây) rồi nhận `503 {"code":"OVERLOADED"}` kèm `Retry-After` (`BEP_VIET_OVERLOAD_RETRY_AFTER_SECONDS`, 15 giây). `/status`, `/livez`, `/readyz` không bị giới hạn. Đặt `0` để tắt.
+- Hết kết nối trong pool DB (`BEP_VIET_DB_POOL_SIZE` + `BEP_VIET_DB_MAX_OVERFLOW`, chờ `BEP_VIET_DB_POOL_TIMEOUT_SECONDS`) hoặc DB không kết nối được cũng trả `503 OVERLOADED` thay vì 500.
+- Mọi phản hồi 429 đều có `Retry-After`.
+- `/recipes/catalog` được dựng và nén gzip một lần cho mỗi phiên bản dữ liệu (đệm 5 phút, có ETag → 304).
+- Giao diện hiện dải "Bếp Việt đang đông khách…" kèm đếm ngược theo `Retry-After`, không tự thử lại trong thời gian chờ; request treo quá 25 giây (đọc) hoặc 60 giây (ghi) bị hủy và báo như trên.
+
+Khuyến nghị: giữ **một** tiến trình uvicorn (không tăng `--workers` trên 512 MB). Tổng pool 10 kết nối nhỏ hơn nhiều so với giới hạn kết nối trực tiếp của Neon Free nên URL không qua pooler vẫn đủ; chỉ khi chạy nhiều instance mới chuyển sang URL `-pooler` cho ứng dụng (migration vẫn dùng URL trực tiếp). Muốn phục vụ ~1000 người cùng lúc cần nâng gói Render (CPU riêng, 2–4 worker) và đo tải (k6/Locust) trước khi mở rộng.
+
+## Bảo trì, sự cố và cập nhật phiên bản
+
+### Bảo trì có kế hoạch
+
+1. Trên Render (service API), đặt biến môi trường rồi bấm **Save, rebuild and deploy**:
+   - `BEP_VIET_MAINTENANCE_MODE=true`
+   - `BEP_VIET_MAINTENANCE_MESSAGE=Nâng cấp kho món, dự kiến 30 phút.` (tùy chọn, tối đa 300 ký tự)
+   - `BEP_VIET_MAINTENANCE_ENDS_AT=2026-11-20T23:30:00+07:00` (tùy chọn)
+2. Mọi API trả `503` mã `MAINTENANCE` kèm `Retry-After`; riêng `/api/v1/status`, `/livez`, `/readyz` vẫn trả lời.
+3. Người dùng thấy màn hình "Bếp Việt đang được nâng cấp" (lời nhắn, giờ dự kiến, cam kết dữ liệu được giữ). Trang tự kiểm tra lại mỗi 30 giây.
+4. Xong việc: đặt `BEP_VIET_MAINTENANCE_MODE=false` và deploy lại. Trang đang mở tự tải lại.
+
+### Sự cố ngoài kế hoạch
+
+Khi API không phản hồi (Render đang khởi động lại, 502/503/504, mất mạng) hai lần liên tiếp, giao diện hiện dải "Chưa kết nối được máy chủ" và tự thử lại mỗi 15 giây; mất mạng thiết bị hiện "Bạn đang ngoại tuyến". Không cần thao tác gì.
+
+### Cập nhật phiên bản
+
+Mỗi lần build, `vite.config.ts` sinh mã build mới, ghi vào `dist/sw.js` và `dist/version.json` (không cần sửa tay số phiên bản). Tab đang mở kiểm tra `version.json` mỗi 15 phút và khi người dùng quay lại tab, rồi hiện thẻ "Đã có phiên bản mới" với nút **Cập nhật ngay** / **Để sau** (hoãn 1 giờ). Đang ở chế độ Vào bếp thì lời nhắc khuyên cập nhật sau khi nấu xong. Tab cũ đòi tệp JS đã bị thay sẽ tự tải lại một lần.

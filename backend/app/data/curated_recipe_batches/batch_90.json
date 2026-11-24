@@ -1,0 +1,1663 @@
+{
+  "batch": 90,
+  "description": "Năm món gia đình và vùng miền: bò nướng ống tre, canh bông bí nấu tôm nấm kim châm, chả cá thác lác chiên thì là, cá lồ ồ kho măng chua và đậu bắp xào cà chua chay.",
+  "recipes": [
+    {
+      "id": "BV777",
+      "slug": "bo-nuong-ong-tre",
+      "name": "Bò nướng ống tre",
+      "aliases": [
+        "Bò nướng lồ ô",
+        "Bò nướng ống lồ ô"
+      ],
+      "region": [
+        "Tây Nguyên"
+      ],
+      "province": [],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "bữa ăn gia đình"
+      ],
+      "difficulty": "Khó",
+      "servings": 4,
+      "serving_basis": "Khẩu phần cho bốn người trong một bữa cơm gia đình.",
+      "prep_time": 40,
+      "cook_time": 45,
+      "passive_time": 0,
+      "total_time": 85,
+      "description": "Bắp bò lẫn ít gầu được ướp với sả, gừng và mắc khén rồi nướng trong ống tre. Hơi nóng khép kín giúp thịt giữ độ ẩm, quyện mùi tre và gia vị vùng cao.",
+      "finished_dish": "Thịt bò chín đều, mềm ẩm, viền hơi xém và thơm sả, gừng, mắc khén; phần giữa không còn sống.",
+      "serving": "Lấy thịt khỏi ống, dùng nóng với cơm lam hoặc xôi, dưa leo và rau thơm; chấm muối mắc khén vừa miệng.",
+      "tips": [
+        "Không nhồi thịt quá chặt; chừa khoảng trống ở miệng ống để hơi nóng lưu thông.",
+        "Xoay ống đều trên than để mặt tre không cháy tập trung.",
+        "Mở ống cẩn thận vì hơi nóng còn đọng bên trong; kiểm tra phần thịt dày nhất đã chín hoàn toàn."
+      ],
+      "dish_type": [
+        "Món mặn",
+        "Món nướng",
+        "Đặc sản vùng miền"
+      ],
+      "main_ingredient": [
+        "thịt bò",
+        "sả",
+        "gừng",
+        "mắc khén"
+      ],
+      "cooking_method": [
+        "ướp",
+        "nướng ống tre"
+      ],
+      "search_terms": [
+        "bò nướng ống tre",
+        "bò nướng lồ ô",
+        "bò nướng mắc khén",
+        "đặc sản Tây Nguyên"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Bò nướng trong ống tre tươi, ướp sả, gừng và mắc khén, thịt chín mềm và giữ ẩm.",
+      "time_note": "Khoảng 1 giờ 25 phút; thời gian nướng đổi theo kích cỡ ống và sức than.",
+      "suggested_pairings": [
+        "Cơm lam nếp nương",
+        "Xôi nếp",
+        "Rau thơm và dưa leo"
+      ],
+      "recipe_family": "highland_bamboo_tube_beef",
+      "keywords": [
+        "Bò nướng ống tre",
+        "Bò nướng lồ ô",
+        "Bò nướng ống lồ ô",
+        "thịt bò",
+        "sả",
+        "gừng",
+        "mắc khén",
+        "ướp",
+        "nướng ống tre",
+        "Món mặn",
+        "Món nướng",
+        "Đặc sản vùng miền"
+      ],
+      "tags": {
+        "region": [
+          "Tây Nguyên"
+        ],
+        "province": [],
+        "meal_type": [
+          "bữa ăn gia đình",
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Món mặn",
+          "Món nướng",
+          "Đặc sản vùng miền"
+        ],
+        "main_ingredient": [
+          "thịt bò",
+          "sả",
+          "gừng",
+          "mắc khén"
+        ],
+        "cooking_method": [
+          "ướp",
+          "nướng ống tre"
+        ],
+        "difficulty": "Khó",
+        "prep_time": 40,
+        "cook_time": 45,
+        "servings": 4,
+        "spicy_level": 1,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Cơm lam nếp nương",
+          "Xôi nếp",
+          "Rau thơm và dưa leo"
+        ],
+        "keywords": [
+          "bò nướng ống tre",
+          "bò nướng lồ ô",
+          "bò nướng mắc khén",
+          "đặc sản Tây Nguyên",
+          "thịt bò",
+          "sả",
+          "gừng",
+          "mắc khén",
+          "ướp",
+          "nướng ống tre"
+        ]
+      },
+      "ingredients": [
+        {
+          "name": "Thịt bắp bò lẫn ít gầu",
+          "quantity": 600,
+          "unit": "g",
+          "role": "main",
+          "notes": "Cắt miếng khoảng 2 cm, thấm khô.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Ống tre tươi",
+          "quantity": 3,
+          "unit": "ống",
+          "role": "equipment",
+          "notes": "Ống đường kính khoảng 5–7 cm, giữ một đầu kín; cọ sạch và tráng nước sôi.",
+          "scaling_rule": "vessel_dependent",
+          "sequence": 2
+        },
+        {
+          "name": "Sả",
+          "quantity": 60,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Gừng",
+          "quantity": 20,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Gọt vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 40,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 20,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Ớt đỏ",
+          "quantity": 10,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Băm nhỏ; giảm nếu không ăn cay.",
+          "scaling_rule": "seasoning",
+          "sequence": 7
+        },
+        {
+          "name": "Mắc khén",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Rang thơm nhẹ rồi giã nhỏ.",
+          "scaling_rule": "seasoning",
+          "sequence": 8
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 30,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Gia giảm theo độ mặn của nước mắm.",
+          "scaling_rule": "seasoning",
+          "sequence": 9
+        },
+        {
+          "name": "Hạt nêm",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng lượng khởi điểm.",
+          "scaling_rule": "seasoning",
+          "sequence": 10
+        },
+        {
+          "name": "Đường",
+          "quantity": 5,
+          "unit": "g",
+          "role": "sweetener",
+          "notes": "Cân vị cho phần ướp.",
+          "scaling_rule": "seasoning",
+          "sequence": 11
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 30,
+          "unit": "ml",
+          "role": "cooking_fat",
+          "notes": "Trộn vào phần ướp.",
+          "scaling_rule": "linear",
+          "sequence": 12
+        },
+        {
+          "name": "Lá chuối",
+          "quantity": 2,
+          "unit": "tàu",
+          "role": "wrapping",
+          "notes": "Rửa sạch, cuộn làm nút bịt miệng ống.",
+          "scaling_rule": "vessel_dependent",
+          "sequence": 13
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Thấm khô bắp bò, cắt miếng đều khoảng 2 cm để thịt chín cùng nhịp."
+        },
+        {
+          "step": 2,
+          "instruction": "Băm sả, gừng, hành tím, tỏi và ớt; rang mắc khén trên lửa nhỏ rồi giã thơm."
+        },
+        {
+          "step": 3,
+          "instruction": "Trộn bò với phần gia vị và dầu ăn, ướp trong ngăn mát ít nhất 30 phút."
+        },
+        {
+          "step": 4,
+          "instruction": "Cọ sạch lòng ống tre, tráng nước sôi rồi để ráo; rửa lá chuối để chuẩn bị nút bịt."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Cho thịt vào ống, nén vừa tay, chừa khoảng 3–4 cm ở miệng rồi bịt bằng lá chuối."
+        },
+        {
+          "step": 2,
+          "instruction": "Đặt ống nghiêng trên than hồng đã ổn định, xoay mỗi 5–7 phút và nướng khoảng 40–45 phút."
+        },
+        {
+          "step": 3,
+          "instruction": "Mở ống khi đã bớt nóng, kiểm tra miếng dày nhất chín hoàn toàn; nướng thêm nếu giữa thịt còn hồng."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://haisanpho.com.vn/bo-nuong-ong-tre",
+          "publisher": "ResFood",
+          "title": "Công thức và cách làm món bò nướng ống tre",
+          "use": "Đối chiếu khẩu phần, mắc khén, cách làm sạch ống, ướp và nướng xoay đều trên than.",
+          "accessed_at": "2026-10-26",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://vtv.vn/doi-song/dac-san-nui-rung-tay-nguyen-bo-nuong-lo-o-20161104095947994.htm",
+          "publisher": "VTV",
+          "title": "Đặc sản núi rừng Tây Nguyên: Bò nướng lồ ô",
+          "use": "Xác nhận tên gọi bò nướng lồ ô/ống tre và dấu ấn món ăn vùng Tây Nguyên.",
+          "accessed_at": "2026-10-26",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Scale the main ingredients to half.",
+            "instruction": "Start with less than half of the seasonings, then taste and adjust."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.25,
+            "example": "Scale the main ingredients by 1.5.",
+            "instruction": "Add seasonings gradually and taste before serving."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 1.6,
+            "example": "Double the main ingredients.",
+            "instruction": "Adjust liquids to the pot size and check doneness at the thickest part."
+          }
+        ],
+        "rules": [
+          "Nguyên liệu chính tăng theo khẩu phần; gia vị mặn, ngọt và cay chỉ dùng hệ số khởi điểm rồi nếm lại.",
+          "Không nhân đôi thời gian nấu khi tăng khẩu phần; chia mẻ nếu dụng cụ không đủ rộng.",
+          "Nước, dầu và vật dụng chứa hoặc nướng cần điều chỉnh theo kích thước nồi, chảo hay ống tre."
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/bo-nuong-ong-tre-960.webp",
+          "page_url": "https://haisanpho.com.vn/bo-nuong-ong-tre",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập công thức.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Bò nướng trong ống tre tươi, ướp sả, gừng và mắc khén, thịt chín mềm và giữ ẩm.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-26",
+          "photo_variant_note": "PNG nguồn ImageGen có nền trong suốt; WebP 3840×2160 được dàn vào khung 16:9 và phóng từ ảnh nguồn, không phải ảnh render gốc 4K. Công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Biên tập theo kỹ thuật nướng trong ống tre và gia vị vùng Tây Nguyên; cần nấu thử để duyệt thời gian và độ chín.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-26",
+        "needs": [
+          "Nấu thử theo kích cỡ ống tre và sức than thực tế.",
+          "Kiểm tra độ chín phần thịt dày nhất."
+        ]
+      },
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "id": "BV778",
+      "slug": "canh-bong-bi-tom-nam-kim-cham",
+      "name": "Canh bông bí nấu tôm nấm kim châm",
+      "aliases": [
+        "Canh bông bí nấu tôm",
+        "Canh bông bí nhồi tôm và nấm kim châm"
+      ],
+      "region": [
+        "Toàn quốc"
+      ],
+      "province": [],
+      "category": "Canh",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "bữa ăn gia đình"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Khẩu phần cho bốn người trong một bữa cơm gia đình.",
+      "prep_time": 25,
+      "cook_time": 15,
+      "passive_time": 0,
+      "total_time": 40,
+      "description": "Bông bí được nhồi nhân tôm và giò sống, nấu cùng tôm nguyên con và nấm kim châm trong nước canh thanh. Cho nấm và bông bí vào gần cuối để giữ màu hoa và độ giòn.",
+      "finished_dish": "Bông bí mềm vừa và còn sắc vàng, nhân tôm giò sống chín chắc, tôm ngọt, nấm kim châm không nhũn; nước canh trong và dịu.",
+      "serving": "Múc nóng vào bát, thêm ngò rí; dùng cùng cơm trắng và một món rau hoặc món kho.",
+      "tips": [
+        "Bỏ nhụy hoa để canh không đắng, giữ cuống non để hoa không rách khi nhồi.",
+        "Quết nhân vừa dẻo và nhồi nhẹ tay để bông không vỡ.",
+        "Nấu hoa vừa chín tới, tránh đun lâu làm hoa sẫm màu và nấm mềm nhũn."
+      ],
+      "dish_type": [
+        "Món canh",
+        "Món mặn"
+      ],
+      "main_ingredient": [
+        "bông bí",
+        "tôm",
+        "giò sống",
+        "nấm kim châm"
+      ],
+      "cooking_method": [
+        "nhồi",
+        "nấu canh"
+      ],
+      "search_terms": [
+        "canh bông bí nấu tôm",
+        "canh bông bí nấm kim châm",
+        "bông bí nhồi tôm",
+        "canh bông bí giò sống"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Bát canh bông bí vàng nhồi nhân tôm giò sống, có tôm nguyên con, nấm kim châm và ngò rí.",
+      "time_note": "Khoảng 40 phút, tính cả sơ chế tôm, nhồi hoa và nấu canh.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Cá kho",
+        "Rau luộc"
+      ],
+      "recipe_family": "stuffed_squash_blossom_shrimp_enoki_soup",
+      "keywords": [
+        "Canh bông bí nấu tôm nấm kim châm",
+        "Canh bông bí nấu tôm",
+        "Canh bông bí nhồi tôm và nấm kim châm",
+        "bông bí",
+        "tôm",
+        "giò sống",
+        "nấm kim châm",
+        "nhồi",
+        "nấu canh",
+        "Món canh",
+        "Món mặn"
+      ],
+      "tags": {
+        "region": [
+          "Toàn quốc"
+        ],
+        "province": [],
+        "meal_type": [
+          "bữa ăn gia đình",
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Món canh",
+          "Món mặn"
+        ],
+        "main_ingredient": [
+          "bông bí",
+          "tôm",
+          "giò sống",
+          "nấm kim châm"
+        ],
+        "cooking_method": [
+          "nhồi",
+          "nấu canh"
+        ],
+        "difficulty": "Dễ",
+        "prep_time": 25,
+        "cook_time": 15,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Cơm trắng",
+          "Cá kho",
+          "Rau luộc"
+        ],
+        "keywords": [
+          "canh bông bí nấu tôm",
+          "canh bông bí nấm kim châm",
+          "bông bí nhồi tôm",
+          "canh bông bí giò sống",
+          "bông bí",
+          "tôm",
+          "giò sống",
+          "nấm kim châm",
+          "nhồi",
+          "nấu canh"
+        ]
+      },
+      "ingredients": [
+        {
+          "name": "Bông bí",
+          "quantity": 200,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Chọn hoa còn búp, bỏ nhụy, rửa nhẹ và để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Tôm tươi",
+          "quantity": 300,
+          "unit": "g",
+          "role": "seafood",
+          "notes": "Bóc vỏ, rút chỉ; băm 100 g làm nhân, giữ phần còn lại nguyên con.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Giò sống",
+          "quantity": 200,
+          "unit": "g",
+          "role": "meat",
+          "notes": "Giữ lạnh trước khi quết để nhân dễ kết dính.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Nấm kim châm",
+          "quantity": 200,
+          "unit": "g",
+          "role": "mushroom",
+          "notes": "Cắt bỏ gốc, rửa nhanh, xé thành cụm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Ngò rí",
+          "quantity": 10,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, cắt nhỏ để nêm cuối.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Nước lọc",
+          "quantity": 600,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Lượng nước cho nồi canh gia đình bốn người.",
+          "scaling_rule": "vessel_dependent",
+          "sequence": 7
+        },
+        {
+          "name": "Đường phèn",
+          "quantity": 8,
+          "unit": "g",
+          "role": "sweetener",
+          "notes": "Tạo vị ngọt dịu.",
+          "scaling_rule": "seasoning",
+          "sequence": 8
+        },
+        {
+          "name": "Hạt nêm",
+          "quantity": 8,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm từng ít một.",
+          "scaling_rule": "seasoning",
+          "sequence": 9
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 10,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm sau khi nhân và tôm chín.",
+          "scaling_rule": "seasoning",
+          "sequence": 10
+        },
+        {
+          "name": "Muối",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng sơ chế tôm và nêm nước canh.",
+          "scaling_rule": "seasoning",
+          "sequence": 11
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng cho phần nhân.",
+          "scaling_rule": "seasoning",
+          "sequence": 12
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Cắt bỏ cuống già và nhụy bông bí, giữ phần cuống non khoảng 5 cm; rửa nhẹ để cánh hoa không rách."
+        },
+        {
+          "step": 2,
+          "instruction": "Cắt gốc nấm kim châm, rửa nhanh rồi xé nhỏ; bóc vỏ, rút chỉ tôm và để ráo."
+        },
+        {
+          "step": 3,
+          "instruction": "Băm 100 g tôm với hành tím, tiêu và ít hạt nêm; trộn đều với giò sống."
+        },
+        {
+          "step": 4,
+          "instruction": "Nhồi lượng nhân vừa đủ vào từng bông bí, không ép chặt để hoa không nứt."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đun sôi nước với đường phèn; thả phần tôm nguyên con và bông bí đã nhồi vào nồi."
+        },
+        {
+          "step": 2,
+          "instruction": "Nấu nhẹ đến khi tôm chuyển hồng và nhân trong hoa chín; hớt bọt để nước canh trong."
+        },
+        {
+          "step": 3,
+          "instruction": "Cho nấm kim châm vào, nấu thêm khoảng 1 phút; nêm nước mắm và hạt nêm vừa miệng."
+        },
+        {
+          "step": 4,
+          "instruction": "Tắt bếp khi bông bí vừa chín, rắc ngò rí rồi múc ra bát."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.dienmayxanh.com/vao-bep/2-cach-nau-canh-bong-bi-ca-thac-lac-va-tom-thom-ngon-ngot-nhe-hap-dan-05031",
+          "publisher": "Điện máy XANH",
+          "title": "2 cách nấu canh bông bí cá thác lác và tôm thơm ngon ngọt nhẹ hấp dẫn",
+          "use": "Đối chiếu món canh bông bí nấu cùng hải sản; không dùng nguồn này để khẳng định phần nấm kim châm hay cách nhồi hoa.",
+          "accessed_at": "2026-10-26",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://www.knorr.com/vn/r/canh-kim-chm-bng-b-nu-gi-sng-c-nh-tinh-anh.html/251999",
+          "publisher": "Knorr Việt Nam",
+          "title": "Canh Kim Châm Bông Bí Nấu Giò Sống - Cả Nhà Tinh Anh",
+          "use": "Xác nhận cách phối hợp giò sống, tôm, bông bí và nấm kim châm; món Bếp Việt phát triển thêm biến tấu nhồi nhân vào hoa.",
+          "accessed_at": "2026-11-11",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Scale the main ingredients to half.",
+            "instruction": "Start with less than half of the seasonings, then taste and adjust."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.25,
+            "example": "Scale the main ingredients by 1.5.",
+            "instruction": "Add seasonings gradually and taste before serving."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 1.6,
+            "example": "Double the main ingredients.",
+            "instruction": "Adjust liquids to the pot size and check doneness at the thickest part."
+          }
+        ],
+        "rules": [
+          "Nguyên liệu chính tăng theo khẩu phần; gia vị mặn, ngọt và cay chỉ dùng hệ số khởi điểm rồi nếm lại.",
+          "Không nhân đôi thời gian nấu khi tăng khẩu phần; chia mẻ nếu dụng cụ không đủ rộng.",
+          "Nước, dầu và vật dụng chứa hoặc nướng cần điều chỉnh theo kích thước nồi, chảo hay ống tre."
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/canh-bong-bi-tom-nam-kim-cham-960.webp",
+          "page_url": "https://www.dienmayxanh.com/vao-bep/2-cach-nau-canh-bong-bi-ca-thac-lac-va-tom-thom-ngon-ngot-nhe-hap-dan-05031",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập công thức.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Bát canh bông bí vàng nhồi nhân tôm giò sống, có tôm nguyên con, nấm kim châm và ngò rí.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-26",
+          "photo_variant_note": "PNG nguồn ImageGen có nền trong suốt; WebP 3840×2160 được dàn vào khung 16:9 và phóng từ ảnh nguồn, không phải ảnh render gốc 4K. Công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Biến tấu Bếp Việt nhồi hỗn hợp tôm và giò sống vào bông bí, kết hợp nấm kim châm dựa trên các nguồn tham khảo; không phải cách làm nguyên bản của một nguồn riêng.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-26",
+        "needs": [
+          "Nấu thử để xác nhận lượng nước, độ chín của nhân và thời gian giữ màu bông bí."
+        ]
+      },
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "id": "BV779",
+      "slug": "cha-ca-thac-lac-chien-thi-la",
+      "name": "Chả cá thác lác chiên thì là",
+      "aliases": [
+        "Chả cá thác lác thì là",
+        "Chả cá thì là"
+      ],
+      "region": [
+        "Toàn quốc"
+      ],
+      "province": [],
+      "category": "Món ăn cùng cơm",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "bữa ăn gia đình"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Khẩu phần cho bốn người trong một bữa cơm gia đình.",
+      "prep_time": 15,
+      "cook_time": 30,
+      "passive_time": 0,
+      "total_time": 45,
+      "description": "Cá thác lác quết cùng thịt xay, thì là, hành tím và tỏi rồi chiên thành miếng dẹt. Lớp ngoài vàng thơm, phần chả bên trong dai mềm và thoảng mùi thì là.",
+      "finished_dish": "Miếng chả cá vàng đều, mặt ngoài ráo dầu, bên trong chín dai mềm; thì là và hành tỏi thơm nhưng không lấn vị cá.",
+      "serving": "Dùng nóng với cơm trắng, rau luộc và nước mắm ớt hoặc tương ớt tùy khẩu vị.",
+      "tips": [
+        "Giữ cá và thịt xay lạnh trước khi trộn để hỗn hợp dễ quết.",
+        "Quết đến khi nhân dẻo và dính tay, không nặn miếng quá dày.",
+        "Chiên lửa vừa để mặt ngoài vàng mà phần giữa chín kỹ."
+      ],
+      "dish_type": [
+        "Món mặn",
+        "Món chiên"
+      ],
+      "main_ingredient": [
+        "cá thác lác",
+        "thịt heo xay",
+        "thì là"
+      ],
+      "cooking_method": [
+        "quết chả",
+        "chiên"
+      ],
+      "search_terms": [
+        "chả cá thác lác chiên thì là",
+        "chả cá thì là",
+        "chả cá thác lác",
+        "chả cá chiên"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Các miếng chả cá thác lác trộn thì là chiên vàng trên đĩa gốm hoa lam.",
+      "time_note": "Khoảng 45 phút; chiên theo mẻ để nhiệt dầu không giảm quá nhanh.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Canh rau ngót thịt băm",
+        "Rau muống luộc"
+      ],
+      "recipe_family": "dill_knifefish_pork_fried_patties",
+      "keywords": [
+        "Chả cá thác lác chiên thì là",
+        "Chả cá thác lác thì là",
+        "Chả cá thì là",
+        "cá thác lác",
+        "thịt heo xay",
+        "thì là",
+        "quết chả",
+        "chiên",
+        "Món mặn",
+        "Món chiên"
+      ],
+      "tags": {
+        "region": [
+          "Toàn quốc"
+        ],
+        "province": [],
+        "meal_type": [
+          "bữa ăn gia đình",
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Món mặn",
+          "Món chiên"
+        ],
+        "main_ingredient": [
+          "cá thác lác",
+          "thịt heo xay",
+          "thì là"
+        ],
+        "cooking_method": [
+          "quết chả",
+          "chiên"
+        ],
+        "difficulty": "Dễ",
+        "prep_time": 15,
+        "cook_time": 30,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Cơm trắng",
+          "Canh rau ngót thịt băm",
+          "Rau muống luộc"
+        ],
+        "keywords": [
+          "chả cá thác lác chiên thì là",
+          "chả cá thì là",
+          "chả cá thác lác",
+          "chả cá chiên",
+          "cá thác lác",
+          "thịt heo xay",
+          "thì là",
+          "quết chả",
+          "chiên"
+        ]
+      },
+      "ingredients": [
+        {
+          "name": "Cá thác lác nạo",
+          "quantity": 400,
+          "unit": "g",
+          "role": "seafood",
+          "notes": "Để lạnh, thấm khô nếu có nước.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Thịt heo xay",
+          "quantity": 300,
+          "unit": "g",
+          "role": "meat",
+          "notes": "Chọn thịt xay có chút mỡ để chả không khô.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Thì là",
+          "quantity": 30,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Nhặt rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 30,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 5
+        },
+        {
+          "name": "Hành lá",
+          "quantity": 20,
+          "unit": "g",
+          "role": "herb",
+          "notes": "Rửa sạch, thái nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 6
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Điều chỉnh theo độ mặn của cá và nước mắm.",
+          "scaling_rule": "seasoning",
+          "sequence": 7
+        },
+        {
+          "name": "Hạt nêm",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng lượng khởi điểm.",
+          "scaling_rule": "seasoning",
+          "sequence": 8
+        },
+        {
+          "name": "Muối",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm phần nhân.",
+          "scaling_rule": "seasoning",
+          "sequence": 9
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Có thể giảm nếu trẻ nhỏ cùng ăn.",
+          "scaling_rule": "seasoning",
+          "sequence": 10
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 75,
+          "unit": "ml",
+          "role": "cooking_fat",
+          "notes": "Dùng chiên áp chảo nhiều dầu; lượng thực tế hấp thụ ít hơn.",
+          "scaling_rule": "vessel_dependent",
+          "sequence": 11
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Giữ cá và thịt xay lạnh; nhặt rửa thì là, hành lá rồi thái nhỏ. Băm hành tím và tỏi."
+        },
+        {
+          "step": 2,
+          "instruction": "Trộn cá thác lác với thịt xay, hành tím, tỏi, nước mắm, hạt nêm, muối và tiêu."
+        },
+        {
+          "step": 3,
+          "instruction": "Quết hỗn hợp đến khi dẻo dính; trộn thì là và hành lá vào sau cùng."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Thoa ít dầu lên tay, chia nhân thành phần đều nhau rồi ép thành miếng dẹt vừa ăn."
+        },
+        {
+          "step": 2,
+          "instruction": "Làm nóng dầu ở lửa vừa; chiên từng mẻ, trở mặt khi viền chả se và vàng nhẹ."
+        },
+        {
+          "step": 3,
+          "instruction": "Chiên đến khi hai mặt vàng đều và phần giữa chín hoàn toàn; gắp ra giấy thấm dầu."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.dienmayxanh.com/vao-bep/3-cach-lam-cha-ca-thac-lac-chien-gion-dai-de-thuc-hien-tai-09831",
+          "publisher": "Điện máy XANH",
+          "title": "2 cách làm chả cá thác lác chiên thì là và cốm xanh dai ngon, dễ làm",
+          "use": "Đối chiếu cá thác lác, thịt xay, thì là, hành tỏi, thời gian sơ chế và kỹ thuật quết rồi chiên.",
+          "accessed_at": "2026-10-26",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Scale the main ingredients to half.",
+            "instruction": "Start with less than half of the seasonings, then taste and adjust."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.25,
+            "example": "Scale the main ingredients by 1.5.",
+            "instruction": "Add seasonings gradually and taste before serving."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 1.6,
+            "example": "Double the main ingredients.",
+            "instruction": "Adjust liquids to the pot size and check doneness at the thickest part."
+          }
+        ],
+        "rules": [
+          "Nguyên liệu chính tăng theo khẩu phần; gia vị mặn, ngọt và cay chỉ dùng hệ số khởi điểm rồi nếm lại.",
+          "Không nhân đôi thời gian nấu khi tăng khẩu phần; chia mẻ nếu dụng cụ không đủ rộng.",
+          "Nước, dầu và vật dụng chứa hoặc nướng cần điều chỉnh theo kích thước nồi, chảo hay ống tre."
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/cha-ca-thac-lac-chien-thi-la-960.webp",
+          "page_url": "https://www.dienmayxanh.com/vao-bep/3-cach-lam-cha-ca-thac-lac-chien-gion-dai-de-thuc-hien-tai-09831",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập công thức.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Các miếng chả cá thác lác trộn thì là chiên vàng trên đĩa gốm hoa lam.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-26",
+          "photo_variant_note": "PNG nguồn ImageGen có nền trong suốt; WebP 3840×2160 được dàn vào khung 16:9 và phóng từ ảnh nguồn, không phải ảnh render gốc 4K. Công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Biên tập theo biến thể chiên thì là; lượng dầu tính cho cách chiên áp chảo nhiều dầu và cần chỉnh theo kích thước chảo.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-26",
+        "needs": [
+          "Nấu thử độ dai, độ chín ở giữa miếng chả và lượng dầu thực tế."
+        ]
+      },
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "id": "BV780",
+      "slug": "ca-lo-o-kho-mang",
+      "name": "Cá lồ ồ kho măng chua",
+      "aliases": [
+        "Cá lồ ồ kho măng"
+      ],
+      "region": [
+        "Miền Trung"
+      ],
+      "province": [],
+      "category": "Món mặn",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "bữa ăn gia đình"
+      ],
+      "difficulty": "Trung bình",
+      "servings": 4,
+      "serving_basis": "Khẩu phần cho bốn người trong một bữa cơm gia đình.",
+      "prep_time": 15,
+      "cook_time": 30,
+      "passive_time": 0,
+      "total_time": 45,
+      "description": "Cá lồ ồ săn chắc được chiên sơ rồi kho liu riu với măng chua, hành tỏi và ớt. Nước kho đậm vị bám quanh cá, vị chua nhẹ của măng giúp bữa cơm thêm cân bằng.",
+      "finished_dish": "Cá chín chắc, thấm gia vị mà còn nguyên khúc; măng mềm giòn, nước kho sánh nhẹ với vị mặn ngọt chua cay hài hòa.",
+      "serving": "Dùng nóng với cơm trắng; thêm rau luộc hoặc canh rau thanh vị để cân bằng món kho.",
+      "tips": [
+        "Luộc măng chua trước nếu măng có vị gắt; để ráo để nước kho không bị loãng.",
+        "Chiên cá sơ cho mặt săn rồi mới kho, hạn chế trở nhiều lần.",
+        "Nếm nước kho trước khi cạn vì độ chua của măng và độ mặn nước mắm khác nhau."
+      ],
+      "dish_type": [
+        "Món mặn",
+        "Món kho",
+        "Đặc sản miền Trung"
+      ],
+      "main_ingredient": [
+        "cá lồ ồ",
+        "măng chua"
+      ],
+      "cooking_method": [
+        "chiên sơ",
+        "kho"
+      ],
+      "search_terms": [
+        "cá lồ ồ kho măng",
+        "cá lồ ồ kho măng chua",
+        "cá kho măng miền Trung"
+      ],
+      "spicy_level": 1,
+      "image_alt": "Cá lồ ồ nguyên con kho trong nồi đất cùng măng chua, ớt đỏ và nước sốt màu hổ phách.",
+      "time_note": "Khoảng 45 phút; chưa tính thời gian ngâm hoặc luộc măng để giảm độ chua.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Rau luộc",
+        "Canh rau tập tàng nấu tôm"
+      ],
+      "recipe_family": "central_vietnam_lo_o_fish_sour_bamboo_braise",
+      "keywords": [
+        "Cá lồ ồ kho măng chua",
+        "Cá lồ ồ kho măng",
+        "cá lồ ồ",
+        "măng chua",
+        "chiên sơ",
+        "kho",
+        "Món mặn",
+        "Món kho",
+        "Đặc sản miền Trung"
+      ],
+      "tags": {
+        "region": [
+          "Miền Trung"
+        ],
+        "province": [],
+        "meal_type": [
+          "bữa ăn gia đình",
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Món mặn",
+          "Món kho",
+          "Đặc sản miền Trung"
+        ],
+        "main_ingredient": [
+          "cá lồ ồ",
+          "măng chua"
+        ],
+        "cooking_method": [
+          "chiên sơ",
+          "kho"
+        ],
+        "difficulty": "Trung bình",
+        "prep_time": 15,
+        "cook_time": 30,
+        "servings": 4,
+        "spicy_level": 1,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Cơm trắng",
+          "Rau luộc",
+          "Canh rau tập tàng nấu tôm"
+        ],
+        "keywords": [
+          "cá lồ ồ kho măng",
+          "cá lồ ồ kho măng chua",
+          "cá kho măng miền Trung",
+          "cá lồ ồ",
+          "măng chua",
+          "chiên sơ",
+          "kho"
+        ]
+      },
+      "ingredients": [
+        {
+          "name": "Cá lồ ồ",
+          "quantity": 500,
+          "unit": "g",
+          "role": "seafood",
+          "notes": "Làm sạch, bỏ mang và ruột, khứa nhẹ hai bên thân.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Măng chua",
+          "quantity": 400,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Rửa sạch; luộc sơ nếu măng có vị chua gắt rồi để ráo.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Hành tím",
+          "quantity": 25,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 15,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Ớt đỏ",
+          "quantity": 2,
+          "unit": "quả",
+          "role": "seasoning",
+          "notes": "Thái lát; bỏ hạt nếu muốn giảm cay.",
+          "scaling_rule": "seasoning",
+          "sequence": 5
+        },
+        {
+          "name": "Nước mắm",
+          "quantity": 45,
+          "unit": "ml",
+          "role": "seasoning",
+          "notes": "Nêm theo độ mặn của nước mắm.",
+          "scaling_rule": "seasoning",
+          "sequence": 6
+        },
+        {
+          "name": "Giấm gạo",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "acid",
+          "notes": "Điều chỉnh tùy độ chua của măng.",
+          "scaling_rule": "seasoning",
+          "sequence": 7
+        },
+        {
+          "name": "Đường",
+          "quantity": 12,
+          "unit": "g",
+          "role": "sweetener",
+          "notes": "Cân vị chua mặn.",
+          "scaling_rule": "seasoning",
+          "sequence": 8
+        },
+        {
+          "name": "Hạt nêm",
+          "quantity": 5,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng lượng khởi điểm.",
+          "scaling_rule": "seasoning",
+          "sequence": 9
+        },
+        {
+          "name": "Muối",
+          "quantity": 3,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Dùng sơ chế và nêm cá.",
+          "scaling_rule": "seasoning",
+          "sequence": 10
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm nước ướp.",
+          "scaling_rule": "seasoning",
+          "sequence": 11
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 100,
+          "unit": "ml",
+          "role": "cooking_fat",
+          "notes": "Dùng chiên sơ cá, điều chỉnh theo chảo.",
+          "scaling_rule": "vessel_dependent",
+          "sequence": 12
+        },
+        {
+          "name": "Nước nóng",
+          "quantity": 120,
+          "unit": "ml",
+          "role": "liquid",
+          "notes": "Pha cùng phần nước ướp để kho.",
+          "scaling_rule": "vessel_dependent",
+          "sequence": 13
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm sạch cá, để ráo rồi khứa nhẹ thân; rửa măng chua và luộc sơ nếu măng quá gắt."
+        },
+        {
+          "step": 2,
+          "instruction": "Băm hành tím, tỏi; thái ớt. Ướp cá khoảng 10 phút với một phần nước mắm, giấm, đường, tiêu và muối."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Làm nóng một lớp dầu trong chảo, chiên lướt cá đến khi mặt ngoài săn lại; gắp ra để ráo."
+        },
+        {
+          "step": 2,
+          "instruction": "Dùng ít dầu phi thơm hành tỏi, cho măng vào xào khoảng 3 phút rồi chuyển vào nồi kho."
+        },
+        {
+          "step": 3,
+          "instruction": "Xếp cá lên măng; hòa phần gia vị còn lại với nước nóng, rưới vào nồi và kho nhỏ lửa có đậy nắp khoảng 15 phút."
+        },
+        {
+          "step": 4,
+          "instruction": "Trở cá nhẹ tay, kho thêm khoảng 15 phút đến khi cá chín và nước sốt bám quanh măng, cá."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.dienmayxanh.com/vao-bep/cach-lam-ca-lo-o-kho-mang-dam-da-dan-da-chuan-vi-mien-trung-10729",
+          "publisher": "Điện máy XANH",
+          "title": "Cách làm cá lồ ồ kho măng đậm đà dân dã chuẩn vị miền Trung",
+          "use": "Đối chiếu cá lồ ồ, măng chua, gia vị, bước chiên sơ và kho hai lượt trên lửa nhỏ.",
+          "accessed_at": "2026-10-26",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://baodaknong.vn/ca-lo-o-la-ca-gi-4-mon-an-ngon-de-lam-tu-ca-lo-o-203211.html",
+          "publisher": "Báo Đắk Nông",
+          "title": "Cá lồ ồ là cá gì? 4 món ăn ngon, dễ làm từ cá lồ ồ",
+          "use": "Đối chiếu cách gọi địa phương và sự phổ biến của cá lồ ồ ở các tỉnh miền Trung.",
+          "accessed_at": "2026-10-26",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Scale the main ingredients to half.",
+            "instruction": "Start with less than half of the seasonings, then taste and adjust."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.25,
+            "example": "Scale the main ingredients by 1.5.",
+            "instruction": "Add seasonings gradually and taste before serving."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 1.6,
+            "example": "Double the main ingredients.",
+            "instruction": "Adjust liquids to the pot size and check doneness at the thickest part."
+          }
+        ],
+        "rules": [
+          "Nguyên liệu chính tăng theo khẩu phần; gia vị mặn, ngọt và cay chỉ dùng hệ số khởi điểm rồi nếm lại.",
+          "Không nhân đôi thời gian nấu khi tăng khẩu phần; chia mẻ nếu dụng cụ không đủ rộng.",
+          "Nước, dầu và vật dụng chứa hoặc nướng cần điều chỉnh theo kích thước nồi, chảo hay ống tre."
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/ca-lo-o-kho-mang-960.webp",
+          "page_url": "https://www.dienmayxanh.com/vao-bep/cach-lam-ca-lo-o-kho-mang-dam-da-dan-da-chuan-vi-mien-trung-10729",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập công thức.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Cá lồ ồ nguyên con kho trong nồi đất cùng măng chua, ớt đỏ và nước sốt màu hổ phách.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-26",
+          "photo_variant_note": "PNG nguồn ImageGen có nền trong suốt; WebP 3840×2160 được dàn vào khung 16:9 và phóng từ ảnh nguồn, không phải ảnh render gốc 4K. Công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Biên tập theo công thức cá lồ ồ kho măng miền Trung; lượng dầu được giảm cho cách chiên sơ trong chảo gia đình.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-26",
+        "needs": [
+          "Nấu thử độ chua, độ mặn và thời gian kho theo kích thước cá thực tế."
+        ]
+      },
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "id": "BV781",
+      "slug": "dau-bap-xao-ca-chua-chay",
+      "name": "Đậu bắp xào cà chua chay",
+      "aliases": [
+        "Đậu bắp xào cà chua",
+        "Đậu bắp sốt cà chua chay"
+      ],
+      "region": [
+        "Toàn quốc"
+      ],
+      "province": [],
+      "category": "Món chay",
+      "meal_type": [
+        "bữa trưa",
+        "bữa tối",
+        "bữa ăn gia đình"
+      ],
+      "difficulty": "Dễ",
+      "servings": 4,
+      "serving_basis": "Một đĩa rau cho bốn người dùng trong bữa cơm gia đình.",
+      "prep_time": 15,
+      "cook_time": 10,
+      "passive_time": 0,
+      "total_time": 25,
+      "description": "Đậu bắp xanh được chần vừa tới rồi xào cùng cà chua chín mềm. Vị chua dịu quyện lớp sốt nhẹ, tạo món rau chay dễ ăn và hợp với cơm nóng.",
+      "finished_dish": "Đậu bắp xanh mềm nhưng còn độ giòn, cà chua chín nhừ vừa đủ tạo sốt sánh nhẹ; món ăn có vị chua dịu và nêm vừa miệng.",
+      "serving": "Dọn nóng cùng cơm trắng và các món chay khác trong bữa cơm gia đình.",
+      "tips": [
+        "Chần đậu bắp khoảng 3 phút rồi để ráo để đậu nhanh chín khi xào và giữ màu xanh.",
+        "Không chần quá lâu để đậu bắp không mềm nhũn; xào nhẹ tay sau khi cho vào chảo.",
+        "Nêm gia vị từ ít rồi điều chỉnh theo độ chua của cà chua."
+      ],
+      "dish_type": [
+        "Món chay",
+        "Món rau",
+        "Món xào"
+      ],
+      "main_ingredient": [
+        "đậu bắp",
+        "cà chua"
+      ],
+      "cooking_method": [
+        "chần",
+        "xào"
+      ],
+      "search_terms": [
+        "đậu bắp xào cà chua chay",
+        "đậu bắp xào cà chua",
+        "món chay từ đậu bắp",
+        "món chay dễ làm"
+      ],
+      "spicy_level": 0,
+      "image_alt": "Đĩa đậu bắp xanh xào cà chua chín mềm với lớp sốt đỏ nhẹ.",
+      "time_note": "Khoảng 25 phút, gồm thời gian sơ chế và chần đậu bắp.",
+      "suggested_pairings": [
+        "Cơm trắng",
+        "Đậu phụ kho nấm",
+        "Canh rau củ chay"
+      ],
+      "recipe_family": "vegetarian_okra_tomato_stir_fry",
+      "keywords": [
+        "Đậu bắp xào cà chua chay",
+        "đậu bắp",
+        "cà chua",
+        "món chay",
+        "món rau xào"
+      ],
+      "tags": {
+        "region": [
+          "Toàn quốc"
+        ],
+        "province": [],
+        "meal_type": [
+          "bữa ăn gia đình",
+          "bữa trưa",
+          "bữa tối"
+        ],
+        "dish_type": [
+          "Món chay",
+          "Món rau",
+          "Món xào"
+        ],
+        "main_ingredient": [
+          "đậu bắp",
+          "cà chua"
+        ],
+        "cooking_method": [
+          "chần",
+          "xào"
+        ],
+        "difficulty": "Dễ",
+        "prep_time": 15,
+        "cook_time": 10,
+        "servings": 4,
+        "spicy_level": 0,
+        "suitable_for_family_meal": true,
+        "suggested_pairings": [
+          "Cơm trắng",
+          "Đậu phụ kho nấm",
+          "Canh rau củ chay"
+        ],
+        "keywords": [
+          "đậu bắp xào cà chua chay",
+          "đậu bắp",
+          "cà chua",
+          "món chay",
+          "món rau xào"
+        ]
+      },
+      "ingredients": [
+        {
+          "name": "Đậu bắp",
+          "quantity": 200,
+          "unit": "g",
+          "role": "vegetable",
+          "notes": "Chọn quả non, rửa sạch, cắt bỏ cuống.",
+          "scaling_rule": "linear",
+          "sequence": 1
+        },
+        {
+          "name": "Cà chua",
+          "quantity": 2,
+          "unit": "quả",
+          "role": "vegetable",
+          "notes": "Rửa sạch, bổ múi cau; chọn quả chín vừa.",
+          "scaling_rule": "linear",
+          "sequence": 2
+        },
+        {
+          "name": "Tỏi",
+          "quantity": 10,
+          "unit": "g",
+          "role": "aromatic",
+          "notes": "Bóc vỏ, băm nhỏ.",
+          "scaling_rule": "linear",
+          "sequence": 3
+        },
+        {
+          "name": "Dầu ăn",
+          "quantity": 15,
+          "unit": "ml",
+          "role": "cooking_fat",
+          "notes": "Dùng phi tỏi và xào cà chua.",
+          "scaling_rule": "linear",
+          "sequence": 4
+        },
+        {
+          "name": "Hạt nêm chay",
+          "quantity": 4,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Kiểm tra nhãn để bảo đảm phù hợp chế độ chay.",
+          "scaling_rule": "seasoning",
+          "sequence": 5
+        },
+        {
+          "name": "Muối",
+          "quantity": 2,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Nêm từ ít rồi điều chỉnh theo khẩu vị.",
+          "scaling_rule": "seasoning",
+          "sequence": 6
+        },
+        {
+          "name": "Tiêu xay",
+          "quantity": 1,
+          "unit": "g",
+          "role": "seasoning",
+          "notes": "Rắc cuối cùng; có thể bỏ nếu không dùng tiêu.",
+          "scaling_rule": "seasoning",
+          "sequence": 7
+        }
+      ],
+      "preparation_steps": [
+        {
+          "step": 1,
+          "instruction": "Rửa đậu bắp, cắt bỏ cuống rồi chần trong nước sôi khoảng 3 phút; vớt ra để ráo và cắt khúc vừa ăn."
+        },
+        {
+          "step": 2,
+          "instruction": "Rửa cà chua, bổ múi cau; bóc vỏ và băm nhỏ tỏi."
+        }
+      ],
+      "cooking_steps": [
+        {
+          "step": 1,
+          "instruction": "Đun nóng dầu, phi tỏi vừa thơm rồi cho cà chua vào đảo đến khi mềm và tiết nước."
+        },
+        {
+          "step": 2,
+          "instruction": "Thêm đậu bắp đã chần, nêm hạt nêm chay và muối; đảo nhẹ tay khoảng 4–5 phút để rau thấm sốt mà không bị nát."
+        },
+        {
+          "step": 3,
+          "instruction": "Nếm lại, rắc tiêu xay nếu dùng, rồi tắt bếp khi đậu bắp vừa chín."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://hayan.vn/vao-bep/cach-lam-dau-bap-xao-ca-chua-chay-thanh-dam-huong-sac-bat-mat-p7868.html",
+          "publisher": "HAY ĂN",
+          "title": "Cách làm đậu bắp xào cà chua chay thanh đạm, hương sắc bắt mắt",
+          "use": "Đối chiếu nguyên liệu đậu bắp, cà chua và cách chần đậu trước khi xào thành món chay.",
+          "accessed_at": "2026-10-26",
+          "type": "editorial_reference"
+        },
+        {
+          "url": "https://cachnaungon.com/cach-lam-dau-bap-xao-ca-chua-chay-thanh-dam-11243/",
+          "publisher": "Cách Nấu Ngon",
+          "title": "Cách làm đậu bắp xào cà chua chay thanh đạm",
+          "use": "Đối chiếu định lượng khoảng 200 g đậu bắp, 2 quả cà chua, gia vị chay và trình tự xào rau với cà chua.",
+          "accessed_at": "2026-10-26",
+          "type": "editorial_reference"
+        }
+      ],
+      "scaling": {
+        "base_servings": 4,
+        "targets": [
+          {
+            "servings": 2,
+            "main_factor": 0.5,
+            "seasoning_start_factor": 0.45,
+            "example": "Scale the main ingredients to half.",
+            "instruction": "Start with less than half of the seasonings, then taste and adjust."
+          },
+          {
+            "servings": 6,
+            "main_factor": 1.5,
+            "seasoning_start_factor": 1.25,
+            "example": "Scale the main ingredients by 1.5.",
+            "instruction": "Add seasonings gradually and taste before serving."
+          },
+          {
+            "servings": 8,
+            "main_factor": 2.0,
+            "seasoning_start_factor": 1.6,
+            "example": "Double the main ingredients.",
+            "instruction": "Adjust the cooking time and seasoning gradually."
+          }
+        ],
+        "rules": [
+          "Nguyên liệu chính tăng theo khẩu phần; gia vị mặn, ngọt và cay chỉ dùng hệ số khởi điểm rồi nếm lại.",
+          "Không nhân đôi thời gian nấu khi tăng khẩu phần; chia mẻ nếu dụng cụ không đủ rộng.",
+          "Nước, dầu và vật dụng chứa hoặc nướng cần điều chỉnh theo kích thước nồi, chảo hay ống tre."
+        ]
+      },
+      "media": [
+        {
+          "image_url": "/images/recipes/edited/dau-bap-xao-ca-chua-chay-960.webp",
+          "page_url": "https://hayan.vn/vao-bep/cach-lam-dau-bap-xao-ca-chua-chay-thanh-dam-huong-sac-bat-mat-p7868.html",
+          "source": "Bếp Việt",
+          "author": "Bếp Việt",
+          "license": null,
+          "rights_status": "project",
+          "rights_note": "Ảnh món ăn được tạo riêng cho Bếp Việt; nguồn tham khảo chỉ dùng để biên tập công thức.",
+          "width": 3840,
+          "height": 2160,
+          "orientation": "landscape",
+          "preferred_width_met": true,
+          "alt_text": "Đĩa đậu bắp xanh xào cà chua chín mềm với lớp sốt đỏ nhẹ.",
+          "verified_dish_match": true,
+          "visual_review_date": "2026-10-26",
+      "photo_variant_note": "PNG ImageGen nguồn 1448×1086 có nền trong suốt; WebP 3840×2160 là bản dàn vào khung 16:9 và phóng từ nguồn, không phải ảnh render gốc 4K. Công thức chưa nấu thử."
+        }
+      ],
+      "editorial": {
+        "status": "editorial_draft",
+        "production_ready": false,
+        "test_cook_status": "not_tested",
+        "variant_note": "Biên tập món đậu bắp xào cà chua theo hướng chay, giữ vị chua dịu và cách làm gọn cho bữa cơm gia đình.",
+        "seed_recipe": null,
+        "reviewed_at": "2026-10-26",
+        "needs": [
+          "Nấu thử để xác nhận độ chín sau khi chần, lượng gia vị và độ sánh của cà chua theo mùa."
+        ]
+      },
+      "width": 3840,
+      "height": 2160
+    }
+  ]
+}

@@ -42,6 +42,9 @@ class User(Base):
     avatar_content_type: Mapped[str | None] = mapped_column(String(32))
     avatar_updated_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
     last_login_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    # Bằng chứng đồng ý Điều khoản/Chính sách: thời điểm và phiên bản người dùng chấp nhận.
+    terms_accepted_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    terms_version: Mapped[str | None] = mapped_column(String(16))
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
     updated_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), server_default=func.now(), onupdate=func.now()

@@ -1,0 +1,56 @@
+# Render Blueprint cho API Bếp Việt (Dashboard -> New -> Blueprint -> chọn repo này).
+# Biến "sync: false" Render sẽ hỏi khi tạo; không bao giờ ghi giá trị bí mật vào tệp này.
+# <FRONTEND> là domain Vercel thật, ví dụ https://bep-viet.vercel.app
+services:
+  - type: web
+    name: bep-viet-api # Khớp destination trong frontend/vercel.json
+    runtime: docker
+    plan: free
+    region: singapore # Gần Việt Nam nhất
+    rootDir: backend
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/v1/livez
+    autoDeploy: true
+    envVars:
+      - key: BEP_VIET_APP_ENV
+        value: production
+      - key: BEP_VIET_JWT_SECRET
+        generateValue: true # Render tự sinh chuỗi ngẫu nhiên dài
+      - key: BEP_VIET_DATABASE_URL
+        sync: false # URL Neon, có ?sslmode=require
+      - key: BEP_VIET_FRONTEND_URL
+        sync: false # <FRONTEND>
+      - key: BEP_VIET_CORS_ORIGINS
+        sync: false # ["<FRONTEND>"]
+      - key: BEP_VIET_GOOGLE_REDIRECT_URI
+        sync: false # <FRONTEND>/api/v1/auth/oauth/google/callback
+      - key: BEP_VIET_GOOGLE_CLIENT_ID
+        sync: false
+      - key: BEP_VIET_GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: BEP_VIET_EMAIL_PROVIDER
+        value: gmail_api # Render free chặn cổng SMTP
+      - key: BEP_VIET_EMAIL_GMAIL_CLIENT_ID
+        sync: false
+      - key: BEP_VIET_EMAIL_GMAIL_CLIENT_SECRET
+        sync: false
+      - key: BEP_VIET_EMAIL_GMAIL_REFRESH_TOKEN
+        sync: false
+      - key: BEP_VIET_EMAIL_FROM_ADDRESS
+        sync: false
+      - key: BEP_VIET_SUPPORT_EMAIL
+        sync: false
+      # Trình duyệt -> Vercel (rewrite /api) -> Render: hai proxy nối IP vào X-Forwarded-For.
+      - key: BEP_VIET_TRUSTED_PROXY_HOPS
+        value: "2"
+      # Gói free 0,1 CPU / 512 MB: một tiến trình, giới hạn tải để báo "đông khách" thay vì treo.
+      - key: BEP_VIET_MAX_CONCURRENT_REQUESTS
+        value: "64"
+      - key: BEP_VIET_DB_POOL_SIZE
+        value: "5"
+      - key: BEP_VIET_DB_MAX_OVERFLOW
+        value: "5"
+      - key: BEP_VIET_DB_POOL_TIMEOUT_SECONDS
+        value: "10"
+      - key: BEP_VIET_MAINTENANCE_MODE
+        value: "false"

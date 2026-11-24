@@ -12,3 +12,6 @@ interface ImportMetaEnv {
 interface ImportMeta {
   readonly env: ImportMetaEnv;
 }
+
+/** Mã build hiện tại (vite.config.ts), dùng để phát hiện phiên bản mới. */
+declare const __APP_BUILD__: string;

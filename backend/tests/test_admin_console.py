@@ -208,11 +208,11 @@ def test_admin_support_read_and_email_reply_statuses(
     )
     assert sent.status_code == 201
     assert "24 giờ làm việc" in sent.json()["message"]
-    assert sent.json()["support_email"] == "hvlongg@gmail.com"
+    assert sent.json()["support_email"] == "support@bepviet.vn"
     contact = client.get("/api/v1/support/contact-info")
     assert contact.status_code == 200
     assert contact.json() == {
-        "support_email": "hvlongg@gmail.com",
+        "support_email": "support@bepviet.vn",
         "response_sla_business_hours": 24,
     }
     mine = client.get("/api/v1/support/tickets/mine", headers=member)

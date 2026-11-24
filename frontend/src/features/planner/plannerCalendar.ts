@@ -95,3 +95,30 @@ export function formatDayMonth(date: Date, locale: string) {
     .map((part) => part.value)
     .join('/');
 }
+
+/** Ngày đầy đủ dạng số (vi: 14/11/2026). */
+export function formatFullDate(date: Date, locale: string) {
+  return new Intl.DateTimeFormat(locale, {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+  }).format(date);
+}
+
+/** Ngày giờ dạng "14/11/2026 21:38". */
+export function formatDateTime(date: Date, locale: string) {
+  const time = new Intl.DateTimeFormat(locale, {
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false,
+  }).format(date);
+  return `${formatFullDate(date, locale)} ${time}`;
+}
+
+/** Thứ kèm ngày ngắn, đọc được cho cả người và trình đọc màn hình (vi: "Thứ Bảy, 14/11"). */
+export function formatWeekdayDate(date: Date, locale: string, withYear = false) {
+  const weekday = new Intl.DateTimeFormat(locale, { weekday: 'long' }).format(date);
+  const capitalized = weekday.charAt(0).toLocaleUpperCase(locale) + weekday.slice(1);
+  const day = withYear ? formatFullDate(date, locale) : formatDayMonth(date, locale);
+  return `${capitalized}, ${day}`;
+}

@@ -1,0 +1,263 @@
+{
+  "batch": 90,
+  "canvas": {
+    "width": 3840,
+    "height": 2160,
+    "format": "WebP",
+    "background": "transparent"
+  },
+  "native_format": "PNG",
+  "export_master_format": "PNG",
+  "assets": [
+    {
+      "id": "BV777",
+      "slug": "bo-nuong-ong-tre",
+      "native_file": "output/recipe-images/native/bo-nuong-ong-tre.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/bo-nuong-ong-tre.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "upscale_note": "Transparent ImageGen source 1536x1024; 3840x2160 is fitted and upscaled, not native 4K.",
+      "web_variants": [
+        {
+          "path": "/images/recipes/edited/bo-nuong-ong-tre-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/bo-nuong-ong-tre-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/bo-nuong-ong-tre-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/bo-nuong-ong-tre-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "id": "BV778",
+      "slug": "canh-bong-bi-tom-nam-kim-cham",
+      "native_file": "output/recipe-images/native/canh-bong-bi-tom-nam-kim-cham.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/canh-bong-bi-tom-nam-kim-cham.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "upscale_note": "Transparent ImageGen source 1536x1024; 3840x2160 is fitted and upscaled, not native 4K.",
+      "web_variants": [
+        {
+          "path": "/images/recipes/edited/canh-bong-bi-tom-nam-kim-cham-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/canh-bong-bi-tom-nam-kim-cham-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/canh-bong-bi-tom-nam-kim-cham-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/canh-bong-bi-tom-nam-kim-cham-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "id": "BV779",
+      "slug": "cha-ca-thac-lac-chien-thi-la",
+      "native_file": "output/recipe-images/native/cha-ca-thac-lac-chien-thi-la.png",
+      "native_pixels": [
+        1426,
+        1103
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/cha-ca-thac-lac-chien-thi-la.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "upscale_note": "Transparent ImageGen source 1426x1103; 3840x2160 is fitted and upscaled, not native 4K.",
+      "web_variants": [
+        {
+          "path": "/images/recipes/edited/cha-ca-thac-lac-chien-thi-la-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/cha-ca-thac-lac-chien-thi-la-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/cha-ca-thac-lac-chien-thi-la-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/cha-ca-thac-lac-chien-thi-la-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "id": "BV780",
+      "slug": "ca-lo-o-kho-mang",
+      "native_file": "output/recipe-images/native/ca-lo-o-kho-mang.png",
+      "native_pixels": [
+        1536,
+        1024
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/ca-lo-o-kho-mang.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "upscale_note": "Transparent ImageGen source 1536x1024; 3840x2160 is fitted and upscaled, not native 4K.",
+      "web_variants": [
+        {
+          "path": "/images/recipes/edited/ca-lo-o-kho-mang-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/ca-lo-o-kho-mang-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/ca-lo-o-kho-mang-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/ca-lo-o-kho-mang-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "id": "BV781",
+      "slug": "dau-bap-xao-ca-chua-chay",
+      "native_file": "output/recipe-images/native/dau-bap-xao-ca-chua-chay.png",
+      "native_pixels": [
+        1448,
+        1086
+      ],
+      "has_alpha": true,
+      "export_master_file": "output/recipe-images/4k/dau-bap-xao-ca-chua-chay.png",
+      "export_master_pixels": [
+        3840,
+        2160
+      ],
+      "upscale_note": "Transparent ImageGen source 1448x1086; 3840x2160 is fitted and upscaled, not native 4K.",
+      "web_variants": [
+        {
+          "path": "/images/recipes/edited/dau-bap-xao-ca-chua-chay-480.webp",
+          "pixels": [
+            480,
+            270
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/dau-bap-xao-ca-chua-chay-960.webp",
+          "pixels": [
+            960,
+            540
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/dau-bap-xao-ca-chua-chay-1536.webp",
+          "pixels": [
+            1536,
+            864
+          ],
+          "has_alpha": true
+        },
+        {
+          "path": "/images/recipes/edited/dau-bap-xao-ca-chua-chay-3840.webp",
+          "pixels": [
+            3840,
+            2160
+          ],
+          "has_alpha": true
+        }
+      ]
+    }
+  ]
+}

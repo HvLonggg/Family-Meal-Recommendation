@@ -1,5 +1,12 @@
 @import 'tailwindcss';
 
+/* Ảnh của Bếp Việt không kéo thả, không giữ lâu để lưu trên điện thoại. */
+img {
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
 :root {
   font-family:
     'Be Vietnam Pro',
@@ -32,7 +39,14 @@
   --color-danger-soft: #fee2e2;
   --color-text: #10213a;
   --color-text-secondary: #475569;
-  --color-text-muted: #64748b;
+  --color-text-muted: #6f665d;
+  /* Thang chữ tiêu đề hero trang công cụ (UX-19); trang chủ giữ cỡ riêng. */
+  --hero-title-font: 'Be Vietnam Pro', Inter, 'Segoe UI', sans-serif;
+  --hero-title-size: clamp(1.9rem, 3.2vw, 2.75rem);
+  --hero-title-weight: 640;
+  --hero-title-leading: 1.14;
+  --hero-title-tracking: -0.03em;
+  --hero-padding-block: clamp(28px, 4vw, 44px);
   --color-border: #dbe4f0;
   --color-focus: #2563eb;
   --focus-ring: 0 0 0 3px rgb(37 99 235 / 22%);
@@ -461,4 +475,13 @@ img.dish-cutout.dish-cutout {
   scale: var(--dish-content-scale, 1);
   background: radial-gradient(ellipse at 50% 46%, #fffdf8 0, #fbf1e4 58%, #f1e2cf 100%);
   filter: drop-shadow(0 1px 1px rgb(92 58 38 / 6%));
+}
+
+/* Ô nhập dưới 16px khiến iOS tự phóng to trang khi chạm vào. */
+@media (max-width: 680px) {
+  input:not([type='checkbox']):not([type='radio']):not([type='range']),
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
 }

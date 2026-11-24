@@ -1,5 +1,5 @@
-import { createHash } from 'node:crypto';
-import { readFile, readdir, stat, writeFile } from 'node:fs/promises';
+import { createHash, randomUUID } from 'node:crypto';
+import { readFile, readdir, rename, rm, stat, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -289,11 +289,34 @@ if (missingEarlier.length) {
 let added = 0;
 let updated = 0;
 for (const recipe of recipes) {
+  if (recipe.catalog_sync_status === 'identity_conflict') continue;
   mergeTranslation(recipe, sidecars.get(recipe.id) ?? sidecars.get(recipe.slug));
   if (Number(recipe.id.slice(2)) < 496 && !refreshCuratedIds.has(recipe.id)) {
     const media = primaryMedia(recipe);
     const image = imageRegistry[recipe.slug];
     if (image && media?.alt_text) image.alt = media.alt_text;
+    const existingIndex = existingIndexById.get(recipe.id);
+    const existingRecipe = existingIndex === undefined ? undefined : snapshot.data[existingIndex];
+    // Repair legacy image text damaged by ASCII encoding while preserving curated recipe content.
+    if (
+      existingRecipe?.slug === recipe.slug &&
+      existingRecipe.image_alt?.includes('?') &&
+      media?.alt_text &&
+      !media.alt_text.includes('?') &&
+      existingRecipe.image_alt === media.alt_text.replace(/\P{ASCII}/gu, '?')
+    ) {
+      existingRecipe.image_alt = media.alt_text;
+      const existingMedia = primaryMedia(existingRecipe.content ?? {});
+      if (existingMedia) {
+        existingMedia.alt_text = media.alt_text;
+        if (
+          media.photo_variant_note &&
+          existingMedia.photo_variant_note === media.photo_variant_note.replace(/\P{ASCII}/gu, '?')
+        ) {
+          existingMedia.photo_variant_note = media.photo_variant_note;
+        }
+      }
+    }
     continue;
   }
 
@@ -386,11 +409,35 @@ for (const slug of Object.keys(imageRegistry)) {
   if (!catalogSlugs.has(slug)) delete imageRegistry[slug];
 }
 
-await Promise.all([
-  writeFile(snapshotPath, `${JSON.stringify(snapshot)}\n`, 'utf8'),
-  writeFile(imageRegistryPath, `${JSON.stringify(imageRegistry, null, 2)}\n`, 'utf8'),
-  writeFile(translationPath, `${JSON.stringify(translations, null, 2)}\n`, 'utf8'),
+async function writeJsonAtomically(filename, contents) {
+  const temporaryPath = `${filename}.${process.pid}.${randomUUID()}.tmp`;
+  try {
+    await writeFile(temporaryPath, contents, { encoding: 'utf8', flag: 'wx' });
+    for (let attempt = 0; ; attempt += 1) {
+      try {
+        await rename(temporaryPath, filename);
+        break;
+      } catch (error) {
+        if (attempt >= 5 || !['EACCES', 'EBUSY', 'EPERM', 'UNKNOWN'].includes(error?.code)) {
+          throw error;
+        }
+        // Windows readers can briefly lock the destination; keep the current JSON intact.
+        await new Promise((resolve) => setTimeout(resolve, 100 * (attempt + 1)));
+      }
+    }
+  } finally {
+    await rm(temporaryPath, { force: true }).catch(() => undefined);
+  }
+}
+
+const writes = await Promise.allSettled([
+  writeJsonAtomically(snapshotPath, `${JSON.stringify(snapshot)}\n`),
+  writeJsonAtomically(imageRegistryPath, `${JSON.stringify(imageRegistry, null, 2)}\n`),
+  writeJsonAtomically(translationPath, `${JSON.stringify(translations, null, 2)}\n`),
 ]);
+for (const result of writes) {
+  if (result.status === 'rejected') throw result.reason;
+}
 console.log(
   `Synchronized ${added} new and ${updated} existing curated recipes into the fallback catalog.`,
 );

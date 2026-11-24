@@ -1,6 +1,8 @@
 import fruitPlatterImage from '@/assets/recipes/trai-cay-trang-mieng.jpg';
+import { getMealRole, getMealRoleLabel, hasVegetarianMealLabel } from '@/data/mealComposition';
 import { estimateRecipeNutrition } from '@/data/nutritionEstimate';
 import { getRecipe, recipeMinutes, recipes, type Recipe } from '@/data/recipes';
+import { normalizeSearchText } from '@/lib/search';
 
 export type MealRole = 'main' | 'soup' | 'vegetable' | 'vegetarian' | 'side' | 'dessert';
 export type MealProfile = 'balanced' | 'light' | 'quick' | 'family';
@@ -104,13 +106,6 @@ const legacyDishCatalog: RandomDish[] = [
     'balanced',
     'family',
   ]),
-  fromRecipe('bun-cha-ha-noi', 'main', { calories: 420, protein: 25, vegetableGrams: 90 }, [
-    'family',
-  ]),
-  fromRecipe('pho-ga-gia-dinh', 'main', { calories: 350, protein: 27, vegetableGrams: 45 }, [
-    'light',
-    'family',
-  ]),
   fromRecipe('canh-chua-ca', 'soup', { calories: 115, protein: 13, vegetableGrams: 105 }, [
     'balanced',
     'light',
@@ -160,7 +155,32 @@ const legacyDishCatalog: RandomDish[] = [
   },
 ];
 
-let catalogSource = recipes;
+const DESSERT_SLUG = /^(che|thach|sua chua|banh flan)( |$)/;
+
+/**
+ * Vai của một món trong mâm. Mỗi món chỉ thuộc một nhóm vai trò rõ ràng (món chay có thể
+ * làm món chay hoặc món phụ) để mâm không có hai món canh hay món ngọt ở ô món chính.
+ */
+export function randomMealRoles(recipe: Recipe): MealRole[] {
+  const role = getMealRole(recipe);
+  if (role === 'soup') return ['soup'];
+  if (recipe.category === 'Món ăn kèm') return ['side'];
+  if (role === 'vegetable')
+    return getMealRoleLabel(recipe) === 'Món ăn kèm' ? ['side'] : ['vegetable'];
+  if (role === 'main') {
+    if (recipe.ingredientCategory === 'Trứng') return ['side'];
+    return hasVegetarianMealLabel(recipe) ? ['vegetarian', 'side'] : ['main'];
+  }
+  if (
+    recipe.category === 'Món tráng miệng' &&
+    DESSERT_SLUG.test(normalizeSearchText(recipe.slug))
+  ) {
+    return ['dessert'];
+  }
+  return [];
+}
+
+let catalogSource: Recipe[] | null = null;
 let cachedCatalog = legacyDishCatalog;
 
 export function getRandomDishCatalog(): RandomDish[] {
@@ -181,21 +201,7 @@ export function getRandomDishCatalog(): RandomDish[] {
   const added = recipes
     .filter((recipe) => !legacyKeys.has(recipe.slug))
     .flatMap((recipe): RandomDish[] => {
-      const roles: MealRole[] =
-        recipe.category === 'Món canh'
-          ? ['soup']
-          : recipe.category === 'Món rau'
-            ? ['vegetable']
-            : recipe.category === 'Món chay'
-              ? ['vegetarian', 'side']
-              : recipe.category === 'Món ăn kèm' || recipe.ingredientCategory === 'Trứng'
-                ? ['side']
-                : recipe.category === 'Món tráng miệng' &&
-                    /^(chè|thạch|sữa chua|bánh flan)/i.test(recipe.name)
-                  ? ['dessert']
-                  : recipe.category === 'Món mặn' || recipe.category === 'Món nước'
-                    ? ['main']
-                    : [];
+      const roles = randomMealRoles(recipe);
       const profiles: MealProfile[] = ['balanced', 'family'];
       if (recipeMinutes(recipe) <= 30) profiles.push('quick');
       if (recipe.tags.some((tag) => ['luộc', 'hấp', 'nấu canh'].includes(tag)))
@@ -279,6 +285,16 @@ export function getNextWheelRotation(current: number, segmentIndex: number, segm
   const target = (360 - ((segmentIndex + 0.5) * 360) / segmentCount) % 360;
   const delta = (target - (current % 360) + 360) % 360;
   return current + 1080 + delta;
+}
+
+/** Thời điểm lưu mâm theo dạng HH:mm dd/MM/yyyy (giờ máy người dùng). */
+export function formatSavedMealTime(value: string) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return '';
+  const pad = (part: number) => String(part).padStart(2, '0');
+  return `${pad(date.getHours())}:${pad(date.getMinutes())} ${pad(date.getDate())}/${pad(
+    date.getMonth() + 1,
+  )}/${date.getFullYear()}`;
 }
 
 /** Tên món theo ngôn ngữ hiện tại. */
