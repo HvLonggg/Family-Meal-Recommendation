@@ -2,6 +2,7 @@ import { useSyncExternalStore } from 'react';
 
 import { getRecipeCatalog, setRecipeDictionary, type RecipeDictionary } from '@/data/recipes';
 import type { Language } from '@/features/auth/types';
+import { loadEnglishUiMessages } from '@/features/i18n/translate';
 
 /** Tải từ điển món trước khi đổi ngôn ngữ giao diện. */
 let active: Language = 'vi';
@@ -11,9 +12,10 @@ let pending: Promise<RecipeDictionary> | null = null;
 const listeners = new Set<() => void>();
 
 function loadEnglishDictionary() {
-  pending ??= import('@/features/i18n/recipeContent.en.json').then(
-    (module) => module.default as RecipeDictionary,
-  );
+  pending ??= Promise.all([
+    import('@/features/i18n/recipeContent.en.json'),
+    loadEnglishUiMessages(),
+  ]).then(([module]) => module.default as RecipeDictionary);
   return pending;
 }
 
@@ -22,6 +24,8 @@ function commit(language: Language, dictionary: RecipeDictionary | null) {
   active = language;
   activeDictionary = dictionary;
   setRecipeDictionary(dictionary);
+  // Đổi `lang` ngay khi nội dung đổi ngôn ngữ, không chờ lượt render hay chuyển trang.
+  if (typeof document !== 'undefined') document.documentElement.lang = language;
   for (const listener of listeners) listener();
 }
 

@@ -4,6 +4,7 @@ import { Link, useSearchParams } from 'react-router';
 
 import { AuthAlert } from '@/components/auth/AuthAlert';
 import { AuthField } from '@/components/auth/AuthField';
+import { useAuthTitle } from '@/components/auth/useAuthTitle';
 import { Button } from '@/components/ui/Button';
 import { errorMessage } from '@/lib/errors';
 import { apiPost } from '@/lib/api/client';
@@ -18,6 +19,7 @@ export function ResetPasswordPage() {
   const [searchParams] = useSearchParams();
   const { t } = useI18n();
   const token = searchParams.get('token') ?? '';
+  useAuthTitle(t('Đặt lại mật khẩu'));
   const [message, setMessage] = useState('');
   const [success, setSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -26,7 +28,7 @@ export function ResetPasswordPage() {
     getValues,
     handleSubmit,
     register,
-  } = useForm<ResetForm>();
+  } = useForm<ResetForm>({ mode: 'onTouched' });
 
   const submit = handleSubmit(async (values) => {
     setMessage('');
@@ -45,6 +47,30 @@ export function ResetPasswordPage() {
     }
   });
 
+  // Mở trang mà không có liên kết hợp lệ: không hiện form, hướng dẫn xin liên kết mới.
+  if (!token) {
+    return (
+      <>
+        <div className="auth-card__heading">
+          <span className="auth-kicker">{t('Bảo vệ tài khoản')}</span>
+          <h1>{t('Không thể đặt lại mật khẩu')}</h1>
+        </div>
+        <AuthAlert tone="danger">
+          {t('Liên kết đặt lại mật khẩu không hợp lệ hoặc đã hết hạn.')}
+        </AuthAlert>
+        <p className="auth-reset-invalid__text">
+          {t('Hãy yêu cầu liên kết mới, chúng tôi sẽ gửi ngay vào email của bạn.')}
+        </p>
+        <Link className="button button--primary auth-submit" to="/forgot-password">
+          {t('Gửi lại liên kết đặt lại mật khẩu')}
+        </Link>
+        <p className="auth-switch">
+          <Link to="/login">{t('Đi tới đăng nhập')}</Link>
+        </p>
+      </>
+    );
+  }
+
   return (
     <>
       <div className="auth-card__heading">
@@ -52,9 +78,6 @@ export function ResetPasswordPage() {
         <h1>{t('Tạo mật khẩu mới')}</h1>
         <p>{t('Chọn mật khẩu riêng biệt và dễ nhớ với bạn.')}</p>
       </div>
-      {!token ? (
-        <AuthAlert tone="danger">{t('Liên kết đặt lại mật khẩu đang thiếu token.')}</AuthAlert>
-      ) : null}
       {message ? <AuthAlert tone={success ? 'success' : 'danger'}>{message}</AuthAlert> : null}
       {!success ? (
         <form className="auth-form" onSubmit={(event) => void submit(event)} noValidate>
@@ -87,7 +110,7 @@ export function ResetPasswordPage() {
                 value === getValues('password') || t('Hai mật khẩu chưa trùng nhau.'),
             })}
           />
-          <Button className="auth-submit" disabled={!token} isLoading={isSubmitting} type="submit">
+          <Button className="auth-submit" isLoading={isSubmitting} type="submit">
             {t('Cập nhật mật khẩu')}
           </Button>
         </form>

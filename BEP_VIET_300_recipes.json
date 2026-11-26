@@ -69227,7 +69227,7 @@
       ],
       "difficulty": "Trung bình",
       "servings": 4,
-      "serving_basis": "4 người lớn; món cùng cơm là phần dùng chung trong mâm 3–4 món, món bún/cơm/cháo là 4 phần chính.",
+      "serving_basis": "4 tô bún đầy đủ, mỗi người lớn một tô.",
       "prep_time": 40,
       "cook_time": 150,
       "passive_time": 0,
@@ -69241,7 +69241,7 @@
           "quantity": 400,
           "unit": "g",
           "role": "main",
-          "notes": "Nguyên liệu chính; cân phần dùng được trừ khi ghi nguyên vỏ/có xương.",
+          "notes": "Để nguyên miếng khi ninh, chín mềm mới thái mỏng.",
           "scaling_rule": "linear",
           "sequence": 1
         },
@@ -69259,7 +69259,7 @@
           "quantity": 150,
           "unit": "g",
           "role": "main",
-          "notes": "Nguyên liệu chính; cân phần dùng được trừ khi ghi nguyên vỏ/có xương.",
+          "notes": "Thái lát vừa, xếp vào tô lúc dọn.",
           "scaling_rule": "linear",
           "sequence": 3
         },
@@ -69268,7 +69268,7 @@
           "quantity": 800,
           "unit": "g",
           "role": "main",
-          "notes": "Nguyên liệu chính; cân phần dùng được trừ khi ghi nguyên vỏ/có xương.",
+          "notes": "Trụng nhanh qua nước sôi ngay trước khi chan.",
           "scaling_rule": "linear",
           "sequence": 4
         },
@@ -69277,7 +69277,7 @@
           "quantity": 100,
           "unit": "g",
           "role": "seasoning",
-          "notes": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+          "notes": "Đập dập phần cây để ninh, băm phần non để phi.",
           "scaling_rule": "taste_adjusted",
           "sequence": 5
         },
@@ -69286,7 +69286,7 @@
           "quantity": 25,
           "unit": "g",
           "role": "seasoning",
-          "notes": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+          "notes": "Hòa nước ấm, để lắng, chỉ dùng phần nước trong.",
           "scaling_rule": "taste_adjusted",
           "sequence": 6
         },
@@ -69295,7 +69295,7 @@
           "quantity": 150,
           "unit": "g",
           "role": "seasoning",
-          "notes": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+          "notes": "Để nguyên múi khi ninh cho nước dùng ngọt.",
           "scaling_rule": "taste_adjusted",
           "sequence": 7
         },
@@ -69304,7 +69304,7 @@
           "quantity": 15,
           "unit": "ml",
           "role": "seasoning",
-          "notes": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+          "notes": "Tạo màu; thêm từng ít cho nước vàng đỏ nhẹ.",
           "scaling_rule": "taste_adjusted",
           "sequence": 8
         },
@@ -69313,7 +69313,7 @@
           "quantity": 15,
           "unit": "g",
           "role": "seasoning",
-          "notes": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+          "notes": "Để riêng cho mỗi người tự thêm độ cay.",
           "scaling_rule": "taste_adjusted",
           "sequence": 9
         },
@@ -69322,7 +69322,7 @@
           "quantity": 150,
           "unit": "g",
           "role": "main",
-          "notes": "Nguyên liệu chính; cân phần dùng được trừ khi ghi nguyên vỏ/có xương.",
+          "notes": "Ăn kèm; ngâm nước chanh loãng để không bị thâm.",
           "scaling_rule": "linear",
           "sequence": 10
         },
@@ -69331,7 +69331,7 @@
           "quantity": 150,
           "unit": "g",
           "role": "main",
-          "notes": "Nguyên liệu chính; cân phần dùng được trừ khi ghi nguyên vỏ/có xương.",
+          "notes": "Ăn kèm, để sống hoặc trụng sơ.",
           "scaling_rule": "linear",
           "sequence": 11
         },
@@ -69340,7 +69340,7 @@
           "quantity": 25,
           "unit": "g",
           "role": "seasoning",
-          "notes": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+          "notes": "Thái nhỏ, rắc lên tô lúc dọn.",
           "scaling_rule": "taste_adjusted",
           "sequence": 12
         },
@@ -69349,7 +69349,7 @@
           "quantity": 15,
           "unit": "g",
           "role": "seasoning",
-          "notes": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+          "notes": "Ăn kèm hoặc rắc lên tô lúc dọn.",
           "scaling_rule": "taste_adjusted",
           "sequence": 13
         },
@@ -69367,7 +69367,7 @@
           "quantity": 8,
           "unit": "g",
           "role": "seasoning",
-          "notes": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+          "notes": "Nêm dần sau khi đã cho nước mắm ruốc.",
           "scaling_rule": "taste_adjusted",
           "sequence": 15
         },
@@ -69376,7 +69376,7 @@
           "quantity": 15,
           "unit": "g",
           "role": "seasoning",
-          "notes": "Gia vị; lượng khởi điểm, nếm sau khi nấu chín.",
+          "notes": "Cho ít một để cân vị mặn của ruốc.",
           "scaling_rule": "taste_adjusted",
           "sequence": 16
         },
@@ -69434,8 +69434,8 @@
       "serving": "Dùng nóng ngay sau khi chan nước hoặc trộn, xem như phần chính của bữa sáng/trưa/tối. Rau và gia vị cay để riêng; món đã nêm không cần thêm nước chấm. Gợi ý ăn cùng: dưa góp dưa chuột, chè hạt sen tươi, gỏi cuốn tôm thịt.",
       "tips": [
         "Hớt bọt khi vừa sôi; tránh đun cuộn mạnh làm nước đục và nguyên liệu dễ vỡ.",
-        "Cho củ cứng trước, lá mềm sau; nêm rau thơm sát lúc tắt bếp.",
-        "Nếm lại sau khi nguyên liệu đã tiết vị; châm nước nóng từng ít nếu canh quá đậm."
+        "Vớt nạm và giò heo ra khi vừa mềm, ngâm nhanh vào nước nguội để thịt không khô và thâm.",
+        "Lọc mắm ruốc thật trong rồi mới cho vào nồi; nước dùng quá đậm thì châm nước sôi từng ít."
       ],
       "scaling": {
         "base_servings": 4,

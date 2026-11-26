@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router';
+import { Link, useNavigate, useSearchParams } from 'react-router';
 
 import { AuthAlert } from '@/components/auth/AuthAlert';
 import { AuthField } from '@/components/auth/AuthField';
+import { useAuthTitle } from '@/components/auth/useAuthTitle';
+import { loginHref } from '@/features/auth/landing';
 import { Button } from '@/components/ui/Button';
 import { errorMessage } from '@/lib/errors';
 import { apiPost } from '@/lib/api/client';
@@ -23,7 +25,12 @@ export function RegisterPage() {
   const { t } = useI18n();
   const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const registrationForm = useForm<RegisterForm>();
+  const [searchParams] = useSearchParams();
+  // Giữ đường quay lại (?next=) qua bước đăng ký để đăng nhập xong về đúng trang.
+  const loginLink = loginHref(searchParams.get('next'));
+  useAuthTitle(t('Đăng ký'));
+  // Kiểm tra khi rời ô (rồi kiểm tra lại khi gõ) để lỗi hiện sớm mà không làm phiền lúc đang nhập.
+  const registrationForm = useForm<RegisterForm>({ mode: 'onTouched' });
 
   const submit = registrationForm.handleSubmit(async (values) => {
     setMessage('');
@@ -35,7 +42,7 @@ export function RegisterPage() {
         password: values.password,
         accepted_terms_version: LEGAL_VERSION,
       });
-      await navigate('/login', {
+      await navigate(loginLink, {
         replace: true,
         state: { notice: t(response.message), email: values.email.trim() },
       });
@@ -76,7 +83,7 @@ export function RegisterPage() {
           error={registrationForm.formState.errors.email?.message}
           id="register-email"
           label={t('Địa chỉ email')}
-          placeholder="ban@example.com"
+          placeholder={t('ban@example.com')}
           type="email"
           {...registrationForm.register('email', {
             required: t('Vui lòng nhập email.'),
@@ -97,6 +104,12 @@ export function RegisterPage() {
             validate: (value) =>
               (/[A-Za-zÀ-ỹ]/.test(value) && /\d/.test(value)) ||
               t('Mật khẩu cần có chữ cái và chữ số.'),
+            // Đổi mật khẩu sau khi đã nhập lại: kiểm tra lại ô xác nhận để lỗi không bị cũ.
+            onBlur: () => {
+              if (registrationForm.getValues('confirmPassword')) {
+                void registrationForm.trigger('confirmPassword');
+              }
+            },
           })}
         />
         <AuthField
@@ -140,7 +153,7 @@ export function RegisterPage() {
         </Button>
       </form>
       <p className="auth-switch">
-        {t('Đã có tài khoản?')} <Link to="/login">{t('Đăng nhập')}</Link>
+        {t('Đã có tài khoản?')} <Link to={loginLink}>{t('Đăng nhập')}</Link>
       </p>
     </div>
   );

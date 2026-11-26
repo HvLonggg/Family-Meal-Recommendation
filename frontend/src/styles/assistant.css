@@ -720,7 +720,7 @@ body.has-narrator .rc-root:not(.is-open) {
   color: #fff;
   background: linear-gradient(135deg, #c64a3b, #8f2a1f);
   box-shadow: 0 6px 12px -6px rgb(125 35 24 / 70%);
-  font-size: 10.5px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.02em;
   white-space: nowrap;
@@ -799,7 +799,7 @@ body.has-narrator .rc-root:not(.is-open) {
 }
 .rc-teaser__body strong {
   color: var(--rc-red);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -975,7 +975,7 @@ body.has-narrator .rc-root:not(.is-open) {
   overflow: hidden;
   margin: 2px 18px 0;
   color: var(--rc-muted);
-  font-size: 11.5px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-align: center;
@@ -1026,14 +1026,14 @@ body.has-narrator .rc-root:not(.is-open) {
   flex-wrap: wrap;
   align-items: center;
   gap: 5px;
-  font-size: 11.5px;
+  font-size: 12px;
 }
 .rc-sources__label {
   color: #9a7b6c;
   font-weight: 700;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  font-size: 10.5px;
+  font-size: 12px;
 }
 .rc-sources__link {
   display: inline-flex;
@@ -1141,7 +1141,7 @@ body.has-narrator .rc-root:not(.is-open) {
   min-height: 22px;
   padding: 0 4px;
   color: #a39385;
-  font-size: 11px;
+  font-size: 12px;
 }
 .rc-message__badge {
   display: inline-flex;
@@ -1151,7 +1151,7 @@ body.has-narrator .rc-root:not(.is-open) {
   padding: 1px 7px;
   color: #0e7489;
   background: #e2f6fa;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 800;
 }
 .rc-message__tools {
@@ -1192,7 +1192,7 @@ body.has-narrator .rc-root:not(.is-open) {
   gap: 4px;
   padding: 0 8px;
   color: var(--rc-red);
-  font-size: 11.5px;
+  font-size: 12px;
   font-weight: 750;
 }
 .rc-message__files {
@@ -1295,7 +1295,7 @@ body.has-narrator .rc-root:not(.is-open) {
   align-items: center;
   gap: 3px;
   color: var(--rc-muted);
-  font-size: 11.5px;
+  font-size: 12px;
 }
 .rc-recipes a > svg {
   color: #c49a84;
@@ -1464,7 +1464,7 @@ body.has-narrator .rc-root:not(.is-open) {
 }
 .rc-composer__files small {
   color: var(--rc-muted);
-  font-size: 10.5px;
+  font-size: 12px;
 }
 .rc-composer__files button {
   display: grid;
@@ -1569,7 +1569,7 @@ body.has-narrator .rc-root:not(.is-open) {
 .rc-composer__hint {
   margin: 0;
   color: #b0a194;
-  font-size: 10.5px;
+  font-size: 12px;
   text-align: center;
 }
 
@@ -1762,7 +1762,7 @@ body.has-narrator .rc-root:not(.is-open) {
   gap: 6px;
   margin: 10px 2px 0;
   color: var(--rc-muted);
-  font-size: 11.5px;
+  font-size: 12px;
 }
 .rc-history__groups {
   flex: 1;
@@ -1773,7 +1773,7 @@ body.has-narrator .rc-root:not(.is-open) {
 .rc-history__groups h3 {
   margin: 12px 4px 6px;
   color: #a39385;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1842,7 +1842,7 @@ body.has-narrator .rc-root:not(.is-open) {
   grid-column: 2;
   grid-row: 1;
   color: #b0a194;
-  font-size: 11px;
+  font-size: 12px;
 }
 .rc-history__tools {
   display: flex;
@@ -1984,9 +1984,19 @@ body.has-narrator .rc-root:not(.is-open) {
   .rc-hide-mobile {
     display: none;
   }
+  /* Nút nổi gọn (~56px) để không che tiêu đề hay ảnh thẻ món. */
   .rc-launcher,
   .rc-launcher .dragon-mascot {
-    width: 78px;
+    width: 56px;
+  }
+  .rc-launcher {
+    filter: drop-shadow(0 8px 12px rgb(92 40 24 / 22%));
+  }
+  .rc-launcher__dot {
+    top: 2px;
+    right: 4px;
+    width: 12px;
+    height: 12px;
   }
   .rc-message__stack {
     max-width: 88%;

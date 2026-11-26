@@ -114,9 +114,6 @@ html[data-reduce-motion='true'] *::after {
 .nav-link--login::after {
   display: none;
 }
-.nav-link--featured {
-  color: #49352c;
-}
 
 .dropdown {
   position: relative;
@@ -438,12 +435,15 @@ html[data-reduce-motion='true'] *::after {
   }
   .site-nav {
     position: absolute;
+    z-index: 2;
     top: calc(100% + 1px);
     right: 0;
     left: 0;
     display: none;
     max-height: calc(100vh - 80px);
+    max-height: calc(100dvh - var(--site-header-height, 68px) - 8px);
     overflow-y: auto;
+    overscroll-behavior: contain;
     flex-direction: column;
     align-items: stretch;
     gap: 10px;
@@ -455,6 +455,20 @@ html[data-reduce-motion='true'] *::after {
   }
   .site-nav.is-open {
     display: flex;
+  }
+  /* Khóa cuộn ở gốc tài liệu: giữ nguyên vị trí cuộn và header dính đỉnh. */
+  html.has-menu-open {
+    overflow: hidden;
+  }
+  .site-nav-backdrop {
+    position: fixed;
+    z-index: 40;
+    inset: 0;
+    border: 0;
+    padding: 0;
+    background: rgb(47 36 31 / 32%);
+    cursor: default;
+    animation: site-nav-fade 160ms ease-out;
   }
   .site-nav__primary,
   .site-nav__actions {
@@ -505,6 +519,17 @@ html[data-reduce-motion='true'] *::after {
   }
   .site-nav .nav-signup {
     min-height: 44px;
+  }
+}
+
+@keyframes site-nav-fade {
+  from {
+    opacity: 0;
+  }
+}
+@media (min-width: 1101px) {
+  .site-nav-backdrop {
+    display: none;
   }
 }
 

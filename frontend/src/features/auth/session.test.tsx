@@ -15,11 +15,15 @@ const authState = vi.hoisted(() => ({
 vi.mock('@/features/auth/AuthContext', () => ({ useAuth: () => authState }));
 
 function LoginProbe() {
-  const state = useLocation().state as { from?: string; notice?: string } | null;
+  const location = useLocation();
+  const state = location.state as { from?: string; notice?: string } | null;
   return (
-    <p>
-      login from={state?.from} notice={state?.notice ?? 'none'}
-    </p>
+    <>
+      <p>
+        login from={state?.from} notice={state?.notice ?? 'none'}
+      </p>
+      <p>search={location.search}</p>
+    </>
   );
 }
 
@@ -57,6 +61,8 @@ describe('ProtectedRoute', () => {
   it('sends visitors opening a link directly to the login page and remembers the link', () => {
     renderAt('/recipes?q=canh#top');
     expect(screen.getByText('login from=/recipes?q=canh#top notice=none')).toBeInTheDocument();
+    // Đường quay lại cũng nằm trong URL để tải lại trang đăng nhập không bị mất.
+    expect(screen.getByText('search=?next=%2Frecipes%3Fq%3Dcanh%23top')).toBeInTheDocument();
   });
 
   it('explains when the session expired', () => {

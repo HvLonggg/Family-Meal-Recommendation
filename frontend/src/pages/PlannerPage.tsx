@@ -1,12 +1,16 @@
 import { useInfiniteQuery, useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router';
 
 import { AppIcon } from '@/components/common/AppIcon';
 import { PlannerCalendarHeader, PlannerDayHeader } from '@/components/planner/PlannerCalendar';
 import { MealCelebration } from '@/components/recipes/MealCelebration';
 import { dishImage } from '@/data/dishImages';
-import { matchesRecipeSearch, recipeSearchRank } from '@/data/recipeSearch';
+import {
+  matchesRecipeSearch,
+  recipeSearchRank,
+  useEnglishSearchIndexVersion,
+} from '@/data/recipeSearch';
 import { recipeText, type Recipe } from '@/data/recipes';
 import {
   addPlanMeal,
@@ -388,13 +392,17 @@ export function PlannerPage() {
   });
 
   const plannedItems = useMemo(() => itemsQuery.data ?? [], [itemsQuery.data]);
-  const filteredRecipes = useMemo(
-    () =>
-      catalog
-        .filter((recipe) => matchesRecipeSearch(recipe, search))
-        .sort((left, right) => recipeSearchRank(right, search) - recipeSearchRank(left, search)),
-    [catalog, search],
-  );
+  // Gõ phím không phải chờ lọc ~800 món: React ưu tiên ô nhập, danh sách cập nhật ngay sau đó.
+  const deferredSearch = useDeferredValue(search);
+  const englishIndexVersion = useEnglishSearchIndexVersion();
+  const filteredRecipes = useMemo(() => {
+    void englishIndexVersion;
+    const ranked = catalog
+      .filter((recipe) => matchesRecipeSearch(recipe, deferredSearch))
+      .map((recipe) => ({ recipe, rank: recipeSearchRank(recipe, deferredSearch) }));
+    ranked.sort((left, right) => right.rank - left.rank);
+    return ranked.map(({ recipe }) => recipe);
+  }, [catalog, deferredSearch, englishIndexVersion]);
   const historyEvents = historyQuery.data?.pages.flatMap((page) => page.data) ?? [];
   const pastMealGroups = pastMealsQuery.data?.pages.flatMap((page) => page.data) ?? [];
   const groupedItems = useMemo(() => {

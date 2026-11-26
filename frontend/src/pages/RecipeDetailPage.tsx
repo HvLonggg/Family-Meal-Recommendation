@@ -19,13 +19,20 @@ import {
   dietaryTagLabels,
   useUserPreferences,
 } from '@/features/account/preferences';
+import { loginHref } from '@/features/auth/landing';
 import { favoriteRecipesQueryKey, type FavoriteRecipe } from '@/features/favorites/favoritesApi';
 import { cookPath } from '@/features/cooking/cookSession';
 import { buildRecipeScript } from '@/features/narration/recipeScript';
 import { useNarration } from '@/features/narration/useNarration';
 import { useRecipeCatalog } from '@/features/i18n/recipeContent';
 import { apiDelete, apiPost, apiRequest } from '@/lib/api/client';
+import { usePageMeta } from '@/features/seo/usePageMeta';
 import { fitDishCutout } from '@/lib/fitDishCutout';
+import {
+  formatIngredientQuantity,
+  isGenericIngredientNote,
+  isGenericServingBasis,
+} from '@/lib/recipeDisplay';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 import { useI18n } from '@/features/i18n/I18nContext';
 import './recipe-detail-page.css';
@@ -62,7 +69,7 @@ function RecipeDetails({ recipe }: { recipe: Recipe }) {
     onSettled: () => queryClient.invalidateQueries({ queryKey: favoriteRecipesQueryKey(user?.id) }),
   });
   const conflicts = isPersonal ? dietaryConflicts(recipe, preferences.dietary_tags) : [];
-  const formatAmount = (value: number) => formatNumber(value, { maximumFractionDigits: 2 });
+  usePageMeta({ title: recipe.name, description: recipe.excerpt, image: recipe.image });
   const heroRef = useRef<HTMLElement>(null);
   const related = useMemo(() => {
     const pairings = (recipe.pairingSlugs ?? []).flatMap((slug) => getRecipe(slug) ?? []);
@@ -173,7 +180,9 @@ function RecipeDetails({ recipe }: { recipe: Recipe }) {
               disabled={toggleFavorite.isPending}
               onClick={() => {
                 if (!user) {
-                  void navigate('/login', { state: { from: `/recipes/${recipe.slug}` } });
+                  void navigate(loginHref(`/recipes/${recipe.slug}`), {
+                    state: { from: `/recipes/${recipe.slug}` },
+                  });
                   return;
                 }
                 toggleFavorite.mutate();
@@ -269,7 +278,9 @@ function RecipeDetails({ recipe }: { recipe: Recipe }) {
                 ) : null}
               </p>
             ) : null}
-            {recipe.servingBasis && <p className="recipe-serving-basis">{recipe.servingBasis}</p>}
+            {!isGenericServingBasis(recipe.servingBasis) && (
+              <p className="recipe-serving-basis">{recipe.servingBasis}</p>
+            )}
             {recipe.ingredients.map((group) => (
               <div className="ingredient-group" key={group.group}>
                 <h3>{t(group.group)}</h3>
@@ -278,12 +289,17 @@ function RecipeDetails({ recipe }: { recipe: Recipe }) {
                     <input type="checkbox" />
                     <span>
                       {item.name}
-                      {item.note ? <small> · {item.note}</small> : null}
+                      {!isGenericIngredientNote(item.note) ? <small> · {item.note}</small> : null}
                     </span>
                     <strong>
                       {item.amount == null
                         ? item.unit
-                        : `${formatAmount(ingredientAmount(item, recipe, servings)!)} ${item.unit}`}
+                        : formatIngredientQuantity(
+                            ingredientAmount(item, recipe, servings)!,
+                            item.unit,
+                            formatNumber,
+                            language,
+                          )}
                     </strong>
                   </label>
                 ))}

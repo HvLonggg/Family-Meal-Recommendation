@@ -35,13 +35,55 @@ const LOGOUT_SIGNAL_KEY = 'bep-viet.auth.logout';
 const AuthContext = createContext<AuthContextValue | null>(null);
 let bootstrapPromise: Promise<AuthSession | null> | null = null;
 
+// Gợi ý (không phải bí mật) rằng trình duyệt này có thể đang có phiên: refresh token vẫn nằm trong
+// cookie HttpOnly. '0' = đã biết là chưa đăng nhập → khách không gọi /auth/refresh (tránh 401 thừa).
+// Chưa có giá trị (máy cũ, trước khi có cờ này) thì vẫn hỏi máy chủ một lần để không mất phiên.
+const SESSION_HINT_KEY = 'bep-viet.auth.has-session';
+
+function readSessionHint() {
+  try {
+    return localStorage.getItem(SESSION_HINT_KEY);
+  } catch {
+    return null;
+  }
+}
+
+function writeSessionHint(hasSession: boolean) {
+  try {
+    localStorage.setItem(SESSION_HINT_KEY, hasSession ? '1' : '0');
+  } catch {
+    // Bộ nhớ bị chặn: vẫn gọi refresh như cũ ở lần sau.
+  }
+}
+
+/** Máy chủ khẳng định không có/không còn phiên (khác với lỗi mạng hay máy chủ đang bận). */
+function isRejectedSession(error: unknown) {
+  const status = (error as { status?: unknown } | null)?.status;
+  return status === 401 || status === 403;
+}
+
 function bootstrapSession() {
   return revalidateSession();
 }
 
+/** Quay về từ Google: máy chủ vừa đặt cookie phiên qua redirect, chưa qua acceptSession. */
+function isOAuthReturn() {
+  return window.location.pathname.startsWith('/oauth-callback');
+}
+
 function revalidateSession() {
+  if (readSessionHint() === '0' && !isOAuthReturn()) return Promise.resolve(null);
   if (!bootstrapPromise) {
-    const pending = apiPost<AuthSession>('/auth/refresh').catch(() => null);
+    const pending = apiPost<AuthSession>('/auth/refresh').then(
+      (session) => {
+        writeSessionHint(true);
+        return session;
+      },
+      (error: unknown) => {
+        if (isRejectedSession(error)) writeSessionHint(false);
+        return null;
+      },
+    );
     bootstrapPromise = pending;
     void pending.finally(() => {
       if (bootstrapPromise === pending) bootstrapPromise = null;
@@ -57,6 +99,7 @@ export function AuthProvider({ children }: PropsWithChildren) {
 
   const acceptSession = useCallback((session: AuthSession) => {
     bootstrapPromise = null;
+    writeSessionHint(true);
     setAccessToken(session.access_token);
     setUser(session.user);
     setSessionExpired(false);
@@ -143,6 +186,7 @@ export function AuthProvider({ children }: PropsWithChildren) {
       setUser(null);
       setSessionExpired(false);
       bootstrapPromise = null;
+      writeSessionHint(false);
       try {
         localStorage.setItem(LOGOUT_SIGNAL_KEY, String(Date.now()));
       } catch {

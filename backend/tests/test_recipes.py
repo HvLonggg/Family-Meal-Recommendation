@@ -73,3 +73,93 @@ def test_recipe_tables_use_vietnamese_database_names() -> None:
     assert Recipe.__tablename__ == "mon_an"
     assert RecipeIngredient.__tablename__ == "nguyen_lieu_mon_an"
     assert RecipeStep.__tablename__ == "buoc_nau_mon_an"
+
+
+def test_recipe_catalog_paginates_in_sql_with_stable_order_and_total(
+    client: TestClient, database_session_factory: sessionmaker[Session]
+) -> None:
+    with database_session_factory() as session:
+        for index in range(5):
+            session.add(
+                Recipe(
+                    slug=f"mon-{index}",
+                    name=f"Món {index}",
+                    excerpt="Món thử phân trang.",
+                    region="Bắc",
+                    category="Món mặn",
+                    difficulty="Dễ",
+                    prep_minutes=5,
+                    cook_minutes=5,
+                    base_servings=2,
+                    image_path="/images/x.webp",
+                    image_alt="Ảnh",
+                    serving="Dùng nóng.",
+                    tip="Mẹo.",
+                    source_name="Bếp Việt",
+                    source_url="https://example.com/",
+                    status="published" if index < 4 else "draft",
+                )
+            )
+        session.commit()
+
+    pages = [
+        client.get("/api/v1/recipes/catalog", params={"limit": 3, "offset": offset}).json()
+        for offset in (0, 3)
+    ]
+
+    assert [page["total"] for page in pages] == [4, 4]
+    slugs = [item["slug"] for page in pages for item in page["data"]]
+    assert slugs == ["mon-0", "mon-1", "mon-2", "mon-3"]
+    listed = client.get("/api/v1/recipes", params={"limit": 2, "offset": 1}).json()
+    assert listed["total"] == 4
+    assert [item["slug"] for item in listed["data"]] == ["mon-1", "mon-2"]
+
+
+def test_recipe_catalog_compact_keeps_only_fields_the_web_app_reads(
+    client: TestClient, database_session_factory: sessionmaker[Session]
+) -> None:
+    seed_recipe(database_session_factory)
+    with database_session_factory() as session:
+        recipe = session.query(Recipe).one()
+        recipe.content = {
+            "aliases": ["Cá kho"],
+            "tags": {"cooking_method": ["kho"]},
+            "description": "Mô tả dài không dùng trong app.",
+            "preparation_steps": [{"step": 1, "instruction": "Trùng với bảng bước làm."}],
+            "ingredients": [
+                {"name": "Cá chép", "quantity": 700, "scaling_rule": "linear", "notes": "x"}
+            ],
+            "media": [
+                {
+                    "source": "Nguồn",
+                    "page_url": "https://e.x/",
+                    "rights_status": "project",
+                    "alt_text": "bỏ",
+                    "width": 1,
+                },
+                {"source": "Ảnh 2"},
+            ],
+            "scaling": {
+                "targets": [{"servings": 2, "seasoning_start_factor": 0.5, "instruction": "bỏ"}]
+            },
+            "suggested_pairings": [{"id": "BV2", "name": "Canh"}],
+        }
+        session.commit()
+
+    full = client.get("/api/v1/recipes/catalog").json()["data"][0]
+    compact_response = client.get("/api/v1/recipes/catalog", params={"compact": "true"})
+    compact = compact_response.json()["data"][0]
+
+    assert "description" in full["content"]
+    assert compact_response.headers["etag"] != client.get("/api/v1/recipes/catalog").headers["etag"]
+    assert compact["content"] == {
+        "aliases": ["Cá kho"],
+        "tags": {"cooking_method": ["kho"]},
+        "ingredients": [{"name": "Cá chép", "scaling_rule": "linear"}],
+        "media": [{"source": "Nguồn", "page_url": "https://e.x/", "rights_status": "project"}],
+        "scaling": {"targets": [{"servings": 2, "seasoning_start_factor": 0.5}]},
+        "suggested_pairings": [{"id": "BV2"}],
+    }
+    assert {key: value for key, value in compact.items() if key != "content"} == {
+        key: value for key, value in full.items() if key != "content"
+    }

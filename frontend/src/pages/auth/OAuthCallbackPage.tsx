@@ -1,12 +1,14 @@
 import { useEffect } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router';
 
+import { useAuthTitle } from '@/components/auth/useAuthTitle';
 import { useAuth } from '@/features/auth/AuthContext';
 import { useI18n } from '@/features/i18n/I18nContext';
 
 export function OAuthCallbackPage() {
   const { isLoading, user } = useAuth();
   const { t } = useI18n();
+  useAuthTitle(t('Đăng nhập Google'));
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const hasError = searchParams.get('status') === 'error';

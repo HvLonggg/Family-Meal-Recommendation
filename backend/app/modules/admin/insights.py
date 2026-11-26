@@ -11,7 +11,7 @@ from itertools import islice
 from typing import Any
 from uuid import UUID
 
-from sqlalchemy import Select, case, func, select
+from sqlalchemy import Select, case, func, select, union_all
 from sqlalchemy.orm import Session
 
 from app.modules.admin.schemas import (
@@ -24,6 +24,7 @@ from app.modules.admin.schemas import (
     DailyCount,
     RankedRecipe,
     TasteSlice,
+    TrendMetric,
 )
 from app.modules.articles.models import Article
 from app.modules.auth.models import AuthIdentity, RefreshSession, User
@@ -67,6 +68,135 @@ def daily_series(
             day=start + timedelta(days=i), count=totals.get(str(start + timedelta(days=i)), 0)
         )
         for i in range(days)
+    ]
+
+
+def _period_bounds(days: int) -> tuple[date, datetime, datetime]:
+    """Trả (ngày đầu kỳ trước, mốc bắt đầu kỳ trước, mốc bắt đầu kỳ hiện tại) theo UTC."""
+    today = datetime.now(UTC).date()
+    current_start = today - timedelta(days=days - 1)
+    previous_start = current_start - timedelta(days=days)
+    midnight = datetime.min.time()
+    return (
+        previous_start,
+        datetime.combine(previous_start, midnight, tzinfo=UTC),
+        datetime.combine(current_start, midnight, tzinfo=UTC),
+    )
+
+
+def _split(series: list[DailyCount], days: int) -> tuple[int, int, list[DailyCount]]:
+    previous, current = series[:days], series[days:]
+    return sum(item.count for item in current), sum(item.count for item in previous), current
+
+
+def _active_user_rows(since: datetime, until: datetime | None = None) -> Any:
+    """Người dùng có đăng nhập/gia hạn phiên, thao tác kế hoạch hoặc yêu thích trong khoảng."""
+    sources = [
+        (RefreshSession.user_id, RefreshSession.created_at),
+        (UserMealPlanEvent.user_id, UserMealPlanEvent.occurred_at),
+        (UserFavoriteRecipe.user_id, UserFavoriteRecipe.created_at),
+    ]
+    selects = []
+    for user_col, time_col in sources:
+        statement = select(user_col.label("user_id"), func.date(time_col).label("day")).where(
+            time_col >= since
+        )
+        if until is not None:
+            statement = statement.where(time_col < until)
+        selects.append(statement)
+    return union_all(*selects).subquery()
+
+
+def _distinct_users(session: Session, rows: Any) -> int:
+    return _scalar(session, select(func.count(func.distinct(rows.c.user_id))))
+
+
+def _active_users(session: Session, days: int) -> TrendMetric:
+    first_day, previous_since, current_since = _period_bounds(days)
+    current = _active_user_rows(current_since)
+    per_day = {
+        _day_key(day): int(count)
+        for day, count in session.execute(
+            select(current.c.day, func.count(func.distinct(current.c.user_id))).group_by(
+                current.c.day
+            )
+        ).all()
+    }
+    days_in_period = [first_day + timedelta(days=days + i) for i in range(days)]
+    return TrendMetric(
+        key="active_users",
+        total=_distinct_users(session, current),
+        previous_total=_distinct_users(session, _active_user_rows(previous_since, current_since)),
+        series=[DailyCount(day=day, count=per_day.get(str(day), 0)) for day in days_in_period],
+    )
+
+
+def platform_trends(session: Session, days: int) -> list[TrendMetric]:
+    """Chỉ số chính của kỳ hiện tại kèm tổng kỳ liền trước để tính mức tăng/giảm."""
+    sources: list[tuple[Any, list[tuple[Any, Any]]]] = [
+        ("signups", [(User.created_at, None)]),
+        ("plans_created", [(UserMealPlanEvent.occurred_at, UserMealPlanEvent.action == "added")]),
+        (
+            "recipes_cooked",
+            [(UserMealPlanEvent.occurred_at, UserMealPlanEvent.action == "completed")],
+        ),
+        ("favorites", [(UserFavoriteRecipe.created_at, None)]),
+    ]
+    metrics = []
+    for key, columns in sources:
+        total, previous, series = _split(daily_series(session, columns, days * 2), days)
+        metrics.append(TrendMetric(key=key, total=total, previous_total=previous, series=series))
+    metrics.insert(1, _active_users(session, days))
+    return metrics
+
+
+ACTIVITY_LABELS = {
+    "added": "Thêm vào kế hoạch",
+    "completed": "Đánh dấu đã nấu",
+    "skipped": "Bỏ qua bữa",
+    "removed": "Xóa khỏi kế hoạch",
+    "updated": "Đổi khẩu phần",
+}
+MEAL_TYPE_LABELS = {"breakfast": "Bữa sáng", "lunch": "Bữa trưa", "dinner": "Bữa tối"}
+
+
+def activity_mix(session: Session, days: int) -> list[TasteSlice]:
+    _, _, since = _period_bounds(days)
+    rows = session.execute(
+        select(UserMealPlanEvent.action, func.count())
+        .where(UserMealPlanEvent.occurred_at >= since)
+        .group_by(UserMealPlanEvent.action)
+    ).all()
+    counts = {
+        ACTIVITY_LABELS[action]: int(count) for action, count in rows if action in ACTIVITY_LABELS
+    }
+    favorites = _scalar(
+        session,
+        select(func.count())
+        .select_from(UserFavoriteRecipe)
+        .where(UserFavoriteRecipe.created_at >= since),
+    )
+    if favorites:
+        counts["Thêm yêu thích"] = favorites
+    return [
+        TasteSlice(label=label, count=count)
+        for label, count in sorted(counts.items(), key=lambda item: item[1], reverse=True)
+        if count
+    ]
+
+
+def meal_type_mix(session: Session, days: int) -> list[TasteSlice]:
+    _, _, since = _period_bounds(days)
+    rows = session.execute(
+        select(UserMealPlanItem.meal_type, func.count())
+        .where(UserMealPlanItem.created_at >= since)
+        .group_by(UserMealPlanItem.meal_type)
+        .order_by(func.count().desc())
+    ).all()
+    return [
+        TasteSlice(label=MEAL_TYPE_LABELS.get(meal, meal), count=int(count))
+        for meal, count in rows
+        if count
     ]
 
 

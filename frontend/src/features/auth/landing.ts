@@ -16,3 +16,11 @@ export function landingPath(role: string, requested: string | undefined) {
   if (role === 'admin') return path?.startsWith('/admin') ? path : '/admin';
   return path ?? '/';
 }
+
+/** Đường dẫn tới trang đăng nhập/đăng ký kèm `?next=` để tải lại trang vẫn nhớ nơi cần quay về. */
+export function authHref(page: '/login' | '/register', from: string | null | undefined) {
+  const path = safeReturnPath(from ?? undefined);
+  return path ? `${page}?next=${encodeURIComponent(path)}` : page;
+}
+
+export const loginHref = (from: string | null | undefined) => authHref('/login', from);

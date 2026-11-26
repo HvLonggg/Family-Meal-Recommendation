@@ -5,8 +5,8 @@
  * qua biến môi trường để không phải sửa mã.
  */
 const DEFAULT_ADDRESS = 'Ngõ 80/57 Mễ Trì Hạ, phường Từ Liêm, Hà Nội';
-// Giữ tên quận cũ riêng cho truy vấn Google Maps.
-const DEFAULT_MAP_QUERY = '80/57 Mễ Trì Hạ, Nam Từ Liêm, Hà Nội';
+// Bản đồ dùng đúng chuỗi địa chỉ hiển thị để chữ và điểm chỉ đường luôn khớp nhau.
+const DEFAULT_MAP_QUERY = DEFAULT_ADDRESS;
 
 export const contactInfo = {
   ownerName: 'Hoàng Văn Long',

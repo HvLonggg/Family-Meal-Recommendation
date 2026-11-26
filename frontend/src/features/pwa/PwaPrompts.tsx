@@ -59,7 +59,30 @@ type PendingUpdate = { worker: ServiceWorker | null };
 
 const VERSION_CHECK_MS = 15 * 60_000;
 const UPDATE_SNOOZE_MS = 60 * 60_000;
+const INSTALL_DELAY_MS = 15_000;
 const UPDATE_SNOOZE_KEY = 'bep-viet.update-snoozed-until';
+
+// Trang xác thực, pháp lý, chế độ nấu và quản trị: không chen lời mời cài vào luồng chính.
+const QUIET_INSTALL_PATH =
+  /^\/(login|register|forgot-password|reset-password|oauth-callback|terms|privacy|cook|admin)(\/|$)/;
+
+/** Đường dẫn hiện tại; khối này nằm ngoài Router nên tự theo dõi khi đang cần. */
+function useCurrentPath(active: boolean) {
+  const [path, setPath] = useState(() => window.location.pathname);
+  useEffect(() => {
+    if (!active) return undefined;
+    const sync = () => setPath(window.location.pathname);
+    sync();
+    // SPA đổi trang bằng pushState (không phát sự kiện), nên dò nhẹ theo chu kỳ.
+    const timer = window.setInterval(sync, 500);
+    window.addEventListener('popstate', sync);
+    return () => {
+      window.clearInterval(timer);
+      window.removeEventListener('popstate', sync);
+    };
+  }, [active]);
+  return path;
+}
 
 function updateSnoozed() {
   try {
@@ -106,6 +129,9 @@ export function PwaPrompts() {
   }, []);
   const [deferred, setDeferred] = useState<BeforeInstallPromptEvent | null>(null);
   const [installMode, setInstallMode] = useState<InstallMode>('none');
+  // Chỉ mời cài sau khi người dùng đã xem trang một lúc, không chặn ngay lần đầu mở.
+  const [installReady, setInstallReady] = useState(false);
+  const currentPath = useCurrentPath(installMode !== 'none');
 
   useEffect(() => {
     // Dev server không dùng SW để tránh cache nhầm mã đang sửa.
@@ -181,6 +207,7 @@ export function PwaPrompts() {
     const onInstalled = () => setInstallMode('none');
     window.addEventListener('beforeinstallprompt', onPrompt);
     window.addEventListener('appinstalled', onInstalled);
+    const readyTimer = window.setTimeout(() => setInstallReady(true), INSTALL_DELAY_MS);
     let iosTimer: number | undefined;
     if (isIosSafari(navigator.userAgent, navigator.maxTouchPoints)) {
       // Đợi người dùng xem trang một lúc rồi mới gợi ý.
@@ -190,6 +217,7 @@ export function PwaPrompts() {
       window.removeEventListener('beforeinstallprompt', onPrompt);
       window.removeEventListener('appinstalled', onInstalled);
       window.clearTimeout(iosTimer);
+      window.clearTimeout(readyTimer);
     };
   }, []);
 
@@ -288,7 +316,7 @@ export function PwaPrompts() {
     );
   }
 
-  if (installMode === 'none') return null;
+  if (installMode === 'none' || !installReady || QUIET_INSTALL_PATH.test(currentPath)) return null;
   return (
     <aside aria-label={text.installTitle} className="pwa-toast pwa-toast--install">
       <img

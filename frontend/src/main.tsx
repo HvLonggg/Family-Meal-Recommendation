@@ -4,6 +4,7 @@ import { createRoot } from 'react-dom/client';
 import { App } from '@/app/App';
 import { updateInProgress } from '@/features/pwa/updateState';
 import { loadRecipeCatalog } from '@/data/recipeApi';
+import { loadEnglishSearchIndex } from '@/data/recipeSearch';
 import { applyRecipeLanguage } from '@/features/i18n/recipeContent';
 import { LANGUAGE_STORAGE_KEY, readStoredLanguage, translate } from '@/features/i18n/translate';
 import '@/styles/global.css';
@@ -77,6 +78,15 @@ function renderCatalogLoader(progress: number) {
 
 // Trang pháp lý không cần kho món: hiện ngay, không bắt người dùng chờ tải danh mục.
 // Trang đăng nhập/đăng ký cũng vậy: khách thấy form ngay, kho món tải ở nền.
+// Chỉ mục tìm kiếm tiếng Anh không cần cho lần vẽ đầu: tải khi trình duyệt rảnh sau khi app đã
+// hiện, để không tranh băng thông với kho món ở màn chờ.
+function prefetchSearchIndexWhenIdle() {
+  const load = () => void loadEnglishSearchIndex();
+  if (typeof window.requestIdleCallback === 'function')
+    window.requestIdleCallback(load, { timeout: 5000 });
+  else window.setTimeout(load, 2000);
+}
+
 const LEGAL_PATH =
   /^\/(privacy|terms|login|register|forgot-password|reset-password|oauth-callback)\/?$/;
 
@@ -89,6 +99,7 @@ if (LEGAL_PATH.test(window.location.pathname) && !resumingUpdate) {
   // Vẫn nạp kho món ở nền để các trang khác dùng được khi người dùng chuyển trang.
   void loadRecipeCatalog(() => undefined).catch(() => undefined);
   void applyRecipeLanguage(language);
+  prefetchSearchIndexWhenIdle();
 } else {
   renderCatalogLoader(6);
   void startApp();
@@ -132,4 +143,5 @@ async function startApp() {
       <App />
     </StrictMode>,
   );
+  prefetchSearchIndexWhenIdle();
 }

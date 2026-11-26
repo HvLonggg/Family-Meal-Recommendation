@@ -302,7 +302,7 @@ export function MealSetsPage() {
                           {t('Thêm cả mâm vào kế hoạch')} <AppIcon name="arrow" size={16} />
                         </Link>
                         <Link className="button button--outline" to="/random-meal">
-                          {t('Đổi món')}
+                          {t('Ghép mâm khác')}
                         </Link>
                       </div>
                     </div>

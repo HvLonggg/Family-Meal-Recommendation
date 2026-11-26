@@ -26,6 +26,8 @@ afterEach(() => {
   replaceRecipeCatalog(originalCatalog);
   vi.resetAllMocks();
   vi.unstubAllGlobals();
+  vi.useRealTimers();
+  localStorage.clear();
 });
 
 beforeEach(() => {
@@ -196,6 +198,78 @@ describe('database recipe catalog', () => {
       .mockRejectedValueOnce(new Error('offline'));
     await expect(loadRecipeCatalog()).rejects.toThrow('offline');
     expect(recipes).toEqual(originalCatalog);
+  });
+
+  it('does not download the static snapshot when the API answers', async () => {
+    const fetchSnapshot = vi.fn();
+    vi.stubGlobal('fetch', fetchSnapshot);
+    vi.mocked(apiRequest).mockResolvedValue({ total: 1, data: [apiRecipe] });
+    await expect(loadRecipeCatalog()).resolves.toBe('online');
+    expect(fetchSnapshot).not.toHaveBeenCalled();
+    expect(recipes).toHaveLength(1);
+  });
+
+  it('requests every page at once when the previous catalog size is known', async () => {
+    localStorage.setItem('bep-viet.catalog-total', '250');
+    const catalog = Array.from({ length: 250 }, (_, index): ApiRecipe => ({
+      ...apiRecipe,
+      slug: `parallel-${index}`,
+    }));
+    const pending: (() => void)[] = [];
+    vi.mocked(apiRequest).mockImplementation(
+      (path) =>
+        new Promise((resolve) => {
+          const offset = Number(new URL(path, 'http://localhost').searchParams.get('offset') ?? 0);
+          pending.push(() =>
+            resolve({ total: catalog.length, data: catalog.slice(offset, offset + 100) }),
+          );
+        }),
+    );
+    const loading = loadRecipeCatalog();
+    await vi.waitFor(() => expect(apiRequest).toHaveBeenCalledTimes(3));
+    pending.forEach((release) => release());
+    await expect(loading).resolves.toBe('online');
+    expect(recipes).toHaveLength(250);
+  });
+
+  it('falls back to the snapshot when the API is still starting up', async () => {
+    vi.useFakeTimers();
+    vi.mocked(apiRequest).mockReturnValue(new Promise(() => undefined));
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue(new Response(JSON.stringify({ total: 1, data: [apiRecipe] }))),
+    );
+    const loading = loadRecipeCatalog();
+    await vi.advanceTimersByTimeAsync(8_000);
+    await expect(loading).resolves.toBe('offline');
+    expect(recipes[0]?.slug).toBe(apiRecipe.slug);
+  });
+
+  it('keeps waiting for a warm API instead of downloading the snapshot', async () => {
+    vi.useFakeTimers();
+    const fetchSnapshot = vi.fn();
+    vi.stubGlobal('fetch', fetchSnapshot);
+    const catalog = Array.from({ length: 150 }, (_, index): ApiRecipe => ({
+      ...apiRecipe,
+      slug: `warm-${index}`,
+    }));
+    let releaseSecondPage = () => undefined as void;
+    vi.mocked(apiRequest).mockImplementation((path) => {
+      const offset = Number(new URL(path, 'http://localhost').searchParams.get('offset') ?? 0);
+      const page = { total: catalog.length, data: catalog.slice(offset, offset + 100) };
+      if (!offset) return Promise.resolve(page);
+      return new Promise((resolve) => {
+        releaseSecondPage = () => resolve(page);
+      });
+    });
+    const loading = loadRecipeCatalog();
+    // Trang đầu đã về, trang sau còn chậm: không tải song song bản lưu sẵn 1 MB.
+    await vi.advanceTimersByTimeAsync(10_000);
+    expect(fetchSnapshot).not.toHaveBeenCalled();
+    releaseSecondPage();
+    await expect(loading).resolves.toBe('online');
+    expect(recipes).toHaveLength(150);
+    expect(vi.mocked(apiRequest).mock.calls[0]?.[0]).toContain('compact=1');
   });
 
   it('loads the complete bundled snapshot when the API is unavailable', async () => {

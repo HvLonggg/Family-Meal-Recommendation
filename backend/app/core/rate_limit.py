@@ -55,6 +55,16 @@ class SlidingWindowLimiter:
                 hits = self._hits[key] = deque()
             hits.append(now)
 
+    def blocked_count(self, *, now: float | None = None) -> int:
+        """Số khóa đang vượt ngưỡng trong cửa sổ hiện tại."""
+        with self._lock:
+            now = now if now is not None else time.monotonic()
+            return sum(
+                1
+                for hits in self._hits.values()
+                if sum(1 for hit in hits if now - hit <= self.window) >= self.limit
+            )
+
     def size(self) -> int:
         with self._lock:
             return len(self._hits)

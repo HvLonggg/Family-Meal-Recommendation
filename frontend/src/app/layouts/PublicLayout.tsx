@@ -21,6 +21,7 @@ import { contactInfo, phoneHref } from '@/config/contact';
 import { adminDestinationFor } from '@/features/admin/adminRouting';
 import { useAuth } from '@/features/auth/AuthContext';
 import { useI18n } from '@/features/i18n/I18nContext';
+import { useRouteDocumentMeta } from '@/features/seo/usePageMeta';
 
 interface MenuLink {
   to: string;
@@ -82,34 +83,66 @@ export function PublicLayout() {
   const navigationType = useNavigationType();
   const previousPathname = useRef(location.pathname);
   const [menuOpen, setMenuOpen] = useState(false);
-  // Tiêu đề tab theo trang: lấy từ tiêu đề chính đang hiển thị (tên món, tên bài, tên trang).
-  useEffect(() => {
-    const brand = 'Bếp Việt';
-    const applyTitle = () => {
-      const heading =
-        location.pathname === '/'
-          ? ''
-          : (document.querySelector('main h1')?.textContent ?? '').replace(/\s+/g, ' ').trim();
-      document.title = heading ? `${heading} · ${brand}` : brand;
-    };
-    applyTitle();
-    // Trang tải dữ liệu chậm (bài viết) có tiêu đề muộn hơn.
-    const timers = [window.setTimeout(applyTitle, 400), window.setTimeout(applyTitle, 1500)];
-    return () => timers.forEach((timer) => window.clearTimeout(timer));
-  }, [location.pathname]);
+  // Tiêu đề tab, description, Open Graph và canonical theo trang; cập nhật ngay khi đổi ngôn ngữ.
+  useRouteDocumentMeta();
 
-  // Menu di động mở: khóa cuộn trang nền, Esc để đóng.
+  const headerRef = useRef<HTMLElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const navRef = useRef<HTMLElement>(null);
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+    menuButtonRef.current?.focus({ preventScroll: true });
+  };
+
+  // Menu di động mở: khóa cuộn ở gốc tài liệu (giữ vị trí cuộn và header dính đỉnh),
+  // đưa focus vào mục đầu, giữ Tab trong menu, Esc để đóng.
   useEffect(() => {
-    if (!menuOpen) return;
-    const { overflow } = document.body.style;
-    document.body.style.overflow = 'hidden';
+    if (!menuOpen) return undefined;
+    const root = document.documentElement;
+    const headerHeight = headerRef.current?.getBoundingClientRect().height;
+    if (headerHeight) root.style.setProperty('--site-header-height', `${headerHeight}px`);
+    root.classList.add('has-menu-open');
+
+    const focusables = () =>
+      [
+        menuButtonRef.current,
+        ...(navRef.current?.querySelectorAll<HTMLElement>('a[href], button:not([disabled])') ?? []),
+      ].filter((element): element is HTMLElement =>
+        Boolean(element && element.getClientRects().length > 0),
+      );
+    focusables()[1]?.focus({ preventScroll: true });
+
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setMenuOpen(false);
+      if (event.key === 'Escape') {
+        setMenuOpen(false);
+        menuButtonRef.current?.focus({ preventScroll: true });
+        return;
+      }
+      if (event.key !== 'Tab') return;
+      const items = focusables();
+      const first = items[0];
+      const last = items.at(-1);
+      if (!first || !last) return;
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+    // Xoay ngang/phóng to sang bố cục desktop thì menu di động không còn ý nghĩa.
+    const desktop = window.matchMedia?.('(min-width: 1101px)');
+    const onLayoutChange = () => {
+      if (desktop?.matches) setMenuOpen(false);
     };
     document.addEventListener('keydown', onKeyDown);
+    desktop?.addEventListener?.('change', onLayoutChange);
     return () => {
-      document.body.style.overflow = overflow;
+      root.classList.remove('has-menu-open');
       document.removeEventListener('keydown', onKeyDown);
+      desktop?.removeEventListener?.('change', onLayoutChange);
     };
   }, [menuOpen]);
 
@@ -171,16 +204,18 @@ export function PublicLayout() {
       <a className="skip-link" href="#main-content">
         {t('Bỏ qua đến nội dung chính')}
       </a>
-      <header className="site-header">
+      <header className="site-header" ref={headerRef}>
         <div className="site-header__content">
           <Link className="brand" to="/" aria-label={t('Bếp Việt - Trang chủ')}>
             <KitchenHomeLogo compact />
           </Link>
           <button
+            aria-controls="site-nav"
             aria-expanded={menuOpen}
             aria-label={menuOpen ? t('Đóng trình đơn') : t('Mở trình đơn')}
             className="mobile-menu-button"
             onClick={() => setMenuOpen((value) => !value)}
+            ref={menuButtonRef}
             type="button"
           >
             <AppIcon name={menuOpen ? 'close' : 'menu'} />
@@ -188,6 +223,8 @@ export function PublicLayout() {
           <nav
             aria-label={t('Điều hướng chính')}
             className={`site-nav${menuOpen ? ' is-open' : ''}`}
+            id="site-nav"
+            ref={navRef}
             onClick={(event) => {
               if ((event.target as HTMLElement).closest('a')) setMenuOpen(false);
             }}
@@ -308,6 +345,10 @@ export function PublicLayout() {
           </nav>
         </div>
       </header>
+      {menuOpen ? (
+        // Chạm ra ngoài menu để đóng; nút đóng/Esc vẫn là cách chính cho bàn phím.
+        <div aria-hidden="true" className="site-nav-backdrop" onClick={() => closeMenu()} />
+      ) : null}
 
       <main id="main-content" tabIndex={-1}>
         <Outlet />
@@ -388,7 +429,7 @@ export function PublicLayout() {
         </div>
         <div className="container footer-bottom">
           <span>
-            © {new Date().getFullYear()} Bếp Việt. {t('Bảo lưu mọi quyền.')}
+            © {new Date().getFullYear()} {t('Bếp Việt')}. {t('Bảo lưu mọi quyền.')}
           </span>
         </div>
       </footer>

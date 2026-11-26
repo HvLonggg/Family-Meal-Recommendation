@@ -2,6 +2,7 @@ import type { PropsWithChildren } from 'react';
 import { Navigate, useLocation } from 'react-router';
 
 import { useAuth } from '@/features/auth/AuthContext';
+import { loginHref } from '@/features/auth/landing';
 import type { UserRole } from '@/features/auth/types';
 import { useI18n } from '@/features/i18n/I18nContext';
 
@@ -23,17 +24,19 @@ export function ProtectedRoute({ allow, children }: ProtectedRouteProps) {
     );
   }
   if (!user) {
-    // Giữ nguyên đường dẫn (cả ?query và #hash) để đăng nhập xong quay lại đúng trang.
+    // Giữ nguyên đường dẫn (cả ?query và #hash) để đăng nhập xong quay lại đúng trang; ghi cả
+    // vào URL (?next=) để tải lại trang không mất.
+    const from = `${location.pathname}${location.search}${location.hash}`;
     return (
       <Navigate
         replace
         state={{
-          from: `${location.pathname}${location.search}${location.hash}`,
+          from,
           notice: sessionExpired
             ? 'Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại.'
             : undefined,
         }}
-        to="/login"
+        to={loginHref(from)}
       />
     );
   }

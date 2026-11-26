@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link, Navigate, useLocation, useNavigate } from 'react-router';
+import { Link, Navigate, useLocation, useNavigate, useSearchParams } from 'react-router';
 
 import { AuthAlert } from '@/components/auth/AuthAlert';
 import { AuthField } from '@/components/auth/AuthField';
 import { SocialLoginButtons } from '@/components/auth/SocialLoginButtons';
+import { useAuthTitle } from '@/components/auth/useAuthTitle';
 import { Button } from '@/components/ui/Button';
 import { useAuth } from '@/features/auth/AuthContext';
-import { landingPath } from '@/features/auth/landing';
+import { authHref, landingPath, safeReturnPath } from '@/features/auth/landing';
 import { errorMessage } from '@/lib/errors';
 import { useI18n } from '@/features/i18n/I18nContext';
 
@@ -18,6 +19,16 @@ interface LoginForm {
 }
 
 const REMEMBERED_IDENTIFIER_KEY = 'bep-viet-login-hint-v1';
+
+type Translate = ReturnType<typeof useI18n>['t'];
+
+/** Lý do khách bị đưa tới trang đăng nhập, theo trang họ muốn mở. */
+function guestReason(path: string, t: Translate) {
+  if (path.startsWith('/planner')) return t('Đăng nhập để lên kế hoạch bữa ăn cho cả tuần.');
+  if (path.startsWith('/cook')) return t('Đăng nhập để vào bếp và theo dõi từng bước nấu.');
+  if (path.startsWith('/admin')) return t('Đăng nhập bằng tài khoản quản trị để tiếp tục.');
+  return t('Đăng nhập để lưu món và lên kế hoạch bữa ăn.');
+}
 
 function getRememberedIdentifier() {
   try {
@@ -32,9 +43,25 @@ export function LoginPage() {
   const { t } = useI18n();
   const navigate = useNavigate();
   const location = useLocation();
+  const [searchParams] = useSearchParams();
   const loginState = location.state as { email?: string; from?: string; notice?: string } | null;
+  // `?next=` giữ đường quay lại khi tải lại trang; state.from vẫn dùng cho điều hướng trong SPA.
+  const returnPath =
+    safeReturnPath(searchParams.get('next') ?? undefined) ??
+    safeReturnPath(loginState?.from) ??
+    undefined;
+  // Khách bị chuyển tới từ một trang cần đăng nhập (không phải phiên hết hạn hay vừa đăng ký).
+  const isGuestRedirect = Boolean(returnPath) && !loginState?.notice;
+  useAuthTitle(t('Đăng nhập'));
   // Thông báo chuyển tiếp (vd. vừa đăng ký xong) là thông tin; lỗi đăng nhập hiển thị kiểu lỗi.
-  const [notice, setNotice] = useState(() => (loginState?.notice ? t(loginState.notice) : ''));
+  const [notice, setNotice] = useState(() =>
+    loginState?.notice
+      ? t(loginState.notice)
+      : returnPath && isGuestRedirect
+        ? guestReason(returnPath, t)
+        : '',
+  );
+  const registerLink = authHref('/register', returnPath);
   const [error, setError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const {
@@ -42,6 +69,7 @@ export function LoginPage() {
     handleSubmit,
     register,
   } = useForm<LoginForm>({
+    mode: 'onTouched',
     defaultValues: {
       email: loginState?.email ?? getRememberedIdentifier(),
       password: '',
@@ -69,7 +97,7 @@ export function LoginPage() {
         // Authentication still works when browser storage is disabled.
       }
       // Quay lại đúng trang đã mở trước khi bị yêu cầu đăng nhập.
-      await navigate(landingPath(user.role, loginState?.from), { replace: true });
+      await navigate(landingPath(user.role, returnPath), { replace: true });
     } catch (loginError) {
       setError(errorMessage(loginError, t));
     } finally {
@@ -79,15 +107,30 @@ export function LoginPage() {
 
   // Đã đăng nhập (mở lại /login hoặc bấm Quay lại) thì vào thẳng ứng dụng.
   if (!isLoading && currentUser && !isSubmitting) {
-    return <Navigate replace to={landingPath(currentUser.role, loginState?.from)} />;
+    return <Navigate replace to={landingPath(currentUser.role, returnPath)} />;
   }
 
   return (
     <>
       <div className="auth-card__heading">
-        <span className="auth-kicker">{t('Chào mừng trở lại')}</span>
-        <h1>{t('Đăng nhập Bếp Việt')}</h1>
-        <p>{t('Tiếp tục hành trình chuẩn bị những bữa cơm thật nhẹ nhàng.')}</p>
+        {isGuestRedirect ? (
+          <>
+            <span className="auth-kicker">{t('Chào mừng bạn đến với Bếp Việt')}</span>
+            <h1>{t('Đăng nhập hoặc tạo tài khoản')}</h1>
+            <p>
+              {t('Mới đến Bếp Việt?')}{' '}
+              <Link className="auth-inline-link" to={registerLink}>
+                {t('Tạo tài khoản miễn phí')}
+              </Link>
+            </p>
+          </>
+        ) : (
+          <>
+            <span className="auth-kicker">{t('Chào mừng trở lại')}</span>
+            <h1>{t('Đăng nhập Bếp Việt')}</h1>
+            <p>{t('Tiếp tục hành trình chuẩn bị những bữa cơm thật nhẹ nhàng.')}</p>
+          </>
+        )}
       </div>
 
       {error ? <AuthAlert tone="danger">{error}</AuthAlert> : null}
@@ -99,7 +142,7 @@ export function LoginPage() {
           error={errors.email?.message}
           id="login-email"
           label={t('Email đăng nhập')}
-          placeholder="ban@example.com"
+          placeholder={t('ban@example.com')}
           type="email"
           {...register('email', {
             required: t('Vui lòng nhập email.'),
@@ -131,7 +174,7 @@ export function LoginPage() {
       <SocialLoginButtons />
 
       <p className="auth-switch">
-        {t('Chưa có tài khoản?')} <Link to="/register">{t('Tạo tài khoản miễn phí')}</Link>
+        {t('Chưa có tài khoản?')} <Link to={registerLink}>{t('Tạo tài khoản miễn phí')}</Link>
       </p>
     </>
   );

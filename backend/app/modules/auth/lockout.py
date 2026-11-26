@@ -17,3 +17,8 @@ def is_login_locked(email: str | None) -> bool:
 def unlock_login(email: str) -> None:
     """Xóa bộ đếm sai mật khẩu của email để người dùng đăng nhập lại ngay."""
     LOGIN_FAILURES_PER_EMAIL.reset(login_email_key(email))
+
+
+def locked_login_count() -> int:
+    """Số email đang bị khóa đăng nhập tạm thời (chỉ trong tiến trình hiện tại)."""
+    return LOGIN_FAILURES_PER_EMAIL.blocked_count()

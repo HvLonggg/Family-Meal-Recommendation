@@ -55,7 +55,7 @@ export const en: Record<string, string> = {
   'Tiếng Việt': 'Vietnamese',
   'Giao diện tiếng Việt': 'Vietnamese interface',
   'Thứ Hai – Thứ Sáu, 08:30 – 17:30 (GMT+7)': 'Monday – Friday, 08:30 – 17:30 (GMT+7)',
-  'Phản hồi trong vòng 24 giờ làm việc': 'Replies within 24 business hours',
+  'Phản hồi trong vòng 24 giờ làm việc': 'Replies within one business day',
   'Hoàng Văn Long': 'Hoang Van Long',
   'Nhà sáng lập & phụ trách sản phẩm': 'Founder & product lead',
 
@@ -344,7 +344,7 @@ export const en: Record<string, string> = {
     'Allow signing in again now instead of waiting 15 minutes',
   'Trời se lạnh': 'Chilly days',
   'Ngày nắng nóng': 'Hot days',
-  'Trời lạnh ăn gì?': 'What to eat when it is cold?',
+  'Trời lạnh ăn gì?': 'What to eat on a cold day?',
   'Trời nóng ăn gì?': 'What to eat when it is hot?',
   'Món nóng hổi, nhiều nước, ấm bụng cho ngày gió mùa.':
     'Steaming, brothy dishes to keep you warm on windy days.',
@@ -587,7 +587,7 @@ export const en: Record<string, string> = {
   'Phản hồi sẽ được gửi về email bạn nhập bên dưới.':
     "We'll reply to the email address you enter below.",
   'Gửi thư thành công. Bếp Việt sẽ phản hồi qua email của bạn.':
-    'Message sent. Bếp Việt will reply by email.',
+    'Message sent. Bep Viet will reply by email.',
   'Nấu tiếp: chuẩn bị nguyên liệu': 'Continue: gather ingredients',
   'Nấu tiếp: hoàn thiện món': 'Continue: finishing touches',
   'Lời bước tính cho {count} người': 'Step amounts are for {count} servings',
@@ -947,13 +947,13 @@ export const en: Record<string, string> = {
   'Liên hệ & hỗ trợ': 'Contact & support',
   'Bếp Việt luôn lắng nghe': 'Bep Viet is always listening',
   'Mình trân trọng mọi góp ý. Bếp Việt sẽ phản hồi bạn qua email trong vòng 24 giờ làm việc.':
-    'I value your feedback. Bep Viet will reply by email within 24 business hours.',
+    'We value your feedback and will reply by email within one business day.',
   'Cảm ơn bạn đã đồng hành và giúp Bếp Việt hoàn thiện hơn.':
     'Thank you for being part of Bep Viet and helping us improve.',
   'Điền thông tin, mình sẽ phản hồi qua email bạn cung cấp.':
-    'Share a few details and I will reply to your email.',
+    'Share a few details and we will reply to your email.',
   'Hòm thư Bếp Việt: {email}. Yêu cầu sẽ được tiếp nhận tại đây; phản hồi gửi về email người gửi trong vòng 24 giờ làm việc.':
-    'Bep Viet support inbox: {email}. Requests are received there, and replies go to the sender within 24 business hours.',
+    'Bep Viet support inbox: {email}. We receive requests there and reply to the sender within one business day.',
   'Đang tải thông tin hòm thư hỗ trợ…': 'Loading the support inbox…',
   'Chưa tải được địa chỉ hòm thư hỗ trợ. Hòm thư tiếp nhận sẽ được xác nhận sau khi gửi yêu cầu.':
     'The support inbox could not be loaded. The receiving address will be confirmed after you submit your request.',
@@ -967,7 +967,7 @@ export const en: Record<string, string> = {
   'Bếp Việt không chỉ là nơi tìm công thức. Đây là nỗ lực để mỗi gia đình có thêm cảm hứng, sự an tâm và niềm vui quanh mâm cơm.':
     'Bep Viet is more than a place to find recipes. It is our effort to bring every family more inspiration, confidence and joy around the table.',
   'Tôi trân trọng từng phút bạn dành để chia sẻ. Mọi phản hồi đều giúp Bếp Việt gần gũi và hữu ích hơn với căn bếp của bạn.':
-    'I value the time you take to share with us. Every response helps make Bep Viet more useful and more at home in your kitchen.',
+    'We value the time you take to share with us. Every response helps make Bep Viet more useful and more at home in your kitchen.',
   'Các trường có dấu * là bắt buộc. Nội dung sẽ được chuyển tới hộp thư hỗ trợ; email của bạn chỉ dùng để phản hồi yêu cầu này.':
     'Fields marked * are required. Your message will be sent to our support inbox, and your email will only be used to respond to this request.',
   'Yêu cầu đã được tiếp nhận và gửi tới {email}. Bếp Việt sẽ phản hồi qua email trong vòng 24 giờ làm việc.':
@@ -1828,7 +1828,7 @@ export const en: Record<string, string> = {
   'Hãy tải ảnh món đã tách nền.': 'Please upload a cut-out dish image.',
   'Thêm ít nhất một nguyên liệu.': 'Add at least one ingredient.',
   'Thêm ít nhất một bước nấu.': 'Add at least one cooking step.',
-  'Kho món Bếp Việt': 'Bếp Việt recipe library',
+  'Kho món Bếp Việt': 'Bep Viet recipe library',
   'Thêm món mới': 'Add recipe',
   'Ví dụ: Gà kho gừng': 'e.g. Ginger braised chicken',
   'Danh sách đi chợ tự xếp mắm, muối, đường, mì chính… vào cột gia vị; hành, tỏi, rau thơm vào nguyên liệu.':
@@ -1886,7 +1886,7 @@ export const en: Record<string, string> = {
   'Ẩn lời nhắn': 'Hide message',
   'Mở trợ lý Chú Rồng': 'Open the Chef Dragon assistant',
   'Trò chuyện với Chú Rồng': 'Chat with Chef Dragon',
-  'Trợ lý AI của Bếp Việt': 'Bếp Việt AI assistant',
+  'Trợ lý AI của Bếp Việt': 'Bep Viet AI assistant',
   'Trợ lý bếp · luôn sẵn sàng': 'Kitchen assistant · always on',
   'Trò chuyện mới': 'New chat',
   'Lịch sử trò chuyện': 'Chat history',
@@ -2050,23 +2050,23 @@ export const en: Record<string, string> = {
   'Tiêu đề (mặc định lấy theo tên tệp)': 'Title (defaults to the file name)',
   'Dạy Chú Rồng': 'Teach Chef Dragon',
   'Viết nhanh thông tin riêng của Bếp Việt: chính sách, sự kiện, mẹo bếp…':
-    'Quickly write Bếp Việt-specific knowledge: policies, events, kitchen tips…',
+    'Quickly write Bep Viet-specific knowledge: policies, events, kitchen tips…',
   'Viết ghi chú kiến thức': 'Write a knowledge note',
   'Tiêu đề ghi chú': 'Note title',
   'Ví dụ: Giờ giao nguyên liệu': 'E.g. Ingredient delivery hours',
   'Nội dung ghi chú': 'Note content',
   'Ví dụ: Bếp Việt giao nguyên liệu nội thành từ 8h đến 20h mỗi ngày.':
-    'E.g. Bếp Việt delivers ingredients in the city from 8am to 8pm daily.',
+    'E.g. Bep Viet delivers ingredients in the city from 8am to 8pm daily.',
   'Lưu & dạy': 'Save & teach',
   'Chú Rồng dùng các tài liệu đang bật để trả lời mọi người dùng và ghi nguồn bên dưới câu trả lời.':
     'Chef Dragon uses enabled documents to answer everyone and cites them under each reply.',
   'Tài liệu đã dạy': 'Taught documents',
   'Đang tải tài liệu…': 'Loading documents…',
   'Tải tệp hoặc viết ghi chú để Chú Rồng biết thêm về Bếp Việt.':
-    'Upload a file or write a note so Chef Dragon knows more about Bếp Việt.',
+    'Upload a file or write a note so Chef Dragon knows more about Bep Viet.',
   'Chưa có tài liệu nào': 'No documents yet',
   'Tải tài liệu, viết ghi chú để trợ lý hiểu thêm về Bếp Việt.':
-    'Upload documents and notes so the assistant knows more about Bếp Việt.',
+    'Upload documents and notes so the assistant knows more about Bep Viet.',
   'Đoạn công thức': 'Recipe chunks',
   'Đoạn bài viết': 'Article chunks',
   'Đoạn tài liệu dạy': 'Taught chunks',
@@ -2136,7 +2136,7 @@ export const en: Record<string, string> = {
   'Hoàn thành': 'Finish',
   'Xong, bước tiếp': 'Done, next step',
   'Trên iPhone: bấm Chia sẻ → "Thêm vào MH chính" rồi mở Bếp Việt từ đó để chuông kêu cả khi khóa máy.':
-    'On iPhone: tap Share → "Add to Home Screen", then open Bếp Việt from there so alarms ring while locked.',
+    'On iPhone: tap Share → "Add to Home Screen", then open Bep Viet from there so alarms ring while locked.',
   'Trình duyệt này không hỗ trợ thông báo; chuông chỉ kêu khi ứng dụng đang mở.':
     "This browser doesn't support notifications; alarms only ring while the app is open.",
   'Chuông sẽ báo cả khi bạn tắt màn hình.': 'Alarms will ring even with the screen off.',
@@ -2287,4 +2287,98 @@ export const en: Record<string, string> = {
   'Thu gọn bộ lọc đã chọn': 'Collapse active filters',
   'Xóa tìm kiếm': 'Clear search',
   'Xóa tìm kiếm và bộ lọc': 'Clear search and filters',
+  // Trang xác thực: thẻ thương hiệu, tiêu đề tab, lý do đăng nhập, liên kết đặt lại hết hạn.
+  'Gợi ý món ngon cho bữa cơm nhà': 'Tasty ideas for home-cooked meals',
+  'Đăng ký': 'Sign up',
+  'Quên mật khẩu': 'Forgot password',
+  'Đặt lại mật khẩu': 'Reset password',
+  'Đăng nhập Google': 'Google sign-in',
+  'Chào mừng bạn đến với Bếp Việt': 'Welcome to Bep Viet',
+  'Đăng nhập hoặc tạo tài khoản': 'Sign in or create an account',
+  'Mới đến Bếp Việt?': 'New to Bep Viet?',
+  'Đăng nhập để lên kế hoạch bữa ăn cho cả tuần.': 'Sign in to plan your meals for the whole week.',
+  'Đăng nhập để vào bếp và theo dõi từng bước nấu.':
+    'Sign in to start cooking and follow each step.',
+  'Đăng nhập bằng tài khoản quản trị để tiếp tục.': 'Sign in with an admin account to continue.',
+  'Đăng nhập để lưu món và lên kế hoạch bữa ăn.': 'Sign in to save dishes and plan your meals.',
+  'Không thể đặt lại mật khẩu': 'Unable to reset your password',
+  'Hãy yêu cầu liên kết mới, chúng tôi sẽ gửi ngay vào email của bạn.':
+    "Request a new link and we'll send it to your email right away.",
+  'Gửi lại liên kết đặt lại mật khẩu': 'Send a new reset link',
+  // Giao diện mobile/trang chủ (QA 25/11)
+  'Ghép mâm khác': 'Build another meal',
+  // Nhãn danh mục, vùng miền và chip tìm kiếm (QA 25/11, D-03/D-10/R-09)
+  'Món ăn vặt': 'Snacks',
+  'Món rau củ': 'Vegetable dishes',
+  'Món thịt heo': 'Pork dishes',
+  'Món thịt bò': 'Beef dishes',
+  'Món vịt': 'Duck dishes',
+  'ban@example.com': 'you@example.com',
+  'Tây Nguyên': 'Central Highlands',
+  'Toàn quốc': 'Nationwide',
+  'Nam Trung Bộ': 'South Central Coast',
+  'Duyên hải miền Trung': 'Central Coast',
+  'Bắc Bộ': 'Northern Vietnam',
+  'Đông Nam Bộ': 'Southeastern Vietnam',
+  'Tây Nam Bộ': 'Southwestern Vietnam',
+  'Bắc Trung Bộ': 'North Central Vietnam',
+  'Đông Bắc': 'Northeast Vietnam',
+  'Tây Bắc': 'Northwest Vietnam',
+  'Đồng bằng Bắc Bộ': 'Northern Delta',
+  'Duyên hải Nam Trung Bộ': 'South Central Coast',
+  'Đồng bằng sông Cửu Long': 'Mekong Delta',
+  'Đông Bắc Bộ': 'Northeast Vietnam',
+  'Nam Bộ': 'Southern Vietnam',
+  'Ẩm thực Việt Nam': 'Vietnamese cuisine',
+  'Tây Bắc Bộ': 'Northwest Vietnam',
+  'Trung du và miền núi Bắc Bộ': 'Northern Midlands and Mountains',
+  'Đồng bằng sông Hồng': 'Red River Delta',
+  'Miền Bắc': 'Northern Vietnam',
+  'Trung Bộ': 'Central Vietnam',
+  'Miền Trung': 'Central Vietnam',
+  'Miền Nam': 'Southern Vietnam',
+  // Mô tả mặc định cho thẻ meta description/og:description
+  'Bếp Việt giúp gia đình chọn món, điều chỉnh khẩu phần và lên lịch nấu ăn theo lịch trình.':
+    'Bep Viet helps families choose dishes, adjust servings and plan meals around their schedule.',
+  // Bảng điều khiển quản trị: KPI, biểu đồ xu hướng, phân bố, việc cần xử lý
+  'Kỳ trước: {count}': 'Previous period: {count}',
+  'Tăng từ 0 ở kỳ trước': 'Up from 0 in the previous period',
+  'Không đổi so với kỳ trước': 'No change from the previous period',
+  '{direction} {percent}% so với kỳ trước': '{direction} {percent}% vs the previous period',
+  Tăng: 'Up',
+  Giảm: 'Down',
+  '{metric}: tổng {total} trong {days} ngày, từ {from} đến {to}.':
+    '{metric}: {total} in total over {days} days, from {from} to {to}.',
+  'Chưa có dữ liệu.': 'No data yet.',
+  'Chưa có hoạt động nào trong kỳ này.': 'No activity in this period yet.',
+  '{days} ngày': '{days} days',
+  'Xem bảng số liệu': 'View data table',
+  Ngày: 'Date',
+  '{count} yêu cầu chưa ai xem': '{count} not opened yet',
+  'Khóa tạm 15 phút sau 5 lần sai mật khẩu': 'Locked for 15 minutes after 5 wrong passwords',
+  '{count} việc đang chờ': '{count} items waiting',
+  'Đã xử lý hết': 'All caught up',
+  'Chỉ số chính': 'Key metrics',
+  'So với {days} ngày liền trước': 'Compared with the previous {days} days',
+  'Khoảng thời gian': 'Time range',
+  'Chọn một thẻ chỉ số ở trên để đổi biểu đồ. Rê chuột hoặc dùng phím mũi tên để xem từng ngày.':
+    'Pick a metric card above to change the chart. Hover or use the arrow keys to inspect each day.',
+  '{metric} · {days} ngày qua': '{metric} · last {days} days',
+  'Người dùng đã làm gì trong {days} ngày qua.': 'What users did in the last {days} days.',
+  'Phân bố hoạt động': 'Activity breakdown',
+  'Bữa được lên kế hoạch': 'Meals planned',
+  'Chưa có món mới trong kế hoạch.': 'No newly planned dishes yet.',
+  'Tài khoản': 'Accounts',
+  '{active}/{total} đang hoạt động': '{active}/{total} active',
+  'Người dùng hoạt động': 'Active users',
+  'Xem người dùng': 'View users',
+  'Người dùng mới': 'New users',
+  'Món thêm vào kế hoạch': 'Dishes added to plans',
+  'Xem kế hoạch': 'View plans',
+  'Lượt nấu xong': 'Meals cooked',
+  'Món được nấu nhiều': 'Most cooked dishes',
+  'Món được yêu thích': 'Most loved dishes',
+  'Tài khoản bị khóa đăng nhập': 'Accounts locked out of sign-in',
+  'Đổi khẩu phần': 'Changed servings',
+  'Thêm yêu thích': 'Added to favourites',
 };

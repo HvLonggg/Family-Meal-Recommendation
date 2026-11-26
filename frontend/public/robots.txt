@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /account
+Disallow: /api
+
+Sitemap: https://bepviet-vn.vercel.app/sitemap.xml

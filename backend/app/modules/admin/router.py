@@ -11,6 +11,7 @@ from sqlalchemy.orm import Session, selectinload
 from app.core.config import get_settings
 from app.core.exceptions import DomainError
 from app.core.images import decode_image_data_url
+from app.core.rate_limit import SlidingWindowLimiter
 from app.db.session import get_db_session
 from app.modules.admin import insights
 from app.modules.admin.email_schemas import (
@@ -83,7 +84,7 @@ from app.modules.auth.email import (
     email_delivery_status,
     send_support_reply_email,
 )
-from app.modules.auth.lockout import is_login_locked, unlock_login
+from app.modules.auth.lockout import is_login_locked, locked_login_count, unlock_login
 from app.modules.auth.models import AuthIdentity, User
 from app.modules.auth.security import hash_password
 from app.modules.auth.service import EmailAlreadyExistsError, revoke_all_sessions
@@ -139,6 +140,45 @@ class AdminEmailDeliveryError(DomainError):
 class MealSuggestionDeliveryUnavailableError(DomainError):
     code = "EMAIL_DELIVERY_UNAVAILABLE"
     status_code = status.HTTP_503_SERVICE_UNAVAILABLE
+
+
+class AdminEmailRateLimitError(DomainError):
+    code = "ADMIN_EMAIL_RATE_LIMITED"
+    status_code = status.HTTP_429_TOO_MANY_REQUESTS
+
+
+# Giới hạn theo từng quản trị viên: nếu token quản trị bị lộ, kẻ xấu không thể biến hệ thống
+# thành máy gửi thư rác (làm hỏng uy tín tên miền / bị nhà cung cấp email khóa).
+SUPPORT_REPLIES_PER_ADMIN = SlidingWindowLimiter(limit=40, window_seconds=60 * 60)
+MEAL_SUGGESTION_SENDS_PER_ADMIN = SlidingWindowLimiter(limit=20, window_seconds=60 * 60)
+
+
+def _consume_email_quota(limiter: SlidingWindowLimiter, admin: User, action: str) -> None:
+    key = str(admin.id)
+    if limiter.blocked(key):
+        logger.warning(
+            "admin_audit action=%s.rate_limited admin_id=%s",
+            action,
+            key,
+            extra={"admin_id": key, "admin_action": action},
+        )
+        raise AdminEmailRateLimitError(
+            "Bạn đã gửi quá nhiều email trong một giờ. Vui lòng thử lại sau."
+        )
+    limiter.hit(key)
+
+
+def _audit(action: str, admin: User, **fields: object) -> None:
+    """Ghi log có cấu trúc cho thao tác quản trị nhạy cảm (không ghi nội dung hay bí mật)."""
+    # JsonFormatter chỉ ghi `message`, nên đưa các trường vào thông điệp dạng key=value.
+    details = " ".join(f"{key}={value}" for key, value in fields.items())
+    logger.info(
+        "admin_audit action=%s admin_id=%s %s",
+        action,
+        admin.id,
+        details,
+        extra={"admin_action": action, "admin_id": str(admin.id), **fields},
+    )
 
 
 def _count(session: Session, statement: Any) -> int:
@@ -207,6 +247,13 @@ def overview(session: DatabaseSession) -> AdminOverviewResponse:
             session, _counter(RecipeSubmission, RecipeSubmission.status == "pending")
         ),
         tickets_open=_count(session, _counter(SupportTicket, SupportTicket.status != "resolved")),
+        tickets_unviewed=_count(
+            session,
+            _counter(
+                SupportTicket, SupportTicket.status != "resolved", SupportTicket.viewed_at.is_(None)
+            ),
+        ),
+        locked_logins=locked_login_count(),
     )
     recent = session.scalars(select(User).order_by(User.created_at.desc()).limit(6)).all()
     return AdminOverviewResponse(
@@ -232,6 +279,10 @@ def platform_insights(
         ),
         signups=insights.daily_series(session, [(User.created_at, None)], days),
         top_recipes=insights.top_recipes(session),
+        period_days=days,
+        metrics=insights.platform_trends(session, days),
+        activity_mix=insights.activity_mix(session, days),
+        meal_types=insights.meal_type_mix(session, days),
     )
 
 
@@ -271,7 +322,9 @@ def users(
     status_code=status.HTTP_201_CREATED,
     summary="Create an account",
 )
-def create_user(payload: AdminUserCreate, session: DatabaseSession) -> AdminUserRow:
+def create_user(
+    payload: AdminUserCreate, session: DatabaseSession, admin: AdminUser
+) -> AdminUserRow:
     if session.scalar(select(User.id).where(User.email == payload.email)) is not None:
         raise EmailAlreadyExistsError("Email này đã có tài khoản trong hệ thống.")
     user = User(
@@ -295,6 +348,7 @@ def create_user(payload: AdminUserCreate, session: DatabaseSession) -> AdminUser
     )
     session.commit()
     session.refresh(user)
+    _audit("user.create", admin, user_id=str(user.id), role=user.role)
     return _user_rows(session, [user])[0]
 
 
@@ -307,6 +361,18 @@ def update_user(
         raise AdminActionForbiddenError(
             "Bạn không thể tự thay đổi vai trò hoặc khóa chính tài khoản của mình."
         )
+    demoting = payload.role is not None and payload.role != "admin"
+    deactivating = payload.status is not None and payload.status != "active"
+    if user.role == "admin" and (demoting or deactivating):
+        remaining = _count(
+            session,
+            _counter(User, User.role == "admin", User.status == "active", User.id != user.id),
+        )
+        if remaining == 0:
+            raise AdminActionForbiddenError(
+                "Không thể hạ quyền hoặc khóa quản trị viên cuối cùng đang hoạt động."
+            )
+    previous_role, previous_status = user.role, user.status
     access_changed = False
     if payload.role and payload.role != user.role:
         user.role = payload.role
@@ -319,6 +385,16 @@ def update_user(
         revoke_all_sessions(session, user)
     session.commit()
     session.refresh(user)
+    if access_changed:
+        _audit(
+            "user.access_change",
+            admin,
+            user_id=str(user.id),
+            role_from=previous_role,
+            role_to=user.role,
+            status_from=previous_status,
+            status_to=user.status,
+        )
     return _user_rows(session, [user])[0]
 
 
@@ -331,10 +407,7 @@ def unlock_user_login(user_id: UUID, session: DatabaseSession, admin: AdminUser)
     user = _get_user(session, user_id)
     if user.email:
         unlock_login(user.email)
-    logger.info(
-        "Admin mở khóa đăng nhập",
-        extra={"admin_id": str(admin.id), "user_id": str(user.id)},
-    )
+    _audit("user.unlock_login", admin, user_id=str(user.id))
     return _user_rows(session, [user])[0]
 
 
@@ -586,12 +659,20 @@ def recipe_insights(slug: str, session: DatabaseSession) -> AdminRecipeInsightsR
 
 @router.patch("/recipes/{slug}", response_model=AdminRecipeRow, summary="Edit a recipe")
 def update_recipe(
-    slug: str, payload: AdminRecipeUpdate, session: DatabaseSession
+    slug: str, payload: AdminRecipeUpdate, session: DatabaseSession, admin: AdminUser
 ) -> AdminRecipeRow:
     recipe = _get_recipe(session, slug)
+    previous_status = recipe.status
     for field, value in payload.model_dump().items():
         setattr(recipe, field, value)
     session.commit()
+    _audit(
+        "recipe.update",
+        admin,
+        recipe_slug=slug,
+        status_from=previous_status,
+        status_to=payload.status,
+    )
     session.refresh(recipe)
     return AdminRecipeRow.model_validate(recipe)
 
@@ -616,7 +697,9 @@ def _apply_recipe_image(recipe: Recipe, data_url: str) -> None:
     status_code=status.HTTP_201_CREATED,
     summary="Create a recipe",
 )
-def create_recipe(payload: AdminRecipeCreate, session: DatabaseSession) -> AdminRecipeRow:
+def create_recipe(
+    payload: AdminRecipeCreate, session: DatabaseSession, admin: AdminUser
+) -> AdminRecipeRow:
     base = slugify(payload.name)
     slug = base
     suffix = 2
@@ -668,16 +751,18 @@ def create_recipe(payload: AdminRecipeCreate, session: DatabaseSession) -> Admin
     session.add(recipe)
     session.commit()
     session.refresh(recipe)
+    _audit("recipe.create", admin, recipe_slug=recipe.slug)
     return AdminRecipeRow.model_validate(recipe)
 
 
 @router.put("/recipes/{slug}/image", response_model=AdminRecipeRow, summary="Replace recipe image")
 def replace_recipe_image(
-    slug: str, payload: AdminRecipeImageUpdate, session: DatabaseSession
+    slug: str, payload: AdminRecipeImageUpdate, session: DatabaseSession, admin: AdminUser
 ) -> AdminRecipeRow:
     recipe = _get_recipe(session, slug)
     _apply_recipe_image(recipe, payload.image)
     session.commit()
+    _audit("recipe.image_replace", admin, recipe_slug=slug)
     session.refresh(recipe)
     return AdminRecipeRow.model_validate(recipe)
 
@@ -710,9 +795,11 @@ def articles(
     summary="Approve, reject or hide an article",
 )
 def moderate(
-    article_id: UUID, payload: ArticleModerationRequest, session: DatabaseSession
+    article_id: UUID, payload: ArticleModerationRequest, session: DatabaseSession, admin: AdminUser
 ) -> ArticleDetail:
-    return to_detail(moderate_article(session, article_id, payload.status, payload.note))
+    detail = to_detail(moderate_article(session, article_id, payload.status, payload.note))
+    _audit("article.moderate", admin, article_id=str(article_id), status_to=payload.status)
+    return detail
 
 
 def _submission_response(item: RecipeSubmission) -> AdminSubmissionResponse:
@@ -762,7 +849,10 @@ def submissions(
     summary="Review a recipe suggestion",
 )
 def review_submission(
-    submission_id: UUID, payload: SubmissionReviewRequest, session: DatabaseSession
+    submission_id: UUID,
+    payload: SubmissionReviewRequest,
+    session: DatabaseSession,
+    admin: AdminUser,
 ) -> AdminSubmissionResponse:
     item = session.scalar(
         select(RecipeSubmission)
@@ -775,6 +865,7 @@ def review_submission(
     item.admin_note = (payload.admin_note or "").strip() or None
     session.commit()
     session.refresh(item)
+    _audit("submission.review", admin, submission_id=str(submission_id), status_to=item.status)
     return _submission_response(item)
 
 
@@ -855,10 +946,12 @@ def reply_to_support_ticket(
     ticket_id: UUID,
     payload: SupportTicketReplyRequest,
     session: DatabaseSession,
+    admin: AdminUser,
 ) -> AdminSupportTicketResponse:
     ticket = session.get(SupportTicket, ticket_id)
     if ticket is None:
         raise AdminResourceNotFoundError("Không tìm thấy yêu cầu hỗ trợ.")
+    _consume_email_quota(SUPPORT_REPLIES_PER_ADMIN, admin, "support.reply")
     now = datetime.now(UTC)
     ticket.reply_status = "sending"
     ticket.reply_attempts += 1
@@ -895,6 +988,7 @@ def reply_to_support_ticket(
         ticket.status = "in_progress"
     session.commit()
     session.refresh(ticket)
+    _audit("support.reply", admin, ticket_id=str(ticket_id))
     return AdminSupportTicketResponse.model_validate(ticket)
 
 
@@ -956,6 +1050,7 @@ def send_meal_suggestions(
             "Dịch vụ gửi email hiện chưa sẵn sàng. Vui lòng kiểm tra trạng thái "
             "nhà cung cấp email rồi thử lại."
         )
+    _consume_email_quota(MEAL_SUGGESTION_SENDS_PER_ADMIN, admin, "meal_suggestion.send")
 
     recipes_by_slug = {
         recipe.slug: recipe
@@ -1021,6 +1116,7 @@ def send_meal_suggestions(
         failed=0,
         queued=len(results),
     )
+    _audit("meal_suggestion.send", admin, recipients=len(results))
     # Trả kết quả ngay; email được gửi song song ở nền, lịch sử tự cập nhật trạng thái.
     queue_meal_suggestions(session.get_bind(), [delivery.id for delivery in results])
     return response
@@ -1244,5 +1340,8 @@ def update_assistant_document(
     status_code=status.HTTP_204_NO_CONTENT,
     summary="Remove a taught document from the assistant",
 )
-def delete_assistant_document(document_id: UUID, session: DatabaseSession) -> None:
+def delete_assistant_document(
+    document_id: UUID, session: DatabaseSession, admin: AdminUser
+) -> None:
     documents.delete_document(session, document_id)
+    _audit("assistant_document.delete", admin, document_id=str(document_id))

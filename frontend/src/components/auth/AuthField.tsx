@@ -11,9 +11,8 @@ export function AuthField({ error, hint, id, label, type = 'text', ...props }: A
   const [showPassword, setShowPassword] = useState(false);
   const { t } = useI18n();
   const isPassword = type === 'password';
-  const describedBy = [error ? `${id}-error` : '', hint ? `${id}-hint` : '']
-    .filter(Boolean)
-    .join(' ');
+  // Chỉ trỏ tới phần mô tả đang hiển thị: khi có lỗi, gợi ý được thay bằng thông báo lỗi.
+  const describedBy = error ? `${id}-error` : hint ? `${id}-hint` : '';
 
   return (
     <div className="auth-field">

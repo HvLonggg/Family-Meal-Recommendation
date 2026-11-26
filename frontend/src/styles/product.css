@@ -1179,6 +1179,8 @@ html[data-reduce-motion='true'] .hero-dish__steam {
   position: relative;
   overflow: hidden;
   container-type: inline-size;
+  overscroll-behavior-x: contain;
+  touch-action: pan-y;
 }
 
 .showcase-carousel__track {
@@ -4666,12 +4668,12 @@ html[data-reduce-motion='true'] .hero-dish__steam {
 }
 
 .profile-options small {
-  overflow: hidden;
   margin-top: 2px;
   color: var(--color-text-muted);
   font-size: 12px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  line-height: 1.4;
+  white-space: normal;
+  overflow-wrap: normal;
 }
 
 .random-settings button:disabled {
@@ -6448,15 +6450,17 @@ html[data-reduce-motion='true'] .hero-dish__steam {
 }
 
 .showcase-carousel--bleed .showcase-carousel__stage {
-  padding-inline: clamp(48px, 5vw, 84px);
+  /* Khung thẻ thẳng lề nội dung (container 1240px); mũi tên nằm trong phần lề, không đè thẻ. */
+  --showcase-gutter: max(58px, calc((100% - 1240px) / 2));
+  padding-inline: var(--showcase-gutter);
 }
 
 .showcase-carousel--bleed .showcase-carousel__arrow--previous {
-  left: 10px;
+  left: max(4px, calc(var(--showcase-gutter) - 58px));
 }
 
 .showcase-carousel--bleed .showcase-carousel__arrow--next {
-  right: 10px;
+  right: max(4px, calc(var(--showcase-gutter) - 58px));
 }
 
 .showcase-carousel--bleed .showcase-carousel__viewport {
@@ -6469,7 +6473,7 @@ html[data-reduce-motion='true'] .hero-dish__steam {
   z-index: 3;
   top: 0;
   bottom: 0;
-  width: clamp(14px, 3vw, 42px);
+  width: clamp(8px, 1.5vw, 20px);
   pointer-events: none;
   content: '';
 }
@@ -6572,15 +6576,7 @@ html[data-reduce-motion='true'] .hero-dish__steam {
   }
 
   .showcase-carousel--bleed .showcase-carousel__stage {
-    padding-inline: 45px;
-  }
-
-  .showcase-carousel--bleed .showcase-carousel__arrow--previous {
-    left: 4px;
-  }
-
-  .showcase-carousel--bleed .showcase-carousel__arrow--next {
-    right: 4px;
+    --showcase-gutter: 50px;
   }
 
   .hero-suggestions .hero-suggestions__keyword {

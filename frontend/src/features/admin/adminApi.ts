@@ -23,6 +23,10 @@ export interface AdminOverview {
     articles_pending: number;
     submissions_pending: number;
     tickets_open: number;
+    /** Yêu cầu hỗ trợ chưa được ai mở xem. */
+    tickets_unviewed?: number;
+    /** Số email đang bị khóa đăng nhập tạm thời do nhập sai mật khẩu. */
+    locked_logins?: number;
   };
   recent_users: { id: string; full_name: string; email: string | null; created_at: string }[];
 }
@@ -95,6 +99,7 @@ type Params = Record<string, string | number | undefined>;
 export const adminKeys = {
   all: ['admin'] as const,
   overview: () => ['admin', 'overview'] as const,
+  insights: (days: number) => ['admin', 'insights', days] as const,
   list: (resource: string, params: Params) => ['admin', resource, params] as const,
   userPlans: (userId: string) => ['admin', 'user-plans', userId] as const,
   user: (userId: string) => ['admin', 'user', userId] as const,
@@ -355,11 +360,28 @@ export interface RankedRecipe {
   cooked: number;
 }
 
+export type TrendKey =
+  'signups' | 'active_users' | 'plans_created' | 'recipes_cooked' | 'favorites';
+
+export interface TrendMetric {
+  key: TrendKey;
+  total: number;
+  previous_total: number;
+  series: DailyCount[];
+}
+
 export interface AdminInsights {
   activity: DailyCount[];
   signups: DailyCount[];
   top_recipes: RankedRecipe[];
+  period_days?: number;
+  metrics?: TrendMetric[];
+  activity_mix?: { label: string; count: number }[];
+  meal_types?: { label: string; count: number }[];
 }
+
+export const INSIGHT_PERIODS = [7, 30, 90] as const;
+export type InsightPeriod = (typeof INSIGHT_PERIODS)[number];
 
 export interface AdminCookedRecipe {
   slug: string;
@@ -441,8 +463,8 @@ export interface AdminRecipeInsights {
   top_cooks: AdminRecipeFan[];
 }
 
-export function getAdminInsights(signal?: AbortSignal) {
-  return apiRequest<AdminInsights>('/admin/insights', { signal });
+export function getAdminInsights(signal?: AbortSignal, days: InsightPeriod = 30) {
+  return apiRequest<AdminInsights>(`/admin/insights?days=${days}`, { signal });
 }
 
 export function getAdminUser(id: string, signal?: AbortSignal) {

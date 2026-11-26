@@ -109,9 +109,44 @@
   }
 }
 
-/* Khi có lời mời cài đang hiện, đẩy nút Chú Rồng lên để không chồng. */
+/* Lời mời cài trên điện thoại: gọn một khối thấp, không phủ nội dung. */
+@media (max-width: 560px) {
+  .pwa-toast--install {
+    gap: 10px;
+    border-radius: 16px;
+    padding: 10px 12px;
+  }
+  .pwa-toast--install .pwa-toast__icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+  }
+  .pwa-toast--install .pwa-toast__title {
+    font-size: 0.9375rem;
+    line-height: 1.3;
+  }
+  .pwa-toast--install .pwa-toast__text {
+    font-size: 0.8125rem;
+    line-height: 1.35;
+  }
+  .pwa-toast--install .pwa-toast__actions {
+    margin-top: 4px;
+  }
+}
+
+/* Khi có lời mời đang hiện: chừa chỗ cuối trang để CTA/link cuối vẫn cuộn ra được,
+ * và đẩy nút Chú Rồng lên để không chồng. */
+html body:has(.pwa-toast--install) {
+  padding-bottom: calc(132px + env(safe-area-inset-bottom));
+}
 html body:has(.pwa-toast) .rc-root:not(.is-open) {
   bottom: calc(var(--rc-bottom) + 132px);
+}
+
+/* Menu di động hoặc hộp thoại đang mở: ẩn nút nổi Chú Rồng để không chen lên trên. */
+html.has-menu-open .rc-root:not(.is-open),
+html body:has(.pwa-dialog-backdrop, .modal-backdrop) .rc-root:not(.is-open) {
+  visibility: hidden;
 }
 
 /* Nút "Thử lại" trên dải báo mất kết nối: đủ 44px để chạm. */
@@ -137,6 +172,40 @@ html .catalog-unavailable button {
   html .rc-launcher__label {
     font-size: 12px;
   }
+
+  /* M-08: nút ± khẩu phần, tim lưu món, mũi tên băng chuyền, VI/EN, link chân trang. */
+  html .serving-stepper button,
+  html .recipe-card__save,
+  html .showcase-carousel__arrow {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  html .language-switcher button {
+    min-height: 44px;
+    padding-inline: 12px;
+  }
+
+  html .footer-links a,
+  html .footer-contact a {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+  }
+
+  html .footer-links > div {
+    gap: 0;
+  }
+}
+
+/* M-09: chữ phụ cần đọc khi nấu không nhỏ hơn 13px. */
+html .ingredient-group small {
+  font-size: 13px;
+}
+
+html .recipe-card__region,
+html .recipe-reference-note span {
+  font-size: 12px;
 }
 /* Link pháp lý xếp chung nhịp với các link khác trong cột. */
 .footer-links .footer-legal {

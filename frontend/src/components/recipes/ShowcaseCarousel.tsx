@@ -17,6 +17,9 @@ type Direction = 'next' | 'previous';
 const CARD_GAP = 22;
 const AUTO_SPEED = 40;
 const MANUAL_DURATION = 900;
+const SWIPE_THRESHOLD = 55;
+// Kéo sang phải chưa có thẻ trước được dựng sẵn nên chỉ nhích nhẹ (cảm giác đàn hồi).
+const PREVIOUS_DRAG_RESISTANCE = 0.35;
 
 function visibleCardsForWidth(width: number) {
   if (width < 680) return 1;
@@ -60,6 +63,13 @@ export function ShowcaseCarousel<Item>({
   const offsetRef = useRef(0);
   const stepRef = useRef(slideStep(initialWidth, visibleCardsForWidth(initialWidth)));
   const swipeStartXRef = useRef<number | null>(null);
+  const dragBaseRef = useRef(0);
+
+  const paintTrack = () => {
+    if (trackRef.current) {
+      trackRef.current.style.transform = `translate3d(${-offsetRef.current}px, 0, 0)`;
+    }
+  };
 
   useEffect(() => {
     if (typeof IntersectionObserver === 'undefined') {
@@ -201,6 +211,7 @@ export function ShowcaseCarousel<Item>({
   const shownEnd = items.length ? modulo(currentIndex + visibleCount - 1, items.length) + 1 : 0;
 
   const move = (direction: Direction) => {
+    // Đang trượt dở thì bỏ qua lần bấm, không khóa nút (tránh trạng thái "tắt" giả).
     if (!canMove || manualDirection) return;
     setAnnounce(true);
     if (reducedMotion) {
@@ -233,17 +244,38 @@ export function ShowcaseCarousel<Item>({
         setPausedForFocus(false);
         const isTouch = event.pointerType === 'touch';
         if (isTouch) setPausedForPointer(true);
-        swipeStartXRef.current = isTouch ? event.clientX : null;
+        swipeStartXRef.current = isTouch && !manualDirection ? event.clientX : null;
+        dragBaseRef.current = offsetRef.current;
+      }}
+      onPointerMove={(event) => {
+        const startX = swipeStartXRef.current;
+        if (startX === null || !canMove) return;
+        // Băng chuyền đi theo ngón tay; trình duyệt vẫn lo phần cuộn dọc (touch-action: pan-y).
+        const delta = event.clientX - startX;
+        const drag =
+          delta < 0 ? Math.min(-delta, stepRef.current) : -delta * PREVIOUS_DRAG_RESISTANCE;
+        offsetRef.current = dragBaseRef.current + drag;
+        paintTrack();
       }}
       onPointerUp={(event) => {
         if (event.pointerType === 'touch') setPausedForPointer(false);
         const startX = swipeStartXRef.current;
         swipeStartXRef.current = null;
-        if (startX === null || Math.abs(event.clientX - startX) < 55) return;
+        if (startX === null) return;
+        if (Math.abs(event.clientX - startX) < SWIPE_THRESHOLD) {
+          // Vuốt quá ngắn: trả thẻ về chỗ cũ.
+          offsetRef.current = dragBaseRef.current;
+          paintTrack();
+          return;
+        }
         move(event.clientX < startX ? 'next' : 'previous');
       }}
       onPointerCancel={(event) => {
         if (event.pointerType === 'touch') setPausedForPointer(false);
+        if (swipeStartXRef.current !== null) {
+          offsetRef.current = dragBaseRef.current;
+          paintTrack();
+        }
         swipeStartXRef.current = null;
       }}
       onFocusCapture={(event) => {
@@ -264,7 +296,7 @@ export function ShowcaseCarousel<Item>({
         <button
           aria-label={t('{label} trước', { label })}
           className="showcase-carousel__arrow showcase-carousel__arrow--previous"
-          disabled={!canMove || manualDirection !== null}
+          disabled={!canMove}
           onClick={() => move('previous')}
           type="button"
         >
@@ -287,7 +319,7 @@ export function ShowcaseCarousel<Item>({
         <button
           aria-label={t('{label} tiếp', { label })}
           className="showcase-carousel__arrow showcase-carousel__arrow--next"
-          disabled={!canMove || manualDirection !== null}
+          disabled={!canMove}
           onClick={() => move('next')}
           type="button"
         >

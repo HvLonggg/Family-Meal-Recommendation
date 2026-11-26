@@ -25,6 +25,9 @@ class OverviewCounts(BaseModel):
     articles_pending: int
     submissions_pending: int
     tickets_open: int
+    # Mặc định 0 để client cũ/không đổi vẫn tương thích.
+    tickets_unviewed: int = 0
+    locked_logins: int = 0
 
 
 class RecentUser(BaseModel):
@@ -268,10 +271,24 @@ class RankedRecipe(BaseModel):
     cooked: int
 
 
+TrendKey = Literal["signups", "active_users", "plans_created", "recipes_cooked", "favorites"]
+
+
+class TrendMetric(BaseModel):
+    key: TrendKey
+    total: int
+    previous_total: int
+    series: list[DailyCount]
+
+
 class AdminInsightsResponse(BaseModel):
     activity: list[DailyCount]
     signups: list[DailyCount]
     top_recipes: list[RankedRecipe]
+    period_days: int = 14
+    metrics: list[TrendMetric] = []
+    activity_mix: list["TasteSlice"] = []
+    meal_types: list["TasteSlice"] = []
 
 
 class TasteSlice(BaseModel):
@@ -378,3 +395,6 @@ class AdminRecipeInsightsResponse(BaseModel):
 
 
 AdminUserDetailResponse.model_rebuild()
+
+
+AdminInsightsResponse.model_rebuild()

@@ -38,7 +38,14 @@ def prepare_recipe_cutout(data: bytes) -> bytes:
             if source.width * source.height > MAX_SOURCE_PIXELS:
                 raise InvalidImageError("Ảnh có kích thước quá lớn.")
             image = source.convert("RGBA")
-    except (UnidentifiedImageError, OSError) as exc:
+    except (
+        UnidentifiedImageError,
+        OSError,
+        ValueError,
+        SyntaxError,
+        Image.DecompressionBombError,
+    ) as exc:
+        # Ảnh hỏng/ảnh "bom giải nén" phải trả lỗi 4xx rõ ràng, không làm sập yêu cầu (500).
         raise InvalidImageError("Không đọc được ảnh món.") from exc
 
     alpha = image.getchannel("A")

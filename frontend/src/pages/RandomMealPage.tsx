@@ -372,8 +372,7 @@ export function RandomMealPage() {
               <AppIcon name="sparkles" size={17} /> {t('Tiện ích chọn món')}
             </span>
             <h1>
-              {t('Quay một vòng,')}
-              <br />
+              {t('Quay một vòng,')} <br />
               <em>{t('có ngay mâm cơm')}</em>
             </h1>
             <p>

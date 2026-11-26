@@ -1,9 +1,12 @@
 import { Link } from 'react-router';
 import { useI18n } from '@/features/i18n/I18nContext';
+import { usePageMeta } from '@/features/seo/usePageMeta';
 
 /** `recipe` dùng khi mã món không tồn tại để dẫn thẳng về Kho món. */
 export function NotFoundPage({ kind = 'page' }: { kind?: 'page' | 'recipe' }) {
   const { t } = useI18n();
+  // SPA luôn trả HTTP 200: đánh dấu noindex để trang 404 “mềm” không bị lập chỉ mục.
+  usePageMeta({ noindex: true });
   return (
     <section className="section">
       <div className="container empty-page">

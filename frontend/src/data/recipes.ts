@@ -187,7 +187,7 @@ const recipeCatalog: Recipe[] = [
     name: 'Canh chua cá',
     excerpt: 'Vị chua dịu từ me và dứa, cá mềm ngọt, nhiều rau — rất hợp ngày nóng.',
     image: sourFishSoupImage,
-    imageAlt: 'Bát canh chua cá với cà chua, dứa, đậu bắp và rau thơm',
+    imageAlt: 'Bát canh chua cá với cà chua, thơm, bạc hà và rau om',
     imageCredit: 'Ảnh minh họa chân thật được tạo riêng cho Bếp Việt',
     imageKind: 'project',
     region: 'Nam',
@@ -200,7 +200,7 @@ const recipeCatalog: Recipe[] = [
       {
         group: 'Cá và rau',
         items: [
-          { name: 'Cá liệt, cá diêu hồng hoặc cá lóc', amount: 250, unit: 'g' },
+          { name: 'Cá liệt, cá diêu hồng hoặc cá lóc', amount: 500, unit: 'g' },
           { name: 'Thơm', amount: 100, unit: 'g' },
           { name: 'Cà chua', amount: 100, unit: 'g' },
           { name: 'Bạc hà (dọc mùng)', amount: 100, unit: 'g' },
@@ -212,7 +212,8 @@ const recipeCatalog: Recipe[] = [
           { name: 'Nước', amount: 1.7, unit: 'lít' },
           { name: 'Nước mắm', amount: 2, unit: 'muỗng canh' },
           { name: 'Hành tím băm', amount: 1, unit: 'muỗng cà phê' },
-          { name: 'Gia vị tạo vị chua cay', amount: null, unit: 'vừa đủ', scalable: false },
+          { name: 'Me chua', amount: 30, unit: 'g' },
+          { name: 'Ớt tươi', amount: null, unit: 'vừa đủ', scalable: false },
           { name: 'Rau om và hành lá', amount: null, unit: 'vừa đủ', scalable: false },
         ],
       },
@@ -225,7 +226,7 @@ const recipeCatalog: Recipe[] = [
     cooking: [
       'Phi thơm hành tím với một ít dầu, cho cà chua vào đảo nhanh khoảng 1 phút để tạo màu và vị nền cho nước canh.',
       'Rót 1,7 lít nước vào nồi. Khi nước sôi, thả cá và thơm vào, đợi sôi trở lại rồi hớt bọt để nước dùng trong.',
-      'Giữ lửa vừa và nấu cá thêm khoảng 5 phút. Cho bạc hà vào, nêm gia vị chua cay và nước mắm sao cho vị chua nhẹ, ngọt hậu và mặn vừa.',
+      'Giữ lửa vừa và nấu cá thêm khoảng 5 phút. Dầm me với một chén nước canh nóng, lọc lấy nước cốt cho vào nồi cùng bạc hà; nêm nước mắm và ớt sao cho vị chua nhẹ, ngọt hậu và mặn vừa.',
       'Cho rau om và hành lá vào cuối cùng, đảo nhẹ rồi tắt bếp. Đậy nắp 1 phút để hương rau lan đều nhưng rau không bị thâm.',
     ],
     serving: 'Dùng nóng trong bữa cơm hoặc ăn kèm bún.',

@@ -60,7 +60,9 @@
         Không kết nối được mạng. Các món bạn đã xem gần đây vẫn có thể mở lại; hãy thử lại khi có
         mạng.
       </p>
-      <button type="button" onclick="location.reload()">Thử lại</button>
+      <button type="button" id="retry">Thử lại</button>
     </main>
+    <!-- CSP script-src 'self' chặn script inline: xử lý nút "Thử lại" ở tệp riêng. -->
+    <script src="/offline.js" defer></script>
   </body>
 </html>

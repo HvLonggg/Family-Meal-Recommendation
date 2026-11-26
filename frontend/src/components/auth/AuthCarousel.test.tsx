@@ -7,14 +7,13 @@ describe('AuthCarousel', () => {
   it('cho phép người dùng chuyển nội dung bằng nút điều hướng', () => {
     render(<AuthCarousel />);
 
-    expect(
-      screen.getByRole('heading', { name: 'Cùng Bếp Việt, trọn vị cơm nhà' }),
-    ).toBeInTheDocument();
+    // Tiêu đề slide là đoạn văn, không phải heading: mỗi trang auth chỉ có một h1 (R-08).
+    expect(screen.getByText('Cùng Bếp Việt, trọn vị cơm nhà')).toBeInTheDocument();
+    expect(screen.queryByRole('heading')).not.toBeInTheDocument();
 
     fireEvent.click(screen.getByRole('button', { name: 'Nội dung tiếp theo' }));
 
-    expect(
-      screen.getByRole('heading', { name: 'Món Việt phong phú, cảm hứng mỗi ngày' }),
-    ).toBeInTheDocument();
+    const active = screen.getByText('Món Việt phong phú, cảm hứng mỗi ngày').closest('article');
+    expect(active).toHaveClass('is-active');
   });
 });

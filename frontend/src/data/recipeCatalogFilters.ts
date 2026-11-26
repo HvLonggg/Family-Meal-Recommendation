@@ -247,6 +247,11 @@ export function getCookingMethodOptions(category: string, catalog: Recipe[]): Ca
   return methodFacets.filter(({ id }) => present.has(id)).map(({ id, label }) => ({ id, label }));
 }
 
+/** Có từ khóa thì xếp theo độ khớp; không có thì món nấu nhanh lên trước. */
+export function defaultCatalogSort(query: string): CatalogSort {
+  return query.trim() ? 'relevant' : 'quick';
+}
+
 export function sortCatalogRecipes(
   recipes: Recipe[],
   sort: CatalogSort,

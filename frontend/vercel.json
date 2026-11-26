@@ -6,7 +6,7 @@
       "destination": "https://bep-viet-api-jiu7.onrender.com/api/:path*"
     },
     {
-      "source": "/(.*)",
+      "source": "/((?!robots[.]txt|sitemap[.]xml).*)",
       "destination": "/index.html"
     }
   ],

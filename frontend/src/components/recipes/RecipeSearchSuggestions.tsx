@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router';
 
 import { recipes } from '@/data/recipes';
-import { pickRecipeSearchSuggestions } from '@/data/recipeSearchSuggestions';
+import { pickRecipeSearchSuggestions, recipeSuggestionHref } from '@/data/recipeSearchSuggestions';
 import { useI18n } from '@/features/i18n/I18nContext';
 
 const ROTATION_INTERVAL_MS = 6500;
@@ -42,13 +42,13 @@ export function RecipeSearchSuggestions() {
       }}
     >
       <span>{t('Gợi ý:')}</span>
-      {suggestions.map((query) => (
+      {suggestions.map((suggestion) => (
         <Link
           className="hero-suggestions__keyword"
-          key={query}
-          to={`/recipes?q=${encodeURIComponent(query)}`}
+          key={suggestion.label}
+          to={recipeSuggestionHref(suggestion)}
         >
-          {t(query)}
+          {t(suggestion.label)}
         </Link>
       ))}
     </nav>

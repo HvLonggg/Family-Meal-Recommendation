@@ -1,8 +1,25 @@
 import type { Language } from '@/features/auth/types';
-import { en } from '@/features/i18n/messages.en';
 
 export type TranslateVars = Record<string, string | number>;
 export type Translate = (text: string, vars?: TranslateVars) => string;
+
+// Bản dịch giao diện tiếng Anh tải riêng (không nằm trong gói JS đầu của người dùng tiếng Việt);
+// recipeContent chỉ chuyển sang 'en' sau khi tệp này đã nạp xong.
+let en: Record<string, string> = {};
+let uiMessagesRequest: Promise<void> | null = null;
+
+export function loadEnglishUiMessages(): Promise<void> {
+  uiMessagesRequest ??= import('@/features/i18n/messages.en').then(
+    (module) => {
+      en = module.en;
+    },
+    (error: unknown) => {
+      uiMessagesRequest = null;
+      throw error;
+    },
+  );
+  return uiMessagesRequest;
+}
 
 export const LANGUAGE_STORAGE_KEY = 'bep-viet-language';
 export const LOCALES: Record<Language, string> = { vi: 'vi-VN', en: 'en-US' };

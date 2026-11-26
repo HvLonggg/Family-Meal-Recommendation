@@ -165,7 +165,7 @@ export function ChangeEmailPanel({ hasPassword }: { hasPassword: boolean }) {
             id="account-new-email"
             label={t('Email mới')}
             onChange={(event) => setNewEmail(event.target.value)}
-            placeholder="ban@example.com"
+            placeholder={t('ban@example.com')}
             required
             type="email"
             value={newEmail}

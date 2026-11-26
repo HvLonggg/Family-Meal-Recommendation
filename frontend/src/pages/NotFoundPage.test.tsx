@@ -30,4 +30,16 @@ describe('NotFoundPage', () => {
     );
     expect(screen.getByRole('heading', { name: 'Không tìm thấy món ăn' })).toBeInTheDocument();
   });
+
+  it('marks the soft 404 as noindex and removes it on leave', () => {
+    const { unmount } = render(
+      <MemoryRouter>
+        <NotFoundPage />
+      </MemoryRouter>,
+    );
+    const robots = () => document.head.querySelector('meta[name="robots"]');
+    expect(robots()).toHaveAttribute('content', 'noindex');
+    unmount();
+    expect(robots()).toBeNull();
+  });
 });

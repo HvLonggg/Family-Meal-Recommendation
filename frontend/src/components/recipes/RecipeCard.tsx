@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router';
 import { AppIcon } from '@/components/common/AppIcon';
 import { formatMinutes, recipeMinutes, type Recipe } from '@/data/recipes';
 import { useAuth } from '@/features/auth/AuthContext';
+import { loginHref } from '@/features/auth/landing';
 import { favoriteRecipesQueryKey, type FavoriteRecipe } from '@/features/favorites/favoritesApi';
 import { apiPost, apiRequest } from '@/lib/api/client';
 import { fitDishCutout } from '@/lib/fitDishCutout';
@@ -70,7 +71,7 @@ export function RecipeCard({ recipe, eager = false }: { recipe: Recipe; eager?: 
             event.preventDefault();
             event.stopPropagation();
             if (!user) {
-              void navigate('/login');
+              void navigate(loginHref(`${window.location.pathname}${window.location.search}`));
               return;
             }
             toggleFavorite.mutate();

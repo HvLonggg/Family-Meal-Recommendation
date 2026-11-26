@@ -176,42 +176,110 @@ export function adaptRecipe(item: ApiRecipe, idToSlug: Map<string, string>): Rec
 
 export type CatalogLoadProgress = (progress: number) => void;
 
-async function readStaticCatalog() {
+const CATALOG_PAGE_SIZE = 100;
+// Số món lần tải trước: lần sau gọi song song mọi trang ngay, khỏi chờ trang đầu báo tổng số.
+const CATALOG_TOTAL_HINT_KEY = 'bep-viet.catalog-total';
+const MAX_HINTED_PAGES = 30;
+// Kho món lớn: máy chủ chậm vẫn kịp trả lời trước khi rơi về bản lưu sẵn.
+const API_TIMEOUT_MS = 30_000;
+// Chưa nhận được trang nào của API sau chừng này (máy chủ miễn phí đang khởi động lại): tải song song bản lưu sẵn
+// trên CDN, bản nào xong trước thì dùng, để người dùng không phải chờ tới 30 giây.
+const SNAPSHOT_HEDGE_MS = 4_000;
+const SNAPSHOT_TIMEOUT_MS = 20_000;
+
+interface CatalogPayload {
+  data: ApiRecipe[];
+  total: number;
+}
+
+/** Bản lưu sẵn trên CDN (cũng được service worker lưu cho lúc mất mạng); chỉ dùng khi API lỗi/chậm. */
+async function readStaticCatalog(): Promise<CatalogPayload> {
   const response = await fetch('/data/recipe-catalog.json', {
-    signal: AbortSignal.timeout(5000),
+    signal: AbortSignal.timeout(SNAPSHOT_TIMEOUT_MS),
   });
   if (!response.ok) throw new Error('Recipe snapshot unavailable.');
-  return (await response.json()) as { data: ApiRecipe[]; total: number };
+  const snapshot = (await response.json()) as CatalogPayload;
+  if (!snapshot.data?.length || snapshot.data.length !== snapshot.total)
+    throw new Error('Recipe snapshot incomplete.');
+  return snapshot;
 }
 
-function supplementCatalog(apiCatalog: ApiRecipe[], staticCatalog: ApiRecipe[]) {
-  const slugs = new Set(apiCatalog.map((recipe) => recipe.slug));
-  const catalogIds = new Set(apiCatalog.flatMap((recipe) => recipe.catalog_id ?? []));
-  const missingRecipes = staticCatalog.filter(
-    (recipe) =>
-      recipe.slug !== 'thit-kho-trung-qa' &&
-      !slugs.has(recipe.slug) &&
-      (!recipe.catalog_id || !catalogIds.has(recipe.catalog_id)),
-  );
-  return [...apiCatalog, ...missingRecipes];
-}
-
-export async function loadRecipeCatalog(onProgress: CatalogLoadProgress = () => undefined) {
-  onProgress(12);
+function readTotalHint() {
   try {
-    await loadApiCatalog(onProgress);
-    return 'online' as const;
-  } catch (error) {
-    try {
-      onProgress(20);
-      const snapshot = await readStaticCatalog();
+    const total = Number(localStorage.getItem(CATALOG_TOTAL_HINT_KEY));
+    return Number.isInteger(total) && total > 0 ? total : 0;
+  } catch {
+    return 0;
+  }
+}
+
+function storeTotalHint(total: number) {
+  try {
+    localStorage.setItem(CATALOG_TOTAL_HINT_KEY, String(total));
+  } catch {
+    // Bộ nhớ trình duyệt bị chặn: lần sau tải tuần tự trang đầu như cũ.
+  }
+}
+
+/**
+ * Nạp kho món một lần duy nhất từ API (nguồn chuẩn, có món quản trị viên vừa thêm/sửa).
+ * Bản JSON tĩnh chỉ được tải khi API lỗi hoặc quá chậm, không tải kèm ở mỗi lần mở app.
+ */
+export async function loadRecipeCatalog(
+  onProgress: CatalogLoadProgress = () => undefined,
+): Promise<'online' | 'offline'> {
+  onProgress(12);
+  const api = new AbortController();
+  const apiTimer = setTimeout(() => api.abort(new Error('Recipe API timed out.')), API_TIMEOUT_MS);
+  let hedgeTimer: ReturnType<typeof setTimeout> | undefined;
+  let snapshotRequest: Promise<CatalogPayload> | null = null;
+  const snapshot = () => (snapshotRequest ??= readStaticCatalog());
+  // Sau khi đã chọn nguồn, các trang API bị hủy không được báo tiến độ lùi lại màn chờ.
+  let settled = false;
+  const reportApiProgress: CatalogLoadProgress = (progress) => {
+    // Đã nhận ít nhất một trang: máy chủ đang thức, không cần tải song song bản lưu sẵn.
+    if (progress > 20) clearTimeout(hedgeTimer);
+    if (!settled) onProgress(progress);
+  };
+  try {
+    const result = await new Promise<{ source: 'online' | 'offline'; payload: CatalogPayload }>(
+      (resolve, reject) => {
+        let apiFailed = false;
+        let apiError: unknown;
+        const trySnapshot = () =>
+          snapshot().then(
+            (payload) => resolve({ source: 'offline', payload }),
+            () => {
+              if (apiFailed)
+                reject(apiError instanceof Error ? apiError : new Error(String(apiError)));
+            },
+          );
+        hedgeTimer = setTimeout(() => void trySnapshot(), SNAPSHOT_HEDGE_MS);
+        loadApiCatalog(api.signal, reportApiProgress).then(
+          (data) => resolve({ source: 'online', payload: { data, total: data.length } }),
+          (error: unknown) => {
+            apiFailed = true;
+            apiError = error;
+            reportApiProgress(20);
+            void trySnapshot();
+          },
+        );
+      },
+    );
+    settled = true;
+    if (result.source === 'offline') {
+      // Đã dùng bản lưu sẵn: dừng tải các trang API còn lại để đỡ tốn mạng.
+      api.abort();
       onProgress(84);
-      installCatalog(snapshot.data, snapshot.total);
-      onProgress(92);
-      return 'offline' as const;
-    } catch {
-      throw error;
     }
+    installCatalog(result.payload.data, result.payload.total);
+    if (result.source === 'online') storeTotalHint(result.payload.total);
+    onProgress(92);
+    return result.source;
+  } finally {
+    settled = true;
+    clearTimeout(apiTimer);
+    clearTimeout(hedgeTimer);
   }
 }
 
@@ -228,31 +296,32 @@ function installCatalog(catalog: ApiRecipe[], total: number) {
   replaceRecipeCatalog(catalog.map((item) => adaptRecipe(item, ids)));
 }
 
-async function loadApiCatalog(onProgress: CatalogLoadProgress) {
-  // Kho món lớn: máy chủ chậm vẫn kịp trả lời trước khi rơi về bản lưu sẵn.
-  const signal = AbortSignal.timeout(30000);
-  const first = await apiRequest<{ data: ApiRecipe[]; total: number }>(
-    '/recipes/catalog?limit=100',
-    { signal },
-  );
-  const pageCount = Math.max(1, Math.ceil(first.total / 100));
-  let loadedPages = 1;
-  const reportPageProgress = () => onProgress(20 + (loadedPages / pageCount) * 70);
-  reportPageProgress();
-  const pages = await Promise.all(
-    Array.from({ length: pageCount - 1 }, (_, index) =>
-      apiRequest<{ data: ApiRecipe[] }>(`/recipes/catalog?limit=100&offset=${(index + 1) * 100}`, {
-        signal,
-      }).then((page) => {
-        loadedPages += 1;
-        reportPageProgress();
-        return page;
-      }),
-    ),
-  );
-  const apiCatalog = [...first.data, ...pages.flatMap((page) => page.data)];
-  const snapshot = await readStaticCatalog().catch(() => undefined);
-  const catalog = snapshot ? supplementCatalog(apiCatalog, snapshot.data) : apiCatalog;
-  installCatalog(catalog, catalog.length);
-  onProgress(92);
+async function loadApiCatalog(signal: AbortSignal, onProgress: CatalogLoadProgress) {
+  const hintedPages = Math.min(MAX_HINTED_PAGES, Math.ceil(readTotalHint() / CATALOG_PAGE_SIZE));
+  let pageCount = Math.max(1, hintedPages);
+  let loadedPages = 0;
+  const fetchPage = (index: number) =>
+    apiRequest<CatalogPayload>(
+      // compact=1: máy chủ chỉ trả các trường adaptRecipe đọc (nhẹ khoảng một nửa).
+      index
+        ? `/recipes/catalog?limit=${CATALOG_PAGE_SIZE}&offset=${index * CATALOG_PAGE_SIZE}&compact=1`
+        : `/recipes/catalog?limit=${CATALOG_PAGE_SIZE}&compact=1`,
+      { signal },
+    ).then((page) => {
+      // Mỗi trang đều kèm tổng số món: cập nhật số trang trước khi báo tiến độ.
+      pageCount = Math.max(1, Math.ceil(page.total / CATALOG_PAGE_SIZE));
+      loadedPages += 1;
+      onProgress(20 + Math.min(1, loadedPages / pageCount) * 70);
+      return page;
+    });
+  const range = (from: number, to: number) =>
+    Array.from({ length: Math.max(0, to - from) }, (_, index) => from + index);
+  // Có gợi ý số món: gọi song song mọi trang ngay; chưa có thì chờ trang đầu báo tổng số.
+  const pages = await Promise.all(range(0, pageCount).map(fetchPage));
+  const total = pages[0]!.total;
+  const needed = Math.max(1, Math.ceil(total / CATALOG_PAGE_SIZE));
+  if (needed > pages.length) {
+    pages.push(...(await Promise.all(range(pages.length, needed).map(fetchPage))));
+  }
+  return pages.slice(0, needed).flatMap((page) => page.data);
 }

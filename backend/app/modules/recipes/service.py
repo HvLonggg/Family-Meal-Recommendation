@@ -1,4 +1,4 @@
-from sqlalchemy import select
+from sqlalchemy import func, select
 from sqlalchemy.orm import Session, selectinload
 
 from app.modules.recipes.models import Recipe
@@ -40,6 +40,11 @@ def list_recipes(
     )
     if with_details or query:
         statement = statement.options(selectinload(Recipe.ingredients), selectinload(Recipe.steps))
+    if not query and not region and category != "Món chay":
+        # Không cần lọc bằng Python: phân trang ngay trong SQL thay vì nạp cả bảng (kèm nguyên
+        # liệu, bước làm) cho mỗi trang. Thứ tự và tổng số giống hệt nhánh lọc bên dưới.
+        total = session.scalar(select(func.count(Recipe.id)).where(*conditions)) or 0
+        return list(session.scalars(statement.limit(limit).offset(offset))), int(total)
     items = list(session.scalars(statement))
     if category == "Món chay":
         items = [

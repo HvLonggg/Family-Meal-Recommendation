@@ -74,8 +74,8 @@ export function AuthCarousel() {
             <div className="auth-carousel__veil" />
             <div className="auth-carousel__content">
               <span className="auth-carousel__badge">{t(slide.badge)}</span>
-              <h1>{t(slide.title)}</h1>
-              <p>{t(slide.description)}</p>
+              <p className="auth-carousel__title">{t(slide.title)}</p>
+              <p className="auth-carousel__description">{t(slide.description)}</p>
             </div>
           </article>
         ))}

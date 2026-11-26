@@ -1,49 +1,111 @@
+import { lazy, Suspense, type ComponentType } from 'react';
 import { createBrowserRouter, Navigate, RouterProvider, useLocation } from 'react-router';
 
 import { canonicalPath, legacyRoutes } from '@/app/router/legacyRoutes';
+import { useI18n } from '@/features/i18n/I18nContext';
 
 import { AuthLayout } from '@/app/layouts/AuthLayout';
 import { PublicLayout } from '@/app/layouts/PublicLayout';
 import { ProtectedRoute } from '@/features/auth/ProtectedRoute';
-import { AccountLayout } from '@/pages/account/AccountLayout';
-import { AccountOverviewPage } from '@/pages/account/AccountOverviewPage';
-import { CookHistoryPage } from '@/pages/account/CookHistoryPage';
-import { MyStoriesPage } from '@/pages/account/MyStoriesPage';
-import { MySubmissionsPage } from '@/pages/account/MySubmissionsPage';
-import { SecurityPage } from '@/pages/account/SecurityPage';
-import { SettingsPage } from '@/pages/account/SettingsPage';
-import { AdminArticlesPage } from '@/pages/admin/AdminArticlesPage';
-import { AdminAssistantPage } from '@/pages/admin/AdminAssistantPage';
-import { AdminLayout } from '@/pages/admin/AdminLayout';
-import { AdminOverviewPage } from '@/pages/admin/AdminOverviewPage';
-import { AdminPlansPage } from '@/pages/admin/AdminPlansPage';
-import { AdminRecipesPage } from '@/pages/admin/AdminRecipesPage';
-import { AdminSubmissionsPage } from '@/pages/admin/AdminSubmissionsPage';
-import { AdminSupportPage } from '@/pages/admin/AdminSupportPage';
-import { AdminUserDetailPage } from '@/pages/admin/AdminUserDetailPage';
-import { AdminUsersPage } from '@/pages/admin/AdminUsersPage';
 import { ArticleDetailPage } from '@/pages/ArticleDetailPage';
 import { ArticlesPage } from '@/pages/ArticlesPage';
 import { ContactPage } from '@/pages/ContactPage';
-import { CookModePage } from '@/pages/CookModePage';
 import { FavoritesPage } from '@/pages/FavoritesPage';
 import { HomePage } from '@/pages/HomePage';
 import { PrivacyPage, TermsPage } from '@/pages/legal/LegalDocumentPage';
 import { MealSetsPage } from '@/pages/MealSetsPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 import { NutritionPage } from '@/pages/NutritionPage';
-import { PlannerPage } from '@/pages/PlannerPage';
 import { RandomMealPage } from '@/pages/RandomMealPage';
 import { RecipeDetailPage } from '@/pages/RecipeDetailPage';
 import { RecipesPage } from '@/pages/RecipesPage';
-import { StoryEditorPage } from '@/pages/StoryEditorPage';
-import { SubmitRecipePage } from '@/pages/SubmitRecipePage';
 import { SuggestionsPage } from '@/pages/SuggestionsPage';
 import { ForgotPasswordPage } from '@/pages/auth/ForgotPasswordPage';
 import { LoginPage } from '@/pages/auth/LoginPage';
 import { OAuthCallbackPage } from '@/pages/auth/OAuthCallbackPage';
 import { RegisterPage } from '@/pages/auth/RegisterPage';
 import { ResetPasswordPage } from '@/pages/auth/ResetPasswordPage';
+
+function RouteFallback() {
+  const { t } = useI18n();
+  return (
+    <div role="status" aria-live="polite" style={{ minHeight: '40vh' }}>
+      <span className="visually-hidden">{t('Đang tải…')}</span>
+    </div>
+  );
+}
+
+/**
+ * Trang ít dùng hoặc nặng (quản trị, tài khoản, vào bếp, kế hoạch, soạn bài) tách thành chunk
+ * riêng: khách xem trang công khai không phải tải và parse phần mã này.
+ */
+function lazyPage<Name extends string>(
+  load: () => Promise<Record<Name, ComponentType>>,
+  name: Name,
+) {
+  const Page = lazy<ComponentType>(() => load().then((module) => ({ default: module[name] })));
+  function LazyPage() {
+    return (
+      <Suspense fallback={<RouteFallback />}>
+        <Page />
+      </Suspense>
+    );
+  }
+  LazyPage.displayName = name;
+  return LazyPage;
+}
+
+const AccountLayout = lazyPage(() => import('@/pages/account/AccountLayout'), 'AccountLayout');
+const AccountOverviewPage = lazyPage(
+  () => import('@/pages/account/AccountOverviewPage'),
+  'AccountOverviewPage',
+);
+const CookHistoryPage = lazyPage(
+  () => import('@/pages/account/CookHistoryPage'),
+  'CookHistoryPage',
+);
+const MyStoriesPage = lazyPage(() => import('@/pages/account/MyStoriesPage'), 'MyStoriesPage');
+const MySubmissionsPage = lazyPage(
+  () => import('@/pages/account/MySubmissionsPage'),
+  'MySubmissionsPage',
+);
+const SecurityPage = lazyPage(() => import('@/pages/account/SecurityPage'), 'SecurityPage');
+const SettingsPage = lazyPage(() => import('@/pages/account/SettingsPage'), 'SettingsPage');
+const AdminArticlesPage = lazyPage(
+  () => import('@/pages/admin/AdminArticlesPage'),
+  'AdminArticlesPage',
+);
+const AdminAssistantPage = lazyPage(
+  () => import('@/pages/admin/AdminAssistantPage'),
+  'AdminAssistantPage',
+);
+const AdminLayout = lazyPage(() => import('@/pages/admin/AdminLayout'), 'AdminLayout');
+const AdminOverviewPage = lazyPage(
+  () => import('@/pages/admin/AdminOverviewPage'),
+  'AdminOverviewPage',
+);
+const AdminPlansPage = lazyPage(() => import('@/pages/admin/AdminPlansPage'), 'AdminPlansPage');
+const AdminRecipesPage = lazyPage(
+  () => import('@/pages/admin/AdminRecipesPage'),
+  'AdminRecipesPage',
+);
+const AdminSubmissionsPage = lazyPage(
+  () => import('@/pages/admin/AdminSubmissionsPage'),
+  'AdminSubmissionsPage',
+);
+const AdminSupportPage = lazyPage(
+  () => import('@/pages/admin/AdminSupportPage'),
+  'AdminSupportPage',
+);
+const AdminUserDetailPage = lazyPage(
+  () => import('@/pages/admin/AdminUserDetailPage'),
+  'AdminUserDetailPage',
+);
+const AdminUsersPage = lazyPage(() => import('@/pages/admin/AdminUsersPage'), 'AdminUsersPage');
+const CookModePage = lazyPage(() => import('@/pages/CookModePage'), 'CookModePage');
+const PlannerPage = lazyPage(() => import('@/pages/PlannerPage'), 'PlannerPage');
+const StoryEditorPage = lazyPage(() => import('@/pages/StoryEditorPage'), 'StoryEditorPage');
+const SubmitRecipePage = lazyPage(() => import('@/pages/SubmitRecipePage'), 'SubmitRecipePage');
 
 function LegacyRedirect() {
   const location = useLocation();

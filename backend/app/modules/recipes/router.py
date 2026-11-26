@@ -1,4 +1,5 @@
-from typing import Annotated
+import json
+from typing import Annotated, Any
 
 from fastapi import APIRouter, Depends, HTTPException, Query, Request, Response, status
 from sqlalchemy import func, select
@@ -19,6 +20,57 @@ router = APIRouter(prefix="/recipes")
 # Kho món đầy đủ (~1 MB/trang) được đọc ở mọi lần mở app: dựng một lần cho mỗi phiên bản dữ
 # liệu (số món + lần cập nhật cuối), TTL ngắn để cả thay đổi chỉ ở nguyên liệu/bước cũng cập nhật.
 CATALOG_CACHE = JsonResponseCache(ttl_seconds=300, max_entries=32)
+
+
+# Các khóa trong `content` mà ứng dụng web thật sự đọc khi dựng kho món (frontend recipeApi.ts).
+# Bản rút gọn bỏ phần trùng lặp (bước làm, nguyên liệu đầy đủ đã có ở cấp trên), nguồn biên tập,
+# mô tả dài... giúp tải kho món ở mỗi lần mở app nhẹ hơn khoảng một nửa.
+_COMPACT_CONTENT_KEYS = (
+    "aliases",
+    "category",
+    "display_image",
+    "finished_dish",
+    "passive_time",
+    "province",
+    "recipe_family",
+    "region",
+    "serving_basis",
+    "tags",
+    "tips",
+)
+_MEDIA_KEYS = ("source", "page_url", "rights_status", "license")
+
+
+def _compact_content(content: dict[str, Any]) -> dict[str, Any]:
+    compact = {key: content[key] for key in _COMPACT_CONTENT_KEYS if key in content}
+    ingredients = content.get("ingredients")
+    if isinstance(ingredients, list):
+        compact["ingredients"] = [
+            {"name": item.get("name"), "scaling_rule": item.get("scaling_rule")}
+            for item in ingredients
+            if isinstance(item, dict) and item.get("scaling_rule")
+        ]
+    media = content.get("media")
+    if isinstance(media, list) and media and isinstance(media[0], dict):
+        compact["media"] = [{key: media[0][key] for key in _MEDIA_KEYS if key in media[0]}]
+    scaling = content.get("scaling")
+    if isinstance(scaling, dict) and isinstance(scaling.get("targets"), list):
+        compact["scaling"] = {
+            "targets": [
+                {
+                    "servings": target.get("servings"),
+                    "seasoning_start_factor": target.get("seasoning_start_factor"),
+                }
+                for target in scaling["targets"]
+                if isinstance(target, dict)
+            ]
+        }
+    pairings = content.get("suggested_pairings")
+    if isinstance(pairings, list):
+        compact["suggested_pairings"] = [
+            {"id": pair.get("id")} for pair in pairings if isinstance(pair, dict)
+        ]
+    return compact
 
 
 def _catalog_version(session: Session) -> tuple[int, str]:
@@ -62,15 +114,23 @@ def recipe_catalog(
     session: Annotated[Session, Depends(get_db_session)],
     limit: Annotated[int, Query(ge=1, le=100)] = 100,
     offset: Annotated[int, Query(ge=0)] = 0,
+    compact: Annotated[
+        bool, Query(description="Chỉ trả các trường nội dung mà ứng dụng web cần.")
+    ] = False,
 ) -> Response:
     def build() -> bytes:
         items, total = list_recipes(session, limit=limit, offset=offset, with_details=True)
         payload = RecipeCatalogResponse(
             data=[RecipeDetailResponse.model_validate(item) for item in items], total=total
         )
-        return payload.model_dump_json(by_alias=True).encode()
+        if not compact:
+            return payload.model_dump_json(by_alias=True).encode()
+        body = payload.model_dump(mode="json", by_alias=True)
+        for item in body["data"]:
+            item["content"] = _compact_content(item.get("content") or {})
+        return json.dumps(body, ensure_ascii=False, separators=(",", ":")).encode()
 
-    key = (limit, offset, *_catalog_version(session))
+    key = (limit, offset, compact, *_catalog_version(session))
     return cached_json_response(request, CATALOG_CACHE.get_or_build(key, build))
 
 

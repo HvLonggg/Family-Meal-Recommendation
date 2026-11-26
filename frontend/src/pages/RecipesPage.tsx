@@ -12,12 +12,17 @@ import {
   matchesCatalogCategory,
   matchesCookingMethods,
   matchesIngredientFacets,
+  defaultCatalogSort,
   sortCatalogRecipes,
   type CatalogFacetOption,
   type CatalogSort,
 } from '@/data/recipeCatalogFilters';
 import { recipeMinutes } from '@/data/recipes';
-import { matchesRecipeRegion, matchesRecipeSearch } from '@/data/recipeSearch';
+import {
+  matchesRecipeRegion,
+  matchesRecipeSearch,
+  useEnglishSearchIndexVersion,
+} from '@/data/recipeSearch';
 import { dietaryConflicts, useUserPreferences } from '@/features/account/preferences';
 import { useAuth } from '@/features/auth/AuthContext';
 import { favoriteRecipesQueryKey, type FavoriteRecipe } from '@/features/favorites/favoritesApi';
@@ -83,7 +88,7 @@ export function RecipesPage() {
   const favoritesOnly = category === 'favorites';
   const requestedRegion = params.get('region') ?? 'Tất cả';
   const region = regions.includes(requestedRegion) ? requestedRegion : 'Tất cả';
-  const requestedSort = params.get('sort') ?? 'quick';
+  const requestedSort = params.get('sort') ?? defaultCatalogSort(query);
   const sort: CatalogSort =
     requestedSort === 'relevant' && query.trim()
       ? 'relevant'
@@ -161,10 +166,11 @@ export function RecipesPage() {
         const next = new URLSearchParams(current);
         next.delete('page');
         for (const [key, value] of Object.entries(nextUpdates)) {
-          if (value && value !== 'Tất cả' && !(key === 'sort' && value === 'quick')) {
-            next.set(key, value);
-          } else next.delete(key);
+          if (value && value !== 'Tất cả') next.set(key, value);
+          else next.delete(key);
         }
+        // Chỉ bỏ `sort` khỏi URL khi đó là thứ tự mặc định của trạng thái hiện tại.
+        if (next.get('sort') === defaultCatalogSort(next.get('q') ?? '')) next.delete('sort');
         return next;
       },
       { replace },
@@ -179,38 +185,39 @@ export function RecipesPage() {
       ).join(','),
     });
   };
-  const filtered = useMemo(
-    () =>
-      sortCatalogRecipes(
-        categoryRecipes.filter(
-          (recipe) =>
-            matchesRecipeSearch(recipe, query) &&
-            matchesIngredientFacets(recipe, ingredients) &&
-            matchesCookingMethods(recipe, methods) &&
-            (region === 'Tất cả' || matchesRecipeRegion(recipe, region)) &&
-            (!fitMe ||
-              !canPersonalize ||
-              ((!preferences.max_cooking_minutes ||
-                recipeMinutes(recipe) <= preferences.max_cooking_minutes) &&
-                dietaryConflicts(recipe, preferences.dietary_tags).length === 0)),
-        ),
-        sort,
-        query,
-        locale,
+  const englishIndexVersion = useEnglishSearchIndexVersion();
+  const filtered = useMemo(() => {
+    void englishIndexVersion;
+    return sortCatalogRecipes(
+      categoryRecipes.filter(
+        (recipe) =>
+          matchesRecipeSearch(recipe, query) &&
+          matchesIngredientFacets(recipe, ingredients) &&
+          matchesCookingMethods(recipe, methods) &&
+          (region === 'Tất cả' || matchesRecipeRegion(recipe, region)) &&
+          (!fitMe ||
+            !canPersonalize ||
+            ((!preferences.max_cooking_minutes ||
+              recipeMinutes(recipe) <= preferences.max_cooking_minutes) &&
+              dietaryConflicts(recipe, preferences.dietary_tags).length === 0)),
       ),
-    [
-      canPersonalize,
-      categoryRecipes,
-      fitMe,
-      ingredients,
-      locale,
-      methods,
-      preferences,
-      query,
-      region,
       sort,
-    ],
-  );
+      query,
+      locale,
+    );
+  }, [
+    canPersonalize,
+    categoryRecipes,
+    englishIndexVersion,
+    fitMe,
+    ingredients,
+    locale,
+    methods,
+    preferences,
+    query,
+    region,
+    sort,
+  ]);
   const pageCount = Math.max(1, Math.ceil(filtered.length / pageSize));
   const requestedPage = Number(params.get('page') ?? 1);
   const page = Math.min(

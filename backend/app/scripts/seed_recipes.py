@@ -98,12 +98,13 @@ RECIPE_SEEDS: list[RecipeSeed] = [
         "source_name": "Món Ngon Mỗi Ngày",
         "source_url": "https://monngonmoingay.com/canh-chua-ca-mien-nam/",
         "ingredients": [
-            ("Cá và rau", "Cá liệt, cá diêu hồng hoặc cá lóc", "250", "g", None, True),
+            ("Cá và rau", "Cá liệt, cá diêu hồng hoặc cá lóc", "500", "g", None, True),
             ("Cá và rau", "Thơm", "100", "g", None, True),
             ("Cá và rau", "Cà chua", "100", "g", None, True),
             ("Cá và rau", "Bạc hà", "100", "g", None, True),
             ("Tạo vị", "Nước", "1.7", "lít", None, True),
             ("Tạo vị", "Nước mắm", "2", "muỗng canh", None, True),
+            ("Tạo vị", "Me chua", "30", "g", None, True),
         ],
         "preparation": [
             "Làm sạch cá và để ráo; cắt cà chua, thơm và bạc hà thành miếng vừa ăn.",

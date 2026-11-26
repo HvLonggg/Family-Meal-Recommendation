@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 
 import { AuthAlert } from '@/components/auth/AuthAlert';
 import { AuthField } from '@/components/auth/AuthField';
+import { useAuthTitle } from '@/components/auth/useAuthTitle';
 import { Button } from '@/components/ui/Button';
 import { errorMessage } from '@/lib/errors';
 import { apiPost } from '@/lib/api/client';
@@ -34,6 +35,7 @@ type RecoveryStep = 'email' | 'code' | 'password' | 'complete';
 export function ForgotPasswordPage() {
   const [step, setStep] = useState<RecoveryStep>('email');
   const { t } = useI18n();
+  useAuthTitle(t('Quên mật khẩu'));
   const [challenge, setChallenge] = useState<OtpChallenge | null>(null);
   const [recoveryEmail, setRecoveryEmail] = useState('');
   const [resetToken, setResetToken] = useState('');
@@ -142,7 +144,7 @@ export function ForgotPasswordPage() {
             error={errors.email?.message}
             id="forgot-email"
             label={t('Email')}
-            placeholder="ban@example.com"
+            placeholder={t('ban@example.com')}
             type="email"
             {...register('email', {
               required: t('Vui lòng nhập email.'),
