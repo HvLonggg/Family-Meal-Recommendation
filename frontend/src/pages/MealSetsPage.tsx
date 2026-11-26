@@ -109,23 +109,24 @@ export function MealSetsPage() {
           <div className="meal-sets-page__hero-art" aria-hidden="true">
             <span className="meal-sets-page__art-ring" />
             {featuredDishes.map((recipe, index) => {
-              const { className: cutoutClassName, ...imageProps } = dishImage(
-                recipe.slug,
-                recipe.image,
-                '120px',
-              );
+              const imageProps = dishImage(recipe.slug, recipe.image, '120px');
 
+              // Cùng kiểu đĩa tròn với thẻ mâm: ảnh chụp có nền được cắt tròn, không còn khung trắng.
               return (
                 <span
-                  className={`meal-sets-page__art-dish meal-sets-page__art-dish--${featuredPositions[index] ?? 'main'}`}
+                  className={`meal-sets-page__art-dish meal-sets-page__art-dish--${featuredPositions[index] ?? 'main'} dish-plate`}
+                  data-dish-kind={guessDishPlateKind(recipe.slug, imageProps.src)}
                   key={recipe.slug}
                 >
                   <img
                     alt=""
-                    className={cutoutClassName}
+                    className="dish-plate__img"
                     decoding="async"
                     loading="eager"
-                    {...imageProps}
+                    onLoad={fitDishPlate}
+                    sizes={imageProps.sizes}
+                    src={imageProps.src}
+                    srcSet={imageProps.srcSet}
                   />
                 </span>
               );
