@@ -1,5 +1,6 @@
 from pathlib import Path
 
+import pytest
 from fastapi.testclient import TestClient
 from pytest import MonkeyPatch
 from sqlalchemy import func, select
@@ -71,6 +72,10 @@ def test_catalog_import_is_complete_and_idempotent(
     assert "ga-rang-gung" not in slugs
 
 
+@pytest.mark.skipif(
+    not importer.DOCUMENT.exists(),
+    reason="Tài liệu gốc .docx không nằm trong git (bị .gitignore), chỉ có trên máy biên soạn.",
+)
 def test_document_images_match_every_catalog_id(tmp_path: Path, monkeypatch: MonkeyPatch) -> None:
     # Use a temporary image directory; importing tests must not modify application assets.
     monkeypatch.setattr(importer, "IMAGE_DIRECTORY", tmp_path)
