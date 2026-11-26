@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import { rememberOAuthReturnPath } from '@/features/auth/landing';
 import type { ProviderAvailability } from '@/features/auth/types';
 import { apiRequest } from '@/lib/api/client';
 import { useI18n } from '@/features/i18n/I18nContext';
@@ -7,7 +8,7 @@ import { useI18n } from '@/features/i18n/I18nContext';
 type SocialProvider = 'google' | 'facebook';
 
 /** Chỉ hiện nhà cung cấp đã cấu hình; chưa có cái nào thì ẩn cả dải "Hoặc tiếp tục với". */
-export function SocialLoginButtons() {
+export function SocialLoginButtons({ returnPath }: { returnPath?: string | null }) {
   const [providers, setProviders] = useState<ProviderAvailability | null>(null);
   const { t } = useI18n();
 
@@ -21,6 +22,7 @@ export function SocialLoginButtons() {
   if (available.length === 0) return null;
 
   const start = (provider: SocialProvider) => {
+    rememberOAuthReturnPath(returnPath);
     window.location.assign(`/api/v1/auth/oauth/${provider}/start`);
   };
 

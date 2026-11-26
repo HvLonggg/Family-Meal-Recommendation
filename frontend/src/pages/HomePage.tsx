@@ -14,7 +14,7 @@ import {
   rememberHomeMealSuggestions,
   selectHomeMealSuggestions,
 } from '@/data/homeMealSuggestions';
-import { seasonOf, selectSeasonalRecipes } from '@/data/seasonalPicks';
+import { seasonOf } from '@/data/seasonalPicks';
 import { useAuth } from '@/features/auth/AuthContext';
 import { useI18n } from '@/features/i18n/I18nContext';
 import { useRecipeCatalog } from '@/features/i18n/recipeContent';
@@ -23,6 +23,8 @@ import { seededShuffle } from '@/lib/seededShuffle';
 import './home-page.css';
 
 const HOME_FEATURED_LIMIT = 12;
+// Lưới "Hôm nay nấu gì?": 4 cột × 2 hàng trên máy tính, 2 cột trên điện thoại.
+const HOME_TODAY_LIMIT = 8;
 
 export function HomePage() {
   const [query, setQuery] = useState('');
@@ -32,9 +34,12 @@ export function HomePage() {
   const { t } = useI18n();
   const { user } = useAuth();
   const catalog = useRecipeCatalog();
+  const [shuffleRound, setShuffleRound] = useState(0);
+  // Mùa theo giờ Việt Nam: mâm cơm gợi ý ưu tiên món hợp thời tiết, món trái mùa hiếm gặp.
+  const [season] = useState(() => seasonOf(new Date()));
   const mealCandidates = useMemo(
-    () => createHomeMealSuggestions(catalog, entrySeed),
-    [catalog, entrySeed],
+    () => createHomeMealSuggestions(catalog, entrySeed, season),
+    [catalog, entrySeed, season],
   );
   const mealSuggestions = useMemo(
     () => selectHomeMealSuggestions(mealCandidates, entrySeed, recentMealKeys, HOME_FEATURED_LIMIT),
@@ -43,18 +48,12 @@ export function HomePage() {
   // Trang chủ chỉ giới thiệu một nhóm món nổi bật; xem toàn bộ ở Kho món.
   const featuredRecipes = useMemo(
     () =>
-      seededShuffle(catalog, `${entrySeed}:${user?.id ?? 'guest'}`, (recipe) => recipe.slug).slice(
-        0,
-        HOME_FEATURED_LIMIT,
-      ),
-    [catalog, entrySeed, user?.id],
-  );
-
-  const [today] = useState(() => new Date());
-  const season = seasonOf(today);
-  const seasonalRecipes = useMemo(
-    () => selectSeasonalRecipes(catalog, season, today, HOME_FEATURED_LIMIT),
-    [catalog, season, today],
+      seededShuffle(
+        catalog,
+        `${entrySeed}:${user?.id ?? 'guest'}:${shuffleRound}`,
+        (recipe) => recipe.slug,
+      ).slice(0, HOME_TODAY_LIMIT),
+    [catalog, entrySeed, shuffleRound, user?.id],
   );
 
   useEffect(() => {
@@ -134,72 +133,62 @@ export function HomePage() {
         </Link>
       </section>
 
-      <section className="content-section">
+      <section className="content-section home-today" aria-labelledby="home-today-title">
         <div className="container">
-          <div className="section-heading">
-            <div>
+          <div className="section-heading home-heading">
+            <div className="home-heading__copy">
               <span className="section-label">{t('Món nhà thân thuộc')}</span>
-              <h2>{t('Hôm nay nấu gì?')}</h2>
+              <h2 id="home-today-title">{t('Hôm nay nấu gì?')}</h2>
               <p>
                 {t(
                   'Công thức được chuẩn hóa theo khẩu phần, dễ theo dõi từ sơ chế đến lúc lên mâm.',
                 )}
               </p>
             </div>
-            <Link className="view-all" to="/recipes">
-              {t('Xem tất cả')} <AppIcon name="arrow" size={17} />
-            </Link>
-          </div>
-        </div>
-        <ShowcaseCarousel
-          bleed
-          getKey={(recipe) => recipe.slug}
-          items={featuredRecipes}
-          label={t('Món ăn')}
-          renderItem={(recipe) => <RecipeCard eager recipe={recipe} />}
-        />
-      </section>
-
-      {seasonalRecipes.length > 0 ? (
-        <section className="content-section" aria-labelledby="home-seasonal-title">
-          <div className="container">
-            <div className="section-heading">
-              <div>
-                <span className="section-label">
-                  {season === 'cold' ? t('Trời se lạnh') : t('Ngày nắng nóng')}
-                </span>
-                <h2 id="home-seasonal-title">
-                  {season === 'cold' ? t('Trời lạnh ăn gì?') : t('Trời nóng ăn gì?')}
-                </h2>
-                <p>
-                  {season === 'cold'
-                    ? t('Món nóng hổi, nhiều nước, ấm bụng cho ngày gió mùa.')
-                    : t('Món thanh mát, dễ ăn cho ngày oi bức.')}
-                </p>
-              </div>
+            <div className="home-heading__actions">
+              <button
+                className="home-action home-action--ghost"
+                onClick={() => setShuffleRound((round) => round + 1)}
+                type="button"
+              >
+                <AppIcon name="refresh" size={17} /> {t('Đổi món khác')}
+              </button>
+              <Link className="home-action" to="/recipes">
+                {t('Xem tất cả')} <AppIcon name="arrow" size={17} />
+              </Link>
             </div>
           </div>
-          <ShowcaseCarousel
-            bleed
-            getKey={(recipe) => recipe.slug}
-            items={seasonalRecipes}
-            label={season === 'cold' ? t('Trời lạnh ăn gì?') : t('Trời nóng ăn gì?')}
-            renderItem={(recipe) => <RecipeCard recipe={recipe} />}
-          />
-        </section>
-      ) : null}
+          <div className="home-today__grid" aria-live="polite">
+            {featuredRecipes.map((recipe, index) => (
+              <RecipeCard
+                eager={shuffleRound === 0 && index < 4}
+                key={recipe.slug}
+                recipe={recipe}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
 
-      <section className="content-section content-section--tint">
+      <section className="content-section content-section--tint home-meals">
         <div className="container">
-          <div className="section-heading">
-            <div>
-              <span className="section-label">{t('Không cần nghĩ nhiều')}</span>
+          <div className="section-heading home-heading">
+            <div className="home-heading__copy">
+              <span className="section-label">
+                {season === 'cold'
+                  ? t('Ấm bụng ngày se lạnh')
+                  : season === 'hot'
+                    ? t('Thanh mát ngày nắng')
+                    : t('Không cần nghĩ nhiều')}
+              </span>
               <h2>{t('Mâm cơm gợi ý hôm nay')}</h2>
               <p>{t('Cân bằng món mặn, món canh và rau cho một bữa ăn trọn vẹn.')}</p>
             </div>
-            <Link className="view-all" to="/meals">
-              {t('Xem mọi thực đơn')} <AppIcon name="arrow" size={17} />
-            </Link>
+            <div className="home-heading__actions">
+              <Link className="home-action" to="/meals">
+                {t('Xem mọi thực đơn')} <AppIcon name="arrow" size={17} />
+              </Link>
+            </div>
           </div>
         </div>
         <ShowcaseCarousel
@@ -221,10 +210,10 @@ export function HomePage() {
                 decoding="async"
                 height={44}
                 loading="lazy"
-                src="/images/brand/quyen-avatar.webp"
+                src="/images/brand/bep-viet-logo.png"
                 width={44}
               />
-              <span className="section-label section-label--light">{t('Góc của Quyên')}</span>
+              <span className="section-label section-label--light">{t('Góc Bếp Việt')}</span>
             </span>
             <h2>{t('Mỗi bữa cơm là một lần nhà mình gần nhau hơn.')}</h2>
             <p>

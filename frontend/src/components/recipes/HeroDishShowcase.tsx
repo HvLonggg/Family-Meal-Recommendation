@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 import { AppIcon } from '@/components/common/AppIcon';
 import { formatMinutes, getRecipe, recipeMinutes, recipes, type Recipe } from '@/data/recipes';
 import { useI18n } from '@/features/i18n/I18nContext';
+import { useRecipeCatalogReady } from '@/features/i18n/recipeContent';
 import { fitDishCutout } from '@/lib/fitDishCutout';
 
 const FIRST_SWITCH_MS = 2000;
@@ -51,15 +52,26 @@ function prefersReducedMotion() {
 
 export function HeroDishShowcase() {
   const { t } = useI18n();
-  const [pool] = useState(showcaseDishes);
+  const catalogReady = useRecipeCatalogReady();
+  const [pool, setPool] = useState(showcaseDishes);
+  const [poolFromCatalog, setPoolFromCatalog] = useState(catalogReady);
   const [current, setCurrent] = useState(0);
   const [leaving, setLeaving] = useState<number | null>(null);
+  if (catalogReady && !poolFromCatalog) {
+    // Kho món vừa tải xong: mở rộng danh sách món xoay vòng, giữ nguyên món đang hiện.
+    const shown = pool[current]!;
+    setPoolFromCatalog(true);
+    setPool([shown, ...showcaseDishes().filter((recipe) => recipe.slug !== shown.slug)]);
+    setCurrent(0);
+    setLeaving(null);
+  }
   const [paused, setPaused] = useState(false);
   const recent = useRef<number[]>([]);
   const [switchCount, setSwitchCount] = useState(0);
 
   useEffect(() => {
-    if (paused || pool.length < 2 || prefersReducedMotion()) return;
+    // Chưa xoay món khi kho món còn tải: không tranh băng thông với dữ liệu kho món.
+    if (!catalogReady || paused || pool.length < 2 || prefersReducedMotion()) return;
     let cancelled = false;
     const delay = switchCount === 0 ? FIRST_SWITCH_MS : SWITCH_MS;
     const timer = window.setTimeout(() => {
@@ -76,7 +88,7 @@ export function HeroDishShowcase() {
       cancelled = true;
       window.clearTimeout(timer);
     };
-  }, [current, paused, pool, switchCount]);
+  }, [catalogReady, current, paused, pool, switchCount]);
 
   useEffect(() => {
     if (leaving === null) return;

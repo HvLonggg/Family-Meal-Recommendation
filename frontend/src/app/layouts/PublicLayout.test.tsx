@@ -103,9 +103,10 @@ describe('PublicLayout header', () => {
 
   it('sends administrators from public pages to the admin console', () => {
     authState.user.role = 'admin';
+    // Trang chủ mở ở chế độ xem trước để đăng nhập xong vẫn về trang chủ.
     renderLayout('/');
-    expect(screen.getByText('Bảng quản trị thử nghiệm')).toBeInTheDocument();
-    expect(screen.queryByText('Trang chủ thử nghiệm')).not.toBeInTheDocument();
+    expect(screen.getByText('Trang chủ thử nghiệm')).toBeInTheDocument();
+    expect(screen.getByText('Chế độ xem trước')).toBeInTheDocument();
     cleanup();
 
     renderLayout('/planner');

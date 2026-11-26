@@ -2,6 +2,7 @@ import { act, cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { ShowcaseCarousel } from '@/components/recipes/ShowcaseCarousel';
+import { setRecipeCatalogSource } from '@/data/recipes';
 
 const items = Array.from({ length: 7 }, (_, index) => ({
   id: `item-${index + 1}`,
@@ -35,6 +36,7 @@ function advanceFrames(milliseconds: number) {
 }
 
 beforeEach(() => {
+  setRecipeCatalogSource('online');
   vi.useFakeTimers();
   frameCallbacks = new Map();
   nextFrameId = 0;
@@ -55,6 +57,15 @@ afterEach(() => {
 });
 
 describe('showcase carousel', () => {
+  it('shows placeholder cards instead of bundled dishes while the catalog loads', () => {
+    setRecipeCatalogSource('loading');
+    const { container } = renderCarousel();
+    expect(screen.queryByText('Món 1')).toBeNull();
+    expect(container.querySelectorAll('.catalog-skeleton-card').length).toBeGreaterThan(0);
+    act(() => setRecipeCatalogSource('online'));
+    expect(screen.getAllByText('Món 1').length).toBeGreaterThan(0);
+  });
+
   it('can extend the recommendation rail to the section edges', () => {
     renderCarousel(true);
     expect(document.querySelector('.showcase-carousel--bleed')).toBeInTheDocument();

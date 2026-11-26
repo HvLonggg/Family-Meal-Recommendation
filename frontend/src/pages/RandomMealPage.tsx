@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties }
 import { Link } from 'react-router';
 
 import { AppIcon } from '@/components/common/AppIcon';
+import { fitDishPlate, guessDishPlateKind } from '@/components/recipes/dishPlate';
 import { MealCelebration } from '@/components/recipes/MealCelebration';
 import { MealRoleIcon } from '@/components/recipes/MealRoleIcon';
 import {
@@ -18,6 +19,7 @@ import {
   type MealProfile,
   type MealRole,
   type MealSlot,
+  type RandomDish,
   type SavedRandomMeal,
 } from '@/data/randomMeals';
 import { formatDuration } from '@/data/nutritionEstimate';
@@ -80,6 +82,12 @@ function polarPosition(angle: number, radius: number): CSSProperties {
     left: `${50 + Math.sin(radians) * radius}%`,
     top: `${50 - Math.cos(radians) * radius}%`,
   };
+}
+
+/** Nguồn ảnh món (ưu tiên bản tách nền) cho thẻ `<img>` đặt trong `.dish-plate`. */
+function pickImageSource(dish: Pick<RandomDish, 'image' | 'sourceKey'>, sizes: string) {
+  const { src, srcSet } = dishImage(dish.sourceKey, dish.image, sizes);
+  return { src, srcSet, sizes: srcSet ? sizes : undefined };
 }
 
 function fromRemoteMeal(meal: RemoteSavedMeal): SavedRandomMeal {
@@ -480,6 +488,7 @@ export function RandomMealPage() {
                 >
                   {wheelIndexes.map((slotIndex, index) => {
                     const role = slots[slotIndex]!.role;
+                    const wheelDish = slots[slotIndex]!.dish;
                     const angle = (index + 0.5) * (360 / wheelIndexes.length);
                     const candidates = getCandidates(
                       role,
@@ -488,14 +497,35 @@ export function RandomMealPage() {
                     );
                     return (
                       <span
-                        className={`meal-wheel__label${activeSpinSlot === slotIndex ? ' is-active' : ''}`}
+                        className={`meal-wheel__label${activeSpinSlot === slotIndex ? ' is-active' : ''}${wheelDish ? ' has-dish' : ''}`}
                         key={`${slotIndex}-${role}`}
                         style={polarPosition(angle, 33)}
                       >
-                        <span className="meal-wheel__symbol">
-                          <MealRoleIcon role={role} />
-                        </span>
-                        <strong>{t(roleDetails[role].shortLabel)}</strong>
+                        {wheelDish ? (
+                          <span
+                            className="meal-wheel__symbol meal-wheel__symbol--dish dish-plate"
+                            data-dish-kind={guessDishPlateKind(
+                              wheelDish.sourceKey,
+                              wheelDish.image,
+                            )}
+                            key={wheelDish.sourceKey}
+                          >
+                            <img
+                              alt=""
+                              className="dish-plate__img"
+                              decoding="async"
+                              onLoad={fitDishPlate}
+                              {...pickImageSource(wheelDish, '96px')}
+                            />
+                          </span>
+                        ) : (
+                          <span className="meal-wheel__symbol">
+                            <MealRoleIcon role={role} />
+                          </span>
+                        )}
+                        <strong>
+                          {wheelDish ? t(dishName(wheelDish)) : t(roleDetails[role].shortLabel)}
+                        </strong>
                         <small>{t('{count} lựa chọn', { count: candidates.length })}</small>
                       </span>
                     );
@@ -591,12 +621,23 @@ export function RandomMealPage() {
                     >
                       <span className="tray-slot__plate">
                         {slot.dish ? (
-                          <img
-                            alt={slot.dish.imageAlt}
-                            decoding="async"
-                            loading="lazy"
-                            {...dishImage(slot.dish.sourceKey, slot.dish.image, '96px')}
-                          />
+                          <span
+                            className="dish-plate"
+                            data-dish-kind={guessDishPlateKind(
+                              slot.dish.sourceKey,
+                              slot.dish.image,
+                            )}
+                            key={slot.dish.sourceKey}
+                          >
+                            <img
+                              alt={slot.dish.imageAlt}
+                              className="dish-plate__img"
+                              decoding="async"
+                              loading="lazy"
+                              onLoad={fitDishPlate}
+                              {...pickImageSource(slot.dish, '(max-width: 560px) 96px, 140px')}
+                            />
+                          </span>
                         ) : (
                           <MealRoleIcon role={slot.role} />
                         )}

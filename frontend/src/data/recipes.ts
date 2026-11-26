@@ -585,10 +585,13 @@ function applyEditedImage(recipe: Recipe): Recipe {
 /** Từ điển bản dịch món; `null` khi dùng tiếng Việt. */
 export type RecipeDictionary = Record<string, string>;
 
-let sourceRecipes = recipeCatalog
+/** Vài món đóng gói sẵn trong mã: dùng khi chưa tải được kho món và làm dữ liệu gốc cho ảnh. */
+const builtinRecipes = recipeCatalog
   .filter((recipe) => recipe.status !== 'draft')
   .map((recipe) => ({ ...recipe, category: getCatalogCategory(recipe) }))
   .map(applyEditedImage);
+const builtinOrder = new Map(builtinRecipes.map((recipe, index) => [recipe.slug, index]));
+let sourceRecipes = builtinRecipes;
 let dictionary: RecipeDictionary | null = null;
 
 /** Danh mục đang hiển thị: bản gốc hoặc bản đã dịch theo ngôn ngữ hiện tại. */
@@ -630,17 +633,53 @@ function localizeRecipe(recipe: Recipe): Recipe {
   };
 }
 
+/**
+ * Nguồn của kho món đang dùng: `loading` khi mới có các món đóng gói sẵn; `cache` là bản lưu ở
+ * máy từ lần trước (đang làm mới ở nền); `offline` là bản lưu sẵn trên CDN; `fallback` khi không
+ * tải được gì và chỉ còn các món đóng gói sẵn.
+ */
+export type RecipeCatalogSource = 'loading' | 'cache' | 'online' | 'offline' | 'fallback';
+
+let catalogSource: RecipeCatalogSource = 'loading';
+const catalogListeners = new Set<() => void>();
+
+function notifyCatalog() {
+  for (const listener of catalogListeners) listener();
+}
+
+/** Theo dõi mọi lần kho món (hoặc bản dịch của nó) được thay. */
+export function subscribeRecipeCatalog(listener: () => void) {
+  catalogListeners.add(listener);
+  return () => {
+    catalogListeners.delete(listener);
+  };
+}
+
+export const getRecipeCatalogSource = () => catalogSource;
+
+export function setRecipeCatalogSource(source: RecipeCatalogSource) {
+  if (source === catalogSource) return;
+  catalogSource = source;
+  notifyCatalog();
+}
+
 function publishCatalog() {
+  // `recipes` là live binding: nơi đọc đồng bộ thấy kho mới ở lần render kế tiếp.
   recipes = dictionary ? sourceRecipes.map(localizeRecipe) : sourceRecipes;
+  notifyCatalog();
 }
 
 export function replaceRecipeCatalog(catalog: Recipe[]) {
-  const order = new Map(sourceRecipes.map((recipe, index) => [recipe.slug, index]));
   sourceRecipes = catalog
     .map((recipe) => ({ ...recipe, category: getCatalogCategory(recipe) }))
     .map(applyEditedImage)
-    .sort((a, b) => (order.get(a.slug) ?? 1000) - (order.get(b.slug) ?? 1000));
+    .sort((a, b) => (builtinOrder.get(a.slug) ?? 1000) - (builtinOrder.get(b.slug) ?? 1000));
   publishCatalog();
+}
+
+/** Món đóng gói sẵn (bản gốc tiếng Việt), không phụ thuộc kho đã tải hay ngôn ngữ đang chọn. */
+export function getBuiltinRecipe(slug: string) {
+  return builtinRecipes.find((recipe) => recipe.slug === slug);
 }
 
 export const getRecipeCatalog = () => recipes;

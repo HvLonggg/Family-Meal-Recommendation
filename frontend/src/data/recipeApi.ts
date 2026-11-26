@@ -1,4 +1,10 @@
-import { getRecipe, replaceRecipeCatalog, type Recipe } from '@/data/recipes';
+import {
+  getBuiltinRecipe,
+  replaceRecipeCatalog,
+  setRecipeCatalogSource,
+  type Recipe,
+  type RecipeCatalogSource,
+} from '@/data/recipes';
 import editedImages from '@/data/recipeImageAssets.json';
 import { apiRequest } from '@/lib/api/client';
 import { UserFacingError } from '@/lib/errors';
@@ -62,7 +68,7 @@ export interface ApiRecipe {
 
 export function adaptRecipe(item: ApiRecipe, idToSlug: Map<string, string>): Recipe {
   const content = item.content;
-  const fallback = getRecipe(item.slug);
+  const fallback = getBuiltinRecipe(item.slug);
   const image = content.display_image ?? content.media?.[0];
   const catalogImage = (editedImages as Record<string, EditedCatalogImage>)[item.slug];
   const editedImage =
@@ -273,7 +279,9 @@ export async function loadRecipeCatalog(
       onProgress(84);
     }
     installCatalog(result.payload.data, result.payload.total);
+    setRecipeCatalogSource(result.source);
     if (result.source === 'online') storeTotalHint(result.payload.total);
+    persistWhenIdle(result.payload);
     onProgress(92);
     return result.source;
   } finally {
@@ -324,4 +332,132 @@ async function loadApiCatalog(signal: AbortSignal, onProgress: CatalogLoadProgre
     pages.push(...(await Promise.all(range(pages.length, needed).map(fetchPage))));
   }
   return pages.slice(0, needed).flatMap((page) => page.data);
+}
+
+// --- Bản kho món lưu ở máy: lần mở sau hiện ngay, rồi làm mới ở nền (stale-while-revalidate) ---
+
+// Tên bắt đầu bằng `bep-viet-` nên phải nằm trong danh sách KEEP của public/sw.js.
+// Lưu nguyên dữ liệu API (chưa adapt) để mã mới luôn adapt lại theo quy tắc hiện hành.
+const PERSISTED_CACHE = 'bep-viet-catalog-v1';
+const PERSISTED_KEY = '/__bep-viet/recipe-catalog.json';
+const PERSISTED_READ_TIMEOUT_MS = 2_000;
+const REVALIDATE_IDLE_TIMEOUT_MS = 4_000;
+
+const hasCacheStorage = () => typeof caches !== 'undefined';
+
+function whenIdle(task: () => void, timeout: number) {
+  if (typeof window !== 'undefined' && typeof window.requestIdleCallback === 'function')
+    window.requestIdleCallback(task, { timeout });
+  else setTimeout(task, Math.min(timeout, 1_500));
+}
+
+// Cờ đồng bộ: lần đầu (chưa lưu gì) gọi API ngay, không tốn một vòng mở Cache Storage rỗng.
+const PERSISTED_FLAG_KEY = 'bep-viet.catalog-persisted';
+
+function hasPersistedFlag() {
+  try {
+    return localStorage.getItem(PERSISTED_FLAG_KEY) === PERSISTED_CACHE;
+  } catch {
+    return true; // Không đọc được cờ: vẫn thử Cache Storage.
+  }
+}
+
+async function readPersistedCatalog(): Promise<{ text: string; payload: CatalogPayload } | null> {
+  if (!hasCacheStorage() || !hasPersistedFlag()) return null;
+  try {
+    const response = await Promise.race([
+      caches.open(PERSISTED_CACHE).then((cache) => cache.match(PERSISTED_KEY)),
+      new Promise<undefined>((resolve) =>
+        setTimeout(() => resolve(undefined), PERSISTED_READ_TIMEOUT_MS),
+      ),
+    ]);
+    if (!response) return null;
+    const text = await response.text();
+    const payload = JSON.parse(text) as CatalogPayload;
+    if (!payload.data?.length || payload.data.length !== payload.total) return null;
+    return { text, payload };
+  } catch {
+    // Cache Storage bị chặn/hỏng: tải từ mạng như lần đầu.
+    return null;
+  }
+}
+
+async function persistCatalogText(text: string) {
+  if (!hasCacheStorage()) return;
+  try {
+    const cache = await caches.open(PERSISTED_CACHE);
+    await cache.put(
+      PERSISTED_KEY,
+      new Response(text, { headers: { 'Content-Type': 'application/json' } }),
+    );
+    try {
+      localStorage.setItem(PERSISTED_FLAG_KEY, PERSISTED_CACHE);
+    } catch {
+      // Không ghi được cờ: lần sau mở thẳng Cache Storage như bình thường.
+    }
+  } catch {
+    // Hết quota hoặc chế độ riêng tư: lần sau tải lại từ mạng.
+  }
+}
+
+const serializeCatalog = (payload: CatalogPayload) =>
+  JSON.stringify({ data: payload.data, total: payload.total });
+
+function persistWhenIdle(payload: CatalogPayload) {
+  if (!hasCacheStorage()) return;
+  whenIdle(() => void persistCatalogText(serializeCatalog(payload)), REVALIDATE_IDLE_TIMEOUT_MS);
+}
+
+/** Lấy bản mới từ API ở nền; chỉ thay kho đang hiển thị khi dữ liệu thực sự khác. */
+function revalidateWhenIdle(persistedText: string) {
+  whenIdle(() => {
+    const api = new AbortController();
+    const timer = setTimeout(() => api.abort(new Error('Recipe API timed out.')), API_TIMEOUT_MS);
+    loadApiCatalog(api.signal, () => undefined)
+      .then((data) => {
+        const payload = { data, total: data.length };
+        storeTotalHint(payload.total);
+        const text = serializeCatalog(payload);
+        if (text === persistedText) {
+          setRecipeCatalogSource('online');
+          return;
+        }
+        installCatalog(payload.data, payload.total);
+        setRecipeCatalogSource('online');
+        void persistCatalogText(text);
+      })
+      .catch(() => undefined) // Mạng lỗi: giữ bản ở máy, lần mở sau thử lại.
+      .finally(() => clearTimeout(timer));
+  }, REVALIDATE_IDLE_TIMEOUT_MS);
+}
+
+let catalogStart: Promise<RecipeCatalogSource> | null = null;
+
+/**
+ * Khởi động nạp kho món (gọi một lần, càng sớm càng tốt). Có bản ở máy thì dùng ngay rồi làm mới
+ * ở nền; chưa có thì tải từ API (rơi về bản lưu sẵn khi API chậm/lỗi). Không bao giờ reject:
+ * thất bại hoàn toàn thì nguồn là `fallback` (chỉ còn các món đóng gói sẵn).
+ */
+export function startRecipeCatalog(onProgress: CatalogLoadProgress = () => undefined) {
+  catalogStart ??= (async (): Promise<RecipeCatalogSource> => {
+    const persisted = await readPersistedCatalog();
+    if (persisted) {
+      try {
+        installCatalog(persisted.payload.data, persisted.payload.total);
+        setRecipeCatalogSource('cache');
+        onProgress(92);
+        revalidateWhenIdle(persisted.text);
+        return 'cache';
+      } catch {
+        // Bản ở máy không hợp lệ: tải lại từ mạng.
+      }
+    }
+    try {
+      return await loadRecipeCatalog(onProgress);
+    } catch {
+      setRecipeCatalogSource('fallback');
+      return 'fallback';
+    }
+  })();
+  return catalogStart;
 }

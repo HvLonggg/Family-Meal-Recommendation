@@ -3,12 +3,41 @@ from sqlalchemy.orm import Session, selectinload
 
 from app.modules.recipes.models import Recipe
 from app.modules.recipes.search import (
-    bilingual_search_text,
+    RecipeSearchFields,
     english_search_index,
     matches_region,
-    matches_search,
     normalize_search,
+    strict_search,
 )
+
+
+def _strings(value: object) -> list[str]:
+    if isinstance(value, str):
+        return [value]
+    if isinstance(value, dict):
+        return [text for item in value.values() for text in _strings(item)]
+    if isinstance(value, list):
+        return [text for item in value for text in _strings(item)]
+    return []
+
+
+def recipe_search_fields(item: Recipe) -> RecipeSearchFields:
+    content = item.content or {}
+    english = english_search_index().get(item.slug, {})
+    return RecipeSearchFields(
+        names=[item.name, *english.get("names", [])],
+        aliases=_strings(content.get("aliases", [])),
+        ingredients=[
+            *(ingredient.name for ingredient in item.ingredients),
+            *english.get("ingredients", []),
+        ],
+        tags=[item.category, *_strings(content.get("tags", []))],
+        regions=[
+            item.region,
+            *_strings(content.get("region", [])),
+            *_strings(content.get("province", [])),
+        ],
+    )
 
 
 def list_recipes(
@@ -67,60 +96,10 @@ def list_recipes(
             )
         ]
     if query:
-        items = [
-            item
-            for item in items
-            if matches_search(
-                query,
-                bilingual_search_text(
-                    item.slug,
-                    item.search_text
-                    or " ".join(
-                        [
-                            item.name,
-                            item.excerpt,
-                            item.region,
-                            item.category,
-                            *[ingredient.name for ingredient in item.ingredients],
-                        ]
-                    ),
-                ),
-            )
-        ]
-        normalized_query = normalize_search(query)
-
-        def relevance(item: Recipe) -> int:
-            content = item.content or {}
-            aliases = content.get("aliases", [])
-            english_names = english_search_index().get(item.slug, {}).get("names", [])
-            names = [item.name, *aliases, *english_names]
-            normalized_names = [normalize_search(name) for name in names if isinstance(name, str)]
-            if normalized_query in normalized_names:
-                return 120
-            if any(name.startswith(normalized_query) for name in normalized_names):
-                return 100
-            if any(normalized_query in name for name in normalized_names):
-                return 80
-            if matches_search(query, " ".join(names)):
-                return 70
-            english_entry = english_search_index().get(item.slug, {})
-            fields = [
-                item.excerpt,
-                item.region,
-                item.category,
-                *english_entry.get("ingredients", []),
-                *english_entry.get("fields", []),
-                *[ingredient.name for ingredient in item.ingredients],
-            ]
-            if any(normalize_search(field) == normalized_query for field in fields):
-                return 60
-            if any(normalized_query in normalize_search(field) for field in fields):
-                return 50
-            if any(matches_search(query, field) for field in fields):
-                return 40
-            return 0
-
-        items.sort(key=relevance, reverse=True)
+        # Strict name-first matching shared with the web catalog (see search.strict_search).
+        matches = strict_search(query, [recipe_search_fields(item) for item in items])
+        matches.sort(key=lambda match: match[1], reverse=True)
+        items = [items[index] for index, _ in matches]
     return items[offset : offset + limit], len(items)
 
 

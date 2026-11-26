@@ -27,3 +27,312 @@
     animation: none;
   }
 }
+
+/* ---------- Ô tìm kiếm trên hero: nút và ô nhập cùng chiều cao, gợi ý gọn một hàng ---------- */
+/* Cột chữ được co theo màn hình, không bị hàng gợi ý (cuộn ngang) đẩy rộng ra. */
+.home-hero .home-hero__copy {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.home-hero .hero-search {
+  width: min(100%, 600px);
+}
+
+.home-hero .hero-search .search-field {
+  min-height: 60px;
+  gap: 8px;
+  border-radius: 18px;
+  padding: 7px 7px 7px 10px;
+}
+
+.home-hero .hero-search .search-field__icon {
+  width: 36px;
+  height: 44px;
+  flex-basis: 36px;
+}
+
+.home-hero .hero-search .search-field input {
+  min-height: 44px;
+  font-size: 15px;
+}
+
+.home-hero .hero-search .search-field__submit {
+  height: 44px;
+  min-height: 44px;
+  border-radius: 13px;
+  padding-inline: 20px;
+  font-size: 14px;
+}
+
+.home-hero .hero-suggestions {
+  display: flex;
+  width: min(100%, 600px);
+  min-height: 34px;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.home-hero .hero-suggestions > span {
+  margin-right: 2px;
+  line-height: 32px;
+}
+
+.home-hero .hero-suggestions .hero-suggestions__keyword {
+  height: 32px;
+  min-height: 32px;
+  padding-block: 0;
+  line-height: 30px;
+}
+
+/* ---------- Tiêu đề mục: chữ bên trái, các nút hành động cùng chiều cao bên phải ---------- */
+.home-heading {
+  align-items: flex-end;
+  gap: 20px 32px;
+  margin-bottom: 28px;
+}
+
+.home-heading__copy {
+  min-width: 0;
+}
+
+.home-heading__actions {
+  display: flex;
+  flex: none;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.home-action {
+  display: inline-flex;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid rgb(180 59 44 / 22%);
+  border-radius: 999px;
+  padding: 0 18px;
+  color: #fff;
+  background: linear-gradient(135deg, #b94c37, #9d3427);
+  box-shadow: 0 4px 12px rgb(157 52 39 / 16%);
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease,
+    color 220ms ease;
+}
+
+.home-action--ghost {
+  color: #963426;
+  background: #fffdf9;
+  box-shadow: 0 2px 8px rgb(74 47 27 / 5%);
+}
+
+.home-action:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgb(148 48 37 / 18%);
+}
+
+.home-action--ghost:hover {
+  border-color: var(--color-primary);
+  background: #fff4ee;
+}
+
+.home-action:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.home-action--ghost svg {
+  transition: transform 420ms ease;
+}
+
+.home-action--ghost:hover svg {
+  transform: rotate(-90deg);
+}
+
+/* ---------- "Hôm nay nấu gì?": lưới thẻ đồng đều, nút "Xem chi tiết" luôn thẳng hàng ---------- */
+.home-today__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.home-today .recipe-card {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  border: 1px solid #eee3d7;
+  border-radius: 22px;
+  background: linear-gradient(180deg, #fffefa, #fff 62%);
+  box-shadow:
+    0 10px 28px rgb(73 48 32 / 6%),
+    0 2px 6px rgb(73 48 32 / 3%);
+  transition:
+    transform 320ms cubic-bezier(0.2, 0.75, 0.25, 1),
+    box-shadow 320ms ease,
+    border-color 240ms ease;
+}
+
+.home-today .recipe-card:hover {
+  transform: translateY(-4px);
+  border-color: #e0c7ae;
+  box-shadow:
+    0 18px 36px rgb(73 48 32 / 11%),
+    0 4px 10px rgb(73 48 32 / 4%);
+}
+
+.home-today .recipe-card__media {
+  aspect-ratio: 4 / 3;
+  background:
+    radial-gradient(ellipse at 50% 55%, rgb(242 218 187 / 42%), transparent 65%),
+    linear-gradient(145deg, #fffdf9, #f8f1e8);
+}
+
+.home-today .recipe-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 16px 16px 18px;
+}
+
+.home-today .recipe-card h3 {
+  display: -webkit-box;
+  overflow: hidden;
+  min-height: calc(2 * 1.3em);
+  margin-top: 8px;
+  font-size: 18px;
+  line-height: 1.3;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.home-today .recipe-card__body > p {
+  min-height: calc(2 * 1.6em);
+  margin: 8px 0 16px;
+}
+
+.home-today .recipe-card__details-link {
+  width: 100%;
+  height: 40px;
+  min-height: 40px;
+  margin-top: auto;
+  padding-block: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-action,
+  .home-action--ghost svg,
+  .home-today .recipe-card {
+    transition: none;
+  }
+}
+
+@media (max-width: 1080px) {
+  .home-today__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .home-today__grid > :nth-child(n + 7) {
+    display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .home-heading {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .home-heading__actions > * {
+    flex: 1 1 0;
+  }
+
+  .home-today__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .home-today__grid > :nth-child(n + 7) {
+    display: flex;
+  }
+}
+
+@media (max-width: 560px) {
+  .home-hero .hero-search .search-field {
+    min-height: 56px;
+    padding: 6px 6px 6px 8px;
+  }
+
+  .home-hero .hero-search .search-field input {
+    font-size: 14px;
+  }
+
+  .home-hero .hero-search .search-field__submit {
+    padding-inline: 14px;
+    font-size: 13px;
+  }
+
+  /* Điện thoại: gợi ý xếp một hàng, vuốt ngang khi dài. */
+  .home-hero .hero-suggestions {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent);
+  }
+
+  .home-hero .hero-suggestions::-webkit-scrollbar {
+    display: none;
+  }
+
+  .home-hero .hero-suggestions > * {
+    flex: none;
+  }
+
+  .home-today .recipe-card {
+    border-radius: 18px;
+  }
+
+  .home-today .recipe-card__region {
+    top: 8px;
+    left: 8px;
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+
+  .home-today .recipe-card__save {
+    top: 6px;
+    right: 6px;
+  }
+
+  .home-today .recipe-card__body {
+    padding: 12px 12px 14px;
+  }
+
+  .home-today .recipe-card h3 {
+    margin: 4px 0 12px;
+    font-size: 15px;
+  }
+
+  .home-today .recipe-card__meta,
+  .home-today .recipe-card__body > p {
+    display: none;
+  }
+
+  .home-today .recipe-card__details-link {
+    height: 38px;
+    min-height: 38px;
+    font-size: 13px;
+  }
+}

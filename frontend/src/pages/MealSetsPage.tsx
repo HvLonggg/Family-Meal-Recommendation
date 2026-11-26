@@ -1,7 +1,8 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import { Link, useSearchParams } from 'react-router';
 
 import { AppIcon } from '@/components/common/AppIcon';
+import { fitDishPlate, guessDishPlateKind } from '@/components/recipes/dishPlate';
 import { dishImage } from '@/data/dishImages';
 import { createHomeMealSuggestions } from '@/data/homeMealSuggestions';
 import {
@@ -9,6 +10,7 @@ import {
   getMealRole,
   getMealRoleLabel,
   hasVegetarianMealLabel,
+  selectFreshMealSets,
 } from '@/data/mealComposition';
 import { formatMinutes, getMealRecipes } from '@/data/recipes';
 import { useDefaultServings } from '@/features/account/preferences';
@@ -30,6 +32,8 @@ export function MealSetsPage() {
   const [visitSeed, setVisitSeed] = useState(createVisitSeed);
   const [mealFilter, setMealFilter] = useState<'all' | 'vegetarian'>('all');
   const [refreshCount, setRefreshCount] = useState(0);
+  // Món của bộ mâm vừa xem, để lần "Đổi mâm" kế tiếp tránh lặp lại.
+  const [previousSlugs, setPreviousSlugs] = useState<ReadonlySet<string>>(() => new Set());
   const [failedDishImages, setFailedDishImages] = useState<Set<string>>(() => new Set());
   const allSuggestions = useMemo(
     () => createHomeMealSuggestions(catalog, visitSeed),
@@ -43,11 +47,25 @@ export function MealSetsPage() {
             return items.length === 3 && items.every(hasVegetarianMealLabel);
           })
         : allSuggestions;
-    if (!requestedMealId) return eligibleMeals.slice(0, 6);
-    const selected = eligibleMeals.find((meal) => meal.id === requestedMealId);
-    if (!selected) return eligibleMeals.slice(0, 6);
-    return [selected, ...eligibleMeals.filter((meal) => meal.id !== selected.id).slice(0, 5)];
-  }, [allSuggestions, mealFilter, requestedMealId]);
+    const selected =
+      requestedMealId && refreshCount === 0
+        ? eligibleMeals.find((meal) => meal.id === requestedMealId)
+        : undefined;
+    if (!selected) return selectFreshMealSets(eligibleMeals, previousSlugs, 6);
+    return [
+      selected,
+      ...selectFreshMealSets(
+        eligibleMeals.filter((meal) => meal.id !== selected.id),
+        previousSlugs,
+        5,
+      ),
+    ];
+  }, [allSuggestions, mealFilter, previousSlugs, refreshCount, requestedMealId]);
+  const shuffleMeals = () => {
+    setPreviousSlugs(new Set(suggestions.flatMap((meal) => meal.recipeSlugs)));
+    setVisitSeed(createVisitSeed());
+    setRefreshCount((count) => count + 1);
+  };
   const scrolledMealId = useRef<string | null>(null);
   useEffect(() => {
     if (!requestedMealId || scrolledMealId.current === requestedMealId) return;
@@ -152,15 +170,13 @@ export function MealSetsPage() {
             </div>
             <div className="meal-sets-page__list-controls">
               <button
-                aria-label={t('Gợi ý mâm cơm mới')}
-                className="button button--outline meal-sets-page__refresh"
-                onClick={() => {
-                  setVisitSeed(createVisitSeed());
-                  setRefreshCount((count) => count + 1);
-                }}
+                className="button button--primary meal-sets-page__refresh"
+                key={`refresh-${refreshCount}`}
+                onClick={shuffleMeals}
+                title={t('Gợi ý mâm cơm mới')}
                 type="button"
               >
-                <AppIcon name="refresh" size={16} /> {t('Mâm khác')}
+                <AppIcon name="refresh" size={16} /> {t('Đổi mâm')}
               </button>
             </div>
           </div>
@@ -194,7 +210,7 @@ export function MealSetsPage() {
           </p>
 
           {suggestions.length ? (
-            <div className="meal-sets-page__grid">
+            <div className="meal-sets-page__grid" key={`${visitSeed}-${mealFilter}`}>
               {suggestions.map((meal, index) => {
                 const items = getMealRecipes(meal.recipeSlugs);
                 const leadRecipe = items[0];
@@ -211,7 +227,12 @@ export function MealSetsPage() {
                 meal.recipeSlugs.forEach((slug) => plannerQuery.append('add', slug));
 
                 return (
-                  <article className="meal-sets-page__card" id={meal.id} key={meal.id}>
+                  <article
+                    className="meal-sets-page__card"
+                    id={meal.id}
+                    key={meal.id}
+                    style={{ '--enter-index': index } as CSSProperties}
+                  >
                     <div className="meal-sets-page__image-wrap">
                       <div
                         aria-label={t('Mâm cơm gợi ý: {dishes}', {
@@ -229,28 +250,38 @@ export function MealSetsPage() {
                                 className={`${dishClassName} meal-sets-page__platter-fallback`}
                                 key={recipe.slug}
                               >
-                                <AppIcon name="plate" size={24} />
+                                <AppIcon name="plate" size={22} />
                               </span>
                             );
                           }
-                          const { className: cutoutClassName, ...imageProps } = dishImage(
+                          const imageProps = dishImage(
                             recipe.slug,
                             recipe.image,
-                            '(min-width: 1200px) 150px, (min-width: 720px) 22vw, 38vw',
+                            '(min-width: 720px) 110px, 30vw',
                           );
 
                           return (
-                            <img
-                              alt=""
-                              className={`${cutoutClassName} ${dishClassName}`}
-                              decoding="async"
+                            <span
+                              className={`${dishClassName} dish-plate`}
+                              data-dish-kind={guessDishPlateKind(recipe.slug, imageProps.src)}
                               key={recipe.slug}
-                              loading={index === 0 ? 'eager' : 'lazy'}
-                              {...imageProps}
-                              onError={() =>
-                                setFailedDishImages((current) => new Set(current).add(recipe.slug))
-                              }
-                            />
+                            >
+                              <img
+                                alt=""
+                                className="dish-plate__img"
+                                decoding="async"
+                                loading={index < 3 ? 'eager' : 'lazy'}
+                                onError={() =>
+                                  setFailedDishImages((current) =>
+                                    new Set(current).add(recipe.slug),
+                                  )
+                                }
+                                onLoad={fitDishPlate}
+                                sizes={imageProps.sizes}
+                                src={imageProps.src}
+                                srcSet={imageProps.srcSet}
+                              />
+                            </span>
                           );
                         })}
                       </div>

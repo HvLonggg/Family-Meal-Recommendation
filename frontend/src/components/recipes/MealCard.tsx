@@ -7,7 +7,7 @@ import { getMealRole } from '@/data/mealComposition';
 import { formatMinutes, recipeMinutes, type mealSets } from '@/data/recipes';
 import { useI18n } from '@/features/i18n/I18nContext';
 import { useRecipeCatalog } from '@/features/i18n/recipeContent';
-import { fitDishCutout } from '@/lib/fitDishCutout';
+import { fitDishPlate, guessDishPlateKind } from '@/components/recipes/dishPlate';
 import './MealCard.css';
 
 type Meal = (typeof mealSets)[number] & { anchorName?: string };
@@ -19,22 +19,30 @@ export function MealCard({ meal, eager = false }: { meal: Meal; eager?: boolean 
     () => resolveHomeMealRecipes(meal.recipeSlugs, catalog),
     [catalog, meal.recipeSlugs],
   );
+  const platterItems = useMemo(() => {
+    const roleOrder = { main: 0, soup: 1, vegetable: 2, other: 3 };
+    return [...items].sort(
+      (left, right) => roleOrder[getMealRole(left)] - roleOrder[getMealRole(right)],
+    );
+  }, [items]);
   const [activeSlug, setActiveSlug] = useState<string | null>(null);
-  const activeRecipe = items.find((recipe) => recipe.slug === activeSlug) ?? items[0];
+  const activeRecipe = platterItems.find((recipe) => recipe.slug === activeSlug) ?? platterItems[0];
   // Mâm cơm luôn được gọi theo món chính, không theo món canh/rau dùng để ghép mâm.
-  const anchor = items.find((recipe) => getMealRole(recipe) === 'main') ?? items[0];
-  const description = describeHomeMeal(items, t, locale);
+  const anchor = platterItems.find((recipe) => getMealRole(recipe) === 'main') ?? platterItems[0];
+  const description = describeHomeMeal(platterItems, t, locale);
 
   if (!activeRecipe || !anchor) return null;
 
-  const platterSize = items.length;
-  const minutes = Math.max(...items.map(recipeMinutes));
+  const platterSize = platterItems.length;
+  const minutes = Math.max(...platterItems.map(recipeMinutes));
 
   return (
     <article className="meal-card meal-card--home">
       <div
         aria-label={t('Mâm cơm gợi ý: {dishes}', {
-          dishes: items.map((item) => item.name).join(', '),
+          dishes: new Intl.ListFormat(locale, { style: 'long', type: 'conjunction' }).format(
+            platterItems.map((item) => item.name),
+          ),
         })}
         className="meal-card__platter"
         role="region"
@@ -42,12 +50,13 @@ export function MealCard({ meal, eager = false }: { meal: Meal; eager?: boolean 
         <div
           className={`meal-platter meal-platter--${platterSize}${platterSize > 4 ? ' meal-platter--many' : ''}`}
         >
-          {items.map((recipe, index) => (
+          {platterItems.map((recipe, index) => (
             <Link
               aria-label={t('Xem chi tiết món {name}', { name: recipe.name })}
-              className={`meal-platter__dish meal-platter__dish--${platterSize}-${index + 1}${
+              className={`meal-platter__dish meal-platter__dish--${platterSize}-${index + 1} dish-plate${
                 recipe.slug === activeRecipe.slug ? ' is-active' : ''
               }`}
+              data-dish-kind={guessDishPlateKind(recipe.slug, recipe.image)}
               key={recipe.slug}
               onFocus={() => setActiveSlug(recipe.slug)}
               onMouseEnter={() => setActiveSlug(recipe.slug)}
@@ -55,8 +64,9 @@ export function MealCard({ meal, eager = false }: { meal: Meal; eager?: boolean 
             >
               <img
                 alt={recipe.imageAlt}
+                className="dish-plate__img"
                 decoding="async"
-                onLoad={(event) => fitDishCutout(event.currentTarget)}
+                onLoad={fitDishPlate}
                 loading={eager ? 'eager' : 'lazy'}
                 sizes="(min-width: 1320px) 180px, (min-width: 680px) 17vw, 38vw"
                 src={recipe.image}
@@ -67,9 +77,11 @@ export function MealCard({ meal, eager = false }: { meal: Meal; eager?: boolean 
         </div>
         <div className="meal-card__platter-caption">
           <span className="meal-card__current-dish">{activeRecipe.name}</span>
-          <span className="meal-card__count">{t('{count} món', { count: items.length })}</span>
+          <span className="meal-card__count">
+            {t('{count} món', { count: platterItems.length })}
+          </span>
           <div aria-label={t('Chọn món trên mâm')} className="meal-card__dots">
-            {items.map((recipe) => (
+            {platterItems.map((recipe) => (
               <button
                 aria-label={t('Làm nổi bật {name} trên mâm', { name: recipe.name })}
                 aria-pressed={recipe.slug === activeRecipe.slug}

@@ -1,6 +1,12 @@
 import { useSyncExternalStore } from 'react';
 
-import { getRecipeCatalog, setRecipeDictionary, type RecipeDictionary } from '@/data/recipes';
+import {
+  getRecipeCatalog,
+  getRecipeCatalogSource,
+  setRecipeDictionary,
+  subscribeRecipeCatalog,
+  type RecipeDictionary,
+} from '@/data/recipes';
 import type { Language } from '@/features/auth/types';
 import { loadEnglishUiMessages } from '@/features/i18n/translate';
 
@@ -56,7 +62,17 @@ export function subscribeRecipeContent(listener: () => void) {
 
 export const getRecipeLanguage = () => active;
 
-/** Danh mục món theo ngôn ngữ hiện tại. */
+/** Danh mục món theo ngôn ngữ hiện tại; render lại khi kho món tải xong hoặc được làm mới. */
 export function useRecipeCatalog() {
-  return useSyncExternalStore(subscribeRecipeContent, getRecipeCatalog);
+  return useSyncExternalStore(subscribeRecipeCatalog, getRecipeCatalog);
+}
+
+/** Nguồn kho món hiện tại (xem `RecipeCatalogSource`). */
+export function useRecipeCatalogSource() {
+  return useSyncExternalStore(subscribeRecipeCatalog, getRecipeCatalogSource);
+}
+
+/** `true` khi đã có kho món thật (máy, API hoặc bản lưu sẵn) hoặc chắc chắn không tải được. */
+export function useRecipeCatalogReady() {
+  return useRecipeCatalogSource() !== 'loading';
 }

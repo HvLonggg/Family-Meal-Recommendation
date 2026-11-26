@@ -91,3 +91,97 @@
     width: 22px;
   }
 }
+
+/* Ô vòng quay đã có món: thay khung biểu tượng bằng ảnh món tròn, lớn hơn khoảng 1,5 lần. */
+.random-meal-page .meal-wheel__symbol--dish {
+  width: clamp(48px, 21cqw, 92px);
+  border: 3px solid #fff5df;
+  padding: 0;
+  overflow: hidden;
+  background: radial-gradient(circle at 36% 30%, #fffefb, #f3e7d4);
+  box-shadow:
+    0 6px 14px rgb(48 31 20 / 30%),
+    inset 0 0 0 1px rgb(120 80 50 / 12%);
+  animation: wheel-dish-reveal 480ms cubic-bezier(0.18, 0.8, 0.25, 1.2) both;
+}
+
+.random-meal-page .meal-wheel__symbol--dish[data-dish-kind='cutout'] > img.dish-plate__img {
+  scale: calc(var(--dish-content-scale, 1) * 1.08);
+}
+
+.random-meal-page .meal-wheel__symbol--dish[data-dish-kind='photo'] {
+  padding: 0;
+}
+
+.random-meal-page .meal-wheel__symbol--dish::before {
+  display: none;
+}
+
+.random-meal-page .meal-wheel__label.has-dish strong {
+  display: -webkit-box;
+  overflow: hidden;
+  margin-top: 4px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.random-meal-page .meal-wheel__label.is-active .meal-wheel__symbol {
+  box-shadow:
+    0 0 0 4px rgb(255 248 225 / 55%),
+    0 6px 14px rgb(48 31 20 / 30%);
+}
+
+.random-meal-page .meal-wheel-wrap.is-spinning .meal-wheel__label.is-active .meal-wheel__symbol {
+  animation: wheel-symbol-pulse 620ms ease-in-out infinite alternate;
+}
+
+@keyframes wheel-dish-reveal {
+  from {
+    opacity: 0;
+    scale: 0.6;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes wheel-symbol-pulse {
+  to {
+    scale: 1.08;
+  }
+}
+
+/* Mâm cơm của bạn: món tròn như đĩa thật, không còn khung vuông trắng, lớn hơn một chút. */
+.random-meal-page .tray-slot {
+  width: 28%;
+}
+
+.random-meal-page .tray-slot.is-filled {
+  border-radius: 50%;
+}
+
+.random-meal-page .tray-slot.is-filled .tray-slot__plate {
+  border: 0;
+  border-radius: 50%;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.random-meal-page .tray-slot__plate > .dish-plate {
+  width: 100%;
+  height: 100%;
+}
+
+.random-meal-page .tray-slot.is-focused .tray-slot__plate {
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .random-meal-page .meal-wheel__symbol--dish,
+  .random-meal-page .meal-wheel-wrap.is-spinning .meal-wheel__label.is-active .meal-wheel__symbol {
+    animation: none;
+  }
+}

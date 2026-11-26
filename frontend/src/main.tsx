@@ -3,7 +3,8 @@ import { createRoot } from 'react-dom/client';
 
 import { App } from '@/app/App';
 import { updateInProgress } from '@/features/pwa/updateState';
-import { loadRecipeCatalog } from '@/data/recipeApi';
+import { CatalogStatusNotice } from '@/components/recipes/CatalogGate';
+import { startRecipeCatalog } from '@/data/recipeApi';
 import { loadEnglishSearchIndex } from '@/data/recipeSearch';
 import { applyRecipeLanguage } from '@/features/i18n/recipeContent';
 import { LANGUAGE_STORAGE_KEY, readStoredLanguage, translate } from '@/features/i18n/translate';
@@ -76,10 +77,13 @@ function renderCatalogLoader(progress: number) {
   );
 }
 
-// Trang pháp lý không cần kho món: hiện ngay, không bắt người dùng chờ tải danh mục.
-// Trang đăng nhập/đăng ký cũng vậy: khách thấy form ngay, kho món tải ở nền.
-// Chỉ mục tìm kiếm tiếng Anh không cần cho lần vẽ đầu: tải khi trình duyệt rảnh sau khi app đã
-// hiện, để không tranh băng thông với kho món ở màn chờ.
+// Bắt đầu nạp kho món ngay, trước lần render đầu: có bản lưu ở máy thì dùng liền rồi làm mới ở nền.
+// Khung trang (header, hero, điều hướng) hiện ngay; phần cần kho món hiện khung giữ chỗ tới khi có dữ liệu.
+const catalogReady = startRecipeCatalog(resumingUpdate ? renderCatalogLoader : undefined);
+const recipeLanguage = applyRecipeLanguage(language);
+
+// Chỉ mục tìm kiếm tiếng Anh không cần cho lần vẽ đầu: tải khi trình duyệt rảnh sau khi kho món
+// đã sẵn sàng, để không tranh băng thông với kho món.
 function prefetchSearchIndexWhenIdle() {
   const load = () => void loadEnglishSearchIndex();
   if (typeof window.requestIdleCallback === 'function')
@@ -87,61 +91,37 @@ function prefetchSearchIndexWhenIdle() {
   else window.setTimeout(load, 2000);
 }
 
-const LEGAL_PATH =
-  /^\/(privacy|terms|login|register|forgot-password|reset-password|oauth-callback)\/?$/;
-
-if (LEGAL_PATH.test(window.location.pathname) && !resumingUpdate) {
+function renderApp() {
   root.render(
     <StrictMode>
+      <CatalogStatusNotice />
       <App />
     </StrictMode>,
   );
-  // Vẫn nạp kho món ở nền để các trang khác dùng được khi người dùng chuyển trang.
-  void loadRecipeCatalog(() => undefined).catch(() => undefined);
-  void applyRecipeLanguage(language);
-  prefetchSearchIndexWhenIdle();
-} else {
-  renderCatalogLoader(6);
-  void startApp();
+  void catalogReady.then(prefetchSearchIndexWhenIdle);
 }
 
-async function startApp() {
-  let catalogUnavailable = false;
-  let offlineCatalog = false;
-  // Tải bản dịch song song với danh mục món.
-  const recipeLanguage = applyRecipeLanguage(readStoredLanguage());
+async function waitForLanguage() {
+  if ((await recipeLanguage) || language !== 'en') return;
+  // Dùng tiếng Việt nếu không tải được bản dịch.
   try {
-    offlineCatalog = (await loadRecipeCatalog(renderCatalogLoader)) === 'offline';
+    localStorage.setItem(LANGUAGE_STORAGE_KEY, 'vi');
   } catch {
-    catalogUnavailable = true;
+    // Bộ nhớ trình duyệt có thể không truy cập được.
   }
-  const recipeLanguageReady = await recipeLanguage;
-  if (!recipeLanguageReady && language === 'en') {
-    // Dùng tiếng Việt nếu không tải được bản dịch.
-    try {
-      localStorage.setItem(LANGUAGE_STORAGE_KEY, 'vi');
-    } catch {
-      // Bộ nhớ trình duyệt có thể không truy cập được.
-    }
-    document.documentElement.lang = 'vi';
-  }
-  await document.fonts.ready.catch(() => undefined);
-  renderCatalogLoader(100);
-  await new Promise((resolve) => window.setTimeout(resolve, 180));
-  root.render(
-    <StrictMode>
-      {(catalogUnavailable || offlineCatalog) && (
-        <div className="catalog-unavailable" role="status">
-          {offlineCatalog
-            ? t('Kho món tải chậm, đang tạm dùng bản lưu sẵn.')
-            : t('Chưa kết nối được kho món. Đang hiển thị các công thức có sẵn.')}{' '}
-          <button onClick={() => window.location.reload()} type="button">
-            {t('Thử lại')}
-          </button>
-        </div>
-      )}
-      <App />
-    </StrictMode>,
-  );
-  prefetchSearchIndexWhenIdle();
+  document.documentElement.lang = 'vi';
+}
+
+if (resumingUpdate) {
+  // Vừa bấm "Cập nhật": nối tiếp thanh tiến độ của hộp thoại cập nhật tới khi kho món sẵn sàng.
+  renderCatalogLoader(6);
+  void (async () => {
+    await Promise.all([catalogReady, waitForLanguage()]);
+    renderCatalogLoader(100);
+    await new Promise((resolve) => window.setTimeout(resolve, 180));
+    renderApp();
+  })();
+} else {
+  // Tiếng Việt hiện ngay; tiếng Anh chờ bản dịch để không nháy nội dung tiếng Việt.
+  void waitForLanguage().then(renderApp);
 }

@@ -212,3 +212,26 @@ export function describeMealComposition(items: MealComponent[], translate?: Tran
     translate,
   );
 }
+
+/**
+ * Chọn bộ mâm mới khi người dùng bấm "Đổi mâm": ưu tiên mâm không trùng món với bộ vừa xem
+ * (tính theo số món trùng, trùng món neo đầu mâm bị phạt nặng hơn), giữ nguyên thứ tự ngẫu nhiên
+ * của danh sách đầu vào khi mức trùng bằng nhau. Kho món ít thì vẫn trả đủ `count` mâm.
+ */
+export function selectFreshMealSets<T extends { recipeSlugs: readonly string[] }>(
+  meals: readonly T[],
+  previousSlugs: ReadonlySet<string>,
+  count: number,
+): T[] {
+  if (!previousSlugs.size) return meals.slice(0, count);
+  const overlap = (meal: T) =>
+    meal.recipeSlugs.reduce(
+      (score, slug, index) => score + (previousSlugs.has(slug) ? (index === 0 ? 3 : 1) : 0),
+      0,
+    );
+  return meals
+    .map((meal, index) => ({ meal, index, score: overlap(meal) }))
+    .sort((left, right) => left.score - right.score || left.index - right.index)
+    .slice(0, count)
+    .map(({ meal }) => meal);
+}

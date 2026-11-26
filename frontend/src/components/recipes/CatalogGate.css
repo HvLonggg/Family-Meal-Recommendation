@@ -1,0 +1,84 @@
+.catalog-skeleton {
+  display: block;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #f3e9dd 25%, #faf3ea 50%, #f3e9dd 75%);
+  background-size: 200% 100%;
+  animation: catalog-skeleton-shimmer 1.4s linear infinite;
+}
+
+.catalog-skeleton-card {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+}
+
+.catalog-skeleton-card__media {
+  aspect-ratio: 1.42 / 1;
+  border-radius: 18px;
+}
+
+.catalog-skeleton__line {
+  width: 90%;
+  height: 14px;
+}
+
+.catalog-skeleton__line--short {
+  width: 55%;
+}
+
+.catalog-page-skeleton {
+  display: grid;
+  gap: 28px;
+  min-height: 70vh;
+  padding-block: 32px 48px;
+}
+
+.catalog-page-skeleton__heading,
+.catalog-page-skeleton__copy {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
+.catalog-page-skeleton__title {
+  width: min(420px, 80%);
+  height: 34px;
+}
+
+.catalog-page-skeleton__grid {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr));
+}
+
+.catalog-page-skeleton__detail {
+  display: grid;
+  gap: 28px;
+}
+
+.catalog-page-skeleton__image {
+  aspect-ratio: 4 / 3;
+  border-radius: 22px;
+}
+
+@media (min-width: 900px) {
+  .catalog-page-skeleton__detail {
+    grid-template-columns: 1.1fr 1fr;
+  }
+}
+
+@keyframes catalog-skeleton-shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .catalog-skeleton {
+    animation: none;
+  }
+}
+
+[data-reduce-motion='true'] .catalog-skeleton {
+  animation: none;
+}

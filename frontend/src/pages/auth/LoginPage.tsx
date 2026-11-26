@@ -82,7 +82,7 @@ export function LoginPage() {
     setError('');
     setIsSubmitting(true);
     try {
-      const user = await login({
+      await login({
         email: values.email,
         password: values.password,
         remember_me: values.rememberMe,
@@ -97,7 +97,7 @@ export function LoginPage() {
         // Authentication still works when browser storage is disabled.
       }
       // Quay lại đúng trang đã mở trước khi bị yêu cầu đăng nhập.
-      await navigate(landingPath(user.role, returnPath), { replace: true });
+      await navigate(landingPath(returnPath), { replace: true });
     } catch (loginError) {
       setError(errorMessage(loginError, t));
     } finally {
@@ -107,7 +107,7 @@ export function LoginPage() {
 
   // Đã đăng nhập (mở lại /login hoặc bấm Quay lại) thì vào thẳng ứng dụng.
   if (!isLoading && currentUser && !isSubmitting) {
-    return <Navigate replace to={landingPath(currentUser.role, returnPath)} />;
+    return <Navigate replace to={landingPath(returnPath)} />;
   }
 
   return (
@@ -171,7 +171,7 @@ export function LoginPage() {
         </Button>
       </form>
 
-      <SocialLoginButtons />
+      <SocialLoginButtons returnPath={returnPath} />
 
       <p className="auth-switch">
         {t('Chưa có tài khoản?')} <Link to={registerLink}>{t('Tạo tài khoản miễn phí')}</Link>

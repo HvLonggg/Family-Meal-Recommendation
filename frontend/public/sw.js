@@ -11,7 +11,9 @@ const SHELL_CACHE = `bep-viet-shell-${VERSION}`;
 const ASSET_CACHE = `bep-viet-assets-${VERSION}`;
 const IMAGE_CACHE = 'bep-viet-images-v1';
 const DATA_CACHE = 'bep-viet-data-v1';
-const KEEP = [SHELL_CACHE, ASSET_CACHE, IMAGE_CACHE, DATA_CACHE];
+// Kho món trang tự lưu (src/data/recipeApi.ts) để lần mở sau hiện ngay: không được dọn khi cập nhật.
+const CATALOG_CACHE = 'bep-viet-catalog-v1';
+const KEEP = [SHELL_CACHE, ASSET_CACHE, IMAGE_CACHE, DATA_CACHE, CATALOG_CACHE];
 const MAX_IMAGES = 150;
 const MAX_ASSETS = 80;
 const OFFLINE_URL = '/offline.html';

@@ -4,6 +4,7 @@ import {
   getMealRole,
   hasVegetarianMealLabel,
 } from '@/data/mealComposition';
+import { seasonalWeight, weightedSeededShuffle, type Season } from '@/data/seasonalPicks';
 import { seededShuffle } from '@/lib/seededShuffle';
 
 const HOME_MEAL_SUGGESTION_STORAGE_KEY = 'bepviet.home-meal-suggestions.v1';
@@ -19,6 +20,8 @@ export type HomeMealSuggestion = {
   recipeSlugs: string[];
   /** Dữ liệu cấu trúc để giao diện tự dịch tiêu đề và mô tả. */
   anchorName?: string;
+  /** Mức hợp mùa của cả mâm (1 = trung tính); chỉ có khi tạo theo mùa. */
+  seasonWeight?: number;
 };
 
 export function getHomeMealSuggestionKey(meal: HomeMealSuggestion): string {
@@ -69,7 +72,15 @@ export function selectHomeMealSuggestions(
 
   const recent = new Set(recentKeys);
   const unseen = candidates.filter((meal) => !recent.has(getHomeMealSuggestionKey(meal)));
-  const shuffled = seededShuffle(unseen, `${seed}:featured-meals`, getHomeMealSuggestionKey);
+  // Mâm có trọng số mùa thì xáo có trọng số để món hợp thời tiết thường được chọn hơn.
+  const shuffled = candidates.some((meal) => meal.seasonWeight !== undefined)
+    ? weightedSeededShuffle(
+        unseen,
+        `${seed}:featured-meals`,
+        getHomeMealSuggestionKey,
+        (meal) => meal.seasonWeight ?? 1,
+      )
+    : seededShuffle(unseen, `${seed}:featured-meals`, getHomeMealSuggestionKey);
   const selected: HomeMealSuggestion[] = [];
   const selectedKeys = new Set<string>();
   const selectedRecipes = new Set<string>();
@@ -115,14 +126,41 @@ function preferRegion(candidates: Recipe[], region: Recipe['region']) {
   return matching.length ? matching : candidates;
 }
 
+/**
+ * Trọng số mùa của cả mâm: trung bình nhân các món, nhưng không vượt món kém hợp mùa nhất,
+ * để chỉ một món trái mùa cũng khiến cả mâm hiếm xuất hiện.
+ */
+function mealSeasonWeight(mealRecipes: Recipe[], season: Season) {
+  const weights = mealRecipes.map((recipe) => seasonalWeight(recipe, season));
+  const geometricMean = Math.exp(
+    weights.reduce((sum, weight) => sum + Math.log(weight), 0) / weights.length,
+  );
+  return Math.min(geometricMean, ...weights);
+}
+
+/**
+ * Ghép mâm cơm (món mặn + canh + rau). Khi truyền `season`, thứ tự món được xáo có trọng số
+ * theo mùa: món hợp thời tiết hay xuất hiện, món trái mùa vẫn có nhưng hiếm.
+ */
 export function createHomeMealSuggestions(
   catalog: Recipe[],
   seed = 'bep-viet',
+  season?: Season,
 ): HomeMealSuggestion[] {
   if (!catalog.length) return [];
 
+  const shuffle = (items: Recipe[], key: string) =>
+    season
+      ? weightedSeededShuffle(
+          items,
+          key,
+          (recipe) => recipe.slug,
+          (recipe) => seasonalWeight(recipe, season),
+        )
+      : seededShuffle(items, key, (recipe) => recipe.slug);
+
   const mealCatalog = catalog.filter((recipe) => getMealRole(recipe) !== 'other');
-  const anchors = seededShuffle(mealCatalog, seed, (recipe) => recipe.slug);
+  const anchors = shuffle(mealCatalog, seed);
 
   const mains = catalog.filter((recipe) => getMealRole(recipe) === 'main');
   const soups = catalog.filter((recipe) => getMealRole(recipe) === 'soup');
@@ -131,24 +169,12 @@ export function createHomeMealSuggestions(
   const vegetarianSoups = soups.filter(hasVegetarianMealLabel);
   const vegetarianVegetables = vegetables.filter(hasVegetarianMealLabel);
   const shuffledPools = {
-    mains: seededShuffle(mains, `${seed}:main`, (recipe) => recipe.slug),
-    soups: seededShuffle(soups, `${seed}:soup`, (recipe) => recipe.slug),
-    vegetables: seededShuffle(vegetables, `${seed}:vegetable`, (recipe) => recipe.slug),
-    vegetarianMains: seededShuffle(
-      vegetarianMains,
-      `${seed}:vegetarian-main`,
-      (recipe) => recipe.slug,
-    ),
-    vegetarianSoups: seededShuffle(
-      vegetarianSoups,
-      `${seed}:vegetarian-soup`,
-      (recipe) => recipe.slug,
-    ),
-    vegetarianVegetables: seededShuffle(
-      vegetarianVegetables,
-      `${seed}:vegetarian-vegetable`,
-      (recipe) => recipe.slug,
-    ),
+    mains: shuffle(mains, `${seed}:main`),
+    soups: shuffle(soups, `${seed}:soup`),
+    vegetables: shuffle(vegetables, `${seed}:vegetable`),
+    vegetarianMains: shuffle(vegetarianMains, `${seed}:vegetarian-main`),
+    vegetarianSoups: shuffle(vegetarianSoups, `${seed}:vegetarian-soup`),
+    vegetarianVegetables: shuffle(vegetarianVegetables, `${seed}:vegetarian-vegetable`),
   };
   const seenCombinations = new Set<string>();
 
@@ -198,6 +224,7 @@ export function createHomeMealSuggestions(
         anchorName: mainName,
         servings: anchor.servings,
         recipeSlugs: mealRecipes.map((recipe) => recipe.slug),
+        ...(season ? { seasonWeight: mealSeasonWeight(mealRecipes, season) } : {}),
       },
     ];
   });

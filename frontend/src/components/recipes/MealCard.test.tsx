@@ -20,7 +20,7 @@ describe('suggested meal platter', () => {
     );
 
     const platter = screen.getByRole('region', {
-      name: `Mâm cơm gợi ý: ${dishes.map((dish) => dish.name).join(', ')}`,
+      name: `Mâm cơm gợi ý: ${new Intl.ListFormat('vi', { style: 'long', type: 'conjunction' }).format(dishes.map((dish) => dish.name))}`,
     });
     const dishLinks = within(platter).getAllByRole('link');
     expect(dishLinks).toHaveLength(dishes.length);
@@ -63,7 +63,7 @@ describe('suggested meal platter', () => {
       </MemoryRouter>,
     );
     const platter = screen.getByRole('region', {
-      name: `Mâm cơm gợi ý: ${dishes.map((dish) => dish.name).join(', ')}`,
+      name: `Mâm cơm gợi ý: ${new Intl.ListFormat('vi', { style: 'long', type: 'conjunction' }).format(dishes.map((dish) => dish.name))}`,
     });
 
     fireEvent.click(

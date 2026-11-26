@@ -27,7 +27,7 @@ import { dietaryConflicts, useUserPreferences } from '@/features/account/prefere
 import { useAuth } from '@/features/auth/AuthContext';
 import { favoriteRecipesQueryKey, type FavoriteRecipe } from '@/features/favorites/favoritesApi';
 import { useI18n } from '@/features/i18n/I18nContext';
-import { useRecipeCatalog } from '@/features/i18n/recipeContent';
+import { useRecipeCatalog, useRecipeCatalogReady } from '@/features/i18n/recipeContent';
 import { apiRequest } from '@/lib/api/client';
 import './recipes-page.css';
 
@@ -64,6 +64,7 @@ export function RecipesPage() {
   const { t, locale } = useI18n();
   const { user, isLoading: authLoading } = useAuth();
   const catalog = useRecipeCatalog();
+  const catalogReady = useRecipeCatalogReady();
   const [pageSize, setPageSize] = useState(() => getCatalogPageSize());
   const query = params.get('q') ?? '';
   // Ô nhập giữ giá trị riêng để gõ không bị trễ hay mất ký tự; URL cập nhật sau khi ngừng gõ.
@@ -242,6 +243,52 @@ export function RecipesPage() {
     favoritesOnly && (authLoading || (Boolean(user) && favoritesQuery.isPending));
   const favoritesUnavailable =
     favoritesOnly && (!user || favoritesQuery.isError || favoritesLoading);
+  useEffect(() => {
+    if (!catalogReady || (favoritesOnly && (!user || favoritesLoading || favoritesQuery.isError)))
+      return;
+
+    const availableIngredients = new Set(ingredientOptions.map(({ id }) => id));
+    const availableMethods = new Set(methodOptions.map(({ id }) => id));
+    const ingredientIds = params.getAll('ingredients').flatMap((value) => value.split(','));
+    const methodIds = params.getAll('methods').flatMap((value) => value.split(','));
+    const hasUnavailableIngredients = ingredientIds.some(
+      (id) => id && !availableIngredients.has(id),
+    );
+    const hasUnavailableMethods = methodIds.some((id) => id && !availableMethods.has(id));
+
+    if (!hasUnavailableIngredients && !hasUnavailableMethods) return;
+
+    setParams(
+      (current) => {
+        const next = new URLSearchParams(current);
+        let changed = false;
+        for (const [key, available] of [
+          ['ingredients', availableIngredients],
+          ['methods', availableMethods],
+        ] as const) {
+          const ids = current.getAll(key).flatMap((value) => value.split(','));
+          if (!ids.some((id) => id && !available.has(id))) continue;
+          const retained = [...new Set(ids.filter((id) => available.has(id)))];
+          next.delete(key);
+          if (retained.length) next.set(key, retained.join(','));
+          changed = true;
+        }
+        if (changed) next.delete('page');
+        return changed ? next : current;
+      },
+      { replace: true },
+    );
+  }, [
+    favoritesLoading,
+    favoritesOnly,
+    favoritesQuery.isError,
+    ingredientOptions,
+    methodOptions,
+    params,
+    setParams,
+    catalogReady,
+    user,
+  ]);
   // Tiêu đề kết quả phản ánh loại món, vùng miền và tùy chọn cá nhân đang chọn.
   const filterTitle = [
     category !== 'Tất cả' ? t(category) : '',

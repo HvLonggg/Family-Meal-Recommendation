@@ -1,6 +1,7 @@
-/** Giới hạn khu vực quản trị; chỉ cho phép xem trước món và bài viết công khai. */
+/** Giới hạn khu vực quản trị; chỉ cho phép xem trước trang chủ, món và bài viết công khai. */
 
-const PREVIEW_PATHS = [/^\/recipes\/[^/]+\/?$/, /^\/articles\/[^/]+\/?$/];
+// Trang chủ nằm trong danh sách để đăng nhập xong (về "/") vẫn thấy trang chủ ở chế độ xem trước.
+const PREVIEW_PATHS = [/^\/$/, /^\/recipes\/[^/]+\/?$/, /^\/articles\/[^/]+\/?$/];
 
 const ADMIN_EQUIVALENTS: [RegExp, (match: RegExpMatchArray) => string][] = [
   [/^\/stories\/new\/?$/, () => '/admin/articles/new'],

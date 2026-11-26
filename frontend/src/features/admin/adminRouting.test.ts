@@ -23,8 +23,12 @@ describe('admin routing', () => {
   });
 
   it('sends every other public page to the dashboard', () => {
-    for (const path of ['/', '/meals', '/random-meal', '/favorites', '/account', '/khong-co']) {
+    for (const path of ['/meals', '/random-meal', '/favorites', '/account', '/khong-co']) {
       expect(adminDestinationFor(path)).toBe('/admin');
     }
+  });
+
+  it('lets admins land on the home page in preview mode after signing in', () => {
+    expect(adminDestinationFor('/')).toBeNull();
   });
 });

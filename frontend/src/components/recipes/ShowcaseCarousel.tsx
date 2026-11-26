@@ -2,7 +2,9 @@ import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { flushSync } from 'react-dom';
 
 import { AppIcon } from '@/components/common/AppIcon';
+import { CatalogSkeletonCarousel } from '@/components/recipes/CatalogGate';
 import { useI18n } from '@/features/i18n/I18nContext';
+import { useRecipeCatalogReady } from '@/features/i18n/recipeContent';
 
 type ShowcaseCarouselProps<Item> = {
   bleed?: boolean;
@@ -11,6 +13,16 @@ type ShowcaseCarouselProps<Item> = {
   label: string;
   renderItem: (item: Item) => ReactNode;
 };
+
+/** Băng chuyền món; trong lúc kho món còn tải thì hiện thẻ giữ chỗ thay cho vài món đóng gói sẵn. */
+export function ShowcaseCarousel<Item>(props: ShowcaseCarouselProps<Item>) {
+  const ready = useRecipeCatalogReady();
+  return ready ? (
+    <LoadedShowcaseCarousel {...props} />
+  ) : (
+    <CatalogSkeletonCarousel bleed={props.bleed} />
+  );
+}
 
 type Direction = 'next' | 'previous';
 
@@ -35,7 +47,7 @@ function modulo(value: number, length: number) {
   return ((value % length) + length) % length;
 }
 
-export function ShowcaseCarousel<Item>({
+function LoadedShowcaseCarousel<Item>({
   bleed = false,
   getKey,
   items,

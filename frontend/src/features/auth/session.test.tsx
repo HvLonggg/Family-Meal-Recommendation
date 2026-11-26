@@ -2,7 +2,12 @@ import { cleanup, render, screen } from '@testing-library/react';
 import { MemoryRouter, Route, Routes, useLocation } from 'react-router';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
-import { landingPath, safeReturnPath } from '@/features/auth/landing';
+import {
+  consumeOAuthReturnPath,
+  landingPath,
+  rememberOAuthReturnPath,
+  safeReturnPath,
+} from '@/features/auth/landing';
 import { ProtectedRoute } from '@/features/auth/ProtectedRoute';
 import { apiRequest, setAccessToken, setSessionHandlers } from '@/lib/api/client';
 
@@ -90,11 +95,21 @@ describe('landing after sign-in', () => {
     expect(safeReturnPath(undefined)).toBeNull();
   });
 
-  it('keeps admins inside the admin area', () => {
-    expect(landingPath('user', '/planner')).toBe('/planner');
-    expect(landingPath('user', undefined)).toBe('/');
-    expect(landingPath('admin', '/admin/users')).toBe('/admin/users');
-    expect(landingPath('admin', '/planner')).toBe('/admin');
+  it('lands on the home page unless a safe return path was requested', () => {
+    expect(landingPath('/planner')).toBe('/planner');
+    expect(landingPath('/admin/users')).toBe('/admin/users');
+    expect(landingPath(undefined)).toBe('/');
+    expect(landingPath(null)).toBe('/');
+    expect(landingPath('/login')).toBe('/');
+    expect(landingPath('//evil.example')).toBe('/');
+  });
+
+  it('remembers the return path across the social sign-in round trip once', () => {
+    rememberOAuthReturnPath('/recipes/pho-bo');
+    expect(consumeOAuthReturnPath()).toBe('/recipes/pho-bo');
+    expect(consumeOAuthReturnPath()).toBeNull();
+    rememberOAuthReturnPath('https://evil.example');
+    expect(consumeOAuthReturnPath()).toBeNull();
   });
 });
 

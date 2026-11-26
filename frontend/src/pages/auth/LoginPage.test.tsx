@@ -5,8 +5,10 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 import { LoginPage } from '@/pages/auth/LoginPage';
 import { ResetPasswordPage } from '@/pages/auth/ResetPasswordPage';
 
+const authState = vi.hoisted(() => ({ user: null as null | { role: string } }));
+
 vi.mock('@/features/auth/AuthContext', () => ({
-  useAuth: () => ({ isLoading: false, login: vi.fn(), user: null }),
+  useAuth: () => ({ isLoading: false, login: vi.fn(), user: authState.user }),
 }));
 
 function renderAt(entry: string | { pathname: string; search?: string; state?: unknown }) {
@@ -15,6 +17,9 @@ function renderAt(entry: string | { pathname: string; search?: string; state?: u
       <Routes>
         <Route element={<LoginPage />} path="/login" />
         <Route element={<ResetPasswordPage />} path="/reset-password" />
+        <Route element={<p>Trang chủ</p>} path="/" />
+        <Route element={<p>Tài khoản</p>} path="/account" />
+        <Route element={<p>Kế hoạch</p>} path="/planner" />
       </Routes>
     </MemoryRouter>,
   );
@@ -22,10 +27,26 @@ function renderAt(entry: string | { pathname: string; search?: string; state?: u
 
 afterEach(() => {
   cleanup();
+  authState.user = null;
   document.title = '';
 });
 
 describe('LoginPage', () => {
+  it('đưa người đã đăng nhập (kể cả quản trị viên) về trang chủ khi không có đường quay lại', () => {
+    for (const role of ['user', 'admin']) {
+      authState.user = { role };
+      renderAt('/login');
+      expect(screen.getByText('Trang chủ')).toBeInTheDocument();
+      cleanup();
+    }
+  });
+
+  it('quay lại đúng trang đã yêu cầu sau khi đăng nhập', () => {
+    authState.user = { role: 'user' };
+    renderAt('/login?next=%2Fplanner');
+    expect(screen.getByText('Kế hoạch')).toBeInTheDocument();
+  });
+
   it('giải thích lý do và chào khách mới khi bị chuyển tới từ trang cần đăng nhập', () => {
     renderAt('/login?next=%2Frecipes%2Fbun-bo-hue');
 

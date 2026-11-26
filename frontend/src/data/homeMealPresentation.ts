@@ -1,12 +1,6 @@
 import type { Recipe } from '@/data/recipes';
 import type { Translate } from '@/features/i18n/I18nContext';
 
-const summaryTemplates = [
-  'Kết hợp {dishes} cho bữa cơm nhà.',
-  'Lên mâm cùng {dishes}.',
-  '{dishes} — trọn vị cơm nhà.',
-] as const;
-
 export function resolveHomeMealRecipes(slugs: string[], catalog: Recipe[]): Recipe[] {
   const bySlug = new Map(catalog.map((recipe) => [recipe.slug, recipe]));
   return [...new Set(slugs)].flatMap((slug) => {
@@ -22,13 +16,20 @@ export function describeHomeMeal(
 ): string {
   if (!items.length) return '';
 
-  const signature = items.map((recipe) => recipe.slug).join('|');
-  const variant = Array.from(signature).reduce(
-    (sum, character) => sum + character.charCodeAt(0),
-    0,
-  );
   const dishes = new Intl.ListFormat(locale, { style: 'long', type: 'conjunction' }).format(
     items.map((recipe) => recipe.name),
   );
-  return translate(summaryTemplates[variant % summaryTemplates.length]!, { dishes });
+  const signature = items
+    .map((recipe) => recipe.slug)
+    .sort((left, right) => left.localeCompare(right))
+    .join('|');
+  const variant =
+    Array.from(signature).reduce((sum, character) => sum + character.charCodeAt(0), 0) % 4;
+  const summaries = [
+    translate('Mâm gồm {dishes}, đủ vị bữa cơm.', { dishes }),
+    translate('{dishes} tạo mâm cơm hài hòa.', { dishes }),
+    translate('Kết hợp {dishes}, vừa đủ vị nhà.', { dishes }),
+    translate('Dọn {dishes}, tròn vị bữa cơm.', { dishes }),
+  ];
+  return `${summaries[variant]!}.`;
 }

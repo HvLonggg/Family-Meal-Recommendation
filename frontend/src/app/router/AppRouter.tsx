@@ -2,6 +2,7 @@ import { lazy, Suspense, type ComponentType } from 'react';
 import { createBrowserRouter, Navigate, RouterProvider, useLocation } from 'react-router';
 
 import { canonicalPath, legacyRoutes } from '@/app/router/legacyRoutes';
+import { CatalogGate } from '@/components/recipes/CatalogGate';
 import { useI18n } from '@/features/i18n/I18nContext';
 
 import { AuthLayout } from '@/app/layouts/AuthLayout';
@@ -125,29 +126,90 @@ const router = createBrowserRouter([
     element: <PublicLayout />,
     children: [
       { index: true, element: <HomePage /> },
-      { path: 'recipes', element: <RecipesPage /> },
-      { path: 'recipes/:slug', element: <RecipeDetailPage /> },
-      { path: 'meals', element: <MealSetsPage /> },
-      { path: 'random-meal', element: <RandomMealPage /> },
+      // Trang đọc kho món: hiện khung giữ chỗ tới khi kho sẵn sàng (không 404 sớm, không nháy món tạm).
+      {
+        path: 'recipes',
+        element: (
+          <CatalogGate>
+            <RecipesPage />
+          </CatalogGate>
+        ),
+      },
+      {
+        path: 'recipes/:slug',
+        element: (
+          <CatalogGate variant="detail">
+            <RecipeDetailPage />
+          </CatalogGate>
+        ),
+      },
+      {
+        path: 'meals',
+        element: (
+          <CatalogGate>
+            <MealSetsPage />
+          </CatalogGate>
+        ),
+      },
+      {
+        path: 'random-meal',
+        element: (
+          <CatalogGate>
+            <RandomMealPage />
+          </CatalogGate>
+        ),
+      },
       {
         path: 'planner',
         element: (
           <ProtectedRoute>
-            <PlannerPage />
+            <CatalogGate>
+              <PlannerPage />
+            </CatalogGate>
           </ProtectedRoute>
         ),
       },
-      { path: 'suggestions', element: <SuggestionsPage /> },
-      { path: 'nutrition', element: <NutritionPage /> },
+      {
+        path: 'suggestions',
+        element: (
+          <CatalogGate>
+            <SuggestionsPage />
+          </CatalogGate>
+        ),
+      },
+      {
+        path: 'nutrition',
+        element: (
+          <CatalogGate>
+            <NutritionPage />
+          </CatalogGate>
+        ),
+      },
       { path: 'articles', element: <ArticlesPage /> },
-      { path: 'articles/:slug', element: <ArticleDetailPage /> },
+      {
+        path: 'articles/:slug',
+        element: (
+          <CatalogGate variant="detail">
+            <ArticleDetailPage />
+          </CatalogGate>
+        ),
+      },
       { path: 'contact', element: <ContactPage /> },
-      { path: 'favorites', element: <FavoritesPage /> },
+      {
+        path: 'favorites',
+        element: (
+          <CatalogGate>
+            <FavoritesPage />
+          </CatalogGate>
+        ),
+      },
       {
         path: 'stories/new',
         element: (
           <ProtectedRoute>
-            <StoryEditorPage />
+            <CatalogGate>
+              <StoryEditorPage />
+            </CatalogGate>
           </ProtectedRoute>
         ),
       },
@@ -155,7 +217,9 @@ const router = createBrowserRouter([
         path: 'stories/:id/edit',
         element: (
           <ProtectedRoute>
-            <StoryEditorPage />
+            <CatalogGate>
+              <StoryEditorPage />
+            </CatalogGate>
           </ProtectedRoute>
         ),
       },
@@ -191,7 +255,9 @@ const router = createBrowserRouter([
     path: 'cook',
     element: (
       <ProtectedRoute>
-        <CookModePage />
+        <CatalogGate variant="detail">
+          <CookModePage />
+        </CatalogGate>
       </ProtectedRoute>
     ),
   },
@@ -210,8 +276,22 @@ const router = createBrowserRouter([
       { path: 'plans', element: <AdminPlansPage /> },
       { path: 'recipes', element: <AdminRecipesPage /> },
       { path: 'articles', element: <AdminArticlesPage /> },
-      { path: 'articles/new', element: <StoryEditorPage /> },
-      { path: 'articles/:id/edit', element: <StoryEditorPage /> },
+      {
+        path: 'articles/new',
+        element: (
+          <CatalogGate>
+            <StoryEditorPage />
+          </CatalogGate>
+        ),
+      },
+      {
+        path: 'articles/:id/edit',
+        element: (
+          <CatalogGate>
+            <StoryEditorPage />
+          </CatalogGate>
+        ),
+      },
       { path: 'submissions', element: <AdminSubmissionsPage /> },
       { path: 'support', element: <AdminSupportPage /> },
       { path: 'assistant', element: <AdminAssistantPage /> },

@@ -2,6 +2,7 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { Link, useNavigate } from 'react-router';
 
 import { AppIcon } from '@/components/common/AppIcon';
+import { CatalogSkeletonCard } from '@/components/recipes/CatalogGate';
 import { formatMinutes, recipeMinutes, type Recipe } from '@/data/recipes';
 import { useAuth } from '@/features/auth/AuthContext';
 import { loginHref } from '@/features/auth/landing';
@@ -9,8 +10,17 @@ import { favoriteRecipesQueryKey, type FavoriteRecipe } from '@/features/favorit
 import { apiPost, apiRequest } from '@/lib/api/client';
 import { fitDishCutout } from '@/lib/fitDishCutout';
 import { useI18n } from '@/features/i18n/I18nContext';
+import { useRecipeCatalogReady } from '@/features/i18n/recipeContent';
 
-export function RecipeCard({ recipe, eager = false }: { recipe: Recipe; eager?: boolean }) {
+type RecipeCardProps = { recipe: Recipe; eager?: boolean };
+
+/** Thẻ món; trong lúc kho món còn tải thì hiện thẻ giữ chỗ thay cho vài món đóng gói sẵn. */
+export function RecipeCard(props: RecipeCardProps) {
+  const ready = useRecipeCatalogReady();
+  return ready ? <LoadedRecipeCard {...props} /> : <CatalogSkeletonCard />;
+}
+
+function LoadedRecipeCard({ recipe, eager = false }: RecipeCardProps) {
   const { user } = useAuth();
   const { t } = useI18n();
   const navigate = useNavigate();

@@ -3,6 +3,7 @@ import { Link, useNavigate, useSearchParams } from 'react-router';
 
 import { useAuthTitle } from '@/components/auth/useAuthTitle';
 import { useAuth } from '@/features/auth/AuthContext';
+import { consumeOAuthReturnPath, landingPath } from '@/features/auth/landing';
 import { useI18n } from '@/features/i18n/I18nContext';
 
 export function OAuthCallbackPage() {
@@ -15,8 +16,8 @@ export function OAuthCallbackPage() {
 
   useEffect(() => {
     if (!isLoading && user) {
-      const landing = user.role === 'admin' ? '/admin' : '/account';
-      void navigate(landing, { replace: true });
+      // Về trang chủ, hoặc trang người dùng đang xem trước khi bấm đăng nhập Google.
+      void navigate(landingPath(consumeOAuthReturnPath()), { replace: true });
     }
   }, [isLoading, navigate, user]);
 

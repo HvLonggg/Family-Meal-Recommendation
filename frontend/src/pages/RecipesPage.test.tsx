@@ -24,7 +24,10 @@ vi.mock('@/features/account/preferences', () => ({
   }),
   dietaryConflicts: () => [],
 }));
-vi.mock('@/features/i18n/recipeContent', () => ({ useRecipeCatalog: () => mocks.catalog }));
+vi.mock('@/features/i18n/recipeContent', () => ({
+  useRecipeCatalog: () => mocks.catalog,
+  useRecipeCatalogReady: () => true,
+}));
 vi.mock('@/lib/api/client', () => ({ apiRequest: mocks.request }));
 vi.mock('@/components/recipes/RecipeCard', () => ({
   RecipeCard: ({ recipe }: { recipe: Recipe }) => (

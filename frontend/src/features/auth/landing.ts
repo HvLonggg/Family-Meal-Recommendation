@@ -11,10 +11,35 @@ export function safeReturnPath(path: string | undefined) {
     : path;
 }
 
-export function landingPath(role: string, requested: string | undefined) {
-  const path = safeReturnPath(requested);
-  if (role === 'admin') return path?.startsWith('/admin') ? path : '/admin';
-  return path ?? '/';
+/**
+ * Sau khi đăng nhập: quay lại trang đã yêu cầu (nếu hợp lệ), còn không thì về trang chủ.
+ * Quản trị viên cũng về trang chủ; khu quản trị mở từ menu tài khoản.
+ */
+export function landingPath(requested: string | null | undefined) {
+  return safeReturnPath(requested ?? undefined) ?? '/';
+}
+
+const OAUTH_RETURN_KEY = 'bepviet.oauth-return-path';
+
+/** Đăng nhập mạng xã hội rời khỏi ứng dụng, nên ghi nhớ nơi cần quay về trong phiên tab. */
+export function rememberOAuthReturnPath(path: string | null | undefined) {
+  try {
+    const safePath = safeReturnPath(path ?? undefined);
+    if (safePath) sessionStorage.setItem(OAUTH_RETURN_KEY, safePath);
+    else sessionStorage.removeItem(OAUTH_RETURN_KEY);
+  } catch {
+    // Trình duyệt chặn bộ nhớ thì vẫn đăng nhập được, chỉ về trang chủ.
+  }
+}
+
+export function consumeOAuthReturnPath() {
+  try {
+    const path = sessionStorage.getItem(OAUTH_RETURN_KEY);
+    sessionStorage.removeItem(OAUTH_RETURN_KEY);
+    return safeReturnPath(path ?? undefined);
+  } catch {
+    return null;
+  }
 }
 
 /** Đường dẫn tới trang đăng nhập/đăng ký kèm `?next=` để tải lại trang vẫn nhớ nơi cần quay về. */

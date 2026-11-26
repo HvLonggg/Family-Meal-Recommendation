@@ -6,7 +6,8 @@ import {
   selectHomeMealSuggestions,
 } from '@/data/homeMealSuggestions';
 import { getMealRole, hasVegetarianMealLabel } from '@/data/mealComposition';
-import { recipes } from '@/data/recipes';
+import { recipes, type Recipe } from '@/data/recipes';
+import { dishClimateOf, type Season } from '@/data/seasonalPicks';
 
 describe('home meal suggestions', () => {
   it('creates distinct meals with a main, a soup and vegetables from the catalog', () => {
@@ -69,5 +70,58 @@ describe('home meal suggestions', () => {
       createHomeMealSuggestions(recipes.filter((recipe) => getMealRole(recipe) === 'main')),
     ).toEqual([]);
     expect(createHomeMealSuggestions([])).toEqual([]);
+  });
+
+  it('keeps the meal composition and favours in-season dishes when a season is given', () => {
+    const base = recipes[0]!;
+    const make = (slug: string, name: string, category: Recipe['category']): Recipe => ({
+      ...base,
+      slug,
+      name,
+      category,
+      region: 'Ba miền',
+      tags: [],
+    });
+    const many = (count: number, prefix: string, name: string, category: Recipe['category']) =>
+      Array.from({ length: count }, (_, index) =>
+        make(`${prefix}-${index}`, `${name} ${index}`, category),
+      );
+    // Món mặn và rau trung tính; chỉ món canh khác nhau: canh hầm (ấm) và canh chua (mát).
+    const catalog = [
+      ...many(40, 'thit', 'Thịt rang cháy cạnh', 'Món mặn'),
+      ...many(40, 'canh-ham', 'Canh hầm xương', 'Món canh'),
+      ...many(40, 'canh-chua', 'Canh chua cá', 'Món canh'),
+      ...many(40, 'rau', 'Rau cải xào', 'Món rau'),
+    ];
+    const bySlug = new Map(catalog.map((item) => [item.slug, item]));
+    const coolingSoupShare = (season?: Season) => {
+      let cooling = 0;
+      let total = 0;
+      for (let run = 0; run < 40; run += 1) {
+        const seed = `season-${run}`;
+        const candidates = createHomeMealSuggestions(catalog, seed, season);
+        for (const meal of selectHomeMealSuggestions(candidates, seed, [], 8)) {
+          const items = meal.recipeSlugs.map((slug) => bySlug.get(slug)!);
+          expect(items.map(getMealRole)).toEqual(['main', 'soup', 'vegetable']);
+          if (dishClimateOf(items[1]!) === 'cooling') cooling += 1;
+          total += 1;
+        }
+      }
+      return cooling / total;
+    };
+
+    const baseline = coolingSoupShare();
+    const cold = coolingSoupShare('cold');
+    const hot = coolingSoupShare('hot');
+    expect(baseline).toBeGreaterThan(0.35);
+    expect(baseline).toBeLessThan(0.65);
+    // Trời lạnh: canh chua hiếm hơn hẳn nhưng không biến mất; trời nóng thì ngược lại.
+    expect(cold).toBeLessThan(0.2);
+    expect(cold).toBeGreaterThan(0);
+    expect(hot).toBeGreaterThan(0.8);
+    expect(coolingSoupShare('mild')).toBeGreaterThan(0.3);
+    expect(coolingSoupShare('mild')).toBeLessThan(0.7);
+    expect(createHomeMealSuggestions(catalog, 'x', 'cold')[0]?.seasonWeight).toBeGreaterThan(0);
+    expect(createHomeMealSuggestions(catalog, 'x')[0]?.seasonWeight).toBeUndefined();
   });
 });

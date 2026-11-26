@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 
 import { matchesRecipeSearch } from '@/data/recipeSearch';
 import { getRecipe, recipeMinutes, recipes } from '@/data/recipes';
-import { matchesSearch } from '@/lib/search';
+import { accentKey, matchesSearch, searchTokens } from '@/lib/search';
 
 describe('Vietnamese recipe search', () => {
   it('matches accented and unaccented keywords with repeated whitespace', () => {
@@ -164,5 +164,21 @@ describe('Vietnamese recipe search', () => {
     expect(
       northern.every((recipe) => matchesSearch('Bắc', [recipe.region, ...(recipe.regions ?? [])])),
     ).toBe(true);
+  });
+});
+
+describe('search tokens', () => {
+  it('compares diacritics independent of tone placement and keeps tones apart', () => {
+    expect(accentKey('hoà')).toBe(accentKey('hòa'));
+    expect(accentKey('thuỷ')).toBe(accentKey('thủy'));
+    expect(accentKey('cá')).not.toBe(accentKey('cà'));
+    expect(accentKey('cua')).not.toBe(accentKey('của'));
+    expect(searchTokens('Bún bò Huế').map((token) => token.norm)).toEqual(['bun', 'bo', 'hue']);
+  });
+
+  it('only tolerates a typo in words of at least five letters', () => {
+    expect(matchesSearch('canh chuaa', ['Canh chua cá'])).toBe(true);
+    expect(matchesSearch('khoo', ['Cá kho tộ'])).toBe(false);
+    expect(matchesSearch('gaa', ['Gà luộc'])).toBe(false);
   });
 });

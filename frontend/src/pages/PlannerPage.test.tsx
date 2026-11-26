@@ -46,6 +46,9 @@ vi.mock('@/data/recipes', () => {
     recipeMinutes: () => 40,
     recipes,
     getRecipeCatalog: () => recipes,
+    getRecipeCatalogSource: () => 'online',
+    subscribeRecipeCatalog: () => () => undefined,
+    setRecipeCatalogSource: () => undefined,
     recipeText: (text: string) => text,
     setRecipeDictionary: () => undefined,
   };
