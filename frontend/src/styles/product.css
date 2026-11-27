@@ -187,17 +187,6 @@ strong {
     linear-gradient(115deg, #fff9ef, #f8ede0);
 }
 
-.home-hero::before {
-  position: absolute;
-  top: -80px;
-  left: -120px;
-  width: 330px;
-  height: 330px;
-  border: 1px solid rgb(180 59 44 / 10%);
-  border-radius: 50%;
-  content: '';
-}
-
 .home-hero__inner {
   display: grid;
   min-height: 620px;
