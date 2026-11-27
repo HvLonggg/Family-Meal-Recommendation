@@ -23,8 +23,6 @@ import { seededShuffle } from '@/lib/seededShuffle';
 import './home-page.css';
 
 const HOME_FEATURED_LIMIT = 12;
-// Lưới "Hôm nay nấu gì?": 4 cột × 2 hàng trên máy tính, 2 cột trên điện thoại.
-const HOME_TODAY_LIMIT = 8;
 
 export function HomePage() {
   const [query, setQuery] = useState('');
@@ -34,7 +32,6 @@ export function HomePage() {
   const { t } = useI18n();
   const { user } = useAuth();
   const catalog = useRecipeCatalog();
-  const [shuffleRound, setShuffleRound] = useState(0);
   // Mùa theo giờ Việt Nam: mâm cơm gợi ý ưu tiên món hợp thời tiết, món trái mùa hiếm gặp.
   const [season] = useState(() => seasonOf(new Date()));
   const mealCandidates = useMemo(
@@ -48,12 +45,11 @@ export function HomePage() {
   // Trang chủ chỉ giới thiệu một nhóm món nổi bật; xem toàn bộ ở Kho món.
   const featuredRecipes = useMemo(
     () =>
-      seededShuffle(
-        catalog,
-        `${entrySeed}:${user?.id ?? 'guest'}:${shuffleRound}`,
-        (recipe) => recipe.slug,
-      ).slice(0, HOME_TODAY_LIMIT),
-    [catalog, entrySeed, shuffleRound, user?.id],
+      seededShuffle(catalog, `${entrySeed}:${user?.id ?? 'guest'}`, (recipe) => recipe.slug).slice(
+        0,
+        HOME_FEATURED_LIMIT,
+      ),
+    [catalog, entrySeed, user?.id],
   );
 
   useEffect(() => {
@@ -146,28 +142,20 @@ export function HomePage() {
               </p>
             </div>
             <div className="home-heading__actions">
-              <button
-                className="home-action home-action--ghost"
-                onClick={() => setShuffleRound((round) => round + 1)}
-                type="button"
-              >
-                <AppIcon name="refresh" size={17} /> {t('Đổi món khác')}
-              </button>
               <Link className="home-action" to="/recipes">
                 {t('Xem tất cả')} <AppIcon name="arrow" size={17} />
               </Link>
             </div>
           </div>
-          <div className="home-today__grid" aria-live="polite">
-            {featuredRecipes.map((recipe, index) => (
-              <RecipeCard
-                eager={shuffleRound === 0 && index < 4}
-                key={recipe.slug}
-                recipe={recipe}
-              />
-            ))}
-          </div>
         </div>
+        {/* Slide món random mỗi lần vào, nút trượt giống "Mâm cơm gợi ý" bên dưới. */}
+        <ShowcaseCarousel
+          bleed
+          getKey={(recipe) => recipe.slug}
+          items={featuredRecipes}
+          label={t('Món ăn')}
+          renderItem={(recipe) => <RecipeCard eager recipe={recipe} />}
+        />
       </section>
 
       <section className="content-section content-section--tint home-meals">

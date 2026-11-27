@@ -11,6 +11,7 @@ import { apiPost, apiRequest } from '@/lib/api/client';
 import { fitDishCutout } from '@/lib/fitDishCutout';
 import { useI18n } from '@/features/i18n/I18nContext';
 import { useRecipeCatalogReady } from '@/features/i18n/recipeContent';
+import './recipe-card-rounded.css';
 
 type RecipeCardProps = { recipe: Recipe; eager?: boolean };
 

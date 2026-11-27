@@ -1,0 +1,94 @@
+/* Thẻ món bo góc dùng chung: slide "Hôm nay nấu gì?" ở trang chủ và lưới trang Món ăn. */
+.home-today .recipe-card,
+.recipe-grid--catalog .recipe-card {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  border: 1px solid #eee3d7;
+  border-radius: 22px;
+  background: linear-gradient(180deg, #fffefa, #fff 62%);
+  box-shadow:
+    0 10px 28px rgb(73 48 32 / 6%),
+    0 2px 6px rgb(73 48 32 / 3%);
+  transition:
+    transform 320ms cubic-bezier(0.2, 0.75, 0.25, 1),
+    box-shadow 320ms ease,
+    border-color 240ms ease;
+}
+
+.home-today .recipe-card:hover,
+.recipe-grid--catalog .recipe-card:hover {
+  transform: translateY(-4px);
+  border-color: #e0c7ae;
+  box-shadow:
+    0 18px 36px rgb(73 48 32 / 11%),
+    0 4px 10px rgb(73 48 32 / 4%);
+}
+
+.home-today .recipe-card__media,
+.recipe-grid--catalog .recipe-card__media {
+  aspect-ratio: 4 / 3;
+  background:
+    radial-gradient(ellipse at 50% 55%, rgb(242 218 187 / 42%), transparent 65%),
+    linear-gradient(145deg, #fffdf9, #f8f1e8);
+}
+
+.home-today .recipe-card__body,
+.recipe-grid--catalog .recipe-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 16px 16px 18px;
+}
+
+.home-today .recipe-card h3,
+.recipe-grid--catalog .recipe-card h3 {
+  display: -webkit-box;
+  overflow: hidden;
+  min-height: calc(2 * 1.3em);
+  margin-top: 8px;
+  font-size: 18px;
+  line-height: 1.3;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.home-today .recipe-card__body > p,
+.recipe-grid--catalog .recipe-card__body > p {
+  min-height: calc(2 * 1.6em);
+  margin: 8px 0 16px;
+}
+
+/* Nút "Xem chi tiết" luôn nằm sát đáy để các thẻ thẳng hàng. */
+.home-today .recipe-card__details-link,
+.recipe-grid--catalog .recipe-card__details-link {
+  width: 100%;
+  height: 40px;
+  min-height: 40px;
+  margin-top: auto;
+  padding-block: 0;
+}
+
+@media (max-width: 560px) {
+  .home-today .recipe-card,
+  .recipe-grid--catalog .recipe-card {
+    border-radius: 18px;
+  }
+
+  .home-today .recipe-card__body,
+  .recipe-grid--catalog .recipe-card__body {
+    padding: 12px 12px 14px;
+  }
+
+  .home-today .recipe-card h3,
+  .recipe-grid--catalog .recipe-card h3 {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-today .recipe-card,
+  .recipe-grid--catalog .recipe-card {
+    transition: none;
+  }
+}
