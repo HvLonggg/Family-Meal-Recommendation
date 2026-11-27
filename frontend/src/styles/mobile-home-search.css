@@ -1,0 +1,161 @@
+/* Luồng B: trang chủ, ô tìm kiếm, kho món trên điện thoại. */
+
+@media (max-width: 560px) {
+  /* ---------- Ô tìm kiếm (trang chủ + kho món): nút gửi chỉ còn biểu tượng ---------- */
+  /* Chữ nút vẫn nằm trong DOM làm tên truy cập; chỉ ẩn bằng cỡ chữ 0 để ô nhập rộng hơn. */
+  form.hero-search .search-field .search-field__submit,
+  form.catalog-search .search-field .search-field__submit {
+    width: 44px;
+    height: 44px;
+    min-height: 44px;
+    flex: 0 0 44px;
+    gap: 0;
+    border-radius: 12px;
+    padding: 0;
+    font-size: 0;
+  }
+
+  form.hero-search .search-field .search-field__submit svg,
+  form.catalog-search .search-field .search-field__submit svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+  }
+
+  form.catalog-search .search-field {
+    min-height: 54px;
+    gap: 4px;
+    padding: 5px 5px 5px 4px;
+  }
+
+  form.catalog-search .search-field__icon {
+    width: 32px;
+    flex-basis: 32px;
+  }
+
+  form.catalog-search .search-field input,
+  form.hero-search .search-field input {
+    min-width: 0;
+    font-size: 15px;
+    text-overflow: ellipsis;
+  }
+
+  /* Gợi ý nhỏ hơn chữ gõ một chút để đọc trọn trên màn 360–390px. */
+  form.catalog-search .search-field input::placeholder,
+  form.hero-search .search-field input::placeholder {
+    font-size: 14px;
+  }
+
+  /* ---------- Kho món: phần đầu trang thấp, gọn ---------- */
+  .catalog-page-view .page-hero.page-hero--recipes {
+    padding-block: 18px 16px;
+  }
+
+  .catalog-page-view .page-hero--recipes .section-label {
+    font-size: 11px;
+  }
+
+  .catalog-page-view .page-hero.page-hero--recipes h1 {
+    margin-top: 4px;
+    font-size: 26px;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+  }
+
+  .catalog-page-view .page-hero.page-hero--recipes p {
+    margin-top: 6px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .catalog-page-view .page-hero--recipes form.catalog-search {
+    margin-top: 14px;
+  }
+
+  .catalog-page-view > .content-section {
+    padding-top: 14px;
+    padding-bottom: 36px;
+  }
+
+  .catalog-page-view .catalog-layout {
+    gap: 12px;
+  }
+
+  /* Thanh loại món: chip chữ nhỏ hơn, vuốt ngang trong khung, không tràn trang. */
+  .catalog-page-view .filter-panel > div {
+    gap: 6px;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+
+  .catalog-page-view .filter-panel > div::-webkit-scrollbar {
+    display: none;
+  }
+
+  .catalog-page-view .filter-panel button,
+  .catalog-page-view .filter-panel .catalog-favorites-tab {
+    flex: none;
+    padding: 0 14px;
+    font-size: 13px;
+  }
+
+  /* Đếm món + tiêu đề gọn, ô sắp xếp thấp. */
+  .catalog-page-view .catalog-results {
+    gap: 10px;
+  }
+
+  .catalog-page-view .catalog-results span {
+    font-size: 11px;
+  }
+
+  .catalog-page-view .catalog-results h2 {
+    margin-top: 2px;
+    font-size: 20px;
+    line-height: 1.25;
+  }
+
+  .catalog-page-view .catalog-results select {
+    border-radius: 12px;
+    font-size: 14px;
+  }
+
+  /* Bộ lọc: nút chữ nhỏ, khoảng cách hẹp. */
+  .catalog-page-view .catalog-filters {
+    margin: 12px 0 16px;
+  }
+
+  .catalog-page-view .catalog-filters button {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .catalog-page-view .catalog-filters__hint,
+  .catalog-page-view .catalog-filters__group legend {
+    font-size: 13px;
+  }
+
+  /* Lưới món hai cột trên điện thoại (style thẻ ở recipe-card-rounded.css). */
+  .catalog-page-view .recipe-grid.recipe-grid--catalog {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 10px;
+  }
+
+  /* ---------- Nhãn trợ lý nổi: neo mép phải để không vượt khung màn hình ---------- */
+  .rc-root:not(.is-open) .rc-launcher__label {
+    right: 4px;
+    left: auto;
+    transform: translateY(6px);
+  }
+
+  .rc-root:not(.is-open) .rc-launcher:hover .rc-launcher__label,
+  .rc-root:not(.is-open) .rc-launcher:focus-visible .rc-launcher__label {
+    transform: none;
+  }
+}
+
+@media (max-width: 340px) {
+  /* Máy rất hẹp: lưới món quay về một cột cho dễ đọc. */
+  .catalog-page-view .recipe-grid.recipe-grid--catalog {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

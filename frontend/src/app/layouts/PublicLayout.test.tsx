@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { cleanup, fireEvent, render, screen, within } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import { MemoryRouter, Route, Routes, useSearchParams } from 'react-router';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
@@ -55,12 +55,20 @@ function renderLayout(path = '/') {
   );
 }
 
+const memberUser = authState.user;
+
 afterEach(() => {
   cleanup();
   vi.restoreAllMocks();
   localStorage.clear();
+  authState.user = memberUser;
   authState.user.role = 'user';
 });
+
+function openMobileMenu() {
+  fireEvent.click(screen.getByRole('button', { name: 'Mở trình đơn' }));
+  return screen.getByRole('navigation', { name: 'Điều hướng chính' });
+}
 
 describe('PublicLayout header', () => {
   it('keeps the viewport when changing filters and scrolls to the new page from the footer', () => {
@@ -152,7 +160,8 @@ describe('PublicLayout header', () => {
 
   it('switches the whole interface to English', async () => {
     renderLayout();
-    fireEvent.click(within(screen.getByRole('banner')).getByRole('button', { name: 'English' }));
+    const navigation = screen.getByRole('navigation', { name: 'Điều hướng chính' });
+    fireEvent.click(within(navigation).getByRole('button', { name: 'English' }));
     const nav = await screen.findByRole(
       'navigation',
       { name: 'Main navigation' },
@@ -162,5 +171,69 @@ describe('PublicLayout header', () => {
     expect(within(nav).getByRole('link', { name: 'Planner' })).toBeInTheDocument();
     expect(document.documentElement.lang).toBe('en');
     expect(localStorage.getItem('bep-viet-language')).toBe('en');
+  });
+
+  it('puts a compact VI/EN switcher on the header bar next to the menu button', async () => {
+    renderLayout();
+    const header = screen.getByRole('banner');
+    const groups = within(header).getAllByRole('group', { name: 'Ngôn ngữ' });
+    const headerSwitcher = groups.find(
+      (group) => !group.closest('nav') && group.classList.contains('language-switcher--compact'),
+    );
+    expect(headerSwitcher).toBeDefined();
+    expect(headerSwitcher?.nextElementSibling).toBe(
+      screen.getByRole('button', { name: 'Mở trình đơn' }),
+    );
+
+    fireEvent.click(within(headerSwitcher as HTMLElement).getByRole('button', { name: 'English' }));
+    await waitFor(() => expect(localStorage.getItem('bep-viet-language')).toBe('en'), {
+      timeout: 5000,
+    });
+  });
+
+  it('shows account links, settings and sign-out directly in the open mobile menu', () => {
+    renderLayout();
+    const navigation = openMobileMenu();
+
+    expect(
+      within(navigation).queryByRole('button', { name: 'Mở menu tài khoản' }),
+    ).not.toBeInTheDocument();
+    const account = within(navigation).getByRole('region', { name: 'Nguyễn Ngọc Lan' });
+    expect(within(account).getByRole('link', { name: 'Cài đặt' })).toHaveAttribute(
+      'href',
+      '/account/settings',
+    );
+    expect(within(account).getByRole('link', { name: 'Đổi mật khẩu & bảo mật' })).toHaveAttribute(
+      'href',
+      '/account/security',
+    );
+    expect(within(account).getByRole('link', { name: 'Tài khoản của tôi' })).toHaveAttribute(
+      'href',
+      '/account',
+    );
+    expect(within(account).getByRole('button', { name: 'Đăng xuất' })).toBeInTheDocument();
+
+    const explore = within(navigation).getByRole('region', { name: 'Khám phá' });
+    expect(within(explore).getByRole('link', { name: 'Món yêu thích' })).toHaveAttribute(
+      'href',
+      '/favorites',
+    );
+    expect(within(navigation).getAllByRole('link', { name: 'Món yêu thích' })).toHaveLength(1);
+  });
+
+  it('offers sign-in and sign-up at the bottom of the mobile menu for guests', () => {
+    authState.user = null as unknown as typeof memberUser;
+    renderLayout();
+    const navigation = openMobileMenu();
+
+    expect(within(navigation).getByRole('link', { name: 'Đăng nhập' })).toHaveAttribute(
+      'href',
+      '/login',
+    );
+    expect(within(navigation).getByRole('link', { name: 'Tạo tài khoản' })).toHaveAttribute(
+      'href',
+      '/register',
+    );
+    expect(within(navigation).queryByRole('link', { name: 'Cài đặt' })).not.toBeInTheDocument();
   });
 });

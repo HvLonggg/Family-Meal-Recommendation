@@ -185,3 +185,91 @@
     animation: none;
   }
 }
+
+/* Điện thoại: hero thấp, vòng quay và mâm nhỏ lại, tiêu đề các khối gọn hơn. */
+@media (max-width: 560px) {
+  .random-meal-page .random-hero__inner {
+    padding-block: 20px 22px;
+  }
+
+  .random-meal-page .random-hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .random-meal-page .random-hero p {
+    margin: 8px 0 10px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .random-meal-page .random-builder-section {
+    padding-block: 16px 32px;
+  }
+
+  .random-meal-page .random-settings {
+    margin-bottom: 14px;
+  }
+
+  .random-meal-page .random-settings > div {
+    gap: 10px 12px;
+    padding: 14px;
+  }
+
+  .random-meal-page .segmented-control button {
+    min-height: 44px;
+    font-size: 16px;
+  }
+
+  .random-meal-page .profile-options {
+    gap: 8px;
+  }
+
+  .random-meal-page .profile-options > button {
+    min-height: 0;
+    padding: 10px;
+  }
+
+  .random-meal-page .wheel-panel,
+  .random-meal-page .tray-panel {
+    padding: 16px 14px;
+  }
+
+  .random-meal-page .panel-heading h2 {
+    font-size: 1.4rem;
+  }
+
+  .random-meal-page .panel-heading > p {
+    min-height: 0;
+    margin-top: 4px;
+  }
+
+  .random-meal-page .meal-wheel-wrap {
+    width: min(100%, 300px);
+    margin: 18px auto 16px;
+  }
+
+  .random-meal-page .meal-tray {
+    width: min(100%, 300px);
+    margin: 14px auto 18px;
+  }
+
+  .random-meal-page .saved-meals-section {
+    padding-block: 28px 36px;
+  }
+
+  .random-meal-page .saved-meals-heading h2 {
+    font-size: 1.35rem;
+  }
+
+  .random-meal-page .saved-meals-heading p {
+    font-size: 14px;
+  }
+
+  .random-meal-page .random-help-band {
+    padding-block: 28px;
+  }
+
+  .random-meal-page .random-help-band h2 {
+    font-size: 1.35rem;
+  }
+}

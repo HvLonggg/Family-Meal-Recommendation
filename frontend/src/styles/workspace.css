@@ -425,13 +425,53 @@ html[data-reduce-motion='true'] *::after {
   }
 }
 
+/* Bản gọn trên thanh header di động: viên thuốc "VI | EN" cao ~34px.
+ * Vùng chạm được nới bằng ::before để vẫn đủ 44px mà không làm header cao lên. */
+.language-switcher--compact {
+  gap: 0;
+  padding: 2px;
+}
+.language-switcher--compact .language-switcher__track {
+  padding: 2px;
+}
+.language-switcher--compact button {
+  position: relative;
+  min-width: 34px;
+  min-height: 26px;
+  padding: 0 8px;
+  font-size: 11.5px;
+}
+.language-switcher--compact button::before {
+  position: absolute;
+  inset: -9px -2px;
+  content: '';
+}
+
+/* Desktop: VI/EN nằm trong cụm hành động; bản trên thanh header và icon menu di động ẩn. */
+.site-header__language,
+.nav-link__icon {
+  display: none;
+}
+.site-nav__auth {
+  display: contents;
+}
+
 @media (max-width: 1100px) {
   .site-header__content {
-    min-height: 68px;
+    min-height: 60px;
+    gap: 8px;
+  }
+  .site-header__language {
+    display: inline-flex;
+    flex: 0 0 auto;
+    margin-left: auto;
+  }
+  .site-nav .site-nav__language {
+    display: none;
   }
   .mobile-menu-button {
     display: grid;
-    margin-left: auto;
+    flex: 0 0 auto;
   }
   .site-nav {
     position: absolute;
@@ -440,18 +480,19 @@ html[data-reduce-motion='true'] *::after {
     right: 0;
     left: 0;
     display: none;
-    max-height: calc(100vh - 80px);
-    max-height: calc(100dvh - var(--site-header-height, 68px) - 8px);
+    max-height: calc(100vh - 72px);
+    max-height: calc(100dvh - var(--site-header-height, 60px) - 8px);
     overflow-y: auto;
     overscroll-behavior: contain;
     flex-direction: column;
     align-items: stretch;
-    gap: 10px;
+    gap: 0;
     border: 1px solid var(--color-border);
-    border-radius: 0 0 18px 18px;
-    padding: 12px;
+    border-top: 0;
+    border-radius: 0 0 20px 20px;
+    padding: 8px 10px 0;
     background: white;
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 18px 40px -12px rgb(74 47 27 / 24%);
   }
   .site-nav.is-open {
     display: flex;
@@ -470,29 +511,50 @@ html[data-reduce-motion='true'] *::after {
     cursor: default;
     animation: site-nav-fade 160ms ease-out;
   }
-  .site-nav__primary,
-  .site-nav__actions {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-  }
-  .site-nav__actions {
-    border-top: 1px solid var(--ws-line);
-    padding-top: 12px;
-    gap: 10px;
+  /* Điều hướng chính: lưới 2 cột gọn; nhóm Khám phá xếp xuống dưới (order) để
+   * "Liên hệ hỗ trợ" lấp ô thứ 8 của lưới. */
+  .site-nav__primary {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2px 6px;
   }
   .site-nav .nav-link,
   .site-nav .nav-link--menu {
     display: flex;
     width: 100%;
+    min-width: 0;
     min-height: 44px;
     align-items: center;
+    gap: 10px;
+    border-radius: 12px;
+    padding: 6px 8px;
+    font-size: 15px;
+  }
+  .site-nav .nav-link--menu {
     justify-content: space-between;
-    padding: 10px 13px;
-    font-size: 14px;
   }
   .site-nav .nav-link::after {
     display: none;
+  }
+  .site-nav .nav-link:hover {
+    background: #faf3eb;
+  }
+  .site-nav .nav-link.is-active {
+    background: var(--color-primary-soft);
+  }
+  .site-nav .nav-link__icon {
+    display: grid;
+    width: 30px;
+    height: 30px;
+    flex: 0 0 auto;
+    place-items: center;
+    border-radius: 9px;
+    color: var(--color-primary);
+    background: #fbf1ea;
+  }
+  .site-nav .nav-link.is-active .nav-link__icon {
+    color: white;
+    background: var(--color-primary);
   }
   .site-nav .dropdown__panel {
     position: static;
@@ -506,8 +568,129 @@ html[data-reduce-motion='true'] *::after {
     width: 100%;
     min-width: 0;
   }
-  .site-nav .language-switcher {
-    align-self: flex-start;
+
+  /* Nhóm trong menu di động (Khám phá, Tài khoản): danh sách một cột, hàng 44px. */
+  .site-nav__group {
+    grid-column: 1 / -1;
+    order: 1;
+    margin-top: 6px;
+    border-top: 1px solid var(--ws-line);
+    padding-top: 8px;
+  }
+  .site-nav__group-title {
+    margin: 0 0 2px;
+    padding: 0 8px;
+    color: var(--color-text-muted);
+    font-size: 12px;
+    font-weight: 750;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .site-nav__list {
+    display: grid;
+    gap: 2px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .site-nav__item {
+    display: flex;
+    width: 100%;
+    min-height: 44px;
+    align-items: center;
+    gap: 16px;
+    border: 0;
+    border-radius: 12px;
+    padding: 6px 14px;
+    color: var(--ws-ink);
+    background: transparent;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .site-nav__item svg {
+    flex: 0 0 auto;
+    color: var(--color-primary);
+  }
+  .site-nav__item:hover {
+    background: #faf3eb;
+  }
+  .site-nav__item.active {
+    color: var(--color-primary);
+    background: var(--color-primary-soft);
+  }
+  .site-nav__item--logout,
+  .site-nav__item--logout svg {
+    color: var(--ws-danger);
+  }
+
+  .site-nav__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+  .site-nav__account {
+    padding-bottom: 10px;
+  }
+  .site-nav__identity {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    gap: 10px;
+    padding: 4px 10px 8px;
+  }
+  .site-nav__identity > span {
+    min-width: 0;
+  }
+  .site-nav__identity strong,
+  .site-nav__identity small {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .site-nav__identity strong {
+    color: var(--ws-ink);
+    font-size: 15px;
+  }
+  .site-nav__identity small {
+    color: var(--color-text-muted);
+    font-size: 12.5px;
+  }
+  /* Khách: Đăng nhập / Tạo tài khoản dính đáy menu, luôn trong tầm ngón cái. */
+  .site-nav__auth {
+    position: sticky;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin: 8px -10px 0;
+    border-top: 1px solid var(--ws-line);
+    padding: 10px 10px calc(10px + env(safe-area-inset-bottom, 0px));
+    background: rgb(255 255 255 / 96%);
+    backdrop-filter: blur(8px);
+  }
+  .site-nav__auth-hint {
+    grid-column: 1 / -1;
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 13px;
+    text-align: center;
+  }
+  .site-nav .nav-link--login {
+    justify-content: center;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: 6px 12px;
+  }
+  .site-nav .nav-signup {
+    min-height: 44px;
+    border-radius: 999px;
+    font-size: 15px;
   }
   .site-nav .account-trigger {
     width: 100%;
@@ -517,8 +700,15 @@ html[data-reduce-motion='true'] *::after {
     flex: 1;
     text-align: left;
   }
-  .site-nav .nav-signup {
-    min-height: 44px;
+}
+
+/* Máy tính bảng: menu là tấm thả xuống hẹp canh phải, dưới nút trình đơn. */
+@media (min-width: 761px) and (max-width: 1100px) {
+  .site-nav {
+    left: auto;
+    width: min(420px, 100%);
+    border-top: 1px solid var(--color-border);
+    border-radius: 20px;
   }
 }
 
@@ -3066,32 +3256,68 @@ html[data-reduce-motion='true'] *::after {
   outline-offset: 3px;
 }
 
+/* Điện thoại/máy tính bảng: thẻ danh tính thu về một dòng, các mục tài khoản
+ * (có "Cài đặt") thành hàng chip cuộn ngang, mép phải mờ dần để gợi ý còn mục. */
 @media (max-width: 959px) {
   .ws-page--account .ws-sidebar {
-    border-radius: 22px;
+    border-radius: 20px;
+  }
+  .ws-page--account .ws-identity {
+    min-height: 0;
+    gap: 10px;
+    padding: 10px 14px;
+  }
+  .ws-page--account .ws-identity .user-avatar {
+    width: 36px !important;
+    height: 36px !important;
+    border-width: 2px;
+    font-size: 13px !important;
+    box-shadow: none;
+  }
+  .ws-page--account .ws-identity strong,
+  .ws-page--account .ws-identity small {
+    max-width: min(70vw, 420px);
+  }
+  .ws-page--account .ws-identity small {
+    margin: 1px 0 0;
+  }
+  .ws-page--account .ws-identity .role-chip {
+    display: none;
   }
   .ws-page--account .ws-nav {
-    gap: 7px;
-    padding: 10px;
+    gap: 6px;
+    padding: 8px 28px 8px 10px;
+    scroll-padding-inline: 10px;
+    scroll-snap-type: x proximity;
+    mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent);
   }
   .ws-page--account .ws-nav__link {
-    min-height: 42px;
+    min-height: 44px;
+    gap: 7px;
+    border: 1px solid var(--ws-line);
+    border-radius: 999px;
+    padding: 0 14px;
+    background: white;
+    font-size: 14px;
+    white-space: nowrap;
+    scroll-snap-align: start;
   }
   .ws-page--account .ws-nav__link:hover {
-    transform: translateY(-1px);
+    transform: none;
+  }
+  .ws-page--account .ws-nav__link.is-active {
+    border-color: #e7c2b4;
+    box-shadow: none;
+  }
+  .ws-page--account .ws-nav__link--logout {
+    border-color: var(--ws-danger-soft);
+    padding-top: 0;
   }
 }
 
 @media (max-width: 560px) {
   .ws-page--account {
     padding-top: 20px;
-  }
-  .ws-page--account .ws-identity {
-    padding: 17px;
-  }
-  .ws-page--account .ws-identity strong,
-  .ws-page--account .ws-identity small {
-    max-width: min(64vw, 250px);
   }
   .ws-page--account .ws-heading h1 {
     font-size: clamp(1.7rem, 8vw, 2.1rem);

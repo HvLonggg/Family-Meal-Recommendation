@@ -30,14 +30,23 @@ interface MenuLink {
   icon: IconName;
 }
 
-const primaryLinks = [
-  { to: '/', label: 'Trang chủ', end: true },
-  { to: '/recipes', label: 'Món ăn' },
-  { to: '/meals', label: 'Bữa cơm' },
-  { to: '/random-meal', label: 'Quay mâm', className: 'nav-link--random' },
-  { to: '/planner', label: 'Kế hoạch' },
-  { to: '/articles', label: 'Bài viết', className: 'nav-link--featured' },
-  { to: '/submit-recipe', label: 'Đề xuất món', className: 'nav-link--featured' },
+interface PrimaryLink {
+  to: string;
+  label: string;
+  icon: IconName;
+  end?: boolean;
+  className?: string;
+}
+
+// Biểu tượng chỉ hiện trong menu di động; thanh điều hướng desktop giữ dạng chữ.
+const primaryLinks: PrimaryLink[] = [
+  { to: '/', label: 'Trang chủ', icon: 'home', end: true },
+  { to: '/recipes', label: 'Món ăn', icon: 'chef' },
+  { to: '/meals', label: 'Bữa cơm', icon: 'plate' },
+  { to: '/random-meal', label: 'Quay mâm', icon: 'refresh', className: 'nav-link--random' },
+  { to: '/planner', label: 'Kế hoạch', icon: 'calendar' },
+  { to: '/articles', label: 'Bài viết', icon: 'book', className: 'nav-link--featured' },
+  { to: '/submit-recipe', label: 'Đề xuất món', icon: 'plus', className: 'nav-link--featured' },
 ];
 
 const exploreLinks: MenuLink[] = [
@@ -209,6 +218,9 @@ export function PublicLayout() {
           <Link className="brand" to="/" aria-label={t('Bếp Việt - Trang chủ')}>
             <KitchenHomeLogo compact />
           </Link>
+          {/* Điện thoại/máy tính bảng: VI/EN nằm ngay trên thanh header, cạnh nút trình đơn.
+              Desktop ẩn bản này và dùng bản trong cụm hành động của thanh điều hướng. */}
+          <LanguageSwitcher className="site-header__language" compact />
           <button
             aria-controls="site-nav"
             aria-expanded={menuOpen}
@@ -237,46 +249,108 @@ export function PublicLayout() {
                   key={link.to}
                   to={link.to}
                 >
+                  <span aria-hidden="true" className="nav-link__icon">
+                    <AppIcon name={link.icon} size={18} />
+                  </span>
                   {t(link.label)}
                 </NavLink>
               ))}
-              <Dropdown
-                className="nav-dropdown"
-                label={t('Khám phá thêm')}
-                trigger={
-                  <>
-                    {t('Khám phá')} <AppIcon name="chevron" size={15} />
-                  </>
-                }
-                triggerClassName={`nav-link nav-link--menu${exploreActive ? ' is-active' : ''}`}
-              >
-                {(close) => (
-                  <ul className="menu-list menu-list--explore">
+              {menuOpen ? (
+                // Menu di động: nhóm "Khám phá" bày sẵn, không phải mở thêm một tầng thả xuống.
+                <section aria-labelledby="site-nav-explore" className="site-nav__group">
+                  <h2 className="site-nav__group-title" id="site-nav-explore">
+                    {t('Khám phá')}
+                  </h2>
+                  <ul className="site-nav__list">
                     {exploreLinks.map((link) => (
                       <li key={link.to}>
-                        <NavLink className="menu-item" onClick={close} to={link.to}>
-                          <span className="menu-item__icon">
-                            <AppIcon name={link.icon} size={18} />
-                          </span>
-                          <span>
-                            <strong>{t(link.label)}</strong>
-                            {link.description ? <small>{t(link.description)}</small> : null}
-                          </span>
+                        <NavLink className="site-nav__item" to={link.to}>
+                          <AppIcon name={link.icon} size={18} />
+                          <span>{t(link.label)}</span>
                         </NavLink>
                       </li>
                     ))}
                   </ul>
-                )}
-              </Dropdown>
+                </section>
+              ) : (
+                <Dropdown
+                  className="nav-dropdown"
+                  label={t('Khám phá thêm')}
+                  trigger={
+                    <>
+                      {t('Khám phá')} <AppIcon name="chevron" size={15} />
+                    </>
+                  }
+                  triggerClassName={`nav-link nav-link--menu${exploreActive ? ' is-active' : ''}`}
+                >
+                  {(close) => (
+                    <ul className="menu-list menu-list--explore">
+                      {exploreLinks.map((link) => (
+                        <li key={link.to}>
+                          <NavLink className="menu-item" onClick={close} to={link.to}>
+                            <span className="menu-item__icon">
+                              <AppIcon name={link.icon} size={18} />
+                            </span>
+                            <span>
+                              <strong>{t(link.label)}</strong>
+                              {link.description ? <small>{t(link.description)}</small> : null}
+                            </span>
+                          </NavLink>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </Dropdown>
+              )}
               <NavLink className={(state) => navClass(state)} to="/contact">
+                <span aria-hidden="true" className="nav-link__icon">
+                  <AppIcon name="message" size={18} />
+                </span>
                 {t('Liên hệ hỗ trợ')}
               </NavLink>
             </div>
 
             <div className="site-nav__actions">
-              <LanguageSwitcher />
+              <LanguageSwitcher className="site-nav__language" />
               {isLoading ? (
                 <span aria-hidden="true" className="user-chip-skeleton" />
+              ) : user && menuOpen ? (
+                // Menu di động: liên kết tài khoản (có Cài đặt) bày thẳng ra, không ẩn sau nút thả xuống.
+                <section
+                  aria-labelledby="site-nav-account"
+                  className="site-nav__group site-nav__account"
+                >
+                  <div className="site-nav__identity">
+                    <UserAvatar name={user.full_name} size={36} src={user.avatar_url} />
+                    <span>
+                      <strong id="site-nav-account">{user.full_name}</strong>
+                      <small>{user.email ?? user.phone_e164}</small>
+                    </span>
+                  </div>
+                  <ul className="site-nav__list">
+                    {/* "Món yêu thích" đã có trong nhóm Khám phá; bỏ trùng ở menu di động. */}
+                    {accountLinks
+                      .filter((link) => link.to !== '/favorites')
+                      .map((link) => (
+                        <li key={link.to}>
+                          <NavLink className="site-nav__item" end to={link.to}>
+                            <AppIcon name={link.icon} size={18} />
+                            <span>{t(link.label)}</span>
+                          </NavLink>
+                        </li>
+                      ))}
+                    <li>
+                      <button
+                        className="site-nav__item site-nav__item--logout"
+                        onClick={() => void handleLogout()}
+                        type="button"
+                      >
+                        <AppIcon name="logout" size={18} />
+                        <span>{t('Đăng xuất')}</span>
+                      </button>
+                    </li>
+                  </ul>
+                </section>
               ) : user ? (
                 <Dropdown
                   align="end"
@@ -332,14 +406,19 @@ export function PublicLayout() {
                   )}
                 </Dropdown>
               ) : (
-                <>
+                <div className="site-nav__auth">
+                  {menuOpen ? (
+                    <p className="site-nav__auth-hint">
+                      {t('Đăng nhập để lưu món yêu thích và cài đặt riêng.')}
+                    </p>
+                  ) : null}
                   <Link className="nav-link nav-link--login" to="/login">
                     {t('Đăng nhập')}
                   </Link>
                   <Link className="nav-signup" to="/register">
                     {t('Tạo tài khoản')}
                   </Link>
-                </>
+                </div>
               )}
             </div>
           </nav>

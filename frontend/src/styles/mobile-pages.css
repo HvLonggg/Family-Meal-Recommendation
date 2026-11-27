@@ -1,0 +1,616 @@
+/* Luồng C: các trang khám phá trên điện thoại (gợi ý, dinh dưỡng, bài viết, bữa cơm...). */
+/* Chỉ thêm quy tắc trong media query hẹp; giao diện máy tính giữ nguyên. */
+
+@media (max-width: 560px) {
+  /* ---------- Hero chung: thấp, chữ vừa phải ---------- */
+  .explore-page .page-hero,
+  .page-hero--compact {
+    padding-block: 18px 20px;
+  }
+
+  .explore-page .page-hero h1,
+  .page-hero--compact h1,
+  .submit-page .submit-hero h1,
+  .contact-page .contact-page__intro h1 {
+    font-size: 1.65rem;
+    line-height: 1.2;
+  }
+
+  .explore-page .page-hero p,
+  .page-hero--compact p,
+  .submit-page .submit-hero p {
+    margin-top: 6px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .explore-page > .content-section {
+    padding-block: 22px 32px;
+  }
+
+  .explore-page .section-heading {
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .explore-page .section-heading h2 {
+    font-size: 1.3rem;
+    line-height: 1.25;
+  }
+
+  .explore-page .section-heading p {
+    margin: 4px 0 0;
+    font-size: 14px;
+  }
+
+  /* ---------- Thẻ món dạng hàng ngang: ảnh vuông bên trái, chữ bên phải ---------- */
+  .explore-page .recipe-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .explore-page .recipe-card {
+    position: relative;
+    display: grid;
+    min-height: 108px;
+    grid-template-columns: 104px minmax(0, 1fr);
+    overflow: hidden;
+    border: 1px solid #efe4d8;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 4px 14px rgb(73 48 32 / 5%);
+  }
+
+  .explore-page .recipe-card:hover {
+    transform: none;
+  }
+
+  .explore-page .recipe-card__media {
+    position: static;
+    height: 100%;
+    aspect-ratio: auto;
+  }
+
+  .explore-page .recipe-card__media img {
+    filter: drop-shadow(0 4px 6px rgb(74 47 27 / 10%));
+  }
+
+  .explore-page .recipe-card__region,
+  .explore-page .recipe-card__details-link {
+    display: none;
+  }
+
+  .explore-page .recipe-card__save {
+    top: 4px;
+    right: 4px;
+    z-index: 1;
+    width: 44px;
+    height: 44px;
+    border-color: transparent;
+    background: transparent;
+  }
+
+  .explore-page .recipe-card__body {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 46px 10px 12px;
+  }
+
+  .explore-page .recipe-card__meta {
+    gap: 10px;
+    font-size: 11.5px;
+  }
+
+  .explore-page .recipe-card h3 {
+    display: -webkit-box;
+    overflow: hidden;
+    margin-top: 4px;
+    font-size: 16px;
+    line-height: 1.3;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  /* Cả thẻ bấm được qua liên kết tiêu đề; nút lưu nằm trên lớp phủ. */
+  .explore-page .recipe-card h3 a::after {
+    position: absolute;
+    inset: 0;
+    content: '';
+  }
+
+  .explore-page .recipe-card__body > p {
+    min-height: 0;
+    margin: 4px 0 0;
+    font-size: 12.5px;
+    line-height: 1.45;
+  }
+
+  /* ---------- Nhu cầu dinh dưỡng: 3 ô chọn gọn trên một hàng ---------- */
+  .explore-page .need-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .explore-page .need-grid button {
+    min-height: 92px;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border-radius: 16px;
+    padding: 12px 6px;
+    text-align: center;
+  }
+
+  .explore-page .need-grid button:hover,
+  .explore-page .need-grid button.is-active {
+    box-shadow: 0 6px 16px rgb(73 48 32 / 8%);
+    transform: none;
+  }
+
+  .explore-page .need-grid button > span {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+  }
+
+  .explore-page .need-grid button > span svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .explore-page .need-grid strong {
+    margin-top: 0;
+    font-size: 13px;
+    line-height: 1.3;
+  }
+
+  /* Mô tả đã thể hiện qua danh sách món bên dưới; ẩn để ô chọn thấp hơn. */
+  .explore-page .need-grid small {
+    display: none;
+  }
+
+  .explore-page .nutrition-note {
+    gap: 8px;
+    margin-top: 12px;
+    border-radius: 12px;
+    padding: 10px 12px;
+  }
+
+  .explore-page .nutrition-note p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  /* ---------- Gợi ý món: hàng chip cuộn ngang, nút đổi gợi ý nằm cạnh tiêu đề ---------- */
+  .explore-page .choice-chips {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 8px;
+    margin: 14px -12px 0;
+    padding: 2px 12px 4px;
+    overflow-x: auto;
+    scroll-padding-inline: 12px;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+  }
+
+  .explore-page .choice-chips::-webkit-scrollbar {
+    display: none;
+  }
+
+  .explore-page .choice-chips button {
+    flex: none;
+    min-height: 44px;
+    padding: 0 16px;
+    font-size: 14px;
+    scroll-snap-align: start;
+  }
+
+  .explore-page .section-heading:has(> .button) {
+    position: relative;
+    padding-right: 132px;
+  }
+
+  .explore-page .section-heading > .button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-height: 44px;
+    padding: 0 12px;
+    font-size: 13px;
+  }
+
+  /* ---------- Yêu thích: hộp mời đăng nhập gọn ---------- */
+  .explore-page .signin-prompt {
+    padding: 24px 18px;
+  }
+
+  .explore-page .signin-prompt > span {
+    width: 52px;
+    height: 52px;
+  }
+
+  .explore-page .signin-prompt h2 {
+    font-size: 1.3rem;
+    line-height: 1.3;
+  }
+
+  .explore-page .signin-prompt p {
+    font-size: 14px;
+  }
+
+  /* ---------- Bài viết: hero ngắn, ẩn ảnh trang trí ---------- */
+  .articles-page .articles-hero {
+    padding-block: 20px 22px;
+  }
+
+  .articles-page .articles-hero__collage {
+    display: none;
+  }
+
+  .articles-page .articles-hero__copy h1 {
+    font-size: 1.65rem;
+    line-height: 1.2;
+  }
+
+  .articles-page .articles-hero__copy > p {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .articles-page .articles-hero__actions {
+    margin-top: 14px;
+  }
+
+  .articles-page .articles-hero__actions .button {
+    min-height: 44px;
+    padding-inline: 16px;
+    font-size: 14px;
+  }
+
+  /* Danh sách bài nằm ngay dưới hero ngắn nên bỏ nút cuộn "Đọc bài mới nhất". */
+  .articles-page .articles-hero__actions .button--outline {
+    display: none;
+  }
+
+  .articles-page .articles-feed {
+    padding-block: 18px 32px;
+  }
+
+  /* Thanh lọc: tab và chip cuộn ngang trong khung, không đẩy trang tràn sang phải. */
+  .articles-page .articles-toolbar {
+    gap: 8px;
+    border-radius: 16px;
+    padding: 8px;
+  }
+
+  .articles-page .articles-tabs {
+    width: 100%;
+    min-width: 0;
+    flex: 1 1 100%;
+  }
+
+  .articles-page .articles-tabs button {
+    min-height: 44px;
+    padding: 0 12px;
+    font-size: 13px;
+  }
+
+  .articles-page .articles-toolbar__search {
+    min-width: 0;
+    flex-basis: 100%;
+  }
+
+  .articles-page .articles-categories {
+    margin: 12px -12px 0;
+    padding: 0 12px 2px;
+    scroll-padding-inline: 12px;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+  }
+
+  .articles-page .articles-categories::-webkit-scrollbar {
+    display: none;
+  }
+
+  .articles-page .articles-categories button {
+    min-height: 40px;
+    padding: 0 13px;
+    scroll-snap-align: start;
+  }
+
+  .articles-page .articles-result {
+    margin-top: 12px;
+    font-size: 13px;
+  }
+
+  .articles-page .articles-results {
+    margin-top: 14px;
+  }
+
+  /* Bài nổi bật: ảnh thấp, chữ gọn. */
+  .articles-page .featured-story {
+    border-radius: 20px;
+  }
+
+  .articles-page .featured-story__media {
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+
+  .articles-page .featured-story__flag {
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+
+  .articles-page .featured-story__body {
+    gap: 8px;
+    padding: 14px 16px 16px;
+  }
+
+  .articles-page .featured-story__body h2 {
+    font-size: 1.25rem;
+    line-height: 1.3;
+  }
+
+  .articles-page .featured-story__body > p {
+    font-size: 14px;
+    line-height: 1.55;
+    -webkit-line-clamp: 2;
+  }
+
+  .articles-page .featured-story__body > .button {
+    min-height: 44px;
+    margin-top: 2px;
+  }
+
+  /* Lưới bài: hàng ngang, ảnh nhỏ bên trái như danh sách tin. */
+  .articles-page .article-feed-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 12px;
+  }
+
+  .articles-page .article-card {
+    display: grid;
+    min-height: 112px;
+    grid-template-columns: 104px minmax(0, 1fr);
+    border-radius: 18px;
+  }
+
+  .articles-page .article-card:hover,
+  .articles-page .article-card:focus-within {
+    transform: none;
+  }
+
+  .articles-page .article-card__media {
+    height: 100%;
+    aspect-ratio: auto;
+  }
+
+  .articles-page .article-card__kind,
+  .articles-page .article-card__body > p,
+  .articles-page .article-card__footer > svg {
+    display: none;
+  }
+
+  .articles-page .article-card__body {
+    min-width: 0;
+    gap: 6px;
+    padding: 10px 12px;
+  }
+
+  .articles-page .article-card__body .article-pill {
+    padding: 3px 8px;
+    font-size: 11px;
+  }
+
+  .articles-page .article-card__body h3 {
+    font-size: 15.5px;
+    line-height: 1.3;
+  }
+
+  .articles-page .article-card__footer {
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .articles-page .article-card__footer .article-byline > :first-child {
+    display: none;
+  }
+
+  /* Lời mời viết câu chuyện: thấp hơn, chip cuộn ngang. */
+  .articles-page .story-invite {
+    padding-block: 28px;
+  }
+
+  .articles-page .story-invite__inner {
+    gap: 16px;
+  }
+
+  .articles-page .story-invite h2 {
+    font-size: 1.3rem;
+  }
+
+  .articles-page .story-invite p {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .articles-page .story-invite__prompts {
+    flex-wrap: nowrap;
+    margin: 14px -12px 0;
+    padding: 0 12px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .articles-page .story-invite__prompts::-webkit-scrollbar {
+    display: none;
+  }
+
+  .articles-page .story-invite__prompts a {
+    flex: none;
+    min-height: 40px;
+  }
+
+  .articles-page .story-invite__cta {
+    width: 100%;
+    min-height: 44px;
+  }
+
+  /* ---------- Chi tiết bài viết: tiêu đề, mở đầu và ảnh bìa gọn hơn ---------- */
+  .article-page .article-reader h1 {
+    margin: 10px 0 8px;
+    font-size: 1.65rem;
+    line-height: 1.2;
+  }
+
+  .article-page .article-reader__lead {
+    margin-bottom: 14px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .article-page .article-reader__meta {
+    gap: 10px;
+    padding-block: 12px;
+  }
+
+  .article-page .article-reader__cover {
+    margin: 18px 0;
+  }
+
+  .article-page .article-reader__cover .article-cover {
+    max-height: 260px;
+    border-radius: 16px;
+  }
+
+  .article-page .article-reader__body {
+    font-size: 16.5px;
+    line-height: 1.75;
+  }
+
+  /* ---------- Đăng món: hero thấp, các bước cuộn ngang ---------- */
+  .submit-page .submit-hero {
+    padding-block: 18px 20px;
+  }
+
+  .submit-page .submit-steps {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    margin: 14px -12px 0;
+    padding: 0 12px 2px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .submit-page .submit-steps::-webkit-scrollbar {
+    display: none;
+  }
+
+  .submit-page .submit-steps li {
+    flex: none;
+  }
+
+  .submit-page .submit-steps a {
+    min-height: 40px;
+    padding-right: 12px;
+    font-size: 13px;
+  }
+
+  .submit-page .submit-body {
+    padding-block: 18px 32px;
+  }
+
+  /* ---------- Liên hệ: mở đầu và khung biểu mẫu gọn ---------- */
+  .contact-page .contact-page__intro {
+    padding-top: 20px;
+  }
+
+  .contact-page .contact-page__intro p {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .contact-page .contact-page__content {
+    padding-block: 14px 24px;
+  }
+
+  .contact-page .contact-form {
+    border-radius: 18px;
+    padding: 16px;
+  }
+
+  /* ---------- Bữa cơm (/meals): ghi đè nhẹ, không sửa tệp CSS gốc của trang ---------- */
+  .meal-sets-page .meal-sets-page__hero {
+    padding: 18px 0 40px;
+  }
+
+  .meal-sets-page .meal-sets-page__hero-copy h1 {
+    margin: 6px 0 8px;
+    font-size: 1.75rem;
+    line-height: 1.18;
+  }
+
+  .meal-sets-page .meal-sets-page__hero-copy > p {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .meal-sets-page .meal-sets-page__hero-notes {
+    margin-top: 10px;
+    font-size: 13px;
+  }
+
+  /* Thẻ "Thử quay mâm": biểu tượng + tiêu đề trên một hàng, bỏ đoạn mô tả dài. */
+  .meal-sets-page .meal-sets-page__quick-card {
+    min-height: 0;
+    grid-template-columns: 44px minmax(0, 1fr);
+    align-items: center;
+    gap: 12px;
+    border-radius: 18px;
+    padding: 14px;
+  }
+
+  .meal-sets-page .meal-sets-page__quick-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+  }
+
+  .meal-sets-page .meal-sets-page__quick-copy h2 {
+    margin: 2px 0 0;
+    font-size: 1.15rem;
+    line-height: 1.3;
+  }
+
+  .meal-sets-page .meal-sets-page__quick-copy p {
+    display: none;
+  }
+
+  .meal-sets-page .meal-sets-page__quick-action {
+    min-height: 44px;
+    grid-column: 1 / -1;
+  }
+
+  .meal-sets-page .meal-sets-page__list-section {
+    padding-top: 26px;
+    padding-bottom: 48px;
+  }
+
+  .meal-sets-page .meal-sets-page__list-heading h2 {
+    font-size: 1.35rem;
+    line-height: 1.25;
+  }
+
+  .meal-sets-page .meal-sets-page__image-wrap {
+    height: clamp(150px, 42vw, 176px);
+  }
+}

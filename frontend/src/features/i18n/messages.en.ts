@@ -2400,4 +2400,6 @@ export const en: Record<string, string> = {
   'Ấm bụng ngày se lạnh': 'Warming meals for chilly days',
   'Thanh mát ngày nắng': 'Refreshing meals for hot days',
   'Góc Bếp Việt': 'Bep Viet corner',
+  'Đăng nhập để lưu món yêu thích và cài đặt riêng.':
+    'Sign in to save favourites and personal settings.',
 };

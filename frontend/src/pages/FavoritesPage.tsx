@@ -21,7 +21,7 @@ export function FavoritesPage() {
     .map(({ slug }) => getRecipe(slug))
     .filter((recipe): recipe is Recipe => Boolean(recipe));
   return (
-    <div className="page-wrap">
+    <div className="page-wrap explore-page">
       <section className="page-hero">
         <div className="container">
           <span className="section-label">{t('Bộ sưu tập cá nhân')}</span>

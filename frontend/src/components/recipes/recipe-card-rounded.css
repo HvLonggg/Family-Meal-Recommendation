@@ -84,6 +84,61 @@
   .recipe-grid--catalog .recipe-card h3 {
     font-size: 16px;
   }
+
+  /* Kho món hai cột: thẻ nhỏ gọn, bỏ mô tả và nút chữ (ảnh + tên đã là liên kết). */
+  .recipe-grid--catalog .recipe-card {
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgb(73 48 32 / 6%);
+  }
+
+  .recipe-grid--catalog .recipe-card:hover {
+    transform: none;
+  }
+
+  .recipe-grid--catalog .recipe-card__media {
+    aspect-ratio: 1 / 0.86;
+  }
+
+  .recipe-grid--catalog .recipe-card__region {
+    top: 8px;
+    left: 8px;
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+
+  .recipe-grid--catalog .recipe-card__save {
+    top: 4px;
+    right: 4px;
+  }
+
+  .recipe-grid--catalog .recipe-card__body {
+    padding: 10px 10px 12px;
+  }
+
+  .recipe-grid--catalog .recipe-card__meta {
+    gap: 4px 8px;
+    font-size: 11px;
+  }
+
+  .recipe-grid--catalog .recipe-card__meta svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  .recipe-grid--catalog .recipe-card h3 {
+    margin-top: 6px;
+    font-size: 14.5px;
+    line-height: 1.3;
+  }
+
+  .recipe-grid--catalog .recipe-card h3 a {
+    display: block;
+  }
+
+  .recipe-grid--catalog .recipe-card__body > p,
+  .recipe-grid--catalog .recipe-card__details-link {
+    display: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

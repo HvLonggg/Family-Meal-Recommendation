@@ -181,7 +181,8 @@ html .catalog-unavailable button {
     min-height: 44px;
   }
 
-  html .language-switcher button {
+  /* Bản gọn trên header tự nới vùng chạm bằng ::before nên không bị kéo cao ở đây. */
+  html .language-switcher:not(.language-switcher--compact) button {
     min-height: 44px;
     padding-inline: 12px;
   }

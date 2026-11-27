@@ -46,7 +46,7 @@ export function NutritionPage() {
   );
 
   return (
-    <div className="page-wrap">
+    <div className="page-wrap explore-page">
       <section className="page-hero page-hero--nutrition">
         <div className="container">
           <span className="section-label">{t('Nhu cầu dinh dưỡng')}</span>

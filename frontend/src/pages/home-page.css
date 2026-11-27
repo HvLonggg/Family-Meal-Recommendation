@@ -169,7 +169,7 @@
   }
 }
 
-@media (max-width: 760px) {
+@media (min-width: 561px) and (max-width: 760px) {
   .home-heading {
     flex-direction: column;
     align-items: stretch;
@@ -181,24 +181,61 @@
 }
 
 @media (max-width: 560px) {
+  /* ---------- Điện thoại: hero gọn, chữ vừa mắt, ô tìm kiếm thấy trọn gợi ý ---------- */
+  .home-hero .home-hero__inner {
+    gap: 18px;
+    padding-block: 26px 58px;
+  }
+
+  .home-hero .hero-kicker {
+    gap: 6px;
+    margin-bottom: 10px;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+  }
+
+  .home-hero .hero-kicker svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .home-hero h1 {
+    font-size: 2.15rem;
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+  }
+
+  .home-hero .home-hero__copy > p {
+    margin: 12px 0 18px;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
   .home-hero .hero-search .search-field {
-    min-height: 56px;
-    padding: 6px 6px 6px 8px;
+    min-height: 54px;
+    gap: 4px;
+    border-radius: 16px;
+    padding: 5px 5px 5px 4px;
+  }
+
+  .home-hero .hero-search .search-field__icon {
+    width: 32px;
+    flex-basis: 32px;
   }
 
   .home-hero .hero-search .search-field input {
-    font-size: 14px;
+    font-size: 15px;
   }
 
-  .home-hero .hero-search .search-field__submit {
-    padding-inline: 14px;
-    font-size: 13px;
-  }
-
-  /* Điện thoại: gợi ý xếp một hàng, vuốt ngang khi dài. */
+  /* Gợi ý xếp một hàng, vuốt ngang khi dài; không đẩy rộng trang. */
   .home-hero .hero-suggestions {
+    min-height: 30px;
     flex-wrap: nowrap;
+    gap: 6px;
+    margin-top: 10px;
     overflow-x: auto;
+    overscroll-behavior-x: contain;
+    font-size: 13px;
     scrollbar-width: none;
     mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent);
   }
@@ -209,5 +246,196 @@
 
   .home-hero .hero-suggestions > * {
     flex: none;
+  }
+
+  .home-hero .hero-suggestions .hero-suggestions__keyword {
+    height: 30px;
+    min-height: 30px;
+    line-height: 28px;
+  }
+
+  /* Món xoay vòng nhỏ lại để mục tiếp theo lộ ra ngay màn đầu. */
+  .home-hero .home-hero__visual {
+    width: min(74%, 290px);
+  }
+
+  .home-hero .hero-dish__plate {
+    max-width: 100%;
+  }
+
+  .home-hero .hero-float {
+    gap: 8px;
+  }
+
+  .home-hero .hero-float--top {
+    top: 6px;
+    left: -14px;
+    border-radius: 12px;
+    padding: 8px 11px;
+  }
+
+  .home-hero .hero-float--bottom {
+    right: -14px;
+    bottom: 14px;
+    border-radius: 14px;
+    padding: 7px 10px;
+  }
+
+  .home-hero .hero-float strong {
+    margin-top: 1px;
+    font-size: 12.5px;
+  }
+
+  .home-hero .hero-float span,
+  .home-hero .hero-float small {
+    font-size: 10.5px;
+  }
+
+  .home-hero .hero-float__icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .home-hero .hero-float__icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* ---------- Lối tắt: ba ô nhỏ cùng một hàng thay cho ba dòng lớn ---------- */
+  .quick-paths.container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: -38px;
+    border-radius: 18px;
+    box-shadow: 0 10px 28px rgb(74 47 27 / 9%);
+  }
+
+  .quick-paths.container > a {
+    min-height: 88px;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    align-content: center;
+    gap: 7px;
+    padding: 12px 6px;
+    text-align: center;
+  }
+
+  .quick-paths.container > a + a {
+    border-top: 0;
+    border-left: 1px solid var(--color-border);
+  }
+
+  .quick-paths.container > a:hover {
+    transform: none;
+  }
+
+  .quick-paths.container > a > svg:last-child,
+  .quick-paths.container small {
+    display: none;
+  }
+
+  .quick-paths.container strong {
+    font-size: 12.5px;
+    line-height: 1.3;
+  }
+
+  .quick-paths.container .quick-paths__icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+  }
+
+  .quick-paths.container .quick-paths__icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* ---------- Mục nội dung: khoảng cách và tiêu đề gọn hơn ---------- */
+  .content-section.home-today,
+  .content-section.home-meals {
+    padding-block: 34px;
+  }
+
+  /* Nhãn + tiêu đề bên trái, nút "Xem tất cả" nhỏ cùng hàng bên phải, mô tả bên dưới. */
+  .home-heading.section-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 2px 12px;
+    margin-bottom: 18px;
+  }
+
+  .home-heading.section-heading .home-heading__copy {
+    display: contents;
+  }
+
+  .home-heading.section-heading .section-label {
+    grid-column: 1 / -1;
+    font-size: 11px;
+  }
+
+  .home-heading.section-heading h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .home-heading.section-heading p {
+    grid-column: 1 / -1;
+    margin: 6px 0 0;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .home-heading.section-heading .home-heading__actions {
+    grid-row: 2;
+    grid-column: 2;
+  }
+
+  .home-heading.section-heading .home-heading__actions > * {
+    flex: none;
+  }
+
+  .home-heading .home-action {
+    height: 44px;
+    gap: 4px;
+    border-color: rgb(180 59 44 / 26%);
+    padding: 0 12px 0 14px;
+    color: #963426;
+    background: #fffdf9;
+    box-shadow: none;
+    font-size: 13px;
+  }
+
+  /* Thẻ món trong slide thấp hơn: ảnh dẹt lại, mô tả một dòng. */
+  .home-today .showcase-carousel .recipe-card__media {
+    aspect-ratio: 16 / 10;
+  }
+
+  .home-today .showcase-carousel .recipe-card h3 {
+    min-height: 0;
+  }
+
+  .home-today .showcase-carousel .recipe-card__body > p {
+    min-height: 0;
+    margin: 6px 0 12px;
+    -webkit-line-clamp: 1;
+  }
+
+  /* ---------- Dải câu chuyện cuối trang ---------- */
+  .story-band .story-band__inner {
+    min-height: 0;
+    gap: 18px;
+    padding-block: 34px;
+  }
+
+  section.story-band h2 {
+    margin: 8px 0 10px;
+    font-size: 1.55rem;
+    line-height: 1.25;
+  }
+
+  section.story-band p {
+    font-size: 14px;
+    line-height: 1.6;
   }
 }

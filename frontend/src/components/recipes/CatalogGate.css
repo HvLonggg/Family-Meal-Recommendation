@@ -28,6 +28,7 @@
 
 .catalog-page-skeleton {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 28px;
   min-height: 70vh;
   padding-block: 32px 48px;
@@ -53,6 +54,7 @@
 
 .catalog-page-skeleton__detail {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 28px;
 }
 

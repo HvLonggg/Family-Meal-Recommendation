@@ -1,4 +1,5 @@
-import { NavLink, Outlet, useNavigate } from 'react-router';
+import { useEffect, useRef } from 'react';
+import { NavLink, Outlet, useLocation, useNavigate } from 'react-router';
 
 import { AppIcon, type IconName } from '@/components/common/AppIcon';
 import { UserAvatar } from '@/components/common/UserAvatar';
@@ -18,6 +19,19 @@ export function AccountLayout() {
   const { logout, user } = useAuth();
   const { t } = useI18n();
   const navigate = useNavigate();
+  const { pathname } = useLocation();
+  const navRef = useRef<HTMLElement>(null);
+
+  // Màn hình hẹp: hàng chip cuộn ngang, đưa mục đang mở (vd. Cài đặt) vào tầm nhìn.
+  useEffect(() => {
+    const nav = navRef.current;
+    if (!nav || nav.scrollWidth <= nav.clientWidth) return;
+    const active = nav.querySelector<HTMLElement>('.is-active');
+    if (!active) return;
+    const offset = active.getBoundingClientRect().left - nav.getBoundingClientRect().left;
+    nav.scrollTo?.({ left: Math.max(0, nav.scrollLeft + offset - 10), behavior: 'auto' });
+  }, [pathname]);
+
   if (!user) return null;
 
   return (
@@ -34,7 +48,7 @@ export function AccountLayout() {
               </span>
             </div>
           </div>
-          <nav className="ws-nav">
+          <nav className="ws-nav" ref={navRef}>
             {sections.map((section) => (
               <NavLink
                 className={({ isActive }) => `ws-nav__link${isActive ? ' is-active' : ''}`}

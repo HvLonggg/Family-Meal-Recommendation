@@ -16,6 +16,8 @@ import '@/styles/admin.css';
 import '@/styles/community.css';
 import '@/styles/assistant.css';
 import '@/styles/cooking.css';
+import '@/styles/mobile-home-search.css';
+import '@/styles/mobile-pages.css';
 
 // Tab cũ mở lâu có thể đòi tệp JS của bản đã bị thay: tải lại một lần để nhận bản mới.
 window.addEventListener('vite:preloadError', (event) => {

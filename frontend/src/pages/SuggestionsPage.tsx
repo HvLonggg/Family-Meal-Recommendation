@@ -80,7 +80,7 @@ export function SuggestionsPage() {
   const results = [...matched.slice(start), ...matched.slice(0, start)].slice(0, RESULT_LIMIT);
 
   return (
-    <div className="page-wrap">
+    <div className="page-wrap explore-page">
       <section className="page-hero page-hero--suggestions">
         <div className="container">
           <span className="section-label">{t('Gợi ý cho nhà mình')}</span>

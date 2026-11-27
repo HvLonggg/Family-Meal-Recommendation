@@ -9,7 +9,13 @@ const options: { id: Language; short: string; label: string }[] = [
   { id: 'en', short: 'EN', label: 'English' },
 ];
 
-export function LanguageSwitcher({ className = '' }: { className?: string }) {
+interface LanguageSwitcherProps {
+  className?: string;
+  /** Bản gọn cho thanh header di động: viên thuốc "VI | EN" thấp, không có quả địa cầu. */
+  compact?: boolean;
+}
+
+export function LanguageSwitcher({ className = '', compact = false }: LanguageSwitcherProps) {
   const { language, setLanguage, t } = useI18n();
   // Bỏ animation ở lần tải trang đầu.
   const [hasSwitched, setHasSwitched] = useState(false);
@@ -29,15 +35,17 @@ export function LanguageSwitcher({ className = '' }: { className?: string }) {
   return (
     <div
       aria-label={t('Ngôn ngữ')}
-      className={`language-switcher ${className}`.trim()}
+      className={`language-switcher${compact ? ' language-switcher--compact' : ''} ${className}`.trim()}
       data-active={language}
       data-animate={hasSwitched || undefined}
       onKeyDown={onKeyDown}
       role="group"
     >
-      <span aria-hidden="true" className="language-switcher__globe">
-        <AppIcon name="globe" size={15} />
-      </span>
+      {compact ? null : (
+        <span aria-hidden="true" className="language-switcher__globe">
+          <AppIcon name="globe" size={15} />
+        </span>
+      )}
       <div className="language-switcher__track">
         <span aria-hidden="true" className="language-switcher__thumb" />
         {options.map((option) => (
