@@ -50,8 +50,8 @@ const FOCUSABLE = 'button:not([disabled]), [href], [tabindex]:not([tabindex="-1"
 
 interface InstallAppButtonProps {
   className?: string;
-  /** Nội dung phụ dưới nhãn chính (dùng ở menu di động). */
-  withHint?: boolean;
+  /** compact: viên nhỏ trên header điện thoại; footer: dưới giờ làm việc ở chân trang. */
+  variant?: 'card' | 'compact' | 'footer';
 }
 
 /**
@@ -59,7 +59,7 @@ interface InstallAppButtonProps {
  * iPhone/iPad và trình duyệt không hỗ trợ thì mở hướng dẫn từng bước đúng hệ điều hành.
  * Ẩn khi đang mở trong ứng dụng đã cài.
  */
-export function InstallAppButton({ className = '', withHint = false }: InstallAppButtonProps) {
+export function InstallAppButton({ className = '', variant = 'card' }: InstallAppButtonProps) {
   const { t } = useI18n();
   const { deferred, installed } = useInstallState();
   const [guide, setGuide] = useState<InstallPlatform | null>(null);
@@ -77,17 +77,24 @@ export function InstallAppButton({ className = '', withHint = false }: InstallAp
   return (
     <>
       <button
-        className={`install-app-button ${className}`.trim()}
+        aria-label={variant === 'compact' ? t('Tải ứng dụng Bếp Việt') : undefined}
+        className={`install-app-button install-app-button--${variant} ${className}`.trim()}
         onClick={() => void handleClick()}
         type="button"
       >
         <span aria-hidden="true" className="install-app-button__icon">
           <AppIcon name="download" size={18} />
         </span>
-        <span className="install-app-button__text">
-          <strong>{t('Tải ứng dụng Bếp Việt')}</strong>
-          {withHint ? <small>{t('Mở nhanh từ màn hình chính, dùng như app')}</small> : null}
-        </span>
+        {variant === 'compact' ? (
+          <span aria-hidden="true" className="install-app-button__label">
+            {t('Tải app')}
+          </span>
+        ) : (
+          <span className="install-app-button__text">
+            <strong>{t('Tải ứng dụng Bếp Việt')}</strong>
+            <small>{t('Mở nhanh từ màn hình chính, dùng như app')}</small>
+          </span>
+        )}
       </button>
       {guide ? <InstallGuide onClose={() => setGuide(null)} platform={guide} /> : null}
     </>

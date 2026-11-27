@@ -254,6 +254,20 @@ describe('showcase carousel', () => {
     expect(screen.getByText('Món ăn 3–5 / 7')).toBeInTheDocument();
   });
 
+  it('lets the mouse drag cards to the next slide without opening the card underneath', () => {
+    const carousel = renderCarousel().getByRole('region', { name: 'Món ăn' });
+    const card = screen.getAllByRole('heading')[0]!;
+    fireEvent.pointerDown(card, { pointerType: 'mouse', button: 0, clientX: 200 });
+    fireEvent.pointerMove(card, { pointerType: 'mouse', clientX: 120 });
+    fireEvent.pointerUp(card, { pointerType: 'mouse', clientX: 120 });
+    const click = new MouseEvent('click', { bubbles: true, cancelable: true });
+    card.dispatchEvent(click);
+    expect(click.defaultPrevented).toBe(true);
+    advanceFrames(950);
+    expect(screen.getByText('Món ăn 2–4 / 7')).toBeInTheDocument();
+    expect(carousel).toHaveClass('is-draggable');
+  });
+
   it('keeps automatic movement off for reduced-motion preference', () => {
     vi.stubGlobal('matchMedia', () => ({
       matches: true,

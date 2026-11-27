@@ -1,0 +1,66 @@
+/* Hộp thoại mời đăng nhập: giữa màn hình, cùng phong cách khung cập nhật ứng dụng. */
+.login-required {
+  position: relative;
+  display: grid;
+  width: min(400px, calc(100vw - 32px));
+  justify-items: center;
+  gap: 10px;
+  border-radius: 24px;
+  padding: 28px 22px 18px;
+  text-align: center;
+  animation: login-required-pop 200ms ease-out;
+}
+
+.login-required__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.login-required__logo {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.login-required h2 {
+  margin: 4px 0 0;
+  font-size: 20px;
+}
+
+.login-required p {
+  margin: 0;
+  color: #6b5a4f;
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+
+.login-required__actions {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.login-required__actions .button {
+  min-height: 44px;
+}
+
+.login-required__later {
+  min-height: 40px;
+}
+
+@keyframes login-required-pop {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .login-required {
+    animation: none;
+  }
+}

@@ -181,3 +181,26 @@
   border-radius: 50%;
   content: '';
 }
+
+/* Băng chuyền: chừa chỗ phía trên/dưới để thẻ nổi lên khi hover không bị cắt mất viền và bóng. */
+.showcase-carousel .showcase-carousel__viewport {
+  margin-block: -12px -22px;
+  padding-block: 12px 22px;
+}
+
+/* Kéo bằng chuột như vuốt trên điện thoại. */
+@media (hover: hover) and (pointer: fine) {
+  .showcase-carousel.is-draggable .showcase-carousel__viewport {
+    cursor: grab;
+  }
+
+  .showcase-carousel.is-draggable .showcase-carousel__viewport:active {
+    cursor: grabbing;
+  }
+}
+
+.showcase-carousel .showcase-carousel__viewport a,
+.showcase-carousel .showcase-carousel__viewport img {
+  -webkit-user-drag: none;
+  user-select: none;
+}

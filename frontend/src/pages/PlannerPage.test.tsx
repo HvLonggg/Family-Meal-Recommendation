@@ -7,7 +7,8 @@ import { DEFAULT_PREFERENCES } from '@/features/account/preferences';
 import type { UserPreferences } from '@/features/auth/types';
 import { PlannerPage } from '@/pages/PlannerPage';
 
-const { mockUser, updateUser } = vi.hoisted(() => ({
+const { authState, mockUser, updateUser } = vi.hoisted(() => ({
+  authState: { guest: false },
   mockUser: {
     id: 'user-1',
     full_name: 'Nguyễn An',
@@ -20,7 +21,7 @@ const { mockUser, updateUser } = vi.hoisted(() => ({
 
 vi.mock('@/features/auth/AuthContext', () => ({
   useAuth: () => ({
-    user: mockUser,
+    user: authState.guest ? null : mockUser,
     isLoading: false,
     login: vi.fn(),
     logout: vi.fn(),
@@ -89,6 +90,7 @@ beforeEach(() => {
   vegetarianPayloads = [];
   preferencePayloads = [];
   mockUser.preferences = undefined;
+  authState.guest = false;
   vi.stubGlobal('fetch', (input: string | URL, init?: RequestInit) => {
     const requestUrl = new URL(typeof input === 'string' ? input : input.href, 'http://localhost');
     const vegetarianMatch = /\/planner\/vegetarian-days\/(\d{4}-\d{2}-\d{2})$/.exec(
@@ -214,6 +216,25 @@ afterEach(() => {
 });
 
 describe('planner page', () => {
+  it('lets guests try the calendar and asks them to sign in only when saving a meal', async () => {
+    authState.guest = true;
+    renderPlanner();
+
+    expect(await screen.findByText('Kế hoạch nấu ăn của bạn')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Thêm bữa ăn' }));
+    fireEvent.click(screen.getAllByRole('button', { name: /^Chọn / })[0]!);
+    fireEvent.click(screen.getByRole('button', { name: 'Lưu bữa ăn' }));
+
+    const prompt = await screen.findByRole('dialog', { name: 'Đăng nhập để tiếp tục' });
+    expect(within(prompt).getByRole('link', { name: 'Đăng nhập' })).toHaveAttribute(
+      'href',
+      expect.stringContaining('/login'),
+    );
+    expect(savedMealPayloads).toHaveLength(0);
+    fireEvent.click(within(prompt).getByRole('button', { name: 'Để sau, tiếp tục xem' }));
+    expect(screen.queryByRole('dialog', { name: 'Đăng nhập để tiếp tục' })).toBeNull();
+  });
+
   it('lists recipes in one scrolling list, saves selected dishes, and prints a categorized shopping list', async () => {
     renderPlanner();
 

@@ -24,6 +24,7 @@ import {
 } from '@/data/randomMeals';
 import { formatDuration } from '@/data/nutritionEstimate';
 import { useAuth } from '@/features/auth/AuthContext';
+import { LoginRequiredDialog } from '@/features/auth/LoginRequiredDialog';
 import { apiPost, apiRequest } from '@/lib/api/client';
 import { useI18n } from '@/features/i18n/I18nContext';
 import { dishImage } from '@/data/dishImages';
@@ -111,6 +112,8 @@ export function RandomMealPage() {
     () => ({ guest: readHistory(null) }),
   );
   const historyOwnerKey = user?.id ?? 'guest';
+  // Khách quay mâm thoải mái; bấm lưu mâm mới yêu cầu đăng nhập.
+  const [loginPrompt, setLoginPrompt] = useState(false);
   const history = historyByAccount[historyOwnerKey] ?? readHistory(user?.id);
   const [rotation, setRotation] = useState(0);
   const rotationRef = useRef(0);
@@ -303,6 +306,10 @@ export function RandomMealPage() {
       );
       return;
     }
+    if (!user) {
+      setLoginPrompt(true);
+      return;
+    }
     setSaving(true);
     const saved: SavedRandomMeal = {
       id: createHistoryId(),
@@ -370,6 +377,13 @@ export function RandomMealPage() {
 
   return (
     <div className="page-wrap random-meal-page">
+      <LoginRequiredDialog
+        description={t(
+          'Mâm vừa quay vẫn được giữ nguyên. Đăng nhập để lưu mâm cơm vào tài khoản và xem lại trên mọi thiết bị.',
+        )}
+        onClose={() => setLoginPrompt(false)}
+        open={loginPrompt}
+      />
       {celebrationId !== null && (
         <MealCelebration key={celebrationId} onFinish={dismissCelebration} />
       )}

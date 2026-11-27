@@ -1,0 +1,67 @@
+/* Phản hồi chạm/bấm mượt hơn trên mọi thiết bị.
+ * - Bỏ độ trễ "chạm đúp để phóng to" và vệt sáng xanh khi chạm trên di động.
+ * - Nút có phản hồi nhấn ngay (thu nhỏ nhẹ) thay vì chờ hiệu ứng hover.
+ * - Bỏ làm mờ nền (backdrop-filter) ở các lớp phủ lên nội dung đang cuộn/chạy: trình duyệt phải
+ *   tính lại hiệu ứng mờ mỗi khung hình nên dễ giật; nền các lớp này vốn gần như đục. */
+a,
+button,
+summary,
+label,
+[role='button'],
+input[type='checkbox'],
+input[type='radio'],
+select {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.button,
+.icon-button,
+.pwa-btn,
+.text-button,
+.install-app-button,
+.showcase-carousel__arrow,
+.mobile-menu-button,
+.nav-signup {
+  transition-duration: 140ms;
+}
+
+.button:active:not(:disabled),
+.icon-button:active:not(:disabled),
+.pwa-btn:active:not(:disabled),
+.text-button:active:not(:disabled),
+.install-app-button:active,
+.mobile-menu-button:active,
+.nav-signup:active {
+  transform: scale(0.97);
+  transition-duration: 60ms;
+}
+
+.site-header {
+  background: rgb(255 255 255 / 97%);
+  backdrop-filter: none;
+}
+
+.showcase-carousel__arrow,
+.hero-float {
+  backdrop-filter: none;
+}
+
+@media (max-width: 1100px) {
+  .site-nav .site-nav__auth {
+    background: #fff;
+    backdrop-filter: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button:active:not(:disabled),
+  .icon-button:active:not(:disabled),
+  .pwa-btn:active:not(:disabled),
+  .text-button:active:not(:disabled),
+  .install-app-button:active,
+  .mobile-menu-button:active,
+  .nav-signup:active {
+    transform: none;
+  }
+}

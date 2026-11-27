@@ -53,24 +53,92 @@
   font-size: 12.5px;
 }
 
-/* Dạng liên kết ở chân trang. */
+/* Chân trang (dưới giờ làm việc): nền tối của footer. */
 .install-app-button--footer {
   width: auto;
-  min-height: 40px;
-  border-color: rgb(255 255 255 / 18%);
-  padding: 6px 12px 6px 6px;
+  max-width: 320px;
+  margin-top: 14px;
+  border-color: rgb(255 255 255 / 16%);
+  padding: 8px 14px 8px 8px;
   color: inherit;
-  background: rgb(255 255 255 / 8%);
+  background: rgb(255 255 255 / 7%);
 }
 
-.install-app-button--footer .install-app-button__icon {
-  width: 30px;
-  height: 30px;
-  border-radius: 10px;
+.install-app-button--footer:hover {
+  border-color: rgb(255 255 255 / 32%);
+  background: rgb(255 255 255 / 11%);
+}
+
+.install-app-button--footer .install-app-button__text strong,
+.install-app-button--footer .install-app-button__text small {
+  display: block;
+  margin: 0;
+  letter-spacing: normal;
+  line-height: 1.35;
+  text-transform: none;
 }
 
 .install-app-button--footer .install-app-button__text strong {
+  color: #fff8ef;
   font-size: 14px;
+}
+
+.install-app-button--footer .install-app-button__text small {
+  color: inherit;
+  opacity: 0.72;
+}
+
+/* Header: viên nhỏ cạnh nút VI/EN, chỉ hiện ở màn hình hẹp (laptop dùng nút ở chân trang). */
+.install-app-button--compact {
+  display: none;
+}
+
+@media (max-width: 1100px) {
+  .install-app-button--compact {
+    position: relative;
+    display: inline-flex;
+    flex: 0 0 auto;
+    width: auto;
+    min-height: 36px;
+    gap: 6px;
+    margin-left: auto;
+    border-radius: 999px;
+    padding: 3px 12px 3px 3px;
+  }
+
+  /* Nút tải đứng trước nên đẩy cả cụm sang phải; VI/EN đứng sát bên. */
+  .install-app-button--compact ~ .site-header__language {
+    margin-left: 0;
+  }
+
+  .install-app-button--compact .install-app-button__icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+
+  .install-app-button--compact .install-app-button__label {
+    font-size: 13px;
+    font-weight: 750;
+    white-space: nowrap;
+  }
+
+  /* Vùng chạm đủ 44px mà không làm viên nút to ra. */
+  .install-app-button--compact::before {
+    position: absolute;
+    inset: -4px -2px;
+    content: '';
+  }
+}
+
+@media (max-width: 359px) {
+  .install-app-button--compact {
+    padding-right: 3px;
+  }
+
+  .install-app-button--compact .install-app-button__label {
+    display: none;
+  }
 }
 
 .install-guide {

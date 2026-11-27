@@ -37,6 +37,7 @@ import {
 import { savePreferences } from '@/features/account/accountApi';
 import { DEFAULT_PREFERENCES, useDefaultServings } from '@/features/account/preferences';
 import { useAuth } from '@/features/auth/AuthContext';
+import { LoginRequiredDialog } from '@/features/auth/LoginRequiredDialog';
 import { logCooked, unmarkPlanItem } from '@/features/cooking/cookingApi';
 import { cookPath } from '@/features/cooking/cookSession';
 import type { CalendarMode } from '@/features/auth/types';
@@ -216,6 +217,14 @@ export function PlannerPage() {
   const [celebrationMessage, setCelebrationMessage] = useState('');
   const [vegetarianFilter, setVegetarianFilter] = useState<boolean | null>(null);
   const [modeOverride, setModeOverride] = useState<CalendarMode | null>(null);
+  // Khách được xem và thử lịch (đổi tuần, đánh dấu ăn chay ngay trên máy); chỉ khi lưu thật mới cần đăng nhập.
+  const [loginPrompt, setLoginPrompt] = useState(false);
+  const [guestVegetarian, setGuestVegetarian] = useState<Record<string, boolean>>({});
+  const requireLogin = () => {
+    if (user) return false;
+    setLoginPrompt(true);
+    return true;
+  };
   // Lịch luôn chạy theo ngày Việt Nam (GMT+7), kể cả khi máy đặt múi giờ khác.
   const [today, setToday] = useState(() => vietnamToday());
   const calendarMode = modeOverride ?? preferences.calendar_mode;
@@ -413,14 +422,28 @@ export function PlannerPage() {
     }
     return grouped;
   }, [plannedItems]);
-  const overrides = useMemo(
-    () => vegetarianOverrides(vegetarianQuery.data, todayVegetarianQuery.data),
-    [todayVegetarianQuery.data, vegetarianQuery.data],
-  );
+  const overrides = useMemo(() => {
+    const merged = vegetarianOverrides(vegetarianQuery.data, todayVegetarianQuery.data);
+    for (const [day, value] of Object.entries(guestVegetarian)) merged.set(day, value);
+    return merged;
+  }, [guestVegetarian, todayVegetarianQuery.data, vegetarianQuery.data]);
   const vegetarianStateOf = (value: string) =>
     resolveVegetarianDay(value, overrides, preferences.vegetarian_lunar_days);
-  const toggleVegetarian = (value: string) =>
-    vegetarianMutation.mutate({ day: value, value: !vegetarianStateOf(value).vegetarian });
+  const toggleVegetarian = (value: string) => {
+    const next = !vegetarianStateOf(value).vegetarian;
+    if (!user) {
+      setGuestVegetarian((current) => ({ ...current, [value]: next }));
+      return;
+    }
+    vegetarianMutation.mutate({ day: value, value: next });
+  };
+  const changeCalendarMode = (mode: CalendarMode) => {
+    if (!user) {
+      setModeOverride(mode);
+      return;
+    }
+    calendarModeMutation.mutate(mode);
+  };
   const vegetarianPendingFor = (value: string) =>
     vegetarianMutation.isPending && vegetarianMutation.variables?.day === value;
   const catalogBySlug = useMemo(
@@ -513,7 +536,7 @@ export function PlannerPage() {
   }, [addTokenHandled, setSearchParams]);
 
   const submitAdd = () => {
-    if (!addTarget) return;
+    if (!addTarget || requireLogin()) return;
     setFeedback('');
     const slot = `${addTarget.date}:${addTarget.mealType}`;
     addMutation.mutate(
@@ -566,8 +589,10 @@ export function PlannerPage() {
     setSelectedSlugs((current) => (current.includes(slug) ? current : [...current, slug]));
     setFeedback('');
   };
-  const updateStatus = (date: string, mealType: PlannerMealType, status: MealCompletionStatus) =>
+  const updateStatus = (date: string, mealType: PlannerMealType, status: MealCompletionStatus) => {
+    if (requireLogin()) return;
     mealStatusMutation.mutate({ plan_date: date, meal_type: mealType, completion_status: status });
+  };
 
   const showShoppingList = () => {
     setShoppingDate(weekFrom);
@@ -580,10 +605,19 @@ export function PlannerPage() {
 
   return (
     <div className="page-wrap planner-page">
+      <LoginRequiredDialog
+        description={t(
+          'Bạn cứ xem và thử lịch thoải mái. Đăng nhập để lưu kế hoạch, đánh dấu bữa đã ăn và đồng bộ trên mọi thiết bị.',
+        )}
+        onClose={() => setLoginPrompt(false)}
+        open={loginPrompt}
+      />
       <section className="page-hero page-hero--planner">
         <div className="container">
           <span className="section-label">
-            {t('Kế hoạch của {name}', { name: user?.full_name.split(' ').at(-1) ?? '' })}
+            {user
+              ? t('Kế hoạch của {name}', { name: user.full_name.split(' ').at(-1) ?? '' })
+              : t('Kế hoạch nấu ăn của bạn')}
           </span>
           <h1>{t('Một tuần chủ động, mỗi bữa thảnh thơi')}</h1>
           <p>{t('Lưu món theo từng bữa, xem lại lịch sử và chuẩn bị nguyên liệu vừa đủ.')}</p>
@@ -595,7 +629,7 @@ export function PlannerPage() {
           <PlannerCalendarHeader
             mode={calendarMode}
             modeSaving={calendarModeMutation.isPending}
-            onModeChange={(mode) => calendarModeMutation.mutate(mode)}
+            onModeChange={changeCalendarMode}
             onToggleTodayVegetarian={() => toggleVegetarian(today)}
             today={today}
             todayVegetarian={vegetarianStateOf(today)}

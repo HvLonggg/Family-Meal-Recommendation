@@ -161,12 +161,11 @@ const router = createBrowserRouter([
       },
       {
         path: 'planner',
+        // Khách xem và thử lịch được; thao tác lưu mới yêu cầu đăng nhập (LoginRequiredDialog).
         element: (
-          <ProtectedRoute>
-            <CatalogGate>
-              <PlannerPage />
-            </CatalogGate>
-          </ProtectedRoute>
+          <CatalogGate>
+            <PlannerPage />
+          </CatalogGate>
         ),
       },
       {

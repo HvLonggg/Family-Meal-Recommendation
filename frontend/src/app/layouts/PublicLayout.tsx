@@ -221,6 +221,7 @@ export function PublicLayout() {
           </Link>
           {/* Điện thoại/máy tính bảng: VI/EN nằm ngay trên thanh header, cạnh nút trình đơn.
               Desktop ẩn bản này và dùng bản trong cụm hành động của thanh điều hướng. */}
+          <InstallAppButton className="site-header__install" variant="compact" />
           <LanguageSwitcher className="site-header__language" compact />
           <button
             aria-controls="site-nav"
@@ -313,7 +314,6 @@ export function PublicLayout() {
 
             <div className="site-nav__actions">
               <LanguageSwitcher className="site-nav__language" />
-              {menuOpen ? <InstallAppButton className="site-nav__install" withHint /> : null}
               {isLoading ? (
                 <span aria-hidden="true" className="user-chip-skeleton" />
               ) : user && menuOpen ? (
@@ -465,6 +465,7 @@ export function PublicLayout() {
                 <span>{t(contactInfo.workingHours)}</span>
               </li>
             </ul>
+            <InstallAppButton className="footer-install" variant="footer" />
           </div>
           <nav aria-label={t('Liên kết chân trang')} className="footer-links">
             <div>
@@ -493,7 +494,6 @@ export function PublicLayout() {
               <Link onClick={handleFooterNavigation} to="/submit-recipe">
                 {t('Đề xuất món mới')}
               </Link>
-              <InstallAppButton className="install-app-button--footer" />
               <nav aria-label={t('Văn bản pháp lý')} className="footer-legal">
                 <Link onClick={handleFooterNavigation} to="/terms">
                   {t('Điều khoản sử dụng')}

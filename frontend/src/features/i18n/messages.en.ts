@@ -2429,4 +2429,12 @@ export const en: Record<string, string> = {
     'Click the install icon (a screen with a down arrow) at the end of the address bar.',
   'Chọn "Cài đặt".': 'Choose "Install".',
   'Đã hiểu': 'Got it',
+  'Tải app': 'Get app',
+  'Đăng nhập để tiếp tục': 'Sign in to continue',
+  'Để sau, tiếp tục xem': 'Later, keep browsing',
+  'Kế hoạch nấu ăn của bạn': 'Your cooking plan',
+  'Bạn cứ xem và thử lịch thoải mái. Đăng nhập để lưu kế hoạch, đánh dấu bữa đã ăn và đồng bộ trên mọi thiết bị.':
+    'Feel free to explore the calendar. Sign in to save your plan, mark meals as eaten and sync across devices.',
+  'Mâm vừa quay vẫn được giữ nguyên. Đăng nhập để lưu mâm cơm vào tài khoản và xem lại trên mọi thiết bị.':
+    'Your spun tray stays as it is. Sign in to save it to your account and see it on every device.',
 };

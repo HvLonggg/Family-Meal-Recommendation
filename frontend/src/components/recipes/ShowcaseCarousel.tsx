@@ -78,6 +78,8 @@ function LoadedShowcaseCarousel<Item>({
   const stepRef = useRef(slideStep(initialWidth, visibleCardsForWidth(initialWidth)));
   const swipeStartXRef = useRef<number | null>(null);
   const hoverTimerRef = useRef<number | undefined>(undefined);
+  // Vừa kéo bằng chuột/ngón tay thì chặn cú click ngay sau đó để không mở nhầm món.
+  const draggedRef = useRef(false);
   useEffect(() => () => window.clearTimeout(hoverTimerRef.current), []);
   const dragBaseRef = useRef(0);
 
@@ -248,7 +250,7 @@ function LoadedShowcaseCarousel<Item>({
     <section
       aria-label={label}
       aria-roledescription={t('băng chuyền món ăn')}
-      className={`showcase-carousel${bleed ? ' showcase-carousel--bleed' : ''}`}
+      className={`showcase-carousel${bleed ? ' showcase-carousel--bleed' : ''}${canMove ? ' is-draggable' : ''}`}
       ref={carouselRef}
       onPointerEnter={(event) => {
         if (event.pointerType !== 'mouse') return;
@@ -265,24 +267,46 @@ function LoadedShowcaseCarousel<Item>({
       }}
       onPointerDown={(event) => {
         setPausedForFocus(false);
+        draggedRef.current = false;
         const isTouch = event.pointerType === 'touch';
-        if (isTouch) setPausedForPointer(true);
-        swipeStartXRef.current = isTouch && !manualDirection ? event.clientX : null;
+        // Chuột: chỉ kéo bằng nút trái, bỏ qua khi bấm vào nút (mũi tên, tim lưu món).
+        const isMouseDrag =
+          event.pointerType === 'mouse' &&
+          event.button === 0 &&
+          !(event.target as HTMLElement).closest('button');
+        if (isTouch || isMouseDrag) setPausedForPointer(true);
+        swipeStartXRef.current =
+          (isTouch || isMouseDrag) && !manualDirection ? event.clientX : null;
         dragBaseRef.current = offsetRef.current;
       }}
       onPointerMove={(event) => {
         const startX = swipeStartXRef.current;
         if (startX === null || !canMove) return;
-        // Băng chuyền đi theo ngón tay; trình duyệt vẫn lo phần cuộn dọc (touch-action: pan-y).
+        // Băng chuyền đi theo ngón tay/chuột; trình duyệt vẫn lo phần cuộn dọc (touch-action: pan-y).
         const delta = event.clientX - startX;
+        if (!draggedRef.current && Math.abs(delta) > 6) {
+          draggedRef.current = true;
+          if (event.pointerType === 'mouse')
+            event.currentTarget.setPointerCapture?.(event.pointerId);
+        }
         const drag =
           delta < 0 ? Math.min(-delta, stepRef.current) : -delta * PREVIOUS_DRAG_RESISTANCE;
         offsetRef.current = dragBaseRef.current + drag;
         paintTrack();
       }}
       onPointerUp={(event) => {
-        if (event.pointerType === 'touch') setPausedForPointer(false);
         const startX = swipeStartXRef.current;
+        if (event.pointerType === 'touch' || (event.pointerType === 'mouse' && startX !== null)) {
+          setPausedForPointer(false);
+        }
+        if (event.pointerType === 'mouse' && startX !== null) {
+          // Chuột vẫn nằm trên băng chuyền: đếm lại 3 giây rồi mới dừng.
+          window.clearTimeout(hoverTimerRef.current);
+          hoverTimerRef.current = window.setTimeout(
+            () => setPausedForPointer(true),
+            HOVER_PAUSE_DELAY,
+          );
+        }
         swipeStartXRef.current = null;
         if (startX === null) return;
         if (Math.abs(event.clientX - startX) < SWIPE_THRESHOLD) {
@@ -293,8 +317,16 @@ function LoadedShowcaseCarousel<Item>({
         }
         move(event.clientX < startX ? 'next' : 'previous');
       }}
+      // Chặn kéo-thả liên kết/ảnh mặc định của trình duyệt để kéo băng chuyền bằng chuột được mượt.
+      onDragStart={(event) => event.preventDefault()}
+      onClickCapture={(event) => {
+        if (!draggedRef.current) return;
+        draggedRef.current = false;
+        event.preventDefault();
+        event.stopPropagation();
+      }}
       onPointerCancel={(event) => {
-        if (event.pointerType === 'touch') setPausedForPointer(false);
+        if (event.pointerType !== 'pen') setPausedForPointer(false);
         if (swipeStartXRef.current !== null) {
           offsetRef.current = dragBaseRef.current;
           paintTrack();
