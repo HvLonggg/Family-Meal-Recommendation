@@ -614,3 +614,391 @@
     height: clamp(150px, 42vw, 176px);
   }
 }
+
+/* ---------- Chân trang trên điện thoại: tối giản, chỉ hiện ở trang chủ ---------- */
+@media (max-width: 760px) {
+  /* PublicLayout gắn lớp này cho mọi trang khác "/"; máy tính vẫn hiện chân trang. */
+  .site-footer.site-footer--secondary {
+    display: none;
+  }
+
+  .site-footer {
+    padding-block: 28px 0;
+    text-align: center;
+  }
+
+  .site-footer .footer-main {
+    justify-items: center;
+    gap: 16px;
+    padding-bottom: 16px;
+  }
+
+  .site-footer .footer-brand {
+    justify-items: center;
+    gap: 10px;
+  }
+
+  .site-footer .footer-brand .kitchen-logo__image {
+    width: 52px;
+    height: 52px;
+  }
+
+  .site-footer .footer-brand p {
+    max-width: 300px;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .site-footer .footer-install {
+    margin-top: 4px;
+    text-align: left;
+  }
+
+  /* Bỏ khối liên hệ, bản đồ, tiêu đề cột và các link phụ. */
+  .site-footer .footer-contact,
+  .site-footer .footer-map,
+  .site-footer .footer-links strong,
+  .site-footer .footer-links a[href$='/favorites'],
+  .site-footer .footer-links a[href$='/submit-recipe'] {
+    display: none;
+  }
+
+  /* Các link chính gom thành một hàng gọn, xuống dòng khi hẹp. */
+  .site-footer .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0 18px;
+  }
+
+  .site-footer .footer-links > div {
+    display: contents;
+  }
+
+  .site-footer .footer-links a {
+    font-size: 13.5px;
+  }
+
+  .site-footer .footer-links a:hover {
+    transform: none;
+  }
+
+  /* Link pháp lý: hàng riêng, chữ nhỏ và nhạt hơn. */
+  .site-footer .footer-links .footer-legal {
+    display: flex;
+    flex-basis: 100%;
+    justify-content: center;
+    gap: 0 16px;
+  }
+
+  .site-footer .footer-links .footer-legal a {
+    color: #a8968a;
+    font-size: 12px;
+  }
+
+  .site-footer .footer-bottom {
+    justify-content: center;
+    padding-block: 12px calc(12px + env(safe-area-inset-bottom));
+    font-size: 12px;
+  }
+
+  /* ---------- Hero các trang: chỉ giữ tiêu đề lớn, bỏ đoạn giới thiệu ---------- */
+  .home-hero .home-hero__copy > p,
+  .page-hero > .container > p,
+  .articles-hero .articles-hero__copy > p,
+  .contact-page__intro > .container > p,
+  .meal-sets-page__hero .meal-sets-page__hero-copy > p,
+  .meal-sets-page__hero .meal-sets-page__hero-notes,
+  .random-hero .random-hero__inner > div > p,
+  .random-hero .random-hero__proof,
+  .submit-hero .submit-hero__inner > p {
+    display: none;
+  }
+}
+
+/* ---------- Kế hoạch (/planner) trên điện thoại: gọn chữ, bớt khoảng trống ---------- */
+/* Tiền tố .page-wrap.planner-page để thắng planner-page.css (nạp sau theo route). */
+@media (max-width: 560px) {
+  .page-wrap.planner-page .page-hero--planner {
+    padding-block: 12px 2px;
+  }
+
+  .page-wrap.planner-page .page-hero--planner .section-label {
+    font-size: 11px;
+  }
+
+  .page-wrap.planner-page .page-hero--planner h1 {
+    font-size: 20px;
+    line-height: 1.25;
+  }
+
+  .page-wrap.planner-page > .content-section {
+    padding-top: 8px;
+  }
+
+  .page-wrap.planner-page .planner-dashboard {
+    padding-bottom: 32px;
+  }
+
+  /* Thẻ lịch dương/âm: số ngày nhỏ, ô chuyển lịch và nút ăn chay thấp hơn. */
+  .page-wrap.planner-page .planner-calendar-hero {
+    gap: 8px;
+    margin-bottom: 10px;
+    border-radius: 14px;
+    padding: 8px;
+  }
+
+  .page-wrap.planner-page .planner-date-card {
+    gap: 2px;
+    border-radius: 10px;
+    padding: 6px 8px;
+  }
+
+  .page-wrap.planner-page .planner-date-card__kicker {
+    gap: 4px;
+    font-size: 10.5px;
+  }
+
+  .page-wrap.planner-page .planner-date-card__body {
+    gap: 6px;
+  }
+
+  .page-wrap.planner-page .planner-date-card__day {
+    font-size: 22px;
+  }
+
+  .page-wrap.planner-page .planner-date-card__title {
+    font-size: 12px;
+    line-height: 1.3;
+  }
+
+  .page-wrap.planner-page .planner-calendar-hero__side {
+    gap: 6px;
+  }
+
+  .page-wrap.planner-page .planner-calendar-switch {
+    border-radius: 12px;
+    padding: 3px;
+  }
+
+  .page-wrap.planner-page .planner-calendar-switch button {
+    min-height: 36px;
+    font-size: 12.5px;
+  }
+
+  .page-wrap.planner-page .planner-veg-today {
+    min-height: 38px;
+    border-radius: 10px;
+    font-size: 12.5px;
+  }
+
+  .page-wrap.planner-page .planner-calendar-hero__next {
+    font-size: 12px;
+  }
+
+  /* Thanh tuần + hai nút hành động. */
+  .page-wrap.planner-page .planner-toolbar--modern {
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .page-wrap.planner-page .planner-week-label {
+    gap: 2px;
+  }
+
+  .page-wrap.planner-page .planner-week-label strong {
+    font-size: 14px;
+  }
+
+  .page-wrap.planner-page .planner-toolbar__actions {
+    gap: 8px;
+  }
+
+  .page-wrap.planner-page .planner-toolbar__actions .button {
+    min-height: 42px;
+    gap: 6px;
+    padding-inline: 10px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  /* Tab, chú thích và cột ngày. */
+  .page-wrap.planner-page .planner-tabs {
+    gap: 4px;
+    margin-bottom: 10px;
+  }
+
+  .page-wrap.planner-page .planner-tabs button {
+    min-height: 40px;
+    padding-inline: 10px;
+  }
+
+  .page-wrap.planner-page .planner-legend {
+    margin-bottom: 8px;
+  }
+
+  .page-wrap.planner-page .planner-week-scroll {
+    border-radius: 14px;
+  }
+
+  .page-wrap.planner-page .planner-day__header {
+    min-height: 0;
+    padding: 8px 10px !important;
+  }
+
+  .page-wrap.planner-page .planner-day__meals {
+    gap: 6px;
+    padding: 6px;
+  }
+
+  .page-wrap.planner-page .planner-meal {
+    border-radius: 10px;
+    padding: 6px 8px;
+  }
+
+  .page-wrap.planner-page .planner-meal__heading {
+    margin-bottom: 4px;
+  }
+
+  .page-wrap.planner-page .planner-meal__empty {
+    min-height: 44px;
+  }
+
+  /* Thẻ tổng kết tuần. */
+  .page-wrap.planner-page .planner-summary--personal {
+    min-height: 0;
+    gap: 10px;
+    margin-top: 12px;
+    border-radius: 14px;
+    padding: 12px;
+  }
+
+  .page-wrap.planner-page .planner-summary__icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+  }
+
+  /* Tiêu đề và dòng phụ xếp chồng thay vì dàn ngang. */
+  .page-wrap.planner-page .planner-summary__copy {
+    display: grid;
+    min-width: calc(100% - 46px);
+    gap: 2px;
+  }
+
+  .page-wrap.planner-page .planner-summary__copy strong {
+    font-size: 13.5px;
+  }
+
+  .page-wrap.planner-page .planner-summary--personal .button {
+    min-height: 42px;
+  }
+
+  /* ---------- Bài viết (/articles): thêm một nấc gọn ---------- */
+  .articles-page .articles-hero {
+    padding-block: 14px 16px;
+  }
+
+  .articles-page .articles-hero__copy h1 {
+    font-size: 1.45rem;
+  }
+
+  .articles-page .articles-hero__actions {
+    margin-top: 10px;
+  }
+
+  .articles-page .articles-hero__actions .button {
+    min-height: 40px;
+    padding-inline: 14px;
+    font-size: 13px;
+  }
+
+  .articles-page .articles-feed {
+    padding-block: 12px 24px;
+  }
+
+  .articles-page .articles-toolbar {
+    gap: 6px;
+    border-radius: 14px;
+    padding: 6px;
+  }
+
+  .articles-page .articles-tabs button {
+    min-height: 38px;
+    padding: 0 10px;
+    font-size: 12.5px;
+  }
+
+  .articles-page .articles-categories {
+    margin-top: 8px;
+  }
+
+  .articles-page .articles-categories button {
+    min-height: 36px;
+    padding: 0 11px;
+    font-size: 12.5px;
+  }
+
+  .articles-page .articles-result {
+    margin-top: 8px;
+  }
+
+  .articles-page .featured-story {
+    border-radius: 16px;
+  }
+
+  .articles-page .featured-story__media {
+    aspect-ratio: 2 / 1;
+  }
+
+  .articles-page .featured-story__body {
+    gap: 6px;
+    padding: 10px 12px 12px;
+  }
+
+  .articles-page .featured-story__body h2 {
+    font-size: 1.1rem;
+  }
+
+  .articles-page .featured-story__body > p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .articles-page .featured-story__body > .button {
+    min-height: 40px;
+    font-size: 13px;
+  }
+
+  .articles-page .article-feed-grid {
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .articles-page .article-card {
+    min-height: 92px;
+    grid-template-columns: 88px minmax(0, 1fr);
+    border-radius: 14px;
+  }
+
+  .articles-page .article-card__body {
+    gap: 4px;
+    padding: 8px 10px;
+  }
+
+  .articles-page .article-card__body h3 {
+    font-size: 14px;
+  }
+
+  .articles-page .story-invite {
+    padding-block: 20px;
+  }
+
+  .articles-page .story-invite h2 {
+    font-size: 1.15rem;
+  }
+
+  .articles-page .story-invite p {
+    font-size: 13px;
+  }
+}

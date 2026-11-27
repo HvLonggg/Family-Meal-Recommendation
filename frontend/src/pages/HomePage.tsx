@@ -14,18 +14,19 @@ import {
   rememberHomeMealSuggestions,
   selectHomeMealSuggestions,
 } from '@/data/homeMealSuggestions';
-import { seasonOf } from '@/data/seasonalPicks';
+import { seasonalWeight, seasonOf, weightedSeededShuffle } from '@/data/seasonalPicks';
 import { useAuth } from '@/features/auth/AuthContext';
 import { useI18n } from '@/features/i18n/I18nContext';
 import { useRecipeCatalog } from '@/features/i18n/recipeContent';
-import { seededShuffle } from '@/lib/seededShuffle';
 
 import './home-page.css';
 
-const HOME_FEATURED_LIMIT = 12;
+// Chỉ ghi nhớ vài mâm đầu (phần người dùng thực sự thấy) để lần sau ưu tiên mâm mới.
+const REMEMBERED_MEAL_COUNT = 12;
 
 export function HomePage() {
   const [query, setQuery] = useState('');
+  // Seed mới mỗi lần vào trang: thứ tự món và mâm cơm luôn khác, không cố định theo ngày.
   const [entrySeed] = useState(() => `${Date.now()}-${Math.random().toString(36).slice(2)}`);
   const [recentMealKeys] = useState(readRecentHomeMealSuggestionKeys);
   const navigate = useNavigate();
@@ -38,22 +39,27 @@ export function HomePage() {
     () => createHomeMealSuggestions(catalog, entrySeed, season),
     [catalog, entrySeed, season],
   );
+  // Băng chuyền lặp vô tận trên mọi tổ hợp mâm (mỗi món làm "neo" một mâm), mâm chưa xem đứng trước.
+  // Băng chuyền chỉ dựng vài thẻ đang hiện nên danh sách dài không tốn thêm khi render.
   const mealSuggestions = useMemo(
-    () => selectHomeMealSuggestions(mealCandidates, entrySeed, recentMealKeys, HOME_FEATURED_LIMIT),
+    () =>
+      selectHomeMealSuggestions(mealCandidates, entrySeed, recentMealKeys, mealCandidates.length),
     [entrySeed, mealCandidates, recentMealKeys],
   );
-  // Trang chủ chỉ giới thiệu một nhóm món nổi bật; xem toàn bộ ở Kho món.
+  // Toàn bộ kho món, xáo ngẫu nhiên mỗi lần vào trang; món hợp mùa hay đứng trước hơn.
   const featuredRecipes = useMemo(
     () =>
-      seededShuffle(catalog, `${entrySeed}:${user?.id ?? 'guest'}`, (recipe) => recipe.slug).slice(
-        0,
-        HOME_FEATURED_LIMIT,
+      weightedSeededShuffle(
+        catalog,
+        `${entrySeed}:${user?.id ?? 'guest'}`,
+        (recipe) => recipe.slug,
+        (recipe) => seasonalWeight(recipe, season),
       ),
-    [catalog, entrySeed, user?.id],
+    [catalog, entrySeed, season, user?.id],
   );
 
   useEffect(() => {
-    rememberHomeMealSuggestions(mealSuggestions);
+    rememberHomeMealSuggestions(mealSuggestions.slice(0, REMEMBERED_MEAL_COUNT));
   }, [mealSuggestions]);
 
   const submitSearch = (event: React.FormEvent) => {

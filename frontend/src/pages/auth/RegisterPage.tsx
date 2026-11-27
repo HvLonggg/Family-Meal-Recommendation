@@ -56,13 +56,8 @@ export function RegisterPage() {
   return (
     <div className="auth-page auth-page--register">
       <div className="auth-card__heading">
-        <span className="auth-kicker">{t('Bắt đầu miễn phí')}</span>
         <h1>{t('Tạo tài khoản của bạn')}</h1>
-        <p>
-          {t(
-            'Điền thông tin để tạo tài khoản. Sau đó bạn có thể đăng nhập và nhận email chào mừng từ Bếp Việt.',
-          )}
-        </p>
+        <p>{t('Miễn phí, chỉ mất một phút.')}</p>
       </div>
       {message ? <AuthAlert tone="danger">{message}</AuthAlert> : null}
 

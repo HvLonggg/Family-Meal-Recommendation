@@ -95,6 +95,16 @@ export function selectHomeMealSuggestions(
     if (selected.length === count) return selected;
   }
 
+  // Hết mâm không trùng món: lấy tiếp các mâm chưa xem còn lại (có thể chung một món),
+  // để băng chuyền trang chủ chạy được trên toàn bộ tổ hợp trước khi quay lại mâm đã xem.
+  for (const meal of shuffled) {
+    const key = getHomeMealSuggestionKey(meal);
+    if (selectedKeys.has(key)) continue;
+    selected.push(meal);
+    selectedKeys.add(key);
+    if (selected.length === count) return selected;
+  }
+
   const previouslyShown = seededShuffle(
     candidates.filter((meal) => recent.has(getHomeMealSuggestionKey(meal))),
     `${seed}:recent-fallback`,
@@ -130,8 +140,8 @@ function preferRegion(candidates: Recipe[], region: Recipe['region']) {
  * Trọng số mùa của cả mâm: trung bình nhân các món, nhưng không vượt món kém hợp mùa nhất,
  * để chỉ một món trái mùa cũng khiến cả mâm hiếm xuất hiện.
  */
-function mealSeasonWeight(mealRecipes: Recipe[], season: Season) {
-  const weights = mealRecipes.map((recipe) => seasonalWeight(recipe, season));
+function mealSeasonWeight(mealRecipes: Recipe[], weightOf: (recipe: Recipe) => number) {
+  const weights = mealRecipes.map(weightOf);
   const geometricMean = Math.exp(
     weights.reduce((sum, weight) => sum + Math.log(weight), 0) / weights.length,
   );
@@ -149,22 +159,30 @@ export function createHomeMealSuggestions(
 ): HomeMealSuggestion[] {
   if (!catalog.length) return [];
 
+  // Trọng số mùa (dò từ khóa trên tên món) cũng chỉ tính một lần cho mỗi món.
+  const weights = new Map<string, number>();
+  const weightOf = (recipe: Recipe) => {
+    let weight = weights.get(recipe.slug);
+    if (weight === undefined) {
+      weight = season ? seasonalWeight(recipe, season) : 1;
+      weights.set(recipe.slug, weight);
+    }
+    return weight;
+  };
   const shuffle = (items: Recipe[], key: string) =>
     season
-      ? weightedSeededShuffle(
-          items,
-          key,
-          (recipe) => recipe.slug,
-          (recipe) => seasonalWeight(recipe, season),
-        )
+      ? weightedSeededShuffle(items, key, (recipe) => recipe.slug, weightOf)
       : seededShuffle(items, key, (recipe) => recipe.slug);
 
-  const mealCatalog = catalog.filter((recipe) => getMealRole(recipe) !== 'other');
+  // Phân loại món mỗi món một lần (getMealRole khá tốn khi chạy trên cả kho ~800 món).
+  const roles = new Map(catalog.map((recipe) => [recipe.slug, getMealRole(recipe)]));
+  const roleOf = (recipe: Recipe) => roles.get(recipe.slug) ?? getMealRole(recipe);
+  const mealCatalog = catalog.filter((recipe) => roleOf(recipe) !== 'other');
   const anchors = shuffle(mealCatalog, seed);
 
-  const mains = catalog.filter((recipe) => getMealRole(recipe) === 'main');
-  const soups = catalog.filter((recipe) => getMealRole(recipe) === 'soup');
-  const vegetables = catalog.filter((recipe) => getMealRole(recipe) === 'vegetable');
+  const mains = catalog.filter((recipe) => roleOf(recipe) === 'main');
+  const soups = catalog.filter((recipe) => roleOf(recipe) === 'soup');
+  const vegetables = catalog.filter((recipe) => roleOf(recipe) === 'vegetable');
   const vegetarianMains = mains.filter(hasVegetarianMealLabel);
   const vegetarianSoups = soups.filter(hasVegetarianMealLabel);
   const vegetarianVegetables = vegetables.filter(hasVegetarianMealLabel);
@@ -180,7 +198,7 @@ export function createHomeMealSuggestions(
 
   return anchors.flatMap((anchor, index) => {
     const selected = new Set<string>([anchor.slug]);
-    const anchorRole = getMealRole(anchor);
+    const anchorRole = roleOf(anchor);
     const isMain = anchorRole === 'main';
     const isSoup = anchorRole === 'soup';
     const isVegetable = anchorRole === 'vegetable';
@@ -212,19 +230,24 @@ export function createHomeMealSuggestions(
     seenCombinations.add(combinationKey);
 
     const time = Math.max(...mealRecipes.map(recipeMinutes));
+    let description: string | undefined;
     // Tên mâm theo món chính, kể cả khi mâm được ghép quanh món canh hoặc món rau.
     const mainName = mealRecipes[0]!.name;
     return [
       {
         id: `goi-y-${anchor.slug}`,
         title: `Mâm cơm cùng ${mainName}`,
-        description: describeMealComposition(mealRecipes),
+        // Mô tả chỉ tính khi cần đọc: trang chủ tạo hàng trăm mâm nhưng chỉ hiện vài thẻ.
+        get description() {
+          description ??= describeMealComposition(mealRecipes);
+          return description;
+        },
         time: `${time} phút`,
         minutes: time,
         anchorName: mainName,
         servings: anchor.servings,
         recipeSlugs: mealRecipes.map((recipe) => recipe.slug),
-        ...(season ? { seasonWeight: mealSeasonWeight(mealRecipes, season) } : {}),
+        ...(season ? { seasonWeight: mealSeasonWeight(mealRecipes, weightOf) } : {}),
       },
     ];
   });

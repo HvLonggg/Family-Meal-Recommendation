@@ -1494,7 +1494,8 @@ html[data-reduce-motion='true'] .hero-dish__steam {
   height: 44px;
   flex: none;
   border: 2px solid rgb(255 248 241 / 70%);
-  border-radius: 50%;
+  /* Bo góc vừa phải thay vì hình tròn để chữ "BẾP VIỆT" ở đáy logo không bị cắt. */
+  border-radius: 12px;
   object-fit: contain;
   background: #fff8f1;
 }

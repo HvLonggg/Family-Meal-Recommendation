@@ -160,11 +160,22 @@
   }
 }
 
-/* Điện thoại/máy tính bảng: bỏ dải mờ trắng hai mép băng chuyền "Hôm nay nấu gì?" và "Mâm cơm gợi ý". */
+/* Điện thoại/máy tính bảng: bỏ dải mờ trắng hai mép băng chuyền "Hôm nay nấu gì?" và "Mâm cơm gợi ý".
+ * Ngoài lớp ::before/::after, "mép trắng" thật sự là khung nhìn bị cắt (overflow: hidden) cách mép màn hình
+ * 50px: thẻ trượt tới đó thì biến mất vào dải nền trống hai bên. Trên điện thoại cho thẻ trượt hết ra
+ * mép màn hình (cắt ở cả băng chuyền), thẻ kế tiếp ló nhẹ bên phải để gợi ý vuốt. */
 @media (max-width: 760px) {
   .showcase-carousel--bleed .showcase-carousel__viewport::before,
   .showcase-carousel--bleed .showcase-carousel__viewport::after {
     content: none;
+  }
+
+  .showcase-carousel--bleed {
+    overflow-x: clip;
+  }
+
+  .showcase-carousel--bleed .showcase-carousel__viewport {
+    overflow: visible;
   }
 }
 

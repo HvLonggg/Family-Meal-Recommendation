@@ -218,3 +218,15 @@
     transition: none;
   }
 }
+
+/* Nhãn ngắn "Tải app" dùng chung cho mọi kiểu nút. */
+.install-app-button__label {
+  font-size: 15px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.install-app-button--footer .install-app-button__label {
+  color: #fff8ef;
+  font-size: 14px;
+}

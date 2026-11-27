@@ -437,7 +437,11 @@ export function PublicLayout() {
 
       <AssistantWidget />
 
-      <footer className="site-footer">
+      {/* Điện thoại chỉ hiện chân trang ở trang chủ: lớp --secondary được ẩn bằng CSS ≤760px,
+          máy tính vẫn giữ chân trang ở mọi trang. */}
+      <footer
+        className={`site-footer${location.pathname === '/' ? '' : ' site-footer--secondary'}`}
+      >
         <div className="container footer-main">
           <div className="footer-brand">
             <Link

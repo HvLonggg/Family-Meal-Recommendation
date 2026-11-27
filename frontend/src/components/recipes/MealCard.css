@@ -305,6 +305,70 @@
   }
 }
 
+.meal-card--home .meal-card__dishes {
+  display: none;
+}
+
+/* Điện thoại: thẻ mâm cơm gọn — mâm nhỏ hơn, tên món dạng chip, bỏ mô tả dài và hàng chọn món. */
+@media (max-width: 760px) {
+  .showcase-carousel__item .meal-card--home .meal-card__platter {
+    padding: 10px 10px 6px;
+  }
+
+  .showcase-carousel__item .meal-card--home .meal-platter {
+    width: min(100%, 196px);
+  }
+
+  .showcase-carousel__item .meal-card--home .meal-card__platter-caption,
+  .showcase-carousel__item .meal-card--home .recipe-card__meta,
+  .showcase-carousel__item .meal-card--home .meal-card__summary {
+    display: none;
+  }
+
+  .showcase-carousel__item .meal-card--home .meal-card__body {
+    gap: 10px;
+    padding: 12px 14px 14px;
+  }
+
+  .showcase-carousel__item .meal-card--home .meal-card__body > h3 {
+    display: -webkit-box;
+    min-height: 0;
+    overflow: hidden;
+    font-size: 1.05rem;
+    line-height: 1.3;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .meal-card--home .meal-card__dishes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .meal-card.meal-card--home .meal-card__dishes li {
+    max-width: 100%;
+    overflow: hidden;
+    border: 1px solid #efdfcf;
+    border-radius: 999px;
+    padding: 3px 9px;
+    color: #6a4a3c;
+    background: #fff6ee;
+    font-size: 12px;
+    font-weight: 650;
+    line-height: 1.4;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .showcase-carousel__item .meal-card--home .meal-card__body > .button {
+    min-height: 44px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .showcase-carousel__item .meal-card--home,
   .showcase-carousel__item .meal-card--home .meal-platter__dish,

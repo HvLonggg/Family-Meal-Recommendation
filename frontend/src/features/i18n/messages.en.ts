@@ -2430,6 +2430,7 @@ export const en: Record<string, string> = {
   'Chọn "Cài đặt".': 'Choose "Install".',
   'Đã hiểu': 'Got it',
   'Tải app': 'Get app',
+  'Tải app Bếp Việt về màn hình thiết bị': 'Install the Bep Viet app on your device',
   'Đăng nhập để tiếp tục': 'Sign in to continue',
   'Để sau, tiếp tục xem': 'Later, keep browsing',
   'Kế hoạch nấu ăn của bạn': 'Your cooking plan',
@@ -2437,4 +2438,7 @@ export const en: Record<string, string> = {
     'Feel free to explore the calendar. Sign in to save your plan, mark meals as eaten and sync across devices.',
   'Mâm vừa quay vẫn được giữ nguyên. Đăng nhập để lưu mâm cơm vào tài khoản và xem lại trên mọi thiết bị.':
     'Your spun tray stays as it is. Sign in to save it to your account and see it on every device.',
+  'Chào mừng bạn quay lại.': 'Welcome back.',
+  'Ghi nhớ đăng nhập': 'Keep me signed in',
+  'Miễn phí, chỉ mất một phút.': 'Free, and it only takes a minute.',
 };

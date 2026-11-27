@@ -44,7 +44,7 @@ describe('InstallAppButton', () => {
     act(() => resetInstallStateForTest({ deferred: event as never }));
     render(<InstallAppButton />);
 
-    fireEvent.click(screen.getByRole('button', { name: /Tải ứng dụng Bếp Việt/ }));
+    fireEvent.click(screen.getByRole('button', { name: /Tải app/ }));
 
     await waitFor(() => expect(prompt).toHaveBeenCalledTimes(1));
     expect(getInstallState().installed).toBe(true);
@@ -57,7 +57,7 @@ describe('InstallAppButton', () => {
     stubUserAgent(IPHONE);
     render(<InstallAppButton />);
 
-    fireEvent.click(screen.getByRole('button', { name: /Tải ứng dụng Bếp Việt/ }));
+    fireEvent.click(screen.getByRole('button', { name: /Tải app/ }));
 
     const dialog = screen.getByRole('dialog', { name: 'Cài trên iPhone / iPad' });
     expect(dialog.textContent).toContain('Thêm vào MH chính');
@@ -69,7 +69,7 @@ describe('InstallAppButton', () => {
     stubUserAgent(ANDROID);
     render(<InstallAppButton />);
 
-    fireEvent.click(screen.getByRole('button', { name: /Tải ứng dụng Bếp Việt/ }));
+    fireEvent.click(screen.getByRole('button', { name: /Tải app/ }));
 
     expect(screen.getByRole('dialog', { name: 'Cài trên Android' }).textContent).toContain(
       'Cài đặt ứng dụng',

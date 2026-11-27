@@ -18,10 +18,10 @@
 }
 
 .login-required__logo {
+  /* Hiện trọn logo, kể cả chữ "BẾP VIỆT" ở đáy (không cắt tròn). */
   width: 72px;
   height: 72px;
-  border-radius: 50%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .login-required h2 {

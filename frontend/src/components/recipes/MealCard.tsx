@@ -105,6 +105,12 @@ export function MealCard({ meal, eager = false }: { meal: Meal; eager?: boolean 
           </span>
         </div>
         <h3>{meal.anchorName ? t('Mâm cơm cùng {name}', { name: anchor.name }) : t(meal.title)}</h3>
+        {/* Bản điện thoại: tên các món dạng chip gọn thay cho đoạn mô tả dài (ẩn trên máy tính). */}
+        <ul className="meal-card__dishes">
+          {platterItems.map((recipe) => (
+            <li key={recipe.slug}>{recipe.name}</li>
+          ))}
+        </ul>
         <div className="meal-card__summary">
           <span className="meal-card__summary-label">{t('Gợi ý phối vị')}</span>
           <p>{description}</p>

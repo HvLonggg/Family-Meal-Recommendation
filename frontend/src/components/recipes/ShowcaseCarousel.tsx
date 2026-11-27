@@ -344,8 +344,9 @@ function LoadedShowcaseCarousel<Item>({
         }
       }}
     >
-      <div aria-live={announce ? 'polite' : 'off'} className="showcase-carousel__status">
-        {label} {shownStart}–{shownEnd} / {items.length}
+      {/* Không hiện bộ đếm vị trí; chỉ trình đọc màn hình nghe vị trí khi người dùng tự chuyển thẻ. */}
+      <div aria-live="polite" className="visually-hidden">
+        {announce ? `${label} ${shownStart}–${shownEnd} / ${items.length}` : ''}
       </div>
       <div className="showcase-carousel__stage">
         <button
@@ -360,6 +361,7 @@ function LoadedShowcaseCarousel<Item>({
         <div className="showcase-carousel__viewport" ref={viewportRef}>
           <div
             className="showcase-carousel__track"
+            data-position={shownStart}
             data-visible-count={visibleCount}
             ref={trackRef}
             style={{ transform: `translate3d(-${trackOffset}px, 0, 0)` }}

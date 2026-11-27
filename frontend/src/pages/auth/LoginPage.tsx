@@ -115,7 +115,6 @@ export function LoginPage() {
       <div className="auth-card__heading">
         {isGuestRedirect ? (
           <>
-            <span className="auth-kicker">{t('Chào mừng bạn đến với Bếp Việt')}</span>
             <h1>{t('Đăng nhập hoặc tạo tài khoản')}</h1>
             <p>
               {t('Mới đến Bếp Việt?')}{' '}
@@ -126,9 +125,8 @@ export function LoginPage() {
           </>
         ) : (
           <>
-            <span className="auth-kicker">{t('Chào mừng trở lại')}</span>
             <h1>{t('Đăng nhập Bếp Việt')}</h1>
-            <p>{t('Tiếp tục hành trình chuẩn bị những bữa cơm thật nhẹ nhàng.')}</p>
+            <p>{t('Chào mừng bạn quay lại.')}</p>
           </>
         )}
       </div>
@@ -161,11 +159,10 @@ export function LoginPage() {
         <div className="auth-form__between">
           <label className="auth-checkbox">
             <input type="checkbox" {...register('rememberMe')} />
-            <span>{t('Ghi nhớ thiết bị này')}</span>
+            <span>{t('Ghi nhớ đăng nhập')}</span>
           </label>
           <Link to="/forgot-password">{t('Quên mật khẩu?')}</Link>
         </div>
-        <p className="auth-field__hint">{t('Giữ đăng nhập và nhớ email trên thiết bị này.')}</p>
         <Button className="auth-submit" isLoading={isSubmitting} type="submit">
           {t('Đăng nhập')}
         </Button>

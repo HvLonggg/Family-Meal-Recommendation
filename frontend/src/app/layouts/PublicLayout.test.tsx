@@ -83,6 +83,14 @@ describe('PublicLayout header', () => {
     expect(scroll).toHaveBeenCalledWith({ top: 0, left: 0, behavior: 'auto' });
   });
 
+  it('marks the footer as secondary outside the home page so phones can hide it', () => {
+    renderLayout('/');
+    expect(screen.getByRole('contentinfo')).not.toHaveClass('site-footer--secondary');
+    cleanup();
+    renderLayout('/planner');
+    expect(screen.getByRole('contentinfo')).toHaveClass('site-footer', 'site-footer--secondary');
+  });
+
   it('uses the official Bếp Việt logo image in shared brand placements', () => {
     renderLayout();
     const logos = screen.getAllByRole('img', { name: 'Bếp Việt' });

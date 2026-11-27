@@ -77,7 +77,7 @@ export function InstallAppButton({ className = '', variant = 'card' }: InstallAp
   return (
     <>
       <button
-        aria-label={variant === 'compact' ? t('Tải ứng dụng Bếp Việt') : undefined}
+        aria-label={t('Tải app Bếp Việt về màn hình thiết bị')}
         className={`install-app-button install-app-button--${variant} ${className}`.trim()}
         onClick={() => void handleClick()}
         type="button"
@@ -85,16 +85,7 @@ export function InstallAppButton({ className = '', variant = 'card' }: InstallAp
         <span aria-hidden="true" className="install-app-button__icon">
           <AppIcon name="download" size={18} />
         </span>
-        {variant === 'compact' ? (
-          <span aria-hidden="true" className="install-app-button__label">
-            {t('Tải app')}
-          </span>
-        ) : (
-          <span className="install-app-button__text">
-            <strong>{t('Tải ứng dụng Bếp Việt')}</strong>
-            <small>{t('Mở nhanh từ màn hình chính, dùng như app')}</small>
-          </span>
-        )}
+        <span className="install-app-button__label">{t('Tải app')}</span>
       </button>
       {guide ? <InstallGuide onClose={() => setGuide(null)} platform={guide} /> : null}
     </>

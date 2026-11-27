@@ -25,6 +25,12 @@ function renderCarousel(bleed = false) {
   );
 }
 
+// Vị trí thẻ đầu tiên đang hiện (bắt đầu từ 1), không còn bộ đếm hiển thị trên giao diện.
+function expectPosition(position: number) {
+  const track = document.querySelector<HTMLElement>('.showcase-carousel__track');
+  expect(track?.dataset.position).toBe(String(position));
+}
+
 // Khớp HOVER_PAUSE_DELAY trong ShowcaseCarousel.
 const HOVER_PAUSE_DELAY = 3000;
 
@@ -74,9 +80,31 @@ describe('showcase carousel', () => {
     expect(document.querySelector('.showcase-carousel--bleed')).toBeInTheDocument();
   });
 
+  it('renders only the visible cards plus two buffers for a whole-catalog loop', () => {
+    const catalog = Array.from({ length: 800 }, (_, index) => ({
+      id: `dish-${index + 1}`,
+      name: `Món ${index + 1}`,
+    }));
+    const { container } = render(
+      <ShowcaseCarousel
+        getKey={(item) => item.id}
+        items={catalog}
+        label="Món ăn"
+        renderItem={(item) => <h3>{item.name}</h3>}
+      />,
+    );
+    expect(container.querySelectorAll('.showcase-carousel__item')).toHaveLength(5);
+    fireEvent.click(screen.getByRole('button', { name: 'Món ăn trước' }));
+    advanceFrames(950);
+    // Vòng lặp vô tận: lùi từ thẻ đầu tiên là tới thẻ cuối kho.
+    expectPosition(800);
+    expect(screen.getByRole('heading', { name: 'Món 800' })).toBeInTheDocument();
+    expect(container.querySelectorAll('.showcase-carousel__item')).toHaveLength(5);
+  });
+
   it('keeps three cards visible and moves one card smoothly when an arrow is clicked', () => {
     renderCarousel();
-    expect(screen.getByText('Món ăn 1–3 / 7')).toBeInTheDocument();
+    expectPosition(1);
     expect(screen.getByRole('heading', { name: 'Món 1' })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: 'Món 3' })).toBeInTheDocument();
     expect(document.querySelector('.showcase-carousel__arrow--previous')).toBeInTheDocument();
@@ -86,13 +114,13 @@ describe('showcase carousel', () => {
     advanceFrames(300);
     const track = document.querySelector<HTMLElement>('.showcase-carousel__track');
     expect(track?.style.transform).not.toBe('translate3d(0, 0, 0)');
-    expect(screen.getByText('Món ăn 1–3 / 7')).toBeInTheDocument();
+    expectPosition(1);
     advanceFrames(650);
-    expect(screen.getByText('Món ăn 2–4 / 7')).toBeInTheDocument();
+    expectPosition(2);
 
     fireEvent.click(screen.getByRole('button', { name: 'Món ăn trước' }));
     advanceFrames(950);
-    expect(screen.getByText('Món ăn 1–3 / 7')).toBeInTheDocument();
+    expectPosition(1);
   });
 
   it('slides the previous item in from the left with the same eased motion', () => {
@@ -104,7 +132,7 @@ describe('showcase carousel', () => {
     advanceFrames(300);
     expect(track?.style.transform).toMatch(/translate3d\(-\d+(\.\d+)?px, 0, 0\)/);
     advanceFrames(650);
-    expect(screen.getByText('Món ăn 7–2 / 7')).toBeInTheDocument();
+    expectPosition(7);
   });
 
   it('moves continuously at an even pace without waiting between dishes', () => {
@@ -116,13 +144,13 @@ describe('showcase carousel', () => {
     advanceFrames(2_000);
     const transformAfterTwoSeconds = track?.style.transform;
     expect(transformAfterTwoSeconds).toMatch(/translate3d\(-\d+(\.\d+)?px, 0, 0\)/);
-    expect(screen.getByText('Món ăn 1–3 / 7')).toBeInTheDocument();
+    expectPosition(1);
 
     advanceFrames(8_500);
-    expect(screen.getByText('Món ăn 2–4 / 7')).toBeInTheDocument();
+    expectPosition(2);
     expect(track?.style.transform).not.toBe('translate3d(0, 0, 0)');
     advanceFrames(10_500);
-    expect(screen.getByText('Món ăn 3–5 / 7')).toBeInTheDocument();
+    expectPosition(3);
   });
 
   it('runs only while visible, pauses offscreen and resumes on re-entry', () => {
@@ -144,24 +172,24 @@ describe('showcase carousel', () => {
     const track = document.querySelector<HTMLElement>('.showcase-carousel__track');
     const initialTransform = track?.style.transform;
     advanceFrames(12_000);
-    expect(screen.getByText('Món ăn 1–3 / 7')).toBeInTheDocument();
+    expectPosition(1);
     expect(track?.style.transform).toBe(initialTransform);
 
     act(() => intersections[0]?.([{ isIntersecting: true }]));
     const carousel = screen.getByRole('region', { name: 'Món ăn' });
     fireEvent.mouseEnter(carousel);
     advanceFrames(11_000);
-    expect(screen.getByText('Món ăn 2–4 / 7')).toBeInTheDocument();
+    expectPosition(2);
     const visibleTransform = track?.style.transform;
 
     act(() => intersections[0]?.([{ isIntersecting: false }]));
     advanceFrames(20_000);
-    expect(screen.getByText('Món ăn 2–4 / 7')).toBeInTheDocument();
+    expectPosition(2);
     expect(track?.style.transform).toBe(visibleTransform);
 
     act(() => intersections[0]?.([{ isIntersecting: true }]));
     advanceFrames(11_000);
-    expect(screen.getByText('Món ăn 3–5 / 7')).toBeInTheDocument();
+    expectPosition(3);
     expect(track?.style.transform).not.toBe(visibleTransform);
   });
 
@@ -175,10 +203,10 @@ describe('showcase carousel', () => {
     fireEvent.focus(next);
     advanceFrames(15_000);
     expect(track?.style.transform).toBe(transformBeforeFocus);
-    expect(screen.getByText('Món ăn 1–3 / 7')).toBeInTheDocument();
+    expectPosition(1);
     fireEvent.blur(next, { relatedTarget: document.body });
     advanceFrames(11_000);
-    expect(screen.getByText('Món ăn 2–4 / 7')).toBeInTheDocument();
+    expectPosition(2);
     expect(track?.style.transform).not.toBe(transformBeforeFocus);
   });
 
@@ -213,11 +241,11 @@ describe('showcase carousel', () => {
     const transformOnHover = track?.style.transform;
     advanceFrames(15_000);
     expect(track?.style.transform).toBe(transformOnHover);
-    expect(screen.getByText('Món ăn 1–3 / 7')).toBeInTheDocument();
+    expectPosition(1);
 
     fireEvent.pointerLeave(carousel, { pointerType: 'mouse' });
     advanceFrames(11_000);
-    expect(screen.getByText('Món ăn 2–4 / 7')).toBeInTheDocument();
+    expectPosition(2);
   });
 
   it('holds still while a finger touches the rail', () => {
@@ -229,19 +257,23 @@ describe('showcase carousel', () => {
     expect(track?.style.transform).toBe(transformOnTouch);
     fireEvent.pointerUp(carousel, { pointerType: 'touch', clientX: 120 });
     advanceFrames(11_000);
-    expect(screen.getByText('Món ăn 2–4 / 7')).toBeInTheDocument();
+    expectPosition(2);
   });
 
-  it('announces the position only after the user presses an arrow', () => {
-    renderCarousel();
-    const status = screen.getByText('Món ăn 1–3 / 7');
-    expect(status).toHaveAttribute('aria-live', 'off');
+  it('hides the position counter and announces it only after the user presses an arrow', () => {
+    const { container } = renderCarousel();
+    const status = container.querySelector('[aria-live]');
+    expect(status).toHaveClass('visually-hidden');
+    expect(status).toHaveAttribute('aria-live', 'polite');
+    expect(status).toBeEmptyDOMElement();
+    expect(screen.queryByText(/\/ 7/)).toBeNull();
     advanceFrames(11_000);
-    expect(screen.getByText('Món ăn 2–4 / 7')).toHaveAttribute('aria-live', 'off');
+    expectPosition(2);
+    expect(status).toBeEmptyDOMElement();
 
     fireEvent.click(screen.getByRole('button', { name: 'Món ăn tiếp' }));
     advanceFrames(950);
-    expect(screen.getByText('Món ăn 3–5 / 7')).toHaveAttribute('aria-live', 'polite');
+    expect(status).toHaveTextContent('Món ăn 3–5 / 7');
   });
 
   it('supports a touch swipe while allowing automatic motion to continue', () => {
@@ -249,9 +281,9 @@ describe('showcase carousel', () => {
     fireEvent.pointerDown(carousel, { pointerType: 'touch', clientX: 180 });
     fireEvent.pointerUp(carousel, { pointerType: 'touch', clientX: 105 });
     advanceFrames(950);
-    expect(screen.getByText('Món ăn 2–4 / 7')).toBeInTheDocument();
+    expectPosition(2);
     advanceFrames(10_500);
-    expect(screen.getByText('Món ăn 3–5 / 7')).toBeInTheDocument();
+    expectPosition(3);
   });
 
   it('lets the mouse drag cards to the next slide without opening the card underneath', () => {
@@ -264,7 +296,7 @@ describe('showcase carousel', () => {
     card.dispatchEvent(click);
     expect(click.defaultPrevented).toBe(true);
     advanceFrames(950);
-    expect(screen.getByText('Món ăn 2–4 / 7')).toBeInTheDocument();
+    expectPosition(2);
     expect(carousel).toHaveClass('is-draggable');
   });
 
@@ -276,8 +308,8 @@ describe('showcase carousel', () => {
     }));
     renderCarousel();
     advanceFrames(20_000);
-    expect(screen.getByText('Món ăn 1–3 / 7')).toBeInTheDocument();
+    expectPosition(1);
     fireEvent.click(screen.getByRole('button', { name: 'Món ăn tiếp' }));
-    expect(screen.getByText('Món ăn 2–4 / 7')).toBeInTheDocument();
+    expectPosition(2);
   });
 });
