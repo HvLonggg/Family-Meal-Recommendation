@@ -30,6 +30,8 @@ const CARD_GAP = 22;
 const AUTO_SPEED = 40;
 const MANUAL_DURATION = 900;
 const SWIPE_THRESHOLD = 55;
+// Rê chuột lướt qua thì băng chuyền vẫn chạy; giữ chuột yên trên thẻ khoảng 3 giây mới dừng lại để đọc.
+const HOVER_PAUSE_DELAY = 3000;
 // Kéo sang phải chưa có thẻ trước được dựng sẵn nên chỉ nhích nhẹ (cảm giác đàn hồi).
 const PREVIOUS_DRAG_RESISTANCE = 0.35;
 
@@ -62,7 +64,7 @@ function LoadedShowcaseCarousel<Item>({
     () => typeof window === 'undefined' || typeof IntersectionObserver === 'undefined',
   );
   const [pausedForFocus, setPausedForFocus] = useState(false);
-  // Dừng khi người dùng rê chuột hoặc đang chạm để thẻ đang đọc không trôi mất.
+  // Dừng khi người dùng giữ chuột trên băng chuyền (sau HOVER_PAUSE_DELAY) hoặc đang chạm.
   const [pausedForPointer, setPausedForPointer] = useState(false);
   // Chỉ thông báo vị trí cho trình đọc màn hình khi người dùng tự chuyển thẻ.
   const [announce, setAnnounce] = useState(false);
@@ -75,6 +77,8 @@ function LoadedShowcaseCarousel<Item>({
   const offsetRef = useRef(0);
   const stepRef = useRef(slideStep(initialWidth, visibleCardsForWidth(initialWidth)));
   const swipeStartXRef = useRef<number | null>(null);
+  const hoverTimerRef = useRef<number | undefined>(undefined);
+  useEffect(() => () => window.clearTimeout(hoverTimerRef.current), []);
   const dragBaseRef = useRef(0);
 
   const paintTrack = () => {
@@ -247,10 +251,17 @@ function LoadedShowcaseCarousel<Item>({
       className={`showcase-carousel${bleed ? ' showcase-carousel--bleed' : ''}`}
       ref={carouselRef}
       onPointerEnter={(event) => {
-        if (event.pointerType === 'mouse') setPausedForPointer(true);
+        if (event.pointerType !== 'mouse') return;
+        window.clearTimeout(hoverTimerRef.current);
+        hoverTimerRef.current = window.setTimeout(
+          () => setPausedForPointer(true),
+          HOVER_PAUSE_DELAY,
+        );
       }}
       onPointerLeave={(event) => {
-        if (event.pointerType === 'mouse') setPausedForPointer(false);
+        if (event.pointerType !== 'mouse') return;
+        window.clearTimeout(hoverTimerRef.current);
+        setPausedForPointer(false);
       }}
       onPointerDown={(event) => {
         setPausedForFocus(false);

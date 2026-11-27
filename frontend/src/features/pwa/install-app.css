@@ -1,0 +1,152 @@
+/* Nút "Tải ứng dụng" và hộp hướng dẫn cài theo hệ điều hành. */
+.install-app-button {
+  display: flex;
+  width: 100%;
+  min-height: 44px;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #f0d9c6;
+  border-radius: 16px;
+  padding: 10px 14px;
+  color: #2f241f;
+  background: linear-gradient(135deg, #fff8ef, #fdeee0);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 200ms ease,
+    background 200ms ease;
+}
+
+.install-app-button:hover {
+  border-color: #e3bfa1;
+}
+
+.install-app-button:focus-visible {
+  outline: 3px solid rgb(180 59 44 / 35%);
+  outline-offset: 2px;
+}
+
+.install-app-button__icon {
+  display: grid;
+  flex: none;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 12px;
+  color: white;
+  background: var(--color-primary, #b43b2c);
+}
+
+.install-app-button__text {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+
+.install-app-button__text strong {
+  font-size: 15px;
+}
+
+.install-app-button__text small {
+  color: #7a6a5f;
+  font-size: 12.5px;
+}
+
+/* Dạng liên kết ở chân trang. */
+.install-app-button--footer {
+  width: auto;
+  min-height: 40px;
+  border-color: rgb(255 255 255 / 18%);
+  padding: 6px 12px 6px 6px;
+  color: inherit;
+  background: rgb(255 255 255 / 8%);
+}
+
+.install-app-button--footer .install-app-button__icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+}
+
+.install-app-button--footer .install-app-button__text strong {
+  font-size: 14px;
+}
+
+.install-guide {
+  width: min(420px, calc(100vw - 32px));
+  border-radius: 22px;
+  padding: 22px 20px 20px;
+}
+
+.install-guide__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.install-guide__head img {
+  border-radius: 12px;
+}
+
+.install-guide__head h2 {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.3;
+}
+
+.install-guide__steps {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  counter-reset: install-step;
+  list-style: none;
+}
+
+.install-guide__steps li {
+  position: relative;
+  padding-left: 36px;
+  color: #4a3b32;
+  font-size: 14.5px;
+  line-height: 1.5;
+  counter-increment: install-step;
+}
+
+.install-guide__steps li::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border-radius: 50%;
+  color: white;
+  background: var(--color-primary, #b43b2c);
+  font-size: 12.5px;
+  font-weight: 700;
+  content: counter(install-step);
+}
+
+.install-guide__note {
+  margin: 12px 0 0;
+  border-radius: 12px;
+  padding: 10px 12px;
+  color: #6b5a4f;
+  background: #fbf3ea;
+  font-size: 13px;
+}
+
+.install-guide__close {
+  width: 100%;
+  min-height: 44px;
+  margin-top: 18px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .install-app-button {
+    transition: none;
+  }
+}

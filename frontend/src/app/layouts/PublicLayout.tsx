@@ -21,6 +21,7 @@ import { contactInfo, phoneHref } from '@/config/contact';
 import { adminDestinationFor } from '@/features/admin/adminRouting';
 import { useAuth } from '@/features/auth/AuthContext';
 import { useI18n } from '@/features/i18n/I18nContext';
+import { InstallAppButton } from '@/features/pwa/InstallAppButton';
 import { useRouteDocumentMeta } from '@/features/seo/usePageMeta';
 
 interface MenuLink {
@@ -312,6 +313,7 @@ export function PublicLayout() {
 
             <div className="site-nav__actions">
               <LanguageSwitcher className="site-nav__language" />
+              {menuOpen ? <InstallAppButton className="site-nav__install" withHint /> : null}
               {isLoading ? (
                 <span aria-hidden="true" className="user-chip-skeleton" />
               ) : user && menuOpen ? (
@@ -491,6 +493,7 @@ export function PublicLayout() {
               <Link onClick={handleFooterNavigation} to="/submit-recipe">
                 {t('Đề xuất món mới')}
               </Link>
+              <InstallAppButton className="install-app-button--footer" />
               <nav aria-label={t('Văn bản pháp lý')} className="footer-legal">
                 <Link onClick={handleFooterNavigation} to="/terms">
                   {t('Điều khoản sử dụng')}

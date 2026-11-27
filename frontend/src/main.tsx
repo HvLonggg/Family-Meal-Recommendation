@@ -2,6 +2,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 
 import { App } from '@/app/App';
+import { startInstallCapture } from '@/features/pwa/installPrompt';
 import { updateInProgress } from '@/features/pwa/updateState';
 import { CatalogStatusNotice } from '@/components/recipes/CatalogGate';
 import { startRecipeCatalog } from '@/data/recipeApi';
@@ -42,6 +43,9 @@ const protectImage = (event: Event) => {
 };
 document.addEventListener('contextmenu', protectImage);
 document.addEventListener('dragstart', protectImage);
+
+// Bắt lời mời cài ứng dụng ngay từ đầu (trình duyệt có thể phát trước khi React dựng xong).
+startInstallCapture();
 
 const rootElement = document.getElementById('root');
 

@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { useI18n } from '@/features/i18n/I18nContext';
+import { promptInstall, useInstallState } from '@/features/pwa/installPrompt';
 import {
-  type BeforeInstallPromptEvent,
   activateUpdate,
   installDismissedRecently,
   isIosSafari,
@@ -60,6 +60,7 @@ type PendingUpdate = { worker: ServiceWorker | null };
 const VERSION_CHECK_MS = 15 * 60_000;
 const UPDATE_SNOOZE_MS = 60 * 60_000;
 const INSTALL_DELAY_MS = 15_000;
+const RESULT_AUTO_CLOSE_MS = 3000;
 const UPDATE_SNOOZE_KEY = 'bep-viet.update-snoozed-until';
 
 // Trang xác thực, pháp lý, chế độ nấu và quản trị: không chen lời mời cài vào luồng chính.
@@ -121,14 +122,30 @@ export function PwaPrompts() {
     checkedResult.current = true;
     setResult(finishUpdate(__APP_BUILD__));
   }, []);
+  // Báo cập nhật thành công chỉ hiện thoáng qua: tự đóng sau 3 giây nếu người dùng không bấm Đóng.
+  useEffect(() => {
+    if (result !== 'success') return undefined;
+    const timer = window.setTimeout(() => setResult(null), RESULT_AUTO_CLOSE_MS);
+    return () => window.clearTimeout(timer);
+  }, [result]);
   const registrationRef = useRef<ServiceWorkerRegistration | null>(null);
   const onWorkerUpdate = useCallback((worker: ServiceWorker) => {
     void newerBuildAvailable().then((available) => {
       if (available) setPending({ worker });
     });
   }, []);
-  const [deferred, setDeferred] = useState<BeforeInstallPromptEvent | null>(null);
-  const [installMode, setInstallMode] = useState<InstallMode>('none');
+  // Sự kiện cài đặt được bắt sớm ở main.tsx và dùng chung với nút "Tải ứng dụng".
+  const { deferred, installed } = useInstallState();
+  const [iosHint, setIosHint] = useState(false);
+  const [installClosed, setInstallClosed] = useState(false);
+  const installMode: InstallMode =
+    installed || installClosed || isStandalone() || installDismissedRecently()
+      ? 'none'
+      : deferred
+        ? 'android'
+        : iosHint
+          ? 'ios'
+          : 'none';
   // Chỉ mời cài sau khi người dùng đã xem trang một lúc, không chặn ngay lần đầu mở.
   const [installReady, setInstallReady] = useState(false);
   const currentPath = useCurrentPath(installMode !== 'none');
@@ -199,23 +216,13 @@ export function PwaPrompts() {
 
   useEffect(() => {
     if (isStandalone() || installDismissedRecently()) return undefined;
-    const onPrompt = (event: Event) => {
-      event.preventDefault();
-      setDeferred(event as BeforeInstallPromptEvent);
-      setInstallMode('android');
-    };
-    const onInstalled = () => setInstallMode('none');
-    window.addEventListener('beforeinstallprompt', onPrompt);
-    window.addEventListener('appinstalled', onInstalled);
     const readyTimer = window.setTimeout(() => setInstallReady(true), INSTALL_DELAY_MS);
     let iosTimer: number | undefined;
     if (isIosSafari(navigator.userAgent, navigator.maxTouchPoints)) {
       // Đợi người dùng xem trang một lúc rồi mới gợi ý.
-      iosTimer = window.setTimeout(() => setInstallMode('ios'), 20_000);
+      iosTimer = window.setTimeout(() => setIosHint(true), 20_000);
     }
     return () => {
-      window.removeEventListener('beforeinstallprompt', onPrompt);
-      window.removeEventListener('appinstalled', onInstalled);
       window.clearTimeout(iosTimer);
       window.clearTimeout(readyTimer);
     };
@@ -223,16 +230,13 @@ export function PwaPrompts() {
 
   const dismissInstall = () => {
     rememberInstallDismissed();
-    setInstallMode('none');
+    setInstallClosed(true);
   };
 
   const install = async () => {
-    if (!deferred) return;
-    await deferred.prompt();
-    const choice = await deferred.userChoice.catch(() => ({ outcome: 'dismissed' as const }));
-    if (choice.outcome === 'dismissed') rememberInstallDismissed();
-    setDeferred(null);
-    setInstallMode('none');
+    const outcome = await promptInstall();
+    if (outcome === 'dismissed') rememberInstallDismissed();
+    setInstallClosed(true);
   };
 
   if (updating) {
@@ -267,25 +271,36 @@ export function PwaPrompts() {
     );
   }
 
-  if (result)
+  if (result) {
+    const success = result === 'success';
     return (
-      <aside className="pwa-toast" role="status">
-        <div className="pwa-toast__body">
-          <p className="pwa-toast__title">
-            {result === 'success'
+      <div className="pwa-dialog-backdrop" onClick={() => setResult(null)}>
+        <div
+          aria-labelledby="pwa-result-title"
+          aria-modal="true"
+          className="pwa-dialog pwa-dialog--result"
+          onClick={(event) => event.stopPropagation()}
+          role={success ? 'dialog' : 'alertdialog'}
+        >
+          <img alt="" className="pwa-dialog__logo" src="/images/brand/bep-viet-logo.png" />
+          <h2 id="pwa-result-title">
+            {success
               ? language === 'en'
                 ? 'App updated successfully'
                 : 'Ứng dụng đã cập nhật'
               : language === 'en'
                 ? 'Update unsuccessful. Please try again.'
                 : 'Chưa cập nhật được. Vui lòng thử lại.'}
-          </p>
-          <button className="pwa-btn" type="button" onClick={() => setResult(null)}>
-            {text.close}
-          </button>
+          </h2>
+          <div className="pwa-dialog__actions">
+            <button autoFocus className="pwa-btn" onClick={() => setResult(null)} type="button">
+              {text.close}
+            </button>
+          </div>
         </div>
-      </aside>
+      </div>
     );
+  }
 
   if (pending && !hidden) {
     const cooking = window.location.pathname.startsWith('/cook');

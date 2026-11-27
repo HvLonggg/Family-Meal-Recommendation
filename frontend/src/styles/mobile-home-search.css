@@ -159,3 +159,25 @@
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* Điện thoại/máy tính bảng: bỏ dải mờ trắng hai mép băng chuyền "Hôm nay nấu gì?" và "Mâm cơm gợi ý". */
+@media (max-width: 760px) {
+  .showcase-carousel--bleed .showcase-carousel__viewport::before,
+  .showcase-carousel--bleed .showcase-carousel__viewport::after {
+    content: none;
+  }
+}
+
+/* Nút tim lưu món luôn nằm trên ảnh/liên kết của thẻ và có vùng chạm rộng,
+ * để chạm vào tim là lưu món chứ không mở trang chi tiết. */
+.recipe-card .recipe-card__save {
+  z-index: 4;
+  touch-action: manipulation;
+}
+
+.recipe-card .recipe-card__save::before {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  content: '';
+}

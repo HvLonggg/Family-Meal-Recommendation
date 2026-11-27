@@ -1,5 +1,5 @@
 import { StrictMode } from 'react';
-import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 import { PwaPrompts } from './PwaPrompts';
 import { beginUpdate } from './updateState';
@@ -84,4 +84,24 @@ it('shows completion once after reload, including StrictMode, without offering t
   await waitFor(() => expect(fetch).toHaveBeenCalled());
   expect(screen.queryByText('Ứng dụng đã cập nhật')).toBeNull();
   expect(screen.queryByText('Đã có phiên bản mới')).toBeNull();
+});
+
+it('shows the update success notice as a centered dialog that closes itself after 3 seconds', async () => {
+  vi.useFakeTimers({ shouldAdvanceTime: true });
+  try {
+    beginUpdate('previous-build');
+    vi.mocked(fetch).mockResolvedValue({
+      ok: true,
+      json: () => Promise.resolve({ build: __APP_BUILD__ }),
+    } as Response);
+    render(<PwaPrompts />);
+    expect(await screen.findByRole('dialog', { name: 'Ứng dụng đã cập nhật' })).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'Đóng' })).toBeTruthy();
+    act(() => {
+      vi.advanceTimersByTime(3000);
+    });
+    expect(screen.queryByText('Ứng dụng đã cập nhật')).toBeNull();
+  } finally {
+    vi.useRealTimers();
+  }
 });

@@ -25,6 +25,9 @@ function renderCarousel(bleed = false) {
   );
 }
 
+// Khớp HOVER_PAUSE_DELAY trong ShowcaseCarousel.
+const HOVER_PAUSE_DELAY = 3000;
+
 function advanceFrames(milliseconds: number) {
   const endTime = currentTime + milliseconds;
   while (currentTime < endTime) {
@@ -179,11 +182,34 @@ describe('showcase carousel', () => {
     expect(track?.style.transform).not.toBe(transformBeforeFocus);
   });
 
-  it('pauses while the mouse rests on the rail and resumes when it leaves', () => {
+  it('keeps moving while the mouse only passes over the rail', () => {
     const carousel = renderCarousel().getByRole('region', { name: 'Món ăn' });
     const track = document.querySelector<HTMLElement>('.showcase-carousel__track');
     advanceFrames(1_000);
     fireEvent.pointerEnter(carousel, { pointerType: 'mouse' });
+    const transformOnEnter = track?.style.transform;
+    act(() => {
+      vi.advanceTimersByTime(HOVER_PAUSE_DELAY - 500);
+    });
+    advanceFrames(1_000);
+    expect(track?.style.transform).not.toBe(transformOnEnter);
+    fireEvent.pointerLeave(carousel, { pointerType: 'mouse' });
+    act(() => {
+      vi.advanceTimersByTime(HOVER_PAUSE_DELAY);
+    });
+    const transformAfterLeave = track?.style.transform;
+    advanceFrames(1_000);
+    expect(track?.style.transform).not.toBe(transformAfterLeave);
+  });
+
+  it('pauses once the mouse rests on the rail for 3 seconds and resumes when it leaves', () => {
+    const carousel = renderCarousel().getByRole('region', { name: 'Món ăn' });
+    const track = document.querySelector<HTMLElement>('.showcase-carousel__track');
+    advanceFrames(1_000);
+    fireEvent.pointerEnter(carousel, { pointerType: 'mouse' });
+    act(() => {
+      vi.advanceTimersByTime(HOVER_PAUSE_DELAY);
+    });
     const transformOnHover = track?.style.transform;
     advanceFrames(15_000);
     expect(track?.style.transform).toBe(transformOnHover);

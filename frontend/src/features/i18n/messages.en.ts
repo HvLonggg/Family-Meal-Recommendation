@@ -2402,4 +2402,31 @@ export const en: Record<string, string> = {
   'Góc Bếp Việt': 'Bep Viet corner',
   'Đăng nhập để lưu món yêu thích và cài đặt riêng.':
     'Sign in to save favourites and personal settings.',
+  // ---------- Tải ứng dụng ----------
+  'Tải ứng dụng Bếp Việt': 'Get the Bep Viet app',
+  'Mở nhanh từ màn hình chính, dùng như app': 'Open it from your home screen like an app',
+  'Cài trên iPhone / iPad': 'Install on iPhone / iPad',
+  'Chạm nút Chia sẻ (ô vuông có mũi tên lên) ở thanh dưới của Safari.':
+    'Tap the Share button (square with an up arrow) in the Safari toolbar.',
+  'Kéo xuống và chọn "Thêm vào MH chính".': 'Scroll down and choose "Add to Home Screen".',
+  'Chạm "Thêm" ở góc trên bên phải. Biểu tượng Bếp Việt sẽ xuất hiện trên màn hình chính.':
+    'Tap "Add" in the top-right corner. The Bep Viet icon appears on your home screen.',
+  'Chạm nút Chia sẻ trên thanh địa chỉ của trình duyệt.':
+    "Tap the Share button in your browser's address bar.",
+  'Chọn "Thêm vào MH chính", rồi chạm "Thêm".': 'Choose "Add to Home Screen", then tap "Add".',
+  'Nếu không thấy mục này, hãy mở bepviet-vn.vercel.app bằng Safari rồi làm lại.':
+    "If you don't see it, open bepviet-vn.vercel.app in Safari and try again.",
+  'Cài trên Android': 'Install on Android',
+  'Chạm nút menu ⋮ ở góc trên bên phải của trình duyệt.':
+    'Tap the ⋮ menu button in the top-right corner of your browser.',
+  'Chọn "Cài đặt ứng dụng" hoặc "Thêm vào màn hình chính".':
+    'Choose "Install app" or "Add to Home screen".',
+  'Chạm "Cài đặt". Bếp Việt sẽ có trong danh sách ứng dụng của máy.':
+    'Tap "Install". Bep Viet will appear in your phone\'s app list.',
+  'Cài trên máy tính': 'Install on your computer',
+  'Mở bằng Chrome hoặc Edge.': 'Open the site in Chrome or Edge.',
+  'Bấm biểu tượng cài đặt (màn hình có mũi tên xuống) ở cuối thanh địa chỉ.':
+    'Click the install icon (a screen with a down arrow) at the end of the address bar.',
+  'Chọn "Cài đặt".': 'Choose "Install".',
+  'Đã hiểu': 'Got it',
 };
