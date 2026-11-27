@@ -5,6 +5,7 @@ import { MemoryRouter } from 'react-router';
 
 import { DEFAULT_PREFERENCES } from '@/features/account/preferences';
 import type { UserPreferences } from '@/features/auth/types';
+import { vietnamToday } from '@/lib/lunarCalendar';
 import { PlannerPage } from '@/pages/PlannerPage';
 
 const { authState, mockUser, updateUser } = vi.hoisted(() => ({
@@ -61,6 +62,27 @@ let savedMealPayloads: Array<Record<string, unknown>> = [];
 let vegetarianMarks = new Map<string, boolean>();
 let vegetarianPayloads: Array<{ day: string; is_vegetarian: boolean }> = [];
 let preferencePayloads: UserPreferences[] = [];
+let itemRequests: Array<{ id: string; method: string; body?: unknown }> = [];
+
+function planItem(id: string, slug: string, name: string, planDate: string, mealType = 'lunch') {
+  return {
+    id,
+    plan_date: planDate,
+    meal_type: mealType,
+    servings: 2,
+    completion_status: 'planned',
+    created_at: '2026-10-07T08:00:00Z',
+    updated_at: '2026-10-07T08:00:00Z',
+    recipe: {
+      slug,
+      name,
+      image_path: `/images/${slug}.jpg`,
+      image_alt: name,
+      base_servings: 4,
+      ingredients: [],
+    },
+  };
+}
 
 function jsonResponse(payload: unknown, status = 200) {
   return new Response(JSON.stringify(payload), {
@@ -89,6 +111,7 @@ beforeEach(() => {
   vegetarianMarks = new Map();
   vegetarianPayloads = [];
   preferencePayloads = [];
+  itemRequests = [];
   mockUser.preferences = undefined;
   authState.guest = false;
   vi.stubGlobal('fetch', (input: string | URL, init?: RequestInit) => {
@@ -146,6 +169,20 @@ beforeEach(() => {
       }));
       plannedItems = items;
       return Promise.resolve(jsonResponse({ items, already_planned: 0 }, 201));
+    }
+    const itemMatch = /\/planner\/items\/([^/]+)$/.exec(requestUrl.pathname);
+    if (itemMatch && (init?.method === 'PATCH' || init?.method === 'DELETE')) {
+      const id = decodeURIComponent(itemMatch[1]!);
+      const body = init.body ? (JSON.parse(init.body as string) as unknown) : undefined;
+      itemRequests.push({ id, method: init.method, body });
+      if (init.method === 'DELETE') {
+        plannedItems = plannedItems.filter((item) => item.id !== id);
+        return Promise.resolve(new Response(null, { status: 204 }));
+      }
+      const current = plannedItems.find((item) => item.id === id)!;
+      const updated = { ...current, ...(body as Record<string, unknown>) };
+      plannedItems = plannedItems.map((item) => (item.id === id ? updated : item));
+      return Promise.resolve(jsonResponse(updated));
     }
     if (requestUrl.pathname.endsWith('/planner/items')) {
       return Promise.resolve(jsonResponse(plannedItems));
@@ -250,30 +287,46 @@ describe('planner page', () => {
     expect(within(dialog).getAllByRole('button', { name: /^Chọn / })).toHaveLength(24);
     fireEvent.click(screen.getAllByRole('button', { name: /^Chọn / })[0]!);
     expect(screen.getByText(/Đã chọn 1 món/)).toBeInTheDocument();
+    // Nút lưu và số món đã chọn nằm ở thanh cố định ngoài vùng cuộn, không phải kéo hết danh sách.
+    const results = within(dialog).getByLabelText('Kết quả tìm món');
+    const saveBar = dialog.querySelector<HTMLElement>('.planner-add-dialog__bar')!;
+    expect(results.contains(saveBar)).toBe(false);
+    expect(within(saveBar).getByRole('button', { name: 'Lưu bữa ăn' })).toBeEnabled();
+    expect(saveBar).toHaveTextContent('Đã chọn 1 món');
     fireEvent.click(screen.getAllByRole('button', { name: /^Chọn / })[10]!);
     expect(screen.getByText(/Đã chọn 2 món/)).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Lưu bữa ăn' }));
     expect(await screen.findByText('Đã lưu bữa ăn!')).toBeInTheDocument();
     expect(savedMealPayloads).toHaveLength(1);
     expect(savedMealPayloads[0]?.recipe_slugs).toHaveLength(2);
-    expect(
-      await screen.findAllByRole('link', { name: 'Xem chi tiết Sườn xào chua ngọt' }),
-    ).toHaveLength(2);
+    // Ô lưới chỉ hiện ảnh nhỏ + tên; thao tác từng món nằm trong bảng chi tiết bữa.
+    const slotDishes = await screen.findAllByRole('button', {
+      name: /^Mở bữa trưa .*: Sườn xào chua ngọt$/,
+    });
+    expect(slotDishes).toHaveLength(2);
+    expect(screen.queryByRole('button', { name: /^Đánh dấu đã nấu / })).toBeNull();
     // Dữ liệu giả dùng ảnh món mặc định.
-    expect(document.querySelector('.planner-dish__link img')).toHaveAttribute(
+    expect(document.querySelector('.planner-dish__open img')).toHaveAttribute(
       'src',
       '/images/suon-xao.jpg',
     );
-    expect(document.querySelector('.planner-dish__link img')).toHaveClass('dish-cutout');
+    expect(document.querySelector('.planner-dish__open img')).toHaveClass('dish-cutout');
     // Ô vừa lưu được làm nổi để người dùng thấy ngay món vừa thêm.
     const savedSlot = `${String(savedMealPayloads[0]?.plan_date)}:${String(savedMealPayloads[0]?.meal_type)}`;
     await waitFor(() =>
       expect(document.querySelector(`[data-slot="${savedSlot}"]`)).toHaveClass('is-highlighted'),
     );
+    fireEvent.click(slotDishes[0]!);
+    const panel = screen.getByRole('dialog', { name: 'Bữa trưa' });
+    expect(
+      within(panel).getAllByRole('link', { name: 'Xem chi tiết Sườn xào chua ngọt' }),
+    ).toHaveLength(2);
     // Nhãn là hành động rõ nghĩa, không phải "✓ Chưa nấu".
-    expect(screen.getAllByRole('button', { name: /^Đánh dấu đã nấu / })[0]).toHaveTextContent(
-      'Đánh dấu đã nấu',
-    );
+    expect(
+      within(panel).getAllByRole('button', { name: /^Đánh dấu đã nấu / })[0],
+    ).toHaveTextContent('Đánh dấu đã nấu');
+    fireEvent.click(within(panel).getByRole('button', { name: 'Đóng chi tiết bữa ăn' }));
+    expect(screen.queryByRole('dialog', { name: 'Bữa trưa' })).toBeNull();
 
     const shoppingButtons = screen.getAllByRole('button', { name: 'Danh sách mua sắm' });
     expect(shoppingButtons).toHaveLength(2);
@@ -297,6 +350,67 @@ describe('planner page', () => {
     expect(screen.getByText('1 khúc 40 cm')).toBeInTheDocument();
     expect(screen.getByText('0,5 quả')).toBeInTheDocument();
     expect(dialog).not.toBeInTheDocument();
+  });
+
+  it('keeps the week grid compact and manages each dish from the meal detail panel', async () => {
+    const today = vietnamToday();
+    plannedItems = [
+      planItem('item-1', 'canh-chua', 'Canh chua cá', today),
+      planItem('item-2', 'rau-muong', 'Rau muống xào tỏi', today),
+    ];
+    renderPlanner();
+
+    const slotDish = await screen.findByRole('button', { name: /^Mở bữa trưa .*: Canh chua cá$/ });
+    const slot = slotDish.closest<HTMLElement>('[data-slot]')!;
+    expect(slot).toHaveAttribute('data-slot', `${today}:lunch`);
+    expect(within(slot).getByText('2 món')).toBeInTheDocument();
+    // Lưới không còn nút xóa / khẩu phần chen vào tên món.
+    expect(screen.queryByRole('button', { name: /^Xóa .* khỏi kế hoạch$/ })).toBeNull();
+    expect(screen.queryByRole('button', { name: /^Tăng khẩu phần / })).toBeNull();
+
+    fireEvent.click(slotDish);
+    const panel = screen.getByRole('dialog', { name: 'Bữa trưa' });
+    expect(within(panel).getByText('2 món · 4 khẩu phần')).toBeInTheDocument();
+    expect(within(panel).getByRole('button', { name: 'Đóng chi tiết bữa ăn' })).toHaveFocus();
+    expect(within(panel).getByRole('link', { name: 'Vào bếp nấu Canh chua cá' })).toHaveAttribute(
+      'href',
+      expect.stringContaining('canh-chua'),
+    );
+    expect(within(panel).getByRole('link', { name: /Vào bếp cả bữa/ })).toBeInTheDocument();
+
+    fireEvent.click(within(panel).getByRole('button', { name: 'Tăng khẩu phần Canh chua cá' }));
+    await waitFor(() =>
+      expect(itemRequests).toContainEqual({ id: 'item-1', method: 'PATCH', body: { servings: 3 } }),
+    );
+    expect(await within(panel).findByText('3 người')).toBeInTheDocument();
+
+    fireEvent.click(
+      within(panel).getByRole('button', { name: 'Xóa Rau muống xào tỏi khỏi kế hoạch' }),
+    );
+    // Hoàn tác hiện ngay trong bảng, không bị che phía sau hộp thoại.
+    expect(
+      await within(panel).findByText('Đã xóa Rau muống xào tỏi khỏi kế hoạch.'),
+    ).toBeInTheDocument();
+    await waitFor(() =>
+      expect(
+        within(panel).queryByRole('link', { name: 'Xem chi tiết Rau muống xào tỏi' }),
+      ).toBeNull(),
+    );
+
+    // "Thêm món" chuyển sang hộp thoại chọn món đúng ngày và bữa đang xem.
+    fireEvent.click(within(panel).getByRole('button', { name: 'Thêm món' }));
+    expect(screen.queryByRole('dialog', { name: 'Bữa trưa' })).toBeNull();
+    const addDialog = screen.getByRole('dialog', { name: 'Chọn món cho bữa ăn' });
+    expect(within(addDialog).getByDisplayValue(today)).toBeInTheDocument();
+    expect(within(addDialog).getByRole('combobox')).toHaveValue('lunch');
+    fireEvent.keyDown(addDialog, { key: 'Escape' });
+
+    // Esc đóng bảng và trả tiêu điểm về món đã bấm.
+    const remaining = screen.getByRole('button', { name: /^Mở bữa trưa .*: Canh chua cá$/ });
+    fireEvent.click(remaining);
+    fireEvent.keyDown(screen.getByRole('dialog', { name: 'Bữa trưa' }), { key: 'Escape' });
+    expect(screen.queryByRole('dialog', { name: 'Bữa trưa' })).toBeNull();
+    expect(remaining).toHaveFocus();
   });
 
   it('shows both calendars and marks vegetarian days on the Vietnamese lunar calendar', async () => {

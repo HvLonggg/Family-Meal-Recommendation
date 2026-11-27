@@ -842,3 +842,68 @@
     margin-top: 14px;
   }
 }
+
+/* Máy tính bảng và máy tính: khung ảnh cao theo tỉ lệ thẻ để mâm tre chiếm phần lớn khung,
+   món trên mâm to tương ứng; điện thoại (≤560px) giữ chiều cao gọn như cũ. */
+@media (min-width: 561px) {
+  .meal-sets-page__image-wrap {
+    height: auto;
+    min-height: 210px;
+    max-height: 300px;
+    aspect-ratio: 4 / 3;
+  }
+
+  .meal-sets-page__platter {
+    height: 88%;
+  }
+
+  .meal-sets-page__platter--3 .meal-sets-page__platter-dish--3-1 {
+    top: 5%;
+    left: 25.5%;
+    width: 49%;
+  }
+
+  .meal-sets-page__platter--3 .meal-sets-page__platter-dish--3-2,
+  .meal-sets-page__platter--3 .meal-sets-page__platter-dish--3-3 {
+    bottom: 7%;
+    width: 45%;
+  }
+
+  .meal-sets-page__platter--3 .meal-sets-page__platter-dish--3-2 {
+    left: 5.5%;
+  }
+
+  .meal-sets-page__platter--3 .meal-sets-page__platter-dish--3-3 {
+    right: 5.5%;
+  }
+
+  .meal-sets-page__platter--2 .meal-sets-page__platter-dish--2-1,
+  .meal-sets-page__platter--2 .meal-sets-page__platter-dish--2-2 {
+    top: 28.5%;
+    width: 43%;
+  }
+
+  .meal-sets-page__platter--2 .meal-sets-page__platter-dish--2-1 {
+    left: 7%;
+  }
+
+  .meal-sets-page__platter--2 .meal-sets-page__platter-dish--2-2 {
+    right: 7%;
+  }
+
+  .meal-sets-page__platter--4 .meal-sets-page__platter-dish {
+    width: 40%;
+  }
+
+  .meal-sets-page__card-body {
+    padding: 18px 20px 20px;
+  }
+
+  .meal-sets-page__card h3 {
+    margin: 10px 0 6px;
+  }
+
+  .meal-sets-page__dishes {
+    margin: 14px 0 16px;
+  }
+}

@@ -7,9 +7,11 @@
   --color-text-muted: #6f665d;
   --planner-touch: 32px;
   --planner-header-offset: 96px;
+  /* Chiều cao cố định của một ô bữa: ba hàng sáng/trưa/tối thẳng nhau trên cả 7 ngày. */
+  --planner-slot-height: 172px;
 }
 
-@media (max-width: 680px), (pointer: coarse) {
+@media (max-width: 760px), (pointer: coarse) {
   .planner-page {
     --planner-touch: 44px;
   }
@@ -17,8 +19,8 @@
 
 /* Cỡ chữ tối thiểu 12px. */
 .planner-page .planner-meal__heading h3,
-.planner-page .planner-dish__link,
-.planner-page .planner-dish__footer,
+.planner-page .planner-meal__count,
+.planner-page .planner-dish__open,
 .planner-page .planner-dish__veg-warning,
 .planner-page .planner-day__moon,
 .planner-page .planner-day__dates small,
@@ -37,8 +39,7 @@
 .planner-page .planner-week-label span,
 .planner-page .planner-current-week,
 .planner-page .planner-dish__cooked,
-.planner-page .planner-dish__cook-link,
-.planner-page .planner-cook-meal {
+.planner-page .planner-dish__cook-link {
   font-size: 12px;
 }
 
@@ -52,21 +53,191 @@
   scroll-margin-top: var(--planner-header-offset);
 }
 
-/* ---------- Ô bữa ăn ---------- */
-.planner-page .planner-add-icon,
-.planner-page .planner-veg-toggle {
-  width: var(--planner-touch);
-  height: var(--planner-touch);
+/* ---------- Lưới tuần: hàng bữa thẳng nhau giữa các ngày ---------- */
+/* Lưới cha khai báo 4 hàng (đầu ngày + 3 bữa); mỗi cột ngày dùng subgrid nên mọi ô cùng hàng cao bằng nhau. */
+.planner-page .planner-grid--personal {
+  grid-template-rows: auto repeat(3, var(--planner-slot-height));
+}
+
+.planner-page .planner-day {
+  display: grid;
+  grid-row: span 4;
+  grid-template-rows: subgrid;
+  row-gap: 0;
+}
+
+.planner-page .planner-day__meals {
+  display: contents;
+}
+
+.planner-page .planner-meal {
+  display: flex;
+  min-width: 0;
+  height: var(--planner-slot-height);
+  min-height: 0;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid transparent;
+  border-top-color: #f1e8de;
+  border-radius: 0;
+  padding: 8px 8px 6px;
+  background: transparent;
+}
+
+.planner-page .planner-day__header + .planner-day__meals .planner-meal:first-child {
+  border-top-color: transparent;
+}
+
+.planner-page .planner-meal__heading {
+  min-height: 26px;
+  flex: 0 0 auto;
+  margin-bottom: 4px;
+}
+
+.planner-page .planner-meal__heading h3 {
+  flex: 1 1 auto;
+}
+
+.planner-page .planner-meal__count {
+  flex: 0 0 auto;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+/* Nút + nhỏ ở đầu ô; vùng bấm nới bằng ::after để vẫn đủ lớn trên màn cảm ứng. */
+.planner-page .planner-add-icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.planner-page .planner-add-icon::after {
+  position: absolute;
+  inset: calc((24px - var(--planner-touch)) / 2);
+  content: '';
+}
+
+.planner-page .planner-add-icon:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 .planner-page .planner-veg-toggle {
+  width: var(--planner-touch);
+  height: var(--planner-touch);
   color: #7d6a55;
+}
+
+/* Danh sách món trong ô: nhiều món thì cuộn bên trong, thanh cuộn mảnh. */
+.planner-page .planner-dish-list {
+  display: grid;
+  min-height: 0;
+  flex: 1 1 auto;
+  align-content: start;
+  gap: 2px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  margin: 0 -4px;
+  padding: 0 4px;
+  scrollbar-color: #d8c3b0 transparent;
+  scrollbar-width: thin;
+}
+
+.planner-page .planner-dish-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.planner-page .planner-dish-list::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: #d8c3b0;
+}
+
+.planner-page .planner-dish {
+  border: 0;
+  padding: 0;
+}
+
+/* Một món = ảnh nhỏ + tên 2 dòng, không nền hộp; bấm để mở bảng chi tiết bữa. */
+.planner-page .planner-dish__open {
+  position: relative;
+  display: grid;
+  width: 100%;
+  min-width: 0;
+  grid-template-columns: 36px minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 8px;
+  padding: 3px 4px 3px 2px;
+  color: var(--color-text);
+  background: transparent;
+  font: inherit;
+  font-weight: 650;
+  line-height: 1.3;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+
+.planner-page .planner-dish__open:hover {
+  background: #faf3eb;
+}
+
+.planner-page .planner-dish__open:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
+}
+
+.planner-page .planner-dish__open img {
+  display: block;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: #f3e8db;
+  object-fit: cover;
+}
+
+.planner-page .planner-dish__open span {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow-wrap: anywhere;
+}
+
+.planner-page .planner-dish.is-cooked .planner-dish__open span {
+  color: var(--color-text-muted);
+  text-decoration: line-through;
+}
+
+/* Dấu nhỏ ở góc ảnh: đã nấu (xanh) hoặc món mặn trong ngày chay (cam). */
+.planner-page .planner-dish__done,
+.planner-page .planner-dish__veg-dot {
+  position: absolute;
+  top: 0;
+  left: 28px;
+  display: grid;
+  width: 14px;
+  height: 14px;
+  place-items: center;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+.planner-page .planner-dish__done {
+  color: white;
+  background: var(--color-success);
+}
+
+.planner-page .planner-dish__veg-dot {
+  background: #d9822b;
 }
 
 .planner-page .planner-meal__empty {
   display: grid;
   width: 100%;
-  min-height: 75px;
+  min-height: 0;
+  flex: 1 1 auto;
   place-items: center;
   border: 1px dashed #e6d8c8;
   border-radius: 10px;
@@ -99,6 +270,7 @@
 /* Ô vừa lưu: viền nổi vài giây. */
 .planner-page .planner-meal.is-highlighted {
   border-color: var(--color-primary);
+  border-radius: 12px;
   box-shadow: 0 0 0 3px rgb(180 59 44 / 22%);
   animation: planner-slot-flash 1.2s ease 2;
 }
@@ -114,32 +286,120 @@
   }
 }
 
-/* Món trong ô: nút × tách lên góc trên, xa nút tăng/giảm khẩu phần. */
-.planner-page .planner-dish {
-  position: relative;
+/* ---------- Bảng chi tiết một bữa ---------- */
+.planner-page .planner-meal-panel {
+  width: min(100%, 600px);
+  max-height: min(86vh, 760px);
+  overflow: hidden;
 }
 
-.planner-page .planner-dish__link {
-  padding-right: calc(var(--planner-touch) + 4px);
+.planner-page .planner-meal-panel__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+  margin: 4px 0 0;
+  color: var(--color-text-muted);
+  font-size: 13px;
+}
+
+.planner-page .planner-meal-panel__veg {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #3f7a3d;
+  font-weight: 650;
+}
+
+.planner-page .planner-meal-panel__undo {
+  position: static;
+  margin-top: 12px;
+}
+
+.planner-page .planner-meal-panel__list {
+  display: grid;
+  min-height: 0;
+  flex: 1 1 auto;
+  gap: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  align-content: start;
+  margin: 14px 0 0;
+  border-top: 1px solid #f0e8df;
+  padding: 0;
+  list-style: none;
+  scrollbar-width: thin;
+}
+
+/* Mỗi món: hàng 1 ảnh + tên + nút ×, hàng 2 thao tác; các nút không chồng lên chữ. */
+.planner-page .planner-meal-panel__item {
+  display: grid;
+  min-width: 0;
+  grid-template-areas:
+    'dish remove'
+    'warning warning'
+    'actions actions';
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px 12px;
+  border-bottom: 1px solid #f0e8df;
+  padding: 12px 2px;
+}
+
+.planner-page .planner-meal-panel__item .planner-dish__link {
+  display: grid;
+  min-width: 0;
+  grid-area: dish;
+  grid-template-columns: 56px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.planner-page .planner-meal-panel__item .planner-dish__link:hover span {
+  color: var(--color-primary);
+}
+
+.planner-page .planner-meal-panel__item .planner-dish__link img {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  background: #f3e8db;
+  object-fit: cover;
+}
+
+.planner-page .planner-meal-panel__item .planner-dish__link span {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.planner-page .planner-meal-panel__item.is-cooked .planner-dish__link span {
+  color: var(--color-text-muted);
+  text-decoration: line-through;
+}
+
+.planner-page .planner-meal-panel__item .planner-dish__veg-warning {
+  grid-area: warning;
+  justify-self: start;
 }
 
 .planner-page .planner-dish__remove {
-  position: absolute;
-  top: 0;
-  right: 0;
   display: grid;
   width: var(--planner-touch);
   height: var(--planner-touch);
+  grid-area: remove;
   place-items: center;
   border: 1px solid #e9dfd3;
   border-radius: 8px;
   color: #a14a3d;
   background: white;
   cursor: pointer;
-}
-
-.planner-page .planner-dish + .planner-dish .planner-dish__remove {
-  top: 7px;
 }
 
 .planner-page .planner-dish__remove:hover:not(:disabled) {
@@ -152,51 +412,103 @@
   cursor: default;
 }
 
-.planner-page .planner-dish__cook {
-  gap: 6px;
-  margin-top: 6px;
+.planner-page .planner-meal-panel__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  grid-area: actions;
+  gap: 8px;
+  padding-left: 68px;
 }
 
 .planner-page .planner-dish__cooked,
-.planner-page .planner-dish__cook-link,
-.planner-page .planner-cook-meal {
+.planner-page .planner-dish__cook-link {
   min-height: var(--planner-touch);
-  padding-inline: 10px;
+  padding-inline: 12px;
 }
 
-.planner-page .planner-dish__footer {
-  flex-wrap: wrap;
-  margin-top: 6px;
-}
-
-.planner-page .planner-dish__footer > div {
+/* Bộ tăng/giảm khẩu phần đẩy về cuối hàng. */
+.planner-page .planner-servings {
+  display: inline-flex;
+  align-items: center;
   gap: 6px;
+  margin-left: auto;
+  color: var(--color-text-muted);
+  font-size: 12px;
+  font-weight: 650;
 }
 
-.planner-page .planner-dish__footer button {
+.planner-page .planner-servings span {
+  min-width: 54px;
+  text-align: center;
+}
+
+.planner-page .planner-servings button {
+  display: grid;
   width: var(--planner-touch);
   height: var(--planner-touch);
+  place-items: center;
+  border: 1px solid #e9dfd3;
   border-radius: 8px;
+  color: #796d61;
+  background: white;
+  cursor: pointer;
 }
 
-/* Màn cảm ứng rộng: nới cột để nút 44px không tràn. */
-@media (pointer: coarse) and (min-width: 681px) {
-  .planner-page .planner-grid--personal {
-    min-width: 1400px;
-  }
+.planner-page .planner-servings button:hover:not(:disabled) {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
 }
 
-/* ---------- Hộp thoại chọn món: một danh sách cuộn, không phân trang ---------- */
-.planner-page .planner-dialog {
-  overflow-y: auto;
+.planner-page .planner-servings button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.planner-page .planner-meal-panel__footer {
+  flex-shrink: 0;
+  margin-top: 0;
+  padding-top: 14px;
+}
+
+/* ---------- Hộp thoại chọn món: lớn, chỉ danh sách cuộn, thanh lưu luôn hiện ---------- */
+.planner-page .planner-add-dialog {
+  width: min(960px, 94vw);
+  height: min(90vh, 920px);
+  max-height: none;
+  overflow: hidden;
+}
+
+.planner-page .planner-add-dialog .planner-dialog__controls {
+  margin-block: 14px 10px;
+}
+
+/* Ô ngày có thêm dòng âm lịch: giữ các ô nhập cùng một hàng thẳng nhau. */
+.planner-page .planner-dialog__controls label {
+  align-content: start;
 }
 
 .planner-page .planner-recipe-results {
+  min-height: 0;
   max-height: none;
-  min-height: min(280px, 42vh);
   flex: 1 1 auto;
+  align-content: start;
   overflow-y: auto;
   overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+
+/* Hộp thoại rộng: xếp 2 cột món để bớt phải cuộn. */
+@media (min-width: 761px) {
+  .planner-page .planner-recipe-results {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 20px;
+  }
+
+  .planner-page .planner-recipe-results > .planner-no-results,
+  .planner-page .planner-recipe-results > .planner-recipe-more {
+    grid-column: 1 / -1;
+  }
 }
 
 .planner-page .planner-recipe-results article {
@@ -223,8 +535,17 @@
   flex-shrink: 0;
 }
 
-/* ---------- Di động ---------- */
-@media (max-width: 680px) {
+.planner-page .planner-add-dialog__bar strong {
+  color: var(--color-text);
+  font-size: 13px;
+}
+
+/* ---------- Điện thoại / máy tính bảng dọc (≤ 760px) ---------- */
+@media (max-width: 760px) {
+  .planner-page {
+    --planner-slot-height: 156px;
+  }
+
   .planner-page .page-hero--planner {
     padding-block: 18px 6px;
   }
@@ -316,16 +637,93 @@
     font-size: 13px;
   }
 
-  .planner-page .planner-dish__link {
+  .planner-page .planner-dish__open {
+    min-height: 44px;
+    grid-template-columns: 40px minmax(0, 1fr);
     font-size: 13px;
   }
 
-  .planner-page .planner-meal {
-    min-height: 0;
+  .planner-page .planner-dish__open img {
+    width: 40px;
+    height: 40px;
   }
 
-  .planner-page .planner-meal__empty {
-    min-height: 56px;
+  .planner-page .planner-dish__done,
+  .planner-page .planner-dish__veg-dot {
+    left: 32px;
+  }
+
+  /* Hộp thoại thành trang toàn màn hình; thanh lưu dính đáy, chừa vùng an toàn. */
+  .planner-page .planner-dialog-backdrop {
+    align-items: stretch;
+    padding: 0;
+  }
+
+  .planner-page .planner-dialog.planner-add-dialog,
+  .planner-page .planner-dialog.planner-meal-panel {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    max-height: none;
+    border: 0;
+    border-radius: 0;
+    padding: max(14px, env(safe-area-inset-top)) 14px 0;
+  }
+
+  /* Bảng chi tiết bữa ít nội dung: dạng tấm trượt từ đáy, cao vừa đủ. */
+  .planner-page .planner-dialog.planner-meal-panel {
+    height: auto;
+    max-height: 90vh;
+    max-height: 90dvh;
+    align-self: end;
+    border-radius: 20px 20px 0 0;
+    padding-top: 16px;
+  }
+
+  .planner-page .planner-add-dialog .planner-dialog__controls {
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr) 76px;
+    gap: 8px;
+    margin-block: 10px 8px;
+  }
+
+  .planner-page .planner-add-dialog .planner-dialog__controls label:last-child {
+    grid-column: auto;
+  }
+
+  .planner-page .planner-add-dialog .planner-dialog__controls input,
+  .planner-page .planner-add-dialog .planner-dialog__controls select {
+    width: 100%;
+    min-width: 0;
+    height: 44px;
+    min-height: 44px;
+    padding-inline: 8px;
+  }
+
+  .planner-page .planner-dialog .planner-dialog__footer {
+    align-items: center;
+    flex-direction: row;
+    margin-inline: -14px;
+    border-top: 1px solid #f0e8df;
+    padding: 10px 14px max(10px, env(safe-area-inset-bottom));
+    background: #fffdfa;
+    box-shadow: 0 -6px 18px rgb(54 37 24 / 6%);
+  }
+
+  .planner-page .planner-dialog .planner-dialog__footer > span {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  .planner-page .planner-dialog .planner-dialog__footer .button {
+    flex: 0 0 auto;
+  }
+
+  .planner-page .planner-meal-panel__actions {
+    padding-left: 0;
+  }
+
+  .planner-page .planner-servings {
+    margin-left: 0;
   }
 }
 
@@ -334,7 +732,230 @@
     animation: none;
   }
 
-  .planner-page .planner-meal__empty {
+  .planner-page .planner-meal__empty,
+  .planner-page .planner-dish__open {
     transition: none;
+  }
+}
+
+/* ---------- In danh sách mua sắm: tiết kiệm giấy, giữ đủ thông tin ---------- */
+/* Trang in có tên riêng: lề A4 10mm chỉ áp cho danh sách mua sắm, không ảnh hưởng trang khác. */
+@page planner-shopping {
+  margin: 10mm;
+  size: A4;
+}
+
+@media print {
+  .planner-page .planner-shopping {
+    page: planner-shopping;
+  }
+
+  /* Ẩn hẳn khung trang (không chỉ làm vô hình) để không in ra trang trắng. */
+  .site-header,
+  .site-footer,
+  .skip-link,
+  .site-nav-backdrop,
+  .rc-root,
+  .pwa-toast,
+  .pwa-progress,
+  .pwa-dialog-backdrop,
+  .planner-page > .page-hero,
+  .planner-page .planner-dashboard > :not(.planner-shopping),
+  .planner-page .planner-dialog-backdrop,
+  .planner-page .planner-shopping__filters,
+  .planner-page .planner-shopping__header > button,
+  .planner-page .planner-shopping__header .section-label,
+  .planner-page .planner-shopping__group header > span,
+  .planner-page .planner-shopping__dishes img,
+  .planner-page .planner-shopping__note {
+    display: none !important;
+  }
+
+  html,
+  body {
+    background: white !important;
+  }
+
+  /* Khung app cao tối thiểu 100vh sẽ đẩy ra một trang trắng thừa khi in. */
+  body:has(.planner-page) .app-shell,
+  body:has(.planner-page) #main-content {
+    min-height: 0 !important;
+  }
+
+  .planner-page,
+  .planner-page > .content-section,
+  .planner-page .planner-dashboard {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: none !important;
+  }
+
+  .planner-page .planner-shopping {
+    position: static;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    color: black;
+    background: none;
+    box-shadow: none;
+    font-size: 10.5pt;
+  }
+
+  .planner-page .planner-shopping__header {
+    display: block;
+    margin-bottom: 3mm;
+    border-bottom: 0.4pt solid #999;
+    padding-bottom: 2mm;
+  }
+
+  .planner-page .planner-shopping__header h2 {
+    display: inline;
+    margin: 0 3mm 0 0;
+    font-size: 14pt;
+  }
+
+  .planner-page .planner-shopping__header p {
+    display: inline;
+    color: #333;
+    font-size: 10pt;
+  }
+
+  /* Danh sách món: dòng chữ gọn nhiều cột thay cho thẻ có ảnh. */
+  .planner-page .planner-shopping__dishes {
+    margin: 0 0 3mm;
+  }
+
+  .planner-page .planner-shopping__dishes h3,
+  .planner-page .planner-shopping__group h3 {
+    margin: 0 0 1mm;
+    font-size: 11pt;
+  }
+
+  .planner-page .planner-shopping__dishes > div {
+    display: block;
+    margin: 0;
+    columns: 3;
+    column-gap: 6mm;
+  }
+
+  .planner-page .planner-shopping__dishes article {
+    display: block;
+    border: 0;
+    border-radius: 0;
+    padding: 0.4mm 0;
+    background: none;
+    break-inside: avoid;
+  }
+
+  .planner-page .planner-shopping__dishes article > div {
+    display: block;
+  }
+
+  .planner-page .planner-shopping__dishes strong,
+  .planner-page .planner-shopping__dishes small {
+    color: black;
+    font-size: 9.5pt;
+  }
+
+  .planner-page .planner-shopping__dishes strong::after {
+    content: ' — ';
+    font-weight: 400;
+  }
+
+  /* Nguyên liệu và gia vị: một luồng hai cột, mỗi nhóm có tiêu đề riêng. */
+  .planner-page .planner-shopping__groups {
+    display: block;
+    columns: 2;
+    column-gap: 8mm;
+  }
+
+  .planner-page .planner-shopping__group {
+    display: block;
+    margin: 0 0 3mm;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+    break-inside: auto;
+  }
+
+  .planner-page .planner-shopping__group header {
+    display: flex;
+    align-items: baseline;
+    gap: 2mm;
+    margin: 0 0 1mm;
+    border-bottom: 0.4pt solid #999;
+    padding: 0 0 0.6mm;
+    break-after: avoid;
+  }
+
+  .planner-page .planner-shopping__group header > div {
+    display: flex;
+    align-items: baseline;
+    gap: 2mm;
+  }
+
+  .planner-page .planner-shopping__group header small {
+    color: #444;
+    font-size: 9pt;
+  }
+
+  .planner-page .planner-shopping__list {
+    display: block;
+    margin: 0;
+  }
+
+  .planner-page .planner-shopping__list li {
+    display: grid;
+    grid-template-columns: 3.2mm minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 2mm;
+    border-bottom: 0.3pt solid #ddd;
+    padding: 0.8mm 0;
+    break-inside: avoid;
+  }
+
+  .planner-page .planner-shopping__list li > div {
+    display: block;
+  }
+
+  .planner-page .planner-shopping__check {
+    width: 3.2mm;
+    height: 3.2mm;
+    margin: 0.6mm 0 0;
+    border: 0.6pt solid #555;
+    border-radius: 0.6mm;
+    background: none;
+    appearance: none;
+  }
+
+  .planner-page .planner-shopping__list strong {
+    color: black;
+    font-size: 10.5pt;
+  }
+
+  /* Tên món dùng nguyên liệu: in cùng dòng, được xuống dòng thay vì bị cắt "…". */
+  .planner-page .planner-shopping__list small {
+    overflow: visible;
+    color: #444;
+    font-size: 8.5pt;
+    white-space: normal;
+  }
+
+  .planner-page .planner-shopping__list small::before {
+    content: ' · ';
+  }
+
+  .planner-page .planner-shopping__amount {
+    color: black;
+    font-size: 10.5pt;
+    white-space: nowrap;
+  }
+
+  .planner-page .planner-shopping__group-empty {
+    margin: 0;
+    font-size: 9pt;
   }
 }

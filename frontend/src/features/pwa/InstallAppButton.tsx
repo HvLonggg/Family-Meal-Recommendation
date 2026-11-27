@@ -85,7 +85,10 @@ export function InstallAppButton({ className = '', variant = 'card' }: InstallAp
         <span aria-hidden="true" className="install-app-button__icon">
           <AppIcon name="download" size={18} />
         </span>
-        <span className="install-app-button__label">{t('Tải app')}</span>
+        {/* Chân trang đủ chỗ cho nhãn đầy đủ; header giữ viên gọn "Tải app". */}
+        <span className="install-app-button__label">
+          {variant === 'footer' ? t('Tải app về thiết bị') : t('Tải app')}
+        </span>
       </button>
       {guide ? <InstallGuide onClose={() => setGuide(null)} platform={guide} /> : null}
     </>

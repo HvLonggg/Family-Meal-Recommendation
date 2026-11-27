@@ -55,7 +55,8 @@
 
 /* Chân trang (dưới giờ làm việc): nền tối của footer. */
 .install-app-button--footer {
-  width: auto;
+  /* Rộng vừa nhãn "Tải app về thiết bị", không kéo giãn hết cột thương hiệu. */
+  width: fit-content;
   max-width: 320px;
   margin-top: 14px;
   border-color: rgb(255 255 255 / 16%);

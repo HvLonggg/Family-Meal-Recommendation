@@ -258,7 +258,7 @@ export function MealSetsPage() {
                           const imageProps = dishImage(
                             recipe.slug,
                             recipe.image,
-                            '(min-width: 720px) 110px, 30vw',
+                            '(min-width: 720px) 140px, 30vw',
                           );
 
                           return (

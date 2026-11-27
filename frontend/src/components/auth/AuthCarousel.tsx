@@ -82,7 +82,7 @@ export function AuthCarousel() {
       </div>
 
       <div className="auth-story__brand" aria-label="Bếp Việt">
-        <KitchenHomeLogo />
+        <KitchenHomeLogo tone="light" />
       </div>
 
       <div className="auth-carousel__controls">

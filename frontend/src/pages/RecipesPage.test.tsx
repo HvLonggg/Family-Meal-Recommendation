@@ -4,6 +4,7 @@ import { MemoryRouter, useLocation, useNavigate } from 'react-router';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { getRecipe, type Recipe } from '@/data/recipes';
 import { favoriteRecipesQueryKey } from '@/features/favorites/favoritesApi';
+import { seededShuffle } from '@/lib/seededShuffle';
 import { RecipesPage } from '@/pages/RecipesPage';
 
 const mocks = vi.hoisted(() => ({
@@ -189,8 +190,53 @@ describe('catalog browsing workflow', () => {
     mocks.catalog = Array.from({ length: 23 }, (_, index) =>
       fixture(`ga-luoc-${index}`, `Gà luộc ${index}`, 'Gà', 20 + index),
     );
-    renderCatalog();
+    renderCatalog('/recipes?sort=quick');
     expect(names()).toHaveLength(size);
+  });
+  it('shuffles the default catalog per visit seed, shows three rows and reveals more on demand', () => {
+    mocks.catalog = Array.from({ length: 23 }, (_, index) =>
+      fixture(`ga-luoc-${index}`, `Gà luộc ${index}`, 'Gà', 20 + index),
+    );
+    const random = vi.spyOn(Math, 'random').mockReturnValue(0.123456);
+    const seed = (0.123456).toString(36).slice(2);
+    const expected = seededShuffle(mocks.catalog, seed, (recipe) => recipe.slug).map(
+      (recipe) => recipe.name,
+    );
+    renderCatalog();
+    random.mockRestore();
+    // Máy tính: lưới 3 cột → 3 hàng = 9 món đầu theo thứ tự xáo của seed.
+    expect(names()).toEqual(expected.slice(0, 9));
+    expect(expected.slice(0, 9)).not.toEqual(mocks.catalog.slice(0, 9).map(({ name }) => name));
+    expect(screen.queryByRole('button', { name: 'Trang tiếp' })).not.toBeInTheDocument();
+    expect(screen.getByRole('combobox')).toHaveValue('random');
+    fireEvent.click(screen.getByRole('button', { name: 'Xem thêm món' }));
+    expect(names()).toEqual(expected.slice(0, 18));
+    fireEvent.click(screen.getByRole('button', { name: 'Xem thêm món' }));
+    expect(names()).toEqual(expected);
+    expect(screen.queryByRole('button', { name: 'Xem thêm món' })).not.toBeInTheDocument();
+    // Chọn sắp xếp cụ thể thì quay lại thứ tự và phân trang như cũ.
+    fireEvent.change(screen.getByRole('combobox'), { target: { value: 'quick' } });
+    expect(currentParams().get('sort')).toBe('quick');
+    expect(names()).toHaveLength(12);
+    expect(names()[0]).toBe('Gà luộc 0');
+    fireEvent.change(screen.getByRole('combobox'), { target: { value: 'random' } });
+    expect(currentParams().has('sort')).toBe(false);
+    expect(names()).toEqual(expected.slice(0, 9));
+  });
+  it('limits the default catalog to three rows of the two-column phone grid', () => {
+    vi.stubGlobal(
+      'matchMedia',
+      vi.fn((query: string) => ({
+        matches: query.includes('max-width: 600px'),
+        addEventListener: vi.fn(),
+        removeEventListener: vi.fn(),
+      })),
+    );
+    mocks.catalog = Array.from({ length: 23 }, (_, index) =>
+      fixture(`ga-luoc-${index}`, `Gà luộc ${index}`, 'Gà', 20 + index),
+    );
+    renderCatalog();
+    expect(names()).toHaveLength(6);
   });
   it('names the active category and region in the results heading', () => {
     mocks.catalog = mocks.catalog.map((recipe) => ({ ...recipe, region: 'Trung' }));
@@ -330,7 +376,7 @@ describe('catalog browsing workflow', () => {
     mocks.catalog = Array.from({ length: 23 }, (_, index) =>
       fixture(`ga-luoc-${index}`, `Gà luộc ${index}`, 'Gà', 20 + index),
     );
-    renderCatalog();
+    renderCatalog('/recipes?sort=quick');
     fireEvent.change(screen.getByRole('searchbox'), { target: { value: 'Gà luộc 22' } });
     fireEvent.click(screen.getByRole('button', { name: 'Trang tiếp' }));
     expect(screen.getByRole('searchbox')).toHaveValue('Gà luộc 22');

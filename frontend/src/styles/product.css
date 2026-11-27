@@ -1493,11 +1493,9 @@ html[data-reduce-motion='true'] .hero-dish__steam {
   width: 44px;
   height: 44px;
   flex: none;
-  border: 2px solid rgb(255 248 241 / 70%);
-  /* Bo góc vừa phải thay vì hình tròn để chữ "BẾP VIỆT" ở đáy logo không bị cắt. */
-  border-radius: 12px;
+  /* Bản logo chữ kem trên nền nâu đỏ: không cần hộp trắng, chỉ thêm quầng sáng nhẹ. */
   object-fit: contain;
-  background: #fff8f1;
+  filter: drop-shadow(0 0 6px rgb(255 236 214 / 28%));
 }
 
 .story-band h2 {
@@ -6962,9 +6960,11 @@ html[data-reduce-motion='true'] .hero-dish__steam {
   padding-bottom: 32px;
 }
 
+/* Máy tính bảng: thương hiệu | cụm link (rộng theo nội dung), bản đồ xuống hàng riêng. */
 @media (min-width: 720px) {
   .footer-main {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 40px;
   }
 
   .footer-map {
@@ -6972,10 +6972,12 @@ html[data-reduce-motion='true'] .hero-dish__steam {
   }
 }
 
+/* Laptop/máy tính: cột link co theo chữ dài nhất để không link nào xuống dòng,
+   phần còn lại chia đều cho thương hiệu và bản đồ. */
 @media (min-width: 1080px) {
   .footer-main {
-    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr) minmax(0, 1.2fr);
-    gap: 48px;
+    grid-template-columns: minmax(260px, 1fr) auto minmax(300px, 1fr);
+    column-gap: clamp(40px, 4vw, 64px);
   }
 
   .footer-map {
@@ -6999,9 +7001,10 @@ html[data-reduce-motion='true'] .hero-dish__steam {
   opacity: 0.85;
 }
 
+/* Bản logo chữ kem (tone="light") đủ lớn để đọc rõ "BẾP VIỆT" trên nền tối. */
 .footer-brand .kitchen-logo__image {
-  width: 64px;
-  height: 64px;
+  width: 80px;
+  height: 80px;
 }
 
 .footer-brand p {
@@ -7045,6 +7048,17 @@ html[data-reduce-motion='true'] .hero-dish__steam {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
+}
+
+@media (min-width: 720px) {
+  .footer-links {
+    grid-template-columns: repeat(2, max-content);
+    column-gap: clamp(32px, 3.5vw, 56px);
+  }
+
+  .footer-links a {
+    white-space: nowrap;
+  }
 }
 
 .footer-links > div {

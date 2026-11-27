@@ -191,7 +191,7 @@ export function PublicLayout() {
       <div className="app-shell app-shell--admin-preview">
         <header className="admin-preview-bar">
           <Link aria-label={t('Bảng điều khiển')} className="admin-preview-bar__brand" to="/admin">
-            <KitchenHomeLogo compact />
+            <KitchenHomeLogo compact tone="light" />
           </Link>
           <p className="admin-preview-bar__label">
             <AppIcon name="eye" size={16} />
@@ -450,7 +450,7 @@ export function PublicLayout() {
               onClick={handleFooterNavigation}
               to="/"
             >
-              <KitchenHomeLogo compact />
+              <KitchenHomeLogo compact tone="light" />
             </Link>
             <p>{t('Trọn vị cơm nhà Việt: chọn món, lên thực đơn và nấu ngon mỗi ngày.')}</p>
             <ul className="footer-contact">

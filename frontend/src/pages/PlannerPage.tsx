@@ -81,7 +81,7 @@ const periods: { id: PlannerPeriod; label: string }[] = [
 const maxRecipesPerMeal = 30;
 /** Số món hiện thêm mỗi lần cuộn gần cuối danh sách trong hộp thoại chọn món. */
 const recipeBatchSize = 30;
-const mobileQuery = '(max-width: 680px)';
+const mobileQuery = '(max-width: 760px)';
 
 // Đơn vị đếm nguyên chiếc: không thể mua "0,5 khúc" hay "1,5 bó".
 const wholeUnits = new Set([
@@ -194,6 +194,12 @@ export function PlannerPage() {
   const [addTarget, setAddTarget] = useState<{ date: string; mealType: PlannerMealType } | null>(
     null,
   );
+  // Bảng chi tiết một bữa: nơi đặt mọi thao tác từng món để lưới tuần luôn gọn.
+  const [detailTarget, setDetailTarget] = useState<{
+    date: string;
+    mealType: PlannerMealType;
+  } | null>(null);
+  const detailTriggerRef = useRef<HTMLElement | null>(null);
   const [search, setSearch] = useState('');
   const [selectedSlugs, setSelectedSlugs] = useState<string[]>([]);
   const [visibleCount, setVisibleCount] = useState(recipeBatchSize);
@@ -487,6 +493,31 @@ export function PlannerPage() {
     addMutation.reset();
   };
 
+  const openMealDetail = (date: string, mealType: PlannerMealType, trigger?: HTMLElement) => {
+    detailTriggerRef.current = trigger ?? null;
+    setDetailTarget({ date, mealType });
+  };
+  const closeMealDetail = () => {
+    setDetailTarget(null);
+    // Trả tiêu điểm về món vừa bấm để người dùng bàn phím không bị lạc.
+    const trigger = detailTriggerRef.current;
+    detailTriggerRef.current = null;
+    if (trigger?.isConnected) trigger.focus();
+  };
+  const addFromMealDetail = () => {
+    if (!detailTarget) return;
+    detailTriggerRef.current = null;
+    setDetailTarget(null);
+    openAddDialog(detailTarget.date, detailTarget.mealType);
+  };
+  const detailItems = detailTarget
+    ? (groupedItems.get(`${detailTarget.date}:${detailTarget.mealType}`) ?? [])
+    : [];
+  const detailMealLabel = detailTarget
+    ? (mealTypes.find((meal) => meal.id === detailTarget.mealType)?.label ?? '')
+    : '';
+  const detailVegetarian = detailTarget ? vegetarianStateOf(detailTarget.date).vegetarian : false;
+
   const requestedToken = JSON.stringify([...new Set(searchParams.getAll('add').filter(Boolean))]);
   const [handledAddToken, setHandledAddToken] = useState<string | null>(null);
   // Mở hộp thoại từ liên kết ?add=… ngay trong lúc render (mẫu "điều chỉnh state theo props"),
@@ -758,7 +789,7 @@ export function PlannerPage() {
                     className="planner-week-scroll"
                     ref={weekScrollRef}
                   >
-                    {removedItem ? (
+                    {removedItem && !detailTarget ? (
                       <div className="planner-undo" role="status">
                         <span>
                           {t('Đã xóa {name} khỏi kế hoạch.', {
@@ -812,156 +843,83 @@ export function PlannerPage() {
                                   >
                                     <div className="planner-meal__heading">
                                       <h3>{t(meal.label)}</h3>
-                                      {slotItems.length > 1 ? (
-                                        <Link
-                                          aria-label={t('Vào bếp nấu cả {meal} {date}', {
-                                            meal: t(meal.label).toLocaleLowerCase(locale),
-                                            date: dayLabel,
-                                          })}
-                                          className="planner-cook-meal"
-                                          to={mealCookPath(slotItems)}
-                                        >
-                                          <AppIcon name="chef" size={14} /> {t('Vào bếp')}
-                                        </Link>
-                                      ) : null}
                                       {slotItems.length ? (
-                                        <button
-                                          aria-label={addLabel}
-                                          className="planner-add-icon"
-                                          onClick={() => openAddDialog(dateValue, meal.id)}
-                                          type="button"
-                                        >
-                                          <AppIcon name="plus" size={16} />
-                                        </button>
+                                        <>
+                                          <span className="planner-meal__count">
+                                            {t('{count} món', { count: slotItems.length })}
+                                          </span>
+                                          <button
+                                            aria-label={addLabel}
+                                            className="planner-add-icon"
+                                            onClick={() => openAddDialog(dateValue, meal.id)}
+                                            type="button"
+                                          >
+                                            <AppIcon name="plus" size={14} />
+                                          </button>
+                                        </>
                                       ) : null}
                                     </div>
                                     {slotItems.length ? (
+                                      // Ô gọn: chỉ ảnh nhỏ + tên; thao tác từng món nằm trong bảng chi tiết bữa.
                                       <ul className="planner-dish-list">
-                                        {slotItems.map((item) => (
-                                          <li
-                                            className={`planner-dish${item.completion_status === 'completed' ? ' is-cooked' : ''}`}
-                                            key={item.id}
-                                          >
-                                            <Link
-                                              aria-label={t('Xem chi tiết {name}', {
-                                                name: recipeText(item.recipe.name),
-                                              })}
-                                              className="planner-dish__link"
-                                              to={`/recipes/${item.recipe.slug}`}
+                                        {slotItems.map((item) => {
+                                          const name = recipeText(item.recipe.name);
+                                          const notVegetarian =
+                                            vegetarianDay.vegetarian &&
+                                            isNonVegetarianDish(item.recipe.slug);
+                                          return (
+                                            <li
+                                              className={`planner-dish${item.completion_status === 'completed' ? ' is-cooked' : ''}${notVegetarian ? ' is-not-veg' : ''}`}
+                                              key={item.id}
                                             >
-                                              <img
-                                                alt={recipeText(item.recipe.image_alt)}
-                                                {...dishImage(
-                                                  item.recipe.slug,
-                                                  item.recipe.image_path,
-                                                )}
-                                              />
-                                              <span>{recipeText(item.recipe.name)}</span>
-                                            </Link>
-                                            <button
-                                              aria-label={t('Xóa {name} khỏi kế hoạch', {
-                                                name: recipeText(item.recipe.name),
-                                              })}
-                                              className="planner-dish__remove"
-                                              disabled={removeMutation.isPending}
-                                              onClick={() => removeMutation.mutate(item)}
-                                              type="button"
-                                            >
-                                              <AppIcon name="close" size={14} />
-                                            </button>
-                                            {vegetarianDay.vegetarian &&
-                                            isNonVegetarianDish(item.recipe.slug) ? (
-                                              <span className="planner-dish__veg-warning">
-                                                {t('Không phải món chay')}
-                                              </span>
-                                            ) : null}
-                                            <div className="planner-dish__cook">
                                               <button
-                                                aria-label={
-                                                  item.completion_status === 'completed'
-                                                    ? t('Bỏ đánh dấu đã nấu {name}', {
-                                                        name: recipeText(item.recipe.name),
-                                                      })
-                                                    : t('Đánh dấu đã nấu {name}', {
-                                                        name: recipeText(item.recipe.name),
-                                                      })
+                                                aria-haspopup="dialog"
+                                                aria-label={t('Mở {meal} {date}: {name}', {
+                                                  meal: t(meal.label).toLocaleLowerCase(locale),
+                                                  date: dayLabel,
+                                                  name,
+                                                })}
+                                                className="planner-dish__open"
+                                                onClick={(event) =>
+                                                  openMealDetail(
+                                                    dateValue,
+                                                    meal.id,
+                                                    event.currentTarget,
+                                                  )
                                                 }
-                                                aria-pressed={
-                                                  item.completion_status === 'completed'
+                                                title={
+                                                  notVegetarian
+                                                    ? `${name} · ${t('Không phải món chay')}`
+                                                    : name
                                                 }
-                                                className="planner-dish__cooked"
-                                                disabled={cookedMutation.isPending}
-                                                onClick={() => cookedMutation.mutate(item)}
                                                 type="button"
                                               >
+                                                <img
+                                                  alt=""
+                                                  {...dishImage(
+                                                    item.recipe.slug,
+                                                    item.recipe.image_path,
+                                                    '40px',
+                                                  )}
+                                                />
+                                                <span>{name}</span>
                                                 {item.completion_status === 'completed' ? (
-                                                  <>
-                                                    <AppIcon name="check" size={14} /> {t('Đã nấu')}
-                                                  </>
-                                                ) : (
-                                                  t('Đánh dấu đã nấu')
-                                                )}
+                                                  <i
+                                                    aria-hidden="true"
+                                                    className="planner-dish__done"
+                                                  >
+                                                    <AppIcon name="check" size={10} />
+                                                  </i>
+                                                ) : notVegetarian ? (
+                                                  <i
+                                                    aria-hidden="true"
+                                                    className="planner-dish__veg-dot"
+                                                  />
+                                                ) : null}
                                               </button>
-                                              <Link
-                                                aria-label={t('Vào bếp nấu {name}', {
-                                                  name: recipeText(item.recipe.name),
-                                                })}
-                                                className="planner-dish__cook-link"
-                                                to={cookPath([
-                                                  {
-                                                    slug: item.recipe.slug,
-                                                    servings: item.servings,
-                                                    planItemId: item.id,
-                                                  },
-                                                ])}
-                                              >
-                                                <AppIcon name="chef" size={13} /> {t('Vào bếp')}
-                                              </Link>
-                                            </div>
-                                            <div className="planner-dish__footer">
-                                              <span>
-                                                {t('{count} người', { count: item.servings })}
-                                              </span>
-                                              <div>
-                                                <button
-                                                  aria-label={t('Giảm khẩu phần {name}', {
-                                                    name: recipeText(item.recipe.name),
-                                                  })}
-                                                  disabled={
-                                                    item.servings <= 1 || servingsMutation.isPending
-                                                  }
-                                                  onClick={() =>
-                                                    servingsMutation.mutate({
-                                                      id: item.id,
-                                                      count: item.servings - 1,
-                                                    })
-                                                  }
-                                                  type="button"
-                                                >
-                                                  <AppIcon name="minus" size={13} />
-                                                </button>
-                                                <button
-                                                  aria-label={t('Tăng khẩu phần {name}', {
-                                                    name: recipeText(item.recipe.name),
-                                                  })}
-                                                  disabled={
-                                                    item.servings >= 30 ||
-                                                    servingsMutation.isPending
-                                                  }
-                                                  onClick={() =>
-                                                    servingsMutation.mutate({
-                                                      id: item.id,
-                                                      count: item.servings + 1,
-                                                    })
-                                                  }
-                                                  type="button"
-                                                >
-                                                  <AppIcon name="plus" size={13} />
-                                                </button>
-                                              </div>
-                                            </div>
-                                          </li>
-                                        ))}
+                                            </li>
+                                          );
+                                        })}
                                       </ul>
                                     ) : (
                                       <button
@@ -1362,7 +1320,9 @@ export function PlannerPage() {
                                       {ingredient.recipe_names.map(recipeText).join(' · ')}
                                     </small>
                                     {ingredient.notes.length ? (
-                                      <small>{ingredient.notes.map(recipeText).join(' · ')}</small>
+                                      <small className="planner-shopping__note">
+                                        {ingredient.notes.map(recipeText).join(' · ')}
+                                      </small>
                                     ) : null}
                                   </div>
                                   <span className="planner-shopping__amount">
@@ -1399,6 +1359,186 @@ export function PlannerPage() {
         </div>
       </section>
 
+      {detailTarget ? (
+        <div
+          className="planner-dialog-backdrop"
+          onClick={(event) => {
+            if (event.target === event.currentTarget) closeMealDetail();
+          }}
+        >
+          <section
+            aria-labelledby="planner-meal-detail-title"
+            aria-modal="true"
+            className="planner-dialog planner-meal-panel"
+            role="dialog"
+            onKeyDown={(event) => {
+              if (event.key === 'Escape') closeMealDetail();
+            }}
+          >
+            <header className="planner-dialog__header">
+              <div>
+                <span className="section-label">
+                  {formatWeekdayDate(parseLocalDate(detailTarget.date), locale, true)}
+                </span>
+                <h2 id="planner-meal-detail-title">{t(detailMealLabel)}</h2>
+                <p className="planner-meal-panel__meta">
+                  {t('{count} món · {servings} khẩu phần', {
+                    count: detailItems.length,
+                    servings: detailItems.reduce((total, item) => total + item.servings, 0),
+                  })}
+                  {detailVegetarian ? (
+                    <span className="planner-meal-panel__veg">
+                      <AppIcon name="leaf" size={12} /> {t('Ngày ăn chay')}
+                    </span>
+                  ) : null}
+                </p>
+              </div>
+              <button
+                aria-label={t('Đóng chi tiết bữa ăn')}
+                autoFocus
+                className="icon-button"
+                onClick={closeMealDetail}
+                type="button"
+              >
+                <AppIcon name="close" size={19} />
+              </button>
+            </header>
+            {removedItem ? (
+              <div className="planner-undo planner-meal-panel__undo" role="status">
+                <span>
+                  {t('Đã xóa {name} khỏi kế hoạch.', { name: recipeText(removedItem.recipe.name) })}
+                </span>
+                <button onClick={undoRemove} type="button">
+                  {t('Hoàn tác')}
+                </button>
+              </div>
+            ) : null}
+            {detailItems.length ? (
+              <ul className="planner-meal-panel__list">
+                {detailItems.map((item) => {
+                  const name = recipeText(item.recipe.name);
+                  const cooked = item.completion_status === 'completed';
+                  return (
+                    <li
+                      className={`planner-meal-panel__item${cooked ? ' is-cooked' : ''}`}
+                      key={item.id}
+                    >
+                      <Link
+                        aria-label={t('Xem chi tiết {name}', { name })}
+                        className="planner-dish__link"
+                        to={`/recipes/${item.recipe.slug}`}
+                      >
+                        <img
+                          alt={recipeText(item.recipe.image_alt)}
+                          {...dishImage(item.recipe.slug, item.recipe.image_path, '72px')}
+                        />
+                        <span>{name}</span>
+                      </Link>
+                      <button
+                        aria-label={t('Xóa {name} khỏi kế hoạch', { name })}
+                        className="planner-dish__remove"
+                        disabled={removeMutation.isPending}
+                        onClick={() => removeMutation.mutate(item)}
+                        type="button"
+                      >
+                        <AppIcon name="close" size={14} />
+                      </button>
+                      {detailVegetarian && isNonVegetarianDish(item.recipe.slug) ? (
+                        <span className="planner-dish__veg-warning">
+                          {t('Không phải món chay')}
+                        </span>
+                      ) : null}
+                      <div className="planner-meal-panel__actions">
+                        <button
+                          aria-label={
+                            cooked
+                              ? t('Bỏ đánh dấu đã nấu {name}', { name })
+                              : t('Đánh dấu đã nấu {name}', { name })
+                          }
+                          aria-pressed={cooked}
+                          className="planner-dish__cooked"
+                          disabled={cookedMutation.isPending}
+                          onClick={() => cookedMutation.mutate(item)}
+                          type="button"
+                        >
+                          {cooked ? (
+                            <>
+                              <AppIcon name="check" size={14} /> {t('Đã nấu')}
+                            </>
+                          ) : (
+                            t('Đánh dấu đã nấu')
+                          )}
+                        </button>
+                        <Link
+                          aria-label={t('Vào bếp nấu {name}', { name })}
+                          className="planner-dish__cook-link"
+                          to={cookPath([
+                            {
+                              slug: item.recipe.slug,
+                              servings: item.servings,
+                              planItemId: item.id,
+                            },
+                          ])}
+                        >
+                          <AppIcon name="chef" size={13} /> {t('Vào bếp')}
+                        </Link>
+                        <div
+                          aria-label={t('Khẩu phần {name}', { name })}
+                          className="planner-servings"
+                          role="group"
+                        >
+                          <button
+                            aria-label={t('Giảm khẩu phần {name}', { name })}
+                            disabled={item.servings <= 1 || servingsMutation.isPending}
+                            onClick={() =>
+                              servingsMutation.mutate({ id: item.id, count: item.servings - 1 })
+                            }
+                            type="button"
+                          >
+                            <AppIcon name="minus" size={13} />
+                          </button>
+                          <span>{t('{count} người', { count: item.servings })}</span>
+                          <button
+                            aria-label={t('Tăng khẩu phần {name}', { name })}
+                            disabled={item.servings >= 30 || servingsMutation.isPending}
+                            onClick={() =>
+                              servingsMutation.mutate({ id: item.id, count: item.servings + 1 })
+                            }
+                            type="button"
+                          >
+                            <AppIcon name="plus" size={13} />
+                          </button>
+                        </div>
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            ) : (
+              <p className="planner-no-results">{t('Bữa này chưa có món nào.')}</p>
+            )}
+            {servingsMutation.isError || removeMutation.isError || cookedMutation.isError ? (
+              <p className="planner-inline-error" role="alert">
+                {errorMessage(
+                  servingsMutation.error ?? removeMutation.error ?? cookedMutation.error,
+                )}
+              </p>
+            ) : null}
+            <footer className="planner-dialog__footer planner-meal-panel__footer">
+              {detailItems.length > 1 ? (
+                <Link className="button button--outline" to={mealCookPath(detailItems)}>
+                  <AppIcon name="chef" size={16} /> {t('Vào bếp cả bữa')}
+                </Link>
+              ) : (
+                <span />
+              )}
+              <button className="button button--primary" onClick={addFromMealDetail} type="button">
+                <AppIcon name="plus" size={16} /> {t('Thêm món')}
+              </button>
+            </footer>
+          </section>
+        </div>
+      ) : null}
       {addTarget ? (
         <div
           className="planner-dialog-backdrop"
@@ -1409,7 +1549,7 @@ export function PlannerPage() {
           <section
             aria-labelledby="planner-add-title"
             aria-modal="true"
-            className="planner-dialog"
+            className="planner-dialog planner-add-dialog"
             role="dialog"
             onKeyDown={(event) => {
               if (event.key === 'Escape') setAddTarget(null);
@@ -1583,10 +1723,11 @@ export function PlannerPage() {
                 </button>
               ) : null}
             </div>
-            <footer className="planner-dialog__footer">
-              <span>
-                {t('{count} món phù hợp', { count: dialogRecipes.length })} ·{' '}
-                {t('Đã chọn {count} món', { count: selectedSlugs.length })}
+            {/* Thanh lưu luôn hiện ở đáy hộp thoại: chỉ danh sách món cuộn, không phải kéo tới cuối. */}
+            <footer className="planner-dialog__footer planner-add-dialog__bar">
+              <span aria-live="polite">
+                <strong>{t('Đã chọn {count} món', { count: selectedSlugs.length })}</strong> ·{' '}
+                {t('{count} món phù hợp', { count: dialogRecipes.length })}
               </span>
               <button
                 className="button button--primary"

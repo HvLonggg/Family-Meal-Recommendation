@@ -204,7 +204,7 @@ export function HomePage() {
                 decoding="async"
                 height={44}
                 loading="lazy"
-                src="/images/brand/bep-viet-logo.png"
+                src="/images/brand/bep-viet-logo-light.png"
                 width={44}
               />
               <span className="section-label section-label--light">{t('Góc Bếp Việt')}</span>

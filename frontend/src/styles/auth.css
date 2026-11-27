@@ -1040,7 +1040,8 @@ body,
       linear-gradient(90deg, rgb(13 19 31 / 28%), transparent 55%);
   }
 
-  /* Huy hiệu logo: nền sáng bo góc vuông để chữ "BẾP VIỆT" màu đỏ đậm không chìm vào ảnh tối. */
+  /* Huy hiệu logo: dùng bản chữ kem trên lớp kính tối mờ thay cho hộp trắng,
+     để chữ "BẾP VIỆT" vẫn đọc rõ trên mọi ảnh nền. */
   .auth-story__brand {
     position: absolute;
     z-index: 3;
@@ -1048,8 +1049,9 @@ body,
     left: 24px;
     border-radius: 18px;
     padding: 6px;
-    background: rgb(255 255 255 / 92%);
+    background: rgb(36 25 21 / 42%);
     box-shadow: 0 10px 28px rgb(0 0 0 / 22%);
+    backdrop-filter: blur(6px);
   }
 
   .auth-story__brand .kitchen-logo__image {

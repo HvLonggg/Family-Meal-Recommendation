@@ -204,3 +204,28 @@
 .catalog-page-view .catalog-empty-state p {
   margin: 0;
 }
+/* Nút "Xem thêm món" của danh sách xáo ngẫu nhiên: nút viên thuốc, không dùng kiểu nút số trang. */
+.catalog-page-view .catalog-pagination.catalog-pagination--more .catalog-pagination__more {
+  display: inline-flex;
+  width: auto;
+  min-width: 200px;
+  height: auto;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  border-color: var(--color-primary);
+  border-radius: 999px;
+  padding: 10px 26px;
+  color: var(--color-primary);
+  background: #fff;
+  font-weight: 700;
+}
+.catalog-page-view .catalog-pagination.catalog-pagination--more .catalog-pagination__more:hover {
+  color: #fff;
+  background: var(--color-primary);
+}
+@media (max-width: 600px) {
+  .catalog-page-view .catalog-pagination.catalog-pagination--more .catalog-pagination__more {
+    width: 100%;
+  }
+}

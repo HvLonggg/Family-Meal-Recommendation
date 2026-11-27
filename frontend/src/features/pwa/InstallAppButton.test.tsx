@@ -78,6 +78,15 @@ describe('InstallAppButton', () => {
     expect(screen.queryByRole('dialog')).toBeNull();
   });
 
+  it('shows the full label in the footer and the short pill elsewhere', () => {
+    const { unmount } = render(<InstallAppButton variant="footer" />);
+    expect(screen.getByRole('button').textContent).toBe('Tải app về thiết bị');
+    unmount();
+    // Viên compact bị CSS ẩn ở màn rộng nên đọc thẳng nhãn thay vì tìm theo role.
+    const { container } = render(<InstallAppButton variant="compact" />);
+    expect(container.querySelector('.install-app-button__label')?.textContent).toBe('Tải app');
+  });
+
   it('is hidden inside the installed app', () => {
     act(() => resetInstallStateForTest({ installed: true }));
     render(<InstallAppButton />);

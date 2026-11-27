@@ -29,7 +29,12 @@ import { favoriteRecipesQueryKey, type FavoriteRecipe } from '@/features/favorit
 import { useI18n } from '@/features/i18n/I18nContext';
 import { useRecipeCatalog, useRecipeCatalogReady } from '@/features/i18n/recipeContent';
 import { apiRequest } from '@/lib/api/client';
+import { seededShuffle } from '@/lib/seededShuffle';
 import './recipes-page.css';
+
+/** Số hàng món hiển thị mỗi lần ở danh sách mặc định (chưa tìm, chưa lọc, chưa chọn sắp xếp). */
+const SHUFFLED_ROWS_PER_STEP = 3;
+const RANDOM_SORT = 'random';
 
 const categories = [
   'Tất cả',
@@ -66,6 +71,11 @@ export function RecipesPage() {
   const catalog = useRecipeCatalog();
   const catalogReady = useRecipeCatalogReady();
   const [pageSize, setPageSize] = useState(() => getCatalogPageSize());
+  // Seed riêng cho mỗi lần mở trang: danh sách mặc định đổi thứ tự mỗi lượt ghé thăm.
+  const [visitSeed] = useState(() => Math.random().toString(36).slice(2));
+  const [extraShuffledSteps, setExtraShuffledSteps] = useState(0);
+  const [gridElement, setGridElement] = useState<HTMLDivElement | null>(null);
+  const gridColumns = useGridColumns(gridElement);
   const query = params.get('q') ?? '';
   // Ô nhập giữ giá trị riêng để gõ không bị trễ hay mất ký tự; URL cập nhật sau khi ngừng gõ.
   const [queryDraft, setQueryDraft] = useState({ locationKey: location.key, value: query });
@@ -160,6 +170,7 @@ export function RecipesPage() {
 
   const updateFilters = (updates: Record<string, string>, replace = false) => {
     window.clearTimeout(queryTimerRef.current);
+    setExtraShuffledSteps(0);
     // Áp dụng cả chữ vừa gõ nếu người dùng chọn tab/lọc trước khi hết debounce.
     const nextUpdates = { q: draftQuery, ...updates };
     setParams(
@@ -170,8 +181,11 @@ export function RecipesPage() {
           if (value && value !== 'Tất cả') next.set(key, value);
           else next.delete(key);
         }
-        // Chỉ bỏ `sort` khỏi URL khi đó là thứ tự mặc định của trạng thái hiện tại.
-        if (next.get('sort') === defaultCatalogSort(next.get('q') ?? '')) next.delete('sort');
+        // Chỉ bỏ `sort` khỏi URL khi đó là thứ tự mặc định của trạng thái hiện tại. Khi không có
+        // từ khóa, "Nấu nhanh nhất" được giữ lại vì thiếu `sort` nghĩa là danh sách xáo ngẫu nhiên.
+        const nextQuery = next.get('q') ?? '';
+        if (nextQuery.trim() && next.get('sort') === defaultCatalogSort(nextQuery))
+          next.delete('sort');
         return next;
       },
       { replace },
@@ -219,6 +233,20 @@ export function RecipesPage() {
     region,
     sort,
   ]);
+  const filterCount =
+    ingredients.length +
+    methods.length +
+    Number(region !== 'Tất cả') +
+    Number(fitMe && canPersonalize);
+  const isFullCatalog = !query && category === 'Tất cả' && filterCount === 0;
+  // Danh sách mặc định (chưa tìm, lọc, sắp xếp hay mở trang cụ thể) xáo theo seed của lượt ghé
+  // và chỉ hiện vài hàng đầu; tìm kiếm, bộ lọc và sắp xếp vẫn giữ thứ tự cũ.
+  const isShuffledView = isFullCatalog && !params.has('sort') && !params.has('page');
+  const shuffledRecipes = useMemo(
+    () => (isShuffledView ? seededShuffle(filtered, visitSeed, (recipe) => recipe.slug) : []),
+    [filtered, isShuffledView, visitSeed],
+  );
+  const shuffledVisibleCount = gridColumns * SHUFFLED_ROWS_PER_STEP * (extraShuffledSteps + 1);
   const pageCount = Math.max(1, Math.ceil(filtered.length / pageSize));
   const requestedPage = Number(params.get('page') ?? 1);
   const page = Math.min(
@@ -233,12 +261,9 @@ export function RecipesPage() {
       value === page ||
       (pageSize >= 8 && Math.abs(value - page) <= 1),
   );
-  const filterCount =
-    ingredients.length +
-    methods.length +
-    Number(region !== 'Tất cả') +
-    Number(fitMe && canPersonalize);
-  const isFullCatalog = !query && category === 'Tất cả' && filterCount === 0;
+  const visibleRecipes = isShuffledView
+    ? shuffledRecipes.slice(0, shuffledVisibleCount)
+    : filtered.slice(offset, offset + pageSize);
   const favoritesLoading =
     favoritesOnly && (authLoading || (Boolean(user) && favoritesQuery.isPending));
   const favoritesUnavailable =
@@ -412,12 +437,16 @@ export function RecipesPage() {
               </div>
               <select
                 aria-label={t('Sắp xếp')}
-                value={sort}
+                value={isShuffledView ? RANDOM_SORT : sort}
                 disabled={favoritesUnavailable}
                 onChange={(event) => {
-                  updateFilters({ sort: event.target.value });
+                  const value = event.target.value;
+                  updateFilters({ sort: value === RANDOM_SORT ? '' : value });
                 }}
               >
+                {isFullCatalog ? (
+                  <option value={RANDOM_SORT}>{t('Gợi ý ngẫu nhiên')}</option>
+                ) : null}
                 {query.trim() ? <option value="relevant">{t('Khớp từ khóa nhất')}</option> : null}
                 {sortOptions.map((option) => (
                   <option key={option.id} value={option.id}>
@@ -490,8 +519,12 @@ export function RecipesPage() {
                 </button>
               </div>
             ) : filtered.length ? (
-              <div className="recipe-grid recipe-grid--catalog catalog-page" key={page}>
-                {filtered.slice(offset, offset + pageSize).map((recipe, index) => (
+              <div
+                className="recipe-grid recipe-grid--catalog catalog-page"
+                key={isShuffledView ? RANDOM_SORT : page}
+                ref={setGridElement}
+              >
+                {visibleRecipes.map((recipe, index) => (
                   // Ảnh hàng đầu tải ngay; phần còn lại tải lười khi cuộn tới.
                   <RecipeCard eager={index < 3} key={recipe.slug} recipe={recipe} />
                 ))}
@@ -518,7 +551,27 @@ export function RecipesPage() {
                 ) : null}
               </div>
             )}
-            {!favoritesUnavailable && filtered.length > 0 && (
+            {!favoritesUnavailable && filtered.length > 0 && isShuffledView ? (
+              <div className="catalog-pagination catalog-pagination--more">
+                <p aria-live="polite" role="status">
+                  {t('Món {from}–{to} trong {total} món', {
+                    from: 1,
+                    to: visibleRecipes.length,
+                    total: filtered.length,
+                  })}
+                </p>
+                {visibleRecipes.length < filtered.length ? (
+                  <button
+                    className="button button--outline catalog-pagination__more"
+                    onClick={() => setExtraShuffledSteps((steps) => steps + 1)}
+                    type="button"
+                  >
+                    {t('Xem thêm món')}
+                  </button>
+                ) : null}
+              </div>
+            ) : null}
+            {!favoritesUnavailable && filtered.length > 0 && !isShuffledView && (
               <div className="catalog-pagination">
                 <p aria-live="polite" role="status">
                   {t('Món {from}–{to} trong {total} món', {
@@ -578,4 +631,36 @@ function getCatalogPageSize() {
   if (window.matchMedia?.('(min-width: 960px)').matches ?? window.innerWidth >= 960) return 12;
   if (window.matchMedia?.('(min-width: 680px)').matches ?? window.innerWidth >= 680) return 8;
   return 6;
+}
+
+/** Số cột ước lượng theo breakpoint CSS khi chưa đo được lưới thật (lần vẽ đầu, môi trường test). */
+function getFallbackGridColumns() {
+  const matches = (query: string, fallback: boolean) =>
+    window.matchMedia?.(query).matches ?? fallback;
+  if (matches('(min-width: 960px)', window.innerWidth >= 960)) return 3;
+  if (matches('(min-width: 680px)', window.innerWidth >= 680)) return 2;
+  if (matches('(max-width: 340px)', window.innerWidth <= 340)) return 1;
+  return matches('(max-width: 600px)', window.innerWidth <= 600) ? 2 : 1;
+}
+
+/** Đếm số cột thực tế của lưới món để "3 hàng" luôn khớp bố cục đang hiển thị. */
+function useGridColumns(grid: HTMLElement | null) {
+  const [columns, setColumns] = useState(getFallbackGridColumns);
+  useEffect(() => {
+    const measure = () => {
+      const template = grid ? window.getComputedStyle(grid).gridTemplateColumns : '';
+      const counted = template && template !== 'none' ? template.trim().split(/\s+/).length : 0;
+      setColumns(counted || getFallbackGridColumns());
+    };
+    measure();
+    const observer =
+      grid && typeof ResizeObserver === 'function' ? new ResizeObserver(measure) : undefined;
+    if (grid) observer?.observe(grid);
+    window.addEventListener('resize', measure);
+    return () => {
+      observer?.disconnect();
+      window.removeEventListener('resize', measure);
+    };
+  }, [grid]);
+  return columns;
 }

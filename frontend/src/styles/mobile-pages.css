@@ -846,22 +846,9 @@
     padding: 8px 10px !important;
   }
 
-  .page-wrap.planner-page .planner-day__meals {
-    gap: 6px;
-    padding: 6px;
-  }
-
+  /* Ô bữa: chiều cao cố định đặt ở planner-page.css (--planner-slot-height) để các hàng thẳng nhau. */
   .page-wrap.planner-page .planner-meal {
-    border-radius: 10px;
     padding: 6px 8px;
-  }
-
-  .page-wrap.planner-page .planner-meal__heading {
-    margin-bottom: 4px;
-  }
-
-  .page-wrap.planner-page .planner-meal__empty {
-    min-height: 44px;
   }
 
   /* Thẻ tổng kết tuần. */

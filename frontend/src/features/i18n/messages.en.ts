@@ -2441,4 +2441,13 @@ export const en: Record<string, string> = {
   'Chào mừng bạn quay lại.': 'Welcome back.',
   'Ghi nhớ đăng nhập': 'Keep me signed in',
   'Miễn phí, chỉ mất một phút.': 'Free, and it only takes a minute.',
+  'Tải app về thiết bị': 'Get the app on your device',
+  'Gợi ý ngẫu nhiên': 'Random picks',
+  // Kế hoạch: bảng chi tiết bữa ăn.
+  'Mở {meal} {date}: {name}': 'Open {meal} on {date}: {name}',
+  'Đóng chi tiết bữa ăn': 'Close meal details',
+  'Khẩu phần {name}': 'Servings for {name}',
+  'Bữa này chưa có món nào.': 'This meal has no dishes yet.',
+  'Vào bếp cả bữa': 'Cook the whole meal',
+  'Thêm món': 'Add dish',
 };

@@ -200,7 +200,7 @@ export function AdminLayout() {
           onClick={() => setNavOpen(false)}
           to="/admin"
         >
-          <KitchenHomeLogo compact />
+          <KitchenHomeLogo compact tone="light" />
           <span>
             <strong>Bếp Việt</strong>
             <small>{t('Bảng quản trị')}</small>
