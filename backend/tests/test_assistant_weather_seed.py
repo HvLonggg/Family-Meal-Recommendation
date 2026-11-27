@@ -269,9 +269,7 @@ def test_weather_falls_back_to_wttr_when_open_meteo_is_rate_limited(
                 "windspeedKmph": "6",
             }
         ],
-        "weather": [
-            {"maxtempC": "25", "mintempC": "17", "hourly": [{"chanceofrain": "70"}]}
-        ],
+        "weather": [{"maxtempC": "25", "mintempC": "17", "hourly": [{"chanceofrain": "70"}]}],
     }
 
     def fake_get(url: str, *, params: dict[str, Any], timeout: float) -> httpx.Response:

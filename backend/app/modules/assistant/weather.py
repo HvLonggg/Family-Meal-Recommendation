@@ -29,10 +29,29 @@ FORECAST_URL = "https://api.open-meteo.com/v1/forecast"
 WTTR_URL = "https://wttr.in/{lat},{lon}"
 # Mã thời tiết WWO (wttr.in) quy về mã WMO mà phần diễn giải đang dùng.
 _WWO_TO_WMO = {
-    113: 0, 116: 2, 119: 3, 122: 3, 143: 45, 248: 45, 260: 45,
-    176: 61, 263: 51, 266: 51, 293: 61, 296: 61, 353: 80,
-    299: 63, 302: 63, 305: 65, 308: 65, 356: 81, 359: 82,
-    200: 95, 386: 95, 389: 95, 392: 95,
+    113: 0,
+    116: 2,
+    119: 3,
+    122: 3,
+    143: 45,
+    248: 45,
+    260: 45,
+    176: 61,
+    263: 51,
+    266: 51,
+    293: 61,
+    296: 61,
+    353: 80,
+    299: 63,
+    302: 63,
+    305: 65,
+    308: 65,
+    356: 81,
+    359: 82,
+    200: 95,
+    386: 95,
+    389: 95,
+    392: 95,
 }
 TIMEOUT_SECONDS = 3.0
 CACHE_SECONDS = 600.0
@@ -337,7 +356,7 @@ class Report:
 
     @property
     def mood(self) -> str:
-        """"rain" | "hot" | "cold" | "mild": quyết định kiểu món nên gợi ý."""
+        """ "rain" | "hot" | "cold" | "mild": quyết định kiểu món nên gợi ý."""
         if (self.code in _RAIN_CODES) or (self.precipitation or 0) >= 0.3:
             return "rain"
         temp = self.temperature if self.temperature is not None else 26.0
@@ -449,16 +468,57 @@ def facts(report: Report, language: Language = "vi") -> str:
 # ---------------------------------------------------------------------------
 _MOOD_WORDS: dict[str, tuple[str, ...]] = {
     "hot": (
-        "goi", "nom", "canh chua", "canh", "che", "sinh to", "nuoc ep", "rau", "dua", "bi",
-        "muop", "cai", "salad", "cuon", "bun", "thach", "suong sao", "dau xanh", "mat",
+        "goi",
+        "nom",
+        "canh chua",
+        "canh",
+        "che",
+        "sinh to",
+        "nuoc ep",
+        "rau",
+        "dua",
+        "bi",
+        "muop",
+        "cai",
+        "salad",
+        "cuon",
+        "bun",
+        "thach",
+        "suong sao",
+        "dau xanh",
+        "mat",
     ),
     "rain": (
-        "lau", "chao", "pho", "bun bo", "kho", "ham", "nuong", "chien", "sup", "mien",
-        "hu tieu", "rang", "gung", "nong",
+        "lau",
+        "chao",
+        "pho",
+        "bun bo",
+        "kho",
+        "ham",
+        "nuong",
+        "chien",
+        "sup",
+        "mien",
+        "hu tieu",
+        "rang",
+        "gung",
+        "nong",
     ),
     "cold": (
-        "lau", "chao", "pho", "kho", "ham", "nuong", "gung", "bun bo", "sup", "mien",
-        "chien", "rang", "tieu", "nong",
+        "lau",
+        "chao",
+        "pho",
+        "kho",
+        "ham",
+        "nuong",
+        "gung",
+        "bun bo",
+        "sup",
+        "mien",
+        "chien",
+        "rang",
+        "tieu",
+        "nong",
     ),
 }
 _MOOD_LINE: dict[str, dict[Language, str]] = {

@@ -369,9 +369,7 @@ def _draft_reply(
         recipes = forecast.recipes
         kind = "weather"
     talk = (
-        smalltalk.detect(payload.message)
-        if not files and not use_ai and forecast is None
-        else None
+        smalltalk.detect(payload.message) if not files and not use_ai and forecast is None else None
     )
     if talk is not None:
         chatter = smalltalk.reply(talk, payload.language, sassy=tone == "sassy")
