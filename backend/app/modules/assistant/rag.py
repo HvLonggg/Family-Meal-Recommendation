@@ -307,6 +307,7 @@ QUESTION_WORDS = (
     "where",
 )
 MIN_COVERAGE = 0.6
+_MARKDOWN_MARKS = re.compile(r"(?:^|\s)#{1,6}\s+")
 
 
 def is_question(text: str) -> bool:
@@ -368,10 +369,14 @@ def extractive_answer(
 
     # Ưu tiên đoạn có một câu trả lời trúng nhiều từ khóa nhất (bước "hầm 3 giờ" hơn phần mô tả).
     best = max(candidates, key=lambda hit: (best_sentence(hit), -candidates.index(hit)))
+    # Tài liệu được dạy: bỏ dòng tiêu đề lặp ("Tên tài liệu:") và dấu đề mục Markdown.
+    heading = f"{best.chunk.title}:"
     sentences = [
-        sentence.strip(" -")
+        cleaned
         for sentence in re.split(r"(?<=[.!?…])\s+|\n+", best.chunk.content)
-        if len(sentence.strip()) > 12
+        if (cleaned := _MARKDOWN_MARKS.sub(" ", sentence).strip(" -*"))
+        and len(cleaned) > 12
+        and cleaned != heading
     ]
     scored = sorted(
         (

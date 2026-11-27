@@ -165,3 +165,38 @@ def test_upload_reports_extraction_errors(
     response = upload(client, admin, "cu.ppt", b"x" * 64)
     assert response.status_code == 400
     assert ".pptx" in response.json()["message"]
+
+
+def test_admin_probe_shows_retrieved_knowledge(
+    client: TestClient, database_session_factory: sessionmaker[Session]
+) -> None:
+    admin = create_admin(client, database_session_factory, "prober@example.com")
+    client.post(
+        "/api/v1/admin/assistant/documents",
+        json={
+            "title": "Giờ giao nguyên liệu",
+            "text": "Bếp Việt giao nguyên liệu nội thành từ 8 giờ đến 20 giờ mỗi ngày.",
+        },
+        headers=admin,
+    )
+    probe = client.post(
+        "/api/v1/admin/assistant/knowledge/probe",
+        json={"query": "giao nguyên liệu nội thành mấy giờ"},
+        headers=admin,
+    )
+    assert probe.status_code == 200, probe.text
+    body = probe.json()
+    assert body["retrieval"] in {"hybrid", "bm25"}
+    assert body["hits"][0]["title"] == "Giờ giao nguyên liệu"
+    assert body["hits"][0]["source_type"] == "doc"
+    assert "20 giờ" in body["hits"][0]["snippet"]
+
+    member = register_and_login(client, "curious@example.com")
+    denied = client.post(
+        "/api/v1/admin/assistant/knowledge/probe", json={"query": "giao hàng"}, headers=member
+    )
+    assert denied.status_code == 403
+    invalid = client.post(
+        "/api/v1/admin/assistant/knowledge/probe", json={"query": "x"}, headers=admin
+    )
+    assert invalid.status_code == 422

@@ -30,8 +30,10 @@ from app.modules.assistant import (
     memory,
     persona,
     rag,
+    seed,
     smalltalk,
     traits,
+    weather,
 )
 from app.modules.assistant.models import AssistantConversation, AssistantMessage
 from app.modules.assistant.phrases import SUGGESTIONS
@@ -350,7 +352,27 @@ def _draft_reply(
     kind = local.intent.kind
     query = rag.build_query(f"{payload.message}\n{attachment_text}".strip(), history)
     use_ai = ai.ai_enabled()
-    talk = smalltalk.detect(payload.message) if not files and not use_ai else None
+    # Hỏi thời tiết: lấy số liệu thật (Open-Meteo) rồi gợi ý món hợp trời; AI chỉ diễn đạt lại.
+    forecast = (
+        weather.reply(
+            payload.message,
+            catalog,
+            language=payload.language,
+            preferences=prefs,
+            avoid=avoid,
+        )
+        if not files and weather.detect(payload.message)
+        else None
+    )
+    if forecast is not None:
+        content = forecast.content
+        recipes = forecast.recipes
+        kind = "weather"
+    talk = (
+        smalltalk.detect(payload.message)
+        if not files and not use_ai and forecast is None
+        else None
+    )
     if talk is not None:
         chatter = smalltalk.reply(talk, payload.language, sassy=tone == "sassy")
         if talk.strong or kind in ("fallback", "greeting", "thanks", "help"):
@@ -373,12 +395,21 @@ def _draft_reply(
     # chi tiết về một món/tài liệu cụ thể ("phở bò hầm bao lâu?") mà bộ máy chỉ gợi ý chung.
     fallback = local.intent.kind == "fallback"
     specific = local.intent.kind in ("suggest", "pick") and rag.is_question(payload.message)
-    if use_ai or ((fallback or specific) and not files):
+    # Hỏi cách dùng tính năng ("làm sao xóa tài khoản?"): ưu tiên tài liệu hướng dẫn/quản trị
+    # viên dạy nếu khớp chắc, thay vì câu trả lời soạn sẵn chung chung của chủ đề.
+    guide_question = (
+        kind == "topic"
+        and local.intent.topic not in ("about", "contact")
+        and rag.is_question(payload.message)
+    )
+    if use_ai or ((fallback or specific or guide_question) and not files and forecast is None):
         hits = rag.retrieve(session, query, k=get_settings().rag_top_k)
     ai_args: dict[str, Any] | None = None
     candidates: list[engine.RecipeEntry] = []
     if use_ai:
         by_slug = {entry.slug: entry for entry in catalog}
+        if forecast is not None:
+            candidates.extend(forecast.recipes)
         for hit in hits:
             entry = by_slug.get(hit.chunk.source_key) if hit.chunk.source_type == "recipe" else None
             if entry is not None and entry not in candidates:
@@ -400,7 +431,9 @@ def _draft_reply(
             "candidates": candidates,
             "attachments": files,
             "language": payload.language,
-            "knowledge": _wants_block(local.intent, payload.language) + rag.context_block(hits),
+            "knowledge": (forecast.context if forecast is not None else "")
+            + _wants_block(local.intent, payload.language)
+            + rag.context_block(hits),
             "memories": memory.context_block(notes),
             # Bản sắc đã nằm trong prompt hệ thống; ở đây chỉ thêm giọng điệu.
             "persona": persona.tone_block(tone),
@@ -408,7 +441,14 @@ def _draft_reply(
         }
     elif hits:
         # Không có AI: trích câu trả lời từ tài liệu khớp nhất thay vì câu "chưa hiểu".
-        answer = rag.extractive_answer(query, hits, payload.language, must_name_source=not fallback)
+        pool = (
+            [hit for hit in hits if hit.chunk.source_type in ("doc", "guide")]
+            if guide_question
+            else hits
+        )
+        answer = rag.extractive_answer(
+            query, pool, payload.language, must_name_source=not (fallback or guide_question)
+        )
         if answer:
             content, used = answer
             sources = _sources([used])
@@ -551,7 +591,7 @@ def begin_turn(session: Session, *, payload: ChatRequest, user: User | None) -> 
         return turn
     inhouse = (
         None
-        if files
+        if files or weather.detect(payload.message)
         else _inhouse_reply(session, payload=payload, user=user, history=history, avoid=avoid)
     )
     if inhouse is not None:
@@ -796,6 +836,12 @@ def warm_up() -> None:
     def run() -> None:
         try:
             with SessionLocal() as session:
+                try:
+                    # Tài liệu nền cho Chú Rồng: chỉ thêm bản còn thiếu, đồng bộ RAG ngay sau.
+                    seed.seed_knowledge_documents(session)
+                except Exception as exc:  # Bảng chưa sẵn sàng: lần khởi động sau thử lại.
+                    session.rollback()
+                    logger.warning("Assistant seed documents skipped (%s).", type(exc).__name__)
                 engine.load_catalog(session)
                 rag.load_index(session)
                 bind = session.get_bind()

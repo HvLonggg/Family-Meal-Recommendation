@@ -73,9 +73,7 @@ describe('LoginPage', () => {
   it('giữ lời chào quen thuộc khi mở trực tiếp', () => {
     renderAt('/login');
 
-    expect(
-      screen.getByRole('heading', { level: 1, name: 'Đăng nhập Bếp Việt' }),
-    ).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 1, name: 'Đăng nhập' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Tạo tài khoản miễn phí' })).toHaveAttribute(
       'href',
       '/register',

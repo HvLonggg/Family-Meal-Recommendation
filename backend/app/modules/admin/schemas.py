@@ -398,3 +398,29 @@ AdminUserDetailResponse.model_rebuild()
 
 
 AdminInsightsResponse.model_rebuild()
+
+
+class KnowledgeProbeIn(BaseModel):
+    """Câu hỏi thử để xem Chú Rồng tìm được đoạn tri thức nào (không gọi LLM)."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    query: str = Field(min_length=2, max_length=500)
+    k: int = Field(default=6, ge=1, le=12)
+
+
+class KnowledgeProbeHit(BaseModel):
+    title: str
+    source_type: str
+    source_key: str
+    url: str
+    snippet: str
+    score: float
+    lexical: float
+    dense: float
+
+
+class KnowledgeProbeResponse(BaseModel):
+    query: str
+    retrieval: Literal["hybrid", "bm25"]
+    hits: list[KnowledgeProbeHit]

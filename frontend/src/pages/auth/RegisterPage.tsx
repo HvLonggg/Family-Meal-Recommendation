@@ -56,7 +56,7 @@ export function RegisterPage() {
   return (
     <div className="auth-page auth-page--register">
       <div className="auth-card__heading">
-        <h1>{t('Tạo tài khoản của bạn')}</h1>
+        <h1>{t('Tạo tài khoản')}</h1>
         <p>{t('Miễn phí, chỉ mất một phút.')}</p>
       </div>
       {message ? <AuthAlert tone="danger">{message}</AuthAlert> : null}

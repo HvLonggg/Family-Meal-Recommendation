@@ -600,7 +600,21 @@ def parse_intent(message: str, catalog: list[RecipeEntry]) -> Intent:
     people = re.search(r"(\d{1,2})\s*(?:nguoi|suat|phan|people|persons|servings)\b", text)
     if people:
         intent.servings = max(1, min(30, int(people.group(1))))
-    if _has(text, "khong cay", "it cay", "not spicy", "mild", "tre em", "em be", "kids"):
+    if _has(
+        text,
+        "khong cay",
+        "it cay",
+        "not spicy",
+        "mild",
+        "tre em",
+        "em be",
+        "tre nho",
+        "con nho",
+        "cho be",
+        "be an",
+        "kids",
+        "children",
+    ):
         intent.not_spicy = True
     if _has(
         text, "mam com", "ca mam", "bua com gia dinh", "com gia dinh", "family meal", "full meal"
@@ -610,6 +624,11 @@ def parse_intent(message: str, catalog: list[RecipeEntry]) -> Intent:
     excluded_spans: list[tuple[int, int]] = []
     for match in re.finditer(rf"{NEGATION} ((?:\w+ ?){{1,3}})", text):
         segment = match.group(1)
+        if re.search(r"(?:^| )(?:hai san|seafood)(?: |$)", segment):
+            # "Kiêng hải sản" = bỏ cả nhóm tôm, mực, cua, nghêu, ốc… như trong ghi nhớ.
+            intent.exclude.extend(word for word in SEAFOOD if word not in intent.exclude)
+            excluded_spans.append(match.span())
+            continue
         fused_segment = _fuse(segment)
         for word in sorted(INGREDIENT_WORDS, key=len, reverse=True):
             target = _fuse(word)
@@ -654,6 +673,10 @@ def parse_intent(message: str, catalog: list[RecipeEntry]) -> Intent:
         or intent.include
         or intent.methods
         or intent.full_meal
+        # "Món không cay", "nấu cho 4 người", "kiêng hải sản" cũng là yêu cầu gợi ý món.
+        or intent.not_spicy
+        or intent.servings
+        or intent.exclude
     )
     if recipe and (asks_recipe or len(text.split()) <= len(recipe.name_norm.split()) + 3):
         intent.kind = "recipe"

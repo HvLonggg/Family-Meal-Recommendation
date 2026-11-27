@@ -48,6 +48,9 @@ from app.modules.admin.schemas import (
     AdminUserPlansResponse,
     AdminUserRow,
     AdminUserUpdate,
+    KnowledgeProbeHit,
+    KnowledgeProbeIn,
+    KnowledgeProbeResponse,
     OverviewCounts,
     RecentUser,
 )
@@ -67,7 +70,7 @@ from app.modules.articles.service import (
     to_detail,
     to_summary,
 )
-from app.modules.assistant import documents, knowledge
+from app.modules.assistant import documents, knowledge, rag
 from app.modules.assistant.models import AssistantKnowledgeDocument
 from app.modules.assistant.schemas import (
     KnowledgeDocumentDetail,
@@ -1254,6 +1257,35 @@ def assistant_knowledge_status(session: DatabaseSession) -> KnowledgeStatus:
 def assistant_knowledge_reindex(session: DatabaseSession) -> KnowledgeStatus:
     knowledge.ensure_fresh(session.get_bind(), force=True)
     return KnowledgeStatus.model_validate(knowledge.knowledge_status(session))
+
+
+@router.post(
+    "/assistant/knowledge/probe",
+    response_model=KnowledgeProbeResponse,
+    summary="Preview which knowledge chunks the assistant retrieves for a question",
+)
+def assistant_knowledge_probe(
+    payload: KnowledgeProbeIn, session: DatabaseSession
+) -> KnowledgeProbeResponse:
+    # Chỉ truy xuất (BM25 + vector nếu có), không gọi mô hình sinh câu trả lời.
+    hits = rag.retrieve(session, payload.query, k=payload.k)
+    return KnowledgeProbeResponse(
+        query=payload.query,
+        retrieval="hybrid" if knowledge.embedding_model() else "bm25",
+        hits=[
+            KnowledgeProbeHit(
+                title=hit.chunk.title,
+                source_type=hit.chunk.source_type,
+                source_key=hit.chunk.source_key,
+                url=hit.chunk.url,
+                snippet=" ".join(hit.chunk.content.split())[:360],
+                score=round(hit.score, 4),
+                lexical=round(hit.lexical, 4),
+                dense=round(hit.dense, 4),
+            )
+            for hit in hits
+        ],
+    )
 
 
 def _document_out(item: AssistantKnowledgeDocument) -> KnowledgeDocumentOut:

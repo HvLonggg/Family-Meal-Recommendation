@@ -585,6 +585,28 @@ export function deleteKnowledgeDocument(id: string) {
   return apiDelete(`/admin/assistant/documents/${encodeURIComponent(id)}`);
 }
 
+export interface KnowledgeProbeHit {
+  title: string;
+  source_type: string;
+  source_key: string;
+  url: string;
+  snippet: string;
+  score: number;
+  lexical: number;
+  dense: number;
+}
+
+export interface KnowledgeProbeResult {
+  query: string;
+  retrieval: 'hybrid' | 'bm25';
+  hits: KnowledgeProbeHit[];
+}
+
+/** Hỏi thử: xem Chú Rồng truy xuất được đoạn tri thức nào cho một câu hỏi (không gọi LLM). */
+export function probeKnowledge(payload: { query: string; k?: number }) {
+  return apiPost<KnowledgeProbeResult>('/admin/assistant/knowledge/probe', payload);
+}
+
 export function reindexKnowledge() {
   return apiPost<KnowledgeStatus>('/admin/assistant/knowledge/reindex');
 }

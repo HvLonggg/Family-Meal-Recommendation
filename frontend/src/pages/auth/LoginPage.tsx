@@ -125,7 +125,7 @@ export function LoginPage() {
           </>
         ) : (
           <>
-            <h1>{t('Đăng nhập Bếp Việt')}</h1>
+            <h1>{t('Đăng nhập')}</h1>
             <p>{t('Chào mừng bạn quay lại.')}</p>
           </>
         )}
