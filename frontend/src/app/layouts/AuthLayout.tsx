@@ -16,9 +16,9 @@ export function AuthLayout() {
                 alt=""
                 className="auth-brand__logo"
                 decoding="async"
-                height={72}
+                height={96}
                 src="/images/brand/bep-viet-logo.png"
-                width={72}
+                width={96}
               />
             </Link>
           </header>

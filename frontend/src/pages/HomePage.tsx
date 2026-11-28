@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 
 import { AppIcon } from '@/components/common/AppIcon';
+import { Typewriter } from '@/components/common/Typewriter';
 import { SearchField } from '@/components/common/SearchField';
 import { HeroDishShowcase } from '@/components/recipes/HeroDishShowcase';
 import { MealCard } from '@/components/recipes/MealCard';
@@ -75,15 +76,22 @@ export function HomePage() {
             <span className="hero-kicker">
               <AppIcon name="sparkles" size={17} /> {t('Bữa nhà ngon hơn mỗi ngày')}
             </span>
+            {/* Khẩu hiệu và câu giới thiệu hiện dần như đang gõ phím khi mở trang. */}
             <h1>
-              {t('Cùng Bếp Việt,')}
+              <Typewriter text={t('Cùng Bếp Việt,')} />
               <br />
-              <em>{t('trọn vị cơm nhà')}</em>
+              <em>
+                <Typewriter delay={650} text={t('trọn vị cơm nhà')} />
+              </em>
             </h1>
             <p>
-              {t(
-                'Chọn món quen, ghép mâm cơm đủ vị và chuẩn bị đúng lượng cho cả gia đình — tất cả trong một căn bếp số.',
-              )}
+              <Typewriter
+                delay={1350}
+                speed={18}
+                text={t(
+                  'Chọn món ngon đa dạng, bổ sung mâm cơm đủ vị khoa học cho cả gia đình — tất cả trong một căn bếp số.',
+                )}
+              />
             </p>
             <form className="hero-search" onSubmit={submitSearch}>
               <SearchField

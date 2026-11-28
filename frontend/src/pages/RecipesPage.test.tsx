@@ -8,7 +8,9 @@ import { seededShuffle } from '@/lib/seededShuffle';
 import { RecipesPage } from '@/pages/RecipesPage';
 
 const mocks = vi.hoisted(() => ({
-  user: null as { id: string } | null,
+  user: null as { id: string; preferences?: object } | null,
+  savePreferences: vi.fn(),
+  updateUser: vi.fn(),
   loading: false,
   personal: false,
   maxMinutes: 0,
@@ -16,8 +18,9 @@ const mocks = vi.hoisted(() => ({
   request: vi.fn(),
 }));
 vi.mock('@/features/auth/AuthContext', () => ({
-  useAuth: () => ({ user: mocks.user, isLoading: mocks.loading }),
+  useAuth: () => ({ user: mocks.user, isLoading: mocks.loading, updateUser: mocks.updateUser }),
 }));
+vi.mock('@/features/account/accountApi', () => ({ savePreferences: mocks.savePreferences }));
 vi.mock('@/features/account/preferences', () => ({
   useUserPreferences: () => ({
     isPersonal: mocks.personal,
@@ -95,11 +98,15 @@ function openFilters() {
   if (toggle) fireEvent.click(toggle);
 }
 beforeEach(() => {
+  // Phần lớn kịch bản phân trang dùng 4 hàng (12 món trên lưới 3 cột); mặc định 3 hàng có test riêng.
+  window.localStorage.setItem('bep-viet:catalog-rows', '4');
   mocks.user = null;
   mocks.loading = false;
   mocks.personal = false;
   mocks.maxMinutes = 0;
   mocks.request.mockReset();
+  mocks.savePreferences.mockReset();
+  mocks.updateUser.mockReset();
   mocks.catalog = [
     fixture('thit-lon-kho', 'Thịt lợn kho', 'Thịt lợn', 35),
     fixture('ga-luoc', 'Gà luộc', 'Thịt gà', 20),
@@ -118,6 +125,8 @@ beforeEach(() => {
 });
 afterEach(() => {
   cleanup();
+  window.localStorage.clear();
+  window.sessionStorage.clear();
   vi.useRealTimers();
   vi.unstubAllGlobals();
 });
@@ -134,7 +143,9 @@ describe('catalog browsing workflow', () => {
       'Món mặn',
     );
     expect(names()).toEqual(['Cá hấp', 'Gà luộc', 'Thịt lợn kho']);
-    fireEvent.change(screen.getByRole('combobox'), { target: { value: 'quick' } });
+    fireEvent.change(screen.getByRole('combobox', { name: 'Sắp xếp' }), {
+      target: { value: 'quick' },
+    });
     expect(names()).toEqual(['Gà luộc', 'Thịt lợn kho', 'Cá hấp']);
   });
   it('combines multi-select ingredients with cooking methods and clears stale selections on tab change', () => {
@@ -157,27 +168,31 @@ describe('catalog browsing workflow', () => {
     // Ô nhập nhận chữ ngay; danh sách lọc sau khi ngừng gõ.
     expect(screen.getByRole('searchbox')).toHaveValue('gà');
     await waitFor(() => expect(names()).toEqual(['Gà luộc']));
-    fireEvent.change(screen.getByRole('combobox'), { target: { value: 'easy' } });
+    fireEvent.change(screen.getByRole('combobox', { name: 'Sắp xếp' }), {
+      target: { value: 'easy' },
+    });
     expect(names()).toEqual(['Gà luộc']);
     fireEvent.change(screen.getByRole('searchbox'), { target: { value: 'chicken' } });
     expect(screen.getByRole('searchbox')).toHaveValue('chicken');
     await waitFor(() => expect(names()).toEqual(['Gà luộc']));
   });
-  it('keeps desktop pagination to twelve dishes and resets page after a filter', () => {
+  it('keeps desktop pagination to the chosen rows and resets page after a filter', () => {
     mocks.catalog = Array.from({ length: 23 }, (_, index) =>
       fixture(`ga-luoc-${index}`, `Gà luộc ${index}`, 'Gà', 20 + index),
     );
-    renderCatalog('/recipes?page=2');
+    renderCatalog('/recipes?sort=quick&page=2');
     expect(names()).toHaveLength(11);
     expect(names()[0]).toBe('Gà luộc 12');
-    fireEvent.change(screen.getByRole('combobox'), { target: { value: 'name' } });
+    fireEvent.change(screen.getByRole('combobox', { name: 'Sắp xếp' }), {
+      target: { value: 'name' },
+    });
     expect(screen.getByTestId('location').textContent).not.toContain('page=');
     expect(names()).toHaveLength(12);
   });
   it.each([
     [true, true, 12],
     [false, true, 8],
-    [false, false, 6],
+    [false, false, 4],
   ])('sizes a page for desktop=%s tablet=%s as %i dishes', (desktop, tablet, size) => {
     vi.stubGlobal(
       'matchMedia',
@@ -193,7 +208,8 @@ describe('catalog browsing workflow', () => {
     renderCatalog('/recipes?sort=quick');
     expect(names()).toHaveLength(size);
   });
-  it('shuffles the default catalog per visit seed, shows three rows and reveals more on demand', () => {
+  it('paginates the shuffled default catalog with a stable per-visit seed', () => {
+    window.localStorage.clear();
     mocks.catalog = Array.from({ length: 23 }, (_, index) =>
       fixture(`ga-luoc-${index}`, `Gà luộc ${index}`, 'Gà', 20 + index),
     );
@@ -204,26 +220,44 @@ describe('catalog browsing workflow', () => {
     );
     renderCatalog();
     random.mockRestore();
-    // Máy tính: lưới 3 cột → 3 hàng = 9 món đầu theo thứ tự xáo của seed.
+    // Mặc định 3 hàng × 3 cột = 9 món mỗi trang theo thứ tự xáo của seed, có phân trang số.
     expect(names()).toEqual(expected.slice(0, 9));
     expect(expected.slice(0, 9)).not.toEqual(mocks.catalog.slice(0, 9).map(({ name }) => name));
-    expect(screen.queryByRole('button', { name: 'Trang tiếp' })).not.toBeInTheDocument();
-    expect(screen.getByRole('combobox')).toHaveValue('random');
-    fireEvent.click(screen.getByRole('button', { name: 'Xem thêm món' }));
-    expect(names()).toEqual(expected.slice(0, 18));
-    fireEvent.click(screen.getByRole('button', { name: 'Xem thêm món' }));
-    expect(names()).toEqual(expected);
     expect(screen.queryByRole('button', { name: 'Xem thêm món' })).not.toBeInTheDocument();
-    // Chọn sắp xếp cụ thể thì quay lại thứ tự và phân trang như cũ.
-    fireEvent.change(screen.getByRole('combobox'), { target: { value: 'quick' } });
+    expect(screen.getByRole('combobox', { name: 'Sắp xếp' })).toHaveValue('random');
+    expect(screen.getByRole('combobox', { name: 'Số hàng mỗi trang' })).toHaveValue('3');
+    expect(screen.getByRole('navigation', { name: 'Phân trang món ăn' })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Trang tiếp' }));
+    expect(currentParams().get('page')).toBe('2');
+    expect(names()).toEqual(expected.slice(9, 18));
+    fireEvent.click(screen.getByRole('button', { name: 'Trang 3' }));
+    expect(names()).toEqual(expected.slice(18));
+    // Chọn sắp xếp cụ thể thì quay lại thứ tự cố định từ trang 1.
+    fireEvent.change(screen.getByRole('combobox', { name: 'Sắp xếp' }), {
+      target: { value: 'quick' },
+    });
     expect(currentParams().get('sort')).toBe('quick');
-    expect(names()).toHaveLength(12);
+    expect(currentParams().has('page')).toBe(false);
     expect(names()[0]).toBe('Gà luộc 0');
-    fireEvent.change(screen.getByRole('combobox'), { target: { value: 'random' } });
+    fireEvent.change(screen.getByRole('combobox', { name: 'Sắp xếp' }), {
+      target: { value: 'random' },
+    });
     expect(currentParams().has('sort')).toBe(false);
     expect(names()).toEqual(expected.slice(0, 9));
   });
-  it('limits the default catalog to three rows of the two-column phone grid', () => {
+  it('reuses the stored shuffle seed when opening a later page directly', () => {
+    mocks.catalog = Array.from({ length: 23 }, (_, index) =>
+      fixture(`ga-luoc-${index}`, `Gà luộc ${index}`, 'Gà', 20 + index),
+    );
+    window.sessionStorage.setItem('bep-viet:catalog-seed', 'stored-seed');
+    const expected = seededShuffle(mocks.catalog, 'stored-seed', (recipe) => recipe.slug).map(
+      (recipe) => recipe.name,
+    );
+    renderCatalog('/recipes?page=2');
+    expect(names()).toEqual(expected.slice(12, 23));
+  });
+  it('sizes the default catalog as three rows of the two-column phone grid', () => {
+    window.localStorage.clear();
     vi.stubGlobal(
       'matchMedia',
       vi.fn((query: string) => ({
@@ -237,6 +271,55 @@ describe('catalog browsing workflow', () => {
     );
     renderCatalog();
     expect(names()).toHaveLength(6);
+    expect(screen.getByRole('button', { name: 'Trang 4' })).toBeInTheDocument();
+  });
+  it('changes the page size by rows, resets to page one and remembers a guest choice', () => {
+    window.localStorage.clear();
+    mocks.catalog = Array.from({ length: 23 }, (_, index) =>
+      fixture(`ga-luoc-${index}`, `Gà luộc ${index}`, 'Gà', 20 + index),
+    );
+    renderCatalog('/recipes?sort=quick&page=3');
+    expect(names()).toHaveLength(5);
+    fireEvent.change(screen.getByRole('combobox', { name: 'Số hàng mỗi trang' }), {
+      target: { value: '5' },
+    });
+    expect(currentParams().has('page')).toBe(false);
+    expect(currentParams().get('sort')).toBe('quick');
+    expect(names()).toHaveLength(15);
+    expect(names()[0]).toBe('Gà luộc 0');
+    expect(window.localStorage.getItem('bep-viet:catalog-rows')).toBe('5');
+    expect(mocks.savePreferences).not.toHaveBeenCalled();
+    cleanup();
+    renderCatalog('/recipes?sort=quick');
+    expect(screen.getByRole('combobox', { name: 'Số hàng mỗi trang' })).toHaveValue('5');
+    expect(names()).toHaveLength(15);
+  });
+  it('prefers the account setting and saves a new choice to the account once', async () => {
+    vi.useFakeTimers();
+    const preferences = { dietary_tags: [], max_cooking_minutes: 0, catalog_rows: 5 };
+    mocks.user = { id: 'u1', preferences };
+    mocks.savePreferences.mockImplementation((next: object) => Promise.resolve(next));
+    mocks.catalog = Array.from({ length: 23 }, (_, index) =>
+      fixture(`ga-luoc-${index}`, `Gà luộc ${index}`, 'Gà', 20 + index),
+    );
+    renderCatalog('/recipes?sort=quick');
+    // Thiết lập tài khoản (5) thắng lựa chọn trên thiết bị (4).
+    expect(screen.getByRole('combobox', { name: 'Số hàng mỗi trang' })).toHaveValue('5');
+    expect(names()).toHaveLength(15);
+    const rows = screen.getByRole('combobox', { name: 'Số hàng mỗi trang' });
+    fireEvent.change(rows, { target: { value: '4' } });
+    fireEvent.change(rows, { target: { value: '3' } });
+    expect(names()).toHaveLength(9);
+    expect(mocks.savePreferences).not.toHaveBeenCalled();
+    await act(async () => {
+      await vi.advanceTimersByTimeAsync(700);
+    });
+    expect(mocks.savePreferences).toHaveBeenCalledTimes(1);
+    expect(mocks.savePreferences).toHaveBeenCalledWith({ ...preferences, catalog_rows: 3 });
+    expect(mocks.updateUser).toHaveBeenCalledWith({
+      id: 'u1',
+      preferences: { ...preferences, catalog_rows: 3 },
+    });
   });
   it('names the active category and region in the results heading', () => {
     mocks.catalog = mocks.catalog.map((recipe) => ({ ...recipe, region: 'Trung' }));
@@ -254,7 +337,7 @@ describe('catalog browsing workflow', () => {
     mocks.catalog = Array.from({ length: 23 }, (_, index) =>
       fixture(`ga-luoc-${index}`, `Gà luộc ${index}`, 'Gà', 20 + index),
     );
-    renderCatalog(`/recipes?page=${page}`);
+    renderCatalog(`/recipes?sort=quick&page=${page}`);
     expect(names()).toHaveLength(12);
     expect(names()[0]).toBe('Gà luộc 0');
     expect(screen.getByRole('button', { name: 'Trang trước' })).toBeDisabled();
@@ -296,16 +379,18 @@ describe('catalog browsing workflow', () => {
       fixture(`ga-luoc-${index}`, `Gà luộc ${index}`, 'Gà', 20 + index),
     );
     renderCatalog('/recipes?category=Món%20mặn&ingredients=chicken&page=2');
-    fireEvent.change(screen.getByRole('combobox'), { target: { value: 'name' } });
+    fireEvent.change(screen.getByRole('combobox', { name: 'Sắp xếp' }), {
+      target: { value: 'name' },
+    });
     expect(currentParams().get('sort')).toBe('name');
     expect(currentParams().has('page')).toBe(false);
     fireEvent.click(screen.getByRole('button', { name: 'Back in test' }));
     expect(currentParams().get('page')).toBe('2');
     expect(currentParams().get('ingredients')).toBe('chicken');
-    expect(screen.getByRole('combobox')).toHaveValue('quick');
+    expect(screen.getByRole('combobox', { name: 'Sắp xếp' })).toHaveValue('quick');
     expect(names()[0]).toBe('Gà luộc 12');
     fireEvent.click(screen.getByRole('button', { name: 'Forward in test' }));
-    expect(screen.getByRole('combobox')).toHaveValue('name');
+    expect(screen.getByRole('combobox', { name: 'Sắp xếp' })).toHaveValue('name');
     expect(currentParams().has('page')).toBe(false);
   });
   it('ignores unknown URL filter values instead of hiding the catalog', () => {
@@ -313,7 +398,7 @@ describe('catalog browsing workflow', () => {
       '/recipes?category=unknown&region=unknown&ingredients=unknown&methods=unknown&sort=unknown',
     );
     expect(names()).toEqual(['Rau muống luộc', 'Canh bí đỏ', 'Gà luộc', 'Thịt lợn kho', 'Cá hấp']);
-    expect(screen.getByRole('combobox')).toHaveValue('quick');
+    expect(screen.getByRole('combobox', { name: 'Sắp xếp' })).toHaveValue('quick');
   });
   it('cancels pending keyword changes when browser history restores the same search', async () => {
     vi.useFakeTimers();

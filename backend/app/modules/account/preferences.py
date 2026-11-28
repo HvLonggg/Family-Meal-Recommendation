@@ -76,6 +76,8 @@ class UserPreferences(BaseModel):
     show_name_on_stories: bool = True
     # Chú Rồng trả treo, cà khịa (vẫn trả lời đúng); tắt thì dí dỏm bình thường.
     assistant_sassy: bool = False
+    # Số hàng món mỗi trang ở kho món; None = theo thiết bị hoặc mặc định của giao diện.
+    catalog_rows: int | None = Field(default=None, ge=3, le=5)
     admin_notify_pending: bool = True
     admin_landing: Literal["home", "admin"] = "admin"
 

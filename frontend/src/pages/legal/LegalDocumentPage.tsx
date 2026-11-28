@@ -1,4 +1,4 @@
-import { useEffect, type MouseEvent } from 'react';
+import { useEffect, useState, type MouseEvent } from 'react';
 import { Link } from 'react-router';
 
 import { useI18n } from '@/features/i18n/I18nContext';
@@ -6,6 +6,7 @@ import { KitchenHomeLogo } from '@/components/brand/KitchenHomeLogo';
 import { contactInfo } from '@/config/contact';
 import {
   LEGAL_EFFECTIVE_DATE,
+  LEGAL_UPDATED_DATE,
   LEGAL_VERSION,
   type LegalBlock,
   type LegalDocumentContent,
@@ -20,6 +21,22 @@ const documents: Record<LegalKind, Record<'vi' | 'en', LegalDocumentContent>> = 
   privacy: { vi: privacyVi, en: privacyEn },
   terms: { vi: termsVi, en: termsEn },
 };
+
+/** Tách "3. Tiêu đề" thành số mục và tiêu đề để trình bày số thứ tự riêng. */
+function splitTitle(title: string) {
+  const match = /^(\d+)\.\s+(.*)$/.exec(title);
+  return match ? { number: match[1], text: match[2] } : { number: null, text: title };
+}
+
+function SectionTitle({ title }: { title: string }) {
+  const { number, text } = splitTitle(title);
+  return (
+    <>
+      {number ? <span className="legal-num">{number}.</span> : null}
+      <span>{text}</span>
+    </>
+  );
+}
 
 function Block({ block }: { block: LegalBlock }) {
   if (typeof block === 'string') return <p>{block}</p>;
@@ -37,6 +54,7 @@ function LegalDocumentPage({ kind }: { kind: LegalKind }) {
   const { language, t } = useI18n();
   const lang = language === 'en' ? 'en' : 'vi';
   const content = documents[kind][lang];
+  const [tocOpen, setTocOpen] = useState(false);
 
   useEffect(() => {
     document.title = `${content.title} · ${t('Bếp Việt')}`;
@@ -47,10 +65,14 @@ function LegalDocumentPage({ kind }: { kind: LegalKind }) {
     const target = document.getElementById(id);
     if (!target) return;
     event.preventDefault();
+    setTocOpen(false);
     target.scrollIntoView?.({ block: 'start' });
     target.focus({ preventScroll: true });
     window.history.replaceState(null, '', `#${id}`);
   };
+
+  const tocListId = `${kind}-toc-list`;
+  const sectionCount = content.sections.length;
 
   return (
     <div className="legal-shell">
@@ -72,61 +94,79 @@ function LegalDocumentPage({ kind }: { kind: LegalKind }) {
         </nav>
       </header>
       <main className="legal-page" id="legal-content" tabIndex={-1}>
-        <header className="legal-page__header">
-          <p className="legal-page__eyebrow">
-            {lang === 'vi' ? 'BẾP VIỆT · MINH BẠCH & TIN CẬY' : 'BEP VIET · TRANSPARENCY & TRUST'}
+        <header className="legal-hero">
+          <p className="legal-hero__eyebrow">
+            {lang === 'vi' ? 'Bếp Việt · Văn bản pháp lý' : 'Bep Viet · Legal'}
           </p>
           <h1>{content.title}</h1>
-          <p className="legal-page__meta">
+          <p className="legal-hero__summary">{content.summary}</p>
+          <p className="legal-hero__meta">
             <span>
               {content.effectiveLabel}: {LEGAL_EFFECTIVE_DATE[lang]}
+            </span>
+            <span>
+              {content.updatedLabel}: {LEGAL_UPDATED_DATE[lang]}
             </span>
             <span>
               {content.versionLabel}: {LEGAL_VERSION}
             </span>
           </p>
-          <p className="legal-page__summary">{content.summary}</p>
         </header>
-        <div className="legal-page__layout">
-          <nav aria-labelledby={`${kind}-toc`} className="legal-toc">
-            <h2 id={`${kind}-toc`}>{content.tocLabel}</h2>
-            <ol>
+        <div className="legal-layout">
+          <nav aria-labelledby={`${kind}-toc`} className="legal-toc" data-open={tocOpen}>
+            <h2 className="legal-toc__title" id={`${kind}-toc`}>
+              {content.tocLabel}
+            </h2>
+            <button
+              aria-controls={tocListId}
+              aria-expanded={tocOpen}
+              className="legal-toc__toggle"
+              onClick={() => setTocOpen((open) => !open)}
+              type="button"
+            >
+              <span>{content.tocLabel}</span>
+              <span className="legal-toc__count">
+                {lang === 'vi' ? `${sectionCount} mục` : `${sectionCount} sections`}
+              </span>
+              <span aria-hidden="true" className="legal-toc__chevron" />
+            </button>
+            <ol className="legal-toc__list" id={tocListId}>
               {content.sections.map((section) => (
                 <li key={section.id}>
                   <a href={`#${section.id}`} onClick={(event) => jumpTo(event, section.id)}>
-                    {section.title}
+                    <SectionTitle title={section.title} />
                   </a>
                 </li>
               ))}
             </ol>
           </nav>
-          <article className="legal-body">
-            {content.sections.map((section) => (
-              <section aria-labelledby={section.id} key={section.id}>
-                <h2 id={section.id} tabIndex={-1}>
-                  {section.title}
-                </h2>
-                {section.blocks.map((block, index) => (
-                  <Block block={block} key={index} />
-                ))}
-              </section>
-            ))}
-          </article>
-        </div>
-        <aside className="legal-contact">
-          <div>
-            <h2>{lang === 'vi' ? 'Cần giải đáp thêm?' : 'Need clarification?'}</h2>
-            <p>
-              {lang === 'vi'
-                ? 'Gửi yêu cầu về tài khoản, nội dung hoặc quyền riêng tư. Bếp Việt phản hồi trong vòng 24 giờ làm việc; thời hạn giải quyết tùy nội dung và quy định áp dụng.'
-                : 'Contact us about your account, content or privacy. We respond within 24 working hours; resolution depends on the request and applicable requirements.'}
+          <div className="legal-main">
+            <article className="legal-body">
+              {content.sections.map((section) => (
+                <section aria-labelledby={section.id} key={section.id}>
+                  <h2 id={section.id} tabIndex={-1}>
+                    <SectionTitle title={section.title} />
+                  </h2>
+                  {section.blocks.map((block, index) => (
+                    <Block block={block} key={index} />
+                  ))}
+                </section>
+              ))}
+            </article>
+            <aside className="legal-contact">
+              <h2>{lang === 'vi' ? 'Cần giải đáp thêm?' : 'Need clarification?'}</h2>
+              <p>
+                {lang === 'vi'
+                  ? 'Gửi yêu cầu về tài khoản, nội dung hoặc quyền riêng tư. Bếp Việt phản hồi trong vòng 24 giờ làm việc; thời hạn giải quyết tùy nội dung và quy định áp dụng.'
+                  : 'Contact us about your account, content or privacy. We respond within 24 working hours; resolution depends on the request and applicable requirements.'}
+              </p>
+              <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
+            </aside>
+            <p className="legal-page__back">
+              <Link to="/">{t('Về trang chủ Bếp Việt')}</Link>
             </p>
           </div>
-          <a href={`mailto:${contactInfo.email}`}>{contactInfo.email} ↗</a>
-        </aside>
-        <p className="legal-page__back">
-          <Link to="/">{t('Về trang chủ Bếp Việt')}</Link>
-        </p>
+        </div>
       </main>
     </div>
   );

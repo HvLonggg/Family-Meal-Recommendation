@@ -2499,4 +2499,13 @@ export const en: Record<string, string> = {
     'The Dragon will answer from general knowledge. Add a document if this is Bếp Việt-specific information.',
   'Không tìm thấy đoạn tri thức phù hợp': 'No matching knowledge chunks found',
   'Quản lý Chú Rồng': 'Manage the Dragon',
+  'Số hàng mỗi trang': 'Rows per page',
+  'Hiển thị {rows} hàng': 'Show {rows} rows',
+  'Chọn món ngon đa dạng, bổ sung mâm cơm đủ vị khoa học cho cả gia đình — tất cả trong một căn bếp số.':
+    'Pick varied, tasty dishes and build balanced, well-rounded meals for the whole family — all in one digital kitchen.',
+  'Bạn đang chưa có menu món?': 'No menu in mind yet?',
+  'Để Bếp Việt quay gợi ý mâm cơm': 'Let Bep Viet spin up a meal for you',
+  'Mâm cơm đủ chất dinh dưỡng và đa dạng ẩm thực Việt, chỉ sau một vòng quay.':
+    'A nutritious, varied Vietnamese meal tray in a single spin.',
+  'Món ngon cho mỗi bữa cơm nhà': 'Delicious dishes for every home meal',
 };

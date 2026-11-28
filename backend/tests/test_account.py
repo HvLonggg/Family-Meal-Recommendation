@@ -1,7 +1,7 @@
 from fastapi.testclient import TestClient
 from sqlalchemy.orm import Session, sessionmaker
 
-from app.modules.account.preferences import UserPreferences, portion_factor
+from app.modules.account.preferences import UserPreferences, portion_factor, read_preferences
 from tests.helpers import PNG_DATA_URL, create_admin, register_and_login
 
 
@@ -88,6 +88,28 @@ def test_invalid_preferences_are_rejected(client: TestClient) -> None:
         "/api/v1/account/preferences", headers=headers, json={"calendar_mode": "chinese"}
     )
     assert invalid_calendar.status_code == 422
+
+
+def test_catalog_rows_preference_is_optional_and_bounded(client: TestClient) -> None:
+    headers = register_and_login(client, "rows@example.com")
+    assert client.get("/api/v1/account/preferences", headers=headers).json()["catalog_rows"] is None
+
+    saved = client.put("/api/v1/account/preferences", headers=headers, json={"catalog_rows": 5})
+    assert saved.status_code == 200, saved.text
+    assert saved.json()["catalog_rows"] == 5
+    me = client.get("/api/v1/auth/me", headers=headers).json()
+    assert me["preferences"]["catalog_rows"] == 5
+
+    for invalid in (2, 6, "many"):
+        response = client.put(
+            "/api/v1/account/preferences", headers=headers, json={"catalog_rows": invalid}
+        )
+        assert response.status_code == 422
+
+
+def test_stale_catalog_rows_value_falls_back_to_default() -> None:
+    assert read_preferences({"catalog_rows": 9, "language": "en"}).catalog_rows is None
+    assert read_preferences({"catalog_rows": 9, "language": "en"}).language == "en"
 
 
 def test_profile_and_avatar_lifecycle(client: TestClient) -> None:

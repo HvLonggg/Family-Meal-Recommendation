@@ -1,16 +1,19 @@
 .legal-shell {
   --color-bg: #fcf8f2;
-  --color-text: #392d26;
+  --color-surface: #fff;
+  --color-text: #33281f;
   --color-primary: #a53e2e;
   --color-focus: #a53e2e;
   --color-border: #eaded1;
-  --color-text-secondary: #68594e;
-  --color-text-muted: #7a6c60;
+  --color-text-secondary: #5f5046;
+  --color-text-muted: #6f6157;
+  --legal-topbar-h: 70px;
   min-height: 100vh;
-  background: var(--color-bg, #f7faff);
-  color: var(--color-text, #10213a);
+  background: var(--color-bg);
+  color: var(--color-text);
 }
 
+/* ---------- Thanh trên cùng ---------- */
 .legal-topbar {
   position: sticky;
   top: 0;
@@ -20,9 +23,11 @@
   gap: 8px 20px;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 16px;
-  border-bottom: 1px solid var(--color-border, #dbe4f0);
-  background: var(--color-surface, #fff);
+  min-height: var(--legal-topbar-h);
+  padding: 12px clamp(16px, 4vw, 40px);
+  border-bottom: 1px solid var(--color-border);
+  background: rgb(255 255 255 / 94%);
+  backdrop-filter: blur(8px);
 }
 
 .legal-topbar__brand {
@@ -30,31 +35,9 @@
   align-items: center;
   gap: 10px;
   font-weight: 800;
-  color: var(--color-text, #10213a);
+  font-size: 18px;
+  color: var(--color-text);
   text-decoration: none;
-}
-
-.legal-topbar__nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px 16px;
-  font-size: 14px;
-}
-
-.legal-topbar__nav a {
-  color: var(--color-text-secondary, #475569);
-}
-
-.legal-topbar__nav a[aria-current='page'] {
-  color: var(--color-primary, #2563eb);
-  font-weight: 700;
-}
-
-.legal-page {
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 24px 16px 48px;
-  outline: none;
 }
 
 .legal-topbar__brand img {
@@ -62,195 +45,451 @@
   height: 46px;
   object-fit: contain;
 }
+
+.legal-topbar__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  font-size: 15px;
+}
+
 .legal-topbar__nav a {
-  padding: 9px 12px;
-  border-radius: 20px;
+  padding: 9px 14px;
+  border-radius: 999px;
+  color: var(--color-text-secondary);
   text-decoration: none;
 }
+
+.legal-topbar__nav a:hover {
+  color: var(--color-primary);
+}
+
 .legal-topbar__nav a[aria-current='page'] {
   background: #f6e9df;
+  color: var(--color-primary);
+  font-weight: 700;
 }
-.legal-page__header {
-  padding: clamp(24px, 4vw, 48px);
-  margin-bottom: 32px;
-  border: 1px solid #eaded1;
+
+/* ---------- Khung trang ---------- */
+.legal-page {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: clamp(24px, 4vw, 48px) 16px 64px;
+  outline: none;
+}
+
+.legal-hero {
+  max-width: 1104px;
+  margin: 0 auto clamp(28px, 4vw, 48px);
+  padding: clamp(28px, 5vw, 56px);
+  border: 1px solid var(--color-border);
   border-radius: 24px;
   background: linear-gradient(120deg, #fffaf2, #f5e8d8);
 }
-.legal-page__eyebrow {
-  font-size: 12px;
+
+.legal-hero__eyebrow {
+  margin: 0 0 14px;
+  color: #97402f;
+  font-size: 13px;
   font-weight: 750;
   letter-spacing: 0.12em;
-  color: #97402f;
-  margin: 0 0 18px;
+  text-transform: uppercase;
 }
-.legal-body section {
-  padding: 24px;
-  border: 1px solid #eaded1;
-  border-radius: 18px;
-  background: #fff;
+
+.legal-hero h1 {
+  margin: 0 0 16px;
+  font-size: clamp(30px, 5vw, 46px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
 }
-.legal-toc a {
-  text-decoration: none;
-  border-radius: 8px;
+
+.legal-hero__summary {
+  max-width: 68ch;
+  margin: 0 0 24px;
+  color: var(--color-text-secondary);
+  font-size: clamp(17px, 1.6vw, 19px);
+  line-height: 1.7;
 }
-.legal-toc a:hover {
-  color: #a53e2e;
-  background: #fcf4eb;
-}
-.legal-contact {
+
+.legal-hero__meta {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 20px;
-  padding: 28px;
-  border-radius: 20px;
-  margin-top: 32px;
-  background: #f3e5d7;
-}
-.legal-contact h2 {
-  font-size: 22px;
-  margin: 0 0 8px;
-}
-.legal-contact p {
-  max-width: 66ch;
-  line-height: 1.6;
+  gap: 8px;
   margin: 0;
-}
-.legal-contact a {
-  color: #843524;
-  font-weight: 700;
-  overflow-wrap: anywhere;
-}
-@media (max-width: 600px) {
-  .legal-topbar {
-    position: static;
-  }
-  .legal-topbar__nav {
-    gap: 4px;
-    font-size: 12px;
-  }
-  .legal-body section {
-    padding: 20px;
-  }
-  .legal-page__header {
-    padding: 24px 20px;
-  }
-}
-
-.legal-page__header h1 {
-  margin: 0 0 8px;
-  font-size: clamp(26px, 6vw, 36px);
-  line-height: 1.2;
-}
-
-.legal-page__meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px 16px;
-  margin: 0 0 12px;
-  color: var(--color-text-muted, #64748b);
   font-size: 14px;
 }
 
-.legal-page__summary {
-  max-width: 70ch;
-  margin: 0 0 24px;
-  font-size: 17px;
-  line-height: 1.6;
+.legal-hero__meta span {
+  padding: 6px 12px;
+  border: 1px solid #e3cfbd;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 70%);
+  color: var(--color-text-secondary);
 }
 
-.legal-page__layout {
+.legal-layout {
   display: grid;
   gap: 24px;
 }
 
+.legal-main {
+  min-width: 0;
+}
+
+/* ---------- Mục lục ---------- */
 .legal-toc {
-  padding: 16px;
-  border: 1px solid var(--color-border, #dbe4f0);
-  border-radius: 12px;
-  background: var(--color-surface, #fff);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background: var(--color-surface);
 }
 
-.legal-toc h2 {
-  margin: 0 0 8px;
-  font-size: 16px;
-}
-
-.legal-toc ol {
+.legal-toc__title {
   margin: 0;
-  padding: 0;
+  padding: 20px 20px 8px;
+  color: var(--color-text-muted);
+  font-size: 13px;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.legal-toc__toggle {
+  display: flex;
+  width: 100%;
+  min-height: 52px;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border: 0;
+  border-radius: 16px;
+  background: none;
+  color: var(--color-text);
+  font: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+}
+
+.legal-toc__count {
+  color: var(--color-text-muted);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.legal-toc__chevron {
+  width: 10px;
+  height: 10px;
+  margin-left: auto;
+  border-right: 2px solid currentcolor;
+  border-bottom: 2px solid currentcolor;
+  transform: translateY(-3px) rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.legal-toc[data-open='true'] .legal-toc__chevron {
+  transform: translateY(2px) rotate(-135deg);
+}
+
+.legal-toc__list {
+  margin: 0;
+  padding: 4px 10px 14px;
   list-style: none;
 }
 
-.legal-toc a {
-  display: block;
-  padding: 8px 4px;
+.legal-toc__list a {
+  display: flex;
+  gap: 8px;
   min-height: 24px;
-  color: var(--color-text-secondary, #475569);
+  padding: 8px 10px;
+  border-radius: 8px;
+  color: var(--color-text-secondary);
   font-size: 15px;
   line-height: 1.4;
+  text-decoration: none;
 }
 
+.legal-toc__list a:hover {
+  background: #fcf4eb;
+  color: var(--color-primary);
+}
+
+.legal-toc__list .legal-num {
+  min-width: 1.6em;
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Nội dung ---------- */
 .legal-body {
-  min-width: 0;
-  max-width: 72ch;
-  font-size: 16px;
-  line-height: 1.7;
-  overflow-wrap: anywhere;
+  max-width: 800px;
+  padding: clamp(8px, 2vw, 16px) clamp(20px, 4vw, 48px);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  background: var(--color-surface);
+  font-size: 17px;
+  line-height: 1.75;
+  overflow-wrap: break-word;
+}
+
+.legal-body section {
+  padding: clamp(24px, 3vw, 32px) 0;
 }
 
 .legal-body section + section {
-  margin-top: 28px;
+  border-top: 1px solid #f0e6dc;
 }
 
 .legal-body h2 {
-  margin: 0 0 8px;
-  font-size: 20px;
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  margin: 0 0 14px;
+  font-size: clamp(20px, 2.2vw, 23px);
+  font-weight: 750;
   line-height: 1.35;
-  scroll-margin-top: 72px;
+  scroll-margin-top: calc(var(--legal-topbar-h) + 24px);
+}
+
+.legal-body h2 .legal-num {
+  flex: none;
+  color: var(--color-primary);
+  font-variant-numeric: tabular-nums;
 }
 
 .legal-body p,
 .legal-body ul {
-  margin: 0 0 12px;
+  margin: 0 0 14px;
+}
+
+.legal-body p:last-child,
+.legal-body ul:last-child {
+  margin-bottom: 0;
 }
 
 .legal-body ul {
-  padding-left: 20px;
+  padding-left: 22px;
+  list-style: disc outside;
+}
+
+.legal-body li {
+  display: list-item;
+  padding-left: 4px;
+}
+
+.legal-body li::marker {
+  color: var(--color-primary);
 }
 
 .legal-body li + li {
-  margin-top: 6px;
+  margin-top: 8px;
 }
 
-.legal-shell a:focus-visible,
-.legal-body h2:focus-visible {
-  outline: 2px solid var(--color-focus, #2563eb);
-  outline-offset: 2px;
-  border-radius: 4px;
+/* ---------- Liên hệ & điều hướng ---------- */
+.legal-contact {
+  max-width: 800px;
+  margin-top: 28px;
+  padding: clamp(24px, 3vw, 32px);
+  border-radius: 20px;
+  background: #f3e5d7;
+}
+
+.legal-contact h2 {
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+
+.legal-contact p {
+  margin: 0 0 14px;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.legal-contact a {
+  color: #843524;
+  font-size: 17px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
 }
 
 .legal-page__back {
-  margin-top: 32px;
+  margin: 28px 0 0;
+  font-size: 16px;
 }
 
-@media (min-width: 900px) {
-  .legal-page__layout {
-    grid-template-columns: 280px minmax(0, 1fr);
-    align-items: start;
-  }
+.legal-page__back a {
+  color: var(--color-primary);
+}
 
-  .legal-toc {
-    position: sticky;
-    top: 72px;
-    max-height: calc(100vh - 96px);
-    overflow: auto;
-  }
+.legal-shell a:focus-visible,
+.legal-shell button:focus-visible,
+.legal-body h2:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+  border-radius: 6px;
 }
 
 .legal-inline-links a {
   color: inherit;
   text-decoration: underline;
+}
+
+/* Desktop: mục lục dạng cột dính bên trái, cột đọc tối đa 800px. */
+@media (min-width: 1024px) {
+  .legal-layout {
+    grid-template-columns: 260px minmax(0, 800px);
+    gap: 44px;
+    justify-content: center;
+    align-items: start;
+  }
+
+  .legal-hero {
+    max-width: 1104px;
+  }
+
+  .legal-toc__toggle {
+    display: none;
+  }
+
+  .legal-toc {
+    position: sticky;
+    top: calc(var(--legal-topbar-h) + 24px);
+    max-height: calc(100vh - var(--legal-topbar-h) - 48px);
+    overflow: auto;
+  }
+}
+
+/* Điện thoại & máy tính bảng: mục lục thu gọn được. */
+@media (max-width: 1023px) {
+  .legal-body,
+  .legal-contact {
+    margin-inline: auto;
+  }
+
+  .legal-toc {
+    max-width: 800px;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .legal-toc__title {
+    display: none;
+  }
+
+  .legal-toc[data-open='false'] .legal-toc__list {
+    display: none;
+  }
+
+  .legal-toc__list {
+    border-top: 1px solid #f0e6dc;
+    padding-top: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .legal-topbar {
+    position: static;
+  }
+
+  .legal-topbar__nav {
+    gap: 4px;
+    font-size: 13px;
+  }
+
+  .legal-topbar__nav a {
+    padding: 8px 10px;
+  }
+
+  .legal-hero {
+    border-radius: 20px;
+  }
+
+  .legal-body {
+    font-size: 16px;
+    border-radius: 16px;
+  }
+
+  .legal-body h2 {
+    gap: 8px;
+    scroll-margin-top: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .legal-toc__chevron {
+    transition: none;
+  }
+}
+
+/* In ấn: chỉ giữ nội dung văn bản, chữ đen trên nền trắng. */
+@media print {
+  .legal-shell {
+    background: #fff;
+    color: #000;
+  }
+
+  .legal-topbar,
+  .legal-toc,
+  .skip-link,
+  .legal-page__back {
+    display: none !important;
+  }
+
+  .legal-page {
+    max-width: none;
+    padding: 0;
+  }
+
+  .legal-layout {
+    display: block;
+  }
+
+  .legal-hero,
+  .legal-body,
+  .legal-contact {
+    max-width: none;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+  }
+
+  .legal-hero {
+    margin-bottom: 16pt;
+  }
+
+  .legal-hero__summary,
+  .legal-hero__meta span {
+    color: #000;
+  }
+
+  .legal-hero__meta span {
+    padding: 0;
+    border: 0;
+  }
+
+  .legal-body {
+    font-size: 11.5pt;
+    line-height: 1.55;
+  }
+
+  .legal-body section {
+    padding: 10pt 0;
+    break-inside: avoid-page;
+  }
+
+  .legal-body h2 {
+    break-after: avoid;
+    font-size: 13pt;
+  }
+
+  .legal-body h2 .legal-num,
+  .legal-body li::marker {
+    color: #000;
+  }
+
+  .legal-contact {
+    margin-top: 16pt;
+  }
 }

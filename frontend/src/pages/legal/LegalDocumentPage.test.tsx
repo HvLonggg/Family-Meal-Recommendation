@@ -3,7 +3,7 @@ import { MemoryRouter, Route, Routes } from 'react-router';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { I18nProvider, useI18n } from '@/features/i18n/I18nContext';
-import { LEGAL_VERSION } from '@/pages/legal/legalTypes';
+import { LEGAL_UPDATED_DATE, LEGAL_VERSION } from '@/pages/legal/legalTypes';
 import { PrivacyPage, TermsPage } from '@/pages/legal/LegalDocumentPage';
 import { privacyEn, privacyVi } from '@/pages/legal/privacyContent';
 import { termsEn, termsVi } from '@/pages/legal/termsContent';
@@ -49,6 +49,7 @@ describe('Legal pages', () => {
     ).toBeTruthy();
     expect(screen.getByText(`Phiên bản: ${LEGAL_VERSION}`)).toBeTruthy();
     expect(screen.getByText(/Ngày hiệu lực:/)).toBeTruthy();
+    expect(screen.getByText(`Cập nhật lần cuối: ${LEGAL_UPDATED_DATE.vi}`)).toBeTruthy();
 
     const toc = screen.getByRole('navigation', { name: 'Mục lục' });
     const links = within(toc).getAllByRole('link');
@@ -56,8 +57,24 @@ describe('Legal pages', () => {
     const rights = within(toc).getByRole('link', { name: /Quyền của bạn/ });
     expect(rights.getAttribute('href')).toBe('#quyen');
 
+    // Nút thu gọn mục lục (dùng trên điện thoại) mở ra, rồi tự đóng khi chọn một mục.
+    const toggle = within(toc).getByRole('button', { name: /Mục lục/ });
+    expect(toggle.getAttribute('aria-expanded')).toBe('false');
+    fireEvent.click(toggle);
+    expect(toggle.getAttribute('aria-expanded')).toBe('true');
+
     fireEvent.click(rights);
     expect(document.activeElement?.id).toBe('quyen');
+    expect(toggle.getAttribute('aria-expanded')).toBe('false');
+  });
+
+  it('keeps the rewritten documents free of vendor-specific configuration details', () => {
+    const text = JSON.stringify([privacyVi, privacyEn, termsVi, termsEn]);
+    expect(text).not.toMatch(/Vercel|Render|Neon|Anthropic|Gemini|Argon2|SameSite/);
+    expect(termsVi.sections.map((section) => section.id)).toContain('an-toan-thuc-pham');
+    expect(privacyVi.sections.some((section) => section.title.includes('Chia sẻ dữ liệu'))).toBe(
+      true,
+    );
   });
 
   it('names the operator and leaves no unfilled placeholders', () => {

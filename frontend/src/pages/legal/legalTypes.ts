@@ -11,6 +11,7 @@ export interface LegalDocumentContent {
   title: string;
   summary: string;
   effectiveLabel: string;
+  updatedLabel: string;
   versionLabel: string;
   tocLabel: string;
   sections: LegalSection[];
@@ -21,4 +22,9 @@ export const LEGAL_VERSION = '1.1';
 export const LEGAL_EFFECTIVE_DATE = {
   vi: '24/11/2026',
   en: 'November 24, 2026',
+} as const;
+/** Ngày biên tập lại câu chữ gần nhất; không đổi cam kết nên giữ nguyên phiên bản (khớp backend). */
+export const LEGAL_UPDATED_DATE = {
+  vi: '28/11/2026',
+  en: 'November 28, 2026',
 } as const;

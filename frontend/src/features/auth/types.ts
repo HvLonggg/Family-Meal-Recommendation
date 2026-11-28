@@ -36,6 +36,8 @@ export interface UserPreferences {
   assistant_sassy: boolean;
   admin_notify_pending: boolean;
   admin_landing: 'home' | 'admin';
+  /** Số hàng món mỗi trang ở kho món (3–5); null = theo thiết bị/mặc định. */
+  catalog_rows?: number | null;
   computed_portions: number;
   computed_servings: number;
 }

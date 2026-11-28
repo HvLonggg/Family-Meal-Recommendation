@@ -65,3 +65,50 @@ select {
     transform: none;
   }
 }
+
+/* Chữ hiện dần như gõ phím (trang chủ): phần chưa gõ vẫn giữ chỗ nên khối không nhảy. */
+.typewriter__rest {
+  visibility: hidden;
+}
+
+.typewriter__caret {
+  position: relative;
+  display: inline-block;
+  width: 0;
+  height: 0.95em;
+  margin-right: -0.06em;
+  border-left: 0.06em solid currentcolor;
+  vertical-align: -0.08em;
+  animation: typewriter-caret 0.8s steps(1) infinite;
+}
+
+@keyframes typewriter-caret {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Từ khóa gợi ý dưới ô tìm kiếm: luôn một hàng, từ dài không đẩy khối phía dưới xuống. */
+.home-hero .hero-suggestions {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  mask-image: linear-gradient(90deg, #000 calc(100% - 36px), transparent);
+}
+
+.home-hero .hero-suggestions::-webkit-scrollbar {
+  display: none;
+}
+
+.home-hero .hero-suggestions > * {
+  flex: none;
+  white-space: nowrap;
+}
+
+/* Tiêu đề phụ khung Chú Rồng: hiện đủ chữ, xuống dòng khi hẹp thay vì bị cắt. */
+.rc-header__title small {
+  overflow: visible;
+  text-overflow: clip;
+  white-space: normal;
+  text-wrap: balance;
+}

@@ -120,19 +120,20 @@ describe('database recipe catalog', () => {
       </AppProviders>,
     );
     expect(screen.getByText('205 món ăn tại 3 miền Việt Nam')).toBeInTheDocument();
-    // Danh sách mặc định xáo ngẫu nhiên và chỉ hiện 3 hàng; chọn sắp xếp để phân trang đủ kho.
+    // Danh sách mặc định xáo ngẫu nhiên, mỗi trang 3 hàng × 3 cột và phân trang đủ kho.
     expect(container.querySelectorAll('.recipe-card')).toHaveLength(9);
+    expect(screen.queryByRole('button', { name: 'Xem thêm món' })).not.toBeInTheDocument();
     fireEvent.change(screen.getByRole('combobox', { name: 'Sắp xếp' }), {
       target: { value: 'quick' },
     });
-    expect(container.querySelectorAll('.recipe-card')).toHaveLength(12);
+    expect(container.querySelectorAll('.recipe-card')).toHaveLength(9);
     const firstPageTitle = container.querySelector('.recipe-card h3')!.textContent;
     fireEvent.click(screen.getByRole('button', { name: 'Trang tiếp' }));
-    expect(container.querySelectorAll('.recipe-card')).toHaveLength(12);
+    expect(container.querySelectorAll('.recipe-card')).toHaveLength(9);
     expect(container.querySelector('.recipe-card h3')!.textContent).not.toBe(firstPageTitle);
     expect(screen.getByRole('button', { name: 'Trang 2' })).toHaveAttribute('aria-current', 'page');
-    fireEvent.click(screen.getByRole('button', { name: 'Trang 18' }));
-    expect(container.querySelectorAll('.recipe-card')).toHaveLength(1);
+    fireEvent.click(screen.getByRole('button', { name: 'Trang 23' }));
+    expect(container.querySelectorAll('.recipe-card')).toHaveLength(7);
     expect(screen.getByRole('button', { name: 'Trang tiếp' })).toBeDisabled();
     fireEvent.click(screen.getByRole('button', { name: 'Món canh' }));
     expect(screen.queryByRole('button', { name: 'Trang 18' })).not.toBeInTheDocument();

@@ -204,28 +204,28 @@
 .catalog-page-view .catalog-empty-state p {
   margin: 0;
 }
-/* Nút "Xem thêm món" của danh sách xáo ngẫu nhiên: nút viên thuốc, không dùng kiểu nút số trang. */
-.catalog-page-view .catalog-pagination.catalog-pagination--more .catalog-pagination__more {
-  display: inline-flex;
-  width: auto;
-  min-width: 200px;
-  height: auto;
-  min-height: 46px;
+/* Sắp xếp và số hàng mỗi trang đứng cạnh nhau; chọn số hàng gọn hơn ô sắp xếp. */
+.catalog-page-view .catalog-results__controls {
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  border-color: var(--color-primary);
-  border-radius: 999px;
-  padding: 10px 26px;
-  color: var(--color-primary);
-  background: #fff;
-  font-weight: 700;
+  gap: 10px;
 }
-.catalog-page-view .catalog-pagination.catalog-pagination--more .catalog-pagination__more:hover {
-  color: #fff;
-  background: var(--color-primary);
+.catalog-page-view .catalog-results select.catalog-results__rows {
+  min-width: 150px;
 }
 @media (max-width: 600px) {
-  .catalog-page-view .catalog-pagination.catalog-pagination--more .catalog-pagination__more {
+  .catalog-page-view .catalog-results__controls {
     width: 100%;
+    flex-wrap: nowrap;
+  }
+  .catalog-page-view .catalog-results__controls select {
+    width: auto;
+    min-width: 0;
+    flex: 1 1 0;
+  }
+  .catalog-page-view .catalog-results__controls select.catalog-results__rows {
+    min-width: 0;
+    flex: 0 1 40%;
   }
 }

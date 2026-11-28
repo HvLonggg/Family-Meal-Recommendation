@@ -394,14 +394,10 @@ export function RandomMealPage() {
               <AppIcon name="sparkles" size={17} /> {t('Tiện ích chọn món')}
             </span>
             <h1>
-              {t('Quay một vòng,')} <br />
-              <em>{t('có ngay mâm cơm')}</em>
+              {t('Bạn đang chưa có menu món?')} <br />
+              <em>{t('Để Bếp Việt quay gợi ý mâm cơm')}</em>
             </h1>
-            <p>
-              {t(
-                'Đặt số món, chọn tiêu chuẩn dinh dưỡng và để Bếp Việt ghép một mâm cơm đủ vị cho nhà mình.',
-              )}
-            </p>
+            <p>{t('Mâm cơm đủ chất dinh dưỡng và đa dạng ẩm thực Việt, chỉ sau một vòng quay.')}</p>
             <div className="random-hero__proof">
               <span>
                 <AppIcon name="check" size={16} /> {t('Đúng nhóm món')}

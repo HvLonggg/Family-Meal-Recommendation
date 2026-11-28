@@ -25,6 +25,7 @@ export const DEFAULT_PREFERENCES: UserPreferences = {
   assistant_sassy: false,
   admin_notify_pending: true,
   admin_landing: 'admin',
+  catalog_rows: null,
   computed_portions: 0,
   computed_servings: 4,
 };
