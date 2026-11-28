@@ -1543,31 +1543,26 @@
     font-size: 16px;
   }
 
-  /* Bảng 7 ngày × 3 bữa như máy tính, cuộn ngang trong khung; cột nhãn bữa dính trái.
-     Cha là flex (không phải grid) để position: sticky bám theo cả chiều rộng cuộn; hàng thẳng nhau nhờ chiều cao cố định. */
+  /* Bảng 7 ngày × 3 bữa vừa khít màn hình điện thoại (không cuộn ngang): 7 cột chia đều,
+     mỗi món chỉ còn ảnh nhỏ + tên chữ nhỏ bên dưới; hàng thẳng nhau nhờ chiều cao cố định. */
   .planner-page .planner-overview__grid {
-    --ov-head: 84px;
-    --ov-row: 100px;
+    --ov-head: 46px;
+    --ov-row: 112px;
 
     display: flex;
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
+    overflow: hidden;
     padding: 0;
-    scrollbar-width: thin;
   }
 
   .planner-page .planner-overview__labels,
   .planner-page .planner-overview__day {
-    flex: none;
     grid-row: auto;
     grid-template-rows: var(--ov-head) repeat(3, var(--ov-row));
   }
 
   .planner-page .planner-overview__labels {
-    position: sticky;
-    z-index: 2;
-    left: 0;
-    width: 30px;
+    flex: none;
+    width: 20px;
     border-right: 1px solid var(--color-border);
     background: white;
   }
@@ -1575,48 +1570,70 @@
   .planner-page .planner-overview__labels span {
     justify-content: center;
     padding: 0;
-    font-size: 12px;
+    font-size: 10px;
+    letter-spacing: 0.02em;
     writing-mode: vertical-rl;
     transform: rotate(180deg);
   }
 
   .planner-page .planner-overview__day {
-    width: 104px;
+    flex: 1 1 0;
+    min-width: 0;
   }
 
   .planner-page .planner-overview__day-header {
+    position: relative;
     box-sizing: border-box;
     justify-content: center;
-    gap: 1px;
+    gap: 0;
     overflow: hidden;
-    padding: 6px 4px;
+    padding: 4px 1px;
+  }
+
+  .planner-page .planner-overview__weekday {
+    font-size: 9.5px;
+    letter-spacing: 0;
   }
 
   .planner-page .planner-overview__date {
-    font-size: 15px;
+    font-size: 12.5px;
+    line-height: 1.15;
   }
 
-  .planner-page .planner-overview__badges {
-    min-height: 0;
-    gap: 3px;
-  }
-
-  .planner-page .planner-overview__today,
-  .planner-page .planner-overview__veg {
-    padding: 0 6px;
-    font-size: 11px;
-    line-height: 16px;
-  }
-
+  .planner-page .planner-overview__alt-date,
   .planner-page .planner-overview__day-count {
     display: none;
   }
 
+  /* Hôm nay / ngày chay: chấm màu nhỏ thay cho nhãn chữ để vừa cột hẹp. */
+  .planner-page .planner-overview__badges {
+    position: absolute;
+    top: 4px;
+    right: 3px;
+    min-height: 0;
+    gap: 2px;
+  }
+
+  .planner-page .planner-overview__today,
+  .planner-page .planner-overview__veg {
+    width: 6px;
+    height: 6px;
+    overflow: hidden;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 0;
+    line-height: 0;
+  }
+
   .planner-page .planner-overview__cell {
     box-sizing: border-box;
-    gap: 3px;
+    gap: 2px;
     overflow: hidden;
-    padding: 5px;
+    padding: 4px 2px;
+  }
+
+  .planner-page .planner-overview__meal-label {
+    display: none;
   }
 
   .planner-page .planner-overview__dishes {
@@ -1624,24 +1641,48 @@
   }
 
   .planner-page .planner-overview__dish {
+    flex-direction: column;
     align-items: center;
-    gap: 5px;
+    gap: 1px;
+    text-align: center;
   }
 
   .planner-page .planner-overview__dish img {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
   }
 
   .planner-page .planner-overview__dish-name {
-    font-size: 11px;
-    line-height: 1.2;
+    display: -webkit-box;
+    overflow: hidden;
+    max-width: 100%;
+    font-size: 9px;
+    line-height: 1.15;
+    word-break: break-word;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
   }
 
   .planner-page .planner-overview__more {
-    padding: 0 7px;
-    font-size: 11px;
-    line-height: 16px;
+    align-self: center;
+    padding: 0 4px;
+    font-size: 9px;
+    line-height: 14px;
+  }
+}
+
+/* Chip "+1 món" chỉ dùng trên điện thoại cho bữa đúng 3 món. */
+.planner-overview__more--compact {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .planner-page .planner-overview__more--compact {
+    display: inline-flex;
+  }
+
+  .planner-page .planner-overview__dish:nth-child(n + 3) {
+    display: none;
   }
 }
 

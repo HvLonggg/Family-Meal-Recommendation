@@ -234,6 +234,11 @@ export function PlannerWeekOverview({
                       <span className="planner-overview__more">
                         {t('+{count} món', { count: hidden })}
                       </span>
+                    ) : items.length === OVERVIEW_VISIBLE_DISHES ? (
+                      // Bữa đúng 3 món: máy tính hiện đủ; điện thoại (cột hẹp) chỉ hiện 2 món + chip này.
+                      <span className="planner-overview__more planner-overview__more--compact">
+                        {t('+{count} món', { count: 1 })}
+                      </span>
                     ) : null}
                   </button>
                 );
