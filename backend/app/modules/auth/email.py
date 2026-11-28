@@ -517,8 +517,8 @@ def send_security_notification(*, recipient: str, event: str) -> None:
         "registration": (
             "Chào mừng bạn đến với Bếp Việt",
             "Tài khoản Bếp Việt của bạn đã được tạo thành công. Chúc bạn có những bữa cơm ngon "
-            "và trải nghiệm thật hữu ích cùng Bếp Việt. Khi email của bạn đã được xác minh, "
-            "mỗi tối Chủ nhật lúc 21:00 (giờ Việt Nam) Bếp Việt sẽ gửi email nhắc bạn lên kế "
+            "và trải nghiệm thật hữu ích cùng Bếp Việt. "
+            "Mỗi tối Chủ nhật lúc 21:00 (giờ Việt Nam) Bếp Việt sẽ gửi email nhắc bạn lên kế "
             "hoạch bữa ăn cho tuần mới; bạn có thể tắt nhắc này bất cứ lúc nào trong Cài đặt "
             "tài khoản.",
             None,

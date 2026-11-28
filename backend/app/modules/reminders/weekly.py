@@ -162,13 +162,12 @@ def _release_week(session: Session, user_id: UUID, monday: date) -> None:
 def _eligible_page(
     session: Session, monday: date, after_id: UUID | None
 ) -> list[tuple[UUID, str, str, dict[str, Any]]]:
-    """Một trang người dùng đang hoạt động, đã xác minh email và chưa nhận email tuần này."""
+    """Một trang người dùng đang hoạt động, có email (chưa cần xác minh), chưa nhận tuần này."""
     statement = (
         select(User.id, User.email, User.full_name, User.preferences)
         .where(
             User.status == "active",
             User.email.is_not(None),
-            User.email_verified_at.is_not(None),
             or_(User.weekly_reminder_week.is_(None), User.weekly_reminder_week < monday),
         )
         .order_by(User.id)

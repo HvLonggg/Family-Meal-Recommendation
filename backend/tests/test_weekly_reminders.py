@@ -124,13 +124,14 @@ def test_run_requires_email_delivery_to_be_configured(
     assert response.json()["code"] == "EMAIL_NOT_CONFIGURED"
 
 
-def test_only_active_verified_opted_in_users_receive_the_reminder(
+def test_every_active_opted_in_email_account_receives_the_reminder(
     client: TestClient,
     database_session_factory: sessionmaker[Session],
     outbox: list[EmailMessage],
 ) -> None:
     add_user(database_session_factory, "ok@example.com")
     add_user(database_session_factory, "explicit-on@example.com", preferences={"language": "vi"})
+    # Đăng ký bằng email là đủ, không cần đã xác minh.
     add_user(database_session_factory, "unverified@example.com", verified=False)
     add_user(
         database_session_factory,
@@ -148,8 +149,12 @@ def test_only_active_verified_opted_in_users_receive_the_reminder(
 
     result = call_cron(client)
 
-    assert recipients(outbox) == ["explicit-on@example.com", "ok@example.com"]
-    assert result["sent"] == 2
+    assert recipients(outbox) == [
+        "explicit-on@example.com",
+        "ok@example.com",
+        "unverified@example.com",
+    ]
+    assert result["sent"] == 3
     assert result["failed"] == 0
     assert result["opted_out"] == 2
     assert result["has_more"] is False
