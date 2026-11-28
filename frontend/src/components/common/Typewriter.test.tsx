@@ -1,47 +1,42 @@
-import { act, render } from '@testing-library/react';
-import { afterEach, beforeEach, expect, it, vi } from 'vitest';
+import { render } from '@testing-library/react';
+import { expect, it, vi } from 'vitest';
 
 import { Typewriter } from './Typewriter';
 
-let frames: FrameRequestCallback[] = [];
-let now = 0;
+it('renders every character once with a staggered CSS delay, full text for screen readers', () => {
+  const { container } = render(<Typewriter delay={100} speed={10} text="Bếp Việt vui" />);
+  const root = container.querySelector<HTMLElement>('.typewriter')!;
+  expect(container.querySelector('.visually-hidden')?.textContent).toBe('Bếp Việt vui');
+  expect(root.style.getPropertyValue('--tw-delay')).toBe('100ms');
+  expect(root.style.getPropertyValue('--tw-speed')).toBe('10ms');
 
-beforeEach(() => {
-  frames = [];
-  now = 0;
-  vi.stubGlobal('requestAnimationFrame', (callback: FrameRequestCallback) => {
-    frames.push(callback);
-    return frames.length;
-  });
-  vi.stubGlobal('cancelAnimationFrame', vi.fn());
-});
-
-afterEach(() => {
-  vi.unstubAllGlobals();
-});
-
-function advance(milliseconds: number) {
-  const end = now + milliseconds;
-  while (now < end) {
-    now = Math.min(end, now + 16);
-    const pending = frames;
-    frames = [];
-    act(() => pending.forEach((callback) => callback(now)));
-  }
-}
-
-it('reveals characters one by one without a blinking caret, full text for screen readers', () => {
-  const { container } = render(<Typewriter delay={100} speed={10} text="Bếp Việt" />);
-  const shown = () => container.querySelectorAll('.typewriter__char.is-shown').length;
-  expect(container.querySelector('.visually-hidden')?.textContent).toBe('Bếp Việt');
-  expect(container.querySelectorAll('.typewriter__char')).toHaveLength(8);
-  expect(shown()).toBe(0);
-
-  advance(100 + 16 + 30);
-  expect(shown()).toBeGreaterThan(0);
-  expect(shown()).toBeLessThan(8);
-
-  advance(1000);
-  expect(shown()).toBe(8);
+  const chars = [...container.querySelectorAll<HTMLElement>('.typewriter__char')];
+  expect(chars.map((char) => char.textContent).join('')).toBe('BếpViệtvui');
+  // Khoảng trắng chiếm một nhịp: "Việt" bắt đầu ở nhịp 4, "vui" ở nhịp 9.
+  expect(chars.map((char) => char.style.getPropertyValue('--i'))).toEqual([
+    '0',
+    '1',
+    '2',
+    '4',
+    '5',
+    '6',
+    '7',
+    '9',
+    '10',
+    '11',
+  ]);
   expect(container.querySelector('.typewriter__caret')).toBeNull();
+});
+
+it('keeps each word in one wrapper so it never breaks mid-word', () => {
+  const { container } = render(<Typewriter text="Cùng Bếp Việt," />);
+  const words = [...container.querySelectorAll('.typewriter__word')];
+  expect(words.map((word) => word.textContent)).toEqual(['Cùng', 'Bếp', 'Việt,']);
+});
+
+it('does not re-render or schedule frames while revealing', () => {
+  const frames = vi.spyOn(window, 'requestAnimationFrame');
+  render(<Typewriter text="Bếp Việt" />);
+  expect(frames).not.toHaveBeenCalled();
+  frames.mockRestore();
 });

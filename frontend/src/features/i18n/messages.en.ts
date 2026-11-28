@@ -2695,4 +2695,5 @@ export const en: Record<string, string> = {
   'gluten/lúa mì': 'gluten/wheat',
   'Nhận email lúc 21:00 tối Chủ nhật để lên thực đơn cho tuần mới.':
     'Get an email at 9 pm on Sunday to plan meals for the new week.',
+  'Đổi món ngẫu nhiên': 'Shuffle dishes',
 };

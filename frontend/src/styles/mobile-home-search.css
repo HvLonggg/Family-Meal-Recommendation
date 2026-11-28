@@ -179,6 +179,45 @@
   }
 }
 
+/* Máy tính (từ 761px): dải mờ trắng không còn đè lên mép thẻ. Khung nhìn không cắt ở lề nội dung nữa;
+ * thẻ trượt ra tới mép trang và chỉ mờ dần trong phần lề ngoài (rộng tối đa 96px, không vượt quá lề),
+ * nên thẻ đứng yên luôn rõ nét và cách dải mờ một khoảng. Mũi tên vẫn nằm trong phần lề. */
+@media (min-width: 761px) {
+  .showcase-carousel--bleed {
+    overflow-x: clip;
+  }
+
+  .showcase-carousel--bleed .showcase-carousel__viewport {
+    overflow: visible;
+  }
+
+  .showcase-carousel--bleed .showcase-carousel__viewport::before,
+  .showcase-carousel--bleed .showcase-carousel__viewport::after {
+    content: none;
+  }
+
+  .showcase-carousel--bleed .showcase-carousel__stage::before,
+  .showcase-carousel--bleed .showcase-carousel__stage::after {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    bottom: 0;
+    width: min(var(--showcase-gutter), 96px);
+    pointer-events: none;
+    content: '';
+  }
+
+  .showcase-carousel--bleed .showcase-carousel__stage::before {
+    left: 0;
+    background: linear-gradient(90deg, var(--showcase-edge-color), transparent);
+  }
+
+  .showcase-carousel--bleed .showcase-carousel__stage::after {
+    right: 0;
+    background: linear-gradient(270deg, var(--showcase-edge-color), transparent);
+  }
+}
+
 /* Nút tim lưu món luôn nằm trên ảnh/liên kết của thẻ và có vùng chạm rộng,
  * để chạm vào tim là lưu món chứ không mở trang chi tiết. */
 .recipe-card .recipe-card__save {

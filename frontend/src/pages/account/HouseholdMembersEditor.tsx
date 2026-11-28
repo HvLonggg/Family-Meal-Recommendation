@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { AppIcon } from '@/components/common/AppIcon';
 import { MAX_HOUSEHOLD_MEMBERS, ageGroupLabel } from '@/features/account/householdMembers';
 import { portionFactor } from '@/features/account/preferences';
@@ -15,6 +17,46 @@ const appetiteLabels: Record<Appetite, string> = {
 interface HouseholdMembersEditorProps {
   members: HouseholdMember[];
   onChange: (members: HouseholdMember[]) => void;
+}
+
+const MAX_AGE = 120;
+
+/**
+ * Ô tuổi dạng chữ số: bản nháp cho phép xóa trống khi đang gõ ("23" gõ liền, không bị "0" chặn).
+ * Giá trị hợp lệ (0–120) được ghi ngay khi gõ; để trống thì giữ tuổi cũ và trả lại khi rời ô.
+ */
+function AgeInput({
+  age,
+  label,
+  onCommit,
+}: {
+  age: number;
+  label: string;
+  onCommit: (age: number) => void;
+}) {
+  const [draft, setDraft] = useState<string | null>(null);
+  return (
+    <input
+      aria-label={label}
+      autoComplete="off"
+      inputMode="numeric"
+      maxLength={3}
+      onBlur={() => setDraft(null)}
+      onChange={(event) => {
+        const digits = event.target.value.replace(/\D/g, '').slice(0, 3);
+        if (digits === '') {
+          setDraft('');
+          return;
+        }
+        const next = Math.min(MAX_AGE, Number(digits));
+        setDraft(String(next));
+        onCommit(next);
+      }}
+      onFocus={(event) => event.target.select()}
+      pattern="[0-9]*"
+      value={draft ?? String(age)}
+    />
+  );
 }
 
 export function HouseholdMembersEditor({ members, onChange }: HouseholdMembersEditorProps) {
@@ -54,18 +96,10 @@ export function HouseholdMembersEditor({ members, onChange }: HouseholdMembersEd
                 </label>
                 <label className="household-member__field household-member__field--age">
                   <span>{t('Tuổi')}</span>
-                  <input
-                    aria-label={t('Tuổi của {name}', { name })}
-                    inputMode="numeric"
-                    max={120}
-                    min={0}
-                    onChange={(event) =>
-                      patch(index, {
-                        age: Math.max(0, Math.min(120, Number(event.target.value) || 0)),
-                      })
-                    }
-                    type="number"
-                    value={member.age}
+                  <AgeInput
+                    age={member.age}
+                    label={t('Tuổi của {name}', { name })}
+                    onCommit={(age) => patch(index, { age })}
                   />
                   <small>{t(ageGroupLabel(member.age))}</small>
                 </label>

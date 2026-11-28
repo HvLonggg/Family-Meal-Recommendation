@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import type { CSSProperties } from 'react';
 
 interface TypewriterProps {
   text: string;
@@ -9,50 +9,53 @@ interface TypewriterProps {
   className?: string;
 }
 
-function prefersReducedMotion() {
-  return (
-    typeof window !== 'undefined' &&
-    Boolean(window.matchMedia?.('(prefers-reduced-motion: reduce)').matches)
-  );
+/**
+ * Chữ hiện dần từng ký tự, mỗi ký tự mờ dần sang rõ, nhích nhẹ lên và hết nhòe (không có con trỏ).
+ * Hoàn toàn bằng CSS: mỗi ký tự dựng một lần, trễ theo `--i` (animation-delay) nên React không
+ * render lại theo từng chữ và trình duyệt tự chạy hoạt ảnh trên compositor, không giật khi máy bận.
+ * Ký tự gom theo từ (không ngắt giữa từ khi xuống dòng) và luôn giữ chỗ nên khối không nhảy;
+ * trình đọc màn hình đọc nguyên câu ngay. Giảm chuyển động: hiện đủ chữ, không hoạt ảnh.
+ */
+/** Tách câu thành từ/khoảng trắng kèm nhịp (số ký tự đứng trước) để tính trễ mà không đổi biến khi render. */
+function splitWords(text: string) {
+  let start = 0;
+  return text
+    .split(/(\s+)/)
+    .filter(Boolean)
+    .map((word) => {
+      const characters = Array.from(word);
+      const token = { characters, isSpace: /^\s+$/.test(word), start, word };
+      start += characters.length;
+      return token;
+    });
 }
 
-/**
- * Chữ hiện dần từng ký tự, mỗi ký tự mờ dần sang rõ và nhích nhẹ lên (không có con trỏ nháy).
- * Nhịp tính theo thời gian thực bằng requestAnimationFrame nên đều tay kể cả khi máy bận.
- * Ký tự chưa hiện vẫn giữ chỗ nên khối không nhảy; trình đọc màn hình đọc nguyên câu ngay.
- */
 export function Typewriter({ className, delay = 0, speed = 38, text }: TypewriterProps) {
-  const characters = Array.from(text);
-  const total = characters.length;
-  const [count, setCount] = useState(() => (prefersReducedMotion() ? total : 0));
-
-  useEffect(() => {
-    if (prefersReducedMotion()) return undefined;
-    let frame = 0;
-    let startedAt: number | null = null;
-    const tick = (time: number) => {
-      startedAt ??= time;
-      const elapsed = time - startedAt - delay;
-      const next = elapsed <= 0 ? 0 : Math.min(total, Math.floor(elapsed / speed) + 1);
-      setCount((current) => (current === next ? current : next));
-      if (next < total) frame = window.requestAnimationFrame(tick);
-    };
-    frame = window.requestAnimationFrame(tick);
-    return () => window.cancelAnimationFrame(frame);
-  }, [delay, speed, total]);
-
   return (
-    <span className={`typewriter${className ? ` ${className}` : ''}`}>
+    <span
+      className={`typewriter${className ? ` ${className}` : ''}`}
+      style={{ '--tw-delay': `${delay}ms`, '--tw-speed': `${speed}ms` } as CSSProperties}
+    >
       <span className="visually-hidden">{text}</span>
       <span aria-hidden="true">
-        {characters.map((character, index) => (
-          <span
-            className={index < count ? 'typewriter__char is-shown' : 'typewriter__char'}
-            key={index}
-          >
-            {character}
-          </span>
-        ))}
+        {splitWords(text).map(({ characters, isSpace, start, word }, wordIndex) =>
+          // Khoảng trắng nằm ngoài từ để trình duyệt xuống dòng ở đây; vẫn chiếm một nhịp.
+          isSpace ? (
+            word
+          ) : (
+            <span className="typewriter__word" key={wordIndex}>
+              {characters.map((character, characterIndex) => (
+                <span
+                  className="typewriter__char"
+                  key={characterIndex}
+                  style={{ '--i': start + characterIndex } as CSSProperties}
+                >
+                  {character}
+                </span>
+              ))}
+            </span>
+          ),
+        )}
       </span>
     </span>
   );

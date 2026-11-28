@@ -214,6 +214,23 @@
 .catalog-page-view .catalog-results select.catalog-results__rows {
   min-width: 150px;
 }
+/* Nút đổi món ngẫu nhiên: cao bằng ô chọn, xoay nhẹ khi bấm/di chuột. */
+.catalog-page-view .catalog-results__shuffle {
+  flex: none;
+  color: var(--color-primary);
+}
+.catalog-page-view .catalog-results__shuffle svg {
+  transition: transform 420ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.catalog-page-view .catalog-results__shuffle:hover svg,
+.catalog-page-view .catalog-results__shuffle:active svg {
+  transform: rotate(180deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .catalog-page-view .catalog-results__shuffle svg {
+    transition: none;
+  }
+}
 @media (max-width: 600px) {
   .catalog-page-view .catalog-results__controls {
     width: 100%;

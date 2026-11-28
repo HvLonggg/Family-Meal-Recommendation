@@ -78,7 +78,7 @@ export function RecipesPage() {
   const [wideViewport, setWideViewport] = useState(isWideViewport);
   // Seed theo lượt ghé: vào trang 1 thì xáo mới; mở thẳng ?page=N (Back, tải lại) thì dùng lại
   // seed đã lưu để trang 2, 3… khớp thứ tự với trang trước đó.
-  const [visitSeed] = useState(() => readVisitSeed(params.has('page')));
+  const [visitSeed, setVisitSeed] = useState(() => readVisitSeed(params.has('page')));
   const [gridElement, setGridElement] = useState<HTMLDivElement | null>(null);
   const gridColumns = useGridColumns(gridElement);
   const [catalogRows, changeCatalogRows] = useCatalogRows();
@@ -252,6 +252,19 @@ export function RecipesPage() {
     () => (isShuffledView ? seededShuffle(filtered, visitSeed, (recipe) => recipe.slug) : filtered),
     [filtered, isShuffledView, visitSeed],
   );
+  // Như rời trang rồi vào lại: seed mới (lưu lại để Back/tải lại khớp), về trang 1, giữ số hàng.
+  const reshuffle = () => {
+    setVisitSeed(readVisitSeed(false));
+    setParams(
+      (current) => {
+        if (!current.has('page')) return current;
+        const next = new URLSearchParams(current);
+        next.delete('page');
+        return next;
+      },
+      { replace: true },
+    );
+  };
   const pageCount = Math.max(1, Math.ceil(filtered.length / pageSize));
   const requestedPage = Number(params.get('page') ?? 1);
   const page = Math.min(
@@ -458,6 +471,17 @@ export function RecipesPage() {
                     </option>
                   ))}
                 </select>
+                {isShuffledView ? (
+                  <button
+                    aria-label={t('Đổi món ngẫu nhiên')}
+                    className="icon-button catalog-results__shuffle"
+                    onClick={reshuffle}
+                    title={t('Đổi món ngẫu nhiên')}
+                    type="button"
+                  >
+                    <AppIcon name="refresh" size={18} />
+                  </button>
+                ) : null}
                 <select
                   aria-label={t('Số hàng mỗi trang')}
                   className="catalog-results__rows"

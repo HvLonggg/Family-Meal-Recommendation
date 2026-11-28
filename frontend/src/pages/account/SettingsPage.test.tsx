@@ -115,6 +115,34 @@ describe('SettingsPage', () => {
     expect(saved.servings_mode).toBe('auto');
   });
 
+  it('lets the member age be cleared while typing and commits the typed number', async () => {
+    vi.mocked(savePreferences).mockImplementation((preferences: UserPreferences) =>
+      Promise.resolve(preferences),
+    );
+    renderSettings('Bữa ăn');
+
+    fireEvent.click(screen.getByRole('button', { name: /Thêm thành viên/ }));
+    const age = screen.getByLabelText('Tuổi của Thành viên 1');
+    expect(age).toHaveValue('30');
+    fireEvent.change(age, { target: { value: '' } });
+    expect(age).toHaveValue('');
+    fireEvent.change(age, { target: { value: '2' } });
+    fireEvent.change(age, { target: { value: '23' } });
+    expect(age).toHaveValue('23');
+    fireEvent.change(age, { target: { value: '999' } });
+    expect(age).toHaveValue('120');
+    fireEvent.change(age, { target: { value: '23' } });
+    fireEvent.change(age, { target: { value: '' } });
+    fireEvent.blur(age);
+    expect(age).toHaveValue('23');
+
+    fireEvent.click(screen.getByRole('button', { name: 'Lưu cài đặt' }));
+    await waitFor(() => expect(savePreferences).toHaveBeenCalledTimes(1));
+    expect(vi.mocked(savePreferences).mock.calls[0]![0].household_members).toEqual([
+      { label: 'Thành viên 1', age: 23, appetite: 'normal' },
+    ]);
+  });
+
   it('turns allergy chips and custom entries into the free-text allergies field', async () => {
     vi.mocked(savePreferences).mockImplementation((preferences: UserPreferences) =>
       Promise.resolve(preferences),

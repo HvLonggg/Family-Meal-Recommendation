@@ -245,6 +245,39 @@ describe('catalog browsing workflow', () => {
     expect(currentParams().has('sort')).toBe(false);
     expect(names()).toEqual(expected.slice(0, 9));
   });
+  it('reshuffles the default catalog from page one with the refresh button and keeps the rows', () => {
+    window.localStorage.setItem('bep-viet:catalog-rows', '3');
+    mocks.catalog = Array.from({ length: 23 }, (_, index) =>
+      fixture(`ga-luoc-${index}`, `Gà luộc ${index}`, 'Gà', 20 + index),
+    );
+    const random = vi.spyOn(Math, 'random').mockReturnValue(0.123456);
+    renderCatalog();
+    const first = names();
+    fireEvent.click(screen.getByRole('button', { name: 'Trang tiếp' }));
+    expect(currentParams().get('page')).toBe('2');
+
+    random.mockReturnValue(0.654321);
+    fireEvent.click(screen.getByRole('button', { name: 'Đổi món ngẫu nhiên' }));
+    random.mockRestore();
+    const expected = seededShuffle(
+      mocks.catalog,
+      (0.654321).toString(36).slice(2),
+      (recipe) => recipe.slug,
+    ).map((recipe) => recipe.name);
+    expect(currentParams().has('page')).toBe(false);
+    expect(names()).toEqual(expected.slice(0, 9));
+    expect(names()).not.toEqual(first);
+    expect(screen.getByRole('combobox', { name: 'Số hàng mỗi trang' })).toHaveValue('3');
+    expect(window.sessionStorage.getItem('bep-viet:catalog-seed')).toBe(
+      (0.654321).toString(36).slice(2),
+    );
+
+    // Có sắp xếp cụ thể thì không còn danh sách ngẫu nhiên nên không hiện nút.
+    fireEvent.change(screen.getByRole('combobox', { name: 'Sắp xếp' }), {
+      target: { value: 'quick' },
+    });
+    expect(screen.queryByRole('button', { name: 'Đổi món ngẫu nhiên' })).not.toBeInTheDocument();
+  });
   it('reuses the stored shuffle seed when opening a later page directly', () => {
     mocks.catalog = Array.from({ length: 23 }, (_, index) =>
       fixture(`ga-luoc-${index}`, `Gà luộc ${index}`, 'Gà', 20 + index),

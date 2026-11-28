@@ -67,11 +67,6 @@
 }
 
 @media (max-width: 560px) {
-  .random-meal-page .random-hero h1 {
-    font-size: clamp(2rem, 9vw, 2.5rem);
-    line-height: 1.12;
-  }
-
   .random-meal-page .random-hero p {
     margin: 12px 0 14px;
     font-size: 15px;
@@ -190,10 +185,6 @@
 @media (max-width: 560px) {
   .random-meal-page .random-hero__inner {
     padding-block: 20px 22px;
-  }
-
-  .random-meal-page .random-hero h1 {
-    font-size: 1.75rem;
   }
 
   .random-meal-page .random-hero p {

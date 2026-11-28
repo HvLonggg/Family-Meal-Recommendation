@@ -88,6 +88,31 @@
   border-top-color: transparent;
 }
 
+/* Ngày ăn chay chỉ đánh dấu bằng huy hiệu + nút lá ở tiêu đề; cột và ô món giữ nền trắng, không tô vàng. */
+.planner-page .planner-day.is-vegetarian {
+  background: transparent;
+  box-shadow: none;
+}
+
+.planner-page .planner-day.is-vegetarian.is-today {
+  background: linear-gradient(180deg, #fff9f0 0, white 145px);
+}
+
+.planner-page .planner-day.is-vegetarian .planner-day__header {
+  border-bottom-color: var(--color-border);
+  background: transparent;
+}
+
+.planner-page .planner-day.is-vegetarian .planner-meal {
+  border-color: transparent;
+  border-top-color: #f1e8de;
+  background: transparent;
+}
+
+.planner-page .planner-day.is-vegetarian .planner-meal.is-highlighted {
+  border-color: var(--color-primary);
+}
+
 .planner-page .planner-meal__heading {
   min-height: 26px;
   flex: 0 0 auto;
@@ -511,8 +536,42 @@
   }
 }
 
+/* Hàng món gọn như bảng tổng quan: ảnh nhỏ 40px, nền trắng, không hộp màu. */
 .planner-page .planner-recipe-results article {
-  padding-block: 8px;
+  grid-template-columns: 40px minmax(0, 1fr) auto;
+  gap: 10px;
+  padding: 6px 2px;
+  background: transparent;
+}
+
+.planner-page .planner-recipe-results article > img,
+.planner-page .planner-recipe-results article > img.dish-cutout {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  padding: 0;
+  background: white;
+  filter: none;
+}
+
+.planner-page .planner-recipe-results article > div {
+  min-width: 0;
+  gap: 1px;
+}
+
+.planner-page .planner-recipe-results article strong {
+  overflow: hidden;
+  font-size: 13px;
+  line-height: 1.3;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.planner-page .planner-recipe-results article span {
+  overflow: hidden;
+  line-height: 1.3;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .planner-page .planner-recipe-results .button {
@@ -538,6 +597,32 @@
 .planner-page .planner-add-dialog__bar strong {
   color: var(--color-text);
   font-size: 13px;
+}
+
+/* Bộ lọc danh sách mua sắm: ba điều khiển cùng cao 44px, thẳng hàng theo đáy (nhãn ngày nằm phía trên ô ngày). */
+.planner-page .planner-period-tabs {
+  box-sizing: border-box;
+  min-height: 44px;
+}
+
+.planner-page .planner-period-tabs button {
+  min-height: 36px;
+}
+
+.planner-page .planner-date-picker input {
+  box-sizing: border-box;
+  height: 44px;
+  min-height: 44px;
+}
+
+.planner-page .planner-shopping__filters > .button {
+  min-height: 44px;
+}
+
+@media (min-width: 521px) {
+  .planner-page .planner-shopping__filters {
+    align-items: flex-end;
+  }
 }
 
 /* ---------- Điện thoại / máy tính bảng dọc (≤ 760px) ---------- */
@@ -1095,10 +1180,6 @@
   border-left: 1px solid var(--color-border);
 }
 
-.planner-page .planner-overview__day.is-vegetarian {
-  background: #fffcf0;
-}
-
 .planner-page .planner-overview__day-header {
   display: flex;
   min-width: 0;
@@ -1112,14 +1193,6 @@
 .planner-page .planner-overview__day.is-today .planner-overview__day-header {
   box-shadow: inset 0 3px 0 var(--color-primary);
   background: var(--color-primary-soft, #eef3ff);
-}
-
-.planner-page .planner-overview__day.is-vegetarian .planner-overview__day-header {
-  background: rgb(255 229 138 / 38%);
-}
-
-.planner-page .planner-overview__day.is-today.is-vegetarian .planner-overview__day-header {
-  box-shadow: inset 0 3px 0 var(--color-primary);
 }
 
 .planner-page .planner-overview__weekday {
@@ -1337,8 +1410,8 @@
   font-size: 12px;
 }
 
-/* Máy tính bảng và điện thoại: chuyển sang thẻ từng ngày, không cuộn ngang. */
-@media (max-width: 1023px) {
+/* Máy tính bảng (761–1023px): chuyển sang thẻ từng ngày, không cuộn ngang. Điện thoại dùng bảng cuộn ngang bên dưới. */
+@media (min-width: 761px) and (max-width: 1023px) {
   .planner-page .planner-overview__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-rows: none;
@@ -1470,10 +1543,105 @@
     font-size: 16px;
   }
 
+  /* Bảng 7 ngày × 3 bữa như máy tính, cuộn ngang trong khung; cột nhãn bữa dính trái.
+     Cha là flex (không phải grid) để position: sticky bám theo cả chiều rộng cuộn; hàng thẳng nhau nhờ chiều cao cố định. */
   .planner-page .planner-overview__grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 8px;
-    padding: 8px;
+    --ov-head: 84px;
+    --ov-row: 100px;
+
+    display: flex;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    padding: 0;
+    scrollbar-width: thin;
+  }
+
+  .planner-page .planner-overview__labels,
+  .planner-page .planner-overview__day {
+    flex: none;
+    grid-row: auto;
+    grid-template-rows: var(--ov-head) repeat(3, var(--ov-row));
+  }
+
+  .planner-page .planner-overview__labels {
+    position: sticky;
+    z-index: 2;
+    left: 0;
+    width: 30px;
+    border-right: 1px solid var(--color-border);
+    background: white;
+  }
+
+  .planner-page .planner-overview__labels span {
+    justify-content: center;
+    padding: 0;
+    font-size: 12px;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+
+  .planner-page .planner-overview__day {
+    width: 104px;
+  }
+
+  .planner-page .planner-overview__day-header {
+    box-sizing: border-box;
+    justify-content: center;
+    gap: 1px;
+    overflow: hidden;
+    padding: 6px 4px;
+  }
+
+  .planner-page .planner-overview__date {
+    font-size: 15px;
+  }
+
+  .planner-page .planner-overview__badges {
+    min-height: 0;
+    gap: 3px;
+  }
+
+  .planner-page .planner-overview__today,
+  .planner-page .planner-overview__veg {
+    padding: 0 6px;
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .planner-page .planner-overview__day-count {
+    display: none;
+  }
+
+  .planner-page .planner-overview__cell {
+    box-sizing: border-box;
+    gap: 3px;
+    overflow: hidden;
+    padding: 5px;
+  }
+
+  .planner-page .planner-overview__dishes {
+    gap: 3px;
+  }
+
+  .planner-page .planner-overview__dish {
+    align-items: center;
+    gap: 5px;
+  }
+
+  .planner-page .planner-overview__dish img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .planner-page .planner-overview__dish-name {
+    font-size: 11px;
+    line-height: 1.2;
+  }
+
+  .planner-page .planner-overview__more {
+    padding: 0 7px;
+    font-size: 11px;
+    line-height: 16px;
   }
 }
 
