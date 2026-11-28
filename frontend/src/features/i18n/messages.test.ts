@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { dietaryTagLabels, householdPresets } from '@/features/account/preferences';
+import { dietaryTagLabels } from '@/features/account/preferences';
 import { articleCategories, articleStatusLabels } from '@/features/articles/articlesApi';
 import { en } from '@/features/i18n/messages.en';
 import { translate } from '@/features/i18n/translate';
@@ -44,7 +44,6 @@ describe('English dictionary', () => {
       ...supportTopics.map((topic) => topic.label),
       ...Object.values(supportStatusLabels),
       ...Object.values(dietaryTagLabels),
-      ...householdPresets.flatMap((preset) => [preset.label, preset.description]),
       ...mealSets.flatMap((meal) => [meal.title, meal.description]),
       ...Object.values(narrationSectionLabels),
       'Bắc',

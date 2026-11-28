@@ -42,7 +42,7 @@ describe('document meta', () => {
         <Recipe name="Canh chua cá" />
       </MemoryRouter>,
     );
-    expect(document.title).toBe('Canh chua cá · Bếp Việt');
+    expect(document.title).toBe('Bếp Việt');
     expect(meta('meta[name="description"]')).toBe('Canh chua cá mô tả');
     expect(meta('meta[property="og:title"]')).toBe('Canh chua cá · Bếp Việt');
     expect(meta('meta[property="og:image"]')).toBe(
@@ -66,7 +66,7 @@ describe('document meta', () => {
         <Recipe name="Vietnamese sour fish soup" />
       </MemoryRouter>,
     );
-    expect(document.title).toBe('Vietnamese sour fish soup · Bep Viet');
+    expect(document.title).toBe('Bep Viet');
     expect(meta('meta[property="og:locale"]')).toBe('en_US');
   });
 

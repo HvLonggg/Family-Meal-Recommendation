@@ -16,7 +16,11 @@ export const DEFAULT_PREFERENCES: UserPreferences = {
   week_start: 'monday',
   calendar_mode: 'solar',
   vegetarian_lunar_days: false,
+  vegetarian_month_days: [],
+  vegetarian_weekdays: [],
+  vegetarian_months: [],
   email_meal_plan_reminders: true,
+  weekly_reminder_email: true,
   text_size: 'normal',
   reduce_motion: false,
   notify_weekly_plan: true,
@@ -51,52 +55,6 @@ export function recommendedServings(
   const portions = householdPortions(preferences.household_members);
   return Math.max(1, Math.min(20, Math.round(portions + Number.EPSILON)));
 }
-
-export const householdPresets: {
-  id: string;
-  label: string;
-  description: string;
-  members: HouseholdMember[];
-}[] = [
-  {
-    id: 'single',
-    label: 'Một mình',
-    description: 'Một người lớn',
-    members: [{ label: 'Tôi', age: 28, appetite: 'normal' }],
-  },
-  {
-    id: 'sisters',
-    label: 'Hai chị em',
-    description: 'Ví dụ: 25 và 22 tuổi',
-    members: [
-      { label: 'Chị', age: 25, appetite: 'normal' },
-      { label: 'Em', age: 22, appetite: 'normal' },
-    ],
-  },
-  {
-    id: 'small-family',
-    label: 'Gia đình nhỏ',
-    description: 'Bố mẹ và bé 12 tuổi',
-    members: [
-      { label: 'Bố', age: 40, appetite: 'normal' },
-      { label: 'Mẹ', age: 38, appetite: 'normal' },
-      { label: 'Bé', age: 12, appetite: 'normal' },
-    ],
-  },
-  {
-    id: 'three-generations',
-    label: 'Ba thế hệ',
-    description: 'Ông bà, bố mẹ và hai con',
-    members: [
-      { label: 'Ông', age: 70, appetite: 'light' },
-      { label: 'Bà', age: 67, appetite: 'light' },
-      { label: 'Bố', age: 42, appetite: 'normal' },
-      { label: 'Mẹ', age: 40, appetite: 'normal' },
-      { label: 'Con lớn', age: 15, appetite: 'big' },
-      { label: 'Con nhỏ', age: 6, appetite: 'normal' },
-    ],
-  },
-];
 
 export const dietaryTagLabels: Record<DietaryTag, string> = {
   vegetarian: 'Ăn chay',

@@ -5,7 +5,7 @@ import { Link, useNavigate, useSearchParams } from 'react-router';
 import { DragonMascot, type DragonMood } from '@/components/assistant/DragonMascot';
 import { useLipSync } from '@/components/assistant/lipSync';
 import { AppIcon } from '@/components/common/AppIcon';
-import { type Recipe } from '@/data/recipes';
+import { hasRecipeSteps, type Recipe } from '@/data/recipes';
 import { useUserPreferences } from '@/features/account/preferences';
 import { sendAssistantMessage } from '@/features/assistant/assistantApi';
 import { useSpeechRecognition } from '@/features/assistant/useSpeech';
@@ -111,11 +111,19 @@ export function CookModePage() {
   const household = isPersonal ? preferences.computed_servings : null;
   const dishParams = params.getAll('dish');
   const key = dishParams.join('|');
-  const dishes = useMemo<Dish[]>(
+  const requested = useMemo(
     () =>
       parseCookDishes(key ? key.split('|') : []).flatMap((dish) => {
         const recipe = catalog.find((item) => item.slug === dish.slug);
-        return recipe
+        return recipe ? [{ dish, recipe }] : [];
+      }),
+    [catalog, key],
+  );
+  // Món chưa có các bước (món cộng đồng mới duyệt) không nấu theo từng bước được: bỏ qua.
+  const dishes = useMemo<Dish[]>(
+    () =>
+      requested.flatMap(({ dish, recipe }) => {
+        return hasRecipeSteps(recipe)
           ? [
               {
                 recipe,
@@ -125,8 +133,27 @@ export function CookModePage() {
             ]
           : [];
       }),
-    [catalog, household, key],
+    [household, requested],
   );
+  if (!dishes.length && requested.length) {
+    const only = requested.length === 1 ? requested[0]!.recipe : null;
+    return (
+      <div className="cook cook--empty">
+        <div className="cook-empty">
+          <AppIcon name="chef" size={36} />
+          <h1>{t('Món này chưa có hướng dẫn từng bước')}</h1>
+          <p>
+            {t(
+              'Công thức đang được ban nội dung bổ sung. Bạn vẫn có thể xem thông tin món hoặc chọn món khác để vào bếp.',
+            )}
+          </p>
+          <Link className="button button--primary" to={only ? `/recipes/${only.slug}` : '/recipes'}>
+            {only ? t('Xem thông tin món') : t('Chọn món')}
+          </Link>
+        </div>
+      </div>
+    );
+  }
   if (!dishes.length) {
     return (
       <div className="cook cook--empty">
@@ -1141,6 +1168,9 @@ function CookSession({ dishes, sessionKey }: { dishes: Dish[]; sessionKey: strin
                 <h1 className="cook__step">
                   {t('Chuẩn bị nguyên liệu cho {count} người', { count: dish.servings })}
                 </h1>
+                {!step.items?.length ? (
+                  <p className="cook__note">{t('Món này chưa có danh sách nguyên liệu.')}</p>
+                ) : null}
                 <ul className="cook-checklist">
                   {(step.items ?? []).map((item) => (
                     <li key={item}>

@@ -1,0 +1,292 @@
+/* Lịch tháng ở tab "Lịch sử bữa ăn": chọn ngày để xem các bữa của ngày đó. */
+.history-calendar {
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+  margin-bottom: 20px;
+}
+
+.history-calendar__month,
+.history-calendar__detail {
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  padding: 14px;
+  background: #fff;
+}
+
+.history-calendar__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.history-calendar__toolbar select {
+  min-height: 36px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 0 8px;
+  background: #fff;
+  color: var(--color-text);
+  font: inherit;
+  font-size: 13.5px;
+  font-weight: 650;
+  text-transform: capitalize;
+}
+
+.history-calendar__nav,
+.history-calendar__today,
+.history-calendar__open-week {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 36px;
+  min-height: 36px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 0 10px;
+  background: #fff;
+  color: var(--color-text);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.history-calendar__nav {
+  padding: 0;
+}
+
+.history-calendar__nav--prev svg {
+  transform: rotate(180deg);
+}
+
+.history-calendar__today {
+  margin-left: auto;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.history-calendar__nav:hover,
+.history-calendar__today:hover,
+.history-calendar__open-week:hover {
+  background: var(--color-primary-soft);
+}
+
+.history-calendar__grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 4px;
+}
+
+.history-calendar__weekday {
+  padding: 4px 0;
+  color: var(--color-text-muted);
+  font-size: 11.5px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.history-calendar__day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  aspect-ratio: 1;
+  min-height: 38px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 0;
+  background: transparent;
+  color: var(--color-text);
+  font: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.history-calendar__day:hover {
+  background: #f7f2ec;
+}
+
+.history-calendar__day.is-future {
+  color: var(--color-text-muted);
+}
+
+.history-calendar__day.has-meals {
+  background: #fbf6ef;
+  font-weight: 750;
+}
+
+.history-calendar__day.is-today {
+  border-color: var(--color-primary);
+}
+
+.history-calendar__day.is-selected {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.history-calendar__day:focus-visible,
+.history-calendar__nav:focus-visible,
+.history-calendar__today:focus-visible,
+.history-calendar__open-week:focus-visible {
+  outline: 2px solid var(--color-focus, var(--color-primary));
+  outline-offset: 2px;
+}
+
+.history-calendar__dots {
+  display: flex;
+  gap: 2px;
+  height: 5px;
+}
+
+.history-calendar__dots i,
+.history-calendar__legend i {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #c9a26b;
+}
+
+.history-calendar__dots i.is-lunch,
+.history-calendar__legend i.is-lunch {
+  background: #d9773b;
+}
+
+.history-calendar__dots i.is-dinner,
+.history-calendar__legend i.is-dinner {
+  background: #7b5aa6;
+}
+
+.history-calendar__day.is-selected .history-calendar__dots i {
+  background: #fff;
+}
+
+.history-calendar__legend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 10px 0 0;
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+.history-calendar__legend i {
+  width: 7px;
+  height: 7px;
+  margin-left: 4px;
+}
+
+.history-calendar__detail header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.history-calendar__detail h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.history-calendar__detail header small,
+.history-calendar__muted {
+  color: var(--color-text-muted);
+  font-size: 12.5px;
+}
+
+.history-calendar__error {
+  color: #a8432f;
+  font-size: 13px;
+}
+
+.history-calendar__meals {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.history-calendar__meal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.history-calendar__meals ul {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.history-calendar__meals ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.history-calendar__meals a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.history-calendar__meals a span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.history-calendar__meals a:hover span {
+  color: var(--color-primary);
+}
+
+.history-calendar__meals img {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #f5eee5;
+}
+
+.history-calendar__meals small {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+.history-calendar__meals small svg {
+  color: var(--color-success, #3e7046);
+}
+
+@media (max-width: 760px) {
+  .history-calendar {
+    grid-template-columns: 1fr;
+  }
+
+  .history-calendar__day {
+    min-height: 40px;
+  }
+}

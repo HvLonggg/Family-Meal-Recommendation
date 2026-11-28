@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 
 interface TypewriterProps {
   text: string;
-  /** Chờ bao lâu (ms) trước khi bắt đầu gõ. */
+  /** Chờ bao lâu (ms) trước khi bắt đầu hiện chữ. */
   delay?: number;
-  /** Thời gian gõ mỗi ký tự (ms). */
+  /** Khoảng cách (ms) giữa hai ký tự. */
   speed?: number;
   className?: string;
 }
@@ -17,39 +17,42 @@ function prefersReducedMotion() {
 }
 
 /**
- * Chữ hiện dần như đang gõ phím. Phần chưa gõ vẫn giữ chỗ (ẩn) nên khối không bị nhảy khi chạy;
- * trình đọc màn hình đọc nguyên câu ngay. Người dùng tắt chuyển động thì hiện đủ câu luôn.
+ * Chữ hiện dần từng ký tự, mỗi ký tự mờ dần sang rõ và nhích nhẹ lên (không có con trỏ nháy).
+ * Nhịp tính theo thời gian thực bằng requestAnimationFrame nên đều tay kể cả khi máy bận.
+ * Ký tự chưa hiện vẫn giữ chỗ nên khối không nhảy; trình đọc màn hình đọc nguyên câu ngay.
  */
 export function Typewriter({ className, delay = 0, speed = 38, text }: TypewriterProps) {
   const characters = Array.from(text);
-  const [count, setCount] = useState(() => (prefersReducedMotion() ? characters.length : 0));
   const total = characters.length;
+  const [count, setCount] = useState(() => (prefersReducedMotion() ? total : 0));
 
   useEffect(() => {
     if (prefersReducedMotion()) return undefined;
-    let timer: number | undefined;
-    const start = window.setTimeout(() => {
-      timer = window.setInterval(() => {
-        setCount((current) => {
-          if (current + 1 >= total && timer !== undefined) window.clearInterval(timer);
-          return Math.min(total, current + 1);
-        });
-      }, speed);
-    }, delay);
-    return () => {
-      window.clearTimeout(start);
-      if (timer !== undefined) window.clearInterval(timer);
+    let frame = 0;
+    let startedAt: number | null = null;
+    const tick = (time: number) => {
+      startedAt ??= time;
+      const elapsed = time - startedAt - delay;
+      const next = elapsed <= 0 ? 0 : Math.min(total, Math.floor(elapsed / speed) + 1);
+      setCount((current) => (current === next ? current : next));
+      if (next < total) frame = window.requestAnimationFrame(tick);
     };
+    frame = window.requestAnimationFrame(tick);
+    return () => window.cancelAnimationFrame(frame);
   }, [delay, speed, total]);
 
-  const typing = count > 0 && count < total;
   return (
     <span className={`typewriter${className ? ` ${className}` : ''}`}>
       <span className="visually-hidden">{text}</span>
       <span aria-hidden="true">
-        {characters.slice(0, count).join('')}
-        {typing ? <span className="typewriter__caret" /> : null}
-        <span className="typewriter__rest">{characters.slice(count).join('')}</span>
+        {characters.map((character, index) => (
+          <span
+            className={index < count ? 'typewriter__char is-shown' : 'typewriter__char'}
+            key={index}
+          >
+            {character}
+          </span>
+        ))}
       </span>
     </span>
   );

@@ -56,7 +56,10 @@ import {
   resolveVegetarianDay,
   upsertVegetarianMark,
   vegetarianOverrides,
+  vegetarianRulesFrom,
 } from '@/features/planner/plannerCalendar';
+import { PlannerHistoryCalendar } from '@/features/planner/PlannerHistoryCalendar';
+import { PlannerWeekOverview } from '@/features/planner/PlannerWeekOverview';
 import {
   lunarFromIsoDate,
   lunarYearName,
@@ -82,6 +85,24 @@ const maxRecipesPerMeal = 30;
 /** Số món hiện thêm mỗi lần cuộn gần cuối danh sách trong hộp thoại chọn món. */
 const recipeBatchSize = 30;
 const mobileQuery = '(max-width: 760px)';
+const viewModeStorageKey = 'bep-viet:planner-view-mode';
+type PlannerViewMode = 'edit' | 'overview';
+
+function readViewMode(): PlannerViewMode {
+  try {
+    return window.localStorage.getItem(viewModeStorageKey) === 'overview' ? 'overview' : 'edit';
+  } catch {
+    return 'edit';
+  }
+}
+
+function storeViewMode(mode: PlannerViewMode) {
+  try {
+    window.localStorage.setItem(viewModeStorageKey, mode);
+  } catch {
+    // Trình duyệt chặn lưu trữ: chế độ xem chỉ giữ trong phiên hiện tại.
+  }
+}
 
 // Đơn vị đếm nguyên chiếc: không thể mua "0,5 khúc" hay "1,5 bó".
 const wholeUnits = new Set([
@@ -191,6 +212,13 @@ export function PlannerPage() {
   const queryClient = useQueryClient();
   const [weekStart, setWeekStart] = useState(() => weekStartOf(parseLocalDate(vietnamToday())));
   const [activeTab, setActiveTab] = useState<'week' | 'history'>('week');
+  // Tổng quan tuần: bảng chỉ đọc để xem nhanh tuần đã lên thực đơn; nhớ lựa chọn trên thiết bị.
+  const [viewMode, setViewModeState] = useState<PlannerViewMode>(readViewMode);
+  const setViewMode = (mode: PlannerViewMode) => {
+    setViewModeState(mode);
+    storeViewMode(mode);
+  };
+  const overviewActive = activeTab === 'week' && viewMode === 'overview';
   const [addTarget, setAddTarget] = useState<{ date: string; mealType: PlannerMealType } | null>(
     null,
   );
@@ -198,6 +226,7 @@ export function PlannerPage() {
   const [detailTarget, setDetailTarget] = useState<{
     date: string;
     mealType: PlannerMealType;
+    readOnly?: boolean;
   } | null>(null);
   const detailTriggerRef = useRef<HTMLElement | null>(null);
   const [search, setSearch] = useState('');
@@ -298,6 +327,7 @@ export function PlannerPage() {
       queryClient.invalidateQueries({ queryKey: ['planner-items', user?.id] }),
       queryClient.invalidateQueries({ queryKey: plannerHistoryQueryKey(user?.id) }),
       queryClient.invalidateQueries({ queryKey: ['planner-meal-history', user?.id] }),
+      queryClient.invalidateQueries({ queryKey: ['planner-history-days', user?.id] }),
       queryClient.invalidateQueries({ queryKey: ['planner-shopping', user?.id] }),
     ]);
 
@@ -433,8 +463,10 @@ export function PlannerPage() {
     for (const [day, value] of Object.entries(guestVegetarian)) merged.set(day, value);
     return merged;
   }, [guestVegetarian, todayVegetarianQuery.data, vegetarianQuery.data]);
+  // Ngày 1/15 tự đánh dấu theo đúng lịch đang xem (dương hoặc âm).
+  const vegetarianRules = vegetarianRulesFrom({ ...preferences, calendar_mode: calendarMode });
   const vegetarianStateOf = (value: string) =>
-    resolveVegetarianDay(value, overrides, preferences.vegetarian_lunar_days);
+    resolveVegetarianDay(value, overrides, vegetarianRules);
   const toggleVegetarian = (value: string) => {
     const next = !vegetarianStateOf(value).vegetarian;
     if (!user) {
@@ -493,9 +525,14 @@ export function PlannerPage() {
     addMutation.reset();
   };
 
-  const openMealDetail = (date: string, mealType: PlannerMealType, trigger?: HTMLElement) => {
+  const openMealDetail = (
+    date: string,
+    mealType: PlannerMealType,
+    trigger?: HTMLElement,
+    readOnly = false,
+  ) => {
     detailTriggerRef.current = trigger ?? null;
-    setDetailTarget({ date, mealType });
+    setDetailTarget({ date, mealType, readOnly });
   };
   const closeMealDetail = () => {
     setDetailTarget(null);
@@ -517,6 +554,7 @@ export function PlannerPage() {
     ? (mealTypes.find((meal) => meal.id === detailTarget.mealType)?.label ?? '')
     : '';
   const detailVegetarian = detailTarget ? vegetarianStateOf(detailTarget.date).vegetarian : false;
+  const detailReadOnly = Boolean(detailTarget?.readOnly);
 
   const requestedToken = JSON.stringify([...new Set(searchParams.getAll('add').filter(Boolean))]);
   const [handledAddToken, setHandledAddToken] = useState<string | null>(null);
@@ -625,6 +663,8 @@ export function PlannerPage() {
     mealStatusMutation.mutate({ plan_date: date, meal_type: mealType, completion_status: status });
   };
 
+  const addMealThisWeek = () =>
+    openAddDialog(weekFrom === currentWeekStart ? today : weekFrom, 'lunch');
   const showShoppingList = () => {
     setShoppingDate(weekFrom);
     setShoppingOpen(true);
@@ -635,7 +675,9 @@ export function PlannerPage() {
   };
 
   return (
-    <div className="page-wrap planner-page">
+    <div
+      className={`page-wrap planner-page${overviewActive && !shoppingOpen ? ' planner-page--print-overview' : ''}`}
+    >
       <LoginRequiredDialog
         description={t(
           'Bạn cứ xem và thử lịch thoải mái. Đăng nhập để lưu kế hoạch, đánh dấu bữa đã ăn và đồng bộ trên mọi thiết bị.',
@@ -718,37 +760,52 @@ export function PlannerPage() {
               >
                 <AppIcon name="check" size={17} /> {t('Danh sách mua sắm')}
               </button>
-              <button
-                className="button button--primary"
-                onClick={() =>
-                  openAddDialog(weekFrom === currentWeekStart ? today : weekFrom, 'lunch')
-                }
-                type="button"
-              >
-                <AppIcon name="plus" size={18} /> {t('Thêm bữa ăn')}
-              </button>
+              {overviewActive ? null : (
+                <button className="button button--primary" onClick={addMealThisWeek} type="button">
+                  <AppIcon name="plus" size={18} /> {t('Thêm bữa ăn')}
+                </button>
+              )}
             </div>
           </div>
 
-          <div aria-label={t('Chế độ xem kế hoạch')} className="planner-tabs" role="tablist">
-            <button
-              aria-selected={activeTab === 'week'}
-              className={activeTab === 'week' ? 'is-active' : ''}
-              onClick={() => setActiveTab('week')}
-              role="tab"
-              type="button"
-            >
-              <AppIcon name="calendar" size={17} /> {t('Lịch tuần')}
-            </button>
-            <button
-              aria-selected={activeTab === 'history'}
-              className={activeTab === 'history' ? 'is-active' : ''}
-              onClick={() => setActiveTab('history')}
-              role="tab"
-              type="button"
-            >
-              <AppIcon name="history" size={17} /> {t('Lịch sử bữa ăn')}
-            </button>
+          <div className="planner-tabs-row">
+            <div aria-label={t('Chế độ xem kế hoạch')} className="planner-tabs" role="tablist">
+              <button
+                aria-selected={activeTab === 'week'}
+                className={activeTab === 'week' ? 'is-active' : ''}
+                onClick={() => setActiveTab('week')}
+                role="tab"
+                type="button"
+              >
+                <AppIcon name="calendar" size={17} /> {t('Lịch tuần')}
+              </button>
+              <button
+                aria-selected={activeTab === 'history'}
+                className={activeTab === 'history' ? 'is-active' : ''}
+                onClick={() => setActiveTab('history')}
+                role="tab"
+                type="button"
+              >
+                <AppIcon name="history" size={17} /> {t('Lịch sử bữa ăn')}
+              </button>
+            </div>
+            {activeTab === 'week' ? (
+              <button
+                aria-label={t('Xem tổng quan tuần')}
+                aria-pressed={viewMode === 'overview'}
+                className={`planner-overview-toggle${viewMode === 'overview' ? ' is-active' : ''}`}
+                onClick={() => setViewMode(viewMode === 'overview' ? 'edit' : 'overview')}
+                title={
+                  viewMode === 'overview'
+                    ? t('Đang xem tổng quan · bấm để quay lại chỉnh sửa')
+                    : t('Xem tổng quan tuần')
+                }
+                type="button"
+              >
+                <AppIcon name="eye" size={17} />
+                <span>{t('Tổng quan')}</span>
+              </button>
+            ) : null}
           </div>
 
           {activeTab === 'week' ? (
@@ -770,6 +827,23 @@ export function PlannerPage() {
                     {t('Thử tải lại')}
                   </button>
                 </div>
+              ) : overviewActive ? (
+                <PlannerWeekOverview
+                  days={days.map(toDateInputValue)}
+                  groupedItems={groupedItems}
+                  mealTypes={mealTypes}
+                  mode={calendarMode}
+                  onAddMeal={() => {
+                    setViewMode('edit');
+                    addMealThisWeek();
+                  }}
+                  onEdit={() => setViewMode('edit')}
+                  onOpenMeal={(date, mealType, trigger) =>
+                    openMealDetail(date, mealType, trigger, true)
+                  }
+                  today={today}
+                  vegetarianStateOf={vegetarianStateOf}
+                />
               ) : (
                 <>
                   <div className="planner-legend">
@@ -943,36 +1017,38 @@ export function PlannerPage() {
                 </>
               )}
 
-              <div className="planner-summary planner-summary--personal">
-                <div className="planner-summary__icon">
-                  <AppIcon name="calendar" size={22} />
-                </div>
-                <div className="planner-summary__copy">
-                  <strong>
-                    {t('{count} món trong kế hoạch tuần', { count: plannedItems.length })}
-                  </strong>
-                  <small>
-                    {t('{meals} bữa đã sắp xếp · Tổng khẩu phần {servings}', {
-                      meals: uniqueMeals,
-                      servings: totalServings,
-                    })}
-                  </small>
-                  {vegetarianDayCount ? (
-                    <small className="planner-summary__veg">
-                      <AppIcon name="leaf" size={13} />
-                      {t('{count} ngày ăn chay trong tuần', { count: vegetarianDayCount })}
+              {overviewActive ? null : (
+                <div className="planner-summary planner-summary--personal">
+                  <div className="planner-summary__icon">
+                    <AppIcon name="calendar" size={22} />
+                  </div>
+                  <div className="planner-summary__copy">
+                    <strong>
+                      {t('{count} món trong kế hoạch tuần', { count: plannedItems.length })}
+                    </strong>
+                    <small>
+                      {t('{meals} bữa đã sắp xếp · Tổng khẩu phần {servings}', {
+                        meals: uniqueMeals,
+                        servings: totalServings,
+                      })}
                     </small>
-                  ) : null}
+                    {vegetarianDayCount ? (
+                      <small className="planner-summary__veg">
+                        <AppIcon name="leaf" size={13} />
+                        {t('{count} ngày ăn chay trong tuần', { count: vegetarianDayCount })}
+                      </small>
+                    ) : null}
+                  </div>
+                  <button
+                    className="button button--primary"
+                    disabled={!plannedItems.length}
+                    onClick={showShoppingList}
+                    type="button"
+                  >
+                    {t('Danh sách mua sắm')} <AppIcon name="arrow" size={17} />
+                  </button>
                 </div>
-                <button
-                  className="button button--primary"
-                  disabled={!plannedItems.length}
-                  onClick={showShoppingList}
-                  type="button"
-                >
-                  {t('Danh sách mua sắm')} <AppIcon name="arrow" size={17} />
-                </button>
-              </div>
+              )}
               {servingsMutation.isError || removeMutation.isError || cookedMutation.isError ? (
                 <p className="planner-inline-error" role="alert">
                   {errorMessage(
@@ -983,6 +1059,17 @@ export function PlannerPage() {
             </>
           ) : (
             <section aria-label={t('Lịch sử kế hoạch món ăn')} className="planner-history">
+              {user ? (
+                <PlannerHistoryCalendar
+                  onOpenWeek={(value) => {
+                    setWeekStart(weekStartOf(parseLocalDate(value)));
+                    setActiveTab('week');
+                  }}
+                  sundayFirst={sundayFirst}
+                  today={today}
+                  userId={user.id}
+                />
+              ) : null}
               {pastMealsQuery.isLoading ? (
                 <div className="route-loading" role="status">
                   <span className="button__spinner" aria-hidden="true" />{' '}
@@ -1434,41 +1521,55 @@ export function PlannerPage() {
                         />
                         <span>{name}</span>
                       </Link>
-                      <button
-                        aria-label={t('Xóa {name} khỏi kế hoạch', { name })}
-                        className="planner-dish__remove"
-                        disabled={removeMutation.isPending}
-                        onClick={() => removeMutation.mutate(item)}
-                        type="button"
-                      >
-                        <AppIcon name="close" size={14} />
-                      </button>
+                      {detailReadOnly ? null : (
+                        <button
+                          aria-label={t('Xóa {name} khỏi kế hoạch', { name })}
+                          className="planner-dish__remove"
+                          disabled={removeMutation.isPending}
+                          onClick={() => removeMutation.mutate(item)}
+                          type="button"
+                        >
+                          <AppIcon name="close" size={14} />
+                        </button>
+                      )}
                       {detailVegetarian && isNonVegetarianDish(item.recipe.slug) ? (
                         <span className="planner-dish__veg-warning">
                           {t('Không phải món chay')}
                         </span>
                       ) : null}
                       <div className="planner-meal-panel__actions">
-                        <button
-                          aria-label={
-                            cooked
-                              ? t('Bỏ đánh dấu đã nấu {name}', { name })
-                              : t('Đánh dấu đã nấu {name}', { name })
-                          }
-                          aria-pressed={cooked}
-                          className="planner-dish__cooked"
-                          disabled={cookedMutation.isPending}
-                          onClick={() => cookedMutation.mutate(item)}
-                          type="button"
-                        >
-                          {cooked ? (
-                            <>
-                              <AppIcon name="check" size={14} /> {t('Đã nấu')}
-                            </>
-                          ) : (
-                            t('Đánh dấu đã nấu')
-                          )}
-                        </button>
+                        {detailReadOnly ? (
+                          <span className="planner-meal-panel__status">
+                            {cooked ? (
+                              <>
+                                <AppIcon name="check" size={13} /> {t('Đã nấu')}
+                              </>
+                            ) : (
+                              t('Chưa nấu')
+                            )}
+                          </span>
+                        ) : (
+                          <button
+                            aria-label={
+                              cooked
+                                ? t('Bỏ đánh dấu đã nấu {name}', { name })
+                                : t('Đánh dấu đã nấu {name}', { name })
+                            }
+                            aria-pressed={cooked}
+                            className="planner-dish__cooked"
+                            disabled={cookedMutation.isPending}
+                            onClick={() => cookedMutation.mutate(item)}
+                            type="button"
+                          >
+                            {cooked ? (
+                              <>
+                                <AppIcon name="check" size={14} /> {t('Đã nấu')}
+                              </>
+                            ) : (
+                              t('Đánh dấu đã nấu')
+                            )}
+                          </button>
+                        )}
                         <Link
                           aria-label={t('Vào bếp nấu {name}', { name })}
                           className="planner-dish__cook-link"
@@ -1482,33 +1583,39 @@ export function PlannerPage() {
                         >
                           <AppIcon name="chef" size={13} /> {t('Vào bếp')}
                         </Link>
-                        <div
-                          aria-label={t('Khẩu phần {name}', { name })}
-                          className="planner-servings"
-                          role="group"
-                        >
-                          <button
-                            aria-label={t('Giảm khẩu phần {name}', { name })}
-                            disabled={item.servings <= 1 || servingsMutation.isPending}
-                            onClick={() =>
-                              servingsMutation.mutate({ id: item.id, count: item.servings - 1 })
-                            }
-                            type="button"
+                        {detailReadOnly ? (
+                          <span className="planner-meal-panel__status">
+                            {t('{count} người', { count: item.servings })}
+                          </span>
+                        ) : (
+                          <div
+                            aria-label={t('Khẩu phần {name}', { name })}
+                            className="planner-servings"
+                            role="group"
                           >
-                            <AppIcon name="minus" size={13} />
-                          </button>
-                          <span>{t('{count} người', { count: item.servings })}</span>
-                          <button
-                            aria-label={t('Tăng khẩu phần {name}', { name })}
-                            disabled={item.servings >= 30 || servingsMutation.isPending}
-                            onClick={() =>
-                              servingsMutation.mutate({ id: item.id, count: item.servings + 1 })
-                            }
-                            type="button"
-                          >
-                            <AppIcon name="plus" size={13} />
-                          </button>
-                        </div>
+                            <button
+                              aria-label={t('Giảm khẩu phần {name}', { name })}
+                              disabled={item.servings <= 1 || servingsMutation.isPending}
+                              onClick={() =>
+                                servingsMutation.mutate({ id: item.id, count: item.servings - 1 })
+                              }
+                              type="button"
+                            >
+                              <AppIcon name="minus" size={13} />
+                            </button>
+                            <span>{t('{count} người', { count: item.servings })}</span>
+                            <button
+                              aria-label={t('Tăng khẩu phần {name}', { name })}
+                              disabled={item.servings >= 30 || servingsMutation.isPending}
+                              onClick={() =>
+                                servingsMutation.mutate({ id: item.id, count: item.servings + 1 })
+                              }
+                              type="button"
+                            >
+                              <AppIcon name="plus" size={13} />
+                            </button>
+                          </div>
+                        )}
                       </div>
                     </li>
                   );
@@ -1532,9 +1639,19 @@ export function PlannerPage() {
               ) : (
                 <span />
               )}
-              <button className="button button--primary" onClick={addFromMealDetail} type="button">
-                <AppIcon name="plus" size={16} /> {t('Thêm món')}
-              </button>
+              {detailReadOnly ? (
+                <span className="planner-meal-panel__readonly">
+                  <AppIcon name="eye" size={14} /> {t('Chế độ xem tổng quan')}
+                </span>
+              ) : (
+                <button
+                  className="button button--primary"
+                  onClick={addFromMealDetail}
+                  type="button"
+                >
+                  <AppIcon name="plus" size={16} /> {t('Thêm món')}
+                </button>
+              )}
             </footer>
           </section>
         </div>

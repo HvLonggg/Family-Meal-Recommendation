@@ -9,6 +9,7 @@ export const submissionStatusLabels: Record<SubmissionStatus, string> = {
   rejected: 'Chưa phù hợp',
 };
 
+/** Chỉ bắt buộc `name`; phần còn lại để trống được (ban nội dung bổ sung khi duyệt). */
 export interface SubmissionWrite {
   name: string;
   region: 'Bắc' | 'Trung' | 'Nam' | 'Ba miền';
@@ -25,6 +26,8 @@ export interface Submission extends Omit<SubmissionWrite, 'submit'> {
   id: string;
   status: SubmissionStatus;
   admin_note: string | null;
+  /** Đường dẫn món trong kho khi đề xuất đã được duyệt và đang xuất bản. */
+  recipe_slug?: string | null;
   created_at: string;
   updated_at: string;
 }

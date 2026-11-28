@@ -136,7 +136,10 @@ export const voiceLines = {
     thinking: 'Để mình xem nhé.',
     answerTail: 'Xong thì nói "xong rồi" để mình đọc bước tiếp nhé.',
     answerFailed: 'Mình chưa trả lời được câu này, bạn thử hỏi lại ngắn hơn nhé.',
-    ingredients: (items: string[]) => `Nguyên liệu gồm: ${items.join('; ')}.`,
+    ingredients: (items: string[]) =>
+      items.length
+        ? `Nguyên liệu gồm: ${items.join('; ')}.`
+        : 'Món này chưa có danh sách nguyên liệu, mình bắt đầu luôn nhé.',
     noMic: 'Trình duyệt chưa cho dùng micro, bạn bấm nút để điều khiển nhé.',
     checkIn: 'Bạn làm tới đâu rồi? Xong thì nói "xong rồi", còn vướng gì cứ hỏi mình nhé.',
     noRinging: 'Không có chuông nào đang kêu.',
@@ -188,7 +191,10 @@ export const voiceLines = {
     thinking: 'Let me check.',
     answerTail: 'Say "done" when you\'re ready for the next step.',
     answerFailed: "I couldn't answer that one — try asking a shorter question.",
-    ingredients: (items: string[]) => `You'll need: ${items.join('; ')}.`,
+    ingredients: (items: string[]) =>
+      items.length
+        ? `You'll need: ${items.join('; ')}.`
+        : "There's no ingredient list for this dish yet, so let's get started.",
     noMic: "The browser won't let me use the microphone — use the buttons instead.",
     checkIn: "How's it going? Say \"done\" when you're ready, or ask me if you're stuck.",
     noRinging: 'No alarm is ringing right now.',

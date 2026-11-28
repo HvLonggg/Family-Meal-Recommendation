@@ -89,7 +89,7 @@ function SubmissionEditor({ existing }: { existing?: Submission }) {
     region: 'Ba miền',
     category: 'Món mặn',
     servings: defaultServings,
-    total_minutes: 30,
+    total_minutes: 0,
     story: '',
     ingredients: '',
     steps: '',
@@ -170,7 +170,7 @@ function SubmissionEditor({ existing }: { existing?: Submission }) {
           <h1>{existing ? t('Cập nhật món bạn đề xuất') : t('Đề xuất món nhà bạn yêu thích')}</h1>
           <p>
             {t(
-              'Chia sẻ tên món, câu chuyện và công thức. Ban nội dung sẽ kiểm tra trước khi xuất bản.',
+              'Chỉ cần tên món là gửi được. Có câu chuyện, nguyên liệu hay các bước thì thêm vào, ban nội dung sẽ bổ sung phần còn lại trước khi xuất bản.',
             )}
           </p>
           <ol className="submit-steps" aria-label={t('Các phần cần điền')}>
@@ -233,7 +233,9 @@ function SubmissionEditor({ existing }: { existing?: Submission }) {
                 />
               </label>
               <fieldset className="submit-field">
-                <legend className="submit-field__label">{t('Vùng miền')}</legend>
+                <legend className="submit-field__label">
+                  {t('Vùng miền')} <em className="submit-field__optional">{t('Không bắt buộc')}</em>
+                </legend>
                 <div className="submit-chips">
                   {regions.map((region) => (
                     <label className="submit-chip" key={region}>
@@ -253,7 +255,9 @@ function SubmissionEditor({ existing }: { existing?: Submission }) {
                 </div>
               </fieldset>
               <fieldset className="submit-field">
-                <legend className="submit-field__label">{t('Loại món')}</legend>
+                <legend className="submit-field__label">
+                  {t('Loại món')} <em className="submit-field__optional">{t('Không bắt buộc')}</em>
+                </legend>
                 <div className="submit-chips">
                   {categories.map((category) => (
                     <label className="submit-chip" key={category.id}>
@@ -292,26 +296,29 @@ function SubmissionEditor({ existing }: { existing?: Submission }) {
                   value={form.total_minutes}
                 />
               </div>
+              <p className="submit-field__hint">
+                {t('Khẩu phần và thời gian không bắt buộc; để thời gian 0 nếu bạn chưa rõ.')}
+              </p>
             </FormCard>
 
             <FormCard
               description={t('Kỷ niệm, xuất xứ hay lý do món này đặc biệt với gia đình bạn.')}
               icon="heart"
               id="submit-story"
+              optional
               step={2}
               title={t('Câu chuyện')}
             >
               <label className="submit-field">
                 <span className="submit-field__label">
-                  {t('Câu chuyện hoặc mô tả ngắn')} <b aria-hidden="true">*</b>
+                  {t('Câu chuyện hoặc mô tả ngắn')}{' '}
+                  <em className="submit-field__optional">{t('Không bắt buộc')}</em>
                 </span>
                 <textarea
                   className="submit-input"
                   maxLength={LIMITS.story}
-                  minLength={10}
                   onChange={(event) => update('story', event.target.value)}
                   placeholder={t('Điều gì khiến món này đặc biệt với gia đình bạn?')}
-                  required
                   rows={4}
                   value={form.story}
                 />
@@ -327,12 +334,14 @@ function SubmissionEditor({ existing }: { existing?: Submission }) {
               )}
               icon="chef"
               id="submit-recipe"
+              optional
               step={3}
               title={t('Công thức')}
             >
               <label className="submit-field">
                 <span className="submit-field__label">
-                  {t('Nguyên liệu chính')} <b aria-hidden="true">*</b>
+                  {t('Nguyên liệu chính')}{' '}
+                  <em className="submit-field__optional">{t('Không bắt buộc')}</em>
                 </span>
                 <textarea
                   className="submit-input submit-input--lines"
@@ -344,7 +353,6 @@ function SubmissionEditor({ existing }: { existing?: Submission }) {
                     t('4 quả trứng vịt'),
                     t('3 muỗng canh nước mắm'),
                   ].join('\n')}
-                  required
                   rows={6}
                   value={form.ingredients}
                 />
@@ -355,19 +363,18 @@ function SubmissionEditor({ existing }: { existing?: Submission }) {
               </label>
               <label className="submit-field">
                 <span className="submit-field__label">
-                  {t('Các bước thực hiện')} <b aria-hidden="true">*</b>
+                  {t('Các bước thực hiện')}{' '}
+                  <em className="submit-field__optional">{t('Không bắt buộc')}</em>
                 </span>
                 <textarea
                   className="submit-input submit-input--lines"
                   maxLength={LIMITS.steps}
-                  minLength={10}
                   onChange={(event) => update('steps', event.target.value)}
                   placeholder={[
                     t('Ví dụ:'),
                     t('Thịt rửa sạch, cắt miếng vừa ăn, ướp nước mắm 20 phút.'),
                     t('Thắng nước màu, cho thịt vào đảo đến khi săn.'),
                   ].join('\n')}
-                  required
                   rows={7}
                   value={form.steps}
                 />
@@ -418,6 +425,11 @@ function SubmissionEditor({ existing }: { existing?: Submission }) {
               </div>
               <div>
                 <strong>{progress === 100 ? t('Sẵn sàng gửi!') : t('Mức độ hoàn thiện')}</strong>
+                <p className="submit-progress__hint">
+                  {checklist[0]!.done
+                    ? t('Đã đủ để gửi. Thêm chi tiết giúp món được duyệt nhanh hơn.')
+                    : t('Chỉ tên món là bắt buộc.')}
+                </p>
                 <ul>
                   {checklist.map((item) => (
                     <li className={item.done ? 'is-done' : ''} key={item.label}>
@@ -447,7 +459,9 @@ function SubmissionEditor({ existing }: { existing?: Submission }) {
                   <div className="submit-preview__facts">
                     <span>
                       <AppIcon name="clock" size={14} />{' '}
-                      {t('{count} phút', { count: form.total_minutes })}
+                      {form.total_minutes > 0
+                        ? t('{count} phút', { count: form.total_minutes })
+                        : '—'}
                     </span>
                     <span>
                       <AppIcon name="users" size={14} />{' '}
@@ -466,7 +480,9 @@ function SubmissionEditor({ existing }: { existing?: Submission }) {
                 <li>{t('Tên món rõ ràng, đúng cách gọi quen thuộc.')}</li>
                 <li>{t('Định lượng và đơn vị cụ thể cho khẩu phần gốc.')}</li>
                 <li>{t('Tách riêng sơ chế và quá trình nấu.')}</li>
-                <li>{t('Ảnh tự chụp, đủ sáng và không có watermark.')}</li>
+                <li>
+                  {t('Chưa có ảnh cũng không sao: món được dùng hình minh họa đến khi có ảnh.')}
+                </li>
               </ol>
               <p>
                 <AppIcon name="shield" size={15} />
@@ -485,6 +501,7 @@ function FormCard({
   description,
   icon,
   id,
+  optional = false,
   step,
   title,
 }: {
@@ -492,9 +509,11 @@ function FormCard({
   description: string;
   icon: IconName;
   id: string;
+  optional?: boolean;
   step: number;
   title: string;
 }) {
+  const { t } = useI18n();
   return (
     <section aria-labelledby={`${id}-title`} className="submit-card" id={id}>
       <header className="submit-card__head">
@@ -502,6 +521,7 @@ function FormCard({
         <div>
           <h2 id={`${id}-title`}>
             <AppIcon name={icon} size={19} /> {title}
+            {optional ? <em className="submit-field__optional">{t('Không bắt buộc')}</em> : null}
           </h2>
           <p>{description}</p>
         </div>

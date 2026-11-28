@@ -1,7 +1,7 @@
 import fruitPlatterImage from '@/assets/recipes/trai-cay-trang-mieng.jpg';
 import { getMealRole, getMealRoleLabel, hasVegetarianMealLabel } from '@/data/mealComposition';
 import { estimateRecipeNutrition } from '@/data/nutritionEstimate';
-import { getRecipe, recipeMinutes, recipes, type Recipe } from '@/data/recipes';
+import { getRecipe, isQuickRecipe, recipeMinutes, recipes, type Recipe } from '@/data/recipes';
 import { normalizeSearchText } from '@/lib/search';
 
 export type MealRole = 'main' | 'soup' | 'vegetable' | 'vegetarian' | 'side' | 'dessert';
@@ -203,7 +203,7 @@ export function getRandomDishCatalog(): RandomDish[] {
     .flatMap((recipe): RandomDish[] => {
       const roles = randomMealRoles(recipe);
       const profiles: MealProfile[] = ['balanced', 'family'];
-      if (recipeMinutes(recipe) <= 30) profiles.push('quick');
+      if (isQuickRecipe(recipe)) profiles.push('quick');
       if (recipe.tags.some((tag) => ['luộc', 'hấp', 'nấu canh'].includes(tag)))
         profiles.push('light');
       return roles.map((role) =>

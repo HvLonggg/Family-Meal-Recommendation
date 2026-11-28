@@ -87,7 +87,7 @@ describe('RegisterPage', () => {
         </Routes>
       </MemoryRouter>,
     );
-    expect(document.title).toBe('Đăng ký · Bếp Việt');
+    expect(document.title).toBe('Bếp Việt');
 
     const email = screen.getByLabelText('Địa chỉ email');
     fireEvent.change(email, { target: { value: 'khong-hop-le' } });

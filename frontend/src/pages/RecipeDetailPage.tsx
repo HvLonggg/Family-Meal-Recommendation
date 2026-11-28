@@ -9,7 +9,10 @@ import { RecipeNarrator } from '@/components/recipes/RecipeNarrator';
 import {
   formatMinutes,
   getRecipe,
+  hasRecipeIngredients,
+  hasRecipeSteps,
   ingredientAmount,
+  RECIPE_PLACEHOLDER_IMAGE,
   recipeMinutes,
   recipes,
   type Recipe,
@@ -83,6 +86,10 @@ function RecipeDetails({ recipe }: { recipe: Recipe }) {
     [language, recipe, servings],
   );
   const narration = useNarration(narrationScript, language);
+  // Món cộng đồng đề xuất có thể chỉ có tên: ẩn các phần thiếu dữ liệu thay vì hiển thị trống.
+  const hasSteps = hasRecipeSteps(recipe);
+  const hasIngredients = hasRecipeIngredients(recipe);
+  const tips = (recipe.tips ?? [recipe.tip]).filter((tip) => tip.trim());
   const narratingClass = (anchor: string) =>
     narration.current?.anchor === anchor ? ' is-narrating' : '';
 
@@ -125,13 +132,15 @@ function RecipeDetails({ recipe }: { recipe: Recipe }) {
           />
           <figcaption className="recipe-detail__source">
             <strong>
-              {recipe.imageKind === 'project'
-                ? t('Ảnh minh họa của Bếp Việt được biên tập bởi tác giả')
-                : recipe.imageKind === 'reference'
-                  ? t('Ảnh món tham khảo')
-                  : recipe.imageKind === 'licensed'
-                    ? t('Ảnh chụp có giấy phép mở')
-                    : t('Ảnh minh họa của Bếp Việt')}
+              {recipe.image === RECIPE_PLACEHOLDER_IMAGE
+                ? t('Món chưa có ảnh, đang dùng hình minh họa')
+                : recipe.imageKind === 'project'
+                  ? t('Ảnh minh họa của Bếp Việt được biên tập bởi tác giả')
+                  : recipe.imageKind === 'reference'
+                    ? t('Ảnh món tham khảo')
+                    : recipe.imageKind === 'licensed'
+                      ? t('Ảnh chụp có giấy phép mở')
+                      : t('Ảnh minh họa của Bếp Việt')}
             </strong>
             {recipe.imageKind === 'project' ? null : recipe.imageCredit && recipe.imageCreditUrl ? (
               <a href={recipe.imageCreditUrl} rel="noreferrer" target="_blank">
@@ -168,12 +177,14 @@ function RecipeDetails({ recipe }: { recipe: Recipe }) {
             </span>
           </div>
           <div className="recipe-actions">
-            <Link
-              className="button button--primary recipe-actions__cook"
-              to={cookPath([{ slug: recipe.slug, servings }])}
-            >
-              <AppIcon name="chef" size={18} /> {t('Vào bếp')}
-            </Link>
+            {hasSteps ? (
+              <Link
+                className="button button--primary recipe-actions__cook"
+                to={cookPath([{ slug: recipe.slug, servings }])}
+              >
+                <AppIcon name="chef" size={18} /> {t('Vào bếp')}
+              </Link>
+            ) : null}
             <button
               aria-pressed={isFavorite}
               className="button button--outline"
@@ -198,7 +209,7 @@ function RecipeDetails({ recipe }: { recipe: Recipe }) {
             >
               <AppIcon name="calendar" size={18} /> {t('Thêm vào kế hoạch')}
             </Link>
-            <RecipeNarrator narration={narration} segments={narrationScript} />
+            {hasSteps ? <RecipeNarrator narration={narration} segments={narrationScript} /> : null}
             {/* Cùng nhóm nút để "Đánh dấu đã nấu" không lẻ một hàng riêng. */}
             <CookedMark servings={servings} slug={recipe.slug} />
           </div>
@@ -213,13 +224,17 @@ function RecipeDetails({ recipe }: { recipe: Recipe }) {
             </p>
           ) : null}
           <div className="recipe-reference-note">
-            <AppIcon name="chef" size={18} />
+            <AppIcon name={recipe.community ? 'users' : 'chef'} size={18} />
             <div>
-              <strong>{t('Bếp Việt biên soạn')}</strong>
+              <strong>
+                {recipe.community ? t('Món do cộng đồng đề xuất') : t('Bếp Việt biên soạn')}
+              </strong>
               <span>
-                {t(
-                  'Hướng dẫn nấu tại nhà với nguyên liệu rõ ràng, các bước dễ theo dõi và gợi ý lên mâm.',
-                )}
+                {recipe.community && !(hasSteps && hasIngredients)
+                  ? t('Món đã được ban nội dung duyệt; công thức chi tiết đang được bổ sung dần.')
+                  : t(
+                      'Hướng dẫn nấu tại nhà với nguyên liệu rõ ràng, các bước dễ theo dõi và gợi ý lên mâm.',
+                    )}
               </span>
             </div>
           </div>
@@ -236,30 +251,37 @@ function RecipeDetails({ recipe }: { recipe: Recipe }) {
                 <span className="section-label">{t('Chuẩn bị')}</span>
                 <h2>{t('Nguyên liệu')}</h2>
               </div>
-              <div className="serving-stepper">
-                <button
-                  aria-label={t('Giảm khẩu phần')}
-                  disabled={servings <= 1}
-                  onClick={() => setServings(Math.max(1, servings - 1))}
-                  type="button"
-                >
-                  <AppIcon name="minus" size={16} />
-                </button>
-                <strong>
-                  {servings}
-                  <small> {t('người')}</small>
-                </strong>
-                <button
-                  aria-label={t('Tăng khẩu phần')}
-                  disabled={servings >= 12}
-                  onClick={() => setServings(Math.min(12, servings + 1))}
-                  type="button"
-                >
-                  <AppIcon name="plus" size={16} />
-                </button>
-              </div>
+              {hasIngredients ? (
+                <div className="serving-stepper">
+                  <button
+                    aria-label={t('Giảm khẩu phần')}
+                    disabled={servings <= 1}
+                    onClick={() => setServings(Math.max(1, servings - 1))}
+                    type="button"
+                  >
+                    <AppIcon name="minus" size={16} />
+                  </button>
+                  <strong>
+                    {servings}
+                    <small> {t('người')}</small>
+                  </strong>
+                  <button
+                    aria-label={t('Tăng khẩu phần')}
+                    disabled={servings >= 12}
+                    onClick={() => setServings(Math.min(12, servings + 1))}
+                    type="button"
+                  >
+                    <AppIcon name="plus" size={16} />
+                  </button>
+                </div>
+              ) : null}
             </div>
-            {householdServings ? (
+            {!hasIngredients ? (
+              <p className="recipe-missing-note">
+                {t('Món này chưa có danh sách nguyên liệu. Ban nội dung sẽ bổ sung sớm.')}
+              </p>
+            ) : null}
+            {hasIngredients && householdServings ? (
               <p className="household-hint">
                 <AppIcon name="users" size={15} />
                 {servings === householdServings
@@ -278,7 +300,7 @@ function RecipeDetails({ recipe }: { recipe: Recipe }) {
                 ) : null}
               </p>
             ) : null}
-            {!isGenericServingBasis(recipe.servingBasis) && (
+            {hasIngredients && !isGenericServingBasis(recipe.servingBasis) && (
               <p className="recipe-serving-basis">{recipe.servingBasis}</p>
             )}
             {recipe.ingredients.map((group) => (
@@ -305,20 +327,24 @@ function RecipeDetails({ recipe }: { recipe: Recipe }) {
                 ))}
               </div>
             ))}
-            <p className="recipe-scaling-note">
-              {t(
-                'Gia vị là lượng nêm khởi điểm; nếm lại sau khi món chín. Khi tăng khẩu phần, chia mẻ nếu cần và giữ thời gian nấu theo độ chín của nguyên liệu.',
-              )}
-            </p>
+            {hasIngredients ? (
+              <p className="recipe-scaling-note">
+                {t(
+                  'Gia vị là lượng nêm khởi điểm; nếm lại sau khi món chín. Khi tăng khẩu phần, chia mẻ nếu cần và giữ thời gian nấu theo độ chín của nguyên liệu.',
+                )}
+              </p>
+            ) : null}
           </article>
           <aside className={`kitchen-note${narratingClass('tips')}`} data-narration="tips">
             <AppIcon name="sparkles" size={25} />
             <h3>{t('Mách nhỏ của bếp')}</h3>
-            <ul className="recipe-tip-list">
-              {(recipe.tips ?? [recipe.tip]).map((tip) => (
-                <li key={tip}>{tip}</li>
-              ))}
-            </ul>
+            {tips.length ? (
+              <ul className="recipe-tip-list">
+                {tips.map((tip) => (
+                  <li key={tip}>{tip}</li>
+                ))}
+              </ul>
+            ) : null}
             <div>
               <span>{t('Sơ chế')}</span>
               <strong>{formatMinutes(recipe.prepMinutes, t)}</strong>
@@ -341,32 +367,41 @@ function RecipeDetails({ recipe }: { recipe: Recipe }) {
           <div>
             <span className="section-label">{t('Từng bước rõ ràng')}</span>
             <h2>{t('Cách nấu')}</h2>
-            <div className="method-section">
-              <h3>{t('Sơ chế')}</h3>
-              {recipe.preparation.map((step, index) => (
-                <div
-                  className={`method-step${narratingClass(`preparation-${index}`)}`}
-                  data-narration={`preparation-${index}`}
-                  key={step}
-                >
-                  <span>{index + 1}</span>
-                  <p>{step}</p>
-                </div>
-              ))}
-            </div>
-            <div className="method-section">
-              <h3>{t('Thực hiện')}</h3>
-              {recipe.cooking.map((step, index) => (
-                <div
-                  className={`method-step method-step--cooking${narratingClass(`cooking-${index}`)}`}
-                  data-narration={`cooking-${index}`}
-                  key={step}
-                >
-                  <span>{index + 1}</span>
-                  <p>{step}</p>
-                </div>
-              ))}
-            </div>
+            {!hasSteps ? (
+              <p className="recipe-missing-note">
+                {t('Món này chưa có các bước nấu chi tiết. Ban nội dung sẽ bổ sung sớm.')}
+              </p>
+            ) : null}
+            {recipe.preparation.length ? (
+              <div className="method-section">
+                <h3>{t('Sơ chế')}</h3>
+                {recipe.preparation.map((step, index) => (
+                  <div
+                    className={`method-step${narratingClass(`preparation-${index}`)}`}
+                    data-narration={`preparation-${index}`}
+                    key={step}
+                  >
+                    <span>{index + 1}</span>
+                    <p>{step}</p>
+                  </div>
+                ))}
+              </div>
+            ) : null}
+            {recipe.cooking.length ? (
+              <div className="method-section">
+                <h3>{t('Thực hiện')}</h3>
+                {recipe.cooking.map((step, index) => (
+                  <div
+                    className={`method-step method-step--cooking${narratingClass(`cooking-${index}`)}`}
+                    data-narration={`cooking-${index}`}
+                    key={step}
+                  >
+                    <span>{index + 1}</span>
+                    <p>{step}</p>
+                  </div>
+                ))}
+              </div>
+            ) : null}
             {recipe.finishedDish && (
               <div
                 className={`finished-dish${narratingClass('finished')}`}
@@ -380,18 +415,20 @@ function RecipeDetails({ recipe }: { recipe: Recipe }) {
               </div>
             )}
           </div>
-          <aside className={`serving-card${narratingClass('serving')}`} data-narration="serving">
-            <span className="serving-card__icon">
-              <AppIcon name="chef" size={28} />
-            </span>
-            <span className="section-label">{t('Cách dùng')}</span>
-            <h3>{t('Lên mâm ngon nhất')}</h3>
-            <p>{recipe.serving}</p>
-            <div className="serving-card__signature">
-              <AppIcon name="chef" size={16} />
-              <span>{t('Gợi ý từ Bếp Việt')}</span>
-            </div>
-          </aside>
+          {recipe.serving.trim() ? (
+            <aside className={`serving-card${narratingClass('serving')}`} data-narration="serving">
+              <span className="serving-card__icon">
+                <AppIcon name="chef" size={28} />
+              </span>
+              <span className="section-label">{t('Cách dùng')}</span>
+              <h3>{t('Lên mâm ngon nhất')}</h3>
+              <p>{recipe.serving}</p>
+              <div className="serving-card__signature">
+                <AppIcon name="chef" size={16} />
+                <span>{t('Gợi ý từ Bếp Việt')}</span>
+              </div>
+            </aside>
+          ) : null}
         </div>
       </section>
       <section className="content-section">

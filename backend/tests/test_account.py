@@ -160,3 +160,50 @@ def test_revoke_all_sessions_invalidates_access_token(client: TestClient) -> Non
     revoked = client.post("/api/v1/account/sessions/revoke-all", headers=headers)
     assert revoked.status_code == 200
     assert client.get("/api/v1/auth/me", headers=headers).status_code == 401
+
+
+def test_vegetarian_fixed_days_default_off_and_are_normalized(client: TestClient) -> None:
+    defaults = read_preferences({})
+    assert defaults.vegetarian_lunar_days is False
+    assert defaults.vegetarian_month_days == []
+    assert defaults.vegetarian_weekdays == []
+    assert defaults.vegetarian_months == []
+
+    headers = register_and_login(client, "chay@example.com")
+    me = client.get("/api/v1/auth/me", headers=headers).json()
+    assert me["preferences"]["vegetarian_lunar_days"] is False
+
+    saved = client.put(
+        "/api/v1/account/preferences",
+        headers=headers,
+        json={
+            "vegetarian_month_days": [15, 1, 15],
+            "vegetarian_weekdays": [6, 0],
+            "vegetarian_months": [7, 1],
+        },
+    )
+    assert saved.status_code == 200, saved.text
+    body = saved.json()
+    assert body["vegetarian_month_days"] == [1, 15]
+    assert body["vegetarian_weekdays"] == [0, 6]
+    assert body["vegetarian_months"] == [1, 7]
+    assert body["vegetarian_lunar_days"] is False
+
+
+def test_vegetarian_fixed_days_reject_out_of_range_values(client: TestClient) -> None:
+    headers = register_and_login(client, "chay-sai@example.com")
+    for payload in (
+        {"vegetarian_month_days": [0]},
+        {"vegetarian_month_days": [32]},
+        {"vegetarian_weekdays": [7]},
+        {"vegetarian_weekdays": [-1]},
+        {"vegetarian_months": [13]},
+        {"vegetarian_months": list(range(1, 14))},
+        {"vegetarian_month_days": [1] * 40},
+    ):
+        response = client.put("/api/v1/account/preferences", headers=headers, json=payload)
+        assert response.status_code == 422, payload
+    # Dữ liệu cũ hỏng trong DB quay về mặc định thay vì làm hỏng cả thiết lập.
+    stored = read_preferences({"vegetarian_month_days": [40], "language": "en"})
+    assert stored.vegetarian_month_days == []
+    assert stored.language == "en"

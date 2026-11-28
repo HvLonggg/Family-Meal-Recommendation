@@ -1,5 +1,6 @@
 import {
   getBuiltinRecipe,
+  RECIPE_PLACEHOLDER_IMAGE,
   replaceRecipeCatalog,
   setRecipeCatalogSource,
   type Recipe,
@@ -66,6 +67,9 @@ export interface ApiRecipe {
   content: CatalogContent;
 }
 
+/** Khớp `COMMUNITY_SOURCE` ở backend (app/modules/submissions/service.py). */
+const COMMUNITY_SOURCE = 'Cộng đồng Bếp Việt';
+
 export function adaptRecipe(item: ApiRecipe, idToSlug: Map<string, string>): Recipe {
   const content = item.content;
   const fallback = getBuiltinRecipe(item.slug);
@@ -116,7 +120,7 @@ export function adaptRecipe(item: ApiRecipe, idToSlug: Map<string, string>): Rec
     aliases: content.aliases ?? [],
     provinces: content.province ?? [],
     excerpt: item.excerpt,
-    image: editedImage?.image ?? item.image_path,
+    image: editedImage?.image ?? (item.image_path || RECIPE_PLACEHOLDER_IMAGE),
     imageSrcSet: editedImage?.imageSrcSet,
     imageMaster: editedImage?.imageMaster,
     imageAlt: editedImage?.imageAlt ?? item.image_alt,
@@ -159,7 +163,7 @@ export function adaptRecipe(item: ApiRecipe, idToSlug: Map<string, string>): Rec
     serving: item.serving,
     finishedDish: content.finished_dish,
     tip: item.tip,
-    tips: content.tips ?? [item.tip],
+    tips: content.tips ?? (item.tip ? [item.tip] : []),
     tags: Array.isArray(content.tags)
       ? content.tags.filter((tag): tag is string => typeof tag === 'string')
       : [
@@ -177,6 +181,7 @@ export function adaptRecipe(item: ApiRecipe, idToSlug: Map<string, string>): Rec
     pairingSlugs: (content.suggested_pairings ?? []).flatMap((pair) => idToSlug.get(pair.id) ?? []),
     scalingTargets: content.scaling?.targets,
     family: content.recipe_family,
+    ...(item.source_name === COMMUNITY_SOURCE ? { community: true } : {}),
   };
 }
 

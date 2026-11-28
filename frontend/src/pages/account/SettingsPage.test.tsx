@@ -1,9 +1,11 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
-import { savePreferences } from '@/features/account/accountApi';
+import { exportAccountData, savePreferences } from '@/features/account/accountApi';
+import type * as AccountReport from '@/features/account/accountReport';
+import { printAccountReport } from '@/features/account/accountReport';
 import type { UserPreferences } from '@/features/auth/types';
 import { SettingsPage } from '@/pages/account/SettingsPage';
 
@@ -59,6 +61,11 @@ vi.mock('@/features/account/accountApi', () => ({
   exportAccountData: vi.fn(),
 }));
 
+vi.mock('@/features/account/accountReport', async (importOriginal) => ({
+  ...(await importOriginal<typeof AccountReport>()),
+  printAccountReport: vi.fn(() => true),
+}));
+
 function renderSettings(tab?: string, entry = '/account/settings') {
   const view = render(
     <QueryClientProvider client={new QueryClient()}>
@@ -78,28 +85,56 @@ afterEach(() => {
 });
 
 describe('SettingsPage', () => {
-  it('turns a household description into members and recommended servings', async () => {
+  it('starts with an empty household and lets the user add and remove members', async () => {
     vi.mocked(savePreferences).mockImplementation((preferences: UserPreferences) =>
-      Promise.resolve({
-        ...preferences,
-        computed_servings: 3,
-      }),
+      Promise.resolve(preferences),
     );
     renderSettings('Bữa ăn');
 
-    fireEvent.change(screen.getByLabelText('Mô tả bữa ăn của nhà bạn'), {
-      target: { value: 'Gia đình nhỏ 3 người: 2 bố mẹ và bạn nhỏ 12 tuổi' },
-    });
-    fireEvent.click(screen.getByRole('button', { name: /Gợi ý thành viên từ mô tả/ }));
+    expect(screen.getByText(/Chưa có thành viên nào/)).toBeInTheDocument();
+    expect(screen.queryByText('Gia đình nhỏ')).not.toBeInTheDocument();
+    const add = screen.getByRole('button', { name: /Thêm thành viên/ });
+    fireEvent.click(add);
+    fireEvent.click(add);
+    fireEvent.click(add);
 
-    expect(screen.getByLabelText('Tuổi của Bé')).toHaveValue(12);
-    expect(screen.getByText('3 suất')).toBeInTheDocument();
+    fireEvent.change(screen.getByLabelText('Tên gọi thành viên 1'), { target: { value: 'Mẹ' } });
+    fireEvent.change(screen.getByLabelText('Tuổi của Thành viên 2'), { target: { value: '8' } });
+    fireEvent.change(screen.getByLabelText('Sức ăn của Mẹ'), { target: { value: 'light' } });
+    fireEvent.click(screen.getByRole('button', { name: 'Xóa Thành viên 3' }));
+    // 0,8 (Mẹ ăn ít) + 0,7 (bé 8 tuổi) ≈ 1,5 → làm tròn 2 suất.
+    expect(screen.getByText('2 suất')).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole('button', { name: 'Lưu cài đặt' }));
     await waitFor(() => expect(savePreferences).toHaveBeenCalledTimes(1));
     const saved = vi.mocked(savePreferences).mock.calls[0]![0];
-    expect(saved.household_members.map((member) => member.label)).toEqual(['Bố', 'Mẹ', 'Bé']);
-    await waitFor(() => expect(updateUser).toHaveBeenCalled());
+    expect(saved.household_members).toEqual([
+      { label: 'Mẹ', age: 30, appetite: 'light' },
+      { label: 'Thành viên 2', age: 8, appetite: 'normal' },
+    ]);
+    expect(saved.servings_mode).toBe('auto');
+  });
+
+  it('turns allergy chips and custom entries into the free-text allergies field', async () => {
+    vi.mocked(savePreferences).mockImplementation((preferences: UserPreferences) =>
+      Promise.resolve(preferences),
+    );
+    renderSettings('Bữa ăn');
+
+    fireEvent.click(screen.getByRole('button', { name: 'tôm' }));
+    fireEvent.click(screen.getByRole('button', { name: 'đậu phộng' }));
+    expect(screen.getByRole('button', { name: 'tôm' })).toHaveAttribute('aria-pressed', 'true');
+    const custom = screen.getByLabelText('Thêm dị ứng khác');
+    fireEvent.change(custom, { target: { value: 'nấm' } });
+    fireEvent.keyDown(custom, { key: 'Enter' });
+    fireEvent.change(custom, { target: { value: 'kiwi,' } });
+    expect(screen.getByRole('button', { name: 'Bỏ nấm' })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Bỏ nấm' }));
+    fireEvent.click(screen.getByRole('button', { name: 'đậu phộng' }));
+
+    fireEvent.click(screen.getByRole('button', { name: 'Lưu cài đặt' }));
+    await waitFor(() => expect(savePreferences).toHaveBeenCalledTimes(1));
+    expect(vi.mocked(savePreferences).mock.calls[0]![0].allergies).toBe('tôm, kiwi');
   });
 
   it('saves the lunar calendar and automatic vegetarian days', async () => {
@@ -112,13 +147,67 @@ describe('SettingsPage', () => {
     expect(screen.getByText(/Hôm nay .* · Ngày \d+ tháng \d+/)).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Âm lịch' }));
     expect(screen.getByRole('button', { name: 'Âm lịch' })).toHaveAttribute('aria-pressed', 'true');
-    fireEvent.click(screen.getByRole('switch', { name: /Tự đánh dấu ăn chay mùng 1 và rằm/ }));
+    const lunarSwitch = screen.getByRole('switch', { name: /Tự đánh dấu ngày 1 và 15/ });
+    expect(lunarSwitch).not.toBeChecked();
+    fireEvent.click(lunarSwitch);
 
     fireEvent.click(screen.getByRole('button', { name: 'Lưu cài đặt' }));
     await waitFor(() => expect(savePreferences).toHaveBeenCalledTimes(1));
     const saved = vi.mocked(savePreferences).mock.calls[0]![0];
     expect(saved.calendar_mode).toBe('lunar');
     expect(saved.vegetarian_lunar_days).toBe(true);
+  });
+
+  it('saves fixed vegetarian weekdays, month days and months from the chips', async () => {
+    vi.mocked(savePreferences).mockImplementation((preferences: UserPreferences) =>
+      Promise.resolve(preferences),
+    );
+    renderSettings('Thông báo');
+    const panel = within(screen.getByRole('region', { name: 'Ngày ăn chay' }));
+
+    expect(panel.getByText('Chưa có ngày ăn chay cố định.')).toBeInTheDocument();
+    fireEvent.click(panel.getByRole('button', { name: 'Thứ Hai' }));
+    fireEvent.click(panel.getByRole('button', { name: 'Ngày 15' }));
+    fireEvent.click(panel.getByRole('button', { name: 'Ngày 1' }));
+    expect(panel.getByRole('button', { name: 'Thứ Hai' })).toHaveAttribute('aria-pressed', 'true');
+    fireEvent.click(panel.getByRole('radio', { name: 'Chọn tháng' }));
+    fireEvent.click(panel.getByRole('button', { name: 'Tháng 7' }));
+    fireEvent.click(panel.getByRole('button', { name: 'Tháng 1' }));
+    expect(
+      panel.getByText('Áp dụng: Thứ Hai hằng tuần, ngày 1 và 15 hằng tháng — tháng 1, 7'),
+    ).toBeInTheDocument();
+    expect(panel.getByText(/^Sắp tới:/)).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('button', { name: 'Lưu cài đặt' }));
+    await waitFor(() => expect(savePreferences).toHaveBeenCalledTimes(1));
+    const saved = vi.mocked(savePreferences).mock.calls[0]![0];
+    expect(saved.vegetarian_weekdays).toEqual([0]);
+    expect(saved.vegetarian_month_days).toEqual([1, 15]);
+    expect(saved.vegetarian_months).toEqual([1, 7]);
+    expect(saved.vegetarian_lunar_days).toBe(false);
+    await waitFor(() => expect(updateUser).toHaveBeenCalled());
+  });
+
+  it('offers the data download as a printable PDF report only', async () => {
+    vi.mocked(exportAccountData).mockResolvedValue({
+      profile: {
+        full_name: 'Nguyễn Ngọc Lan',
+        email: 'lan@example.com',
+        role: 'user',
+        created_at: '2026-10-01T00:00:00Z',
+      },
+      meal_plans: [{ date: '2026-11-29', meal_type: 'lunch', recipe_name: 'Canh chua' }],
+    });
+    renderSettings('Thông báo');
+
+    expect(screen.queryByText(/JSON/)).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: /Tải dữ liệu của tôi \(PDF\)/ }));
+
+    await waitFor(() => expect(printAccountReport).toHaveBeenCalledTimes(1));
+    const [html, title] = vi.mocked(printAccountReport).mock.calls[0]!;
+    expect(html).toContain('lan@example.com');
+    expect(html).toContain('Canh chua');
+    expect(title).toContain('Nguyễn Ngọc Lan');
   });
 
   it('enables daily meal reminders by default and lets the user disable them', async () => {

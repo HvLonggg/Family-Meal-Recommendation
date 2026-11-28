@@ -722,6 +722,22 @@
 .submit-field__label svg {
   color: var(--color-text-muted);
 }
+.submit-field__optional {
+  border-radius: 999px;
+  padding: 2px 8px;
+  color: var(--color-text-muted);
+  background: #f4ece1;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 600;
+}
+.submit-field__hint,
+.submit-progress__hint {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
 .submit-field__meta {
   display: inline-flex;
   align-items: center;

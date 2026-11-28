@@ -72,7 +72,7 @@ export function DeleteAccountPanel({ hasPassword }: { hasPassword: boolean }) {
     <Panel
       className="danger-zone"
       description={t(
-        'Xóa vĩnh viễn tài khoản, cài đặt, kế hoạch, yêu thích, nhật ký nấu, hội thoại và ghi nhớ của trợ lý. Bài viết đã xuất bản được giữ lại ở dạng ẩn danh. Không thể hoàn tác.',
+        'Xóa vĩnh viễn mọi dữ liệu cá nhân; bài đã đăng được giữ ẩn danh. Không thể hoàn tác.',
       )}
       icon="trash"
       id="delete-account"
@@ -88,7 +88,7 @@ export function DeleteAccountPanel({ hasPassword }: { hasPassword: boolean }) {
         <form className="ws-form" noValidate onSubmit={submit}>
           <Notice tone="warning">
             {t('Nên tải dữ liệu của bạn trước khi xóa:')}{' '}
-            <Link to="/account/settings">{t('Tải dữ liệu của tôi')}</Link>
+            <Link to="/account/settings#privacy">{t('Tải dữ liệu của tôi (PDF)')}</Link>
           </Notice>
           {error ? <Notice tone="danger">{error}</Notice> : null}
           {hasPassword ? (

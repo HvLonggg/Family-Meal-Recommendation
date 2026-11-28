@@ -1,11 +1,12 @@
 from typing import Annotated
 from uuid import UUID
 
-from fastapi import APIRouter, Depends, status
+from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from app.core.exceptions import DomainError
+from app.core.rate_limit import SlidingWindowLimiter
 from app.db.session import get_db_session
 from app.modules.auth.dependencies import get_current_user
 from app.modules.auth.models import User
@@ -15,11 +16,25 @@ from app.modules.submissions.schemas import (
     SubmissionResponse,
     SubmissionWrite,
 )
+from app.modules.submissions.service import linked_recipe_slugs
 
 router = APIRouter(prefix="/submissions")
 
 DatabaseSession = Annotated[Session, Depends(get_db_session)]
 CurrentUser = Annotated[User, Depends(get_current_user)]
+
+# Chỉ bắt buộc tên món nên giới hạn số lần gửi/sửa để chống spam: 20 lần mỗi giờ mỗi người.
+SUBMISSION_WRITES = SlidingWindowLimiter(limit=20, window_seconds=3600)
+
+
+def _limit_writes(user: User) -> None:
+    key = str(user.id)
+    if SUBMISSION_WRITES.blocked(key):
+        raise HTTPException(
+            status_code=status.HTTP_429_TOO_MANY_REQUESTS,
+            detail="Bạn gửi đề xuất quá nhanh, thử lại sau ít phút nhé.",
+        )
+    SUBMISSION_WRITES.hit(key)
 
 
 class SubmissionNotFoundError(DomainError):
@@ -64,8 +79,15 @@ def my_submissions(session: DatabaseSession, current_user: CurrentUser) -> Submi
             .order_by(RecipeSubmission.updated_at.desc())
         )
     )
+    slugs = linked_recipe_slugs(session, items)
     return SubmissionListResponse(
-        data=[SubmissionResponse.model_validate(item) for item in items], total=len(items)
+        data=[
+            SubmissionResponse.model_validate(item).model_copy(
+                update={"recipe_slug": slugs.get(str(item.id))}
+            )
+            for item in items
+        ],
+        total=len(items),
     )
 
 
@@ -78,6 +100,7 @@ def my_submissions(session: DatabaseSession, current_user: CurrentUser) -> Submi
 def create_submission(
     payload: SubmissionWrite, session: DatabaseSession, current_user: CurrentUser
 ) -> SubmissionResponse:
+    _limit_writes(current_user)
     submission = RecipeSubmission(user_id=current_user.id)
     _apply(submission, payload)
     session.add(submission)
@@ -96,6 +119,7 @@ def update_submission(
     submission = _owned_submission(session, current_user, submission_id)
     if submission.status == "approved":
         raise SubmissionLockedError("Đề xuất đã được duyệt nên không thể chỉnh sửa.")
+    _limit_writes(current_user)
     _apply(submission, payload)
     submission.admin_note = None
     session.commit()

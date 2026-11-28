@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 import { AppIcon } from '@/components/common/AppIcon';
 import { RecipeCard } from '@/components/recipes/RecipeCard';
-import { recipeMinutes, recipes, type Recipe } from '@/data/recipes';
+import { isQuickRecipe, recipeMinutes, recipes, type Recipe } from '@/data/recipes';
 import { dietaryConflicts, useUserPreferences } from '@/features/account/preferences';
 import type { UserPreferences } from '@/features/auth/types';
 import { useI18n } from '@/features/i18n/I18nContext';
@@ -36,7 +36,7 @@ const options: SuggestionOption[] = [
     id: 'quick',
     label: 'Dưới 30 phút',
     description: 'Món nấu nhanh cho ngày bận rộn.',
-    matches: (recipe) => recipeMinutes(recipe) <= 30,
+    matches: (recipe) => isQuickRecipe(recipe),
   },
   {
     id: 'greens',

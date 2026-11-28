@@ -28,6 +28,7 @@ import { LoginRequiredDialog } from '@/features/auth/LoginRequiredDialog';
 import { apiPost, apiRequest } from '@/lib/api/client';
 import { useI18n } from '@/features/i18n/I18nContext';
 import { dishImage } from '@/data/dishImages';
+import { SavedMealDialog, SavedMealTray } from '@/pages/SavedMealDetails';
 
 import './random-meal-page.css';
 
@@ -114,6 +115,8 @@ export function RandomMealPage() {
   const historyOwnerKey = user?.id ?? 'guest';
   // Khách quay mâm thoải mái; bấm lưu mâm mới yêu cầu đăng nhập.
   const [loginPrompt, setLoginPrompt] = useState(false);
+  const [openMealId, setOpenMealId] = useState<string | null>(null);
+  const closeMealDialog = useCallback(() => setOpenMealId(null), []);
   const history = historyByAccount[historyOwnerKey] ?? readHistory(user?.id);
   const [rotation, setRotation] = useState(0);
   const rotationRef = useRef(0);
@@ -360,6 +363,12 @@ export function RandomMealPage() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const savedMealTitle = (meal: SavedRandomMeal) =>
+    t('Mâm {profile}', {
+      profile: t(profileDetails[meal.profile].label).toLocaleLowerCase(locale),
+    });
+  const openMeal = history.find((meal) => meal.id === openMealId) ?? null;
+
   const resetMeal = () => {
     dismissCelebration();
     setSlots(createMealSlots(dishCount));
@@ -513,7 +522,7 @@ export function RandomMealPage() {
                       >
                         {wheelDish ? (
                           <span
-                            className="meal-wheel__symbol meal-wheel__symbol--dish dish-plate"
+                            className="meal-wheel__symbol meal-wheel__symbol--dish dish-plate dish-plate--uniform"
                             data-dish-kind={guessDishPlateKind(
                               wheelDish.sourceKey,
                               wheelDish.image,
@@ -632,7 +641,7 @@ export function RandomMealPage() {
                       <span className="tray-slot__plate">
                         {slot.dish ? (
                           <span
-                            className="dish-plate"
+                            className="dish-plate dish-plate--uniform"
                             data-dish-kind={guessDishPlateKind(
                               slot.dish.sourceKey,
                               slot.dish.image,
@@ -764,66 +773,60 @@ export function RandomMealPage() {
               <p>{t('Quay đủ món và chọn “Lưu mâm cơm này” để xem lại tại đây.')}</p>
             </div>
           ) : (
-            <div className="saved-meal-grid">
+            <ul className="saved-tray-grid">
               {history.map((meal) => {
                 const savedSlots = restoreMealSlots(meal.dishIds);
+                if (savedSlots.length === 0) return null;
+                const title = savedMealTitle(meal);
                 return (
-                  <article className="saved-meal-card" key={meal.id}>
-                    <div className="saved-meal-card__images">
-                      {savedSlots.map((slot, index) => (
-                        <figure key={slot.dish!.id}>
-                          <img
-                            alt={slot.dish!.imageAlt}
-                            decoding="async"
-                            loading="lazy"
-                            {...dishImage(slot.dish!.sourceKey, slot.dish!.image, '96px')}
-                          />
-                          <figcaption>
-                            {index + 1}. {t(roleDetails[slot.role].shortLabel)}
-                          </figcaption>
-                        </figure>
-                      ))}
-                    </div>
-                    <div className="saved-meal-card__body">
-                      <div>
-                        <span>
-                          <AppIcon name={profileIcons[meal.profile]} size={20} />
+                  <li key={meal.id}>
+                    <button
+                      aria-haspopup="dialog"
+                      className="saved-tray-card"
+                      onClick={() => setOpenMealId(meal.id)}
+                      type="button"
+                    >
+                      <SavedMealTray size="sm" slots={savedSlots} />
+                      <span className="saved-tray-card__body">
+                        <strong>{title}</strong>
+                        <small>
+                          {t('{count} món', { count: savedSlots.length })}
+                          {formatSavedMealTime(meal.createdAt) && (
+                            <>
+                              {' · '}
+                              <time dateTime={meal.createdAt}>
+                                {formatSavedMealTime(meal.createdAt)}
+                              </time>
+                            </>
+                          )}
+                        </small>
+                        <span className="saved-tray-card__dishes">
+                          {savedSlots.map((slot) => t(dishName(slot.dish!))).join(' · ')}
                         </span>
-                        <span>
-                          <strong>
-                            {t('Mâm {profile}', {
-                              profile: t(profileDetails[meal.profile].label).toLocaleLowerCase(
-                                locale,
-                              ),
-                            })}
-                          </strong>
-                          <small>{t('{count} món', { count: savedSlots.length })}</small>
-                          <time className="saved-meal-card__time" dateTime={meal.createdAt}>
-                            {formatSavedMealTime(meal.createdAt)}
-                          </time>
-                        </span>
-                      </div>
-                      <ul>
-                        {savedSlots.map((slot) => (
-                          <li key={slot.dish!.id}>{t(dishName(slot.dish!))}</li>
-                        ))}
-                      </ul>
-                      <button
-                        className="text-link"
-                        disabled={spinning}
-                        onClick={() => reuseMeal(meal)}
-                        type="button"
-                      >
-                        {t('Dùng lại mâm này')} <AppIcon name="arrow" size={15} />
-                      </button>
-                    </div>
-                  </article>
+                      </span>
+                      <AppIcon name="arrow" size={16} />
+                    </button>
+                  </li>
                 );
               })}
-            </div>
+            </ul>
           )}
         </div>
       </section>
+
+      {openMeal && (
+        <SavedMealDialog
+          meal={openMeal}
+          onClose={closeMealDialog}
+          onReuse={() => {
+            setOpenMealId(null);
+            reuseMeal(openMeal);
+          }}
+          reuseDisabled={spinning}
+          slots={restoreMealSlots(openMeal.dishIds)}
+          title={savedMealTitle(openMeal)}
+        />
+      )}
 
       <section className="random-help-band">
         <div className="container">

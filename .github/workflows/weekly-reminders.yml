@@ -1,0 +1,77 @@
+name: Weekly meal-plan reminders
+
+# Render Free không có cron, nên GitHub Actions đánh thức API rồi gọi endpoint nội bộ.
+# 14:00 UTC Chủ nhật = 21:00 Chủ nhật giờ Việt Nam (UTC+7). GitHub có thể trễ vài phút khi
+# hàng đợi đông; máy chủ chống gửi trùng theo tuần nên chạy lại thủ công vẫn an toàn.
+on:
+  schedule:
+    - cron: "0 14 * * 0"
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: weekly-reminders
+  cancel-in-progress: false
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      API_BASE_URL: ${{ vars.API_BASE_URL || 'https://bep-viet-api-jiu7.onrender.com' }}
+      CRON_SECRET: ${{ secrets.BEP_VIET_CRON_SECRET }}
+    steps:
+      - name: Check configuration
+        run: |
+          if [ -z "$CRON_SECRET" ]; then
+            echo "::error::Thiếu GitHub secret BEP_VIET_CRON_SECRET (Settings > Secrets and variables > Actions)."
+            exit 1
+          fi
+
+      - name: Wake up the API (Render Free cold start)
+        run: |
+          base="${API_BASE_URL%/}"
+          for attempt in $(seq 1 12); do
+            if curl -fsS --max-time 30 -o /dev/null "$base/api/v1/livez"; then
+              echo "API is up (attempt $attempt)."
+              exit 0
+            fi
+            echo "API not ready (attempt $attempt/12); retrying in 15s..."
+            sleep 15
+          done
+          echo "::error::API did not wake up in time."
+          exit 1
+
+      - name: Send weekly reminders
+        run: |
+          base="${API_BASE_URL%/}"
+          # Mỗi lượt gọi gửi tối đa một lô; lặp lại cho đến khi hết người nhận.
+          for round in $(seq 1 10); do
+            response=$(curl -sS --max-time 150 --retry 2 --retry-all-errors \
+              -X POST -H "X-Cron-Secret: $CRON_SECRET" \
+              -o body.json -w '%{http_code}' "$base/api/v1/internal/reminders/weekly") || {
+              echo "::error::Request to the API failed."
+              exit 1
+            }
+            echo "Round $round: HTTP $response"
+            cat body.json
+            echo
+            if [ "$response" != "200" ]; then
+              echo "::error::API returned HTTP $response (503 = BEP_VIET_CRON_SECRET not set on Render or email not configured; 401 = secret mismatch)."
+              exit 1
+            fi
+            if [ "$(jq -r '.aborted' body.json)" = "true" ]; then
+              echo "::error::Run aborted after repeated email failures; check the Gmail API configuration."
+              exit 1
+            fi
+            failed=$(jq -r '.failed' body.json)
+            if [ "$failed" != "0" ]; then
+              echo "::warning::$failed email(s) failed in round $round; re-run this workflow to retry them."
+            fi
+            if [ "$(jq -r '.has_more' body.json)" != "true" ]; then
+              echo "Done."
+              exit 0
+            fi
+          done
+          echo "::warning::Reached the round limit; remaining users will be reminded on the next run."

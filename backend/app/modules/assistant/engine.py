@@ -72,6 +72,9 @@ class Intent:
     topic: str | None = None
     # Yêu cầu vị/cách nấu: "low_oil", "light_sweet"… (xem traits.py).
     traits: list[str] = field(default_factory=list)
+    # Ưu tiên nhẹ từ cài đặt tài khoản (không phải bộ lọc cứng).
+    prefer_regions: set[str] = field(default_factory=set)
+    gentle: bool = False
 
 
 @dataclass(slots=True)
@@ -413,10 +416,99 @@ INGREDIENT_LABELS = {
 }
 
 
+# Nhóm dị ứng thường gặp không có trong INGREDIENT_WORDS (chỉ dùng để loại món, không dùng
+# để hiểu câu hỏi nên không ảnh hưởng parse_intent).
+ALLERGEN_WORDS: dict[str, tuple[str, ...]] = {
+    "dau phong": ("dau phong", "lac", "dauphong"),
+    "sua": ("sua", "sua tuoi", "sua dac", "sua chua", "pho mai", "kem tuoi", "bo lat", "bobeo"),
+    "vung": ("vung", "me rang", "dau me", "hat me"),
+    "hat dieu": ("hat dieu", "dieu"),
+    "bot mi": ("botmi", "bot mi", "mi"),
+}
+ALLERGEN_LABELS = {
+    "dau phong": "đậu phộng",
+    "sua": "sữa",
+    "vung": "mè/vừng",
+    "hat dieu": "hạt điều",
+    "bot mi": "bột mì",
+}
+# Cách gọi -> nhóm dị ứng (đã bỏ dấu).
+ALLERGEN_ALIASES: dict[str, str] = {
+    "dau phong": "dau phong",
+    "lac": "dau phong",
+    "peanut": "dau phong",
+    "peanuts": "dau phong",
+    "sua": "sua",
+    "milk": "sua",
+    "dairy": "sua",
+    "lactose": "sua",
+    "vung": "vung",
+    "me": "vung",
+    "sesame": "vung",
+    "hat dieu": "hat dieu",
+    "cashew": "hat dieu",
+    "gluten": "bot mi",
+    "bot mi": "bot mi",
+}
+SHELLFISH = ("tom", "cua", "ngheu", "ngao", "hen", "oc")
+
+
 def ingredient_label(word: str, language: Language = "vi") -> str:
     if language == "en":
         return word
-    return INGREDIENT_LABELS.get(word, word)
+    return INGREDIENT_LABELS.get(word) or ALLERGEN_LABELS.get(word, word)
+
+
+def exclusions_in(text: str) -> list[str]:
+    """Nguyên liệu cần loại từ một đoạn tự do như "tôm, đậu phộng, hải sản có vỏ".
+
+    Dùng cho ô "Dị ứng" trong cài đặt: mọi thứ được nhắc đều là thứ phải tránh.
+    """
+    words: list[str] = []
+
+    def add(*items: str) -> None:
+        words.extend(item for item in items if item not in words)
+
+    pieces = (
+        part
+        for chunk in re.split(r"[,;/\n+.]", text)
+        for part in re.split(r" va | and | hoac | or ", f" {_norm(chunk)} ")
+    )
+    for raw in pieces:
+        segment = re.sub(
+            r"^(?:(?:bi|khong an|khong|kieng|tranh|di ung voi|di ung|allergic to|"
+            r"allergy|an)\s+)+",
+            "",
+            raw.strip(),
+        ).strip()
+        if len(segment) < 2:
+            continue
+        if re.search(r"(?:^| )(?:hai san co vo|giap xac|shellfish|crustacean)(?: |$)", segment):
+            add(*SHELLFISH)
+            continue
+        if re.search(r"(?:^| )(?:hai san|seafood)(?: |$)", segment):
+            add(*SEAFOOD)
+            continue
+        found = False
+        for alias in sorted(ALLERGEN_ALIASES, key=len, reverse=True):
+            if re.search(rf"(?:^| ){re.escape(alias)}(?: |$)", segment):
+                add(ALLERGEN_ALIASES[alias])
+                found = True
+                break
+        if found:
+            continue
+        fused = f" {_fuse(segment)} "
+        for word in sorted(INGREDIENT_WORDS, key=len, reverse=True):
+            pattern = rf" {re.escape(_fuse(word))} "
+            if re.search(pattern, fused):
+                # "tôm cua" -> cả tôm lẫn cua; bỏ cụm đã khớp để "thịt heo" không khớp thêm "heo".
+                add(word)
+                fused = re.sub(pattern, "  ", fused)
+                found = True
+        if not found and len(segment.split()) <= 3:
+            # Nguyên liệu lạ ("kiwi", "hat oc cho"): vẫn loại món có đúng cụm này.
+            add(segment)
+    return words
 
 
 NEGATION = (
@@ -702,7 +794,7 @@ def parse_intent(message: str, catalog: list[RecipeEntry]) -> Intent:
 # Chọn món.
 # ---------------------------------------------------------------------------
 def _contains(entry: RecipeEntry, word: str) -> bool:
-    keywords = INGREDIENT_WORDS.get(word, (word,))
+    keywords = INGREDIENT_WORDS.get(word) or ALLERGEN_WORDS.get(word) or (word,)
     return any(
         re.search(rf"(?:^| |\|){re.escape(keyword)}(?: |$|\|)", entry.ingredient_text)
         for keyword in keywords
@@ -749,6 +841,11 @@ class Preferences:
     not_spicy: bool = False
     servings: int | None = None
     vegetarian: bool = False
+    # Ưu tiên mềm từ cài đặt tài khoản: vùng miền hay ăn, nhà có trẻ nhỏ/người lớn tuổi
+    # (xếp món ít cay lên trước), giới hạn thời gian nấu mặc định.
+    regions: list[str] = field(default_factory=list)
+    gentle: bool = False
+    max_minutes: int | None = None
 
 
 SEAFOOD = ("tom", "muc", "cua", "ngheu", "ngao", "hen", "oc")
@@ -789,6 +886,9 @@ def apply_preferences(intent: Intent, prefs: Preferences | None) -> Intent:
     intent.exclude.extend(word for word in prefs.exclude if word not in intent.exclude)
     intent.not_spicy = intent.not_spicy or prefs.not_spicy
     intent.servings = intent.servings or prefs.servings
+    intent.max_minutes = intent.max_minutes or prefs.max_minutes
+    intent.gentle = intent.gentle or prefs.gentle
+    intent.prefer_regions.update(prefs.regions)
     if prefs.vegetarian:
         intent.categories.add("Món chay")
     return intent
@@ -851,9 +951,21 @@ def pick_recipes(
         fresh.sort(key=lambda entry: (entry.minutes, entry.difficulty != "Dễ"))
         fresh = fresh[: max(limit * 3, limit)]
         rng.shuffle(fresh)
+    if intent.gentle:
+        # Nhà có trẻ nhỏ/người lớn tuổi: món không cay lên trước (không loại hẳn món cay vừa).
+        fresh.sort(key=lambda entry: entry.spicy >= 1)
     if intent.regions:
         # Hỏi "món miền Trung" thì món đặc trưng của vùng đứng trước món "Ba miền".
         fresh.sort(key=lambda entry: macro_region(entry.region) not in intent.regions)
+    elif intent.prefer_regions:
+        # Vùng miền trong cài đặt chỉ cộng điểm nhẹ: đưa một món của vùng đó lên đầu.
+        local = next(
+            (e for e in fresh[: limit * 3] if macro_region(e.region) in intent.prefer_regions),
+            None,
+        )
+        if local is not None:
+            fresh.remove(local)
+            fresh.insert(0, local)
     if intent.traits:
         # Món khớp nhiều yêu cầu vị/cách nấu nhất lên đầu; cùng điểm thì giữ thứ tự ngẫu nhiên.
         scores = {entry.slug: traits.total(entry, intent.traits) for entry in fresh}

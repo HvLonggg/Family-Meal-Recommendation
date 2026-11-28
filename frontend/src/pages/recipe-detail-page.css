@@ -95,3 +95,15 @@
     margin-top: 16px;
   }
 }
+
+/* Món cộng đồng chưa bổ sung nguyên liệu/các bước. */
+.recipe-missing-note {
+  margin: 18px 0 0;
+  border: 1px dashed #dcc9b3;
+  border-radius: 12px;
+  padding: 14px 16px;
+  color: #76634f;
+  background: #fbf7f0;
+  font-size: 14px;
+  line-height: 1.7;
+}

@@ -959,3 +959,568 @@
     font-size: 9pt;
   }
 }
+
+/* ---------- Tổng quan tuần (chỉ đọc) ---------- */
+.planner-page .planner-tabs-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.planner-page .planner-tabs-row .planner-tabs {
+  min-width: 0;
+  flex: 1;
+  margin-bottom: -1px;
+  border-bottom: 0;
+}
+
+.planner-page .planner-overview-toggle {
+  display: inline-flex;
+  align-items: center;
+  align-self: center;
+  gap: 7px;
+  min-height: 38px;
+  margin-bottom: 4px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0 14px;
+  color: var(--color-text-muted);
+  background: white;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+  transition:
+    color 160ms ease,
+    background 160ms ease,
+    border-color 160ms ease;
+}
+
+.planner-page .planner-overview-toggle:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.planner-page .planner-overview-toggle.is-active {
+  border-color: var(--color-primary);
+  color: white;
+  background: var(--color-primary);
+}
+
+.planner-page .planner-overview-toggle:focus-visible,
+.planner-page .planner-overview__cell:focus-visible {
+  outline: 2px solid var(--color-focus, var(--color-primary));
+  outline-offset: 2px;
+}
+
+.planner-page .planner-overview {
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  background: white;
+}
+
+.planner-page .planner-overview__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+  margin: 0;
+  border-bottom: 1px solid var(--color-border);
+  padding: 14px 20px;
+  background: #fbf8f4;
+}
+
+.planner-page .planner-overview__stats div {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.planner-page .planner-overview__stats dt {
+  color: var(--color-text-muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.planner-page .planner-overview__stats dd {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 18px;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+}
+
+.planner-page .planner-overview__stats dd small {
+  color: var(--color-text-muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.planner-page .planner-overview__stat--veg dd {
+  color: var(--veg-leaf);
+}
+
+/* Bảng 7 cột: hàng đầu ngày + 3 hàng bữa; subgrid giữ các hàng thẳng nhau giữa mọi ngày. */
+.planner-page .planner-overview__grid {
+  display: grid;
+  grid-template-columns: 76px repeat(7, minmax(0, 1fr));
+  grid-template-rows: auto repeat(3, minmax(116px, auto));
+}
+
+.planner-page .planner-overview__labels,
+.planner-page .planner-overview__day {
+  display: grid;
+  min-width: 0;
+  grid-row: span 4;
+  grid-template-rows: subgrid;
+}
+
+.planner-page .planner-overview__labels span {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid var(--color-border);
+  padding: 0 12px;
+  color: #5b4e42;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.planner-page .planner-overview__labels span:first-child {
+  border-top: 0;
+}
+
+.planner-page .planner-overview__day {
+  border-left: 1px solid var(--color-border);
+}
+
+.planner-page .planner-overview__day.is-vegetarian {
+  background: #fffcf0;
+}
+
+.planner-page .planner-overview__day-header {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 12px 6px 10px;
+  text-align: center;
+}
+
+.planner-page .planner-overview__day.is-today .planner-overview__day-header {
+  box-shadow: inset 0 3px 0 var(--color-primary);
+  background: var(--color-primary-soft, #eef3ff);
+}
+
+.planner-page .planner-overview__day.is-vegetarian .planner-overview__day-header {
+  background: rgb(255 229 138 / 38%);
+}
+
+.planner-page .planner-overview__day.is-today.is-vegetarian .planner-overview__day-header {
+  box-shadow: inset 0 3px 0 var(--color-primary);
+}
+
+.planner-page .planner-overview__weekday {
+  color: var(--color-text-muted);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.planner-page .planner-overview__date {
+  color: var(--color-text);
+  font-size: 17px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+}
+
+.planner-page .planner-overview__day.is-today .planner-overview__date {
+  color: var(--color-primary);
+}
+
+.planner-page .planner-overview__alt-date {
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+.planner-page .planner-overview__alt-date em {
+  color: var(--veg-text);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.planner-page .planner-overview__badges {
+  display: flex;
+  min-height: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+}
+
+.planner-page .planner-overview__today,
+.planner-page .planner-overview__veg {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  border-radius: 999px;
+  padding: 1px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 18px;
+}
+
+.planner-page .planner-overview__today {
+  color: white;
+  background: var(--color-primary);
+}
+
+.planner-page .planner-overview__veg {
+  color: var(--veg-text);
+  background: var(--veg-bg-strong);
+}
+
+.planner-page .planner-overview__day-count {
+  color: var(--color-text-muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.planner-page .planner-overview__cell {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  border-radius: 0;
+  padding: 10px 8px;
+  color: var(--color-text);
+  background: transparent;
+  font: inherit;
+  text-align: left;
+}
+
+.planner-page button.planner-overview__cell {
+  cursor: pointer;
+  transition: background 150ms ease;
+}
+
+.planner-page button.planner-overview__cell:hover {
+  background: rgb(37 99 235 / 5%);
+}
+
+.planner-page .planner-overview__cell.is-empty {
+  align-items: center;
+  justify-content: center;
+}
+
+.planner-page .planner-overview__meal-label {
+  display: none;
+}
+
+.planner-page .planner-overview__dash {
+  color: #b8afa5;
+  font-size: 14px;
+}
+
+.planner-page .planner-overview__dishes {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.planner-page .planner-overview__dish {
+  display: flex;
+  min-width: 0;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.planner-page .planner-overview__dish img {
+  width: 24px;
+  height: 24px;
+  flex: none;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #f3ece4;
+}
+
+.planner-page .planner-overview__dish-name {
+  display: -webkit-box;
+  min-width: 0;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.planner-page .planner-overview__dish.is-cooked .planner-overview__dish-name {
+  color: var(--color-text-muted);
+}
+
+.planner-page .planner-overview__dish.is-cooked .planner-overview__dish-name::before {
+  content: '✓ ';
+  color: var(--color-success);
+}
+
+.planner-page .planner-overview__more {
+  align-self: flex-start;
+  border-radius: 999px;
+  padding: 1px 9px;
+  color: var(--color-primary);
+  background: var(--color-primary-soft, #eef3ff);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 18px;
+  white-space: nowrap;
+}
+
+.planner-page .planner-overview--empty {
+  padding: 40px 20px;
+}
+
+.planner-page .planner-overview__empty-state {
+  display: flex;
+  max-width: 460px;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.planner-page .planner-overview__empty-icon {
+  display: grid;
+  width: 56px;
+  height: 56px;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--color-primary);
+  background: var(--color-primary-soft, #eef3ff);
+}
+
+.planner-page .planner-overview__empty-state p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
+.planner-page .planner-overview__empty-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.planner-page .planner-meal-panel__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-text-muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.planner-page .planner-meal-panel__readonly {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+/* Máy tính bảng và điện thoại: chuyển sang thẻ từng ngày, không cuộn ngang. */
+@media (max-width: 1023px) {
+  .planner-page .planner-overview__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .planner-page .planner-overview__labels {
+    display: none;
+  }
+
+  .planner-page .planner-overview__day {
+    display: block;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+  }
+
+  .planner-page .planner-overview__day.is-today {
+    border-color: var(--color-primary);
+  }
+
+  .planner-page .planner-overview__day-header {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 2px 8px;
+    padding: 9px 12px;
+    text-align: left;
+  }
+
+  .planner-page .planner-overview__date {
+    font-size: 15px;
+  }
+
+  .planner-page .planner-overview__badges {
+    min-height: 0;
+    align-self: center;
+  }
+
+  .planner-page .planner-overview__day-count {
+    margin-left: auto;
+  }
+
+  /* Nút mặc định co theo nội dung: kéo hết bề ngang thẻ để chip "+K" và "…" hiện đúng chỗ. */
+  .planner-page .planner-overview__cell {
+    width: 100%;
+    min-height: 38px;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 12px;
+  }
+
+  .planner-page .planner-overview__cell.is-empty {
+    justify-content: flex-start;
+  }
+
+  .planner-page .planner-overview__meal-label {
+    display: block;
+    width: 34px;
+    flex: none;
+    color: #5b4e42;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  /* Tên món nối bằng dấu phẩy trên một dòng, quá dài thì "…". */
+  .planner-page .planner-overview__dishes {
+    display: block;
+    flex: 1;
+    overflow: hidden;
+    font-size: 13px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .planner-page .planner-overview__dish {
+    display: inline;
+  }
+
+  .planner-page .planner-overview__dish + .planner-overview__dish::before {
+    content: ', ';
+  }
+
+  .planner-page .planner-overview__dish img {
+    display: none;
+  }
+
+  .planner-page .planner-overview__dish-name {
+    display: inline;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .planner-page .planner-overview__more {
+    flex: none;
+    align-self: center;
+  }
+}
+
+@media (max-width: 760px) {
+  .planner-page .planner-tabs-row {
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+
+  .planner-page .planner-overview-toggle {
+    width: 40px;
+    min-height: 40px;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .planner-page .planner-overview-toggle span {
+    display: none;
+  }
+
+  .planner-page .planner-overview {
+    border-radius: 14px;
+  }
+
+  .planner-page .planner-overview__stats {
+    gap: 6px 18px;
+    padding: 10px 12px;
+  }
+
+  .planner-page .planner-overview__stats dd {
+    font-size: 16px;
+  }
+
+  .planner-page .planner-overview__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+    padding: 8px;
+  }
+}
+
+/* ---------- In tổng quan tuần (khi không mở danh sách mua sắm) ---------- */
+@page planner-overview {
+  margin: 10mm;
+  size: A4 landscape;
+}
+
+@media print {
+  .planner-page.planner-page--print-overview .planner-dashboard > .planner-overview {
+    display: block !important;
+    page: planner-overview;
+    border-color: #999;
+    border-radius: 0;
+  }
+
+  /* product.css ẩn mọi thứ khi in (visibility) trừ danh sách mua sắm: mở lại cho bảng tổng quan. */
+  .planner-page--print-overview .planner-overview,
+  .planner-page--print-overview .planner-overview * {
+    visibility: visible !important;
+  }
+
+  .planner-page--print-overview .planner-overview__grid {
+    grid-template-columns: 64px repeat(7, minmax(0, 1fr)) !important;
+    grid-template-rows: auto repeat(3, minmax(90px, auto)) !important;
+    gap: 0 !important;
+    padding: 0 !important;
+  }
+
+  .planner-page--print-overview .planner-overview__labels {
+    display: grid !important;
+  }
+
+  .planner-page--print-overview .planner-overview__day {
+    display: grid !important;
+    border: 0 !important;
+    border-left: 1px solid #999 !important;
+    border-radius: 0 !important;
+  }
+
+  .planner-page--print-overview .planner-overview__dish img {
+    display: none !important;
+  }
+
+  .planner-page--print-overview .planner-overview__cell,
+  .planner-page--print-overview .planner-overview__labels span {
+    border-top-color: #999 !important;
+  }
+}

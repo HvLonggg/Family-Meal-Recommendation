@@ -40,6 +40,11 @@ services:
         sync: false
       - key: BEP_VIET_SUPPORT_EMAIL
         sync: false
+      # Khóa cho tác vụ định kỳ (email nhắc kế hoạch tuần, 21:00 Chủ nhật): GitHub Actions gửi
+      # kèm header X-Cron-Secret. Dùng cùng một chuỗi ngẫu nhiên dài với GitHub secret
+      # BEP_VIET_CRON_SECRET. Để trống thì endpoint /internal/* bị tắt.
+      - key: BEP_VIET_CRON_SECRET
+        sync: false
       # Trình duyệt -> Vercel (rewrite /api) -> Render: hai proxy nối IP vào X-Forwarded-For.
       - key: BEP_VIET_TRUSTED_PROXY_HOPS
         value: "2"

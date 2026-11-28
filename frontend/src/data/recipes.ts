@@ -70,7 +70,12 @@ export type Recipe = {
   sourceName: string;
   sourceUrl: string;
   status?: 'published' | 'draft';
+  /** Món do cộng đồng đề xuất và được ban nội dung duyệt; có thể thiếu nguyên liệu/các bước. */
+  community?: boolean;
 };
+
+/** Ảnh minh họa chung cho món chưa có ảnh (frontend/public). */
+export const RECIPE_PLACEHOLDER_IMAGE = '/images/brand/dish-placeholder.png';
 
 const recipeCatalog: Recipe[] = [
   {
@@ -694,6 +699,20 @@ export function recipeMinutes(recipe: Recipe) {
   return recipe.prepMinutes + recipe.cookMinutes + (recipe.passiveMinutes ?? 0);
 }
 
+/** Có ít nhất một bước làm: mới vào bếp / nghe hướng dẫn giọng nói được. */
+export const hasRecipeSteps = (recipe: Recipe) =>
+  recipe.preparation.length + recipe.cooking.length > 0;
+
+export const hasRecipeIngredients = (recipe: Recipe) =>
+  recipe.ingredients.some((group) => group.items.length > 0);
+
+/** Món đề xuất có thể chưa có thời gian nấu (0 = chưa rõ). */
+export const hasRecipeTime = (recipe: Recipe) => recipeMinutes(recipe) > 0;
+
+/** Nấu xong trong `maxMinutes`; món chưa rõ thời gian không được coi là món nhanh. */
+export const isQuickRecipe = (recipe: Recipe, maxMinutes = 30) =>
+  hasRecipeTime(recipe) && recipeMinutes(recipe) <= maxMinutes;
+
 type FormatText = (text: string, vars?: Record<string, string | number>) => string;
 
 const fillTemplate: FormatText = (text, vars) =>
@@ -703,6 +722,8 @@ const fillTemplate: FormatText = (text, vars) =>
 
 /** Định dạng thời lượng; truyền hàm dịch `t` để hiển thị theo ngôn ngữ đang chọn. */
 export function formatMinutes(minutes: number, t: FormatText = fillTemplate) {
+  // 0 phút = món chưa có thông tin thời gian (món cộng đồng đề xuất chưa bổ sung).
+  if (!(minutes > 0)) return '—';
   if (minutes < 60) return t('{count} phút', { count: minutes });
   if (minutes >= 1440 && minutes % 1440 === 0) return t('{count} ngày', { count: minutes / 1440 });
   const remainder = minutes % 60;

@@ -66,25 +66,21 @@ select {
   }
 }
 
-/* Chữ hiện dần như gõ phím (trang chủ): phần chưa gõ vẫn giữ chỗ nên khối không nhảy. */
-.typewriter__rest {
-  visibility: hidden;
+/* Chữ hiện dần từng ký tự (trang chủ): mờ sang rõ, nhích nhẹ lên; ký tự chưa hiện vẫn giữ chỗ. */
+.typewriter__char {
+  display: inline;
+  opacity: 0;
+  transition: opacity 360ms ease-out;
 }
 
-.typewriter__caret {
-  position: relative;
-  display: inline-block;
-  width: 0;
-  height: 0.95em;
-  margin-right: -0.06em;
-  border-left: 0.06em solid currentcolor;
-  vertical-align: -0.08em;
-  animation: typewriter-caret 0.8s steps(1) infinite;
+.typewriter__char.is-shown {
+  opacity: 1;
 }
 
-@keyframes typewriter-caret {
-  50% {
-    opacity: 0;
+@media (prefers-reduced-motion: reduce) {
+  .typewriter__char {
+    opacity: 1;
+    transition: none;
   }
 }
 

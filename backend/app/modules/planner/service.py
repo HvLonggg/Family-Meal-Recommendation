@@ -7,7 +7,7 @@ from datetime import UTC, date, datetime, timedelta
 from decimal import Decimal
 from uuid import UUID
 
-from sqlalchemy import func, select, tuple_
+from sqlalchemy import case, func, select, tuple_
 from sqlalchemy.orm import Session, joinedload
 
 from app.modules.planner.models import UserMealPlanEvent, UserMealPlanItem, UserVegetarianDay
@@ -269,6 +269,32 @@ def list_past_meals(
     for item in items:
         by_group.setdefault((item.plan_date, item.meal_type), []).append(item)
     return [(*key, by_group.get(key, [])) for key in group_keys], total
+
+
+def list_plan_day_summaries(
+    session: Session, *, user_id: UUID, from_date: date, to_date: date
+) -> list[tuple[date, str, int, int]]:
+    """Đếm món theo (ngày, bữa) trong khoảng ngày, dùng chỉ mục (user_id, plan_date)."""
+    completed = func.sum(case((UserMealPlanItem.completion_status == "completed", 1), else_=0))
+    statement = (
+        select(
+            UserMealPlanItem.plan_date,
+            UserMealPlanItem.meal_type,
+            func.count(UserMealPlanItem.id),
+            completed,
+        )
+        .where(
+            UserMealPlanItem.user_id == user_id,
+            UserMealPlanItem.plan_date >= from_date,
+            UserMealPlanItem.plan_date <= to_date,
+        )
+        .group_by(UserMealPlanItem.plan_date, UserMealPlanItem.meal_type)
+        .order_by(UserMealPlanItem.plan_date, UserMealPlanItem.meal_type)
+    )
+    return [
+        (plan_date, meal_type, int(count or 0), int(done or 0))
+        for plan_date, meal_type, count, done in session.execute(statement)
+    ]
 
 
 def set_item_status(

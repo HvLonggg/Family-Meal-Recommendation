@@ -50,7 +50,7 @@ describe('LoginPage', () => {
   it('giải thích lý do và chào khách mới khi bị chuyển tới từ trang cần đăng nhập', () => {
     renderAt('/login?next=%2Frecipes%2Fbun-bo-hue');
 
-    expect(document.title).toBe('Đăng nhập · Bếp Việt');
+    expect(document.title).toBe('Bếp Việt');
     expect(
       screen.getByRole('heading', { level: 1, name: 'Đăng nhập hoặc tạo tài khoản' }),
     ).toBeInTheDocument();
@@ -85,7 +85,7 @@ describe('ResetPasswordPage', () => {
   it('thiếu liên kết hợp lệ thì ẩn form và mời gửi lại liên kết', () => {
     renderAt('/reset-password');
 
-    expect(document.title).toBe('Đặt lại mật khẩu · Bếp Việt');
+    expect(document.title).toBe('Bếp Việt');
     expect(
       screen.getByText('Liên kết đặt lại mật khẩu không hợp lệ hoặc đã hết hạn.'),
     ).toBeInTheDocument();

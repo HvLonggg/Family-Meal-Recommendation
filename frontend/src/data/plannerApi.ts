@@ -116,6 +116,8 @@ export const plannerItemsQueryKey = (userId?: string, from = '', to = '') =>
 export const plannerHistoryQueryKey = (userId?: string) => ['planner-history', userId] as const;
 export const plannerMealHistoryQueryKey = (userId?: string, through = '') =>
   ['planner-meal-history', userId, through] as const;
+export const plannerDaysQueryKey = (userId?: string, from = '', to = '') =>
+  ['planner-history-days', userId, from, to] as const;
 export const plannerShoppingQueryKey = (userId?: string, period?: PlannerPeriod, date?: string) =>
   ['planner-shopping', userId, period, date] as const;
 
@@ -169,6 +171,19 @@ export function getPastMealHistory(
 ) {
   const query = new URLSearchParams({ through, limit: String(limit), offset: String(offset) });
   return apiRequest<PlanMealHistoryPage>(`/planner/history/meals?${query}`, { signal });
+}
+
+/** Ngày có món trong khoảng (tối đa ~2 tháng), để tô chấm trên lịch tháng. */
+export interface PlanDaySummary {
+  plan_date: string;
+  meal_types: PlannerMealType[];
+  item_count: number;
+  completed_count: number;
+}
+
+export function getPlanDays(from: string, to: string, signal?: AbortSignal) {
+  const query = new URLSearchParams({ from, to });
+  return apiRequest<PlanDaySummary[]>(`/planner/history/days?${query}`, { signal });
 }
 
 export function getShoppingList(period: PlannerPeriod, date: string, signal?: AbortSignal) {

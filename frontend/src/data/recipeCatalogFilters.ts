@@ -272,14 +272,17 @@ export function sortCatalogRecipes(
   if (sort === 'relevant' && query.trim()) {
     for (const recipe of recipes) relevance.set(recipe, recipeSearchRank(recipe, query));
   }
+  // Món chưa rõ thời gian / chưa có nguyên liệu xếp cuối khi sắp theo nhanh / ít nguyên liệu.
+  const minutes = (recipe: Recipe) => recipeMinutes(recipe) || Number.MAX_SAFE_INTEGER;
+  const ingredientsOf = (recipe: Recipe) => ingredientCount(recipe) || Number.MAX_SAFE_INTEGER;
   return [...recipes].sort((a, b) => {
     const rank =
       sort === 'quick'
-        ? recipeMinutes(a) - recipeMinutes(b)
+        ? minutes(a) - minutes(b)
         : sort === 'easy'
-          ? difficulty(a) - difficulty(b) || recipeMinutes(a) - recipeMinutes(b)
+          ? difficulty(a) - difficulty(b) || minutes(a) - minutes(b)
           : sort === 'few-ingredients'
-            ? ingredientCount(a) - ingredientCount(b) || recipeMinutes(a) - recipeMinutes(b)
+            ? ingredientsOf(a) - ingredientsOf(b) || minutes(a) - minutes(b)
             : sort === 'relevant'
               ? (relevance.get(b) ?? 0) - (relevance.get(a) ?? 0)
               : 0;

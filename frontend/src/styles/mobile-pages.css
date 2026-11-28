@@ -828,6 +828,15 @@
     margin-bottom: 10px;
   }
 
+  /* Tab nằm trong hàng cùng nút Tổng quan: hàng giữ khoảng cách, tab bám viền dưới. */
+  .page-wrap.planner-page .planner-tabs-row {
+    margin-bottom: 10px;
+  }
+
+  .page-wrap.planner-page .planner-tabs-row .planner-tabs {
+    margin-bottom: -1px;
+  }
+
   .page-wrap.planner-page .planner-tabs button {
     min-height: 40px;
     padding-inline: 10px;

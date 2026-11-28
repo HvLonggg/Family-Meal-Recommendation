@@ -103,6 +103,11 @@ from app.modules.submissions.schemas import (
     SubmissionStatus,
     SubmissionSubmitter,
 )
+from app.modules.submissions.service import (
+    linked_recipe_slugs,
+    publish_submission,
+    unpublish_submission,
+)
 from app.modules.support.models import AdminMealSuggestionEmail, SupportTicket
 from app.modules.support.schemas import (
     AdminSupportTicketListResponse,
@@ -805,14 +810,17 @@ def moderate(
     return detail
 
 
-def _submission_response(item: RecipeSubmission) -> AdminSubmissionResponse:
+def _submission_response(
+    item: RecipeSubmission, recipe_slug: str | None = None
+) -> AdminSubmissionResponse:
     return AdminSubmissionResponse.model_validate(
         {
             **{
                 field: getattr(item, field)
                 for field in AdminSubmissionResponse.model_fields
-                if field != "submitter"
+                if field not in {"submitter", "recipe_slug"}
             },
+            "recipe_slug": recipe_slug,
             "submitter": SubmissionSubmitter(
                 id=item.user.id, full_name=item.user.full_name, email=item.user.email
             ),
@@ -841,8 +849,10 @@ def submissions(
         .limit(limit)
         .offset(offset)
     ).all()
+    slugs = linked_recipe_slugs(session, items)
     return AdminSubmissionListResponse(
-        data=[_submission_response(item) for item in items], total=total
+        data=[_submission_response(item, slugs.get(str(item.id))) for item in items],
+        total=total,
     )
 
 
@@ -864,12 +874,26 @@ def review_submission(
     )
     if item is None:
         raise AdminResourceNotFoundError("Không tìm thấy đề xuất món.")
+    previous_status = item.status
     item.status = payload.status
     item.admin_note = (payload.admin_note or "").strip() or None
+    # Duyệt = xuất bản món vào kho (cùng giao dịch). Món mới làm đổi phiên bản kho
+    # (số món + thời điểm cập nhật) nên bộ đệm /recipes/catalog và máy khách tự làm mới.
+    recipe_slug: str | None = None
+    if payload.status == "approved":
+        recipe_slug = publish_submission(session, item).slug
+    elif previous_status == "approved":
+        unpublish_submission(session, item)
     session.commit()
     session.refresh(item)
-    _audit("submission.review", admin, submission_id=str(submission_id), status_to=item.status)
-    return _submission_response(item)
+    _audit(
+        "submission.review",
+        admin,
+        submission_id=str(submission_id),
+        status_to=item.status,
+        recipe_slug=recipe_slug,
+    )
+    return _submission_response(item, recipe_slug)
 
 
 @router.get("/support", response_model=AdminSupportTicketListResponse, summary="Support requests")

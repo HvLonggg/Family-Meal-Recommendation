@@ -83,7 +83,8 @@ export function useRouteDocumentMeta() {
       const description = meta.description?.trim() || t(DEFAULT_DESCRIPTION);
       const image = absoluteUrl(meta.image || DEFAULT_SHARE_IMAGE);
       const url = canonicalUrl(pathname);
-      document.title = title;
+      // Thanh tab trình duyệt luôn chỉ là tên ứng dụng; tên trang vẫn dùng cho thẻ chia sẻ (OG).
+      document.title = brand;
       setMetaTag('name', 'description', description);
       setMetaTag('property', 'og:site_name', brand);
       setMetaTag('property', 'og:type', 'website');

@@ -1,3 +1,4 @@
+import type { AccountExportData } from '@/features/account/accountReport';
 import type { AuthUser, UserPreferences } from '@/features/auth/types';
 import { apiDelete, apiPatch, apiPost, apiPut, apiRequest } from '@/lib/api/client';
 
@@ -43,7 +44,7 @@ export function revokeAllSessions() {
 }
 
 export function exportAccountData() {
-  return apiRequest<Record<string, unknown>>('/account/export');
+  return apiRequest<AccountExportData>('/account/export');
 }
 
 export function changePassword(currentPassword: string, newPassword: string) {

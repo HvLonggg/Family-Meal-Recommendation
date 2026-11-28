@@ -25,8 +25,17 @@ export interface UserPreferences {
   max_cooking_minutes: number;
   week_start: 'monday' | 'sunday';
   calendar_mode: CalendarMode;
+  /** Tự đánh dấu mùng 1 và rằm âm lịch; mặc định tắt. */
   vegetarian_lunar_days: boolean;
+  /** Ngày ăn chay cố định trong tháng (1–31, dương lịch). Thiếu = không có. */
+  vegetarian_month_days?: number[];
+  /** Thứ ăn chay hằng tuần theo ISO: 0 = Thứ Hai … 6 = Chủ Nhật. */
+  vegetarian_weekdays?: number[];
+  /** Tháng áp dụng lịch cố định (1–12); rỗng = mọi tháng. */
+  vegetarian_months?: number[];
   email_meal_plan_reminders: boolean;
+  /** Email nhắc lên kế hoạch tuần mới, gửi 21:00 tối Chủ nhật (giờ Việt Nam). */
+  weekly_reminder_email?: boolean;
   text_size: 'normal' | 'large';
   reduce_motion: boolean;
   notify_weekly_plan: boolean;

@@ -54,6 +54,7 @@ def _send_message(
     reply_to: str | None = None,
     inline_images: list[tuple[str, bytes, str, str]] | None = None,
     preheader: str = DEFAULT_PREHEADER,
+    headers: dict[str, str] | None = None,
 ) -> None:
     settings = get_settings()
     if not settings.email_enabled:
@@ -68,6 +69,8 @@ def _send_message(
     message["To"] = recipient
     if reply_to:
         message["Reply-To"] = reply_to
+    for header_name, header_value in (headers or {}).items():
+        message[header_name] = header_value
     message.set_content(_branded_plain_text(text, settings.support_email))
     message.add_alternative(
         _branded_html(html, settings.support_email, preheader=preheader), subtype="html"
@@ -514,7 +517,10 @@ def send_security_notification(*, recipient: str, event: str) -> None:
         "registration": (
             "Chào mừng bạn đến với Bếp Việt",
             "Tài khoản Bếp Việt của bạn đã được tạo thành công. Chúc bạn có những bữa cơm ngon "
-            "và trải nghiệm thật hữu ích cùng Bếp Việt.",
+            "và trải nghiệm thật hữu ích cùng Bếp Việt. Khi email của bạn đã được xác minh, "
+            "mỗi tối Chủ nhật lúc 21:00 (giờ Việt Nam) Bếp Việt sẽ gửi email nhắc bạn lên kế "
+            "hoạch bữa ăn cho tuần mới; bạn có thể tắt nhắc này bất cứ lúc nào trong Cài đặt "
+            "tài khoản.",
             None,
         ),
         "password_reset": (
@@ -933,6 +939,147 @@ def send_meal_plan_reminder_email(
         closing_message="Chúc bạn chuẩn bị bữa cơm thật vui và ngon miệng cùng gia đình.",
         recipes=recipes,
         plan_date=plan_date,
+    )
+
+
+# 7 ngày x 3 bữa (sáng, trưa, tối).
+WEEKLY_PLAN_SLOTS = 21
+WEEKLY_REMINDER_TIPS = (
+    "Chọn trước các bữa tối cả tuần, rồi thêm bữa trưa và bữa sáng nếu cần: đi chợ một lần "
+    "sẽ đỡ mất thời gian và đỡ lãng phí thực phẩm.",
+    "Xen kẽ món kho, canh, xào và rau luộc để bữa cơm đủ vị, đủ chất.",
+    "Chưa biết nấu gì? Hãy nhờ Chú Rồng gợi ý món theo khẩu vị và số người ăn trong nhà.",
+)
+
+
+def _weekly_plan_summary(planned_meals: int) -> tuple[str, str]:
+    if planned_meals <= 0:
+        return (
+            "Tuần tới chưa có bữa nào trong kế hoạch",
+            "Chỉ cần vài phút chọn món, cả tuần sẽ nhẹ đầu hơn nhiều.",
+        )
+    if planned_meals >= WEEKLY_PLAN_SLOTS:
+        return (
+            f"Đã đủ {WEEKLY_PLAN_SLOTS}/{WEEKLY_PLAN_SLOTS} bữa cho tuần tới",
+            "Kế hoạch đã đầy đủ. Bạn có thể xem lại và đổi món nếu muốn.",
+        )
+    missing = WEEKLY_PLAN_SLOTS - planned_meals
+    return (
+        f"Đã lên {planned_meals}/{WEEKLY_PLAN_SLOTS} bữa cho tuần tới",
+        f"Còn {missing} bữa chưa có món. Bổ sung cho đủ để tuần mới thật thong thả.",
+    )
+
+
+def _weekly_progress_bar(planned_meals: int) -> str:
+    filled = round(min(max(planned_meals, 0), WEEKLY_PLAN_SLOTS) / WEEKLY_PLAN_SLOTS * 100)
+    cell = "height:10px;line-height:10px;font-size:0"
+    filled_cell = (
+        f"<td width='{filled}%' bgcolor='#b43b2c' style='width:{filled}%;{cell};"
+        "background:#b43b2c'>&nbsp;</td>"
+        if filled
+        else ""
+    )
+    rest_cell = (
+        f"<td bgcolor='#f0e4d6' style='{cell};background:#f0e4d6'>&nbsp;</td>"
+        if filled < 100
+        else ""
+    )
+    return (
+        "<table role='presentation' width='100%' cellspacing='0' cellpadding='0' "
+        "style='width:100%;border-collapse:separate;border-radius:999px;overflow:hidden;"
+        f"background:#f0e4d6'><tr>{filled_cell}{rest_cell}</tr></table>"
+    )
+
+
+def send_weekly_plan_reminder_email(
+    *,
+    recipient: str,
+    recipient_name: str,
+    week_start: date,
+    planned_meals: int,
+    unsubscribe_url: str,
+) -> None:
+    """Email nhắc lên kế hoạch bữa ăn tuần mới (gửi tối Chủ nhật), kèm link hủy một chạm."""
+    settings = get_settings()
+    site_base = str(settings.frontend_url).rstrip("/")
+    planner_url = f"{site_base}/planner"
+    settings_url = f"{site_base}/account/settings"
+    week_label = f"{week_start:%d/%m} – {week_start + timedelta(days=6):%d/%m}"
+    greeting_name = recipient_name.strip() or "bạn"
+    summary_title, summary_detail = _weekly_plan_summary(planned_meals)
+    cta_label = "Lên kế hoạch tuần tới"
+    reason = (
+        "Bạn nhận email này vì tài khoản Bếp Việt đang bật “Nhắc kế hoạch tuần” "
+        "(gửi lúc 21:00 tối Chủ nhật, giờ Việt Nam)."
+    )
+    title_font = "Georgia,'Times New Roman',serif"
+
+    text = (
+        f"Chào {greeting_name},\n\n"
+        f"Tuần mới ({week_label}) sắp bắt đầu. {summary_title}. {summary_detail}\n\n"
+        f"{cta_label}: {planner_url}\n\n"
+        "Vài gợi ý nhỏ:\n"
+        + "\n".join(f"- {tip}" for tip in WEEKLY_REMINDER_TIPS)
+        + "\n\nChúc bạn một tuần nhiều bữa cơm ngon.\nĐội ngũ Bếp Việt\n\n"
+        f"{reason}\n"
+        f"Hủy nhận email nhắc tuần (một lần bấm): {unsubscribe_url}\n"
+        f"Quản lý thông báo trong Cài đặt: {settings_url}"
+    )
+    tips_html = "".join(
+        f"<li style='margin:0 0 8px'>{escape(tip)}</li>" for tip in WEEKLY_REMINDER_TIPS
+    )
+    link_style = "color:#9d3e2d;text-decoration:underline"
+    html = (
+        "<table role='presentation' width='100%' cellspacing='0' cellpadding='0' "
+        "style='width:100%;border-collapse:separate;margin:0 0 22px;border-radius:18px;"
+        "background:#fff6e9;border:1px solid #ead8c4'>"
+        "<tr><td style='padding:24px 24px 22px'>"
+        "<div style='font-size:11px;font-weight:700;letter-spacing:1.6px;color:#a74735'>"
+        "KẾ HOẠCH TUẦN MỚI · BẾP VIỆT</div>"
+        f"<h1 style='margin:10px 0 6px;font-family:{title_font};font-size:26px;"
+        f"font-weight:700;line-height:1.3;color:#762b21'>Chào {escape(greeting_name)},</h1>"
+        "<p style='margin:0;font-size:15px;line-height:1.65;color:#65574f'>"
+        f"Tuần mới <strong>{escape(week_label)}</strong> sắp bắt đầu. "
+        "Dành vài phút tối nay lên thực đơn để cả nhà có những bữa cơm chủ động, ngon miệng."
+        "</p></td></tr></table>"
+        "<table role='presentation' width='100%' cellspacing='0' cellpadding='0' "
+        "style='width:100%;border-collapse:separate;margin:0 0 22px;border-radius:14px;"
+        "background:#ffffff;border:1px solid #ecdccb'>"
+        "<tr><td style='padding:18px 20px'>"
+        "<div style='margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:1.4px;"
+        "color:#b7791f'>TUẦN TỚI CỦA BẠN</div>"
+        f"<div style='margin:0 0 4px;font-family:{title_font};font-size:20px;font-weight:700;"
+        f"line-height:1.35;color:#2f2320'>{escape(summary_title)}</div>"
+        f"<p style='margin:0 0 14px;font-size:14px;line-height:1.6;color:#6b5b51'>"
+        f"{escape(summary_detail)}</p>"
+        f"{_weekly_progress_bar(planned_meals)}"
+        "</td></tr></table>"
+        f"<div style='margin:0 0 26px'>{_email_button(planner_url, cta_label)}</div>"
+        "<p style='margin:0 0 8px;font-size:11px;font-weight:700;letter-spacing:1.4px;"
+        "color:#b7791f'>VÀI GỢI Ý NHỎ</p>"
+        "<ul style='margin:0 0 22px;padding-left:20px;font-size:14px;line-height:1.65;"
+        f"color:#49382f'>{tips_html}</ul>"
+        "<p style='margin:0 0 22px;color:#6b5b51;font-size:14px;line-height:1.6'>"
+        "Chúc bạn một tuần nhiều bữa cơm ngon,<br>"
+        f"<strong style='font-family:{title_font};color:#762b21'>Đội ngũ Bếp Việt</strong></p>"
+        "<div style='padding-top:16px;border-top:1px solid #eee3d7;font-size:12px;"
+        "line-height:1.7;color:#76675d'>"
+        f"{escape(reason)} "
+        f"<a href='{escape(unsubscribe_url, quote=True)}' style='{link_style}'>"
+        "Hủy nhận email nhắc tuần</a> chỉ với một lần bấm, hoặc quản lý thông báo trong "
+        f"<a href='{escape(settings_url, quote=True)}' style='{link_style}'>Cài đặt tài khoản</a>."
+        "</div>"
+    )
+    _send_message(
+        recipient=recipient,
+        subject=f"Lên kế hoạch bữa ăn tuần {week_label} | Bếp Việt",
+        text=text,
+        html=html,
+        preheader=f"{summary_title}. Dành vài phút lên thực đơn tuần {week_label}."[:140],
+        headers={
+            "List-Unsubscribe": f"<{unsubscribe_url}>",
+            "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
+        },
     )
 
 

@@ -101,6 +101,9 @@ class Settings(BaseSettings):
     # dạng base64url (32 byte). Không cấu hình thì chuông chỉ kêu trong ứng dụng.
     web_push_vapid_private_key: SecretStr | None = None
     web_push_subject: str | None = None
+    # Render Free không có cron: GitHub Actions gọi các endpoint /internal/* kèm khóa này
+    # (header X-Cron-Secret). Để trống = tắt hẳn các endpoint đó (trả 503).
+    cron_secret: SecretStr | None = None
 
     @field_validator("maintenance_message", "maintenance_ends_at", mode="before")
     @classmethod

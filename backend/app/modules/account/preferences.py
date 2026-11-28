@@ -3,7 +3,7 @@
 from decimal import ROUND_HALF_UP, Decimal
 from typing import Any, Literal
 
-from pydantic import BaseModel, ConfigDict, Field, ValidationError, field_validator
+from pydantic import BaseModel, ConfigDict, Field, ValidationError, field_validator, model_validator
 
 Language = Literal["vi", "en"]
 Appetite = Literal["light", "normal", "big"]
@@ -50,6 +50,12 @@ class HouseholdMember(BaseModel):
         return " ".join(value.strip().split())
 
 
+def _sorted_in_range(value: list[int], low: int, high: int, label: str) -> list[int]:
+    if any(item < low or item > high for item in value):
+        raise ValueError(f"{label} phải nằm trong khoảng {low}–{high}.")
+    return sorted(set(value))
+
+
 class UserPreferences(BaseModel):
     """Giá trị đọc ra luôn đầy đủ mặc định để giao diện không phải đoán."""
 
@@ -67,8 +73,16 @@ class UserPreferences(BaseModel):
     max_cooking_minutes: int = Field(default=0, ge=0, le=240)
     week_start: Literal["monday", "sunday"] = "monday"
     calendar_mode: Literal["solar", "lunar"] = "solar"
+    # Mặc định tắt: chỉ tự đánh dấu mùng 1/rằm khi người dùng tự bật.
     vegetarian_lunar_days: bool = False
+    # Lịch ăn chay cố định. Ngày trong tuần theo ISO: 0 = Thứ Hai ... 6 = Chủ Nhật.
+    vegetarian_month_days: list[int] = Field(default_factory=list, max_length=31)
+    vegetarian_weekdays: list[int] = Field(default_factory=list, max_length=7)
+    # Rỗng = áp dụng mọi tháng.
+    vegetarian_months: list[int] = Field(default_factory=list, max_length=12)
     email_meal_plan_reminders: bool = True
+    # Email nhắc lên kế hoạch tuần mới, gửi 21:00 tối Chủ nhật (giờ Việt Nam).
+    weekly_reminder_email: bool = True
     text_size: Literal["normal", "large"] = "normal"
     reduce_motion: bool = False
     notify_weekly_plan: bool = True
@@ -81,6 +95,19 @@ class UserPreferences(BaseModel):
     admin_notify_pending: bool = True
     admin_landing: Literal["home", "admin"] = "admin"
 
+    @model_validator(mode="before")
+    @classmethod
+    def inherit_legacy_weekly_toggle(cls, data: Any) -> Any:
+        # Nút "Nhắc kế hoạch tuần" cũ (notify_weekly_plan) chưa từng gửi email; ai đã tắt nút
+        # đó thì vẫn coi là không muốn nhận email tuần cho đến khi tự bật lại.
+        if (
+            isinstance(data, dict)
+            and "weekly_reminder_email" not in data
+            and data.get("notify_weekly_plan") is False
+        ):
+            return {**data, "weekly_reminder_email": False}
+        return data
+
     @field_validator("household_description", "allergies")
     @classmethod
     def clean_text(cls, value: str) -> str:
@@ -90,6 +117,21 @@ class UserPreferences(BaseModel):
     @classmethod
     def unique_items(cls, value: list[str]) -> list[str]:
         return list(dict.fromkeys(value))
+
+    @field_validator("vegetarian_month_days")
+    @classmethod
+    def valid_month_days(cls, value: list[int]) -> list[int]:
+        return _sorted_in_range(value, 1, 31, "Ngày trong tháng")
+
+    @field_validator("vegetarian_weekdays")
+    @classmethod
+    def valid_weekdays(cls, value: list[int]) -> list[int]:
+        return _sorted_in_range(value, 0, 6, "Thứ trong tuần")
+
+    @field_validator("vegetarian_months")
+    @classmethod
+    def valid_months(cls, value: list[int]) -> list[int]:
+        return _sorted_in_range(value, 1, 12, "Tháng")
 
     def household_portions(self) -> float:
         return sum(portion_factor(member.age, member.appetite) for member in self.household_members)

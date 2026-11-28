@@ -1,10 +1,11 @@
-from datetime import datetime
+from datetime import date, datetime
 from typing import Any
 from uuid import UUID, uuid4
 
 from sqlalchemy import (
     JSON,
     Boolean,
+    Date,
     DateTime,
     ForeignKey,
     Index,
@@ -42,6 +43,8 @@ class User(Base):
     avatar_content_type: Mapped[str | None] = mapped_column(String(32))
     avatar_updated_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
     last_login_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    # Thứ Hai của tuần gần nhất đã gửi email nhắc lên kế hoạch (chống gửi trùng trong một tuần).
+    weekly_reminder_week: Mapped[date | None] = mapped_column(Date)
     # Bằng chứng đồng ý Điều khoản/Chính sách: thời điểm và phiên bản người dùng chấp nhận.
     terms_accepted_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
     terms_version: Mapped[str | None] = mapped_column(String(16))

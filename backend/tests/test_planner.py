@@ -382,3 +382,62 @@ def test_vegetarian_days_require_authentication(client: TestClient) -> None:
         ).status_code
         == 401
     )
+
+
+def test_history_days_summarize_a_month_privately_and_limit_range(
+    client: TestClient, database_session_factory: sessionmaker[Session]
+) -> None:
+    seed_planner_recipes(database_session_factory)
+    headers = register_and_login(client, "days-planner@example.com")
+    other_headers = register_and_login(client, "days-planner-other@example.com")
+
+    for plan_date, meal_type, slugs in (
+        ("2026-10-07", "dinner", ["bun-cha-ha-noi", "canh-chua-ca"]),
+        ("2026-10-07", "breakfast", ["bun-cha-ha-noi"]),
+        ("2026-10-20", "lunch", ["canh-chua-ca"]),
+        ("2026-11-02", "lunch", ["canh-chua-ca"]),
+    ):
+        response = client.post(
+            "/api/v1/planner/meals",
+            headers=headers,
+            json={"recipe_slugs": slugs, "plan_date": plan_date, "meal_type": meal_type},
+        )
+        assert response.status_code == 201, response.text
+    client.patch(
+        "/api/v1/planner/meals/status",
+        headers=headers,
+        json={"plan_date": "2026-10-07", "meal_type": "dinner", "completion_status": "completed"},
+    )
+
+    days = client.get("/api/v1/planner/history/days?from=2026-10-01&to=2026-10-31", headers=headers)
+    assert days.status_code == 200
+    assert days.json() == [
+        {
+            "plan_date": "2026-10-07",
+            "meal_types": ["breakfast", "dinner"],
+            "item_count": 3,
+            "completed_count": 2,
+        },
+        {"plan_date": "2026-10-20", "meal_types": ["lunch"], "item_count": 1, "completed_count": 0},
+    ]
+    assert (
+        client.get(
+            "/api/v1/planner/history/days?from=2026-10-01&to=2026-10-31", headers=other_headers
+        ).json()
+        == []
+    )
+    assert (
+        client.get(
+            "/api/v1/planner/history/days?from=2026-10-31&to=2026-10-01", headers=headers
+        ).status_code
+        == 422
+    )
+    assert (
+        client.get(
+            "/api/v1/planner/history/days?from=2026-01-01&to=2026-06-01", headers=headers
+        ).status_code
+        == 422
+    )
+    assert (
+        client.get("/api/v1/planner/history/days?from=2026-10-01&to=2026-10-31").status_code == 401
+    )

@@ -114,6 +114,7 @@ beforeEach(() => {
   itemRequests = [];
   mockUser.preferences = undefined;
   authState.guest = false;
+  window.localStorage.clear();
   vi.stubGlobal('fetch', (input: string | URL, init?: RequestInit) => {
     const requestUrl = new URL(typeof input === 'string' ? input : input.href, 'http://localhost');
     const vegetarianMatch = /\/planner\/vegetarian-days\/(\d{4}-\d{2}-\d{2})$/.exec(
@@ -253,6 +254,77 @@ afterEach(() => {
 });
 
 describe('planner page', () => {
+  it('shows a read-only week overview that collapses busy meals and remembers the mode', async () => {
+    const today = vietnamToday();
+    plannedItems = [
+      ...Array.from({ length: 5 }, (_, index) =>
+        planItem(`lunch-${index}`, `mon-trua-${index}`, `Món trưa ${index + 1}`, today),
+      ),
+      planItem('dinner-1', 'canh-chua', 'Canh chua cá', today, 'dinner'),
+    ];
+    const view = renderPlanner();
+
+    await screen.findByRole('button', { name: /^Mở bữa trưa .*: Món trưa 1$/ });
+    const toggle = screen.getByRole('button', { name: 'Xem tổng quan tuần' });
+    expect(toggle).toHaveAttribute('aria-pressed', 'false');
+    fireEvent.click(toggle);
+    expect(toggle).toHaveAttribute('aria-pressed', 'true');
+    expect(window.localStorage.getItem('bep-viet:planner-view-mode')).toBe('overview');
+
+    const overview = screen.getByRole('region', { name: 'Tổng quan tuần' });
+    // Chỉ đọc: không còn nút thêm món ở ô hay thanh công cụ.
+    expect(screen.queryByRole('button', { name: /^Thêm món vào / })).toBeNull();
+    expect(screen.queryByRole('button', { name: 'Thêm bữa ăn' })).toBeNull();
+    expect(within(overview).getByText('Tổng số món').nextSibling).toHaveTextContent('6');
+
+    const lunch = within(overview).getByRole('button', { name: /^Xem bữa trưa .* · 5 món:/ });
+    expect(lunch).toHaveAttribute('data-slot', `${today}:lunch`);
+    expect(within(lunch).getByText('Món trưa 1')).toBeInTheDocument();
+    expect(within(lunch).queryByText('Món trưa 3')).toBeNull();
+    expect(within(lunch).getByText('+3 món')).toBeInTheDocument();
+    const dinner = within(overview).getByRole('button', { name: /^Xem bữa tối .* · 1 món:/ });
+    expect(within(dinner).queryByText(/^\+/)).toBeNull();
+
+    // Bấm ô mở bảng chi tiết ở chế độ chỉ xem: đủ món, không có thao tác sửa.
+    fireEvent.click(lunch);
+    const panel = screen.getByRole('dialog', { name: 'Bữa trưa' });
+    expect(
+      within(panel).getByRole('link', { name: 'Xem chi tiết Món trưa 5' }),
+    ).toBeInTheDocument();
+    expect(within(panel).queryByRole('button', { name: /^Xóa / })).toBeNull();
+    expect(within(panel).queryByRole('button', { name: /khẩu phần/ })).toBeNull();
+    expect(within(panel).queryByRole('button', { name: 'Thêm món' })).toBeNull();
+    fireEvent.keyDown(panel, { key: 'Escape' });
+    expect(lunch).toHaveFocus();
+
+    view.unmount();
+    renderPlanner();
+    expect(
+      await screen.findByRole('button', { name: /^Xem bữa trưa .* · 5 món:/ }),
+    ).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Xem tổng quan tuần' })).toHaveAttribute(
+      'aria-pressed',
+      'true',
+    );
+  });
+
+  it('shows guests a friendly empty overview with a way back to editing', async () => {
+    authState.guest = true;
+    window.localStorage.setItem('bep-viet:planner-view-mode', 'overview');
+    renderPlanner();
+
+    expect(
+      await screen.findByText('Tuần này chưa có bữa nào được lên kế hoạch'),
+    ).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: /Về lịch chỉnh sửa/ }));
+    expect(screen.getByRole('button', { name: 'Xem tổng quan tuần' })).toHaveAttribute(
+      'aria-pressed',
+      'false',
+    );
+    expect(screen.getAllByRole('button', { name: /^Thêm món vào / }).length).toBeGreaterThan(0);
+    expect(window.localStorage.getItem('bep-viet:planner-view-mode')).toBe('edit');
+  });
+
   it('lets guests try the calendar and asks them to sign in only when saving a meal', async () => {
     authState.guest = true;
     renderPlanner();
@@ -417,7 +489,12 @@ describe('planner page', () => {
     vi.useFakeTimers({ toFake: ['Date'] });
     // 25/09/2026 là rằm tháng Tám âm lịch (Tết Trung thu) theo giờ Việt Nam.
     vi.setSystemTime(new Date('2026-09-25T03:00:00Z'));
-    mockUser.preferences = { ...DEFAULT_PREFERENCES, vegetarian_lunar_days: true };
+    // Đang dùng âm lịch nên ngày rằm được tự đánh dấu (lịch dương sẽ đánh dấu ngày 1 và 15 dương).
+    mockUser.preferences = {
+      ...DEFAULT_PREFERENCES,
+      vegetarian_lunar_days: true,
+      calendar_mode: 'lunar',
+    };
     renderPlanner();
 
     const hero = await screen.findByRole('region', { name: 'Lịch hôm nay' });
@@ -432,9 +509,8 @@ describe('planner page', () => {
     );
 
     await screen.findByText('Tuần này');
-    // Ngày âm lịch không lặp lại ở nhãn tuần khi đang xem dương lịch.
-    expect(screen.getByText('21/09 – 27/09 · 2026')).toBeInTheDocument();
-    expect(screen.queryByText('ÂL 11/8 – 17/8 · Bính Ngọ')).toBeNull();
+    // Đang xem âm lịch: nhãn tuần theo âm lịch.
+    expect(screen.getByText('ÂL 11/8 – 17/8 · Bính Ngọ')).toBeInTheDocument();
     expect(screen.queryByText(/Theo giờ Việt Nam/)).toBeNull();
     const fullMoonToggle = screen.getByRole('button', {
       name: 'Bỏ đánh dấu ăn chay ngày Thứ Sáu, 25/09',
@@ -459,15 +535,14 @@ describe('planner page', () => {
     );
     expect(screen.getByText('1 ngày ăn chay trong tuần')).toBeInTheDocument();
 
-    fireEvent.click(within(hero).getByRole('button', { name: 'Âm lịch' }));
-    await waitFor(() => expect(preferencePayloads[0]?.calendar_mode).toBe('lunar'));
+    fireEvent.click(within(hero).getByRole('button', { name: 'Dương lịch' }));
+    await waitFor(() => expect(preferencePayloads[0]?.calendar_mode).toBe('solar'));
     expect(updateUser).toHaveBeenCalled();
-    expect(within(hero).getByRole('button', { name: 'Âm lịch' })).toHaveAttribute(
+    expect(within(hero).getByRole('button', { name: 'Dương lịch' })).toHaveAttribute(
       'aria-pressed',
       'true',
     );
-    expect(screen.getByText('DL 25/09')).toBeInTheDocument();
-    expect(screen.getByText('ÂL 11/8 – 17/8 · Bính Ngọ')).toBeInTheDocument();
+    expect(screen.getByText('21/09 – 27/09 · 2026')).toBeInTheDocument();
 
     // Ô trống bấm được để thêm món, không lặp chữ "Chưa có món".
     expect(screen.queryByText('Chưa có món')).toBeNull();

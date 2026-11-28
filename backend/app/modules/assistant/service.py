@@ -25,6 +25,7 @@ from app.modules.account.preferences import read_preferences
 from app.modules.assistant import (
     ai,
     engine,
+    household,
     identity,
     knowledge,
     memory,
@@ -329,7 +330,8 @@ def _draft_reply(
     tone: persona.Persona,
 ) -> _Draft:
     notes = memory.notes(session, user)
-    prefs = engine.preferences_from(notes) if notes else None
+    # Cài đặt tài khoản (dị ứng, số người, ăn cay, ăn chay…) gộp với ghi nhớ; khách chỉ có ghi nhớ.
+    prefs, family = household.for_turn(user, notes, payload.message)
     catalog = engine.load_catalog(session)
     # Gợi ý tiếp (chip, lời mời đổi món) chỉ thỉnh thoảng: lượt đầu, khi chưa hiểu câu hỏi,
     # hoặc mỗi vài lượt, để cuộc trò chuyện không lặp đi lặp lại.
@@ -432,7 +434,11 @@ def _draft_reply(
             "knowledge": (forecast.context if forecast is not None else "")
             + _wants_block(local.intent, payload.language)
             + rag.context_block(hits),
-            "memories": memory.context_block(notes),
+            "memories": "\n".join(
+                block
+                for block in (household.context_block(family), memory.context_block(notes))
+                if block
+            ),
             # Bản sắc đã nằm trong prompt hệ thống; ở đây chỉ thêm giọng điệu.
             "persona": persona.tone_block(tone),
             "moment": engine.moment_block(),
@@ -455,6 +461,10 @@ def _draft_reply(
             allowed = top.source_type == "recipe" and entry and engine.allowed(entry, prefs)
             recipes = [entry] if allowed and entry else []
             kind = "knowledge"
+    note = household.applied_note(family, payload.language)
+    if note and recipes and kind in ("suggest", "weather"):
+        # Câu soạn sẵn nhắc ngắn ràng buộc đã áp dụng từ Cài đặt (AI tự diễn đạt từ hồ sơ).
+        content = f"{content}\n\n{note}"
     if tone == "sassy":
         # Chỉ dùng khi trả lời bằng bộ máy nội bộ (AI đã tự nói giọng trả treo).
         content = persona.decorate(content, _quip(kind, local.intent, payload))
@@ -559,6 +569,28 @@ def begin_turn(session: Session, *, payload: ChatRequest, user: User | None) -> 
     )
     tone = _tone(user)
     command = memory.parse_command(payload.message) if not files else None
+    if (
+        user is not None
+        and not files
+        and (
+            (command is not None and command.action == "recall")
+            or (command is None and household.asks_profile(payload.message))
+        )
+    ):
+        # "Bạn biết gì về tôi / nhà tôi mấy người": trả lời từ Cài đặt + ghi nhớ của chính
+        # người đang đăng nhập, không gửi tới AI.
+        content, actions, suggestions = household.describe(
+            user, memory.notes(session, user), payload.language
+        )
+        turn.reply = {
+            "content": content,
+            "recipes": [],
+            "suggestions": suggestions,
+            "actions": actions,
+            "sources": [],
+            "mode": "local",
+        }
+        return turn
     if command is not None:
         # Lệnh ghi nhớ trả lời xác định, không cần AI và không gửi đi đâu.
         content, actions, suggestions = memory.handle(session, user, command, payload.language)
@@ -634,7 +666,7 @@ def _inhouse_reply(
             source=SessionRecipeSource(session),
             history=history,
             avoid=avoid,
-            preferences=engine.preferences_from(notes) if notes else None,
+            preferences=household.for_turn(user, notes, payload.message)[0],
         ),
     )
     if decision.route != "inhouse" or decision.answer is None:

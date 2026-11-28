@@ -71,7 +71,7 @@ export function MySubmissionsPage() {
                   <span>{formatDisplayDate(item.updated_at)}</span>
                 </div>
                 <h2>{item.name}</h2>
-                <p>{item.story}</p>
+                {item.story ? <p>{item.story}</p> : null}
                 {item.admin_note ? (
                   <p className="manage-card__note">
                     <AppIcon name="message" size={15} /> {t('Phản hồi từ ban nội dung')}:{' '}
@@ -79,6 +79,11 @@ export function MySubmissionsPage() {
                   </p>
                 ) : null}
                 <div className="manage-card__actions">
+                  {item.recipe_slug ? (
+                    <Link className="button button--primary" to={`/recipes/${item.recipe_slug}`}>
+                      <AppIcon name="eye" size={15} /> {t('Xem món trong kho')}
+                    </Link>
+                  ) : null}
                   {item.status !== 'approved' ? (
                     <Link className="button button--outline" to={`/submit-recipe?edit=${item.id}`}>
                       <AppIcon name="pen" size={15} /> {t('Chỉnh sửa')}

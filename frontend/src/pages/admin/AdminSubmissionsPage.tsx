@@ -1,4 +1,5 @@
 import { keepPreviousData, useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import { Link } from 'react-router';
 
 import { AppIcon } from '@/components/common/AppIcon';
 import { useConfirmDialog } from '@/components/common/useConfirmDialog';
@@ -53,7 +54,14 @@ export function AdminSubmissionsPage() {
       title: approved
         ? t('Duyệt đề xuất “{name}”?', { name: item.name })
         : t('Từ chối đề xuất “{name}”?', { name: item.name }),
-      confirmLabel: approved ? t('Duyệt') : t('Từ chối'),
+      ...(approved
+        ? {
+            description: t(
+              'Món sẽ được thêm ngay vào kho món công khai. Phần còn thiếu (ảnh, nguyên liệu, các bước) có thể bổ sung sau ở mục Món ăn.',
+            ),
+          }
+        : {}),
+      confirmLabel: approved ? t('Duyệt và xuất bản') : t('Từ chối'),
       tone: approved ? 'primary' : 'danger',
       note: {
         label: approved
@@ -122,25 +130,35 @@ export function AdminSubmissionsPage() {
                 <p>
                   {t(item.region)} · {t(item.category)} ·{' '}
                   {t('{count} người', { count: item.servings })} ·{' '}
-                  {t('{minutes} phút', { minutes: item.total_minutes })}
+                  {item.total_minutes > 0
+                    ? t('{minutes} phút', { minutes: item.total_minutes })
+                    : t('Chưa rõ thời gian')}
                 </p>
                 <details className="submission-detail">
                   <summary>{t('Xem công thức chi tiết')}</summary>
                   <div>
                     <h3>{t('Câu chuyện')}</h3>
-                    <p>{item.story}</p>
+                    <p>{item.story || t('Chưa cung cấp')}</p>
                     <h3>{t('Nguyên liệu')}</h3>
-                    <ul>
-                      {item.ingredients.split('\n').map((line, index) => (
-                        <li key={index}>{line}</li>
-                      ))}
-                    </ul>
+                    {item.ingredients ? (
+                      <ul>
+                        {item.ingredients.split('\n').map((line, index) => (
+                          <li key={index}>{line}</li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p>{t('Chưa cung cấp')}</p>
+                    )}
                     <h3>{t('Các bước')}</h3>
-                    <ol>
-                      {item.steps.split('\n').map((line, index) => (
-                        <li key={index}>{line}</li>
-                      ))}
-                    </ol>
+                    {item.steps ? (
+                      <ol>
+                        {item.steps.split('\n').map((line, index) => (
+                          <li key={index}>{line}</li>
+                        ))}
+                      </ol>
+                    ) : (
+                      <p>{t('Chưa cung cấp')}</p>
+                    )}
                   </div>
                 </details>
                 {item.admin_note ? (
@@ -149,6 +167,11 @@ export function AdminSubmissionsPage() {
                   </p>
                 ) : null}
                 <div className="manage-card__actions">
+                  {item.recipe_slug ? (
+                    <Link className="button button--outline" to={`/recipes/${item.recipe_slug}`}>
+                      <AppIcon name="eye" size={15} /> {t('Xem món trong kho')}
+                    </Link>
+                  ) : null}
                   {item.status !== 'approved' ? (
                     <button
                       className="button button--primary"

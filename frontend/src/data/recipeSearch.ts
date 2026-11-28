@@ -1,6 +1,6 @@
 import { useSyncExternalStore } from 'react';
 
-import { getRecipeCatalog, recipeMinutes, type Recipe } from '@/data/recipes';
+import { getRecipeCatalog, isQuickRecipe, type Recipe } from '@/data/recipes';
 import {
   accentKey,
   FUZZY_MIN_LENGTH,
@@ -423,7 +423,7 @@ function parseRecipeQuery(query: string): RecipeQuery {
     if (facet === 'easy') {
       filters.push((item) => ['de', 'easy'].includes(normalizeSearchText(item.difficulty)));
     }
-    if (facet === 'quick') filters.push((item) => recipeMinutes(item) <= 30);
+    if (facet === 'quick') filters.push((item) => isQuickRecipe(item));
   }
 
   const regionMatch = remainingQuery.match(
@@ -444,7 +444,7 @@ function parseRecipeQuery(query: string): RecipeQuery {
   const timeMatch = remainingQuery.match(TIME_QUERY_PATTERN);
   if (timeMatch) {
     const maxMinutes = Number(timeMatch[1]);
-    filters.push((item) => recipeMinutes(item) <= maxMinutes);
+    filters.push((item) => isQuickRecipe(item, maxMinutes));
     remainingQuery = remainingQuery.replace(timeMatch[0], ' ').replace(/\s+/g, ' ').trim();
     remainingQuery = remainingQuery
       .split(' ')

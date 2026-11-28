@@ -6,41 +6,35 @@ import { AppIcon, type IconName } from '@/components/common/AppIcon';
 import { Button } from '@/components/ui/Button';
 import { Notice, Panel, Toggle } from '@/components/ui/Workspace';
 import { exportAccountData, savePreferences } from '@/features/account/accountApi';
-import { parseHouseholdDescription } from '@/features/account/householdParser';
+import { withMemberLabels } from '@/features/account/householdMembers';
 import {
   DEFAULT_PREFERENCES,
   dietaryTagLabels,
   householdPortions,
-  householdPresets,
-  portionFactor,
   recommendedServings,
 } from '@/features/account/preferences';
 import { useAuth } from '@/features/auth/AuthContext';
-import type {
-  Appetite,
-  DietaryTag,
-  HouseholdMember,
-  Language,
-  PreferredRegion,
-  UserPreferences,
-} from '@/features/auth/types';
+import type { DietaryTag, Language, PreferredRegion, UserPreferences } from '@/features/auth/types';
 import { useI18n } from '@/features/i18n/I18nContext';
 import { formatLunarLong } from '@/features/planner/plannerCalendar';
 import { errorMessage } from '@/lib/errors';
 import { formatDisplayDate } from '@/lib/formatDate';
 import { lunarFromIsoDate, vietnamToday } from '@/lib/lunarCalendar';
+import { AllergyField } from '@/pages/account/AllergyField';
+import { HouseholdMembersEditor } from '@/pages/account/HouseholdMembersEditor';
 import { MemoryPanel } from '@/pages/account/MemoryPanel';
+import { VegetarianDaysPanel } from '@/pages/account/VegetarianDaysPanel';
 
-const appetiteLabels: Record<Appetite, string> = {
-  light: 'Ăn ít',
-  normal: 'Bình thường',
-  big: 'Ăn nhiều',
-};
 const regions: PreferredRegion[] = ['Bắc', 'Trung', 'Nam'];
 const cookingTimes = [0, 20, 30, 45, 60, 90];
 
 function comparable(preferences: UserPreferences) {
-  return JSON.stringify({ ...preferences, computed_portions: 0, computed_servings: 0 });
+  return JSON.stringify({
+    ...DEFAULT_PREFERENCES,
+    ...preferences,
+    computed_portions: 0,
+    computed_servings: 0,
+  });
 }
 
 type SettingsTab = 'general' | 'meals' | 'notify' | 'assistant' | 'admin';
@@ -58,6 +52,7 @@ const SECTION_TAB: Record<string, SettingsTab> = {
   household: 'meals',
   diet: 'meals',
   planner: 'notify',
+  vegetarian: 'notify',
   privacy: 'notify',
   'assistant-tone': 'assistant',
   memories: 'assistant',
@@ -104,15 +99,23 @@ export function SettingsPage() {
     onError: (error) => setNotice({ tone: 'danger', text: errorMessage(error, t) }),
   });
   const exportMutation = useMutation({
-    mutationFn: exportAccountData,
-    onSuccess: (data) => {
-      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = `bep-viet-du-lieu-${new Date().toISOString().slice(0, 10)}.json`;
-      link.click();
-      URL.revokeObjectURL(url);
+    // Báo cáo PDF: dựng trang in từ dữ liệu xuất rồi mở hộp thoại in ("Lưu dưới dạng PDF").
+    mutationFn: async () => {
+      const [data, report] = await Promise.all([
+        exportAccountData(),
+        import('@/features/account/accountReport'),
+      ]);
+      const options = { today: todayInVietnam, phone: user?.phone_e164 ?? null, t };
+      const html = report.buildAccountReportHtml(data, options);
+      return report.printAccountReport(
+        html,
+        report.reportTitle(data.profile.full_name, todayInVietnam, t),
+      );
+    },
+    onSuccess: (opened) => {
+      if (!opened) {
+        setNotice({ tone: 'danger', text: t('Trình duyệt chưa mở được trang in. Hãy thử lại.') });
+      }
     },
     onError: (error) => setNotice({ tone: 'danger', text: errorMessage(error, t) }),
   });
@@ -126,37 +129,12 @@ export function SettingsPage() {
     setNotice(null);
     setDraft((current) => ({ ...current, [key]: value }));
   };
-  const updateMember = (index: number, patch: Partial<HouseholdMember>) =>
-    update(
-      'household_members',
-      draft.household_members.map((member, position) =>
-        position === index ? { ...member, ...patch } : member,
-      ),
-    );
   const toggleInList = <T extends string>(list: T[], value: T) =>
     list.includes(value) ? list.filter((item) => item !== value) : [...list, value];
 
   const chooseLanguage = (value: Language) => {
     setLanguage(value);
     setDraft((current) => ({ ...current, language: value }));
-  };
-
-  const applyDescription = () => {
-    const members = parseHouseholdDescription(draft.household_description);
-    if (!members.length) {
-      setNotice({
-        tone: 'info',
-        text: t('Chưa nhận ra thành viên nào. Hãy thử: “2 bố mẹ và bạn nhỏ 12 tuổi”.'),
-      });
-      return;
-    }
-    update('household_members', members);
-    setNotice({
-      tone: 'info',
-      text: t('Đã gợi ý {count} thành viên từ mô tả. Bạn kiểm tra lại rồi lưu nhé.', {
-        count: members.length,
-      }),
-    });
   };
 
   return (
@@ -248,143 +226,16 @@ export function SettingsPage() {
         <>
           <Panel
             description={t(
-              'Khai báo người ăn cùng để Bếp Việt tự tính khẩu phần và lượng nguyên liệu phù hợp.',
+              'Thêm người ăn cùng để Bếp Việt tự tính khẩu phần và lượng nguyên liệu.',
             )}
             icon="users"
             id="household"
             title={t('Gia đình & khẩu phần')}
           >
-            <div className="household-presets">
-              {householdPresets.map((preset) => (
-                <button
-                  className="preset-chip"
-                  key={preset.id}
-                  onClick={() => {
-                    update('household_members', preset.members);
-                    update('servings_mode', 'auto');
-                  }}
-                  type="button"
-                >
-                  <strong>{t(preset.label)}</strong>
-                  <small>{t(preset.description)}</small>
-                </button>
-              ))}
-            </div>
-
-            <div className="ws-field">
-              <label htmlFor="household-description">
-                <span>{t('Mô tả bữa ăn của nhà bạn')}</span>
-              </label>
-              <textarea
-                aria-describedby="household-description-count"
-                id="household-description"
-                maxLength={300}
-                onChange={(event) => update('household_description', event.target.value)}
-                placeholder={t(
-                  'Ví dụ: 2 chị em 25 và 22 tuổi, hoặc gia đình nhỏ 3 người: bố mẹ và bạn nhỏ 12 tuổi',
-                )}
-                rows={2}
-                value={draft.household_description}
-              />
-              <small id="household-description-count">
-                {t('{count}/300 ký tự', { count: draft.household_description.length })}
-              </small>
-            </div>
-            <button
-              className="text-button"
-              disabled={!draft.household_description.trim()}
-              onClick={applyDescription}
-              type="button"
-            >
-              <AppIcon name="sparkles" size={16} /> {t('Gợi ý thành viên từ mô tả')}
-            </button>
-
-            <div className="member-table" role="table" aria-label={t('Thành viên trong bữa ăn')}>
-              <div className="member-table__head" role="row">
-                <span role="columnheader">{t('Thành viên')}</span>
-                <span role="columnheader">{t('Tuổi')}</span>
-                <span role="columnheader">{t('Khẩu vị')}</span>
-                <span role="columnheader">{t('Suất')}</span>
-                <span aria-hidden="true" />
-              </div>
-              {draft.household_members.length === 0 ? (
-                <p className="member-table__empty">
-                  {t('Chưa có thành viên. Chọn mẫu phía trên hoặc thêm từng người.')}
-                </p>
-              ) : (
-                draft.household_members.map((member, index) => (
-                  <div className="member-table__row" key={index} role="row">
-                    <input
-                      aria-label={t('Tên gọi thành viên {index}', { index: index + 1 })}
-                      maxLength={40}
-                      onChange={(event) => updateMember(index, { label: event.target.value })}
-                      value={member.label}
-                    />
-                    <input
-                      aria-label={t('Tuổi của {name}', { name: member.label })}
-                      max={120}
-                      min={0}
-                      onChange={(event) =>
-                        updateMember(index, {
-                          age: Math.max(0, Math.min(120, Number(event.target.value) || 0)),
-                        })
-                      }
-                      type="number"
-                      value={member.age}
-                    />
-                    <select
-                      aria-label={t('Khẩu vị của {name}', { name: member.label })}
-                      onChange={(event) =>
-                        updateMember(index, { appetite: event.target.value as Appetite })
-                      }
-                      value={member.appetite}
-                    >
-                      {(Object.keys(appetiteLabels) as Appetite[]).map((key) => (
-                        <option key={key} value={key}>
-                          {t(appetiteLabels[key])}
-                        </option>
-                      ))}
-                    </select>
-                    <span className="member-table__portion">
-                      ×
-                      {formatNumber(portionFactor(member.age, member.appetite), {
-                        maximumFractionDigits: 2,
-                      })}
-                    </span>
-                    <button
-                      aria-label={t('Xóa {name}', { name: member.label })}
-                      className="icon-button icon-button--small"
-                      onClick={() =>
-                        update(
-                          'household_members',
-                          draft.household_members.filter((_, position) => position !== index),
-                        )
-                      }
-                      type="button"
-                    >
-                      <AppIcon name="trash" size={15} />
-                    </button>
-                  </div>
-                ))
-              )}
-              <button
-                className="button button--outline member-table__add"
-                disabled={draft.household_members.length >= 12}
-                onClick={() =>
-                  update('household_members', [
-                    ...draft.household_members,
-                    {
-                      label: t('Thành viên {index}', { index: draft.household_members.length + 1 }),
-                      age: 30,
-                      appetite: 'normal',
-                    },
-                  ])
-                }
-                type="button"
-              >
-                <AppIcon name="plus" size={16} /> {t('Thêm thành viên')}
-              </button>
-            </div>
+            <HouseholdMembersEditor
+              members={draft.household_members}
+              onChange={(members) => update('household_members', members)}
+            />
 
             <div className="servings-result">
               <div>
@@ -462,15 +313,10 @@ export function SettingsPage() {
                 ))}
               </div>
             </div>
-            <label className="ws-field">
-              <span>{t('Dị ứng hoặc nguyên liệu cần tránh')}</span>
-              <input
-                maxLength={200}
-                onChange={(event) => update('allergies', event.target.value)}
-                placeholder={t('Ví dụ: đậu phộng, tôm, sữa')}
-                value={draft.allergies}
-              />
-            </label>
+            <AllergyField
+              onChange={(value) => update('allergies', value)}
+              value={draft.allergies}
+            />
             <div className="ws-grid-2">
               <div className="ws-fieldset">
                 <span className="ws-fieldset__label">{t('Độ cay yêu thích')}</span>
@@ -579,18 +425,14 @@ export function SettingsPage() {
                 </small>
               </div>
               <Toggle
-                checked={draft.vegetarian_lunar_days}
-                description={t(
-                  'Tô vàng mùng 1 và ngày rằm âm lịch trên lịch kế hoạch. Bạn vẫn bật/tắt được từng ngày.',
-                )}
-                label={t('Tự đánh dấu ăn chay mùng 1 và rằm')}
-                onChange={(value) => update('vegetarian_lunar_days', value)}
-              />
-              <Toggle
-                checked={draft.notify_weekly_plan}
-                description={t('Nhận email nhắc lên thực đơn vào cuối tuần.')}
+                checked={draft.weekly_reminder_email ?? draft.notify_weekly_plan}
+                description={t('Nhận email lúc 21:00 tối Chủ nhật để lên thực đơn cho tuần mới.')}
                 label={t('Nhắc kế hoạch tuần')}
-                onChange={(value) => update('notify_weekly_plan', value)}
+                onChange={(value) => {
+                  // Email nhắc tuần dùng weekly_reminder_email; giữ notify_weekly_plan đồng bộ cho dữ liệu cũ.
+                  update('weekly_reminder_email', value);
+                  update('notify_weekly_plan', value);
+                }}
               />
               <Toggle
                 checked={draft.email_meal_plan_reminders}
@@ -620,14 +462,17 @@ export function SettingsPage() {
                   onClick={() => exportMutation.mutate()}
                   variant="secondary"
                 >
-                  <AppIcon name="download" size={16} /> {t('Tải dữ liệu của tôi')}
+                  <AppIcon name="file" size={16} /> {t('Tải dữ liệu của tôi (PDF)')}
                 </Button>
                 <small>
-                  {t('Tệp JSON gồm hồ sơ, thiết lập, món yêu thích, kế hoạch và bài viết.')}
+                  {t(
+                    'Mở bản báo cáo để in: chọn “Lưu dưới dạng PDF”. Gồm hồ sơ, thói quen ăn uống, hoạt động và kế hoạch bữa ăn.',
+                  )}
                 </small>
               </div>
             </Panel>
           </div>
+          <VegetarianDaysPanel draft={draft} today={todayInVietnam} update={update} />
         </>
       ) : null}
 
@@ -695,7 +540,15 @@ export function SettingsPage() {
           <Button
             disabled={!dirty}
             isLoading={saveMutation.isPending}
-            onClick={() => saveMutation.mutate({ ...draft, language })}
+            onClick={() =>
+              saveMutation.mutate({
+                ...draft,
+                language,
+                household_members: withMemberLabels(draft.household_members, (index) =>
+                  t('Thành viên {index}', { index }),
+                ),
+              })
+            }
           >
             {t('Lưu cài đặt')}
           </Button>

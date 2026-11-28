@@ -9,6 +9,7 @@ from app.db.session import get_db_session
 from app.modules.auth.dependencies import get_current_user
 from app.modules.auth.models import User
 from app.modules.planner.schemas import (
+    PlanDaySummary,
     PlanEventResponse,
     PlanHistoryResponse,
     PlanItemCreate,
@@ -27,6 +28,7 @@ from app.modules.planner.schemas import (
 from app.modules.planner.service import (
     create_shopping_list,
     list_past_meals,
+    list_plan_day_summaries,
     list_plan_history,
     list_plan_items,
     list_vegetarian_days,
@@ -214,6 +216,40 @@ def past_meals(
         if items
     ]
     return PlanMealHistoryResponse(data=data, total=total)
+
+
+MEAL_ORDER = {"breakfast": 0, "lunch": 1, "dinner": 2}
+
+
+@router.get(
+    "/history/days",
+    response_model=list[PlanDaySummary],
+    summary="List days that have planned meals in a date range",
+)
+def plan_days(
+    session: Annotated[Session, Depends(get_db_session)],
+    current_user: Annotated[User, Depends(get_current_user)],
+    from_date: Annotated[date, Query(alias="from")],
+    to_date: Annotated[date, Query(alias="to")],
+) -> list[PlanDaySummary]:
+    if to_date < from_date:
+        raise HTTPException(status_code=422, detail="Ngày kết thúc phải sau ngày bắt đầu.")
+    if (to_date - from_date).days > 62:
+        raise HTTPException(status_code=422, detail="Mỗi lần chỉ xem tối đa hai tháng.")
+    days: dict[date, PlanDaySummary] = {}
+    for plan_date, meal_type, count, completed in list_plan_day_summaries(
+        session, user_id=current_user.id, from_date=from_date, to_date=to_date
+    ):
+        summary = days.setdefault(
+            plan_date,
+            PlanDaySummary(plan_date=plan_date, meal_types=[], item_count=0, completed_count=0),
+        )
+        summary.meal_types.append(meal_type)  # type: ignore[arg-type]
+        summary.item_count += count
+        summary.completed_count += completed
+    for summary in days.values():
+        summary.meal_types.sort(key=lambda meal: MEAL_ORDER.get(meal, 9))
+    return list(days.values())
 
 
 @router.get("/shopping-list", response_model=ShoppingListResponse, summary="Build a shopping list")

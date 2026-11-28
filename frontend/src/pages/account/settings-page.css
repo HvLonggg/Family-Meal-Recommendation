@@ -1,0 +1,381 @@
+/* Cài đặt · Ngày ăn chay */
+.veg-days .ws-panel__body {
+  gap: 20px;
+}
+
+.veg-days__group {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.veg-days__group legend {
+  margin-bottom: 10px;
+  padding: 0;
+  color: var(--color-text);
+  font-size: 13.5px;
+  font-weight: 750;
+}
+
+.veg-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 40px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 0 10px;
+  background: #fff;
+  color: var(--color-text-secondary, var(--color-text));
+  font: inherit;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.veg-chip:hover {
+  border-color: #e0c27a;
+  background: #fffaf0;
+}
+
+.veg-chip.is-active {
+  border-color: #d9a520;
+  background: #f8e3a6;
+  color: #5a3f00;
+}
+
+.veg-chip:focus-visible {
+  outline: 2px solid var(--color-focus, var(--color-primary));
+  outline-offset: 2px;
+}
+
+.veg-days__weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 8px;
+  max-width: 460px;
+}
+
+.veg-days__month-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 6px;
+  max-width: 380px;
+}
+
+.veg-chip--day {
+  min-width: 0;
+  min-height: 38px;
+  padding: 0;
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+.veg-days__months {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 6px;
+  max-width: 460px;
+}
+
+.veg-days__radios {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+}
+
+.veg-days__radios label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 36px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.veg-days__radios input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-primary);
+}
+
+.veg-days__hint {
+  color: var(--color-text-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.veg-days__preview {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  border: 1px dashed var(--color-border);
+  border-radius: 14px;
+  padding: 12px 14px;
+  background: #fcfaf7;
+  color: var(--color-text-muted);
+}
+
+.veg-days__preview.is-set {
+  border-style: solid;
+  border-color: #ecd28a;
+  background: #fffaf0;
+  color: #5a3f00;
+}
+
+.veg-days__preview > svg {
+  flex: 0 0 auto;
+  margin-top: 2px;
+}
+
+.veg-days__preview div {
+  display: grid;
+  gap: 4px;
+}
+
+.veg-days__preview strong {
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.veg-days__preview small {
+  font-size: 12.5px;
+}
+
+/* Bố cục chung của trang cài đặt: các thẻ cách đều nhau. */
+.ws-split + .veg-days,
+.veg-days + .ws-panel {
+  margin-top: 18px;
+}
+
+@media (max-width: 520px) {
+  .veg-days__weekdays,
+  .veg-days__month-grid {
+    gap: 5px;
+  }
+
+  .veg-chip {
+    min-width: 0;
+    padding: 0 4px;
+  }
+
+  .veg-days__months {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* Cài đặt · Gia đình & khẩu phần */
+.household-editor {
+  display: grid;
+  gap: 12px;
+}
+
+.household-editor__empty {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px dashed var(--color-border);
+  border-radius: 16px;
+  padding: 18px;
+  color: var(--color-text-muted);
+  background: #fffcf8;
+}
+
+.household-editor__empty p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.household-editor__list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.household-member {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1.6fr) minmax(0, 0.8fr) minmax(0, 1fr) 36px;
+  align-items: start;
+  gap: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 12px 14px;
+  background: #fff;
+}
+
+.household-member__avatar {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin-top: 20px;
+  border-radius: 50%;
+  background: #fbe9dc;
+  color: var(--color-primary);
+  font-weight: 800;
+}
+
+.household-member__field {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.household-member__field > span {
+  color: var(--color-text-muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.household-member__field input,
+.household-member__field select {
+  width: 100%;
+  min-height: 40px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 8px 11px;
+  color: var(--color-text);
+  background: #fffcf8;
+  font: inherit;
+  font-size: 14px;
+  outline: none;
+}
+
+.household-member__field input:focus,
+.household-member__field select:focus {
+  border-color: var(--color-primary);
+  box-shadow: var(--focus-ring);
+}
+
+.household-member__field small {
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+.household-member__remove {
+  margin-top: 22px;
+}
+
+.household-editor__add {
+  justify-self: start;
+}
+
+@media (max-width: 640px) {
+  .household-member {
+    grid-template-columns: 1fr 1fr 36px;
+  }
+
+  .household-member__avatar {
+    display: none;
+  }
+
+  .household-member__field--name {
+    grid-column: 1 / 3;
+  }
+
+  .household-member__remove {
+    grid-column: 3;
+    grid-row: 1;
+  }
+}
+
+/* Cài đặt · Dị ứng */
+.allergy-field {
+  display: grid;
+  gap: 10px;
+}
+
+.allergy-field__custom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  min-height: 46px;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: 6px 8px;
+  background: #fffcf8;
+}
+
+.allergy-field__custom:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: var(--focus-ring);
+}
+
+.allergy-field__custom input {
+  flex: 1 1 160px;
+  min-width: 120px;
+  min-height: 32px;
+  border: 0;
+  padding: 0 6px;
+  background: transparent;
+  color: var(--color-text);
+  font: inherit;
+  font-size: 14px;
+  outline: none;
+}
+
+.allergy-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 999px;
+  padding: 4px 6px 4px 12px;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.allergy-tag button {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border: 0;
+  border-radius: 50%;
+  padding: 0;
+  background: rgb(255 255 255 / 22%);
+  color: inherit;
+  cursor: pointer;
+}
+
+.allergy-tag button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 1px;
+}
+
+.allergy-field__error {
+  color: var(--color-danger, #b43b2c);
+  font-size: 12px;
+}
+
+/* Bảo mật · thẻ gọn */
+.security-page .ws-panel__body {
+  gap: 14px;
+}
+
+.security-card__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  border-top: 1px solid var(--color-border);
+  padding-top: 14px;
+}
+
+.security-card__footer small {
+  color: var(--color-text-muted);
+  font-size: 12px;
+}

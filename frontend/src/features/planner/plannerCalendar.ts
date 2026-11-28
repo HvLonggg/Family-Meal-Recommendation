@@ -1,5 +1,6 @@
 import type { Recipe } from '@/data/recipes';
 import type { VegetarianDayMark } from '@/data/plannerApi';
+import type { UserPreferences } from '@/features/auth/types';
 import type { Translate } from '@/features/i18n/translate';
 import {
   isLunarFastingDay,
@@ -9,7 +10,7 @@ import {
   type LunarDate,
 } from '@/lib/lunarCalendar';
 
-export type VegetarianSource = 'manual' | 'lunar' | 'none';
+export type VegetarianSource = 'manual' | 'rule' | 'lunar' | 'none';
 
 export interface VegetarianState {
   vegetarian: boolean;
@@ -33,15 +34,93 @@ export function vegetarianOverrides(...lists: (VegetarianDayMark[] | undefined)[
   return overrides;
 }
 
-/** Lựa chọn thủ công của người dùng luôn thắng quy tắc tự động mùng 1 và rằm. */
+/**
+ * Lịch ăn chay cố định trong Cài đặt.
+ * `weekdays` theo ISO: 0 = Thứ Hai … 6 = Chủ Nhật (khác `Date.getDay()` của JS).
+ * `months` rỗng = áp dụng mọi tháng; ngày/tháng đều theo dương lịch.
+ */
+export interface VegetarianRules {
+  /** Tự đánh dấu ngày 1 và 15 theo lịch đang dùng (dương: ngày 1/15; âm: mùng 1/rằm). */
+  lunarDays: boolean;
+  /** Lịch đang dùng; mặc định âm lịch cho tương thích dữ liệu cũ. */
+  calendar?: 'solar' | 'lunar';
+  monthDays: number[];
+  weekdays: number[];
+  months: number[];
+}
+
+type VegetarianPreferenceFields = Partial<
+  Pick<
+    UserPreferences,
+    | 'vegetarian_lunar_days'
+    | 'vegetarian_month_days'
+    | 'vegetarian_weekdays'
+    | 'vegetarian_months'
+    | 'calendar_mode'
+  >
+>;
+
+/** Đọc quy tắc từ thiết lập; trường thiếu (tài khoản cũ) coi như tắt. */
+export function vegetarianRulesFrom(preferences: VegetarianPreferenceFields): VegetarianRules {
+  return {
+    lunarDays: preferences.vegetarian_lunar_days ?? false,
+    monthDays: preferences.vegetarian_month_days ?? [],
+    weekdays: preferences.vegetarian_weekdays ?? [],
+    months: preferences.vegetarian_months ?? [],
+    calendar: preferences.calendar_mode === 'solar' ? 'solar' : 'lunar',
+  };
+}
+
+/** Ngày 1 hoặc 15 theo lịch đang dùng. */
+function isFastingDayIn(value: string, calendar: 'solar' | 'lunar') {
+  if (calendar === 'solar') {
+    const day = Number(value.slice(8, 10));
+    return day === 1 || day === 15;
+  }
+  return isLunarFastingDay(lunarFromIsoDate(value));
+}
+
+/** Thứ trong tuần theo ISO (0 = Thứ Hai) của một ngày YYYY-MM-DD. */
+export function isoWeekdayOf(value: string) {
+  const [year, month, day] = value.split('-').map(Number);
+  return (new Date(Date.UTC(year!, month! - 1, day)).getUTCDay() + 6) % 7;
+}
+
+/** Ngày khớp lịch cố định (ngày trong tháng hoặc thứ trong tuần, trong các tháng đã chọn). */
+export function matchesVegetarianRule(value: string, rules: VegetarianRules) {
+  if (!rules.monthDays.length && !rules.weekdays.length) return false;
+  const [, month, day] = value.split('-').map(Number);
+  if (rules.months.length && !rules.months.includes(month!)) return false;
+  return rules.monthDays.includes(day!) || rules.weekdays.includes(isoWeekdayOf(value));
+}
+
+/** Các ngày sắp tới (sau `from`) khớp lịch cố định hoặc mùng 1/rằm, tìm trong khoảng một năm. */
+export function nextVegetarianDays(from: string, rules: VegetarianRules, count = 3) {
+  const found: string[] = [];
+  for (let offset = 1; offset <= 366 && found.length < count; offset += 1) {
+    const value = addDaysIso(from, offset);
+    if (resolveVegetarianDay(value, new Map(), rules).vegetarian) found.push(value);
+  }
+  return found;
+}
+
+/**
+ * Thứ tự ưu tiên: đánh dấu thủ công từng ngày → lịch cố định → mùng 1/rằm (nếu bật).
+ * Tham số thứ ba nhận boolean để tương thích cách gọi cũ (chỉ quy tắc âm lịch).
+ */
 export function resolveVegetarianDay(
   value: string,
   overrides: Map<string, boolean>,
-  autoLunarDays: boolean,
+  rules: VegetarianRules | boolean,
 ): VegetarianState {
+  const resolved: VegetarianRules =
+    typeof rules === 'boolean'
+      ? { lunarDays: rules, monthDays: [], weekdays: [], months: [] }
+      : rules;
   const override = overrides.get(value);
   if (override !== undefined) return { vegetarian: override, source: 'manual' };
-  if (autoLunarDays && isLunarFastingDay(lunarFromIsoDate(value))) {
+  if (matchesVegetarianRule(value, resolved)) return { vegetarian: true, source: 'rule' };
+  if (resolved.lunarDays && isFastingDayIn(value, resolved.calendar ?? 'lunar')) {
     return { vegetarian: true, source: 'lunar' };
   }
   return { vegetarian: false, source: 'none' };

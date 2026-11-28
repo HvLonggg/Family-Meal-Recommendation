@@ -57,7 +57,7 @@ function LegalDocumentPage({ kind }: { kind: LegalKind }) {
   const [tocOpen, setTocOpen] = useState(false);
 
   useEffect(() => {
-    document.title = `${content.title} · ${t('Bếp Việt')}`;
+    document.title = t('Bếp Việt');
   }, [content.title, t]);
 
   // Chuyển focus tới tiêu đề mục để người dùng bàn phím/trình đọc màn hình đọc tiếp đúng chỗ.

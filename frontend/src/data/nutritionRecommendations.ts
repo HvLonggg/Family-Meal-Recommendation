@@ -1,4 +1,4 @@
-import { recipeMinutes, type Recipe } from '@/data/recipes';
+import { isQuickRecipe, type Recipe } from '@/data/recipes';
 import { matchesRecipeCategory, matchesRecipeSearch } from '@/data/recipeSearch';
 import { normalizeSearchText } from '@/lib/search';
 
@@ -56,5 +56,5 @@ export function getNutritionMatches(catalog: Recipe[], need: NutritionNeedId) {
   if (need === 'family') {
     return catalog.filter(isFamilyFriendly);
   }
-  return catalog.filter((recipe) => recipeMinutes(recipe) <= 30);
+  return catalog.filter((recipe) => isQuickRecipe(recipe));
 }

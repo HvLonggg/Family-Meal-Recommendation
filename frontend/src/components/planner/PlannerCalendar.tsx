@@ -214,10 +214,12 @@ export function PlannerDayHeader({
         onClick={onToggleVegetarian}
         title={
           vegetarian.source === 'lunar'
-            ? t('Tự đánh dấu vì là mùng 1 hoặc rằm. Bấm để bỏ.')
-            : vegetarian.vegetarian
-              ? t('Bỏ đánh dấu ngày ăn chay')
-              : t('Đánh dấu ngày ăn chay')
+            ? t('Tự đánh dấu vì là ngày 1 hoặc 15 theo lịch đang dùng. Bấm để bỏ.')
+            : vegetarian.source === 'rule'
+              ? t('Theo lịch ăn chay cố định trong Cài đặt. Bấm để bỏ riêng ngày này.')
+              : vegetarian.vegetarian
+                ? t('Bỏ đánh dấu ngày ăn chay')
+                : t('Đánh dấu ngày ăn chay')
         }
         type="button"
       >
@@ -227,7 +229,11 @@ export function PlannerDayHeader({
         // Hiển thị huy hiệu mà không làm lệch nội dung ngày.
         <span className="planner-day__veg-banner">
           <AppIcon name="leaf" size={12} />
-          {vegetarian.source === 'lunar' ? t('Ăn chay · tự động') : t('Ngày ăn chay')}
+          {vegetarian.source === 'lunar'
+            ? t('Ăn chay · tự động')
+            : vegetarian.source === 'rule'
+              ? t('Ăn chay · theo lịch')
+              : t('Ngày ăn chay')}
         </span>
       ) : null}
     </header>

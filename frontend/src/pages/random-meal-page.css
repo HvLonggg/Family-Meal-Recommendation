@@ -273,3 +273,375 @@
     font-size: 1.35rem;
   }
 }
+
+/*
+ * Cỡ món đồng đều: ảnh tách nền chỉ chiếm ~73% khung nhờ fitDishCutout, còn ảnh chụp có nền
+ * (vd. "Trái cây theo mùa" .jpg) bị cắt tròn kín khung kèm vành đĩa sứ nên to hẳn các món khác.
+ * Thu ảnh chụp về cùng đường kính hiển thị với ảnh tách nền.
+ */
+.random-meal-page .dish-plate--uniform[data-dish-kind='photo'],
+.saved-meal-dialog .dish-plate--uniform[data-dish-kind='photo'] {
+  scale: 0.78;
+}
+
+/* Trên vòng quay, khung tròn đã có nền: chỉ thu ảnh chụp bên trong khung. */
+.random-meal-page .meal-wheel__symbol--dish.dish-plate--uniform[data-dish-kind='photo'] {
+  scale: 1;
+  background: radial-gradient(circle at 36% 30%, #fffefb, #f3e7d4);
+  box-shadow:
+    0 6px 14px rgb(48 31 20 / 30%),
+    inset 0 0 0 1px rgb(120 80 50 / 12%);
+}
+
+.random-meal-page .meal-wheel__symbol--dish[data-dish-kind='photo'] > img.dish-plate__img {
+  scale: 0.8;
+  box-shadow: 0 2px 5px rgb(52 33 19 / 26%);
+}
+
+/* Mâm cơm đã lưu: thẻ gọn, mâm thu nhỏ bên trái, bấm để xem chi tiết. */
+.saved-tray-grid {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  gap: 12px;
+  list-style: none;
+}
+
+.saved-tray-card {
+  display: grid;
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  align-items: center;
+  border: 1px solid #e3d6c8;
+  border-radius: 18px;
+  padding: 12px 14px 12px 12px;
+  color: inherit;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  font: inherit;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 12px;
+  text-align: left;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.saved-tray-card:hover {
+  border-color: #cfb79d;
+  box-shadow: 0 10px 22px rgb(74 47 27 / 10%);
+  transform: translateY(-1px);
+}
+
+.saved-tray-card:focus-visible {
+  outline: 3px solid #a94a37;
+  outline-offset: 2px;
+}
+
+.saved-tray-card > svg {
+  color: #874333;
+}
+
+.saved-tray-card__body {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+
+.saved-tray-card__body strong {
+  overflow: hidden;
+  color: #2f241d;
+  font-size: 16px;
+  line-height: 1.3;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.saved-tray-card__body small {
+  color: #6f665d;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.saved-tray-card__dishes {
+  display: -webkit-box;
+  overflow: hidden;
+  margin-top: 4px;
+  color: #4e443c;
+  font-size: 13px;
+  line-height: 1.4;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+/* Mâm gỗ tròn thu nhỏ, món xếp vòng như mâm chính. */
+.saved-tray {
+  position: relative;
+  display: block;
+  flex: none;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, #f7ead6 0 34%, transparent 35%),
+    radial-gradient(circle at 38% 32%, #d9a36e, #b97a46 62%, #9c6136);
+  box-shadow:
+    inset 0 0 0 3px rgb(255 240 215 / 45%),
+    0 4px 10px rgb(74 47 27 / 18%);
+}
+
+.saved-tray--sm {
+  width: 84px;
+}
+
+.saved-tray--lg {
+  width: 132px;
+}
+
+.saved-tray .saved-tray__dish {
+  position: absolute;
+  width: var(--saved-tray-dish, 42%);
+  translate: -50% -50%;
+}
+
+/* Chi tiết mâm đã lưu. */
+.saved-meal-dialog {
+  width: min(620px, 100%);
+}
+
+.saved-meal-dialog__head {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee4d6;
+  padding: 20px 56px 18px 20px;
+  gap: 18px;
+  background: #fbf6ee;
+}
+
+.saved-meal-dialog__head h2 {
+  margin: 2px 0 4px;
+  font-size: 1.45rem;
+  line-height: 1.2;
+}
+
+.saved-meal-dialog__head p {
+  margin: 0;
+  color: #6f665d;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+.saved-meal-dialog__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+.saved-meal-dialog__body {
+  overflow-y: auto;
+  padding: 16px 20px 8px;
+  overscroll-behavior: contain;
+}
+
+.saved-meal-dialog__dishes {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  gap: 8px;
+  list-style: none;
+}
+
+.saved-meal-dialog__dishes li {
+  display: grid;
+  align-items: center;
+  border: 1px solid #eee4d6;
+  border-radius: 14px;
+  padding: 8px 12px 8px 8px;
+  grid-template-columns: 56px minmax(0, 1fr) auto;
+  gap: 12px;
+}
+
+.saved-meal-dialog__thumb {
+  width: 56px;
+}
+
+.saved-meal-dialog__dish-text {
+  display: grid;
+  min-width: 0;
+  gap: 1px;
+}
+
+.saved-meal-dialog__dish-text small {
+  color: #874333;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.saved-meal-dialog__dish-text strong {
+  color: #2f241d;
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+.saved-meal-dialog__dish-meta {
+  display: flex;
+  flex-wrap: wrap;
+  color: #6f665d;
+  font-size: 12px;
+  gap: 2px 10px;
+  font-variant-numeric: tabular-nums;
+}
+
+.saved-meal-dialog__recipe {
+  display: inline-flex;
+  min-height: 36px;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0 10px;
+  color: #874333;
+  font-size: 13px;
+  font-weight: 700;
+  gap: 4px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.saved-meal-dialog__recipe:hover,
+.saved-meal-dialog__recipe:focus-visible {
+  background: #f6ebe0;
+}
+
+.saved-meal-dialog__subhead {
+  margin: 18px 0 8px;
+  font-size: 15px;
+}
+
+.saved-meal-dialog__metrics {
+  display: grid;
+  margin: 0;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.saved-meal-dialog__metrics > div {
+  border-radius: 12px;
+  padding: 10px;
+  background: #f8f2e8;
+}
+
+.saved-meal-dialog__metrics dt {
+  color: #6f665d;
+  font-size: 12px;
+}
+
+.saved-meal-dialog__metrics dd {
+  display: grid;
+  margin: 2px 0 0;
+}
+
+.saved-meal-dialog__metrics strong {
+  color: #2f241d;
+  font-size: 16px;
+  font-variant-numeric: tabular-nums;
+}
+
+.saved-meal-dialog__metrics small {
+  color: #6f665d;
+  font-size: 12px;
+}
+
+.saved-meal-dialog .nutrition-disclaimer {
+  margin: 10px 0 6px;
+  color: #6f665d;
+  font-size: 12px;
+}
+
+.saved-meal-dialog__actions {
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid #eee4d6;
+  padding: 12px 20px;
+  gap: 10px;
+}
+
+@media (max-width: 560px) {
+  .saved-tray-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .saved-tray--sm {
+    width: 72px;
+  }
+
+  .modal-backdrop.saved-meal-dialog-backdrop {
+    place-items: end stretch;
+    padding: 0;
+  }
+
+  .modal.saved-meal-dialog {
+    width: 100%;
+    max-height: 92dvh;
+    border-radius: 22px 22px 0 0;
+  }
+
+  .saved-meal-dialog__head {
+    padding: 16px 52px 14px 16px;
+    gap: 14px;
+  }
+
+  .saved-meal-dialog__head .saved-tray--lg {
+    width: 96px;
+  }
+
+  .saved-meal-dialog__head h2 {
+    font-size: 1.2rem;
+  }
+
+  .saved-meal-dialog__body {
+    padding: 12px 16px 6px;
+  }
+
+  .saved-meal-dialog__metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .saved-meal-dialog__dishes li {
+    grid-template-columns: 48px minmax(0, 1fr) auto;
+    gap: 10px;
+  }
+
+  .saved-meal-dialog__thumb {
+    width: 48px;
+  }
+
+  .saved-meal-dialog__recipe {
+    padding: 0 6px;
+  }
+
+  .saved-meal-dialog__actions {
+    padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+  }
+
+  .saved-meal-dialog__actions .button {
+    flex: 1;
+    white-space: nowrap;
+  }
+
+  .saved-meal-dialog__actions .button--outline {
+    flex: 0 0 auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .saved-tray-card {
+    transition: none;
+  }
+
+  .saved-tray-card:hover {
+    transform: none;
+  }
+}

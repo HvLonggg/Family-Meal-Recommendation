@@ -120,6 +120,15 @@ class PlanMealHistoryResponse(BaseModel):
     total: int
 
 
+class PlanDaySummary(BaseModel):
+    """Tóm tắt một ngày có món trong kế hoạch để tô chấm trên lịch tháng."""
+
+    plan_date: date
+    meal_types: list[MealType]
+    item_count: int
+    completed_count: int
+
+
 class ShoppingListItemResponse(BaseModel):
     name: str
     category: Literal["ingredient", "seasoning"]
