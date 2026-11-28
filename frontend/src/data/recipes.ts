@@ -689,6 +689,9 @@ export function getBuiltinRecipe(slug: string) {
 
 export const getRecipeCatalog = () => recipes;
 
+/** Kho món gốc (tiếng Việt), không đổi khi đổi ngôn ngữ; chỉ đổi khi kho món được tải lại. */
+export const getSourceRecipeCatalog = () => sourceRecipes;
+
 export function setRecipeDictionary(next: RecipeDictionary | null) {
   if (next === dictionary) return;
   dictionary = next;

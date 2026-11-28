@@ -3,6 +3,7 @@ import { useSyncExternalStore } from 'react';
 import {
   getRecipeCatalog,
   getRecipeCatalogSource,
+  getSourceRecipeCatalog,
   setRecipeDictionary,
   subscribeRecipeCatalog,
   type RecipeDictionary,
@@ -65,6 +66,14 @@ export const getRecipeLanguage = () => active;
 /** Danh mục món theo ngôn ngữ hiện tại; render lại khi kho món tải xong hoặc được làm mới. */
 export function useRecipeCatalog() {
   return useSyncExternalStore(subscribeRecipeCatalog, getRecipeCatalog);
+}
+
+/**
+ * Kho món gốc tiếng Việt: dùng để dựng thứ tự ngẫu nhiên/phân loại món (dò từ khóa tiếng Việt trên
+ * tên món) nên không đổi theo ngôn ngữ. Đổi ngôn ngữ không làm hook này render lại.
+ */
+export function useSourceRecipeCatalog() {
+  return useSyncExternalStore(subscribeRecipeCatalog, getSourceRecipeCatalog);
 }
 
 /** Nguồn kho món hiện tại (xem `RecipeCatalogSource`). */

@@ -31,5 +31,5 @@ export function describeHomeMeal(
     translate('Kết hợp {dishes}, vừa đủ vị nhà.', { dishes }),
     translate('Dọn {dishes}, tròn vị bữa cơm.', { dishes }),
   ];
-  return `${summaries[variant]!}.`;
+  return summaries[variant]!;
 }

@@ -18,7 +18,7 @@ import {
 import { seasonalWeight, seasonOf, weightedSeededShuffle } from '@/data/seasonalPicks';
 import { useAuth } from '@/features/auth/AuthContext';
 import { useI18n } from '@/features/i18n/I18nContext';
-import { useRecipeCatalog } from '@/features/i18n/recipeContent';
+import { useRecipeCatalog, useSourceRecipeCatalog } from '@/features/i18n/recipeContent';
 
 import './home-page.css';
 
@@ -33,12 +33,15 @@ export function HomePage() {
   const navigate = useNavigate();
   const { t } = useI18n();
   const { user } = useAuth();
+  // Kho món theo ngôn ngữ đang chọn: chỉ dùng để hiển thị chữ. Thứ tự và cách ghép mâm dựng từ kho
+  // gốc tiếng Việt (trọng số mùa dò theo tên tiếng Việt) nên đổi ngôn ngữ chỉ dịch chữ, không xáo lại.
   const catalog = useRecipeCatalog();
+  const sourceCatalog = useSourceRecipeCatalog();
   // Mùa theo giờ Việt Nam: mâm cơm gợi ý ưu tiên món hợp thời tiết, món trái mùa hiếm gặp.
   const [season] = useState(() => seasonOf(new Date()));
   const mealCandidates = useMemo(
-    () => createHomeMealSuggestions(catalog, entrySeed, season),
-    [catalog, entrySeed, season],
+    () => createHomeMealSuggestions(sourceCatalog, entrySeed, season),
+    [sourceCatalog, entrySeed, season],
   );
   // Băng chuyền lặp vô tận trên mọi tổ hợp mâm (mỗi món làm "neo" một mâm), mâm chưa xem đứng trước.
   // Băng chuyền chỉ dựng vài thẻ đang hiện nên danh sách dài không tốn thêm khi render.
@@ -48,16 +51,24 @@ export function HomePage() {
     [entrySeed, mealCandidates, recentMealKeys],
   );
   // Toàn bộ kho món, xáo ngẫu nhiên mỗi lần vào trang; món hợp mùa hay đứng trước hơn.
-  const featuredRecipes = useMemo(
+  const featuredOrder = useMemo(
     () =>
       weightedSeededShuffle(
-        catalog,
+        sourceCatalog,
         `${entrySeed}:${user?.id ?? 'guest'}`,
         (recipe) => recipe.slug,
         (recipe) => seasonalWeight(recipe, season),
-      ),
-    [catalog, entrySeed, season, user?.id],
+      ).map((recipe) => recipe.slug),
+    [entrySeed, season, sourceCatalog, user?.id],
   );
+  // Giữ nguyên thứ tự, chỉ lấy bản món theo ngôn ngữ hiện tại để thẻ luôn hiện đúng chữ.
+  const featuredRecipes = useMemo(() => {
+    const bySlug = new Map(catalog.map((recipe) => [recipe.slug, recipe]));
+    return featuredOrder.flatMap((slug) => {
+      const recipe = bySlug.get(slug);
+      return recipe ? [recipe] : [];
+    });
+  }, [catalog, featuredOrder]);
 
   useEffect(() => {
     rememberHomeMealSuggestions(mealSuggestions.slice(0, REMEMBERED_MEAL_COUNT));

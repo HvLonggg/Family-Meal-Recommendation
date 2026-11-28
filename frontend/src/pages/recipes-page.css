@@ -245,4 +245,18 @@
     min-width: 0;
     flex: 0 1 40%;
   }
+  /* Điện thoại: chữ nhỏ hơn và chừa ít chỗ cho mũi tên để hiện đủ "Gợi ý ngẫu nhiên", "Hiển thị 3 hàng". */
+  .catalog-page-view .catalog-results__controls {
+    gap: 8px;
+  }
+  .catalog-page-view .catalog-results .catalog-results__controls select,
+  .catalog-page-view .catalog-results .catalog-results__controls select.catalog-results__rows {
+    flex: 0 1 auto;
+    width: auto;
+    min-width: 0;
+    padding-right: 24px;
+    padding-left: 10px;
+    background-position: right 8px center;
+    font-size: 13px;
+  }
 }

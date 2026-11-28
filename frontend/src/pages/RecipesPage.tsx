@@ -452,6 +452,17 @@ export function RecipesPage() {
                 </h2>
               </div>
               <div className="catalog-results__controls">
+                {isShuffledView ? (
+                  <button
+                    aria-label={t('Đổi món ngẫu nhiên')}
+                    className="icon-button catalog-results__shuffle"
+                    onClick={reshuffle}
+                    title={t('Đổi món ngẫu nhiên')}
+                    type="button"
+                  >
+                    <AppIcon name="refresh" size={18} />
+                  </button>
+                ) : null}
                 <select
                   aria-label={t('Sắp xếp')}
                   value={isShuffledView ? RANDOM_SORT : sort}
@@ -471,17 +482,6 @@ export function RecipesPage() {
                     </option>
                   ))}
                 </select>
-                {isShuffledView ? (
-                  <button
-                    aria-label={t('Đổi món ngẫu nhiên')}
-                    className="icon-button catalog-results__shuffle"
-                    onClick={reshuffle}
-                    title={t('Đổi món ngẫu nhiên')}
-                    type="button"
-                  >
-                    <AppIcon name="refresh" size={18} />
-                  </button>
-                ) : null}
                 <select
                   aria-label={t('Số hàng mỗi trang')}
                   className="catalog-results__rows"
@@ -503,7 +503,7 @@ export function RecipesPage() {
                 >
                   {CATALOG_ROW_OPTIONS.map((rows) => (
                     <option key={rows} value={rows}>
-                      {t('Hiển thị {rows} hàng', { rows })}
+                      {t('{rows} hàng', { rows })}
                     </option>
                   ))}
                 </select>

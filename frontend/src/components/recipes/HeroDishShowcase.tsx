@@ -116,7 +116,7 @@ export function HeroDishShowcase() {
           const isLeaving = index !== current;
           return (
             <img
-              alt={isLeaving ? '' : recipe.imageAlt}
+              alt={isLeaving ? '' : (getRecipe(recipe.slug)?.imageAlt ?? recipe.imageAlt)}
               aria-hidden={isLeaving || undefined}
               className={`hero-dish__plate ${isLeaving ? 'is-leaving' : switchCount > 0 ? 'is-entering' : ''}`}
               decoding="async"
